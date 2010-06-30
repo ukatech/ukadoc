@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Install</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">Install</SPAN><BR>
+      <HR>
+      <BR>
+      ゴーストは一般的にnarという拡張子のアーカイブで配布される。<BR>
+      ただし、nar自体はzipと同じなのでサーバによってはzipで配布する場合もある。<BR>
+      lzhでも解凍DLLがあればインストール可能ではあるがよほどの理由が無い場合は使用しない。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">nar</SPAN><BR>
+      install.txtを含んだzip。<BR>
+      Nanika ARchiveの略。<BR>
+      なー。<BR>
+      <BR>
+      install.txtを含んだゴーストフォルダを本体にD&amp;Dすることによって作成できる。<BR>
+      手動でzip圧縮しリネームしたものと同等。<BR>
+      手動でzip圧縮する際はフォルダを掘り下げてはならない。<BR>
+      <BR>
+      ゴーストを配布する際にゴーストとシェルのフォルダにあるprofileフォルダを含めてはならないので注意する事。<BR>
+      ネットワーク更新でも同じことがいえる。<BR>
+      <BR>
+      <BR>
+      home<BR>
+      　+-ghost<BR>
+      　　　+-myghost<BR>
+      　　　　　+-ghost<BR>
+      　　　　　+-shell<BR>
+      　　　　　<SPAN class="text_green">+-install.txt</SPAN><BR>
+      　　　　　+-readme.txt<BR>
+      　　　　　+-thumbnail.png<BR>
+      <SPAN class="text_green">　　　　　+-developer_options.txt</SPAN> (SSPのみ)<BR>
+      <BR>
+      <HR>
+      <BR>
+      <A href="descript_install.html">install.txt</A><BR>
+      インストールするべきフォルダなどの情報を記載するテキスト。<BR>
+      このファイルがなければD&amp;Dでインストールすることは不可能。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">developer_options.txt</SPAN><BR>
+      SSP専用。<BR>
+      <BR>
+      <SPAN class="text_gray">ghost/master/savedata.txt,nonar<BR>
+      shell/old/,nonar</SPAN><BR>
+      <BR>
+      上記のような記述のテキストをフォルダに置くとupdates2.dauやnarアーカイブ作成時に<BR>
+      指定されたファイルが含まれない。<BR>
+      <BR>
+      指定できるオプション<BR>
+      <SPAN class="text_green">noupdate</SPAN> updates2.dau/updates.txtに含めない。<BR>
+      <SPAN class="text_green">nonar</SPAN> NARアーカイブに含めない。<BR>
+      <BR>
+      両方除外する場合。<BR>
+      <SPAN class="text_gray">ghost/master/savedata,nonar,noupdate<BR>
+      </SPAN><BR>
+      なお、profileフォルダなどは指定しなくても自動的に除外される。<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

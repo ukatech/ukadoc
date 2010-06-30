@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 配布用ファイルを作る</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">配布用ファイルを作る</SPAN><BR>
+      <HR>
+      <BR>
+      ゴーストのアーカイブはD&amp;Dインストールできるzipもしくはnarファイルが一般的です。<BR>
+      lzhでもインストールは可能ですが理由がない限りはzip、narにしてください。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">01、ゴーストの更新用情報を作る</SPAN><BR>
+      <BR>
+      まずは自分のゴーストデータを全てをコピーし、下記のものを削除してください。<BR>
+      <BR>
+      ・各種セーブデータファイル(初期値が必要なものだけ含めてください)<BR>
+      ・全てのprofileフォルダ(ghost、shell内)<BR>
+      ・ディレクトリ直下の<SPAN class="text_green">profile.txt</SPAN><BR>
+      <BR>
+      次にコピーしたディレクトリの一番上に空のテキストで<SPAN class="text_green">updates2.dau</SPAN>を作ります。<BR>
+      ※この時ゴーストのmasterフォルダに<SPAN class="text_green">updates2.dau</SPAN>は必要ありません。<BR>
+      <BR>
+      そしてMATERIA、SSP等の本体を起動し、<SPAN class="text_green">updates2.dau</SPAN>や更新したいファイルの入ったフォルダを本体にドロップします。<BR>
+      この時、<SPAN class="text_green">install.txt</SPAN>が入ってるとそちらが優先されnarファイルができてしまうので含めないでください。<BR>
+      <BR>
+      <SPAN class="text_green">updates2.dau</SPAN>が作成できたら中身を確認してみてください。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">02、ゴーストのnarファイルを作成する</SPAN><BR>
+      <BR>
+      ディレクトリ直下に<SPAN class="text_green">install.txt</SPAN>というファイルを作ります。<BR>
+      下記の内容をコピーして<SPAN class="text_green">install.txt</SPAN>に貼り付けゴースト名等を適切に変更してください。<BR>
+      <BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,ghost<BR>
+      name,ゴースト名<BR>
+      directory,ゴーストのフォルダ名(英数で)</SPAN><BR>
+      <BR>
+      また、下記のものを含めると特殊なインストールをします。<BR>
+      <BR>
+      <SPAN class="text_gray">refresh,1</SPAN><BR>
+      インストールされるフォルダにすでにファイルがあった場合は全て削除してからリフレッシュインストールします。<BR>
+      構成を変えたりして上書きしていらないファイルが残ってしまう場合などに使います。<BR>
+      セーブデータ等も消えてしまうので注意してください。<BR>
+      <BR>
+      <SPAN class="text_gray">refreshundeletemask,save1:txt,save2.txt</SPAN><BR>
+      リフレッシュインストールの際に残しておきたいファイルを指定します。<BR>
+      ファイル名のみでパスは含みません。<BR>
+      :で区切る事によっていくつでもマスクできます。<BR>
+      <BR>
+      <SPAN class="text_gray">balloon.directory,バルーンフォルダ名</SPAN><BR>
+      一緒にバルーンを同梱しインストールできます。<BR>
+      <BR>
+      　　　-myghost<BR>
+      　　　　　+-ghost<BR>
+      　　　　　+-shell<BR>
+      <SPAN class="text_green">　　　　　+-balloon(バルーンフォルダ名)</SPAN><BR>
+      の位置に同梱するバルーンを配置してください。<BR>
+      インストールされればballoonフォルダの方に配置されます。<BR>
+      バルーンはネットワーク更新できないので<SPAN class="text_green">updates2.dau</SPAN>作成の際に含めないようにしてください。<BR>
+      <BR>
+      全て記述し終わりフォルダごと本体にドロップするとフォルダ名のnarファイルが作成されます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">03、その他のnarファイルを作成する</SPAN><BR>
+      <BR>
+      ゴーストの追加ファイル用アーカイブを作る時は<BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,supplement<BR>
+      name,内容 <BR>
+      accept,受け取るゴースト名</SPAN><BR>
+      とします。<BR>
+      この場合、受け取るゴーストに指定されたゴーストでなければインストールできません。<BR>
+      ファイルの階層構成は普通のゴーストのnarファイルと同じです。<BR>
+      <BR>
+      バルーンを単体でインストールさせるには<BR>
+      typeの部分を<BR>
+      <SPAN class="text_gray">type,balloon</SPAN><BR>
+      にします。<BR>
+      <BR>
+      ゴーストと同じようにフォルダごと本体にドロップして作成してください。<BR>
+      refreshも使えます。<BR>
+      <BR>
+      シェルをインストールさせるには<BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,shell<BR>
+      name,シェル名 <BR>
+      accept,受け取るゴースト名<BR>
+      directory,シェルのディレクトリ名</SPAN><BR>
+      にします。<BR>
+      <BR>
+      ゴーストと同じようにフォルダごと本体にドロップして作成してください。<BR>
+      指定されたゴーストのshellフォルダにインストールされます。<BR>
+      受け取るゴーストに指定されたゴーストでなければインストールできません。<BR>
+      refreshも使えます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">04、ツールでもっと楽にファイルを作る</SPAN><BR>
+      <BR>
+      ネットワーク更新用ツール<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</A>、<A href="http://rx79g.hp.infoseek.co.jp/index_nx0.html">ＭＳＧ</A>、<A href="http://yune-kotomi.tarenari.jp/page/show/GDM-Ghost+Distribution+Manager">ゴースト配布系自動化システム</A>を使うと面倒な更新ファイルの選別やFTPアップロードを自動化できます。<BR>
+      また、必要ファイルの選別や<SPAN class="text_green">updates2.dau</SPAN>の更新をしてからnarファイルを作成する事もできます。<BR>
+      <BR>
+      SSPではエクスプローラーのメニューから<SPAN class="text_green">updates2.dau</SPAN>やnarファイルを作成できます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      さらに詳しい説明はゴースト作成の説明の<A href="manual_install.html">Install</A>の項目にて。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

@@ -1,0 +1,3033 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 SHIORI Eventリスト</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">SHIORI Eventリスト</SPAN>
+<HR>
+<A href="./">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="50">
+  <TBODY>
+    <TR>
+      <TH colspan="5">起動・終了・切り替えイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnFirstBoot</TD>
+      <TD>初回起動した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>vanishされた回数。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnBoot</TD>
+      <TD rowspan="3">起動した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>起動時のシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>※MATERIA、SSPのみ　前回の処理中で落ちた時にhaltを返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>※MATERIA、SSPのみ　前回の処理中で落ちたゴースト名 。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnClose</TD>
+      <TD>終了が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※SSPのみ　終了理由。<BR>
+      ユーザーが終了した場合、user<BR>
+      シャットダウンした場合、shutdownが返される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnCloseAll</TD>
+      <TD>すべて終了が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※SSPのみ　終了理由。<BR>
+      ユーザーが終了した場合、user<BR>
+      シャットダウンした場合、shutdownが返される。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnGhostChanged</TD>
+      <TD rowspan="2">他のゴーストから自ゴースト切り替えられた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>直前のゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>直前のゴーストの切り替え時のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnGhostChanging</TD>
+      <TD rowspan="3">他のゴーストへの切り替え指示があった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>切り替わるゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>手動で切り替えた場合、manual<BR>
+      システムにより切り替えられた場合、automatic<BR>
+      が返される。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>切り替わるゴーストのパス。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnGhostCalled</TD>
+      <TD rowspan="4">他のゴーストから呼び出された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>呼び出したゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>呼び出したゴーストの起動時のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>呼び出したゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>呼び出したゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnGhostCalling</TD>
+      <TD rowspan="4">他のゴーストの呼び出しが指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>呼び出すゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>手動で切り替えた場合、manual<BR>
+      システムにより切り替えられた場合、automatic<BR>
+      が返される。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>呼び出すゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>呼び出すゴーストのパス。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnGhostCallComplete</TD>
+      <TD rowspan="4">他のゴーストを呼び出し、そのゴーストが起動スクリプトを完了後発生。</TD>
+      <TD>Reference0</TD>
+      <TD>呼び出したゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>呼び出したゴーストの起動時のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>呼び出したゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>呼び出したゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnOtherGhostClosed</TD>
+      <TD rowspan="3">複数起動中、他のゴーストが終了された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>終了したゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>終了したゴーストの最後のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>終了したゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="8">S</TD>
+      <TD rowspan="8">OnOtherGhostChanged</TD>
+      <TD rowspan="8">他のゴースト間で切り替わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>直前のゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>切り替わったゴーストの本体側の名前。。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>直前のゴーストの切り替え時のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>切り替わったゴーストの切り替わり時のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>直前のゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>切り替わったゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference14</TD>
+      <TD>直前のゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference15</TD>
+      <TD>切り替わったゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnShellChanged</TD>
+      <TD>他のシェルから切り替わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>直前のシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnShellChanging</TD>
+      <TD>他のシェルへ切り替えた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>切り替わるシェル名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnBalloonChange</TD>
+      <TD rowspan="2">他のバルーンから切り替わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>切り替わったバルーン名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>切り替わったバルーンのパス。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnWindowStateRestore</TD>
+      <TD>最小化が解除された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnWindowStateMinimize</TD>
+      <TD>最小化が指示された際に発生。<BR>
+      ※SSPのみ設定で喋らすことが可能。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">入力ボックスイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>OnTeachStart</TD>
+      <TD>TeachBoxがオープンした際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnTeachInputCancel</TD>
+      <TD>TeachBoxが閉じられた際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>閉じられた場合、cancel。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnTeach</TD>
+      <TD rowspan="2">TeachBoxからの入力があった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>入力された言葉。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*</TD>
+      <TD>Reference0に対して入力された言葉。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S</TD>
+      <TD rowspan="3">OnCommunicate</TD>
+      <TD rowspan="3">CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>Boxからはuser、ゴーストからはゴースト名を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>スクリプトの内容。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*</TD>
+      <TD>拡張情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnCommunicateInputCancel</TD>
+      <TD>CommunicateBoxが閉じられた際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>閉じられた場合、cancel。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnUserInput</TD>
+      <TD rowspan="2">InputBoxに入力され決定された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>InputBoxのID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>入力された内容。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnUserInputCancel</TD>
+      <TD rowspan="2">InputBoxが閉じられた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>入力のイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>タイムアウトした場合、timeout。閉じられた場合、close。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">時間イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnSecondChange</TD>
+      <TD rowspan="5">1秒ごとに発生。</TD>
+      <TD>Reference0</TD>
+      <TD>連続起動時間（hour）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>見切れ時に1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>重なり時に1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>cantalkが再生されるときに1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>※SSPのみ　タイムアウトするまでの時間。(秒単位)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnMinuteChange</TD>
+      <TD rowspan="5">1分ごとに発生。</TD>
+      <TD>Reference0</TD>
+      <TD>連続起動時間（hour）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>見切れ時に1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>重なり時に1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>cantalkが再生されるときに1、それ以外は0が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>※SSPのみ　タイムアウトするまでの時間。(秒単位)</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">消滅イベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnVanishSelecting</TD>
+      <TD>消滅が指示された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnVanishSelected</TD>
+      <TD>確認ダイアログでYESが選択された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnVanishCancel</TD>
+      <TD>確認ダイアログでNOが選択された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnVanishButtonHold</TD>
+      <TD>消滅イベント中ダブルクリックでキャンセルされた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnVanished</TD>
+      <TD rowspan="4">直前のゴーストの消滅により自分に切り替わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>消滅されたゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>※SSPのみ　消滅したゴーストのOnVanishSelectedイベントのスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※SSPのみ　消滅されたゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>※SSPのみ　消滅されたゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnOtherGhostVanish</TD>
+      <TD rowspan="4">複数起動中、他のゴーストが消滅された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>消滅されたゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>消滅したゴーストのOnVanishSelectedイベントのスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>消滅されたゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>消滅されたゴーストのシェル名。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">選択肢イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnChoiceSelect</TD>
+      <TD rowspan="2">選択肢が選択された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>選択された選択肢のID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*</TD>
+      <TD>※CROWのみ　選択肢の２番目以降のID。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnChoiceSelectEx</TD>
+      <TD>選択肢が選択された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>選択された選択肢のID。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnChoiceEnter</TD>
+      <TD rowspan="3">選択肢上にカーソルが乗った際に発生。<BR>
+      選択肢から外れた際に全Referenceは解除される。<BR>
+      ※喋らせる事はできない。</TD>
+      <TD>Reference0</TD>
+      <TD>選択肢の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ジャンプID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*</TD>
+      <TD>拡張情報。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnChoiceTimeout</TD>
+      <TD>選択肢待ち時間がタイムアウトした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>タイムアウトしたスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnChoiceHover</TD>
+      <TD rowspan="2">選択肢上で静止された際に発生。</TD>
+      <TD>Reference*(0)</TD>
+      <TD>選択肢ラベル。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*(1)</TD>
+      <TD>選択肢ID。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnAnchorSelect</TD>
+      <TD>\_aジャンパがクリックされた瞬間に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>選択されたジャンパのID。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnAnchorSelectEx</TD>
+      <TD>\_aジャンパがクリックされた瞬間に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>選択されたジャンパのID。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">サーフィスイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">S,C</TD>
+      <TD rowspan="3">OnSurfaceChange</TD>
+      <TD rowspan="3">サーフィスが変わった際に発生。<BR>
+      ※喋らせる事はできない。</TD>
+      <TD>Reference0</TD>
+      <TD>本体側の現在サーフィス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>相方側の現在サーフィス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※SSPのみ　キャラID,サーフィス番号,幅,高さ</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnSurfaceRestore</TD>
+      <TD rowspan="2">同じサーフィスが一定時間続いた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>本体側の現在サーフィス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>相方側の現在サーフィス。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">マウスイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="6">M,S,C</TD>
+      <TD rowspan="6">OnMouseClick</TD>
+      <TD rowspan="6">マウスクリックされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1、ホイールクリックは2が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">M,S,C</TD>
+      <TD rowspan="6">OnMouseDoubleClick</TD>
+      <TD rowspan="6">ダブルクリックされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1、ホイールクリックは2が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnMouseMove</TD>
+      <TD rowspan="5">マウスが移動した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>マウスホイールの回転量および回転方向。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnMouseWheel</TD>
+      <TD rowspan="5">マウスホイールが回転した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>マウスホイールの回転量および回転方向。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnMouseUp</TD>
+      <TD rowspan="6">マウスクリックが放された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1、ホイールクリックは2が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnMouseDown</TD>
+      <TD rowspan="6">マウスクリックが押された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1、ホイールクリックは2が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">S</TD>
+      <TD rowspan="5">OnMouseEnterAll</TD>
+      <TD rowspan="5">マウスがキャラクターウインドウに入った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">S</TD>
+      <TD rowspan="5">OnMouseLeaveAll</TD>
+      <TD rowspan="5">マウスがキャラクターウインドウから出た際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">S</TD>
+      <TD rowspan="5">OnMouseEnter</TD>
+      <TD rowspan="5">マウスが当たり判定に入った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">S</TD>
+      <TD rowspan="5">OnMouseLeave</TD>
+      <TD rowspan="5">マウスが当たり判定から出た際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnMouseDragStart</TD>
+      <TD rowspan="6">マウスをドラッグし始めた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>マウスホイールの回転量および回転方向。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnMouseDragEnd</TD>
+      <TD rowspan="6">マウスをドラッグし終えた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>マウスホイールの回転量および回転方向。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>左クリックは0、右クリックは1が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnMouseHover</TD>
+      <TD rowspan="6">マウスが静止している際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="7">S</TD>
+      <TD rowspan="7">OnMouseGesture</TD>
+      <TD rowspan="7">マウスを右ドラッグまたはホイールをドラッグした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの xy 座標（1バイト区切り）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>右ドラッグを開始したマウスカーソルの xy 座標（1バイト区切り）</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>右ドラッグを開始した当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>
+      <PRE>ジェスチャー方向。<BR clear="none">left_up(左上) up(上) right_up(右上)<BR clear="none">left(左) right(右)<BR clear="none">left_down(左下) down(下) right_down(右下)<BR clear="none">circle.cw(時計回り) circle.ccw(反時計回り)<BR clear="none">end(右ボタンをはなした)</PRE>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>ジェスチャー移動角度。<BR>
+      右0度から反時計回りに360度。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">インストールイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnInstallBegin</TD>
+      <TD rowspan="3">アーカイブのインストール開始の際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>成功した時、アーカイブ内容の※識別子を返す。<BR>
+      失敗した時、失敗理由を返す。<BR>
+      ゴーストを指名していた場合その名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>成功した時、内容の名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>内容の名前2。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnInstallComplete</TD>
+      <TD rowspan="3">インストールが正常終了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>成功した時、アーカイブ内容の※識別子を返す。<BR>
+      失敗した時、失敗理由を返す。<BR>
+      ゴーストを指名していた場合その名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>成功した時、内容の名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>内容の名前2。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnInstallCompleteEx</TD>
+      <TD rowspan="4">インストールが正常終了した際に発生。<BR>
+      このイベントが無かった場合OnInstallCompleteが発生。</TD>
+      <TD>Reference0</TD>
+      <TD>成功した時、アーカイブ内容の※識別子を返す。<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>インストールした物の種別を返す。識別子参照(複数の場合は1バイト区切り)</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>インストールした物の名前。(複数の場合は1バイト区切り)</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>インストールした場所。(複数の場合は1バイト区切り)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnInstallFailure</TD>
+      <TD rowspan="3">インストールに失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>成功した時、アーカイブ内容の※識別子を返す。<BR>
+      失敗した時、失敗理由を返す。<BR>
+      ゴーストを指名していた場合その名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>成功した時、内容の名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>内容の名前2。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnInstallRefuse</TD>
+      <TD rowspan="3">インストールするファイルが他のゴーストを指名していた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>成功した時、アーカイブ内容の※識別子を返す。<BR>
+      失敗した時、失敗理由を返す。<BR>
+      ゴーストを指名していた場合その名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>成功した時、内容の名前を返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>内容の名前2。</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※インストールの識別子<BR>
+      shell／ghost／balloon／plugin / headline /supplement<BR>
+      ※OnInstallComplete / OnNarCreatedのみ<BR>
+      ghost with balloon / shell with balloon<BR>
+      ※SSP専用<BR>
+      calendar skin / calendar plugin</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ファイルドロップイベント</TH>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>OnFileDropping</TD>
+      <TD>ファイルがDnDされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパス。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>OnFileDropped</TD>
+      <TD>DnDされたファイルを処理し終わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパス。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>OnDirectoryDrop</TD>
+      <TD>ディレクトリがDnD された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパス。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>OnWallpaperChange</TD>
+      <TD>画像ファイルのDnDによって壁紙が変更された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパス。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnFileDropEx</TD>
+      <TD>ファイルがDnDされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパスを半角スペースで区切って返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnFileDrop2</TD>
+      <TD rowspan="2">ファイルがDnDされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドロップされたファイルパスを半角スペースで区切って返す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>本体にドロップされた場合は0、相方は1を返す。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnUpdatedataCreating</TD>
+      <TD>ゴーストフォルダがDnDされた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnUpdatedataCreated</TD>
+      <TD>updates2.dauが作成された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnNarCreating</TD>
+      <TD rowspan="3">install.txtの入ったゴーストフォルダがDnDされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>narにするオブジェクト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>narに出力されたファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>識別子。インストールの識別子参照。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnNarCreated</TD>
+      <TD rowspan="3">narファイルが作成された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>narにするオブジェクト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>narに出力されたファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>識別子。インストールの識別子参照。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">URLドロップイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnURLDropping</TD>
+      <TD>URLがドロップされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>URLパス。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnURLDropped</TD>
+      <TD>ドロップされたURLを受領し終わった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ダウンロードし終わったファイルのローカルパス。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnURLDropFailure</TD>
+      <TD rowspan="2">ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ダウンロードし終わった分のファイルのローカルパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ユーザーのダブルクリックによって中断した場合、artificial<BR>
+      タイムアウトした場合、timeoutを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnURLQuery</TD>
+      <TD rowspan="3">URLがドロップされた際に発生。<BR>
+      これに反応するとOnURLDroppingは発生しない。</TD>
+      <TD>Reference0</TD>
+      <TD>URLパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>ドロップされたURLのMIMEタイプ</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ネットワーク更新イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdateBegin</TD>
+      <TD rowspan="3">ネットワーク更新開始が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>フルパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdateReady</TD>
+      <TD rowspan="3">更新ファイルが確認された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdateComplete</TD>
+      <TD rowspan="3">ネットワーク更新が成功し完了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdateFailure</TD>
+      <TD rowspan="3">ネットワーク更新に失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。<BR>
+      ※SSPのみ　失敗したファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdate.OnDownloadBegin</TD>
+      <TD rowspan="3">ファイルダウンロード開始の際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ダウンロードするファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>:更新総数の現在のファイル数。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>更新総数。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnUpdate.OnMD5CompareBegin</TD>
+      <TD rowspan="3">MD5の照合開始の際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>比較するファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnUpdate.OnMD5CompareComplete</TD>
+      <TD rowspan="2">MD5が一致した際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnUpdate.OnMD5CompareFailure</TD>
+      <TD rowspan="2">MD5が一致しなかった際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOtherBegin</TD>
+      <TD rowspan="3">ゴースト以外のネットワーク更新開始が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>フルパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>更新する種類を返す。<BR>
+      (shell ghost balloon headline plugin)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOtherReady</TD>
+      <TD rowspan="3">ゴースト以外の更新ファイルが確認された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>更新する種類を返す。<BR>
+      (shell ghost balloon headline plugin)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOtherComplete</TD>
+      <TD rowspan="3">ゴースト以外のネットワーク更新が成功し完了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>更新する種類を返す。<BR>
+      (shell ghost balloon headline plugin)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOtherFailure</TD>
+      <TD rowspan="3">ゴースト以外のネットワーク更新に失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※成功/失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOther.OnDownloadBegin</TD>
+      <TD rowspan="3">ゴースト以外のファイルダウンロード開始の際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ダウンロードするファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>:更新総数の現在のファイル数。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>更新総数。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnUpdateOther.OnMD5CompareBegin</TD>
+      <TD rowspan="3">ゴースト以外のMD5の照合開始の際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>比較するファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnUpdateOther.OnMD5CompareComplete</TD>
+      <TD rowspan="2">ゴースト以外のMD5が一致した際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnUpdateOther.OnMD5CompareFailure</TD>
+      <TD rowspan="2">ゴースト以外のMD5が一致しなかった際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>正しいMD5値。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落としたファイルのMD5値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnUpdateCheckComplete</TD>
+      <TD rowspan="2">ネットワーク更新のチェックに成功した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>:更新総数の現在のファイル数。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされた更新されたファイル名のリスト。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnUpdateCheckFailure</TD>
+      <TD>ネットワーク更新のチェックに失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※失敗理由</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※成功/失敗理由<BR>
+      none　　　　更新するファイルが無かった。<BR>
+      changed　　更新された。<BR>
+      timeout　　 タイムアウトした。<BR>
+      md5 miss　 MD5が一致しなかった。<BR>
+      404 等　　　そのステータスコードでの失敗。<BR>
+      fileio　　　　 ※SSPのみ。ファイルの書き込み失敗、容量不足。<BR>
+      readonly　　※SSPのみ。読取専用フラグがついている。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">時計合わせイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnSNTPBegin</TD>
+      <TD rowspan="4">時計合わせが開始が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>接続先サーバ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされたサーバ側の現時刻。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>カンマでセパレートされたローカル側の現時刻</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>サーバとローカルの時刻のずれ。（秒単位）</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnSNTPCompare</TD>
+      <TD rowspan="4">サーバに接続が確立された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>接続先サーバ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされたサーバ側の現時刻。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>カンマでセパレートされたローカル側の現時刻</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>サーバとローカルの時刻のずれ。（秒単位）</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnSNTPCorrect</TD>
+      <TD rowspan="4">ローカル時刻をサーバ時刻に修正した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>接続先サーバ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされたサーバ側の現時刻。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>カンマでセパレートされたローカル側の現時刻</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>サーバとローカルの時刻のずれ。（秒単位）</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnSNTPFailure</TD>
+      <TD rowspan="4">時計合わせに失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>接続先サーバ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>カンマでセパレートされたサーバ側の現時刻。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>カンマでセパレートされたローカル側の現時刻</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>サーバとローカルの時刻のずれ。（秒単位）</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">メールチェックイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnBIFFBegin</TD>
+      <TD>メールチェック開始が指示された際に発生。</TD>
+      <TD>Reference2</TD>
+      <TD>チェックするメールサーバ名、SSP、CROWはアカウント名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="8">M,S,C</TD>
+      <TD rowspan="8">OnBIFFComplete</TD>
+      <TD rowspan="8">メールチェックが成功した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>スプールされているメールの通数、１オリジン表記。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>スプールされているメールのバイト数。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>チェックするメールサーバ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>メールの新着差分。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>全メールのTopResult。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>ListResult。</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>UidlResult。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>1バイト区切りの送信者とタイトル。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S,C</TD>
+      <TD rowspan="4">OnBIFF2Complete</TD>
+      <TD rowspan="4">メールスプール数が増加した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>スプールされているメールの通数、１オリジン表記。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>スプールされているメールのバイト数。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>チェックするメールサーバ名、SSP、CROWはアカウント名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>全メールのTopResult。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnBIFFFailure</TD>
+      <TD rowspan="2">メールチェックに成功した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※失敗理由</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>チェックするメールサーバ名、SSP、CROWはアカウント名。</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※失敗理由<BR>
+      timeout　タイムアウトした。<BR>
+      kick　　　 認証に失敗した。<BR>
+      defect　　ユーザー設定に誤りがあった。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ヘッドラインセンスイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S</TD>
+      <TD rowspan="2">OnHeadlinesenseBegin</TD>
+      <TD rowspan="2">ヘッドラインセンス開始が指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ヘッドラインセンスするサイト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ヘッドラインセンスするURL。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">M,S</TD>
+      <TD rowspan="4">OnHeadlinesense.OnFind</TD>
+      <TD rowspan="4">読み上げるべきヘッドラインセンスがあった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ヘッドラインセンスするサイト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ヘッドラインセンスするURL。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※OnFind フェーズ</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>ヘッドラインの内容。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>OnHeadlinesenseComplete</TD>
+      <TD>ヘッドラインセンスが正常に終了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※終了理由</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>OnHeadlinesenseFailure</TD>
+      <TD>ヘッドラインセンスに失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※終了理由</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※OnFind フェーズ<BR>
+      First　　　　　　 1ページ目<BR>
+      First and Last　1ページ目で次がない<BR>
+      Last　　　　　　 最後のページ<BR>
+      Next　　　　　　 いずれでもないページ</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※終了理由<BR>
+      no update　　　　更新がなかった<BR>
+      can't download　ファイルが取れなかった<BR>
+      can't analyze　　ファイルは取れたが、有効なヘッドラインを取得できなかった</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">SSTPイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>OnSSTPBreak</TD>
+      <TD>SSTPがブレイクされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>例外の起きたスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>OnSSTPBlacklisting</TD>
+      <TD>最終クライアントのブラックリスト行きが指示された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>最終クライアントのIPアドレス。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">単体イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnKeyPress</TD>
+      <TD rowspan="3">本体がアクティブな状態でキーが入力された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>入力されたキー。(キートップに書かれた文字)</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>入力されたキー。(Win32仮想キーコード)</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※SSPのみ　キーの押しっぱなしカウント。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnNetworkHeavy</TD>
+      <TD>相手サーバが時間内に応答しなかった際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>※SSPのみ　タイムアウトするまでの時間。(秒単位)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S,C</TD>
+      <TD rowspan="3">OnDisplayChange</TD>
+      <TD rowspan="3">デスクトップの解像度／色深度が変更された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>変化後の色深度（bpp）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>変化後の解像度（width）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>変化後の解像度（height）</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnRecommendsiteChoice</TD>
+      <TD rowspan="2">メニューからサイトのリンクが選択された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>選択されたサイト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>選択されたサイトのURL。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnTranslate</TD>
+      <TD>MAKOTOトランスレート機能。</TD>
+      <TD>Reference0</TD>
+      <TD>処理するべきスクリプト。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">Notifyイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">S,C</TD>
+      <TD rowspan="3">basewareversion</TD>
+      <TD rowspan="3">ベースウェアの情報を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>バージョン番号。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>本体の識別。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※SSPのみ　バージョン情報の詳細な数値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">hwnd</TD>
+      <TD rowspan="2">hwndを通知。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴーストのhwnd。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>バルーンのhwnd。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>uniqueid</TD>
+      <TD>unique IDを通知。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴーストのユニークID。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>capability</TD>
+      <TD>capabilityを通知。</TD>
+      <TD>Reference*</TD>
+      <TD>実装レベルに応じて下記がReferenceに1つずつ送られる。<BR>
+      request.status　Statusヘッダ実装<BR>
+      request.securitylevel　SecurityLevelヘッダ実装<BR>
+      request.baseid　BaseIDヘッダ実装<BR>
+      response.marker　Markerヘッダ有効<BR>
+      response.errorlevel　エラーログ有効<BR>
+      response.errordescription　(エラーログ有効)<BR>
+      response.securitylevel　返り値のSecurityLevel有効<BR>
+      response.requestcharset　次の呼び出しの文字コード指定有効</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>ownerghostname</TD>
+      <TD>現在のゴースト名を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>現在のゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>otherghostname</TD>
+      <TD>他に起動しているゴースト名を通知。</TD>
+      <TD>Reference*</TD>
+      <TD>１バイト区切りにされた他に起動しているゴースト名、本体のサーフィス番号、相方のサーフィス番号。</TD>
+    </TR>
+    <TR>
+      <TD height="17">M,S,C</TD>
+      <TD height="17">installedghostname</TD>
+      <TD height="17">インストールされているゴーストを通知。</TD>
+      <TD height="17">Reference*</TD>
+      <TD height="17">インストールされているゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD height="15">S,C</TD>
+      <TD height="15">installedshellname</TD>
+      <TD height="15">インストールされているシェルを通知。</TD>
+      <TD height="15">Reference*</TD>
+      <TD height="15">インストールされているシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>installedballoonname</TD>
+      <TD>インストールされているバルーンを通知。</TD>
+      <TD>Reference*</TD>
+      <TD>インストールされているバルーン名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>installedheadlinename</TD>
+      <TD>インストールされているRSS/ヘッドラインを通知。</TD>
+      <TD>Reference*</TD>
+      <TD>インストールされているRSS/ヘッドライン名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>installedplugin</TD>
+      <TD>インストールされているプラグインを通知。</TD>
+      <TD>Reference*</TD>
+      <TD>インストールされているプラグイン名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofusegraph</TD>
+      <TD>使ってるぞグラフの情報を通知。</TD>
+      <TD>Reference*</TD>
+      <TD>１バイト区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。<BR>
+      boot 起動中の時。<BR>
+      install インストールされている時。<BR>
+      vanish アンインストールした情報が残ってる時。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="7">S,C</TD>
+      <TD rowspan="7">OnNotifySelfInfo</TD>
+      <TD rowspan="7">ゴーストの情報を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>相方側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>現在のシェル名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>現在のシェルへの絶対パス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>現在のバルーン名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>現在のバルーンへの絶対パス。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnNotifyDressupInfo</TD>
+      <TD>着せ替えの情報を通知。</TD>
+      <TD>Reference*</TD>
+      <TD>１バイト区切りにされたキャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnNotifyUserInfo</TD>
+      <TD rowspan="3">ユーザーの入力情報を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>呼び方。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>フルネーム。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>誕生日。(2003,5,5のようにカンマ区切りで)</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnNotifyOSInfo</TD>
+      <TD rowspan="4">OS情報を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>OSのシステム,バージョン。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>CPUタイプ,クロックMHz,追加情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>物理,仮想メモリ(KB)。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>システム起動からの経過分。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnNotifyFontInfo</TD>
+      <TD>システムにインストールされているフォントを通知。</TD>
+      <TD>Reference*</TD>
+      <TD>フォント名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnInitialize</TD>
+      <TD>起動した際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnDestroy</TD>
+      <TD>終了が指示された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnSysResume</TD>
+      <TD>レジュームの際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnSysSuspend</TD>
+      <TD>サスペンドの際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnBatteryNotify</TD>
+      <TD>残りバッテリー量を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>残りバッテリー％。</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">※Notifyイベントは喋らせる事はできない。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">SSP拡張イベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnEmbryoExist</TD>
+      <TD>SSP起動時、先にmateria.exeが起動されていた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnNekodorifExist</TD>
+      <TD>SSP起動時、先に猫どりふが起動されていた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnScreenSaverStart</TD>
+      <TD>スクリーンセーバーが起動した際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnScreenSaverEnd</TD>
+      <TD>スクリーンセーバーが終了した際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnAITalk</TD>
+      <TD>\aなどによる会話が求められた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnCacheSuspend</TD>
+      <TD>ゴーストキャッシュに入った際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnCacheRestore</TD>
+      <TD>ゴーストキャッシュから出た際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnSoundStop</TD>
+      <TD>サウンドが終了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>再生ファイル名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnBalloonBreak</TD>
+      <TD rowspan="3">SSTP以外でブレイクされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>スクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ブレイクしたキャラクターのID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>ブレイクした位置までの文字数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnBalloonClose</TD>
+      <TD>バルーンを閉じた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>閉じる際に表示されていたスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnBalloonTimeout</TD>
+      <TD rowspan="2">選択肢以外でバルーンがタイムアウトした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>タイムアウトした際にスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>残り時間。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnBatteryLow</TD>
+      <TD rowspan="2">Windowsの電源管理設定の設定により通知を受けた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>バッテリ残量の割合(％)。不明の場合は-1。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>残り時間。不明の場合は-1。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnBatteryCritical</TD>
+      <TD rowspan="2">Windowsの電源管理設定の設定により通知を受けた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>バッテリ残量の割合(％)。不明の場合は-1。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>残り時間。不明の場合は-1。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnDeviceArrival</TD>
+      <TD>デバイスを検出された際に発生。</TD>
+      <TD>Reference*</TD>
+      <TD>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnDeviceRemove</TD>
+      <TD>デバイスを削除された際に発生。</TD>
+      <TD>Reference*</TD>
+      <TD>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnDressupChanged</TD>
+      <TD rowspan="3">着せ替えが切替えられた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>着せ替え対象のキャラクターID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>パーツの名称。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>有効になった時に1、無効になった時に0が返る。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnShellScaling</TD>
+      <TD rowspan="2">シェル倍率が変更された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>変更された後の倍率。（パーセント）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>変更される前の倍率。（パーセント）</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnExecuteHTTPComplete</TD>
+      <TD rowspan="6">execute-httpで正常に取得完了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>post/get</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>IDで指定した文字列。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>対象のURL。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>取得したファイルのフルパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>取得結果コード。(timeout|fileio|200|204|403|404)等</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>Cookieの文字列。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnExecuteHTTPFailure</TD>
+      <TD rowspan="6">execute-httpで取得エラーした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>post/get</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>IDで指定した文字列。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>対象のURL。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>取得したファイルのフルパス。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>取得結果コード。(timeout|fileio|200|204|403|404)等</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>Cookieの文字列。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnTrayBalloonClick</TD>
+      <TD rowspan="2">トレイアイコンのバルーンをクリックして消した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>タイトル文字列。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>表示テキスト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnTrayBalloonTimeout</TD>
+      <TD rowspan="2">トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>タイトル文字列。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>表示テキスト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnNetworkStatusChange</TD>
+      <TD rowspan="2">ネットワーク接続状態が変わった際に発生。<BR>
+      起動直後のみNOTIFYで通知。</TD>
+      <TD>Reference0</TD>
+      <TD>onlineまたはoffline。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnSystemDialog</TD>
+      <TD rowspan="3">ファイル関連のダイアログで保存/OKが押された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>openまたはsave。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>イベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>ファイルのパスまたはカンマ区切りのRGB値。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnSystemDialogCancel</TD>
+      <TD rowspan="2">ファイル関連のダイアログでキャンセルが押された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>openまたはsave。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>イベントID。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnConfigurationDialogHelp</TD>
+      <TD rowspan="4">SSP:設定ウインドウのヘルプボタンで項目をクリックした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ダイアログID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ダイアログタイトル。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>項目タイプ:項目名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>項目内容テキスト。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnTextDrop</TD>
+      <TD rowspan="2">テキストデータがDnDされた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>テキスト内容。(改行は1バイト値)</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>DnDされたキャラクターのID。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnOtherGhostTalk</TD>
+      <TD rowspan="6">他のゴーストが話した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>\0側のゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>
+      <P>トークを中断した場合、break。<BR>
+      コミュニケートの場合、communicate。<BR>
+      SSTPの場合、sstp。<BR>
+      Owned SSTPの場合、owned。<BR>
+      非ローカルSSTPの場合、remote。<BR>
+      該当するものがカンマ区切りで返る。</P>
+      </TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>他ゴーストの話したイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>他ゴーストの話した内容のスクリプト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>1バイト区切りの他ゴーストに渡されたReference。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnRaisePluginFailure</TD>
+      <TD rowspan="4">\![raiseplugin]が失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>見つからなかった場合、notfound。<BR>
+      無効設定だった場合、disabled。<BR>
+      他、204など実行結果。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>プラグインの名前またはID。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>実行しようしたイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3～</TD>
+      <TD>実行しようしたイベントのReference。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnNotifyPluginFailure</TD>
+      <TD rowspan="4">\![notifyplugin]が失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>見つからなかった場合、notfound。<BR>
+      無効設定だった場合、disabled。<BR>
+      他、204など実行結果。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>プラグインの名前またはID。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>実行しようしたイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3～</TD>
+      <TD>実行しようしたイベントのReference。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnRaiseOtherFailure</TD>
+      <TD rowspan="4">\![raiseother]が失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>見つからなかった場合、notfound。<BR>
+      \t中だった場合、timecritical。<BR>
+      パッシブモードだった場合、passivemode。<BR>
+      インダクションモードだった場合、inductionmode。<BR>
+      最小化中だった場合、minimized。<BR>
+      他、204など実行結果。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ゴースト名または\0名。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>実行しようしたイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3～</TD>
+      <TD>実行しようしたイベントのReference。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnNotifyOtherFailure</TD>
+      <TD rowspan="4">\![notifyother]が失敗した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>見つからなかった場合、notfound。<BR>
+      \t中だった場合、timecritical。<BR>
+      パッシブモードだった場合、passivemode。<BR>
+      インダクションモードだった場合、inductionmode。<BR>
+      最小化中だった場合、minimized。<BR>
+      他、204など実行結果。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ゴースト名または\0名。<BR>
+      __SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>実行しようしたイベントID。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3～</TD>
+      <TD>実行しようしたイベントのReference。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>inputbox.autocomplete</TD>
+      <TD>
+      <P>1バイト区切りでリストを返すと入力ボックスでオートコンプリート機能が動作。<BR>
+      (WinMe/2000以降)</P>
+      </TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">tooltip</TD>
+      <TD rowspan="6">ツールチップ内容を通知。</TD>
+      <TD>Reference0</TD>
+      <TD>マウスカーソルの x 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マウスカーソルの y 座標（ローカル座標）</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>当たり判定の識別子。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>常に0。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">balloon_tooltip</TD>
+      <TD rowspan="2">バルーン選択肢上のツールチップ内容を通知。</TD>
+      <TD>Reference*(0)</TD>
+      <TD>選択肢ラベル。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*(1)</TD>
+      <TD>選択肢ID。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">プラグイン-バーチャルビールかけイベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnBeerShower</TD>
+      <TD>プラグインが実行された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">プラグイン-バーチャル道頓堀イベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnDive</TD>
+      <TD>プラグインが実行された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">プラグイン-実体化イベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnHitThunder</TD>
+      <TD>プラグインが実行された際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">外部アプリイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnApplicationBoot</TD>
+      <TD>外部アプリケーションが起動した際に発生。</TD>
+      <TD rowspan="2">Reference0</TD>
+      <TD rowspan="2">アプリケーション名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnApplicationClose</TD>
+      <TD>外部アプリケーションが終了した際に発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnApplicationExist</TD>
+      <TD>外部アプリケーションの存在を通知された際に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>アプリケーションの情報。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnApplicationVersion</TD>
+      <TD rowspan="5">外部アプリケーションのバージョン情報を通知された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>アプリケーション名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>アプリケーションの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>バージョン番号。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>著作権。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>開発元のURL。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnApplicationOperationFinish</TD>
+      <TD rowspan="3">外部アプリケーションか何らかの処理が完了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>アプリケーション名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>処理の内容。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>処理の対象。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnApplicationFileOpen</TD>
+      <TD rowspan="2">外部アプリケーションがドキュメントファイルを開いた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>アプリケーション名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ファイルのフルパス。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnWebsiteUpdateNotify</TD>
+      <TD rowspan="3">ウェブサイトの更新・新着情報を通知された際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ウェブサイト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>最終更新日時。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>更新内容。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">外部アプリ-きのこイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="2">M,S,C</TD>
+      <TD rowspan="2">OnKinokoObjectCreate</TD>
+      <TD rowspan="2">きのこスキンが頭に生えた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>そのきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>そのきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnKinokoObjectDestroy</TD>
+      <TD>きのこスキンが頭から消えた際に発生。</TD>
+      <TD>Reference2</TD>
+      <TD>そのきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnKinokoObjectChanging</TD>
+      <TD rowspan="3">きのこスキンを切り替えようとしている際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>切り替える直前のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>切り替える直前のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>切り替える直前のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnKinokoObjectChanged</TD>
+      <TD rowspan="3">きのこスキンを切り替えた際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>切り替えた後のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>切り替えた後のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>切り替えた後のきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">M,S,C</TD>
+      <TD rowspan="3">OnKinokoObjectInstalled</TD>
+      <TD rowspan="3">きのこスキンをドロップでインストールした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>インストールされたきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>インストールされたきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>インストールされたきのこの情報。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnBatteryLow</TD>
+      <TD>バッテリ残量が40％を切った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>パーセンテージの数値を返す。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnBatteryCritical</TD>
+      <TD>バッテリ残量が20％を切った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>パーセンテージの数値を返す。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnSysResourceLow</TD>
+      <TD>システムリソースが40％を切った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>パーセンテージの数値を返す。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnSysResourceCritical</TD>
+      <TD>システムリソースが20％を切った際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>パーセンテージの数値を返す。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">外部アプリ-猫どりふイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnNekodorifObjectEmerge</TD>
+      <TD rowspan="5">落下物が可視領域内に出現した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>落下物の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>落下物の対象ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落下物のカテゴリ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>きのこフラグ。きのこにあった場合は1、そうでなければ0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>落下物のターゲット名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnNekodorifObjectHit</TD>
+      <TD rowspan="5">落下物がヒットした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>落下物の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>落下物の対象ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落下物のカテゴリ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>きのこフラグ。きのこにあった場合は1、そうでなければ0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>落下物のターゲット名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnNekodorifObjectDrop</TD>
+      <TD rowspan="5">落下物を再投下する際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>落下物の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>落下物の対象ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落下物のカテゴリ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>きのこフラグ。きのこにあった場合は1、そうでなければ0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>落下物のターゲット名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnNekodorifObjectVanish</TD>
+      <TD rowspan="5">ヒットした落下物が可視領域内から消滅した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>落下物の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>落下物の対象ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落下物のカテゴリ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>きのこフラグ。きのこにあった場合は1、そうでなければ0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>落下物のターゲット名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="5">M,S,C</TD>
+      <TD rowspan="5">OnNekodorifObjectDodge</TD>
+      <TD rowspan="5">ヒットしなかった落下物が可視領域内から消滅した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>落下物の名前。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>落下物の対象ゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>落下物のカテゴリ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>きのこフラグ。きのこにあった場合は1、そうでなければ0。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>落下物のターゲット名。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">外部アプリ-YunaSoft SexyFont Plug-inイベント</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>OnMusicPlay</TD>
+      <TD>音楽を再生した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>曲タイトル。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト間汎用イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD rowspan="3">OnRequestValues</TD>
+      <TD rowspan="3">他ゴーストが任意に送信した際に発生。<BR>
+      このイベントが送られた時、\[raiseother]でOnGetPropertyイベントを送信する必要がある。</TD>
+      <TD>Reference0</TD>
+      <TD>送信したゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>\0データの場合は0、\1データの場合は1。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>※要求するプロパティ名。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnGetProperty</TD>
+      <TD rowspan="4">OnRequestValuesを受けた際に返すべきイベント。</TD>
+      <TD>Reference0</TD>
+      <TD>送信するゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>\0データの場合は0、\1データの場合は1。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>OnRequestValuesで受け取ったReference2の内容をそのまま。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>Reference2の項目に応じた内容。</TD>
+    </TR>
+    <TR>
+      <TD colspan="5">要求されるプロパティ名一覧。<BR>
+      キャラクター名/世代/年齢層/性別/種族/種族タイプ/行動タイプ/プロフィール/カード画像パス<BR>
+      LIFE/STR/DEX/AGL/MIN/INT/SEN<BR>
+      -1NOB</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト「ぬるぽ いんたーはい」-特殊イベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>OnTalkRequest</TD>
+      <TD>ぬるぽ　いんたーはいからトークを求められた際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト「The Hand」-Hand特殊イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="5">S</TD>
+      <TD rowspan="5">OnHandActivate</TD>
+      <TD rowspan="5">The Handが他ゴーストを触りに行くまたは触り終わった際に発生。<BR>
+      触っている間、Sender:The Handでゴーストに(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)イベントを送る。</TD>
+      <TD>Reference0</TD>
+      <TD>通常触り開始：NormalStart<BR>
+      通常触り終了：NormalEnd<BR>
+      必殺技開始：SuperStart<BR>
+      必殺技途中：SuperContinue<BR>
+      必殺技終了：SuperEnd<BR>
+      必殺技途中でホーミング発動：SuperHoming</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>当たり判定名。<BR>
+      停止された場合はescaped。<BR>
+      必殺技の場合は1～4。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>相手に起きるイベント。<BR>
+      通常時：(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)<BR>
+      必殺技中：触った回数<BR>
+      必殺技終了時：(MAX触り回数|escaped|nocollision|attacked|deleted)</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>触りに行く際のスクリプト。<BR>
+      必殺技中は当たり判定名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>シェル番号。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト「ごーすとじてん」「きゅーぴっど」-模擬戦イベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="8">S</TD>
+      <TD rowspan="8">OnJitenBattle</TD>
+      <TD rowspan="8">ゴーストが行う模擬戦の毎ターン発生。</TD>
+      <TD>Reference0</TD>
+      <TD>送信したゴーストの\0名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>攻撃側キャラクタ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>防御側キャラクタ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>戦闘結果。<BR>
+      開始時：模擬戦闘開始<BR>
+      行動時：(物理攻撃成功|物理攻撃失敗|物理攻撃回避|物理攻撃ミス|精神攻撃成功|精神攻撃失敗|精神攻撃回避|精神攻撃ミス)</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>ダメージ。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>攻撃側キャラクタLIFE。</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>防御側キャラクタLIFE。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>
+      <PRE>Normal</PRE>
+      </TD>
+    </TR>
+    <TR>
+      <TD rowspan="8">S</TD>
+      <TD rowspan="8">OnJitenTagBattle</TD>
+      <TD rowspan="8">ゴーストが行う模擬戦の毎ターン発生。</TD>
+      <TD>Reference0</TD>
+      <TD>送信したゴーストの\0名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>攻撃側キャラクタ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>防御側キャラクタ名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>戦闘結果。<BR>
+      開始時：模擬戦闘開始<BR>
+      行動時：(物理攻撃成功|物理攻撃失敗|物理攻撃回避|物理攻撃ミス|精神攻撃成功|精神攻撃失敗|精神攻撃回避|精神攻撃ミス)</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>ダメージ。</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>攻撃側キャラクタLIFE。</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>防御側キャラクタLIFE。</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>
+      <PRE>Tag</PRE>
+      </TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト「マギルトリエ」-バーチャルバトルイベント</TH>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">OnMglBattle</TD>
+      <TD rowspan="4">マギルトリエが行うバーチャルバトルの結果ごとに発生。</TD>
+      <TD>Reference0</TD>
+      <TD>バージョン情報。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>送信元ゴースト。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>Mglイベント名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference*</TD>
+      <TD>Mglイベントに対する内容。</TD>
+    </TR>
+    <TR>
+      <TH colspan="5">ゴースト「カレー家族／沙紀と右近」-パーティゲーム「６０階段」イベント</TH>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>Send60stair_Call</TD>
+      <TD>カレー家族／沙紀と右近が同時起動しているゴーストをゲームに誘う際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>Send60stair_Start</TD>
+      <TD>カレー家族／沙紀と右近がゲームを開始する際に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">Send60stair_YourTurnStart</TD>
+      <TD rowspan="2">カレー家族／沙紀と右近が行うゲーム中に自ゴーストの順番が来た際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>現在位置。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マーキング位置。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>Send60stair_Marking</TD>
+      <TD>カレー家族／沙紀と右近が行うゲーム中にマーキングした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>マーキング位置。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">Send60stair_DiceRoll</TD>
+      <TD rowspan="2">カレー家族／沙紀と右近が行うゲーム中にゴーストがサイコロを振り、ドボンでない際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>第一サイコロの出目。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>第二サイコロの出目。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="4">S</TD>
+      <TD rowspan="4">Send60stair_Dobon</TD>
+      <TD rowspan="4">カレー家族／沙紀と右近が行うゲーム中に参加ゴーストのいずれかがドボンした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>ドボンしたゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ドボンしたゴーストの現在位置。</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>ドボンしたゴーストのマーキング位置。</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>サイコロの出目。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">Send60stair_YourTurnEnd</TD>
+      <TD rowspan="2">カレー家族／沙紀と右近が行うゲーム中に自ゴーストのターンが終了した際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>現在位置。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>マーキング位置。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">Send60stair_Goal</TD>
+      <TD rowspan="2">カレー家族／沙紀と右近が行うゲーム中にいずれかのゴーストがゴールした際に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>優勝したゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>順位。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>Send60stair_GameEnd</TD>
+      <TD>カレー家族／沙紀と右近が行うゲーム終了時、順位を表示した後に発生。</TD>
+      <TD>-</TD>
+      <TD>-</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">Send60stair_GetStatus</TD>
+      <TD rowspan="2">\[raiseother]で沙紀に送信するべきイベント。</TD>
+      <TD>Reference0</TD>
+      <TD>送信するゴーストの\0名。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>大胆さ。(0～60)</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->

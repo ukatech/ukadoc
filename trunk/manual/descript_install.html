@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Install設定</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">Install設定</SPAN>
+<HR>
+<A href="./">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="50">
+  <COL span="1" width="250">
+  <TBODY>
+    <TR>
+      <TH colspan="3">install.txt(ゴースト、バルーン、プラグイン、ヘッドラインセンサ)</TH>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">オブジェクト名</SPAN></TD>
+      <TD>そのオブジェクトの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。<BR>
+      ゴーストの場合はghost。<BR>
+      バルーンの場合はballoon。<BR>
+      プラグインの場合はplugin。<BR>
+      ヘッドラインセンサの場合はheadline。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>directory,<SPAN class="text_green">ディレクトリ名</SPAN></TD>
+      <TD>そのオブジェクトのディレクトリ名。半角英数推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>refresh,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>refreshundeletemask,<SPAN class="text_green">ファイル名1</SPAN>;<SPAN class="text_green">ファイル名2...</SPAN></TD>
+      <TD>refreshの消去から除外するファイル名。<BR>
+      複数ある場合はコロンで区切る。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">install.txt(ゴーストwithバルーン)</TH>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD height="16">M,S,C</TD>
+      <TD height="16">name,<SPAN class="text_green">オブジェクト名</SPAN></TD>
+      <TD height="16">そのオブジェクトの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。ゴーストの場合はghost。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>directory,<SPAN class="text_green">ディレクトリ名</SPAN></TD>
+      <TD>そのオブジェクトのゴースト側のディレクトリ名。半角英数推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>balloon.directory,<SPAN class="text_green">ディレクトリ名</SPAN></TD>
+      <TD>そのオブジェクトのバルーン側のディレクトリ名。半角英数推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>refresh,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>refreshundeletemask,<SPAN class="text_green">ファイル名1</SPAN>;<SPAN class="text_green">ファイル名2...</SPAN></TD>
+      <TD>refreshの消去から除外するファイル名。<BR>
+      複数ある場合はコロンで区切る。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">install.txt(ゴーストへの追加ファイル)</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">オブジェクト名</SPAN></TD>
+      <TD>そのオブジェクトの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。追加ファイルの場合はsupplement。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>accept,<SPAN class="text_green">ゴースト名</SPAN></TD>
+      <TD>受け取るゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">install.txt(追加シェル)</TH>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">オブジェクト名</SPAN></TD>
+      <TD>そのオブジェクトの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。追加シェルの場合はshell。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>accept,<SPAN class="text_green">ゴースト名</SPAN></TD>
+      <TD>受け取るゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>directory,<SPAN class="text_green">ディレクトリ名</SPAN></TD>
+      <TD>シェルのディレクトリ名。半角英数推奨。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->

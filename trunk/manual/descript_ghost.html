@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Ghost設定</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">Ghost設定</SPAN>
+<HR>
+<A href="/">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="50">
+  <COL span="1" width="250">
+  <TBODY>
+    <TR>
+      <TH colspan="3">descript.txt</TH>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">ゴースト名</SPAN></TD>
+      <TD>そのゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。ゴーストの場合はghost。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftman,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのゴーストの作者名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanw,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのゴーストの作者名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>id,<SPAN class="text_green">ID名</SPAN></TD>
+      <TD>そのゴーストのID名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>作者のURL。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>homeurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>ネットワーク更新用のURL、SHIORI側の記述が優先される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>本題側のゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.name2,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>本題側のゴーストの名前。愛称等。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>相方側のゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char*.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>\p[*]の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.seriko.defaultsurface,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>本題側のゴーストのデフォルトのサーフィス番号。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.seriko.defaultsurface,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>相方側のゴーストのデフォルトのサーフィス番号。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char*.seriko.defaultsurface,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>\p[*]のゴーストのデフォルトのサーフィス番号。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>balloon.defaultsurface,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>バルーンのデフォルトのサーフィス番号。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※全体のサーフィスのデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※本体側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※相方側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※2人目以降の相方側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>本体側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>相方側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>2人目以降の相方側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>本体側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>相方側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>2人目以降の相方側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>本体側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>相方側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>2人目以降の相方側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstp.allowunspecifiedsend,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>0でゴーストを指名しないSSTPを受けない。デフォルトは1。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sstp.allowcommunicate,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>0でCOMMUNICATEを受けない。デフォルトは1。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sstp.alwaystranslate,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>0でSSTPオプションにかかわらず常時MAKOTOトランスレートを実行。デフォルトは0。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>name.allowoverride,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>0でシェル側のsakura.name/kero.nameを使用しない。デフォルトは1。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>shiori.cache,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>0で常にSHIORIをunloadする。デフォルトは1。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>shiori.encoding,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>1でCharsetのないSHIORIで強制エンコーディングする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>don't need onmousemove,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>1でOnMouseMoveを送らなくなる。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>don't need bind,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>1で着せ替えを無効にする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>don't need seriko talk,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>1でSERIKO talkメソッド(口パク)機能を無効化する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>balloon,<SPAN class="text_green">バルーン名</SPAN></TD>
+      <TD>デフォルトに使用するバルーン名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>default.balloon.path,<SPAN class="text_green">パス</SPAN></TD>
+      <TD>デフォルトに使用するバルーンの相対パス。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>balloon.dontmove,true</TD>
+      <TD>バルーン位置調整の標準設定をOFFにする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>icon,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>そのゴーストの持つアイコン。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>icon.minimize,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>そのゴーストの最小化した際のアイコン。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD align="left">cursor,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>そのゴーストに使用するカーソル。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>shiori,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>そのゴーストが使用するSHIORIのファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>makoto,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>そのゴーストが使用するMAKOTOのファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>menu.font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>ポップアップメニューに使用するフォント。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>menu.font.height,<SPAN class="text_green">フォントサイズ</SPAN></TD>
+      <TD>ポップアップメニューに使用する文字の大きさ。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>install.accept,<SPAN class="text_green">名前1</SPAN>,<SPAN class="text_green">名前2</SPAN>,<SPAN class="text_green">名前3...</SPAN></TD>
+      <TD>カンマ区切りで列挙した名前のゴースト用narファイルをインストール可能にする。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※サーフィスの位置情報<BR>
+      top　　 上部に貼り付き表示。<BR>
+      bottom 下部に貼り付き表示。<BR>
+      free　　自由移動。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" allowtransparency="true" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->

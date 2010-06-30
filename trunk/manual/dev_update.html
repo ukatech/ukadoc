@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 ネットワーク更新に対応する</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">ネットワーク更新に対応する</SPAN><BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">01、サーバを用意する</SPAN><BR>
+      <BR>
+      まずネットワーク更新に必要なサーバを用意します。<BR>
+      無料ホームページ等では制限のある場合があるのでにファイルを置く時は下記の事に注意してください。<BR>
+      <BR>
+      ・必要なファイルの拡張子がアップロードできる。<BR>
+      ・テキストなどに自動的に広告が入らない。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">02、ゴーストに更新用URLを書く</SPAN><BR>
+      <BR>
+      SHIORIごとに書き方は違いますがhomeurlにサーバ側の<SPAN class="text_green">updates2.dau</SPAN>までのURLを書きます。<BR>
+      <SPAN class="text_gray">例　http://xxx.yyy/myghost/</SPAN><BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">03、更新したいファイルだけの構成を作る</SPAN><BR>
+      <BR>
+      自分のゴーストから更新したいファイルだけをコピーし、同じディレクトリ構成にします。<BR>
+      <BR>
+      全てのファイルをアップロードしても更新ファイルだけネットワーク更新されるので構いません。<BR>
+      ただし、その場合は下記の物は更新に含めないようにしてください。<BR>
+      <BR>
+      ・各種セーブデータファイル<BR>
+      ・全てのprofileフォルダ(ghost、shell内)<BR>
+      ・ディレクトリ直下の<SPAN class="text_green">profile.txt</SPAN><BR>
+      ・ghost\masterフォルダ内の<SPAN class="text_green">updates2.dau</SPAN><BR>
+      <BR>
+      次にコピーしたディレクトリの一番上に空のテキストで<SPAN class="text_green">updates2.dau</SPAN>を作ります。<BR>
+      そしてMATERIA、SSP等の本体を起動し、<SPAN class="text_green">updates2.dau</SPAN>や更新したいファイルの入ったフォルダを本体にドロップします。<BR>
+      この時、<SPAN class="text_green">install.txt</SPAN>が入ってるとそちらが優先されnarファイルができてしまうので含めないでください。<BR>
+      <BR>
+      <SPAN class="text_green">updates2.dau</SPAN>が作成できたら中身を確認してみてください。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">04、サーバにアップロードする</SPAN><BR>
+      <SPAN class="text_red">全てバイナリモードでアップロードしてください。</SPAN><BR>
+      アスキーモードでアップロードするとネットワーク更新に失敗します。<BR>
+      <BR>
+      ローカルの<SPAN class="text_green">updates2.dau</SPAN>とサーバ上の<SPAN class="text_green">updates2.dau</SPAN>に違いがある個所だけネットワーク更新されます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">05、ネットワーク更新用ツールでもっと楽に更新する</SPAN><BR>
+      <BR>
+      ネットワーク更新用ツール<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</A>、<A href="http://rx79g.hp.infoseek.co.jp/index_nx0.html">ＭＳＧ</A>、<A href="http://yune-kotomi.tarenari.jp/page/show/GDM-Ghost+Distribution+Manager">ゴースト配布系自動化システム</A>を使うと面倒な更新ファイルの選別やFTPアップロードを自動化できます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      さらに詳しい説明はゴースト作成の説明の<A href="manual_update.html">Update</A>の項目にて。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

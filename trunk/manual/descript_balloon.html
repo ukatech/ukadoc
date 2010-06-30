@@ -1,0 +1,553 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Balloon</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">Balloon設定</SPAN>
+<HR>
+<A href="./">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="50">
+  <COL span="1" width="250">
+  <TBODY>
+    <TR>
+      <TH colspan="3">descript.txt</TH>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">バルーン名</SPAN></TD>
+      <TD>そのバルーンの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。バルーンの場合はballoon。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftman,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのバルーンの作者名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanw,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのバルーンの作者名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>id,<SPAN class="text_green">ID名</SPAN></TD>
+      <TD>そのバルーンのID名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>作者のURL。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>homeurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>ネットワーク更新用のURL。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>cursor,<SPAN class="text_green">カーソル名</SPAN></TD>
+      <TD>バルーンに使用するカーソル。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>origin.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト開始位置のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>origin.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト開始位置のY座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>validrect.left,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト描画範囲の左位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>validrect.top,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト描画範囲の上位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>validrect.right,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト描画範囲の右位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>validrect.bottom,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>テキスト描画範囲の下位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>wordwrappoint.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>自動改行で折り返すX座標。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>wordwrappoint.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>自動改行で折り返すY座標。現在は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>使用するフォント。デフォルトはＭＳ ゴシック。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォント色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォント色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォント色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.shadowcolor.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォントの陰落ち色赤(0～255) noneで無効化</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.shadowcolor.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォントの陰落ち色緑(0～255) noneで無効化</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.shadowcolor.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォントの陰落ち色青(0～255) noneで無効化</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>anchor.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>アンカーフォント色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>anchor.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>アンカーフォント色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>anchor.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>アンカーフォント色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.style,<SPAN class="text_green">形状</SPAN></TD>
+      <TD>選択肢マーカーの形状。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.blendmethod,<SPAN class="text_green">コマンド</SPAN></TD>
+      <TD>選択肢マーカーのラスタオペレーションコマンド。<BR>
+      noneで無し。<BR>
+      notmaskpenでr2_notmaskpen。<BR>
+      mergepennotでr2_mergepennot。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーのフォント色赤(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーのフォント色緑(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーのフォント色青(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.pen.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形枠および下線の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.pen.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形枠および下線の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.pen.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形枠および下線の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.brush.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形内の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.brush.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形内の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>cursor.brush.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択肢マーカーの矩形内の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.style,<SPAN class="text_green">形状</SPAN></TD>
+      <TD>選択中アンカーの形状。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.blendmethod,<SPAN class="text_green">コマンド</SPAN></TD>
+      <TD>選択中アンカーのラスタオペレーションコマンド。<BR>
+      noneで無し。<BR>
+      notmaskpenでr2_notmaskpen。<BR>
+      mergepennotでr2_mergepennot。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.pen.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形枠および下線の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.pen.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形枠および下線の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.pen.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形枠および下線の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.brush.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形内の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.brush.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形内の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.brush.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>選択中アンカーの矩形内の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.style,<SPAN class="text_green">形状</SPAN></TD>
+      <TD>非選択中アンカーの形状。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.blendmethod,<SPAN class="text_green">コマンド</SPAN></TD>
+      <TD>非選択中アンカーのラスタオペレーションコマンド。<BR>
+      noneで無し。<BR>
+      notmaskpenでr2_notmaskpen。<BR>
+      mergepennotでr2_mergepennot。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーのフォント色赤(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーのフォント色緑(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーのフォント色青(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.pen.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形枠および下線の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.pen.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形枠および下線の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.pen.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形枠および下線の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.brush.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形内の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.brush.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形内の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.notselect.brush.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>非選択中アンカーの矩形内の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.style,<SPAN class="text_green">形状</SPAN></TD>
+      <TD>訪問済みアンカーの形状。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.blendmethod,<SPAN class="text_green">コマンド</SPAN></TD>
+      <TD>訪問済みアンカーのフォント色赤(0～255)<BR>
+      ラスタオペレーションコマンドが無い場合使用。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーのフォント色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーのフォント色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーのフォント色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.pen.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形枠および下線の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.pen.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形枠および下線の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.pen.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形枠および下線の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.brush.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形内の色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.brush.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形内の色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>anchor.visited.brush.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>訪問済みアンカーの選択肢マーカの矩形内の色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmarker.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>SSTPマーカーのX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmarker.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>SSTPマーカーのY座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>SSTPメッセージの表示開始位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>SSTPメッセージの表示開始位置Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sstpmessage.xr,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>SSTPメッセージの表示終了位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>SSTPメッセージに使用するフォント。デフォルトはＭＳ ゴシック。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.font.height,サイズ</TD>
+      <TD>SSTPメッセージのフォントサイズ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>SSTPメッセージフォント色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>SSTPメッセージフォント色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sstpmessage.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>SSTPメッセージフォント色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>カウンタ数値に使用するフォント。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.font.height,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>カウンタ数値のフォントサイズ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>カウンタ数値のフォント色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>カウンタ数値のフォント色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>カウンタ数値のフォント色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.xr,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>カウンタ数値のX座標。右起点。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>number.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>カウンタ数値のY座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>arrow0.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>スクロールマーカ上矢印のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>arrow0.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>スクロールマーカ上矢印のY座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>arrow1.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>スクロールマーカ下矢印のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>arrow1.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>スクロールマーカ下矢印のY座標。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>communicatebox.font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>入力ボックスに使用するフォント。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>communicatebox.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>入力可能域始点のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>communicatebox.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>入力可能域始点のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>communicatebox.width,<SPAN class="text_green">サイズ</SPAN></TD>
+      <TD>入力可能域の横幅。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>communicatebox.height,<SPAN class="text_green">サイズ</SPAN></TD>
+      <TD>入力可能域の縦幅。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>paint_transparent_region_black,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合はPNAで透過した際、背景色を黒で表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>use_self_alpha,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合はPNAの代わりに32bitPNGのアルファチャンネルを使用する。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">balloons*s.txt/balloonk*s.txt(個別指定)</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>windowposition.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>基本調整位置から移動X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>windowposition.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>基本調整位置から移動Y座標。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">個別のバルーンを指定することによりdescript.txtをオーバーライドできる。<BR>
+      内容はdescript.txtの表参照。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->

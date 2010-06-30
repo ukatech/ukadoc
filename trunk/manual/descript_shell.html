@@ -1,0 +1,749 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Shell設定</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">Shell設定</SPAN>
+<HR>
+<A href="./">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="50">
+  <COL span="1" width="250">
+  <TBODY>
+    <TR>
+      <TH colspan="3">descript.txt</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>name,<SPAN class="text_green">シェル名</SPAN></TD>
+      <TD>そのシェルの名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>type,<SPAN class="text_green">種別</SPAN></TD>
+      <TD>ファイルセットの種別。シェルの場合はshell。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftman,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのシェルの作者名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanw,<SPAN class="text_green">作者名</SPAN></TD>
+      <TD>そのシェルの作者名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>id,<SPAN class="text_green">ID名</SPAN></TD>
+      <TD>そのシェルのID名。半角英数のみ。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>charset,<SPAN class="text_green">文字コード</SPAN></TD>
+      <TD>表示する文字コード。Shift_JIS推奨。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>craftmanurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>作者のURL。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>homeurl,<SPAN class="text_green">URL</SPAN></TD>
+      <TD>ネットワーク更新用のURL。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>本題側のゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.name2,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>本題側のゴーストの名前。愛称等。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>相方側のゴーストの名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char*.name,<SPAN class="text_green">名前</SPAN></TD>
+      <TD>\p[*]の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※全体のサーフィスのデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※本体側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※相方側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.seriko.alignmenttodesktop,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※2人目以降の相方側のデフォルト表示位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>本体側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>相方側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaultx,<SPAN class="text_green">X座標</SPAN></TD>
+      <TD>2人目以降の相方側の画像ベースX座標位置。デフォルトは画像中央。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>本体側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>相方側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaulty,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>2人目以降の相方側の画像ベースY座標位置。デフォルトは画像下端。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>本体側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>相方側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>..defaulttop,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>2人目以降の相方側のデフォルトY座標位置。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.balloon.offsetx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>本体側バルーン位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.balloon.offsety,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>本体側バルーン位置Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.balloon.offsetx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>相方側バルーン位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.balloon.offsety,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>相方側バルーン位置Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.balloon.alignment,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※本体側の吹き出しの位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.balloon.alignment,<SPAN class="text_green">位置情報</SPAN></TD>
+      <TD>※相方側の吹き出しの位置情報。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>readme,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>Read Me!ボタンで開かれるシェルの説明テキストファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>menu.font.name,<SPAN class="text_green">フォント名</SPAN></TD>
+      <TD>ポップアップメニューに使用するフォント。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>menu.font.height,<SPAN class="text_green">フォントサイズ</SPAN></TD>
+      <TD>ポップアップメニューに使用する文字の大きさ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.background.bitmap.filename,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>バックグラウンド表示画像ファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.foreground.bitmap.filename,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>フォアグラウンド表示画像ファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.sidebar.bitmap.filename,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>サイドバー表示画像ファイル名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.background.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>バックグラウンド文字色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.background.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>バックグラウンド文字色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.background.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>バックグラウンド文字色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.foreground.font.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォアグラウンド文字色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.foreground.font.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォアグラウンド文字色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.foreground.font.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>フォアグラウンド文字色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.separator.color.r,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>セパレータ色赤(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.separator.color.g,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>セパレータ色緑(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.separator.color.b,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>セパレータ色青(0～255)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.background.alignment,<SPAN class="text_green">位置</SPAN></TD>
+      <TD>バックグラウンド画像をrighttopで右寄せ、lefttopで左寄せ、centertopで中央寄せ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.foreground.alignment,<SPAN class="text_green">位置</SPAN></TD>
+      <TD>フォアグラウンド画像をrighttopで右寄せ、lefttopで左寄せ、centertopで中央寄せ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>menu.sidebar.alignment,<SPAN class="text_green">位置</SPAN></TD>
+      <TD>サイドバー画像をtopで上寄せ、bottomで下寄せ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">カテゴリ名</SPAN>,<SPAN class="text_green">パーツ名</SPAN>,<SPAN class="text_green">サムネイル名</SPAN></TD>
+      <TD>そのパーツをメニューの着せ替えに表示。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合は最初からそのパーツを表示。(本体側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
+      <TD>IDのパーツを最初から表示、カンマ区切りで複数可。(本体側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">グループ名</SPAN>,<SPAN class="text_green">オプション</SPAN></TD>
+      <TD>その着せ替えカテゴリにオプションを設定。(本体側)<BR>
+      mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<BR>
+      オプションは+区切りで複数可。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>sakura.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値のパーツから順に着せ替えメニューを表示。(本体側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>sakura.menu,auto</TD>
+      <TD>着せ替えメニューを自動で表示。(本体側)</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">カテゴリ名</SPAN>,<SPAN class="text_green">パーツ名</SPAN>,<SPAN class="text_green">サムネイル名</SPAN></TD>
+      <TD>そのパーツをメニューの着せ替えに表示。(相方側)</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合は最初からそのパーツを表示。(相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
+      <TD>IDのパーツを最初から表示、カンマ区切りで複数可。(相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">グループ名</SPAN>,<SPAN class="text_green">オプション</SPAN></TD>
+      <TD>その着せ替えカテゴリにオプションを設定。(相方側)<BR>
+      mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<BR>
+      オプションは+区切りで複数可。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>kero.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値のパーツから順に着せ替えメニューを表示。(相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>kero.menu,auto</TD>
+      <TD>着せ替えメニューを自動で表示。(相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">カテゴリ名</SPAN>,<SPAN class="text_green">パーツ名</SPAN>,<SPAN class="text_green">サムネイル名</SPAN></TD>
+      <TD>そのパーツをメニューの着せ替えに表示。(2人目以降の相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合は最初からそのパーツを表示。(2人目以降の相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
+      <TD>IDのパーツを最初から表示、カンマ区切りで複数可。(2人目以降の相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">グループ名</SPAN>,<SPAN class="text_green">オプション</SPAN></TD>
+      <TD>その着せ替えカテゴリにオプションを設定。(2人目以降の相方側)<BR>
+      mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<BR>
+      オプションは+区切りで複数可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値のパーツから順に着せ替えメニューを表示。(2人目以降の相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>char<SPAN class="text_green">*</SPAN>.menu,auto</TD>
+      <TD>着せ替えメニューを自動で表示。(2人目以降の相方側)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>seriko.paint_transparent_region_black,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合はPNAで透過した際、背景色を黒で表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>seriko.use_self_alpha,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値が1だった場合はPNAの代わりに32bitPNGのアルファチャンネルを使用する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※サーフィスの位置情報<BR>
+      top　　 上部に貼り付き表示。<BR>
+      bottom 下部に貼り付き表示。<BR>
+      free　　自由移動。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※吹き出しの位置情報<BR>
+      none　自動調整、shellのY座標が画面中央より左なら右、右なら左に表示。<BR>
+      left　　常に左に表示。<BR>
+      right　常に右に表示。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">surfaces.txt(サーフィスブレス内) / surfaces2.txt(SSPのみ)</TH>
+    </TR>
+    <TR>
+      <TD colspan="3">surface<SPAN class="text_green">*</SPAN><BR>
+      {<BR>
+      <SPAN class="text_green">ここに記述</SPAN><BR>
+      }<BR>
+      <BR>
+      ※SSPのみ 追加指定<BR>
+      surface.append<SPAN class="text_green">*</SPAN><BR>
+      {<BR>
+      <SPAN class="text_green">ここに記述</SPAN><BR>
+      }<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>element<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>ベースサーフィスの設定。<BR>
+      加算したアニメーションパターンはこのサーフィス内で1枚のベースサーフィス扱いになる。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD><SPAN class="text_green">*</SPAN>interval,タイミング定義</TD>
+      <TD>アニメーションの開始タイミングの設定。<BR>
+      タイミング定義は下記のアニメーションタイミング参照。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD><SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>intervalで設定したタイミングで発動するアニメーションパターンの設定。<BR>
+      パターン定義は下記のアニメーションパターン参照。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD><SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">最小ウエイト</SPAN>-<SPAN class="text_green">最大ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>intervalで設定したタイミングで発動するアニメーションパターンの設定。<BR>
+      最小ウエイトと最大ウエイトの間でランダムに発動。<BR>
+      パターン定義は下記のアニメーションパターン参照。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD><SPAN class="text_green">*</SPAN>option,exclusive</TD>
+      <TD>これが定義されたアニメーションは他のアニメーションの影響を受けない。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD><SPAN class="text_green">*</SPAN>option,background</TD>
+      <TD>これが定義されたアニメーションはベースサーフィスより裏に表示される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD><SPAN class="text_green">*</SPAN>option,<SPAN class="text_green">オプション</SPAN></TD>
+      <TD>(exclusive|background)<BR>
+      +区切りで複数オプション可。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>collision<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">始点X</SPAN>,<SPAN class="text_green">始点Y</SPAN>,<SPAN class="text_green">終点X</SPAN>,<SPAN class="text_green">終点Y</SPAN>,<SPAN class="text_green">ID</SPAN></TD>
+      <TD>当たり判定。囲まれた範囲がIDの領域となる。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>collisionex,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">タイプ</SPAN>,<SPAN class="text_green">座標1</SPAN>,<SPAN class="text_green">座標2...</SPAN></TD>
+      <TD>不定形当たり判定。<BR>
+      タイプは以下の通り。<BR>
+      rect 長方形。座標は始点XYと終点XYの4つ。<BR>
+      ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。<BR>
+      polygon 多角形。座標は各頂点、交差可。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.balloon.offsetx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>そのサーフィスでのみの本体側バルーン位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sakura.balloon.offsety,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>そのサーフィスでのみの本体側バルーン位置Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.balloon.offsetx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>そのサーフィスでのみの相方側バルーン位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>kero.balloon.offsety,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>そのサーフィスでのみの相方側バルーン位置Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>point.centerx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>サーフィスの中心X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>point.centery,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>サーフィスの中心Y座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>point.kinoko.centerx,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>きのこの生えるX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>point.kinoko.centery,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>きのこの生えるY座標。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>point.basepos.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>シェルの中心X座標。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>point.basepos.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>シェルの中心Y座標。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">サーフィスのアニメーションタイミング(SERIKO)</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>sometimes</TD>
+      <TD>毎秒2分の1の確率で発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>rarely</TD>
+      <TD>毎秒4分の1の確率で発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>random,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>毎秒数値分の1の確率で発生。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>periodic,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>数値秒間隔で発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>always</TD>
+      <TD>ループ再生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>runonce</TD>
+      <TD>サーフィスに切り替わった瞬間に1回のみ発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>never</TD>
+      <TD>自動では発生しない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>yen-e</TD>
+      <TD>\eが来た時に発動。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>talk,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>バルーン内のテキストに合わせて発動。<BR>
+      数値分の文字がくるごとにアニメーションする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>bind</TD>
+      <TD>着せ替えを定義する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>bind+<SPAN class="text_green">アニメーションタイミング</SPAN></TD>
+      <TD>定義した着せ替えになった場合に他のアニメーションタイミングを発生。<BR>
+      +で繋げて複数可。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">サーフィスのアニメーションパターン(SERIKO)</TH>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>base</TD>
+      <TD>ベースになるサーフィス表示。<BR>
+      サーフィス番号を-1で初期ベースに戻すことができる。<BR>
+      XY座標は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>overlay</TD>
+      <TD>ベースサーフィスの上に合成して表示。<BR>
+      サーフィス番号を-1で合成を消すことができる。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>overlayfast</TD>
+      <TD>ベースサーフィスの上に合成して表示。<BR>
+      このアニメーションはベースサーフィスの表示領域のみ合成できる。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>replace</TD>
+      <TD>ベースサーフィスの上に合成して表示。<BR>
+      このアニメーションの透過部分はベースサーフィスも透過される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>asis</TD>
+      <TD>抜き色やPNAを適応しないでそのまま表示。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>move</TD>
+      <TD>ベースサーフィスをXY座標で指定して表示。<BR>
+      サーフィス番号は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>bind</TD>
+      <TD>ベースサーフィスに着せ替えを定義。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>add</TD>
+      <TD>ベースサーフィスに着せ替えを加算する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>reduce</TD>
+      <TD>ベースサーフィスから着せ替えを減算する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>insert</TD>
+      <TD>他の着せ替えグループをそこに挿入する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>start,[<SPAN class="text_green">パターンID</SPAN>]</TD>
+      <TD>IDのパターンアニメーションを発動させる。<BR>
+      XY座標は無い。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>stop,[<SPAN class="text_green">パターンID</SPAN>]</TD>
+      <TD>IDのパターンアニメーションを停止させる。<BR>
+      XY座標は無い。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>alternativestart,[<SPAN class="text_green">パターンID1</SPAN>,<SPAN class="text_green">パターンID2..</SPAN>.]</TD>
+      <TD>複数の内のどれかのIDパターンアニメーションを発動させる。<BR>
+      XY座標は無い。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>alternativestop,[<SPAN class="text_green">パターンID1</SPAN>,<SPAN class="text_green">パターンID2..</SPAN>.]</TD>
+      <TD>複数の内のどれかのIDパターンアニメーションを停止させる。<BR>
+      XY座標は無い。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">パターンIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">surfaces.txt(カーソルブレス内)</TH>
+    </TR>
+    <TR>
+      <TD colspan="3">sakura.cursor<BR>
+      {<BR>
+      <SPAN class="text_green">ここに記述</SPAN><BR>
+      }<BR>
+      相方側の設定はkero.cursor、char<SPAN class="text_green">*</SPAN>.cursor</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>mouseup<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">当たり判定ID</SPAN>,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>当たり判定の上に来た時に表示するカーソルファイルを設定。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>mousedown<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">当たり判定ID</SPAN>,<SPAN class="text_green">ファイル名</SPAN></TD>
+      <TD>当たり判定をクリックした時に表示するカーソルファイルを設定。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">システムカーソル</TH>
+    </TR>
+    <TR>
+      <TD colspan="3">カーソルファイルの変わりに指定すると現在使われているカーソルの変形が表示ができます。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:arrow</TD>
+      <TD>矢印</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:cross</TD>
+      <TD>十字</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:no</TD>
+      <TD>禁止</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:hand</TD>
+      <TD>手</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:grip</TD>
+      <TD>つかんだ手</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:finger</TD>
+      <TD>指差し</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:wait</TD>
+      <TD>時計</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:text</TD>
+      <TD>I</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:move</TD>
+      <TD>移動</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system:help</TD>
+      <TD>？</TD>
+    </TR>
+    <TR>
+      <TH colspan="3">surfaces.txt(ツールチップブレス内)</TH>
+    </TR>
+    <TR>
+      <TD colspan="3">sakura.tooltips<BR>
+      {<BR>
+      <SPAN class="text_green">ここに記述</SPAN><BR>
+      }<BR>
+      相方側の設定はkero.tooltips、char<SPAN class="text_green">*</SPAN>.tooltips</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD><SPAN class="text_green">当たり判定名</SPAN>,<SPAN class="text_green">表示内容</SPAN></TD>
+      <TD>当たり判定の上に来た時に表示するツールチップのテキストを設定。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->
