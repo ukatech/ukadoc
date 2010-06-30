@@ -1,0 +1,2097 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 SakuraScriptリスト</TITLE>
+<LINK rel="stylesheet" href="list.css" type="text/css">
+</HEAD>
+<BODY><SPAN class="text_bold">SakuraScriptリスト</SPAN>
+<HR>
+<A href="./">■Index</A> <A href="descript_ghost.html">■Ghost</A> <A href="descript_shell.html">■Shell</A> <A href="descript_balloon.html">■Balloon</A> <A href="descript_install.html">■Install</A> <A href="list_sakura_script.htm">■SAKURA script</A> <A href="list_shiori_event.htm">■SHIORI Event</A> <A href="list_shiori_resource.htm">■SHIORI Resource</A> <BR>
+<A href="#スコープコマンド">■スコープ</A> <A href="#サーフィスコマンド">■サーフィス</A> <A href="#バルーン、テキストコマンド">■バルーン&amp;テキスト</A> <A href="#フォント変更コマンド">■フォント</A> <A href="#ウエイトコマンド">■ウエイト</A> <A href="#選択肢コマンド">■選択肢</A> <A href="#選択肢マーカー変更コマンド">■選択肢マーカー</A> <A href="#イベントコマンド">■イベント</A> <A href="#サウンドコマンド">■サウンド</A> <A href="#オープンコマンド">■オープン</A> <A href="#未分類コマンド">■未分類</A><BR>
+<A href="#環境変数">■環境変数</A> <A href="#プロパティシステム">■プロパティシステム</A> <BR>
+<TABLE width="100%">
+  <COL span="1" width="30">
+  <COL span="1" width="250">
+  <TBODY>
+    <TR>
+      <TH colspan="3"><A name="スコープコマンド">スコープコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\0もしくは\h</TD>
+      <TD>本体側のスコープに移る。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\1もしくは\u</TD>
+      <TD>相方側のスコープに移る。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\p[<SPAN class="text_green">ID番号</SPAN>]</TD>
+      <TD>ID番号のスコープを表示する。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="サーフィスコマンド">サーフィスコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\s<SPAN class="text_green">ID番号</SPAN></TD>
+      <TD>現スコープ側のサーフィスをID番号のサーフィスに変更する。<BR>
+      この場合0～9のみ使用可能。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\s[<SPAN class="text_green">ID番号</SPAN>]</TD>
+      <TD>現スコープ側のサーフィスをID番号のサーフィスに変更する。<BR>
+      \s[-1]で非表示サーフィス。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\i[<SPAN class="text_green">ID番号</SPAN>]</TD>
+      <TD>現スコープ側にID番号のサーフィスアニメーションを表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\i[<SPAN class="text_green">ID</SPAN>,wait]</TD>
+      <TD>ID番号のサーフィスアニメーションを待ちながら表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![anim,clear,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>ID番号のサーフィスアニメーションを巻き戻しする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![anim,pause<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>ID番号のサーフィスアニメーションを一時停止する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![anim,resume,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>上記の一時停止を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![anim,offset,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x座標</SPAN>,<SPAN class="text_green">y座標</SPAN>]</TD>
+      <TD>ID番号のサーフィスアニメーションの位置を指定した座標分ずらす。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![anim,add,overlay,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>ID番号のサーフィスを現サーフィスに重ねる。※下記参照</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![anim,stop]</TD>
+      <TD>サーフィスアニメーションを停止する。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![anim,add,text,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">横幅</SPAN>,<SPAN class="text_green">縦幅</SPAN>,<SPAN class="text_green">文字列</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">r</SPAN>,<SPAN class="text_green">g</SPAN>,<SPAN class="text_green">b</SPAN>,<SPAN class="text_green">フォントサイズ</SPAN>,<SPAN class="text_green">フォント名</SPAN>]</TD>
+      <TD>サーフィス上にテキストを表示する。<BR>
+      文字列までは必須。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\__w[animation,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>ID番号のアニメーションが完了するまで待機。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![bind,<SPAN class="text_green">カテゴリ名</SPAN>,<SPAN class="text_green">パーツ名</SPAN>,<SPAN class="text_green">数値</SPAN>]</TD>
+      <TD>着せ替えパーツを着衣、脱衣する。<BR>
+      数値部分は1で着衣、0で脱衣。<BR>
+      パーツ名を空欄にするとカテゴリ単位の動作になる。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![lock,repaint]</TD>
+      <TD>\![unlock,repaint]が呼ばれるまで再描画を停止する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![unlock,repaint]</TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![set,alignmentondesktop,top]</TD>
+      <TD>現スコープ側サーフィスをデスクトップ上部に吸着。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![set,alignmentondesktop,bottom]</TD>
+      <TD>現スコープ側サーフィスをデスクトップ下部に吸着。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,alignmenttodesktop,left]</TD>
+      <TD>現スコープ側サーフィスをデスクトップ左部に吸着。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,alignmenttodesktop,right]</TD>
+      <TD>現スコープ側サーフィスをデスクトップ右部に吸着。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\![set,alignmenttodesktop,free]</TD>
+      <TD>サーフィスを自由移動可能にする。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\![set,scaling,<SPAN class="text_green">倍率</SPAN>]</TD>
+      <TD>サーフィスの倍率を変更する。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![set,scaling,<SPAN class="text_green">横倍率</SPAN>,<SPAN class="text_green">縦倍率</SPAN>,<SPAN class="text_green">変化時間</SPAN>]</TD>
+      <TD>サーフィスの倍率を精密に変更する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,alpha,<SPAN class="text_green">数値</SPAN>]</TD>
+      <TD>現スコープ側サーフィスを0～100で透明度を変更する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,alignmenttodesktop,default]</TD>
+      <TD>サーフィスをdescript.txtの定義の位置に戻す。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![effect,<SPAN class="text_green">プラグイン名</SPAN>,<SPAN class="text_green">速度倍率</SPAN>,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>サーフィスをプラグインにより変化させる。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![effect2,<SPAN class="text_green">追加サーフィスID</SPAN>,<SPAN class="text_green">プラグイン名</SPAN>,<SPAN class="text_green">速度倍率</SPAN>,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>追加したサーフィスをプラグインにより変化させる。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![filter,<SPAN class="text_green">プラグイン名</SPAN>,<SPAN class="text_green">起動時間</SPAN>,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>サーフィスを変化があるたびにプラグインにより変化させる。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![filter]</TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">\![anim,add,overlay,<SPAN class="text_green">ID</SPAN>]について<BR>
+      <BR>
+      \![anim,add,overlay,<SPAN class="text_green">ID</SPAN>]　ID番号のサーフィスを現サーフィスに重ねる。<BR>
+      \![anim,add,overlayfast,<SPAN class="text_green">ID</SPAN>]　ID番号のサーフィスを現サーフィスにoverlayfastで重ねる。<BR>
+      \![anim,add,base,<SPAN class="text_green">ID</SPAN>]　現ベースサーフィスをID番号のサーフィスに変更する。<BR>
+      \![anim,add,move,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>]　現サーフィスをXY座標に移動して表示。<BR>
+      \![anim,add,overlay,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>]　ID番号のサーフィスを現サーフィスにXY座標に移動して重ねる。<BR>
+      \![anim,add,overlay,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間...</SPAN>]　重ねたサーフィスをアニメーションする。(時間はms)<BR>
+      \![anim,add,overlay,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">アニメーションタイミング</SPAN>]<BR>
+      アニメーションタイミングにはrunonce、alwaysが指定できる。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="バルーン、テキストコマンド">バルーン、テキストコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\b[<SPAN class="text_green">ID番号</SPAN>]</TD>
+      <TD>現スコープ側のバルーンをID番号のバルーンに変更する。<BR>
+      \b[-1]でバルーンを非表示。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_b[<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>]</TD>
+      <TD>画像をバルーンのXY座標に貼り付ける。<BR>
+      ※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。<BR>
+      ※SSPのみ画像URLを指定可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_b[<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,opaque]</TD>
+      <TD>画像をバルーンのXY座標に貼り付ける。<BR>
+      左上の色を透過しないで表示する。<BR>
+      ※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_b[<SPAN class="text_green">ファイル名</SPAN>,inline]</TD>
+      <TD>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<BR>
+      ※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_b[<SPAN class="text_green">ファイル名</SPAN>,inline,opaque]</TD>
+      <TD>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<BR>
+      左上の色を透過しないで表示する。<BR>
+      ※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_b[<SPAN class="text_green">ファイル名</SPAN>,inline,<SPAN class="text_green">オプション名</SPAN>,<SPAN class="text_green">オプション名...</SPAN>]</TD>
+      <TD>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。<BR>
+      オプション名<BR>
+      --option=opaque<BR>
+      バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<BR>
+      左上の色を透過しないで表示する。<BR>
+      --option=use_self_alpha<BR>
+      アルファチャンネル付きのPNGを透過して表示する。<BR>
+      --clipping=<SPAN class="text_green">左 上 右 下</SPAN><BR>
+      バルーンの左上右下で指定した数値の座標に画像を貼り付ける。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\n</TD>
+      <TD>バルーン内の文字を改行。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\n[half]</TD>
+      <TD>通常の半分の高さで改行。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\n[<SPAN class="text_green">パーセント</SPAN>]</TD>
+      <TD>通常のパーセント分改行する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\_n</TD>
+      <TD>次の\_nがくるまで自動改行されない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\c</TD>
+      <TD>現スコープ側のバルーン内の文字をクリア。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\c[char,<SPAN class="text_green">数値</SPAN>]</TD>
+      <TD>現スコープ側のカーソル位置から指定文字数をクリア。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\c[char,<SPAN class="text_green">数値</SPAN>,<SPAN class="text_green">開始位置</SPAN>]</TD>
+      <TD>現スコープ側の指定位置から指定文字数をクリア。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\c[line,<SPAN class="text_green">数値</SPAN>]</TD>
+      <TD>現スコープ側のカーソル位置から指定行数をクリア。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\c[line,<SPAN class="text_green">数値</SPAN>,<SPAN class="text_green">開始位置</SPAN>]</TD>
+      <TD>現スコープ側の指定位置から指定行数をクリア。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_l[<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>]</TD>
+      <TD>現スコープ側のカーソル位置をXYの座標に移動する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_l[<SPAN class="text_green">x</SPAN>em,<SPAN class="text_green">y</SPAN>em]</TD>
+      <TD>現スコープ側のカーソル位置をem単位でXY座標に移動する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_l[@<SPAN class="text_green">x</SPAN>@,<SPAN class="text_green">y</SPAN>]</TD>
+      <TD>現スコープ側のカーソル位置をXY相対座標に移動する。<BR>
+      em単位でも可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\C</TD>
+      <TD>先頭に記述すると直前に表示したバルーンのテキストに追記をする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD><SPAN class="script">\![set,autoscroll,disable]</SPAN></TD>
+      <TD>バルーンの文字スクロールを停止する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>
+      <P><SPAN class="script">\![set,autoscroll,enable]</SPAN></P>
+      </TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,balloonoffset,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>]</TD>
+      <TD>バルーンをXY座標に移動。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,balloonalign,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>バルーンを下記IDの表示方向へ切り替える。<BR>
+      left　center　top　right　bottom　auto</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,balloonnum,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">現在の数</SPAN>,<SPAN class="text_green">最大数</SPAN>]</TD>
+      <TD>ファイル受信時に表示されるデータ書式を表示する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![*]</TD>
+      <TD>マーカーを表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![enter,onlinemode]</TD>
+      <TD>オンラインマーカーを強制的に表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![leave,onlinemode]</TD>
+      <TD>オンラインマーカーを強制的に非表示にする。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\_!</TD>
+      <TD>次の\_!までタグを実行せずにそのまま表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_?</TD>
+      <TD>次の\_?までタグを実行せずにそのまま表示する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">\b_[<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">...</SPAN>]について<BR>
+      ※SSPのみ可、ファイル名等のパスには環境変数も使える。<BR>
+      base64を使用する場合<BR>
+      例:&quot;data:image/png;base64,iV～II&quot;<BR>
+      exe/dllのリソースを使用する場合<BR>
+      例:D:\hogehoge.exe,20<BR>
+      exe/dllのリソースを使用する場合(リソースID指定)<BR>
+      例:D:\hogehoge.exe,-10</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="フォント変更コマンド">フォント変更コマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[name,<SPAN class="text_green">フォント名</SPAN>]</TD>
+      <TD>これ以降のテキストを指定したフォントに変更する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[name,default]</TD>
+      <TD>使用フォントをデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[height,<SPAN class="text_green">数値</SPAN>]</TD>
+      <TD>これ以降のテキストを指定したフォントサイズに変更する。<BR>
+      +や-による相対的な変更が可能。<BR>
+      スタイルシートのサイズ指定も可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[height,default]</TD>
+      <TD>フォントサイズをデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[color,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>フォント色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD></TD>
+      <TD>\f[color,<SPAN class="text_green">R</SPAN>%,<SPAN class="text_green">G</SPAN>%,<SPAN class="text_green">B</SPAN>%]</TD>
+      <TD>フォント色をRGB(0～100%)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[color,<SPAN class="text_green"></SPAN><SPAN class="text_green">色</SPAN>]</TD>
+      <TD>フォント色をカラーコードやカラーネームで変更。<BR>
+      #ff0000、red等。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[color,default]</TD>
+      <TD>フォント色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[shadowcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>フォントの陰落ち色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[shadowcolor,none]</TD>
+      <TD>フォントの陰落ち色を無効化。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[shadowcolor,default]</TD>
+      <TD>フォントの陰落ち色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[outline,true]</TD>
+      <TD>フォントの白抜きを有効化。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[outline,false]</TD>
+      <TD>フォントの白抜きを無効化。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[outline,default]</TD>
+      <TD>フォントの白抜きをデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchor.font.color,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>アンカーフォント色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchor.font.color,default]</TD>
+      <TD>アンカーフォント色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[bold,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>パラメータにtrueまたは1を指定するとBold。<BR>
+      パラメータにfalseまたは0を指定すると標準になります。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[bold,default]</TD>
+      <TD>ボールド文字をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[Italic,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>パラメータにtrueまたは1を指定するとItalic。<BR>
+      パラメータにfalseまたは0を指定すると標準になります。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[italic,default]</TD>
+      <TD>イタリック文字をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[default]</TD>
+      <TD>全てのバルーン属性をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="ウエイトコマンド">ウエイトコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\w<SPAN class="text_green">時間</SPAN></TD>
+      <TD>時間x50ms分の時間ウエイト。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\_w[<SPAN class="text_green">時間</SPAN>]</TD>
+      <TD>精密ウエイト。[時間]ms。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\__w[<SPAN class="text_green">時間</SPAN>]</TD>
+      <TD>再生開始、または\xから指定ミリ秒数が経つまで待機。<BR>
+      \__w[clear]で時間リセット。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\x</TD>
+      <TD>バルーンをクリック待ちにする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\x[noclear]</TD>
+      <TD>バルーンを一時クリック待ちにする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\t</TD>
+      <TD>タイムクリティカルセッション。<BR>
+      \eまでの間、クリックや他のイベントなどを行わない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_q</TD>
+      <TD>クイックセッション。<BR>
+      次の\_qか\eまでメッセージがノーウエイトで表示される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![quicksession,true]</TD>
+      <TD>クイックセッションを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![quicksession,false]</TD>
+      <TD>クイックセッションを終了する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_s</TD>
+      <TD>シククロナイズセッション。<BR>
+      次の\_sか\eまでメッセージを両バルーンに表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_s[<SPAN class="text_green">ID1</SPAN>,<SPAN class="text_green">ID2</SPAN>,<SPAN class="text_green">ID3...</SPAN>]</TD>
+      <TD>IDのスコープをシンクロナイズセッションする。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="選択肢コマンド">選択肢コマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\q[<SPAN class="text_green">タイトル</SPAN>,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>選択肢を表示。<BR>
+      選択後、SIORIイベントOnChoiceSelectが開始される。<BR>
+      IDはReference0に格納される。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\q[<SPAN class="text_green">タイトル</SPAN>,<SPAN class="text_green">ID1</SPAN>,<SPAN class="text_green">ID2</SPAN>,<SPAN class="text_green">ID3...</SPAN>]</TD>
+      <TD>選択肢を表示。<BR>
+      選択後、SIORIイベントOnChoiceSelectが開始される。<BR>
+      ID*はReference*に格納される。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\q[<SPAN class="text_green">タイトル</SPAN>,script:<SPAN class="text_green">実行内容</SPAN>]</TD>
+      <TD>選択肢を表示。<BR>
+      選択後、内容を実行する。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\q[<SPAN class="text_green">ID</SPAN>][<SPAN class="text_green">タイトル</SPAN>]</TD>
+      <TD>選択肢を表示。<BR>
+      選択後、ID番号のSIORIイベントが開始される。<BR>
+      上記のものとは違い選択肢は改行される。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\z</TD>
+      <TD>上記選択肢の範囲終了に付ける。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\__q[<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>\__qがくるまでの範囲を選択肢とする。<BR>
+      第2引数以降はreference。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\*</TD>
+      <TD>このコマンドの後の選択肢はタイムアウトされない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![set,choicetimeout,<SPAN class="text_green">時間</SPAN>]</TD>
+      <TD>タイムアウトを時間指定する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_a[<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>\_aがくるまでの範囲をジャンパとする。<BR>
+      ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される。<BR>
+      IDはReference0に格納される。<BR>
+      SSPのみ、IDでURLジャンプが可能。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="選択肢マーカー変更コマンド">選択肢マーカー変更コマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorstyle,<SPAN class="text_green">形状</SPAN>]</TD>
+      <TD>非選択中アンカーの形状の変更。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorstyle,default]</TD>
+      <TD>非選択中アンカーの形状をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]もしくは<BR>
+      \f[cursorbrushcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>非選択中アンカーの矩形内の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorbrushcolor,default]</TD>
+      <TD>非選択中アンカーの矩形内の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorpencolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>非選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorpencolor,default]</TD>
+      <TD>非選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorfontcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>非選択中アンカーのフォント色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursorfontcolor,default]</TD>
+      <TD>非選択中アンカーのフォント色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[cursormethod,<SPAN class="text_green">描画方法</SPAN>]</TD>
+      <TD>非選択中アンカー描画方法の変更。<BR>
+      Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorstyle,<SPAN class="text_green">形状</SPAN>]</TD>
+      <TD>選択中アンカーの形状の変更。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorstyle,default]</TD>
+      <TD>選択中アンカーの形状をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]もしくは<BR>
+      \f[anchorbrushcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>選択中アンカーの矩形内の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorbrushcolor,default]</TD>
+      <TD>選択中アンカーの矩形内の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorpencolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorpencolor,default]</TD>
+      <TD>選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorfontcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>選択中アンカーのフォント色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchorfontcolor,default]</TD>
+      <TD>選択中アンカーのフォント色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchormethod,<SPAN class="text_green">描画方法</SPAN>]</TD>
+      <TD>選択中アンカーの描画方法の変更。<BR>
+      Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchormethod,default]</TD>
+      <TD>選択中アンカーの描画方法をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectstyle,<SPAN class="text_green">形状</SPAN>]</TD>
+      <TD>訪問済みアンカーの形状の変更。<BR>
+      squareで矩形を表示。<BR>
+      underlineで下線を表示。<BR>
+      square+underlineで矩形と下線を表示。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectstyle,default]</TD>
+      <TD>訪問済みアンカーの形状をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]もしくは<BR>
+      \f[anchornotselectbrushcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>訪問済みアンカーの矩形内の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectbrushcolor,default]</TD>
+      <TD>訪問済みアンカーの矩形内の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectpencolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>訪問済みアンカーの矩形枠および下線の色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectpencolor,default]</TD>
+      <TD>訪問済みアンカーの矩形枠および下線の色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectfontcolor,<SPAN class="text_green">R</SPAN>,<SPAN class="text_green">G</SPAN>,<SPAN class="text_green">B</SPAN>]</TD>
+      <TD>訪問済みアンカーのフォント色をRGB(0～255)で変更。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectfontcolor,default]</TD>
+      <TD>訪問済みアンカーのフォント色をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\f[anchornotselectmethod,<SPAN class="text_green">描画方法</SPAN>]</TD>
+      <TD>訪問済みアンカーの描画方法の変更。<BR>
+      Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</TD>
+    </TR>
+    <TR>
+      <TD></TD>
+      <TD>\f[anchornotselectmethod,default]</TD>
+      <TD>訪問済みアンカーの描画方法をデフォルトに戻す。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="イベントコマンド">イベントコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\e</TD>
+      <TD>イベント、メッセージの終了する。<BR>
+      その後に書かれたイベント、メッセージは発生しない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\-</TD>
+      <TD>本体を終了する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\4</TD>
+      <TD>現スコープのキャラクターが離れる距離まで移動。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\5</TD>
+      <TD>現スコープのキャラクタが接触する距離まで移動。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\![move]</TD>
+      <TD>指定座標まで移動。※下記参照</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![moveasync]</TD>
+      <TD>指定座標まで非同期移動。※下記参照</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![set,position,<SPAN class="text_green">x</SPAN>,<SPAN class="text_green">y</SPAN>,<SPAN class="text_green">スコープID</SPAN>]</TD>
+      <TD>指定スコープをXY座標に固定する。(ドラッグ等を不可能にする)</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>\![reset,position]</TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![updatebymyself]</TD>
+      <TD>ネットワーク更新イベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![updatebymyself,checkonly]</TD>
+      <TD>ネットワーク更新チェックイベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\![update,platform]</TD>
+      <TD>本体ネットワーク更新イベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\6</TD>
+      <TD>時計合わせイベントで実際に時間修正を行う。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\7</TD>
+      <TD>時計合わせイベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![executesntp]</TD>
+      <TD>時計合わせイベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,headline,<SPAN class="text_green">ヘッドライン名</SPAN>]</TD>
+      <TD>ヘッドラインセンスイベントを開始する。<BR>
+      ヘッドライン名をrandomにするとランダムに選択。<BR>
+      lastinstalledにすると最後にインストールされたヘッドラインを開始。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![biff]</TD>
+      <TD>メールチェックイベントを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![vanishbymyself]</TD>
+      <TD>消滅指示無しで自ゴーストをアンインストールする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![vanishbymyself,<SPAN class="text_green">ゴースト名</SPAN>]</TD>
+      <TD>消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\+</TD>
+      <TD>ランダムに他のゴーストに切り替わる。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\_+</TD>
+      <TD>次の順番のゴーストに切り替わる。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![change,ghost,<SPAN class="text_green">ゴースト名</SPAN>]</TD>
+      <TD>そのゴーストへの切り替えを行う。<BR>
+      ゴースト名をrandomにするとランダムチェンジ。<BR>
+      sequentialの場合はシーケンシャルチェンジ。<BR>
+      該当ゴーストがいなかった場合は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>\![change,shell,<SPAN class="text_green">シェル名</SPAN>]</TD>
+      <TD>そのシェルへの切り替えを行う。<BR>
+      該当シェルがいなかった場合は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![change,balloon,<SPAN class="text_green">バルーン名</SPAN>]</TD>
+      <TD>そのバルーンへの切り替えを行う。<BR>
+      該当バルーンがいなかった場合は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![change,ghost,lastinstalled]</TD>
+      <TD>最後にインストールされたゴーストへの切り替えを行う。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![change,shell,lastinstalled]</TD>
+      <TD>最後にインストールされたシェルへの切り替えを行う。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![change,balloon,lastinstalled]</TD>
+      <TD>最後にインストールされたバルーンへの切り替えを行う。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![call,ghost,<SPAN class="text_green">ゴースト名</SPAN>]</TD>
+      <TD>そのゴーストを呼び出す。<BR>
+      ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\v</TD>
+      <TD>手前に表示する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![set,windowstate,stayontop]</TD>
+      <TD>手前に表示する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![set,windowstate,!stayontop]</TD>
+      <TD>手前に表示しない。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![set,windowstate,minimize]</TD>
+      <TD>最小化する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,wallpaper,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">オプション</SPAN>]</TD>
+      <TD>指定したファイルを壁紙にする。<BR>
+      オプションにcenter、tile、stretchを指定できる、省略可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,tasktrayicon,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">テキスト</SPAN>]</TD>
+      <TD>指定したアイコンファイルをタスクトレイのアイコンに変更する。<BR>
+      テキストはアイコンにマウスを重ねたときの表示、省略可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![set,trayballoon,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション...</SPAN>]</TD>
+      <TD>トレイアイコンからバルーンを表示する。※下記参照。<BR>
+      バルーンをクリックして消した時にOnTrayBalloonClickが発生。<BR>
+      タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![raise,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>イベントを実行する。<BR>
+      第3引数以降はreference。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![timerraise,<SPAN class="text_green">時間</SPAN>,<SPAN class="text_green">繰り返すか否か</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>待ち時間(ミリ秒)を指定してイベントを実行する。<BR>
+      第5引数以降はreference。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![raiseother,<SPAN class="text_green">ゴースト名</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>起動している他のゴーストへイベントを通知する。<BR>
+      第4引数以降はreference。<BR>
+      ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<BR>
+      1バイト区切りで複数指定可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![timerraiseother,<SPAN class="text_green">時間</SPAN>,<SPAN class="text_green">繰り返すか否か</SPAN>,<SPAN class="text_green">ゴースト名</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<BR>
+      第6引数以降はreference。<BR>
+      ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<BR>
+      1バイト区切りで複数指定可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![raiseplugin,<SPAN class="text_green">プラグインのIDまたは名前</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>プラグインに指定したイベントを送信する。<BR>
+      プラグイン名をrandomにするとランダムに選択。<BR>
+      lastinstalledにすると最後にインストールされたプラグインを開始。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![notify,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>Notifyイベントを実行する。<BR>
+      第3引数以降はreference。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![notifyother,<SPAN class="text_green">ゴースト名</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>起動している他のゴーストへNotifyイベントを通知する。<BR>
+      第4引数以降はreference。<BR>
+      ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<BR>
+      1バイト区切りで複数指定可。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![notifyplugin,<SPAN class="text_green">プラグインのIDまたは名前</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>プラグインに指定したNotifyイベントを送信する。<BR>
+      プラグイン名をrandomにするとランダムに選択。<BR>
+      lastinstalledにすると最後にインストールされたプラグインを開始。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※\![move]、\![moveasync]について<BR>
+      \![move,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN>,<SPAN class="text_green">移動時間</SPAN>,<SPAN class="text_green">基準とするキャラ</SPAN>,<SPAN class="text_green">基準とするキャラ基準位置</SPAN>,<SPAN class="text_green">動かすキャラ基準位置</SPAN>]<BR>
+      移動時間以降は省略可能。<BR>
+      <BR>
+      X座標、Y座標は目的の座標を指定。<BR>
+      負の値も指定可能。<BR>
+      どちらかを省略するか、&quot;fix&quot;と指定した場合は、その座標を保持する。<BR>
+      <BR>
+      移動時間はミリ秒単位。<BR>
+      移動時間を省略、もしくは0を指定した場合は瞬時に移動。<BR>
+      <BR>
+      基準とするキャラは、別のスコープの相対位置に移動する際に使用。<BR>
+      指定方法は0 1等のキャラクターを表わすIDの数値の他、自分自身をあらわすme、スクリーン左上を起点とするscreenがある。<BR>
+      省略時はscreenが指定したとみなされる。<BR>
+      <BR>
+      基準とするキャラ基準位置は、指定した座標をそのサーフィスのどこを起点とするかを指定する。<BR>
+      X基準.Y基準、という形で指定し、それぞれ<BR>
+      　X基準：left,right,base,center<BR>
+      　Y基準：top,bottom,base,center<BR>
+      の4つの指定を組み合わせ、right.base、などのように記述する。<BR>
+      なお、baseはsurfaces.txt内のpoint.basepos指定に従う。<BR>
+      <BR>
+      省略時は、left.topを指定したとみなされる。また、screen指定の場合はbaseは利用できない。<BR>
+      <BR>
+      動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※\![set,trayballoon,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション...</SPAN>]オプション<BR>
+      --text=<SPAN class="text_green">テキスト</SPAN>　バルーンに表示する文字列、複数指定で複数行に。<BR>
+      --title=<SPAN class="text_green">タイトル</SPAN>　バルーンのタイトル。<BR>
+      --icon=<SPAN class="text_green">アイコン設定名</SPAN>　バルーンに表示されるアイコンの設定。<BR>
+      info　情報アイコン<BR>
+      error　エラーアイコン<BR>
+      warning　警告アイコン<BR>
+      none　なし<BR>
+      --timeout=<SPAN class="text_green">秒数</SPAN>　バルーンの表示時間。<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="サウンドコマンド">サウンドコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\8[<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>自ゴーストフォルダにあるwaveを再生する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_v[<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>自ゴーストフォルダにあるwave、mp3、wmaを再生する。 <BR>
+      ファイルが存在しない場合は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\_V</TD>
+      <TD>\_vのファイル再生が終了するのを待つ。<BR>
+      既に終了しているか存在しない場合は無視される。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,play,<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>\_vと同じ機能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,cdplay,<SPAN class="text_green">トラックNo.</SPAN>]</TD>
+      <TD>音楽CDを再生する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,loop,<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>ループ再生する。\_Vの対象にならない。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,wait]</TD>
+      <TD>\_Vと同じ機能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,pause]</TD>
+      <TD>再生を一時停止する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![sound,resume]</TD>
+      <TD>一時停止を解除する。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="オープンコマンド">オープンコマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\j[<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>IDにジャンプする。<BR>
+      http://～でURLジャンプする。<BR>
+      file://～でOSに関連付けられた拡張子でファイルを実行する。<BR>
+      ※SSPのみ mailto:～でその宛先の新規メールを作成する</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,browser,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>本体で設定されたブラウザを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![open,mailer,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>本体で設定されたメーラーを開く。</TD>
+    </TR>
+    <TR>
+      <TD>-</TD>
+      <TD>\__t</TD>
+      <TD>TeachBoxを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,teachbox]</TD>
+      <TD>TeachBoxを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,communicatebox]</TD>
+      <TD>CommunicateBoxを開く。<BR>
+      入力決定後はOnCommunicateが発生する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,inputbox,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">テキスト</SPAN>]</TD>
+      <TD>※InputBoxを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>![open,passwordinput,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">テキスト</SPAN>]</TD>
+      <TD>※文字を隠すInputBoxを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![close,inputbox,<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>IDで指定されたInputBoxを閉じる。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,dateinput,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">年</SPAN>,<SPAN class="text_green">月</SPAN>,<SPAN class="text_green">日</SPAN>]</TD>
+      <TD>年月日入力ダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,sliderinput,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">現在値</SPAN>,<SPAN class="text_green">最小</SPAN>,<SPAN class="text_green">最大</SPAN>]</TD>
+      <TD>スライダー調節ダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,timeinput,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">表示時間</SPAN>,<SPAN class="text_green">時</SPAN>,<SPAN class="text_green">分</SPAN>,<SPAN class="text_green">秒</SPAN>]</TD>
+      <TD>時間入力ダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,configurationdialog]</TD>
+      <TD>設定ダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,ghostexplorer]</TD>
+      <TD>ゴーストエクスプローラを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,shellexplorer]</TD>
+      <TD>シェルエクスプローラを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,balloonexplorer]</TD>
+      <TD>バルーンエクスプローラを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,headlinesensorexplorer]</TD>
+      <TD>ヘッドライセンスエクスプローラを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,pluginexplorer]</TD>
+      <TD>プラグインエクスプローラを開く。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,rateofusegraph]</TD>
+      <TD>ゴースト使用率を表示する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,rateofusegraphballoon]</TD>
+      <TD>バルーン使用率を表示する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![open,rateofusegraphtotal]</TD>
+      <TD>ゴースト使用率(合算)を表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,calendar]</TD>
+      <TD>カレンダーを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,help]</TD>
+      <TD>SSPヘルプを開く。</TD>
+    </TR>
+    <TR>
+      <TD height="16">S</TD>
+      <TD height="16">\![open,messenger]</TD>
+      <TD height="16">インスタントメッセンジャーを開く。</TD>
+    </TR>
+    <TR>
+      <TD height="12">S</TD>
+      <TD height="12">\![open,readme]</TD>
+      <TD height="12">readme.txtを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,file,<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>ファイルを実行する。</TD>
+    </TR>
+    <TR>
+      <TD height="17">S</TD>
+      <TD height="17">\![open,dialog,open,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD height="17">※ファイルを開くのダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD height="15">S</TD>
+      <TD height="15">\![open,dialog,save,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD height="15">※ファイルの保存のダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,dialog,folder,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>※フォルダ選択のダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,dialog,color,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>※カラーパレットのダイアログを開く。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![open,surfacetest]</TD>
+      <TD>サーフィステストダイアログを開く 。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※InputBox<BR>
+      このコマンドを指定すると入力ボックスが表示される。<BR>
+      入力後、決定されるとSHIORIイベント、OnUserInputが発生する。<BR>
+      IDはreference0に格納される。<BR>
+      タイムアウト時にはreference1はtimeoutと返る。<BR>
+      表示時間は-1でタイムアウト無しになる。単位はms。<BR>
+      入力の間、他の一切を受け付けない。<BR>
+      MATERI、SSPのみボックス内にあらかじめテキストを用意できる。<BR>
+      さらにSSPのみテキストの代わりにオプションを指定できる。(カンマ区切りで複数指定)<BR>
+      --text=<SPAN class="text_green">標準で入力されているテキスト</SPAN><BR>
+      --limit=<SPAN class="text_green">入力制限文字数</SPAN></TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※ファイルを開く / ファイルを保存 パラメータ<BR>
+      --title　ダイアログのタイトルバーに表示されるテキスト<BR>
+      --dir=<SPAN class="text_green">パス</SPAN>　初期表示フォルダ<BR>
+      --filter=<SPAN class="text_green">フィルタ</SPAN>　BMP|*.bmp|その他|*.png;;*.gif　のように記述<BR>
+      --ext=<SPAN class="text_green">拡張子</SPAN>　保存時の標準拡張子<BR>
+      --name=<SPAN class="text_green">ファイル名</SPAN>　保存時の標準ファイル名<BR>
+      --id=<SPAN class="text_green">イベントID</SPAN>　OnSystemDialog/OnSystemDialogCancelに送るID<BR>
+      イベントIDをOn～にするとそのIDのイベントが発生する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※フォルダ選択 パラメータ<BR>
+      --title　ダイアログのタイトルバーに表示されるテキスト<BR>
+      --dir=<SPAN class="text_green">パス</SPAN>　初期表示フォルダ<BR>
+      --id=<SPAN class="text_green">イベントID</SPAN>　OnSystemDialog/OnSystemDialogCancelに送るID<BR>
+      イベントIDをOn～にするとそのIDのイベントが発生する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※カラーパレット パラメータ<BR>
+      --color=<SPAN class="text_green">R G B</SPAN>　RGBをそれぞれ0～255で指定<BR>
+      --id=<SPAN class="text_green">イベントID</SPAN>　OnSystemDialog/OnSystemDialogCancelに送るID<BR>
+      イベントIDをOn～にするとそのIDのイベントが発生する。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="未分類コマンド">未分類コマンド</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![execute,http-get,<SPAN class="text_green">URL</SPAN>]</TD>
+      <TD>http get リクエストを行い、レスポンスをファイルに格納する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,http-get,<SPAN class="text_green">URL</SPAN>,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,http-post,<SPAN class="text_green">URL</SPAN>,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,http-get,<SPAN class="text_green">URL</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション...</SPAN>]</TD>
+      <TD>※オプション付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,http-post,<SPAN class="text_green">URL</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション</SPAN>,<SPAN class="text_green">オプション...</SPAN>]</TD>
+      <TD>※オプション付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,extractarchive,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">ディレクトリ名</SPAN>]</TD>
+      <TD>ZIPファイルの解凍をする。<BR>
+      ssp.exe以下のフォルダのみ可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,compressarchive,<SPAN class="text_green">ファイル名</SPAN>,<SPAN class="text_green">ディレクトリ名</SPAN>]</TD>
+      <TD>ZIPファイルの圧縮をする。<BR>
+      ssp.exe以下のフォルダのみ可能。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,install,path,<SPAN class="text_green">ファイル名</SPAN>]</TD>
+      <TD>指定したnarファイルをインストールする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![execute,install,url,<SPAN class="text_green">URL</SPAN>,<SPAN class="text_green">feedまたはnar</SPAN>]</TD>
+      <TD>指定したURLのnarファイルをインストールまたはRSSFeedを登録。<BR>
+      feed、narは省略可能。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![enter,passivemode]</TD>
+      <TD>※PassiveModeを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\![leave,passivemode]</TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD><SPAN class="script">\![enter,inductionmode]</SPAN></TD>
+      <TD>※InductionModeを開始する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD><SPAN class="script">\![leave,inductionmode]</SPAN></TD>
+      <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\![reloadsurface]</TD>
+      <TD>サーフィスをリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,descript]</TD>
+      <TD>全descript.txtをリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,descript,<SPAN class="text_green">パラメータ</SPAN>]</TD>
+      <TD>指定したdescript.txtをリロードする。<BR>
+      半角スペース区切りで複数指定可能。<BR>
+      ghost shell balloon headline plugin</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,shiori]</TD>
+      <TD>shiori.dllをリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,makoto]</TD>
+      <TD>makoto.dllをリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,shell]</TD>
+      <TD>シェルをリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![reload,ghost]</TD>
+      <TD>ゴースト全体をリロードする。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\_u[<SPAN class="text_green">0x0000</SPAN>]</TD>
+      <TD>UCS-2 コード埋め込み。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\_m[<SPAN class="text_green">0x00</SPAN>]</TD>
+      <TD>ASCII コード埋め込み。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\&amp;[<SPAN class="text_green">ID</SPAN>]</TD>
+      <TD>識別子による実体参照。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>\m[<SPAN class="text_green">umsg</SPAN>,<SPAN class="text_green">wparam</SPAN>,<SPAN class="text_green">lparam</SPAN>]</TD>
+      <TD>SSTP専用。<BR>
+      Wndヘッダにより予めセットされたウインドウハンドルに対し<BR>
+      postmessage(hwnd,umsg,wparam,lparam) を実行する。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※PassiveMode<BR>
+      パッシブモードの時、以下の制限が発生する。<BR>
+      ・ポップアップメニューが出ない。<BR>
+      ・メールチェックしない。<BR>
+      ・ヘッドラインセンスしない。<BR>
+      ・オートチェンジしない。<BR>
+      ・選択肢がタイムアウトしない。<BR>
+      ・吹き出しが時間経過で消えない。<BR>
+      ・ファイルが DnD されても無視。<BR>
+      ・nar ダブルクリックも無視。<BR>
+      ・OnSurfaceRestoreが来ない。<BR>
+      ・cantalk は常に false。（OnSecondChange および OnMinuteChange 自体は来る）<BR>
+      ・コミュニケートボックスは閉じられ、また開かない。<BR>
+      ・最小化できない。<BR>
+      ・終了できない。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※InductionMode<BR>
+      パッシブモードから以下の制限を解除したもの。<BR>
+      ・タイムアウト発生。<BR>
+      ・最小化可能。<BR>
+      ・終了可能。<BR>
+      ・コミュニケートボックス可能。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3">※http get/post オプション<BR>
+      --async=<SPAN class="text_green">識別ID</SPAN>　処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。<BR>
+      --file=<SPAN class="text_green">ファイル名</SPAN>　取得するデータの保存名を指定。<SPAN class="text_green">myghost</SPAN>/ghost/master/var/<SPAN class="text_green">ファイル名</SPAN>に保存される。<BR>
+      --nodescript　オンライン表示とダウンロード状況を表示しない。<BR>
+      --param=<SPAN class="text_green">パラメータ</SPAN>　get/postのパラメータを指定します。<BR>
+      --timeout=<SPAN class="text_green">秒数</SPAN>　通信のタイムアウトする時間を指定します。(300秒まで)<BR>
+      --param-charset=<SPAN class="text_green">文字コード</SPAN>　文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。<BR>
+      --cookie=<SPAN class="text_green">クッキーデータ</SPAN>　Cookieのデータ、OnExecuteHTTPCompleteのReference5の値をそのまま指定する。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="環境変数">環境変数</A></TH>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">スクリプト</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%month</TD>
+      <TD>現在月。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%day</TD>
+      <TD>現在日。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%hour</TD>
+      <TD>現在時。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%minute</TD>
+      <TD>現在分。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%second</TD>
+      <TD>現在秒。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%username</TD>
+      <TD>ユーザー名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%selfname</TD>
+      <TD>本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>%selfname2</TD>
+      <TD>本体側の名前その2。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%keroname</TD>
+      <TD>相方側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%screenwidth</TD>
+      <TD>ディスプレイスクリーンの幅。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%screenheight</TD>
+      <TD>ディスプレイスクリーンの高さ。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%exh</TD>
+      <TD>OSの連続起動時間。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%et</TD>
+      <TD>間違った連続起動時間。(単位を含む)</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%wronghour</TD>
+      <TD>正しくない現在時間。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%ms</TD>
+      <TD>単語-人。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%mz</TD>
+      <TD>単語-無機物。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%ml</TD>
+      <TD>単語-集合。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%mc</TD>
+      <TD>単語-社名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%mh</TD>
+      <TD>単語-店名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%mt</TD>
+      <TD>単語-技。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%me</TD>
+      <TD>単語-食物。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%mp</TD>
+      <TD>単語-地名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%m?</TD>
+      <TD>単語-非限定。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>%dms</TD>
+      <TD>単語-「～に～する～」。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>%lastghostname</TD>
+      <TD>インストール時用。最後にイベントを行ったゴースト名。</TD>
+    </TR>
+    <TR>
+      <TD>M,S</TD>
+      <TD>%lastobjectname</TD>
+      <TD>インストール時用。最後にイベントを行ったオブジェクト名。</TD>
+    </TR>
+    <TR>
+      <TD>S,D</TD>
+      <TD>%*</TD>
+      <TD>\![*]と同じ機能。</TD>
+    </TR>
+    <TR>
+      <TH colspan="3"><A name="プロパティシステム">プロパティシステム</A></TH>
+    </TR>
+    <TR>
+      <TD colspan="3">※プロパティシステムは環境変数とタグの両方で使えます。<BR>
+      <BR>
+      環境変数による拾得の仕方<BR>
+      %property[<SPAN class="text_green">プロパティ名</SPAN>]<BR>
+      <BR>
+      タグによる書き込み方<BR>
+      \![set,property,<SPAN class="text_green">プロパティ名</SPAN>,<SPAN class="text_green">値</SPAN>]<BR>
+      <BR>
+      タグによる読み込み方<BR>
+      \![get,property,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">プロパティ名</SPAN>]<BR>
+      Reference0にイベント名が入ります。<BR>
+      <BR>
+      \![get,property,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">プロパティ名</SPAN>,<SPAN class="text_green">プロパティ名</SPAN>,<SPAN class="text_green">...</SPAN>]<BR>
+      複数のプロパティを読み込んだ場合Reference0、1、2～と順にイベント名が入ります。</TD>
+    </TR>
+    <TR>
+      <TD><SPAN class="text_bold">対象</SPAN></TD>
+      <TD><SPAN class="text_bold">プロパティ名</SPAN></TD>
+      <TD><SPAN class="text_bold">説明</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.year</TD>
+      <TD>現在年。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.month</TD>
+      <TD>現在月。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.day</TD>
+      <TD>現在日。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.hour</TD>
+      <TD>現在時。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.minute</TD>
+      <TD>現在分。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>system.second</TD>
+      <TD>現在秒。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system.millisecond</TD>
+      <TD>現在ミリ秒。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>system.dayofweek</TD>
+      <TD>現在曜日。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>baseware.version</TD>
+      <TD>ベースウェアのバージョン情報。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>baseware.name</TD>
+      <TD>ベースウェア名。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>ghostlist.count</TD>
+      <TD>インストールされているゴーストの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>balloonlist.count</TD>
+      <TD>インストールされているバルーンの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>headlinelist.count</TD>
+      <TD>インストールされているヘッドラインの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>pluginlist.count</TD>
+      <TD>インストールされているプラグインの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.ghost.count</TD>
+      <TD>最近使ったものゴーストの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.balloon.count</TD>
+      <TD>最近使ったものバルーンの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.headline.count</TD>
+      <TD>最近使ったものヘッドラインの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.plugin.count</TD>
+      <TD>最近使ったもののプラグインの数。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>currentghost.shelllist.count</TD>
+      <TD>インストールされているシェルの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.scope.count</TD>
+      <TD>現在有効な最大キャラ数。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>currentghost.scope(<SPAN class="text_green">ID</SPAN>).surface.num</TD>
+      <TD>現在のゴーストのスコープIDのサーフィスID。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.scope(<SPAN class="text_green">ID</SPAN>).seriko.defaultsurface</TD>
+      <TD>現在のゴーストのデフォルトサーフィス。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>currentghost.scope(<SPAN class="text_green">番号</SPAN>).surface.x</TD>
+      <TD>現在のゴーストのスコープIDのサーフィスのX座標。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>currentghost.scope(<SPAN class="text_green">番号</SPAN>).surface.y</TD>
+      <TD>現在のゴーストのスコープIDのサーフィスY座標。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.count</TD>
+      <TD>現在のゴーストのバルーンの数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.scope(<SPAN class="text_green">ID</SPAN>).count</TD>
+      <TD>現在のバルーンのバルーン画像数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.scope(<SPAN class="text_green">ID</SPAN>).num</TD>
+      <TD>現在のバルーンのID。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.scope(<SPAN class="text_green">ID</SPAN>).validwidth</TD>
+      <TD>現在のバルーンの文字描画に使える幅。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.scope(<SPAN class="text_green">ID</SPAN>).validheight</TD>
+      <TD>現在のバルーンの文字描画に使える高さ。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.scope(<SPAN class="text_green">ID</SPAN>).lines</TD>
+      <TD>現在のバルーンのおさまる行数の最大値。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).name</TD>
+      <TD>そのゴーストの名称。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).sakuraname</TD>
+      <TD>そのゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).keroname</TD>
+      <TD>そのゴーストの相方側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).boottime</TD>
+      <TD>そのゴーストの起動回数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).bootminute</TD>
+      <TD>そのゴーストの起動時間。(分単位)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist(<SPAN class="text_green">名前</SPAN>).percent</TD>
+      <TD>そのゴーストの起動時間割合。(パーセント、小数)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).name</TD>
+      <TD>使用率のその順位のゴーストの名称。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).sakuraname</TD>
+      <TD>使用率のその順位のゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).keroname</TD>
+      <TD>使用率のその順位のゴーストの相方側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).boottime</TD>
+      <TD>使用率のその順位のゴーストの起動回数。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).bootminute</TD>
+      <TD>使用率のその順位のゴーストの起動時間。(分単位)</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>rateofuselist.index(<SPAN class="text_green">順位</SPAN>).percent</TD>
+      <TD>使用率のその順位のゴーストの起動時間割合。(パーセント、小数)</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>ghostlist(<SPAN class="text_green">ゴースト名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>そのゴーストの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>ghostlist(<SPAN class="text_green">ゴースト名/パス</SPAN>).icon</TD>
+      <TD>そのゴーストのアイコン。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>ghostlist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>リスト内のIDの位置のゴーストから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>ghostlist.current.<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>リスト内の現在の位置のゴースから情報を取得ト。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>currentghost.shelllist.current.<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>現在のゴーストの現在のシェルから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>activeghostlist(<SPAN class="text_green">ゴースト名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>起動中ゴーストのゴースト名もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>activeghostlist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>起動中ゴーストのリスト内のID位置のゴーストから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>activeghostlist.current.<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>起動中ゴーストの現在ゴースから情報を取得ト。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>現在のゴーストから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>currentghost.shelllist(<SPAN class="text_green">シェル名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>現在のゴーストのシェル名もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>currentghost.shelllist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>現在のゴーストのリスト内ID位置のシェルから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>currentghost.balloon.<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>現在のゴーストのバルーンから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>balloonlist(<SPAN class="text_green">バルーン名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>バルーンの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>balloonlist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>リスト内のIDの位置のバルーンから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>headlinelist(<SPAN class="text_green">ヘッドライン名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>ヘッドラインの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>headlinelist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>リスト内のIDの位置のヘッドラインから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>pluginlist(<SPAN class="text_green">プラグイン名/パス/ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>プラグインの名前もしくはパス、IDから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>pluginlist.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>リスト内のIDの位置のプラグインから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.ghost(<SPAN class="text_green">ゴースト名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののゴーストの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.ghost.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののリスト内のIDの位置のゴーストから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.balloon(<SPAN class="text_green">バルーン名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののバルーンの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.balloont.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののリスト内のIDの位置のバルーンから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.headline(<SPAN class="text_green">ヘッドライン名/パス</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののヘッドラインの名前もしくはパスから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.headlinet.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののリスト内のIDの位置のヘッドラインから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.plugin(<SPAN class="text_green">プラグイン名/パス/ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののプラグインの名前もしくはパス、IDから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>history.plugint.index(<SPAN class="text_green">ID</SPAN>).<SPAN class="text_green">取得内容</SPAN></TD>
+      <TD>最近使ったもののリスト内のIDの位置のプラグインから情報を取得。</TD>
+    </TR>
+    <TR>
+      <TD colspan="3"><SPAN class="text_bold"></SPAN><SPAN class="text_bold">取得内容</SPAN></TD>
+    </TR>
+    <TR>
+      <TD>S,C</TD>
+      <TD>name</TD>
+      <TD>対象の名前。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>sakuraname</TD>
+      <TD>対象のゴーストの本体側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>keroname</TD>
+      <TD>対象のゴーストの相方側の名前。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>craftmanw</TD>
+      <TD>対象の作者名。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>craftmanurl</TD>
+      <TD>対象の配布先URL。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>path</TD>
+      <TD>対象のパス。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>.thumbnail</TD>
+      <TD>対象のサムネイル。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>update_result</TD>
+      <TD>対象のアップデートリザルト。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>update_time</TD>
+      <TD>対象のアップデート時間。</TD>
+    </TR>
+    <TR>
+      <TD>C</TD>
+      <TD>shiori.<SPAN class="text_green">変数名</SPAN></TD>
+      <TD>対象のゴーストのSHIORI。</TD>
+    </TR>
+    <TR>
+      <TD>S.C</TD>
+      <TD>index</TD>
+      <TD>対象のリスト内の位置。</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<BR>
+<!-- ad -->
+<CENTER><SCRIPT type="text/javascript" src="http://imgj.xrea.com/xa.j?site=disc2.s56.xrea.com"></SCRIPT>
+<NOSCRIPT><IFRAME height="60" width="468" frameborder="0" marginheight="0" marginwidth="0" scrolling="no" src="http://img.xrea.com/ad_iframe.fcg?site=disc2.s56.xrea.com"><A href="http://img.xrea.com/ad_click.fcg?site=disc2.s56.xrea.com" target="_blank"><IMG src="http://img.xrea.com/ad_img.fcg?site=disc2.s56.xrea.com" border="0" alt="xreaad"></A></IFRAME></NOSCRIPT>
+</CENTER>
+<!-- /ad --></BODY>
+</HTML>
+<!--nobanner-->

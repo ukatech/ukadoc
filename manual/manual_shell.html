@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Shell</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">Shell</SPAN><BR>
+      <HR>
+      <BR>
+      シェルフォルダのファイルは以下の通り。<BR>
+      <BR>
+      home<BR>
+      　+-ghost<BR>
+      　　　+-myghost<BR>
+      　　　　　+-shell<BR>
+      　　　　　　　+-master<BR>
+      <SPAN class="text_green">　　　　　　　　　+-descript.txt<BR>
+      　　　　　　　　　+-surface*.png<BR>
+      　　　　　　　　　+-surface*.pna<BR>
+      <SPAN class="text_green">　　　　　　　　　+-<SPAN class="text_green">surfaces.txt</SPAN></SPAN><BR>
+      </SPAN>　　　　　　　　　+-menu_background.png<BR>
+      　　　　　　　　　+-menu_foreground.png<BR>
+      　　　　　　　　　+-menu_sidebar.png<SPAN class="text_green"><BR>
+      　　　　　　　　　+-readme.txt<BR>
+      　　　　　　　　　+-thumbnail.png</SPAN><BR>
+      <SPAN class="text_green">　　　　　　　　　+-surfacetable.txt</SPAN> (SSPのみ)<BR>
+      <BR>
+      <HR>
+      <BR>
+      <A href="descript_shell.html">descript.txt</A><BR>
+      シェルを識別するためのファイル。<BR>
+      テキスト内の記載事項はリンク先を参照。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surface*.png</SPAN><BR>
+      サーフィスファイル。<BR>
+      デスクトップに表示される絵。<BR>
+      対応形式はPNGのみ。<BR>
+      画像サイズ、色数に制限は無い。<BR>
+      <BR>
+      画像左上の1ドット(座標0,0)と同色が透過される。<BR>
+      <BR>
+      <BR>
+      サーフィスの番号にはある程度の推奨する割り振りがある。<BR>
+      必ずこの番号にする必要は無いが00と10のみは必須。<BR>
+      <BR>
+      sakura側<BR>
+      00 素<BR>
+      01 照れ<BR>
+      02 驚き<BR>
+      03 不安<BR>
+      04 落ち込み<BR>
+      05 微笑み<BR>
+      06 目閉じ<BR>
+      07 怒り<BR>
+      08 冷笑<BR>
+      09 照れ怒り<BR>
+      25 歌<BR>
+      <BR>
+      kero側<BR>
+      10 素<BR>
+      11 刮目<BR>
+      19 歌<BR>
+      <BR>
+      サーフィス番号は0～8192まで使える。(MATERIA仕様)<BR>
+      他のベースウェアには制限が無い。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surface*.pna</SPAN><BR>
+      サーフィスのアルファチャンネル定義ファイル。<BR>
+      PNA自体はPNGをリネームしたもの。<BR>
+      サーフィス番号と同じ番号のpnaファイルを置くことによってサーフィスの半透明化ができる。<BR>
+      <BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_png1.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_pna.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_png2.jpg" width="163" height="300" border="0"></TD>
+          </TR>
+          <TR>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.png</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.pna</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">デスクトップの表示</SPAN></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <BR>
+      ただし、Windows2000/XPでULWモードを使用したときのみ。<BR>
+      Windows9xではpnaは無視される。<BR>
+      また、透過が完全でない場所は当たり判定が発生する。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green"><A href="descript_shell.html">surfaces.txt</A></SPAN><BR>
+      サーフィスのID割り当て、レイヤー合成、アニメーション、当たり判定などを定義するファイル。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      point.centerx,212<BR>
+      point.centery,198<BR>
+      point.kinoko.centerx,214<BR>
+      point.kinoko.centery,34<BR>
+      <BR>
+      0interval,sometimes<BR>
+      0pattern0,101,10,overlay,168,67<BR>
+      0pattern1,100,10,overlay,168,67<BR>
+      0pattern2,101,10,overlay,168,67<BR>
+      0pattern3,-1,10,overlay,168,67<BR>
+      }<BR>
+      <BR>
+      surface10<BR>
+      {<BR>
+      collision0,40,56,95,90,Head<BR>
+      point.centerx,70<BR>
+      point.centery,66<BR>
+      sakura.balloon.offsetx,80<BR>
+      sakura.balloon.offsety,-100<BR>
+      kero.balloon.offsetx,-30<BR>
+      kero.balloon.offsety,20<BR>
+      }</SPAN><BR>
+      <BR>
+      上記のように定義し各サーフィスのプレス内に記述する。<BR>
+      定義内容については<SPAN class="text_green"><A href="descript_shell.html">surfaces.txt</A></SPAN>参照。<BR>
+      <BR>
+      <BR>
+      下記のように複数のサーフィスを同時に定義することも可能。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0,surface1<BR>
+      {<BR>
+      0interval,sometimes<BR>
+      0pattern0,101,10,overlay,168,67<BR>
+      0pattern1,100,10,overlay,168,67<BR>
+      0pattern2,101,10,overlay,168,67<BR>
+      0pattern3,-1,10,overlay,168,67<BR>
+      }</SPAN><BR>
+      <BR>
+      また、SSPのみ下記のような範囲指定や複数指定が可能。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0-9,25<BR>
+      {<BR>
+      0interval,sometimes<BR>
+      0pattern0,101,10,overlay,168,67<BR>
+      0pattern1,100,10,overlay,168,67<BR>
+      0pattern2,101,10,overlay,168,67<BR>
+      0pattern3,-1,10,overlay,168,67<BR>
+      }</SPAN><BR>
+      <BR>
+      さらにSSPのみ下記のような定義の追加も可能。<BR>
+      <BR>
+      <SPAN class="text_gray">surface.append0-9,25<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      }</SPAN><BR>
+      <BR>
+      !で除外設定もできる。<BR>
+      <BR>
+      <SPAN class="text_gray">surface.append0-9,25,!5-8<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      }</SPAN><BR>
+      <BR>
+      サーフィスIDはエイリアスで任意IDに変更する事ができる。<BR>
+      <BR>
+      <SPAN class="text_gray">sakura.surface.alias<BR>
+      {<BR>
+      smile,[5]<BR>
+      } <BR>
+      <BR>
+      kero.surface.alias<BR>
+      {<BR>
+      10,[10,11,12]<BR>
+      } </SPAN><BR>
+      <BR>
+      とすると\s[5]を|s[smile]とする事も可能。<BR>
+      また、上記のようにする事で\s[10]をID10、11、12からランダムにすることができる。<BR>
+      <BR>
+      char*.surface.aliasで2人目以降の相方側のエイリアスも可能。(SSP専用)<BR>
+      <BR>
+      アニメーション、着せ替えについては<A href="manual_animation.html">アニメーション</A>を参照。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green"><A href="descript_shell.html">surfaces2.txt</A></SPAN><BR>
+      SSP専用。<BR>
+      機能は<SPAN class="text_green">surfaces.txt</SPAN>と同じ。<BR>
+      互換性を維持しつつSSP専用の機能を使うためのもの。<BR>
+      必要な部分のみを追記する形でも問題ない。<BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">readme.txt</SPAN><BR>
+      シェルメニューのRead Me! ボタンを押した時に表示されるテキスト。<BR>
+      ゴースト製作者ではないシェル製作者が配布元などを記載するためのもの。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">thumbnail.png</SPAN><BR>
+      メニューツリーでシェルの選択時に表示されるサムネイル。<BR>
+      使用可能な画像形式はpngもしくはjpg。<BR>
+      pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。<BR>
+      このファイルは省略可能。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surfacetable.txt</SPAN><BR>
+      SSP専用。<BR>
+      <BR>
+      <SPAN class="text_gray">0,素(さくら)<BR>
+      10,素(うにゅう)</SPAN><BR>
+      <BR>
+      上記のような記述のテキストをフォルダに置くとサーフィステストウィンドウの表示が代替される。<BR>
+      <BR>
+      <BR>
+      version 1.0書式での場合<BR>
+      <BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      version,1<BR>
+      option,DisableNoDefineSurfaces<BR>
+      <BR>
+      group,さくら<BR>
+      {<BR>
+      scope,0<BR>
+      <BR>
+      0,素<BR>
+      1,照れ<BR>
+      3,不安<BR>
+      4,落ち込み<BR>
+      7,怒り<BR>
+      }<BR>
+      <BR>
+      group,うにゅう<BR>
+      {<BR>
+      scope,1<BR>
+      <BR>
+      10,素<BR>
+      11,つり目<BR>
+      }<BR>
+      <BR>
+      //非表示設定<BR>
+      group,__disabled<BR>
+      {<BR>
+      19,__parts<BR>
+      }</SPAN><BR>
+      <BR>
+      charset,Shift_JISは1行目に必要。<BR>
+      charsetは理由がない限りはShift_JISを使用する。<BR>
+      <BR>
+      version,1はversion 1.0フォーマットを使用するのに必要。<BR>
+      <BR>
+      option,DisableNoDefineSurfacesは指定のないサーフィスを除外するオプション。<BR>
+      <BR>
+      グループ名を__disabledにするとそのサーフィスグループをリストに表示しない。<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

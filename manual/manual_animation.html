@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 SERIKO/MAYUNA</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">SERIKO/MAYUNA</SPAN><BR>
+      <HR>
+      <BR>ゴーストではアニメーション仕様をSERIKO、着せ替え仕様をMAYUNAと呼称する。<BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">アニメーション(SERIKO)</SPAN><BR>
+      アニメーションは全てサーフィスの組み合わせで行われる。<BR>
+      アニメーションパターンは<A href="descript_shell.html">surfaces.txt</A>で定義する。<BR>
+      下記のように定義し各サーフィスのプレス内に記述する。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0<BR>
+      {<BR>
+      0interval,sometimes<BR>
+      0pattern0,100,5,overlay,0,0<BR>
+      0pattern1,101,5,overlay,0,0<BR>
+      0pattern2,100,5,overlay,0,0<BR>
+      0pattern3,-1,5,overlay,0,0<BR>
+      <BR>
+      1interval,always<BR>
+      1pattern0,50,20,overlay,10,0<BR>
+      1pattern1,51,20,overlay,10,0<BR>
+      1pattern2,52,20,overlay,10,0<BR>
+      1pattern3,53,20,overlay,10,0<BR>
+      1pattern4,54,20,overlay,10,0<BR>
+      1pattern5,53,20,overlay,10,0<BR>
+      1pattern6,52,20,overlay,10,0<BR>
+      1pattern7,51,20,overlay,10,0<BR>
+      <BR>
+      2interval,runonce<BR>
+      2pattern0,60,20,overlay<BR>
+      2pattern1,61,20,overlay<BR>
+      2pattern2,62,20,overlay<BR>
+      2pattern3,63,20,overlay<BR>
+      2pattern4,64,20,overlay<BR>
+      2pattern5,-1,20,overlay<BR>
+      <BR>
+      3interval,always<BR>
+      3pattern0,0,15,move,0,-1<BR>
+      3pattern1,0,15,move,0,-2<BR>
+      3pattern2,0,15,move,0,-3<BR>
+      3pattern3,0,15,move,0,-3<BR>
+      3pattern4,0,15,move,0,-2<BR>
+      3pattern5,0,15,move,0,-1<BR>
+      3pattern6,0,15,move,0,0<BR>
+      3pattern7,0,15,move,0,1<BR>
+      3pattern8,0,15,move,0,2<BR>
+      3pattern9,0,15,move,0,3<BR>
+      3pattern10,0,15,move,0,3<BR>
+      3pattern11,0,15,move,0,2<BR>
+      3pattern12,0,15,move,0,1<BR>
+      3pattern13,0,15,move,0,0<BR>
+      }<BR>
+      </SPAN><BR>
+      <BR>
+      MATERIAでは1つのベースサーフィスが持てるアニメーションパターンは最大で128（127interval～
+      まで）。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">着せ替え(MAYUNA)</SPAN><BR>
+      MATERIA、SSPのみ可能。<BR>
+      CROWでは着せ替え初期配置のみで表示される。<BR>
+      ただし、MATERIAはバグにより\0側しか着せ替えメニューが表示されない。<BR>
+      <BR>
+      着せ替えはアニメーションではなく静止画仕様になる。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0<BR>
+      {<BR>
+      0interval,bind<BR>
+      0pattern0,200,2,bind,0,0<BR>
+      <BR>
+      1interval,bind<BR>
+      1pattern0,150,2,bind,0,0<BR>
+      }</SPAN><BR>
+      <BR>
+      bindで指定されたサーフィスはベースにレイヤー加算され「服」のサーフィスとなる。<BR>
+      bindはアニメーションパターンを無視する。<BR>
+      複数重ねることにより各部パーツを再現することも可能。<BR>
+      それらは番号の順に重ねられていく。<BR>
+      <BR>
+      下記の様にadd、reduceを使用すると複数のサーフィスをひとつのbind(服)として扱う事ができる。<BR>
+      <BR>
+      <SPAN class="text_gray">surface0<BR>
+      {<BR>
+      0interval,bind<BR>
+      0pattern0,100,2,add,0,0<BR>
+      0pattern1,101,2,add,0,0<BR>
+      0pattern2,102,2,reduce,0,0<BR>
+      0pattern3,103,2,add,0,0<BR>
+      }</SPAN><BR>
+      <BR>
+      reduceを使用した場合下記のような減算のされ方をする。<BR>
+      reduceより下にあるレイヤー及びベースサーフィスに適用される。<BR>
+      <BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_png1.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_png3.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_png3.jpg" width="163" height="300" border="0"></TD>
+          </TR>
+          <TR>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.png</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">surface102.png</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">デスクトップの表示</SPAN></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <BR>
+      bindアニメーショングループはユーザーがメニューから自由にON/OFF可能になる。<BR>
+      つまり服を着せたり脱がせたりすることができるが、そのためには<A href="descript_shell.html">descript.txt</A>を適切に編集する必要がある。<BR>
+      <BR>
+      <SPAN class="text_gray">sakura.bindgroup0.name,服,エプロンドレス,apron<BR>
+      sakura.bindgroup1.name,リボン,白リボン,ribbonwhite<BR>
+      sakura.bindgroup2.name,服,黒服,black<BR>
+      sakura.bindgroup3.name,リボン,黒リボン,ribbonblack<BR>
+      <BR>
+      sakura.bindgroup0.default,1<BR>
+      sakura.bindgroup1.default,1<BR>
+      <BR>
+      kero.bindgroup0.name,ネクタイ,ネクタイ<BR>
+      kero.bindgroup1.name,腕章,黒腕章<BR>
+      kero.bindgroup2.name,腕,ドリル<BR>
+      <BR>
+      kero.bindgroup0.default,1<BR>
+      kero.bindgroup1.default,1<BR>
+      <BR>
+      sakura.menuitem0,2<BR>
+      sakura.menuitem1,3<BR>
+      sakura.menuitem2,-<BR>
+      sakura.menuitem3,0<BR>
+      sakura.menuitem4,1<BR>
+      <BR>
+      kero.menuitem0,0<BR>
+      kero.menuitem1,1<BR>
+      kero.menuitem2,-<BR>
+      kero.menuitem3,2</SPAN><BR>
+      <BR>
+      上記のように記述することで本体側の「着せ替え」メニューに「エプロンドレス」「黒服」「白リボン」「黒リボン」<BR>
+      相方側のメニューに「ネクタイ」「腕章」「腕」が出現し、それらを自由に着脱することができるようになる。<BR>
+      <BR>
+      左から順に、カテゴリ名、パーツ名、サムネイルファイル名をカンマで区切って記述する。<BR>
+      同じ種類のグループには常に同じIDを振る必要があることに注意。<BR>
+      <BR>
+      *.bindgroup*.defaultはそのシェルの初期値の着せ替えを設定する。<BR>
+      この設定ではデフォルトでエプロンドレス＆白リボン、ネクタイ＆黒腕章になる。<BR>
+      0を指定もしくは省略すると着せ替えOFF状態となる。<BR>
+      <BR>
+      *.menuitem*,* はメニュー項目の構造を表している。<BR>
+      メニューツリー表示順に番号を割り振り、カンマで区切りbindgroup*のIDを指定する。<BR>
+      セパレータを挟む場合はIDに-と記述する。<BR>
+      この例だと着せ替えアイテムは上から順に黒服、黒リボン、セパレータ、エプロンドレス、白リボンとなる。<BR>
+      <BR>
+      サムネイルはメニュー選択時のガイドとして表示される。<BR>
+      不要な場合無指定でも構わない。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

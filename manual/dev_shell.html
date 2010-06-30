@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 シェルの作成</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><SPAN class="text_bold">シェルの作成</SPAN><BR>
+      <HR>
+      home<BR>
+      　+-ghost<BR>
+      　　　+-myghost<BR>
+      　　　　　+-shell<BR>
+      　　　　　　　+-master<BR>
+      　　　　　　　　　<SPAN class="text_green">+-descript.txt<BR>
+      　　　　　　　　　+-surface*.png<BR>
+      　　　　　　　　　+-surface*.pna<BR>
+      　　　　　　　　　+-surfaces.txt</SPAN><BR>
+      　　　　　　　　　+-menu_background.png<BR>
+      　　　　　　　　　+-menu_foreground.png<BR>
+      　　　　　　　　　+-menu_sidebar.png<BR>
+      　　　　　　　　　<SPAN class="text_green">+-readme.txt<BR>
+      　　　　　　　　　+-thumbnail.png</SPAN><BR>
+      <BR>
+      緑色の部分がシェルの作成に必要なファイルとなります。<BR>
+      homeはゴーストを起動するためのexeがあるフォルダです。<BR>
+      myghostは自分のゴースト名を入れます。<BR>
+      ゴーストのフォルダ、ファイル構成の名前は英数で付けてください。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">1、立ち絵となる絵を用意する</SPAN><BR>
+      ゴーストにおける画像形式の基本はpngです。<BR>
+      jpg、bmp等は使えません。<BR>
+      pngを使用していれば大きさ、色数に制限はありません。<BR>
+      ファイルサイズを小さくしたい場合は減色してください。<BR>
+      <BR>
+      まずは<SPAN class="text_green">surface0.png</SPAN>と<SPAN class="text_green">surface10.png</SPAN>を作ります。<BR>
+      これらの画像(サーフィス)は必須です。<BR>
+      <SPAN class="text_green">surface0.png</SPAN>はメイン側の基本立ち絵、<SPAN class="text_green">surface10.png</SPAN>は相方側の基本立ち絵となります。<BR>
+      相方が要らない場合は<SPAN class="text_green">surface10.pngを</SPAN>単色で塗り潰した画像(全て透明のサーフィス)を使用してください。<BR>
+      <BR>
+      サーフィスは<SPAN class="text_green">surface0000.png</SPAN>、<SPAN class="text_green">surface0010.png</SPAN>等の様に記述しても<SPAN class="text_green">surface0</SPAN>、<SPAN class="text_green">surface10</SPAN>と認識されます。<BR>
+      <BR>
+      自分で絵を描く、もしくはフリーシェルと称される用意されたサーフィスを使用します。<BR>
+      <BR>
+      ・画像の透過について<BR>
+      サーフィス画像では左上端の1ドットが抜け色となります。<BR>
+      なので、左上端の1ドットと同じ色がキャラクター内にあった場合その部分も透過されてしまいますので<BR>
+      キャラクターには使用していない系統の色で塗り潰してください。<BR>
+      <BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_alias1.gif" width="225" height="239" border="0"></TD>
+            <TD>→</TD>
+            <TD><IMG src="image/surface0_alias2.gif" width="225" height="239" border="0"></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      キャラクターの輪郭が半透明になっていると背景と混ざって右のように表示されてしまいます。<BR>
+      <BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_alias3.gif" width="225" height="239" border="0"></TD>
+            <TD>→</TD>
+            <TD><IMG src="image/surface0_alias4.gif" width="225" height="239" border="0"></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      この様に輪郭が背景と混ざらないようにすると綺麗に色が抜けます。<BR>
+      <BR>
+      Photoshopをして作成する場合、<BR>
+      <A href="http://homepage3.nifty.com/khsoft/cbs/">ClearBrain Systems</A>の<A href="http://homepage3.nifty.com/khsoft/cbs/software/">シェル＆縮小サーフェス制作補助プラグインセット for Photoshop</A><BR>
+      を使うと効率よく作業ができると思います。<BR>
+      <BR>
+      <BR>
+      ・2000/XPの半透明表示を使う場合について<BR>
+      半透明処理はWindows2000/XPのみで使用できます。<BR>
+      Windows9x/Meでは半透明は無視されます。<BR>
+      <BR>
+      半透明にするには半透明にしたい画像と同じファイル名のpnaを作ります。<BR>
+      pnaはアルファチャンネル定義用のpngをリネームしたものです。<BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_png1.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_pna.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">→</TD>
+            <TD><IMG src="image/surface0_png2.jpg" width="163" height="300" border="0"></TD>
+          </TR>
+          <TR>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.png</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.pna</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">デスクトップの表示</SPAN></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <BR>
+      pnaで白くした部分が残り黒くした部分が透明となります。<BR>
+      またその度合いにより半透明が出来ます。<BR>
+      <BR>
+      半透明の部分はキャラクターとしてクリックできます。<BR>
+      ですので透明部分は完全な黒(RGBが0,0,0)色にしてください。<BR>
+      <BR>
+      ・pna作成補助ツール<BR>
+      <A href="http://d.hatena.ne.jp/faerie/20050610">32ビットPNGからpnaを作る物</A><BR>
+      <A href="http://matcha.s106.xrea.com/unyu.aoumi.com/">32ビットpngからpnaとサーフェス用pngを作るツール</A><BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">02、descript.txtにシェルの必要な情報を書く</SPAN><BR>
+      シェルを作るにあたってdescript.txtの中身が書かれていなければ<BR>
+      本体に認識されません。<BR>
+      <BR>
+      まずは以下の内容をコピーしてdescript.txtという名前のテキストに貼り付け<BR>
+      自分のゴーストに適切なネームに変更してください。<BR>
+      <BR>
+      <SPAN class="text_green">charset,Shift_JIS<BR>
+      <BR>
+      name,このシェルの名前<BR>
+      id,このシェルのIDもしくは名前(英数のみで書いてください)<BR>
+      <BR>
+      craftman,制作者名(英数のみで書いてください)<BR>
+      craftmanw,一覧などで使用する制作者名(日本語表記でも可能)<BR>
+      craftmanurl,制作者のURL(http://～など)</SPAN><BR>
+      <BR>
+      charsetは基本的にShift_JISにしておいてください。<BR>
+      <BR>
+      シェル全体の基本バルーン位置を変えるには<BR>
+      <SPAN class="text_green">sakura.balloon.offsetx,0<BR>
+      sakura.balloon.offsety,0<BR>
+      kero.balloon.offsetx,0<BR>
+      kero.balloon.offsety,0</SPAN><BR>
+      という項目を足してください。<BR>
+      sakura.balloon.offsetがメイン側、kero.balloon.offsetが相方側のバルーン位置の変更になります。<BR>
+      数字を増やすとx座標はキャラクター寄りにy座標は下に表示されます。<BR>
+      マイナスをつけると逆の方向に表示位置がx座標はキャラクターから離れにy座標は上に表示されるようになります。<BR>
+      <BR>
+      ・こちらのサイトより項目の穴埋めで作成することも出来ます。<BR>
+      <A href="http://fifthmoon.tarenari.jp/cgi-bin/descriptmaker/descript.cgi?typeparam=shell">シェルのdescript.txt作成</A><BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">3、アニメーションを作る</SPAN><BR>
+      まずはアニメーションの表示方法や順番を書くためのsurfaces.txtというテキストを作ります。<BR>
+      ここではまばたきを例にアニメーションを説明します。<BR>
+      <BR>
+      <SPAN class="text_green">surface0<BR>
+      {<BR>
+      0interval,sometimes<BR>
+      0pattern0,100,5,overlayfast,0,0<BR>
+      0pattern1,101,5,overlayfast,0,0<BR>
+      0pattern2,100,5,overlayfast,0,0<BR>
+      0pattern3,-1,10,overlay,0,0<BR>
+      }</SPAN><BR>
+      surface0.pngにアニメーションさせるにはこのようにsurface0と書きその下のプレス内に<BR>
+      アニメーションの内容を書きます。<BR>
+      <BR>
+      0interval,sometimesとは0番のアニメーションIDが時々動作する事になります。<BR>
+      アニメーションする順番はpattern0、pattern1、pattern2というように順番に書いていきます。<BR>
+      先頭に同じアニメーション群のIDを入れるのを忘れないで下さい。<BR>
+      <BR>
+      <SPAN class="text_gray">0pattern0,</SPAN><SPAN class="text_green">100</SPAN><SPAN class="text_gray">,5,overlayfast,0,0</SPAN><BR>
+      100という部分はsurface100.pngの画像が使われます。<BR>
+      101とすればsurface101.pngの画像ということです。<BR>
+      <BR>
+      <SPAN class="text_gray">0pattern0,100,</SPAN><SPAN class="text_green">5</SPAN><SPAN class="text_gray">,overlayfast,0,0</SPAN><BR>
+      5の部分は表示時間です。<BR>
+      その画像に切り替わるまでの時間を指定してください。<BR>
+      <BR>
+      <SPAN class="text_gray">0pattern0,100,5,</SPAN><SPAN class="text_green">overlayfast</SPAN><SPAN class="text_gray">,0,0</SPAN><BR>
+      overlayfastの部分は描画方法です。<BR>
+      overlayfastとは元の画像の上に重ねて画像を表示する命令です。<BR>
+      ただし、重ねる画像が下になっている画像の描画から出てしまう場合はoverlayを使います。<BR>
+      <BR>
+      <SPAN class="text_gray">0pattern0,100,5,overlayfast,</SPAN><SPAN class="text_green">0,0</SPAN><BR>
+      最後の0,0の部分は画像の始点です。<BR>
+      元の画像からどれだけXY座標をずらして表示するか指定します。<BR>
+      <BR>
+      画像の番号を-1にするとそのパターンを非表示にすることができます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">4、当たり判定を作る</SPAN><BR>
+      当たり判定もアニメーション同様に指定したサーフィスのプレス内に記述します。<BR>
+      <BR>
+      <SPAN class="text_green">surface0<BR>
+      {</SPAN><BR>
+      <SPAN class="text_gray">0interval,sometimes<BR>
+      0pattern0,100,5,overlayfast,0,0<BR>
+      0pattern1,101,5,overlayfast,0,0<BR>
+      0pattern2,100,5,overlayfast,0,0<BR>
+      0pattern3,-1,10,overlay,0,0</SPAN><BR>
+      <BR>
+      <SPAN class="text_green">collision0,117,71,185,130,Face<BR>
+      collision1,115,174,174,217,Bust<BR>
+      }</SPAN><BR>
+      <BR>
+      上のように当たり判定１箇所ごとにcollision0、collision1、collision2と順番に書いていきます。<BR>
+      最後の文字列はイベントで使われる当たり判定のIDになります。<BR>
+      1サーフィスの最大辺り判定個数は256個です。<BR>
+      <BR>
+      当たり判定は<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/" target="_blank">Coordin</A>を使うと簡単に座標を取得出ます。<BR>
+      Coordinに画像をドロップしドラッグで四角い当たり判定を作ります。<BR>
+      自動的にクリップボードに座標がコピーされているので当たり判定の数字の部分を置き換えてください。<BR>
+      <BR>
+      MATERIAの設定で開発インターフェイスにチェックするとポップアップメニューから当たり判定領域を確認できるようになります。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">5、中心座標を作る</SPAN><BR>
+      主に<A href="http://homepage3.nifty.com/khsoft/cbs/software/kinoko/" target="_blank">きのこ</A>の生える位置です。<BR>
+      特に指定しなくても問題はありませんがサーフィスによってはきのこが正常に生えません。<BR>
+      <BR>
+      <BR>
+      <SPAN class="text_green">surface0<BR>
+      {</SPAN><BR>
+      <SPAN class="text_gray">0interval,sometimes<BR>
+      0pattern0,100,5,overlayfast,0,0<BR>
+      0pattern1,101,5,overlayfast,0,0<BR>
+      0pattern2,100,5,overlayfast,0,0<BR>
+      0pattern3,-1,10,overlay,0,0<BR>
+      <BR>
+      collision0,117,71,185,130,Face<BR>
+      collision1,115,174,174,217,Bust</SPAN><BR>
+      <SPAN class="text_green"><BR>
+      point.kinoko.centerx,180<BR>
+      point.kinoko.centery,40<BR>
+      }</SPAN><BR>
+      point.kinoko.centerにそれぞれX座標、Y座標の位置を数字でいれます。<BR>
+      きのこの種類によっては高さがまるで違うので気を付けてください。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">6、シェルのサムネイル画像を作る</SPAN><BR>
+      ポップアップメニューのシェル選択時に表示される画像です。<BR>
+      シェルが複数あるなどして一目でわかりやすくしたい場合などに使用します。<BR>
+      シェルがmasterのみ等の場合は必要無いと思います。<BR>
+      <BR>
+      thumbnail.pngという画像が同じフォルダに入っていれば自動的に使用されます。<BR>
+      ファイル名をthumbnail.pnrとするとサーフィスのように左上1ピクセルと同じ色を透明にして表示させます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">7、説明テキストを作る</SPAN><BR>
+      readme.txtというファイルがあるとポップアップメニューのシェル選択にあるRead
+      Me!という項目を選択した時に表示できます。<BR>
+      シェルの説明や連絡事項など必要な事があれば記入してください。<BR>
+      特に無い場合はreadme.txtは無くても構いません。<BR>
+      <BR>
+      <HR>
+      <BR>
+      さらに詳しい説明はゴースト作成の説明の<A href="manual_shell.html">シェル</A>、<A href="manual_animation.html">アニメーション</A>の項目にて。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

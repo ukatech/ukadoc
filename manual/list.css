@@ -1,0 +1,31 @@
+a:link	{
+  color : #0000FF;
+}
+a:visited	{
+  color : #4040FF;
+}
+a:active	{
+  color : #FF0000;
+}
+a:hover	{
+  color : #FF0000;
+}
+BODY{
+  background-color : #FFFFFF;
+}
+TABLE{
+  background-color : #94A5F7;
+}
+TD{
+  background-color : #FFFFFF;
+}
+TH{
+  text-align : left;
+  color : white;
+}
+.text_bold{
+  font-weight : bold;
+}
+.text_green{
+  color : #006600;
+}

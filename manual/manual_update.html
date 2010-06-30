@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Update</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">Update</SPAN><BR>
+      <HR>
+      <BR>
+      ネットワーク更新ではゴーストの全てのファイルが更新可能である。<BR>
+      <BR>
+      updates2.dauの作成<BR>
+      更新用URL（サーバ）の設定<BR>
+      サーバへのファイル配置<BR>
+      3つがそろってはじめて可能になる。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">updates2.dau</SPAN><BR>
+      更新用ファイルを作成するにはまず<BR>
+      適当なディレクトリに更新用ファイルをディレクトリ階層をそのまま再現して配置する。<BR>
+      ディレクトリの一番上の階層にupdates2.dauという空のテキストファイルを作る。<BR>
+      そのフォルダを本体にD&amp;DするとファイルのMD5が計算されupdates2.dauに書き込まれる。<BR>
+      フォルダの中身をサーバにそのままアップロードすれば更新用ファイルが出来上がる。<BR>
+      <BR>
+      サーバにファイルをアップロードする時は必ずバイナリモードでアップロードしなくてはならない。<BR>
+      本体にD&amp;Dする時、install.txtがあるとそちらが優先されてnarファイルを作ってしまうので注意。<BR>
+      <BR>
+      <SPAN class="text_green">updates.txt</SPAN><BR>
+      updates2.dauとほぼ同じ扱い。<BR>
+      拡張子制限でdauがアップロードできない等の問題を解決できる。<BR>
+      ディレクトリの一番上の階層に配置する。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">更新用URL</SPAN><BR>
+      SHIORI Eventで指定する。<BR>
+      記述は各SHIORIにて。<BR>
+      <BR>
+      サーバ側のupdates2.dauの場所を指定する。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">delete.txt</SPAN><BR>
+      このテキストに書かれたファイルを消去することができる。<BR>
+      サーバ側のupdates2.dauと同じ位置に配置する。<BR>
+      不要になったファイルが肥大するのを防ぐのに使う。<BR>
+      <BR>
+      <SPAN class="text_gray">ghost\master\ai.dtx<BR>
+      shell\master\surface0.png</SPAN><BR>
+      <BR>
+      上記のようにゴーストのホームディレクトリからの相対パスで記載する。<BR>
+      delete.txtはそのまま存在しつづけるため<BR>
+      内容を変更しない限り記載されたファイルが再び置かれても消されつづける。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">updates_def.txt</SPAN> <BR>
+      SSPのみ。<BR>
+      相対パスで書いておくと、更新ファイル作成時にそれを無視する。<BR>
+      <BR>
+      <SPAN class="text_gray">ghost/maste/profile/mainform.txt,ignore<BR>
+      ghost/master/profile/var.txt,ignore<BR>
+      shell/master/profile/bind.txt,ignore<BR>
+      shell/master/profile/keroform.txt,ignore<BR>
+      shell/master/profile/mainform.txt,ignore<BR>
+      shell/master/profile/crow.ini,ignore</SPAN><BR>
+      <BR>
+      <SPAN class="text_green">developer_options.txt</SPAN><BR>
+      SSPのみ。<BR>
+      updates_def.txtの改修版。NARに含めないものも指定可。<BR>
+      <BR>
+      <SPAN class="text_gray">ghost/master/profile/,nonar,noupdate<BR>
+      shell/master/profile/,nonar,noupdate</SPAN><BR>
+      <BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->

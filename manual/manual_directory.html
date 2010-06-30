@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 ゴーストの構成</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">ゴーストの構成</SPAN><BR>
+      <HR>
+      <BR>
+      ひとつのゴーストは必ずひとつのmasterゴーストとmasterシェルを持つ必要がある。<BR>
+      ディレクトリ構成は下記を参照。<BR>
+      <BR>
+      ゴーストはシェル側のみ複数持つことが可能である。<BR>
+      <BR>
+      home<BR>
+      　+-ghost<BR>
+      　　　<SPAN class="text_green">+-myghost<BR>
+      　　　　　+-ghost<BR>
+      　　　　　　　+-master<BR>
+      　　　　　　　　　+-descirpt.txt<BR>
+      　　　　　　　　　+-shiori.dll<BR>
+      　　　　　　　　　+-makoto.dll<BR>
+      　　　　　　　　　+-updates2.dau<BR>
+      　　　　　　　　　+-*.ico<BR>
+      　　　　　　　　　+-*.csr<BR>
+      　　　　　+-shell<BR>
+      　　　　　　　+-master<BR>
+      　　　　　　　　　+-descript.txt<BR>
+      　　　　　　　　　+-surfaces.txt<BR>
+      　　　　　　　　　+-surfacetable.txt<BR>
+      　　　　　　　　　+-readme.txt<BR>
+      　　　　　　　　　+-surface*.png<BR>
+      　　　　　　　　　+-surface*.pna<BR>
+      　　　　　　　　　+-menu_background.png<BR>
+      　　　　　　　　　+-menu_foreground.png<BR>
+      　　　　　　　　　+-menu_sidebar.png<BR>
+      　　　　　　　　　+-thumbnail.png<BR>
+      　　　　　+-install.txt<BR>
+      　　　　　+-readme.txt<BR>
+      　　　　　+-thumbnail.png</SPAN><BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">home</SPAN><BR>
+      起動EXEの位置。<BR>
+      <BR>
+      <SPAN class="text_gray">home\</SPAN><SPAN class="text_green">ghost</SPAN><BR>
+      各ゴーストが格納されるフォルダ。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\</SPAN><SPAN class="text_green">myghost</SPAN><BR>
+      自ゴーストルートフォルダ。<BR>
+      名称は英数推奨。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">ghost</SPAN><BR>
+      ゴーストの内部動作用ファイルのフォルダ。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\</SPAN><SPAN class="text_green">master</SPAN><BR>
+      ゴーストのデフォルトで使用されるフォルダ。<BR>
+      ただし、現在masterしか使用できない。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">descript.txt</SPAN><BR>
+      ゴーストの名称等を記述するファイル。<BR>
+      これがないと本体に認識されない。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">shiori.dll</SPAN><BR>
+      ゴーストがトーク、イベントを起こすのに必要なDLL。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">makoto.dll</SPAN><BR>
+      ゴーストがトランスレートするためのDLL。<BR>
+      使用しなくても可。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">updates2.dau</SPAN><BR>
+      ネットワーク更新の受信照合用のファイル。<BR>
+      これがないとネットワーク更新ができない。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">*.ico</SPAN><BR>
+      タスクトレイなどに表示されるアイコン。<BR>
+      無い場合はデフォルトアイコンが使用される。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">*.csr</SPAN><BR>
+      ゴースト範囲内で表示されるカーソル。<BR>
+      無い場合はデフォルトカーソルが使用される。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">shell</SPAN><BR>
+      ゴーストのグラフィック表示用ファイルのフォルダ。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\</SPAN><SPAN class="text_green">master</SPAN><BR>
+      デフォルトのシェルで使用されるフォルダ。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">descript.txt</SPAN><BR>
+      シェルの名称等を記述するファイル。<BR>
+      シェルが認識されるのに必要。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surfaces.txt</SPAN><BR>
+      サーフィスのアニメーションや当たり判定等を定義するファイル。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surfacetable.txt</SPAN><BR>
+      SSP専用。<BR>
+      サーフィステストのサーフィス番号に名称を付けるためのファイル。<BR>
+      無くても可。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">readme.txt</SPAN><BR>
+      メニューにあるシェルの説明用のファイル。<BR>
+      無くても可。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surface*.png</SPAN><BR>
+      サーフィスファイル。<BR>
+      surface0とsurface10は必ずなくてはいけない。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surface*.pna</SPAN><BR>
+      サーフィスα加合ファイル。<BR>
+      win2000/XPのみ使用可能。<BR>
+      使用しなくても可。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_background.png</SPAN><BR>
+      オーナードローで使用される背景の画像。<BR>
+      無い場合は通常のメニューツリーになる。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_foreground.png</SPAN><BR>
+      オーナードローで使用される背景の選択域画像。<BR>
+      無い場合は通常のメニューツリーになる。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_sidebar.png</SPAN><BR>
+      メニューツリーの左側に表示される画像。<BR>
+      無くても可。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">thumbnail.png</SPAN><BR>
+      メニューツリーでシェルの選択時に表示されるサムネイル。<BR>
+      使用可能な画像形式はpngもしくはjpg。<BR>
+      pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。<BR>
+      このファイルは省略可能。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">install.txt</SPAN><BR>
+      インストールの際に必要なファイル。<BR>
+      narファイルにするには必要。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">readme.txt</SPAN><BR>
+      ゴーストがインストールされた時に開くファイル。<BR>
+      配布者や配布元など明記するのが一般的。<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">thumbnail.png</SPAN><BR>
+      メニューツリーでゴーストの選択時に表示されるサムネイル。<BR>
+      使用可能な画像形式はpngもしくはjpg。<BR>
+      pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。<BR>
+      このファイルは省略可能。<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">　管理人 : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">緋龍華 麒麟</SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
+<!--nobanner-->
