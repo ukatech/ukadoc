@@ -17,7 +17,7 @@
 	width: 200px;
 }
 .style_bottom_l{
-	background-color: #94A5F7;
+	background-color: #94DE84;
 	color: white;
 	font-size: 12px;
 	font-weight: bold;
@@ -25,7 +25,7 @@
 	text-align: left;
 }
 .style_bottom_r{
-	background-color: #94A5F7;
+	background-color: #94DE84;
 	color: white;
 	font-size: 12px;
 	font-weight: bold;
@@ -80,7 +80,7 @@
 	width: 520px;
 }
 .style_navigation{
-	background-color: #94A5F7;
+	background-color: #94DE84;
 	height: 154px;
 }
 .style_navigation_bottom{
@@ -169,6 +169,7 @@
 	color: white;
 	font-weight: bold;
 	text-decoration: underline;
+	visibility: hidden;
 }
 A:LINK{
 	color: #0000FF;
