@@ -119,9 +119,35 @@
       <BR>
       <HR>
       <BR>
-      <SPAN class="text_bold">04、ツールでもっと楽にファイルを作る</SPAN><BR>
+      <SPAN class="text_bold">04、複数インストール用パッケージを作る</SPAN><BR>
       <BR>
-      ネットワーク更新用ツール<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</A>、<A href="http://rx79g.hp.infoseek.co.jp/index_nx0.html">ＭＳＧ</A>、<A href="http://yune-kotomi.tarenari.jp/page/show/GDM-Ghost+Distribution+Manager">ゴースト配布系自動化システム</A>を使うと面倒な更新ファイルの選別やFTPアップロードを自動化できます。<BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,package<BR>
+      name,内容</SPAN><BR>
+      <BR>
+      とすると、複数インストール用パッケージを作ることができます。<BR>
+      その際、中のファイルの配置は以下のようにします。<BR>
+      <BR>
+      　　　-mypackage<BR>
+      　　　-install.txt (package用)<BR>
+      <SPAN class="text_green">　　　　　-myghost1<BR>
+      　　　　　　　-install.txt (myghost1用)<BR>
+      　　　　　　　+-ghost<BR>
+      　　　　　　　+-shell<BR></SPAN>
+      <SPAN class="text_green">　　　　　-myghost2<BR>
+      　　　　　　　-install.txt (myghost2用)<BR>
+      　　　　　　　+-ghost<BR>
+      　　　　　　　+-shell<BR></SPAN>
+      <BR>
+      直下のinstall.txtはtype,packageとnameが書かれたのみのもので、それ以下の各フォルダにそれぞれ単独でも機能するインストール構造を作ります。<BR>
+      単純にインストールするファイルの配置が多段になっただけと考えるとわかりやすいです。<BR>
+      なお、インストールで認識可能なものならなんでも複数パックにできます。<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">05、ツールでもっと楽にファイルを作る</SPAN><BR>
+      <BR>
+      ネットワーク更新用ツール<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</A>(<A href="http://code.google.com/p/satoriya-shiori/">IE7以降対応版</A>)、<A href="http://rx79g.hp.infoseek.co.jp/index_nx0.html">ＭＳＧ</A>を使うと面倒な更新ファイルの選別やFTPアップロードを自動化できます。<BR>
       また、必要ファイルの選別や<SPAN class="text_green">updates2.dau</SPAN>の更新をしてからnarファイルを作成する事もできます。<BR>
       <BR>
       SSPではエクスプローラーのメニューから<SPAN class="text_green">updates2.dau</SPAN>やnarファイルを作成できます。<BR>
