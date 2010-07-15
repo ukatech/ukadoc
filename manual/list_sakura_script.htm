@@ -1004,6 +1004,12 @@
     </TR>
     <TR>
       <TD>S</TD>
+      <TD>\![embed,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>イベントの実行結果を現在実行中のスクリプトのこのタグ内に「埋め込む」。使い方は\![raise]と同じ。プロパティシステムの内容によって分岐など、イベントを実行して情報を取得する仕様を、1回のスクリプト実行で有効に使用するための仕様。<BR>
+      第3引数以降はreference。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
       <TD>\![timerraise,<SPAN class="text_green">時間</SPAN>,<SPAN class="text_green">繰り返すか否か</SPAN>,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
       <TD>待ち時間(ミリ秒)を指定してイベントを実行する。<BR>
       第5引数以降はreference。</TD>
@@ -1425,6 +1431,17 @@
       <TD>M,S</TD>
       <TD><SPAN class="script">\![leave,inductionmode]</SPAN></TD>
       <TD>上記を解除する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![enter,selectrect]</TD>
+      <TD>矩形選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると長方形領域を指定することができる。<BR>
+      実行後、OnSelectRectBeginが実行される。その他OnSelectRectMouseUp、OnSelectRectMouseDownも参照。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![leave,selectrect]</TD>
+      <TD>上記を解除する。実行後OnSelectRectCompleteが実行される。</TD>
     </TR>
     <TR>
       <TD>M,S</TD>
