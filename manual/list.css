@@ -27,5 +27,8 @@ TH{
   font-weight : bold;
 }
 .text_green{
-  color : #006600;
+  color : #009900;
+}
+.text_red{
+  color : #CC0000;
 }

@@ -383,16 +383,22 @@
       <TH colspan="3">surfaces.txt(サーフィスブレス内) / surfaces2.txt(SSPのみ)</TH>
     </TR>
     <TR>
-      <TD colspan="3">surface<SPAN class="text_green">*</SPAN><BR>
+      <TD colspan="3">surface<SPAN class="text_red">*</SPAN><BR>
       {<BR>
       <SPAN class="text_green">ここに記述</SPAN><BR>
       }<BR>
       <BR>
-      ※SSPのみ 追加指定<BR>
-      surface.append<SPAN class="text_green">*</SPAN><BR>
+      ※SSPのみ 追加指定（すでに定義済みのものに対してさらに定義を後付けする）<BR>
+      surface.append<SPAN class="text_red">*</SPAN><BR>
       {<BR>
       <SPAN class="text_green">ここに記述</SPAN><BR>
       }<BR>
+      <BR>
+      <SPAN class="text_red">*</SPAN>部分には数値(ID)を指定する。0,1,5のようにカンマ区切りで複数可。<BR>
+      SSPのみ：1-9のように範囲指定も可。カンマ区切りと合わせて1-9,20-29のような指定も可。<BR>
+      <BR>
+      これ以降の各定義の<SPAN class="text_green">*</SPAN>には、各ブレス（中括弧の内側）内でダブらない数値を指定する。<BR>
+      この数値がSakuraScript側などからの操作用IDになる。
       </TD>
     </TR>
     <TR>
@@ -403,38 +409,40 @@
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD><SPAN class="text_green">*</SPAN>interval,タイミング定義</TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.interval,タイミング定義</TD>
       <TD>アニメーションの開始タイミングの設定。<BR>
-      タイミング定義は下記のアニメーションタイミング参照。</TD>
+      タイミング定義は下記のアニメーションタイミング参照。<BR>
+      旧仕様：<SPAN class="text_green">*</SPAN>interval</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD><SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
       <TD>intervalで設定したタイミングで発動するアニメーションパターンの設定。<BR>
-      パターン定義は下記のアニメーションパターン参照。</TD>
+      パターン定義は下記のアニメーションパターン参照。<BR>
+      旧仕様：<SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN></TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD><SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">最小ウエイト</SPAN>-<SPAN class="text_green">最大ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">サーフィス番号</SPAN>,<SPAN class="text_green">最小ウエイト</SPAN>-<SPAN class="text_green">最大ウエイト</SPAN>,<SPAN class="text_green">パターン定義</SPAN>,<SPAN class="text_green">X座標</SPAN>,<SPAN class="text_green">Y座標</SPAN></TD>
       <TD>intervalで設定したタイミングで発動するアニメーションパターンの設定。<BR>
       最小ウエイトと最大ウエイトの間でランダムに発動。<BR>
       パターン定義は下記のアニメーションパターン参照。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD><SPAN class="text_green">*</SPAN>option,exclusive</TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.option,exclusive</TD>
       <TD>これが定義されたアニメーションは他のアニメーションの影響を受けない。</TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD><SPAN class="text_green">*</SPAN>option,background</TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.option,background</TD>
       <TD>これが定義されたアニメーションはベースサーフィスより裏に表示される。</TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD><SPAN class="text_green">*</SPAN>option,<SPAN class="text_green">オプション</SPAN></TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.option,<SPAN class="text_green">オプション</SPAN></TD>
       <TD>(exclusive|background)<BR>
-      +区切りで複数オプション可。</TD>
+      +区切りで複数オプション可。例：exclusive+background</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
