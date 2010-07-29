@@ -1434,14 +1434,15 @@
     </TR>
     <TR>
       <TD>S</TD>
-      <TD>\![enter,selectrect]</TD>
-      <TD>矩形選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると長方形領域を指定することができる。<BR>
-      実行後、OnSelectRectBeginが実行される。その他OnSelectRectMouseUp、OnSelectRectMouseDownも参照。</TD>
+      <TD>\![enter,selectmode,モード(rect)]</TD>
+      <TD>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<BR>
+      実行後、OnSelectModeBeginが実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDownも参照。<BR>
+      現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。</TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD>\![leave,selectrect]</TD>
-      <TD>上記を解除する。実行後OnSelectRectCompleteが実行される。</TD>
+      <TD>\![leave,selectmode]</TD>
+      <TD>上記を解除する。実行後OnSelectModeCompleteが実行される。</TD>
     </TR>
     <TR>
       <TD>M,S</TD>
