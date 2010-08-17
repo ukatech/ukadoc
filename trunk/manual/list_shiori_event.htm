@@ -1656,7 +1656,7 @@
     <TR>
       <TD rowspan="3">S,C</TD>
       <TD rowspan="3">OnDisplayChange</TD>
-      <TD rowspan="3">デスクトップの解像度／色深度が変更された際に発生。</TD>
+      <TD rowspan="3">デスクトップの解像度／色深度が変更された際に発生。<span class="text_green">[起動時NOTIFY/他GET]</span></TD>
       <TD>Reference0</TD>
       <TD>変化後の色深度（bpp）</TD>
     </TR>
@@ -1692,7 +1692,7 @@
     <TR>
       <TD rowspan="3">S,C</TD>
       <TD rowspan="3">basewareversion</TD>
-      <TD rowspan="3">ベースウェアの情報を通知。</TD>
+      <TD rowspan="3">ベースウェアの情報を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>バージョン番号。</TD>
     </TR>
@@ -1707,7 +1707,7 @@
     <TR>
       <TD rowspan="2">S</TD>
       <TD rowspan="2">hwnd</TD>
-      <TD rowspan="2">hwndを通知。</TD>
+      <TD rowspan="2">hwndを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>ゴーストのhwnd。</TD>
     </TR>
@@ -1718,14 +1718,14 @@
     <TR>
       <TD>S</TD>
       <TD>uniqueid</TD>
-      <TD>unique IDを通知。</TD>
+      <TD>unique IDを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
-      <TD>ゴーストのユニークID。</TD>
+      <TD>ゴーストのユニークID。特殊なSSTPを送信する際に使用する。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>capability</TD>
-      <TD>capabilityを通知。</TD>
+      <TD>SHIORI拡張実装状態を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>実装レベルに応じて下記がReferenceに1つずつ送られる。<BR>
       request.status　Statusヘッダ実装<BR>
@@ -1740,56 +1740,56 @@
     <TR>
       <TD>M,S,C</TD>
       <TD>ownerghostname</TD>
-      <TD>現在のゴースト名を通知。</TD>
+      <TD>現在のゴースト名を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>現在のゴースト名。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
       <TD>otherghostname</TD>
-      <TD>他に起動しているゴースト名を通知。</TD>
+      <TD>他に起動しているゴースト名を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>１バイト区切りにされた他に起動しているゴースト名、本体のサーフィス番号、相方のサーフィス番号。</TD>
     </TR>
     <TR>
       <TD height="17">M,S,C</TD>
       <TD height="17">installedghostname</TD>
-      <TD height="17">インストールされているゴーストを通知。</TD>
+      <TD height="17">インストールされているゴーストを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD height="17">Reference*</TD>
       <TD height="17">インストールされているゴースト名。</TD>
     </TR>
     <TR>
       <TD height="15">S,C</TD>
       <TD height="15">installedshellname</TD>
-      <TD height="15">インストールされているシェルを通知。</TD>
+      <TD height="15">インストールされているシェルを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD height="15">Reference*</TD>
       <TD height="15">インストールされているシェル名。</TD>
     </TR>
     <TR>
       <TD>S,C</TD>
       <TD>installedballoonname</TD>
-      <TD>インストールされているバルーンを通知。</TD>
+      <TD>インストールされているバルーンを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>インストールされているバルーン名。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>installedheadlinename</TD>
-      <TD>インストールされているRSS/ヘッドラインを通知。</TD>
+      <TD>インストールされているRSS/ヘッドラインを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>インストールされているRSS/ヘッドライン名。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>installedplugin</TD>
-      <TD>インストールされているプラグインを通知。</TD>
+      <TD>インストールされているプラグインを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>インストールされているプラグイン名。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>rateofusegraph</TD>
-      <TD>使ってるぞグラフの情報を通知。</TD>
+      <TD>使ってるぞグラフの情報を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>１バイト区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。<BR>
       boot 起動中の時。<BR>
@@ -1799,7 +1799,7 @@
     <TR>
       <TD rowspan="7">S,C</TD>
       <TD rowspan="7">OnNotifySelfInfo</TD>
-      <TD rowspan="7">ゴーストの情報を通知。</TD>
+      <TD rowspan="7">ゴースト自身の情報を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>ゴースト名。</TD>
     </TR>
@@ -1830,14 +1830,14 @@
     <TR>
       <TD>S</TD>
       <TD>OnNotifyDressupInfo</TD>
-      <TD>着せ替えの情報を通知。</TD>
+      <TD>着せ替えの情報を通知。<span class="text_green">[起動時NOTIFY/メニューから切替はGET]</span></TD>
       <TD>Reference*</TD>
       <TD>１バイト区切りにされたキャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス。</TD>
     </TR>
     <TR>
       <TD rowspan="4">S</TD>
       <TD rowspan="4">OnNotifyUserInfo</TD>
-      <TD rowspan="4">ユーザーの入力情報を通知。</TD>
+      <TD rowspan="4">ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>呼び方。</TD>
     </TR>
@@ -1856,7 +1856,7 @@
     <TR>
       <TD rowspan="4">S</TD>
       <TD rowspan="4">OnNotifyOSInfo</TD>
-      <TD rowspan="4">OS情報を通知。</TD>
+      <TD rowspan="4">OS情報を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>OSのシステム,バージョン,表示用の名前 [カンマ区切り]</TD>
     </TR>
@@ -1875,42 +1875,42 @@
     <TR>
       <TD>S</TD>
       <TD>OnNotifyFontInfo</TD>
-      <TD>システムにインストールされているフォントを通知。</TD>
+      <TD>システムにインストールされているフォントを通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference*</TD>
       <TD>フォント名。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>OnInitialize</TD>
-      <TD>起動した際に発生。</TD>
+      <TD>起動した際に発生。<span class="text_green">[NOTIFY]</span></TD>
       <TD>-</TD>
       <TD>-</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>OnDestroy</TD>
-      <TD>終了が指示された際に発生。</TD>
+      <TD>終了が指示された際に発生。<span class="text_green">[NOTIFY]</span></TD>
       <TD>-</TD>
       <TD>-</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>OnSysResume</TD>
-      <TD>レジュームの際に発生。</TD>
+      <TD>レジュームの際に発生。<span class="text_green">[NOTIFY]</span></TD>
       <TD>-</TD>
       <TD>-</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>OnSysSuspend</TD>
-      <TD>サスペンドの際に発生。</TD>
+      <TD>サスペンドの際に発生。<span class="text_green">[NOTIFY]</span></TD>
       <TD>-</TD>
       <TD>-</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>OnBatteryNotify</TD>
-      <TD>残りバッテリー量を通知。</TD>
+      <TD>残りバッテリー量を通知。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>残りバッテリー％。</TD>
     </TR>
@@ -1937,7 +1937,7 @@
     <TR>
       <TD rowspan="3">S</TD>
       <TD rowspan="3">OnScreenSaverStart</TD>
-      <TD rowspan="3">スクリーンセーバーが起動した際に発生。</TD>
+      <TD rowspan="3">スクリーンセーバーが起動した際に発生。<span class="text_green">[NOTIFY]</span></TD>
       <TD>Reference0</TD>
       <TD>スクリーンセーバ名</TD>
     </TR>
@@ -2234,7 +2234,7 @@
     <TR>
       <TD rowspan="6">S</TD>
       <TD rowspan="6">OnOtherGhostTalk</TD>
-      <TD rowspan="6">他のゴーストが話した際に発生。</TD>
+      <TD rowspan="6">他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</TD>
       <TD>Reference0</TD>
       <TD>ゴースト名。</TD>
     </TR>
