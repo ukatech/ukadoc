@@ -63,37 +63,37 @@
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>origin.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>origin.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト開始位置のX座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>origin.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>origin.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト開始位置のY座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>validrect.left,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>validrect.left,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト描画範囲の左位置。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>validrect.top,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>validrect.top,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト描画範囲の上位置。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>validrect.right,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>validrect.right,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト描画範囲の右位置。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>validrect.bottom,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>validrect.bottom,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>テキスト描画範囲の下位置。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>wordwrappoint.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>wordwrappoint.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
       <TD>自動改行で折り返すX座標。</TD>
     </TR>
     <TR>
@@ -105,6 +105,11 @@
       <TD>M,S,C</TD>
       <TD>font.name,<SPAN class="text_green">フォント名</SPAN></TD>
       <TD>使用するフォント。デフォルトはＭＳ ゴシック。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>font.height,<SPAN class="text_green">数値</SPAN></TD>
+      <TD>使用するフォントの高さ方向の大きさ。(単位はピクセル：ポイントではない)</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
@@ -386,28 +391,38 @@
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>sstpmarker.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>sstpmarker.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>SSTPマーカーのX座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>sstpmarker.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>sstpmarker.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>SSTPマーカーのY座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>sstpmessage.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>sstpmessage.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>SSTPメッセージの表示開始位置X座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>sstpmessage.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>sstpmessage.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>SSTPメッセージの表示開始位置Y座標。</TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD>sstpmessage.xr,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>sstpmessage.xr,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>SSTPメッセージの表示終了位置X座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>onlinemarker.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
+      <TD>オンライン表示のX座標。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>onlinemarker.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></TD>
+      <TD>オンライン表示のY座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
@@ -417,7 +432,7 @@
     <TR>
       <TD>M,S,C</TD>
       <TD>sstpmessage.font.height,サイズ</TD>
-      <TD>SSTPメッセージのフォントサイズ。</TD>
+      <TD>SSTPメッセージの高さ方向の大きさ(単位はピクセル：ポイントではない)。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
@@ -442,7 +457,7 @@
     <TR>
       <TD>M,S,C</TD>
       <TD>number.font.height,<SPAN class="text_green">数値</SPAN></TD>
-      <TD>カウンタ数値のフォントサイズ。</TD>
+      <TD>カウンタ数値の高さ方向の大きさ(単位はピクセル：ポイントではない)。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
@@ -461,32 +476,32 @@
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>number.xr,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>number.xr,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>カウンタ数値のX座標。右起点。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>number.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>number.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>カウンタ数値のY座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>arrow0.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>arrow0.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>スクロールマーカ上矢印のX座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>arrow0.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>arrow0.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>スクロールマーカ上矢印のY座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>arrow1.x,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>arrow1.x,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>スクロールマーカ下矢印のX座標。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
-      <TD>arrow1.y,<SPAN class="text_green">座標</SPAN></TD>
+      <TD>arrow1.y,<SPAN class="text_green">座標 <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
       <TD>スクロールマーカ下矢印のY座標。</TD>
     </TR>
     <TR>
@@ -539,7 +554,10 @@
     </TR>
     <TR>
       <TD colspan="3">個別のバルーンを指定することによりdescript.txtをオーバーライドできる。<BR>
-      内容はdescript.txtの表参照。</TD>
+      内容はdescript.txtの表参照。<BR>
+      <BR>
+      <A NAME="NOTE1">*1</A> 以上の座標値のうち、*1と書かれたものは、マイナス座標を指定するとベースとなる画像の右下からの相対座標となる。<BR>
+      何かの理由でどうしてもマイナス座標を指定したい場合は、--数値、と指定すること（マイナス2つ）。</TD>
     </TR>
   </TBODY>
 </TABLE>
