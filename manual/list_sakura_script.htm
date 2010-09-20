@@ -585,39 +585,47 @@
       <TD>M,S,C</TD>
       <TD>\q[<SPAN class="text_green">タイトル</SPAN>,<SPAN class="text_green">ID</SPAN>]</TD>
       <TD>選択肢を表示。<BR>
-      選択後、SIORIイベントOnChoiceSelectが開始される。<BR>
+      選択後、SHIORIイベントOnChoiceSelectが開始される。<BR>
       IDはReference0に格納される。</TD>
+    </TR>
+    <TR>
+      <TD>M,S,C</TD>
+      <TD>\q[<SPAN class="text_green">タイトル</SPAN>,<SPAN class="text_green">OnID</SPAN>,r0,r1,...]</TD>
+      <TD>選択肢を表示。<BR>
+      上記のようにIDが"On"で始まっている場合は、選択後、SHIORIイベントOnID(書いた通りのイベント)が開始される。<BR>
+      それ以降のパラメータはr0,r1,...の順番にReference0以降に格納される。</TD>
     </TR>
     <TR>
       <TD>C</TD>
       <TD>\q[<SPAN class="text_green">タイトル</SPAN>,<SPAN class="text_green">ID1</SPAN>,<SPAN class="text_green">ID2</SPAN>,<SPAN class="text_green">ID3...</SPAN>]</TD>
       <TD>選択肢を表示。<BR>
-      選択後、SIORIイベントOnChoiceSelectが開始される。<BR>
+      選択後、SHIORIイベントOnChoiceSelectが開始される。<BR>
       ID*はReference*に格納される。</TD>
     </TR>
     <TR>
-      <TD>-</TD>
+      <TD>S</TD>
       <TD>\q[<SPAN class="text_green">タイトル</SPAN>,script:<SPAN class="text_green">実行内容</SPAN>]</TD>
       <TD>選択肢を表示。<BR>
-      選択後、内容を実行する。</TD>
+      選択後、script:以下の内容をSakuraScriptとして実行する。</TD>
     </TR>
     <TR>
       <TD>-</TD>
       <TD>\q[<SPAN class="text_green">ID</SPAN>][<SPAN class="text_green">タイトル</SPAN>]</TD>
-      <TD>選択肢を表示。<BR>
-      選択後、ID番号のSIORIイベントが開始される。<BR>
+      <TD>選択肢を表示。[旧仕様]<BR>
+      選択後、ID番号のSHIORIイベントが開始される。<BR>
       上記のものとは違い選択肢は改行される。</TD>
     </TR>
     <TR>
       <TD>-</TD>
       <TD>\z</TD>
-      <TD>上記選択肢の範囲終了に付ける。</TD>
+      <TD>上記選択肢の範囲終了に付ける。[旧仕様]</TD>
     </TR>
     <TR>
       <TD>S</TD>
-      <TD>\__q[<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
+      <TD>\__q[<SPAN class="text_green">ID</SPAN>,...</SPAN>]</TD>
       <TD>\__qがくるまでの範囲を選択肢とする。<BR>
-      第2引数以降はreference。</TD>
+      ID以降の仕様は、Onやscript:で始まるものが特別扱いされるのも含めて\qと同じ。<BR>
+      Onで始まるIDを指定した場合のみ、ID以降のパラメータがそれぞれreferenceとして扱われる。</TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
@@ -635,7 +643,7 @@
       <TD>\_aがくるまでの範囲をジャンパとする。<BR>
       ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される。<BR>
       IDはReference0に格納される。<BR>
-      SSPのみ、IDでURLジャンプが可能。</TD>
+      SSPのみ、IDでURLジャンプが可能＋Onで始まるIDを特別扱いする処理が含まれる。</TD>
     </TR>
     <TR>
       <TH colspan="3"><A name="選択肢マーカー変更コマンド">選択肢マーカー変更コマンド</A></TH>
