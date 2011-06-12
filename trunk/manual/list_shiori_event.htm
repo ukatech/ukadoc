@@ -2442,6 +2442,17 @@
       <TD>選択結果（長方形枠）。カンマ区切りで、左,上,右,下の座標。</TD>
     </TR>
     <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnSelectModeCancel</TD>
+      <TD rowspan="2">\![leave,selectrect]を実行後に矩形選択モードが解除された際に、正常な選択がされていなかった場合に発生(まだ未選択・からっぽ領域など)。</TD>
+      <TD>Reference0</TD>
+      <TD>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>選択モード。今のところ "rect" のみ。</TD>
+    </TR>
+    <TR>
       <TD rowspan="3">S</TD>
       <TD rowspan="3">OnSelectModeMouseDown</TD>
       <TD rowspan="3">矩形選択モード中にマウスボタンが押された際に発生。</TD>
@@ -2470,6 +2481,55 @@
     <TR>
       <TD>Reference2</TD>
       <TD>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="3">S</TD>
+      <TD>OnPingComplete<BR>または<BR>--eventで指定ID</TD>
+      <TD>\![execute,ping]で指定回数のping実行完了時に発生。</TD>
+      <TD>Reference0</TD>
+      <TD>--eventで指定した文字列そのもの</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">OnPingProgress<BR>または<BR>--eventで指定ID+Progress</TD>
+      <TD rowspan="2">\![execute,ping]でping実行中に発生。</TD>
+      <TD>Reference1</TD>
+      <TD>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数<BR>
+      [\1]はバイト値1</TD>
+    </TR>
+    <TR>
+      <TD>Reference2以降</TD>
+      <TD>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms)<BR>
+      [\1]はバイト値1<BR>
+      Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<BR>
+      エラー情報は<A HREF="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</A>を参照。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="6">S</TD>
+      <TD rowspan="6">OnOtherSurfaceChange</TD>
+      <TD rowspan="6">他のゴーストのサーフェス(\sで指定する見た目)が変わった際に発生。<BR>
+      \![set,othersurfacechange,true|false]で設定(標準無効)</TD>
+      <TD>Reference0</TD>
+      <TD>ゴースト名</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>ゴーストSakura名</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>サーフェスが切り替わったウインドウID(Sakura=0)</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>新サーフェスID</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>旧サーフェスID</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>新しいサーフェスの大きさ(座標：左,上,右,下)</TD>
     </TR>
     <TR>
       <TD>S</TD>
