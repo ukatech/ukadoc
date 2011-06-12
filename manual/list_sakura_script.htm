@@ -1005,6 +1005,11 @@
       タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</TD>
     </TR>
     <TR>
+      <TD>S</TD>
+      <TD>\![set,othersurfacechange,<SPAN class="text_green">trueかfalse</SPAN>]</TD>
+      <TD>OnOtherSurfaceChangeを通知するかどうかを設定。通常無効。</TD>
+    </TR>
+    <TR>
       <TD>M,S,C</TD>
       <TD>\![raise,<SPAN class="text_green">イベント名</SPAN>,<SPAN class="text_green">r0</SPAN>,<SPAN class="text_green">r1</SPAN>,<SPAN class="text_green">r2...</SPAN>]</TD>
       <TD>イベントを実行する。<BR>
@@ -1421,6 +1426,22 @@
       feed、narは省略可能。</TD>
     </TR>
     <TR>
+      <TD>S</TD>
+      <TD>\![execute,ping,<SPAN class="text_green">パラメータ1</SPAN>,<SPAN class="text_green">パラメータ2</SPAN>,...]</TD>
+      <TD>指定したホストにpingを打つ。IPv6対応。<BR>
+      パラメータは以下の通り。<BR>
+      --host=ホスト名またはIP<BR>
+      --ttl=TTL(パケット生存期間(何回ルーティングできるか) 標準255<BR>
+      --count=送信回数 標準3<BR>
+      --size=送信サイズ(--data有効の時は--size無効) 標準32<BR>
+      --timeout=タイムアウト(ms) 標準5000<BR>
+      --df=(true|false) パケット分割不能true 分割可false 標準false<BR>
+      --data=文字列 ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)<BR>
+      --event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる<BR>
+      動作中・動作後のイベントに関する仕様はOnPingProgress・OnPingCompleteを参照。
+      </TD>
+    </TR>
+    <TR>
       <TD>M,S,C</TD>
       <TD>\![enter,passivemode]</TD>
       <TD>※PassiveModeを開始する。</TD>
@@ -1442,15 +1463,29 @@
     </TR>
     <TR>
       <TD>S</TD>
-      <TD>\![enter,selectmode,モード(rect)]</TD>
+      <TD>\![enter,selectmode,モード(rect),<SPAN class="text_green">左,上,右,下</SPAN>]<BR>
+      \![enter,selectmode,モード(rect),<SPAN class="text_green">当たり判定名</SPAN>]<BR>
+      \![enter,selectmode,モード(rect)]</TD>
       <TD>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<BR>
-      実行後、OnSelectModeBeginが実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDownも参照。<BR>
-      現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。</TD>
+      実行後、OnSelectModeBeginが実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<BR>
+      現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<BR>
+      モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</TD>
     </TR>
     <TR>
       <TD>S</TD>
       <TD>\![leave,selectmode]</TD>
-      <TD>上記を解除する。実行後OnSelectModeCompleteが実行される。</TD>
+      <TD>上記を解除する。実行後OnSelectModeCompleteが実行される。<BR>
+      当たり判定領域が無効(未選択)などの場合はOnSelectModeCancelになる。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![enter,collisionmode]<BR>\![enter,collisionmode,rect]</TD>
+      <TD>開発用パレットの「当たり判定を表示」と同じことをする。3つめにrectと指定すると、当たり判定名を表示せず領域の枠のみ表示する。</TD>
+    </TR>
+    <TR>
+      <TD>S</TD>
+      <TD>\![leave,collisionmode]</TD>
+      <TD>上記を解除する。</TD>
     </TR>
     <TR>
       <TD>M,S</TD>

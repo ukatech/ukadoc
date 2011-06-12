@@ -427,6 +427,7 @@
       <TD>animation<SPAN class="text_green">*</SPAN>.interval,タイミング定義</TD>
       <TD>アニメーションの開始タイミングの設定。<BR>
       タイミング定義は下記のアニメーションタイミング参照。<BR>
+      この定義がアニメーション定義の開始を示すものになるので、必ず最初に来るようにする。<BR>
       旧仕様：<SPAN class="text_green">*</SPAN>interval</TD>
     </TR>
     <TR>
@@ -458,6 +459,14 @@
       <TD>animation<SPAN class="text_green">*</SPAN>.option,<SPAN class="text_green">オプション</SPAN></TD>
       <TD>(exclusive|background)<BR>
       +区切りで複数オプション可。例：exclusive+background</TD>
+    </TR>
+    <TR>
+      <TD ROWSPAN="2">S</TD>
+      <TD>animation<SPAN class="text_green">*</SPAN>.collision<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">当たり判定定義</SPAN></TD>
+      <TD ROWSPAN="2">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。</TD>
+    </TR>
+    <TR>
+      <TD>animation<SPAN class="text_green">*</SPAN>.collisionex<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">当たり判定定義(ex)</SPAN></TD>
     </TR>
     <TR>
       <TD>M,S,C</TD>
