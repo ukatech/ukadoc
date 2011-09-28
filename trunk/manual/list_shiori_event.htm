@@ -2531,6 +2531,65 @@
       <TD>Reference5</TD>
       <TD>新しいサーフェスの大きさ(座標：左,上,右,下)</TD>
     </TR>
+    
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnOverlap</TD>
+      <TD rowspan="2">キャラクター（サーフィス）のウインドウが重なった時に発生。<BR>
+      重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</TD>
+      <TD>Reference0</TD>
+      <TD>ID-ID [\1] ID-ID [\1] ID-ID ...<BR>
+      [\1] はバイト値1<BR>
+      例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnOtherOverlap</TD>
+      <TD rowspan="2">他も含めて全起動中のキャラクター（サーフィス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<BR>
+      重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</TD>
+      <TD>Reference0</TD>
+      <TD>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<BR>
+      [\1] はバイト値1<BR>
+      例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</TD>
+    </TR>
+
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnOffscreen</TD>
+      <TD rowspan="2">キャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<BR>
+      見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</TD>
+      <TD>Reference0</TD>
+      <TD>ID [\1] ID [\1] ID ...<BR>
+      [\1] はバイト値1<BR>
+      例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</TD>
+    </TR>
+    <TR>
+      <TD rowspan="2">S</TD>
+      <TD rowspan="2">OnOtherOffscreen</TD>
+      <TD rowspan="2">キャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<BR>
+      見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</TD>
+      <TD>Reference0</TD>
+      <TD>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<BR>
+      [\1] はバイト値1<BR>
+      例：Emily/1 [\1] 所長たん/0</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</TD>
+    </TR>
+
     <TR>
       <TD>S</TD>
       <TD>inputbox.autocomplete</TD>
