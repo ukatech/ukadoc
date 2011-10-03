@@ -2593,6 +2593,54 @@
     </TR>
 
     <TR>
+      <TD rowspan="9">S</TD>
+      <TD rowspan="9">OnExecuteHTTPSSLInfo</TD>
+      <TD rowspan="9"\![execute,http-***]タグで実行した際に、取得先がhttps://だった時に、SSL/TLSの接続情報を通知する。<BR>
+      取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</TD>
+      <TD>Reference0</TD>
+      <TD>async ID (無ければからっぽ)</TD>
+    </TR>
+    <TR>
+      <TD>Reference1</TD>
+      <TD>取得URL</TD>
+    </TR>
+    <TR>
+      <TD>Reference2</TD>
+      <TD>httpレスポンスコード (エラーでも通知される)</TD>
+    </TR>
+    <TR>
+      <TD>Reference3</TD>
+      <TD>通信バージョン 今時はだいたい "TLSv1/SSLv3" (SSP内部でSSLv2は蹴るので実はこれだけしか来ない)</TD>
+    </TR>
+    <TR>
+      <TD>Reference4</TD>
+      <TD>暗号化方法<BR>
+      例：AES256-SHA</TD>
+    </TR>
+    <TR>
+      <TD>Reference5</TD>
+      <TD>発行先 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<BR>
+      プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<BR>
+      例：/1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</TD>
+    </TR>
+    <TR>
+      <TD>Reference6</TD>
+      <TD>有効期限開始日時 年,月,日,時,分,秒<BR>
+      例：2011,7,7,9,0,0</TD>
+    </TR>
+    <TR>
+      <TD>Reference7</TD>
+      <TD>有効期限終了日時 年,月,日,時,分,秒<BR>
+      例：2012,7,28,8,59,59</TD>
+    </TR>
+    <TR>
+      <TD>Reference8</TD>
+      <TD>発行者 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<BR>
+      プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<BR>
+      例：/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</TD>
+    </TR>
+
+    <TR>
       <TD>S</TD>
       <TD>inputbox.autocomplete</TD>
       <TD>
