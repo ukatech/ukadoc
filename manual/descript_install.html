@@ -1,187 +1,320 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-<META http-equiv="Content-Style-Type" content="text/css">
-<TITLE>Disc-2 Install�ݒ�</TITLE>
-<STYLE type="text/css">
-/*<![CDATA[*/
-a:link	{
-  color : #0000FF;
-}
-a:visited	{
-  color : #4040FF;
-}
-a:active	{
-  color : #FF0000;
-}
-a:hover	{
-  color : #FF0000;
-}
-BODY{
-  background-color : #FFFFFF;
-}
-TABLE{
-  background-color : #94A5F7;
-}
-TD{
-  background-color : #FFFFFF;
-}
-TH{
-  text-align : left;
-  color : white;
-}
-.text_bold{
-  font-weight : bold;
-}
-.text_green{
-  color : #009900;
-}
-.text_red{
-  color : #CC0000;
-}
-/*]]>*/
-</STYLE>
-</HEAD>
-<BODY><SPAN class="text_bold">Install�ݒ�</SPAN>
-<HR>
-<A href="./">��Index</A> <A href="descript_ghost.html">��Ghost</A> <A href="descript_shell.html">��Shell</A> <A href="descript_balloon.html">��Balloon</A> <A href="descript_install.html">��Install</A> <A href="list_sakura_script.htm">��SAKURA script</A> <A href="list_shiori_event.htm">��SHIORI Event</A> <A href="list_shiori_resource.htm">��SHIORI Resource</A> <BR>
-<TABLE width="100%">
-  <COL span="1" width="50">
-  <COL span="1" width="250">
-  <TBODY>
-    <TR>
-      <TH colspan="3">install.txt(�S�[�X�g�A�o���[���A�v���O�C���A�w�b�h���C���Z���T)</TH>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">�����R�[�h</SPAN></TD>
-      <TD>�\�����镶���R�[�h�BShift_JIS�����B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>name,<SPAN class="text_green">�I�u�W�F�N�g��</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">���</SPAN></TD>
-      <TD>�t�@�C���Z�b�g�̎�ʁB<BR>
-      �S�[�X�g�̏ꍇ��ghost�B<BR>
-      �o���[���̏ꍇ��balloon�B<BR>
-      �v���O�C���̏ꍇ��plugin�B<BR>
-      �w�b�h���C���Z���T�̏ꍇ��headline�B<BR>
-      �����p�b�P�[�W�̏ꍇ��package�B(SSP�̂�)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>directory,<SPAN class="text_green">�f�B���N�g����</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̃f�B���N�g�����B���p�p�������B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>refresh,<SPAN class="text_green">���l</SPAN></TD>
-      <TD>���l��1���Z�b�g����Ɠ����f�B���N�g���̃t�@�C����S�ď������Ă���C���X�g�[������B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>refreshundeletemask,<SPAN class="text_green">�t�@�C����1</SPAN>;<SPAN class="text_green">�t�@�C����2...</SPAN></TD>
-      <TD>refresh�̏������珜�O����t�@�C�����B<BR>
-      ��������ꍇ�̓R�����ŋ�؂�B</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">install.txt(�S�[�X�gwith�o���[��)</TH>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">�����R�[�h</SPAN></TD>
-      <TD>�\�����镶���R�[�h�BShift_JIS�����B</TD>
-    </TR>
-    <TR>
-      <TD height="16">M,S,C</TD>
-      <TD height="16">name,<SPAN class="text_green">�I�u�W�F�N�g��</SPAN></TD>
-      <TD height="16">���̃I�u�W�F�N�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">���</SPAN></TD>
-      <TD>�t�@�C���Z�b�g�̎�ʁB�S�[�X�g�̏ꍇ��ghost�B</TD>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>directory,<SPAN class="text_green">�f�B���N�g����</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̃S�[�X�g���̃f�B���N�g�����B���p�p�������B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>balloon.directory,<SPAN class="text_green">�f�B���N�g����</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̃o���[�����̃f�B���N�g�����B���p�p�������B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>refresh,<SPAN class="text_green">���l</SPAN></TD>
-      <TD>���l��1���Z�b�g����Ɠ����f�B���N�g���̃t�@�C����S�ď������Ă���C���X�g�[������B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>refreshundeletemask,<SPAN class="text_green">�t�@�C����1</SPAN>;<SPAN class="text_green">�t�@�C����2...</SPAN></TD>
-      <TD>refresh�̏������珜�O����t�@�C�����B<BR>
-      ��������ꍇ�̓R�����ŋ�؂�B</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">install.txt(�S�[�X�g�ւ̒ǉ��t�@�C��)</TH>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>name,<SPAN class="text_green">�I�u�W�F�N�g��</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">���</SPAN></TD>
-      <TD>�t�@�C���Z�b�g�̎�ʁB�ǉ��t�@�C���̏ꍇ��supplement�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>accept,<SPAN class="text_green">�S�[�X�g��</SPAN></TD>
-      <TD>�󂯎��S�[�X�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">�����R�[�h</SPAN></TD>
-      <TD>�\�����镶���R�[�h�BShift_JIS�����B</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">install.txt(�ǉ��V�F��)</TH>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">�����R�[�h</SPAN></TD>
-      <TD>�\�����镶���R�[�h�BShift_JIS�����B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>name,<SPAN class="text_green">�I�u�W�F�N�g��</SPAN></TD>
-      <TD>���̃I�u�W�F�N�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">���</SPAN></TD>
-      <TD>�t�@�C���Z�b�g�̎�ʁB�ǉ��V�F���̏ꍇ��shell�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>accept,<SPAN class="text_green">�S�[�X�g��</SPAN></TD>
-      <TD>�󂯎��S�[�X�g�̖��O�B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>directory,<SPAN class="text_green">�f�B���N�g����</SPAN></TD>
-      <TD>�V�F���̃f�B���N�g�����B���p�p�������B</TD>
-    </TR>
-  </TBODY>
-</TABLE>
-<BR>
-</BODY>
-</HTML>
-<!--nobanner-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Disc-2 Install設定</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Install設定</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+			<li><a href="./list_sakura_script.htm">SAKURA script</a></li>
+			<li><a href="./list_shiori_event.htm">SHIORI Event</a></li>
+			<li><a href="./list_shiori_resource.htm">SHIORI Resource</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Install</h1>
+		<section class="navigation-category">
+			<h1>install.txt(ゴースト、バルーン、プラグイン、ヘッドラインセンサ)</h1>
+			<ul>
+				<li><a href="#_1_charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#_1_name,オブジェクト名">name,オブジェクト名</a></li>
+				<li><a href="#_1_type,種別">type,種別</a></li>
+				<li><a href="#_1_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
+				<li><a href="#_1_refresh,数値">refresh,数値</a></li>
+				<li><a href="#_1_refreshundeletemask,ファイル名1;ファイル名2...">refreshundeletemask,ファイル名1;ファイル名2...</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>install.txt(ゴーストwithバルーン)</h1>
+			<ul>
+				<li><a href="#_2_charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#_2_name,オブジェクト名">name,オブジェクト名</a></li>
+				<li><a href="#_2_type,種別">type,種別</a></li>
+				<li><a href="#_2_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
+				<li><a href="#_2_balloon.directory,ディレクトリ名">balloon.directory,ディレクトリ名</a></li>
+				<li><a href="#_2_refresh,数値">refresh,数値</a></li>
+				<li><a href="#_2_refreshundeletemask,ファイル名1;ファイル名2...">refreshundeletemask,ファイル名1;ファイル名2...</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>install.txt(ゴーストへの追加ファイル)</h1>
+			<ul>
+				<li><a href="#_3_name,オブジェクト名">name,オブジェクト名</a></li>
+				<li><a href="#_3_type,種別">type,種別</a></li>
+				<li><a href="#_3_accept,ゴースト名">accept,ゴースト名</a></li>
+				<li><a href="#_3_charset,文字コード">charset,文字コード</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>install.txt(追加シェル)</h1>
+			<ul>
+				<li><a href="#_4_charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#_4_name,オブジェクト名">name,オブジェクト名</a></li>
+				<li><a href="#_4_type,種別">type,種別</a></li>
+				<li><a href="#_4_accept,ゴースト名">accept,ゴースト名</a></li>
+				<li><a href="#_4_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>install.txt(ゴースト、バルーン、プラグイン、ヘッドラインセンサ)</h1>
+			<dl id="_1_charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_name,オブジェクト名">
+				<dt class="entry">name,オブジェクト名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />複数パッケージの場合はpackage。(SSPのみ)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_directory,ディレクトリ名">
+				<dt class="entry">directory,ディレクトリ名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトのディレクトリ名。半角英数推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_refresh,数値">
+				<dt class="entry">refresh,数値</dt>
+				<dd class="entry">
+					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_refreshundeletemask,ファイル名1;ファイル名2...">
+				<dt class="entry">refreshundeletemask,ファイル名1;ファイル名2...</dt>
+				<dd class="entry">
+					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>install.txt(ゴーストwithバルーン)</h1>
+			<dl id="_2_charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_name,オブジェクト名">
+				<dt class="entry">name,オブジェクト名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。ゴーストの場合はghost。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_directory,ディレクトリ名">
+				<dt class="entry">directory,ディレクトリ名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトのゴースト側のディレクトリ名。半角英数推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_balloon.directory,ディレクトリ名">
+				<dt class="entry">balloon.directory,ディレクトリ名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトのバルーン側のディレクトリ名。半角英数推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_refresh,数値">
+				<dt class="entry">refresh,数値</dt>
+				<dd class="entry">
+					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_refreshundeletemask,ファイル名1;ファイル名2...">
+				<dt class="entry">refreshundeletemask,ファイル名1;ファイル名2...</dt>
+				<dd class="entry">
+					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>install.txt(ゴーストへの追加ファイル)</h1>
+			<dl id="_3_name,オブジェクト名">
+				<dt class="entry">name,オブジェクト名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_3_type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。追加ファイルの場合はsupplement。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_3_accept,ゴースト名">
+				<dt class="entry">accept,ゴースト名</dt>
+				<dd class="entry">
+					<p class="description">受け取るゴーストの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_3_charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>install.txt(追加シェル)</h1>
+			<dl id="_4_charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_4_name,オブジェクト名">
+				<dt class="entry">name,オブジェクト名</dt>
+				<dd class="entry">
+					<p class="description">そのオブジェクトの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_4_type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。追加シェルの場合はshell。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_4_accept,ゴースト名">
+				<dt class="entry">accept,ゴースト名</dt>
+				<dd class="entry">
+					<p class="description">受け取るゴーストの名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_4_directory,ディレクトリ名">
+				<dt class="entry">directory,ディレクトリ名</dt>
+				<dd class="entry">
+					<p class="description">シェルのディレクトリ名。半角英数推奨。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>

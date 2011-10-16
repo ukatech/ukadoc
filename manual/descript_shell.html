@@ -1,808 +1,1567 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-<META http-equiv="Content-Style-Type" content="text/css">
-<TITLE>Disc-2 Shellİ’è</TITLE>
-<STYLE type="text/css">
-/*<![CDATA[*/
-a:link	{
-  color : #0000FF;
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Disc-2 Shellè¨­å®š</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Shellè¨­å®š</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+			<li><a href="./list_sakura_script.htm">SAKURA script</a></li>
+			<li><a href="./list_shiori_event.htm">SHIORI Event</a></li>
+			<li><a href="./list_shiori_resource.htm">SHIORI Resource</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Shell</h1>
+		<section class="navigation-category">
+			<h1>descript.txt</h1>
+			<ul>
+				<li><a href="#name,ã‚·ã‚§ãƒ«å">name,ã‚·ã‚§ãƒ«å</a></li>
+				<li><a href="#type,ç¨®åˆ¥">type,ç¨®åˆ¥</a></li>
+				<li><a href="#craftman,ä½œè€…å">craftman,ä½œè€…å</a></li>
+				<li><a href="#craftmanw,ä½œè€…å">craftmanw,ä½œè€…å</a></li>
+				<li><a href="#id,IDå">id,IDå</a></li>
+				<li><a href="#charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰">charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰</a></li>
+				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
+				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+				<li><a href="#sakura.name,åå‰">sakura.name,åå‰</a></li>
+				<li><a href="#sakura.name2,åå‰">sakura.name2,åå‰</a></li>
+				<li><a href="#kero.name,åå‰">kero.name,åå‰</a></li>
+				<li><a href="#char*.name,åå‰">char*.name,åå‰</a></li>
+				<li><a href="#seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#sakura.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">sakura.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#kero.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">kero.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#char*.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">char*.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#sakura..defaultx,Xåº§æ¨™">sakura..defaultx,Xåº§æ¨™</a></li>
+				<li><a href="#kero..defaultx,Xåº§æ¨™">kero..defaultx,Xåº§æ¨™</a></li>
+				<li><a href="#char*..defaultx,Xåº§æ¨™">char*..defaultx,Xåº§æ¨™</a></li>
+				<li><a href="#sakura..defaulty,Yåº§æ¨™">sakura..defaulty,Yåº§æ¨™</a></li>
+				<li><a href="#kero..defaulty,Yåº§æ¨™">kero..defaulty,Yåº§æ¨™</a></li>
+				<li><a href="#char*..defaulty,Yåº§æ¨™">char*..defaulty,Yåº§æ¨™</a></li>
+				<li><a href="#sakura..defaulttop,Yåº§æ¨™">sakura..defaulttop,Yåº§æ¨™</a></li>
+				<li><a href="#kero..defaulttop,Yåº§æ¨™">kero..defaulttop,Yåº§æ¨™</a></li>
+				<li><a href="#char*..defaulttop,Yåº§æ¨™">char*..defaulttop,Yåº§æ¨™</a></li>
+				<li><a href="#_1_sakura.balloon.offsetx,åº§æ¨™">sakura.balloon.offsetx,åº§æ¨™</a></li>
+				<li><a href="#_1_sakura.balloon.offsety,åº§æ¨™">sakura.balloon.offsety,åº§æ¨™</a></li>
+				<li><a href="#_1_kero.balloon.offsetx,åº§æ¨™">kero.balloon.offsetx,åº§æ¨™</a></li>
+				<li><a href="#_1_kero.balloon.offsety,åº§æ¨™">kero.balloon.offsety,åº§æ¨™</a></li>
+				<li><a href="#sakura.balloon.alignment,ä½ç½®æƒ…å ±">sakura.balloon.alignment,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#kero.balloon.alignment,ä½ç½®æƒ…å ±">kero.balloon.alignment,ä½ç½®æƒ…å ±</a></li>
+				<li><a href="#readme,ãƒ•ã‚¡ã‚¤ãƒ«å">readme,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+				<li><a href="#menu.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">menu.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</a></li>
+				<li><a href="#menu.font.height,ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º">menu.font.height,ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</a></li>
+				<li><a href="#menu.background.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">menu.background.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+				<li><a href="#menu.foreground.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">menu.foreground.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+				<li><a href="#menu.sidebar.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">menu.sidebar.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+				<li><a href="#menu.background.font.color.r,æ•°å€¤">menu.background.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#menu.background.font.color.g,æ•°å€¤">menu.background.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#menu.background.font.color.b,æ•°å€¤">menu.background.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#menu.foreground.font.color.r,æ•°å€¤">menu.foreground.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#menu.foreground.font.color.g,æ•°å€¤">menu.foreground.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#menu.foreground.font.color.b,æ•°å€¤">menu.foreground.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#menu.separator.color.r,æ•°å€¤">menu.separator.color.r,æ•°å€¤</a></li>
+				<li><a href="#menu.separator.color.g,æ•°å€¤">menu.separator.color.g,æ•°å€¤</a></li>
+				<li><a href="#menu.separator.color.b,æ•°å€¤">menu.separator.color.b,æ•°å€¤</a></li>
+				<li><a href="#menu.disable.font.color.r">menu.disable.font.color.r</a></li>
+				<li><a href="#menu.disable.font.color.g">menu.disable.font.color.g</a></li>
+				<li><a href="#menu.disable.font.color.b">menu.disable.font.color.b</a></li>
+				<li><a href="#menu.background.alignment,ä½ç½®">menu.background.alignment,ä½ç½®</a></li>
+				<li><a href="#menu.foreground.alignment,ä½ç½®">menu.foreground.alignment,ä½ç½®</a></li>
+				<li><a href="#menu.sidebar.alignment,ä½ç½®">menu.sidebar.alignment,ä½ç½®</a></li>
+				<li><a href="#sakura.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">sakura.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</a></li>
+				<li><a href="#sakura.bindgroup*.default,æ•°å€¤">sakura.bindgroup*.default,æ•°å€¤</a></li>
+				<li><a href="#sakura.bindgroup*.addid,ID">sakura.bindgroup*.addid,ID</a></li>
+				<li><a href="#sakura.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">sakura.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</a></li>
+				<li><a href="#sakura.menuitem*,æ•°å€¤">sakura.menuitem*,æ•°å€¤</a></li>
+				<li><a href="#sakura.menu,auto">sakura.menu,auto</a></li>
+				<li><a href="#kero.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">kero.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</a></li>
+				<li><a href="#kero.bindgroup*.default,æ•°å€¤">kero.bindgroup*.default,æ•°å€¤</a></li>
+				<li><a href="#kero.bindgroup*.addid,ID">kero.bindgroup*.addid,ID</a></li>
+				<li><a href="#kero.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">kero.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</a></li>
+				<li><a href="#kero.menuitem*,æ•°å€¤">kero.menuitem*,æ•°å€¤</a></li>
+				<li><a href="#kero.menu,auto">kero.menu,auto</a></li>
+				<li><a href="#char*.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">char*.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</a></li>
+				<li><a href="#char*.bindgroup*.default,æ•°å€¤">char*.bindgroup*.default,æ•°å€¤</a></li>
+				<li><a href="#char*.bindgroup*.addid,ID">char*.bindgroup*.addid,ID</a></li>
+				<li><a href="#char*.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">char*.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</a></li>
+				<li><a href="#char*.menuitem*,æ•°å€¤">char*.menuitem*,æ•°å€¤</a></li>
+				<li><a href="#char*.menu,auto">char*.menu,auto</a></li>
+				<li><a href="#seriko.paint_transparent_region_black,æ•°å€¤">seriko.paint_transparent_region_black,æ•°å€¤</a></li>
+				<li><a href="#seriko.use_self_alpha,æ•°å€¤">seriko.use_self_alpha,æ•°å€¤</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>surfaces.txt(ã‚µãƒ¼ãƒ•ã‚£ã‚¹ãƒ–ãƒ¬ã‚¹å†…) / surfaces2.txt(SSPã®ã¿)</h1>
+			<ul>
+				<li><a href="#element*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ãƒ•ã‚¡ã‚¤ãƒ«å,Xåº§æ¨™,Yåº§æ¨™">element*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ãƒ•ã‚¡ã‚¤ãƒ«å,Xåº§æ¨™,Yåº§æ¨™</a></li>
+				<li><a href="#animation*.interval,ã‚¿ã‚¤ãƒŸãƒ³ã‚°å®šç¾©">animation*.interval,ã‚¿ã‚¤ãƒŸãƒ³ã‚°å®šç¾©</a></li>
+				<li><a href="#animation*.pattern*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·,ã‚¦ã‚¨ã‚¤ãƒˆ,Xåº§æ¨™,Yåº§æ¨™">animation*.pattern*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·,ã‚¦ã‚¨ã‚¤ãƒˆ,Xåº§æ¨™,Yåº§æ¨™</a></li>
+				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
+				<li><a href="#animation*.option,background">animation*.option,background</a></li>
+				<li><a href="#animation*.option,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">animation*.option,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</a></li>
+				<li><a href="#animation*.collision*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©animation*.collisionex*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©(ex)">animation*.collision*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©animation*.collisionex*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©(ex)</a></li>
+				<li><a href="#collision*,å§‹ç‚¹X,å§‹ç‚¹Y,çµ‚ç‚¹X,çµ‚ç‚¹Y,ID">collision*,å§‹ç‚¹X,å§‹ç‚¹Y,çµ‚ç‚¹X,çµ‚ç‚¹Y,ID</a></li>
+				<li><a href="#collisionex,ID,ã‚¿ã‚¤ãƒ—,åº§æ¨™1,åº§æ¨™2...">collisionex,ID,ã‚¿ã‚¤ãƒ—,åº§æ¨™1,åº§æ¨™2...</a></li>
+				<li><a href="#_2_sakura.balloon.offsetx,åº§æ¨™">sakura.balloon.offsetx,åº§æ¨™</a></li>
+				<li><a href="#_2_sakura.balloon.offsety,åº§æ¨™">sakura.balloon.offsety,åº§æ¨™</a></li>
+				<li><a href="#_2_kero.balloon.offsetx,åº§æ¨™">kero.balloon.offsetx,åº§æ¨™</a></li>
+				<li><a href="#_2_kero.balloon.offsety,åº§æ¨™">kero.balloon.offsety,åº§æ¨™</a></li>
+				<li><a href="#point.centerx,åº§æ¨™">point.centerx,åº§æ¨™</a></li>
+				<li><a href="#point.centery,åº§æ¨™">point.centery,åº§æ¨™</a></li>
+				<li><a href="#point.kinoko.centerx,åº§æ¨™">point.kinoko.centerx,åº§æ¨™</a></li>
+				<li><a href="#point.kinoko.centery,åº§æ¨™">point.kinoko.centery,åº§æ¨™</a></li>
+				<li><a href="#point.basepos.x,åº§æ¨™">point.basepos.x,åº§æ¨™</a></li>
+				<li><a href="#point.basepos.y,åº§æ¨™">point.basepos.y,åº§æ¨™</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°(SERIKO)</h1>
+			<ul>
+				<li><a href="#sometimes">sometimes</a></li>
+				<li><a href="#rarely">rarely</a></li>
+				<li><a href="#random,æ•°å€¤">random,æ•°å€¤</a></li>
+				<li><a href="#periodic,æ•°å€¤">periodic,æ•°å€¤</a></li>
+				<li><a href="#always">always</a></li>
+				<li><a href="#runonce">runonce</a></li>
+				<li><a href="#never">never</a></li>
+				<li><a href="#yen-e">yen-e</a></li>
+				<li><a href="#talk,æ•°å€¤">talk,æ•°å€¤</a></li>
+				<li><a href="#_1_bind">bind</a></li>
+				<li><a href="#bind+ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°">bind+ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³(SERIKO)</h1>
+			<ul>
+				<li><a href="#base">base</a></li>
+				<li><a href="#overlay">overlay</a></li>
+				<li><a href="#overlayfast">overlayfast</a></li>
+				<li><a href="#replace">replace</a></li>
+				<li><a href="#asis">asis</a></li>
+				<li><a href="#move">move</a></li>
+				<li><a href="#_2_bind">bind</a></li>
+				<li><a href="#add">add</a></li>
+				<li><a href="#reduce">reduce</a></li>
+				<li><a href="#insert">insert</a></li>
+				<li><a href="#start,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID_">start,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID]</a></li>
+				<li><a href="#stop,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID_">stop,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID]</a></li>
+				<li><a href="#alternativestart,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2..._">alternativestart,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2...]</a></li>
+				<li><a href="#alternativestop,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2..._">alternativestop,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2...]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>surfaces.txt(ã‚«ãƒ¼ã‚½ãƒ«ãƒ–ãƒ¬ã‚¹å†…)</h1>
+			<ul>
+				<li><a href="#mouseup*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å">mouseup*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+				<li><a href="#mousedown*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å">mousedown*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ã‚·ã‚¹ãƒ†ãƒ ã‚«ãƒ¼ã‚½ãƒ«</h1>
+			<ul>
+				<li><a href="#system:arrow">system:arrow</a></li>
+				<li><a href="#system:cross">system:cross</a></li>
+				<li><a href="#system:no">system:no</a></li>
+				<li><a href="#system:hand">system:hand</a></li>
+				<li><a href="#system:grip">system:grip</a></li>
+				<li><a href="#system:finger">system:finger</a></li>
+				<li><a href="#system:wait">system:wait</a></li>
+				<li><a href="#system:text">system:text</a></li>
+				<li><a href="#system:move">system:move</a></li>
+				<li><a href="#system:help">system:help</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>surfaces.txt(ãƒ„ãƒ¼ãƒ«ãƒãƒƒãƒ—ãƒ–ãƒ¬ã‚¹å†…)</h1>
+			<ul>
+				<li><a href="#å½“ãŸã‚Šåˆ¤å®šå,è¡¨ç¤ºå†…å®¹">å½“ãŸã‚Šåˆ¤å®šå,è¡¨ç¤ºå†…å®¹</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>descript.txt</h1>
+			<dl id="name,ã‚·ã‚§ãƒ«å">
+				<dt class="entry">name,ã‚·ã‚§ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚·ã‚§ãƒ«ã®åå‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="type,ç¨®åˆ¥">
+				<dt class="entry">type,ç¨®åˆ¥</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚¡ã‚¤ãƒ«ã‚»ãƒƒãƒˆã®ç¨®åˆ¥ã€‚ã‚·ã‚§ãƒ«ã®å ´åˆã¯shellã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftman,ä½œè€…å">
+				<dt class="entry">craftman,ä½œè€…å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚·ã‚§ãƒ«ã®ä½œè€…åã€‚åŠè§’è‹±æ•°ã®ã¿ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw,ä½œè€…å">
+				<dt class="entry">craftmanw,ä½œè€…å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚·ã‚§ãƒ«ã®ä½œè€…åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="id,IDå">
+				<dt class="entry">id,IDå</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚·ã‚§ãƒ«ã®IDåã€‚åŠè§’è‹±æ•°ã®ã¿ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰">
+				<dt class="entry">charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">è¡¨ç¤ºã™ã‚‹æ–‡å­—ã‚³ãƒ¼ãƒ‰ã€‚Shift_JISæ¨å¥¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanurl,URL">
+				<dt class="entry">craftmanurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ä½œè€…ã®URLã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="homeurl,URL">
+				<dt class="entry">homeurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯æ›´æ–°ç”¨ã®URLã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.name,åå‰">
+				<dt class="entry">sakura.name,åå‰</dt>
+				<dd class="entry">
+					<p class="description">æœ¬é¡Œå´ã®ã‚´ãƒ¼ã‚¹ãƒˆã®åå‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.name2,åå‰">
+				<dt class="entry">sakura.name2,åå‰</dt>
+				<dd class="entry">
+					<p class="description">æœ¬é¡Œå´ã®ã‚´ãƒ¼ã‚¹ãƒˆã®åå‰ã€‚æ„›ç§°ç­‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.name,åå‰">
+				<dt class="entry">kero.name,åå‰</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ã®ã‚´ãƒ¼ã‚¹ãƒˆã®åå‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.name,åå‰">
+				<dt class="entry">char*.name,åå‰</dt>
+				<dd class="entry">
+					<p class="description">\p[*]ã®åå‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">
+				<dt class="entry">seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»å…¨ä½“ã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤ºä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">
+				<dt class="entry">sakura.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»æœ¬ä½“å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤ºä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">
+				<dt class="entry">kero.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»ç›¸æ–¹å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤ºä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±">
+				<dt class="entry">char*.seriko.alignmenttodesktop,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»2äººç›®ä»¥é™ã®ç›¸æ–¹å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆè¡¨ç¤ºä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura..defaultx,Xåº§æ¨™">
+				<dt class="entry">sakura..defaultx,Xåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">æœ¬ä½“å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Xåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸­å¤®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero..defaultx,Xåº§æ¨™">
+				<dt class="entry">kero..defaultx,Xåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Xåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸­å¤®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*..defaultx,Xåº§æ¨™">
+				<dt class="entry">char*..defaultx,Xåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">2äººç›®ä»¥é™ã®ç›¸æ–¹å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Xåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸­å¤®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura..defaulty,Yåº§æ¨™">
+				<dt class="entry">sakura..defaulty,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">æœ¬ä½“å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Yåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸‹ç«¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero..defaulty,Yåº§æ¨™">
+				<dt class="entry">kero..defaulty,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Yåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸‹ç«¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*..defaulty,Yåº§æ¨™">
+				<dt class="entry">char*..defaulty,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">2äººç›®ä»¥é™ã®ç›¸æ–¹å´ã®ç”»åƒãƒ™ãƒ¼ã‚¹Yåº§æ¨™ä½ç½®ã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ç”»åƒä¸‹ç«¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura..defaulttop,Yåº§æ¨™">
+				<dt class="entry">sakura..defaulttop,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">æœ¬ä½“å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆYåº§æ¨™ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero..defaulttop,Yåº§æ¨™">
+				<dt class="entry">kero..defaulttop,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆYåº§æ¨™ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*..defaulttop,Yåº§æ¨™">
+				<dt class="entry">char*..defaulttop,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">2äººç›®ä»¥é™ã®ç›¸æ–¹å´ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆYåº§æ¨™ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_sakura.balloon.offsetx,åº§æ¨™">
+				<dt class="entry">sakura.balloon.offsetx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">æœ¬ä½“å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_sakura.balloon.offsety,åº§æ¨™">
+				<dt class="entry">sakura.balloon.offsety,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">æœ¬ä½“å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_kero.balloon.offsetx,åº§æ¨™">
+				<dt class="entry">kero.balloon.offsetx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_kero.balloon.offsety,åº§æ¨™">
+				<dt class="entry">kero.balloon.offsety,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ç›¸æ–¹å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.balloon.alignment,ä½ç½®æƒ…å ±">
+				<dt class="entry">sakura.balloon.alignment,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»æœ¬ä½“å´ã®å¹ãå‡ºã—ã®ä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.balloon.alignment,ä½ç½®æƒ…å ±">
+				<dt class="entry">kero.balloon.alignment,ä½ç½®æƒ…å ±</dt>
+				<dd class="entry">
+					<p class="description">â€»ç›¸æ–¹å´ã®å¹ãå‡ºã—ã®ä½ç½®æƒ…å ±ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="readme,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">readme,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">Read Me!ãƒœã‚¿ãƒ³ã§é–‹ã‹ã‚Œã‚‹ã‚·ã‚§ãƒ«ã®èª¬æ˜ãƒ†ã‚­ã‚¹ãƒˆãƒ•ã‚¡ã‚¤ãƒ«åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">
+				<dt class="entry">menu.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.font.height,ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º">
+				<dt class="entry">menu.font.height,ãƒ•ã‚©ãƒ³ãƒˆã‚µã‚¤ã‚º</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒãƒ—ã‚¢ãƒƒãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«ä½¿ç”¨ã™ã‚‹æ–‡å­—ã®å¤§ãã•ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.background.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">menu.background.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰è¡¨ç¤ºç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.foreground.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">menu.foreground.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰è¡¨ç¤ºç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.sidebar.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">menu.sidebar.bitmap.filename,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ã‚µã‚¤ãƒ‰ãƒãƒ¼è¡¨ç¤ºç”»åƒãƒ•ã‚¡ã‚¤ãƒ«åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.background.font.color.r,æ•°å€¤">
+				<dt class="entry">menu.background.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.background.font.color.g,æ•°å€¤">
+				<dt class="entry">menu.background.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.background.font.color.b,æ•°å€¤">
+				<dt class="entry">menu.background.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.foreground.font.color.r,æ•°å€¤">
+				<dt class="entry">menu.foreground.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.foreground.font.color.g,æ•°å€¤">
+				<dt class="entry">menu.foreground.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.foreground.font.color.b,æ•°å€¤">
+				<dt class="entry">menu.foreground.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰æ–‡å­—è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.separator.color.r,æ•°å€¤">
+				<dt class="entry">menu.separator.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.separator.color.g,æ•°å€¤">
+				<dt class="entry">menu.separator.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.separator.color.b,æ•°å€¤">
+				<dt class="entry">menu.separator.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚»ãƒ‘ãƒ¬ãƒ¼ã‚¿è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.disable.font.color.r">
+				<dt class="entry">menu.disable.font.color.r</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸å¯æ–‡å­—è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.disable.font.color.g">
+				<dt class="entry">menu.disable.font.color.g</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸å¯æ–‡å­—è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.disable.font.color.b">
+				<dt class="entry">menu.disable.font.color.b</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸å¯æ–‡å­—è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.background.alignment,ä½ç½®">
+				<dt class="entry">menu.background.alignment,ä½ç½®</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒã‚¯ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ç”»åƒã‚’righttopã§å³å¯„ã›ã€lefttopã§å·¦å¯„ã›ã€centertopã§ä¸­å¤®å¯„ã›ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.foreground.alignment,ä½ç½®">
+				<dt class="entry">menu.foreground.alignment,ä½ç½®</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ã‚¢ã‚°ãƒ©ã‚¦ãƒ³ãƒ‰ç”»åƒã‚’righttopã§å³å¯„ã›ã€lefttopã§å·¦å¯„ã›ã€centertopã§ä¸­å¤®å¯„ã›ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="menu.sidebar.alignment,ä½ç½®">
+				<dt class="entry">menu.sidebar.alignment,ä½ç½®</dt>
+				<dd class="entry">
+					<p class="description">ã‚µã‚¤ãƒ‰ãƒãƒ¼ç”»åƒã‚’topã§ä¸Šå¯„ã›ã€bottomã§ä¸‹å¯„ã›ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">
+				<dt class="entry">sakura.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒ‘ãƒ¼ãƒ„ã‚’ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç€ã›æ›¿ãˆã«è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.bindgroup*.default,æ•°å€¤">
+				<dt class="entry">sakura.bindgroup*.default,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯æœ€åˆã‹ã‚‰ãã®ãƒ‘ãƒ¼ãƒ„ã‚’è¡¨ç¤ºã€‚(æœ¬ä½“å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.bindgroup*.addid,ID">
+				<dt class="entry">sakura.bindgroup*.addid,ID</dt>
+				<dd class="entry">
+					<p class="description">IDã®ãƒ‘ãƒ¼ãƒ„ã‚’æœ€åˆã‹ã‚‰è¡¨ç¤ºã€ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚(æœ¬ä½“å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">
+				<dt class="entry">sakura.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</dt>
+				<dd class="entry">
+					<p class="description">ãã®ç€ã›æ›¿ãˆã‚«ãƒ†ã‚´ãƒªã«ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã€‚(æœ¬ä½“å´)<br />mustselectã§ãƒ‘ãƒ¼ãƒ„ã‚’å¿…ãš1ã¤é¸æŠã€multipleã§è¤‡æ•°ã®ãƒ‘ãƒ¼ãƒ„ã‚’é¸æŠå¯èƒ½ã€‚<br />ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯+åŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.menuitem*,æ•°å€¤">
+				<dt class="entry">sakura.menuitem*,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ã®ãƒ‘ãƒ¼ãƒ„ã‹ã‚‰é †ã«ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã€‚(æœ¬ä½“å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.menu,auto">
+				<dt class="entry">sakura.menu,auto</dt>
+				<dd class="entry">
+					<p class="description">ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è‡ªå‹•ã§è¡¨ç¤ºã€‚(æœ¬ä½“å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">
+				<dt class="entry">kero.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒ‘ãƒ¼ãƒ„ã‚’ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç€ã›æ›¿ãˆã«è¡¨ç¤ºã€‚(ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.bindgroup*.default,æ•°å€¤">
+				<dt class="entry">kero.bindgroup*.default,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯æœ€åˆã‹ã‚‰ãã®ãƒ‘ãƒ¼ãƒ„ã‚’è¡¨ç¤ºã€‚(ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.bindgroup*.addid,ID">
+				<dt class="entry">kero.bindgroup*.addid,ID</dt>
+				<dd class="entry">
+					<p class="description">IDã®ãƒ‘ãƒ¼ãƒ„ã‚’æœ€åˆã‹ã‚‰è¡¨ç¤ºã€ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚(ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">
+				<dt class="entry">kero.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</dt>
+				<dd class="entry">
+					<p class="description">ãã®ç€ã›æ›¿ãˆã‚«ãƒ†ã‚´ãƒªã«ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã€‚(ç›¸æ–¹å´)<br />mustselectã§ãƒ‘ãƒ¼ãƒ„ã‚’å¿…ãš1ã¤é¸æŠã€multipleã§è¤‡æ•°ã®ãƒ‘ãƒ¼ãƒ„ã‚’é¸æŠå¯èƒ½ã€‚<br />ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯+åŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.menuitem*,æ•°å€¤">
+				<dt class="entry">kero.menuitem*,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ã®ãƒ‘ãƒ¼ãƒ„ã‹ã‚‰é †ã«ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã€‚(ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.menu,auto">
+				<dt class="entry">kero.menu,auto</dt>
+				<dd class="entry">
+					<p class="description">ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è‡ªå‹•ã§è¡¨ç¤ºã€‚(ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å">
+				<dt class="entry">char*.bindgroup*.name,ã‚«ãƒ†ã‚´ãƒªå,ãƒ‘ãƒ¼ãƒ„å,ã‚µãƒ ãƒã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒ‘ãƒ¼ãƒ„ã‚’ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ç€ã›æ›¿ãˆã«è¡¨ç¤ºã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.bindgroup*.default,æ•°å€¤">
+				<dt class="entry">char*.bindgroup*.default,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯æœ€åˆã‹ã‚‰ãã®ãƒ‘ãƒ¼ãƒ„ã‚’è¡¨ç¤ºã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.bindgroup*.addid,ID">
+				<dt class="entry">char*.bindgroup*.addid,ID</dt>
+				<dd class="entry">
+					<p class="description">IDã®ãƒ‘ãƒ¼ãƒ„ã‚’æœ€åˆã‹ã‚‰è¡¨ç¤ºã€ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">
+				<dt class="entry">char*.bindoption*.group,ã‚°ãƒ«ãƒ¼ãƒ—å,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</dt>
+				<dd class="entry">
+					<p class="description">ãã®ç€ã›æ›¿ãˆã‚«ãƒ†ã‚´ãƒªã«ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã‚’è¨­å®šã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)<br />mustselectã§ãƒ‘ãƒ¼ãƒ„ã‚’å¿…ãš1ã¤é¸æŠã€multipleã§è¤‡æ•°ã®ãƒ‘ãƒ¼ãƒ„ã‚’é¸æŠå¯èƒ½ã€‚<br />ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã¯+åŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.menuitem*,æ•°å€¤">
+				<dt class="entry">char*.menuitem*,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ã®ãƒ‘ãƒ¼ãƒ„ã‹ã‚‰é †ã«ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è¡¨ç¤ºã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.menu,auto">
+				<dt class="entry">char*.menu,auto</dt>
+				<dd class="entry">
+					<p class="description">ç€ã›æ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’è‡ªå‹•ã§è¡¨ç¤ºã€‚(2äººç›®ä»¥é™ã®ç›¸æ–¹å´)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="seriko.paint_transparent_region_black,æ•°å€¤">
+				<dt class="entry">seriko.paint_transparent_region_black,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯PNAã§é€éã—ãŸéš›ã€èƒŒæ™¯è‰²ã‚’é»’ã§è¡¨ç¤ºã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="seriko.use_self_alpha,æ•°å€¤">
+				<dt class="entry">seriko.use_self_alpha,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯PNAã®ä»£ã‚ã‚Šã«32bitPNGã®ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒ³ãƒãƒ«ã‚’ä½¿ç”¨ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>â€»ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä½ç½®æƒ…å ±</h1>
+				<dl>
+					<dt>top</dt>
+					<dd>ä¸Šéƒ¨ã«è²¼ã‚Šä»˜ãè¡¨ç¤ºã€‚</dd>
+					<dt>bottom</dt>
+					<dd>ä¸‹éƒ¨ã«è²¼ã‚Šä»˜ãè¡¨ç¤ºã€‚</dd>
+					<dt>free</dt>
+					<dd>è‡ªç”±ç§»å‹•ã€‚</dd>
+				</dl>
+			</section>
+			<section class="caption">
+				<h1>â€»å¹ãå‡ºã—ã®ä½ç½®æƒ…å ±</h1>
+				<dl>
+					<dt>none</dt>
+					<dd>è‡ªå‹•èª¿æ•´ã€shellã®Yåº§æ¨™ãŒç”»é¢ä¸­å¤®ã‚ˆã‚Šå·¦ãªã‚‰å³ã€å³ãªã‚‰å·¦ã«è¡¨ç¤ºã€‚</dd>
+					<dt>left</dt>
+					<dd>å¸¸ã«å·¦ã«è¡¨ç¤ºã€‚</dd>
+					<dt>right</dt>
+					<dd>å¸¸ã«å³ã«è¡¨ç¤ºã€‚</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>surfaces.txt(ã‚µãƒ¼ãƒ•ã‚£ã‚¹ãƒ–ãƒ¬ã‚¹å†…) / surfaces2.txt(SSPã®ã¿)</h1>
+			<div class="caption">
+<pre><code>surface*
+{
+ã“ã“ã«è¨˜è¿°
 }
-a:visited	{
-  color : #4040FF;
+</code></pre>
+				<p>â€»SSPã®ã¿ è¿½åŠ æŒ‡å®šï¼ˆã™ã§ã«å®šç¾©æ¸ˆã¿ã®ã‚‚ã®ã«å¯¾ã—ã¦ã•ã‚‰ã«å®šç¾©ã‚’å¾Œä»˜ã‘ã™ã‚‹ï¼‰</p>
+<pre><code>surface.append*
+{
+ã“ã“ã«è¨˜è¿°
 }
-a:active	{
-  color : #FF0000;
+</code></pre>
+				<p>*éƒ¨åˆ†ã«ã¯æ•°å€¤(ID)ã‚’æŒ‡å®šã™ã‚‹ã€‚0,1,5ã®ã‚ˆã†ã«ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã§è¤‡æ•°å¯ã€‚<br />SSPã®ã¿ï¼š1-9ã®ã‚ˆã†ã«ç¯„å›²æŒ‡å®šã‚‚å¯ã€‚ã‚«ãƒ³ãƒåŒºåˆ‡ã‚Šã¨åˆã‚ã›ã¦1-9,20-29ã®ã‚ˆã†ãªæŒ‡å®šã‚‚å¯ã€‚</p>
+				<p>ã“ã‚Œä»¥é™ã®å„å®šç¾©ã®*ã«ã¯ã€å„ãƒ–ãƒ¬ã‚¹ï¼ˆä¸­æ‹¬å¼§ã®å†…å´ï¼‰å†…ã§ãƒ€ãƒ–ã‚‰ãªã„æ•°å€¤ã‚’æŒ‡å®šã™ã‚‹ã€‚<br />ã“ã®æ•°å€¤ãŒSakuraScriptå´ãªã©ã‹ã‚‰ã®æ“ä½œç”¨IDã«ãªã‚‹ã€‚</p>
+			</div>
+			<dl id="element*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ãƒ•ã‚¡ã‚¤ãƒ«å,Xåº§æ¨™,Yåº§æ¨™">
+				<dt class="entry">element*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ãƒ•ã‚¡ã‚¤ãƒ«å,Xåº§æ¨™,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®è¨­å®šã€‚<br />åŠ ç®—ã—ãŸã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³ã¯ã“ã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹å†…ã§1æšã®ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹æ‰±ã„ã«ãªã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.interval,ã‚¿ã‚¤ãƒŸãƒ³ã‚°å®šç¾©">
+				<dt class="entry">animation*.interval,ã‚¿ã‚¤ãƒŸãƒ³ã‚°å®šç¾©</dt>
+				<dd class="entry">
+					<p class="description">ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®é–‹å§‹ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã®è¨­å®šã€‚<br />ã‚¿ã‚¤ãƒŸãƒ³ã‚°å®šç¾©ã¯ä¸‹è¨˜ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°å‚ç…§ã€‚<br />ã“ã®å®šç¾©ãŒã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å®šç¾©ã®é–‹å§‹ã‚’ç¤ºã™ã‚‚ã®ã«ãªã‚‹ã®ã§ã€å¿…ãšæœ€åˆã«æ¥ã‚‹ã‚ˆã†ã«ã™ã‚‹ã€‚<br />æ—§ä»•æ§˜ï¼š<SPAN class="text_green">*</SPAN>interval</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.pattern*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·,ã‚¦ã‚¨ã‚¤ãƒˆ,Xåº§æ¨™,Yåº§æ¨™">
+				<dt class="entry">animation*.pattern*,ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©,ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·,ã‚¦ã‚¨ã‚¤ãƒˆ,Xåº§æ¨™,Yåº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">intervalã§è¨­å®šã—ãŸã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ç™ºå‹•ã™ã‚‹ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³ã®è¨­å®šã€‚<br />ãƒ‘ã‚¿ãƒ¼ãƒ³å®šç¾©ã¯ä¸‹è¨˜ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³å‚ç…§ã€‚<br />ã‚¦ã‚¨ã‚¤ãƒˆã®éƒ¨åˆ†ã«ã¯ã€Œæœ€å°ã‚¦ã‚¨ã‚¤ãƒˆ-æœ€å¤§ã‚¦ã‚¨ã‚¤ãƒˆã€ã¨ãƒã‚¤ãƒŠã‚¹æ–‡å­—ã§åŒºåˆ‡ã£ãŸæ›¸ãæ–¹ã‚‚ã§ãã€ãã®å ´åˆã¯æœ€å°ï½æœ€å¤§é–“ã§ãƒ©ãƒ³ãƒ€ãƒ ã«é¸æŠã•ã‚Œã‚‹(SSPã®ã¿)ã€‚<br />æ—§ä»•æ§˜ï¼š<SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.option,exclusive">
+				<dt class="entry">animation*.option,exclusive</dt>
+				<dd class="entry">
+					<p class="description">ã“ã‚ŒãŒå®šç¾©ã•ã‚ŒãŸã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã¯ä»–ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®å½±éŸ¿ã‚’å—ã‘ãªã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.option,background">
+				<dt class="entry">animation*.option,background</dt>
+				<dd class="entry">
+					<p class="description">ã“ã‚ŒãŒå®šç¾©ã•ã‚ŒãŸã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã¯ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚ˆã‚Šè£ã«è¡¨ç¤ºã•ã‚Œã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.option,ã‚ªãƒ—ã‚·ãƒ§ãƒ³">
+				<dt class="entry">animation*.option,ã‚ªãƒ—ã‚·ãƒ§ãƒ³</dt>
+				<dd class="entry">
+					<p class="description">(exclusive|background)<br />+åŒºåˆ‡ã‚Šã§è¤‡æ•°ã‚ªãƒ—ã‚·ãƒ§ãƒ³å¯ã€‚ä¾‹ï¼šexclusive+background</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.collision*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©animation*.collisionex*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©(ex)">
+				<dt class="entry">animation*.collision*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©<br />animation*.collisionex*,å½“ãŸã‚Šåˆ¤å®šå®šç¾©(ex)</dt>
+				<dd class="entry">
+					<p class="description">ä»¥ä¸‹ã®å½“ãŸã‚Šåˆ¤å®šå®šç¾©ã¨åŒã˜ã‚‚ã®ã‚’å¾Œã‚ã«æ›¸ãã“ã¨ã§ã€ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³å‹•ä½œä¸­ã«ã®ã¿æœ‰åŠ¹ãªå½“ãŸã‚Šåˆ¤å®šãŒæ›¸ã‘ã‚‹ã‚ˆã†ã«ãªã‚‹ã€‚ã‚¿ã‚¤ãƒŸãƒ³ã‚°bindã«ã‚‚æœ‰åŠ¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="collision*,å§‹ç‚¹X,å§‹ç‚¹Y,çµ‚ç‚¹X,çµ‚ç‚¹Y,ID">
+				<dt class="entry">collision*,å§‹ç‚¹X,å§‹ç‚¹Y,çµ‚ç‚¹X,çµ‚ç‚¹Y,ID</dt>
+				<dd class="entry">
+					<p class="description">å½“ãŸã‚Šåˆ¤å®šã€‚å›²ã¾ã‚ŒãŸç¯„å›²ãŒIDã®é ˜åŸŸã¨ãªã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="collisionex,ID,ã‚¿ã‚¤ãƒ—,åº§æ¨™1,åº§æ¨™2...">
+				<dt class="entry">collisionex,ID,ã‚¿ã‚¤ãƒ—,åº§æ¨™1,åº§æ¨™2...</dt>
+				<dd class="entry">
+					<p class="description">ä¸å®šå½¢å½“ãŸã‚Šåˆ¤å®šã€‚<br />ã‚¿ã‚¤ãƒ—ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚<br />rect é•·æ–¹å½¢ã€‚åº§æ¨™ã¯å§‹ç‚¹XYã¨çµ‚ç‚¹XYã®4ã¤ã€‚<br />ellipse æ¥•å††ã€‚åº§æ¨™ã¯æ¥•å††ã‚’å›²ã‚€é•·æ–¹å½¢ã€å§‹ç‚¹XYã¨çµ‚ç‚¹XYã®4ã¤ã€‚<br />polygon å¤šè§’å½¢ã€‚åº§æ¨™ã¯å„é ‚ç‚¹ã€äº¤å·®å¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_sakura.balloon.offsetx,åº§æ¨™">
+				<dt class="entry">sakura.balloon.offsetx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã§ã®ã¿ã®æœ¬ä½“å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_sakura.balloon.offsety,åº§æ¨™">
+				<dt class="entry">sakura.balloon.offsety,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã§ã®ã¿ã®æœ¬ä½“å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_kero.balloon.offsetx,åº§æ¨™">
+				<dt class="entry">kero.balloon.offsetx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã§ã®ã¿ã®ç›¸æ–¹å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_kero.balloon.offsety,åº§æ¨™">
+				<dt class="entry">kero.balloon.offsety,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã§ã®ã¿ã®ç›¸æ–¹å´ãƒãƒ«ãƒ¼ãƒ³ä½ç½®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.centerx,åº§æ¨™">
+				<dt class="entry">point.centerx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä¸­å¿ƒXåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.centery,åº§æ¨™">
+				<dt class="entry">point.centery,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä¸­å¿ƒYåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.kinoko.centerx,åº§æ¨™">
+				<dt class="entry">point.kinoko.centerx,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã“ã®ç”Ÿãˆã‚‹Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.kinoko.centery,åº§æ¨™">
+				<dt class="entry">point.kinoko.centery,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ãã®ã“ã®ç”Ÿãˆã‚‹Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.basepos.x,åº§æ¨™">
+				<dt class="entry">point.basepos.x,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ã‚·ã‚§ãƒ«ã®ä¸­å¿ƒXåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="point.basepos.y,åº§æ¨™">
+				<dt class="entry">point.basepos.y,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">ã‚·ã‚§ãƒ«ã®ä¸­å¿ƒYåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°(SERIKO)</h1>
+			<dl id="sometimes">
+				<dt class="entry">sometimes</dt>
+				<dd class="entry">
+					<p class="description">æ¯ç§’2åˆ†ã®1ã®ç¢ºç‡ã§ç™ºç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rarely">
+				<dt class="entry">rarely</dt>
+				<dd class="entry">
+					<p class="description">æ¯ç§’4åˆ†ã®1ã®ç¢ºç‡ã§ç™ºç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="random,æ•°å€¤">
+				<dt class="entry">random,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ¯ç§’æ•°å€¤åˆ†ã®1ã®ç¢ºç‡ã§ç™ºç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="periodic,æ•°å€¤">
+				<dt class="entry">periodic,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ç§’é–“éš”ã§ç™ºç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="always">
+				<dt class="entry">always</dt>
+				<dd class="entry">
+					<p class="description">ãƒ«ãƒ¼ãƒ—å†ç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="runonce">
+				<dt class="entry">runonce</dt>
+				<dd class="entry">
+					<p class="description">ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã«åˆ‡ã‚Šæ›¿ã‚ã£ãŸç¬é–“ã«1å›ã®ã¿ç™ºç”Ÿã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="never">
+				<dt class="entry">never</dt>
+				<dd class="entry">
+					<p class="description">è‡ªå‹•ã§ã¯ç™ºç”Ÿã—ãªã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="yen-e">
+				<dt class="entry">yen-e</dt>
+				<dd class="entry">
+					<p class="description">\eãŒæ¥ãŸæ™‚ã«ç™ºå‹•ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="talk,æ•°å€¤">
+				<dt class="entry">talk,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒ«ãƒ¼ãƒ³å†…ã®ãƒ†ã‚­ã‚¹ãƒˆã«åˆã‚ã›ã¦ç™ºå‹•ã€‚<br />æ•°å€¤åˆ†ã®æ–‡å­—ãŒãã‚‹ã”ã¨ã«ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_bind">
+				<dt class="entry">bind</dt>
+				<dd class="entry">
+					<p class="description">ç€ã›æ›¿ãˆã‚’å®šç¾©ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="bind+ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°">
+				<dt class="entry">bind+ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°</dt>
+				<dd class="entry">
+					<p class="description">å®šç¾©ã—ãŸç€ã›æ›¿ãˆã«ãªã£ãŸå ´åˆã«ä»–ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã‚’ç™ºç”Ÿã€‚<br />+ã§ç¹‹ã’ã¦è¤‡æ•°å¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³(SERIKO)</h1>
+			<dl id="base">
+				<dt class="entry">base</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã«ãªã‚‹ã‚µãƒ¼ãƒ•ã‚£ã‚¹è¡¨ç¤ºã€‚<br />ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·ã‚’-1ã§åˆæœŸãƒ™ãƒ¼ã‚¹ã«æˆ»ã™ã“ã¨ãŒã§ãã‚‹ã€‚<br />XYåº§æ¨™ã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="overlay">
+				<dt class="entry">overlay</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä¸Šã«åˆæˆã—ã¦è¡¨ç¤ºã€‚<br />ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·ã‚’-1ã§åˆæˆã‚’æ¶ˆã™ã“ã¨ãŒã§ãã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="overlayfast">
+				<dt class="entry">overlayfast</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä¸Šã«åˆæˆã—ã¦è¡¨ç¤ºã€‚<br />ã“ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã¯ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®è¡¨ç¤ºé ˜åŸŸã®ã¿åˆæˆã§ãã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="replace">
+				<dt class="entry">replace</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ä¸Šã«åˆæˆã—ã¦è¡¨ç¤ºã€‚<br />ã“ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®é€ééƒ¨åˆ†ã¯ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚‚é€éã•ã‚Œã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="asis">
+				<dt class="entry">asis</dt>
+				<dd class="entry">
+					<p class="description">æŠœãè‰²ã‚„PNAã‚’é©å¿œã—ãªã„ã§ãã®ã¾ã¾è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="move">
+				<dt class="entry">move</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚’XYåº§æ¨™ã§æŒ‡å®šã—ã¦è¡¨ç¤ºã€‚<br />ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·ã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_2_bind">
+				<dt class="entry">bind</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã«ç€ã›æ›¿ãˆã‚’å®šç¾©ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="add">
+				<dt class="entry">add</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã«ç€ã›æ›¿ãˆã‚’åŠ ç®—ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="reduce">
+				<dt class="entry">reduce</dt>
+				<dd class="entry">
+					<p class="description">ãƒ™ãƒ¼ã‚¹ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‹ã‚‰ç€ã›æ›¿ãˆã‚’æ¸›ç®—ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="insert">
+				<dt class="entry">insert</dt>
+				<dd class="entry">
+					<p class="description">ä»–ã®ç€ã›æ›¿ãˆã‚°ãƒ«ãƒ¼ãƒ—ã‚’ãã“ã«æŒ¿å…¥ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="start,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID_">
+				<dt class="entry">start,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID]</dt>
+				<dd class="entry">
+					<p class="description">IDã®ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ç™ºå‹•ã•ã›ã‚‹ã€‚<br />XYåº§æ¨™ã¯ç„¡ã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="stop,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID_">
+				<dt class="entry">stop,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID]</dt>
+				<dd class="entry">
+					<p class="description">IDã®ãƒ‘ã‚¿ãƒ¼ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åœæ­¢ã•ã›ã‚‹ã€‚<br />XYåº§æ¨™ã¯ç„¡ã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="alternativestart,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2..._">
+				<dt class="entry">alternativestart,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2...]</dt>
+				<dd class="entry">
+					<p class="description">è¤‡æ•°ã®å†…ã®ã©ã‚Œã‹ã®IDãƒ‘ã‚¿ãƒ¼ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’ç™ºå‹•ã•ã›ã‚‹ã€‚<br />XYåº§æ¨™ã¯ç„¡ã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="alternativestop,_ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2..._">
+				<dt class="entry">alternativestop,[ãƒ‘ã‚¿ãƒ¼ãƒ³ID1,ãƒ‘ã‚¿ãƒ¼ãƒ³ID2...]</dt>
+				<dd class="entry">
+					<p class="description">è¤‡æ•°ã®å†…ã®ã©ã‚Œã‹ã®IDãƒ‘ã‚¿ãƒ¼ãƒ³ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åœæ­¢ã•ã›ã‚‹ã€‚<br />XYåº§æ¨™ã¯ç„¡ã„ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<div class="caption">
+				<p>ãƒ‘ã‚¿ãƒ¼ãƒ³IDã«-1ã§ãã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã®åœæ­¢ã€-2ã§å…¨ã¦ã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åœæ­¢ã™ã‚‹äº‹ãŒã§ãã‚‹ã€‚</p>
+			</div>
+		</section>
+		<section class="category">
+			<h1>surfaces.txt(ã‚«ãƒ¼ã‚½ãƒ«ãƒ–ãƒ¬ã‚¹å†…)</h1>
+			<div class="caption">
+<pre><code>sakura.cursor
+{
+ã“ã“ã«è¨˜è¿°
 }
-a:hover	{
-  color : #FF0000;
+</code></pre>
+				<p>ç›¸æ–¹å´ã®è¨­å®šã¯kero.cursorã€char*.cursor</p>
+			</div>
+			<dl id="mouseup*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">mouseup*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">å½“ãŸã‚Šåˆ¤å®šã®ä¸Šã«æ¥ãŸæ™‚ã«è¡¨ç¤ºã™ã‚‹ã‚«ãƒ¼ã‚½ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨­å®šã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousedown*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å">
+				<dt class="entry">mousedown*,å½“ãŸã‚Šåˆ¤å®šID,ãƒ•ã‚¡ã‚¤ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">å½“ãŸã‚Šåˆ¤å®šã‚’ã‚¯ãƒªãƒƒã‚¯ã—ãŸæ™‚ã«è¡¨ç¤ºã™ã‚‹ã‚«ãƒ¼ã‚½ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨­å®šã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ã‚·ã‚¹ãƒ†ãƒ ã‚«ãƒ¼ã‚½ãƒ«</h1>
+			<div class="caption">
+				<p>ã‚«ãƒ¼ã‚½ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã®å¤‰ã‚ã‚Šã«æŒ‡å®šã™ã‚‹ã¨ç¾åœ¨ä½¿ã‚ã‚Œã¦ã„ã‚‹ã‚«ãƒ¼ã‚½ãƒ«ã®å¤‰å½¢ãŒè¡¨ç¤ºãŒã§ãã¾ã™ã€‚</p>
+			</div>
+			<dl id="system:arrow">
+				<dt class="entry">system:arrow</dt>
+				<dd class="entry">
+					<p class="description">çŸ¢å°</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:cross">
+				<dt class="entry">system:cross</dt>
+				<dd class="entry">
+					<p class="description">åå­—</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:no">
+				<dt class="entry">system:no</dt>
+				<dd class="entry">
+					<p class="description">ç¦æ­¢</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:hand">
+				<dt class="entry">system:hand</dt>
+				<dd class="entry">
+					<p class="description">æ‰‹</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:grip">
+				<dt class="entry">system:grip</dt>
+				<dd class="entry">
+					<p class="description">ã¤ã‹ã‚“ã æ‰‹</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:finger">
+				<dt class="entry">system:finger</dt>
+				<dd class="entry">
+					<p class="description">æŒ‡å·®ã—</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:wait">
+				<dt class="entry">system:wait</dt>
+				<dd class="entry">
+					<p class="description">æ™‚è¨ˆ</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:text">
+				<dt class="entry">system:text</dt>
+				<dd class="entry">
+					<p class="description">I</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:move">
+				<dt class="entry">system:move</dt>
+				<dd class="entry">
+					<p class="description">ç§»å‹•</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system:help">
+				<dt class="entry">system:help</dt>
+				<dd class="entry">
+					<p class="description">ï¼Ÿ</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>surfaces.txt(ãƒ„ãƒ¼ãƒ«ãƒãƒƒãƒ—ãƒ–ãƒ¬ã‚¹å†…)</h1>
+			<div class="caption">
+<pre><code>sakura.tooltips
+{
+ã“ã“ã«è¨˜è¿°
 }
-BODY{
-  background-color : #FFFFFF;
-}
-TABLE{
-  background-color : #94A5F7;
-}
-TD{
-  background-color : #FFFFFF;
-}
-TH{
-  text-align : left;
-  color : white;
-}
-.text_bold{
-  font-weight : bold;
-}
-.text_green{
-  color : #009900;
-}
-.text_red{
-  color : #CC0000;
-}
-/*]]>*/
-</STYLE>
-</HEAD>
-<BODY><SPAN class="text_bold">Shellİ’è</SPAN>
-<HR>
-<A href="./">¡Index</A> <A href="descript_ghost.html">¡Ghost</A> <A href="descript_shell.html">¡Shell</A> <A href="descript_balloon.html">¡Balloon</A> <A href="descript_install.html">¡Install</A> <A href="list_sakura_script.htm">¡SAKURA script</A> <A href="list_shiori_event.htm">¡SHIORI Event</A> <A href="list_shiori_resource.htm">¡SHIORI Resource</A> <BR>
-<TABLE width="100%">
-  <COL span="1" width="50">
-  <COL span="1" width="250">
-  <TBODY>
-    <TR>
-      <TH colspan="3">descript.txt</TH>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>name,<SPAN class="text_green">ƒVƒFƒ‹–¼</SPAN></TD>
-      <TD>‚»‚ÌƒVƒFƒ‹‚Ì–¼‘OB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">í•Ê</SPAN></TD>
-      <TD>ƒtƒ@ƒCƒ‹ƒZƒbƒg‚Ìí•ÊBƒVƒFƒ‹‚Ìê‡‚ÍshellB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftman,<SPAN class="text_green">ìÒ–¼</SPAN></TD>
-      <TD>‚»‚ÌƒVƒFƒ‹‚ÌìÒ–¼B”¼Šp‰p”‚Ì‚İB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftmanw,<SPAN class="text_green">ìÒ–¼</SPAN></TD>
-      <TD>‚»‚ÌƒVƒFƒ‹‚ÌìÒ–¼B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>id,<SPAN class="text_green">ID–¼</SPAN></TD>
-      <TD>‚»‚ÌƒVƒFƒ‹‚ÌID–¼B”¼Šp‰p”‚Ì‚İB</TD>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">•¶šƒR[ƒh</SPAN></TD>
-      <TD>•\¦‚·‚é•¶šƒR[ƒhBShift_JIS„§B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftmanurl,<SPAN class="text_green">URL</SPAN></TD>
-      <TD>ìÒ‚ÌURLB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>homeurl,<SPAN class="text_green">URL</SPAN></TD>
-      <TD>ƒlƒbƒgƒ[ƒNXV—p‚ÌURLB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.name,<SPAN class="text_green">–¼‘O</SPAN></TD>
-      <TD>–{‘è‘¤‚ÌƒS[ƒXƒg‚Ì–¼‘OB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura.name2,<SPAN class="text_green">–¼‘O</SPAN></TD>
-      <TD>–{‘è‘¤‚ÌƒS[ƒXƒg‚Ì–¼‘OBˆ¤Ì“™B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.name,<SPAN class="text_green">–¼‘O</SPAN></TD>
-      <TD>‘Š•û‘¤‚ÌƒS[ƒXƒg‚Ì–¼‘OB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char*.name,<SPAN class="text_green">–¼‘O</SPAN></TD>
-      <TD>\p[*]‚Ì–¼‘OB</TD>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>seriko.alignmenttodesktop,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦‘S‘Ì‚ÌƒT[ƒtƒBƒX‚ÌƒfƒtƒHƒ‹ƒg•\¦ˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura.seriko.alignmenttodesktop,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦–{‘Ì‘¤‚ÌƒfƒtƒHƒ‹ƒg•\¦ˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero.seriko.alignmenttodesktop,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦‘Š•û‘¤‚ÌƒfƒtƒHƒ‹ƒg•\¦ˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.seriko.alignmenttodesktop,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦2l–ÚˆÈ~‚Ì‘Š•û‘¤‚ÌƒfƒtƒHƒ‹ƒg•\¦ˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura..defaultx,<SPAN class="text_green">XÀ•W</SPAN></TD>
-      <TD>–{‘Ì‘¤‚Ì‰æ‘œƒx[ƒXXÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ’†‰›B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero..defaultx,<SPAN class="text_green">XÀ•W</SPAN></TD>
-      <TD>‘Š•û‘¤‚Ì‰æ‘œƒx[ƒXXÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ’†‰›B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>..defaultx,<SPAN class="text_green">XÀ•W</SPAN></TD>
-      <TD>2l–ÚˆÈ~‚Ì‘Š•û‘¤‚Ì‰æ‘œƒx[ƒXXÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ’†‰›B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura..defaulty,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>–{‘Ì‘¤‚Ì‰æ‘œƒx[ƒXYÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ‰º’[B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero..defaulty,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>‘Š•û‘¤‚Ì‰æ‘œƒx[ƒXYÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ‰º’[B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>..defaulty,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>2l–ÚˆÈ~‚Ì‘Š•û‘¤‚Ì‰æ‘œƒx[ƒXYÀ•WˆÊ’uBƒfƒtƒHƒ‹ƒg‚Í‰æ‘œ‰º’[B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura..defaulttop,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>–{‘Ì‘¤‚ÌƒfƒtƒHƒ‹ƒgYÀ•WˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero..defaulttop,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>‘Š•û‘¤‚ÌƒfƒtƒHƒ‹ƒgYÀ•WˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>..defaulttop,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>2l–ÚˆÈ~‚Ì‘Š•û‘¤‚ÌƒfƒtƒHƒ‹ƒgYÀ•WˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.balloon.offsetx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>–{‘Ì‘¤ƒoƒ‹[ƒ“ˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.balloon.offsety,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>–{‘Ì‘¤ƒoƒ‹[ƒ“ˆÊ’uYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.balloon.offsetx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‘Š•û‘¤ƒoƒ‹[ƒ“ˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.balloon.offsety,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‘Š•û‘¤ƒoƒ‹[ƒ“ˆÊ’uYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.balloon.alignment,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦–{‘Ì‘¤‚Ì‚«o‚µ‚ÌˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.balloon.alignment,<SPAN class="text_green">ˆÊ’uî•ñ</SPAN></TD>
-      <TD>¦‘Š•û‘¤‚Ì‚«o‚µ‚ÌˆÊ’uî•ñB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>readme,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>Read Me!ƒ{ƒ^ƒ“‚ÅŠJ‚©‚ê‚éƒVƒFƒ‹‚Ìà–¾ƒeƒLƒXƒgƒtƒ@ƒCƒ‹–¼B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>menu.font.name,<SPAN class="text_green">ƒtƒHƒ“ƒg–¼</SPAN></TD>
-      <TD>ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[‚Ég—p‚·‚éƒtƒHƒ“ƒgB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>menu.font.height,<SPAN class="text_green">ƒtƒHƒ“ƒgƒTƒCƒY</SPAN></TD>
-      <TD>ƒ|ƒbƒvƒAƒbƒvƒƒjƒ…[‚Ég—p‚·‚é•¶š‚Ì‘å‚«‚³B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.background.bitmap.filename,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh•\¦‰æ‘œƒtƒ@ƒCƒ‹–¼B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.foreground.bitmap.filename,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>ƒtƒHƒAƒOƒ‰ƒEƒ“ƒh•\¦‰æ‘œƒtƒ@ƒCƒ‹–¼B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.sidebar.bitmap.filename,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>ƒTƒCƒhƒo[•\¦‰æ‘œƒtƒ@ƒCƒ‹–¼B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.background.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh•¶šFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.background.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh•¶šF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.background.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh•¶šFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.foreground.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒAƒOƒ‰ƒEƒ“ƒh•¶šFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.foreground.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒAƒOƒ‰ƒEƒ“ƒh•¶šF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.foreground.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒAƒOƒ‰ƒEƒ“ƒh•¶šFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.separator.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒZƒpƒŒ[ƒ^FÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.separator.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒZƒpƒŒ[ƒ^F—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.separator.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒZƒpƒŒ[ƒ^FÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.disable.font.color.r</TD>
-      <TD>‘I‘ğ•s‰Â•¶šFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.disable.font.color.g</TD>
-      <TD>‘I‘ğ•s‰Â•¶šF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.disable.font.color.b</TD>
-      <TD>‘I‘ğ•s‰Â•¶šFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.background.alignment,<SPAN class="text_green">ˆÊ’u</SPAN></TD>
-      <TD>ƒoƒbƒNƒOƒ‰ƒEƒ“ƒh‰æ‘œ‚ğrighttop‚Å‰EŠñ‚¹Alefttop‚Å¶Šñ‚¹Acentertop‚Å’†‰›Šñ‚¹B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.foreground.alignment,<SPAN class="text_green">ˆÊ’u</SPAN></TD>
-      <TD>ƒtƒHƒAƒOƒ‰ƒEƒ“ƒh‰æ‘œ‚ğrighttop‚Å‰EŠñ‚¹Alefttop‚Å¶Šñ‚¹Acentertop‚Å’†‰›Šñ‚¹B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>menu.sidebar.alignment,<SPAN class="text_green">ˆÊ’u</SPAN></TD>
-      <TD>ƒTƒCƒhƒo[‰æ‘œ‚ğtop‚ÅãŠñ‚¹Abottom‚Å‰ºŠñ‚¹B</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">ƒJƒeƒSƒŠ–¼</SPAN>,<SPAN class="text_green">ƒp[ƒc–¼</SPAN>,<SPAN class="text_green">ƒTƒ€ƒlƒCƒ‹–¼</SPAN></TD>
-      <TD>‚»‚Ìƒp[ƒc‚ğƒƒjƒ…[‚Ì’…‚¹‘Ö‚¦‚É•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍÅ‰‚©‚ç‚»‚Ìƒp[ƒc‚ğ•\¦B(–{‘Ì‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
-      <TD>ID‚Ìƒp[ƒc‚ğÅ‰‚©‚ç•\¦AƒJƒ“ƒ}‹æØ‚è‚Å•¡”‰ÂB(–{‘Ì‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura.bindoption<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">ƒOƒ‹[ƒv–¼</SPAN>,<SPAN class="text_green">ƒIƒvƒVƒ‡ƒ“</SPAN></TD>
-      <TD>‚»‚Ì’…‚¹‘Ö‚¦ƒJƒeƒSƒŠ‚ÉƒIƒvƒVƒ‡ƒ“‚ğİ’èB(–{‘Ì‘¤)<BR>
-      mustselect‚Åƒp[ƒc‚ğ•K‚¸1‚Â‘I‘ğAmultiple‚Å•¡”‚Ìƒp[ƒc‚ğ‘I‘ğ‰Â”\B<BR>
-      ƒIƒvƒVƒ‡ƒ“‚Í+‹æØ‚è‚Å•¡”‰ÂB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>sakura.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚Ìƒp[ƒc‚©‚ç‡‚É’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ•\¦B(–{‘Ì‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sakura.menu,auto</TD>
-      <TD>’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ©“®‚Å•\¦B(–{‘Ì‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">ƒJƒeƒSƒŠ–¼</SPAN>,<SPAN class="text_green">ƒp[ƒc–¼</SPAN>,<SPAN class="text_green">ƒTƒ€ƒlƒCƒ‹–¼</SPAN></TD>
-      <TD>‚»‚Ìƒp[ƒc‚ğƒƒjƒ…[‚Ì’…‚¹‘Ö‚¦‚É•\¦B(‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍÅ‰‚©‚ç‚»‚Ìƒp[ƒc‚ğ•\¦B(‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
-      <TD>ID‚Ìƒp[ƒc‚ğÅ‰‚©‚ç•\¦AƒJƒ“ƒ}‹æØ‚è‚Å•¡”‰ÂB(‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero.bindoption<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">ƒOƒ‹[ƒv–¼</SPAN>,<SPAN class="text_green">ƒIƒvƒVƒ‡ƒ“</SPAN></TD>
-      <TD>‚»‚Ì’…‚¹‘Ö‚¦ƒJƒeƒSƒŠ‚ÉƒIƒvƒVƒ‡ƒ“‚ğİ’èB(‘Š•û‘¤)<BR>
-      mustselect‚Åƒp[ƒc‚ğ•K‚¸1‚Â‘I‘ğAmultiple‚Å•¡”‚Ìƒp[ƒc‚ğ‘I‘ğ‰Â”\B<BR>
-      ƒIƒvƒVƒ‡ƒ“‚Í+‹æØ‚è‚Å•¡”‰ÂB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>kero.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚Ìƒp[ƒc‚©‚ç‡‚É’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ•\¦B(‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>kero.menu,auto</TD>
-      <TD>’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ©“®‚Å•\¦B(‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.name,<SPAN class="text_green">ƒJƒeƒSƒŠ–¼</SPAN>,<SPAN class="text_green">ƒp[ƒc–¼</SPAN>,<SPAN class="text_green">ƒTƒ€ƒlƒCƒ‹–¼</SPAN></TD>
-      <TD>‚»‚Ìƒp[ƒc‚ğƒƒjƒ…[‚Ì’…‚¹‘Ö‚¦‚É•\¦B(2l–ÚˆÈ~‚Ì‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.default,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍÅ‰‚©‚ç‚»‚Ìƒp[ƒc‚ğ•\¦B(2l–ÚˆÈ~‚Ì‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.bindgroup<SPAN class="text_green">*</SPAN>.addid,<SPAN class="text_green">ID</SPAN></TD>
-      <TD>ID‚Ìƒp[ƒc‚ğÅ‰‚©‚ç•\¦AƒJƒ“ƒ}‹æØ‚è‚Å•¡”‰ÂB(2l–ÚˆÈ~‚Ì‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.bindoption<SPAN class="text_green">*</SPAN>.group,<SPAN class="text_green">ƒOƒ‹[ƒv–¼</SPAN>,<SPAN class="text_green">ƒIƒvƒVƒ‡ƒ“</SPAN></TD>
-      <TD>‚»‚Ì’…‚¹‘Ö‚¦ƒJƒeƒSƒŠ‚ÉƒIƒvƒVƒ‡ƒ“‚ğİ’èB(2l–ÚˆÈ~‚Ì‘Š•û‘¤)<BR>
-      mustselect‚Åƒp[ƒc‚ğ•K‚¸1‚Â‘I‘ğAmultiple‚Å•¡”‚Ìƒp[ƒc‚ğ‘I‘ğ‰Â”\B<BR>
-      ƒIƒvƒVƒ‡ƒ“‚Í+‹æØ‚è‚Å•¡”‰ÂB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.menuitem<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚Ìƒp[ƒc‚©‚ç‡‚É’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ•\¦B(2l–ÚˆÈ~‚Ì‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>char<SPAN class="text_green">*</SPAN>.menu,auto</TD>
-      <TD>’…‚¹‘Ö‚¦ƒƒjƒ…[‚ğ©“®‚Å•\¦B(2l–ÚˆÈ~‚Ì‘Š•û‘¤)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>seriko.paint_transparent_region_black,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍPNA‚Å“§‰ß‚µ‚½ÛA”wŒiF‚ğ•‚Å•\¦‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>seriko.use_self_alpha,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍPNA‚Ì‘ã‚í‚è‚É32bitPNG‚ÌƒAƒ‹ƒtƒ@ƒ`ƒƒƒ“ƒlƒ‹‚ğg—p‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD colspan="3">¦ƒT[ƒtƒBƒX‚ÌˆÊ’uî•ñ<BR>
-      top@@ ã•”‚É“\‚è•t‚«•\¦B<BR>
-      bottom ‰º•”‚É“\‚è•t‚«•\¦B<BR>
-      free@@©—RˆÚ“®B</TD>
-    </TR>
-    <TR>
-      <TD colspan="3">¦‚«o‚µ‚ÌˆÊ’uî•ñ<BR>
-      none@©“®’²®Ashell‚ÌYÀ•W‚ª‰æ–Ê’†‰›‚æ‚è¶‚È‚ç‰EA‰E‚È‚ç¶‚É•\¦B<BR>
-      left@@í‚É¶‚É•\¦B<BR>
-      right@í‚É‰E‚É•\¦B</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">surfaces.txt(ƒT[ƒtƒBƒXƒuƒŒƒX“à) / surfaces2.txt(SSP‚Ì‚İ)</TH>
-    </TR>
-    <TR>
-      <TD colspan="3">surface<SPAN class="text_red">*</SPAN><BR>
-      {<BR>
-      <SPAN class="text_green">‚±‚±‚É‹Lq</SPAN><BR>
-      }<BR>
-      <BR>
-      ¦SSP‚Ì‚İ ’Ç‰Áw’èi‚·‚Å‚É’è‹`Ï‚İ‚Ì‚à‚Ì‚É‘Î‚µ‚Ä‚³‚ç‚É’è‹`‚ğŒã•t‚¯‚·‚éj<BR>
-      surface.append<SPAN class="text_red">*</SPAN><BR>
-      {<BR>
-      <SPAN class="text_green">‚±‚±‚É‹Lq</SPAN><BR>
-      }<BR>
-      <BR>
-      <SPAN class="text_red">*</SPAN>•”•ª‚É‚Í”’l(ID)‚ğw’è‚·‚éB0,1,5‚Ì‚æ‚¤‚ÉƒJƒ“ƒ}‹æØ‚è‚Å•¡”‰ÂB<BR>
-      SSP‚Ì‚İF1-9‚Ì‚æ‚¤‚É”ÍˆÍw’è‚à‰ÂBƒJƒ“ƒ}‹æØ‚è‚Æ‡‚í‚¹‚Ä1-9,20-29‚Ì‚æ‚¤‚Èw’è‚à‰ÂB<BR>
-      <BR>
-      ‚±‚êˆÈ~‚ÌŠe’è‹`‚Ì<SPAN class="text_green">*</SPAN>‚É‚ÍAŠeƒuƒŒƒXi’†Š‡ŒÊ‚Ì“à‘¤j“à‚Åƒ_ƒu‚ç‚È‚¢”’l‚ğw’è‚·‚éB<BR>
-      ‚±‚Ì”’l‚ªSakuraScript‘¤‚È‚Ç‚©‚ç‚Ì‘€ì—pID‚É‚È‚éB
-      </TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>element<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">ƒpƒ^[ƒ“’è‹`</SPAN>,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN>,<SPAN class="text_green">XÀ•W</SPAN>,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚Ìİ’èB<BR>
-      ‰ÁZ‚µ‚½ƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ^[ƒ“‚Í‚±‚ÌƒT[ƒtƒBƒX“à‚Å1–‡‚Ìƒx[ƒXƒT[ƒtƒBƒXˆµ‚¢‚É‚È‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.interval,ƒ^ƒCƒ~ƒ“ƒO’è‹`</TD>
-      <TD>ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌŠJnƒ^ƒCƒ~ƒ“ƒO‚Ìİ’èB<BR>
-      ƒ^ƒCƒ~ƒ“ƒO’è‹`‚Í‰º‹L‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ~ƒ“ƒOQÆB<BR>
-      ‚±‚Ì’è‹`‚ªƒAƒjƒ[ƒVƒ‡ƒ“’è‹`‚ÌŠJn‚ğ¦‚·‚à‚Ì‚É‚È‚é‚Ì‚ÅA•K‚¸Å‰‚É—ˆ‚é‚æ‚¤‚É‚·‚éB<BR>
-      ‹Œd—lF<SPAN class="text_green">*</SPAN>interval</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.pattern<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">ƒpƒ^[ƒ“’è‹`</SPAN>,<SPAN class="text_green">ƒT[ƒtƒBƒX”Ô†</SPAN>,<SPAN class="text_green">ƒEƒGƒCƒg</SPAN>,<SPAN class="text_green">XÀ•W</SPAN>,<SPAN class="text_green">YÀ•W</SPAN></TD>
-      <TD>interval‚Åİ’è‚µ‚½ƒ^ƒCƒ~ƒ“ƒO‚Å”­“®‚·‚éƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ^[ƒ“‚Ìİ’èB<BR>
-      ƒpƒ^[ƒ“’è‹`‚Í‰º‹L‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ^[ƒ“QÆB<BR>
-      ƒEƒGƒCƒg‚Ì•”•ª‚É‚ÍuÅ¬ƒEƒGƒCƒg-Å‘åƒEƒGƒCƒgv‚Æƒ}ƒCƒiƒX•¶š‚Å‹æØ‚Á‚½‘‚«•û‚à‚Å‚«A‚»‚Ìê‡‚ÍÅ¬`Å‘åŠÔ‚Åƒ‰ƒ“ƒ_ƒ€‚É‘I‘ğ‚³‚ê‚é(SSP‚Ì‚İ)B<BR>
-      ‹Œd—lF<SPAN class="text_green">*</SPAN>pattern<SPAN class="text_green">*</SPAN></TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.option,exclusive</TD>
-      <TD>‚±‚ê‚ª’è‹`‚³‚ê‚½ƒAƒjƒ[ƒVƒ‡ƒ“‚Í‘¼‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚Ì‰e‹¿‚ğó‚¯‚È‚¢B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.option,background</TD>
-      <TD>‚±‚ê‚ª’è‹`‚³‚ê‚½ƒAƒjƒ[ƒVƒ‡ƒ“‚Íƒx[ƒXƒT[ƒtƒBƒX‚æ‚è— ‚É•\¦‚³‚ê‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.option,<SPAN class="text_green">ƒIƒvƒVƒ‡ƒ“</SPAN></TD>
-      <TD>(exclusive|background)<BR>
-      +‹æØ‚è‚Å•¡”ƒIƒvƒVƒ‡ƒ“‰ÂB—áFexclusive+background</TD>
-    </TR>
-    <TR>
-      <TD ROWSPAN="2">S</TD>
-      <TD>animation<SPAN class="text_green">*</SPAN>.collision<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">“–‚½‚è”»’è’è‹`</SPAN></TD>
-      <TD ROWSPAN="2">ˆÈ‰º‚Ì“–‚½‚è”»’è’è‹`‚Æ“¯‚¶‚à‚Ì‚ğŒã‚ë‚É‘‚­‚±‚Æ‚ÅAƒAƒjƒ[ƒVƒ‡ƒ““®ì’†‚É‚Ì‚İ—LŒø‚È“–‚½‚è”»’è‚ª‘‚¯‚é‚æ‚¤‚É‚È‚éBƒ^ƒCƒ~ƒ“ƒObind‚É‚à—LŒøB</TD>
-    </TR>
-    <TR>
-      <TD>animation<SPAN class="text_green">*</SPAN>.collisionex<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">“–‚½‚è”»’è’è‹`(ex)</SPAN></TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>collision<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">n“_X</SPAN>,<SPAN class="text_green">n“_Y</SPAN>,<SPAN class="text_green">I“_X</SPAN>,<SPAN class="text_green">I“_Y</SPAN>,<SPAN class="text_green">ID</SPAN></TD>
-      <TD>“–‚½‚è”»’èBˆÍ‚Ü‚ê‚½”ÍˆÍ‚ªID‚Ì—Ìˆæ‚Æ‚È‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>collisionex,<SPAN class="text_green">ID</SPAN>,<SPAN class="text_green">ƒ^ƒCƒv</SPAN>,<SPAN class="text_green">À•W1</SPAN>,<SPAN class="text_green">À•W2...</SPAN></TD>
-      <TD>•s’èŒ`“–‚½‚è”»’èB<BR>
-      ƒ^ƒCƒv‚ÍˆÈ‰º‚Ì’Ê‚èB<BR>
-      rect ’·•ûŒ`BÀ•W‚Ín“_XY‚ÆI“_XY‚Ì4‚ÂB<BR>
-      ellipse ‘È‰~BÀ•W‚Í‘È‰~‚ğˆÍ‚Ş’·•ûŒ`An“_XY‚ÆI“_XY‚Ì4‚ÂB<BR>
-      polygon ‘½ŠpŒ`BÀ•W‚ÍŠe’¸“_AŒğ·‰ÂB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.balloon.offsetx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚»‚ÌƒT[ƒtƒBƒX‚Å‚Ì‚İ‚Ì–{‘Ì‘¤ƒoƒ‹[ƒ“ˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sakura.balloon.offsety,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚»‚ÌƒT[ƒtƒBƒX‚Å‚Ì‚İ‚Ì–{‘Ì‘¤ƒoƒ‹[ƒ“ˆÊ’uYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.balloon.offsetx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚»‚ÌƒT[ƒtƒBƒX‚Å‚Ì‚İ‚Ì‘Š•û‘¤ƒoƒ‹[ƒ“ˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>kero.balloon.offsety,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚»‚ÌƒT[ƒtƒBƒX‚Å‚Ì‚İ‚Ì‘Š•û‘¤ƒoƒ‹[ƒ“ˆÊ’uYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>point.centerx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>ƒT[ƒtƒBƒX‚Ì’†SXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>point.centery,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>ƒT[ƒtƒBƒX‚Ì’†SYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>point.kinoko.centerx,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚«‚Ì‚±‚Ì¶‚¦‚éXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>point.kinoko.centery,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>‚«‚Ì‚±‚Ì¶‚¦‚éYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>point.basepos.x,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>ƒVƒFƒ‹‚Ì’†SXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>point.basepos.y,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>ƒVƒFƒ‹‚Ì’†SYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">ƒT[ƒtƒBƒX‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ~ƒ“ƒO(SERIKO)</TH>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sometimes</TD>
-      <TD>–ˆ•b2•ª‚Ì1‚ÌŠm—¦‚Å”­¶B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>rarely</TD>
-      <TD>–ˆ•b4•ª‚Ì1‚ÌŠm—¦‚Å”­¶B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>random,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–ˆ•b”’l•ª‚Ì1‚ÌŠm—¦‚Å”­¶B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>periodic,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l•bŠÔŠu‚Å”­¶B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>always</TD>
-      <TD>ƒ‹[ƒvÄ¶B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>runonce</TD>
-      <TD>ƒT[ƒtƒBƒX‚ÉØ‚è‘Ö‚í‚Á‚½uŠÔ‚É1‰ñ‚Ì‚İ”­¶B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>never</TD>
-      <TD>©“®‚Å‚Í”­¶‚µ‚È‚¢B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>yen-e</TD>
-      <TD>\e‚ª—ˆ‚½‚É”­“®B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>talk,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒoƒ‹[ƒ““à‚ÌƒeƒLƒXƒg‚É‡‚í‚¹‚Ä”­“®B<BR>
-      ”’l•ª‚Ì•¶š‚ª‚­‚é‚²‚Æ‚ÉƒAƒjƒ[ƒVƒ‡ƒ“‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>bind</TD>
-      <TD>’…‚¹‘Ö‚¦‚ğ’è‹`‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>bind+<SPAN class="text_green">ƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ~ƒ“ƒO</SPAN></TD>
-      <TD>’è‹`‚µ‚½’…‚¹‘Ö‚¦‚É‚È‚Á‚½ê‡‚É‘¼‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒ^ƒCƒ~ƒ“ƒO‚ğ”­¶B<BR>
-      +‚ÅŒq‚°‚Ä•¡”‰ÂB</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">ƒT[ƒtƒBƒX‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒpƒ^[ƒ“(SERIKO)</TH>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>base</TD>
-      <TD>ƒx[ƒX‚É‚È‚éƒT[ƒtƒBƒX•\¦B<BR>
-      ƒT[ƒtƒBƒX”Ô†‚ğ-1‚Å‰Šúƒx[ƒX‚É–ß‚·‚±‚Æ‚ª‚Å‚«‚éB<BR>
-      XYÀ•W‚Í–³‹‚³‚ê‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>overlay</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚Ìã‚É‡¬‚µ‚Ä•\¦B<BR>
-      ƒT[ƒtƒBƒX”Ô†‚ğ-1‚Å‡¬‚ğÁ‚·‚±‚Æ‚ª‚Å‚«‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>overlayfast</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚Ìã‚É‡¬‚µ‚Ä•\¦B<BR>
-      ‚±‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚Íƒx[ƒXƒT[ƒtƒBƒX‚Ì•\¦—Ìˆæ‚Ì‚İ‡¬‚Å‚«‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>replace</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚Ìã‚É‡¬‚µ‚Ä•\¦B<BR>
-      ‚±‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚Ì“§‰ß•”•ª‚Íƒx[ƒXƒT[ƒtƒBƒX‚à“§‰ß‚³‚ê‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>asis</TD>
-      <TD>”²‚«F‚âPNA‚ğ“K‰‚µ‚È‚¢‚Å‚»‚Ì‚Ü‚Ü•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>move</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚ğXYÀ•W‚Åw’è‚µ‚Ä•\¦B<BR>
-      ƒT[ƒtƒBƒX”Ô†‚Í–³‹‚³‚ê‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>bind</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚É’…‚¹‘Ö‚¦‚ğ’è‹`B</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>add</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚É’…‚¹‘Ö‚¦‚ğ‰ÁZ‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>reduce</TD>
-      <TD>ƒx[ƒXƒT[ƒtƒBƒX‚©‚ç’…‚¹‘Ö‚¦‚ğŒ¸Z‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>insert</TD>
-      <TD>‘¼‚Ì’…‚¹‘Ö‚¦ƒOƒ‹[ƒv‚ğ‚»‚±‚É‘}“ü‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>start,[<SPAN class="text_green">ƒpƒ^[ƒ“ID</SPAN>]</TD>
-      <TD>ID‚Ìƒpƒ^[ƒ“ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ”­“®‚³‚¹‚éB<BR>
-      XYÀ•W‚Í–³‚¢B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>stop,[<SPAN class="text_green">ƒpƒ^[ƒ“ID</SPAN>]</TD>
-      <TD>ID‚Ìƒpƒ^[ƒ“ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ’â~‚³‚¹‚éB<BR>
-      XYÀ•W‚Í–³‚¢B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>alternativestart,[<SPAN class="text_green">ƒpƒ^[ƒ“ID1</SPAN>,<SPAN class="text_green">ƒpƒ^[ƒ“ID2..</SPAN>.]</TD>
-      <TD>•¡”‚Ì“à‚Ì‚Ç‚ê‚©‚ÌIDƒpƒ^[ƒ“ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ”­“®‚³‚¹‚éB<BR>
-      XYÀ•W‚Í–³‚¢B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>alternativestop,[<SPAN class="text_green">ƒpƒ^[ƒ“ID1</SPAN>,<SPAN class="text_green">ƒpƒ^[ƒ“ID2..</SPAN>.]</TD>
-      <TD>•¡”‚Ì“à‚Ì‚Ç‚ê‚©‚ÌIDƒpƒ^[ƒ“ƒAƒjƒ[ƒVƒ‡ƒ“‚ğ’â~‚³‚¹‚éB<BR>
-      XYÀ•W‚Í–³‚¢B</TD>
-    </TR>
-    <TR>
-      <TD colspan="3">ƒpƒ^[ƒ“ID‚É-1‚Å‚»‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚Ì’â~A-2‚Å‘S‚Ä‚ÌƒAƒjƒ[ƒVƒ‡ƒ“‚ğ’â~‚·‚é–‚ª‚Å‚«‚éB</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">surfaces.txt(ƒJ[ƒ\ƒ‹ƒuƒŒƒX“à)</TH>
-    </TR>
-    <TR>
-      <TD colspan="3">sakura.cursor<BR>
-      {<BR>
-      <SPAN class="text_green">‚±‚±‚É‹Lq</SPAN><BR>
-      }<BR>
-      ‘Š•û‘¤‚Ìİ’è‚Íkero.cursorAchar<SPAN class="text_green">*</SPAN>.cursor</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>mouseup<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">“–‚½‚è”»’èID</SPAN>,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>“–‚½‚è”»’è‚Ìã‚É—ˆ‚½‚É•\¦‚·‚éƒJ[ƒ\ƒ‹ƒtƒ@ƒCƒ‹‚ğİ’èB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>mousedown<SPAN class="text_green">*</SPAN>,<SPAN class="text_green">“–‚½‚è”»’èID</SPAN>,<SPAN class="text_green">ƒtƒ@ƒCƒ‹–¼</SPAN></TD>
-      <TD>“–‚½‚è”»’è‚ğƒNƒŠƒbƒN‚µ‚½‚É•\¦‚·‚éƒJ[ƒ\ƒ‹ƒtƒ@ƒCƒ‹‚ğİ’èB</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">ƒVƒXƒeƒ€ƒJ[ƒ\ƒ‹</TH>
-    </TR>
-    <TR>
-      <TD colspan="3">ƒJ[ƒ\ƒ‹ƒtƒ@ƒCƒ‹‚Ì•Ï‚í‚è‚Éw’è‚·‚é‚ÆŒ»İg‚í‚ê‚Ä‚¢‚éƒJ[ƒ\ƒ‹‚Ì•ÏŒ`‚ª•\¦‚ª‚Å‚«‚Ü‚·B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:arrow</TD>
-      <TD>–îˆó</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:cross</TD>
-      <TD>\š</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:no</TD>
-      <TD>‹Ö~</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:hand</TD>
-      <TD>è</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:grip</TD>
-      <TD>‚Â‚©‚ñ‚¾è</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:finger</TD>
-      <TD>w·‚µ</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:wait</TD>
-      <TD>Œv</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:text</TD>
-      <TD>I</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:move</TD>
-      <TD>ˆÚ“®</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>system:help</TD>
-      <TD>H</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">surfaces.txt(ƒc[ƒ‹ƒ`ƒbƒvƒuƒŒƒX“à)</TH>
-    </TR>
-    <TR>
-      <TD colspan="3">sakura.tooltips<BR>
-      {<BR>
-      <SPAN class="text_green">‚±‚±‚É‹Lq</SPAN><BR>
-      }<BR>
-      ‘Š•û‘¤‚Ìİ’è‚Íkero.tooltipsAchar<SPAN class="text_green">*</SPAN>.tooltips</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD><SPAN class="text_green">“–‚½‚è”»’è–¼</SPAN>,<SPAN class="text_green">•\¦“à—e</SPAN></TD>
-      <TD>“–‚½‚è”»’è‚Ìã‚É—ˆ‚½‚É•\¦‚·‚éƒc[ƒ‹ƒ`ƒbƒv‚ÌƒeƒLƒXƒg‚ğİ’èB</TD>
-    </TR>
-  </TBODY>
-</TABLE>
-<BR>
-</BODY>
-</HTML>
-<!--nobanner-->
+</code></pre>
+				<p>ç›¸æ–¹å´ã®è¨­å®šã¯kero.tooltipsã€char*.tooltips</p>
+			</div>
+			<dl id="å½“ãŸã‚Šåˆ¤å®šå,è¡¨ç¤ºå†…å®¹">
+				<dt class="entry">å½“ãŸã‚Šåˆ¤å®šå,è¡¨ç¤ºå†…å®¹</dt>
+				<dd class="entry">
+					<p class="description">å½“ãŸã‚Šåˆ¤å®šã®ä¸Šã«æ¥ãŸæ™‚ã«è¡¨ç¤ºã™ã‚‹ãƒ„ãƒ¼ãƒ«ãƒãƒƒãƒ—ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’è¨­å®šã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>
