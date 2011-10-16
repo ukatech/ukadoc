@@ -53,7 +53,7 @@ a:hover	{
 	margin-left: 10px;
 }
 .menu-header li a:before {
-	content: "Å°";
+	content: "\25a0";
 }
 .navigation-bar {
 	border: 1px solid #669;
