@@ -1,624 +1,1217 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<HTML>
-<HEAD>
-<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-<META http-equiv="Content-Style-Type" content="text/css">
-<TITLE>Balloon</TITLE>
-<STYLE type="text/css">
-/*<![CDATA[*/
-a:link	{
-  color : #0000FF;
-}
-a:visited	{
-  color : #4040FF;
-}
-a:active	{
-  color : #FF0000;
-}
-a:hover	{
-  color : #FF0000;
-}
-BODY{
-  background-color : #FFFFFF;
-}
-TABLE{
-  background-color : #94A5F7;
-}
-TD{
-  background-color : #FFFFFF;
-}
-TH{
-  text-align : left;
-  color : white;
-}
-.text_bold{
-  font-weight : bold;
-}
-.text_green{
-  color : #009900;
-}
-.text_red{
-  color : #CC0000;
-}
-/*]]>*/
-</STYLE>
-</HEAD>
-<BODY><SPAN class="text_bold">Balloonİ’è</SPAN>
-<HR>
-<A href="./">¡Index</A> <A href="descript_ghost.html">¡Ghost</A> <A href="descript_shell.html">¡Shell</A> <A href="descript_balloon.html">¡Balloon</A> <A href="descript_install.html">¡Install</A> <A href="list_sakura_script.htm">¡SAKURA script</A> <A href="list_shiori_event.htm">¡SHIORI Event</A> <A href="list_shiori_resource.htm">¡SHIORI Resource</A> <BR>
-<TABLE width="100%">
-  <COL span="1" width="50">
-  <COL span="1" width="250">
-  <TBODY>
-    <TR>
-      <TH colspan="3">descript.txt</TH>
-    </TR>
-    <TR>
-      <TD>S,C</TD>
-      <TD>charset,<SPAN class="text_green">•¶šƒR[ƒh</SPAN></TD>
-      <TD>•\¦‚·‚é•¶šƒR[ƒhBShift_JIS„§B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>name,<SPAN class="text_green">ƒoƒ‹[ƒ“–¼</SPAN></TD>
-      <TD>‚»‚Ìƒoƒ‹[ƒ“‚Ì–¼‘OB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>type,<SPAN class="text_green">í•Ê</SPAN></TD>
-      <TD>ƒtƒ@ƒCƒ‹ƒZƒbƒg‚Ìí•ÊBƒoƒ‹[ƒ“‚Ìê‡‚ÍballoonB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftman,<SPAN class="text_green">ìÒ–¼</SPAN></TD>
-      <TD>‚»‚Ìƒoƒ‹[ƒ“‚ÌìÒ–¼B”¼Šp‰p”‚Ì‚İB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftmanw,<SPAN class="text_green">ìÒ–¼</SPAN></TD>
-      <TD>‚»‚Ìƒoƒ‹[ƒ“‚ÌìÒ–¼B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>id,<SPAN class="text_green">ID–¼</SPAN></TD>
-      <TD>‚»‚Ìƒoƒ‹[ƒ“‚ÌID–¼B”¼Šp‰p”‚Ì‚İB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>craftmanurl,<SPAN class="text_green">URL</SPAN></TD>
-      <TD>ìÒ‚ÌURLB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>homeurl,<SPAN class="text_green">URL</SPAN></TD>
-      <TD>ƒlƒbƒgƒ[ƒNXV—p‚ÌURLB</TD>
-    </TR>
-    <TR>
-      <TD>M,S</TD>
-      <TD>cursor,<SPAN class="text_green">ƒJ[ƒ\ƒ‹–¼</SPAN></TD>
-      <TD>ƒoƒ‹[ƒ“‚Ég—p‚·‚éƒJ[ƒ\ƒ‹B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>origin.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒgŠJnˆÊ’u‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>origin.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒgŠJnˆÊ’u‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>validrect.left,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒg•`‰æ”ÍˆÍ‚Ì¶ˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>validrect.top,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒg•`‰æ”ÍˆÍ‚ÌãˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>validrect.right,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒg•`‰æ”ÍˆÍ‚Ì‰EˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>validrect.bottom,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒeƒLƒXƒg•`‰æ”ÍˆÍ‚Ì‰ºˆÊ’uB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>wordwrappoint.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>©“®‰üs‚ÅÜ‚è•Ô‚·XÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>-</TD>
-      <TD>wordwrappoint.y,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>©“®‰üs‚ÅÜ‚è•Ô‚·YÀ•WBŒ»İ‚Í–³‹‚³‚ê‚éB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.name,<SPAN class="text_green">ƒtƒHƒ“ƒg–¼</SPAN></TD>
-      <TD>g—p‚·‚éƒtƒHƒ“ƒgBƒfƒtƒHƒ‹ƒg‚Í‚l‚r ƒSƒVƒbƒNB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.height,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>g—p‚·‚éƒtƒHƒ“ƒg‚Ì‚‚³•ûŒü‚Ì‘å‚«‚³B(’PˆÊ‚ÍƒsƒNƒZƒ‹Fƒ|ƒCƒ“ƒg‚Å‚Í‚È‚¢)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒgFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒgF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒgFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.shadowcolor.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒg‚Ì‰A—‚¿FÔ(0`255) none‚Å–³Œø‰»</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.shadowcolor.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒg‚Ì‰A—‚¿F—Î(0`255) none‚Å–³Œø‰»</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>font.shadowcolor.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒg‚Ì‰A—‚¿FÂ(0`255) none‚Å–³Œø‰»</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>font.bold,<SPAN class="text_green">0/1</SPAN></TD>
-      <TD>‘¾šƒtƒHƒ“ƒgB0‚Å–³Œø/1‚Å—LŒøB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>font.italic,<SPAN class="text_green">0/1</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒg‚ÌƒCƒ^ƒŠƒbƒNƒXƒ^ƒCƒ‹B0‚Å–³Œø/1‚Å—LŒøB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>font.strike,<SPAN class="text_green">0/1</SPAN></TD>
-      <TD>‘Å‚¿Á‚µü‚ğ‚Â‚¯‚éB0‚Å–³Œø/1‚Å—LŒøB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>font.outline,<SPAN class="text_green">0/1</SPAN></TD>
-      <TD>ƒtƒHƒ“ƒg‚ÌƒAƒEƒgƒ‰ƒCƒ“ƒXƒ^ƒCƒ‹B0‚Å–³Œø/1‚Å—LŒøB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>anchor.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒAƒ“ƒJ[ƒtƒHƒ“ƒgFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>anchor.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒAƒ“ƒJ[ƒtƒHƒ“ƒgF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>anchor.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒAƒ“ƒJ[ƒtƒHƒ“ƒgFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.style,<SPAN class="text_green">Œ`ó</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚ÌŒ`óB<BR>
-      square‚Å‹éŒ`‚ğ•\¦B<BR>
-      underline‚Å‰ºü‚ğ•\¦B<BR>
-      square+underline‚Å‹éŒ`‚Æ‰ºü‚ğ•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.blendmethod,<SPAN class="text_green">ƒRƒ}ƒ“ƒh</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ìƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒhB<BR>
-      none‚Å–³‚µB<BR>
-      notmaskpen‚År2_notmaskpenB<BR>
-      mergepennot‚År2_mergepennotB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚ÌƒtƒHƒ“ƒgFÔ(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚ÌƒtƒHƒ“ƒgF—Î(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚ÌƒtƒHƒ“ƒgFÂ(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.pen.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.pen.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.pen.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.brush.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`“à‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.brush.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`“à‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>cursor.brush.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğˆƒ}[ƒJ[‚Ì‹éŒ`“à‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.style,<SPAN class="text_green">Œ`ó</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚ÌŒ`óB<BR>
-      square‚Å‹éŒ`‚ğ•\¦B<BR>
-      underline‚Å‰ºü‚ğ•\¦B<BR>
-      square+underline‚Å‹éŒ`‚Æ‰ºü‚ğ•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.blendmethod,<SPAN class="text_green">ƒRƒ}ƒ“ƒh</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ìƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒhB<BR>
-      none‚Å–³‚µB<BR>
-      notmaskpen‚År2_notmaskpenB<BR>
-      mergepennot‚År2_mergepennotB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.pen.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.pen.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.pen.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.brush.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.brush.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.brush.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.style,<SPAN class="text_green">Œ`ó</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚ÌŒ`óB<BR>
-      square‚Å‹éŒ`‚ğ•\¦B<BR>
-      underline‚Å‰ºü‚ğ•\¦B<BR>
-      square+underline‚Å‹éŒ`‚Æ‰ºü‚ğ•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.blendmethod,<SPAN class="text_green">ƒRƒ}ƒ“ƒh</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ìƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒhB<BR>
-      none‚Å–³‚µB<BR>
-      notmaskpen‚År2_notmaskpenB<BR>
-      mergepennot‚År2_mergepennotB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgFÔ(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgF—Î(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgFÂ(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.pen.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.pen.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.pen.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.brush.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.brush.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.notselect.brush.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”ñ‘I‘ğ’†ƒAƒ“ƒJ[‚Ì‹éŒ`“à‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.style,<SPAN class="text_green">Œ`ó</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚ÌŒ`óB<BR>
-      square‚Å‹éŒ`‚ğ•\¦B<BR>
-      underline‚Å‰ºü‚ğ•\¦B<BR>
-      square+underline‚Å‹éŒ`‚Æ‰ºü‚ğ•\¦B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.blendmethod,<SPAN class="text_green">ƒRƒ}ƒ“ƒh</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgFÔ(0`255)<BR>
-      ƒ‰ƒXƒ^ƒIƒyƒŒ[ƒVƒ‡ƒ“ƒRƒ}ƒ“ƒh‚ª–³‚¢ê‡g—pB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚ÌƒtƒHƒ“ƒgFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.pen.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.pen.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.pen.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`˜g‚¨‚æ‚Ñ‰ºü‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.brush.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`“à‚ÌFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.brush.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`“à‚ÌF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>anchor.visited.brush.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>–K–âÏ‚İƒAƒ“ƒJ[‚Ì‘I‘ğˆƒ}[ƒJ‚Ì‹éŒ`“à‚ÌFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmarker.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>SSTPƒ}[ƒJ[‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmarker.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>SSTPƒ}[ƒJ[‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒW‚Ì•\¦ŠJnˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒW‚Ì•\¦ŠJnˆÊ’uYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>sstpmessage.xr,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒW‚Ì•\¦I—¹ˆÊ’uXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>onlinemarker.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒIƒ“ƒ‰ƒCƒ“•\¦‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>onlinemarker.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></TD>
-      <TD>ƒIƒ“ƒ‰ƒCƒ“•\¦‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.font.name,<SPAN class="text_green">ƒtƒHƒ“ƒg–¼</SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒW‚Ég—p‚·‚éƒtƒHƒ“ƒgBƒfƒtƒHƒ‹ƒg‚Í‚l‚r ƒSƒVƒbƒNB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.font.height,ƒTƒCƒY</TD>
-      <TD>SSTPƒƒbƒZ[ƒW‚Ì‚‚³•ûŒü‚Ì‘å‚«‚³(’PˆÊ‚ÍƒsƒNƒZƒ‹Fƒ|ƒCƒ“ƒg‚Å‚Í‚È‚¢)B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒWƒtƒHƒ“ƒgFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒWƒtƒHƒ“ƒgF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>sstpmessage.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>SSTPƒƒbƒZ[ƒWƒtƒHƒ“ƒgFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.font.name,<SPAN class="text_green">ƒtƒHƒ“ƒg–¼</SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚Ég—p‚·‚éƒtƒHƒ“ƒgB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.font.height,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚Ì‚‚³•ûŒü‚Ì‘å‚«‚³(’PˆÊ‚ÍƒsƒNƒZƒ‹Fƒ|ƒCƒ“ƒg‚Å‚Í‚È‚¢)B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.font.color.r,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚ÌƒtƒHƒ“ƒgFÔ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.font.color.g,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚ÌƒtƒHƒ“ƒgF—Î(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.font.color.b,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚ÌƒtƒHƒ“ƒgFÂ(0`255)</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.xr,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚ÌXÀ•WB‰E‹N“_B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>number.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒJƒEƒ“ƒ^”’l‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>arrow0.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒXƒNƒ[ƒ‹ƒ}[ƒJã–îˆó‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>arrow0.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒXƒNƒ[ƒ‹ƒ}[ƒJã–îˆó‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>arrow1.x,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒXƒNƒ[ƒ‹ƒ}[ƒJ‰º–îˆó‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>arrow1.y,<SPAN class="text_green">À•W <A HREF="#NOTE1">*1</A></SPAN></SPAN></TD>
-      <TD>ƒXƒNƒ[ƒ‹ƒ}[ƒJ‰º–îˆó‚ÌYÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>communicatebox.font.name,<SPAN class="text_green">ƒtƒHƒ“ƒg–¼</SPAN></TD>
-      <TD>“ü—Íƒ{ƒbƒNƒX‚Ég—p‚·‚éƒtƒHƒ“ƒgB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>communicatebox.x,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>“ü—Í‰Â”\ˆæn“_‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>communicatebox.y,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>“ü—Í‰Â”\ˆæn“_‚ÌXÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>communicatebox.width,<SPAN class="text_green">ƒTƒCƒY</SPAN></TD>
-      <TD>“ü—Í‰Â”\ˆæ‚Ì‰¡•B</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>communicatebox.height,<SPAN class="text_green">ƒTƒCƒY</SPAN></TD>
-      <TD>“ü—Í‰Â”\ˆæ‚Ìc•B</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>paint_transparent_region_black,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍPNA‚Å“§‰ß‚µ‚½ÛA”wŒiF‚ğ•‚Å•\¦‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TD>S</TD>
-      <TD>use_self_alpha,<SPAN class="text_green">”’l</SPAN></TD>
-      <TD>”’l‚ª1‚¾‚Á‚½ê‡‚ÍPNA‚Ì‘ã‚í‚è‚É32bitPNG‚ÌƒAƒ‹ƒtƒ@ƒ`ƒƒƒ“ƒlƒ‹‚ğg—p‚·‚éB</TD>
-    </TR>
-    <TR>
-      <TH colspan="3">balloons*s.txt/balloonk*s.txt(ŒÂ•Êw’è)</TH>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>windowposition.x,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>Šî–{’²®ˆÊ’u‚©‚çˆÚ“®XÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD>M,S,C</TD>
-      <TD>windowposition.y,<SPAN class="text_green">À•W</SPAN></TD>
-      <TD>Šî–{’²®ˆÊ’u‚©‚çˆÚ“®YÀ•WB</TD>
-    </TR>
-    <TR>
-      <TD colspan="3">ŒÂ•Ê‚Ìƒoƒ‹[ƒ“‚ğw’è‚·‚é‚±‚Æ‚É‚æ‚èdescript.txt‚ğƒI[ƒo[ƒ‰ƒCƒh‚Å‚«‚éB<BR>
-      “à—e‚Ídescript.txt‚Ì•\QÆB<BR>
-      <BR>
-      <A NAME="NOTE1">*1</A> ˆÈã‚ÌÀ•W’l‚Ì‚¤‚¿A*1‚Æ‘‚©‚ê‚½‚à‚Ì‚ÍAƒ}ƒCƒiƒXÀ•W‚ğw’è‚·‚é‚Æƒx[ƒX‚Æ‚È‚é‰æ‘œ‚Ì‰E‰º‚©‚ç‚Ì‘Š‘ÎÀ•W‚Æ‚È‚éB<BR>
-      ‰½‚©‚Ì——R‚Å‚Ç‚¤‚µ‚Ä‚àƒ}ƒCƒiƒXÀ•W‚ğw’è‚µ‚½‚¢ê‡‚ÍA--”’lA‚Æw’è‚·‚é‚±‚Æiƒ}ƒCƒiƒX2‚ÂjB</TD>
-    </TR>
-  </TBODY>
-</TABLE>
-<BR>
-</BODY>
-</HTML>
-<!--nobanner-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Disc-2 Balloonè¨­å®š</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Balloonè¨­å®š</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+			<li><a href="./list_sakura_script.htm">SAKURA script</a></li>
+			<li><a href="./list_shiori_event.htm">SHIORI Event</a></li>
+			<li><a href="./list_shiori_resource.htm">SHIORI Resource</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Balloon</h1>
+		<section class="navigation-category">
+			<h1>descript.txt</h1>
+			<ul>
+				<li><a href="#charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰">charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰</a></li>
+				<li><a href="#name,ãƒãƒ«ãƒ¼ãƒ³å">name,ãƒãƒ«ãƒ¼ãƒ³å</a></li>
+				<li><a href="#type,ç¨®åˆ¥">type,ç¨®åˆ¥</a></li>
+				<li><a href="#craftman,ä½œè€…å">craftman,ä½œè€…å</a></li>
+				<li><a href="#craftmanw,ä½œè€…å">craftmanw,ä½œè€…å</a></li>
+				<li><a href="#id,IDå">id,IDå</a></li>
+				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
+				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+				<li><a href="#cursor,ã‚«ãƒ¼ã‚½ãƒ«å">cursor,ã‚«ãƒ¼ã‚½ãƒ«å</a></li>
+				<li><a href="#origin.x,åº§æ¨™">origin.x,åº§æ¨™</a></li>
+				<li><a href="#origin.y,åº§æ¨™">origin.y,åº§æ¨™</a></li>
+				<li><a href="#validrect.left,åº§æ¨™">validrect.left,åº§æ¨™</a></li>
+				<li><a href="#validrect.top,åº§æ¨™">validrect.top,åº§æ¨™</a></li>
+				<li><a href="#validrect.right,åº§æ¨™">validrect.right,åº§æ¨™</a></li>
+				<li><a href="#validrect.bottom,åº§æ¨™">validrect.bottom,åº§æ¨™</a></li>
+				<li><a href="#wordwrappoint.x,åº§æ¨™">wordwrappoint.x,åº§æ¨™</a></li>
+				<li><a href="#font.name,ãƒ•ã‚©ãƒ³ãƒˆå">font.name,ãƒ•ã‚©ãƒ³ãƒˆå</a></li>
+				<li><a href="#font.height,æ•°å€¤">font.height,æ•°å€¤</a></li>
+				<li><a href="#font.color.r,æ•°å€¤">font.color.r,æ•°å€¤</a></li>
+				<li><a href="#font.color.g,æ•°å€¤">font.color.g,æ•°å€¤</a></li>
+				<li><a href="#font.color.b,æ•°å€¤">font.color.b,æ•°å€¤</a></li>
+				<li><a href="#font.shadowcolor.r,æ•°å€¤">font.shadowcolor.r,æ•°å€¤</a></li>
+				<li><a href="#font.shadowcolor.g,æ•°å€¤">font.shadowcolor.g,æ•°å€¤</a></li>
+				<li><a href="#font.shadowcolor.b,æ•°å€¤">font.shadowcolor.b,æ•°å€¤</a></li>
+				<li><a href="#font.bold,0/1">font.bold,0/1</a></li>
+				<li><a href="#font.italic,0/1">font.italic,0/1</a></li>
+				<li><a href="#font.strike,0/1">font.strike,0/1</a></li>
+				<li><a href="#font.outline,0/1">font.outline,0/1</a></li>
+				<li><a href="#anchor.font.color.r,æ•°å€¤">anchor.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.font.color.g,æ•°å€¤">anchor.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.font.color.b,æ•°å€¤">anchor.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#cursor.style,å½¢çŠ¶">cursor.style,å½¢çŠ¶</a></li>
+				<li><a href="#cursor.blendmethod,ã‚³ãƒãƒ³ãƒ‰">cursor.blendmethod,ã‚³ãƒãƒ³ãƒ‰</a></li>
+				<li><a href="#cursor.font.color.r,æ•°å€¤">cursor.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#cursor.font.color.g,æ•°å€¤">cursor.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#cursor.font.color.b,æ•°å€¤">cursor.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#cursor.pen.color.r,æ•°å€¤">cursor.pen.color.r,æ•°å€¤</a></li>
+				<li><a href="#cursor.pen.color.g,æ•°å€¤">cursor.pen.color.g,æ•°å€¤</a></li>
+				<li><a href="#cursor.pen.color.b,æ•°å€¤">cursor.pen.color.b,æ•°å€¤</a></li>
+				<li><a href="#cursor.brush.color.r,æ•°å€¤">cursor.brush.color.r,æ•°å€¤</a></li>
+				<li><a href="#cursor.brush.color.g,æ•°å€¤">cursor.brush.color.g,æ•°å€¤</a></li>
+				<li><a href="#cursor.brush.color.b,æ•°å€¤">cursor.brush.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.style,å½¢çŠ¶">anchor.style,å½¢çŠ¶</a></li>
+				<li><a href="#anchor.blendmethod,ã‚³ãƒãƒ³ãƒ‰">anchor.blendmethod,ã‚³ãƒãƒ³ãƒ‰</a></li>
+				<li><a href="#anchor.pen.color.r,æ•°å€¤">anchor.pen.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.pen.color.g,æ•°å€¤">anchor.pen.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.pen.color.b,æ•°å€¤">anchor.pen.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.brush.color.r,æ•°å€¤">anchor.brush.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.brush.color.g,æ•°å€¤">anchor.brush.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.brush.color.b,æ•°å€¤">anchor.brush.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.style,å½¢çŠ¶">anchor.notselect.style,å½¢çŠ¶</a></li>
+				<li><a href="#anchor.notselect.blendmethod,ã‚³ãƒãƒ³ãƒ‰">anchor.notselect.blendmethod,ã‚³ãƒãƒ³ãƒ‰</a></li>
+				<li><a href="#anchor.notselect.font.color.r,æ•°å€¤">anchor.notselect.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.font.color.g,æ•°å€¤">anchor.notselect.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.font.color.b,æ•°å€¤">anchor.notselect.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.pen.color.r,æ•°å€¤">anchor.notselect.pen.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.pen.color.g,æ•°å€¤">anchor.notselect.pen.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.pen.color.b,æ•°å€¤">anchor.notselect.pen.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.brush.color.r,æ•°å€¤">anchor.notselect.brush.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.brush.color.g,æ•°å€¤">anchor.notselect.brush.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.notselect.brush.color.b,æ•°å€¤">anchor.notselect.brush.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.style,å½¢çŠ¶">anchor.visited.style,å½¢çŠ¶</a></li>
+				<li><a href="#anchor.visited.blendmethod,ã‚³ãƒãƒ³ãƒ‰">anchor.visited.blendmethod,ã‚³ãƒãƒ³ãƒ‰</a></li>
+				<li><a href="#anchor.visited.font.color.r,æ•°å€¤">anchor.visited.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.font.color.g,æ•°å€¤">anchor.visited.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.font.color.b,æ•°å€¤">anchor.visited.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.pen.color.r,æ•°å€¤">anchor.visited.pen.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.pen.color.g,æ•°å€¤">anchor.visited.pen.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.pen.color.b,æ•°å€¤">anchor.visited.pen.color.b,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.brush.color.r,æ•°å€¤">anchor.visited.brush.color.r,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.brush.color.g,æ•°å€¤">anchor.visited.brush.color.g,æ•°å€¤</a></li>
+				<li><a href="#anchor.visited.brush.color.b,æ•°å€¤">anchor.visited.brush.color.b,æ•°å€¤</a></li>
+				<li><a href="#sstpmarker.x,åº§æ¨™">sstpmarker.x,åº§æ¨™</a></li>
+				<li><a href="#sstpmarker.y,åº§æ¨™">sstpmarker.y,åº§æ¨™</a></li>
+				<li><a href="#sstpmessage.x,åº§æ¨™">sstpmessage.x,åº§æ¨™</a></li>
+				<li><a href="#sstpmessage.y,åº§æ¨™">sstpmessage.y,åº§æ¨™</a></li>
+				<li><a href="#sstpmessage.xr,åº§æ¨™">sstpmessage.xr,åº§æ¨™</a></li>
+				<li><a href="#onlinemarker.x,åº§æ¨™">onlinemarker.x,åº§æ¨™</a></li>
+				<li><a href="#onlinemarker.y,åº§æ¨™">onlinemarker.y,åº§æ¨™</a></li>
+				<li><a href="#sstpmessage.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">sstpmessage.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</a></li>
+				<li><a href="#sstpmessage.font.height,ã‚µã‚¤ã‚º">sstpmessage.font.height,ã‚µã‚¤ã‚º</a></li>
+				<li><a href="#sstpmessage.font.color.r,æ•°å€¤">sstpmessage.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#sstpmessage.font.color.g,æ•°å€¤">sstpmessage.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#sstpmessage.font.color.b,æ•°å€¤">sstpmessage.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#number.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">number.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</a></li>
+				<li><a href="#number.font.height,æ•°å€¤">number.font.height,æ•°å€¤</a></li>
+				<li><a href="#number.font.color.r,æ•°å€¤">number.font.color.r,æ•°å€¤</a></li>
+				<li><a href="#number.font.color.g,æ•°å€¤">number.font.color.g,æ•°å€¤</a></li>
+				<li><a href="#number.font.color.b,æ•°å€¤">number.font.color.b,æ•°å€¤</a></li>
+				<li><a href="#number.xr,åº§æ¨™">number.xr,åº§æ¨™</a></li>
+				<li><a href="#number.y,åº§æ¨™">number.y,åº§æ¨™</a></li>
+				<li><a href="#arrow0.x,åº§æ¨™">arrow0.x,åº§æ¨™</a></li>
+				<li><a href="#arrow0.y,åº§æ¨™">arrow0.y,åº§æ¨™</a></li>
+				<li><a href="#arrow1.x,åº§æ¨™">arrow1.x,åº§æ¨™</a></li>
+				<li><a href="#arrow1.y,åº§æ¨™">arrow1.y,åº§æ¨™</a></li>
+				<li><a href="#communicatebox.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">communicatebox.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</a></li>
+				<li><a href="#communicatebox.x,åº§æ¨™">communicatebox.x,åº§æ¨™</a></li>
+				<li><a href="#communicatebox.y,åº§æ¨™">communicatebox.y,åº§æ¨™</a></li>
+				<li><a href="#communicatebox.width,ã‚µã‚¤ã‚º">communicatebox.width,ã‚µã‚¤ã‚º</a></li>
+				<li><a href="#communicatebox.height,ã‚µã‚¤ã‚º">communicatebox.height,ã‚µã‚¤ã‚º</a></li>
+				<li><a href="#paint_transparent_region_black,æ•°å€¤">paint_transparent_region_black,æ•°å€¤</a></li>
+				<li><a href="#use_self_alpha,æ•°å€¤">use_self_alpha,æ•°å€¤</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>balloons*s.txt/balloonk*s.txt(å€‹åˆ¥æŒ‡å®š)</h1>
+			<ul>
+				<li><a href="#windowposition.x,åº§æ¨™">windowposition.x,åº§æ¨™</a></li>
+				<li><a href="#windowposition.y,åº§æ¨™">windowposition.y,åº§æ¨™</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>descript.txt</h1>
+			<dl id="charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰">
+				<dt class="entry">charset,æ–‡å­—ã‚³ãƒ¼ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">è¡¨ç¤ºã™ã‚‹æ–‡å­—ã‚³ãƒ¼ãƒ‰ã€‚Shift_JISæ¨å¥¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name,ãƒãƒ«ãƒ¼ãƒ³å">
+				<dt class="entry">name,ãƒãƒ«ãƒ¼ãƒ³å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒãƒ«ãƒ¼ãƒ³ã®åå‰ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="type,ç¨®åˆ¥">
+				<dt class="entry">type,ç¨®åˆ¥</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚¡ã‚¤ãƒ«ã‚»ãƒƒãƒˆã®ç¨®åˆ¥ã€‚ãƒãƒ«ãƒ¼ãƒ³ã®å ´åˆã¯balloonã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftman,ä½œè€…å">
+				<dt class="entry">craftman,ä½œè€…å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒãƒ«ãƒ¼ãƒ³ã®ä½œè€…åã€‚åŠè§’è‹±æ•°ã®ã¿ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw,ä½œè€…å">
+				<dt class="entry">craftmanw,ä½œè€…å</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒãƒ«ãƒ¼ãƒ³ã®ä½œè€…åã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="id,IDå">
+				<dt class="entry">id,IDå</dt>
+				<dd class="entry">
+					<p class="description">ãã®ãƒãƒ«ãƒ¼ãƒ³ã®IDåã€‚åŠè§’è‹±æ•°ã®ã¿ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanurl,URL">
+				<dt class="entry">craftmanurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ä½œè€…ã®URLã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="homeurl,URL">
+				<dt class="entry">homeurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯æ›´æ–°ç”¨ã®URLã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor,ã‚«ãƒ¼ã‚½ãƒ«å">
+				<dt class="entry">cursor,ã‚«ãƒ¼ã‚½ãƒ«å</dt>
+				<dd class="entry">
+					<p class="description">ãƒãƒ«ãƒ¼ãƒ³ã«ä½¿ç”¨ã™ã‚‹ã‚«ãƒ¼ã‚½ãƒ«ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="origin.x,åº§æ¨™">
+				<dt class="entry">origin.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆé–‹å§‹ä½ç½®ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="origin.y,åº§æ¨™">
+				<dt class="entry">origin.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆé–‹å§‹ä½ç½®ã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.left,åº§æ¨™">
+				<dt class="entry">validrect.left,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆæç”»ç¯„å›²ã®å·¦ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.top,åº§æ¨™">
+				<dt class="entry">validrect.top,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆæç”»ç¯„å›²ã®ä¸Šä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.right,åº§æ¨™">
+				<dt class="entry">validrect.right,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆæç”»ç¯„å›²ã®å³ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.bottom,åº§æ¨™">
+				<dt class="entry">validrect.bottom,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ãƒ†ã‚­ã‚¹ãƒˆæç”»ç¯„å›²ã®ä¸‹ä½ç½®ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="wordwrappoint.x,åº§æ¨™">
+				<dt class="entry">wordwrappoint.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">è‡ªå‹•æ”¹è¡Œã§æŠ˜ã‚Šè¿”ã™Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.name,ãƒ•ã‚©ãƒ³ãƒˆå">
+				<dt class="entry">font.name,ãƒ•ã‚©ãƒ³ãƒˆå</dt>
+				<dd class="entry">
+					<p class="description">ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.height,æ•°å€¤">
+				<dt class="entry">font.height,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã®é«˜ã•æ–¹å‘ã®å¤§ãã•ã€‚(å˜ä½ã¯ãƒ”ã‚¯ã‚»ãƒ«ï¼šãƒã‚¤ãƒ³ãƒˆã§ã¯ãªã„)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.r,æ•°å€¤">
+				<dt class="entry">font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.g,æ•°å€¤">
+				<dt class="entry">font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.b,æ•°å€¤">
+				<dt class="entry">font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.r,æ•°å€¤">
+				<dt class="entry">font.shadowcolor.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆã®é™°è½ã¡è‰²èµ¤(0ï½255) noneã§ç„¡åŠ¹åŒ–</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.g,æ•°å€¤">
+				<dt class="entry">font.shadowcolor.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆã®é™°è½ã¡è‰²ç·‘(0ï½255) noneã§ç„¡åŠ¹åŒ–</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.b,æ•°å€¤">
+				<dt class="entry">font.shadowcolor.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆã®é™°è½ã¡è‰²é’(0ï½255) noneã§ç„¡åŠ¹åŒ–</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.bold,0/1">
+				<dt class="entry">font.bold,0/1</dt>
+				<dd class="entry">
+					<p class="description">å¤ªå­—ãƒ•ã‚©ãƒ³ãƒˆã€‚0ã§ç„¡åŠ¹/1ã§æœ‰åŠ¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.italic,0/1">
+				<dt class="entry">font.italic,0/1</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¤ã‚¿ãƒªãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ«ã€‚0ã§ç„¡åŠ¹/1ã§æœ‰åŠ¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.strike,0/1">
+				<dt class="entry">font.strike,0/1</dt>
+				<dd class="entry">
+					<p class="description">æ‰“ã¡æ¶ˆã—ç·šã‚’ã¤ã‘ã‚‹ã€‚0ã§ç„¡åŠ¹/1ã§æœ‰åŠ¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.outline,0/1">
+				<dt class="entry">font.outline,0/1</dt>
+				<dd class="entry">
+					<p class="description">ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã‚¹ã‚¿ã‚¤ãƒ«ã€‚0ã§ç„¡åŠ¹/1ã§æœ‰åŠ¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.r,æ•°å€¤">
+				<dt class="entry">anchor.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚¢ãƒ³ã‚«ãƒ¼ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.g,æ•°å€¤">
+				<dt class="entry">anchor.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚¢ãƒ³ã‚«ãƒ¼ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.b,æ•°å€¤">
+				<dt class="entry">anchor.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚¢ãƒ³ã‚«ãƒ¼ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.style,å½¢çŠ¶">
+				<dt class="entry">cursor.style,å½¢çŠ¶</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®å½¢çŠ¶ã€‚<br />squareã§çŸ©å½¢ã‚’è¡¨ç¤ºã€‚<br />underlineã§ä¸‹ç·šã‚’è¡¨ç¤ºã€‚<br />square+underlineã§çŸ©å½¢ã¨ä¸‹ç·šã‚’è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.blendmethod,ã‚³ãƒãƒ³ãƒ‰">
+				<dt class="entry">cursor.blendmethod,ã‚³ãƒãƒ³ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã€‚<br />noneã§ç„¡ã—ã€‚<br />notmaskpenã§r2_notmaskpenã€‚<br />mergepennotã§r2_mergepennotã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.r,æ•°å€¤">
+				<dt class="entry">cursor.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.g,æ•°å€¤">
+				<dt class="entry">cursor.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.b,æ•°å€¤">
+				<dt class="entry">cursor.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.r,æ•°å€¤">
+				<dt class="entry">cursor.pen.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.g,æ•°å€¤">
+				<dt class="entry">cursor.pen.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.b,æ•°å€¤">
+				<dt class="entry">cursor.pen.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.r,æ•°å€¤">
+				<dt class="entry">cursor.brush.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.g,æ•°å€¤">
+				<dt class="entry">cursor.brush.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.b,æ•°å€¤">
+				<dt class="entry">cursor.brush.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠè‚¢ãƒãƒ¼ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.style,å½¢çŠ¶">
+				<dt class="entry">anchor.style,å½¢çŠ¶</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®å½¢çŠ¶ã€‚<br />squareã§çŸ©å½¢ã‚’è¡¨ç¤ºã€‚<br />underlineã§ä¸‹ç·šã‚’è¡¨ç¤ºã€‚<br />square+underlineã§çŸ©å½¢ã¨ä¸‹ç·šã‚’è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.blendmethod,ã‚³ãƒãƒ³ãƒ‰">
+				<dt class="entry">anchor.blendmethod,ã‚³ãƒãƒ³ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã€‚<br />noneã§ç„¡ã—ã€‚<br />notmaskpenã§r2_notmaskpenã€‚<br />mergepennotã§r2_mergepennotã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.r,æ•°å€¤">
+				<dt class="entry">anchor.pen.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.g,æ•°å€¤">
+				<dt class="entry">anchor.pen.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.b,æ•°å€¤">
+				<dt class="entry">anchor.pen.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.r,æ•°å€¤">
+				<dt class="entry">anchor.brush.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.g,æ•°å€¤">
+				<dt class="entry">anchor.brush.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.b,æ•°å€¤">
+				<dt class="entry">anchor.brush.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">é¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.style,å½¢çŠ¶">
+				<dt class="entry">anchor.notselect.style,å½¢çŠ¶</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®å½¢çŠ¶ã€‚<br />squareã§çŸ©å½¢ã‚’è¡¨ç¤ºã€‚<br />underlineã§ä¸‹ç·šã‚’è¡¨ç¤ºã€‚<br />square+underlineã§çŸ©å½¢ã¨ä¸‹ç·šã‚’è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.blendmethod,ã‚³ãƒãƒ³ãƒ‰">
+				<dt class="entry">anchor.notselect.blendmethod,ã‚³ãƒãƒ³ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ã€‚<br />noneã§ç„¡ã—ã€‚<br />notmaskpenã§r2_notmaskpenã€‚<br />mergepennotã§r2_mergepennotã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.r,æ•°å€¤">
+				<dt class="entry">anchor.notselect.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.g,æ•°å€¤">
+				<dt class="entry">anchor.notselect.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.b,æ•°å€¤">
+				<dt class="entry">anchor.notselect.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.r,æ•°å€¤">
+				<dt class="entry">anchor.notselect.pen.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.g,æ•°å€¤">
+				<dt class="entry">anchor.notselect.pen.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.b,æ•°å€¤">
+				<dt class="entry">anchor.notselect.pen.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.r,æ•°å€¤">
+				<dt class="entry">anchor.notselect.brush.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.g,æ•°å€¤">
+				<dt class="entry">anchor.notselect.brush.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.b,æ•°å€¤">
+				<dt class="entry">anchor.notselect.brush.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">éé¸æŠä¸­ã‚¢ãƒ³ã‚«ãƒ¼ã®çŸ©å½¢å†…ã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.style,å½¢çŠ¶">
+				<dt class="entry">anchor.visited.style,å½¢çŠ¶</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®å½¢çŠ¶ã€‚<br />squareã§çŸ©å½¢ã‚’è¡¨ç¤ºã€‚<br />underlineã§ä¸‹ç·šã‚’è¡¨ç¤ºã€‚<br />square+underlineã§çŸ©å½¢ã¨ä¸‹ç·šã‚’è¡¨ç¤ºã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.blendmethod,ã‚³ãƒãƒ³ãƒ‰">
+				<dt class="entry">anchor.visited.blendmethod,ã‚³ãƒãƒ³ãƒ‰</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)<br />ãƒ©ã‚¹ã‚¿ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒãƒ³ãƒ‰ãŒç„¡ã„å ´åˆä½¿ç”¨ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.r,æ•°å€¤">
+				<dt class="entry">anchor.visited.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.g,æ•°å€¤">
+				<dt class="entry">anchor.visited.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.b,æ•°å€¤">
+				<dt class="entry">anchor.visited.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.r,æ•°å€¤">
+				<dt class="entry">anchor.visited.pen.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.g,æ•°å€¤">
+				<dt class="entry">anchor.visited.pen.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.b,æ•°å€¤">
+				<dt class="entry">anchor.visited.pen.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢æ ãŠã‚ˆã³ä¸‹ç·šã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.r,æ•°å€¤">
+				<dt class="entry">anchor.visited.brush.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢å†…ã®è‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.g,æ•°å€¤">
+				<dt class="entry">anchor.visited.brush.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢å†…ã®è‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.b,æ•°å€¤">
+				<dt class="entry">anchor.visited.brush.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">è¨ªå•æ¸ˆã¿ã‚¢ãƒ³ã‚«ãƒ¼ã®é¸æŠè‚¢ãƒãƒ¼ã‚«ã®çŸ©å½¢å†…ã®è‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmarker.x,åº§æ¨™">
+				<dt class="entry">sstpmarker.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒãƒ¼ã‚«ãƒ¼ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmarker.y,åº§æ¨™">
+				<dt class="entry">sstpmarker.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒãƒ¼ã‚«ãƒ¼ã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.x,åº§æ¨™">
+				<dt class="entry">sstpmessage.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºé–‹å§‹ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.y,åº§æ¨™">
+				<dt class="entry">sstpmessage.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºé–‹å§‹ä½ç½®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.xr,åº§æ¨™">
+				<dt class="entry">sstpmessage.xr,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®è¡¨ç¤ºçµ‚äº†ä½ç½®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="onlinemarker.x,åº§æ¨™">
+				<dt class="entry">onlinemarker.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚ªãƒ³ãƒ©ã‚¤ãƒ³è¡¨ç¤ºã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="onlinemarker.y,åº§æ¨™">
+				<dt class="entry">onlinemarker.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚ªãƒ³ãƒ©ã‚¤ãƒ³è¡¨ç¤ºã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">
+				<dt class="entry">sstpmessage.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã€‚ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ï¼­ï¼³ ã‚´ã‚·ãƒƒã‚¯ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.height,ã‚µã‚¤ã‚º">
+				<dt class="entry">sstpmessage.font.height,ã‚µã‚¤ã‚º</dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®é«˜ã•æ–¹å‘ã®å¤§ãã•(å˜ä½ã¯ãƒ”ã‚¯ã‚»ãƒ«ï¼šãƒã‚¤ãƒ³ãƒˆã§ã¯ãªã„)ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.r,æ•°å€¤">
+				<dt class="entry">sstpmessage.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.g,æ•°å€¤">
+				<dt class="entry">sstpmessage.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.b,æ•°å€¤">
+				<dt class="entry">sstpmessage.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">SSTPãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">
+				<dt class="entry">number.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.height,æ•°å€¤">
+				<dt class="entry">number.font.height,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®é«˜ã•æ–¹å‘ã®å¤§ãã•(å˜ä½ã¯ãƒ”ã‚¯ã‚»ãƒ«ï¼šãƒã‚¤ãƒ³ãƒˆã§ã¯ãªã„)ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.r,æ•°å€¤">
+				<dt class="entry">number.font.color.r,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²èµ¤(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.g,æ•°å€¤">
+				<dt class="entry">number.font.color.g,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²ç·‘(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.b,æ•°å€¤">
+				<dt class="entry">number.font.color.b,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®ãƒ•ã‚©ãƒ³ãƒˆè‰²é’(0ï½255)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.xr,åº§æ¨™">
+				<dt class="entry">number.xr,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®Xåº§æ¨™ã€‚å³èµ·ç‚¹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.y,åº§æ¨™">
+				<dt class="entry">number.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚«ã‚¦ãƒ³ã‚¿æ•°å€¤ã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow0.x,åº§æ¨™">
+				<dt class="entry">arrow0.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚«ä¸ŠçŸ¢å°ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow0.y,åº§æ¨™">
+				<dt class="entry">arrow0.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚«ä¸ŠçŸ¢å°ã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow1.x,åº§æ¨™">
+				<dt class="entry">arrow1.x,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚«ä¸‹çŸ¢å°ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow1.y,åº§æ¨™">
+				<dt class="entry">arrow1.y,åº§æ¨™ <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ãƒãƒ¼ã‚«ä¸‹çŸ¢å°ã®Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.font.name,ãƒ•ã‚©ãƒ³ãƒˆå">
+				<dt class="entry">communicatebox.font.name,ãƒ•ã‚©ãƒ³ãƒˆå</dt>
+				<dd class="entry">
+					<p class="description">å…¥åŠ›ãƒœãƒƒã‚¯ã‚¹ã«ä½¿ç”¨ã™ã‚‹ãƒ•ã‚©ãƒ³ãƒˆã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.x,åº§æ¨™">
+				<dt class="entry">communicatebox.x,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">å…¥åŠ›å¯èƒ½åŸŸå§‹ç‚¹ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.y,åº§æ¨™">
+				<dt class="entry">communicatebox.y,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">å…¥åŠ›å¯èƒ½åŸŸå§‹ç‚¹ã®Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.width,ã‚µã‚¤ã‚º">
+				<dt class="entry">communicatebox.width,ã‚µã‚¤ã‚º</dt>
+				<dd class="entry">
+					<p class="description">å…¥åŠ›å¯èƒ½åŸŸã®æ¨ªå¹…ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.height,ã‚µã‚¤ã‚º">
+				<dt class="entry">communicatebox.height,ã‚µã‚¤ã‚º</dt>
+				<dd class="entry">
+					<p class="description">å…¥åŠ›å¯èƒ½åŸŸã®ç¸¦å¹…ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="paint_transparent_region_black,æ•°å€¤">
+				<dt class="entry">paint_transparent_region_black,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯PNAã§é€éã—ãŸéš›ã€èƒŒæ™¯è‰²ã‚’é»’ã§è¡¨ç¤ºã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="use_self_alpha,æ•°å€¤">
+				<dt class="entry">use_self_alpha,æ•°å€¤</dt>
+				<dd class="entry">
+					<p class="description">æ•°å€¤ãŒ1ã ã£ãŸå ´åˆã¯PNAã®ä»£ã‚ã‚Šã«32bitPNGã®ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒ³ãƒãƒ«ã‚’ä½¿ç”¨ã™ã‚‹ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>balloons*s.txt/balloonk*s.txt(å€‹åˆ¥æŒ‡å®š)</h1>
+			<dl id="windowposition.x,åº§æ¨™">
+				<dt class="entry">windowposition.x,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">åŸºæœ¬èª¿æ•´ä½ç½®ã‹ã‚‰ç§»å‹•Xåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="windowposition.y,åº§æ¨™">
+				<dt class="entry">windowposition.y,åº§æ¨™</dt>
+				<dd class="entry">
+					<p class="description">åŸºæœ¬èª¿æ•´ä½ç½®ã‹ã‚‰ç§»å‹•Yåº§æ¨™ã€‚</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<div class="caption">
+				<p>å€‹åˆ¥ã®ãƒãƒ«ãƒ¼ãƒ³ã‚’æŒ‡å®šã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šdescript.txtã‚’ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã§ãã‚‹ã€‚<br />å†…å®¹ã¯descript.txtã®è¡¨å‚ç…§ã€‚</p>
+				<p id="note1">*1 ä»¥ä¸Šã®åº§æ¨™å€¤ã®ã†ã¡ã€*1ã¨æ›¸ã‹ã‚ŒãŸã‚‚ã®ã¯ã€ãƒã‚¤ãƒŠã‚¹åº§æ¨™ã‚’æŒ‡å®šã™ã‚‹ã¨ãƒ™ãƒ¼ã‚¹ã¨ãªã‚‹ç”»åƒã®å³ä¸‹ã‹ã‚‰ã®ç›¸å¯¾åº§æ¨™ã¨ãªã‚‹ã€‚<br />ä½•ã‹ã®ç†ç”±ã§ã©ã†ã—ã¦ã‚‚ãƒã‚¤ãƒŠã‚¹åº§æ¨™ã‚’æŒ‡å®šã—ãŸã„å ´åˆã¯ã€--æ•°å€¤ã€ã¨æŒ‡å®šã™ã‚‹ã“ã¨ï¼ˆãƒã‚¤ãƒŠã‚¹2ã¤ï¼‰ã€‚</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
