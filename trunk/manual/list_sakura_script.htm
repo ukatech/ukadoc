@@ -281,6 +281,7 @@
 				<li><a href="#_!_open,dialog,save,パラメータ_">\![open,dialog,save,パラメータ]</a></li>
 				<li><a href="#_!_open,dialog,folder,パラメータ_">\![open,dialog,folder,パラメータ]</a></li>
 				<li><a href="#_!_open,dialog,color,パラメータ_">\![open,dialog,color,パラメータ]</a></li>
+				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
 				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
 			</ul>
 		</section>
@@ -2321,7 +2322,7 @@
 			<dl id="_!_close,inputbox,ID_">
 				<dt class="entry">\![close,inputbox,ID]</dt>
 				<dd class="entry">
-					<p class="description">IDで指定されたInputBoxを閉じる。</p>
+					<p class="description">IDで指定されたInputBoxを閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2527,6 +2528,15 @@
 				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
 				<dd class="entry">
 					<p class="description">※カラーパレットのダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_close,dialog,ID_">
+				<dt class="entry">\![close,dialog,ID]</dt>
+				<dd class="entry">
+					<p class="description">指定したイベントIDのダイアログを閉じる。全部の場合は__SYSTEM_ALL_DIALOG__を指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
