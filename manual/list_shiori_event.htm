@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -166,6 +166,8 @@
 				<li><a href="#OnUpdateOther.OnMD5CompareFailure">OnUpdateOther.OnMD5CompareFailure</a></li>
 				<li><a href="#OnUpdateCheckComplete">OnUpdateCheckComplete</a></li>
 				<li><a href="#OnUpdateCheckFailure">OnUpdateCheckFailure</a></li>
+				<li><a href="#OnUpdateResult">OnUpdateResult</a></li>
+				<li><a href="#OnUpdateResultExplorer">OnUpdateResultExplorer</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -2040,6 +2042,49 @@
 					<dd>※SSPのみ。読取専用フラグがついている。</dd>
 				</dl>
 			</section>
+			<dl id="OnUpdateResult">
+				<dt class="entry">OnUpdateResult</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を通知する。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>※実行結果　Reference0、Reference1…と、更新を実行した順に入っていく</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>※実行結果</h1>
+				<dl>
+					<dt>フォーマット</dt>
+					<dd>(※１)[\1](※２)[\1](※３)[\1](※４)　または<br />
+					(※１)[\1](※２)[\1](※３)</dd>
+					<dt>※１</dt>
+					<dd>ghost、shell、balloon、plugin　のいずれか</dd>
+					<dt>※２</dt>
+					<dd>OK、NGのいずれか。OKで成功、NGで失敗。</dd>
+					<dt>※３</dt>
+					<dd>成功した場合＝更新ファイル数(0もあり)<br />
+					失敗した場合＝失敗理由。md5 failureなど通常のネットワーク更新時と同じ。少し上の「※成功/失敗理由」も参照すること。</dd>
+					<dt>※４</dt>
+					<dd>失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</dd>
+				</dl>
+			</section>
+			<dl id="OnUpdateResultExplorer">
+				<dt class="entry">OnUpdateResultExplorer</dt>
+				<dd class="entry">
+					<p class="description">ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnUpdateResultと同じ</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>時計合わせイベント</h1>
