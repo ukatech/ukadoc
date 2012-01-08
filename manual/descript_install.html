@@ -72,6 +72,7 @@
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -82,6 +83,7 @@
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -93,6 +95,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />複数パッケージの場合はpackage。(SSPのみ)</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -104,6 +107,7 @@
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトのディレクトリ名。半角英数推奨。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -115,6 +119,7 @@
 				<dt class="entry">refresh,数値</dt>
 				<dd class="entry">
 					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
+					<p class="default">1以外の任意の値</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -126,6 +131,7 @@
 				<dt class="entry">refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
 					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -140,6 +146,7 @@
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -150,6 +157,7 @@
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -161,6 +169,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。ゴーストの場合はghost。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -172,6 +181,7 @@
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトのゴースト側のディレクトリ名。半角英数推奨。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -182,6 +192,7 @@
 				<dt class="entry">balloon.directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトのバルーン側のディレクトリ名。半角英数推奨。</p>
+					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -193,6 +204,7 @@
 				<dt class="entry">refresh,数値</dt>
 				<dd class="entry">
 					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
+					<p class="default">1以外の任意の値</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -204,6 +216,7 @@
 				<dt class="entry">refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
 					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -218,6 +231,7 @@
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -229,6 +243,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。追加ファイルの場合はsupplement。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -240,6 +255,7 @@
 				<dt class="entry">accept,ゴースト名</dt>
 				<dd class="entry">
 					<p class="description">受け取るゴーストの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -251,6 +267,7 @@
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -264,6 +281,7 @@
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -274,6 +292,7 @@
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -285,6 +304,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。追加シェルの場合はshell。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -296,6 +316,7 @@
 				<dt class="entry">accept,ゴースト名</dt>
 				<dd class="entry">
 					<p class="description">受け取るゴーストの名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -307,6 +328,7 @@
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p class="description">シェルのディレクトリ名。半角英数推奨。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

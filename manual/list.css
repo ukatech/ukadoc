@@ -139,6 +139,15 @@ a:hover	{
 .category .description {
 	margin: 5px 5px 5px 15px;
 }
+.category .default {
+	margin: 5px 5px 5px 15px;
+	font-style: italic;
+	font-size: small;
+	color: #666;
+}
+.category .default:before {
+	content: "既定値: ";
+}
 .category .reference {
 	margin: 5px 5px 5px 15px;
 	padding: 2px;
