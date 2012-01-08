@@ -107,7 +107,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。ゴーストの場合はghost。</p>
-					<p class="default">省略不可</p>
+					<p class="default">省略不可 | ghost( on SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -119,7 +119,7 @@
 				<dt class="entry">craftman,作者名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの作者名。半角英数のみ。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -131,7 +131,7 @@
 				<dt class="entry">craftmanw,作者名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの作者名。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -143,7 +143,7 @@
 				<dt class="entry">id,ID名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストのID名。半角英数のみ。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -155,7 +155,7 @@
 				<dt class="entry">craftmanurl,URL</dt>
 				<dd class="entry">
 					<p class="description">作者のURL。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -167,7 +167,7 @@
 				<dt class="entry">homeurl,URL</dt>
 				<dd class="entry">
 					<p class="description">ネットワーク更新用のURL、SHIORI側の記述が優先される。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -177,7 +177,7 @@
 				<dt class="entry">sakura.name,名前</dt>
 				<dd class="entry">
 					<p class="description">本題側のゴーストの名前。</p>
-					<p class="default">不明</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -189,7 +189,7 @@
 				<dt class="entry">sakura.name2,名前</dt>
 				<dd class="entry">
 					<p class="description">本題側のゴーストの名前。愛称等。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -199,7 +199,7 @@
 				<dt class="entry">kero.name,名前</dt>
 				<dd class="entry">
 					<p class="description">相方側のゴーストの名前。</p>
-					<p class="default">不明</p>
+					<p class="default">省略不可 | sakura.name( on SSP ※ウインドウのタイトル設定に使用)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -211,7 +211,7 @@
 				<dt class="entry">char*.name,名前</dt>
 				<dd class="entry">
 					<p class="description">\p[*]の名前。</p>
-					<p class="default">不明</p>
+					<p class="default">kero.name( on SSP ※ウインドウのタイトル設定に使用)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -241,7 +241,7 @@
 				<dt class="entry">char*.seriko.defaultsurface,数値</dt>
 				<dd class="entry">
 					<p class="description">\p[*]のゴーストのデフォルトのサーフィス番号。</p>
-					<p class="default">不明</p>
+					<p class="default">10</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -251,7 +251,7 @@
 				<dt class="entry">balloon.defaultsurface,数値</dt>
 				<dd class="entry">
 					<p class="description">バルーンのデフォルトのサーフィス番号。</p>
-					<p class="default">不明</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -261,7 +261,7 @@
 				<dt class="entry">seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
 					<p class="description">※全体のサーフィスのデフォルト表示位置情報。</p>
-					<p class="default">不明</p>
+					<p class="default">bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -272,7 +272,7 @@
 				<dt class="entry">sakura.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
 					<p class="description">※本体側のデフォルト表示位置情報。</p>
-					<p class="default">不明</p>
+					<p class="default">bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -282,7 +282,7 @@
 				<dt class="entry">kero.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
 					<p class="description">※相方側のデフォルト表示位置情報。</p>
-					<p class="default">不明</p>
+					<p class="default">bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -292,7 +292,7 @@
 				<dt class="entry">char*.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
 					<p class="description">※2人目以降の相方側のデフォルト表示位置情報。</p>
-					<p class="default">不明</p>
+					<p class="default">bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -444,7 +444,7 @@
 				<dt class="entry">shiori.encoding,数値</dt>
 				<dd class="entry">
 					<p class="description">1でCharsetのないSHIORIで強制エンコーディングする。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -454,7 +454,7 @@
 				<dt class="entry">don&#39;t need onmousemove,数値</dt>
 				<dd class="entry">
 					<p class="description">1でOnMouseMoveを送らなくなる。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -465,7 +465,7 @@
 				<dt class="entry">don&#39;t need bind,数値</dt>
 				<dd class="entry">
 					<p class="description">1で着せ替えを無効にする。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -476,7 +476,7 @@
 				<dt class="entry">don&#39;t need seriko talk,数値</dt>
 				<dd class="entry">
 					<p class="description">1でSERIKO talkメソッド(口パク)機能を無効化する。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -487,7 +487,7 @@
 				<dt class="entry">balloon,バルーン名</dt>
 				<dd class="entry">
 					<p class="description">デフォルトに使用するバルーン名。</p>
-					<p class="default">不明</p>
+					<p class="default">不明 | SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -498,7 +498,7 @@
 				<dt class="entry">default.balloon.path,パス</dt>
 				<dd class="entry">
 					<p class="description">デフォルトに使用するバルーンの相対パス。</p>
-					<p class="default">不明</p>
+					<p class="default">不明| SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -508,7 +508,7 @@
 				<dt class="entry">balloon.dontmove,true</dt>
 				<dd class="entry">
 					<p class="description">バルーン位置調整の標準設定をOFFにする。</p>
-					<p class="default">不明</p>
+					<p class="default">false</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -518,7 +518,7 @@
 				<dt class="entry">icon,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの持つアイコン。</p>
-					<p class="default">不明</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -530,7 +530,7 @@
 				<dt class="entry">icon.minimize,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの最小化した際のアイコン。</p>
-					<p class="default">不明</p>
+					<p class="default">icon</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -540,7 +540,7 @@
 				<dt class="entry">cursor,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストに使用するカーソル。</p>
-					<p class="default">不明</p>
+					<p class="default">矢印カーソル</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -552,7 +552,7 @@
 				<dt class="entry">shiori,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストが使用するSHIORIのファイル名。</p>
-					<p class="default">不明</p>
+					<p class="default">shiori.dll</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -564,7 +564,7 @@
 				<dt class="entry">makoto,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストが使用するMAKOTOのファイル名。</p>
-					<p class="default">不明</p>
+					<p class="default">makoto.dll</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -576,7 +576,7 @@
 				<dt class="entry">menu.font.name,フォント名</dt>
 				<dd class="entry">
 					<p class="description">ポップアップメニューに使用するフォント。</p>
-					<p class="default">不明</p>
+					<p class="default">OSで設定されたUI標準フォント</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -586,7 +586,7 @@
 				<dt class="entry">menu.font.height,フォントサイズ</dt>
 				<dd class="entry">
 					<p class="description">ポップアップメニューに使用する文字の大きさ。</p>
-					<p class="default">不明</p>
+					<p class="default">OSで設定されたUI標準フォントの高さ</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
