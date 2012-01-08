@@ -194,7 +194,7 @@
 				<dt class="entry">name,シェル名</dt>
 				<dd class="entry">
 					<p class="description">そのシェルの名前。</p>
-					<p class="default">省略不可</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -206,7 +206,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。シェルの場合はshell。</p>
-					<p class="default">省略不可</p>
+					<p class="default">省略不可 | shell( on SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1096,7 +1096,7 @@
 				<dt class="entry">animation*.collision*,当たり判定定義<br />animation*.collisionex*,当たり判定定義(ex)</dt>
 				<dd class="entry">
 					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1106,7 +1106,7 @@
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
 					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1118,7 +1118,7 @@
 				<dt class="entry">collisionex,ID,タイプ,座標1,座標2...</dt>
 				<dd class="entry">
 					<p class="description">不定形当たり判定。<br />タイプは以下の通り。<br />rect 長方形。座標は始点XYと終点XYの4つ。<br />ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。<br />polygon 多角形。座標は各頂点、交差可。</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1523,7 +1523,7 @@
 				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">当たり判定の上に来た時に表示するカーソルファイルを設定。</p>
-					<p class="default">不明</p>
+					<p class="default">指先カーソル（当たり判定名がbustの場合のみ手のひら）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1533,7 +1533,7 @@
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">当たり判定をクリックした時に表示するカーソルファイルを設定。</p>
-					<p class="default">不明</p>
+					<p class="default">矢印カーソル</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1650,7 +1650,7 @@
 				<dt class="entry">当たり判定名,表示内容</dt>
 				<dd class="entry">
 					<p class="description">当たり判定の上に来た時に表示するツールチップのテキストを設定。</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
