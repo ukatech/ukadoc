@@ -1698,7 +1698,9 @@
 			<dl id="OnURLQuery">
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
-					<p class="description">Reference0</p>
+					<p class="description">URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
+					これに対してスクリプトを返す(200)と、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
+					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
 						<dd>URLパス。</dd>
@@ -3452,7 +3454,8 @@
 			<dl id="OnOtherSurfaceChange">
 				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">Reference0</p>
+					<p class="description">（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
+					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名</dd>
