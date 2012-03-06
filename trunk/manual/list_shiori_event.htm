@@ -284,7 +284,9 @@
 				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a></li>
 				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a></li>
 				<li><a href="#OnPingComplete">OnPingComplete</a></li>
-				<li><a href="#OnPingComplete">OnPingProgress</a></li>
+				<li><a href="#OnPingProgress">OnPingProgress</a></li>
+				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
+				<li><a href="#OnNSLookupFailure">OnNSLookupFailure</a></li>
 				<li><a href="#OnOtherSurfaceChange">OnOtherSurfaceChange</a></li>
 				<li><a href="#OnOverlap">OnOverlap</a></li>
 				<li><a href="#OnOtherOverlap">OnOtherOverlap</a></li>
@@ -3445,6 +3447,42 @@
 						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
 						<dt>Reference2</dt>
 						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNSLookupComplete">
+				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dd class="entry">
+					<p class="description">\![execute,nslookup]で成功時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>--hostで指定した文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dt>Reference3</dt>
+						<dd>実行結果。正引きでIP、逆引きでホスト名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNSLookupFailure">
+				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dd class="entry">
+					<p class="description">\![execute,nslookup]で失敗時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>--hostで指定した文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>正引きでlookup、逆引きでreverse</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
