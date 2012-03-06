@@ -298,6 +298,7 @@
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,feedまたはnar]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
+				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_enter,passivemode_">\![enter,passivemode]</a></li>
 				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
 				<li><a href="#_!_enter,inductionmode_">\![enter,inductionmode]</a></li>
@@ -2692,6 +2693,20 @@
 						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
 					</ul>
 					<p class="description">動作中・動作後のイベントに関する仕様はOnPingProgress・OnPingCompleteを参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,nslookup,パラメータ1,パラメータ2,..._">
+				<dt class="entry">\![execute,nslookup,パラメータ1,パラメータ2,...]</dt>
+				<dd class="entry">
+					<p class="description">ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br />パラメータは以下の通り。</p>
+					<ul class="description">
+						<li>--host=ホスト名またはIP</li>
+						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
+					</ul>
+					<p class="description">動作中・動作後のイベントに関する仕様はOnNSLookupComplete・OnNSLookupFailureを参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
