@@ -477,9 +477,15 @@
 					<p class="description">他のゴーストから自ゴースト切り替えられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>直前のゴースト名。</dd>
+						<dd>直前のゴーストの本体側の名前。</dd>
 						<dt>Reference1</dt>
 						<dd>直前のゴーストの切り替え時のスクリプト。</dd>
+						<dt>Reference2</dt>
+						<dd>直前のゴーストの名前。 [SSPのみ]</dd>
+						<dt>Reference3</dt>
+						<dd>直前のゴーストのパス（ファイルの場所）。 [SSPのみ]</dd>
+						<dt>Reference7</dt>
+						<dd>直前のゴーストのシェル名。 [SSPのみ]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -494,9 +500,11 @@
 					<p class="description">他のゴーストへの切り替え指示があった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>切り替わるゴースト名。</dd>
+						<dd>切り替わるゴーストの本体側の名前。</dd>
 						<dt>Reference1</dt>
 						<dd>手動で切り替えた場合、manual<br />システムにより切り替えられた場合、automatic<br />が返される。</dd>
+						<dt>Reference2</dt>
+						<dd>切り替わるゴーストの名前。 [SSPのみ]</dd>
 						<dt>Reference3</dt>
 						<dd>切り替わるゴーストのパス。</dd>
 					</dl>
@@ -517,7 +525,9 @@
 						<dt>Reference1</dt>
 						<dd>呼び出したゴーストの起動時のスクリプト。</dd>
 						<dt>Reference2</dt>
-						<dd>呼び出したゴースト名。</dd>
+						<dd>呼び出したゴーストの名前。</dd>
+						<dt>Reference3</dt>
+						<dd>呼び出したゴーストのパス。</dd>
 						<dt>Reference7</dt>
 						<dd>呼び出したゴーストのシェル名。</dd>
 					</dl>
@@ -536,7 +546,7 @@
 						<dt>Reference1</dt>
 						<dd>手動で切り替えた場合、manual<br />システムにより切り替えられた場合、automatic<br />が返される。</dd>
 						<dt>Reference2</dt>
-						<dd>呼び出すゴースト名。</dd>
+						<dd>呼び出すゴーストの名前。</dd>
 						<dt>Reference3</dt>
 						<dd>呼び出すゴーストのパス。</dd>
 					</dl>
@@ -555,7 +565,7 @@
 						<dt>Reference1</dt>
 						<dd>呼び出したゴーストの起動時のスクリプト。</dd>
 						<dt>Reference2</dt>
-						<dd>呼び出したゴースト名。</dd>
+						<dd>呼び出したゴーストの名前。</dd>
 						<dt>Reference7</dt>
 						<dd>呼び出したゴーストのシェル名。</dd>
 					</dl>
