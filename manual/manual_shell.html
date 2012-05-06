@@ -121,7 +121,12 @@
       SSPのみ、surfaces2.txt、surfaces3.txt～surfaceZZ.txt、などのように後ろに2文字以下の文字がついたファイルを追加で読みこめる。<BR>
       surfaces2.txtは2.01系以降、任意の2文字以下がつけられるようになったのは2.2.57以降。<BR>
       <BR>
-      <SPAN class="text_gray">surface0<BR>
+      <SPAN class="text_gray">
+      descript<BR>
+      {<BR>
+      version,1<BR>
+      }<BR><BR>
+      surface0<BR>
       {<BR>
       collision0,188,25,252,63,Head<BR>
       collision1,190,92,236,118,Face<BR>
@@ -132,11 +137,11 @@
       point.kinoko.centerx,214<BR>
       point.kinoko.centery,34<BR>
       <BR>
-      0interval,sometimes<BR>
-      0pattern0,101,10,overlay,168,67<BR>
-      0pattern1,100,10,overlay,168,67<BR>
-      0pattern2,101,10,overlay,168,67<BR>
-      0pattern3,-1,10,overlay,168,67<BR>
+      animation0,interval,sometimes<BR>
+      animation0,pattern0,overlay,101,10,168,67<BR>
+      animation0,pattern1,overlay,100,10,168,67<BR>
+      animation0,pattern2,overlay,101,10,168,67<BR>
+      animation0,pattern3,overlay,-1,10,168,67<BR>
       }<BR>
       <BR>
       surface10<BR>
@@ -158,22 +163,22 @@
       <BR>
       <SPAN class="text_gray">surface0,surface1<BR>
       {<BR>
-      0interval,sometimes<BR>
-      0pattern0,101,10,overlay,168,67<BR>
-      0pattern1,100,10,overlay,168,67<BR>
-      0pattern2,101,10,overlay,168,67<BR>
-      0pattern3,-1,10,overlay,168,67<BR>
+      animation0,interval,sometimes<BR>
+      animation0,pattern0,overlay,101,10,168,67<BR>
+      animation0,pattern1,overlay,100,10,168,67<BR>
+      animation0,pattern2,overlay,101,10,168,67<BR>
+      animation0,pattern3,overlay,-1,10,168,67<BR>
       }</SPAN><BR>
       <BR>
       また、SSPのみ下記のような範囲指定や複数指定が可能。<BR>
       <BR>
       <SPAN class="text_gray">surface0-9,25<BR>
       {<BR>
-      0interval,sometimes<BR>
-      0pattern0,101,10,overlay,168,67<BR>
-      0pattern1,100,10,overlay,168,67<BR>
-      0pattern2,101,10,overlay,168,67<BR>
-      0pattern3,-1,10,overlay,168,67<BR>
+      animation0,interval,sometimes<BR>
+      animation0,pattern0,overlay,101,10,168,67<BR>
+      animation0,pattern1,overlay,100,10,168,67<BR>
+      animation0,pattern2,overlay,101,10,168,67<BR>
+      animation0,pattern3,overlay,-1,10,168,67<BR>
       }</SPAN><BR>
       <BR>
       さらにSSPのみ下記のような定義の追加も可能。<BR>
