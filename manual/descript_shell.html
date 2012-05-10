@@ -100,7 +100,19 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>surfaces.txt または surfaces**.txt(SSPのみ) のサーフィスブレス内</h1>
+			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
+			<ul>
+				<li><a href="#charset,文字コード-surfaces">charset,文字コード</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>descriptブレス</h1>
+			<ul>
+				<li><a href="#version,*">version,*</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>surfaceブレス</h1>
 			<ul>
 				<li><a href="#element*,パターン定義,ファイル名,X座標,Y座標">element*,パターン定義,ファイル名,X座標,Y座標</a></li>
 				<li><a href="#animation*.interval,タイミング定義">animation*.interval,タイミング定義</a></li>
@@ -159,7 +171,13 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>surfaces.txt(カーソルブレス内)</h1>
+			<h1>surface.aliasブレス</h1>
+			<ul>
+				<li><a href="#*,[*]">*,[*]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>cursorブレス</h1>
 			<ul>
 				<li><a href="#mouseup*,当たり判定ID,ファイル名">mouseup*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousedown*,当たり判定ID,ファイル名">mousedown*,当たり判定ID,ファイル名</a></li>
@@ -181,7 +199,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>surfaces.txt(ツールチップブレス内)</h1>
+			<h1>tooltipブレス</h1>
 			<ul>
 				<li><a href="#当たり判定名,表示内容">当たり判定名,表示内容</a></li>
 			</ul>
@@ -1007,10 +1025,48 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>surfaces.txt または surfaces**.txt(SSPのみ) のサーフィスブレス内</h1>
+			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
 			<div class="caption">
 				<p>※SSPのみ「surfaces**.txt（**は0～2文字の任意の文字）」と言うファイル名は全て読み込まれる。数字以外も可。</p>
+				<p>charsetの他は、以下に続くそれぞれのブレス内に設定する。</p>
 			</div>
+			<dl id="charset,文字コード-surfaces">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>descriptブレス</h1>
+			<div class="caption">
+<pre><code>descript
+{
+ここに記述
+}
+</code></pre>
+			</div>
+			<dl id="version,*">
+				<dt class="entry">version,*</dt>
+				<dd class="entry">
+					<p class="description">使用するSERIKO定義の書式のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>surfaceブレス</h1>
 			<div class="caption">
 <pre><code>surface*
 {
@@ -1513,7 +1569,30 @@
 			</div>
 		</section>
 		<section class="category">
-			<h1>surfaces.txt(カーソルブレス内)</h1>
+			<h1>surface.aliasブレス</h1>
+			<div class="caption">
+<pre><code>sakura.surface.alias
+{
+ここに記述
+}
+</code></pre>
+				<p>相方側の設定はkerosurface.alias、char*.surface.alias（char*はSSPのみ）</p>
+			</div>
+			<dl id="*,[*]">
+				<dt class="entry">*,[*]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスIDに対して任意のエイリアスIDを設定する。<br />例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br />また、1,[1,11,21]などとカンマ区切りで複数のサーフィスを指定することもでき、<br />この場合\s[1]で1,11,21からランダムで選ばれる。</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>cursorブレス</h1>
 			<div class="caption">
 <pre><code>sakura.cursor
 {
@@ -1640,7 +1719,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>surfaces.txt(ツールチップブレス内)</h1>
+			<h1>tooltipブレス</h1>
 			<div class="caption">
 <pre><code>sakura.tooltips
 {

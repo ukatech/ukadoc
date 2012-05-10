@@ -187,18 +187,18 @@
       <div class="text_green">
       surface0<BR>
       {<BR>
-      animation0,interval,sometimes<BR>
-      animation0,pattern0,overlayfast,100,5,0,0<BR>
-      animation0,pattern1,overlayfast,101,5,0,0<BR>
-      animation0,pattern2,overlayfast,100,5,0,0<BR>
-      animation0,pattern3,overlay,-1,10,0,0<BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlayfast,100,5,0,0<BR>
+      animation0.pattern1,overlayfast,101,5,0,0<BR>
+      animation0.pattern2,overlayfast,100,5,0,0<BR>
+      animation0.pattern3,overlay,-1,10,0,0<BR>
       }<BR>
       </div>
       <BR>
       surface0.pngにアニメーションさせるにはこのようにsurface0と書き<BR>
       その下のプレス内にアニメーションの内容を定義していきます。<BR>
       <BR>
-      <SPAN class="text_green">animation0,interval,sometimes</SPAN><BR>
+      <SPAN class="text_green">animation0.interval,sometimes</SPAN><BR>
       animation*,intervalという行は、その番号のアニメーションが実行されるタイミングの定義です。<BR>
       animation*.interval,に続く「sometimes」がタイミング定義の内容になります。<BR>
       例のようにsometimesを指定した場合、時々（１秒当たり２分の１の確立）実行されます。
@@ -208,21 +208,21 @@
       それぞれpattern0、pattern1、pattern2というように順番に書いていきます。パターン番号の抜け・重複はできません。<BR>
       また、先頭に同じアニメーション群のID（animation*）を入れるのを忘れないで下さい。<BR>
       <BR>
-      <SPAN class="text_gray">animation0,pattern0,<SPAN class="text_green">overlayfast</SPAN>,100,5,0,0</SPAN><BR>
+      <SPAN class="text_gray">animation0.pattern0,<SPAN class="text_green">overlayfast</SPAN>,100,5,0,0</SPAN><BR>
       overlayfastの部分は描画方法です。<BR>
       overlayfastとは元の画像の上に重ねて画像を表示する命令です。<BR>
       ただし、重ねる画像が下になっている画像の描画から出てしまう場合はoverlayを使います。<BR>
       <BR>
-      <SPAN class="text_gray">animation0,pattern0,overlayfast,<SPAN class="text_green">100</SPAN>,5,0,0</SPAN><BR>
+      <SPAN class="text_gray">animation0.pattern0,overlayfast,<SPAN class="text_green">100</SPAN>,5,0,0</SPAN><BR>
       100という部分はsurface100.pngの画像が使われます。<BR>
       101とすればsurface101.pngの画像ということです。<BR>
       <!--element使ってる場合この記述は正しく無い気がしますが、後回し……。そもそも-->
       <BR>
-      <SPAN class="text_gray">animation0,pattern0,overlayfast,100,<SPAN class="text_green">5</SPAN>,0,0</SPAN><BR>
+      <SPAN class="text_gray">animation0.pattern0,overlayfast,100,<SPAN class="text_green">5</SPAN>,0,0</SPAN><BR>
       5の部分は表示時間（ミリセカンド）です。<BR>
       その画像に切り替わるまでの時間を指定してください。<BR>
       <BR>
-      <SPAN class="text_gray">animation0,pattern0,overlayfast,100,5,<SPAN class="text_green">0,0</SPAN></SPAN><BR>
+      <SPAN class="text_gray">animation0.pattern0,overlayfast,100,5,<SPAN class="text_green">0,0</SPAN></SPAN><BR>
       最後の0,0の部分は画像の始点です。<BR>
       元の画像からどれだけXY座標をずらして表示するか指定します。<BR>
       <BR>
@@ -236,11 +236,11 @@
       <SPAN class="text_green">surface0<BR>
       {</SPAN><BR>
       <SPAN class="text_gray">
-      animation0,interval,sometimes<BR>
-      animation0,pattern0,overlayfast,100,5,0,0<BR>
-      animation0,pattern1,overlayfast,101,5,0,0<BR>
-      animation0,pattern2,overlayfast,100,5,0,0<BR>
-      animation0,pattern3,overlay,-1,10,0,0<BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlayfast,100,5,0,0<BR>
+      animation0.pattern1,overlayfast,101,5,0,0<BR>
+      animation0.pattern2,overlayfast,100,5,0,0<BR>
+      animation0.pattern3,overlay,-1,10,0,0<BR>
       <BR></SPAN>
       <SPAN class="text_green">collision0,117,71,185,130,Face<BR>
       collision1,115,174,174,217,Bust<BR>
@@ -266,11 +266,11 @@
       <SPAN class="text_green">surface0<BR>
       {</SPAN><BR>
       <SPAN class="text_gray">
-      animation0,interval,sometimes<BR>
-      animation0,pattern0,overlayfast,100,5,0,0<BR>
-      animation0,pattern1,overlayfast,101,5,0,0<BR>
-      animation0,pattern2,overlayfast,100,5,0,0<BR>
-      animation0,pattern3,overlay,-1,10,0,0<BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlayfast,100,5,0,0<BR>
+      animation0.pattern1,overlayfast,101,5,0,0<BR>
+      animation0.pattern2,overlayfast,100,5,0,0<BR>
+      animation0.pattern3,overlay,-1,10,0,0<BR>
       <BR>
       collision0,117,71,185,130,Face<BR>
       collision1,115,174,174,217,Bust</SPAN><BR>
