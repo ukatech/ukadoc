@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Disc-2 Balloon設定</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Balloon設定</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+			<li><a href="./list_sakura_script.htm">SAKURA script</a></li>
+			<li><a href="./list_shiori_event.htm">SHIORI Event</a></li>
+			<li><a href="./list_shiori_resource.htm">SHIORI Resource</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Balloon</h1>
+		<section class="navigation-category">
+			<h1>descript.txt</h1>
+			<ul>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#name,バルーン名">name,バルーン名</a></li>
+				<li><a href="#type,種別">type,種別</a></li>
+				<li><a href="#craftman,作者名">craftman,作者名</a></li>
+				<li><a href="#craftmanw,作者名">craftmanw,作者名</a></li>
+				<li><a href="#id,ID名">id,ID名</a></li>
+				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
+				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+				<li><a href="#cursor,カーソル名">cursor,カーソル名</a></li>
+				<li><a href="#origin.x,座標">origin.x,座標</a></li>
+				<li><a href="#origin.y,座標">origin.y,座標</a></li>
+				<li><a href="#validrect.left,座標">validrect.left,座標</a></li>
+				<li><a href="#validrect.top,座標">validrect.top,座標</a></li>
+				<li><a href="#validrect.right,座標">validrect.right,座標</a></li>
+				<li><a href="#validrect.bottom,座標">validrect.bottom,座標</a></li>
+				<li><a href="#wordwrappoint.x,座標">wordwrappoint.x,座標</a></li>
+				<li><a href="#font.name,フォント名">font.name,フォント名</a></li>
+				<li><a href="#font.height,数値">font.height,数値</a></li>
+				<li><a href="#font.color.r,数値">font.color.r,数値</a></li>
+				<li><a href="#font.color.g,数値">font.color.g,数値</a></li>
+				<li><a href="#font.color.b,数値">font.color.b,数値</a></li>
+				<li><a href="#font.shadowcolor.r,数値">font.shadowcolor.r,数値</a></li>
+				<li><a href="#font.shadowcolor.g,数値">font.shadowcolor.g,数値</a></li>
+				<li><a href="#font.shadowcolor.b,数値">font.shadowcolor.b,数値</a></li>
+				<li><a href="#font.bold,0/1">font.bold,0/1</a></li>
+				<li><a href="#font.italic,0/1">font.italic,0/1</a></li>
+				<li><a href="#font.strike,0/1">font.strike,0/1</a></li>
+				<li><a href="#font.outline,0/1">font.outline,0/1</a></li>
+				<li><a href="#anchor.font.color.r,数値">anchor.font.color.r,数値</a></li>
+				<li><a href="#anchor.font.color.g,数値">anchor.font.color.g,数値</a></li>
+				<li><a href="#anchor.font.color.b,数値">anchor.font.color.b,数値</a></li>
+				<li><a href="#cursor.style,形状">cursor.style,形状</a></li>
+				<li><a href="#cursor.blendmethod,コマンド">cursor.blendmethod,コマンド</a></li>
+				<li><a href="#cursor.font.color.r,数値">cursor.font.color.r,数値</a></li>
+				<li><a href="#cursor.font.color.g,数値">cursor.font.color.g,数値</a></li>
+				<li><a href="#cursor.font.color.b,数値">cursor.font.color.b,数値</a></li>
+				<li><a href="#cursor.pen.color.r,数値">cursor.pen.color.r,数値</a></li>
+				<li><a href="#cursor.pen.color.g,数値">cursor.pen.color.g,数値</a></li>
+				<li><a href="#cursor.pen.color.b,数値">cursor.pen.color.b,数値</a></li>
+				<li><a href="#cursor.brush.color.r,数値">cursor.brush.color.r,数値</a></li>
+				<li><a href="#cursor.brush.color.g,数値">cursor.brush.color.g,数値</a></li>
+				<li><a href="#cursor.brush.color.b,数値">cursor.brush.color.b,数値</a></li>
+				<li><a href="#anchor.style,形状">anchor.style,形状</a></li>
+				<li><a href="#anchor.blendmethod,コマンド">anchor.blendmethod,コマンド</a></li>
+				<li><a href="#anchor.pen.color.r,数値">anchor.pen.color.r,数値</a></li>
+				<li><a href="#anchor.pen.color.g,数値">anchor.pen.color.g,数値</a></li>
+				<li><a href="#anchor.pen.color.b,数値">anchor.pen.color.b,数値</a></li>
+				<li><a href="#anchor.brush.color.r,数値">anchor.brush.color.r,数値</a></li>
+				<li><a href="#anchor.brush.color.g,数値">anchor.brush.color.g,数値</a></li>
+				<li><a href="#anchor.brush.color.b,数値">anchor.brush.color.b,数値</a></li>
+				<li><a href="#anchor.notselect.style,形状">anchor.notselect.style,形状</a></li>
+				<li><a href="#anchor.notselect.blendmethod,コマンド">anchor.notselect.blendmethod,コマンド</a></li>
+				<li><a href="#anchor.notselect.font.color.r,数値">anchor.notselect.font.color.r,数値</a></li>
+				<li><a href="#anchor.notselect.font.color.g,数値">anchor.notselect.font.color.g,数値</a></li>
+				<li><a href="#anchor.notselect.font.color.b,数値">anchor.notselect.font.color.b,数値</a></li>
+				<li><a href="#anchor.notselect.pen.color.r,数値">anchor.notselect.pen.color.r,数値</a></li>
+				<li><a href="#anchor.notselect.pen.color.g,数値">anchor.notselect.pen.color.g,数値</a></li>
+				<li><a href="#anchor.notselect.pen.color.b,数値">anchor.notselect.pen.color.b,数値</a></li>
+				<li><a href="#anchor.notselect.brush.color.r,数値">anchor.notselect.brush.color.r,数値</a></li>
+				<li><a href="#anchor.notselect.brush.color.g,数値">anchor.notselect.brush.color.g,数値</a></li>
+				<li><a href="#anchor.notselect.brush.color.b,数値">anchor.notselect.brush.color.b,数値</a></li>
+				<li><a href="#anchor.visited.style,形状">anchor.visited.style,形状</a></li>
+				<li><a href="#anchor.visited.blendmethod,コマンド">anchor.visited.blendmethod,コマンド</a></li>
+				<li><a href="#anchor.visited.font.color.r,数値">anchor.visited.font.color.r,数値</a></li>
+				<li><a href="#anchor.visited.font.color.g,数値">anchor.visited.font.color.g,数値</a></li>
+				<li><a href="#anchor.visited.font.color.b,数値">anchor.visited.font.color.b,数値</a></li>
+				<li><a href="#anchor.visited.pen.color.r,数値">anchor.visited.pen.color.r,数値</a></li>
+				<li><a href="#anchor.visited.pen.color.g,数値">anchor.visited.pen.color.g,数値</a></li>
+				<li><a href="#anchor.visited.pen.color.b,数値">anchor.visited.pen.color.b,数値</a></li>
+				<li><a href="#anchor.visited.brush.color.r,数値">anchor.visited.brush.color.r,数値</a></li>
+				<li><a href="#anchor.visited.brush.color.g,数値">anchor.visited.brush.color.g,数値</a></li>
+				<li><a href="#anchor.visited.brush.color.b,数値">anchor.visited.brush.color.b,数値</a></li>
+				<li><a href="#sstpmarker.x,座標">sstpmarker.x,座標</a></li>
+				<li><a href="#sstpmarker.y,座標">sstpmarker.y,座標</a></li>
+				<li><a href="#sstpmessage.x,座標">sstpmessage.x,座標</a></li>
+				<li><a href="#sstpmessage.y,座標">sstpmessage.y,座標</a></li>
+				<li><a href="#sstpmessage.xr,座標">sstpmessage.xr,座標</a></li>
+				<li><a href="#onlinemarker.x,座標">onlinemarker.x,座標</a></li>
+				<li><a href="#onlinemarker.y,座標">onlinemarker.y,座標</a></li>
+				<li><a href="#sstpmessage.font.name,フォント名">sstpmessage.font.name,フォント名</a></li>
+				<li><a href="#sstpmessage.font.height,サイズ">sstpmessage.font.height,サイズ</a></li>
+				<li><a href="#sstpmessage.font.color.r,数値">sstpmessage.font.color.r,数値</a></li>
+				<li><a href="#sstpmessage.font.color.g,数値">sstpmessage.font.color.g,数値</a></li>
+				<li><a href="#sstpmessage.font.color.b,数値">sstpmessage.font.color.b,数値</a></li>
+				<li><a href="#number.font.name,フォント名">number.font.name,フォント名</a></li>
+				<li><a href="#number.font.height,数値">number.font.height,数値</a></li>
+				<li><a href="#number.font.color.r,数値">number.font.color.r,数値</a></li>
+				<li><a href="#number.font.color.g,数値">number.font.color.g,数値</a></li>
+				<li><a href="#number.font.color.b,数値">number.font.color.b,数値</a></li>
+				<li><a href="#number.xr,座標">number.xr,座標</a></li>
+				<li><a href="#number.y,座標">number.y,座標</a></li>
+				<li><a href="#arrow0.x,座標">arrow0.x,座標</a></li>
+				<li><a href="#arrow0.y,座標">arrow0.y,座標</a></li>
+				<li><a href="#arrow1.x,座標">arrow1.x,座標</a></li>
+				<li><a href="#arrow1.y,座標">arrow1.y,座標</a></li>
+				<li><a href="#communicatebox.font.name,フォント名">communicatebox.font.name,フォント名</a></li>
+				<li><a href="#communicatebox.x,座標">communicatebox.x,座標</a></li>
+				<li><a href="#communicatebox.y,座標">communicatebox.y,座標</a></li>
+				<li><a href="#communicatebox.width,サイズ">communicatebox.width,サイズ</a></li>
+				<li><a href="#communicatebox.height,サイズ">communicatebox.height,サイズ</a></li>
+				<li><a href="#paint_transparent_region_black,数値">paint_transparent_region_black,数値</a></li>
+				<li><a href="#use_self_alpha,数値">use_self_alpha,数値</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>balloons*s.txt/balloonk*s.txt(個別指定)</h1>
+			<ul>
+				<li><a href="#windowposition.x,座標">windowposition.x,座標</a></li>
+				<li><a href="#windowposition.y,座標">windowposition.y,座標</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>descript.txt</h1>
+			<dl id="charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name,バルーン名">
+				<dt class="entry">name,バルーン名</dt>
+				<dd class="entry">
+					<p class="description">そのバルーンの名前。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。バルーンの場合はballoon。</p>
+					<p class="default">省略不可 | balloon( on SSP)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftman,作者名">
+				<dt class="entry">craftman,作者名</dt>
+				<dd class="entry">
+					<p class="description">そのバルーンの作者名。半角英数のみ。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw,作者名">
+				<dt class="entry">craftmanw,作者名</dt>
+				<dd class="entry">
+					<p class="description">そのバルーンの作者名。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="id,ID名">
+				<dt class="entry">id,ID名</dt>
+				<dd class="entry">
+					<p class="description">そのバルーンのID名。半角英数のみ。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanurl,URL">
+				<dt class="entry">craftmanurl,URL</dt>
+				<dd class="entry">
+					<p class="description">作者のURL。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="homeurl,URL">
+				<dt class="entry">homeurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新用のURL。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor,カーソル名">
+				<dt class="entry">cursor,カーソル名</dt>
+				<dd class="entry">
+					<p class="description">バルーンに使用するカーソル。</p>
+					<p class="default">OSで設定されたカーソル</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="origin.x,座標">
+				<dt class="entry">origin.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト開始位置のX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="origin.y,座標">
+				<dt class="entry">origin.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト開始位置のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.left,座標">
+				<dt class="entry">validrect.left,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト描画範囲の左位置。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.top,座標">
+				<dt class="entry">validrect.top,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト描画範囲の上位置。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.right,座標">
+				<dt class="entry">validrect.right,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト描画範囲の右位置。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="validrect.bottom,座標">
+				<dt class="entry">validrect.bottom,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">テキスト描画範囲の下位置。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="wordwrappoint.x,座標">
+				<dt class="entry">wordwrappoint.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">自動改行で折り返すX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.name,フォント名">
+				<dt class="entry">font.name,フォント名</dt>
+				<dd class="entry">
+					<p class="description">使用するフォント。デフォルトはＭＳ ゴシック。</p>
+					<p class="default">ＭＳ ゴシック</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.height,数値">
+				<dt class="entry">font.height,数値</dt>
+				<dd class="entry">
+					<p class="description">使用するフォントの高さ方向の大きさ。(単位はピクセル：ポイントではない)</p>
+					<p class="default">12</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.r,数値">
+				<dt class="entry">font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">フォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.g,数値">
+				<dt class="entry">font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">フォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.color.b,数値">
+				<dt class="entry">font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">フォント色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.r,数値">
+				<dt class="entry">font.shadowcolor.r,数値</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色赤(0～255) noneで無効化</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.g,数値">
+				<dt class="entry">font.shadowcolor.g,数値</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色緑(0～255) noneで無効化</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.shadowcolor.b,数値">
+				<dt class="entry">font.shadowcolor.b,数値</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色青(0～255) noneで無効化</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.bold,0/1">
+				<dt class="entry">font.bold,0/1</dt>
+				<dd class="entry">
+					<p class="description">太字フォント。0で無効/1で有効。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.italic,0/1">
+				<dt class="entry">font.italic,0/1</dt>
+				<dd class="entry">
+					<p class="description">フォントのイタリックスタイル。0で無効/1で有効。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.strike,0/1">
+				<dt class="entry">font.strike,0/1</dt>
+				<dd class="entry">
+					<p class="description">打ち消し線をつける。0で無効/1で有効。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="font.outline,0/1">
+				<dt class="entry">font.outline,0/1</dt>
+				<dd class="entry">
+					<p class="description">フォントのアウトラインスタイル。0で無効/1で有効。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.r,数値">
+				<dt class="entry">anchor.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.g,数値">
+				<dt class="entry">anchor.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.b,数値">
+				<dt class="entry">anchor.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.style,形状">
+				<dt class="entry">cursor.style,形状</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="default">square</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.blendmethod,コマンド">
+				<dt class="entry">cursor.blendmethod,コマンド</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーのラスタオペレーションコマンド。<br />noneで無し。<br />notmaskpenでr2_notmaskpen。<br />mergepennotでr2_mergepennot。</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.r,数値">
+				<dt class="entry">cursor.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーのフォント色赤(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.g,数値">
+				<dt class="entry">cursor.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーのフォント色緑(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.font.color.b,数値">
+				<dt class="entry">cursor.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーのフォント色青(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.r,数値">
+				<dt class="entry">cursor.pen.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形枠および下線の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.g,数値">
+				<dt class="entry">cursor.pen.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形枠および下線の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.pen.color.b,数値">
+				<dt class="entry">cursor.pen.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形枠および下線の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.r,数値">
+				<dt class="entry">cursor.brush.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形内の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.g,数値">
+				<dt class="entry">cursor.brush.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形内の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.brush.color.b,数値">
+				<dt class="entry">cursor.brush.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">選択肢マーカーの矩形内の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.style,形状">
+				<dt class="entry">anchor.style,形状</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="default">underline</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.blendmethod,コマンド">
+				<dt class="entry">anchor.blendmethod,コマンド</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーのラスタオペレーションコマンド。<br />noneで無し。<br />notmaskpenでr2_notmaskpen。<br />mergepennotでr2_mergepennot。</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.r,数値">
+				<dt class="entry">anchor.pen.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形枠および下線の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.g,数値">
+				<dt class="entry">anchor.pen.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形枠および下線の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.pen.color.b,数値">
+				<dt class="entry">anchor.pen.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形枠および下線の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.r,数値">
+				<dt class="entry">anchor.brush.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形内の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.g,数値">
+				<dt class="entry">anchor.brush.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形内の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.brush.color.b,数値">
+				<dt class="entry">anchor.brush.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形内の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.style,形状">
+				<dt class="entry">anchor.notselect.style,形状</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.blendmethod,コマンド">
+				<dt class="entry">anchor.notselect.blendmethod,コマンド</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのラスタオペレーションコマンド。<br />noneで無し。<br />notmaskpenでr2_notmaskpen。<br />mergepennotでr2_mergepennot。</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.r,数値">
+				<dt class="entry">anchor.notselect.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色赤(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.g,数値">
+				<dt class="entry">anchor.notselect.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色緑(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.font.color.b,数値">
+				<dt class="entry">anchor.notselect.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色青(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.r,数値">
+				<dt class="entry">anchor.notselect.pen.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.g,数値">
+				<dt class="entry">anchor.notselect.pen.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.pen.color.b,数値">
+				<dt class="entry">anchor.notselect.pen.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.r,数値">
+				<dt class="entry">anchor.notselect.brush.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.g,数値">
+				<dt class="entry">anchor.notselect.brush.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.notselect.brush.color.b,数値">
+				<dt class="entry">anchor.notselect.brush.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.style,形状">
+				<dt class="entry">anchor.visited.style,形状</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.blendmethod,コマンド">
+				<dt class="entry">anchor.visited.blendmethod,コマンド</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのラスタオペレーションコマンド。<br />noneで無し。<br />notmaskpenでr2_notmaskpen。<br />mergepennotでr2_mergepennot。</p>
+					<p class="default">none</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.r,数値">
+				<dt class="entry">anchor.visited.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.g,数値">
+				<dt class="entry">anchor.visited.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.font.color.b,数値">
+				<dt class="entry">anchor.visited.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.r,数値">
+				<dt class="entry">anchor.visited.pen.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形枠および下線の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.g,数値">
+				<dt class="entry">anchor.visited.pen.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形枠および下線の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.pen.color.b,数値">
+				<dt class="entry">anchor.visited.pen.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形枠および下線の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.r,数値">
+				<dt class="entry">anchor.visited.brush.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形内の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.g,数値">
+				<dt class="entry">anchor.visited.brush.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形内の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.visited.brush.color.b,数値">
+				<dt class="entry">anchor.visited.brush.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの選択肢マーカの矩形内の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmarker.x,座標">
+				<dt class="entry">sstpmarker.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPマーカーのX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmarker.y,座標">
+				<dt class="entry">sstpmarker.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPマーカーのY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.x,座標">
+				<dt class="entry">sstpmessage.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージの表示開始位置X座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.y,座標">
+				<dt class="entry">sstpmessage.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージの表示開始位置Y座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.xr,座標">
+				<dt class="entry">sstpmessage.xr,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージの表示終了位置X座標。左起点。（※負値を指定すると右起点）</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="onlinemarker.x,座標">
+				<dt class="entry">onlinemarker.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">オンライン表示のX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="onlinemarker.y,座標">
+				<dt class="entry">onlinemarker.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">オンライン表示のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.name,フォント名">
+				<dt class="entry">sstpmessage.font.name,フォント名</dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージに使用するフォント。デフォルトはＭＳ ゴシック。</p>
+					<p class="default">ＭＳ ゴシック</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.height,サイズ">
+				<dt class="entry">sstpmessage.font.height,サイズ</dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージの高さ方向の大きさ(単位はピクセル：ポイントではない)。</p>
+					<p class="default">10</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.r,数値">
+				<dt class="entry">sstpmessage.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージフォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.g,数値">
+				<dt class="entry">sstpmessage.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージフォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.font.color.b,数値">
+				<dt class="entry">sstpmessage.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">SSTPメッセージフォント色青(0～255)</p>
+					<p class="default">192</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.name,フォント名">
+				<dt class="entry">number.font.name,フォント名</dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値に使用するフォント。</p>
+					<p class="default">ＭＳ ゴシック</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.height,数値">
+				<dt class="entry">number.font.height,数値</dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値の高さ方向の大きさ(単位はピクセル：ポイントではない)。</p>
+					<p class="default">10</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.r,数値">
+				<dt class="entry">number.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値のフォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.g,数値">
+				<dt class="entry">number.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値のフォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.font.color.b,数値">
+				<dt class="entry">number.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値のフォント色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.xr,座標">
+				<dt class="entry">number.xr,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値のX座標。右起点。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.y,座標">
+				<dt class="entry">number.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">カウンタ数値のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow0.x,座標">
+				<dt class="entry">arrow0.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">スクロールマーカ上矢印のX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow0.y,座標">
+				<dt class="entry">arrow0.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">スクロールマーカ上矢印のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow1.x,座標">
+				<dt class="entry">arrow1.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">スクロールマーカ下矢印のX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="arrow1.y,座標">
+				<dt class="entry">arrow1.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p class="description">スクロールマーカ下矢印のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.font.name,フォント名">
+				<dt class="entry">communicatebox.font.name,フォント名</dt>
+				<dd class="entry">
+					<p class="description">入力ボックスに使用するフォント。</p>
+					<p class="default">ＭＳ ゴシック</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.x,座標">
+				<dt class="entry">communicatebox.x,座標</dt>
+				<dd class="entry">
+					<p class="description">入力可能域始点のX座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.y,座標">
+				<dt class="entry">communicatebox.y,座標</dt>
+				<dd class="entry">
+					<p class="description">入力可能域始点のY座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.width,サイズ">
+				<dt class="entry">communicatebox.width,サイズ</dt>
+				<dd class="entry">
+					<p class="description">入力可能域の横幅。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.height,サイズ">
+				<dt class="entry">communicatebox.height,サイズ</dt>
+				<dd class="entry">
+					<p class="description">入力可能域の縦幅。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="paint_transparent_region_black,数値">
+				<dt class="entry">paint_transparent_region_black,数値</dt>
+				<dd class="entry">
+					<p class="description">数値が1だった場合はPNAで透過した際、背景色を黒で表示する。</p>
+					<p class="default">1以外の任意の値</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="use_self_alpha,数値">
+				<dt class="entry">use_self_alpha,数値</dt>
+				<dd class="entry">
+					<p class="description">数値が1だった場合はPNAの代わりに32bitPNGのアルファチャンネルを使用する。</p>
+					<p class="default">1以外の任意の値</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>balloons*s.txt/balloonk*s.txt(個別指定)</h1>
+			<dl id="windowposition.x,座標">
+				<dt class="entry">windowposition.x,座標</dt>
+				<dd class="entry">
+					<p class="description">基本調整位置から移動X座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="windowposition.y,座標">
+				<dt class="entry">windowposition.y,座標</dt>
+				<dd class="entry">
+					<p class="description">基本調整位置から移動Y座標。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<div class="caption">
+				<p>個別のバルーンを指定することによりdescript.txtをオーバーライドできる。<br />内容はdescript.txtの表参照。</p>
+				<p id="note1">*1 以上の座標値のうち、*1と書かれたものは、マイナス座標を指定するとベースとなる画像の右下からの相対座標となる。<br />何かの理由でどうしてもマイナス座標を指定したい場合は、--数値、と指定すること（マイナス2つ）。</p>
+			</div>
+		</section>
+	</div>
+</body>
+</html>

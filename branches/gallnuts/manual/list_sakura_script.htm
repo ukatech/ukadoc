@@ -1,0 +1,3992 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Disc-2 SakuraScriptリスト</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">SakuraScriptリスト</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+			<li><a href="./list_sakura_script.htm">SAKURA script</a></li>
+			<li><a href="./list_shiori_event.htm">SHIORI Event</a></li>
+			<li><a href="./list_shiori_resource.htm">SHIORI Resource</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Sakura Script</h1>
+		<section class="navigation-category">
+			<h1>スコープコマンド</h1>
+			<ul>
+				<li><a href="#_0もしくは_h">\0もしくは\h</a></li>
+				<li><a href="#_1もしくは_u">\1もしくは\u</a></li>
+				<li><a href="#_p_ID番号_">\p[ID番号]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>サーフィスコマンド</h1>
+			<ul>
+				<li><a href="#_sID番号">\sID番号</a></li>
+				<li><a href="#_s_ID番号_">\s[ID番号]</a></li>
+				<li><a href="#_i_ID番号_">\i[ID番号]</a></li>
+				<li><a href="#_i_ID,wait_">\i[ID,wait]</a></li>
+				<li><a href="#_!_anim,clear,ID_">\![anim,clear,ID]</a></li>
+				<li><a href="#_!_anim,pauseID_">\![anim,pauseID]</a></li>
+				<li><a href="#_!_anim,resume,ID_">\![anim,resume,ID]</a></li>
+				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,ID,x座標,y座標]</a></li>
+				<li><a href="#_!_anim,add,overlay,ID_">\![anim,add,overlay,ID]</a></li>
+				<li><a href="#_!_anim,stop_">\![anim,stop]</a></li>
+				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名_">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名]</a></li>
+				<li><a href="#___w_animation,ID_">\__w[animation,ID]</a></li>
+				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a></li>
+				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
+				<li><a href="#_!_unlock,repaint_">\![unlock,repaint]</a></li>
+				<li><a href="#_!_set,alignmentondesktop,top_">\![set,alignmentondesktop,top]</a></li>
+				<li><a href="#_!_set,alignmentondesktop,bottom_">\![set,alignmentondesktop,bottom]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,left_">\![set,alignmenttodesktop,left]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,right_">\![set,alignmenttodesktop,right]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,free_">\![set,alignmenttodesktop,free]</a></li>
+				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
+				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
+				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,default_">\![set,alignmenttodesktop,default]</a></li>
+				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,プラグイン名,速度倍率,パラメータ]</a></li>
+				<li><a href="#_!_effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ]</a></li>
+				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
+				<li><a href="#_!_filter_">\![filter]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>バルーン、テキストコマンド</h1>
+			<ul>
+				<li><a href="#_b_ID番号_">\b[ID番号]</a></li>
+				<li><a href="#__b_ファイル名,x,y_">\_b[ファイル名,x,y]</a></li>
+				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[ファイル名,x,y,opaque]</a></li>
+				<li><a href="#__b_ファイル名,inline_">\_b[ファイル名,inline]</a></li>
+				<li><a href="#__b_ファイル名,inline,opaque_">\_b[ファイル名,inline,opaque]</a></li>
+				<li><a href="#__b_ファイル名,inline,オプション名,オプション名..._">\_b[ファイル名,inline,オプション名,オプション名...]</a></li>
+				<li><a href="#_n">\n</a></li>
+				<li><a href="#_n_half_">\n[half]</a></li>
+				<li><a href="#_n_パーセント_">\n[パーセント]</a></li>
+				<li><a href="#__n">\_n</a></li>
+				<li><a href="#_c">\c</a></li>
+				<li><a href="#_c_char,数値_">\c[char,数値]</a></li>
+				<li><a href="#_c_char,数値,開始位置_">\c[char,数値,開始位置]</a></li>
+				<li><a href="#_c_line,数値_">\c[line,数値]</a></li>
+				<li><a href="#_c_line,数値,開始位置_">\c[line,数値,開始位置]</a></li>
+				<li><a href="#__l_x,y_">\_l[x,y]</a></li>
+				<li><a href="#__l_xem,yem_">\_l[xem,yem]</a></li>
+				<li><a href="#__l_@x,@y_">\_l[@x,@y]</a></li>
+				<li><a href="#_C">\C</a></li>
+				<li><a href="#_!_set,autoscroll,disable_">\![set,autoscroll,disable]</a></li>
+				<li><a href="#_!_set,autoscroll,enable_">\![set,autoscroll,enable]</a></li>
+				<li><a href="#_!_set,balloonoffset,x,y_">\![set,balloonoffset,x,y]</a></li>
+				<li><a href="#_!_set,balloonalign,ID_">\![set,balloonalign,ID]</a></li>
+				<li><a href="#_!_set,balloonnum,ファイル名,現在の数,最大数_">\![set,balloonnum,ファイル名,現在の数,最大数]</a></li>
+				<li><a href="#_!_*_">\![*]</a></li>
+				<li><a href="#_!_enter,onlinemode_">\![enter,onlinemode]</a></li>
+				<li><a href="#_!_leave,onlinemode_">\![leave,onlinemode]</a></li>
+				<li><a href="#__!">\_!</a></li>
+				<li><a href="#__?">\_?</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>フォント変更コマンド</h1>
+			<ul>
+				<li><a href="#_f_name,フォント名_">\f[name,フォント名]</a></li>
+				<li><a href="#_f_height,数値_">\f[height,数値]</a></li>
+				<li><a href="#_f_color,R,G,B_">\f[color,R,G,B]</a></li>
+				<li><a href="#_f_color,R_,G_,B__">\f[color,R%,G%,B%]</a></li>
+				<li><a href="#_f_color,色_">\f[color,色]</a></li>
+				<li><a href="#_f_color,default_">\f[color,default]</a></li>
+				<li><a href="#_f_shadowcolor,R,G,B_">\f[shadowcolor,R,G,B]</a></li>
+				<li><a href="#_f_shadowcolor,none_">\f[shadowcolor,none]</a></li>
+				<li><a href="#_f_shadowcolor,default_">\f[shadowcolor,default]</a></li>
+				<li><a href="#_f_outline,パラメータ_">\f[outline,パラメータ]</a></li>
+				<li><a href="#_f_anchor.font.color,R,G,B_">\f[anchor.font.color,R,G,B]</a></li>
+				<li><a href="#_f_bold,パラメータ_">\f[bold,パラメータ]</a></li>
+				<li><a href="#_f_italic,パラメータ_">\f[italic,パラメータ]</a></li>
+				<li><a href="#_f_strike,パラメータ_">\f[strike,パラメータ]</a></li>
+				<li><a href="#_f_underline,パラメータ_">\f[underline,パラメータ]</a></li>
+				<li><a href="#_f_sub,パラメータ_">\f[sub,パラメータ]</a></li>
+				<li><a href="#_f_sup,パラメータ_">\f[sup,パラメータ]</a></li>
+				<li><a href="#_f_default_">\f[default]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ウエイトコマンド</h1>
+			<ul>
+				<li><a href="#_w時間">\w時間</a></li>
+				<li><a href="#__w_時間_">\_w[時間]</a></li>
+				<li><a href="#___w_時間_">\__w[時間]</a></li>
+				<li><a href="#_x">\x</a></li>
+				<li><a href="#_x_noclear_">\x[noclear]</a></li>
+				<li><a href="#_t">\t</a></li>
+				<li><a href="#__q">\_q</a></li>
+				<li><a href="#_!_quicksession,true_">\![quicksession,true]</a></li>
+				<li><a href="#_!_quicksession,false_">\![quicksession,false]</a></li>
+				<li><a href="#__s">\_s</a></li>
+				<li><a href="#__s_ID1,ID2,ID3..._">\_s[ID1,ID2,ID3...]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>選択肢コマンド</h1>
+			<ul>
+				<li><a href="#_q_タイトル,ID_">\q[タイトル,ID]</a></li>
+				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[タイトル,OnID,r0,r1,...]</a></li>
+				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[タイトル,ID1,ID2,ID3...]</a></li>
+				<li><a href="#_q_タイトル,script:実行内容_">\q[タイトル,script:実行内容]</a></li>
+				<li><a href="#_q_ID__タイトル_">\q[ID][タイトル]</a></li>
+				<li><a href="#_z">\z</a></li>
+				<li><a href="#___q_ID,..._">\__q[ID,...]</a></li>
+				<li><a href="#_*">\*</a></li>
+				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,時間]</a></li>
+				<li><a href="#__a_ID_">\_a[ID]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>選択肢マーカー変更コマンド</h1>
+			<ul>
+				<li><a href="#_f_cursorstyle,形状_">\f[cursorstyle,形状]</a></li>
+				<li><a href="#_f_cursorstyle,default_">\f[cursorstyle,default]</a></li>
+				<li><a href="#_f_cursorcolor,R,G,B_もしくは_f_cursorbrushcolor,R,G,B_">\f[cursorcolor,R,G,B]もしくは\f[cursorbrushcolor,R,G,B]</a></li>
+				<li><a href="#_f_cursorbrushcolor,default_">\f[cursorbrushcolor,default]</a></li>
+				<li><a href="#_f_cursorpencolor,R,G,B_">\f[cursorpencolor,R,G,B]</a></li>
+				<li><a href="#_f_cursorpencolor,default_">\f[cursorpencolor,default]</a></li>
+				<li><a href="#_f_cursorfontcolor,R,G,B_">\f[cursorfontcolor,R,G,B]</a></li>
+				<li><a href="#_f_cursorfontcolor,default_">\f[cursorfontcolor,default]</a></li>
+				<li><a href="#_f_cursormethod,描画方法_">\f[cursormethod,描画方法]</a></li>
+				<li><a href="#_f_anchorstyle,形状_">\f[anchorstyle,形状]</a></li>
+				<li><a href="#_f_anchorstyle,default_">\f[anchorstyle,default]</a></li>
+				<li><a href="#_f_anchorcolor,R,G,B_もしくは_f_anchorbrushcolor,R,G,B_">\f[anchorcolor,R,G,B]もしくは\f[anchorbrushcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorbrushcolor,default_">\f[anchorbrushcolor,default]</a></li>
+				<li><a href="#_f_anchorpencolor,R,G,B_">\f[anchorpencolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorpencolor,default_">\f[anchorpencolor,default]</a></li>
+				<li><a href="#_f_anchorfontcolor,R,G,B_">\f[anchorfontcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorfontcolor,default_">\f[anchorfontcolor,default]</a></li>
+				<li><a href="#_f_anchormethod,描画方法_">\f[anchormethod,描画方法]</a></li>
+				<li><a href="#_f_anchormethod,default_">\f[anchormethod,default]</a></li>
+				<li><a href="#_f_anchornotselectstyle,形状_">\f[anchornotselectstyle,形状]</a></li>
+				<li><a href="#_f_anchornotselectstyle,default_">\f[anchornotselectstyle,default]</a></li>
+				<li><a href="#_f_anchornotselectcolor,R,G,B_もしくは_f_anchornotselectbrushcolor,R,G,B_">\f[anchornotselectcolor,R,G,B]もしくは\f[anchornotselectbrushcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchornotselectbrushcolor,default_">\f[anchornotselectbrushcolor,default]</a></li>
+				<li><a href="#_f_anchornotselectpencolor,R,G,B_">\f[anchornotselectpencolor,R,G,B]</a></li>
+				<li><a href="#_f_anchornotselectpencolor,default_">\f[anchornotselectpencolor,default]</a></li>
+				<li><a href="#_f_anchornotselectfontcolor,R,G,B_">\f[anchornotselectfontcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchornotselectfontcolor,default_">\f[anchornotselectfontcolor,default]</a></li>
+				<li><a href="#_f_anchornotselectmethod,描画方法_">\f[anchornotselectmethod,描画方法]</a></li>
+				<li><a href="#_f_anchornotselectmethod,default_">\f[anchornotselectmethod,default]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>イベントコマンド</h1>
+			<ul>
+				<li><a href="#_e">\e</a></li>
+				<li><a href="#_-">\-</a></li>
+				<li><a href="#_4">\4</a></li>
+				<li><a href="#_5">\5</a></li>
+				<li><a href="#_!_move_">\![move]</a></li>
+				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
+				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,スコープID]</a></li>
+				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
+				<li><a href="#_!_updatebymyself_">\![updatebymyself]</a></li>
+				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself,checkonly]</a></li>
+				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
+				<li><a href="#_6">\6</a></li>
+				<li><a href="#_7">\7</a></li>
+				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
+				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,ヘッドライン名]</a></li>
+				<li><a href="#_!_biff_">\![biff]</a></li>
+				<li><a href="#_!_vanishbymyself_">\![vanishbymyself]</a></li>
+				<li><a href="#_!_vanishbymyself,ゴースト名_">\![vanishbymyself,ゴースト名]</a></li>
+				<li><a href="#_+">\+</a></li>
+				<li><a href="#__+">\_+</a></li>
+				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,ゴースト名]</a></li>
+				<li><a href="#_!_change,shell,シェル名_">\![change,shell,シェル名]</a></li>
+				<li><a href="#_!_change,balloon,バルーン名_">\![change,balloon,バルーン名]</a></li>
+				<li><a href="#_!_change,ghost,lastinstalled_">\![change,ghost,lastinstalled]</a></li>
+				<li><a href="#_!_change,shell,lastinstalled_">\![change,shell,lastinstalled]</a></li>
+				<li><a href="#_!_change,balloon,lastinstalled_">\![change,balloon,lastinstalled]</a></li>
+				<li><a href="#_!_call,ghost,ゴースト名_">\![call,ghost,ゴースト名]</a></li>
+				<li><a href="#_v">\v</a></li>
+				<li><a href="#_!_set,windowstate,stayontop_">\![set,windowstate,stayontop]</a></li>
+				<li><a href="#_!_set,windowstate,!stayontop_">\![set,windowstate,!stayontop]</a></li>
+				<li><a href="#_!_set,windowstate,minimize_">\![set,windowstate,minimize]</a></li>
+				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
+				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
+				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
+				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_notify,イベント名,r0,r1,r2..._">\![notify,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#__v_ファイル名_">\_v[ファイル名]</a></li>
+				<li><a href="#__V">\_V</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>サウンドコマンド</h1>
+			<ul>
+				<li><a href="#_8_ファイル名_">\8[ファイル名]</a></li>
+				<li><a href="#_!_sound,play,ファイル名_">\![sound,play,ファイル名]</a></li>
+				<li><a href="#_!_sound,cdplay,トラックNo._">\![sound,cdplay,トラックNo.]</a></li>
+				<li><a href="#_!_sound,loop,ファイル名_">\![sound,loop,ファイル名]</a></li>
+				<li><a href="#_!_sound,wait_">\![sound,wait]</a></li>
+				<li><a href="#_!_sound,pause_">\![sound,pause]</a></li>
+				<li><a href="#_!_sound,resume_">\![sound,resume]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>オープンコマンド</h1>
+			<ul>
+				<li><a href="#_j_ID_">\j[ID]</a></li>
+				<li><a href="#_!_open,browser,パラメータ_">\![open,browser,パラメータ]</a></li>
+				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,パラメータ]</a></li>
+				<li><a href="#___t">\__t</a></li>
+				<li><a href="#_!_open,teachbox_">\![open,teachbox]</a></li>
+				<li><a href="#_!_open,communicatebox_">\![open,communicatebox]</a></li>
+				<li><a href="#_!_open,inputbox,ID,表示時間,テキスト_">\![open,inputbox,ID,表示時間,テキスト]</a></li>
+				<li><a href="#_!_open,passwordinput,ID,表示時間,テキスト_">\![open,passwordinput,ID,表示時間,テキスト]</a></li>
+				<li><a href="#_!_close,inputbox,ID_">\![close,inputbox,ID]</a></li>
+				<li><a href="#_!_open,dateinput,ID,表示時間,年,月,日_">\![open,dateinput,ID,表示時間,年,月,日]</a></li>
+				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大_">\![open,sliderinput,ID,表示時間,現在値,最小,最大]</a></li>
+				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒_">\![open,timeinput,ID,表示時間,時,分,秒]</a></li>
+				<li><a href="#_!_open,configurationdialog_">\![open,configurationdialog]</a></li>
+				<li><a href="#_!_open,ghostexplorer_">\![open,ghostexplorer]</a></li>
+				<li><a href="#_!_open,shellexplorer_">\![open,shellexplorer]</a></li>
+				<li><a href="#_!_open,balloonexplorer_">\![open,balloonexplorer]</a></li>
+				<li><a href="#_!_open,headlinesensorexplorer_">\![open,headlinesensorexplorer]</a></li>
+				<li><a href="#_!_open,pluginexplorer_">\![open,pluginexplorer]</a></li>
+				<li><a href="#_!_open,rateofusegraph_">\![open,rateofusegraph]</a></li>
+				<li><a href="#_!_open,rateofusegraphballoon_">\![open,rateofusegraphballoon]</a></li>
+				<li><a href="#_!_open,rateofusegraphtotal_">\![open,rateofusegraphtotal]</a></li>
+				<li><a href="#_!_open,calendar_">\![open,calendar]</a></li>
+				<li><a href="#_!_open,help_">\![open,help]</a></li>
+				<li><a href="#_!_open,messenger_">\![open,messenger]</a></li>
+				<li><a href="#_!_open,readme_">\![open,readme]</a></li>
+				<li><a href="#_!_open,file,ファイル名_">\![open,file,ファイル名]</a></li>
+				<li><a href="#_!_open,dialog,open,パラメータ_">\![open,dialog,open,パラメータ]</a></li>
+				<li><a href="#_!_open,dialog,save,パラメータ_">\![open,dialog,save,パラメータ]</a></li>
+				<li><a href="#_!_open,dialog,folder,パラメータ_">\![open,dialog,folder,パラメータ]</a></li>
+				<li><a href="#_!_open,dialog,color,パラメータ_">\![open,dialog,color,パラメータ]</a></li>
+				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
+				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>未分類コマンド</h1>
+			<ul>
+				<li><a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a></li>
+				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,URL,パラメータ]</a></li>
+				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,URL,パラメータ]</a></li>
+				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,ファイル名,ディレクトリ名]</a></li>
+				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,ファイル名,ディレクトリ名]</a></li>
+				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
+				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,feedまたはnar]</a></li>
+				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
+				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
+				<li><a href="#_!_enter,passivemode_">\![enter,passivemode]</a></li>
+				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
+				<li><a href="#_!_enter,inductionmode_">\![enter,inductionmode]</a></li>
+				<li><a href="#_!_leave,inductionmode_">\![leave,inductionmode]</a></li>
+				<li><a href="#_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</a></li>
+				<li><a href="#_!_leave,selectmode_">\![leave,selectmode]</a></li>
+				<li><a href="#_!_enter,collisionmode__!_enter,collisionmode,rect_">\![enter,collisionmode]\![enter,collisionmode,rect]</a></li>
+				<li><a href="#_!_leave,collisionmode_">\![leave,collisionmode]</a></li>
+				<li><a href="#_!_reloadsurface_">\![reloadsurface]</a></li>
+				<li><a href="#_!_reload,descript_">\![reload,descript]</a></li>
+				<li><a href="#_!_reload,descript,パラメータ_">\![reload,descript,パラメータ]</a></li>
+				<li><a href="#_!_reload,shiori_">\![reload,shiori]</a></li>
+				<li><a href="#_!_reload,makoto_">\![reload,makoto]</a></li>
+				<li><a href="#_!_reload,shell_">\![reload,shell]</a></li>
+				<li><a href="#_!_reload,ghost_">\![reload,ghost]</a></li>
+				<li><a href="#__u_0x0000_">\_u[0x0000]</a></li>
+				<li><a href="#__m_0x00_">\_m[0x00]</a></li>
+				<li><a href="#_&amp;_ID_">\&amp;[ID]</a></li>
+				<li><a href="#_m_umsg,wparam,lparam_">\m[umsg,wparam,lparam]</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>環境変数</h1>
+			<ul>
+				<li><a href="#_month">%month</a></li>
+				<li><a href="#_day">%day</a></li>
+				<li><a href="#_hour">%hour</a></li>
+				<li><a href="#_minute">%minute</a></li>
+				<li><a href="#_second">%second</a></li>
+				<li><a href="#_username">%username</a></li>
+				<li><a href="#_selfname">%selfname</a></li>
+				<li><a href="#_selfname2">%selfname2</a></li>
+				<li><a href="#_keroname">%keroname</a></li>
+				<li><a href="#_screenwidth">%screenwidth</a></li>
+				<li><a href="#_screenheight">%screenheight</a></li>
+				<li><a href="#_exh">%exh</a></li>
+				<li><a href="#_et">%et</a></li>
+				<li><a href="#_wronghour">%wronghour</a></li>
+				<li><a href="#_ms">%ms</a></li>
+				<li><a href="#_mz">%mz</a></li>
+				<li><a href="#_ml">%ml</a></li>
+				<li><a href="#_mc">%mc</a></li>
+				<li><a href="#_mh">%mh</a></li>
+				<li><a href="#_mt">%mt</a></li>
+				<li><a href="#_me">%me</a></li>
+				<li><a href="#_mp">%mp</a></li>
+				<li><a href="#_m?">%m?</a></li>
+				<li><a href="#_dms">%dms</a></li>
+				<li><a href="#_lastghostname">%lastghostname</a></li>
+				<li><a href="#_lastobjectname">%lastobjectname</a></li>
+				<li><a href="#_*2">%*</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>プロパティシステム</h1>
+			<ul>
+				<li><a href="#system.year">system.year</a></li>
+				<li><a href="#system.month">system.month</a></li>
+				<li><a href="#system.day">system.day</a></li>
+				<li><a href="#system.hour">system.hour</a></li>
+				<li><a href="#system.minute">system.minute</a></li>
+				<li><a href="#system.second">system.second</a></li>
+				<li><a href="#system.millisecond">system.millisecond</a></li>
+				<li><a href="#system.dayofweek">system.dayofweek</a></li>
+				<li><a href="#baseware.version">baseware.version</a></li>
+				<li><a href="#baseware.name">baseware.name</a></li>
+				<li><a href="#ghostlist.count">ghostlist.count</a></li>
+				<li><a href="#balloonlist.count">balloonlist.count</a></li>
+				<li><a href="#headlinelist.count">headlinelist.count</a></li>
+				<li><a href="#pluginlist.count">pluginlist.count</a></li>
+				<li><a href="#history.ghost.count">history.ghost.count</a></li>
+				<li><a href="#history.balloon.count">history.balloon.count</a></li>
+				<li><a href="#history.headline.count">history.headline.count</a></li>
+				<li><a href="#history.plugin.count">history.plugin.count</a></li>
+				<li><a href="#currentghost.shelllist.count">currentghost.shelllist.count</a></li>
+				<li><a href="#currentghost.scope.count">currentghost.scope.count</a></li>
+				<li><a href="#currentghost.scope(ID).surface.num">currentghost.scope(ID).surface.num</a></li>
+				<li><a href="#currentghost.scope(ID).seriko.defaultsurface">currentghost.scope(ID).seriko.defaultsurface</a></li>
+				<li><a href="#currentghost.scope(番号).surface.x">currentghost.scope(番号).surface.x</a></li>
+				<li><a href="#currentghost.scope(番号).surface.y">currentghost.scope(番号).surface.y</a></li>
+				<li><a href="#currentghost.balloon.count">currentghost.balloon.count</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).count">currentghost.balloon.scope(ID).count</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).num">currentghost.balloon.scope(ID).num</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).validwidth">currentghost.balloon.scope(ID).validwidth</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).validheight">currentghost.balloon.scope(ID).validheight</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).lines">currentghost.balloon.scope(ID).lines</a></li>
+				<li><a href="#rateofuselist(名前).name">rateofuselist(名前).name</a></li>
+				<li><a href="#rateofuselist(名前).sakuraname">rateofuselist(名前).sakuraname</a></li>
+				<li><a href="#rateofuselist(名前).keroname">rateofuselist(名前).keroname</a></li>
+				<li><a href="#rateofuselist(名前).boottime">rateofuselist(名前).boottime</a></li>
+				<li><a href="#rateofuselist(名前).bootminute">rateofuselist(名前).bootminute</a></li>
+				<li><a href="#rateofuselist(名前).percent">rateofuselist(名前).percent</a></li>
+				<li><a href="#rateofuselist.index(順位).name">rateofuselist.index(順位).name</a></li>
+				<li><a href="#rateofuselist.index(順位).sakuraname">rateofuselist.index(順位).sakuraname</a></li>
+				<li><a href="#rateofuselist.index(順位).keroname">rateofuselist.index(順位).keroname</a></li>
+				<li><a href="#rateofuselist.index(順位).boottime">rateofuselist.index(順位).boottime</a></li>
+				<li><a href="#rateofuselist.index(順位).bootminute">rateofuselist.index(順位).bootminute</a></li>
+				<li><a href="#rateofuselist.index(順位).percent">rateofuselist.index(順位).percent</a></li>
+				<li><a href="#ghostlist(ゴースト名/パス).取得内容">ghostlist(ゴースト名/パス).取得内容</a></li>
+				<li><a href="#ghostlist(ゴースト名/パス).icon">ghostlist(ゴースト名/パス).icon</a></li>
+				<li><a href="#ghostlist.index(ID).取得内容">ghostlist.index(ID).取得内容</a></li>
+				<li><a href="#ghostlist.current.取得内容">ghostlist.current.取得内容</a></li>
+				<li><a href="#currentghost.shelllist.current.取得内容">currentghost.shelllist.current.取得内容</a></li>
+				<li><a href="#activeghostlist(ゴースト名/パス).取得内容">activeghostlist(ゴースト名/パス).取得内容</a></li>
+				<li><a href="#activeghostlist.index(ID).取得内容">activeghostlist.index(ID).取得内容</a></li>
+				<li><a href="#activeghostlist.current.取得内容">activeghostlist.current.取得内容</a></li>
+				<li><a href="#currentghost.取得内容">currentghost.取得内容</a></li>
+				<li><a href="#currentghost.shelllist(シェル名/パス).取得内容">currentghost.shelllist(シェル名/パス).取得内容</a></li>
+				<li><a href="#currentghost.shelllist.index(ID).取得内容">currentghost.shelllist.index(ID).取得内容</a></li>
+				<li><a href="#currentghost.balloon.取得内容">currentghost.balloon.取得内容</a></li>
+				<li><a href="#balloonlist(バルーン名/パス).取得内容">balloonlist(バルーン名/パス).取得内容</a></li>
+				<li><a href="#balloonlist.index(ID).取得内容">balloonlist.index(ID).取得内容</a></li>
+				<li><a href="#headlinelist(ヘッドライン名/パス).取得内容">headlinelist(ヘッドライン名/パス).取得内容</a></li>
+				<li><a href="#headlinelist.index(ID).取得内容">headlinelist.index(ID).取得内容</a></li>
+				<li><a href="#pluginlist(プラグイン名/パス/ID).取得内容">pluginlist(プラグイン名/パス/ID).取得内容</a></li>
+				<li><a href="#pluginlist.index(ID).取得内容">pluginlist.index(ID).取得内容</a></li>
+				<li><a href="#history.ghost(ゴースト名/パス).取得内容">history.ghost(ゴースト名/パス).取得内容</a></li>
+				<li><a href="#history.ghost.index(ID).取得内容">history.ghost.index(ID).取得内容</a></li>
+				<li><a href="#history.balloon(バルーン名/パス).取得内容">history.balloon(バルーン名/パス).取得内容</a></li>
+				<li><a href="#history.balloont.index(ID).取得内容">history.balloont.index(ID).取得内容</a></li>
+				<li><a href="#history.headline(ヘッドライン名/パス).取得内容">history.headline(ヘッドライン名/パス).取得内容</a></li>
+				<li><a href="#history.headlinet.index(ID).取得内容">history.headlinet.index(ID).取得内容</a></li>
+				<li><a href="#history.plugin(プラグイン名/パス/ID).取得内容">history.plugin(プラグイン名/パス/ID).取得内容</a></li>
+				<li><a href="#history.plugint.index(ID).取得内容">history.plugint.index(ID).取得内容</a></li>
+				<li><a href="#name">name</a></li>
+				<li><a href="#sakuraname">sakuraname</a></li>
+				<li><a href="#keroname">keroname</a></li>
+				<li><a href="#craftmanw">craftmanw</a></li>
+				<li><a href="#craftmanurl">craftmanurl</a></li>
+				<li><a href="#path">path</a></li>
+				<li><a href="#thumbnail">thumbnail</a></li>
+				<li><a href="#update_result">update_result</a></li>
+				<li><a href="#update_time">update_time</a></li>
+				<li><a href="#shiori.変数名">shiori.変数名</a></li>
+				<li><a href="#index">index</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>スコープコマンド</h1>
+			<dl id="_0もしくは_h">
+				<dt class="entry">\0もしくは\h</dt>
+				<dd class="entry">
+					<p class="description">本体側のスコープに移る。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1もしくは_u">
+				<dt class="entry">\1もしくは\u</dt>
+				<dd class="entry">
+					<p class="description">相方側のスコープに移る。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_p_ID番号_">
+				<dt class="entry">\p[ID番号]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のスコープを表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>サーフィスコマンド</h1>
+			<dl id="_sID番号">
+				<dt class="entry">\sID番号</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のサーフィスをID番号のサーフィスに変更する。<br />この場合0～9のみ使用可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_s_ID番号_">
+				<dt class="entry">\s[ID番号]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のサーフィスをID番号のサーフィスに変更する。<br />\s[-1]で非表示サーフィス。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_i_ID番号_">
+				<dt class="entry">\i[ID番号]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側にID番号のサーフィスアニメーションを表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_i_ID,wait_">
+				<dt class="entry">\i[ID,wait]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のサーフィスアニメーションを待ちながら表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,clear,ID_">
+				<dt class="entry">\![anim,clear,ID]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のサーフィスアニメーションを巻き戻しする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,pauseID_">
+				<dt class="entry">\![anim,pauseID]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のサーフィスアニメーションを一時停止する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,resume,ID_">
+				<dt class="entry">\![anim,resume,ID]</dt>
+				<dd class="entry">
+					<p class="description">上記の一時停止を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,offset,ID,x座標,y座標_">
+				<dt class="entry">\![anim,offset,ID,x座標,y座標]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のサーフィスアニメーションの位置を指定した座標分ずらす。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,add,overlay,ID_">
+				<dt class="entry">\![anim,add,overlay,ID]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のサーフィスを現サーフィスに重ねる。※下記参照</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,stop_">
+				<dt class="entry">\![anim,stop]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスアニメーションを停止する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名_">
+				<dt class="entry">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名]</dt>
+				<dd class="entry">
+					<p class="description">サーフィス上にテキストを表示する。<br />文字列までは必須。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="___w_animation,ID_">
+				<dt class="entry">\__w[animation,ID]</dt>
+				<dd class="entry">
+					<p class="description">ID番号のアニメーションが完了するまで待機。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
+				<dt class="entry">\![bind,カテゴリ名,パーツ名,数値]</dt>
+				<dd class="entry">
+					<p class="description">着せ替えパーツを着衣、脱衣する。<br />数値部分は1で着衣、0で脱衣。<br />パーツ名を空欄にするとカテゴリ単位の動作になる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_lock,repaint_">
+				<dt class="entry">\![lock,repaint]</dt>
+				<dd class="entry">
+					<p class="description">\![unlock,repaint]が呼ばれるまで再描画を停止する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_unlock,repaint_">
+				<dt class="entry">\![unlock,repaint]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmentondesktop,top_">
+				<dt class="entry">\![set,alignmentondesktop,top]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフィスをデスクトップ上部に吸着。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmentondesktop,bottom_">
+				<dt class="entry">\![set,alignmentondesktop,bottom]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフィスをデスクトップ下部に吸着。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,left_">
+				<dt class="entry">\![set,alignmenttodesktop,left]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフィスをデスクトップ左部に吸着。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,right_">
+				<dt class="entry">\![set,alignmenttodesktop,right]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフィスをデスクトップ右部に吸着。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,free_">
+				<dt class="entry">\![set,alignmenttodesktop,free]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスを自由移動可能にする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,scaling,倍率_">
+				<dt class="entry">\![set,scaling,倍率]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスの倍率を変更する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
+				<dt class="entry">\![set,scaling,横倍率,縦倍率,変化時間]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスの倍率を精密に変更する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alpha,数値_">
+				<dt class="entry">\![set,alpha,数値]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフィスを0～100で透明度を変更する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,default_">
+				<dt class="entry">\![set,alignmenttodesktop,default]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスをdescript.txtの定義の位置に戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_effect,プラグイン名,速度倍率,パラメータ_">
+				<dt class="entry">\![effect,プラグイン名,速度倍率,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスをプラグインにより変化させる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ_">
+				<dt class="entry">\![effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">追加したサーフィスをプラグインにより変化させる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_filter,プラグイン名,起動時間,パラメータ_">
+				<dt class="entry">\![filter,プラグイン名,起動時間,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスを変化があるたびにプラグインにより変化させる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_filter_">
+				<dt class="entry">\![filter]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>\![anim,add,overlay,ID]について</h1>
+				<dl>
+					<dt>\![anim,add,overlay,ID]</dt>
+					<dd>ID番号のサーフィスを現サーフィスに重ねる。</dd>
+					<dt>\![anim,add,overlayfast,ID]</dt>
+					<dd>ID番号のサーフィスを現サーフィスにoverlayfastで重ねる。</dd>
+					<dt>\![anim,add,base,ID]</dt>
+					<dd>現ベースサーフィスをID番号のサーフィスに変更する。</dd>
+					<dt>\![anim,add,move,x,y]</dt>
+					<dd>現サーフィスをXY座標に移動して表示。</dd>
+					<dt>\![anim,add,overlay,ID,x,y]</dt>
+					<dd>ID番号のサーフィスを現サーフィスにXY座標に移動して重ねる。</dd>
+					<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間...]</dt>
+					<dd>重ねたサーフィスをアニメーションする。(時間はms)</dd>
+					<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間,アニメーションタイミング]</dt>
+					<dd>アニメーションタイミングにはrunonce、alwaysが指定できる。</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>バルーン、テキストコマンド</h1>
+			<dl id="_b_ID番号_">
+				<dt class="entry">\b[ID番号]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のバルーンをID番号のバルーンに変更する。<br />\b[-1]でバルーンを非表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,x,y_">
+				<dt class="entry">\_b[ファイル名,x,y]</dt>
+				<dd class="entry">
+					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。<br />※SSPのみ画像URLを指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,x,y,opaque_">
+				<dt class="entry">\_b[ファイル名,x,y,opaque]</dt>
+				<dd class="entry">
+					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,inline_">
+				<dt class="entry">\_b[ファイル名,inline]</dt>
+				<dd class="entry">
+					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,inline,opaque_">
+				<dt class="entry">\_b[ファイル名,inline,opaque]</dt>
+				<dd class="entry">
+					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,inline,オプション名,オプション名..._">
+				<dt class="entry">\_b[ファイル名,inline,オプション名,オプション名...]</dt>
+				<dd class="entry">
+					<p class="description">※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<p class="description">オプション名</p>
+					<dl class="description">
+						<dt>--option=opaque</dt>
+						<dd>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />左上の色を透過しないで表示する。</dd>
+						<dt>--option=use_self_alpha</dt>
+						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
+						<dt>--clipping=左 上 右 下</dt>
+						<dd>バルーンの左上右下で指定した数値の座標に画像を貼り付ける。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_n">
+				<dt class="entry">\n</dt>
+				<dd class="entry">
+					<p class="description">バルーン内の文字を改行。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_n_half_">
+				<dt class="entry">\n[half]</dt>
+				<dd class="entry">
+					<p class="description">通常の半分の高さで改行。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_n_パーセント_">
+				<dt class="entry">\n[パーセント]</dt>
+				<dd class="entry">
+					<p class="description">通常のパーセント分改行する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__n">
+				<dt class="entry">\_n</dt>
+				<dd class="entry">
+					<p class="description">次の\_nがくるまで自動改行されない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_c">
+				<dt class="entry">\c</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のバルーン内の文字をクリア。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_c_char,数値_">
+				<dt class="entry">\c[char,数値]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のカーソル位置から指定文字数をクリア。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_c_char,数値,開始位置_">
+				<dt class="entry">\c[char,数値,開始位置]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側の指定位置から指定文字数をクリア。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_c_line,数値_">
+				<dt class="entry">\c[line,数値]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のカーソル位置から指定行数をクリア。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_c_line,数値,開始位置_">
+				<dt class="entry">\c[line,数値,開始位置]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側の指定位置から指定行数をクリア。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__l_x,y_">
+				<dt class="entry">\_l[x,y]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のカーソル位置をXYの座標に移動する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__l_xem,yem_">
+				<dt class="entry">\_l[xem,yem]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のカーソル位置をem単位でXY座標に移動する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__l_@x,@y_">
+				<dt class="entry">\_l[@x,@y]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側のカーソル位置をXY相対座標に移動する。<br />em単位でも可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_C">
+				<dt class="entry">\C</dt>
+				<dd class="entry">
+					<p class="description">先頭に記述すると直前に表示したバルーンのテキストに追記をする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,autoscroll,disable_">
+				<dt class="entry">\![set,autoscroll,disable]</dt>
+				<dd class="entry">
+					<p class="description">バルーンの文字スクロールを停止する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,autoscroll,enable_">
+				<dt class="entry">\![set,autoscroll,enable]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,balloonoffset,x,y_">
+				<dt class="entry">\![set,balloonoffset,x,y]</dt>
+				<dd class="entry">
+					<p class="description">バルーンをXY座標に移動。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,balloonalign,ID_">
+				<dt class="entry">\![set,balloonalign,ID]</dt>
+				<dd class="entry">
+					<p class="description">バルーンを下記IDの表示方向へ切り替える。<br />left　center　top　right　bottom　auto</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,balloonnum,ファイル名,現在の数,最大数_">
+				<dt class="entry">\![set,balloonnum,ファイル名,現在の数,最大数]</dt>
+				<dd class="entry">
+					<p class="description">ファイル受信時に表示されるデータ書式を表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_*_">
+				<dt class="entry">\![*]</dt>
+				<dd class="entry">
+					<p class="description">マーカーを表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_enter,onlinemode_">
+				<dt class="entry">\![enter,onlinemode]</dt>
+				<dd class="entry">
+					<p class="description">オンラインマーカーを強制的に表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_leave,onlinemode_">
+				<dt class="entry">\![leave,onlinemode]</dt>
+				<dd class="entry">
+					<p class="description">オンラインマーカーを強制的に非表示にする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__!">
+				<dt class="entry">\_!</dt>
+				<dd class="entry">
+					<p class="description">次の\_!までタグを実行せずにそのまま表示する。</p>
+				</dd>
+			</dl>
+			<dl id="__?">
+				<dt class="entry">\_?</dt>
+				<dd class="entry">
+					<p class="description">次の\_?までタグを実行せずにそのまま表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>\_b[ファイル名,...]について</h1>
+				<p>※SSPのみ可、ファイル名等のパスには環境変数も使える。</p>
+				<dl>
+					<dt>base64を使用する場合</dt>
+					<dd>例:"data:image/png;base64,iV～II"</dd>
+					<dt>exe/dllのリソースを使用する場合</dt>
+					<dd>例:D:\hogehoge.exe,20</dd>
+					<dt>exe/dllのリソースを使用する場合(リソースID指定)</dt>
+					<dd>例:D:\hogehoge.exe,-10</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>フォント変更コマンド</h1>
+			<dl id="_f_name,フォント名_">
+				<dt class="entry">\f[name,フォント名]</dt>
+				<dd class="entry">
+					<p class="description">これ以降のテキストを指定したフォントに変更する。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_height,数値_">
+				<dt class="entry">\f[height,数値]</dt>
+				<dd class="entry">
+					<p class="description">これ以降のテキストを指定したフォントサイズに変更する。<br />+や-による相対的な変更が可能。<br />スタイルシートのサイズ指定も可能。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_color,R,G,B_">
+				<dt class="entry">\f[color,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">フォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_color,R_,G_,B__">
+				<dt class="entry">\f[color,R%,G%,B%]</dt>
+				<dd class="entry">
+					<p class="description">フォント色をRGB(0～100%)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_color,色_">
+				<dt class="entry">\f[color,色]</dt>
+				<dd class="entry">
+					<p class="description">フォント色をカラーコードやカラーネームで変更。<br />#ff0000、red等。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_color,default_">
+				<dt class="entry">\f[color,default]</dt>
+				<dd class="entry">
+					<p class="description">フォント色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_shadowcolor,R,G,B_">
+				<dt class="entry">\f[shadowcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_shadowcolor,none_">
+				<dt class="entry">\f[shadowcolor,none]</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色を無効化。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_shadowcolor,default_">
+				<dt class="entry">\f[shadowcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">フォントの陰落ち色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_outline,パラメータ_">
+				<dt class="entry">\f[outline,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると白抜き。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchor.font.color,R,G,B_">
+				<dt class="entry">\f[anchor.font.color,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色をRGB(0～255)で変更。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_bold,パラメータ_">
+				<dt class="entry">\f[bold,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると太字。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_italic,パラメータ_">
+				<dt class="entry">\f[italic,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_strike,パラメータ_">
+				<dt class="entry">\f[strike,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_underline,パラメータ_">
+				<dt class="entry">\f[underline,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_sub,パラメータ_">
+				<dt class="entry">\f[sub,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_sup,パラメータ_">
+				<dt class="entry">\f[sup,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_default_">
+				<dt class="entry">\f[default]</dt>
+				<dd class="entry">
+					<p class="description">全てのバルーン属性をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ウエイトコマンド</h1>
+			<dl id="_w時間">
+				<dt class="entry">\w時間</dt>
+				<dd class="entry">
+					<p class="description">時間x50ms分の時間ウエイト。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__w_時間_">
+				<dt class="entry">\_w[時間]</dt>
+				<dd class="entry">
+					<p class="description">精密ウエイト。[時間]ms。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="___w_時間_">
+				<dt class="entry">\__w[時間]</dt>
+				<dd class="entry">
+					<p class="description">再生開始、または\xから指定ミリ秒数が経つまで待機。<br />\__w[clear]で時間リセット。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_x">
+				<dt class="entry">\x</dt>
+				<dd class="entry">
+					<p class="description">バルーンをクリック待ちにする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_x_noclear_">
+				<dt class="entry">\x[noclear]</dt>
+				<dd class="entry">
+					<p class="description">バルーンを一時クリック待ちにする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_t">
+				<dt class="entry">\t</dt>
+				<dd class="entry">
+					<p class="description">タイムクリティカルセッション。<br />\eまでの間、クリックや他のイベントなどを行わない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__q">
+				<dt class="entry">\_q</dt>
+				<dd class="entry">
+					<p class="description">クイックセッション。<br />次の\_qか\eまでメッセージがノーウエイトで表示される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_quicksession,true_">
+				<dt class="entry">\![quicksession,true]</dt>
+				<dd class="entry">
+					<p class="description">クイックセッションを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_quicksession,false_">
+				<dt class="entry">\![quicksession,false]</dt>
+				<dd class="entry">
+					<p class="description">クイックセッションを終了する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__s">
+				<dt class="entry">\_s</dt>
+				<dd class="entry">
+					<p class="description">シククロナイズセッション。<br />次の\_sか\eまでメッセージを両バルーンに表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__s_ID1,ID2,ID3..._">
+				<dt class="entry">\_s[ID1,ID2,ID3...]</dt>
+				<dd class="entry">
+					<p class="description">IDのスコープをシンクロナイズセッションする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>選択肢コマンド</h1>
+			<dl id="_q_タイトル,ID_">
+				<dt class="entry">\q[タイトル,ID]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelectが開始される。<br />IDはReference0に格納される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_q_タイトル,OnID,r0,r1,..._">
+				<dt class="entry">\q[タイトル,OnID,r0,r1,...]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。<br />上記のようにIDが"On"で始まっている場合は、選択後、SHIORIイベントOnID(書いた通りのイベント)が開始される。<br />それ以降のパラメータはr0,r1,...の順番にReference0以降に格納される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_q_タイトル,ID1,ID2,ID3..._">
+				<dt class="entry">\q[タイトル,ID1,ID2,ID3...]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelectが開始される。<br />ID*はReference*に格納される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_q_タイトル,script:実行内容_">
+				<dt class="entry">\q[タイトル,script:実行内容]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。<br />選択後、script:以下の内容をSakuraScriptとして実行する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_q_ID__タイトル_">
+				<dt class="entry">\q[ID][タイトル]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。[旧仕様]<br />選択後、ID番号のSHIORIイベントが開始される。<br />上記のものとは違い選択肢は改行される。</p>
+				</dd>
+			</dl>
+			<dl id="_z">
+				<dt class="entry">\z</dt>
+				<dd class="entry">
+					<p class="description">上記選択肢の範囲終了に付ける。[旧仕様]</p>
+				</dd>
+			</dl>
+			<dl id="___q_ID,..._">
+				<dt class="entry">\__q[ID,...]</dt>
+				<dd class="entry">
+					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID以降の仕様は、Onやscript:で始まるものが特別扱いされるのも含めて\qと同じ。<br />Onで始まるIDを指定した場合のみ、ID以降のパラメータがそれぞれreferenceとして扱われる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_*">
+				<dt class="entry">\*</dt>
+				<dd class="entry">
+					<p class="description">このコマンドの後の選択肢はタイムアウトされない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,choicetimeout,時間_">
+				<dt class="entry">\![set,choicetimeout,時間]</dt>
+				<dd class="entry">
+					<p class="description">タイムアウトを時間指定する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__a_ID_">
+				<dt class="entry">\_a[ID]</dt>
+				<dd class="entry">
+					<p class="description">\_aがくるまでの範囲をジャンパとする。<br />ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される。<br />IDはReference0に格納される。<br />SSPのみ、Onで始まるIDを特別扱いする処理が含まれる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>選択肢マーカー変更コマンド</h1>
+			<dl id="_f_cursorstyle,形状_">
+				<dt class="entry">\f[cursorstyle,形状]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorstyle,default_">
+				<dt class="entry">\f[cursorstyle,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの形状をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorcolor,R,G,B_もしくは_f_cursorbrushcolor,R,G,B_">
+				<dt class="entry">\f[cursorcolor,R,G,B]もしくは\f[cursorbrushcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorbrushcolor,default_">
+				<dt class="entry">\f[cursorbrushcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorpencolor,R,G,B_">
+				<dt class="entry">\f[cursorpencolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorpencolor,default_">
+				<dt class="entry">\f[cursorpencolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorfontcolor,R,G,B_">
+				<dt class="entry">\f[cursorfontcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursorfontcolor,default_">
+				<dt class="entry">\f[cursorfontcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursormethod,描画方法_">
+				<dt class="entry">\f[cursormethod,描画方法]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカー描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorstyle,形状_">
+				<dt class="entry">\f[anchorstyle,形状]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorstyle,default_">
+				<dt class="entry">\f[anchorstyle,default]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの形状をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorcolor,R,G,B_もしくは_f_anchorbrushcolor,R,G,B_">
+				<dt class="entry">\f[anchorcolor,R,G,B]もしくは\f[anchorbrushcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorbrushcolor,default_">
+				<dt class="entry">\f[anchorbrushcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形内の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorpencolor,R,G,B_">
+				<dt class="entry">\f[anchorpencolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorpencolor,default_">
+				<dt class="entry">\f[anchorpencolor,default]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorfontcolor,R,G,B_">
+				<dt class="entry">\f[anchorfontcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーのフォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorfontcolor,default_">
+				<dt class="entry">\f[anchorfontcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーのフォント色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchormethod,描画方法_">
+				<dt class="entry">\f[anchormethod,描画方法]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchormethod,default_">
+				<dt class="entry">\f[anchormethod,default]</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの描画方法をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectstyle,形状_">
+				<dt class="entry">\f[anchornotselectstyle,形状]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectstyle,default_">
+				<dt class="entry">\f[anchornotselectstyle,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの形状をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectcolor,R,G,B_もしくは_f_anchornotselectbrushcolor,R,G,B_">
+				<dt class="entry">\f[anchornotselectcolor,R,G,B]もしくは\f[anchornotselectbrushcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectbrushcolor,default_">
+				<dt class="entry">\f[anchornotselectbrushcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形内の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectpencolor,R,G,B_">
+				<dt class="entry">\f[anchornotselectpencolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectpencolor,default_">
+				<dt class="entry">\f[anchornotselectpencolor,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形枠および下線の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectfontcolor,R,G,B_">
+				<dt class="entry">\f[anchornotselectfontcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectfontcolor,default_">
+				<dt class="entry">\f[anchornotselectfontcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectmethod,描画方法_">
+				<dt class="entry">\f[anchornotselectmethod,描画方法]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchornotselectmethod,default_">
+				<dt class="entry">\f[anchornotselectmethod,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの描画方法をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>イベントコマンド</h1>
+			<dl id="_e">
+				<dt class="entry">\e</dt>
+				<dd class="entry">
+					<p class="description">イベント、メッセージの終了する。<br />その後に書かれたイベント、メッセージは発生しない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_-">
+				<dt class="entry">\-</dt>
+				<dd class="entry">
+					<p class="description">本体を終了する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_4">
+				<dt class="entry">\4</dt>
+				<dd class="entry">
+					<p class="description">現スコープのキャラクターが離れる距離まで移動。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_5">
+				<dt class="entry">\5</dt>
+				<dd class="entry">
+					<p class="description">現スコープのキャラクタが接触する距離まで移動。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_move_">
+				<dt class="entry">\![move]</dt>
+				<dd class="entry">
+					<p class="description">指定座標まで移動。※下記参照</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_moveasync_">
+				<dt class="entry">\![moveasync]</dt>
+				<dd class="entry">
+					<p class="description">指定座標まで非同期移動。※下記参照</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,position,x,y,スコープID_">
+				<dt class="entry">\![set,position,x,y,スコープID]</dt>
+				<dd class="entry">
+					<p class="description">指定スコープをXY座標に固定する。(ドラッグ等を不可能にする)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reset,position_">
+				<dt class="entry">\![reset,position]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_updatebymyself_">
+				<dt class="entry">\![updatebymyself]</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新イベントを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_updatebymyself,checkonly_">
+				<dt class="entry">\![updatebymyself,checkonly]</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新チェックイベントを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_update,platform_">
+				<dt class="entry">\![update,platform]</dt>
+				<dd class="entry">
+					<p class="description">本体ネットワーク更新イベントを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_6">
+				<dt class="entry">\6</dt>
+				<dd class="entry">
+					<p class="description">時計合わせイベントで実際に時間修正を行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_7">
+				<dt class="entry">\7</dt>
+				<dd class="entry">
+					<p class="description">時計合わせイベントを開始する。</p>
+				</dd>
+			</dl>
+			<dl id="_!_executesntp_">
+				<dt class="entry">\![executesntp]</dt>
+				<dd class="entry">
+					<p class="description">時計合わせイベントを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,headline,ヘッドライン名_">
+				<dt class="entry">\![execute,headline,ヘッドライン名]</dt>
+				<dd class="entry">
+					<p class="description">ヘッドラインセンスイベントを開始する。<br />ヘッドライン名をrandomにするとランダムに選択。<br />lastinstalledにすると最後にインストールされたヘッドラインを開始。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_biff_">
+				<dt class="entry">\![biff]</dt>
+				<dd class="entry">
+					<p class="description">メールチェックイベントを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_vanishbymyself_">
+				<dt class="entry">\![vanishbymyself]</dt>
+				<dd class="entry">
+					<p class="description">消滅指示無しで自ゴーストをアンインストールする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_vanishbymyself,ゴースト名_">
+				<dt class="entry">\![vanishbymyself,ゴースト名]</dt>
+				<dd class="entry">
+					<p class="description">消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_+">
+				<dt class="entry">\+</dt>
+				<dd class="entry">
+					<p class="description">ランダムに他のゴーストに切り替わる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__+">
+				<dt class="entry">\_+</dt>
+				<dd class="entry">
+					<p class="description">次の順番のゴーストに切り替わる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,ghost,ゴースト名_">
+				<dt class="entry">\![change,ghost,ゴースト名]</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストへの切り替えを行う。<br />ゴースト名をrandomにするとランダムチェンジ。<br />sequentialの場合はシーケンシャルチェンジ。<br />該当ゴーストがいなかった場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,shell,シェル名_">
+				<dt class="entry">\![change,shell,シェル名]</dt>
+				<dd class="entry">
+					<p class="description">そのシェルへの切り替えを行う。<br />該当シェルがいなかった場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,balloon,バルーン名_">
+				<dt class="entry">\![change,balloon,バルーン名]</dt>
+				<dd class="entry">
+					<p class="description">そのバルーンへの切り替えを行う。<br />該当バルーンがいなかった場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,ghost,lastinstalled_">
+				<dt class="entry">\![change,ghost,lastinstalled]</dt>
+				<dd class="entry">
+					<p class="description">最後にインストールされたゴーストへの切り替えを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,shell,lastinstalled_">
+				<dt class="entry">\![change,shell,lastinstalled]</dt>
+				<dd class="entry">
+					<p class="description">最後にインストールされたシェルへの切り替えを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_change,balloon,lastinstalled_">
+				<dt class="entry">\![change,balloon,lastinstalled]</dt>
+				<dd class="entry">
+					<p class="description">最後にインストールされたバルーンへの切り替えを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_call,ghost,ゴースト名_">
+				<dt class="entry">\![call,ghost,ゴースト名]</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストを呼び出す。<br />ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_v">
+				<dt class="entry">\v</dt>
+				<dd class="entry">
+					<p class="description">手前に表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,windowstate,stayontop_">
+				<dt class="entry">\![set,windowstate,stayontop]</dt>
+				<dd class="entry">
+					<p class="description">手前に表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,windowstate,!stayontop_">
+				<dt class="entry">\![set,windowstate,!stayontop]</dt>
+				<dd class="entry">
+					<p class="description">手前に表示しない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,windowstate,minimize_">
+				<dt class="entry">\![set,windowstate,minimize]</dt>
+				<dd class="entry">
+					<p class="description">最小化する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,wallpaper,ファイル名,オプション_">
+				<dt class="entry">\![set,wallpaper,ファイル名,オプション]</dt>
+				<dd class="entry">
+					<p class="description">指定したファイルを壁紙にする。<br />オプションにcenter、tile、stretchを指定できる、省略可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
+				<dt class="entry">\![set,tasktrayicon,ファイル名,テキスト]</dt>
+				<dd class="entry">
+					<p class="description">指定したアイコンファイルをタスクトレイのアイコンに変更する。<br />テキストはアイコンにマウスを重ねたときの表示、省略可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
+				<dt class="entry">\![set,trayballoon,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p class="description">トレイアイコンからバルーンを表示する。※下記参照。<br />バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br />タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,othersurfacechange,trueかfalse_">
+				<dt class="entry">\![set,othersurfacechange,trueかfalse]</dt>
+				<dd class="entry">
+					<p class="description">OnOtherSurfaceChangeを通知するかどうかを設定。通常無効。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_raise,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![raise,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">イベントを実行する。<br />第3引数以降はreference。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_embed,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![embed,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">イベントの実行結果を現在実行中のスクリプトのこのタグ内に「埋め込む」。使い方は\![raise]と同じ。プロパティシステムの内容によって分岐など、イベントを実行して情報を取得する仕様を、1回のスクリプト実行で有効に使用するための仕様。<br />第3引数以降はreference。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">待ち時間(ミリ秒)を指定してイベントを実行する。<br />第5引数以降はreference。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">起動している他のゴーストへイベントを通知する。<br />第4引数以降はreference。<br />ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br />1バイト区切りで複数指定可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br />第6引数以降はreference。<br />ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br />1バイト区切りで複数指定可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">プラグインに指定したイベントを送信する。<br />プラグイン名をrandomにするとランダムに選択。<br />lastinstalledにすると最後にインストールされたプラグインを開始。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_notify,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![notify,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">Notifyイベントを実行する。<br />第3引数以降はreference。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">起動している他のゴーストへNotifyイベントを通知する。<br />第4引数以降はreference。<br />ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br />1バイト区切りで複数指定可。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p class="description">プラグインに指定したNotifyイベントを送信する。<br />プラグイン名をrandomにするとランダムに選択。<br />lastinstalledにすると最後にインストールされたプラグインを開始。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>※\![move]、\![moveasync]について</h1>
+				<p>\![move,X座標,Y座標,移動時間,基準とするキャラ,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
+				<p>X座標、Y座標は目的の座標を指定。<br />負の値も指定可能。<br />どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
+				<p>移動時間はミリ秒単位。<br />移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
+				<p>基準とするキャラは、別のスコープの相対位置に移動する際に使用。<br />指定方法は0 1等のキャラクターを表わすIDの数値の他、自分自身をあらわすme、スクリーン左上を起点とするscreen、他のゴーストを指定する (Sakura名)/(ID) 例えばEmily/1 など、がある。<br />省略時はscreenが指定したとみなされる。</p>
+				<p>基準とするキャラ基準位置は、指定した座標をそのサーフィスのどこを起点とするかを指定する。<br />X基準.Y基準、という形で指定し、それぞれ<br />X基準：left,right,base,center<br />Y基準：top,bottom,base,center<br />の4つの指定を組み合わせ、right.base、などのように記述する。<br />なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
+				<p>省略時は、left.topを指定したとみなされる。また、screen指定の場合はbaseは利用できない。</p>
+				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
+			</section>
+			<section class="caption">
+				<h1>※\![set,trayballoon,オプション,オプション,オプション...]オプション</h1>
+				<dl>
+					<dt>--text=テキスト</dt>
+					<dd>バルーンに表示する文字列、複数指定で複数行に。</dd>
+					<dt>--title=タイトル</dt>
+					<dd>バルーンのタイトル。</dd>
+					<dt>--icon=アイコン設定名</dt>
+					<dd>バルーンに表示されるアイコンの設定。</dd>
+					<dt>info</dt>
+					<dd>情報アイコン</dd>
+					<dt>error</dt>
+					<dd>エラーアイコン</dd>
+					<dt>warning</dt>
+					<dd>警告アイコン</dd>
+					<dt>none</dt>
+					<dd>なし</dd>
+					<dt>--timeout=秒数</dt>
+					<dd>バルーンの表示時間。</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>サウンドコマンド</h1>
+			<dl id="__v_ファイル名_">
+				<dt class="entry">\8[ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">自ゴーストフォルダにあるwaveを再生する。</p>
+				</dd>
+			</dl>
+			<dl id="__V">
+				<dt class="entry">\_v[ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">自ゴーストフォルダにあるwave、mp3、wmaを再生する。 <br />ファイルが存在しない場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_8_ファイル名_">
+				<dt class="entry">\_V</dt>
+				<dd class="entry">
+					<p class="description">\_vのファイル再生が終了するのを待つ。<br />既に終了しているか存在しない場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,play,ファイル名_">
+				<dt class="entry">\![sound,play,ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">\_vと同じ機能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,cdplay,トラックNo._">
+				<dt class="entry">\![sound,cdplay,トラックNo.]</dt>
+				<dd class="entry">
+					<p class="description">音楽CDを再生する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,loop,ファイル名_">
+				<dt class="entry">\![sound,loop,ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">ループ再生する。\_Vの対象にならない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,wait_">
+				<dt class="entry">\![sound,wait]</dt>
+				<dd class="entry">
+					<p class="description">\_Vと同じ機能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,pause_">
+				<dt class="entry">\![sound,pause]</dt>
+				<dd class="entry">
+					<p class="description">再生を一時停止する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_sound,resume_">
+				<dt class="entry">\![sound,resume]</dt>
+				<dd class="entry">
+					<p class="description">一時停止を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>オープンコマンド</h1>
+			<dl id="_j_ID_">
+				<dt class="entry">\j[ID]</dt>
+				<dd class="entry">
+					<p class="description">IDにジャンプする。<br />http://～でURLジャンプする。<br />file://～でOSに関連付けられた拡張子でファイルを実行する。<br />※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+				</dd>
+			</dl>
+			<dl id="_!_open,browser,パラメータ_">
+				<dt class="entry">\![open,browser,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">本体で設定されたブラウザを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,mailer,パラメータ_">
+				<dt class="entry">\![open,mailer,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">本体で設定されたメーラーを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="___t">
+				<dt class="entry">\__t</dt>
+				<dd class="entry">
+					<p class="description">TeachBoxを開く。</p>
+				</dd>
+			</dl>
+			<dl id="_!_open,teachbox_">
+				<dt class="entry">\![open,teachbox]</dt>
+				<dd class="entry">
+					<p class="description">TeachBoxを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,communicatebox_">
+				<dt class="entry">\![open,communicatebox]</dt>
+				<dd class="entry">
+					<p class="description">CommunicateBoxを開く。<br />入力決定後はOnCommunicateが発生する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,inputbox,ID,表示時間,テキスト_">
+				<dt class="entry">\![open,inputbox,ID,表示時間,テキスト]</dt>
+				<dd class="entry">
+					<p class="description">※InputBoxを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,passwordinput,ID,表示時間,テキスト_">
+				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト]</dt>
+				<dd class="entry">
+					<p class="description">※文字を隠すInputBoxを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_close,inputbox,ID_">
+				<dt class="entry">\![close,inputbox,ID]</dt>
+				<dd class="entry">
+					<p class="description">IDで指定されたInputBoxを閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,dateinput,ID,表示時間,年,月,日_">
+				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日]</dt>
+				<dd class="entry">
+					<p class="description">年月日入力ダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大_">
+				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大]</dt>
+				<dd class="entry">
+					<p class="description">スライダー調節ダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒_">
+				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒]</dt>
+				<dd class="entry">
+					<p class="description">時間入力ダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,configurationdialog_">
+				<dt class="entry">\![open,configurationdialog]</dt>
+				<dd class="entry">
+					<p class="description">設定ダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,ghostexplorer_">
+				<dt class="entry">\![open,ghostexplorer]</dt>
+				<dd class="entry">
+					<p class="description">ゴーストエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,shellexplorer_">
+				<dt class="entry">\![open,shellexplorer]</dt>
+				<dd class="entry">
+					<p class="description">シェルエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,balloonexplorer_">
+				<dt class="entry">\![open,balloonexplorer]</dt>
+				<dd class="entry">
+					<p class="description">バルーンエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,headlinesensorexplorer_">
+				<dt class="entry">\![open,headlinesensorexplorer]</dt>
+				<dd class="entry">
+					<p class="description">ヘッドライセンスエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,pluginexplorer_">
+				<dt class="entry">\![open,pluginexplorer]</dt>
+				<dd class="entry">
+					<p class="description">プラグインエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,rateofusegraph_">
+				<dt class="entry">\![open,rateofusegraph]</dt>
+				<dd class="entry">
+					<p class="description">ゴースト使用率を表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,rateofusegraphballoon_">
+				<dt class="entry">\![open,rateofusegraphballoon]</dt>
+				<dd class="entry">
+					<p class="description">バルーン使用率を表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,rateofusegraphtotal_">
+				<dt class="entry">\![open,rateofusegraphtotal]</dt>
+				<dd class="entry">
+					<p class="description">ゴースト使用率(合算)を表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,calendar_">
+				<dt class="entry">\![open,calendar]</dt>
+				<dd class="entry">
+					<p class="description">カレンダーを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,help_">
+				<dt class="entry">\![open,help]</dt>
+				<dd class="entry">
+					<p class="description">SSPヘルプを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,messenger_">
+				<dt class="entry">\![open,messenger]</dt>
+				<dd class="entry">
+					<p class="description">インスタントメッセンジャーを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,readme_">
+				<dt class="entry">\![open,readme]</dt>
+				<dd class="entry">
+					<p class="description">readme.txtを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,file,ファイル名_">
+				<dt class="entry">\![open,file,ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">ファイルを実行する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,dialog,open,パラメータ_">
+				<dt class="entry">\![open,dialog,open,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">※ファイルを開くのダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,dialog,save,パラメータ_">
+				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">※ファイルの保存のダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,dialog,folder,パラメータ_">
+				<dt class="entry">\![open,dialog,folder,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">※フォルダ選択のダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,dialog,color,パラメータ_">
+				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">※カラーパレットのダイアログを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_close,dialog,ID_">
+				<dt class="entry">\![close,dialog,ID]</dt>
+				<dd class="entry">
+					<p class="description">指定したイベントIDのダイアログを閉じる。全部の場合は__SYSTEM_ALL_DIALOG__を指定。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,surfacetest_">
+				<dt class="entry">\![open,surfacetest]</dt>
+				<dd class="entry">
+					<p class="description">サーフィステストダイアログを開く 。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>※InputBox</h1>
+				<p>このコマンドを指定すると入力ボックスが表示される。<br />入力後、決定されるとSHIORIイベント、OnUserInputが発生する。<br />IDはreference0に格納される。<br />タイムアウト時にはreference1はtimeoutと返る。<br />表示時間は-1でタイムアウト無しになる。単位はms。<br />入力の間、他の一切を受け付けない。<br />MATERI、SSPのみボックス内にあらかじめテキストを用意できる。<br />さらにSSPのみテキストの代わりにオプションを指定できる。(カンマ区切りで複数指定)<br />--text=標準で入力されているテキスト<br />--limit=入力制限文字数</p>
+			</section>
+			<section class="caption">
+				<h1>※ファイルを開く / ファイルを保存 パラメータ</h1>
+				<dl>
+					<dt>--title</dt>
+					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
+					<dt>--dir=パス</dt>
+					<dd>初期表示フォルダ</dd>
+					<dt>--filter=フィルタ</dt>
+					<dd>BMP|*.bmp|その他|*.png;*.gif のように記述</dd>
+					<dt>--ext=拡張子</dt>
+					<dd>保存時の標準拡張子</dd>
+					<dt>--name=ファイル名</dt>
+					<dd>保存時の標準ファイル名</dd>
+					<dt>--id=イベントID</dt>
+					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+				</dl>
+			</section>
+			<section class="caption">
+				<h1>※フォルダ選択 パラメータ</h1>
+				<dl>
+					<dt>--title</dt>
+					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
+					<dt>--dir=パス</dt>
+					<dd>初期表示フォルダ</dd>
+					<dt>--id=イベントID</dt>
+					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+				</dl>
+			</section>
+			<section class="caption">
+				<h1>※カラーパレット パラメータ</h1>
+				<dl>
+					<dt>--color=R G B</dt>
+					<dd>RGBをそれぞれ0～255で指定</dd>
+					<dt>--id=イベントID</dt>
+					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>未分類コマンド</h1>
+			<dl id="_!_execute,http-get,URL_">
+				<dt class="entry">\![execute,http-get,URL]</dt>
+				<dd class="entry">
+					<p class="description">http get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-get,URL,パラメータ_">
+				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-post,URL,パラメータ_">
+				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p class="description">※オプション付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p class="description">※オプション付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
+				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
+				<dd class="entry">
+					<p class="description">ZIPファイルの解凍をする。<br />ssp.exe以下のフォルダのみ可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
+				<dt class="entry">\![execute,compressarchive,ファイル名,ディレクトリ名]</dt>
+				<dd class="entry">
+					<p class="description">ZIPファイルの圧縮をする。<br />ssp.exe以下のフォルダのみ可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,install,path,ファイル名_">
+				<dt class="entry">\![execute,install,path,ファイル名]</dt>
+				<dd class="entry">
+					<p class="description">指定したnarファイルをインストールする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,install,url,URL,feedまたはnar_">
+				<dt class="entry">\![execute,install,url,URL,feedまたはnar]</dt>
+				<dd class="entry">
+					<p class="description">指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br />feed、narは省略可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,ping,パラメータ1,パラメータ2,..._">
+				<dt class="entry">\![execute,ping,パラメータ1,パラメータ2,...]</dt>
+				<dd class="entry">
+					<p class="description">指定したホストにpingを打つ。IPv6対応。<br />パラメータは以下の通り。</p>
+					<ul class="description">
+						<li>--host=ホスト名またはIP</li>
+						<li>--ttl=TTL(パケット生存期間(何回ルーティングできるか) 標準255</li>
+						<li>--count=送信回数 標準3</li>
+						<li>--size=送信サイズ(--data有効の時は--size無効) 標準32</li>
+						<li>--timeout=タイムアウト(ms) 標準5000</li>
+						<li>--df=(true|false) パケット分割不能true 分割可false 標準false</li>
+						<li>--data=文字列 ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
+						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
+					</ul>
+					<p class="description">動作中・動作後のイベントに関する仕様はOnPingProgress・OnPingCompleteを参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,nslookup,パラメータ1,パラメータ2,..._">
+				<dt class="entry">\![execute,nslookup,パラメータ1,パラメータ2,...]</dt>
+				<dd class="entry">
+					<p class="description">ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br />パラメータは以下の通り。</p>
+					<ul class="description">
+						<li>--host=ホスト名またはIP</li>
+						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
+					</ul>
+					<p class="description">動作中・動作後のイベントに関する仕様はOnNSLookupComplete・OnNSLookupFailureを参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_enter,passivemode_">
+				<dt class="entry">\![enter,passivemode]</dt>
+				<dd class="entry">
+					<p class="description">※PassiveModeを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_leave,passivemode_">
+				<dt class="entry">\![leave,passivemode]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_enter,inductionmode_">
+				<dt class="entry">\![enter,inductionmode]</dt>
+				<dd class="entry">
+					<p class="description">※InductionModeを開始する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_leave,inductionmode_">
+				<dt class="entry">\![leave,inductionmode]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
+				<dt class="entry">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</dt>
+				<dd class="entry">
+					<p class="description">選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br />実行後、OnSelectModeBeginが実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br />現在のところ、矩形選択モードを示す &quot;rect&quot; のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br />モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_leave,selectmode_">
+				<dt class="entry">\![leave,selectmode]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。実行後OnSelectModeCompleteが実行される。<br />当たり判定領域が無効(未選択)などの場合はOnSelectModeCancelになる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_enter,collisionmode__!_enter,collisionmode,rect_">
+				<dt class="entry">\![enter,collisionmode]\![enter,collisionmode,rect]</dt>
+				<dd class="entry">
+					<p class="description">開発用パレットの「当たり判定を表示」と同じことをする。3つめにrectと指定すると、当たり判定名を表示せず領域の枠のみ表示する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_leave,collisionmode_">
+				<dt class="entry">\![leave,collisionmode]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reloadsurface_">
+				<dt class="entry">\![reloadsurface]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスをリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,descript_">
+				<dt class="entry">\![reload,descript]</dt>
+				<dd class="entry">
+					<p class="description">全descript.txtをリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,descript,パラメータ_">
+				<dt class="entry">\![reload,descript,パラメータ]</dt>
+				<dd class="entry">
+					<p class="description">指定したdescript.txtをリロードする。<br />半角スペース区切りで複数指定可能。<br />ghost shell balloon headline plugin</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,shiori_">
+				<dt class="entry">\![reload,shiori]</dt>
+				<dd class="entry">
+					<p class="description">shiori.dllをリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,makoto_">
+				<dt class="entry">\![reload,makoto]</dt>
+				<dd class="entry">
+					<p class="description">makoto.dllをリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,shell_">
+				<dt class="entry">\![reload,shell]</dt>
+				<dd class="entry">
+					<p class="description">シェルをリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reload,ghost_">
+				<dt class="entry">\![reload,ghost]</dt>
+				<dd class="entry">
+					<p class="description">ゴースト全体をリロードする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__u_0x0000_">
+				<dt class="entry">\_u[0x0000]</dt>
+				<dd class="entry">
+					<p class="description">UCS-2 コード埋め込み。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__m_0x00_">
+				<dt class="entry">\_m[0x00]</dt>
+				<dd class="entry">
+					<p class="description">ASCII コード埋め込み。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_&amp;_ID_">
+				<dt class="entry">\&amp;[ID]</dt>
+				<dd class="entry">
+					<p class="description">識別子による実体参照。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_m_umsg,wparam,lparam_">
+				<dt class="entry">\m[umsg,wparam,lparam]</dt>
+				<dd class="entry">
+					<p class="description">SSTP専用。<br />Wndヘッダにより予めセットされたウインドウハンドルに対し<br />postmessage(hwnd,umsg,wparam,lparam) を実行する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>※PassiveMode</h1>
+				<p>パッシブモードの時、以下の制限が発生する。</p>
+				<ul>
+					<li>ポップアップメニューが出ない。</li>
+					<li>メールチェックしない。</li>
+					<li>ヘッドラインセンスしない。</li>
+					<li>オートチェンジしない。</li>
+					<li>選択肢がタイムアウトしない。</li>
+					<li>吹き出しが時間経過で消えない。</li>
+					<li>ファイルが DnD されても無視。</li>
+					<li>nar ダブルクリックも無視。</li>
+					<li>OnSurfaceRestoreが来ない。</li>
+					<li>cantalk は常に false。（OnSecondChange および OnMinuteChange 自体は来る）</li>
+					<li>コミュニケートボックスは閉じられ、また開かない。</li>
+					<li>最小化できない。</li>
+					<li>終了できない。</li>
+				</ul>
+			</section>
+			<section class="caption">
+				<h1>※InductionMode</h1>
+				<p>パッシブモードから以下の制限を解除したもの。</p>
+				<ul>
+					<li>タイムアウト発生。</li>
+					<li>最小化可能。</li>
+					<li>終了可能。</li>
+					<li>コミュニケートボックス可能。</li>
+				</ul>
+			</section>
+			<section class="caption">
+				<h1>※http get/post オプション</h1>
+				<dl>
+					<dt>--async=識別ID</dt>
+					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。</dd>
+					<dt>--file=ファイル名</dt>
+					<dd>取得するデータの保存名を指定。myghost/ghost/master/var/ファイル名に保存される。</dd>
+					<dt>--nodescript</dt>
+					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
+					<dt>--param=パラメータ</dt>
+					<dd>get/postのパラメータを指定します。</dd>
+					<dt>--timeout=秒数</dt>
+					<dd>通信のタイムアウトする時間を指定します。(300秒まで)</dd>
+					<dt>--param-charset=文字コード</dt>
+					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
+					<dt>--cookie=クッキーデータ</dt>
+					<dd>Cookieのデータ、OnExecuteHTTPCompleteのReference5の値をそのまま指定する。</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>環境変数</h1>
+			<dl id="_month">
+				<dt class="entry">%month</dt>
+				<dd class="entry">
+					<p class="description">現在月。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_day">
+				<dt class="entry">%day</dt>
+				<dd class="entry">
+					<p class="description">現在日。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_hour">
+				<dt class="entry">%hour</dt>
+				<dd class="entry">
+					<p class="description">現在時。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_minute">
+				<dt class="entry">%minute</dt>
+				<dd class="entry">
+					<p class="description">現在分。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_second">
+				<dt class="entry">%second</dt>
+				<dd class="entry">
+					<p class="description">現在秒。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_username">
+				<dt class="entry">%username</dt>
+				<dd class="entry">
+					<p class="description">ユーザー名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_selfname">
+				<dt class="entry">%selfname</dt>
+				<dd class="entry">
+					<p class="description">本体側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_selfname2">
+				<dt class="entry">%selfname2</dt>
+				<dd class="entry">
+					<p class="description">本体側の名前その2。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_keroname">
+				<dt class="entry">%keroname</dt>
+				<dd class="entry">
+					<p class="description">相方側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_screenwidth">
+				<dt class="entry">%screenwidth</dt>
+				<dd class="entry">
+					<p class="description">ディスプレイスクリーンの幅。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_screenheight">
+				<dt class="entry">%screenheight</dt>
+				<dd class="entry">
+					<p class="description">ディスプレイスクリーンの高さ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_exh">
+				<dt class="entry">%exh</dt>
+				<dd class="entry">
+					<p class="description">OSの連続起動時間。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_et">
+				<dt class="entry">%et</dt>
+				<dd class="entry">
+					<p class="description">間違った連続起動時間。(単位を含む)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_wronghour">
+				<dt class="entry">%wronghour</dt>
+				<dd class="entry">
+					<p class="description">正しくない現在時間。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_ms">
+				<dt class="entry">%ms</dt>
+				<dd class="entry">
+					<p class="description">単語-人。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_mz">
+				<dt class="entry">%mz</dt>
+				<dd class="entry">
+					<p class="description">単語-無機物。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_ml">
+				<dt class="entry">%ml</dt>
+				<dd class="entry">
+					<p class="description">単語-集合。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_mc">
+				<dt class="entry">%mc</dt>
+				<dd class="entry">
+					<p class="description">単語-社名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_mh">
+				<dt class="entry">%mh</dt>
+				<dd class="entry">
+					<p class="description">単語-店名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_mt">
+				<dt class="entry">%mt</dt>
+				<dd class="entry">
+					<p class="description">単語-技。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_me">
+				<dt class="entry">%me</dt>
+				<dd class="entry">
+					<p class="description">単語-食物。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_mp">
+				<dt class="entry">%mp</dt>
+				<dd class="entry">
+					<p class="description">単語-地名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_m?">
+				<dt class="entry">%m?</dt>
+				<dd class="entry">
+					<p class="description">単語-非限定。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_dms">
+				<dt class="entry">%dms</dt>
+				<dd class="entry">
+					<p class="description">単語-「～に～する～」。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_lastghostname">
+				<dt class="entry">%lastghostname</dt>
+				<dd class="entry">
+					<p class="description">インストール時用。最後にイベントを行ったゴースト名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_lastobjectname">
+				<dt class="entry">%lastobjectname</dt>
+				<dd class="entry">
+					<p class="description">インストール時用。最後にイベントを行ったオブジェクト名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_*2">
+				<dt class="entry">%*</dt>
+				<dd class="entry">
+					<p class="description">\![*]と同じ機能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>プロパティシステム</h1>
+			<div class="caption">
+				<p>※プロパティシステムは環境変数とタグの両方で使えます。</p>
+				<dl>
+					<dt>環境変数による拾得の仕方</dt>
+					<dd>%property[プロパティ名]</dd>
+					<dt>タグによる書き込み方</dt>
+					<dd>\![set,property,プロパティ名,値]</dd>
+					<dt>タグによる読み込み方</dt>
+					<dd>\![get,property,イベント名,プロパティ名]<br />Reference0にイベント名が入ります。</dd>
+					<dt>\![get,property,イベント名,プロパティ名,プロパティ名,...]</dt>
+					<dd>複数のプロパティを読み込んだ場合Reference0、1、2～と順にイベント名が入ります。</dd>
+				</dl>
+			</div>
+			<dl id="system.year">
+				<dt class="entry">system.year</dt>
+				<dd class="entry">
+					<p class="description">現在年。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.month">
+				<dt class="entry">system.month</dt>
+				<dd class="entry">
+					<p class="description">現在月。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.day">
+				<dt class="entry">system.day</dt>
+				<dd class="entry">
+					<p class="description">現在日。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.hour">
+				<dt class="entry">system.hour</dt>
+				<dd class="entry">
+					<p class="description">現在時。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.minute">
+				<dt class="entry">system.minute</dt>
+				<dd class="entry">
+					<p class="description">現在分。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.second">
+				<dt class="entry">system.second</dt>
+				<dd class="entry">
+					<p class="description">現在秒。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.millisecond">
+				<dt class="entry">system.millisecond</dt>
+				<dd class="entry">
+					<p class="description">現在ミリ秒。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.dayofweek">
+				<dt class="entry">system.dayofweek</dt>
+				<dd class="entry">
+					<p class="description">現在曜日。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="baseware.version">
+				<dt class="entry">baseware.version</dt>
+				<dd class="entry">
+					<p class="description">ベースウェアのバージョン情報。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="baseware.name">
+				<dt class="entry">baseware.name</dt>
+				<dd class="entry">
+					<p class="description">ベースウェア名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist.count">
+				<dt class="entry">ghostlist.count</dt>
+				<dd class="entry">
+					<p class="description">インストールされているゴーストの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="balloonlist.count">
+				<dt class="entry">balloonlist.count</dt>
+				<dd class="entry">
+					<p class="description">インストールされているバルーンの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="headlinelist.count">
+				<dt class="entry">headlinelist.count</dt>
+				<dd class="entry">
+					<p class="description">インストールされているヘッドラインの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="pluginlist.count">
+				<dt class="entry">pluginlist.count</dt>
+				<dd class="entry">
+					<p class="description">インストールされているプラグインの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.ghost.count">
+				<dt class="entry">history.ghost.count</dt>
+				<dd class="entry">
+					<p class="description">最近使ったものゴーストの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.balloon.count">
+				<dt class="entry">history.balloon.count</dt>
+				<dd class="entry">
+					<p class="description">最近使ったものバルーンの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.headline.count">
+				<dt class="entry">history.headline.count</dt>
+				<dd class="entry">
+					<p class="description">最近使ったものヘッドラインの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.plugin.count">
+				<dt class="entry">history.plugin.count</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののプラグインの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.shelllist.count">
+				<dt class="entry">currentghost.shelllist.count</dt>
+				<dd class="entry">
+					<p class="description">インストールされているシェルの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope.count">
+				<dt class="entry">currentghost.scope.count</dt>
+				<dd class="entry">
+					<p class="description">現在有効な最大キャラ数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).surface.num">
+				<dt class="entry">currentghost.scope(ID).surface.num</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのスコープIDのサーフィスID。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).seriko.defaultsurface">
+				<dt class="entry">currentghost.scope(ID).seriko.defaultsurface</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのデフォルトサーフィス。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(番号).surface.x">
+				<dt class="entry">currentghost.scope(番号).surface.x</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのスコープIDのサーフィスのX座標。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(番号).surface.y">
+				<dt class="entry">currentghost.scope(番号).surface.y</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのスコープIDのサーフィスY座標。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.count">
+				<dt class="entry">currentghost.balloon.count</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのバルーンの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).count">
+				<dt class="entry">currentghost.balloon.scope(ID).count</dt>
+				<dd class="entry">
+					<p class="description">現在のバルーンのバルーン画像数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).num">
+				<dt class="entry">currentghost.balloon.scope(ID).num</dt>
+				<dd class="entry">
+					<p class="description">現在のバルーンのID。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).validwidth">
+				<dt class="entry">currentghost.balloon.scope(ID).validwidth</dt>
+				<dd class="entry">
+					<p class="description">現在のバルーンの文字描画に使える幅。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).validheight">
+				<dt class="entry">currentghost.balloon.scope(ID).validheight</dt>
+				<dd class="entry">
+					<p class="description">現在のバルーンの文字描画に使える高さ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).lines">
+				<dt class="entry">currentghost.balloon.scope(ID).lines</dt>
+				<dd class="entry">
+					<p class="description">現在のバルーンのおさまる行数の最大値。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).name">
+				<dt class="entry">rateofuselist(名前).name</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの名称。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).sakuraname">
+				<dt class="entry">rateofuselist(名前).sakuraname</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの本体側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).keroname">
+				<dt class="entry">rateofuselist(名前).keroname</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの相方側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).boottime">
+				<dt class="entry">rateofuselist(名前).boottime</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの起動回数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).bootminute">
+				<dt class="entry">rateofuselist(名前).bootminute</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの起動時間。(分単位)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist(名前).percent">
+				<dt class="entry">rateofuselist(名前).percent</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの起動時間割合。(パーセント、小数)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).name">
+				<dt class="entry">rateofuselist.index(順位).name</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの名称。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).sakuraname">
+				<dt class="entry">rateofuselist.index(順位).sakuraname</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの本体側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).keroname">
+				<dt class="entry">rateofuselist.index(順位).keroname</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの相方側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).boottime">
+				<dt class="entry">rateofuselist.index(順位).boottime</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの起動回数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).bootminute">
+				<dt class="entry">rateofuselist.index(順位).bootminute</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの起動時間。(分単位)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="rateofuselist.index(順位).percent">
+				<dt class="entry">rateofuselist.index(順位).percent</dt>
+				<dd class="entry">
+					<p class="description">使用率のその順位のゴーストの起動時間割合。(パーセント、小数)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist(ゴースト名/パス).取得内容">
+				<dt class="entry">ghostlist(ゴースト名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist(ゴースト名/パス).icon">
+				<dt class="entry">ghostlist(ゴースト名/パス).icon</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストのアイコン。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist.index(ID).取得内容">
+				<dt class="entry">ghostlist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">リスト内のIDの位置のゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist.current.取得内容">
+				<dt class="entry">ghostlist.current.取得内容</dt>
+				<dd class="entry">
+					<p class="description">リスト内の現在の位置のゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.shelllist.current.取得内容">
+				<dt class="entry">currentghost.shelllist.current.取得内容</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストの現在のシェルから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="activeghostlist(ゴースト名/パス).取得内容">
+				<dt class="entry">activeghostlist(ゴースト名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">起動中ゴーストのゴースト名もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="activeghostlist.index(ID).取得内容">
+				<dt class="entry">activeghostlist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">起動中ゴーストのリスト内のID位置のゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="activeghostlist.current.取得内容">
+				<dt class="entry">activeghostlist.current.取得内容</dt>
+				<dd class="entry">
+					<p class="description">起動中ゴーストの現在ゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.取得内容">
+				<dt class="entry">currentghost.取得内容</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.shelllist(シェル名/パス).取得内容">
+				<dt class="entry">currentghost.shelllist(シェル名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのシェル名もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.shelllist.index(ID).取得内容">
+				<dt class="entry">currentghost.shelllist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのリスト内ID位置のシェルから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.取得内容">
+				<dt class="entry">currentghost.balloon.取得内容</dt>
+				<dd class="entry">
+					<p class="description">現在のゴーストのバルーンから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="balloonlist(バルーン名/パス).取得内容">
+				<dt class="entry">balloonlist(バルーン名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">バルーンの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="balloonlist.index(ID).取得内容">
+				<dt class="entry">balloonlist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">リスト内のIDの位置のバルーンから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="headlinelist(ヘッドライン名/パス).取得内容">
+				<dt class="entry">headlinelist(ヘッドライン名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">ヘッドラインの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="headlinelist.index(ID).取得内容">
+				<dt class="entry">headlinelist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">リスト内のIDの位置のヘッドラインから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="pluginlist(プラグイン名/パス/ID).取得内容">
+				<dt class="entry">pluginlist(プラグイン名/パス/ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">プラグインの名前もしくはパス、IDから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="pluginlist.index(ID).取得内容">
+				<dt class="entry">pluginlist.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">リスト内のIDの位置のプラグインから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.ghost(ゴースト名/パス).取得内容">
+				<dt class="entry">history.ghost(ゴースト名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののゴーストの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.ghost.index(ID).取得内容">
+				<dt class="entry">history.ghost.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののリスト内のIDの位置のゴーストから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.balloon(バルーン名/パス).取得内容">
+				<dt class="entry">history.balloon(バルーン名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののバルーンの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.balloont.index(ID).取得内容">
+				<dt class="entry">history.balloont.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののリスト内のIDの位置のバルーンから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.headline(ヘッドライン名/パス).取得内容">
+				<dt class="entry">history.headline(ヘッドライン名/パス).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののヘッドラインの名前もしくはパスから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.headlinet.index(ID).取得内容">
+				<dt class="entry">history.headlinet.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののリスト内のIDの位置のヘッドラインから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.plugin(プラグイン名/パス/ID).取得内容">
+				<dt class="entry">history.plugin(プラグイン名/パス/ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののプラグインの名前もしくはパス、IDから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="history.plugint.index(ID).取得内容">
+				<dt class="entry">history.plugint.index(ID).取得内容</dt>
+				<dd class="entry">
+					<p class="description">最近使ったもののリスト内のIDの位置のプラグインから情報を取得。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<hr />
+			<p>取得内容</p>
+			<dl id="name">
+				<dt class="entry">name</dt>
+				<dd class="entry">
+					<p class="description">対象の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakuraname">
+				<dt class="entry">sakuraname</dt>
+				<dd class="entry">
+					<p class="description">対象のゴーストの本体側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="keroname">
+				<dt class="entry">keroname</dt>
+				<dd class="entry">
+					<p class="description">対象のゴーストの相方側の名前。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw">
+				<dt class="entry">craftmanw</dt>
+				<dd class="entry">
+					<p class="description">対象の作者名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanurl">
+				<dt class="entry">craftmanurl</dt>
+				<dd class="entry">
+					<p class="description">対象の配布先URL。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="path">
+				<dt class="entry">path</dt>
+				<dd class="entry">
+					<p class="description">対象のパス。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="thumbnail">
+				<dt class="entry">thumbnail</dt>
+				<dd class="entry">
+					<p class="description">対象のサムネイル。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="update_result">
+				<dt class="entry">update_result</dt>
+				<dd class="entry">
+					<p class="description">対象のアップデートリザルト。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="update_time">
+				<dt class="entry">update_time</dt>
+				<dd class="entry">
+					<p class="description">対象のアップデート時間。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.変数名">
+				<dt class="entry">shiori.変数名</dt>
+				<dd class="entry">
+					<p class="description">対象のゴーストのSHIORI。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="index">
+				<dt class="entry">index</dt>
+				<dd class="entry">
+					<p class="description">対象のリスト内の位置。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>
