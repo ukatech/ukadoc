@@ -216,11 +216,11 @@ version,1
 <pre class="exmp-descript">
 surface0
 {
-animation0,interval,sometimes
-animation0,pattern0,overlayfast,100,5,0,0
-animation0,pattern1,overlayfast,101,5,0,0
-animation0,pattern2,overlayfast,100,5,0,0
-animation0,pattern3,overlay,-1,10,0,0
+animation0.interval,sometimes
+animation0.pattern0,overlayfast,100,5,0,0
+animation0.pattern1,overlayfast,101,5,0,0
+animation0.pattern2,overlayfast,100,5,0,0
+animation0.pattern3,overlay,-1,10,0,0
 }
 </pre>
 				</div>
@@ -229,7 +229,7 @@ animation0,pattern3,overlay,-1,10,0,0
 				</div>
 				<div class="section">
 <pre class="exmp-descript">
-animation0,interval,sometimes
+animation0.interval,sometimes
 </pre>
 					<p>animation*,intervalという行は、その番号のアニメーションが実行されるタイミングの定義です。</p>
 					<p>animation*.interval,に続く「sometimes」がタイミング定義の内容になります。</p>
@@ -243,7 +243,7 @@ animation0,interval,sometimes
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
-animation0,pattern0,<em>overlayfast</em>,100,5,0,0
+animation0.pattern0,<em>overlayfast</em>,100,5,0,0
 </pre>
 					<p>overlayfastの部分は描画方法です。</p>
 					<p>overlayfastとは元の画像の上に重ねて画像を表示する命令です。</p>
@@ -251,21 +251,21 @@ animation0,pattern0,<em>overlayfast</em>,100,5,0,0
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
-animation0,pattern0,overlayfast,<em>100</em>,5,0,0
+animation0.pattern0,overlayfast,<em>100</em>,5,0,0
 </pre>
 					<p>100という部分はsurface100.pngの画像が使われます。</p>
 					<p>101とすればsurface101.pngの画像ということです。</p>
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
-animation0,pattern0,overlayfast,100,<em>5</em>,0,0
+animation0.pattern0,overlayfast,100,<em>5</em>,0,0
 </pre>
 					<p>5の部分は表示時間（ミリセカンド）です。</p>
 					<p>その画像に切り替わるまでの時間を指定してください。</p>
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
-animation0,pattern0,overlayfast,100,5,<em>0,0</em>
+animation0.pattern0,overlayfast,100,5,<em>0,0</em>
 </pre>
 					<p>最後の0,0の部分は画像の始点です。</p>
 					<p>元の画像からどれだけXY座標をずらして表示するか指定します。</p>
@@ -283,11 +283,11 @@ animation0,pattern0,overlayfast,100,5,<em>0,0</em>
 <pre class="exmp-descript2">
 <em>surface0</em>
 <em>{</em>
-animation0,interval,sometimes
-animation0,pattern0,overlayfast,100,5,0,0
-animation0,pattern1,overlayfast,101,5,0,0
-animation0,pattern2,overlayfast,100,5,0,0
-animation0,pattern3,overlay,-1,10,0,0
+animation0.interval,sometimes
+animation0.pattern0,overlayfast,100,5,0,0
+animation0.pattern1,overlayfast,101,5,0,0
+animation0.pattern2,overlayfast,100,5,0,0
+animation0.pattern3,overlay,-1,10,0,0
 
 <em>collision0,117,71,185,130,Face</em>
 <em>collision1,115,174,174,217,Bust</em>
@@ -318,11 +318,11 @@ animation0,pattern3,overlay,-1,10,0,0
 <pre class="exmp-descript2">
 <em>surface0</em>
 <em>{</em>
-animation0,interval,sometimes
-animation0,pattern0,overlayfast,100,5,0,0
-animation0,pattern1,overlayfast,101,5,0,0
-animation0,pattern2,overlayfast,100,5,0,0
-animation0,pattern3,overlay,-1,10,0,0
+animation0.interval,sometimes
+animation0.pattern0,overlayfast,100,5,0,0
+animation0.pattern1,overlayfast,101,5,0,0
+animation0.pattern2,overlayfast,100,5,0,0
+animation0.pattern3,overlay,-1,10,0,0
 
 collision0,117,71,185,130,Face
 collision1,115,174,174,217,Bust
