@@ -1,60 +1,3 @@
-@charset "utf-8";
-/* 京 */
-
-body,p,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,img,em,strong,blockquote,dfn,code,samp,del,ins,table,th,td{
-	font-size:100%;
-	font-style:normal;
-	font-weight:normal;
-	text-decoration:none;
-	text-indent:0;
-	white-space:normal;
-	margin:0;
-	padding:0;
-	outline-style:none;
-}
-
-html{
-	background-color:#94de84;
-}
-body{
-	width: 800px;
-	margin: 0 auto;
-	color: #333333;
-	font-size: 14px;
-}
-
-
-
-ul#menu{
-	display: inline;
-	list-style-type: none;
-}
-ul#menu a{
-	background-image: url(image/menu.gif);
-	color: #ffffff;
-	display: block;
-	height: 24px;
-	overflow: hidden;
-	text-indent: -10000px;
-	width: 100px;
-}
-ul#menu li{
-	float: left;
-	height: 24px;
-	width: 100px;
-}
-
-
-.navigationflame{
-}
-.navigation_top{
-	background-image: url(image/title2.gif);
-	background-repeat: no-repeat;
-	height: 130px;
-	text-align: right;
-	vertical-align: top;
-	width: 750px;
-}
 .navigation_ad{
 	margin-bottom: auto;
 	margin-left: auto;
@@ -63,43 +6,94 @@ ul#menu li{
 	text-align: right;
 }
 .navigation_link{
+	background-color: #94DE84;
 	height: 24px;
 	padding-left: 75px;
 	text-align: center;
 }
-a.menu_bbs{
+.navigation_table{
+	background-color: #94DE84;
+}
+.navigation_top{
+	background-color: #94DE84;
+	background-image: url(image/title2.gif);
+	background-repeat: no-repeat;
+	height: 130px;
+	text-align: right;
+	vertical-align: top;
+	width: 750px;
+}
+A.menu_bbs{
 	background-position: -400px 0px;
 }
-a.menu_dic{
+A.menu_dic{
 	background-position: -2000px 0px;
 }
-a.menu_manual{
+A.menu_manual{
 	background-position: -300px 0px;
 }
-a.menu_top{
+A.menu_top{
 	background-position: 0px 0px;
 }
-a.menu_user{
+A.menu_user{
 	background-position: -100px 0px;
 }
-a.menu_wiki{
+A.menu_wiki{
 	background-position: -500px 0px;
 }
-a:hover.menu_bbs{
+A:HOVER.menu_bbs{
 	background-position: -400px -24px;
 }
-a:hover.menu_dic{
+A:HOVER.menu_dic{
 	background-position: -200px -24px;
 }
-a:hover.menu_manual{
+A:HOVER.menu_manual{
 	background-position: -300px -24px;
 }
-a:hover.menu_top{
+A:HOVER.menu_top{
 	background-position: 0px -24px;
 }
-a:hover.menu_user{
+A:HOVER.menu_user{
 	background-position: -100px -24px;
 }
-a:hover.menu_wiki{
+A:HOVER.menu_wiki{
 	background-position: -500px -24px;
+}
+BODY{
+	background-color: white;
+	border-width: 0px 0px 0px 0px;
+	color: #333333;
+	font-size: 14px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+	scrollbar-3dlight-color: #B1B1C9;
+	scrollbar-arrow-color: #B1B1C9;
+	scrollbar-darkshadow-color: #B1B1C9;
+	scrollbar-face-color: #ffffff;
+	scrollbar-highlight-color: #ffffff;
+	scrollbar-shadow-color: #D4D4E5;
+	scrollbar-track-color: #D4D4E5;
+	text-align: center;
+}
+UL#menu{
+	display: inline;
+	list-style-type: none;
+}
+UL#menu A{
+	background-image: url(image/menu.gif);
+	color: #FFFFFF;
+	display: block;
+	height: 24px;
+	overflow: hidden;
+	text-indent: -10000px;
+	width: 100px;
+}
+UL#menu LI{
+	float: left;
+	height: 24px;
+	width: 100px;
 }
