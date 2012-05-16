@@ -1,128 +1,105 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="../style.css" type="text/css">
-<base target="_blank">
-<title>Disc-2 Update</title>
-</head>
-<body>
-
-
-
-<div class="baseflame">
-	<h1 class="head">
-		<iframe height="154" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="../navigation.html" name="navigation">
-			UKADOC Project(Powered by Disc-2)
-		</iframe>
-	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="800" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
-		</div>
-		<div class="text">
-			<h2>Update</h2>
-			<div class="chapter">
-				<div class="section">
-					ネットワーク更新ではゴーストの全てのファイルが更新可能である。
-				</div>
-				<div class="section">
-					<p>updates2.dauの作成</p>
-					<p>更新用URL（サーバ）の設定</p>
-					<p>サーバへのファイル配置</p>
-					<p>3つがそろってはじめて可能になる。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">updates2.dau</h3>
-					<p>更新用ファイルを作成するにはまず、適当なフォルダに更新用ファイルを、<br>ディレクトリ階層をそのまま再現して配置する。</p>
-					<p>ディレクトリの一番上の階層にupdates2.dauという空のtxtファイルを作る（SSPは勝手に作ってくれる）。</p>
-					<p>そのフォルダを本体にD&amp;DするとファイルのMD5が計算されupdates2.dauに書き込まれる。</p>
-					<p>フォルダの中身をサーバにそのままアップロードすれば更新用ファイルが出来上がる。</p>
-				</div>
-				<div class="section">
-					<p>サーバにファイルをアップロードする時は<strong>必ずバイナリモードでアップロードしなくてはならない</strong>。</p>
-					<p>本体にD&amp;Dする時、install.txtがあるとそちらが優先されてnarファイルを作ってしまうので注意。</p>
-					<p>SSPの場合はD&amp;D時の挙動は本体設定から設定可能。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">updates.txt</h3>
-					<p>updates2.dauとほぼ同じ扱い。</p>
-					<p>拡張子制限でdauがアップロードできない等の問題を解決できる。</p>
-					<p>ディレクトリの一番上の階層に配置する。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">更新用URL</h3>
-					<p>SHIORI Eventで指定する。</p>
-					<p>記述は各SHIORIにて。</p>
-					<p>サーバ側のupdates2.dauの場所を指定する。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">delete.txt</h3>
-					<p>このテキストに書かれたファイルを消去することができる。</p>
-					<p>サーバ側のupdates2.dauと同じ位置に配置する。</p>
-					<p>不要になったファイルが肥大するのを防ぐのに使う。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost\master\ai.dtx
-shell\master\surface0.png
-</pre>
-				</div>
-				<div class="section">
-					<p>上記のようにゴーストのホームディレクトリからの相対パスで記載する。</p>
-					<p>delete.txtはそのまま存在しつづけるため<br>内容を変更しない限り記載されたファイルが再び置かれても消されつづける。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">updates_def.txt</h3> 
-					<p>SSPのみ。</p>
-					<p>相対パスで書いておくと、更新ファイル作成時にそれを無視する。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost/maste/profile/mainform.txt,ignore
-ghost/master/profile/var.txt,ignore
-shell/master/profile/bind.txt,ignore
-shell/master/profile/keroform.txt,ignore
-shell/master/profile/mainform.txt,ignore
-shell/master/profile/crow.ini,ignore
-</pre>
-				</div>
-				<div class="section">
-					<h3 class="component">developer_options.txt</h3>
-					<p>SSPのみ。</p>
-					<p>updates_def.txtの改修版。NARに含めないものも指定可。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost/master/profile/,nonar,noupdate
-shell/master/profile/,nonar,noupdate
-</pre>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="foot">
-		<p class="disc2-author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_self">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_self">緋龍華 麒麟(サイト)</a>
-		</p>
-		<p class="disc2-banner">
-			<img src="../image/disc_2.gif" width="200" height="40" border="0" alt="Disc-2">
-		</p>
-	</div>
-</div>
-
-
-
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Update</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">Update</SPAN><BR>
+      <HR>
+      <BR>
+      �l�b�g���[�N�X�V�ł̓S�[�X�g�̑S�Ẵt�@�C�����X�V�\�ł���B<BR>
+      <BR>
+      updates2.dau�̍쐬<BR>
+      �X�V�pURL�i�T�[�o�j�̐ݒ�<BR>
+      �T�[�o�ւ̃t�@�C���z�u<BR>
+      3��������Ă͂��߂ĉ\�ɂȂ�B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">updates2.dau</SPAN><BR>
+      �X�V�p�t�@�C�����쐬����ɂ͂܂�<BR>
+      �K���ȃf�B���N�g���ɍX�V�p�t�@�C�����f�B���N�g���K�w�����̂܂܍Č����Ĕz�u����B<BR>
+      �f�B���N�g���̈�ԏ�̊K�w��updates2.dau�Ƃ�����̃e�L�X�g�t�@�C�������B<BR>
+      ���̃t�H���_��{�̂�D&amp;D����ƃt�@�C����MD5���v�Z����updates2.dau�ɏ������܂��B<BR>
+      �t�H���_�̒��g���T�[�o�ɂ��̂܂܃A�b�v���[�h����΍X�V�p�t�@�C�����o���オ��B<BR>
+      <BR>
+      �T�[�o�Ƀt�@�C�����A�b�v���[�h���鎞�͕K���o�C�i�����[�h�ŃA�b�v���[�h���Ȃ��Ă͂Ȃ�Ȃ��B<BR>
+      �{�̂�D&amp;D���鎞�Ainstall.txt������Ƃ����炪�D�悳���nar�t�@�C��������Ă��܂��̂Œ��ӁB<BR>
+      <BR>
+      <SPAN class="text_green">updates.txt</SPAN><BR>
+      updates2.dau�Ƃقړ��������B<BR>
+      �g���q������dau���A�b�v���[�h�ł��Ȃ����̖��������ł���B<BR>
+      �f�B���N�g���̈�ԏ�̊K�w�ɔz�u����B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">�X�V�pURL</SPAN><BR>
+      SHIORI Event�Ŏw�肷��B<BR>
+      �L�q�͊eSHIORI�ɂāB<BR>
+      <BR>
+      �T�[�o����updates2.dau�̏ꏊ���w�肷��B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">delete.txt</SPAN><BR>
+      ���̃e�L�X�g�ɏ����ꂽ�t�@�C�����������邱�Ƃ��ł���B<BR>
+      �T�[�o����updates2.dau�Ɠ����ʒu�ɔz�u����B<BR>
+      �s�v�ɂȂ����t�@�C������傷��̂�h���̂Ɏg���B<BR>
+      <BR>
+      <SPAN class="text_gray">ghost\master\ai.dtx<BR>
+      shell\master\surface0.png</SPAN><BR>
+      <BR>
+      ��L�̂悤�ɃS�[�X�g�̃z�[���f�B���N�g������̑��΃p�X�ŋL�ڂ���B<BR>
+      delete.txt�͂��̂܂ܑ��݂��Â��邽��<BR>
+      ���e��ύX���Ȃ�����L�ڂ��ꂽ�t�@�C�����Ăђu����Ă�������Â���B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">updates_def.txt</SPAN> <BR>
+      SSP�̂݁B<BR>
+      ���΃p�X�ŏ����Ă����ƁA�X�V�t�@�C���쐬���ɂ���𖳎�����B<BR>
+      <BR>
+      <SPAN class="text_gray">ghost/maste/profile/mainform.txt,ignore<BR>
+      ghost/master/profile/var.txt,ignore<BR>
+      shell/master/profile/bind.txt,ignore<BR>
+      shell/master/profile/keroform.txt,ignore<BR>
+      shell/master/profile/mainform.txt,ignore<BR>
+      shell/master/profile/crow.ini,ignore</SPAN><BR>
+      <BR>
+      <SPAN class="text_green">developer_options.txt</SPAN><BR>
+      SSP�̂݁B<BR>
+      updates_def.txt�̉��C�ŁBNAR�Ɋ܂߂Ȃ����̂��w��B<BR>
+      <BR>
+      <SPAN class="text_gray">ghost/master/profile/,nonar,noupdate<BR>
+      shell/master/profile/,nonar,noupdate</SPAN><BR>
+      <BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">�@�Ǘ��l : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white"><A href="http://code.google.com/p/ukadoc/" target="_self"><SPAN class="text_link_white">UKADOC Project(�������e)</SPAN></A> / <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">�ꗴ�� �i��(�T�C�g)</SPAN></A></SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
 <!--nobanner-->

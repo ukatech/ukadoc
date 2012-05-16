@@ -1,216 +1,169 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="../style.css" type="text/css">
-<base target="_blank">
-<title>Disc-2 配布用ファイルを作る</title>
-</head>
-<body>
-
-
-
-<div class="baseflame">
-	<h1 class="head">
-		<iframe height="154" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="../navigation.html" name="navigation">
-			UKADOC Project(Powered by Disc-2)
-		</iframe>
-	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="800" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
-		</div>
-		<div class="text">
-			<h2>配布用ファイルを作る</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>ゴーストのアーカイブはD&amp;Dインストールできるzipもしくはnarファイルが一般的です。</p>
-					<p>lzhでもインストールは可能ですが理由がない限りはzip、narにしてください。</p>	
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>1、ゴーストの更新用情報を作る</h3>
-				<div class="section">
-					<p>まずは自分のゴーストデータを全てをコピーし、下記のものを削除してください。</p>
-				</div>
-				<ul>
-					<li>各種セーブデータファイル(初期値が必要なものだけ含めてください)</li>
-					<li>全てのprofileフォルダ(ghost、shell内)</li>
-					<li>ディレクトリ直下の<em>profile.txt</em></li>
-				</ul>
-				<div class="section">
-					<p>次にコピーしたディレクトリの一番上に空のテキストで<em>updates2.dau</em>を作ります。</p>
-					<p>※この時ゴーストのmasterフォルダに<em>updates2.dau</em>は必要ありません。</p>
-				</div>
-				<div class="section">
-					<p>そしてMATERIA、SSP等の本体を起動し、<em>updates2.dau</em>や更新したいファイルの入ったフォルダを本体にドロップします。</p>
-					<p>この時、<em>install.txt</em>が入ってるとそちらが優先されnarファイルができてしまうので含めないでください。</p>
-				</div>
-				<div class="section">
-					<em>updates2.dau</em>が作成できたら中身を確認してみてください。
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>2、ゴーストのnarファイルを作成する</h3>
-				<div class="section">
-					<p>ディレクトリ直下に<em>install.txt</em>というファイルを作ります。</p>
-					<p>下記の内容をコピーして<em>install.txt</em>に貼り付けゴースト名等を適切に変更してください。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,ghost
-name,ゴースト名
-directory,ゴーストのフォルダ名(英数で)
-</pre>
-				</div>
-				<div class="section">
-					<p>また、下記の記述を含めると特殊なインストールをします。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-refresh,1
-</pre>
-					<p>インストールされるフォルダにすでにファイルがあった場合は全て削除してからリフレッシュインストールします。</p>
-					<p>構成を変えたりして上書きしていらないファイルが残ってしまう場合などに使います。</p>
-					<p>セーブデータ等も消えてしまうので注意してください。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-refreshundeletemask,save1:txt,save2.txt
-</pre>
-					<p>リフレッシュインストールの際に残しておきたいファイルを指定します。</p>
-					<p>ファイル名のみでパスは含みません。</p>
-					<p>:で区切る事によっていくつでもマスクできます。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-balloon.directory,バルーンフォルダ名
-</pre>
-					<p>一緒にバルーンを同梱しインストールできます。</p>
-				</div>
-				<div class="section">
-<pre>
-　　　-myghost
-　　　　　+-ghost
-　　　　　+-shell
-　　　　　<em>+-balloon(バルーンフォルダ名)</em>
-</pre>
-					<p>の位置に同梱するバルーンを配置してください。</p>
-					<p>インストールされればballoonフォルダの方に配置されます。</p>
-					<p>バルーンはネットワーク更新できないので<em>updates2.dau</em>作成の際に含めないようにしてください。</p>
-				</div>
-				<div class="section">
-					<p>全て記述し終わりフォルダごと本体にドロップするとフォルダ名のnarファイルが作成されます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>3、その他のnarファイルを作成する</h3>
-				<div class="section">
-					<p>ゴーストの追加ファイル用アーカイブを作る時は</p>
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,supplement
-name,内容
-accept,受け取るゴースト名
-</pre>
-					<p>とします。</p>
-					<p>この場合、受け取るゴーストに指定されたゴーストでなければインストールできません。</p>
-					<p>ファイルの階層構成は普通のゴーストのnarファイルと同じです。</p>
-				</div>
-				<div class="section">
-					バルーンを単体でインストールさせるには、<br>typeの部分を
-<pre class="exmp-descript2">
-type,balloon
-</pre>
-					にします。
-				</div>
-				<div class="section">
-					<p>ゴーストと同じようにフォルダごと本体にドロップして作成してください。</p>
-					<p>refreshも使えます。</p>
-				</div>
-				<div class="section">
-					シェルをインストールさせるには<br>
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,shell
-name,シェル名
-accept,受け取るゴースト名
-directory,シェルのディレクトリ名
-</pre>
-					にします。
-				</div>
-				<div class="section">
-					<p>ゴーストと同じようにフォルダごと本体にドロップして作成してください。</p>
-					<p>指定されたゴーストのshellフォルダにインストールされます。</p>
-					<p>受け取るゴーストに指定されたゴーストでなければインストールできません。</p>
-					<p>refreshも使えます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3 id="package">4、複数インストール用パッケージを作る</h3>
-				<div class="section">
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,package
-name,内容
-</pre>
-				</div>
-				<div class="section">
-					<p>とすると、複数インストール用パッケージを作ることができます。</p>
-					<p>その際、中のファイルの配置は以下のようにします。</p>
-				</div>
-				<div class="section">
-<pre>
-　　-mypackage
-　　-install.txt (package用)
-　　　　<em>-myghost1</em>
-　　　　　　<em>-install.txt (myghost1用)</em>
-　　　　　　<em>+-ghost</em>
-　　　　　　<em>+-shell</em>
-　　　　<em>-myghost2</em>
-　　　　　　<em>-install.txt (myghost2用)</em>
-　　　　　　<em>+-ghost</em>
-　　　　　　<em>+-shell</em>
-</pre>
-				</div>
-				<div class="section">
-					<p>直下のinstall.txtはtype,packageとnameが書かれたのみのもので、それ以下の各フォルダにそれぞれ単独でも機能するインストール構造を作ります。</p>
-					<p>単純にインストールするファイルの配置が多段になっただけと考えるとわかりやすいです。</p>
-					<p>なお、インストールで認識可能なものならなんでも複数パックにできます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>5、ツールでもっと楽にファイルを作る</h3>
-				<div class="section">
-					<p>ネットワーク更新用ツール<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</a>(<a href="http://code.google.com/p/satoriya-shiori/">IE7以降対応版</a>)を使うと面倒な更新ファイルの選別やFTPアップロードを自動化できます。</p>
-					<p>また、必要ファイルの選別や<em>updates2.dau</em>の更新をしてからnarファイルを作成する事もできます。</p>
-				</div>
-				<div class="section">
-					SSPではエクスプローラーのメニューから<em>updates2.dau</em>やnarファイルを作成できます。
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					さらに詳しい説明はゴースト作成の説明の<a href="manual_install.html">Install</a>の項目にて。
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="foot">
-		<p class="disc2-author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_self">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_self">緋龍華 麒麟(サイト)</a>
-		</p>
-		<p class="disc2-banner">
-			<img src="../image/disc_2.gif" width="200" height="40" border="0" alt="Disc-2">
-		</p>
-	</div>
-</div>
-
-
-
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 �z�z�p�t�@�C�������</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">�z�z�p�t�@�C�������</SPAN><BR>
+      <HR>
+      <BR>
+      �S�[�X�g�̃A�[�J�C�u��D&amp;D�C���X�g�[���ł���zip��������nar�t�@�C������ʓI�ł��B<BR>
+      lzh�ł��C���X�g�[���͉\�ł������R���Ȃ������zip�Anar�ɂ��Ă��������B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">01�A�S�[�X�g�̍X�V�p�������</SPAN><BR>
+      <BR>
+      �܂��͎����̃S�[�X�g�f�[�^��S�Ă��R�s�[���A���L�̂��̂��폜���Ă��������B<BR>
+      <BR>
+      �E�e��Z�[�u�f�[�^�t�@�C��(�����l���K�v�Ȃ��̂����܂߂Ă�������)<BR>
+      �E�S�Ă�profile�t�H���_(ghost�Ashell��)<BR>
+      �E�f�B���N�g��������<SPAN class="text_green">profile.txt</SPAN><BR>
+      <BR>
+      ���ɃR�s�[�����f�B���N�g���̈�ԏ�ɋ�̃e�L�X�g��<SPAN class="text_green">updates2.dau</SPAN>�����܂��B<BR>
+      �����̎��S�[�X�g��master�t�H���_��<SPAN class="text_green">updates2.dau</SPAN>�͕K�v����܂���B<BR>
+      <BR>
+      ������MATERIA�ASSP���̖{�̂��N�����A<SPAN class="text_green">updates2.dau</SPAN>��X�V�������t�@�C���̓������t�H���_��{�̂Ƀh���b�v���܂��B<BR>
+      ���̎��A<SPAN class="text_green">install.txt</SPAN>�������Ă�Ƃ����炪�D�悳��nar�t�@�C�����ł��Ă��܂��̂Ŋ܂߂Ȃ��ł��������B<BR>
+      <BR>
+      <SPAN class="text_green">updates2.dau</SPAN>���쐬�ł����璆�g���m�F���Ă݂Ă��������B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">02�A�S�[�X�g��nar�t�@�C�����쐬����</SPAN><BR>
+      <BR>
+      �f�B���N�g��������<SPAN class="text_green">install.txt</SPAN>�Ƃ����t�@�C�������܂��B<BR>
+      ���L�̓��e���R�s�[����<SPAN class="text_green">install.txt</SPAN>�ɓ\��t���S�[�X�g������K�؂ɕύX���Ă��������B<BR>
+      <BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,ghost<BR>
+      name,�S�[�X�g��<BR>
+      directory,�S�[�X�g�̃t�H���_��(�p����)</SPAN><BR>
+      <BR>
+      �܂��A���L�̂��̂��܂߂�Ɠ���ȃC���X�g�[�������܂��B<BR>
+      <BR>
+      <SPAN class="text_gray">refresh,1</SPAN><BR>
+      �C���X�g�[�������t�H���_�ɂ��łɃt�@�C�����������ꍇ�͑S�č폜���Ă��烊�t���b�V���C���X�g�[�����܂��B<BR>
+      �\����ς����肵�ď㏑�����Ă���Ȃ��t�@�C�����c���Ă��܂��ꍇ�ȂǂɎg���܂��B<BR>
+      �Z�[�u�f�[�^���������Ă��܂��̂Œ��ӂ��Ă��������B<BR>
+      <BR>
+      <SPAN class="text_gray">refreshundeletemask,save1:txt,save2.txt</SPAN><BR>
+      ���t���b�V���C���X�g�[���̍ۂɎc���Ă��������t�@�C�����w�肵�܂��B<BR>
+      �t�@�C�����݂̂Ńp�X�͊܂݂܂���B<BR>
+      :�ŋ�؂鎖�ɂ���Ă����ł��}�X�N�ł��܂��B<BR>
+      <BR>
+      <SPAN class="text_gray">balloon.directory,�o���[���t�H���_��</SPAN><BR>
+      �ꏏ�Ƀo���[���𓯍����C���X�g�[���ł��܂��B<BR>
+      <BR>
+      �@�@�@-myghost<BR>
+      �@�@�@�@�@+-ghost<BR>
+      �@�@�@�@�@+-shell<BR>
+      <SPAN class="text_green">�@�@�@�@�@+-balloon(�o���[���t�H���_��)</SPAN><BR>
+      �̈ʒu�ɓ�������o���[����z�u���Ă��������B<BR>
+      �C���X�g�[��������balloon�t�H���_�̕��ɔz�u����܂��B<BR>
+      �o���[���̓l�b�g���[�N�X�V�ł��Ȃ��̂�<SPAN class="text_green">updates2.dau</SPAN>�쐬�̍ۂɊ܂߂Ȃ��悤�ɂ��Ă��������B<BR>
+      <BR>
+      �S�ċL�q���I���t�H���_���Ɩ{�̂Ƀh���b�v����ƃt�H���_����nar�t�@�C�����쐬����܂��B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold">03�A���̑���nar�t�@�C�����쐬����</SPAN><BR>
+      <BR>
+      �S�[�X�g�̒ǉ��t�@�C���p�A�[�J�C�u����鎞��<BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,supplement<BR>
+      name,���e <BR>
+      accept,�󂯎��S�[�X�g��</SPAN><BR>
+      �Ƃ��܂��B<BR>
+      ���̏ꍇ�A�󂯎��S�[�X�g�Ɏw�肳�ꂽ�S�[�X�g�łȂ���΃C���X�g�[���ł��܂���B<BR>
+      �t�@�C���̊K�w�\���͕��ʂ̃S�[�X�g��nar�t�@�C���Ɠ����ł��B<BR>
+      <BR>
+      �o���[����P�̂ŃC���X�g�[��������ɂ�<BR>
+      type�̕�����<BR>
+      <SPAN class="text_gray">type,balloon</SPAN><BR>
+      �ɂ��܂��B<BR>
+      <BR>
+      �S�[�X�g�Ɠ����悤�Ƀt�H���_���Ɩ{�̂Ƀh���b�v���č쐬���Ă��������B<BR>
+      refresh���g���܂��B<BR>
+      <BR>
+      �V�F�����C���X�g�[��������ɂ�<BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,shell<BR>
+      name,�V�F���� <BR>
+      accept,�󂯎��S�[�X�g��<BR>
+      directory,�V�F���̃f�B���N�g����</SPAN><BR>
+      �ɂ��܂��B<BR>
+      <BR>
+      �S�[�X�g�Ɠ����悤�Ƀt�H���_���Ɩ{�̂Ƀh���b�v���č쐬���Ă��������B<BR>
+      �w�肳�ꂽ�S�[�X�g��shell�t�H���_�ɃC���X�g�[������܂��B<BR>
+      �󂯎��S�[�X�g�Ɏw�肳�ꂽ�S�[�X�g�łȂ���΃C���X�g�[���ł��܂���B<BR>
+      refresh���g���܂��B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold"><A name="package">04�A�����C���X�g�[���p�p�b�P�[�W�����</A></SPAN><BR>
+      <BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      type,package<BR>
+      name,���e</SPAN><BR>
+      <BR>
+      �Ƃ���ƁA�����C���X�g�[���p�p�b�P�[�W����邱�Ƃ��ł��܂��B<BR>
+      ���̍ہA���̃t�@�C���̔z�u�͈ȉ��̂悤�ɂ��܂��B<BR>
+      <BR>
+      �@�@�@-mypackage<BR>
+      �@�@�@-install.txt (package�p)<BR>
+      <SPAN class="text_green">�@�@�@�@�@-myghost1<BR>
+      �@�@�@�@�@�@�@-install.txt (myghost1�p)<BR>
+      �@�@�@�@�@�@�@+-ghost<BR>
+      �@�@�@�@�@�@�@+-shell<BR></SPAN>
+      <SPAN class="text_green">�@�@�@�@�@-myghost2<BR>
+      �@�@�@�@�@�@�@-install.txt (myghost2�p)<BR>
+      �@�@�@�@�@�@�@+-ghost<BR>
+      �@�@�@�@�@�@�@+-shell<BR></SPAN>
+      <BR>
+      ������install.txt��type,package��name�������ꂽ�݂̂̂��̂ŁA����ȉ��̊e�t�H���_�ɂ��ꂼ��P�Ƃł��@�\����C���X�g�[���\�������܂��B<BR>
+      �P���ɃC���X�g�[������t�@�C���̔z�u�����i�ɂȂ��������ƍl����Ƃ킩��₷���ł��B<BR>
+      �Ȃ��A�C���X�g�[���ŔF���\�Ȃ��̂Ȃ�Ȃ�ł������p�b�N�ɂł��܂��B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_bold"><A name="tool">05�A�c�[���ł����Ɗy�Ƀt�@�C�������</A></SPAN><BR>
+      <BR>
+      �l�b�g���[�N�X�V�p�c�[��<A href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">������</A>(<A href="http://code.google.com/p/satoriya-shiori/">IE7�ȍ~�Ή���</A>)���g���Ɩʓ|�ȍX�V�t�@�C���̑I�ʂ�FTP�A�b�v���[�h���������ł��܂��B<BR>
+      �܂��A�K�v�t�@�C���̑I�ʂ�<SPAN class="text_green">updates2.dau</SPAN>�̍X�V�����Ă���nar�t�@�C�����쐬���鎖���ł��܂��B<BR>
+      <BR>
+      SSP�ł̓G�N�X�v���[���[�̃��j���[����<SPAN class="text_green">updates2.dau</SPAN>��nar�t�@�C�����쐬�ł��܂��B<BR>
+      <BR>
+      <HR>
+      <BR>
+      ����ɏڂ��������̓S�[�X�g�쐬�̐�����<A href="manual_install.html">Install</A>�̍��ڂɂāB<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">�@�Ǘ��l : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white"><A href="http://code.google.com/p/ukadoc/" target="_self"><SPAN class="text_link_white">UKADOC Project(�������e)</SPAN></A> / <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">�ꗴ�� �i��(�T�C�g)</SPAN></A></SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
 <!--nobanner-->
