@@ -1,226 +1,182 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<link rel="stylesheet" href="../style.css" type="text/css">
-<base target="_blank">
-<title>Disc-2 全体の構成</title>
-</head>
-<body>
-
-
-
-<div class="baseflame">
-	<h1 class="head">
-		<iframe height="154" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="../navigation.html" name="navigation">
-			UKADOC Project(Powered by Disc-2)
-		</iframe>
-	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="800" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
-		</div>
-		<div class="text">
-			<h2>全体の構成</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>ひとつのゴーストは必ずひとつのmasterゴーストとmasterシェルを持つ必要がある。</p>
-					<p>ディレクトリ構成は下記を参照。</p>
-				</div>
-				<div class="section">
-					<p>現在はシェル側のみ複数持つことが可能で、ゴースト側はmasterしか持てない。</p>
-				</div>
-<pre>
-home
-　+-ghost
-　　　<em>+-myghost</em>
-　　　　　<em>+-ghost</em>
-　　　　　　　<em>+-master</em>
-　　　　　　　　　<em>+-descirpt.txt</em>
-　　　　　　　　　<em>+-shiori.dll</em>
-　　　　　　　　　<em>+-makoto.dll</em>
-　　　　　　　　　<em>+-updates2.dau</em>
-　　　　　　　　　<em>+-*.ico</em>
-　　　　　　　　　<em>+-*.csr</em>
-　　　　　<em>+-shell</em>
-　　　　　　　<em>+-master</em>
-　　　　　　　　　<em>+-descript.txt</em>
-　　　　　　　　　<em>+-surface*.png</em>
-　　　　　　　　　<em>+-surface*.pna</em>
-　　　　　　　　　<em>+-surfaces.txt</em>
-　　　　　　　　　<em>+-makoto.dll</em>
-　　　　　　　　　<em>+-menu_background.png</em>
-　　　　　　　　　<em>+-menu_foreground.png</em>
-　　　　　　　　　<em>+-menu_sidebar.png</em>
-　　　　　　　　　<em>+-readme.txt</em>
-　　　　　　　　　<em>+-thumbnail.png</em>
-　　　　　　　　　<em>+-surfaces**.txt （SSPのみ）</em>
-　　　　　　　　　<em>+-surfacetable.txt (SSPのみ)</em>
-　　　　　<em>+-install.txt</em>
-　　　　　<em>+-readme.txt</em>
-　　　　　<em>+-thumbnail.png</em>
-</pre>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">home</h3>
-					<p>起動EXEの位置。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\</span>ghost</h3>
-					<p>各ゴーストが格納されるフォルダ。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\</span>myghost</h3>
-					<p>自ゴーストルートフォルダ。</p>
-					<p>名称は英数推奨。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\</span>ghost</h3>
-					<p>ゴーストの内部動作用ファイルのフォルダ。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\</span>master</h3>
-					<p>ゴーストのデフォルトで使用されるフォルダ。</p>
-					<p>ただし、現在masterしか使用できない（過去の設計の名残）。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>descript.txt</h3>
-					<p>ゴーストの名称等を記述するファイル。</p>
-					<p>これがないと本体に認識されない。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>shiori.dll</h3>
-					<p>ゴーストがトーク、イベントを起こすのに必要なDLL。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>makoto.dll</h3>
-					<p>ゴーストのトランスレート用のDLL。</p>
-					<p>使用しなくても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>updates2.dau</h3>
-					<p>ネットワーク更新の受信照合用のファイル。</p>
-					<p>これがないとネットワーク更新ができない。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>*.ico</h3>
-					<p>タスクトレイなどに表示されるアイコン。</p>
-					<p>無い場合はデフォルトアイコンが使用される。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\ghost\master\</span>*.csr</h3>
-					<p>ゴースト範囲内で表示されるカーソル。</p>
-					<p>無い場合はデフォルトカーソルが使用される。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\</span>shell</h3>
-					<p>ゴーストのグラフィック表示用ファイルのフォルダ。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\</span>master</h3>
-					<p>デフォルトのシェルで使用されるフォルダ。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>descript.txt</h3>
-					<p>シェルの名称等を記述するファイル。</p>
-					<p>シェルが認識されるのに必要。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>surface*.png</h3>
-					<p>サーフィスファイル。</p>
-					<p>surface0とsurface10は必須。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>surface*.pna</h3>
-					<p>サーフィスα加合ファイル。</p>
-					<p>win2000/XPのみ使用可能。</p>
-					<p>使用しなくても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>surfaces.txt</h3>
-					<p>サーフィスのアニメーションや当たり判定等を定義するファイル。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>menu_background.png</h3>
-					<p>オーナードローで使用される背景の画像。</p>
-					<p>無い場合は通常のメニューツリーになる。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>menu_foreground.png</h3>
-					<p>オーナードローで使用される背景の選択域画像。</p>
-					<p>無い場合は通常のメニューツリーになる。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>menu_sidebar.png</h3>
-					<p>メニューツリーの左側に表示される画像。</p>
-					<p>無くても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>readme.txt</h3>
-					<p>メニューにあるシェルの説明用のファイル。</p>
-					<p>無くても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>thumbnail.png</h3>
-					<p>メニューツリーでシェルの選択時に表示されるサムネイル。</p>
-					<p>使用可能な画像形式はpngもしくはjpg。</p>
-					<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
-					<p>無くても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>surfacetable.txt</h3>
-					<p>SSP専用。</p>
-					<p>サーフィステストのサーフィス番号に名称を付けるためのファイル。</p>
-					<p>無くても可。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\shell\master\</span>surfaces**.txt</h3>
-					<p>SSP専用。</p>
-					<p>**には任意の1～2文字が入る。</p>
-					<p>互換性を維持しつつSSP専用の機能を使うためのもの。</p>
-					<p>無くても可。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\</span>install.txt</h3>
-					<p>インストールの際に必要なファイル。</p>
-					<p>narファイルにするには必要。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\</span>readme.txt</h3>
-					<p>ゴーストがインストールされた時に開くファイル。</p>
-					<p>配布者や配布元など明記するのが一般的。</p>
-					<p>1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使える。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><span class="directory">home\ghost\myghost\</span>thumbnail.png</h3>
-					<p>メニューツリーでゴーストの選択時に表示されるサムネイル。</p>
-					<p>使用可能な画像形式はpngもしくはjpg。</p>
-					<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
-					<p>このファイルは省略可能。</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="foot">
-		<p class="disc2-author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_self">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_self">緋龍華 麒麟(サイト)</a>
-		</p>
-		<p class="disc2-banner">
-			<img src="../image/disc_2.gif" width="200" height="40" border="0" alt="Disc-2">
-		</p>
-	</div>
-</div>
-
-
-
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 �S�[�X�g�̍\��</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">�S�[�X�g�̍\��</SPAN><BR>
+      <HR>
+      <BR>
+      �ЂƂ̃S�[�X�g�͕K���ЂƂ�master�S�[�X�g��master�V�F�������K�v������B<BR>
+      �f�B���N�g���\���͉��L���Q�ƁB<BR>
+      <BR>
+      �S�[�X�g�̓V�F�����̂ݕ��������Ƃ��\�ł���B<BR>
+      <BR>
+      home<BR>
+      �@+-ghost<BR>
+      �@�@�@<SPAN class="text_green">+-myghost<BR>
+      �@�@�@�@�@+-ghost<BR>
+      �@�@�@�@�@�@�@+-master<BR>
+      �@�@�@�@�@�@�@�@�@+-descirpt.txt<BR>
+      �@�@�@�@�@�@�@�@�@+-shiori.dll<BR>
+      �@�@�@�@�@�@�@�@�@+-makoto.dll<BR>
+      �@�@�@�@�@�@�@�@�@+-updates2.dau<BR>
+      �@�@�@�@�@�@�@�@�@+-*.ico<BR>
+      �@�@�@�@�@�@�@�@�@+-*.csr<BR>
+      �@�@�@�@�@+-shell<BR>
+      �@�@�@�@�@�@�@+-master<BR>
+      �@�@�@�@�@�@�@�@�@+-descript.txt<BR>
+      �@�@�@�@�@�@�@�@�@+-surfaces.txt<BR>
+      �@�@�@�@�@�@�@�@�@+-surfacetable.txt<BR>
+      �@�@�@�@�@�@�@�@�@+-readme.txt<BR>
+      �@�@�@�@�@�@�@�@�@+-surface*.png<BR>
+      �@�@�@�@�@�@�@�@�@+-surface*.pna<BR>
+      �@�@�@�@�@�@�@�@�@+-menu_background.png<BR>
+      �@�@�@�@�@�@�@�@�@+-menu_foreground.png<BR>
+      �@�@�@�@�@�@�@�@�@+-menu_sidebar.png<BR>
+      �@�@�@�@�@�@�@�@�@+-thumbnail.png<BR>
+      �@�@�@�@�@+-install.txt<BR>
+      �@�@�@�@�@+-readme.txt<BR>
+      �@�@�@�@�@+-thumbnail.png</SPAN><BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">home</SPAN><BR>
+      �N��EXE�̈ʒu�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\</SPAN><SPAN class="text_green">ghost</SPAN><BR>
+      �e�S�[�X�g���i�[�����t�H���_�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\</SPAN><SPAN class="text_green">myghost</SPAN><BR>
+      ���S�[�X�g���[�g�t�H���_�B<BR>
+      ���͉̂p�������B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">ghost</SPAN><BR>
+      �S�[�X�g�̓�������p�t�@�C���̃t�H���_�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\</SPAN><SPAN class="text_green">master</SPAN><BR>
+      �S�[�X�g�̃f�t�H���g�Ŏg�p�����t�H���_�B<BR>
+      �������A����master�����g�p�ł��Ȃ��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">descript.txt</SPAN><BR>
+      �S�[�X�g�̖��̓����L�q����t�@�C���B<BR>
+      ���ꂪ�Ȃ��Ɩ{�̂ɔF������Ȃ��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">shiori.dll</SPAN><BR>
+      �S�[�X�g���g�[�N�A�C�x���g���N�����̂ɕK�v��DLL�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">makoto.dll</SPAN><BR>
+      �S�[�X�g���g�����X���[�g���邽�߂�DLL�B<BR>
+      �g�p���Ȃ��Ă��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">updates2.dau</SPAN><BR>
+      �l�b�g���[�N�X�V�̎�M�ƍ��p�̃t�@�C���B<BR>
+      ���ꂪ�Ȃ��ƃl�b�g���[�N�X�V���ł��Ȃ��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">*.ico</SPAN><BR>
+      �^�X�N�g���C�Ȃǂɕ\�������A�C�R���B<BR>
+      �����ꍇ�̓f�t�H���g�A�C�R�����g�p�����B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\ghost\master\</SPAN><SPAN class="text_green">*.csr</SPAN><BR>
+      �S�[�X�g�͈͓��ŕ\�������J�[�\���B<BR>
+      �����ꍇ�̓f�t�H���g�J�[�\�����g�p�����B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">shell</SPAN><BR>
+      �S�[�X�g�̃O���t�B�b�N�\���p�t�@�C���̃t�H���_�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\</SPAN><SPAN class="text_green">master</SPAN><BR>
+      �f�t�H���g�̃V�F���Ŏg�p�����t�H���_�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">descript.txt</SPAN><BR>
+      �V�F���̖��̓����L�q����t�@�C���B<BR>
+      �V�F�����F�������̂ɕK�v�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surfaces.txt</SPAN><BR>
+      �T�[�t�B�X�̃A�j���[�V�����ⓖ���蔻�蓙���`����t�@�C���B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surfacetable.txt</SPAN><BR>
+      SSP��p�B<BR>
+      �T�[�t�B�X�e�X�g�̃T�[�t�B�X�ԍ��ɖ��̂�t���邽�߂̃t�@�C���B<BR>
+      �����Ă��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">readme.txt</SPAN><BR>
+      ���j���[�ɂ���V�F���̐����p�̃t�@�C���B<BR>
+      �����Ă��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surface*.png</SPAN><BR>
+      �T�[�t�B�X�t�@�C���B<BR>
+      surface0��surface10�͕K���Ȃ��Ă͂����Ȃ��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">surface*.pna</SPAN><BR>
+      �T�[�t�B�X�������t�@�C���B<BR>
+      win2000/XP�̂ݎg�p�\�B<BR>
+      �g�p���Ȃ��Ă��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_background.png</SPAN><BR>
+      �I�[�i�[�h���[�Ŏg�p�����w�i�̉摜�B<BR>
+      �����ꍇ�͒ʏ�̃��j���[�c���[�ɂȂ�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_foreground.png</SPAN><BR>
+      �I�[�i�[�h���[�Ŏg�p�����w�i�̑I����摜�B<BR>
+      �����ꍇ�͒ʏ�̃��j���[�c���[�ɂȂ�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">menu_sidebar.png</SPAN><BR>
+      ���j���[�c���[�̍����ɕ\�������摜�B<BR>
+      �����Ă��B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\shell\master\</SPAN><SPAN class="text_green">thumbnail.png</SPAN><BR>
+      ���j���[�c���[�ŃV�F���̑I�����ɕ\�������T���l�C���B<BR>
+      �g�p�\�ȉ摜�`����png��������jpg�B<BR>
+      png��pnr�Ƀ��l�[������Ɖ摜�����1�h�b�g(���W0,0)�Ɠ��F�����߂����B<BR>
+      ���̃t�@�C���͏ȗ��\�B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">install.txt</SPAN><BR>
+      �C���X�g�[���̍ۂɕK�v�ȃt�@�C���B<BR>
+      nar�t�@�C���ɂ���ɂ͕K�v�B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">readme.txt</SPAN><BR>
+      �S�[�X�g���C���X�g�[�����ꂽ���ɊJ���t�@�C���B<BR>
+      �z�z�҂�z�z���Ȃǖ��L����̂���ʓI�B<BR>
+      1�s�ڂ�charset,UTF-8�Ə����Ă������ABOM���܂�ł�����Shift JIS�ȊO���g����B<BR>
+      <BR>
+      <SPAN class="text_gray">home\ghost\myghost\</SPAN><SPAN class="text_green">thumbnail.png</SPAN><BR>
+      ���j���[�c���[�ŃS�[�X�g�̑I�����ɕ\�������T���l�C���B<BR>
+      �g�p�\�ȉ摜�`����png��������jpg�B<BR>
+      png��pnr�Ƀ��l�[������Ɖ摜�����1�h�b�g(���W0,0)�Ɠ��F�����߂����B<BR>
+      ���̃t�@�C���͏ȗ��\�B<BR>
+      <BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">�@�Ǘ��l : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white"><A href="http://code.google.com/p/ukadoc/" target="_self"><SPAN class="text_link_white">UKADOC Project(�������e)</SPAN></A> / <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">�ꗴ�� �i��(�T�C�g)</SPAN></A></SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
 <!--nobanner-->
