@@ -1,407 +1,304 @@
-ï»¿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="../style.css" type="text/css">
-<base target="_blank">
-<title>Disc-2 Shell</title>
-</head>
-<body>
-
-
-
-<div class="baseflame">
-	<h1 class="head">
-		<iframe height="154" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="../navigation.html" name="navigation">
-			UKADOC Project(Powered by Disc-2)
-		</iframe>
-	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="800" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
-		</div>
-		<div class="text">
-			<h2>Shell</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>ã‚·ã‚§ãƒ«ãƒ•ã‚©ãƒ«ãƒ€ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯ä»¥ä¸‹ã®é€šã‚Šã€‚</p>
-				</div>
-				<div class="section">
-<pre>
-home
-ã€€+-ghost
-ã€€ã€€ã€€+-myghost
-ã€€ã€€ã€€ã€€ã€€+-shell
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€+-master
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-descript.txt</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-surface*.png</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-surface*.pna</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-surfaces.txt</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-makoto.dll</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€+-menu_background.png
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€+-menu_foreground.png
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€+-menu_sidebar.png
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-readme.txt</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-thumbnail.png</em>
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-surfaces**.txt</em> ï¼ˆSSPã®ã¿ï¼‰
-ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€<em>+-surfacetable.txt</em> (SSPã®ã¿)
-</pre>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_shell.html">descript.txt</a></h3>
-					<p>ã‚·ã‚§ãƒ«ã‚’è­˜åˆ¥ã™ã‚‹ãŸã‚ã®ãƒ•ã‚¡ã‚¤ãƒ«ã€‚</p>
-					<p>ãƒ†ã‚­ã‚¹ãƒˆå†…ã®è¨˜è¼‰äº‹é …ã¯ãƒªãƒ³ã‚¯å…ˆã‚’å‚ç…§ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">surface*.png</h3>
-					<p>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ãƒ•ã‚¡ã‚¤ãƒ«ã€‚</p>
-					<p>ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã«è¡¨ç¤ºã•ã‚Œã‚‹çµµã€‚</p>
-					<p>å¯¾å¿œå½¢å¼ã¯PNGã®ã¿ã€‚</p>
-					<p>ç”»åƒã‚µã‚¤ã‚ºã€è‰²æ•°ã«åˆ¶é™ã¯ç„¡ã„ã€‚</p>
-				</div>
-				<div class="section">
-					ç”»åƒå·¦ä¸Šã®1ãƒ‰ãƒƒãƒˆ(åº§æ¨™0,0)ã¨åŒè‰²ãŒé€éã•ã‚Œã‚‹ã€‚
-				</div>
-				<div class="section">
-					ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ç•ªå·ã«ã¯ã‚ã‚‹ç¨‹åº¦ã®æ¨å¥¨ã™ã‚‹å‰²ã‚ŠæŒ¯ã‚ŠãŒã‚ã‚‹ã€‚
-					å¿…ãšã“ã®ç•ªå·ã«ã™ã‚‹å¿…è¦ã¯ç„¡ã„ãŒ00ã¨10ã®ã¿ã¯å¿…é ˆã€‚
-
-					<table class="exmp-surfacenum">
-						<tr>
-							<td colspan="2">sakuraå´</td>
-						</tr>
-						<tr>
-							<td>00</td><td>ç´ </td>
-						</tr>
-						<tr>
-							<td>01</td><td>ç…§ã‚Œ</td>
-						</tr>
-						<tr>
-							<td>02</td><td>é©šã</td>
-						</tr>
-						<tr>
-							<td>03</td><td>ä¸å®‰</td>
-						</tr>
-						<tr>
-							<td>04</td><td>è½ã¡è¾¼ã¿</td>
-						</tr>
-						<tr>
-							<td>05</td><td>å¾®ç¬‘ã¿</td>
-						</tr>
-						<tr>
-							<td>06</td><td>ç›®é–‰ã˜</td>
-						</tr>
-						<tr>
-							<td>07</td><td>æ€’ã‚Š</td>
-						</tr>
-						<tr>
-							<td>08</td><td>å†·ç¬‘</td>
-						</tr>
-						<tr>
-							<td>09</td><td>ç…§ã‚Œæ€’ã‚Š</td>
-						</tr>
-						<tr>
-							<td>25</td><td>æ­Œ</td>
-					</table>
-					<table class="exmp-surfacenum">
-						<tr>
-						<td colspan="2">keroå´</td>
-						</tr>
-						<tr>
-						<td>10</td><td>ç´ </td>
-						</tr>
-						<tr>
-						<td>11</td><td>åˆ®ç›®</td>
-						</tr>
-						<tr>
-						<td>19</td><td>æ­Œ</td>
-						</tr>
-					</table>
-				</div>
-				<div class="section">
-					<p>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·ã¯0ï½8192ã¾ã§ä½¿ãˆã‚‹ã€‚(MATERIAä»•æ§˜)</p>
-					<p>ä»–ã®ãƒ™ãƒ¼ã‚¹ã‚¦ã‚§ã‚¢ã«ã¯åˆ¶é™ãŒç„¡ã„ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">surface*.pna</h3>
-					<p>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ã‚¢ãƒ«ãƒ•ã‚¡ãƒãƒ£ãƒ³ãƒãƒ«å®šç¾©ãƒ•ã‚¡ã‚¤ãƒ«ã€‚</p>
-					<p>PNAè‡ªä½“ã¯PNGã‚’ãƒªãƒãƒ¼ãƒ ã—ãŸã‚‚ã®ã€‚</p>
-					<p>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ç•ªå·ã¨åŒã˜ç•ªå·ã®pnaãƒ•ã‚¡ã‚¤ãƒ«ã‚’ç½®ãã“ã¨ã«ã‚ˆã£ã¦ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®åŠé€æ˜åŒ–ãŒã§ãã‚‹ã€‚</p>
-				</div>
-				<div class="section">
-					<table class="exmp-surface">
-						<tr>
-							<td><img src="image/surface0_png1.jpg" width="163" height="300" alt=""></td>
-							<td class="cell_arrow">â†’</td>
-							<td><img src="image/surface0_pna.jpg" width="163" height="300" alt=""></td>
-							<td class="cell_arrow">â†’</td>
-							<td><img src="image/surface0_png2.jpg" width="163" height="300" alt=""></td>
-						</tr>
-						<tr>
-							<td>surface0.png</td>
-							<td></td>
-							<td>surface0.pna</td>
-							<td></td>
-							<td>ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ã®è¡¨ç¤º</td>
-						</tr>
-					</table>
-				</div>
-				<div class="section">
-					<p>ãŸã ã—ã€Windows2000/XPã§ULWãƒ¢ãƒ¼ãƒ‰ã‚’ä½¿ç”¨ã—ãŸã¨ãã®ã¿ã€‚</p>
-					<p>Windows9xã§ã¯pnaã¯ç„¡è¦–ã•ã‚Œã‚‹ã€‚</p>
-					<p>ã¾ãŸã€é€éãŒå®Œå…¨ã§ãªã„å ´æ‰€ã¯å½“ãŸã‚Šåˆ¤å®šãŒç™ºç”Ÿã™ã‚‹ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_shell.html">surfaces.txt</a></h3>
-					<p>ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®IDå‰²ã‚Šå½“ã¦ã€ãƒ¬ã‚¤ãƒ¤ãƒ¼åˆæˆã€ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã€å½“ãŸã‚Šåˆ¤å®šãªã©ã‚’å®šç¾©ã™ã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã€‚</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-descript
-{
-version,1
-}
-
-surface0
-{
-collision0,188,25,252,63,Head
-collision1,190,92,236,118,Face
-collision2,180,191,220,222,Bust
-collision3,154,311,248,362,Skirt
-point.centerx,212
-point.centery,198
-point.kinoko.centerx,214
-point.kinoko.centery,34
-
-animation0.interval,sometimes
-animation0.pattern0,overlay,101,10,168,67
-animation0.pattern1,overlay,100,10,168,67
-animation0.pattern2,overlay,101,10,168,67
-animation0.pattern3,overlay,-1,10,168,67
-}
-
-surface10
-{
-collision0,40,56,95,90,Head
-point.centerx,70
-point.centery,66
-sakura.balloon.offsetx,80
-sakura.balloon.offsety,-100
-kero.balloon.offsetx,-30
-kero.balloon.offsety,20
-}
-</pre>
-				</div>
-				<div class="section">
-					<p>ä¸Šè¨˜ã®ã‚ˆã†ã«å®šç¾©ã—å„ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã®ãƒ—ãƒ¬ã‚¹å†…ã«è¨˜è¿°ã™ã‚‹ã€‚</p>
-					<p>å®šç¾©å†…å®¹ã«ã¤ã„ã¦ã¯<a href="descript_shell.html">surfaces.txt</a>å‚ç…§ã€‚</p>
-				</div>
-				<div class="section">
-					ä¸‹è¨˜ã®ã‚ˆã†ã«è¤‡æ•°ã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚’åŒæ™‚ã«å®šç¾©ã™ã‚‹ã“ã¨ã‚‚å¯èƒ½ã€‚
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-surface0,surface1
-{
-animation0.interval,sometimes
-animation0.pattern0,overlay,101,10,168,67
-animation0.pattern1,overlay,100,10,168,67
-animation0.pattern2,overlay,101,10,168,67
-animation0.pattern3,overlay,-1,10,168,67
-}
-</pre>
-				</div>
-				<div class="section">
-					ã¾ãŸã€SSPã®ã¿ä¸‹è¨˜ã®ã‚ˆã†ãªç¯„å›²æŒ‡å®šã‚„è¤‡æ•°æŒ‡å®šãŒå¯èƒ½ã€‚
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-surface0-9,25
-{
-animation0.interval,sometimes
-animation0.pattern0,overlay,101,10,168,67
-animation0.pattern1,overlay,100,10,168,67
-animation0.pattern2,overlay,101,10,168,67
-animation0.pattern3,overlay,-1,10,168,67
-}
-</pre>
-				</div>
-				<div class="section">
-					ã•ã‚‰ã«SSPã®ã¿ä¸‹è¨˜ã®ã‚ˆã†ãªå®šç¾©ã®è¿½åŠ ã‚‚å¯èƒ½ã€‚
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-surface.append0-9,25
-{
-collision0,188,25,252,63,Head
-collision1,190,92,236,118,Face
-collision2,180,191,220,222,Bust
-collision3,154,311,248,362,Skirt
-}
-</pre>
-				</div>
-				<div class="section">
-					!ã§é™¤å¤–è¨­å®šã‚‚ã§ãã‚‹ã€‚
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-surface.append0-9,25,!5-8
-{
-collision0,188,25,252,63,Head
-collision1,190,92,236,118,Face
-collision2,180,191,220,222,Bust
-collision3,154,311,248,362,Skirt
-}
-</pre>
-				</div>
-				<div class="section">
-					ã‚µãƒ¼ãƒ•ã‚£ã‚¹IDã¯ã‚¨ã‚¤ãƒªã‚¢ã‚¹ã§ä»»æ„IDã«å¤‰æ›´ã™ã‚‹äº‹ãŒã§ãã‚‹ã€‚
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-sakura.surface.alias
-{
-smile,[5]
-} 
-
-kero.surface.alias
-{
-10,[10,11,12]
-} 
-</pre>
-				</div>
-				<div class="section">
-					<p>ã¨ã™ã‚‹ã¨\s[5]ã‚’\s[smile]ã¨ã™ã‚‹äº‹ã‚‚å¯èƒ½ã€‚</p>
-					<p>ã¾ãŸã€ä¸Šè¨˜ã®ã‚ˆã†ã«ã™ã‚‹äº‹ã§\s[10]ã‚’ID10ã€11ã€12ã‹ã‚‰ãƒ©ãƒ³ãƒ€ãƒ ã«ã™ã‚‹ã“ã¨ãŒã§ãã‚‹ã€‚</p>
-				</div>
-				<div class="section">
-					char*.surface.aliasã§2äººç›®ä»¥é™ã®ç›¸æ–¹å´ã®ã‚¨ã‚¤ãƒªã‚¢ã‚¹ã‚‚å¯èƒ½ã€‚(SSPå°‚ç”¨)
-				</div>
-				<div class="section">
-					ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã€ç€ã›æ›¿ãˆã«ã¤ã„ã¦ã¯<a href="manual_animation.html">ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³</a>ã‚’å‚ç…§ã€‚
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_shell.html">surfaces**.txt</a></h3>
-					<p>SSPå°‚ç”¨ã€‚</p>
-					<p>**ã«ã¯surfaces2.txtã€surfaces3.txtï½surfaceZZ.txtã€2æ–‡å­—ä»¥ä¸‹ã®æ–‡å­—ãŒã¤ã‘ã‚‰ã‚Œã‚‹ã€‚ã€‚</p>
-					<p>surfaces2.txtã¯2.01ç³»ä»¥é™ã€ä»»æ„ã®2æ–‡å­—ä»¥ä¸‹ãŒã¤ã‘ã‚‰ã‚Œã‚‹ã‚ˆã†ã«ãªã£ãŸã®ã¯2.2.57ä»¥é™ã€‚</p>
-					<p>æ©Ÿèƒ½ã¯<em>surfaces.txt</em>ã¨åŒã˜ã€‚</p>
-					<p>äº’æ›æ€§ã‚’ç¶­æŒã—ã¤ã¤SSPå°‚ç”¨ã®æ©Ÿèƒ½ã‚’ä½¿ã†ãŸã‚ã®ã‚‚ã®ã€‚</p>
-					<p>å¿…è¦ãªéƒ¨åˆ†ã®ã¿ã‚’è¿½è¨˜ã™ã‚‹å½¢ã§ã‚‚å•é¡Œãªã„ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="manual_translator.html">makoto.dll</a></h3>
-					<p>ãƒˆãƒ©ãƒ³ã‚¹ãƒ¬ãƒ¼ãƒˆæ©Ÿèƒ½ã‚’ä½¿ã†ãŸã‚ã®ã‚‚ã®ã€‚</p>
-					<p>ã‚´ãƒ¼ã‚¹ãƒˆå´ã«ç”¨æ„ã§ãã‚‹ã‚‚ã®ã¨åŒã˜ã€‚ã‚·ã‚§ãƒ«å´ã®ã»ã†ãŒå¾Œã«å¤‰æ›ã•ã‚Œã‚‹ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">readme.txt</h3>
-					<p>ã‚·ã‚§ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®Read Me! ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸæ™‚ã«è¡¨ç¤ºã•ã‚Œã‚‹ãƒ†ã‚­ã‚¹ãƒˆã€‚</p>
-					<p>ã‚´ãƒ¼ã‚¹ãƒˆè£½ä½œè€…ã§ã¯ãªã„ã‚·ã‚§ãƒ«è£½ä½œè€…ãŒé…å¸ƒå…ƒãªã©ã‚’è¨˜è¼‰ã™ã‚‹ãŸã‚ã®ã‚‚ã®ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">thumbnail.png</h3>
-					<p>ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ„ãƒªãƒ¼ã§ã‚·ã‚§ãƒ«ã®é¸æŠæ™‚ã«è¡¨ç¤ºã•ã‚Œã‚‹ã‚µãƒ ãƒã‚¤ãƒ«ã€‚</p>
-					<p>ä½¿ç”¨å¯èƒ½ãªç”»åƒå½¢å¼ã¯pngã‚‚ã—ãã¯jpgã€‚</p>
-					<p>pngã‚’pnrã«ãƒªãƒãƒ¼ãƒ ã™ã‚‹ã¨ç”»åƒå·¦ä¸Šã®1ãƒ‰ãƒƒãƒˆ(åº§æ¨™0,0)ã¨åŒè‰²ãŒé€éã•ã‚Œã‚‹ã€‚</p>
-					<p>ã“ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¯çœç•¥å¯èƒ½ã€‚</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">surfacetable.txt</h3>
-					<p>SSPå°‚ç”¨ã€‚</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-0,ç´ (ã•ãã‚‰)
-10,ç´ (ã†ã«ã‚…ã†)
-</pre>
-				</div>
-				<div class="section">
-					ä¸Šè¨˜ã®ã‚ˆã†ãªè¨˜è¿°ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’ãƒ•ã‚©ãƒ«ãƒ€ã«ç½®ãã¨ã‚µãƒ¼ãƒ•ã‚£ã‚¹ãƒ†ã‚¹ãƒˆã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã®è¡¨ç¤ºãŒä»£æ›¿ã•ã‚Œã‚‹ã€‚
-				</div>
-				<div class="section">
-					version 1.0æ›¸å¼ã§ã®å ´åˆ
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-charset,Shift_JIS
-version,1
-option,DisableNoDefineSurfaces
-
-group,ã•ãã‚‰
-{
-scope,0
-
-0,ç´ 
-1,ç…§ã‚Œ
-3,ä¸å®‰
-4,è½ã¡è¾¼ã¿
-7,æ€’ã‚Š
-}
-
-group,ã†ã«ã‚…ã†
-{
-scope,1
-
-10,ç´ 
-11,ã¤ã‚Šç›®
-}
-
-//éè¡¨ç¤ºè¨­å®š
-group,__disabled
-{
-19,__parts
-}
-</pre>
-				</div>
-				<div class="section">
-					<p>charset,Shift_JISã¯1è¡Œç›®ã«å¿…è¦ã€‚</p>
-					<p>charsetã¯ç†ç”±ãŒãªã„é™ã‚Šã¯Shift_JISã§ã‚ˆã„ã€‚</p>
-				</div>
-				<div class="section">
-					version,1ã¯version 1.0ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã‚’ä½¿ç”¨ã™ã‚‹ã®ã«å¿…è¦ã€‚
-				</div>
-				<div class="section">
-					option,DisableNoDefineSurfacesã¯æŒ‡å®šã®ãªã„ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚’é™¤å¤–ã™ã‚‹ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
-				</div>
-				<div class="section">
-					ã‚°ãƒ«ãƒ¼ãƒ—åã‚’__disabledã«ã™ã‚‹ã¨ãã®ã‚µãƒ¼ãƒ•ã‚£ã‚¹ã‚°ãƒ«ãƒ¼ãƒ—ã‚’ãƒªã‚¹ãƒˆã«è¡¨ç¤ºã—ãªã„ã€‚
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="foot">
-		<p class="disc2-author">
-			ç®¡ç†äºº : <a href="http://code.google.com/p/ukadoc/" target="_self">UKADOC Project(æ–‡æ›¸å†…å®¹)</a> / <a href="http://khmix.sakura.ne.jp/" target="_self">ç·‹é¾è¯ éº’éºŸ(ã‚µã‚¤ãƒˆ)</a>
-		</p>
-		<p class="disc2-banner">
-			<img src="../image/disc_2.gif" width="200" height="40" border="0" alt="Disc-2">
-		</p>
-	</div>
-</div>
-
-
-
-</body>
-</html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<BASE target="_blank">
+<META http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Style-Type" content="text/css">
+<TITLE>Disc-2 Shell</TITLE>
+<LINK rel="stylesheet" href="../style.css" type="text/css">
+</HEAD>
+<BODY>
+<TABLE class="style_table" cellpadding="0" cellspacing="0">
+  <TBODY>
+    <TR>
+      <TD class="style_side_l" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+      <TD class="style_navigation" colspan="3"><IFRAME height="154" width="750" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="../navigation.html" name="navigation"></IFRAME></TD>
+      <TD class="style_side_r" rowspan="4"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+    <TR>
+      <TD class="style_navigation_bottom" colspan="3"></TD>
+    </TR>
+    <TR>
+      <TD class="style_sidemenu"><IFRAME height="800" width="200" frameborder="0" marginheight="0" marginwidth="0" scrolling="NO" src="sidemenu.html" name="sidemenu"></IFRAME></TD>
+      <TD class="style_spacer_w10"></TD>
+      <TD class="style_text"><IMG src="image/border.gif" width="500" height="10" border="0"><BR>
+      <SPAN class="text_bold">Shell</SPAN><BR>
+      <HR>
+      <BR>
+      ƒVƒFƒ‹ƒtƒHƒ‹ƒ_‚Ìƒtƒ@ƒCƒ‹‚ÍˆÈ‰º‚Ì’Ê‚èB<BR>
+      <BR>
+      home<BR>
+      @+-ghost<BR>
+      @@@+-myghost<BR>
+      @@@@@+-shell<BR>
+      @@@@@@@+-master<BR>
+      <SPAN class="text_green">@@@@@@@@@+-descript.txt<BR>
+      @@@@@@@@@+-surface*.png<BR>
+      @@@@@@@@@+-surface*.pna<BR>
+      <SPAN class="text_green">@@@@@@@@@+-<SPAN class="text_green">surfaces.txt</SPAN></SPAN><BR>
+      </SPAN>@@@@@@@@@+-menu_background.png<BR>
+      @@@@@@@@@+-menu_foreground.png<BR>
+      @@@@@@@@@+-menu_sidebar.png<SPAN class="text_green"><BR>
+      @@@@@@@@@+-readme.txt<BR>
+      @@@@@@@@@+-thumbnail.png</SPAN><BR>
+      <SPAN class="text_green">@@@@@@@@@+-surfacetable.txt</SPAN> (SSP‚Ì‚İ)<BR>
+      <BR>
+      <HR>
+      <BR>
+      <A href="descript_shell.html">descript.txt</A><BR>
+      ƒVƒFƒ‹‚ğ¯•Ê‚·‚é‚½‚ß‚Ìƒtƒ@ƒCƒ‹B<BR>
+      ƒeƒLƒXƒg“à‚Ì‹LÚ–€‚ÍƒŠƒ“ƒNæ‚ğQÆB<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surface*.png</SPAN><BR>
+      ƒT[ƒtƒBƒXƒtƒ@ƒCƒ‹B<BR>
+      ƒfƒXƒNƒgƒbƒv‚É•\¦‚³‚ê‚éŠGB<BR>
+      ‘Î‰Œ`®‚ÍPNG‚Ì‚İB<BR>
+      ‰æ‘œƒTƒCƒYAF”‚É§ŒÀ‚Í–³‚¢B<BR>
+      <BR>
+      ‰æ‘œ¶ã‚Ì1ƒhƒbƒg(À•W0,0)‚Æ“¯F‚ª“§‰ß‚³‚ê‚éB<BR>
+      <BR>
+      <BR>
+      ƒT[ƒtƒBƒX‚Ì”Ô†‚É‚Í‚ ‚é’ö“x‚Ì„§‚·‚éŠ„‚èU‚è‚ª‚ ‚éB<BR>
+      •K‚¸‚±‚Ì”Ô†‚É‚·‚é•K—v‚Í–³‚¢‚ª00‚Æ10‚Ì‚İ‚Í•K{B<BR>
+      <BR>
+      sakura‘¤<BR>
+      00 ‘f<BR>
+      01 Æ‚ê<BR>
+      02 ‹Á‚«<BR>
+      03 •sˆÀ<BR>
+      04 —‚¿‚İ<BR>
+      05 ”÷Î‚İ<BR>
+      06 –Ú•Â‚¶<BR>
+      07 “{‚è<BR>
+      08 —âÎ<BR>
+      09 Æ‚ê“{‚è<BR>
+      25 ‰Ì<BR>
+      <BR>
+      kero‘¤<BR>
+      10 ‘f<BR>
+      11 ™‰–Ú<BR>
+      19 ‰Ì<BR>
+      <BR>
+      ƒT[ƒtƒBƒX”Ô†‚Í0`8192‚Ü‚Åg‚¦‚éB(MATERIAd—l)<BR>
+      ‘¼‚Ìƒx[ƒXƒEƒFƒA‚É‚Í§ŒÀ‚ª–³‚¢B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surface*.pna</SPAN><BR>
+      ƒT[ƒtƒBƒX‚ÌƒAƒ‹ƒtƒ@ƒ`ƒƒƒ“ƒlƒ‹’è‹`ƒtƒ@ƒCƒ‹B<BR>
+      PNA©‘Ì‚ÍPNG‚ğƒŠƒl[ƒ€‚µ‚½‚à‚ÌB<BR>
+      ƒT[ƒtƒBƒX”Ô†‚Æ“¯‚¶”Ô†‚Ìpnaƒtƒ@ƒCƒ‹‚ğ’u‚­‚±‚Æ‚É‚æ‚Á‚ÄƒT[ƒtƒBƒX‚Ì”¼“§–¾‰»‚ª‚Å‚«‚éB<BR>
+      <BR>
+      <TABLE border="0">
+        <TBODY>
+          <TR>
+            <TD><IMG src="image/surface0_png1.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">¨</TD>
+            <TD><IMG src="image/surface0_pna.jpg" width="163" height="300" border="0"></TD>
+            <TD class="text_12px_font">¨</TD>
+            <TD><IMG src="image/surface0_png2.jpg" width="163" height="300" border="0"></TD>
+          </TR>
+          <TR>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.png</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">surface0.pna</SPAN></TD>
+            <TD class="text_center"></TD>
+            <TD class="text_center"><SPAN class="text_14px_font">ƒfƒXƒNƒgƒbƒv‚Ì•\¦</SPAN></TD>
+          </TR>
+        </TBODY>
+      </TABLE>
+      <BR>
+      ‚½‚¾‚µAWindows2000/XP‚ÅULWƒ‚[ƒh‚ğg—p‚µ‚½‚Æ‚«‚Ì‚İB<BR>
+      Windows9x‚Å‚Ípna‚Í–³‹‚³‚ê‚éB<BR>
+      ‚Ü‚½A“§‰ß‚ªŠ®‘S‚Å‚È‚¢êŠ‚Í“–‚½‚è”»’è‚ª”­¶‚·‚éB<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green"><A href="descript_shell.html">surfaces.txt</A></SPAN><BR>
+      ƒT[ƒtƒBƒX‚ÌIDŠ„‚è“–‚ÄAƒŒƒCƒ„[‡¬AƒAƒjƒ[ƒVƒ‡ƒ“A“–‚½‚è”»’è‚È‚Ç‚ğ’è‹`‚·‚éƒtƒ@ƒCƒ‹B<BR>
+      SSP‚Ì‚İAsurfaces2.txtAsurfaces3.txt`surfaceZZ.txtA‚È‚Ç‚Ì‚æ‚¤‚ÉŒã‚ë‚É2•¶šˆÈ‰º‚Ì•¶š‚ª‚Â‚¢‚½ƒtƒ@ƒCƒ‹‚ğ’Ç‰Á‚Å“Ç‚İ‚±‚ß‚éB<BR>
+      surfaces2.txt‚Í2.01ŒnˆÈ~A”CˆÓ‚Ì2•¶šˆÈ‰º‚ª‚Â‚¯‚ç‚ê‚é‚æ‚¤‚É‚È‚Á‚½‚Ì‚Í2.2.57ˆÈ~B<BR>
+      <BR>
+      <SPAN class="text_gray">
+      descript<BR>
+      {<BR>
+      version,1<BR>
+      }<BR><BR>
+      surface0<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      point.centerx,212<BR>
+      point.centery,198<BR>
+      point.kinoko.centerx,214<BR>
+      point.kinoko.centery,34<BR>
+      <BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlay,101,10,168,67<BR>
+      animation0.pattern1,overlay,100,10,168,67<BR>
+      animation0.pattern2,overlay,101,10,168,67<BR>
+      animation0.pattern3,overlay,-1,10,168,67<BR>
+      }<BR>
+      <BR>
+      surface10<BR>
+      {<BR>
+      collision0,40,56,95,90,Head<BR>
+      point.centerx,70<BR>
+      point.centery,66<BR>
+      sakura.balloon.offsetx,80<BR>
+      sakura.balloon.offsety,-100<BR>
+      kero.balloon.offsetx,-30<BR>
+      kero.balloon.offsety,20<BR>
+      }</SPAN><BR>
+      <BR>
+      ã‹L‚Ì‚æ‚¤‚É’è‹`‚µŠeƒT[ƒtƒBƒX‚ÌƒvƒŒƒX“à‚É‹Lq‚·‚éB<BR>
+      ’è‹`“à—e‚É‚Â‚¢‚Ä‚Í<SPAN class="text_green"><A href="descript_shell.html">surfaces.txt</A></SPAN>QÆB<BR>
+      <BR>
+      <BR>
+      ‰º‹L‚Ì‚æ‚¤‚É•¡”‚ÌƒT[ƒtƒBƒX‚ğ“¯‚É’è‹`‚·‚é‚±‚Æ‚à‰Â”\B<BR>
+      <BR>
+      <SPAN class="text_gray">surface0,surface1<BR>
+      {<BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlay,101,10,168,67<BR>
+      animation0.pattern1,overlay,100,10,168,67<BR>
+      animation0.pattern2,overlay,101,10,168,67<BR>
+      animation0.pattern3,overlay,-1,10,168,67<BR>
+      }</SPAN><BR>
+      <BR>
+      ‚Ü‚½ASSP‚Ì‚İ‰º‹L‚Ì‚æ‚¤‚È”ÍˆÍw’è‚â•¡”w’è‚ª‰Â”\B<BR>
+      <BR>
+      <SPAN class="text_gray">surface0-9,25<BR>
+      {<BR>
+      animation0.interval,sometimes<BR>
+      animation0.pattern0,overlay,101,10,168,67<BR>
+      animation0.pattern1,overlay,100,10,168,67<BR>
+      animation0.pattern2,overlay,101,10,168,67<BR>
+      animation0.pattern3,overlay,-1,10,168,67<BR>
+      }</SPAN><BR>
+      <BR>
+      ‚³‚ç‚ÉSSP‚Ì‚İ‰º‹L‚Ì‚æ‚¤‚È’è‹`‚Ì’Ç‰Á‚à‰Â”\B<BR>
+      <BR>
+      <SPAN class="text_gray">surface.append0-9,25<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      }</SPAN><BR>
+      <BR>
+      !‚ÅœŠOİ’è‚à‚Å‚«‚éB<BR>
+      <BR>
+      <SPAN class="text_gray">surface.append0-9,25,!5-8<BR>
+      {<BR>
+      collision0,188,25,252,63,Head<BR>
+      collision1,190,92,236,118,Face<BR>
+      collision2,180,191,220,222,Bust<BR>
+      collision3,154,311,248,362,Skirt<BR>
+      }</SPAN><BR>
+      <BR>
+      ƒT[ƒtƒBƒXID‚ÍƒGƒCƒŠƒAƒX‚Å”CˆÓID‚É•ÏX‚·‚é–‚ª‚Å‚«‚éB<BR>
+      <BR>
+      <SPAN class="text_gray">sakura.surface.alias<BR>
+      {<BR>
+      smile,[5]<BR>
+      } <BR>
+      <BR>
+      kero.surface.alias<BR>
+      {<BR>
+      10,[10,11,12]<BR>
+      } </SPAN><BR>
+      <BR>
+      ‚Æ‚·‚é‚Æ\s[5]‚ğ\s[smile]‚Æ‚·‚é–‚à‰Â”\B<BR>
+      ‚Ü‚½Aã‹L‚Ì‚æ‚¤‚É‚·‚é–‚Å\s[10]‚ğID10A11A12‚©‚çƒ‰ƒ“ƒ_ƒ€‚É‚·‚é‚±‚Æ‚ª‚Å‚«‚éB<BR>
+      <BR>
+      char*.surface.alias‚Å2l–ÚˆÈ~‚Ì‘Š•û‘¤‚ÌƒGƒCƒŠƒAƒX‚à‰Â”\B(SSPê—p)<BR>
+      <BR>
+      ƒAƒjƒ[ƒVƒ‡ƒ“A’…‚¹‘Ö‚¦‚É‚Â‚¢‚Ä‚Í<A href="manual_animation.html">ƒAƒjƒ[ƒVƒ‡ƒ“</A>‚ğQÆB<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green"><A href="descript_shell.html">surfaces2.txt</A></SPAN><BR>
+      SSPê—pB<BR>
+      ‹@”\‚Í<SPAN class="text_green">surfaces.txt</SPAN>‚Æ“¯‚¶B<BR>
+      ŒİŠ·«‚ğˆÛ‚µ‚Â‚ÂSSPê—p‚Ì‹@”\‚ğg‚¤‚½‚ß‚Ì‚à‚ÌB<BR>
+      •K—v‚È•”•ª‚Ì‚İ‚ğ’Ç‹L‚·‚éŒ`‚Å‚à–â‘è‚È‚¢B<BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">readme.txt</SPAN><BR>
+      ƒVƒFƒ‹ƒƒjƒ…[‚ÌRead Me! ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚É•\¦‚³‚ê‚éƒeƒLƒXƒgB<BR>
+      ƒS[ƒXƒg»ìÒ‚Å‚Í‚È‚¢ƒVƒFƒ‹»ìÒ‚ª”z•zŒ³‚È‚Ç‚ğ‹LÚ‚·‚é‚½‚ß‚Ì‚à‚ÌB<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">thumbnail.png</SPAN><BR>
+      ƒƒjƒ…[ƒcƒŠ[‚ÅƒVƒFƒ‹‚Ì‘I‘ğ‚É•\¦‚³‚ê‚éƒTƒ€ƒlƒCƒ‹B<BR>
+      g—p‰Â”\‚È‰æ‘œŒ`®‚Ípng‚à‚µ‚­‚ÍjpgB<BR>
+      png‚ğpnr‚ÉƒŠƒl[ƒ€‚·‚é‚Æ‰æ‘œ¶ã‚Ì1ƒhƒbƒg(À•W0,0)‚Æ“¯F‚ª“§‰ß‚³‚ê‚éB<BR>
+      ‚±‚Ìƒtƒ@ƒCƒ‹‚ÍÈ—ª‰Â”\B<BR>
+      <BR>
+      <HR>
+      <BR>
+      <SPAN class="text_green">surfacetable.txt</SPAN><BR>
+      SSPê—pB<BR>
+      <BR>
+      <SPAN class="text_gray">0,‘f(‚³‚­‚ç)<BR>
+      10,‘f(‚¤‚É‚ã‚¤)</SPAN><BR>
+      <BR>
+      ã‹L‚Ì‚æ‚¤‚È‹Lq‚ÌƒeƒLƒXƒg‚ğƒtƒHƒ‹ƒ_‚É’u‚­‚ÆƒT[ƒtƒBƒXƒeƒXƒgƒEƒBƒ“ƒhƒE‚Ì•\¦‚ª‘ã‘Ö‚³‚ê‚éB<BR>
+      <BR>
+      <BR>
+      version 1.0‘®‚Å‚Ìê‡<BR>
+      <BR>
+      <SPAN class="text_gray">charset,Shift_JIS<BR>
+      version,1<BR>
+      option,DisableNoDefineSurfaces<BR>
+      <BR>
+      group,‚³‚­‚ç<BR>
+      {<BR>
+      scope,0<BR>
+      <BR>
+      0,‘f<BR>
+      1,Æ‚ê<BR>
+      3,•sˆÀ<BR>
+      4,—‚¿‚İ<BR>
+      7,“{‚è<BR>
+      }<BR>
+      <BR>
+      group,‚¤‚É‚ã‚¤<BR>
+      {<BR>
+      scope,1<BR>
+      <BR>
+      10,‘f<BR>
+      11,‚Â‚è–Ú<BR>
+      }<BR>
+      <BR>
+      //”ñ•\¦İ’è<BR>
+      group,__disabled<BR>
+      {<BR>
+      19,__parts<BR>
+      }</SPAN><BR>
+      <BR>
+      charset,Shift_JIS‚Í1s–Ú‚É•K—vB<BR>
+      charset‚Í——R‚ª‚È‚¢ŒÀ‚è‚ÍShift_JIS‚ğg—p‚·‚éB<BR>
+      <BR>
+      version,1‚Íversion 1.0ƒtƒH[ƒ}ƒbƒg‚ğg—p‚·‚é‚Ì‚É•K—vB<BR>
+      <BR>
+      option,DisableNoDefineSurfaces‚Íw’è‚Ì‚È‚¢ƒT[ƒtƒBƒX‚ğœŠO‚·‚éƒIƒvƒVƒ‡ƒ“B<BR>
+      <BR>
+      ƒOƒ‹[ƒv–¼‚ğ__disabled‚É‚·‚é‚Æ‚»‚ÌƒT[ƒtƒBƒXƒOƒ‹[ƒv‚ğƒŠƒXƒg‚É•\¦‚µ‚È‚¢B<BR>
+      </TD>
+    </TR>
+    <TR>
+      <TD class="style_bottom_l" colspan="2">@ŠÇ—l : <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white"><A href="http://code.google.com/p/ukadoc/" target="_self"><SPAN class="text_link_white">UKADOC Project(•¶‘“à—e)</SPAN></A> / <A href="http://khmix.sakura.ne.jp/" target="_self"><SPAN class="text_link_white">”ê—´‰Ø êi—Ù(ƒTƒCƒg)</SPAN></A></SPAN></A></TD>
+      <TD class="style_bottom_r"><IMG src="../image/disc_2.gif" width="200" height="40" border="0"><IMG src="../image/s_14.gif" width="14" height="10" border="0"></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+</BODY>
+</HTML>
 <!--nobanner-->
