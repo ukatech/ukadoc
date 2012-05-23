@@ -128,6 +128,7 @@
 				<li><a href="#OnFileDropped">OnFileDropped</a></li>
 				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a></li>
 				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
+				<li><a href="#OnFileDrop">OnFileDrop</a></li>
 				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
 				<li><a href="#OnFileDrop2">OnFileDrop2</a></li>
 				<li><a href="#OnUpdatedataCreating">OnUpdatedataCreating</a></li>
@@ -1516,26 +1517,34 @@
 			<dl id="OnFileDropping">
 				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
-					<p class="description">ファイルがDnDされた際に発生。</p>
+					<p class="description">ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>ドラッグしているファイルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnFileDropped">
 				<dt class="entry">OnFileDropped</dt>
 				<dd class="entry">
-					<p class="description">DnDされたファイルを処理し終わった際に発生。</p>
+					<p class="description">[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1545,10 +1554,14 @@
 					<p class="description">ディレクトリがDnD された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>ドロップされたディレクトリのパス。</dd>
+						<dt>Reference1</dt>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1561,20 +1574,26 @@
 						<dd>ドロップされたファイルパス。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnFileDropEx">
-				<dt class="entry">OnFileDropEx</dt>
+			<dl id="OnFileDrop">
+				<dt class="entry">OnFileDrop</dt>
 				<dd class="entry">
-					<p class="description">ファイルがDnDされた際に発生。</p>
+					<p class="description">[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを半角スペースで区切って返す。</dd>
+						<dd>ドロップされたファイルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1584,14 +1603,29 @@
 					<p class="description">ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを半角スペースで区切って返す。</dd>
+						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnFileDropEx">
+				<dt class="entry">OnFileDropEx</dt>
+				<dd class="entry">
+					<p class="description">ファイルがDnDされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dt>Reference1</dt>
+						<dd>本体にドロップされた場合は0、相方は1を返す。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
