@@ -164,6 +164,18 @@ a:hover{
 	color: #ff0000;
 	text-decoration: none;
 }
+.menuflame a:active{
+	position:relative;
+	top:0;
+	left:0;
+	color: #ff0000;
+	text-decoration: none;}
+.menuflame a:hover{
+	position:relative;
+	top:0;
+	left:0;
+	color: #ff0000;
+	text-decoration: none;}
 .disc2-author a:link{
 	color: #ffffff;
 	font-weight: bold;
