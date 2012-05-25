@@ -90,6 +90,7 @@
 				<li><a href="#_!_set,balloonoffset,x,y_">\![set,balloonoffset,x,y]</a></li>
 				<li><a href="#_!_set,balloonalign,ID_">\![set,balloonalign,ID]</a></li>
 				<li><a href="#_!_set,balloonnum,ファイル名,現在の数,最大数_">\![set,balloonnum,ファイル名,現在の数,最大数]</a></li>
+				<li><a href="#_!_set,balloontimeout,時間_">\![set,balloontimeout,時間]</a></li>
 				<li><a href="#_!_*_">\![*]</a></li>
 				<li><a href="#_!_enter,onlinemode_">\![enter,onlinemode]</a></li>
 				<li><a href="#_!_leave,onlinemode_">\![leave,onlinemode]</a></li>
@@ -1005,6 +1006,15 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_set,balloontimeout,時間_">
+				<dt class="entry">\![set,balloontimeout,時間]</dt>
+				<dd class="entry">
+					<p class="description">バルーン表示のタイムアウトの時間を指定する。単位はミリ秒。<br />そのスクリプト中のみ有効。<br />0または負数でタイムアウトなし。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_*_">
 				<dt class="entry">\![*]</dt>
 				<dd class="entry">
@@ -1416,7 +1426,7 @@
 			<dl id="_!_set,choicetimeout,時間_">
 				<dt class="entry">\![set,choicetimeout,時間]</dt>
 				<dd class="entry">
-					<p class="description">タイムアウトを時間指定する。</p>
+					<p class="description">選択肢のタイムアウトの時間を指定する。単位はミリ秒。<br />そのスクリプト中のみ有効。選択肢より後ろに書いても有効。<br />0または-1でタイムアウトなし。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2259,6 +2269,11 @@
 				<dt class="entry">\j[ID]</dt>
 				<dd class="entry">
 					<p class="description">IDにジャンプする。<br />http://～でURLジャンプする。<br />file://～でOSに関連付けられた拡張子でファイルを実行する。<br />※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_open,browser,パラメータ_">
@@ -3908,6 +3923,7 @@
 				<dd class="entry">
 					<p class="description">対象のゴーストの本体側の名前。</p>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -3917,6 +3933,7 @@
 				<dd class="entry">
 					<p class="description">対象のゴーストの相方側の名前。</p>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
