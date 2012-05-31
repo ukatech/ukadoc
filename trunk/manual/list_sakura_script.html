@@ -143,6 +143,7 @@
 				<li><a href="#_q_タイトル,ID_">\q[タイトル,ID]</a></li>
 				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[タイトル,OnID,r0,r1,...]</a></li>
 				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[タイトル,ID1,ID2,ID3...]</a></li>
+				<li><a href="#_q_タイトル,ID,r2,r3..._">\q[タイトル,ID,r2,r3...]</a></li>
 				<li><a href="#_q_タイトル,script:実行内容_">\q[タイトル,script:実行内容]</a></li>
 				<li><a href="#_q_ID__タイトル_">\q[ID][タイトル]</a></li>
 				<li><a href="#_z">\z</a></li>
@@ -150,6 +151,8 @@
 				<li><a href="#_*">\*</a></li>
 				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,時間]</a></li>
 				<li><a href="#__a_ID_">\_a[ID]</a></li>
+				<li><a href="#__a_OnID,r0,r1..._">\_a[OnID,r0,r1...]</a></li>
+				<li><a href="#__a_ID,r2,r3..._">\_a[ID,r2,r3...]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1354,7 +1357,7 @@
 			<dl id="_q_タイトル,ID_">
 				<dt class="entry">\q[タイトル,ID]</dt>
 				<dd class="entry">
-					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelectが開始される。<br />IDはReference0に格納される。</p>
+					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelectが開始される（SSPのみそれに先立ってOnChoiceSelectExが開始される）。<br />IDはReference0に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1382,6 +1385,15 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_q_タイトル,ID,r2,r3..._">
+				<dt class="entry">\q[タイトル,ID,r<em>2</em>,r<em>3</em>...]</dt>
+				<dd class="entry">
+					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelect<em>Ex</em>が開始される。<br />r*はOnChoiceSelectExのReference*に格納される。<br />OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。<br /><em>またSHOIRIが里々である場合、Reference1が独特な形式となる点にも注意。（詳しくは<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>の項。）</em></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_q_タイトル,script:実行内容_">
 				<dt class="entry">\q[タイトル,script:実行内容]</dt>
 				<dd class="entry">
@@ -1406,7 +1418,7 @@
 			<dl id="___q_ID,..._">
 				<dt class="entry">\__q[ID,...]</dt>
 				<dd class="entry">
-					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID以降の仕様は、Onやscript:で始まるものが特別扱いされるのも含めて\qと同じ。<br />Onで始まるIDを指定した場合のみ、ID以降のパラメータがそれぞれreferenceとして扱われる。</p>
+					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID以降の仕様は、Onやscript:で始まるものが特別扱いされる点や、ID以降の引数の扱いまで含めて\qと同じ。<br />実行後に発生するSHIORI Eventも同様。<br /><em>但しSHIORIが里々の場合、OnChoiceSelectExのReference1の形式が\qと異なるので注意。</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1437,11 +1449,29 @@
 			<dl id="__a_ID_">
 				<dt class="entry">\_a[ID]</dt>
 				<dd class="entry">
-					<p class="description">\_aがくるまでの範囲をジャンパとする。<br />ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される。<br />IDはReference0に格納される。<br />SSPのみ、Onで始まるIDを特別扱いする処理が含まれる。</p>
+					<p class="description">\_aがくるまでの範囲をジャンパとする。通常の選択肢と異なりタイムアウトしない。<br />ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される（SSPのみ先立ってOnAnchorSelectExが開始される）。<br />IDはReference0に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__a_OnID,r0,r1..._">
+				<dt class="entry">\_a[OnID,r0,r1...]</dt>
+				<dd class="entry">
+					<p class="description">\_aがくるまでの範囲をジャンパとする。通常の選択肢と異なりタイムアウトしない。<br />上記のようにIDが"On"で始まっている場合は、クリックするとSHIORIイベントOnID(書いた通りのイベント)が開始される。<br />IDに続く引数が順番にReference0以降に格納される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__a_ID,r2,r3..._">
+				<dt class="entry">\_a[ID,r2,r3...]</dt>
+				<dd class="entry">
+					<p class="description">\_aがくるまでの範囲をジャンパとする。通常の選択肢と異なりタイムアウトしない。<br />ジャンパをクリックするとSHIORIイベントOnAnchorSelect<em>Ex</em>が開始される。<br />IDはReference0に、IDに続く引数はReference2以降に格納される。<br />OnAnchorSelectExに続けてOnAnchorSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>

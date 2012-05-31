@@ -18,6 +18,10 @@ img {
 body {
 	background-color: #eee;
 }
+em {
+	font-style: normal;
+	font-weight:bold;
+}
 a:link	{
   color : #0000FF;
 }
@@ -187,4 +191,12 @@ a:hover	{
 .category .supported-baseware li {
 	float: left;
 	margin-left: 5px;
+}
+.category .remarks {
+	margin: 5px 5px 5px 15px;
+	padding: 5px;
+	border: 1px dashed #669;
+}
+.category .remarks p {
+	margin: 0.5em auto;
 }

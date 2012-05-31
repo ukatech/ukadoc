@@ -949,15 +949,18 @@
 			<dl id="OnChoiceSelectEx">
 				<dt class="entry">OnChoiceSelectEx</dt>
 				<dd class="entry">
-					<p class="description">選択肢が選択された際に発生。</p>
+					<p class="description">選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択された選択肢のテキスト。</dd>
+						<dd>選択された選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference1</dt>
-						<dd>選択された選択肢のID。</dd>
+						<dd>選択された選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
 						<dt>Reference*</dt>
 						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
 					</dl>
+					<div class="remarks">
+						<p id="OnChoiceSelectEx-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>で発生したOnChoiceSelectExには、他のSHIORI同様に選択肢IDのみが入る。</p>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1005,8 +1008,11 @@
 						<dt>Reference*(0)</dt>
 						<dd>選択肢ラベル。</dd>
 						<dt>Reference*(1)</dt>
-						<dd>選択肢ID。</dd>
+						<dd>選択肢ID。 <a href="#OnChoiceHover-note1">*1</a></dd>
 					</dl>
+					<div class="remarks">
+						<p id="OnChoiceHover-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したOnChoiceHoverには、他のSHIORI同様に選択肢IDのみが入る。</p>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1786,16 +1792,17 @@
 					<p class="description">更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateReady-note1">*1</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</dd>
+						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)<br /></dd>
 					</dl>
+					<div class="remarks">
+						<p id="OnUpdateReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
+					</div>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1932,12 +1939,15 @@
 					<p class="description">ゴースト以外の更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateOtherReady-note1">*1</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
 						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)</dd>
 					</dl>
+					<div class="remarks">
+						<p id="OnUpdateOtherReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3684,8 +3694,11 @@
 						<dt>Reference*(0)</dt>
 						<dd>選択肢ラベル。</dd>
 						<dt>Reference*(1)</dt>
-						<dd>選択肢ID。</dd>
+						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
 					</dl>
+					<div class="remarks">
+						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
