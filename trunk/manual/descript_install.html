@@ -28,6 +28,7 @@
 				<li><a href="#_1_charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#_1_name,オブジェクト名">name,オブジェクト名</a></li>
 				<li><a href="#_1_type,種別">type,種別</a></li>
+				<li><a href="#_1_accept,本体側名">accept,本体側名</a></li>
 				<li><a href="#_1_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
 				<li><a href="#_1_refresh,数値">refresh,数値</a></li>
 				<li><a href="#_1_refreshundeletemask,ファイル名1;ファイル名2...">refreshundeletemask,ファイル名1;ファイル名2...</a></li>
@@ -50,7 +51,7 @@
 			<ul>
 				<li><a href="#_3_name,オブジェクト名">name,オブジェクト名</a></li>
 				<li><a href="#_3_type,種別">type,種別</a></li>
-				<li><a href="#_3_accept,ゴースト名">accept,ゴースト名</a></li>
+				<li><a href="#_3_accept,本体側名">accept,本体側名</a></li>
 				<li><a href="#_3_charset,文字コード">charset,文字コード</a></li>
 			</ul>
 		</section>
@@ -60,7 +61,7 @@
 				<li><a href="#_4_charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#_4_name,オブジェクト名">name,オブジェクト名</a></li>
 				<li><a href="#_4_type,種別">type,種別</a></li>
-				<li><a href="#_4_accept,ゴースト名">accept,ゴースト名</a></li>
+				<li><a href="#_4_accept,本体側名">accept,本体側名</a></li>
 				<li><a href="#_4_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
 			</ul>
 		</section>
@@ -96,6 +97,18 @@
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />複数パッケージの場合はpackage。(SSPのみ)</p>
 					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_1_accept,本体側名">
+				<dt class="entry">accept,本体側名</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -251,10 +264,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_3_accept,ゴースト名">
-				<dt class="entry">accept,ゴースト名</dt>
+			<dl id="_3_accept,本体側名">
+				<dt class="entry">accept,本体側名</dt>
 				<dd class="entry">
-					<p class="description">受け取るゴーストの名前。</p>
+					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -312,11 +325,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_4_accept,ゴースト名">
-				<dt class="entry">accept,ゴースト名</dt>
+			<dl id="_4_accept,本体側名">
+				<dt class="entry">accept,本体側名</dt>
 				<dd class="entry">
-					<p class="description">受け取るゴーストの名前。</p>
-					<p class="default">省略不可 | 動作なし＝誰にでもインストール可( on SSP)</p>
+					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
+					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
