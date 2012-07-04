@@ -96,11 +96,15 @@
 			<h1>マウスイベント</h1>
 			<ul>
 				<li><a href="#OnMouseClick">OnMouseClick</a></li>
+				<li><a href="#OnMouseClickEx">OnMouseClickEx</a></li>
 				<li><a href="#OnMouseDoubleClick">OnMouseDoubleClick</a></li>
+				<li><a href="#OnMouseDoubleClickEx">OnMouseDoubleClickEx</a></li>
+				<li><a href="#OnMouseUp">OnMouseUp</a></li>
+				<li><a href="#OnMouseUpEx">OnMouseUpEx</a></li>
+				<li><a href="#OnMouseDown">OnMouseDown</a></li>
+				<li><a href="#OnMouseDownEx">OnMouseDownEx</a></li>
 				<li><a href="#OnMouseMove">OnMouseMove</a></li>
 				<li><a href="#OnMouseWheel">OnMouseWheel</a></li>
-				<li><a href="#OnMouseUp">OnMouseUp</a></li>
-				<li><a href="#OnMouseDown">OnMouseDown</a></li>
 				<li><a href="#OnMouseEnterAll">OnMouseEnterAll</a></li>
 				<li><a href="#OnMouseLeaveAll">OnMouseLeaveAll</a></li>
 				<li><a href="#OnMouseEnter">OnMouseEnter</a></li>
@@ -801,11 +805,11 @@
 						<dt>Reference0</dt>
 						<dd>連続起動時間（hour）</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0が返る。</dd>
+						<dd>見切れ時に1、それ以外は0。</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0が返る。</dd>
+						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0が返る。</dd>
+						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　タイムアウトするまでの時間。(秒単位)</dd>
 					</dl>
@@ -824,11 +828,11 @@
 						<dt>Reference0</dt>
 						<dd>連続起動時間（hour）</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0が返る。</dd>
+						<dd>見切れ時に1、それ以外は0。</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0が返る。</dd>
+						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0が返る。</dd>
+						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　タイムアウトするまでの時間。(秒単位)</dd>
 					</dl>
@@ -1094,7 +1098,7 @@
 			<dl id="OnMouseClick">
 				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
-					<p class="description">マウスクリックされた際に発生。</p>
+					<p class="description">左・右ボタンでマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1103,11 +1107,11 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、ホイールクリックは2が返る。</dd>
+						<dd>左クリックは0、右クリックは1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1116,10 +1120,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnMouseDoubleClick">
-				<dt class="entry">OnMouseDoubleClick</dt>
+			<dl id="OnMouseClickEx">
+				<dt class="entry">OnMouseClickEx</dt>
 				<dd class="entry">
-					<p class="description">ダブルクリックされた際に発生。</p>
+					<p class="description">左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1128,16 +1132,154 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、ホイールクリックは2が返る。</dd>
+						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseDoubleClick">
+				<dt class="entry">OnMouseDoubleClick</dt>
+				<dd class="entry">
+					<p class="description">左・右ボタンでダブルクリックされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>左クリックは0、右クリックは1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseDoubleClickEx">
+				<dt class="entry">OnMouseDoubleClickEx</dt>
+				<dd class="entry">
+					<p class="description">左・右ボタン以外でダブルクリックされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseUp">
+				<dt class="entry">OnMouseUp</dt>
+				<dd class="entry">
+					<p class="description">左・右のマウスボタンが放された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>左クリックは0、右クリックは1。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseUpEx">
+				<dt class="entry">OnMouseUpEx</dt>
+				<dd class="entry">
+					<p class="description">左・右以外のマウスボタンが放された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseDown">
+				<dt class="entry">OnMouseDown</dt>
+				<dd class="entry">
+					<p class="description">左・右のマウスボタンが押された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>左クリックは0、右クリックは1。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseDownEx">
+				<dt class="entry">OnMouseDownEx</dt>
+				<dd class="entry">
+					<p class="description">左・右以外のマウスボタンが押された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1153,7 +1295,7 @@
 						<dt>Reference2</dt>
 						<dd>マウスホイールの回転量および回転方向。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1176,7 +1318,7 @@
 						<dt>Reference2</dt>
 						<dd>マウスホイールの回転量および回転方向。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1184,52 +1326,6 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnMouseUp">
-				<dt class="entry">OnMouseUp</dt>
-				<dd class="entry">
-					<p class="description">マウスクリックが放された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
-						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
-						<dt>Reference2</dt>
-						<dd>常に0。</dd>
-						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
-						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、ホイールクリックは2が返る。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnMouseDown">
-				<dt class="entry">OnMouseDown</dt>
-				<dd class="entry">
-					<p class="description">マウスクリックが押された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
-						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
-						<dt>Reference2</dt>
-						<dd>常に0。</dd>
-						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
-						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、ホイールクリックは2が返る。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1245,7 +1341,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1266,7 +1362,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1287,7 +1383,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1308,7 +1404,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 					</dl>
@@ -1329,11 +1425,11 @@
 						<dt>Reference2</dt>
 						<dd>マウスホイールの回転量および回転方向。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1が返る。</dd>
+						<dd>左クリックは0、右クリックは1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1352,11 +1448,11 @@
 						<dt>Reference2</dt>
 						<dd>マウスホイールの回転量および回転方向。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1が返る。</dd>
+						<dd>左クリックは0、右クリックは1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1375,7 +1471,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
@@ -1392,7 +1488,7 @@
 					<p class="description">マウスを右ドラッグまたはホイールをドラッグした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>マウスカーソルの xy 座標（1バイト区切り）</dd>
 						<dt>Reference2</dt>
@@ -1755,7 +1851,7 @@
 						<dt>Reference1</dt>
 						<dd>URLパス。</dd>
 						<dt>Reference1</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference2</dt>
 						<dd>ドロップされたURLのMIMEタイプ</dd>
 					</dl>
@@ -3112,7 +3208,7 @@
 						<dt>Reference1</dt>
 						<dd>パーツの名称。</dd>
 						<dt>Reference2</dt>
-						<dd>有効になった時に1、無効になった時に0が返る。</dd>
+						<dd>有効になった時に1、無効になった時に0。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3396,7 +3492,7 @@
 					<p class="description">\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>選択モード。今のところ "rect" のみ。</dd>
 					</dl>
@@ -3411,7 +3507,7 @@
 					<p class="description">\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>選択モード。今のところ "rect" のみ。</dd>
 					</dl>
@@ -3426,7 +3522,7 @@
 					<p class="description">\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>選択モード。今のところ "rect" のみ。</dd>
 						<dt>Reference2</dt>
@@ -3443,7 +3539,7 @@
 					<p class="description">矩形選択モード中にマウスボタンが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>選択モード。今のところ "rect" のみ。</dd>
 						<dt>Reference2</dt>
@@ -3460,7 +3556,7 @@
 					<p class="description">矩形選択モード中にマウスボタンが離された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
 						<dd>選択モード。今のところ "rect" のみ。</dd>
 						<dt>Reference2</dt>
@@ -3675,7 +3771,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1が返る。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
