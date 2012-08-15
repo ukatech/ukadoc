@@ -109,6 +109,8 @@
 			<h1>descriptブレス</h1>
 			<ul>
 				<li><a href="#version,*">version,*</a></li>
+				<li><a href="#collision-sort,ソート順序">collision-sort,ソート順序</a></li>
+				<li><a href="#animation-sort,ソート順序">animation-sort,ソート順序</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1057,6 +1059,30 @@
 				<dd class="entry">
 					<p class="description">使用するSERIKO定義の書式のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
 					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="collision-sort,ソート順序">
+				<dt class="entry">collision-sort,ソート順序</dt>
+				<dd class="entry">
+					<p class="description">当たり判定の判定順ソート。どれを優先するかの設定。<br /> ascendで昇順(1,2,3...) descendで降順(10,9,8...) </p>
+					<p class="default">ascend</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation-sort,ソート順序">
+				<dt class="entry">animation-sort,ソート順序</dt>
+				<dd class="entry">
+					<p class="description">アニメーションID表示順ソート。一番上に表示されるかどうか。<br />ascendで昇順 descendで降順 標準descend</p>
+					<p class="default">descend</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
