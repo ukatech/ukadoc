@@ -167,6 +167,15 @@
 				<li><a href="#_f_cursorfontcolor,R,G,B_">\f[cursorfontcolor,R,G,B]</a></li>
 				<li><a href="#_f_cursorfontcolor,default_">\f[cursorfontcolor,default]</a></li>
 				<li><a href="#_f_cursormethod,描画方法_">\f[cursormethod,描画方法]</a></li>
+				<li><a href="#_f_cursornotselectstyle,形状_">\f[cursornotselectstyle,形状]</a></li>
+				<li><a href="#_f_cursornotselectstyle,default_">\f[cursornotselectstyle,default]</a></li>
+				<li><a href="#_f_cursornotselectcolor,R,G,B_もしくは_f_cursornotselectbrushcolor,R,G,B_">\f[cursornotselectcolor,R,G,B]もしくは\f[cursornotselectbrushcolor,R,G,B]</a></li>
+				<li><a href="#_f_cursornotselectbrushcolor,default_">\f[cursornotselectbrushcolor,default]</a></li>
+				<li><a href="#_f_cursornotselectpencolor,R,G,B_">\f[cursornotselectpencolor,R,G,B]</a></li>
+				<li><a href="#_f_cursornotselectpencolor,default_">\f[cursornotselectpencolor,default]</a></li>
+				<li><a href="#_f_cursornotselectfontcolor,R,G,B_">\f[cursornotselectfontcolor,R,G,B]</a></li>
+				<li><a href="#_f_cursornotselectfontcolor,default_">\f[cursornotselectfontcolor,default]</a></li>
+				<li><a href="#_f_cursornotselectmethod,描画方法_">\f[cursornotselectmethod,描画方法]</a></li>
 				<li><a href="#_f_anchorstyle,形状_">\f[anchorstyle,形状]</a></li>
 				<li><a href="#_f_anchorstyle,default_">\f[anchorstyle,default]</a></li>
 				<li><a href="#_f_anchorcolor,R,G,B_もしくは_f_anchorbrushcolor,R,G,B_">\f[anchorcolor,R,G,B]もしくは\f[anchorbrushcolor,R,G,B]</a></li>
@@ -187,6 +196,16 @@
 				<li><a href="#_f_anchornotselectfontcolor,default_">\f[anchornotselectfontcolor,default]</a></li>
 				<li><a href="#_f_anchornotselectmethod,描画方法_">\f[anchornotselectmethod,描画方法]</a></li>
 				<li><a href="#_f_anchornotselectmethod,default_">\f[anchornotselectmethod,default]</a></li>
+				<li><a href="#_f_anchorvisitedstyle,形状_">\f[anchorvisitedstyle,形状]</a></li>
+				<li><a href="#_f_anchorvisitedstyle,default_">\f[anchorvisitedstyle,default]</a></li>
+				<li><a href="#_f_anchorvisitedcolor,R,G,B_もしくは_f_anchorvisitedbrushcolor,R,G,B_">\f[anchorvisitedcolor,R,G,B]もしくは\f[anchorvisitedbrushcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorvisitedbrushcolor,default_">\f[anchorvisitedbrushcolor,default]</a></li>
+				<li><a href="#_f_anchorvisitedpencolor,R,G,B_">\f[anchorvisitedpencolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorvisitedpencolor,default_">\f[anchorvisitedpencolor,default]</a></li>
+				<li><a href="#_f_anchorvisitedfontcolor,R,G,B_">\f[anchorvisitedfontcolor,R,G,B]</a></li>
+				<li><a href="#_f_anchorvisitedfontcolor,default_">\f[anchorvisitedfontcolor,default]</a></li>
+				<li><a href="#_f_anchorvisitedmethod,描画方法_">\f[anchorvisitedmethod,描画方法]</a></li>
+				<li><a href="#_f_anchorvisitedmethod,default_">\f[anchorvisitedmethod,default]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -226,7 +245,7 @@
 				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
 				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
 				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_set,otherghosttalk,trueかfalse_">\![set,otherghosttalk,trueかfalse]</a></li>
+				<li><a href="#_!_set,otherghosttalk,true|false|before|after_">\![set,otherghosttalk,true|false|before|after]</a></li>
 				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
 				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,イベント名,r0,r1,r2...]</a></li>
@@ -1544,7 +1563,9 @@
 			<dl id="_f_cursorfontcolor,default_">
 				<dt class="entry">\f[cursorfontcolor,default]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーのフォント色をデフォルトに戻す。</p>
+					<p class="description">非選択中アンカーのフォント色をデフォルトに戻す。<br />
+					default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。<br />
+					また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1552,6 +1573,89 @@
 			</dl>
 			<dl id="_f_cursormethod,描画方法_">
 				<dt class="entry">\f[cursormethod,描画方法]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカー描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectstyle,形状_">
+				<dt class="entry">\f[cursornotselectstyle,形状]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectstyle,default_">
+				<dt class="entry">\f[cursornotselectstyle,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの形状をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectcolor,R,G,B_もしくは_f_cursornotselectbrushcolor,R,G,B_">
+				<dt class="entry">\f[cursornotselectcolor,R,G,B]もしくは\f[cursornotselectbrushcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectbrushcolor,default_">
+				<dt class="entry">\f[cursornotselectbrushcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形内の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectpencolor,R,G,B_">
+				<dt class="entry">\f[cursornotselectpencolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectpencolor,default_">
+				<dt class="entry">\f[cursornotselectpencolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectfontcolor,R,G,B_">
+				<dt class="entry">\f[cursornotselectfontcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectfontcolor,default_">
+				<dt class="entry">\f[cursornotselectfontcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">非選択中アンカーのフォント色をデフォルトに戻す。<br />
+					default.anchor, default.anchornotselect, default.anchorvisited, default.cursornotselect, default.cursornotselectnotselectと指定すると、それぞれのデフォルトと同じ値に設定。<br />
+					また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_cursornotselectmethod,描画方法_">
+				<dt class="entry">\f[cursornotselectmethod,描画方法]</dt>
 				<dd class="entry">
 					<p class="description">非選択中アンカー描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
 					<ul class="supported-baseware">
@@ -1625,7 +1729,9 @@
 			<dl id="_f_anchorfontcolor,default_">
 				<dt class="entry">\f[anchorfontcolor,default]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーのフォント色をデフォルトに戻す。</p>
+					<p class="description">選択中アンカーのフォント色をデフォルトに戻す。<br />
+					default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。<br />
+					また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1713,7 +1819,9 @@
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectfontcolor,default_">
-				<dt class="entry">\f[anchornotselectfontcolor,default]</dt>
+				<dt class="entry">\f[anchornotselectfontcolor,default]<br />
+					default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。<br />
+					また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。</dt>
 				<dd class="entry">
 					<p class="description">訪問済みアンカーのフォント色をデフォルトに戻す。</p>
 					<ul class="supported-baseware">
@@ -1732,6 +1840,98 @@
 			</dl>
 			<dl id="_f_anchornotselectmethod,default_">
 				<dt class="entry">\f[anchornotselectmethod,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの描画方法をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedstyle,形状_">
+				<dt class="entry">\f[anchorvisitedstyle,形状]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedstyle,default_">
+				<dt class="entry">\f[anchorvisitedstyle,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの形状をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedcolor,R,G,B_もしくは_f_anchorvisitedbrushcolor,R,G,B_">
+				<dt class="entry">\f[anchorvisitedcolor,R,G,B]もしくは\f[anchorvisitedbrushcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedbrushcolor,default_">
+				<dt class="entry">\f[anchorvisitedbrushcolor,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形内の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedpencolor,R,G,B_">
+				<dt class="entry">\f[anchorvisitedpencolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedpencolor,default_">
+				<dt class="entry">\f[anchorvisitedpencolor,default]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの矩形枠および下線の色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedfontcolor,R,G,B_">
+				<dt class="entry">\f[anchorvisitedfontcolor,R,G,B]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色をRGB(0～255)で変更。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedfontcolor,default_">
+				<dt class="entry">\f[anchorvisitedfontcolor,default]<br />
+					default.anchor, default.anchorvisited, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。<br />
+					また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーのフォント色をデフォルトに戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedmethod,描画方法_">
+				<dt class="entry">\f[anchorvisitedmethod,描画方法]</dt>
+				<dd class="entry">
+					<p class="description">訪問済みアンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_f_anchorvisitedmethod,default_">
+				<dt class="entry">\f[anchorvisitedmethod,default]</dt>
 				<dd class="entry">
 					<p class="description">訪問済みアンカーの描画方法をデフォルトに戻す。</p>
 					<ul class="supported-baseware">
@@ -2075,10 +2275,12 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_set,otherghosttalk,trueかfalse_">
-				<dt class="entry">\![set,otherghosttalk,trueかfalse]</dt>
+			<dl id="_!_set,otherghosttalk,true|false|before|after_">
+				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
 				<dd class="entry">
-					<p class="description">OnOtherGhostTalkを通知するかどうかを設定。通常無効。</p>
+					<p class="description">OnOtherGhostTalkを通知するかどうかを設定。通常無効。<br />
+					beforeを指定すると喋る前、afterを指定すると喋った後に通知。<br />
+					trueはafterと同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

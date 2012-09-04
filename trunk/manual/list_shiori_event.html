@@ -2614,6 +2614,12 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>処理するべきスクリプト。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate。<br />該当するものがカンマ区切りで返る。</dd>
+						<dt>Reference2</dt>
+						<dd>※SSPのみ　このスクリプトが発生したイベントID (イベントが原因ではない場合空欄)。</dd>
+						<dt>Reference3</dt>
+						<dd>※SSPのみ　1バイト区切りの上記イベントのReference (イベントが原因ではない場合空欄)。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3397,7 +3403,7 @@
 						<dt>Reference1</dt>
 						<dd>\0側のゴースト名。</dd>
 						<dt>Reference2</dt>
-						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTPの場合、sstp。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />該当するものがカンマ区切りで返る。</dd>
+						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate<br />該当するものがカンマ区切りで返る。</dd>
 						<dt>Reference3</dt>
 						<dd>他ゴーストの話したイベントID。</dd>
 						<dt>Reference4</dt>
