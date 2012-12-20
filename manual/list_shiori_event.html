@@ -737,7 +737,7 @@
 					<p class="description">CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Boxからはuser、ゴーストからはゴースト名を返す。</dd>
+						<dd>Boxからはuser、ゴーストからはゴーストの本体側名を返す。</dd>
 						<dt>Reference1</dt>
 						<dd>スクリプトの内容。</dd>
 						<dt>Reference*</dt>
@@ -956,9 +956,9 @@
 					<p class="description">選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択された選択肢のテキスト（ラベル）。</dd>
+						<dd>選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference1</dt>
-						<dd>選択された選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
+						<dd>選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
 						<dt>Reference*</dt>
 						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
 					</dl>
@@ -976,9 +976,9 @@
 					<p class="description">選択肢上にカーソルが乗った際に発生。<br />選択肢から外れた際に全Referenceは解除される。<br />※喋らせる事はできない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢の名前。</dd>
+						<dd>選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference1</dt>
-						<dd>ジャンプID。</dd>
+						<dd>選択肢のID。</dd>
 						<dt>Reference*</dt>
 						<dd>拡張情報。</dd>
 					</dl>
@@ -1010,9 +1010,9 @@
 					<p class="description">選択肢上で静止された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*(0)</dt>
-						<dd>選択肢ラベル。</dd>
+						<dd>選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference*(1)</dt>
-						<dd>選択肢ID。 <a href="#OnChoiceHover-note1">*1</a></dd>
+						<dd>選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnChoiceHover-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したOnChoiceHoverには、他のSHIORI同様に選択肢IDのみが入る。</p>
