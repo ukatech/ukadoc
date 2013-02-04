@@ -2386,12 +2386,26 @@
 			</dl>
 			<section class="caption">
 				<h1>※\![move]、\![moveasync]について</h1>
-				<p>\![move,X座標,Y座標,移動時間,基準とするキャラ,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
+				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
 				<p>X座標、Y座標は目的の座標を指定。<br />負の値も指定可能。<br />どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
 				<p>移動時間はミリ秒単位。<br />移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
-				<p>基準とするキャラは、別のスコープの相対位置に移動する際に使用。<br />指定方法は0 1等のキャラクターを表わすIDの数値の他、自分自身をあらわすme、スクリーン左上を起点とするscreen、他のゴーストを指定する (Sakura名)/(ID) 例えばEmily/1 など、がある。<br />省略時はscreenが指定したとみなされる。</p>
-				<p>基準とするキャラ基準位置は、指定した座標をそのサーフィスのどこを起点とするかを指定する。<br />X基準.Y基準、という形で指定し、それぞれ<br />X基準：left,right,base,center<br />Y基準：top,bottom,base,center<br />の4つの指定を組み合わせ、right.base、などのように記述する。<br />なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
-				<p>省略時は、left.topを指定したとみなされる。また、screen指定の場合はbaseは利用できない。</p>
+				<p>移動基準は、移動の基準（相対座標の原点）とするキャラクターなど。<br />指定方法は以下。</p>
+				<dl>
+					<dt>screen</dt>
+					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
+					<dt>ID</dt>
+					<dd>0,1等で指定したID番スコープ（\0,\1,\p[2]などの数に相当）のキャラクターとの相対座標</dd>
+					<dt>本体側名/ID</dt>
+					<dd>本体側名（sakura名,\0名）で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
+					<dt>me</dt>
+					<dd>移動するキャラクター自身との相対座標</dd>
+					<dt>primalyscreen</dt>
+					<dd>主モニター左上を原点とした座標</dd>
+					<dt>global</dt>
+					<dd>システム座標系（windowsの場合primalyscreenと同じ）</dd>
+				</dl>
+				<p>基準とするキャラ基準位置は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br />X基準.Y基準、という形で指定し、それぞれ<br />X基準：left,right,base,center<br />Y基準：top,bottom,base,center<br />の4つの指定を組み合わせ、right.base、などのように記述する。<br />なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
+				<p>省略時は、left.topを指定したとみなされる。<br />screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
 				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
 				<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
 			</section>
@@ -2556,7 +2570,7 @@
 			<dl id="_!_open,communicatebox_">
 				<dt class="entry">\![open,communicatebox]</dt>
 				<dd class="entry">
-					<p class="description">CommunicateBoxを開く。<br />入力決定後はOnCommunicateが発生する。</p>
+					<p class="description">CommunicateBoxを開く。<br />入力決定後はOnCommunicateが発生する。<br />SSPのみ、続けてデフォルトのテキストを指定できる（\![open,communicatebox,テキスト]の形）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2567,7 +2581,7 @@
 			<dl id="_!_open,inputbox,ID,表示時間,テキスト_">
 				<dt class="entry">\![open,inputbox,ID,表示時間,テキスト]</dt>
 				<dd class="entry">
-					<p class="description">※InputBoxを開く。</p>
+					<p class="description">※InputBoxを開く。<br />テキストはbox展開直後にデフォルトで表示されているテキスト。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2578,7 +2592,7 @@
 			<dl id="_!_open,passwordinput,ID,表示時間,テキスト_">
 				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト]</dt>
 				<dd class="entry">
-					<p class="description">※文字を隠すInputBoxを開く。</p>
+					<p class="description">※文字を隠すInputBoxを開く。<br />テキストはbox展開直後にデフォルトで表示されているテキスト。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
