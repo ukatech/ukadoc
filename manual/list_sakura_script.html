@@ -287,7 +287,7 @@
 				<li><a href="#_!_open,dateinput,ID,表示時間,年,月,日_">\![open,dateinput,ID,表示時間,年,月,日]</a></li>
 				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大_">\![open,sliderinput,ID,表示時間,現在値,最小,最大]</a></li>
 				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒_">\![open,timeinput,ID,表示時間,時,分,秒]</a></li>
-				<li><a href="#_!_open,configurationdialog_">\![open,configurationdialog]</a></li>
+				<li><a href="#_!_open,configurationdialog,ダイアログID_">\![open,configurationdialog,ダイアログID]</a></li>
 				<li><a href="#_!_open,ghostexplorer_">\![open,ghostexplorer]</a></li>
 				<li><a href="#_!_open,shellexplorer_">\![open,shellexplorer]</a></li>
 				<li><a href="#_!_open,balloonexplorer_">\![open,balloonexplorer]</a></li>
@@ -2634,10 +2634,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_open,configurationdialog_">
-				<dt class="entry">\![open,configurationdialog]</dt>
+			<dl id="_!_open,configurationdialog,ダイアログID_">
+				<dt class="entry">\![open,configurationdialog,ダイアログID]</dt>
 				<dd class="entry">
-					<p class="description">設定ダイアログを開く。</p>
+					<p class="description">設定ダイアログ（オーナードローメニューの「本体設定」）を開く。<br />ダイアログIDで初期表示する画面を指定できる（省略時は前回開いた画面）。<br />SHIORI Event ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a>のReference0参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2770,7 +2770,7 @@
 			<dl id="_!_open,file,ファイル名_">
 				<dt class="entry">\![open,file,ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">ファイルを実行する。</p>
+					<p class="description">ファイルを実行する。<br />windowsの環境変数（%SYSTEMROOT%,%SYSTEM%,%TEMP%等）を使う事ができる。<br />ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2840,7 +2840,19 @@
 					<dt>--title</dt>
 					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
 					<dt>--dir=パス</dt>
-					<dd>初期表示フォルダ</dd>
+					<dd>
+						<p>
+							初期表示フォルダ
+						</p>
+						<p>
+							パス部分に以下で、windowsの特殊なフォルダの指定が可能
+							<br />__system_mydocument__
+							<br />__system_mypictures__
+							<br />__system_myvideo__
+							<br />__system_mymusic__
+							<br />__system_desktop__
+						</p>
+					</dd>
 					<dt>--filter=フィルタ</dt>
 					<dd>BMP|*.bmp|その他|*.png;*.gif のように記述</dd>
 					<dt>--ext=拡張子</dt>
@@ -2857,7 +2869,19 @@
 					<dt>--title</dt>
 					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
 					<dt>--dir=パス</dt>
-					<dd>初期表示フォルダ</dd>
+					<dd>
+						<p>
+							初期表示フォルダ
+						</p>
+						<p>
+							パス部分に以下で、windowsの特殊なフォルダの指定が可能
+							<br />__system_mydocument__
+							<br />__system_mypictures__
+							<br />__system_myvideo__
+							<br />__system_mymusic__
+							<br />__system_desktop__
+						</p>
+					</dd>
 					<dt>--id=イベントID</dt>
 					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
 				</dl>
@@ -3741,8 +3765,9 @@
 						<dd>\q、\__qタグによる選択肢表示中。</dd>
 						<dt>minimizing</dt>
 						<dd>最小化中（タスクトレイアイコン化中）。</dd>
+						<dt>opening(種類)</dt>
+						<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がカンマ区切りで入る。<br />例：opening(input,dialog)</dd>
 					</dl>
-					
 				</section>
 				<div class="caption">
 					<p>※Statusヘッダは、SHIORI毎に以下のようにも取得出来ます。</p>
