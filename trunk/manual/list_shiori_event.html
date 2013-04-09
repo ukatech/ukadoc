@@ -439,7 +439,7 @@
 						<dt>Reference0</dt>
 						<dd>起動時のシェル名。</dd>
 						<dt>Reference6</dt>
-						<dd>※MATERIA、SSPのみ　前回の処理中で落ちた時にhaltを返す。</dd>
+						<dd>※MATERIA、SSPのみ　前回の処理中で落ちた時にhalt。</dd>
 						<dt>Reference7</dt>
 						<dd>※MATERIA、SSPのみ　前回の処理中で落ちたゴースト名 。</dd>
 					</dl>
@@ -739,7 +739,7 @@
 					<p class="description">CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Boxからはuser、ゴーストからはゴーストの本体側名を返す。</dd>
+						<dd>Boxからはuser、ゴーストからはゴーストの本体側名。</dd>
 						<dt>Reference1</dt>
 						<dd>スクリプトの内容。</dd>
 						<dt>Reference*</dt>
@@ -1564,9 +1564,9 @@
 					<p class="description">アーカイブのインストール開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由を返す。<br />ゴーストを指名していた場合その名前を返す。</dd>
+						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前を返す。</dd>
+						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
 						<dd>内容の名前2。</dd>
 					</dl>
@@ -1583,9 +1583,9 @@
 					<p class="description">インストールが正常終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由を返す。<br />ゴーストを指名していた場合その名前を返す。</dd>
+						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前を返す。</dd>
+						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
 						<dd>内容の名前2。</dd>
 					</dl>
@@ -1602,7 +1602,7 @@
 					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の種別を返す。※識別子参照(複数の場合は1バイト区切り)</dd>
+						<dd>インストールした物の種別。※識別子参照(複数の場合は1バイト区切り)</dd>
 						<dt>Reference1</dt>
 						<dd>インストールした物の名前。(複数の場合は1バイト区切り)</dd>
 						<dt>Reference2</dt>
@@ -1619,9 +1619,9 @@
 					<p class="description">インストールに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由を返す。<br />ゴーストを指名していた場合その名前を返す。</dd>
+						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前を返す。</dd>
+						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
 						<dd>内容の名前2。</dd>
 					</dl>
@@ -1638,9 +1638,9 @@
 					<p class="description">インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由を返す。<br />ゴーストを指名していた場合その名前を返す。</dd>
+						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前を返す。</dd>
+						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
 						<dd>内容の名前2。</dd>
 					</dl>
@@ -1672,7 +1672,7 @@
 						<dt>Reference0</dt>
 						<dd>ドラッグしているファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1689,7 +1689,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1706,7 +1706,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたディレクトリのパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1738,7 +1738,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1755,7 +1755,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1772,7 +1772,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>本体にドロップされた場合は0、相方は1を返す。</dd>
+						<dd>本体にドロップされた場合は0、相方は1。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1880,7 +1880,7 @@
 						<dt>Reference0</dt>
 						<dd>ダウンロードし終わった分のファイルのローカルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>ユーザーのダブルクリックによって中断した場合、artificial<br />タイムアウトした場合、timeoutを返す。</dd>
+						<dd>ユーザーのダブルクリックによって中断した場合、artificial<br />タイムアウトした場合、timeout。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1893,7 +1893,7 @@
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
 					<p class="description">URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
-					これに対してスクリプトを返す(200)と、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
+					これに対してスクリプト(200)と、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
 					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
@@ -1921,7 +1921,9 @@
 						<dt>Reference1</dt>
 						<dd>フルパス。</dd>
 						<dt>Reference3</dt>
-						<dd>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</dd>
+						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1940,7 +1942,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -1960,7 +1964,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</dd>
+						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1979,7 +1985,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSPのみ　失敗したファイル名。</dd>
 						<dt>Reference3</dt>
-						<dd>※CROWのみ　ゴースト更新の際はghost本体更新の際はbasewareを返す。</dd>
+						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1999,6 +2007,10 @@
 						<dd>更新総数の現在のファイル数。</dd>
 						<dt>Reference2</dt>
 						<dd>更新総数。</dd>
+						<dt>Reference3</dt>
+						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2018,6 +2030,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2035,6 +2051,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2052,6 +2072,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2070,7 +2094,9 @@
 						<dt>Reference1</dt>
 						<dd>フルパス。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)</dd>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2087,7 +2113,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)</dd>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateOtherReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -2107,7 +2135,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)</dd>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2124,7 +2154,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類を返す。<br />(shell ghost balloon headline plugin)</dd>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2142,6 +2174,10 @@
 						<dd>更新総数の現在のファイル数。</dd>
 						<dt>Reference2</dt>
 						<dd>更新総数。</dd>
+						<dt>Reference3</dt>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2159,6 +2195,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2174,6 +2214,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2189,6 +2233,10 @@
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
+						<dt>Reference3</dt>
+						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2204,6 +2252,8 @@
 						<dd>更新総数の現在のファイル数。</dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2217,6 +2267,8 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※失敗理由</dd>
+						<dt>Reference4</dt>
+						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3855,7 +3907,7 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p class="description">1バイト区切りでリストを返すと入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<p class="description">1バイト区切りでリストと入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
@@ -4184,7 +4236,7 @@
 					<p class="description">バッテリ残量が40％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>パーセンテージの数値を返す。</dd>
+						<dd>パーセンテージの数値。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4199,7 +4251,7 @@
 					<p class="description">バッテリ残量が20％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>パーセンテージの数値を返す。</dd>
+						<dd>パーセンテージの数値。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4214,7 +4266,7 @@
 					<p class="description">システムリソースが40％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>パーセンテージの数値を返す。</dd>
+						<dd>パーセンテージの数値。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4229,7 +4281,7 @@
 					<p class="description">システムリソースが20％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>パーセンテージの数値を返す。</dd>
+						<dd>パーセンテージの数値。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
