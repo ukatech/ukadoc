@@ -122,6 +122,24 @@ ul.notelist li{
 .menuflame li{
 	margin: 1px 0;
 }
+.menuflame ul ul{
+	margin-top: 4px;
+	margin-left: 0;
+	margin-bottom: 0.5em;
+}
+.menuflame ul h2{
+	margin: 0;
+	padding: 1px 0 2px 0;
+	border: none;
+	font-weight: normal;
+}
+.menuflame ul ul li{
+	margin: 0;
+	margin-right: 0.5em;
+	padding: 0;
+	padding: 0;
+	display: inline;
+}
 pre{
 	line-height:1.2em;
 	white-space: pre;
