@@ -13,11 +13,13 @@
 			<li><a href="./index.html">Index</a></li>
 			<li><a href="./descript_ghost.html">Ghost</a></li>
 			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
-			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
 			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_propertysystem.html">Property System</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -38,9 +40,14 @@
 				<li><a href="#OnOtherGhostChanged">OnOtherGhostChanged</a></li>
 				<li><a href="#OnShellChanged">OnShellChanged</a></li>
 				<li><a href="#OnShellChanging">OnShellChanging</a></li>
+				<li><a href="#OnDressupChanged">OnDressupChanged</a></li>
 				<li><a href="#OnBalloonChange">OnBalloonChange</a></li>
 				<li><a href="#OnWindowStateRestore">OnWindowStateRestore</a></li>
 				<li><a href="#OnWindowStateMinimize">OnWindowStateMinimize</a></li>
+				<li><a href="#OnFullScreenAppMinimize">OnFullScreenAppMinimize</a></li>
+				<li><a href="#OnFullScreenAppRestore">OnFullScreenAppRestore</a></li>
+				<li><a href="#OnCacheSuspend">OnCacheSuspend</a></li>
+				<li><a href="#OnCacheRestore">OnCacheRestore</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -53,6 +60,15 @@
 				<li><a href="#OnCommunicateInputCancel">OnCommunicateInputCancel</a></li>
 				<li><a href="#OnUserInput">OnUserInput</a></li>
 				<li><a href="#OnUserInputCancel">OnUserInputCancel</a></li>
+				<li><a href="#inputbox.autocomplete">inputbox.autocomplete</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ダイアログボックスイベント</h1>
+			<ul>
+				<li><a href="#OnSystemDialog">OnSystemDialog</a></li>
+				<li><a href="#OnSystemDialogCancel">OnSystemDialogCancel</a></li>
+				<li><a href="#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -90,6 +106,7 @@
 			<ul>
 				<li><a href="#OnSurfaceChange">OnSurfaceChange</a></li>
 				<li><a href="#OnSurfaceRestore">OnSurfaceRestore</a></li>
+				<li><a href="#OnOtherSurfaceChange">OnOtherSurfaceChange</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -115,6 +132,28 @@
 				<li><a href="#OnMouseDragEnd">OnMouseDragEnd</a></li>
 				<li><a href="#OnMouseHover">OnMouseHover</a></li>
 				<li><a href="#OnMouseGesture">OnMouseGesture</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>バルーンイベント</h1>
+			<ul>
+				<li><a href="#OnBalloonBreak">OnBalloonBreak</a></li>
+				<li><a href="#OnBalloonClose">OnBalloonClose</a></li>
+				<li><a href="#OnBalloonTimeout">OnBalloonTimeout</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ツールチップイベント</h1>
+			<ul>
+				<li><a href="#tooltip">tooltip</a></li>
+				<li><a href="#balloon_tooltip">balloon_tooltip</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>トレイバルーンイベント</h1>
+			<ul>
+				<li><a href="#OnTrayBalloonClick">OnTrayBalloonClick</a></li>
+				<li><a href="#OnTrayBalloonTimeout">OnTrayBalloonTimeout</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -212,13 +251,88 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>その他通信イベント</h1>
+			<ul>
+				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
+				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
+				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
+				<li><a href="#OnPingComplete">OnPingComplete</a></li>
+				<li><a href="#OnPingProgress">OnPingProgress</a></li>
+				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
+				<li><a href="#OnNSLookupFailure">OnNSLookupFailure</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>イベント送信失敗イベント</h1>
+			<ul>
+				<li><a href="#OnRaisePluginFailure">OnRaisePluginFailure</a></li>
+				<li><a href="#OnNotifyPluginFailure">OnNotifyPluginFailure</a></li>
+				<li><a href="#OnRaiseOtherFailure">OnRaiseOtherFailure</a></li>
+				<li><a href="#OnNotifyOtherFailure">OnNotifyOtherFailure</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>見切れ・重なりイベント</h1>
+			<ul>
+				<li><a href="#OnOverlap">OnOverlap</a></li>
+				<li><a href="#OnOtherOverlap">OnOtherOverlap</a></li>
+				<li><a href="#OnOffscreen">OnOffscreen</a></li>
+				<li><a href="#OnOtherOffscreen">OnOtherOffscreen</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ネットワーク状態イベント</h1>
+			<ul>
+				<li><a href="#OnNetworkHeavy">OnNetworkHeavy</a></li>
+				<li><a href="#OnNetworkStatusChange">OnNetworkStatusChange</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>スクリーン状態イベント</h1>
+			<ul>
+				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
+				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
+				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>バッテリー状態イベント</h1>
+			<ul>
+				<li><a href="#OnBatteryLow">OnBatteryLow</a></li>
+				<li><a href="#OnBatteryCritical">OnBatteryCritical</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>デバイス状態イベント</h1>
+			<ul>
+				<li><a href="#OnDeviceArrival">OnDeviceArrival</a></li>
+				<li><a href="#OnDeviceRemove">OnDeviceRemove</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>選択領域モードイベント</h1>
+			<ul>
+				<li><a href="#OnSelectModeBegin">OnSelectModeBegin</a></li>
+				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
+				<li><a href="#OnSelectModeComplete">OnSelectModeComplete</a></li>
+				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
+				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a></li>
+				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>単体イベント</h1>
 			<ul>
 				<li><a href="#OnKeyPress">OnKeyPress</a></li>
-				<li><a href="#OnNetworkHeavy">OnNetworkHeavy</a></li>
-				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
 				<li><a href="#OnRecommendsiteChoice">OnRecommendsiteChoice</a></li>
 				<li><a href="#OnTranslate">OnTranslate</a></li>
+				<li><a href="#OnAITalk">OnAITalk</a></li>
+				<li><a href="#OnOtherGhostTalk">OnOtherGhostTalk</a></li>
+				<li><a href="#OnEmbryoExist">OnEmbryoExist</a></li>
+				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
+				<li><a href="#OnSoundStop">OnSoundStop</a></li>
+				<li><a href="#OnTextDrop">OnTextDrop</a></li>
+				<li><a href="#OnShellScaling">OnShellScaling</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -248,63 +362,6 @@
 				<li><a href="#OnSysResume">OnSysResume</a></li>
 				<li><a href="#OnSysSuspend">OnSysSuspend</a></li>
 				<li><a href="#OnBatteryNotify">OnBatteryNotify</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>SSP拡張イベント</h1>
-			<ul>
-				<li><a href="#OnEmbryoExist">OnEmbryoExist</a></li>
-				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
-				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
-				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
-				<li><a href="#OnAITalk">OnAITalk</a></li>
-				<li><a href="#OnCacheSuspend">OnCacheSuspend</a></li>
-				<li><a href="#OnCacheRestore">OnCacheRestore</a></li>
-				<li><a href="#OnSoundStop">OnSoundStop</a></li>
-				<li><a href="#OnBalloonBreak">OnBalloonBreak</a></li>
-				<li><a href="#OnBalloonClose">OnBalloonClose</a></li>
-				<li><a href="#OnBalloonTimeout">OnBalloonTimeout</a></li>
-				<li><a href="#OnBatteryLow">OnBatteryLow</a></li>
-				<li><a href="#OnBatteryCritical">OnBatteryCritical</a></li>
-				<li><a href="#OnDeviceArrival">OnDeviceArrival</a></li>
-				<li><a href="#OnDeviceRemove">OnDeviceRemove</a></li>
-				<li><a href="#OnDressupChanged">OnDressupChanged</a></li>
-				<li><a href="#OnShellScaling">OnShellScaling</a></li>
-				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
-				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
-				<li><a href="#OnTrayBalloonClick">OnTrayBalloonClick</a></li>
-				<li><a href="#OnTrayBalloonTimeout">OnTrayBalloonTimeout</a></li>
-				<li><a href="#OnNetworkStatusChange">OnNetworkStatusChange</a></li>
-				<li><a href="#OnSystemDialog">OnSystemDialog</a></li>
-				<li><a href="#OnSystemDialogCancel">OnSystemDialogCancel</a></li>
-				<li><a href="#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a></li>
-				<li><a href="#OnTextDrop">OnTextDrop</a></li>
-				<li><a href="#OnOtherGhostTalk">OnOtherGhostTalk</a></li>
-				<li><a href="#OnRaisePluginFailure">OnRaisePluginFailure</a></li>
-				<li><a href="#OnNotifyPluginFailure">OnNotifyPluginFailure</a></li>
-				<li><a href="#OnRaiseOtherFailure">OnRaiseOtherFailure</a></li>
-				<li><a href="#OnNotifyOtherFailure">OnNotifyOtherFailure</a></li>
-				<li><a href="#OnSelectModeBegin">OnSelectModeBegin</a></li>
-				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
-				<li><a href="#OnSelectModeComplete">OnSelectModeComplete</a></li>
-				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
-				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a></li>
-				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a></li>
-				<li><a href="#OnPingComplete">OnPingComplete</a></li>
-				<li><a href="#OnPingProgress">OnPingProgress</a></li>
-				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
-				<li><a href="#OnNSLookupFailure">OnNSLookupFailure</a></li>
-				<li><a href="#OnOtherSurfaceChange">OnOtherSurfaceChange</a></li>
-				<li><a href="#OnOverlap">OnOverlap</a></li>
-				<li><a href="#OnOtherOverlap">OnOtherOverlap</a></li>
-				<li><a href="#OnOffscreen">OnOffscreen</a></li>
-				<li><a href="#OnOtherOffscreen">OnOtherOffscreen</a></li>
-				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
-				<li><a href="#OnFullScreenAppMinimize">OnFullScreenAppMinimize</a></li>
-				<li><a href="#OnFullScreenAppRestore">OnFullScreenAppRestore</a></li>
-				<li><a href="#inputbox.autocomplete">inputbox.autocomplete</a></li>
-				<li><a href="#tooltip">tooltip</a></li>
-				<li><a href="#balloon_tooltip">balloon_tooltip</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -657,6 +714,25 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnDressupChanged">
+				<dt class="entry">OnDressupChanged</dt>
+				<dd class="entry">
+					<p class="description">着せ替えが切替えられた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>着せ替え対象のキャラクターID。</dd>
+						<dt>Reference1</dt>
+						<dd>パーツの名称。</dd>
+						<dt>Reference2</dt>
+						<dd>有効になった時に1、無効になった時に0。</dd>
+						<dt>Reference3</dt>
+						<dd>パーツのカテゴリ名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnBalloonChange">
 				<dt class="entry">OnBalloonChange</dt>
 				<dd class="entry">
@@ -691,6 +767,42 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnFullScreenAppMinimize">
+				<dt class="entry">OnFullScreenAppMinimize</dt>
+				<dd class="entry">
+					<p class="description">全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。<strong>[NOTIFY]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnFullScreenAppRestore">
+				<dt class="entry">OnFullScreenAppRestore</dt>
+				<dd class="entry">
+					<p class="description">全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。<strong>[NOTIFY]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCacheSuspend">
+				<dt class="entry">OnCacheSuspend</dt>
+				<dd class="entry">
+					<p class="description">ゴーストキャッシュに入った際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCacheRestore">
+				<dt class="entry">OnCacheRestore</dt>
+				<dd class="entry">
+					<p class="description">ゴーストキャッシュから出た際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -792,6 +904,93 @@
 						<dd>入力のイベントID。</dd>
 						<dt>Reference1</dt>
 						<dd>タイムアウトした場合、timeout。閉じられた場合、close。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="inputbox.autocomplete">
+				<dt class="entry">inputbox.autocomplete</dt>
+				<dd class="entry">
+					<p class="description">ボックス展開時に発生。このイベントに1バイト区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
+						<dt>Reference1</dt>
+						<dd>inputboxの場合のみ、入力完了時に起きるイベント名／識別子。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ダイアログボックスイベント</h1>
+			<dl id="OnSystemDialog">
+				<dt class="entry">OnSystemDialog</dt>
+				<dd class="entry">
+					<p class="description">ファイル関連のダイアログで保存/OKが押された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>openまたはsave。</dd>
+						<dt>Reference1</dt>
+						<dd>イベントID。</dd>
+						<dt>Reference2</dt>
+						<dd>ファイルのパスまたはカンマ区切りのRGB値。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSystemDialogCancel">
+				<dt class="entry">OnSystemDialogCancel</dt>
+				<dd class="entry">
+					<p class="description">ファイル関連のダイアログでキャンセルが押された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>openまたはsave。</dd>
+						<dt>Reference1</dt>
+						<dd>イベントID。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnConfigurationDialogHelp">
+				<dt class="entry">OnConfigurationDialogHelp</dt>
+				<dd class="entry">
+					<p class="description">設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>
+							<p>ダイアログID。種類とページとの対応は以下。</p>
+							<ul>
+								<li>setup …… 一般</li>
+								<li>ghost …… ゴースト(1)</li>
+								<li>ghost2 …… ゴースト(2)</li>
+								<li>folder …… フォルダ</li>
+								<li>display …… 表示</li>
+								<li>talk …… 喋り/バルーン</li>
+								<li>network …… 接続(1)</li>
+								<li>network2 …… 接続(2)</li>
+								<li>biff …… POP</li>
+								<li>application …… 外部アプリ</li>
+								<li>messenger …… IM</li>
+								<li>ipmessenger …… IPMessenger</li>
+								<li>international …… 国際化</li>
+								<li>developer …… 開発/その他</li>
+							</ul>
+						</dd>
+						<dt>Reference1</dt>
+						<dd>ダイアログタイトル。</dd>
+						<dt>Reference2</dt>
+						<dd>項目タイプ:項目名。</dd>
+						<dt>Reference3</dt>
+						<dd>項目内容テキスト。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -977,7 +1176,7 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p class="description">選択肢上にカーソルが乗った際に発生。<br />選択肢から外れた際に全Referenceは解除される。<br />※喋らせる事はできない。</p>
+					<p class="description">選択肢上にカーソルが乗った際に発生。<br />選択肢から外れた際に全Referenceは解除される。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -1064,7 +1263,7 @@
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">サーフィスが変わった際に発生。<br />※喋らせる事はできない。</p>
+					<p class="description">サーフィスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体側の現在サーフィス。</dd>
@@ -1093,6 +1292,30 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherSurfaceChange">
+				<dt class="entry">OnOtherSurfaceChange</dt>
+				<dd class="entry">
+					<p class="description">（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
+					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ゴースト名</dd>
+						<dt>Reference1</dt>
+						<dd>ゴーストSakura名</dd>
+						<dt>Reference2</dt>
+						<dd>サーフェスが切り替わったウインドウID(Sakura=0)</dd>
+						<dt>Reference3</dt>
+						<dd>新サーフェスID</dd>
+						<dt>Reference4</dt>
+						<dd>旧サーフェスID</dd>
+						<dt>Reference5</dt>
+						<dd>新しいサーフェスの大きさ(座標：左,上,右,下)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1215,7 +1438,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
@@ -1242,7 +1465,7 @@
 						<dt>Reference2</dt>
 						<dd>常に0。</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
 						<dt>Reference4</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
@@ -1605,6 +1828,131 @@
 						<dd>ジェスチャー方向。<br />left_up(左上) up(上) right_up(右上)<br />left(左) right(右)<br />left_down(左下) down(下) right_down(右下)<br />circle.cw(時計回り) circle.ccw(反時計回り)<br />end(右ボタンをはなした)</dd>
 						<dt>Reference6</dt>
 						<dd>ジェスチャー移動角度。<br />右0度から反時計回りに360度。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>バルーンイベント</h1>
+			<dl id="OnBalloonBreak">
+				<dt class="entry">OnBalloonBreak</dt>
+				<dd class="entry">
+					<p class="description">SSTP以外でブレイクされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スクリプト。</dd>
+						<dt>Reference1</dt>
+						<dd>ブレイクしたキャラクターのID。</dd>
+						<dt>Reference2</dt>
+						<dd>ブレイクした位置までの文字数。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBalloonClose">
+				<dt class="entry">OnBalloonClose</dt>
+				<dd class="entry">
+					<p class="description">バルーンを閉じた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>閉じる際に表示されていたスクリプト。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBalloonTimeout">
+				<dt class="entry">OnBalloonTimeout</dt>
+				<dd class="entry">
+					<p class="description">選択肢以外でバルーンがタイムアウトした際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>タイムアウトした際に表示されていたスクリプト。</dd>
+						<dt>Reference1</dt>
+						<dd>残り時間。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ツールチップイベント</h1>
+			<dl id="tooltip">
+				<dt class="entry">tooltip</dt>
+				<dd class="entry">
+					<p class="description">ツールチップ内容を通知。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>常に0。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="balloon_tooltip">
+				<dt class="entry">balloon_tooltip</dt>
+				<dd class="entry">
+					<p class="description">バルーン選択肢上のツールチップ内容を通知。</p>
+					<dl class="reference">
+						<dt>Reference*(0)</dt>
+						<dd>選択肢ラベル。</dd>
+						<dt>Reference*(1)</dt>
+						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
+					</dl>
+					<div class="remarks">
+						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>トレイバルーンイベント</h1>
+			<dl id="OnTrayBalloonClick">
+				<dt class="entry">OnTrayBalloonClick</dt>
+				<dd class="entry">
+					<p class="description">トレイアイコンのバルーンをクリックして消した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>タイトル文字列。</dd>
+						<dt>Reference1</dt>
+						<dd>表示テキスト。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnTrayBalloonTimeout">
+				<dt class="entry">OnTrayBalloonTimeout</dt>
+				<dd class="entry">
+					<p class="description">トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>タイトル文字列。</dd>
+						<dt>Reference1</dt>
+						<dd>表示テキスト。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2691,6 +3039,530 @@
 			</dl>
 		</section>
 		<section class="category">
+			<h1>その他通信イベント</h1>
+			<dl id="OnExecuteHTTPComplete">
+				<dt class="entry">OnExecuteHTTPComplete</dt>
+				<dd class="entry">
+					<p class="description">execute-httpで正常に取得完了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>post/get</dd>
+						<dt>Reference1</dt>
+						<dd>IDで指定した文字列。</dd>
+						<dt>Reference2</dt>
+						<dd>対象のURL。</dd>
+						<dt>Reference3</dt>
+						<dd>取得したファイルのフルパス。</dd>
+						<dt>Reference4</dt>
+						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等</dd>
+						<dt>Reference5</dt>
+						<dd>Cookieの文字列。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteHTTPFailure">
+				<dt class="entry">OnExecuteHTTPFailure</dt>
+				<dd class="entry">
+					<p class="description">execute-httpで取得エラーした際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>post/get</dd>
+						<dt>Reference1</dt>
+						<dd>IDで指定した文字列。</dd>
+						<dt>Reference2</dt>
+						<dd>対象のURL。</dd>
+						<dt>Reference3</dt>
+						<dd>取得したファイルのフルパス。</dd>
+						<dt>Reference4</dt>
+						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等</dd>
+						<dt>Reference5</dt>
+						<dd>Cookieの文字列。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteHTTPSSLInfo">
+				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
+				<dd class="entry">
+					<p class="description">取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>async ID (無ければからっぽ)</dd>
+						<dt>Reference1</dt>
+						<dd>取得URL</dd>
+						<dt>Reference2</dt>
+						<dd>httpレスポンスコード (エラーでも通知される)</dd>
+						<dt>Reference3</dt>
+						<dd>通信バージョン 今時はだいたい "TLSv1/SSLv3" (SSP内部でSSLv2は蹴るので実はこれだけしか来ない)</dd>
+						<dt>Reference4</dt>
+						<dd>暗号化方法<br />例：AES256-SHA</dd>
+						<dt>Reference5</dt>
+						<dd>発行先 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
+						<dt>Reference6</dt>
+						<dd>有効期限開始日時 年,月,日,時,分,秒<br />例：2011,7,7,9,0,0</dd>
+						<dt>Reference7</dt>
+						<dd>有効期限終了日時 年,月,日,時,分,秒<br />例：2012,7,28,8,59,59</dd>
+						<dt>Reference8</dt>
+						<dd>発行者 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnPingComplete">
+				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
+				<dd class="entry">
+					<p class="description">\![execute,ping]で指定回数のping実行完了時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dt>Reference2</dt>
+						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnPingProgress">
+				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
+				<dd class="entry">
+					<p class="description">\![execute,ping]でping実行中に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dt>Reference2</dt>
+						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNSLookupComplete">
+				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dd class="entry">
+					<p class="description">\![execute,nslookup]で成功時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>--hostで指定した文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dt>Reference3</dt>
+						<dd>実行結果。正引きでIP、逆引きでホスト名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNSLookupFailure">
+				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dd class="entry">
+					<p class="description">\![execute,nslookup]で失敗時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--eventで指定した文字列そのもの</dd>
+						<dt>Reference1</dt>
+						<dd>--hostで指定した文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>正引きでlookup、逆引きでreverse</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>イベント送信失敗イベント</h1>
+				<dl id="OnRaisePluginFailure">
+				<dt class="entry">OnRaisePluginFailure</dt>
+				<dd class="entry">
+					<p class="description">\![raiseplugin]が失敗した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference1</dt>
+						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference2</dt>
+						<dd>実行しようしたイベントID。</dd>
+						<dt>Reference3～</dt>
+						<dd>実行しようしたイベントのReference。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNotifyPluginFailure">
+				<dt class="entry">OnNotifyPluginFailure</dt>
+				<dd class="entry">
+					<p class="description">\![notifyplugin]が失敗した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference1</dt>
+						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference2</dt>
+						<dd>実行しようしたイベントID。</dd>
+						<dt>Reference3～</dt>
+						<dd>実行しようしたイベントのReference。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRaiseOtherFailure">
+				<dt class="entry">OnRaiseOtherFailure</dt>
+				<dd class="entry">
+					<p class="description">\![raiseother]が失敗した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference1</dt>
+						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference2</dt>
+						<dd>実行しようしたイベントID。</dd>
+						<dt>Reference3～</dt>
+						<dd>実行しようしたイベントのReference。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNotifyOtherFailure">
+				<dt class="entry">OnNotifyOtherFailure</dt>
+				<dd class="entry">
+					<p class="description">\![notifyother]が失敗した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference1</dt>
+						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dt>Reference2</dt>
+						<dd>実行しようしたイベントID。</dd>
+						<dt>Reference3～</dt>
+						<dd>実行しようしたイベントのReference。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>見切れ・重なりイベント</h1>
+			<dl id="OnOverlap">
+				<dt class="entry">OnOverlap</dt>
+				<dd class="entry">
+					<p class="description">キャラクター（サーフィス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] はバイト値1<br />例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</dd>
+						<dt>Reference1</dt>
+						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherOverlap">
+				<dt class="entry">OnOtherOverlap</dt>
+				<dd class="entry">
+					<p class="description">他も含めて全起動中のキャラクター（サーフィス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</dd>
+						<dt>Reference1</dt>
+						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOffscreen">
+				<dt class="entry">OnOffscreen</dt>
+				<dd class="entry">
+					<p class="description">キャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ID [\1] ID [\1] ID ...<br />[\1] はバイト値1<br />例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</dd>
+						<dt>Reference1</dt>
+						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherOffscreen">
+				<dt class="entry">OnOtherOffscreen</dt>
+				<dd class="entry">
+					<p class="description">他を含めてキャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/1 [\1] 所長たん/0</dd>
+						<dt>Reference1</dt>
+						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ネットワーク状態イベント</h1>
+			<dl id="OnNetworkHeavy">
+				<dt class="entry">OnNetworkHeavy</dt>
+				<dd class="entry">
+					<p class="description">相手サーバが時間内に応答しなかった際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>※SSPのみ　タイムアウトするまでの時間。(秒単位)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNetworkStatusChange">
+				<dt class="entry">OnNetworkStatusChange</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>onlineまたはoffline。</dd>
+						<dt>Reference1</dt>
+						<dd>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>スクリーン状態イベント</h1>
+			<dl id="OnScreenSaverStart">
+				<dt class="entry">OnScreenSaverStart</dt>
+				<dd class="entry">
+					<p class="description">スクリーンセーバーが起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スクリーンセーバ名</dd>
+						<dt>Reference1</dt>
+						<dd>スクリーンセーバ実行ファイルのパス</dd>
+						<dt>Reference2</dt>
+						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnScreenSaverEnd">
+				<dt class="entry">OnScreenSaverEnd</dt>
+				<dd class="entry">
+					<p class="description">スクリーンセーバーが終了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スクリーンセーバ名</dd>
+						<dt>Reference1</dt>
+						<dd>スクリーンセーバ実行ファイルのパス</dd>
+						<dt>Reference2</dt>
+						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDisplayChange">
+				<dt class="entry">OnDisplayChange</dt>
+				<dd class="entry">
+					<p class="description">デスクトップの解像度／色深度が変更された際に発生。<strong>[起動時NOTIFY/他GET]</strong></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>変化後の色深度（bpp）</dd>
+						<dt>Reference1</dt>
+						<dd>変化後の解像度（width）</dd>
+						<dt>Reference2</dt>
+						<dd>変化後の解像度（height）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>バッテリー状態イベント</h1>
+			<dl id="OnBatteryLow">
+				<dt class="entry">OnBatteryLow</dt>
+				<dd class="entry">
+					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
+						<dt>Reference1</dt>
+						<dd>残り時間。不明の場合は-1。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBatteryCritical">
+				<dt class="entry">OnBatteryCritical</dt>
+				<dd class="entry">
+					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
+						<dt>Reference1</dt>
+						<dd>残り時間。不明の場合は-1。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>デバイス状態イベント</h1>
+			<dl id="OnDeviceArrival">
+				<dt class="entry">OnDeviceArrival</dt>
+				<dd class="entry">
+					<p class="description">デバイスを検出された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDeviceRemove">
+				<dt class="entry">OnDeviceRemove</dt>
+				<dd class="entry">
+					<p class="description">デバイスを削除された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>選択領域モードイベント</h1>
+			<dl id="OnSelectModeBegin">
+				<dt class="entry">OnSelectModeBegin</dt>
+				<dd class="entry">
+					<p class="description">\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>選択モード。今のところ "rect" のみ。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSelectModeCancel">
+				<dt class="entry">OnSelectModeCancel</dt>
+				<dd class="entry">
+					<p class="description">\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>選択モード。今のところ "rect" のみ。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSelectModeComplete">
+				<dt class="entry">OnSelectModeComplete</dt>
+				<dd class="entry">
+					<p class="description">\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dt>Reference2</dt>
+						<dd>選択結果（長方形枠）。カンマ区切りで、左,上,右,下の座標。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSelectModeMouseDown">
+				<dt class="entry">OnSelectModeMouseDown</dt>
+				<dd class="entry">
+					<p class="description">矩形選択モード中にマウスボタンが押された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dt>Reference2</dt>
+						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSelectModeMouseUp">
+				<dt class="entry">OnSelectModeMouseUp</dt>
+				<dd class="entry">
+					<p class="description">矩形選択モード中にマウスボタンが離された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dt>Reference2</dt>
+						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
 			<h1>単体イベント</h1>
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
@@ -2710,39 +3582,6 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNetworkHeavy">
-				<dt class="entry">OnNetworkHeavy</dt>
-				<dd class="entry">
-					<p class="description">相手サーバが時間内に応答しなかった際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>※SSPのみ　タイムアウトするまでの時間。(秒単位)</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnDisplayChange">
-				<dt class="entry">OnDisplayChange</dt>
-				<dd class="entry">
-					<p class="description">デスクトップの解像度／色深度が変更された際に発生。<strong>[起動時NOTIFY/他GET]</strong></p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変化後の色深度（bpp）</dd>
-						<dt>Reference1</dt>
-						<dd>変化後の解像度（width）</dd>
-						<dt>Reference2</dt>
-						<dd>変化後の解像度（height）</dd>
-					</dl>
-					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -2791,6 +3630,99 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnAITalk">
+				<dt class="entry">OnAITalk</dt>
+				<dd class="entry">
+					<p class="description">\aなどによる会話が求められた際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherGhostTalk">
+				<dt class="entry">OnOtherGhostTalk</dt>
+				<dd class="entry">
+					<p class="description">他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ゴースト名。</dd>
+						<dt>Reference1</dt>
+						<dd>\0側のゴースト名。</dd>
+						<dt>Reference2</dt>
+						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
+						<dt>Reference3</dt>
+						<dd>他ゴーストの話したイベントID。</dd>
+						<dt>Reference4</dt>
+						<dd>他ゴーストの話した内容のスクリプト。</dd>
+						<dt>Reference5</dt>
+						<dd>1バイト区切りの他ゴーストに渡されたReference。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnEmbryoExist">
+				<dt class="entry">OnEmbryoExist</dt>
+				<dd class="entry">
+					<p class="description">SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNekodorifExist">
+				<dt class="entry">OnNekodorifExist</dt>
+				<dd class="entry">
+					<p class="description">SSP起動時、先に猫どりふが起動されていた際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSoundStop">
+				<dt class="entry">OnSoundStop</dt>
+				<dd class="entry">
+					<p class="description">サウンドが終了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>再生ファイル名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnTextDrop">
+				<dt class="entry">OnTextDrop</dt>
+				<dd class="entry">
+					<p class="description">テキストデータがDnDされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>テキスト内容。(改行は1バイト値)</dd>
+						<dt>Reference1</dt>
+						<dd>DnDされたキャラクターのID。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnShellScaling">
+				<dt class="entry">OnShellScaling</dt>
+				<dd class="entry">
+					<p class="description">シェル倍率が変更された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>変更された後の倍率。（パーセント）</dd>
+						<dt>Reference1</dt>
+						<dd>変更される前の倍率。（パーセント）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -3174,848 +4106,6 @@
 			<div class="caption">
 				<p>※Notifyイベントは喋らせる事はできない。</p>
 			</div>
-		</section>
-		<section class="category">
-			<h1>SSP拡張イベント</h1>
-			<dl id="OnEmbryoExist">
-				<dt class="entry">OnEmbryoExist</dt>
-				<dd class="entry">
-					<p class="description">SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNekodorifExist">
-				<dt class="entry">OnNekodorifExist</dt>
-				<dd class="entry">
-					<p class="description">SSP起動時、先に猫どりふが起動されていた際に発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnScreenSaverStart">
-				<dt class="entry">OnScreenSaverStart</dt>
-				<dd class="entry">
-					<p class="description">スクリーンセーバーが起動した際に発生。<strong>[NOTIFY]</strong></p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>スクリーンセーバ名</dd>
-						<dt>Reference1</dt>
-						<dd>スクリーンセーバ実行ファイルのパス</dd>
-						<dt>Reference2</dt>
-						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnScreenSaverEnd">
-				<dt class="entry">OnScreenSaverEnd</dt>
-				<dd class="entry">
-					<p class="description">スクリーンセーバーが終了した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>スクリーンセーバ名</dd>
-						<dt>Reference1</dt>
-						<dd>スクリーンセーバ実行ファイルのパス</dd>
-						<dt>Reference2</dt>
-						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnAITalk">
-				<dt class="entry">OnAITalk</dt>
-				<dd class="entry">
-					<p class="description">\aなどによる会話が求められた際に発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnCacheSuspend">
-				<dt class="entry">OnCacheSuspend</dt>
-				<dd class="entry">
-					<p class="description">ゴーストキャッシュに入った際に発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnCacheRestore">
-				<dt class="entry">OnCacheRestore</dt>
-				<dd class="entry">
-					<p class="description">ゴーストキャッシュから出た際に発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSoundStop">
-				<dt class="entry">OnSoundStop</dt>
-				<dd class="entry">
-					<p class="description">サウンドが終了した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>再生ファイル名。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBalloonBreak">
-				<dt class="entry">OnBalloonBreak</dt>
-				<dd class="entry">
-					<p class="description">SSTP以外でブレイクされた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>スクリプト。</dd>
-						<dt>Reference1</dt>
-						<dd>ブレイクしたキャラクターのID。</dd>
-						<dt>Reference2</dt>
-						<dd>ブレイクした位置までの文字数。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBalloonClose">
-				<dt class="entry">OnBalloonClose</dt>
-				<dd class="entry">
-					<p class="description">バルーンを閉じた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>閉じる際に表示されていたスクリプト。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBalloonTimeout">
-				<dt class="entry">OnBalloonTimeout</dt>
-				<dd class="entry">
-					<p class="description">選択肢以外でバルーンがタイムアウトした際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>タイムアウトした際に表示されていたスクリプト。</dd>
-						<dt>Reference1</dt>
-						<dd>残り時間。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBatteryLow">
-				<dt class="entry">OnBatteryLow</dt>
-				<dd class="entry">
-					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
-						<dt>Reference1</dt>
-						<dd>残り時間。不明の場合は-1。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBatteryCritical">
-				<dt class="entry">OnBatteryCritical</dt>
-				<dd class="entry">
-					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
-						<dt>Reference1</dt>
-						<dd>残り時間。不明の場合は-1。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnDeviceArrival">
-				<dt class="entry">OnDeviceArrival</dt>
-				<dd class="entry">
-					<p class="description">デバイスを検出された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnDeviceRemove">
-				<dt class="entry">OnDeviceRemove</dt>
-				<dd class="entry">
-					<p class="description">デバイスを削除された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnDressupChanged">
-				<dt class="entry">OnDressupChanged</dt>
-				<dd class="entry">
-					<p class="description">着せ替えが切替えられた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>着せ替え対象のキャラクターID。</dd>
-						<dt>Reference1</dt>
-						<dd>パーツの名称。</dd>
-						<dt>Reference2</dt>
-						<dd>有効になった時に1、無効になった時に0。</dd>
-						<dt>Reference3</dt>
-						<dd>パーツのカテゴリ名。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnShellScaling">
-				<dt class="entry">OnShellScaling</dt>
-				<dd class="entry">
-					<p class="description">シェル倍率が変更された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変更された後の倍率。（パーセント）</dd>
-						<dt>Reference1</dt>
-						<dd>変更される前の倍率。（パーセント）</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnExecuteHTTPComplete">
-				<dt class="entry">OnExecuteHTTPComplete</dt>
-				<dd class="entry">
-					<p class="description">execute-httpで正常に取得完了した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>post/get</dd>
-						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
-						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
-						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
-						<dt>Reference4</dt>
-						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等</dd>
-						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnExecuteHTTPFailure">
-				<dt class="entry">OnExecuteHTTPFailure</dt>
-				<dd class="entry">
-					<p class="description">execute-httpで取得エラーした際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>post/get</dd>
-						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
-						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
-						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
-						<dt>Reference4</dt>
-						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等</dd>
-						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnTrayBalloonClick">
-				<dt class="entry">OnTrayBalloonClick</dt>
-				<dd class="entry">
-					<p class="description">トレイアイコンのバルーンをクリックして消した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
-						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnTrayBalloonTimeout">
-				<dt class="entry">OnTrayBalloonTimeout</dt>
-				<dd class="entry">
-					<p class="description">トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
-						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNetworkStatusChange">
-				<dt class="entry">OnNetworkStatusChange</dt>
-				<dd class="entry">
-					<p class="description">ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>onlineまたはoffline。</dd>
-						<dt>Reference1</dt>
-						<dd>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSystemDialog">
-				<dt class="entry">OnSystemDialog</dt>
-				<dd class="entry">
-					<p class="description">ファイル関連のダイアログで保存/OKが押された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>openまたはsave。</dd>
-						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
-						<dt>Reference2</dt>
-						<dd>ファイルのパスまたはカンマ区切りのRGB値。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSystemDialogCancel">
-				<dt class="entry">OnSystemDialogCancel</dt>
-				<dd class="entry">
-					<p class="description">ファイル関連のダイアログでキャンセルが押された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>openまたはsave。</dd>
-						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnConfigurationDialogHelp">
-				<dt class="entry">OnConfigurationDialogHelp</dt>
-				<dd class="entry">
-					<p class="description">設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>
-							<p>ダイアログID。種類とページとの対応は以下。</p>
-							<ul>
-								<li>setup …… 一般</li>
-								<li>ghost …… ゴースト(1)</li>
-								<li>ghost2 …… ゴースト(2)</li>
-								<li>folder …… フォルダ</li>
-								<li>display …… 表示</li>
-								<li>talk …… 喋り/バルーン</li>
-								<li>network …… 接続(1)</li>
-								<li>network2 …… 接続(2)</li>
-								<li>biff …… POP</li>
-								<li>application …… 外部アプリ</li>
-								<li>messenger …… IM</li>
-								<li>ipmessenger …… IPMessenger</li>
-								<li>international …… 国際化</li>
-								<li>developer …… 開発/その他</li>
-							</ul>
-						</dd>
-						<dt>Reference1</dt>
-						<dd>ダイアログタイトル。</dd>
-						<dt>Reference2</dt>
-						<dd>項目タイプ:項目名。</dd>
-						<dt>Reference3</dt>
-						<dd>項目内容テキスト。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnTextDrop">
-				<dt class="entry">OnTextDrop</dt>
-				<dd class="entry">
-					<p class="description">テキストデータがDnDされた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>テキスト内容。(改行は1バイト値)</dd>
-						<dt>Reference1</dt>
-						<dd>DnDされたキャラクターのID。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOtherGhostTalk">
-				<dt class="entry">OnOtherGhostTalk</dt>
-				<dd class="entry">
-					<p class="description">他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
-						<dt>Reference1</dt>
-						<dd>\0側のゴースト名。</dd>
-						<dt>Reference2</dt>
-						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
-						<dt>Reference3</dt>
-						<dd>他ゴーストの話したイベントID。</dd>
-						<dt>Reference4</dt>
-						<dd>他ゴーストの話した内容のスクリプト。</dd>
-						<dt>Reference5</dt>
-						<dd>1バイト区切りの他ゴーストに渡されたReference。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnRaisePluginFailure">
-				<dt class="entry">OnRaisePluginFailure</dt>
-				<dd class="entry">
-					<p class="description">\![raiseplugin]が失敗した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference2</dt>
-						<dd>実行しようしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようしたイベントのReference。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNotifyPluginFailure">
-				<dt class="entry">OnNotifyPluginFailure</dt>
-				<dd class="entry">
-					<p class="description">\![notifyplugin]が失敗した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference2</dt>
-						<dd>実行しようしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようしたイベントのReference。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnRaiseOtherFailure">
-				<dt class="entry">OnRaiseOtherFailure</dt>
-				<dd class="entry">
-					<p class="description">\![raiseother]が失敗した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference2</dt>
-						<dd>実行しようしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようしたイベントのReference。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNotifyOtherFailure">
-				<dt class="entry">OnNotifyOtherFailure</dt>
-				<dd class="entry">
-					<p class="description">\![notifyother]が失敗した際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
-						<dt>Reference2</dt>
-						<dd>実行しようしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようしたイベントのReference。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSelectModeBegin">
-				<dt class="entry">OnSelectModeBegin</dt>
-				<dd class="entry">
-					<p class="description">\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSelectModeCancel">
-				<dt class="entry">OnSelectModeCancel</dt>
-				<dd class="entry">
-					<p class="description">\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSelectModeComplete">
-				<dt class="entry">OnSelectModeComplete</dt>
-				<dd class="entry">
-					<p class="description">\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
-						<dt>Reference2</dt>
-						<dd>選択結果（長方形枠）。カンマ区切りで、左,上,右,下の座標。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSelectModeMouseDown">
-				<dt class="entry">OnSelectModeMouseDown</dt>
-				<dd class="entry">
-					<p class="description">矩形選択モード中にマウスボタンが押された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
-						<dt>Reference2</dt>
-						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSelectModeMouseUp">
-				<dt class="entry">OnSelectModeMouseUp</dt>
-				<dd class="entry">
-					<p class="description">矩形選択モード中にマウスボタンが離された際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
-						<dt>Reference2</dt>
-						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
-				<dd class="entry">
-					<p class="description">\![execute,ping]で指定回数のping実行完了時に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
-						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
-						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
-				<dd class="entry">
-					<p class="description">\![execute,ping]でping実行中に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
-						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
-						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
-				<dd class="entry">
-					<p class="description">\![execute,nslookup]で成功時に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
-						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
-						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
-						<dt>Reference3</dt>
-						<dd>実行結果。正引きでIP、逆引きでホスト名。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
-				<dd class="entry">
-					<p class="description">\![execute,nslookup]で失敗時に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
-						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
-						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOtherSurfaceChange">
-				<dt class="entry">OnOtherSurfaceChange</dt>
-				<dd class="entry">
-					<p class="description">（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
-					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ゴースト名</dd>
-						<dt>Reference1</dt>
-						<dd>ゴーストSakura名</dd>
-						<dt>Reference2</dt>
-						<dd>サーフェスが切り替わったウインドウID(Sakura=0)</dd>
-						<dt>Reference3</dt>
-						<dd>新サーフェスID</dd>
-						<dt>Reference4</dt>
-						<dd>旧サーフェスID</dd>
-						<dt>Reference5</dt>
-						<dd>新しいサーフェスの大きさ(座標：左,上,右,下)</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOverlap">
-				<dt class="entry">OnOverlap</dt>
-				<dd class="entry">
-					<p class="description">キャラクター（サーフィス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] はバイト値1<br />例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</dd>
-						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOtherOverlap">
-				<dt class="entry">OnOtherOverlap</dt>
-				<dd class="entry">
-					<p class="description">他も含めて全起動中のキャラクター（サーフィス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</dd>
-						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOffscreen">
-				<dt class="entry">OnOffscreen</dt>
-				<dd class="entry">
-					<p class="description">キャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ID [\1] ID [\1] ID ...<br />[\1] はバイト値1<br />例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</dd>
-						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnOtherOffscreen">
-				<dt class="entry">OnOtherOffscreen</dt>
-				<dd class="entry">
-					<p class="description">他を含めてキャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/1 [\1] 所長たん/0</dd>
-						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnExecuteHTTPSSLInfo">
-				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
-				<dd class="entry">
-					<p class="description">取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>async ID (無ければからっぽ)</dd>
-						<dt>Reference1</dt>
-						<dd>取得URL</dd>
-						<dt>Reference2</dt>
-						<dd>httpレスポンスコード (エラーでも通知される)</dd>
-						<dt>Reference3</dt>
-						<dd>通信バージョン 今時はだいたい "TLSv1/SSLv3" (SSP内部でSSLv2は蹴るので実はこれだけしか来ない)</dd>
-						<dt>Reference4</dt>
-						<dd>暗号化方法<br />例：AES256-SHA</dd>
-						<dt>Reference5</dt>
-						<dd>発行先 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
-						<dt>Reference6</dt>
-						<dd>有効期限開始日時 年,月,日,時,分,秒<br />例：2011,7,7,9,0,0</dd>
-						<dt>Reference7</dt>
-						<dd>有効期限終了日時 年,月,日,時,分,秒<br />例：2012,7,28,8,59,59</dd>
-						<dt>Reference8</dt>
-						<dd>発行者 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnFullScreenAppMinimize">
-				<dt class="entry">OnFullScreenAppMinimize</dt>
-				<dd class="entry">
-					<p class="description">全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。<strong>[NOTIFY]</strong></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnFullScreenAppRestore">
-				<dt class="entry">OnFullScreenAppRestore</dt>
-				<dd class="entry">
-					<p class="description">全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。<strong>[NOTIFY]</strong></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="inputbox.autocomplete">
-				<dt class="entry">inputbox.autocomplete</dt>
-				<dd class="entry">
-					<p class="description">1バイト区切りでリストと入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
-						<dt>Reference1</dt>
-						<dd>inputboxの場合のみ、入力完了時に起きるイベント名／識別子。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="tooltip">
-				<dt class="entry">tooltip</dt>
-				<dd class="entry">
-					<p class="description">ツールチップ内容を通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
-						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
-						<dt>Reference2</dt>
-						<dd>常に0。</dd>
-						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
-						<dt>Reference5</dt>
-						<dd>常に0。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="balloon_tooltip">
-				<dt class="entry">balloon_tooltip</dt>
-				<dd class="entry">
-					<p class="description">バルーン選択肢上のツールチップ内容を通知。</p>
-					<dl class="reference">
-						<dt>Reference*(0)</dt>
-						<dd>選択肢ラベル。</dd>
-						<dt>Reference*(1)</dt>
-						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
-					</dl>
-					<div class="remarks">
-						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
-					</div>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 		</section>
 		<section class="category">
 			<h1>プラグイン-バーチャルビールかけイベント</h1>
