@@ -99,6 +99,8 @@
 				<li><a href="#OnMouseClickEx">OnMouseClickEx</a></li>
 				<li><a href="#OnMouseDoubleClick">OnMouseDoubleClick</a></li>
 				<li><a href="#OnMouseDoubleClickEx">OnMouseDoubleClickEx</a></li>
+				<li><a href="#OnMouseMultipleClick">OnMouseMultipleClick</a></li>
+				<li><a href="#OnMouseMultipleClickEx">OnMouseMultipleClickEx</a></li>
 				<li><a href="#OnMouseUp">OnMouseUp</a></li>
 				<li><a href="#OnMouseUpEx">OnMouseUpEx</a></li>
 				<li><a href="#OnMouseDown">OnMouseDown</a></li>
@@ -1195,6 +1197,60 @@
 						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
 						<dt>Reference6</dt>
 						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseMultipleClick">
+				<dt class="entry">OnMouseMultipleClick</dt>
+				<dd class="entry">
+					<p class="description">3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>左クリックは0、右クリックは1</dd>
+						<dt>Reference6</dt>
+						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dt>Reference7</dt>
+						<dd>連続クリック回数</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMouseMultipleClickEx">
+				<dt class="entry">OnMouseMultipleClickEx</dt>
+				<dd class="entry">
+					<p class="description">左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dt>Reference6</dt>
+						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dt>Reference7</dt>
+						<dd>連続クリック回数</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
