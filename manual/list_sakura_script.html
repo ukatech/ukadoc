@@ -2920,7 +2920,7 @@
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description">※オプション付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2929,7 +2929,7 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description">※オプション付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3008,7 +3008,7 @@
 			<dl id="_!_enter,passivemode_">
 				<dt class="entry">\![enter,passivemode]</dt>
 				<dd class="entry">
-					<p class="description">※PassiveModeを開始する。</p>
+					<p class="description"><a href="#notes_passivemode">※PassiveMode</a>を開始する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3030,7 +3030,7 @@
 			<dl id="_!_enter,inductionmode_">
 				<dt class="entry">\![enter,inductionmode]</dt>
 				<dd class="entry">
-					<p class="description">※InductionModeを開始する。</p>
+					<p class="description"><a href="#notes_inductionmode">※InductionMode</a>を開始する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3190,7 +3190,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_passivemode">
 				<h1>※PassiveMode</h1>
 				<p>パッシブモードの時、以下の制限が発生する。</p>
 				<ul>
@@ -3209,7 +3209,7 @@
 					<li>終了できない。</li>
 				</ul>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_inductionmode">
 				<h1>※InductionMode</h1>
 				<p>パッシブモードから以下の制限を解除したもの。</p>
 				<ul>
@@ -3219,11 +3219,11 @@
 					<li>コミュニケートボックス可能。</li>
 				</ul>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_executehttp">
 				<h1>※http get/post オプション</h1>
 				<dl>
 					<dt>--async=識別ID</dt>
-					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。</dd>
+					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。<br />Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br />例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。myghost/ghost/master/var/ファイル名に保存される。</dd>
 					<dt>--nodescript</dt>
@@ -3231,7 +3231,7 @@
 					<dt>--param=パラメータ</dt>
 					<dd>get/postのパラメータを指定します。</dd>
 					<dt>--timeout=秒数</dt>
-					<dd>通信のタイムアウトする時間を指定します。(300秒まで)</dd>
+					<dd>レスポンスを待つ時間（※ダウンロードに要する時間ではない）を指定します。最大300秒。</dd>
 					<dt>--param-charset=文字コード</dt>
 					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
 					<dt>--cookie=クッキーデータ</dt>

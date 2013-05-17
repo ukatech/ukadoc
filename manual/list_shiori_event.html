@@ -1919,7 +1919,7 @@
 						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
 					</dl>
 					<div class="remarks">
-						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
+						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
 					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1968,7 +1968,7 @@
 					<p class="description">アーカイブのインストール開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
+						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
 						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
@@ -1987,7 +1987,7 @@
 					<p class="description">インストールが正常終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
+						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
 						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
@@ -2006,7 +2006,7 @@
 					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の種別。※識別子参照(複数の場合は1バイト区切り)</dd>
+						<dd>インストールした物の種別。<a href="#notes_installidentifier">※識別子</a>参照(複数の場合は1バイト区切り)</dd>
 						<dt>Reference1</dt>
 						<dd>インストールした物の名前。(複数の場合は1バイト区切り)</dd>
 						<dt>Reference2</dt>
@@ -2023,7 +2023,7 @@
 					<p class="description">インストールに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
+						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a><br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
 						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
@@ -2042,7 +2042,7 @@
 					<p class="description">インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の※識別子を返す。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
+						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>を返す。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
 						<dt>Reference1</dt>
 						<dd>成功した時、内容の名前。</dd>
 						<dt>Reference2</dt>
@@ -2055,7 +2055,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption">
+			<div class="caption" id="notes_installidentifier">
 				<dl>
 					<dt>※インストールの識別子</dt>
 					<dd>shell / ghost / balloon / plugin / headline /supplement</dd>
@@ -2215,7 +2215,7 @@
 						<dt>Reference1</dt>
 						<dd>narに出力されたファイル名。</dd>
 						<dt>Reference2</dt>
-						<dd>識別子。インストールの識別子参照。</dd>
+						<dd><a href="#notes_installidentifier">※識別子</a>。インストールの識別子参照。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2234,7 +2234,7 @@
 						<dt>Reference1</dt>
 						<dd>narに出力されたファイル名。</dd>
 						<dt>Reference2</dt>
-						<dd>識別子。インストールの識別子参照。</dd>
+						<dd><a href="#notes_installidentifier">※識別子</a>。インストールの識別子参照。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2364,7 +2364,7 @@
 					<p class="description">ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -2385,7 +2385,7 @@
 					<p class="description">ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSPのみ　失敗したファイル名。</dd>
 						<dt>Reference3</dt>
@@ -2535,7 +2535,7 @@
 					<p class="description">ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -2554,7 +2554,7 @@
 					<p class="description">ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※成功/失敗理由</dd>
+						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -2670,7 +2670,7 @@
 					<p class="description">ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※失敗理由</dd>
+						<dd><a href="#notes_updateresult">※失敗理由</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2679,7 +2679,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_updateresult">
 				<h1>※成功/失敗理由</h1>
 				<dl>
 					<dt>none</dt>
@@ -2725,7 +2725,7 @@
 					<dd>OK、NGのいずれか。OKで成功、NGで失敗。</dd>
 					<dt>※３</dt>
 					<dd>成功した場合＝更新ファイル数(0もあり)<br />
-					失敗した場合＝失敗理由。md5 failureなど通常のネットワーク更新時と同じ。少し上の「※成功/失敗理由」も参照すること。</dd>
+					失敗した場合＝失敗理由。md5 failureなど通常のネットワーク更新時と同じ。（「<a href="#notes_updateresult">※成功/失敗理由</a>」も参照）</dd>
 					<dt>※４</dt>
 					<dd>失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</dd>
 				</dl>
@@ -2944,7 +2944,7 @@
 						<dt>Reference1</dt>
 						<dd>ヘッドラインセンスするURL。</dd>
 						<dt>Reference2</dt>
-						<dd>※OnFind フェーズ</dd>
+						<dd><a href="#notes_headlinesensephase">※OnFind フェーズ</a></dd>
 						<dt>Reference3</dt>
 						<dd>ヘッドラインの内容。</dd>
 					</dl>
@@ -2960,7 +2960,7 @@
 					<p class="description">ヘッドラインセンスが正常に終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※終了理由</dd>
+						<dd><a href="#notes_headlinesenseresult">※終了理由</a></dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2974,7 +2974,7 @@
 					<p class="description">ヘッドラインセンスに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※終了理由</dd>
+						<dd><a href="#notes_headlinesenseresult">※終了理由</a></dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2982,7 +2982,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_headlinesensephase">
 				<h1>※OnFind フェーズ</h1>
 				<dl>
 					<dt>First</dt>
@@ -2995,7 +2995,7 @@
 					<dd>いずれでもないページ</dd>
 				</dl>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_headlinesenseresult">
 				<h1>※終了理由</h1>
 				<dl>
 					<dt>no update</dt>
