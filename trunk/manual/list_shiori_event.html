@@ -244,6 +244,18 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>カレンダーイベント</h1>
+			<ul>
+				<li><a href="#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a></li>
+				<li><a href="#OnScheduleRead">OnScheduleRead</a></li>
+				<li><a href="#OnSchedulesenseBegin">OnSchedulesenseBegin</a></li>
+				<li><a href="#OnSchedulesenseComplete">OnSchedulesenseComplete</a></li>
+				<li><a href="#OnSchedulesenseFailure">OnSchedulesenseFailure</a></li>
+				<li><a href="#OnSchedulepostBegin">OnSchedulepostBegin</a></li>
+				<li><a href="#OnSchedulepostComplete">OnSchedulepostComplete</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>SSTPイベント</h1>
 			<ul>
 				<li><a href="#OnSSTPBreak">OnSSTPBreak</a></li>
@@ -3004,6 +3016,153 @@
 					<dd>ファイルが取れなかった</dd>
 					<dt>can't analyze</dt>
 					<dd>ファイルは取れたが、有効なヘッドラインを取得できなかった</dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category">
+			<h1>カレンダーイベント</h1>
+			<dl id="OnSchedule5MinutesToGo">
+				<dt class="entry">OnSchedule5MinutesToGo</dt>
+				<dd class="entry">
+					<p class="description">本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>イベントの<a href="#notes_scheduletype">タイプ</a></dd>
+						<dt>Reference1</dt>
+						<dd>イベントの内容(caption)</dd>
+						<dt>Reference2</dt>
+						<dd>追加データ(subtitle)</dd>
+						<dt>Reference3</dt>
+						<dd>スクリプト(script)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnScheduleRead">
+				<dt class="entry">OnScheduleRead</dt>
+				<dd class="entry">
+					<p class="description">カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>イベントの<a href="#notes_scheduletype">タイプ</a>。</dd>
+						<dt>Reference1</dt>
+						<dd>イベントの内容(caption)</dd>
+						<dt>Reference2</dt>
+						<dd>追加データ(subtitle)</dd>
+						<dt>Reference3</dt>
+						<dd>スクリプト(script)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSchedulesenseBegin">
+				<dt class="entry">OnSchedulesenseBegin</dt>
+				<dd class="entry">
+					<p class="description">スケジュールセンサが接続開始する際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スケジュールセンサの名前</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSchedulesenseComplete">
+				<dt class="entry">OnSchedulesenseComplete</dt>
+				<dd class="entry">
+					<p class="description">スケジュールセンサの処理が完了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スケジュールセンサの名前</dd>
+						<dt>Reference1</dt>
+						<dd>スケジュールセンサの返したスケジュールデータの数</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSchedulesenseFailure">
+				<dt class="entry">OnSchedulesenseFailure</dt>
+				<dd class="entry">
+					<p class="description">スケジュールセンサの処理に失敗した場合に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#notes_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSchedulepostBegin">
+				<dt class="entry">OnSchedulepostBegin</dt>
+				<dd class="entry">
+					<p class="description">スケジュールセンサが投稿モードで接続開始する際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スケジュールセンサの名前</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSchedulepostComplete">
+				<dt class="entry">OnSchedulepostComplete</dt>
+				<dd class="entry">
+					<p class="description">スケジュールセンサが投稿処理を完了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スケジュールセンサの名前</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="notes_scheduletype">
+				<h1>※スケジュールタイプ</h1>
+				<dl>
+					<dt>default</dt>
+					<dd>認識できないタイプ</dd>
+					<dt>event</dt>
+					<dd>汎用</dd>
+					<dt>meeting</dt>
+					<dd>会議</dd>
+					<dt>appointment</dt>
+					<dd>アポイントメント</dd>
+					<dt>reservation</dt>
+					<dd>病院などの予約</dd>
+					<dt>duedate</dt>
+					<dd>しめきり</dd>
+					<dt>party</dt>
+					<dd>パーティー・飲み会</dd>
+					<dt>date</dt>
+					<dd>デート</dd>
+					<dt>work</dt>
+					<dd>仕事</dd>
+					<dt>go</dt>
+					<dd>お出かけ</dd>
+					<dt>tv</dt>
+					<dd>テレビ番組</dd>
+					<dt>recording</dt>
+					<dd>録画予約</dd>
+					<dt>cd</dt>
+					<dd>CD発売日</dd>
+					<dt>game</dt>
+					<dd>ゲーム発売日</dd>
+					<dt>video</dt>
+					<dd>映像メディアの発売日</dd>
+					<dt>book</dt>
+					<dd>書籍発売日</dd>
+					<dt>release</dt>
+					<dd>その他発売日</dd>
 				</dl>
 			</section>
 		</section>
