@@ -25,6 +25,7 @@
 	<section class="navigation-bar">
 		<h1>プロパティシステム</h1>
 		<section class="navigation-category">
+			<h1>プロパティシステム</h1>
 			<ul>
 				<li><a href="#system.year">system.year</a></li>
 				<li><a href="#system.month">system.month</a></li>
@@ -99,9 +100,7 @@
 				<li><a href="#rateofuselist.index(順位).bootminute">rateofuselist.index(順位).bootminute</a></li>
 				<li><a href="#rateofuselist.index(順位).percent">rateofuselist.index(順位).percent</a></li>
 			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>汎用プロパティ名</h1>
+			<h2>汎用プロパティ名</h2>
 			<ul>
 				<li><a href="#name">name</a></li>
 				<li><a href="#sakuraname">sakuraname</a></li>
@@ -126,14 +125,20 @@
 		<section class="category">
 			<h1>プロパティシステム</h1>
 			<div class="caption">
+				<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みです。</p>
+				<ul>
+					<li><a href="http://crow.aqrs.jp/devtest.html" target="_blank">参考:CROW テスト項目資料</a></li>
+				</ul>
+			</div>
+			<div class="caption">
 				<p>プロパティシステムは環境変数とタグの両方で使えます。<br />※詳細はSAKURA Scriptおよび環境変数のプロパティシステムの項参考。</p>
 				<dl>
 					<dt>環境変数による拾得の仕方</dt>
-					<dd>%property[プロパティ名]</dd>
+					<dd><a href="list_sakura_script.html#_property_取得内容_">%property[プロパティ名]</a></dd>
 					<dt>タグによる書き込み方</dt>
-					<dd>\![set,property,プロパティ名,値]<br />※全ての値に対してsetが有効なわけではありません。</dd>
+					<dd><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a><br />※全ての値に対してsetが有効なわけではありません。</dd>
 					<dt>タグによる読み込み方</dt>
-					<dd>\![get,property,イベント名,プロパティ名]<br />指定した名前のSHIORI Eventが発生し、Reference0以降に一つずつプロパティシステムの値が入ります。</dd>
+					<dd><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a><br />指定した名前のSHIORI Eventが発生し、Reference0以降に一つずつプロパティシステムの値が入ります。</dd>
 				</dl>
 			</div>
 			<dl id="system.year">
@@ -833,9 +838,7 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>汎用プロパティ名</h1>
+			<h2>汎用プロパティ名</h2>
 			<dl id="name">
 				<dt class="entry">name</dt>
 				<dd class="entry">
