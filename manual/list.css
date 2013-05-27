@@ -80,6 +80,13 @@ a:hover	{
 	background-color: #99c;
 	text-align: left;
 }
+.navigation-category h2 {
+	font-size: medium;
+	border-top:1px solid #99c;
+	border-bottom:1px solid #99c;
+	padding: 3px 5px;
+	text-align: left;
+}
 .navigation-bar ul {
 	padding: 0 0 20px 20px;
 }
@@ -104,6 +111,12 @@ a:hover	{
 	padding: 5px;
 	color: #fff;
 	background-color: #669;
+}
+.category h2 {
+	font-size: x-large;
+	padding: 5px;
+	border-top:1px solid #669;
+	border-bottom:1px solid #669;
 }
 .category strong {
 	font-weight: normal;

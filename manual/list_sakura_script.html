@@ -56,6 +56,7 @@
 				<li><a href="#_!_set,alignmenttodesktop,right_">\![set,alignmenttodesktop,right]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,free_">\![set,alignmenttodesktop,free]</a></li>
 				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
+				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,横倍率,縦倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
 				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,default_">\![set,alignmenttodesktop,default]</a></li>
@@ -624,16 +625,26 @@
 				<dt class="entry">\![set,scaling,倍率]</dt>
 				<dd class="entry">
 					<p class="description">サーフィスの倍率を変更する。</p>
+					<p class="description">サーフィスの倍率を変更する。単位%。<br />ユーザの設定する倍率を１００％とした倍率。<br />負数の指定が可能で、-100でその軸方向に反転する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_set,scaling,横倍率,縦倍率_">
+				<dt class="entry">\![set,scaling,横倍率,縦倍率]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスの倍率を縦比・横比別それぞれに変更する。単位%。<br />ユーザの設定する倍率を１００％とした倍率。<br />負数の指定が可能で、-100でその軸方向に反転する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
 				<dt class="entry">\![set,scaling,横倍率,縦倍率,変化時間]</dt>
 				<dd class="entry">
-					<p class="description">サーフィスの倍率を精密に変更する。</p>
+					<p class="description">サーフィスの倍率を精密に変更する。<br />倍率の単位は%、変化時間の単位はミリ秒。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
