@@ -35,14 +35,11 @@
 				<li><a href="#charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
-				<li><a href="#menu,hidden">menu</a></li>
+				<li><a href="#menu,hidden">menu,hidden</a></li>
 				<li><a href="#sakura.name,名前">sakura.name,名前</a></li>
 				<li><a href="#sakura.name2,名前">sakura.name2,名前</a></li>
-				<li><a href="#sakura.menu,hidden">sakura.menu,hidden</a></li>
 				<li><a href="#kero.name,名前">kero.name,名前</a></li>
-				<li><a href="#kero.menu,hidden">kero.menu,hidden</a></li>
 				<li><a href="#char*.name,名前">char*.name,名前</a></li>
-				<li><a href="#char*.menu,hidden">char*.menu,hidden</a></li>
 				<li><a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop,位置情報</a></li>
 				<li><a href="#sakura.seriko.alignmenttodesktop,位置情報">sakura.seriko.alignmenttodesktop,位置情報</a></li>
 				<li><a href="#kero.seriko.alignmenttodesktop,位置情報">kero.seriko.alignmenttodesktop,位置情報</a></li>
@@ -91,19 +88,19 @@
 				<li><a href="#sakura.bindgroup*.addid,ID">sakura.bindgroup*.addid,ID</a></li>
 				<li><a href="#sakura.bindoption*.group,グループ名,オプション">sakura.bindoption*.group,グループ名,オプション</a></li>
 				<li><a href="#sakura.menuitem*,数値">sakura.menuitem*,数値</a></li>
-				<li><a href="#sakura.menu,auto">sakura.menu,auto</a></li>
+				<li><a href="#sakura.menu,autoまたはhidden">sakura.menu,autoまたはhidden</a></li>
 				<li><a href="#kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#kero.bindgroup*.default,数値">kero.bindgroup*.default,数値</a></li>
 				<li><a href="#kero.bindgroup*.addid,ID">kero.bindgroup*.addid,ID</a></li>
 				<li><a href="#kero.bindoption*.group,グループ名,オプション">kero.bindoption*.group,グループ名,オプション</a></li>
 				<li><a href="#kero.menuitem*,数値">kero.menuitem*,数値</a></li>
-				<li><a href="#kero.menu,auto">kero.menu,auto</a></li>
+				<li><a href="#kero.menu,autoまたはhidden">kero.menu,autoまたはhidden</a></li>
 				<li><a href="#char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#char*.bindgroup*.default,数値">char*.bindgroup*.default,数値</a></li>
 				<li><a href="#char*.bindgroup*.addid,ID">char*.bindgroup*.addid,ID</a></li>
 				<li><a href="#char*.bindoption*.group,グループ名,オプション">char*.bindoption*.group,グループ名,オプション</a></li>
 				<li><a href="#char*.menuitem*,数値">char*.menuitem*,数値</a></li>
-				<li><a href="#char*.menu,auto">char*.menu,auto</a></li>
+				<li><a href="#char*.menu,autoまたはhidden">char*.menu,autoまたはhidden</a></li>
 				<li><a href="#seriko.paint_transparent_region_black,数値">seriko.paint_transparent_region_black,数値</a></li>
 				<li><a href="#seriko.use_self_alpha,数値">seriko.use_self_alpha,数値</a></li>
 			</ul>
@@ -208,7 +205,7 @@
 			<dl id="menu,hidden">
 				<dt class="entry">menu,hidden</dt>
 				<dd class="entry">
-					<p class="description">シェルをゴーストのシェルリストに表示しなくなる。</p>
+					<p class="description">シェルをゴーストのシェル切り替えメニューに表示しなくなる。</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -237,16 +234,6 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="sakura.menu,hidden">
-				<dt class="entry">sakura.menu,hidden</dt>
-				<dd class="entry">
-					<p class="description">シェルの本体側スコープの着せ替えメニューに内容を表示しなくなる。</p>
-					<p class="default">値なし</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="kero.name,名前">
 				<dt class="entry">kero.name,名前</dt>
 				<dd class="entry">
@@ -259,31 +246,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="kero.menu,hidden">
-				<dt class="entry">kero.menu,hidden</dt>
-				<dd class="entry">
-					<p class="description">シェルの相方側スコープの着せ替えメニューに内容を表示しなくなる。</p>
-					<p class="default">値なし</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="char*.name,名前">
 				<dt class="entry">char*.name,名前</dt>
 				<dd class="entry">
 					<p class="description">\p[*]の名前。</p>
 					<p class="default">ghostのdescript設定</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="char*.menu,hidden">
-				<dt class="entry">char*.menu,hidden</dt>
-				<dd class="entry">
-					<p class="description">シェルの*番スコープの着せ替えメニューに内容を表示しなくなる。</p>
-					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -827,11 +794,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="sakura.menu,auto">
-				<dt class="entry">sakura.menu,auto</dt>
+			<dl id="sakura.menu,autoまたはhidden">
+				<dt class="entry">sakura.menu,autoまたはhidden</dt>
 				<dd class="entry">
-					<p class="description">着せ替えメニューを自動で表示。(本体側)</p>
-					<p class="default">手動設定</p>
+					<p class="description">シェルの本体側の着せ替えメニューの表示。<br />autoで自動表示、hiddenで非表示。</p>
+					<p class="default">動作なし（手動設定）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -895,11 +862,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="kero.menu,auto">
-				<dt class="entry">kero.menu,auto</dt>
+			<dl id="kero.menu,autoまたはhidden">
+				<dt class="entry">kero.menu,autoまたはhidden</dt>
 				<dd class="entry">
-					<p class="description">着せ替えメニューを自動で表示。(相方側)</p>
-					<p class="default">手動設定</p>
+					<p class="description">シェルの相方側の着せ替えメニューの表示。<br />autoで自動表示、hiddenで非表示。</p>
+					<p class="default">動作なし（手動設定）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -960,11 +927,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="char*.menu,auto">
-				<dt class="entry">char*.menu,auto</dt>
+			<dl id="char*.menu,autoまたはhidden">
+				<dt class="entry">char*.menu,autoまたはhidden</dt>
 				<dd class="entry">
-					<p class="description">着せ替えメニューを自動で表示。(2人目以降の相方側)</p>
-					<p class="default">手動設定</p>
+					<p class="description">シェルの*番スコープの着せ替えメニューの表示。<br />autoで自動表示、hiddenで非表示。</p>
+					<p class="default">動作なし（手動設定）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
