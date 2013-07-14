@@ -55,9 +55,6 @@
 				<li><a href="#font.italic,0/1">font.italic,0/1</a></li>
 				<li><a href="#font.strike,0/1">font.strike,0/1</a></li>
 				<li><a href="#font.outline,0/1">font.outline,0/1</a></li>
-				<li><a href="#anchor.font.color.r,数値">anchor.font.color.r,数値</a></li>
-				<li><a href="#anchor.font.color.g,数値">anchor.font.color.g,数値</a></li>
-				<li><a href="#anchor.font.color.b,数値">anchor.font.color.b,数値</a></li>
 				<li><a href="#cursor.style,形状">cursor.style,形状</a></li>
 				<li><a href="#cursor.blendmethod,コマンド">cursor.blendmethod,コマンド</a></li>
 				<li><a href="#cursor.font.color.r,数値">cursor.font.color.r,数値</a></li>
@@ -69,6 +66,20 @@
 				<li><a href="#cursor.brush.color.r,数値">cursor.brush.color.r,数値</a></li>
 				<li><a href="#cursor.brush.color.g,数値">cursor.brush.color.g,数値</a></li>
 				<li><a href="#cursor.brush.color.b,数値">cursor.brush.color.b,数値</a></li>
+				<li><a href="#cursor.notselect.style,形状">cursor.notselect.style,形状</a></li>
+				<li><a href="#cursor.notselect.blendmethod,コマンド">cursor.notselect.blendmethod,コマンド</a></li>
+				<li><a href="#cursor.notselect.font.color.r,数値">cursor.notselect.font.color.r,数値</a></li>
+				<li><a href="#cursor.notselect.font.color.g,数値">cursor.notselect.font.color.g,数値</a></li>
+				<li><a href="#cursor.notselect.font.color.b,数値">cursor.notselect.font.color.b,数値</a></li>
+				<li><a href="#cursor.notselect.pen.color.r,数値">cursor.notselect.pen.color.r,数値</a></li>
+				<li><a href="#cursor.notselect.pen.color.g,数値">cursor.notselect.pen.color.g,数値</a></li>
+				<li><a href="#cursor.notselect.pen.color.b,数値">cursor.notselect.pen.color.b,数値</a></li>
+				<li><a href="#cursor.notselect.brush.color.r,数値">cursor.notselect.brush.color.r,数値</a></li>
+				<li><a href="#cursor.notselect.brush.color.g,数値">cursor.notselect.brush.color.g,数値</a></li>
+				<li><a href="#cursor.notselect.brush.color.b,数値">cursor.notselect.brush.color.b,数値</a></li>
+				<li><a href="#anchor.font.color.r,数値">anchor.font.color.r,数値</a></li>
+				<li><a href="#anchor.font.color.g,数値">anchor.font.color.g,数値</a></li>
+				<li><a href="#anchor.font.color.b,数値">anchor.font.color.b,数値</a></li>
 				<li><a href="#anchor.style,形状">anchor.style,形状</a></li>
 				<li><a href="#anchor.blendmethod,コマンド">anchor.blendmethod,コマンド</a></li>
 				<li><a href="#anchor.pen.color.r,数値">anchor.pen.color.r,数値</a></li>
@@ -466,42 +477,6 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="anchor.font.color.r,数値">
-				<dt class="entry">anchor.font.color.r,数値</dt>
-				<dd class="entry">
-					<p class="description">アンカーフォント色赤(0～255)</p>
-					<p class="default">0</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="anchor.font.color.g,数値">
-				<dt class="entry">anchor.font.color.g,数値</dt>
-				<dd class="entry">
-					<p class="description">アンカーフォント色緑(0～255)</p>
-					<p class="default">0</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="anchor.font.color.b,数値">
-				<dt class="entry">anchor.font.color.b,数値</dt>
-				<dd class="entry">
-					<p class="description">アンカーフォント色青(0～255)</p>
-					<p class="default">0</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="cursor.style,形状">
 				<dt class="entry">cursor.style,形状</dt>
 				<dd class="entry">
@@ -634,21 +609,137 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="anchor.style,形状">
-				<dt class="entry">anchor.style,形状</dt>
+			<dl id="cursor.notselect.font.color.r,数値">
+				<dt class="entry">cursor.notselect.font.color.r,数値</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
-					<p class="default">underline</p>
+					<p class="description">非選択中の選択肢のフォント色赤(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="anchor.blendmethod,コマンド">
-				<dt class="entry">anchor.blendmethod,コマンド</dt>
+			<dl id="cursor.notselect.font.color.g,数値">
+				<dt class="entry">cursor.notselect.font.color.g,数値</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーのラスタオペレーションコマンド。<br />noneで無し。<br />notmaskpenでr2_notmaskpen。<br />mergepennotでr2_mergepennot。</p>
-					<p class="default">none</p>
+					<p class="description">非選択中の選択肢のフォント色緑(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.font.color.b,数値">
+				<dt class="entry">cursor.notselect.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢のフォント色青(0～255)<br />ラスタオペレーションコマンドが無い場合使用。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.pen.color.r,数値">
+				<dt class="entry">cursor.notselect.pen.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形枠および下線の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.pen.color.g,数値">
+				<dt class="entry">cursor.notselect.pen.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形枠および下線の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.pen.color.b,数値">
+				<dt class="entry">cursor.notselect.pen.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形枠および下線の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.brush.color.r,数値">
+				<dt class="entry">cursor.notselect.brush.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形内の色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.brush.color.g,数値">
+				<dt class="entry">cursor.notselect.brush.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形内の色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.brush.color.b,数値">
+				<dt class="entry">cursor.notselect.brush.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">非選択中の選択肢の矩形内の色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.r,数値">
+				<dt class="entry">anchor.font.color.r,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色赤(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.g,数値">
+				<dt class="entry">anchor.font.color.g,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色緑(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.font.color.b,数値">
+				<dt class="entry">anchor.font.color.b,数値</dt>
+				<dd class="entry">
+					<p class="description">アンカーフォント色青(0～255)</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="anchor.style,形状">
+				<dt class="entry">anchor.style,形状</dt>
+				<dd class="entry">
+					<p class="description">選択中アンカーの形状。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="default">underline</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
