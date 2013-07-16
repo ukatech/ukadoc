@@ -33,6 +33,7 @@
 				<li><a href="#craftman,作者名">craftman,作者名</a></li>
 				<li><a href="#craftmanw,作者名">craftmanw,作者名</a></li>
 				<li><a href="#id,ID名">id,ID名</a></li>
+				<li><a href="#title,表示名">title,表示名</a></li>
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#sakura.name,名前">sakura.name,名前</a></li>
@@ -63,8 +64,9 @@
 				<li><a href="#sstp.allowcommunicate,数値">sstp.allowcommunicate,数値</a></li>
 				<li><a href="#sstp.alwaystranslate,数値">sstp.alwaystranslate,数値</a></li>
 				<li><a href="#name.allowoverride,数値">name.allowoverride,数値</a></li>
+				<li><a href="#shiori.version,バージョン">shiori.version,バージョン</a></li>
 				<li><a href="#shiori.cache,数値">shiori.cache,数値</a></li>
-				<li><a href="#shiori.encoding,数値">shiori.encoding,数値</a></li>
+				<li><a href="#shiori.encoding,文字コード">shiori.encoding,文字コード</a></li>
 				<li><a href="#don&#39;t_need_onmousemove,数値">don&#39;t need onmousemove,数値</a></li>
 				<li><a href="#don&#39;t_need_bind,数値">don&#39;t need bind,数値</a></li>
 				<li><a href="#don&#39;t_need_seriko_talk,数値">don&#39;t need seriko talk,数値</a></li>
@@ -147,7 +149,19 @@
 			<dl id="id,ID名">
 				<dt class="entry">id,ID名</dt>
 				<dd class="entry">
-					<p class="description">そのゴーストのID名。半角英数のみ。</p>
+					<p class="description">そのゴーストのID名。半角英数のみ。<br />起動ログのないSSPでは無意味。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="title,表示名">
+				<dt class="entry">title,表示名</dt>
+				<dd class="entry">
+					<p class="description">そのゴーストの起動ログでIDの変わりに表示される名前。半角英数のみ。<br />起動ログのないSSPでは無意味。</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -465,6 +479,16 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="shiori.version,バージョン">
+				<dt class="entry">shiori.version,バージョン</dt>
+				<dd class="entry">
+					<p class="description">SHIORIのプロトコルバージョン指定。<br />SHIORI/ 2.0のみに対応する古い栞等で指定が必要になる場合がある。</p>
+					<p class="default">値なし（2.0で呼び出し施行した後、応答がない場合に3.0で呼び出し）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="shiori.cache,数値">
 				<dt class="entry">shiori.cache,数値</dt>
 				<dd class="entry">
@@ -475,11 +499,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="shiori.encoding,数値">
-				<dt class="entry">shiori.encoding,数値</dt>
+			<dl id="shiori.encoding,文字コード">
+				<dt class="entry">shiori.encoding,文字コード</dt>
 				<dd class="entry">
-					<p class="description">1でCharsetのないSHIORIで強制エンコーディングする。</p>
-					<p class="default">0</p>
+					<p class="description">SHIORIがCharsetを返さない場合に、指定した文字コードで強制的にエンコーディングする。</p>
+					<p class="default">0（loadしない）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
