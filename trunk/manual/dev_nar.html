@@ -79,7 +79,7 @@ refresh,1
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
-refreshundeletemask,save1:txt,save2.txt
+refreshundeletemask,save1.txt:save2.txt
 </pre>
 					<p>リフレッシュインストールの際に残しておきたいファイルを指定します。</p>
 					<p>ファイル名のみでパスは含みません。</p>
@@ -114,10 +114,10 @@ balloon.directory,バルーンフォルダ名
 charset,Shift_JIS
 type,supplement
 name,内容
-accept,受け取るゴースト名
+accept,受け取るゴーストの本体側（\0,sakura）名
 </pre>
 					<p>とします。</p>
-					<p>この場合、受け取るゴーストに指定されたゴーストでなければインストールできません。</p>
+					<p>この場合、指定されたゴーストでなければインストールできません。</p>
 					<p>ファイルの階層構成は普通のゴーストのnarファイルと同じです。</p>
 				</div>
 				<div class="section">
@@ -150,19 +150,72 @@ directory,シェルのディレクトリ名
 				</div>
 			</div>
 			<div class="chapter">
-				<h3 id="package">4、複数インストール用パッケージを作る</h3>
+				<h3>4、アーカイブにバルーンなどを同梱する</h3>
+				<div class="section">
+					<p>以下のようなファイルの配置を考えます。</p>
+<pre>
+　　-myghost
+　　-install.txt (package用)
+　　　　<em>-install.txt</em>
+　　　　+-ghost
+　　　　+-shell
+　　　　<em>-myballoon</em>
+　　　　　　-descript.txt
+　　　　　　-balloons0.png
+　　　　　　:
+　　　　　　:
+</pre>
+				</div>
+				<div class="section">
+					<p>この時install.txtを以下のように書けば、ゴーストと同時にバルーンのインストールができます。</p>
+<pre class="exmp-descript2">
+charset,Shift_JIS
+type,ghost
+name,ゴースト名
+directory,ゴーストのフォルダ名(英数で)
+<em>balloon.directory,myballoon</em>（※バルーンのフォルダ名。英数）
+</pre>
+					<p>この場合balloon側にinstall.txtは不要です<br>※あっても無視されます。単独配布を見越して入れておいても大丈夫。</p>
+				</div>
+				<div class="section">
+					<p>また、もし設置後のバルーンフォルダ名と、配布時のフォルダ名が異なる場合は以下のようにします。</p>
+<pre class="exmp-descript2">
+charset,Shift_JIS
+type,ghost
+name,ゴースト名
+directory,ゴーストのフォルダ名(英数で)
+balloon.directory,<em>hoge_balloon</em>（※設置後のバルーンフォルダ名。英数）
+<em>balloon.source.directory,myballoon</em>（※配布時のバルーンフォルダ名。英数）
+</pre>
+					<p>これで上例のmyballoonというバルーンのフォルダは、<br>実際のインストール後にはhoge_balloonというフォルダ名になります。</p>
+				</div>
+				<div class="section">
+					<p>同梱するファイルについてのrefreshの設定は以下のようにします。</p>
+<pre class="exmp-descript2">
+balloon.refresh,1
+balloon.refreshundeletemask,hoge.png:huga.txt:...
+</pre>
+				</div>
+				<div class="section">
+					<p>なお、同様の同梱はballoon以外にheadlineとpluginについて可能です。</p>
+					<p>インストールの主体側も、ghost以外にshellについて同様に同梱の設定ができます。</p>
+				</div>
+			</div>
+			<div class="chapter">
+				<h3 id="package">5、複数インストール用パッケージを作る</h3>
+				<div class="section">
+					<p>この方法はSSP専用となっています。</p>
+				</div>
 				<div class="section">
 <pre class="exmp-descript2">
 charset,Shift_JIS
 type,package
 name,内容
 </pre>
-				</div>
-				<div class="section">
 					<p>とすると、複数インストール用パッケージを作ることができます。</p>
-					<p>その際、中のファイルの配置は以下のようにします。</p>
 				</div>
 				<div class="section">
+					<p>その際、中のファイルの配置は以下のようにします。</p>
 <pre>
 　　-mypackage
 　　-install.txt (package用)
@@ -183,7 +236,7 @@ name,内容
 				</div>
 			</div>
 			<div class="chapter">
-				<h3>5、ツールでもっと楽にファイルを作る</h3>
+				<h3>6、ツールでもっと楽にファイルを作る</h3>
 				<div class="section">
 					<p>以下のようなツールを使えば、面倒なファイルの選別やFTPアップロードを自動化できます。</p>
 					<p>また、必要ファイルの選別や<em>updates2.dau</em>の更新をしてからnarファイルを作成する事もできます。</p>

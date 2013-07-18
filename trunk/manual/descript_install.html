@@ -25,53 +25,26 @@
 	<section class="navigation-bar">
 		<h1>Install</h1>
 		<section class="navigation-category">
-			<h1>install.txt(ゴースト、バルーン、プラグイン、ヘッドラインセンサ)</h1>
+			<h1>install.txt</h1>
 			<ul>
-				<li><a href="#_1_charset,文字コード">charset,文字コード</a></li>
-				<li><a href="#_1_name,オブジェクト名">name,オブジェクト名</a></li>
-				<li><a href="#_1_type,種別">type,種別</a></li>
-				<li><a href="#_1_accept,本体側名">accept,本体側名</a></li>
-				<li><a href="#_1_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
-				<li><a href="#_1_refresh,数値">refresh,数値</a></li>
-				<li><a href="#_1_refreshundeletemask,ファイル名1;ファイル名2...">refreshundeletemask,ファイル名1;ファイル名2...</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>install.txt(ゴーストwithバルーン)</h1>
-			<ul>
-				<li><a href="#_2_charset,文字コード">charset,文字コード</a></li>
-				<li><a href="#_2_name,オブジェクト名">name,オブジェクト名</a></li>
-				<li><a href="#_2_type,種別">type,種別</a></li>
-				<li><a href="#_2_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
-				<li><a href="#_2_balloon.directory,ディレクトリ名">balloon.directory,ディレクトリ名</a></li>
-				<li><a href="#_2_refresh,数値">refresh,数値</a></li>
-				<li><a href="#_2_refreshundeletemask,ファイル名1;ファイル名2...">refreshundeletemask,ファイル名1;ファイル名2...</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>install.txt(ゴーストへの追加ファイル)</h1>
-			<ul>
-				<li><a href="#_3_name,オブジェクト名">name,オブジェクト名</a></li>
-				<li><a href="#_3_type,種別">type,種別</a></li>
-				<li><a href="#_3_accept,本体側名">accept,本体側名</a></li>
-				<li><a href="#_3_charset,文字コード">charset,文字コード</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>install.txt(追加シェル)</h1>
-			<ul>
-				<li><a href="#_4_charset,文字コード">charset,文字コード</a></li>
-				<li><a href="#_4_name,オブジェクト名">name,オブジェクト名</a></li>
-				<li><a href="#_4_type,種別">type,種別</a></li>
-				<li><a href="#_4_accept,本体側名">accept,本体側名</a></li>
-				<li><a href="#_4_directory,ディレクトリ名">directory,ディレクトリ名</a></li>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#name,オブジェクト名">name,オブジェクト名</a></li>
+				<li><a href="#type,種別">type,種別</a></li>
+				<li><a href="#accept,本体側名">accept,本体側名</a></li>
+				<li><a href="#directory,ディレクトリ名">directory,ディレクトリ名</a></li>
+				<li><a href="#refresh,数値">refresh,数値</a></li>
+				<li><a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask,ファイル名1:ファイル名2...</a></li>
+				<li><a href="#*.directory,ディレクトリ名">*.directory,ディレクトリ名</a></li>
+				<li><a href="#*.source.directory,ディレクトリ名">*.source.directory,ディレクトリ名</a></li>
+				<li><a href="#*.refresh,数値">*.refresh,数値</a></li>
+				<li><a href="#*.refreshundeletemask,ファイル名1:ファイル名2...">*.refreshundeletemask,ファイル名1:ファイル名2...</a></li>
 			</ul>
 		</section>
 	</section>
 	<div class="categories">
 		<section class="category">
-			<h1>install.txt(ゴースト、バルーン、プラグイン、ヘッドラインセンサ)</h1>
-			<dl id="_1_charset,文字コード">
+			<h1>install.txt</h1>
+			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
@@ -82,7 +55,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_name,オブジェクト名">
+			<dl id="name,オブジェクト名">
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトの名前。</p>
@@ -94,10 +67,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_type,種別">
+			<dl id="type,種別">
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />複数パッケージの場合はpackage。(SSPのみ)</p>
+					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />カレンダーの素金の場合はcalendar skin。<br />カレンダーのスケジュールセンサの場合はcalendar plugin<br /><a href="dev_nar.html#package">複数パッケージの場合はpackage</a>。(SSPのみ)</p>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -106,10 +79,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_accept,本体側名">
+			<dl id="accept,本体側名">
 				<dt class="entry">accept,本体側名</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
+					<p class="description">ファイルセットを受け取ることができるゴーストの<em>本体側の</em>名前（＝\0名,sakura名）。<br />もしくはゴースト側descript.txtの<a href="descript_ghost.html#install.accept,名前1,名前2,名前3...">install.accept</a>に設定してある名前でも可。<br />追加シェルや追加ファイル（supplement）など、特定ゴーストに渡す内容では必ず用いる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -118,7 +91,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_directory,ディレクトリ名">
+			<dl id="directory,ディレクトリ名">
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p class="description">そのオブジェクトのディレクトリ名。半角英数推奨。</p>
@@ -130,11 +103,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_refresh,数値">
+			<dl id="refresh,数値">
 				<dt class="entry">refresh,数値</dt>
 				<dd class="entry">
 					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -142,10 +115,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_1_refreshundeletemask,ファイル名1;ファイル名2...">
+			<dl id="refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロン「:」で区切る。<br />パス指定不可。全てのディレクトリの指定したファイル名のファイルが除外される。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -154,200 +127,43 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>install.txt(ゴーストwithバルーン)</h1>
-			<dl id="_2_charset,文字コード">
-				<dt class="entry">charset,文字コード</dt>
+			<dl id="*.directory,ディレクトリ名">
+				<dt class="entry">*.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">Shift_JIS</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_name,オブジェクト名">
-				<dt class="entry">name,オブジェクト名</dt>
-				<dd class="entry">
-					<p class="description">そのオブジェクトの名前。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_type,種別">
-				<dt class="entry">type,種別</dt>
-				<dd class="entry">
-					<p class="description">ファイルセットの種別。ゴーストの場合はghost。</p>
-					<p class="default">省略不可 | ghost( on SSP)</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_directory,ディレクトリ名">
-				<dt class="entry">directory,ディレクトリ名</dt>
-				<dd class="entry">
-					<p class="description">そのオブジェクトのゴースト側のディレクトリ名。半角英数推奨。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_balloon.directory,ディレクトリ名">
-				<dt class="entry">balloon.directory,ディレクトリ名</dt>
-				<dd class="entry">
-					<p class="description">そのオブジェクトのバルーン側のディレクトリ名。半角英数推奨。</p>
-					<p class="default">不明</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_refresh,数値">
-				<dt class="entry">refresh,数値</dt>
-				<dd class="entry">
-					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
-					<p class="default">1以外の任意の値</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_refreshundeletemask,ファイル名1;ファイル名2...">
-				<dt class="entry">refreshundeletemask,ファイル名1:ファイル名2...</dt>
-				<dd class="entry">
-					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロンで区切る。</p>
+					<p class="description">同時にインストールするオブジェクトのディレクトリ名。半角英数推奨。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。<br />typeが<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。<br />例えばゴーストにバルーンを同梱する場合などに利用できる。<br />この指定がある場合同時にインストールする側のinstall.txtは無視される。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>install.txt(ゴーストへの追加ファイル)</h1>
-			<dl id="_3_name,オブジェクト名">
-				<dt class="entry">name,オブジェクト名</dt>
+			<dl id="*.source.directory,ディレクトリ名">
+				<dt class="entry">*.source.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">そのオブジェクトの名前。</p>
-					<p class="default">省略不可</p>
+					<p class="description">同時にインストールするオブジェクトのアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。<br />同時にインストールするオブジェクトの、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
+					<p class="default">*.directoryで設定したディレクトリ名</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_3_type,種別">
-				<dt class="entry">type,種別</dt>
+			<dl id="*.refresh,数値">
+				<dt class="entry">*.refresh,数値</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットの種別。追加ファイルの場合はsupplement。</p>
-					<p class="default">省略不可 | supplement( on SSP)</p>
+					<p class="description">同時にインストールするオブジェクトの<a href="#refresh,数値">refresh</a>設定。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。</p>
+					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_3_accept,本体側名">
-				<dt class="entry">accept,本体側名</dt>
+			<dl id="*.refreshundeletemask,ファイル名1:ファイル名2...">
+				<dt class="entry">*.refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_3_charset,文字コード">
-				<dt class="entry">charset,文字コード</dt>
-				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">Shift_JIS</p>
+					<p class="description">同時にインストールするオブジェクトの<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-		</section>
-		<section class="category">
-			<h1>install.txt(追加シェル)</h1>
-			<dl id="_4_charset,文字コード">
-				<dt class="entry">charset,文字コード</dt>
-				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">Shift_JIS</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_4_name,オブジェクト名">
-				<dt class="entry">name,オブジェクト名</dt>
-				<dd class="entry">
-					<p class="description">そのオブジェクトの名前。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_4_type,種別">
-				<dt class="entry">type,種別 | shell( on SSP)</dt>
-				<dd class="entry">
-					<p class="description">ファイルセットの種別。追加シェルの場合はshell。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_4_accept,本体側名">
-				<dt class="entry">accept,本体側名</dt>
-				<dd class="entry">
-					<p class="description">ファイルセットを受け取ることができるゴーストの本体側の名前。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_4_directory,ディレクトリ名">
-				<dt class="entry">directory,ディレクトリ名</dt>
-				<dd class="entry">
-					<p class="description">シェルのディレクトリ名。半角英数推奨。</p>
-					<p class="default">省略不可</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
