@@ -36,8 +36,9 @@
 				<li><a href="#OnGhostCalled">OnGhostCalled</a></li>
 				<li><a href="#OnGhostCalling">OnGhostCalling</a></li>
 				<li><a href="#OnGhostCallComplete">OnGhostCallComplete</a></li>
-				<li><a href="#OnOtherGhostClosed">OnOtherGhostClosed</a></li>
+				<li><a href="#OnOtherGhostBooted">OnOtherGhostBooted</a></li>
 				<li><a href="#OnOtherGhostChanged">OnOtherGhostChanged</a></li>
+				<li><a href="#OnOtherGhostClosed">OnOtherGhostClosed</a></li>
 				<li><a href="#OnShellChanged">OnShellChanged</a></li>
 				<li><a href="#OnShellChanging">OnShellChanging</a></li>
 				<li><a href="#OnDressupChanged">OnDressupChanged</a></li>
@@ -652,17 +653,19 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnOtherGhostClosed">
-				<dt class="entry">OnOtherGhostClosed</dt>
+			<dl id="OnOtherGhostBooted">
+				<dt class="entry">OnOtherGhostBooted</dt>
 				<dd class="entry">
-					<p class="description">複数起動中、他のゴーストが終了された際に発生。</p>
+					<p class="description">他のゴーストに呼び出された、他のゴーストが起動した際に発生。<br />言い換えると、呼び出したゴーストにOnGhostCallCompleteが発生するタイミングで、無関係なゴーストに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>終了したゴーストの本体側の名前。</dd>
+						<dd>起動したゴーストの本体側名。</dd>
 						<dt>Reference1</dt>
-						<dd>終了したゴーストの最後のスクリプト。</dd>
+						<dd>起動したゴーストの起動時のスクリプト。</dd>
 						<dt>Reference2</dt>
-						<dd>終了したゴースト名。</dd>
+						<dd>起動したゴースト名。</dd>
+						<dt>Reference7</dt>
+						<dd>起動したゴーストのシェル名。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -690,6 +693,25 @@
 						<dd>直前のゴーストのシェル名。</dd>
 						<dt>Reference15</dt>
 						<dd>切り替わったゴーストのシェル名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherGhostClosed">
+				<dt class="entry">OnOtherGhostClosed</dt>
+				<dd class="entry">
+					<p class="description">複数起動中、他のゴーストが終了された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>終了したゴーストの本体側の名前。</dd>
+						<dt>Reference1</dt>
+						<dd>終了したゴーストの最後のスクリプト。</dd>
+						<dt>Reference2</dt>
+						<dd>終了したゴースト名。</dd>
+						<dt>Reference7</dt>
+						<dd>終了したゴーストのシェル名。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1978,14 +2000,6 @@
 				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
 					<p class="description">アーカイブのインストール開始の際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
-						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前。</dd>
-						<dt>Reference2</dt>
-						<dd>内容の名前2。</dd>
-					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1999,11 +2013,11 @@
 					<p class="description">インストールが正常終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
+						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。</dd>
 						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前。</dd>
+						<dd>インストールした物の名前（install.txtのname指定）。</dd>
 						<dt>Reference2</dt>
-						<dd>内容の名前2。</dd>
+						<dd>インストールした物の名前2（ghost with balloonなどの場合のballoon側の名前）。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2018,11 +2032,11 @@
 					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の種別。<a href="#notes_installidentifier">※識別子</a>参照(複数の場合は1バイト区切り)</dd>
+						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。複数の場合は1バイト区切り。</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前。(複数の場合は1バイト区切り)</dd>
+						<dd>インストールした物の名前。複数の場合は1バイト区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした場所。(複数の場合は1バイト区切り)</dd>
+						<dd>インストールした場所。複数の場合は1バイト区切り。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2035,11 +2049,7 @@
 					<p class="description">インストールに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a><br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
-						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前。</dd>
-						<dt>Reference2</dt>
-						<dd>内容の名前2。</dd>
+						<dd><a href="#notes_install-reasonoffailure">※失敗理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2054,11 +2064,7 @@
 					<p class="description">インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>成功した時、アーカイブ内容の<a href="#notes_installidentifier">※識別子</a>を返す。<br />失敗した時、失敗理由。<br />ゴーストを指名していた場合その名前。</dd>
-						<dt>Reference1</dt>
-						<dd>成功した時、内容の名前。</dd>
-						<dt>Reference2</dt>
-						<dd>内容の名前2。</dd>
+						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2067,7 +2073,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_installidentifier">
+			<div class="caption" id="notes_install-identifier">
 				<dl>
 					<dt>※インストールの識別子</dt>
 					<dd>shell / ghost / balloon / plugin / headline /supplement</dd>
@@ -2075,6 +2081,18 @@
 					<dd>ghost with balloon / shell with balloon</dd>
 					<dt>※SSP専用</dt>
 					<dd>calendar skin / calendar plugin / package</dd>
+				</dl>
+			</div>
+			<div class="caption" id="notes_install-reasonoffailure">
+				<dl>
+					<dt>※インストールの失敗理由</dt>
+					<dd>
+						<p>unlha32……lzh形式ファイルを展開するdllのロードに失敗した</p>
+						<p>extraction……解凍失敗（ファイル破損）</p>
+						<p>invalid type……install.txtに不備がある</p>
+						<p>artificial……ユーザがインストールを中断した（※SSPのみ）</p>
+						<p>unsupported……その他サポートしていないアーカイブ</p>
+					</dd>
 				</dl>
 			</div>
 		</section>
