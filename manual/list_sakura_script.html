@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Disc-2 SakuraScriptリスト</title>
+<title>UKADOC Project SakuraScriptリスト</title>
 <link rel="stylesheet" href="list.css" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -45,7 +45,7 @@
 				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,ID,x座標,y座標]</a></li>
 				<li><a href="#_!_anim,add,overlay,ID_">\![anim,add,overlay,ID]</a></li>
 				<li><a href="#_!_anim,stop_">\![anim,stop]</a></li>
-				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名_">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名]</a></li>
+				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]</a></li>
 				<li><a href="#___w_animation,ID_">\__w[animation,ID]</a></li>
 				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a></li>
 				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
@@ -55,11 +55,11 @@
 				<li><a href="#_!_set,alignmenttodesktop,left_">\![set,alignmenttodesktop,left]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,right_">\![set,alignmenttodesktop,right]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,free_">\![set,alignmenttodesktop,free]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,default_">\![set,alignmenttodesktop,default]</a></li>
 				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,横倍率,縦倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
 				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値]</a></li>
-				<li><a href="#_!_set,alignmenttodesktop,default_">\![set,alignmenttodesktop,default]</a></li>
 				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフィスID,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
@@ -104,19 +104,15 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>フォント変更コマンド</h1>
+			<h1>文字変更コマンド</h1>
 			<ul>
-				<li><a href="#_f_name,フォント名_">\f[name,フォント名]</a></li>
+				<li><a href="#_f_name,文字名_">\f[name,文字名]</a></li>
 				<li><a href="#_f_height,数値_">\f[height,数値]</a></li>
-				<li><a href="#_f_color,R,G,B_">\f[color,R,G,B]</a></li>
-				<li><a href="#_f_color,R_,G_,B__">\f[color,R%,G%,B%]</a></li>
-				<li><a href="#_f_color,色_">\f[color,色]</a></li>
-				<li><a href="#_f_color,default_">\f[color,default]</a></li>
-				<li><a href="#_f_shadowcolor,R,G,B_">\f[shadowcolor,R,G,B]</a></li>
+				<li><a href="#_f_color,色指定_">\f[color,色指定]</a></li>
+				<li><a href="#_f_shadowcolor,色指定_">\f[shadowcolor,色指定]</a></li>
 				<li><a href="#_f_shadowcolor,none_">\f[shadowcolor,none]</a></li>
-				<li><a href="#_f_shadowcolor,default_">\f[shadowcolor,default]</a></li>
 				<li><a href="#_f_outline,パラメータ_">\f[outline,パラメータ]</a></li>
-				<li><a href="#_f_anchor.font.color,R,G,B_">\f[anchor.font.color,R,G,B]</a></li>
+				<li><a href="#_f_anchor.font.color,色指定_">\f[anchor.font.color,色指定]</a></li>
 				<li><a href="#_f_bold,パラメータ_">\f[bold,パラメータ]</a></li>
 				<li><a href="#_f_italic,パラメータ_">\f[italic,パラメータ]</a></li>
 				<li><a href="#_f_strike,パラメータ_">\f[strike,パラメータ]</a></li>
@@ -164,53 +160,30 @@
 			<h1>選択肢マーカー変更コマンド</h1>
 			<ul>
 				<li><a href="#_f_cursorstyle,形状_">\f[cursorstyle,形状]</a></li>
-				<li><a href="#_f_cursorstyle,default_">\f[cursorstyle,default]</a></li>
-				<li><a href="#_f_cursorcolor,R,G,B_もしくは_f_cursorbrushcolor,R,G,B_">\f[cursorcolor,R,G,B]もしくは\f[cursorbrushcolor,R,G,B]</a></li>
-				<li><a href="#_f_cursorbrushcolor,default_">\f[cursorbrushcolor,default]</a></li>
-				<li><a href="#_f_cursorpencolor,R,G,B_">\f[cursorpencolor,R,G,B]</a></li>
-				<li><a href="#_f_cursorpencolor,default_">\f[cursorpencolor,default]</a></li>
-				<li><a href="#_f_cursorfontcolor,R,G,B_">\f[cursorfontcolor,R,G,B]</a></li>
-				<li><a href="#_f_cursorfontcolor,default_">\f[cursorfontcolor,default]</a></li>
+				<li><a href="#_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</a></li>
+				<li><a href="#_f_cursorpencolor,色指定_">\f[cursorpencolor,色指定]</a></li>
+				<li><a href="#_f_cursorfontcolor,色指定_">\f[cursorfontcolor,色指定]</a></li>
 				<li><a href="#_f_cursormethod,描画方法_">\f[cursormethod,描画方法]</a></li>
 				<li><a href="#_f_cursornotselectstyle,形状_">\f[cursornotselectstyle,形状]</a></li>
-				<li><a href="#_f_cursornotselectstyle,default_">\f[cursornotselectstyle,default]</a></li>
-				<li><a href="#_f_cursornotselectcolor,R,G,B_もしくは_f_cursornotselectbrushcolor,R,G,B_">\f[cursornotselectcolor,R,G,B]もしくは\f[cursornotselectbrushcolor,R,G,B]</a></li>
-				<li><a href="#_f_cursornotselectbrushcolor,default_">\f[cursornotselectbrushcolor,default]</a></li>
-				<li><a href="#_f_cursornotselectpencolor,R,G,B_">\f[cursornotselectpencolor,R,G,B]</a></li>
-				<li><a href="#_f_cursornotselectpencolor,default_">\f[cursornotselectpencolor,default]</a></li>
-				<li><a href="#_f_cursornotselectfontcolor,R,G,B_">\f[cursornotselectfontcolor,R,G,B]</a></li>
-				<li><a href="#_f_cursornotselectfontcolor,default_">\f[cursornotselectfontcolor,default]</a></li>
+				<li><a href="#_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">\f[cursornotselectcolor,色指定]もしくは\f[cursornotselectbrushcolor,色指定]</a></li>
+				<li><a href="#_f_cursornotselectpencolor,色指定_">\f[cursornotselectpencolor,色指定]</a></li>
+				<li><a href="#_f_cursornotselectfontcolor,色指定_">\f[cursornotselectfontcolor,色指定]</a></li>
 				<li><a href="#_f_cursornotselectmethod,描画方法_">\f[cursornotselectmethod,描画方法]</a></li>
 				<li><a href="#_f_anchorstyle,形状_">\f[anchorstyle,形状]</a></li>
-				<li><a href="#_f_anchorstyle,default_">\f[anchorstyle,default]</a></li>
-				<li><a href="#_f_anchorcolor,R,G,B_もしくは_f_anchorbrushcolor,R,G,B_">\f[anchorcolor,R,G,B]もしくは\f[anchorbrushcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorbrushcolor,default_">\f[anchorbrushcolor,default]</a></li>
-				<li><a href="#_f_anchorpencolor,R,G,B_">\f[anchorpencolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorpencolor,default_">\f[anchorpencolor,default]</a></li>
-				<li><a href="#_f_anchorfontcolor,R,G,B_">\f[anchorfontcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorfontcolor,default_">\f[anchorfontcolor,default]</a></li>
+				<li><a href="#_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">\f[anchorcolor,色指定]もしくは\f[anchorbrushcolor,色指定]</a></li>
+				<li><a href="#_f_anchorpencolor,色指定_">\f[anchorpencolor,色指定]</a></li>
+				<li><a href="#_f_anchorfontcolor,色指定_">\f[anchorfontcolor,色指定]</a></li>
 				<li><a href="#_f_anchormethod,描画方法_">\f[anchormethod,描画方法]</a></li>
-				<li><a href="#_f_anchormethod,default_">\f[anchormethod,default]</a></li>
 				<li><a href="#_f_anchornotselectstyle,形状_">\f[anchornotselectstyle,形状]</a></li>
-				<li><a href="#_f_anchornotselectstyle,default_">\f[anchornotselectstyle,default]</a></li>
-				<li><a href="#_f_anchornotselectcolor,R,G,B_もしくは_f_anchornotselectbrushcolor,R,G,B_">\f[anchornotselectcolor,R,G,B]もしくは\f[anchornotselectbrushcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchornotselectbrushcolor,default_">\f[anchornotselectbrushcolor,default]</a></li>
-				<li><a href="#_f_anchornotselectpencolor,R,G,B_">\f[anchornotselectpencolor,R,G,B]</a></li>
-				<li><a href="#_f_anchornotselectpencolor,default_">\f[anchornotselectpencolor,default]</a></li>
-				<li><a href="#_f_anchornotselectfontcolor,R,G,B_">\f[anchornotselectfontcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchornotselectfontcolor,default_">\f[anchornotselectfontcolor,default]</a></li>
+				<li><a href="#_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">\f[anchornotselectcolor,色指定]もしくは\f[anchornotselectbrushcolor,色指定]</a></li>
+				<li><a href="#_f_anchornotselectpencolor,色指定_">\f[anchornotselectpencolor,色指定]</a></li>
+				<li><a href="#_f_anchornotselectfontcolor,色指定_">\f[anchornotselectfontcolor,色指定]</a></li>
 				<li><a href="#_f_anchornotselectmethod,描画方法_">\f[anchornotselectmethod,描画方法]</a></li>
-				<li><a href="#_f_anchornotselectmethod,default_">\f[anchornotselectmethod,default]</a></li>
 				<li><a href="#_f_anchorvisitedstyle,形状_">\f[anchorvisitedstyle,形状]</a></li>
-				<li><a href="#_f_anchorvisitedstyle,default_">\f[anchorvisitedstyle,default]</a></li>
-				<li><a href="#_f_anchorvisitedcolor,R,G,B_もしくは_f_anchorvisitedbrushcolor,R,G,B_">\f[anchorvisitedcolor,R,G,B]もしくは\f[anchorvisitedbrushcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorvisitedbrushcolor,default_">\f[anchorvisitedbrushcolor,default]</a></li>
-				<li><a href="#_f_anchorvisitedpencolor,R,G,B_">\f[anchorvisitedpencolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorvisitedpencolor,default_">\f[anchorvisitedpencolor,default]</a></li>
-				<li><a href="#_f_anchorvisitedfontcolor,R,G,B_">\f[anchorvisitedfontcolor,R,G,B]</a></li>
-				<li><a href="#_f_anchorvisitedfontcolor,default_">\f[anchorvisitedfontcolor,default]</a></li>
+				<li><a href="#_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">\f[anchorvisitedcolor,色指定]もしくは\f[anchorvisitedbrushcolor,色指定]</a></li>
+				<li><a href="#_f_anchorvisitedpencolor,色指定_">\f[anchorvisitedpencolor,色指定]</a></li>
+				<li><a href="#_f_anchorvisitedfontcolor,色指定_">\f[anchorvisitedfontcolor,色指定]</a></li>
 				<li><a href="#_f_anchorvisitedmethod,描画方法_">\f[anchorvisitedmethod,描画方法]</a></li>
-				<li><a href="#_f_anchorvisitedmethod,default_">\f[anchorvisitedmethod,default]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -509,7 +482,7 @@
 			<dl id="_!_anim,add,overlay,ID_">
 				<dt class="entry">\![anim,add,overlay,ID]</dt>
 				<dd class="entry">
-					<p class="description">ID番号のサーフィスを現サーフィスに重ねる。※下記参照</p>
+					<p class="description">ID番号のサーフィスを現サーフィスに重ねる。<a href="#notes_animoverlay">※下記参照</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -524,8 +497,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名_">
-				<dt class="entry">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,フォントサイズ,フォント名]</dt>
+			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">
+				<dt class="entry">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]</dt>
 				<dd class="entry">
 					<p class="description">サーフィス上にテキストを表示する。<br />文字列までは必須。</p>
 					<ul class="supported-baseware">
@@ -621,6 +594,15 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_set,alignmenttodesktop,default_">
+				<dt class="entry">\![set,alignmenttodesktop,default]</dt>
+				<dd class="entry">
+					<p class="description">サーフィスをdescript.txtの定義の位置に戻す。<br />※alignment<em>on</em>desktopでも有効</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_set,scaling,倍率_">
 				<dt class="entry">\![set,scaling,倍率]</dt>
 				<dd class="entry">
@@ -654,15 +636,6 @@
 				<dt class="entry">\![set,alpha,数値]</dt>
 				<dd class="entry">
 					<p class="description">現スコープ側サーフィスを0～100で透明度を変更する。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmenttodesktop,default_">
-				<dt class="entry">\![set,alignmenttodesktop,default]</dt>
-				<dd class="entry">
-					<p class="description">サーフィスをdescript.txtの定義の位置に戻す。<br />※alignment<em>on</em>desktopでも有効</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -704,7 +677,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_animoverlay">
 				<h1>\![anim,add,overlay,ID]について</h1>
 				<dl>
 					<dt>\![anim,add,overlay,ID]</dt>
@@ -740,7 +713,7 @@
 			<dl id="__b_ファイル名,x,y_">
 				<dt class="entry">\_b[ファイル名,x,y]</dt>
 				<dd class="entry">
-					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。<br />※SSPのみ画像URLを指定可能。</p>
+					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br />※SSPのみ画像URLを指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -751,7 +724,7 @@
 			<dl id="__b_ファイル名,x,y,opaque_">
 				<dt class="entry">\_b[ファイル名,x,y,opaque]</dt>
 				<dd class="entry">
-					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -760,7 +733,7 @@
 			<dl id="__b_ファイル名,inline_">
 				<dt class="entry">\_b[ファイル名,inline]</dt>
 				<dd class="entry">
-					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -769,7 +742,7 @@
 			<dl id="__b_ファイル名,inline,opaque_">
 				<dt class="entry">\_b[ファイル名,inline,opaque]</dt>
 				<dd class="entry">
-					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<p class="description">バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -778,7 +751,7 @@
 			<dl id="__b_ファイル名,inline,オプション名,オプション名..._">
 				<dt class="entry">\_b[ファイル名,inline,オプション名,オプション名...]</dt>
 				<dd class="entry">
-					<p class="description">※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、下記参照。</p>
+					<p class="description">※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<p class="description">オプション名</p>
 					<dl class="description">
 						<dt>--option=opaque</dt>
@@ -1055,7 +1028,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_imageresource">
 				<h1>\_b[ファイル名,...]について</h1>
 				<p>※SSPのみ可、ファイル名等のパスには環境変数も使える。</p>
 				<dl>
@@ -1069,11 +1042,11 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>フォント変更コマンド</h1>
-			<dl id="_f_name,フォント名_">
-				<dt class="entry">\f[name,フォント名]</dt>
+			<h1>文字変更コマンド</h1>
+			<dl id="_f_name,文字名_">
+				<dt class="entry">\f[name,文字名]</dt>
 				<dd class="entry">
-					<p class="description">これ以降のテキストを指定したフォントに変更する。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">これテキストを指定した文字に変更する。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1082,52 +1055,25 @@
 			<dl id="_f_height,数値_">
 				<dt class="entry">\f[height,数値]</dt>
 				<dd class="entry">
-					<p class="description">これ以降のテキストを指定したフォントサイズに変更する。<br />+や-による相対的な変更が可能。<br />スタイルシートのサイズ指定も可能。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">これテキストを指定した文字サイズに変更する。<br />+や-による相対的な変更が可能。<br />スタイルシートのサイズ指定も可能。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_color,R,G,B_">
-				<dt class="entry">\f[color,R,G,B]</dt>
+			<dl id="_f_color,色指定_">
+				<dt class="entry">\f[color,色指定]</dt>
 				<dd class="entry">
-					<p class="description">フォント色をRGB(0～255)で変更。</p>
+					<p class="description">文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_color,R_,G_,B__">
-				<dt class="entry">\f[color,R%,G%,B%]</dt>
+			<dl id="_f_shadowcolor,色指定_">
+				<dt class="entry">\f[shadowcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">フォント色をRGB(0～100%)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_color,色_">
-				<dt class="entry">\f[color,色]</dt>
-				<dd class="entry">
-					<p class="description">フォント色をカラーコードやカラーネームで変更。<br />#ff0000、red等。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_color,default_">
-				<dt class="entry">\f[color,default]</dt>
-				<dd class="entry">
-					<p class="description">フォント色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_shadowcolor,R,G,B_">
-				<dt class="entry">\f[shadowcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">フォントの陰落ち色をRGB(0～255)で変更。</p>
+					<p class="description">文字の陰落ち色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1136,16 +1082,7 @@
 			<dl id="_f_shadowcolor,none_">
 				<dt class="entry">\f[shadowcolor,none]</dt>
 				<dd class="entry">
-					<p class="description">フォントの陰落ち色を無効化。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_shadowcolor,default_">
-				<dt class="entry">\f[shadowcolor,default]</dt>
-				<dd class="entry">
-					<p class="description">フォントの陰落ち色をデフォルトに戻す。</p>
+					<p class="description">文字の陰落ち色を無効化。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1154,16 +1091,16 @@
 			<dl id="_f_outline,パラメータ_">
 				<dt class="entry">\f[outline,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると白抜き。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると白抜き。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchor.font.color,R,G,B_">
-				<dt class="entry">\f[anchor.font.color,R,G,B]</dt>
+			<dl id="_f_anchor.font.color,色指定_">
+				<dt class="entry">\f[anchor.font.color,色指定]</dt>
 				<dd class="entry">
-					<p class="description">アンカーフォント色をRGB(0～255)で変更。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">アンカー文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1172,7 +1109,7 @@
 			<dl id="_f_bold,パラメータ_">
 				<dt class="entry">\f[bold,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると太字。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると太字。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1181,7 +1118,7 @@
 			<dl id="_f_italic,パラメータ_">
 				<dt class="entry">\f[italic,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1190,7 +1127,7 @@
 			<dl id="_f_strike,パラメータ_">
 				<dt class="entry">\f[strike,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1199,7 +1136,7 @@
 			<dl id="_f_underline,パラメータ_">
 				<dt class="entry">\f[underline,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1208,7 +1145,7 @@
 			<dl id="_f_sub,パラメータ_">
 				<dt class="entry">\f[sub,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1217,7 +1154,7 @@
 			<dl id="_f_sup,パラメータ_">
 				<dt class="entry">\f[sup,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻ります。</p>
+					<p class="description">パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br />パラメータにfalseまたは0を指定すると無効になります。<br />defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1362,7 +1299,7 @@
 			<dl id="_q_タイトル,OnID,r0,r1,..._">
 				<dt class="entry">\q[タイトル,OnID,r0,r1,...]</dt>
 				<dd class="entry">
-					<p class="description">選択肢を表示。<br />上記のようにIDが"On"で始まっている場合は、選択後、SHIORIイベントOnID(書いた通りのイベント)が開始される。<br />それ以降のパラメータはr0,r1,...の順番にReference0以降に格納される。</p>
+					<p class="description">選択肢を表示。<br />上記のようにIDが"On"で始まっている場合は、選択後、SHIORIイベントOnID(書いた通りのイベント)が開始される。<br />それパラメータはr0,r1,...の順番にReference0以降に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1412,7 +1349,7 @@
 			<dl id="___q_ID,..._">
 				<dt class="entry">\__q[ID,...]</dt>
 				<dd class="entry">
-					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID以降の仕様は、Onやscript:で始まるものが特別扱いされる点や、ID以降の引数の扱いまで含めて\qと同じ。<br />実行後に発生するSHIORI Eventも同様。<br /><em>但しSHIORIが里々の場合、OnChoiceSelectExのReference1の形式が\qと異なるので注意。</em></p>
+					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br />実行後に発生するSHIORI Eventも同様。<br /><em>但しSHIORIが里々の場合、OnChoiceSelectExのReference1の形式が\qと異なるので注意。</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1475,74 +1412,34 @@
 			<dl id="_f_cursorstyle,形状_">
 				<dt class="entry">\f[cursorstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="description">選択中アンカーの形状を変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。<br />defaultでバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursorstyle,default_">
-				<dt class="entry">\f[cursorstyle,default]</dt>
+			<dl id="_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">
+				<dt class="entry">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状をデフォルトに戻す。</p>
+					<p class="description">選択中アンカーの矩形内の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursorcolor,R,G,B_もしくは_f_cursorbrushcolor,R,G,B_">
-				<dt class="entry">\f[cursorcolor,R,G,B]もしくは\f[cursorbrushcolor,R,G,B]</dt>
+			<dl id="_f_cursorpencolor,色指定_">
+				<dt class="entry">\f[cursorpencolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<p class="description">選択中アンカーの矩形枠および下線の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursorbrushcolor,default_">
-				<dt class="entry">\f[cursorbrushcolor,default]</dt>
+			<dl id="_f_cursorfontcolor,色指定_">
+				<dt class="entry">\f[cursorfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの矩形内の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursorpencolor,R,G,B_">
-				<dt class="entry">\f[cursorpencolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursorpencolor,default_">
-				<dt class="entry">\f[cursorpencolor,default]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursorfontcolor,R,G,B_">
-				<dt class="entry">\f[cursorfontcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーのフォント色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursorfontcolor,default_">
-				<dt class="entry">\f[cursorfontcolor,default]</dt>
-				<dd class="entry">
-					<p class="description">
-						選択中アンカーのフォント色をデフォルトに戻す。
-						<br />default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。
-						<br />また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。
-					</p>
+					<p class="description">選択中アンカーの文字色をRGB(0～255)で変更。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1551,7 +1448,7 @@
 			<dl id="_f_cursormethod,描画方法_">
 				<dt class="entry">\f[cursormethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカー描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<p class="description">選択中アンカー描画方法を変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />defaultでバルーン設定の標準に戻る。<br />参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br />※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1560,74 +1457,34 @@
 			<dl id="_f_cursornotselectstyle,形状_">
 				<dt class="entry">\f[cursornotselectstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="description">非選択中アンカーの形状を変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。<br />defaultでバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursornotselectstyle,default_">
-				<dt class="entry">\f[cursornotselectstyle,default]</dt>
+			<dl id="_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">
+				<dt class="entry">\f[cursornotselectcolor,色指定]もしくは\f[cursornotselectbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの形状をデフォルトに戻す。</p>
+					<p class="description">非選択中アンカーの矩形内の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursornotselectcolor,R,G,B_もしくは_f_cursornotselectbrushcolor,R,G,B_">
-				<dt class="entry">\f[cursornotselectcolor,R,G,B]もしくは\f[cursornotselectbrushcolor,R,G,B]</dt>
+			<dl id="_f_cursornotselectpencolor,色指定_">
+				<dt class="entry">\f[cursornotselectpencolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<p class="description">非選択中アンカーの矩形枠および下線の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_cursornotselectbrushcolor,default_">
-				<dt class="entry">\f[cursornotselectbrushcolor,default]</dt>
+			<dl id="_f_cursornotselectfontcolor,色指定_">
+				<dt class="entry">\f[cursornotselectfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形内の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursornotselectpencolor,R,G,B_">
-				<dt class="entry">\f[cursornotselectpencolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursornotselectpencolor,default_">
-				<dt class="entry">\f[cursornotselectpencolor,default]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursornotselectfontcolor,R,G,B_">
-				<dt class="entry">\f[cursornotselectfontcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーのフォント色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_cursornotselectfontcolor,default_">
-				<dt class="entry">\f[cursornotselectfontcolor,default]</dt>
-				<dd class="entry">
-					<p class="description">
-						非選択中アンカーのフォント色をデフォルトに戻す。
-						<br />default.anchor, default.anchornotselect, default.anchorvisited, default.cursornotselect, default.cursornotselectnotselectと指定すると、それぞれのデフォルトと同じ値に設定。
-						<br />また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。
-					</p>
+					<p class="description">非選択中アンカーの文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1636,7 +1493,7 @@
 			<dl id="_f_cursornotselectmethod,描画方法_">
 				<dt class="entry">\f[cursornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカー描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<p class="description">非選択中アンカー描画方法を変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />defaultでバルーン設定の標準に戻る。<br />参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br />※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1645,74 +1502,34 @@
 			<dl id="_f_anchorstyle,形状_">
 				<dt class="entry">\f[anchorstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="description">選択中アンカーの形状を変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。<br />defaultでバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorstyle,default_">
-				<dt class="entry">\f[anchorstyle,default]</dt>
+			<dl id="_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">
+				<dt class="entry">\f[anchorcolor,色指定]もしくは\f[anchorbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状をデフォルトに戻す。</p>
+					<p class="description">選択中アンカーの矩形内の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorcolor,R,G,B_もしくは_f_anchorbrushcolor,R,G,B_">
-				<dt class="entry">\f[anchorcolor,R,G,B]もしくは\f[anchorbrushcolor,R,G,B]</dt>
+			<dl id="_f_anchorpencolor,色指定_">
+				<dt class="entry">\f[anchorpencolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<p class="description">選択中アンカーの矩形枠および下線の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorbrushcolor,default_">
-				<dt class="entry">\f[anchorbrushcolor,default]</dt>
+			<dl id="_f_anchorfontcolor,色指定_">
+				<dt class="entry">\f[anchorfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの矩形内の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorpencolor,R,G,B_">
-				<dt class="entry">\f[anchorpencolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorpencolor,default_">
-				<dt class="entry">\f[anchorpencolor,default]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorfontcolor,R,G,B_">
-				<dt class="entry">\f[anchorfontcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーのフォント色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorfontcolor,default_">
-				<dt class="entry">\f[anchorfontcolor,default]</dt>
-				<dd class="entry">
-					<p class="description">
-						選択中アンカーのフォント色をデフォルトに戻す。
-						<br />default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。
-						<br />また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。
-					</p>
+					<p class="description">選択中アンカーの文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1721,16 +1538,7 @@
 			<dl id="_f_anchormethod,描画方法_">
 				<dt class="entry">\f[anchormethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchormethod,default_">
-				<dt class="entry">\f[anchormethod,default]</dt>
-				<dd class="entry">
-					<p class="description">選択中アンカーの描画方法をデフォルトに戻す。</p>
+					<p class="description">選択中アンカーの描画方法を変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />defaultでバルーン設定の標準に戻る。<br />参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br />※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1739,74 +1547,34 @@
 			<dl id="_f_anchornotselectstyle,形状_">
 				<dt class="entry">\f[anchornotselectstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="description">非選択中アンカーの形状を変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。<br />defaultでバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchornotselectstyle,default_">
-				<dt class="entry">\f[anchornotselectstyle,default]</dt>
+			<dl id="_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">
+				<dt class="entry">\f[anchornotselectcolor,色指定]もしくは\f[anchornotselectbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの形状をデフォルトに戻す。</p>
+					<p class="description">非選択中アンカーの矩形内の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchornotselectcolor,R,G,B_もしくは_f_anchornotselectbrushcolor,R,G,B_">
-				<dt class="entry">\f[anchornotselectcolor,R,G,B]もしくは\f[anchornotselectbrushcolor,R,G,B]</dt>
+			<dl id="_f_anchornotselectpencolor,色指定_">
+				<dt class="entry">\f[anchornotselectpencolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<p class="description">非選択中アンカーの矩形枠および下線の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchornotselectbrushcolor,default_">
-				<dt class="entry">\f[anchornotselectbrushcolor,default]</dt>
+			<dl id="_f_anchornotselectfontcolor,色指定_">
+				<dt class="entry">\f[anchornotselectfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形内の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchornotselectpencolor,R,G,B_">
-				<dt class="entry">\f[anchornotselectpencolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchornotselectpencolor,default_">
-				<dt class="entry">\f[anchornotselectpencolor,default]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形枠および下線の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchornotselectfontcolor,R,G,B_">
-				<dt class="entry">\f[anchornotselectfontcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーのフォント色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchornotselectfontcolor,default_">
-				<dt class="entry">\f[anchornotselectfontcolor,default]<dt>
-				<dd class="entry">
-					<p class="description">
-						非選択中アンカーのフォント色をデフォルトに戻す。
-						<br />default.anchor, default.anchornotselect, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。
-						<br />また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。
-					</p>
+					<p class="description">非選択中アンカーの文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1815,16 +1583,7 @@
 			<dl id="_f_anchornotselectmethod,描画方法_">
 				<dt class="entry">\f[anchornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchornotselectmethod,default_">
-				<dt class="entry">\f[anchornotselectmethod,default]</dt>
-				<dd class="entry">
-					<p class="description">非選択中アンカーの描画方法をデフォルトに戻す。</p>
+					<p class="description">非選択中アンカーの描画方法を変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />defaultでバルーン設定の標準に戻る。<br />参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br />※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1833,74 +1592,34 @@
 			<dl id="_f_anchorvisitedstyle,形状_">
 				<dt class="entry">\f[anchorvisitedstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの形状の変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。</p>
+					<p class="description">訪問済みアンカーの形状を変更。<br />squareで矩形を表示。<br />underlineで下線を表示。<br />square+underlineで矩形と下線を表示。<br />defaultでバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorvisitedstyle,default_">
-				<dt class="entry">\f[anchorvisitedstyle,default]</dt>
+			<dl id="_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">
+				<dt class="entry">\f[anchorvisitedcolor,色指定]もしくは\f[anchorvisitedbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの形状をデフォルトに戻す。</p>
+					<p class="description">訪問済みアンカーの矩形内の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorvisitedcolor,R,G,B_もしくは_f_anchorvisitedbrushcolor,R,G,B_">
-				<dt class="entry">\f[anchorvisitedcolor,R,G,B]もしくは\f[anchorvisitedbrushcolor,R,G,B]</dt>
+			<dl id="_f_anchorvisitedpencolor,色指定_">
+				<dt class="entry">\f[anchorvisitedpencolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの矩形内の色をRGB(0～255)で変更。</p>
+					<p class="description">訪問済みアンカーの矩形枠および下線の色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorvisitedbrushcolor,default_">
-				<dt class="entry">\f[anchorvisitedbrushcolor,default]</dt>
+			<dl id="_f_anchorvisitedfontcolor,色指定_">
+				<dt class="entry">\f[anchorvisitedfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの矩形内の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorvisitedpencolor,R,G,B_">
-				<dt class="entry">\f[anchorvisitedpencolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">訪問済みアンカーの矩形枠および下線の色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorvisitedpencolor,default_">
-				<dt class="entry">\f[anchorvisitedpencolor,default]</dt>
-				<dd class="entry">
-					<p class="description">訪問済みアンカーの矩形枠および下線の色をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorvisitedfontcolor,R,G,B_">
-				<dt class="entry">\f[anchorvisitedfontcolor,R,G,B]</dt>
-				<dd class="entry">
-					<p class="description">訪問済みアンカーのフォント色をRGB(0～255)で変更。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_f_anchorvisitedfontcolor,default_">
-				<dt class="entry">\f[anchorvisitedfontcolor,default]</dt>
-				<dd class="entry">
-					<p class="description">
-						訪問済みアンカーのフォント色をデフォルトに戻す。
-						<br />default.anchor, default.anchorvisited, default.anchorvisited, default.cursor, default.cursornotselectと指定すると、それぞれのデフォルトと同じ値に設定。
-						<br />また、default.plainと指定すると、アンカーでも選択肢でもない通常のテキストと同じ値に設定。
-					</p>
+					<p class="description">訪問済みアンカーの文字色を変更。<br />指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1909,28 +1628,47 @@
 			<dl id="_f_anchorvisitedmethod,描画方法_">
 				<dt class="entry">\f[anchorvisitedmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの描画方法の変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。</p>
+					<p class="description">訪問済みアンカーの描画方法を変更。<br />Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br />defaultでバルーン設定の標準に戻る。<br />参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br />※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_f_anchorvisitedmethod,default_">
-				<dt class="entry">\f[anchorvisitedmethod,default]</dt>
-				<dd class="entry">
-					<p class="description">訪問済みアンカーの描画方法をデフォルトに戻す。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
+			<section class="caption" id="notes_color">
+				<h1>※色指定の方法</h1>
+				<p>基本はHTML・CSSの色の表現と似ています。</p>
+				<dl>
+					<dt>R,G,B</dt>
+					<dd>赤・緑・青の三原色の明度をそれぞれ0～255の10進数値で表現し、カンマで区切る。<br />0,0,0で黒、255,255,255で白。</dd>
+					<dt>R%,G%,B%</dt>
+					<dd>赤・緑・青の三原色の明度をそれぞれ0～100%の百分率で表現し、カンマで区切る。<br />0%,0%,0%で黒、100%,100%,100%で白。</dd>
+					<dt>16進数カラーコード</dt>
+					<dd>#07fのように、赤・緑・青の三原色の明度を「#」に続けて<em>16進数で</em>表現し、つなげる。<br />赤・緑・青それぞれ2桁ずつの計6桁か、1桁ずつの計3桁で表現できる。<br />16進数のアルファベット表現は大文字・小文字いずれでも可。<br />#000000または#000で黒、#ffffffまたは#fffで白。</dd>
+					<dt>定義済みキーワード</dt>
+					<dd>red、white、blackというような色名を表すキーワード（全て小文字）で指定可能。<br />いわゆるX11 colorとW3C colorで定義が異なる色（green,gray等）については、W3C colorの定義。<br />色見本：<a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a>（外部リンク）</dd>
+					<dt>default</dt>
+					<dd>色指定部分にdefaultと記述すると、指定した文字をその文字のデフォルト色に戻す。<br />デフォルト色は、バルーンのdescript.txtに定義されたものなど（未定義時黒）。</dd>
+					<dt>default.anchor</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.anchorと指定すると、指定した文字の色を選択時のアンカーのデフォルト文字色に変更。</dd>
+					<dt>default.anchornotselect</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.anchornotselectと指定すると、指定した文字の色を非選択時のアンカーのデフォルト文字色に変更。</dd>
+					<dt>default.anchorvisited</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.anchorvisitedと指定すると、指定した文字の色を訪問済みのアンカーのデフォルト文字色に変更。</dd>
+					<dt>default.cursor</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.cursorと指定すると、指定した文字の色を選択時の選択肢のデフォルト文字色に変更。</dd>
+					<dt>default.cursornotselect</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.anchorと指定すると、指定した文字の色を非選択時の選択肢のデフォルト文字色に変更。</dd>
+					<dt>default.plain</dt>
+					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br />色指定部分にdefault.plainと指定すると、指定した文字の色を普通のテキストのデフォルト文字色に変更。</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>イベントコマンド</h1>
 			<dl id="_e">
 				<dt class="entry">\e</dt>
 				<dd class="entry">
-					<p class="description">イベント、メッセージの終了する。<br />その後に書かれたイベント、メッセージは発生しない。</p>
+					<p class="description">イベント、メッセージの終了する。<br />この後に書かれたスクリプトは実行・表示されない。<br />いくつかのサクラスクリプトの効果が終了する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1974,7 +1712,7 @@
 			<dl id="_!_move_">
 				<dt class="entry">\![move]</dt>
 				<dd class="entry">
-					<p class="description">指定座標まで移動。※下記参照</p>
+					<p class="description">指定座標まで移動。<a href="#notes_move">※下記参照</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -1984,7 +1722,7 @@
 			<dl id="_!_moveasync_">
 				<dt class="entry">\![moveasync]</dt>
 				<dd class="entry">
-					<p class="description">指定座標まで非同期移動。※下記参照</p>
+					<p class="description">指定座標まで非同期移動。<a href="#notes_move">※下記参照</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2254,7 +1992,7 @@
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
 				<dt class="entry">\![set,trayballoon,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description">トレイアイコンからバルーンを表示する。※下記参照。<br />バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br />タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</p>
+					<p class="description">トレイアイコンからバルーンを表示する。<a href="#notes_trayballoon">※下記参照</a>。<br />バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br />タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2363,7 +2101,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_move">
 				<h1>※\![move]、\![moveasync]について</h1>
 				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
 				<p>X座標、Y座標は目的の座標を指定。<br />負の値も指定可能。<br />どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
@@ -2388,7 +2126,7 @@
 				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
 				<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_trayballoon">
 				<h1>※\![set,trayballoon,オプション,オプション,オプション...]オプション</h1>
 				<dl>
 					<dt>--text=テキスト</dt>
@@ -2809,11 +2547,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<section class="caption" id="notes_inputbox">
 				<h1>※InputBox</h1>
 				<p>このコマンドを指定すると入力ボックスが表示される。<br />入力後、決定されるとSHIORIイベント、OnUserInputが発生する。<br />IDはreference0に格納される。<br />タイムアウト時にはreference1はtimeoutと返る。<br />表示時間は-1でタイムアウト無しになる。単位はms。<br />入力の間、他の一切を受け付けない。<br />MATERI、SSPのみボックス内にあらかじめテキストを用意できる。<br />さらにSSPのみテキストの代わりにオプションを指定できる。(カンマ区切りで複数指定)<br />--text=標準で入力されているテキスト<br />--limit=入力制限文字数</p>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_selectfile">
 				<h1>※ファイルを開く / ファイルを保存 パラメータ</h1>
 				<dl>
 					<dt>--title</dt>
@@ -2842,7 +2580,7 @@
 					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
 				</dl>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_selectfolder">
 				<h1>※フォルダ選択 パラメータ</h1>
 				<dl>
 					<dt>--title</dt>
@@ -2865,7 +2603,7 @@
 					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
 				</dl>
 			</section>
-			<section class="caption">
+			<section class="caption" id="notes_colorpallet">
 				<h1>※カラーパレット パラメータ</h1>
 				<dl>
 					<dt>--color=R G B</dt>
