@@ -11,15 +11,22 @@
 	<nav class="menu-header">
 		<ul>
 			<li><a href="./index.html">Index</a></li>
+		</ul>
+		<ul>
 			<li><a href="./descript_ghost.html">Ghost</a></li>
 			<li><a href="./descript_shell.html">Shell</a></li>
 			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_plugin.html">Plugin</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
+		</ul>
+		<ul>
 			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
 			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
 			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
+			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -122,25 +129,25 @@
 		</section>
 	</section>
 	<div class="categories">
+		<section class="caption">
+			<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みです。</p>
+			<ul>
+				<li><a href="http://crow.aqrs.jp/devtest.html" target="_blank">参考:CROW テスト項目資料</a></li>
+			</ul>
+		</section>
+		<section class="caption">
+			<p>プロパティシステムは環境変数とタグの両方で使えます。<br />※詳細はSAKURA Scriptおよび環境変数のプロパティシステムの項参考。</p>
+			<dl>
+				<dt>環境変数による拾得の仕方</dt>
+				<dd><a href="list_sakura_script.html#_property_取得内容_">%property[プロパティ名]</a></dd>
+				<dt>タグによる書き込み方</dt>
+				<dd><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a><br />※全ての値に対してsetが有効なわけではありません。</dd>
+				<dt>タグによる読み込み方</dt>
+				<dd><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a><br />指定した名前のSHIORI Eventが発生し、Reference0以降に一つずつプロパティシステムの値が入ります。</dd>
+			</dl>
+		</section>
 		<section class="category">
 			<h1>プロパティシステム</h1>
-			<div class="caption">
-				<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みです。</p>
-				<ul>
-					<li><a href="http://crow.aqrs.jp/devtest.html" target="_blank">参考:CROW テスト項目資料</a></li>
-				</ul>
-			</div>
-			<div class="caption">
-				<p>プロパティシステムは環境変数とタグの両方で使えます。<br />※詳細はSAKURA Scriptおよび環境変数のプロパティシステムの項参考。</p>
-				<dl>
-					<dt>環境変数による拾得の仕方</dt>
-					<dd><a href="list_sakura_script.html#_property_取得内容_">%property[プロパティ名]</a></dd>
-					<dt>タグによる書き込み方</dt>
-					<dd><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a><br />※全ての値に対してsetが有効なわけではありません。</dd>
-					<dt>タグによる読み込み方</dt>
-					<dd><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a><br />指定した名前のSHIORI Eventが発生し、Reference0以降に一つずつプロパティシステムの値が入ります。</dd>
-				</dl>
-			</div>
 			<dl id="system.year">
 				<dt class="entry">system.year</dt>
 				<dd class="entry">
