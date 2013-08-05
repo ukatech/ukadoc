@@ -39,11 +39,12 @@ a:hover	{
 	font-size: x-large;
 }
 .menu-header {
-	margin: 0 20px;
+	margin: 1px 20px;
 	width: 90%;
 	border: 1px solid #669;
 	background-color: #eef;
 	padding: 1px;
+	text-align:center;
 }
 .menu-header:after {
 	content: "\0020";
@@ -51,6 +52,12 @@ a:hover	{
 	height: 0px;
 	visibility: hidden;
 	clear: both;
+}
+.menu-header ul{
+	text-align: center;
+}
+.menu-header ul:after{
+	content: "　";
 }
 .menu-header li {
 	float: left;
@@ -101,6 +108,27 @@ a:hover	{
 	padding-left: 20px;
 	width: 65%;
 }
+.categories .caption {
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed #669;
+	background-color: #fef;
+}
+.categories .caption h1 {
+	font-size: medium;
+	padding: 5px;
+	color: #000;
+	background-color: #fef;
+}
+.categories .caption dt {
+	font-weight: bold;
+}
+.categories .caption dd {
+	margin-bottom: 0.5em;
+}
+.categories .caption p {
+	margin: 0.5em auto;
+}
 .category {
 	background-color: #ffe;
 	clear: left;
@@ -112,6 +140,9 @@ a:hover	{
 	color: #fff;
 	background-color: #669;
 }
+.category>dl{
+	margin-bottom:20px;
+}
 .category h2 {
 	font-size: x-large;
 	padding: 5px;
@@ -121,27 +152,6 @@ a:hover	{
 .category strong {
 	font-weight: normal;
 	color : #009900;
-}
-.category .caption {
-	margin: 5px;
-	padding: 5px;
-	border: 1px dashed #669;
-	background-color: #fef;
-}
-.category .caption h1 {
-	font-size: medium;
-	padding: 5px;
-	color: #000;
-	background-color: #fef;
-}
-.category .caption dt {
-	font-weight: bold;
-}
-.category .caption dd {
-	margin-bottom: 0.5em;
-}
-.category .caption p {
-	margin: 0.5em auto;
 }
 .category dt.entry {
 	font-size: large;
@@ -199,7 +209,7 @@ a:hover	{
 	background-color: #ded;
 }
 .category .supported-baseware {
-	margin: 0 0 50px 15px;
+	margin: 0 0 30px 15px;
 }
 .category .supported-baseware li {
 	float: left;

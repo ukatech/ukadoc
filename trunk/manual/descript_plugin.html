@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>UKADOC Project Plugin設定</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Plugin設定</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+		</ul>
+		<ul>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+		</ul>
+		<ul>
+			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_propertysystem.html">Property System</a></li>
+			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Plugin</h1>
+		<section class="navigation-category">
+			<h1>descript.txt</h1>
+			<ul>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#name,プラグイン名">name,プラグイン名</a></li>
+				<li><a href="#id,ID">id,ID</a></li>
+				<li><a href="#filename,dll">filename,dll</a></li>
+				<li><a href="#type,種別">type,種別</a></li>
+				<li><a href="#craftman,作者名">craftman,作者名</a></li>
+				<li><a href="#craftmanw,作者名">craftmanw,作者名</a></li>
+				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
+				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+				<li><a href="#secondchangeinterval,秒数">secondchangeinterval,秒数</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category">
+			<h1>descript.txt</h1>
+			<dl id="charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">使用する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name,プラグイン名">
+				<dt class="entry">name,プラグイン名</dt>
+				<dd class="entry">
+					<p class="description">そのプラグインの名前。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="id,ID">
+				<dt class="entry">id,ID</dt>
+				<dd class="entry">
+					<p class="description">そのプラグインのIDとなる、極力重複可能性の低い文字列。<br />文字列は1バイト文字のみで構成される63バイトまでのもの。<br /><a href="http://www.famkruithof.net/uuid/uuidgen">http://www.famkruithof.net/uuid/uuidgen</a>などで生成できる。<br />一度決定したら変更してはならない。</p>
+					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="filename,dll">
+				<dt class="entry">filename,dll</dt>
+				<dd class="entry">
+					<p class="description">pluginの実体となるdllのパス。</p>
+					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="type,種別">
+				<dt class="entry">type,種別</dt>
+				<dd class="entry">
+					<p class="description">ファイルセットの種別。プラグインの場合はplugin。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftman,作者名">
+				<dt class="entry">craftman,作者名</dt>
+				<dd class="entry">
+					<p class="description">そのプラグインの作者名。半角英数のみ。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw,作者名">
+				<dt class="entry">craftmanw,作者名</dt>
+				<dd class="entry">
+					<p class="description">そのプラグインの作者名。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanurl,URL">
+				<dt class="entry">craftmanurl,URL</dt>
+				<dd class="entry">
+					<p class="description">プラグイン作者のURL。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="homeurl,URL">
+				<dt class="entry">homeurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新用のURL。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="secondchangeinterval,秒数">
+				<dt class="entry">secondchangeinterval,秒数</dt>
+				<dd class="entry">
+					<p class="description">PLUGIN Event <a href="list_plugin_event.html#OnSecondChange">OnSecondChange</a>を通知する間隔（秒）。<br />0で通知されなくなる。</p>
+					<p class="default">1</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>
