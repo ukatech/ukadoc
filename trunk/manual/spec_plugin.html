@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>UKADOC Project PLUGIN/2.0</title>
+<link rel="stylesheet" href="spec.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">PLUGIN/2.0</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+		</ul>
+		<ul>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+		</ul>
+		<ul>
+			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_propertysystem.html">Property System</a></li>
+			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>PLUGIN/2.0</h1>
+		<section class="navigation-category">
+			<h1>PLUGIN/2.0</h1>
+			<ul>
+				<li><a href="#chapter0">前書</a></li>
+				<li><a href="#chapter1">バージョンの影響評価</a></li>
+				<li><a href="#chapter2">実体</a></li>
+				<li><a href="#chapter3">dllエクスポート関数群</a></li>
+				<li><a href="#chapter4">repuest規定</a></li>
+				<li><a href="#chapter5">response規定</a></li>
+				<li><a href="#chapter6">プラグインID</a></li>
+				<li><a href="#chapter7">desctipt.txt</a></li>
+				<li><a href="#chapter8">ゴースト側拡張</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="text">
+		<div class="caption">
+			<p>最終変更：<time>2013-08-07</time></p>
+		</div>
+		<div class="caption">
+			<p>参考：<a href="http://usada.sakura.vg/contents/plugin.html">PLUGIN/1.0</a>（外部サイト）</p>
+		</div>
+		<section id="chapter0">
+			<h1>前書</h1>
+			<p>PLUGIN/2.0は、旧来仕様（1.0）の改訂版です。SSPで実装。</p>
+			<p>主な変更は文字コード指定の追加です。</p>
+		</section>
+		<section id="chapter1">
+			<h1>バージョンの影響評価</h1>
+			<section>
+				<h1>バージョンの影響評価</h1>
+				<p>処理系にいろいろ負担を移すことを前提としているので、覚悟してください（苦笑</p>
+			</section>
+			<section>
+				<h1>プラグイン作者</h1>
+				<p>新たにコール用にrequestエクスポートを定義するので、PLUGIN/1.0との衝突は考慮する必要はありません。</p>
+				<p>スクリプトやイベント等のゴーストへの通知が非常に楽になる。</p>
+			</section>
+			<section>
+				<h1>ゴースト作者</h1>
+				<p>特定のプラグインにたとえ対応していなくてもデフォルトスクリプト仕様（後述）があるので致命的な事にならない。</p>
+				<p>どうしてもデフォルトスクリプトで雰囲気を壊されたくない場合は対応しましょう……</p>
+			</section>
+			<section>
+				<h1>バージョンの影響評価</h1>
+				<p>ゴーストごとにちりぢりになった機能群をまとめて扱えるので便利かつ楽。</p>
+			</section>
+		</section>
+		<section id="chapter2">
+			<h1>実体</h1>
+			<p>設定ファイル「descript.txt」とdllファイルの2つが必要です。</p>
+		</section>
+		<section id="chapter3">
+			<h1>dllエクスポート関数群</h1>
+			<p><em>YAYA/KAWARI as PLUGIN利用者は読み飛ばして下さい</em></p>
+			<ul>
+				<li>extern "C" __declspec(dllexport) BOOL __cdecl load(HGLOBAL h, long len);</li>
+				<li>extern "C" __declspec(dllexport) BOOL __cdecl unload(void);</li>
+				<li>extern "C" __declspec(dllexport) HGLOBAL __cdecl request(HGLOBAL h, long *len);</li>
+			</ul>
+			<p>☆Borland系C/C++コンパイラでは_loadのように頭にアンダースコアがつくようですがそちらにも対応した方が良いでしょう。</p>
+			<section>
+				<h1>load</h1>
+				<p>読み込み時にコールされます。HGLOBALにDLLの入るディレクトリのパスが入ります。<br />GlobalAlloc(GMEM_FIXED,xxx) されたものなのでそのままポインタ(char *)にキャストして利用してください。<br />また、必ずDLL側でGlobalFreeしてください。</p>
+				<p>返り値は常にtrueです。<br />規定ではロード失敗時にfalseですが、falseを返しても何も処理されません。</p>
+			</section>
+			<section>
+				<h1>unload</h1>
+				<p>DLL開放直前（＝SSP/CROW終了時＋上書きインストール時、DLL_PROCESS_DETACH前）にコールされます。</p>
+				<p>返り値は常にtrueです。<br />規定では開放失敗時にfalseですが、falseを返しても無視されます。</p>
+			</section>
+			<section>
+				<h1>request</h1>
+				<p>ロード・アンロード以外の処理はすべてここで行われます。<br />注意事項はloadと同じです。</p>
+				<p>返り値は<a href="#chapter5">後述</a>の通りです。<br />レスポンス用の返り値HGLOBALも、GlobalAlloc(GMEM_FIXED,xxx)で確保されたものにしてください。</p>
+			</section>
+		</section>
+		<section id="chapter4">
+			<h1>request規定</h1>
+			<p>典型的なリクエスト例は以下の通り。※改行コード＝CR+LF</p>
+<pre><code><!--
+-->GET PLUGIN/2.0
+ID: OnGhostChange
+Charset: UTF-8
+Reference0: 54
+</code></pre>
+<pre><code><!--
+-->NOTIFY PLUGIN/2.0
+ID: OnMenuExec
+Charset: UTF-8
+Sender: 晶子
+Reference0: 17982
+</code></pre>
+			<p>空行で終了。他のDLL仕様といっしょで、ゼロ終端とは限らないので注意してください。</p>
+			<p>PLUGIN/2.0のフォーマットは基本的にSHIORI/3.0仕様に準じています。<br />イベント識別子のIDヘッダと、任意の数(8以降あり)の追加情報であるReferenceヘッダから構成されます。<br />Referenceの内容はIDによって変わります。</p>
+			<p>Reference等の内容に改行等を含めたい場合、また含めなければならないと規定したい場合は、%8f%73のように、回避したい文字のみURLエンコードして渡すよう規定することを *強く推奨* します（仕様ではありませんが）</p>
+			<p>Senderの内容は、後述するゴースト側からの呼び出し仕様によって呼び出された場合、ゴースト名となります。<br />本体側からコールされた場合はSenderヘッダ自体が消滅するか空文字列が代入されます。<br />SHIORIのように「本体の名前（SSPとかCROWとか）」が入るわけではないので注意してください。</p>
+			<p>通知されるリクエストの種類（ID）については、<a href="list_plugin_event.html">PLUGIN Eventのページ</a>を参照してください。</p>
+		</section>
+		<section id="chapter5">
+			<h1>response規定</h1>
+			<p>レスポンスの例は以下の通り。※改行コード＝CR+LF</p>
+<pre><code><!--
+-->PLUGIN/2.0 200 OK
+Charset: Shift_JIS
+Target: 54
+Event: OnResourceLow
+EventOption: notify
+Reference0: 19
+Reference1: 31
+Reference2: 65
+Script: すくりぷと～
+ScriptOption: nobreak,notranslate
+</code></pre>
+			<p>※複数起動対応の処理系のみ※ 現在起動中のゴーストでTargetに該当するゴーストがいたらそれで処理されます。<br />"__SYSTEM_ALL_GHOST__"が指定されている場合は、「起動中の全ゴースト」に通知されます。</p>
+			<p>該当しない場合、何も指定しない場合は処理系に応じて適当なゴースト「1体」で処理されます。<br />また、後述のゴースト側からの呼び出し仕様で呼ばれた場合は、Targetヘッダで明示的に指定がされない限り、呼んだゴーストに返ります。</p>
+			<p>※対応していない処理系ではそもそも1体しかありませんのでそのゴーストが毎度呼び出されます。</p>
+			<section>
+				<h1>Event/Reference</h1>
+				<p>EventヘッダとReferenceヘッダはゴースト側に送るイベントです。<br />これにゴーストが反応しない場合、デフォルトスクリプトであるScriptヘッダが再生されます。</p>
+			</section>
+			<section>
+				<h1>ScriptOption</h1>
+				<p>ScriptOptionは、Scriptヘッダ内容にのみ適用されるオプション指定です。</p>
+				<dl>
+					<dt>notranslate</dt>
+					<dd>ゴーストのトランスレートを介さない</dd>
+					<dt>nobreak</dt>
+					<dd>現在喋っているトークを中断せず最後まで喋った後で指定したスクリプトを実行する</dd>
+				</dl>
+			</section>
+			<section>
+				<h1>EventOption</h1>
+				<p>EventOptionは、Eventヘッダ内容にのみ適用されるオプション指定です。</p>
+				<dl>
+					<dt>notify</dt>
+					<dd>指定したイベントをゴーストにnotifyで通知する</dd>
+				</dl>
+			</section>
+			<p>Event,EventOption,Reference,Target,Script,ScriptOptionはすべて省略可能です。<br />例えばイベントだけ送りたい、デフォルトスクリプトは不要な場合はScript/ScriptOptionヘッダを省略してください。<br />※スクリプトだけ送りたい場合はその逆です。</p>
+		</section>
+		<section id="chapter6">
+			<h1>プラグインID</h1>
+			<p><a href="descript_plugin.html#id,ID">Plugin説明のIDの項</a>を参照してください。
+		</section>
+		<section id="chapter7">
+			<h1>descript.txt</h1>
+			<p><a href="descript_plugin.html">Plugin設定のページ</a>を参照してください。</p>
+		</section>
+		<section id="chapter8">
+			<h1>ゴースト側拡張</h1>
+			<section>
+				<h1>スクリプト拡張</h1>
+<pre><code><!--
+-->\![raiseplugin,プラグイン名またはID,イベント,Reference0...]
+\![notifyplugin,プラグイン名またはID,イベント,Reference0...]
+</code></pre>
+				<p>指定したプラグインに指定したイベントを送信します。 プラグイン側でTarget指定がない限り(system_any)、プラグインからのレスポンスはraisepluginしたゴーストに優先的に割り振られますので、SAORIもどき的な使い方も可能です。</p>
+				<p>送信コマンドは、<a href="list_sakura_script.html#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin]</a>の場合はGET、<a href="list_sakura_script.html#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin]</a>の場合はNOTIFYとなります。</p>
+			</section>
+			<section>
+				<h1>SHIORIイベント拡張</h1>
+				<p><a href="list_shiori_event.html#installedplugin">installedpluginの項目</a>を参照してください。</p>
+			</section>
+		</section>
+	</div>
+</body>
+</html>

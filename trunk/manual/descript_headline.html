@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>UKADOC Project Headline設定</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Headline設定</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+		</ul>
+		<ul>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+		</ul>
+		<ul>
+			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_propertysystem.html">Property System</a></li>
+			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Headline</h1>
+		<section class="navigation-category">
+			<h1>descript.txt</h1>
+			<ul>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#name,ヘッドライン名">name,ヘッドライン名</a></li>
+				<li><a href="#dllname,dll">dllname,dll</a></li>
+				<li><a href="#url,URL">url,URL</a></li>
+				<li><a href="#openurl,URL">openurl,URL</a></li>
+				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<div class="caption">
+			<p>ヘッドライン全体の仕様は<a href="spec_headline.html">HEADLINE/2.0</a>参照。</p>
+		</div>
+		<section class="category">
+			<h1>descript.txt</h1>
+			<dl id="charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">使用する文字コード。Shift_JIS推奨。</p>
+					<p class="default">Shift_JIS</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name,ヘッドライン名">
+				<dt class="entry">name,ヘッドライン名</dt>
+				<dd class="entry">
+					<p class="description">そのヘッドラインの名前。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="dllname,ファイル名">
+				<dt class="entry">dllname,ファイル名</dt>
+				<dd class="entry">
+					<p class="description">headlineの実体となるdllのパス。</p>
+					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="url,URL">
+				<dt class="entry">url,URL</dt>
+				<dd class="entry">
+					<p class="description">ヘッドライン読込先URL。</p>
+					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="openurl,URL">
+				<dt class="entry">openurl,URL</dt>
+				<dd class="entry">
+					<p class="description">サイトにジャンプする際に実際にオープンされる URL。</p>
+					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="homeurl,URL">
+				<dt class="entry">homeurl,URL</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新用のURL。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>

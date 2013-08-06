@@ -18,6 +18,7 @@
 			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
 			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
 		</ul>
 		<ul>
@@ -27,6 +28,12 @@
 			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -48,6 +55,9 @@
 		</section>
 	</section>
 	<div class="categories">
+		<div class="caption">
+			<p>プラグイン全体の仕様は<a href="spec_plugin.html">PLUGIN/2.0</a>参照。</p>
+		</div>
 		<section class="category">
 			<h1>descript.txt</h1>
 			<dl id="charset,文字コード">
@@ -76,7 +86,7 @@
 			<dl id="id,ID">
 				<dt class="entry">id,ID</dt>
 				<dd class="entry">
-					<p class="description">そのプラグインのIDとなる、極力重複可能性の低い文字列。<br />文字列は1バイト文字のみで構成される63バイトまでのもの。<br /><a href="http://www.famkruithof.net/uuid/uuidgen">http://www.famkruithof.net/uuid/uuidgen</a>などで生成できる。<br />一度決定したら変更してはならない。</p>
+					<p class="description">そのプラグインのIDとなる、極力重複可能性の低い文字列。<br />文字列は1バイト文字のみで構成される63バイトまでのもの。通常GUID/UUIDと呼ばれるものを使う。<br />一度決定したら変更してはならない。<br />IDの一致は、たとえ別名のプラグインであっても互換性があることを示す。<br /><br />※生成方法<a href="http://www.famkruithof.net/uuid/uuidgen">http://www.famkruithof.net/uuid/uuidgen</a>。<br />またはそれなりに開発環境が揃っていれば、guidgen.exeのRegistry Formatが利用可能。<br /><a href="http://ssp.shillest.net/docs/guid.zip">ツール</a>も配布されている。</p>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
