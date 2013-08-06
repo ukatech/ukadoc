@@ -124,11 +124,19 @@ a:hover	{
 .text section h1+.section {
 	margin: 10px 1em;
 }
-.text section pre {
+.text section code {
+	display:block;
 	background-color: #ded;
 	border: 2px solid #aba;
-	padding:5px;
-	margin:10px;
+	padding: 5px;
+	margin: 10px;
+}
+.text section ul {
+	margin: 10px;
+}
+.text section ul li {
+	list-style-type: disc;
+	margin-left: 15px;
 }
 .text section dl {
 	margin:10px;
