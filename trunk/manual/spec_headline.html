@@ -162,6 +162,20 @@ Headline: ほげほげ5
 			<p><a href="descript_headline.html">Headline設定のページ</a>を参照してください。</p>
 		</section>
 		<section id="chapter6">
+			<h1>SHIORI Event</h1>
+			<p>いずれも詳細は<a href="descript_headline.html">SHIORI Eventのページ</a>を参照してください。</p>
+			<dl>
+				<dt><a href="list_shiori_event.html#OnHeadlinesenseBegin">OnHeadlinesenseBegin</a></dt>
+				<dd>ヘッドラインセンス開始時。</dd>
+				<dt><a href="list_shiori_event.html#OnHeadlinesense.OnFind">OnHeadlinesense.OnFind</a></dt>
+				<dd>読みあげる内容があった時。</dd>
+				<dt><a href="list_shiori_event.html#OnHeadlinesenseComplete">OnHeadlinesenseComplete</a></dt>
+				<dd>ヘッドラインセンス正常終了時。</dd>
+				<dt><a href="list_shiori_event.html#OnHeadlinesenseFailure">OnHeadlinesenseFailure</a></dt>
+				<dd>ヘッドラインセンス失敗時。</dd>
+			</dl>
+		</section>
+		<section id="chapter7">
 			<h1>補足</h1>
 			<p>GET Headlineは2回呼ばれます。1回目は古いファイルに対して、2回目は新しいファイルに対してです。ただし古->新の順番は実装によっては順番が逆になる可能性がありますので、順番に依存するような処理は組んではいけません。</p>
 			<p>デバッグ中など、常に表示したい場合（no updateにならない）は、descript.txtにalwaysdisplay,1と書いてみてください（デバッグ終了後に必ず消す事）。</p>
