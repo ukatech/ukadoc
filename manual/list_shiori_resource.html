@@ -18,6 +18,7 @@
 			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
 			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
 		</ul>
 		<ul>
@@ -27,6 +28,12 @@
 			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -63,13 +70,13 @@
 				<li><a href="#kero.popupmenu.type">kero.popupmenu.type</a></li>
 				<li><a href="#char*.popupmenu.type">char*.popupmenu.type</a></li>
 			</ul>
-			<h1>オーナードロー画像</h1>
+			<h1>オーナードローメニュー画像</h1>
 			<ul>
 				<li><a href="#menu.sidebar.bitmap.filename">menu.sidebar.bitmap.filename</a></li>
 				<li><a href="#menu.background.bitmap.filename">menu.background.bitmap.filename</a></li>
 				<li><a href="#menu.foreground.bitmap.filename">menu.foreground.bitmap.filename</a></li>
 			</ul>
-			<h1>オーナードロー文字色</h1>
+			<h1>オーナードローメニュー文字色</h1>
 			<ul>
 				<li><a href="#menu.background.font.color.r">menu.background.font.color.r</a></li>
 				<li><a href="#menu.background.font.color.g">menu.background.font.color.g</a></li>
@@ -84,7 +91,11 @@
 				<li><a href="#menu.disable.font.color.g">menu.disable.font.color.g</a></li>
 				<li><a href="#menu.disable.font.color.b">menu.disable.font.color.b</a></li>
 			</ul>
-			<h1>メニュー名</h1>
+			<h1>オーナードローメニュー項目表示</h1>
+			<ul>
+				<li><a href="#note_visible">オーナードローメニュー項目表示</a></li>
+			</ul>
+			<h1>オーナードローメニュー項目名</h1>
 			<ul>
 				<li><a href="#-">-</a></li>
 				<li><a href="#activaterootbutton.caption">activaterootbutton.caption</a></li>
@@ -466,7 +477,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>オーナードロー画像</h1>
+			<h1>オーナードローメニュー画像</h1>
 			<dl id="menu.sidebar.bitmap.filename">
 				<dt class="entry">menu.sidebar.bitmap.filename</dt>
 				<dd class="entry">
@@ -502,7 +513,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>オーナードロー文字色</h1>
+			<h1>オーナードローメニュー文字色</h1>
 			<dl id="menu.background.font.color.r">
 				<dt class="entry">menu.background.font.color.r</dt>
 				<dd class="entry">
@@ -637,11 +648,17 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>メニュー名</h1>
+			<h1>オーナードローメニュー項目表示</h1>
+			<div class="caption" id="note_visible">
+				<p>以下項目名の「caption」の部分を「visible」に置き換えると、それぞれ表示設定になる。<br />1で表示、0で非表示。</p>
+			</div>
+		</section>
+		<section class="category">
+			<h1>オーナードローメニュー項目名</h1>
 			<dl id="-">
 				<dt class="entry">-</dt>
 				<dd class="entry">
-					<p class="description">Languageの名称。</p>
+					<p class="description"><strong>[変更不可]</strong>Languageの名称。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1481,12 +1498,6 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>メニュー表示/非表示</h1>
-			<div class="caption">
-				<p>各メニューリソースのcaptionの部分をvisibleに置き換えると表示/非表示設定。<br />1で表示、0で非表示となる。</p>
-			</div>
 		</section>
 	</div>
 </body>

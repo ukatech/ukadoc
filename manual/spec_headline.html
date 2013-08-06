@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>UKADOC Project HEADLINE/2.0</title>
+<link rel="stylesheet" href="spec.css" />
+<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">HEADLINE/2.0</h1>
+	<nav class="menu-header">
+		<ul>
+			<li><a href="./index.html">Index</a></li>
+		</ul>
+		<ul>
+			<li><a href="./descript_ghost.html">Ghost</a></li>
+			<li><a href="./descript_shell.html">Shell</a></li>
+			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+			<li><a href="./descript_balloon.html">Balloon</a></li>
+			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
+			<li><a href="./descript_install.html">Install</a></li>
+		</ul>
+		<ul>
+			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_propertysystem.html">Property System</a></li>
+			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+		</ul>
+	</nav>
+	<section class="navigation-bar">
+		<h1>HEADLINE/2.0</h1>
+		<section class="navigation-category">
+			<h1>HEADLINE/2.0</h1>
+			<ul>
+				<li><a href="#chapter0">前書</a></li>
+				<li><a href="#chapter1">ヘッドラインの実体</a></li>
+				<li><a href="#chapter2">dll</a></li>
+				<li><a href="#chapter3">request - response 1: version取得</a></li>
+				<li><a href="#chapter4">request - response 2: ヘッドライン取得</a></li>
+				<li><a href="#chapter5">desctipt.txt</a></li>
+				<li><a href="#chapter6">補足</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="text">
+		<div class="caption">
+			<p>最終変更：<time>2013-08-07</time></p>
+		</div>
+		<div class="caption">
+			<p>参考：<a href="http://usada.sakura.vg/contents/headlinesenser.html">HEADLINE/1.1</a>（外部サイト）</p>
+		</div>
+		<section id="chapter0">
+			<h1>前書</h1>
+			<p>HEADLINE/2.0は、旧来仕様（1.1）の改訂版です。現在SSPのみ実装。</p>
+			<p>主な変更は文字コード指定の追加です。</p>
+		</section>
+		<section id="chapter1">
+			<h1>ヘッドラインの実体</h1>
+			<p>設定ファイル「descript.txt」とexecute 関数をエクスポートするdllファイルの2つが必要です。</p>
+		</section>
+		<section id="chapter2">
+			<h1>dll</h1>
+			<p>load,request,unloadをエクスポートする標準的なWindows上でのdllです。</p>
+		</section>
+		<section id="chapter3">
+			<h1>request - response 1: version取得</h1>
+			<section>
+				<h1>request例</h1>
+<pre><code><!--
+-->GET Version HEADLINE/2.0
+Charset: UTF-8
+Sender: SSP
+</code></pre>
+			</section>
+			<section>
+				<h1>requestヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>文字コード</dd>
+					<dt>Sender</dt>
+					<dd>イベント送信元</dd>
+				</dl>
+			</section>
+			<section>
+				<h1>response例</h1>
+<pre><code><!--
+-->HEADLINE/2.0 200 OK
+Charset: UTF-8
+Value: HeadlineModule 1.1
+</code></pre>
+			</section>
+			<section>
+				<h1>responseヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>[省略可]文字コード。省略した場合は呼び出し側指定のもの。</dd>
+					<dt>Value</dt>
+					<dd>[省略可]バージョン文字列</dd>
+				</dl>
+			</section>
+		</section>
+		<section id="chapter4">
+			<h1>request - response 2: ヘッドライン取得</h1>
+			<section>
+				<h1>request例</h1>
+<pre><code><!--
+-->GET Headline HEADLINE/2.0
+Charset: UTF-8
+Sender: SSP
+Option: url
+Path: C:\SSP\temp\ad9326dc37cb86a9.html
+</code></pre>
+			</section>
+			<section>
+				<h1>requestヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>文字コード</dd>
+					<dt>Sender</dt>
+					<dd>イベント送信元</dd>
+					<dt>Option</dt>
+					<dd>[省略可]応答で解析可能なオプション。カンマ区切りで列挙。<br />現在urlのみ。responseのHeadlineヘッダの項参照。</dd>
+					<dt>Path</dt>
+					<dd>ヘッドライン解析対象ファイルパス（フルパス）。</dd>
+				</dl>
+			</section>
+			<section>
+				<h1>response例</h1>
+<pre><code><!--
+-->HEADLINE/2.0 200 OK
+Charset: UTF-8
+Headline: ほげほげ1
+Headline: ほげほげ2
+Headline: ほげほげ3
+Headline: ほげほげ4
+Headline: ほげほげ5
+</code></pre>
+			</section>
+			<section>
+				<h1>responseヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>[省略可]文字コード。省略した場合は呼び出し側指定のもの。</dd>
+					<dt>RequestCharset</dt>
+					<dd>[省略可]次の呼び出し時に希望する文字コード。省略した場合はCharset。</dd>
+					<dt>Headline</dt>
+					<dd>ヘッドラインの内容。<br />呼び出し時にOption: urlというふうに、Optionヘッダにurlが入っていた場合、URL拡張に対応しています。<br />その場合は、バイト値1区切りで、 内容[1]URL という形式で応答すると、ゴーストにURLも通知され、ゴースト側が対応していれば項目をクリックするとその詳細にジャンプ、等ができるかもしれません。<br />尚、返却するのはさくらスクリプトの断片ではなく、タグは使えません。単なるプレーンテキストを返却します。</dd>
+				</dl>
+			</section>
+		</section>
+		<section id="chapter5">
+			<h1>descript.txt</h1>
+			<p><a href="descript_headline.html">Headline設定のページ</a>を参照してください。</p>
+		</section>
+		<section id="chapter6">
+			<h1>補足</h1>
+			<p>GET Headlineは2回呼ばれます。1回目は古いファイルに対して、2回目は新しいファイルに対してです。ただし古->新の順番は実装によっては順番が逆になる可能性がありますので、順番に依存するような処理は組んではいけません。</p>
+			<p>デバッグ中など、常に表示したい場合（no updateにならない）は、descript.txtにalwaysdisplay,1と書いてみてください（デバッグ終了後に必ず消す事）。</p>
+		</section>
+	</div>
+</body>
+</html>

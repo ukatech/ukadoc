@@ -22,16 +22,16 @@ em {
 	font-style: normal;
 	font-weight:bold;
 }
-a:link {
+a:link	{
   color : #0000FF;
 }
-a:visited {
+a:visited	{
   color : #4040FF;
 }
-a:active {
+a:active	{
   color : #FF0000;
 }
-a:hover {
+a:hover	{
   color : #FF0000;
 }
 #page-title {
@@ -102,58 +102,49 @@ a:hover {
 	margin-top: 3px;
 	font-size: small;
 }
-.categories {
+.text {
 	float: left;
 	margin: 10px 0 60px 0;
 	padding-left: 20px;
 	width: 65%;
 }
-.categories .caption {
-	margin: 5px;
-	padding: 5px;
-	border: 1px dashed #669;
-	background-color: #fef;
-}
-.categories .caption h1 {
-	font-size: medium;
-	padding: 5px;
-	color: #000;
-	background-color: #fef;
-}
-.categories .caption dt {
-	font-weight: bold;
-}
-.categories .caption dd {
-	margin-bottom: 0.5em;
-}
-.categories .caption p {
-	margin: 0.5em auto;
-}
-.category {
+.text section {
+	padding-bottom: 20px;
 	background-color: #ffe;
 	clear: left;
 	border: 1px solid #669;
 }
-.category h1 {
+.text section h1 {
 	font-size: x-large;
 	padding: 5px;
+	margin-bottom: 5px;
 	color: #fff;
 	background-color: #669;
 }
-.category>dl{
-	margin-bottom:20px;
+.text section h1+.section {
+	margin: 10px 1em;
 }
-.category h2 {
-	font-size: x-large;
-	padding: 5px;
-	border-top:1px solid #669;
-	border-bottom:1px solid #669;
+.text section pre {
+	background-color: #ded;
+	border: 2px solid #aba;
+	padding:5px;
+	margin:10px;
 }
-.category strong {
-	font-weight: normal;
-	color : #009900;
+.text section dl {
+	margin:10px;
 }
-.category dt.entry {
+.text section dt {
+	font-weight:bold;
+}
+.text section dd {
+	margin:5px 5px 5px 40px;
+}
+.text section section {
+	border: none;
+	padding-bottom: 0;
+}
+.text section section h1 {
+	color: #000;
 	font-size: large;
 	font-weight: bold;
 	border-left: 7px solid #94A5F7;
@@ -163,63 +154,33 @@ a:hover {
 	clear: left;
 	background-color: #eef;
 }
-.category .description {
-	margin: 5px 5px 5px 15px;
+.text section section section h1 {
+	
 }
-.category .default {
-	margin: 5px 5px 5px 15px;
-	font-style: italic;
-	font-size: small;
-	color: #666;
+.text p {
+	margin: 10px;
+	margin-top: 1em;
 }
-.category .default:before {
-	content: "既定値: ";
-}
-.category .reference {
-	margin: 5px 5px 5px 15px;
-	padding: 2px;
-	background-color: #aba;
-}
-.category .reference dt {
-	font-weight: bold;
-	float: left;
-	clear: left;
-	padding: 5px;
-	min-width: 7em;
-	_width: 7em;
-}
-.category .reference dt:after {
-	content: ":";
-}
-.category .reference dd {
-	padding: 5px 5px 5px 10px;
-	overflow: hidden;
-	background-color: #efe;
-	_word-break: break-all;
-	_height: 1em;
-	_overflow-y: visible;
-}
-.category .reference dd:nth-of-type(odd) {
-	background-color: #ded;
-}
-.category .reference dd dt {
-	min-width: 0;
-}
-.category .reference dd dd:nth-of-type(even) {
-	background-color: #ded;
-}
-.category .supported-baseware {
-	margin: 0 0 30px 15px;
-}
-.category .supported-baseware li {
-	float: left;
-	margin-left: 5px;
-}
-.category .remarks {
-	margin: 5px 5px 5px 15px;
+
+
+.text .caption {
+	margin: 5px;
 	padding: 5px;
 	border: 1px dashed #669;
+	background-color: #fef;
 }
-.category .remarks p {
+.text .caption h1 {
+	font-size: medium;
+	padding: 5px;
+	color: #000;
+	background-color: #fef;
+}
+.text .caption dt {
+	font-weight: bold;
+}
+.text .caption dd {
+	margin-bottom: 0.5em;
+}
+.text .caption p {
 	margin: 0.5em auto;
 }

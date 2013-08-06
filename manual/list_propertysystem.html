@@ -18,6 +18,7 @@
 			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
 			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
 		</ul>
 		<ul>
@@ -27,6 +28,12 @@
 			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -129,13 +136,13 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption">
+		<div class="caption">
 			<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みです。</p>
 			<ul>
 				<li><a href="http://crow.aqrs.jp/devtest.html" target="_blank">参考:CROW テスト項目資料</a></li>
 			</ul>
-		</section>
-		<section class="caption">
+		</div>
+		<div class="caption">
 			<p>プロパティシステムは環境変数とタグの両方で使えます。<br />※詳細はSAKURA Scriptおよび環境変数のプロパティシステムの項参考。</p>
 			<dl>
 				<dt>環境変数による拾得の仕方</dt>
@@ -145,7 +152,7 @@
 				<dt>タグによる読み込み方</dt>
 				<dd><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a><br />指定した名前のSHIORI Eventが発生し、Reference0以降に一つずつプロパティシステムの値が入ります。</dd>
 			</dl>
-		</section>
+		</div>
 		<section class="category">
 			<h1>プロパティシステム</h1>
 			<dl id="system.year">
@@ -338,7 +345,7 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
-				<section class="caption">
+				<div class="caption">
 					<h1>※SHIORI Statusヘッダ</h1>
 					<p>複数がカンマ(,)区切りで返ったり、空が返る場合もある</p>
 					<dl>
@@ -359,7 +366,7 @@
 						<dt>opening(種類)</dt>
 						<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がカンマ区切りで入る。<br />例：opening(input,dialog)</dd>
 					</dl>
-				</section>
+				</div>
 				<div class="caption">
 					<p>※Statusヘッダは、SHIORI毎に以下のようにも取得出来ます。</p>
 					<dl>

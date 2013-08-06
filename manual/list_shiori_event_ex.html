@@ -18,6 +18,7 @@
 			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
 			<li><a href="./descript_balloon.html">Balloon</a></li>
 			<li><a href="./descript_plugin.html">Plugin</a></li>
+			<li><a href="./descript_headline.html">Headline</a></li>
 			<li><a href="./descript_install.html">Install</a></li>
 		</ul>
 		<ul>
@@ -27,6 +28,12 @@
 			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+		</ul>
+		<ul>
+			<li>×SHIORI/3.0</li>
+			<li><a href="./list_shiori_event_ex.html">SAORI/1.0</a>（外部サイト）</li>
+			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -228,7 +235,7 @@
 			<h1>ゴースト「奏でる日常の音色」</h1>
 			<ul>
 				<li><a href="#OnKanadeTeaPartyInfomationRequest">OnKanadeTeaPartyInfomationRequest</a></li>
-				<li><a href="#OnKanadeTeaPartyInfomationRequest_r2">（可変名の返信イベント）</a></li>
+				<li><a href="#可変名の返信イベント">可変名の返信イベント</a></li>
 				<li><a href="#OnKanadeTeaParty">OnKanadeTeaParty</a></li>
 				<li><a href="#OnKanadeTeaPartyEnd">OnKanadeTeaPartyEnd</a></li>
 			</ul>
@@ -241,14 +248,14 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption">
+		<div class="caption">
 			<p>以下には、ベースウェア外部のアプリケーションがSSTPによって発信するものや、ゴーストやプラグインが他のゴーストに対して発行するものなど、<em>発行者が外部にあるイベント</em>および、それらのイベントの<em>受信者が返却するイベント</em>が含まれます。</p>
 			<p>そうしたイベントについてこのページは非公式なドキュメントに過ぎず、記載後のそれぞれの更新などで、情報が不正確になっている場合があります。詳しくはそれぞれ公式の説明をあたるようにしてください。</p>
-		</section>
-		<section class="caption">
+		</div>
+		<div class="caption">
 			<p><strong>[NOTIFY]</strong>の表示があるイベントは、必ずNOTIFYコマンドで通知されます。<br />NOTIFYコマンドで通知されたイベントにスクリプトを返却しても一切無視されます。</p>
 			<p>特に表示がないイベントは、状況によってNOTIFY、GETのいずれでも通知される可能性があります。</p>
-		</section>
+		</div>
 		<section class="category">
 			<h1>プラグイン「バーチャルビールかけ（BeerShower）」</h1>
 			<ul class="caption link">
@@ -511,11 +518,11 @@
 					<p class="description">きのこスキンが頭に生えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンの名前。</dd>
 						<dt>Reference1</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンが主に対象とするゴースト名。複数ある場合カンマ区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンのカテゴリ。複数ある場合カンマ区切り。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -525,11 +532,11 @@
 					<p class="description">きのこスキンが頭から消えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンの名前。</dd>
 						<dt>Reference1</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンが主に対象とするゴースト名。複数ある場合カンマ区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>そのきのこの情報。</dd>
+						<dd>そのきのこスキンのカテゴリ。複数ある場合カンマ区切り。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -539,11 +546,11 @@
 					<p class="description">きのこスキンを切り替えようとしている際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>切り替える直前のきのこの情報。</dd>
+						<dd>切り替える直前のきのこスキンの名前。</dd>
 						<dt>Reference1</dt>
-						<dd>切り替える直前のきのこの情報。</dd>
+						<dd>切り替える直前のきのこスキンが主に対象とするゴースト名。複数ある場合カンマ区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>切り替える直前のきのこの情報。</dd>
+						<dd>切り替える直前のきのこスキンのカテゴリ。複数ある場合カンマ区切り。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -553,11 +560,11 @@
 					<p class="description">きのこスキンを切り替えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>切り替えた後のきのこの情報。</dd>
+						<dd>切り替えた後のきのこスキンの名前。</dd>
 						<dt>Reference1</dt>
-						<dd>切り替えた後のきのこの情報。</dd>
+						<dd>切り替えた後のきのこスキンが主に対象とするゴースト名。複数ある場合カンマ区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>切り替えた後のきのこの情報。</dd>
+						<dd>切り替えた後のきのこスキンのカテゴリ。複数ある場合カンマ区切り。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -567,18 +574,18 @@
 					<p class="description">きのこスキンをドロップでインストールした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールされたきのこの情報。</dd>
+						<dd>インストールされたきのこスキンの名前。</dd>
 						<dt>Reference1</dt>
-						<dd>インストールされたきのこの情報。</dd>
+						<dd>インストールされたきのこスキンが主に対象とするゴースト名。複数ある場合カンマ区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>インストールされたきのこの情報。</dd>
+						<dd>インストールされたきのこスキンのカテゴリ。複数ある場合カンマ区切り。</dd>
 					</dl>
 				</dd>
 			</dl>
 			<dl id="OnBatteryLow-kinoko">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p class="description">バッテリ残量が40％を切った際に発生。</p>
+					<p class="description">バッテリ残量が40％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryLow-kinoko">同名の物</a>があるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -598,7 +605,7 @@
 			<dl id="OnSysResourceLow">
 				<dt class="entry">OnSysResourceLow</dt>
 				<dd class="entry">
-					<p class="description">システムリソースが40％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryLow-kinoko">同名の物</a>があるので注意。</p>
+					<p class="description">システムリソースが50％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -608,7 +615,7 @@
 			<dl id="OnSysResourceCritical">
 				<dt class="entry">OnSysResourceCritical</dt>
 				<dd class="entry">
-					<p class="description">システムリソースが20％を切った際に発生。</p>
+					<p class="description">システムリソースが30％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -619,8 +626,7 @@
 		<section class="category">
 			<h1>アプリ「猫どりふ」</h1>
 			<ul class="caption link">
-				<li>公開元：閉鎖</li>
-				<li>代理再配布：<a href="http://umeici.onjn.jp/">http://umeici.onjn.jp/</a></li>
+				<li>公開元：<a href="http://umeici.onjn.jp/">http://umeici.onjn.jp/</a></li>
 			</ul>
 			<ul class="supported-baseware">
 				<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1581,7 +1587,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption">
+			<div class="caption">
 				<h1>要求されるプロパティ名一覧。</h1>
 				<ul>
 					<li>キャラクター名</li>
@@ -1602,7 +1608,7 @@
 					<li>SEN</li>
 					<li>NOB</li>
 				</ul>
-			</section>
+			</div>
 		</section>
 		<section class="category">
 			<h1>ゴースト「ぬるぽ いんたーはい」</h1>
@@ -1856,7 +1862,7 @@
 			<dl id="OnKanadeTeaPartyInfomationRequest">
 				<dt class="entry">OnKanadeTeaPartyInfomationRequest</dt>
 				<dd class="entry">
-					<p class="description">お茶会開始前に、奏でる日常の音色から各ゴースト間に通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,返信イベント名,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#notes_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
+					<p class="description">お茶会開始前に、奏でる日常の音色から各ゴースト間に通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,<a href="#OnKanadeTeaPartyInfomationRequest_r2">返信イベント名</a>,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#notes_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>お茶会バージョン番号。</dd>
@@ -1867,10 +1873,10 @@
 					</dl>
 				</dd>
 			</dl>
-			<dl id="OnKanadeTeaPartyInfomationRequest_r2">
-				<dt class="entry">（可変名の返信イベント）</dt>
+			<dl id="可変名の返信イベント">
+				<dt class="entry">可変名の返信イベント</dt>
 				<dd class="entry">
-					<p class="description">OnKanadeTeaPartyInfomationRequestに対してraiseotherで返信するべきイベント。<br />イベント名はOnKanadeTeaPartyInfomationRequestのreference2で通知されている。</p>
+					<p class="description">OnKanadeTeaPartyInfomationRequestを受信したゴーストが、<em>奏でる日常の音色に対して</em>raiseotherで<em>通知する</em>イベント。<br />イベント名はOnKanadeTeaPartyInfomationRequestのreference2で通知されている。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストの対応するお茶会バージョン番号</dd>
