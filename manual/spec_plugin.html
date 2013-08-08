@@ -42,7 +42,7 @@
 			<h1>PLUGIN/2.0</h1>
 			<ul>
 				<li><a href="#chapter0">前書</a></li>
-				<li><a href="#chapter1">バージョンの影響評価</a></li>
+				<li><a href="#chapter1">バージョンの設計思想と影響評価</a></li>
 				<li><a href="#chapter2">実体</a></li>
 				<li><a href="#chapter3">dllエクスポート関数群</a></li>
 				<li><a href="#chapter4">repuest規定</a></li>
@@ -55,7 +55,7 @@
 	</section>
 	<div class="text">
 		<div class="caption">
-			<p>最終変更：<time>2013-08-07</time></p>
+			<p>最終変更：<time>2013-08-10</time></p>
 		</div>
 		<div class="caption">
 			<p>参考：<a href="http://usada.sakura.vg/contents/plugin.html">PLUGIN/1.0</a>（外部サイト）</p>
@@ -63,13 +63,18 @@
 		<section id="chapter0">
 			<h1>前書</h1>
 			<p>PLUGIN/2.0は、旧来仕様（1.0）の改訂版です。SSPで実装。</p>
-			<p>主な変更は文字コード指定の追加です。</p>
+			<p>整備中の規格であり、大幅な変更の可能性があります。</p>
 		</section>
 		<section id="chapter1">
-			<h1>バージョンの影響評価</h1>
+			<h1>バージョンの設計思想と影響評価</h1>
 			<section>
-				<h1>バージョンの影響評価</h1>
-				<p>処理系にいろいろ負担を移すことを前提としているので、覚悟してください（苦笑</p>
+				<h1>設計思想</h1>
+				<p>手軽に本体やゴーストとやりとりできるよう改修し、SAORI群としてゴーストごとに分散してしまったもののうち「便利機能」にあたる部分を統合し、利用者側の利便性を改善する。</p>
+				<p>プラグイン開発者から実行環境へ負担を移すほうが良いでしょう……多分。</p>
+			</section>
+			<section>
+				<h1>処理系</h1>
+				<p>処理系にいろいろ負担を移すことを前提としていますので、覚悟してください（苦笑</p>
 			</section>
 			<section>
 				<h1>プラグイン作者</h1>
