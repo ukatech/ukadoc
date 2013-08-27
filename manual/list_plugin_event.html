@@ -25,7 +25,7 @@
 			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
 			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
 			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
 		</ul>
@@ -34,6 +34,7 @@
 			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
 			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+			<li><a href="./spec_dll.html">DLL</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -146,7 +147,7 @@
 			<dl id="OnSecondChange">
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
-					<p class="description">秒経過で発生。<br />何秒ごとに通知されるかは、descript.txtの<a href="descript_plugin.html#secondchangeinterval">secondchangeintervalで設定可能。</a></p>
+					<p class="description">秒経過で発生。<br />何秒ごとに通知されるかは、descript.txtの<a href="descript_plugin.html#secondchangeinterval,秒数">secondchangeintervalで設定可能。</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -256,7 +257,7 @@
 			<dl id="OnChoiceSelect_Ex_/OnAnchorSelect_Ex_/_q等に指定された任意名イベント">
 				<dt class="entry">OnChoiceSelect(Ex)/OnAnchorSelect(Ex)/\q等に指定された任意名イベント</dt>
 				<dd class="entry">
-					<p class="description">選択肢・アンカー選択時に発生するSHIORI Eventのプラグイン側フック。<br />プラグインがゴーストに送信したスクリプトおよび、プラグインがゴーストに通知したイベントに対してゴーストから返信されたスクリプトに、選択肢・アンカー形のさくらスクリプトタグが含まれる場合、その一回に限って同じイベント通知がプラグイン側にも横流しされる。</p>
+					<p class="description">選択肢・アンカー選択時に発生するSHIORI Eventのプラグイン側フック。<br />プラグインがゴーストに送信したスクリプトおよび、プラグインがゴーストに通知したイベントに対してゴーストから返信されたスクリプトに、選択肢・アンカー系のさくらスクリプトタグが含まれる場合、その一回に限って選択肢・アンカー選択時にSHIORI側に通知されるのと同じイベントが、プラグイン側にも横流し通知される。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>発生した選択肢・アンカー系SHIORI EventのReference。</dd>

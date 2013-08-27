@@ -25,7 +25,7 @@
 			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
 			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
 			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
 		</ul>
@@ -34,6 +34,7 @@
 			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
 			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+			<li><a href="./spec_dll.html">DLL</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -218,7 +219,7 @@
 }
 </code></pre>
 				<p>*部分には数値(ID)を指定する。0,1,5のようにカンマ区切りで複数可。<br />SSPのみ：1-9のように範囲指定も可。カンマ区切りと合わせて1-9,20-29のような指定も可。</p>
-				<p>これ以降の各定義の*には、各ブレス（中括弧の内側）内でダブらない数値を指定する。<br />この数値がSakuraScript側などからの操作用IDになる。</p>
+				<p>これ以降の各定義の*には、各ブレス（中括弧の内側）内でダブらない数値を指定する。<br />この数値がさくらスクリプト側などからの操作用IDになる。</p>
 			</div>
 			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
@@ -670,7 +671,7 @@
 			<dl id="start,_パターンID_">
 				<dt class="entry">start,[パターンID]</dt>
 				<dd class="entry">
-					<p class="description">IDのパターンアニメーションを発動させる。<br />XY座標は無い。</p>
+					<p class="description">IDのパターンアニメーションを発動させる。<br />ウエイト、XY座標は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -681,7 +682,7 @@
 			<dl id="stop,_パターンID_">
 				<dt class="entry">stop,[パターンID]</dt>
 				<dd class="entry">
-					<p class="description">IDのパターンアニメーションを停止させる。<br />XY座標は無い。</p>
+					<p class="description">IDのパターンアニメーションを停止させる。<br />ウエイト、XY座標は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -690,7 +691,7 @@
 			<dl id="alternativestart,_パターンID1,パターンID2..._">
 				<dt class="entry">alternativestart,[パターンID1,パターンID2...]</dt>
 				<dd class="entry">
-					<p class="description">複数の内のどれかのIDパターンアニメーションを発動させる。<br />XY座標は無い。</p>
+					<p class="description">複数の内のどれかのIDパターンアニメーションを発動させる。<br />ウエイト、XY座標は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -701,14 +702,14 @@
 			<dl id="alternativestop,_パターンID1,パターンID2..._">
 				<dt class="entry">alternativestop,[パターンID1,パターンID2...]</dt>
 				<dd class="entry">
-					<p class="description">複数の内のどれかのIDパターンアニメーションを停止させる。<br />XY座標は無い。</p>
+					<p class="description">複数の内のどれかのIDパターンアニメーションを停止させる。<br />ウエイト、XY座標は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<div class="caption">
-				<p>パターンIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。</p>
+				<p>サーフェスIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。</p>
 			</div>
 		</section>
 		<section class="category">
