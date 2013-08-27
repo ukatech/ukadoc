@@ -25,7 +25,7 @@
 			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
 			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
 			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">SAKURA script</a></li>
+			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
 			<li><a href="./list_propertysystem.html">Property System</a></li>
 			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
 		</ul>
@@ -34,6 +34,7 @@
 			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
 			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+			<li><a href="./spec_dll.html">DLL</a></li>
 		</ul>
 	</nav>
 	<section class="navigation-bar">
@@ -44,7 +45,7 @@
 				<li><a href="#chapter0">前書</a></li>
 				<li><a href="#chapter1">バージョンの設計思想と影響評価</a></li>
 				<li><a href="#chapter2">実体</a></li>
-				<li><a href="#chapter3">dllエクスポート関数群</a></li>
+				<li><a href="#chapter3">DLL</a></li>
 				<li><a href="#chapter4">repuest規定</a></li>
 				<li><a href="#chapter5">response規定</a></li>
 				<li><a href="#chapter6">プラグインID</a></li>
@@ -96,29 +97,9 @@
 			<p>設定ファイル「descript.txt」とdllファイルの2つが必要です。</p>
 		</section>
 		<section id="chapter3">
-			<h1>dllエクスポート関数群</h1>
-			<p><em>YAYA/KAWARI as PLUGIN利用者は読み飛ばして下さい</em></p>
-			<ul>
-				<li>extern "C" __declspec(dllexport) BOOL __cdecl load(HGLOBAL h, long len);</li>
-				<li>extern "C" __declspec(dllexport) BOOL __cdecl unload(void);</li>
-				<li>extern "C" __declspec(dllexport) HGLOBAL __cdecl request(HGLOBAL h, long *len);</li>
-			</ul>
-			<p>☆Borland系C/C++コンパイラでは_loadのように頭にアンダースコアがつくようですがそちらにも対応した方が良いでしょう。</p>
-			<section>
-				<h1>load</h1>
-				<p>読み込み時にコールされます。HGLOBALにDLLの入るディレクトリのパスが入ります。<br />GlobalAlloc(GMEM_FIXED,xxx) されたものなのでそのままポインタ(char *)にキャストして利用してください。<br />また、必ずDLL側でGlobalFreeしてください。</p>
-				<p>返り値は常にtrueです。<br />規定ではロード失敗時にfalseですが、falseを返しても何も処理されません。</p>
-			</section>
-			<section>
-				<h1>unload</h1>
-				<p>DLL開放直前（＝SSP/CROW終了時＋上書きインストール時、DLL_PROCESS_DETACH前）にコールされます。</p>
-				<p>返り値は常にtrueです。<br />規定では開放失敗時にfalseですが、falseを返しても無視されます。</p>
-			</section>
-			<section>
-				<h1>request</h1>
-				<p>ロード・アンロード以外の処理はすべてここで行われます。<br />注意事項はloadと同じです。</p>
-				<p>返り値は<a href="#chapter5">後述</a>の通りです。<br />レスポンス用の返り値HGLOBALも、GlobalAlloc(GMEM_FIXED,xxx)で確保されたものにしてください。</p>
-			</section>
+			<h1>DLL</h1>
+			<p><a href="spec_dll.html">DLLのページ</a>を参照してください。</p>
+			<p><em>※YAYA/KAWARI as PLUGIN利用者・モジュール作者は読み飛ばして大丈夫です。</em></p>
 		</section>
 		<section id="chapter4">
 			<h1>request規定</h1>
