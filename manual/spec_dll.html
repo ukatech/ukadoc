@@ -77,7 +77,7 @@
 			<section>
 				<h1>request</h1>
 				<p>ロード・アンロード以外の処理はすべてここで行われます。<br />注意事項はloadと同じです。</p>
-				<p>返り値は<a href="#chapter5">後述</a>の通りです。<br />レスポンス用の返り値HGLOBALも、GlobalAlloc(GMEM_FIXED,xxx)で確保されたものにしてください。</p>
+				<p>返り値はこのDLLが実装するサブシステム（SHIORI,SAORI,PLUGIN,...）の種類によります。<br />レスポンス用の返り値HGLOBALも、GlobalAlloc(GMEM_FIXED,xxx)で確保されたものにしてください。</p>
 			</section>
 		</section>
 	</div>
