@@ -64,6 +64,10 @@
 				<li><a href="#OnFullScreenAppRestore">OnFullScreenAppRestore</a></li>
 				<li><a href="#OnCacheSuspend">OnCacheSuspend</a></li>
 				<li><a href="#OnCacheRestore">OnCacheRestore</a></li>
+				<li><a href="#OnInitialize">OnInitialize</a></li>
+				<li><a href="#OnDestroy">OnDestroy</a></li>
+				<li><a href="#OnSysResume">OnSysResume</a></li>
+				<li><a href="#OnSysSuspend">OnSysSuspend</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -392,10 +396,6 @@
 				<li><a href="#OnNotifyUserInfo">OnNotifyUserInfo</a></li>
 				<li><a href="#OnNotifyOSInfo">OnNotifyOSInfo</a></li>
 				<li><a href="#OnNotifyFontInfo">OnNotifyFontInfo</a></li>
-				<li><a href="#OnInitialize">OnInitialize</a></li>
-				<li><a href="#OnDestroy">OnDestroy</a></li>
-				<li><a href="#OnSysResume">OnSysResume</a></li>
-				<li><a href="#OnSysSuspend">OnSysSuspend</a></li>
 			</ul>
 		</section>
 	</section>
@@ -753,6 +753,46 @@
 				<dt class="entry">OnCacheRestore</dt>
 				<dd class="entry">
 					<p class="description">ゴーストキャッシュから出た際に発生。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnInitialize">
+				<dt class="entry">OnInitialize</dt>
+				<dd class="entry">
+					<p class="description">起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDestroy">
+				<dt class="entry">OnDestroy</dt>
+				<dd class="entry">
+					<p class="description">終了が指示された際に発生。<strong>[NOTIFY]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSysResume">
+				<dt class="entry">OnSysResume</dt>
+				<dd class="entry">
+					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>解除理由。通常normal、システムのスケジュールによる自動解除時auto、バッテリー切れで非情停止の場合critical（Windows Vista以降廃止）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSysSuspend">
+				<dt class="entry">OnSysSuspend</dt>
+				<dd class="entry">
+					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<strong>[NOTIFY]</strong></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4235,42 +4275,6 @@
 						<dt>Reference*</dt>
 						<dd>フォント名。</dd>
 					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnInitialize">
-				<dt class="entry">OnInitialize</dt>
-				<dd class="entry">
-					<p class="description">起動した際に発生。<strong>[NOTIFY]</strong></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnDestroy">
-				<dt class="entry">OnDestroy</dt>
-				<dd class="entry">
-					<p class="description">終了が指示された際に発生。<strong>[NOTIFY]</strong></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSysResume">
-				<dt class="entry">OnSysResume</dt>
-				<dd class="entry">
-					<p class="description">レジュームの際に発生。<strong>[NOTIFY]</strong></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnSysSuspend">
-				<dt class="entry">OnSysSuspend</dt>
-				<dd class="entry">
-					<p class="description">サスペンドの際に発生。<strong>[NOTIFY]</strong></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
