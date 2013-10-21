@@ -183,6 +183,7 @@
 				<li><a href="#OnElonaOmakeMMAEventCooking">OnElonaOmakeMMAEventCooking</a></li>
 				<li><a href="#OnElonaOmakeMMAEventAreaChanged">OnElonaOmakeMMAEventAreaChanged</a></li>
 				<li><a href="#OnElonaOmakeMMAEventHour">OnElonaOmakeMMAEventHour</a></li>
+				<li><a href="#OnElonaOmakeMMAEventGrandmapocalypse">OnElonaOmakeMMAEventGrandmapocalypse</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1549,6 +1550,16 @@
 					</dl>
 				</dd>
 			</dl>
+			<dl id="OnElonaOmakeMMAEventGrandmapocalypse">
+				<dt class="entry">OnElonaOmakeMMAEventGrandmapocalypse</dt>
+				<dd class="entry">
+					<p class="description">グランマ黙示録が訪れた時に発生。</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
+					</dl>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>ゴースト間汎用イベント</h1>
@@ -1863,7 +1874,7 @@
 			<dl id="OnKanadeTeaPartyInfomationRequest">
 				<dt class="entry">OnKanadeTeaPartyInfomationRequest</dt>
 				<dd class="entry">
-					<p class="description">お茶会開始前に、奏でる日常の音色から各ゴースト間に通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,<a href="#可変名の返信イベント">返信イベント名</a>,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#notes_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
+					<p class="description">お茶会開始前に、奏でる日常の音色から各ゴーストに通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,<a href="#可変名の返信イベント">返信イベント名</a>,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#notes_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>お茶会バージョン番号。</dd>
