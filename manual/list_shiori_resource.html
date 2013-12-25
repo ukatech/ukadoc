@@ -192,6 +192,13 @@
 				<li><a href="#vanishbutton.caption">vanishbutton.caption</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>ツールチップイベント</h1>
+			<ul>
+				<li><a href="#tooltip">tooltip</a></li>
+				<li><a href="#balloon_tooltip">balloon_tooltip</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<div class="caption">
@@ -1504,6 +1511,50 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ツールチップ系</h1>
+			<dl id="tooltip">
+				<dt class="entry">tooltip</dt>
+				<dd class="entry">
+					<p class="description">シェルにおけるツールチップ内容の取得。<br />シェルのサーフェスにマウスカーソルが乗った際に通知。<br /><a href="descript_shell_surfaces.html#当たり判定名,表示内容">シェル側設定</a>がある場合はそちらが優先される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dt>Reference1</dt>
+						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dt>Reference2</dt>
+						<dd>常に0。</dd>
+						<dt>Reference3</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference4</dt>
+						<dd>当たり判定の識別子。</dd>
+						<dt>Reference5</dt>
+						<dd>常に0。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="balloon_tooltip">
+				<dt class="entry">balloon_tooltip</dt>
+				<dd class="entry">
+					<p class="description">バルーン選択肢上のツールチップ内容の取得。<br />選択肢にマウスカーソルが乗った際に通知。<br /></p>
+					<dl class="reference">
+						<dt>Reference*(0)</dt>
+						<dd>選択肢ラベル。</dd>
+						<dt>Reference*(1)</dt>
+						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
+					</dl>
+					<div class="remarks">
+						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>

@@ -167,13 +167,6 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>ツールチップイベント</h1>
-			<ul>
-				<li><a href="#tooltip">tooltip</a></li>
-				<li><a href="#balloon_tooltip">balloon_tooltip</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
 			<h1>トレイバルーンイベント</h1>
 			<ul>
 				<li><a href="#OnTrayBalloonClick">OnTrayBalloonClick</a></li>
@@ -407,6 +400,9 @@
 		<div class="caption">
 			<p><strong>[NOTIFY]</strong>の表示があるイベントは、必ずNOTIFYコマンドで通知されます。<br />NOTIFYコマンドで通知されたイベントにスクリプトを返却しても一切無視されます。</p>
 			<p>特に表示がないイベントは、状況によってNOTIFY、GETのいずれでも通知される可能性があります。</p>
+		</div>
+		<div class="caption">
+			<p>ここに乗っていないイベントについては、<a href="list_shiori_resource.html">SHIORI Resource</a>または<a href="list_shiori_event_ex.html">外部からのSHIORI Event</a>のページも参照してください。</p>
 		</div>
 		<section class="category">
 			<h1>起動・終了・切り替えイベント</h1>
@@ -1877,50 +1873,6 @@
 						<dt>Reference1</dt>
 						<dd>残り時間。</dd>
 					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-		</section>
-		<section class="category">
-			<h1>ツールチップイベント</h1>
-			<dl id="tooltip">
-				<dt class="entry">tooltip</dt>
-				<dd class="entry">
-					<p class="description">ツールチップ内容を通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
-						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
-						<dt>Reference2</dt>
-						<dd>常に0。</dd>
-						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
-						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
-						<dt>Reference5</dt>
-						<dd>常に0。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="balloon_tooltip">
-				<dt class="entry">balloon_tooltip</dt>
-				<dd class="entry">
-					<p class="description">バルーン選択肢上のツールチップ内容を通知。</p>
-					<dl class="reference">
-						<dt>Reference*(0)</dt>
-						<dd>選択肢ラベル。</dd>
-						<dt>Reference*(1)</dt>
-						<dd>選択肢ID。 <a href="#balloon_tooltip-note1">*1</a></dd>
-					</dl>
-					<div class="remarks">
-						<p id="balloon_tooltip-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._">\__q[ID,...]</a>による選択肢上で発生したballoon_tooltipには、他のSHIORI同様に選択肢IDのみが入る。</p>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
