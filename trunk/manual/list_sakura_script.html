@@ -2039,7 +2039,7 @@
 			<dl id="_!_raise,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![raise,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">イベントを実行する。<br />第3引数以降はreference。</p>
+					<p class="description">イベントを実行する。<br />第3引数以降はReference0以降に順番に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2050,7 +2050,13 @@
 			<dl id="_!_embed,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![embed,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">イベントの実行結果を現在実行中のスクリプトのこのタグ内に「埋め込む」。使い方は\![raise]と同じ。プロパティシステムの内容によって分岐など、イベントを実行して情報を取得する仕様を、1回のスクリプト実行で有効に使用するための仕様。<br />第3引数以降はreference。</p>
+					<p class="description">イベントの実行結果を現在実行中のスクリプトのこのタグ内に<strong>「埋め込む」</strong>特殊タグ。<br />
+					オプション部分の使い方は\![raise]と同じで、第3引数以降はReference0以降に順番に格納される。</p>
+					
+					<p class="description">実行中に\![embed]タグに遭遇すると、指定したイベント呼び出しが行われ、結果(Result)が返された場合には、\![embed]タグ全体がその結果文字列に置き換えられ、置き換えられた文字列の1文字目からスクリプト実行を続行する。<br />
+					(※里々の実行中SAORI呼び出し"sync"の仕組みをより広範囲・汎用的に提供するための機能)</p>
+					
+					<p class="description">当初プロパティシステムと合わせて使用し、プロパティシステム呼び出し自体は結果を返さず、直後に埋め込んだ\![embed]タグで結果に応じて動的に処理を変えるのを「1回のスクリプト実行内で」行う機構として実装されたが、特にそのような縛りはなく、スクリプト実行に同期させて同時に何か処理したい場合すべてに使える仕様である。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
