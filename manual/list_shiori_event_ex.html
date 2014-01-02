@@ -76,6 +76,12 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>SAORI「httpc.dll」</h1>
+			<ul>
+				<li><a href="#OnHttpcNotify">OnHttpcNotify</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>外部アプリ汎用イベント</h1>
 			<ul>
 				<li><a href="#OnApplicationBoot">OnApplicationBoot</a></li>
@@ -372,6 +378,32 @@
 				<dt class="entry">OnCrystalDiskInfoClear</dt>
 				<dd class="entry">
 					<p class="description">今まで情報があったのに消えてしまった場合に発生。<br />CrystalDiskInfoが終了した場合など。</p>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category">
+			<h1>SAORI「httpc.dll」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="http://www.geocities.jp/poskoma/#content_1_13">http://www.geocities.jp/poskoma/#content_1_13</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+				<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnHttpcNotify">
+				<dt class="entry">OnHttpcNotify</dt>
+				<dd class="entry">
+					<p class="description">httpc.dllが提供する機能の非同期実行オプションでの実行後、同dllからDirectSSTPで送信される戻り値通知イベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>呼び出し時に引数１で渡した識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>空欄</dd>
+						<dt>Reference2</dt>
+						<dd>実行した関数の戻り値</dd>
+					</dl>
 				</dd>
 			</dl>
 		</section>
