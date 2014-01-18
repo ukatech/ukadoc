@@ -126,6 +126,9 @@ a:hover {
 .categories .caption dd {
 	margin-bottom: 0.5em;
 }
+.categories .caption .reference dd{
+	margin-bottom: 0;
+}
 .categories .caption p {
 	margin: 0.5em auto;
 }
