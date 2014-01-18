@@ -196,6 +196,12 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>アプリ「テナリ君」用SSTP送信パッチ</h1>
+			<ul>
+				<li><a href="#OnMahjong">OnMahjong</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>ゴースト間汎用イベント</h1>
 			<ul>
 				<li><a href="#OnRequestValues">OnRequestValues</a></li>
@@ -401,8 +407,8 @@
 						<dd>呼び出し時に引数１で渡した識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>空欄</dd>
-						<dt>Reference2</dt>
-						<dd>実行した関数の戻り値</dd>
+						<dt>Reference*</dt>
+						<dd>実行した機能の戻り値。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -1593,6 +1599,129 @@
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
 					</dl>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>アプリ「テナリ君」用SSTP送信パッチ</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="http://nikolat.herokuapp.com/ukagaka/mahjong-with-ghost-enabled/">http://nikolat.herokuapp.com/ukagaka/mahjong-with-ghost-enabled/</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+				<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+				<li><em>※推奨　SSP2.3.13以上</em></li>
+			</ul>
+			<dl id="OnMahjong">
+				<dt class="entry">OnMahjong</dt>
+				<dd class="entry">
+					<p class="description">ゲームの各タイミングで通知。後述の<a href="#reference_ukajong">※サーバコマンド</a>参照。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>バージョン（UKAJONG/0.1）</dd>
+						<dt>Reference1</dt>
+						<dd><a href="#reference_ukajong">※サーバコマンド</a></dd>
+						<dt>Reference*</dt>
+						<dd><a href="#reference_ukajong">※サーバコマンド</a>に応じた追加情報</dd>
+					</dl>
+					<div class="caption" id="reference_ukajong">
+						<p>UKAJANG/0.1におけるサーバコマンドとその追加情報は以下</p>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>gamestart（ゲーム開始時）</dd>
+							<dt>Reference2</dt>
+							<dd>席（東|南|西|北）</dd>
+							<dt>Reference3</dt>
+							<dd>プレイヤー名1</dd>
+							<dt>Reference4</dt>
+							<dd>プレイヤー名2</dd>
+							<dt>Reference5</dt>
+							<dd>プレイヤー名3</dd>
+							<dt>Reference6</dt>
+							<dd>プレイヤー名4</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>gameend（ゲーム終了時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名1（バイト値１）点数</dd>
+							<dt>Reference3</dt>
+							<dd>プレイヤー名2（バイト値１）点数</dd>
+							<dt>Reference4</dt>
+							<dd>プレイヤー名3（バイト値１）点数</dd>
+							<dt>Reference5</dt>
+							<dd>プレイヤー名4（バイト値１）点数</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>kyokustart（一局開始時）</dd>
+							<dt>Reference2</dt>
+							<dd>場風（東|南|西|北）</dd>
+							<dt>Reference3</dt>
+							<dd>親プレイヤー名</dd>
+							<dt>Reference4</dt>
+							<dd>本場（例 1）</dd>
+							<dt>Reference5</dt>
+							<dd>供託（例 1000）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>kyokuend（一局終了時）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>haipai（配牌を配る時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名</dd>
+							<dt>Reference3</dt>
+							<dd>配牌（例 1m2m3m4p5p6p7s8s9s1z5z6z7z）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>dora（ドラ表示牌を送る時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名</dd>
+							<dt>Reference3</dt>
+							<dd>牌（例 7z）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>tsumo（ツモの時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名（自分）</dd>
+							<dt>Reference3</dt>
+							<dd>残り枚数</dd>
+							<dt>Reference4</dt>
+							<dd>牌（例 7z）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>sutehai（捨牌時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名（自分）</dd>
+							<dt>Reference3</dt>
+							<dd>牌（例 7z）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>say（発声時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名</dd>
+							<dt>Reference3</dt>
+							<dd>発声内容（chi|pon|kan|ron|tsumo|richi|tenpai|noten）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>agari（あがりの時）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>ryukyoku（流局時）</dd>
+						</dl>
+					</div>
 				</dd>
 			</dl>
 		</section>
