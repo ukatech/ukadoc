@@ -61,7 +61,7 @@
 			<ul>
 				<li><a href="#element*,パターン定義,ファイル名,X座標,Y座標">element*,パターン定義,ファイル名,X座標,Y座標</a></li>
 				<li><a href="#animation*.interval,タイミング定義">animation*.interval,タイミング定義</a></li>
-				<li><a href="#animation*.pattern*,パターン定義,サーフィス番号,ウエイト,X座標,Y座標">animation*.pattern*,パターン定義,サーフィス番号,ウエイト,X座標,Y座標</a></li>
+				<li><a href="#animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標">animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
@@ -79,7 +79,7 @@
 				<li><a href="#point.basepos.x,座標">point.basepos.x,座標</a></li>
 				<li><a href="#point.basepos.y,座標">point.basepos.y,座標</a></li>
 			</ul>
-			<h2>サーフィスのアニメーションタイミング(SERIKO)</h2>
+			<h2>サーフェスのアニメーションタイミング(SERIKO)</h2>
 			<ul>
 				<li><a href="#sometimes">sometimes</a></li>
 				<li><a href="#rarely">rarely</a></li>
@@ -93,7 +93,7 @@
 				<li><a href="#_1_bind">bind</a></li>
 				<li><a href="#bind+アニメーションタイミング">bind+アニメーションタイミング</a></li>
 			</ul>
-			<h2>サーフィスのアニメーションパターン(SERIKO)</h2>
+			<h2>サーフェスのアニメーションパターン(SERIKO)</h2>
 			<ul>
 				<li><a href="#base">base</a></li>
 				<li><a href="#overlay">overlay</a></li>
@@ -227,7 +227,7 @@
 			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスの設定。<br />加算したアニメーションパターンはこのサーフィス内で1枚のベースサーフィス扱いになる。</p>
+					<p class="description">ベースサーフェスの設定。<br />加算したアニメーションパターンはこのサーフェス内で1枚のベースサーフェス扱いになる。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -248,10 +248,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="animation*.pattern*,パターン定義,サーフィス番号,ウエイト,X座標,Y座標">
-				<dt class="entry">animation*.pattern*,パターン定義,サーフィス番号,ウエイト,X座標,Y座標</dt>
+			<dl id="animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標">
+				<dt class="entry">animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">intervalで設定したタイミングで発動するアニメーションパターンの設定。<br />パターン定義は下記のアニメーションパターン参照。<br />ウエイトの部分には「最小ウエイト-最大ウエイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される(SSPのみ)。<br />旧仕様：<em>*</em>pattern<em>*</em></p>
+					<p class="description">intervalで設定したタイミングで発動するアニメーションパターンの設定。<br />パターン定義は下記のアニメーションパターン参照。<br />ウエイトの部分には「最小ウエイト-最大ウエイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される(SSPのみ)。<br />サーフェス番号に-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。<br />旧仕様：<em>*</em>pattern<em>*</em></p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -276,7 +276,7 @@
 			<dl id="animation*.option,background">
 				<dt class="entry">animation*.option,background</dt>
 				<dd class="entry">
-					<p class="description">これが定義されたアニメーションはベースサーフィスより裏に表示される。</p>
+					<p class="description">これが定義されたアニメーションはベースサーフェスより裏に表示される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -328,7 +328,7 @@
 			<dl id="_2_sakura.balloon.offsetx,座標">
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフィスでのみの本体側バルーン位置X座標。</p>
+					<p class="description">そのサーフェスでのみの本体側バルーン位置X座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -340,7 +340,7 @@
 			<dl id="_2_sakura.balloon.offsety,座標">
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフィスでのみの本体側バルーン位置Y座標。</p>
+					<p class="description">そのサーフェスでのみの本体側バルーン位置Y座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -352,7 +352,7 @@
 			<dl id="_2_kero.balloon.offsetx,座標">
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフィスでのみの相方側バルーン位置X座標。</p>
+					<p class="description">そのサーフェスでのみの相方側バルーン位置X座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -364,7 +364,7 @@
 			<dl id="_2_kero.balloon.offsety,座標">
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフィスでのみの相方側バルーン位置Y座標。</p>
+					<p class="description">そのサーフェスでのみの相方側バルーン位置Y座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -376,7 +376,7 @@
 			<dl id="point.centerx,座標">
 				<dt class="entry">point.centerx,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフィスの中心X座標。</p>
+					<p class="description">サーフェスの中心X座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -388,7 +388,7 @@
 			<dl id="point.centery,座標">
 				<dt class="entry">point.centery,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフィスの中心Y座標。</p>
+					<p class="description">サーフェスの中心Y座標。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -441,7 +441,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<h2>サーフィスのアニメーションタイミング(SERIKO)</h2>
+			<h2>サーフェスのアニメーションタイミング(SERIKO)</h2>
 			<dl id="sometimes">
 				<dt class="entry">sometimes</dt>
 				<dd class="entry">
@@ -498,7 +498,7 @@
 			<dl id="runonce">
 				<dt class="entry">runonce</dt>
 				<dd class="entry">
-					<p class="description">サーフィスに切り替わった瞬間に1回のみ発生。</p>
+					<p class="description">サーフェスに切り替わった瞬間に1回のみ発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -559,11 +559,11 @@
 					</ul>
 				</dd>
 			</dl>
-			<h2>サーフィスのアニメーションパターン(SERIKO)</h2>
+			<h2>サーフェスのアニメーションパターン(SERIKO)</h2>
 			<dl id="base">
 				<dt class="entry">base</dt>
 				<dd class="entry">
-					<p class="description">ベースになるサーフィス表示。<br />サーフィス番号を-1で初期ベースに戻すことができる。<br />XY座標は無視される。</p>
+					<p class="description">ベースになるサーフェス表示。<br />サーフェス番号を-1で初期ベースに戻すことができる。<br />XY座標は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -574,7 +574,7 @@
 			<dl id="overlay">
 				<dt class="entry">overlay</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスの上に合成して表示。<br />サーフィス番号を-1で合成を消すことができる。</p>
+					<p class="description">ベースサーフェスの上に合成して表示。<br />サーフェス番号を-1で合成を消すことができる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -585,7 +585,7 @@
 			<dl id="overlayfast">
 				<dt class="entry">overlayfast</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスの上に合成して表示。<br />このアニメーションはベースサーフィスの表示領域のみ合成できる。</p>
+					<p class="description">ベースサーフェスの上に合成して表示。<br />このアニメーションはベースサーフェスの表示領域のみ合成できる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -596,7 +596,7 @@
 			<dl id="replace">
 				<dt class="entry">replace</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスの上に合成して表示。<br />このアニメーションの透過部分はベースサーフィスも透過される。</p>
+					<p class="description">ベースサーフェスの上に合成して表示。<br />このアニメーションの透過部分はベースサーフェスも透過される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -605,7 +605,7 @@
 			<dl id="interpolate">
 				<dt class="entry">interpolate</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスの<em>透明なところにのみ</em>画像を合成。<br />ベースサーフィスの半透明部分は、透明度が高い部分ほど強く合成が反映される。<br />interpolateで重なる部分はベースより上位（手前）側になければならない。</p>
+					<p class="description">ベースサーフェスの<em>透明なところにのみ</em>画像を合成。<br />ベースサーフェスの半透明部分は、透明度が高い部分ほど強く合成が反映される。<br />interpolateで重なる部分はベースより上位（手前）側になければならない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -623,7 +623,7 @@
 			<dl id="move">
 				<dt class="entry">move</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフィスをXY座標で指定して表示。<br />サーフィス番号は無視される。</p>
+					<p class="description">ベースサーフェスをXY座標で指定して表示。<br />サーフェス番号は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -634,7 +634,7 @@
 			<dl id="_2_bind">
 				<dt class="entry">bind</dt>
 				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフィスを着せ替えパーツとする。<br />着せ替えパーツとして単純に一つのサーフィスの合成しか出来なかった頃の唯一のメソッドで、現在はaddが互換。</p>
+					<p class="description">着せ替え用メソッド。指定したサーフェスを着せ替えパーツとする。<br />着せ替えパーツとして単純に一つのサーフェスの合成しか出来なかった頃の唯一のメソッドで、現在はaddが互換。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -644,7 +644,7 @@
 			<dl id="add">
 				<dt class="entry">add</dt>
 				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフィスをベースサーフィスに合成する。</p>
+					<p class="description">着せ替え用メソッド。指定したサーフェスをベースサーフェスに合成する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -654,7 +654,7 @@
 			<dl id="reduce">
 				<dt class="entry">reduce</dt>
 				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフィスの透過領域をベースサーフィスから削除する。透過領域の追加。</p>
+					<p class="description">着せ替え用メソッド。指定したサーフェスの透過領域をベースサーフェスから削除する。透過領域の追加。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -711,9 +711,6 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption">
-				<p>サーフィスIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。</p>
-			</div>
 		</section>
 		<section class="category">
 			<h1>surface.aliasブレス</h1>
@@ -728,7 +725,7 @@
 			<dl id="*,[*]">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
-					<p class="description">サーフィスIDに対して任意のエイリアスIDを設定する。<br />例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br />また、1,[1,11,21]などとカンマ区切りで複数のサーフィスを指定することもでき、<br />この場合\s[1]で1,11,21からランダムで選ばれる。</p>
+					<p class="description">サーフェスIDに対して任意のエイリアスIDを設定する。<br />例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br />また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br />この場合\s[1]で1,11,21からランダムで選ばれる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>

@@ -126,7 +126,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>サーフィスイベント</h1>
+			<h1>サーフェスイベント</h1>
 			<ul>
 				<li><a href="#OnSurfaceChange">OnSurfaceChange</a></li>
 				<li><a href="#OnSurfaceRestore">OnSurfaceRestore</a></li>
@@ -1255,18 +1255,18 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サーフィスイベント</h1>
+			<h1>サーフェスイベント</h1>
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">サーフィスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
+					<p class="description">サーフェスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフィス。</dd>
+						<dd>本体側の現在サーフェス。</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフィス。</dd>
+						<dd>相方側の現在サーフェス。</dd>
 						<dt>Reference2</dt>
-						<dd>※SSPのみ　キャラID,サーフィス番号,幅,高さ</dd>
+						<dd>※SSPのみ　キャラID,サーフェス番号,幅,高さ</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1277,12 +1277,12 @@
 			<dl id="OnSurfaceRestore">
 				<dt class="entry">OnSurfaceRestore</dt>
 				<dd class="entry">
-					<p class="description">同じサーフィスが一定時間続いた際に発生。</p>
+					<p class="description">同じサーフェスが一定時間続いた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフィス。</dd>
+						<dd>本体側の現在サーフェス。</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフィス。</dd>
+						<dd>相方側の現在サーフェス。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1294,7 +1294,7 @@
 			<dl id="OnOtherSurfaceChange">
 				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">（自分以外の）他のゴーストのサーフィス（表情）が変わった際に通知されます。<br />
+					<p class="description">（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
 					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
@@ -1302,13 +1302,13 @@
 						<dt>Reference1</dt>
 						<dd>ゴーストSakura名</dd>
 						<dt>Reference2</dt>
-						<dd>サーフィスが切り替わったウインドウID(Sakura=0)</dd>
+						<dd>サーフェスが切り替わったウインドウID(Sakura=0)</dd>
 						<dt>Reference3</dt>
-						<dd>新サーフィスID</dd>
+						<dd>新サーフェスID</dd>
 						<dt>Reference4</dt>
-						<dd>旧サーフィスID</dd>
+						<dd>旧サーフェスID</dd>
 						<dt>Reference5</dt>
-						<dd>新しいサーフィスの大きさ(座標：左,上,右,下)</dd>
+						<dd>新しいサーフェスの大きさ(座標：左,上,右,下)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3365,7 +3365,7 @@
 			<dl id="OnOverlap">
 				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
-					<p class="description">キャラクター（サーフィス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
+					<p class="description">キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] はバイト値1<br />例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</dd>
@@ -3380,7 +3380,7 @@
 			<dl id="OnOtherOverlap">
 				<dt class="entry">OnOtherOverlap</dt>
 				<dd class="entry">
-					<p class="description">他も含めて全起動中のキャラクター（サーフィス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p class="description">他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</dd>
@@ -3395,7 +3395,7 @@
 			<dl id="OnOffscreen">
 				<dt class="entry">OnOffscreen</dt>
 				<dd class="entry">
-					<p class="description">キャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
+					<p class="description">キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ID [\1] ID [\1] ID ...<br />[\1] はバイト値1<br />例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</dd>
@@ -3410,7 +3410,7 @@
 			<dl id="OnOtherOffscreen">
 				<dt class="entry">OnOtherOffscreen</dt>
 				<dd class="entry">
-					<p class="description">他を含めてキャラクター（サーフィス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p class="description">他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/1 [\1] 所長たん/0</dd>
@@ -3937,7 +3937,7 @@
 					<p class="description">他に起動しているゴーストの本体側名を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>１バイト区切りにされた、他に起動しているゴーストの本体側名、本体側サーフィス番号、相方側サーフィス番号。</dd>
+						<dd>１バイト区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4152,7 +4152,7 @@
 						<dt>Reference1</dt>
 						<dd>選択しているバルーンのフルパス</dd>
 						<dt>Reference2</dt>
-						<dd>サーフィス番号リスト [キャラID＋コロン＋カンマ区切り＋スペース] 例：0:0,1,2,3 1:0,1</dd>
+						<dd>サーフェス番号リスト [キャラID＋コロン＋カンマ区切り＋スペース] 例：0:0,1,2,3 1:0,1</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4169,7 +4169,7 @@
 						<dt>Reference1</dt>
 						<dd>選択しているシェルのフルパス</dd>
 						<dt>Reference2</dt>
-						<dd>サーフィス番号リスト [カンマ区切り] 例：0,1,2,3,4,5,6,7,8,10,11</dd>
+						<dd>サーフェス番号リスト [カンマ区切り] 例：0,1,2,3,4,5,6,7,8,10,11</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

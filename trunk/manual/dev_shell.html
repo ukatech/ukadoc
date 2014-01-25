@@ -57,7 +57,7 @@ home
 			<div class="chapter">
 				<h3>1、立ち絵となる絵を用意する</h3>
 				<div class="section">
-					自分で絵を描く、もしくはフリーシェルと称される用意されたサーフィスを使用します。
+					自分で絵を描く、もしくはフリーシェルと称される用意されたサーフェスを使用します。
 				</div>
 				<div class="section">
 					<p>ゴーストにおける画像形式の基本はpngです。</p>
@@ -67,16 +67,16 @@ home
 				</div>
 				<div class="section">
 					<p>まずは<em>surface0.png</em>と<em>surface10.png</em>を用意します。</p>
-					<p>この二枚の画像(サーフィス)は必須です。</p>
+					<p>この二枚の画像(サーフェス)は必須です。</p>
 					<p><em>surface0.png</em>はメイン側の基本立ち絵、<em>surface10.png</em>は相方側の基本立ち絵となります。</p>
-					<p>相方が要らない場合は<em>surface10.pngを</em>単色で塗り潰した画像(全て透明のサーフィス)を使用してください。</p>
+					<p>相方が要らない場合は<em>surface10.pngを</em>単色で塗り潰した画像(全て透明のサーフェス)を使用してください。</p>
 				</div>
 				<div class="section">
-					サーフィスは<em>surface0000.png</em>、<em>surface0010.png</em>等の様に記述しても<em>surface0</em>、<em>surface10</em>と認識されます。
+					サーフェスは<em>surface0000.png</em>、<em>surface0010.png</em>等の様に記述しても<em>surface0</em>、<em>surface10</em>と認識されます。
 				</div>
 				<div class="section">
 					<h4>・画像の透過について</h4>
-					<p>サーフィス画像では左上端の1ドットが抜け色となります。</p>
+					<p>サーフェス画像では左上端の1ドットが抜け色となります。</p>
 					<p>なので、左上端の1ドットと同じ色がキャラクター内にあった場合その部分も透過されてしまいますので、キャラクターには使用していない系統の色で塗り潰してください。</p>
 				</div>
 				<div class="section">
@@ -97,7 +97,7 @@ home
 					</table>
 					<p>この様に輪郭が背景と混ざらないようにすると綺麗に色が抜けます。</p>
 					<br>
-					<p>Photoshopをして作成する場合、<a href="http://homepage3.nifty.com/khsoft/cbs/">ClearBrain Systems</a>の<a href="http://homepage3.nifty.com/khsoft/cbs/software/">シェル＆縮小サーフィス制作補助プラグインセット for Photoshop</a>を使うと効率よく作業ができると思います。</p>
+					<p>Photoshopをして作成する場合、<a href="http://homepage3.nifty.com/khsoft/cbs/">ClearBrain Systems</a>の<a href="http://homepage3.nifty.com/khsoft/cbs/software/">シェル＆縮小サーフェス制作補助プラグインセット for Photoshop</a>を使うと効率よく作業ができると思います。</p>
 				</div>
 				<div class="section">
 					<h4>・2000/XPの半透明表示を使う場合について</h4>
@@ -276,7 +276,7 @@ animation0.pattern0,overlayfast,100,5,<em>0,0</em>
 			<div class="chapter">
 				<h3>4、当たり判定を作る</h3>
 				<div class="section">
-					当たり判定もアニメーション同様に指定したサーフィスのプレス内に記述します。
+					当たり判定もアニメーション同様に指定したサーフェスのプレス内に記述します。
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
@@ -296,7 +296,7 @@ animation0.pattern3,overlay,-1,10,0,0
 				<div class="section">
 					<p>上のように当たり判定１箇所ごとにcollision0、collision1、collision2と順番に書いていきます。</p>
 					<p>最後の文字列はイベントで使われる当たり判定のIDになります。</p>
-					<p>1サーフィスの最大辺り判定個数は256個です。</p>
+					<p>1サーフェスの最大辺り判定個数は256個です。</p>
 				</div>
 				<div class="section">
 					<p>当たり判定は<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/" target="_blank">Coordin</a>を使うと簡単に座標を取得出ます。</p>
@@ -311,7 +311,7 @@ animation0.pattern3,overlay,-1,10,0,0
 				<h3>5、中心座標を作る</h3>
 				<div class="section">
 					<p>主に<a href="http://homepage3.nifty.com/khsoft/cbs/software/kinoko/" target="_blank">きのこ</a>の生える位置です。</p>
-					<p>特に指定しなくても問題はありませんがサーフィスによってはきのこが正常に生えません。</p>
+					<p>特に指定しなくても問題はありませんがサーフェスによってはきのこが正常に生えません。</p>
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
@@ -345,7 +345,7 @@ collision1,115,174,174,217,Bust
 				</div>
 				<div class="section">
 					<p>thumbnail.pngという画像が同じフォルダに入っていれば自動的に使用されます。</p>
-					<p>ファイル名をthumbnail.pnrとするとサーフィスのように左上1ピクセルと同じ色を透明にして表示させます。</p>
+					<p>ファイル名をthumbnail.pnrとするとサーフェスのように左上1ピクセルと同じ色を透明にして表示させます。</p>
 				</div>
 			</div>
 			<div class="chapter">
