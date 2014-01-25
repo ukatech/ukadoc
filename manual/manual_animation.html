@@ -35,7 +35,7 @@
 			<div class="chapter">
 				<h3 id="manual_seriko">アニメーション(SERIKO)</h3>
 				<div class="section">
-					<p>アニメーションは全てサーフィスの組み合わせで行われる。</p>
+					<p>アニメーションは全てサーフェスの組み合わせで行われる。</p>
 					<p>アニメーションパターンは<a href="descript_shell.html" target="_top">surfaces.txt</a>で定義する。</p>
 					<p>SERIKOには1.x系の定義（旧定義）と、2.0の定義があり、2.0の定義で記述する場合、surfaces.txt内にdescriptブレスを設け、以下の記述が必要になる。</p>
 				</div>
@@ -51,7 +51,7 @@ version,1
 					尚、このページの例は以下SERIKO/2.0による。
 				</div>
 				<div class="section">
-					各サーフィスのブレス内には下記のように定義し記述する。
+					各サーフェスのブレス内には下記のように定義し記述する。
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
@@ -100,7 +100,7 @@ animation3.pattern13,move,0,15,0,0
 </pre>
 				</div>
 				<div class="section">
-					<p>MATERIAでは1つのベースサーフィスが持てるアニメーションパターンは最大で128（animation0～animation127）まで。
+					<p>MATERIAでは1つのベースサーフェスが持てるアニメーションパターンは最大で128（animation0～animation127）まで。
 				</div>
 			</div>
 			<div class="chapter">
@@ -126,13 +126,13 @@ animation1.pattern0,bind,150,2,0,0
 </pre>
 				</div>
 				<div class="section">
-					<p>bindで指定されたサーフィスはベースにレイヤー加算され「服」のサーフィスとなる。</p>
+					<p>bindで指定されたサーフェスはベースにレイヤー加算され「服」のサーフェスとなる。</p>
 					<p>bindはアニメーションパターンを無視する。</p>
 					<p>複数重ねることにより各部パーツを再現することも可能。</p>
 					<p>それらは番号の順に重ねられていく。</p>
 				</div>
 				<div class="section">
-					下記の様にadd、reduceを使用すると複数のサーフィスをひとつのbind(服)として扱う事ができる。
+					下記の様にadd、reduceを使用すると複数のサーフェスをひとつのbind(服)として扱う事ができる。
 				</div>
 				<div class="section">
 <pre class="exmp-descript2">
@@ -148,7 +148,7 @@ animation0.pattern3,add,103,2,0,0
 				</div>
 				<div class="section">
 					<p>reduceを使用した場合下記のような減算のされ方をする。</p>
-					<p>reduceより下にあるレイヤー及びベースサーフィスに適用される。</p>
+					<p>reduceより下にあるレイヤー及びベースサーフェスに適用される。</p>
 				</div>
 				<div class="section">
 					<table class="exmp-surface">
