@@ -958,7 +958,7 @@
 			<dl id="seriko.paint_transparent_region_black,数値">
 				<dt class="entry">seriko.paint_transparent_region_black,数値</dt>
 				<dd class="entry">
-					<p class="description">数値が1だった場合はPNAで透過した際、背景色を黒で表示する。</p>
+					<p class="description">サーフェスの抜き色（png画像左上の色）になっているにも関わらず、PNA等での透明度指定では透明でない領域の表示設定。<br />0を指定した場合はサーフェス本来の色（抜き色）を指定の透明度で表示する。<br />1を指定した場合はサーフェスの色の替わりに黒で塗りつぶされてから指定の透明度で表示する。<br />例えば0を指定した上で全面真っ白のpnaを用意したサーフェスは、抜き色なしで画像のまま表示される。</p>
 					<p class="default">1</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
