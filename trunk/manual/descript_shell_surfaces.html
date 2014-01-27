@@ -329,7 +329,8 @@
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの本体側バルーン位置X座標。</p>
-					<p class="default">不明</p>
+					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br />
+					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -341,7 +342,8 @@
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの本体側バルーン位置Y座標。</p>
-					<p class="default">不明</p>
+					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br />
+					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -353,7 +355,8 @@
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの相方側バルーン位置X座標。</p>
-					<p class="default">不明</p>
+					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br />
+					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -365,7 +368,8 @@
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの相方側バルーン位置Y座標。</p>
-					<p class="default">不明</p>
+					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br />
+					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -376,8 +380,8 @@
 			<dl id="point.centerx,座標">
 				<dt class="entry">point.centerx,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心X座標。</p>
-					<p class="default">不明</p>
+					<p class="description">サーフェスの中心X座標。<br />通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p class="default">サーフィスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -388,8 +392,8 @@
 			<dl id="point.centery,座標">
 				<dt class="entry">point.centery,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心Y座標。</p>
-					<p class="default">不明</p>
+					<p class="description">サーフェスの中心Y座標。<br />通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p class="default">サーフェスの中心(高さ÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -401,7 +405,7 @@
 				<dt class="entry">point.kinoko.centerx,座標</dt>
 				<dd class="entry">
 					<p class="description">きのこの生えるX座標。</p>
-					<p class="default">不明</p>
+					<p class="default">サーフェスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -413,7 +417,7 @@
 				<dt class="entry">point.kinoko.centery,座標</dt>
 				<dd class="entry">
 					<p class="description">きのこの生えるY座標。</p>
-					<p class="default">不明</p>
+					<p class="default">サーフェスの上端＋20ピクセル下(SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -424,8 +428,9 @@
 			<dl id="point.basepos.x,座標">
 				<dt class="entry">point.basepos.x,座標</dt>
 				<dd class="entry">
-					<p class="description">シェルの中心X座標。</p>
-					<p class="default">不明</p>
+					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のX座標。<br />
+					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
+					<p class="default">サーフェスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -434,8 +439,9 @@
 			<dl id="point.basepos.y,座標">
 				<dt class="entry">point.basepos.y,座標</dt>
 				<dd class="entry">
-					<p class="description">シェルの中心Y座標。</p>
-					<p class="default">不明</p>
+					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のY座標です。<br />
+					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
+					<p class="default">サーフェスの下端</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
