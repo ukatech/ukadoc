@@ -61,6 +61,14 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>プラグイン「スタンプ帳」</h1>
+			<ul>
+				<li><a href="#OnStampInfo">OnStampInfo</a></li>
+				<li><a href="#OnStampAdd">OnStampAdd</a></li>
+				<li><a href="#OnStampInfoCall">OnStampInfoCall</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>プラグイン「芋スコープ」</h1>
 			<ul>
 				<li><a href="#OnPotatoReturn">OnPotatoReturn</a></li>
@@ -265,14 +273,25 @@
 		</section>
 	</section>
 	<div class="categories">
-		<div class="caption">
+		<section class="caption">
 			<p>以下には、ベースウェア外部のアプリケーションがSSTPによって発信するものや、ゴーストやプラグインが他のゴーストに対して発行するものなど、<em>発行者が外部にあるイベント</em>および、それらのイベントの<em>受信者が返却するイベント</em>が含まれます。</p>
 			<p>そうしたイベントについてこのページは非公式なドキュメントに過ぎず、記載後のそれぞれの更新などで、情報が不正確になっている場合があります。詳しくはそれぞれ公式の説明をあたるようにしてください。</p>
-		</div>
-		<div class="caption">
+			<p>未記載のイベントをご存知の方のご報告は<a href="http://ssp.shillest.net/bts/?project=misc&action=top">ありがたく受け付けております</a>。</p>
+		</section>
+		<section class="caption">
 			<p><strong>[NOTIFY]</strong>の表示があるイベントは、必ずNOTIFYコマンドで通知されます。<br />NOTIFYコマンドで通知されたイベントにスクリプトを返却しても一切無視されます。</p>
 			<p>特に表示がないイベントは、状況によってNOTIFY、GETのいずれでも通知される可能性があります。</p>
-		</div>
+		</section>
+		<section class="caption">
+			<h1>関連するさくらスクリプト</h1>
+			<ul>
+				<li><a href="list_sakura_script.html#_!_raiseother,%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E5%90%8D,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raiseother]</a></li>
+				<li><a href="list_sakura_script.html#_!_notifyother,%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E5%90%8D,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![notifyother]</a></li>
+				<li><a href="list_sakura_script.html#_!_timerraiseother,%E6%99%82%E9%96%93,%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%99%E3%81%8B%E5%90%A6%E3%81%8B,%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E5%90%8D,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![timerraiseother]</a></li>
+				<li><a href="list_sakura_script.html#_!_raiseplugin,%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AEID%E3%81%BE%E3%81%9F%E3%81%AF%E5%90%8D%E5%89%8D,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raiseplugin]</a></li>
+				<li><a href="list_sakura_script.html#_!_notifyplugin,%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AEID%E3%81%BE%E3%81%9F%E3%81%AF%E5%90%8D%E5%89%8D,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![notifyplugin]</a></li>
+			</ul>
+		</section>
 		<section class="category">
 			<h1>プラグイン「バーチャルビールかけ（BeerShower）」</h1>
 			<ul class="caption link">
@@ -319,6 +338,54 @@
 				<dt class="entry">OnHitThunder</dt>
 				<dd class="entry">
 					<p class="description">プラグインが実行された際に発生。</p>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>プラグイン「スタンプ帳」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="http://navy.nm.land.to/post/">http://navy.nm.land.to/post/</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnStampInfo">
+				<dt class="entry">OnStampInfo</dt>
+				<dd class="entry">
+					<p class="description">スタンプに関する情報を通知するイベント。<br />ゴースト起動時、プラグインのロード・アンロードおよびOnStampInfoCallを送信した任意のタイミングで発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スタンプ総数。</dd>
+						<dt>Reference1</dt>
+						<dd>当該ゴーストのスタンプが存在するか否か。あれば1、なければ0。<br />複数ゴースト起動していると信用性が薄くなるので、確実に知りたい場合はOnStampInfoCallによって当イベントを能動的に発生させる事が推奨される。</dd>
+						<dt>Reference2</dt>
+						<dd>プラグインのパス。</dd>
+						<dt>Reference3</dt>
+						<dd>全スタンプ情報。ゴースト名・スタンプ画像ファイル名・スタンプのタイトル・スタンプのコメント・スタンプを押した時刻がバイト値１区切りで、それがスタンプの数だけ各セットバイト値２区切りで入っている。</dd>
+						<dt>Reference4</dt>
+						<dd>このプラグインが動いていれば1、さもなくば0。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnStampAdd">
+				<dt class="entry">OnStampAdd</dt>
+				<dd class="entry">
+					<p class="description">スタンプを押すためにraisepluginでスタンプ帳へ送信するイベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>スタンプの画像ファイルのパス。</dd>
+						<dt>Reference1</dt>
+						<dd>スタンプのタイトル。<br />さくらスクリプトを含まない文字列（除去される）を指定。<br />省略可。</dd>
+						<dt>Reference2</dt>
+						<dd>スタンプのコメント。<br />さくらスクリプトを含まない文字列（除去される）を指定。<br />&lt;br&gt;（&lt;BR&gt;、＜br＞、＜BR＞）で改行可能。<br />省略可。</dd>
+					</dl>
+				</dd>
+				</dd>
+			</dl>
+			<dl id="OnStampInfoCall">
+				<dt class="entry">OnStampInfoCall</dt>
+				<dd class="entry">
+					<p class="description">OnStampInfoをゴースト側から任意のタイミングで発生させたい場合に、raisepluginでスタンプ帳へ送信するイベント。</p>
 				</dd>
 			</dl>
 		</section>
