@@ -79,6 +79,7 @@
 				<li><a href="#sakura.popupmenu.type">sakura.popupmenu.type</a></li>
 				<li><a href="#kero.popupmenu.type">kero.popupmenu.type</a></li>
 				<li><a href="#char*.popupmenu.type">char*.popupmenu.type</a></li>
+				<li><a href="#getaistate">getaistate</a></li>
 			</ul>
 			<h1>オーナードローメニュー画像</h1>
 			<ul>
@@ -546,6 +547,40 @@
 				<dt class="entry">char*.popupmenu.type</dt>
 				<dd class="entry">
 					<p class="description">\p[*]のオーナードローメニューの変更。0で全表示メニュー、1で省略メニュー。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="getaistate">
+				<dt class="entry">getaistate</dt>
+				<dd class="entry">
+					<p class="description">AIグラフのSHIORI/3.0版。<br />
+					ゴースト内部状態(トーク数、好感度など)に関するレーダーチャートを描く。<br />
+					以下のフォーマットで返す。</p>
+					
+					<p class="description">グラフ表示値群 [バイト値1] グラフラベル群 [バイト値1] グラフ加算値群 [バイト値1] グラフ最大値群</p>
+					
+					<dl class="description">
+						<dt>グラフ表示値群</dt>
+						<dd>グラフに表示したい値を半角数値・カンマ区切りで返してください。</dd>
+						<dt>グラフラベル群(省略可)</dt>
+						<dd>グラフに表示したいラベルをカンマ区切りで返してください。<br />
+						省略時：Neuron,NeuronM,NeuronK,NeuronD,NeuronE,Synapse</dd>
+						<dt>グラフ加算値群(省略可)</dt>
+						<dd>グラフの「加算値」を半角数値・カンマ区切りで返してください。<br />
+						加算値とは、学習で増えた値や、直近で変化した値などを強調表示する機能で、グラフ表示値に加算されて表示されます。<br />
+						省略時：すべてゼロで非表示</dd>
+						<dt>グラフ最大値群(省略可)</dt>
+						<dd>グラフの最大値を半角数値・カンマ区切りで返してください。最大値 ≧ (表示値 + 加算値) です。<br />
+						省略時：表示値＋加算値を計算しその最大値をすべての要素に設定</dd>
+					</dl>
+					
+					<p class="description">例：1250,1500,45,65,19500,4[b1]馬力,rpm,km/h,t,kgf,軸[b1]100,50,40,0,0,1[b1]1350,1550,130,96,20000,8<br />
+					[b1]はバイト値1を示す。<br />
+					表示結果は以下の通りとなる。<br />
+					<img src="image/aigraph.png" width="288" height="288" alt="AI Graph" /></p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

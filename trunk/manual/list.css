@@ -169,6 +169,16 @@ a:hover {
 .category .description {
 	margin: 5px 5px 5px 15px;
 }
+.category .description dt {
+	margin: 15px 5px 5px 0px;
+	border-left: 7px solid #cccc99;
+	padding: 0 0 0 5px;
+}
+.category .description dd {
+	margin: 5px 5px 15px 20px;
+	border-left: 1px solid #cccc99;
+	padding: 0 0 0 5px;
+}
 .category .default {
 	margin: 5px 5px 5px 15px;
 	font-style: italic;
