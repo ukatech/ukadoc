@@ -99,6 +99,10 @@
 				<li><a href="#makoto,ファイル名">makoto,ファイル名</a></li>
 				<li><a href="#menu.font.name,フォント名">menu.font.name,フォント名</a></li>
 				<li><a href="#menu.font.height,フォントサイズ">menu.font.height,フォントサイズ</a></li>
+				<li><a href="#shiori.logo.file,ファイル名">shiori.logo.file,ファイル名</a></li>
+				<li><a href="#shiori.logo.x,X座標">shiori.logo.x,X座標</a></li>
+				<li><a href="#shiori.logo.y,Y座標">shiori.logo.y,Y座標</a></li>
+				<li><a href="#shiori.logo.align,位置情報">shiori.logo.align,位置情報</a></li>
 				<li><a href="#install.accept,名前1,名前2,名前3...">install.accept,名前1,名前2,名前3...</a></li>
 			</ul>
 		</section>
@@ -676,6 +680,53 @@
 					<p class="description">オーナードローメニューに使用する文字の大きさ。</p>
 					<p class="default">OSで設定されたUI標準フォントの高さ</p>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="#shiori.logo.file,ファイル名">
+				<dt class="entry">shiori.logo.file,ファイル名</dt>
+				<dd class="entry">
+					<p class="description">AIグラフ背景に使用する画像ファイル名です。</p>
+					<p class="default">SSP標準背景</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.logo.x,X座標">
+				<dt class="entry">shiori.logo.x,X座標</dt>
+				<dd class="entry">
+					<p class="description">AIグラフ背景に使用する画像ファイルを表示するX座標です。<br />
+					shiori.logo.alignも参照してください。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.logo.y,Y座標">
+				<dt class="entry">shiori.logo.y,Y座標</dt>
+				<dd class="entry">
+					<p class="description">AIグラフ背景に使用する画像ファイルを表示するY座標です。<br />
+					shiori.logo.alignも参照してください。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.logo.align,位置情報">
+				<dt class="entry">shiori.logo.align,位置情報</dt>
+				<dd class="entry">
+					<p class="description">shiori.logo.x,yで指定した座標の基準点を指定します。通常は左上です。<br />
+					左上(lefttop)・左下(leftbottom)・右上(righttop)・右下(rightbottom)を指定できます。</p>
+					<p class="default">lefttop(左上基準)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
