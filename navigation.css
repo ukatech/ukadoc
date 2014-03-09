@@ -103,3 +103,14 @@ a:hover.menu_user{
 a:hover.menu_wiki{
 	background-position: -500px -24px;
 }
+
+form.internal-search{
+	text-align:right;
+}
+form.internal-search input[type="text"]{
+	width:200px;
+}
+form.internal-search input[type="submit"]{
+	margin-right:50px;
+}
+
