@@ -87,7 +87,9 @@ a:hover {
 	background-color: #99c;
 	text-align: left;
 }
-.navigation-category h2 {
+.navigation-category section h1 {
+	color: #000;
+	background-color: #eef;
 	font-size: medium;
 	border-top:1px solid #99c;
 	border-bottom:1px solid #99c;
