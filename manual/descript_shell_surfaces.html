@@ -166,6 +166,7 @@
 </code></pre>
 				</p>
 				<p>ブレス名、{}、各設定として認識されない行はすべてコメント行として扱われる。慣例的には行頭を「//」から始める。</p>
+				<p>インデント可。</p>
 				<p>SSPのみ「surfaces**.txt（**は0～2文字の任意の文字）」という名のテキストファイルは全て読み込まれる。数字以外も可。</p>
 		</section>
 		<section class="category">
@@ -206,8 +207,8 @@
 			<dl id="maxwidth,ピクセル">
 				<dt class="entry">maxwidth,ピクセル</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの最大幅。単位はピクセル。</p>
-					<p class="default">定義なし（SSPは自動判定）</p>
+					<p class="description">サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。SSPでは利用されない情報。</p>
+					<p class="default">定義なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
