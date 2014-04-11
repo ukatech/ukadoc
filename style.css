@@ -38,7 +38,7 @@ h1{
 	width: 190px;
 	margin: 0 5px;
 	padding-bottom: 6px;
-	border-bottom: 2px solid #bfcce1;
+	border-bottom: 2px solid #7bb56b;
 	color: #646464;
 	font-weight: bold;
 }
@@ -46,7 +46,7 @@ h2{
 	width: 100%;
 	font-weight: bold;
 	padding-bottom: 6px;
-	border-bottom: 2px solid #bfcce1;
+	border-bottom: 2px solid #7bb56b;
 }
 h3{
 	font-weight: bold;
@@ -111,7 +111,7 @@ ul{
 	margin-left: 2.2em;
 	margin-bottom: 1.5em;
 	list-style-type: none;
-	list-style-image: url(image/icon_hp.gif);
+	list-style-image: url(image/icon_doc.png);
 }
 ul.notelist{
 	list-style-type:none;
@@ -161,39 +161,49 @@ strong{
 
 
 a:link{
-	color: #0000ff;
+	color: #0000f0;
 	text-decoration: none;
 }
 a:visited{
-	color: #4040ff;
+	color: #4040f0;
 	text-decoration: none;
 }
 a:active{
 	position:relative;
 	top:1px;
 	left:1px;
-	color: #ff0000;
+	color: #f00000;
 	text-decoration: none;
 }
 a:hover{
 	position:relative;
 	top:1px;
 	left:1px;
-	color: #ff0000;
+	color: #f00000;
+	text-decoration: none;
+}
+.menuflame a:link{
+	color: #0000f0;
+	text-decoration: none;
+}
+.menuflame a:visited{
+	color: #4040f0;
 	text-decoration: none;
 }
 .menuflame a:active{
 	position:relative;
 	top:0;
 	left:0;
-	color: #ff0000;
-	text-decoration: none;}
+	color: #f00000;
+	text-decoration: none;
+}
 .menuflame a:hover{
 	position:relative;
 	top:0;
 	left:0;
-	color: #ff0000;
-	text-decoration: none;}
+	color: #f00000;
+	text-decoration: none;
+}
 .disc2-author a:link{
 	color: #ffffff;
 	font-weight: bold;
@@ -219,22 +229,6 @@ a:hover{
 	font-weight: bold;
 	text-decoration: underline;
 }
-.menuflame a:link{
-	color: #0000ff;
-	text-decoration: none;
-}
-.menuflame a:visited{
-	color: #4040ff;
-	text-decoration: none;
-}
-.menuflame a:active{
-	color: #ff0000;
-	text-decoration: none;
-}
-.menuflame a:hover{
-	color: #ff0000;
-	text-decoration: none;
-}
 
 
 
@@ -250,7 +244,7 @@ a:hover{
 	overflow: hidden
 }
 .head{
-	height: 168px;
+	height: 174px;
 	background-image: url(image/shade_h.png);
 	background-repeat: repeat-x;
 	background-position: left bottom;
@@ -272,7 +266,7 @@ a:hover{
 	padding-bottom: 1em;
 }
 .chapter{
-	border-top: 2px solid #bfcce1;
+	border-top: 2px solid #7bb56b;
 	margin-bottom: 1.5em;
 }
 h2+.chapter{
