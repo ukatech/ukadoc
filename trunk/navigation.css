@@ -23,8 +23,36 @@ body{
 	font-size: 14px;
 }
 
+#navigation_top{
+	background-image: url(image/title2.gif);
+	background-repeat: no-repeat;
+	height: 130px;
+	text-align: right;
+	vertical-align: top;
+	width: 750px;
+}
+#navigation_body{
+	width:100%;
+}
+#navigation_body .menu{
+	margin-top:1px;
+	list-style-type: none;
+	float: left;
+}
+
+#navigation_body form.internal-search{
+	text-align: right;
+	padding-right: 3px;
+}
+#navigation_body form.internal-search input[type="text"]{
+	width: 200px;
+}
+#navigation_body form.internal-search input[type="submit"]{
+	margin-right: 50px;
+}
 
 
+/* 現在未使用 *********************************************************************************** 
 ul#menu{
 	display: inline;
 	list-style-type: none;
@@ -43,29 +71,12 @@ ul#menu li{
 	height: 24px;
 	width: 100px;
 }
-
-
-.navigationflame{
-}
-.navigation_top{
-	background-image: url(image/title2.gif);
-	background-repeat: no-repeat;
-	height: 130px;
-	text-align: right;
-	vertical-align: top;
-	width: 750px;
-}
 .navigation_ad{
 	margin-bottom: auto;
 	margin-left: auto;
 	margin-right: 10px;
 	margin-top: auto;
 	text-align: right;
-}
-.navigation_link{
-	height: 24px;
-	padding-left: 75px;
-	text-align: center;
 }
 a.menu_bbs{
 	background-position: -400px 0px;
@@ -103,14 +114,4 @@ a:hover.menu_user{
 a:hover.menu_wiki{
 	background-position: -500px -24px;
 }
-
-form.internal-search{
-	text-align:right;
-}
-form.internal-search input[type="text"]{
-	width:200px;
-}
-form.internal-search input[type="submit"]{
-	margin-right:50px;
-}
-
+************************************************************************************************* */
