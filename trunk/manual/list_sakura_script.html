@@ -382,6 +382,15 @@
 		</section>
 	</section>
 	<div class="categories">
+		<section class="caption">
+			<h1>さくらスクリプトタグのエスケープ</h1>
+			<ul>
+				<li>「\」をさくらスクリプトの開始記号でなく単に表示したい場合は「\\」とする</li>
+				<li>同様に「%」は「\%」と書く</li>
+				<li>スクウェアブラケット内に引数を持つタグ（\q[ラベル名,ID]など）内でのみ、「]」は「\]」と書ける。</li>
+				<li>スクウェアブラケット内に複数の引数を持つタグの第２引数以降で、「,」を引数の内容としたい場合、その引数全体を""で囲うことにより回避できる。<br />例：\![raise,OnTest,"100,2"]</li>
+			</ul>
+		</section>
 		<section class="category">
 			<h1>スコープコマンド</h1>
 			<dl id="_0もしくは_h">
@@ -1223,7 +1232,7 @@
 			<dl id="_x">
 				<dt class="entry">\x</dt>
 				<dd class="entry">
-					<p class="description">バルーンをクリック待ちにする。</p>
+					<p class="description">バルーンをクリック待ちにする。<br />クリック後、スコープはリセットされ\0となり、\f系の効果も解除される。\tは継続。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1234,7 +1243,7 @@
 			<dl id="_x_noclear_">
 				<dt class="entry">\x[noclear]</dt>
 				<dd class="entry">
-					<p class="description">バルーンを一時クリック待ちにする。</p>
+					<p class="description">バルーンを一時クリック待ちにする。<br />クリック後、スコープはリセットされ\0となり、\f系の効果も解除される。\tは継続。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

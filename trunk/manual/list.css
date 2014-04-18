@@ -132,7 +132,13 @@ a:hover {
 	margin-bottom: 0;
 }
 .categories .caption p {
-	margin: 0.5em auto;
+}
+.categories .caption ul li {
+	margin-left:1.5em;
+	list-style-type:disc;
+}
+.categories .caption ul li ul li {
+	list-style-type:circle;
 }
 .category {
 	background-color: #ffe;
