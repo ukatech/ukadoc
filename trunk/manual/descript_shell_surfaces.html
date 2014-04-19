@@ -349,7 +349,11 @@
 			<dl id="collisionex*,ID,タイプ,座標1,座標2...">
 				<dt class="entry">collisionex*,ID,タイプ,座標1,座標2...</dt>
 				<dd class="entry">
-					<p class="description">不定形当たり判定。<br />タイプは以下の通り。<br />rect 長方形。座標は始点XYと終点XYの4つ。<br />ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。<br />polygon 多角形。座標は各頂点、交差可。</p>
+					<p class="description">不定形当たり判定。<br />タイプは以下の通り。<br />
+					rect 長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300<br />
+					ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300<br />
+					circle 真円。中心点のXYの値、半径の順で記述する。例：100,200,20<br />
+					polygon 多角形。座標は各頂点、交差可。例：100,100,200,300,50,200</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

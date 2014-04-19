@@ -90,6 +90,7 @@
 				<li><a href="#_b_ID番号_">\b[ID番号]</a></li>
 				<li><a href="#__b_ファイル名,x,y_">\_b[ファイルパス,x,y]</a></li>
 				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[ファイルパス,x,y,opaque]</a></li>
+				<li><a href="#__b_ファイル名,x,y,オプション名,オプション名..._">\_b[ファイルパス,x,y,オプション名,オプション名...]</a></li>
 				<li><a href="#__b_ファイル名,inline_">\_b[ファイルパス,inline]</a></li>
 				<li><a href="#__b_ファイル名,inline,opaque_">\_b[ファイルパス,inline,opaque]</a></li>
 				<li><a href="#__b_ファイル名,inline,オプション名,オプション名..._">\_b[ファイルパス,inline,オプション名,オプション名...]</a></li>
@@ -740,7 +741,7 @@
 			<dl id="__b_ファイル名,x,y_">
 				<dt class="entry">\_b[ファイルパス,x,y]</dt>
 				<dd class="entry">
-					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br />※SSPのみ画像URLを指定可能。</p>
+					<p class="description">画像をバルーンのXY座標に貼り付ける。画像は文字の上に表示される。<br />※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br />※SSPのみ画像URLを指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -751,7 +752,29 @@
 			<dl id="__b_ファイル名,x,y,opaque_">
 				<dt class="entry">\_b[ファイルパス,x,y,opaque]</dt>
 				<dd class="entry">
-					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p class="description">画像をバルーンのXY座標に貼り付ける。画像は文字の上に表示される。<br />左上の色を透過しないで表示する。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="__b_ファイル名,x,y,オプション名,オプション名..._">
+				<dt class="entry">\_b[ファイルパス,x,y,オプション名,オプション名...]</dt>
+				<dd class="entry">
+					<p class="description">画像をバルーンのXY座標に貼り付ける。<br />※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p class="description">オプション名</p>
+					<dl class="description">
+						<dt>--option=opaque</dt>
+						<dd>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br />左上の色を透過しないで表示する。</dd>
+						<dt>--option=use_self_alpha</dt>
+						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
+						<dt>--clipping=左 上 右 下</dt>
+						<dd>画像の一部分を矩形に切り抜いて表示する。<br />切り抜く範囲は左上右下と数値で指定。</dd>
+						<dt>--option=fixed</dt>
+						<dd>スクロールした時に画像を動かさない。</dd>
+						<dt>--option=background</dt>
+						<dd>文字の下に画像を表示する。このオプションで、文字の背景として画像を使用することができる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
