@@ -786,7 +786,7 @@
 					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>解除理由。通常normal、システムのスケジュールによる自動解除時auto、バッテリー切れで非情停止の場合critical（Windows Vista以降廃止）</dd>
+						<dd>解除理由。通常normal、システムのスケジュールによる自動解除時auto、バッテリー切れで非常停止した場合critical（Windows Vista以降廃止）</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -909,7 +909,7 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p class="description">ボックス展開時に発生。このイベントに1バイト区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<p class="description">ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
@@ -1813,11 +1813,11 @@
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの xy 座標（1バイト区切り）</dd>
+						<dd>マウスカーソルの xy 座標（バイト値1区切り）</dd>
 						<dt>Reference2</dt>
 						<dd>当たり判定の識別子。</dd>
 						<dt>Reference3</dt>
-						<dd>右ドラッグを開始したマウスカーソルの xy 座標（1バイト区切り）</dd>
+						<dd>右ドラッグを開始したマウスカーソルの xy 座標（バイト値1区切り）</dd>
 						<dt>Reference4</dt>
 						<dd>右ドラッグを開始した当たり判定の識別子。</dd>
 						<dt>Reference5</dt>
@@ -1950,11 +1950,11 @@
 					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。複数の場合は1バイト区切り。</dd>
+						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前。複数の場合は1バイト区切り。</dd>
+						<dd>インストールした物の名前。複数の場合はバイト値1区切り。</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした場所。複数の場合は1バイト区切り。</dd>
+						<dd>インストールした場所。複数の場合はバイト値1区切り。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2816,7 +2816,7 @@
 						<dt>Reference6</dt>
 						<dd>UidlResult。</dd>
 						<dt>Reference7</dt>
-						<dd>1バイト区切りの送信者とタイトル。</dd>
+						<dd>バイト値1区切りの送信者とタイトル。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3289,9 +3289,9 @@
 					<p class="description">\![raiseplugin]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference2</dt>
 						<dd>実行しようとしたイベントID。</dd>
 						<dt>Reference3～</dt>
@@ -3308,9 +3308,9 @@
 					<p class="description">\![notifyplugin]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference2</dt>
 						<dd>実行しようとしたイベントID。</dd>
 						<dt>Reference3～</dt>
@@ -3327,9 +3327,9 @@
 					<p class="description">\![raiseother]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference2</dt>
 						<dd>実行しようとしたイベントID。</dd>
 						<dt>Reference3～</dt>
@@ -3346,9 +3346,9 @@
 					<p class="description">\![notifyother]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合１バイト区切りのリスト。</dd>
+						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
 						<dt>Reference2</dt>
 						<dd>実行しようとしたイベントID。</dd>
 						<dt>Reference3～</dt>
@@ -3565,7 +3565,7 @@
 					<p class="description">デバイスを検出された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
+						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3578,7 +3578,7 @@
 					<p class="description">デバイスを削除された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名が1バイト区切りで返る。</dd>
+						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3732,7 +3732,7 @@
 						<dt>Reference2</dt>
 						<dd>※SSPのみ　このスクリプトが発生したイベントID (イベントが原因ではない場合空欄)。</dd>
 						<dt>Reference3</dt>
-						<dd>※SSPのみ　1バイト区切りの上記イベントのReference (イベントが原因ではない場合空欄)。</dd>
+						<dd>※SSPのみ　バイト値1区切りの上記イベントのReference (イベントが原因ではない場合空欄)。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3766,7 +3766,7 @@
 						<dt>Reference4</dt>
 						<dd>他ゴーストの話した内容のスクリプト。</dd>
 						<dt>Reference5</dt>
-						<dd>1バイト区切りの他ゴーストに渡されたReference。</dd>
+						<dd>バイト値1区切りの他ゴーストに渡されたReference。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3810,7 +3810,7 @@
 					<p class="description">テキストデータがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>テキスト内容。(改行は1バイト値)</dd>
+						<dd>テキスト内容。(改行はバイト値1)</dd>
 						<dt>Reference1</dt>
 						<dd>DnDされたキャラクターのID。</dd>
 					</dl>
@@ -3861,11 +3861,12 @@
 					<p class="description">hwndを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴーストのhwnd。</dd>
+						<dd>ゴーストのhwnd。バイト値１区切りで各スコープ。</dd>
 						<dt>Reference1</dt>
-						<dd>バルーンのhwnd。</dd>
+						<dd>バルーンのhwnd。バイト値１区切りで各スコープ。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -3879,6 +3880,7 @@
 						<dd>ゴーストのユニークID。特殊なSSTPを送信する際に使用する。</dd>
 					</dl>
 					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -3937,7 +3939,7 @@
 					<p class="description">他に起動しているゴーストの本体側名を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>１バイト区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
+						<dd>バイト値1区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4100,7 +4102,7 @@
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							<p>１バイト区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。</p>
+							<p>バイト値1区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。</p>
 							<dl>
 								<dt>boot</dt>
 								<dd>起動中の時。</dd>
@@ -4182,7 +4184,7 @@
 					<p class="description">着せ替えの情報を通知。<strong>[起動時NOTIFY/メニューから切替はGET]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>１バイト区切りにされたキャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス。</dd>
+						<dd>バイト値1区切りにされたキャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
