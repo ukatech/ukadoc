@@ -43,9 +43,17 @@
 	<section class="navigation-bar">
 		<h1>SHIORI Resource</h1>
 		<section class="navigation-category">
-			<h1>リソース系</h1>
+			<h1>SHIORI情報</h1>
 			<ul>
-				<li><a href="#homeurl">homeurl</a></li>
+				<li><a href="#version">version</a></li>
+				<li><a href="#craftman">craftman</a></li>
+				<li><a href="#craftmanw">craftmanw</a></li>
+				<li><a href="#name">name</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ゴースト情報</h1>
+			<ul>
 				<li><a href="#useorigin1">useorigin1</a></li>
 				<li><a href="#username">username</a></li>
 				<li><a href="#sakura.defaultx">sakura.defaultx</a></li>
@@ -81,12 +89,16 @@
 				<li><a href="#char*.popupmenu.type">char*.popupmenu.type</a></li>
 				<li><a href="#getaistate">getaistate</a></li>
 			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>オーナードローメニュー画像</h1>
 			<ul>
 				<li><a href="#menu.sidebar.bitmap.filename">menu.sidebar.bitmap.filename</a></li>
 				<li><a href="#menu.background.bitmap.filename">menu.background.bitmap.filename</a></li>
 				<li><a href="#menu.foreground.bitmap.filename">menu.foreground.bitmap.filename</a></li>
 			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>オーナードローメニュー文字色</h1>
 			<ul>
 				<li><a href="#menu.background.font.color.r">menu.background.font.color.r</a></li>
@@ -102,10 +114,14 @@
 				<li><a href="#menu.disable.font.color.g">menu.disable.font.color.g</a></li>
 				<li><a href="#menu.disable.font.color.b">menu.disable.font.color.b</a></li>
 			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>オーナードローメニュー項目表示</h1>
 			<ul>
 				<li><a href="#note_visible">オーナードローメニュー項目表示</a></li>
 			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>オーナードローメニュー項目名</h1>
 			<ul>
 				<li><a href="#-">-</a></li>
@@ -214,7 +230,57 @@
 			<p>通常のSHIORI Eventと異なる特徴としては、戻り値はさくらスクリプトを含まない単なる（短い）テキスト（bool様の物含む）であることが挙げられます。またリクエストIDは「On」から始まりません。</p>
 		</div>
 		<section class="category">
-			<h1>リソース系</h1>
+			<h1>SHIORI情報</h1>
+			<div class="caption">
+				<p>以下4つのIDのリクエストは、通常SHIORIが自動的に返却するもので、各ゴースト作者サイドが気にする必要はありません。</p>
+			</div>
+			<dl id="version">
+				<dt class="entry">version</dt>
+				<dd class="entry">
+					<p class="description">SHIORIのロード直後に発生。<br />SHIORIはこのイベントに対し、SHIORIのバージョン情報を返却する（<em>SHIORIプロトコルのバージョンではない</em>）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftman">
+				<dt class="entry">craftman</dt>
+				<dd class="entry">
+					<p class="description">SHIORIのロード直後に発生。<br />SHIORIはこのイベントに対し、SHIORIの作者名を返却する。使用できるのは7ビット文字のみ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="craftmanw">
+				<dt class="entry">craftmanw</dt>
+				<dd class="entry">
+					<p class="description">SHIORIのロード直後に発生。<br />SHIORIはこのイベントに対し、SHIORIの作者名を返却する。7ビット文字に加え8ビット文字およびデフォルトエンコーディングのマルチバイト文字も使用可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name">
+				<dt class="entry">name</dt>
+				<dd class="entry">
+					<p class="description">SHIORIのロード直後に発生。<br />SHIORIはこのイベントに対し、SHIORIの名前を返却する（<em>ゴースト名ではない</em>）。使用できるのは7ビット文字のみ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ゴースト情報</h1>
 			<dl id="homeurl">
 				<dt class="entry">homeurl</dt>
 				<dd class="entry">
