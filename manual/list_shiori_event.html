@@ -1092,7 +1092,7 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p class="description">直前のゴーストの消滅により自分に切り替わった際に発生。</p>
+					<p class="description">直前のゴーストの消滅により自分に切り替わった際に発生。<br />※SSPのみ　同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>消滅されたゴーストの本体側の名前。</dd>
@@ -1101,7 +1101,7 @@
 						<dt>Reference2</dt>
 						<dd>※SSPのみ　消滅されたゴースト名。</dd>
 						<dt>Reference7</dt>
-						<dd>※SSPのみ　消滅されたゴーストのシェル名。</dd>
+						<dd>※SSPのみ　<em>切り替わったゴーストの</em>シェル名。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1122,7 +1122,7 @@
 						<dt>Reference2</dt>
 						<dd>消滅されたゴースト名。</dd>
 						<dt>Reference7</dt>
-						<dd>消滅されたゴーストのシェル名。</dd>
+						<dd><em>切り替わったゴーストの</em>シェル名。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2905,10 +2905,10 @@
 			<dl id="OnHeadlinesenseComplete">
 				<dt class="entry">OnHeadlinesenseComplete</dt>
 				<dd class="entry">
-					<p class="description">ヘッドラインセンスが正常に終了した際に発生。</p>
+					<p class="description">ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_headlinesenseresult">※終了理由</a></dd>
+						<dd><a href="#notes_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2947,7 +2947,7 @@
 				<h1>※終了理由</h1>
 				<dl>
 					<dt>no update</dt>
-					<dd>更新がなかった</dd>
+					<dd>（現状OnHeadlinesenseCompleteのみ）更新がなかった</dd>
 					<dt>can't download</dt>
 					<dd>ファイルが取れなかった</dd>
 					<dt>can't analyze</dt>
@@ -4112,6 +4112,19 @@
 								<dd>アンインストールした情報が残ってる時。</dd>
 							</dl>
 						</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="enable_log">
+				<dt class="entry">enable_log</dt>
+				<dd class="entry">
+					<p class="description">開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<strong>[NOTIFY]</strong></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ONなら1、OFFなら0</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
