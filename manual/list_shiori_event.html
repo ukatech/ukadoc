@@ -1082,6 +1082,14 @@
 				<dt class="entry">OnVanishButtonHold</dt>
 				<dd class="entry">
 					<p class="description">消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>中断の操作が起きたスクリプト。</dd>
+						<dt>Reference1</dt>
+						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dt>Reference2</dt>
+						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1839,11 +1847,11 @@
 					<p class="description">SSTP以外でブレイクされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スクリプト。</dd>
+						<dd>中断の操作が起きたスクリプト。</dd>
 						<dt>Reference1</dt>
-						<dd>ブレイクしたキャラクターのID。</dd>
+						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
 						<dt>Reference2</dt>
-						<dd>ブレイクした位置までの文字数。</dd>
+						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2024,7 +2032,7 @@
 						<dt>Reference0</dt>
 						<dd>ドラッグしているファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
+						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2041,7 +2049,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
+						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2058,7 +2066,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたディレクトリのパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
+						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2090,7 +2098,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
+						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2107,7 +2115,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　本体にドロップされた場合は0、相方は1。</dd>
+						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2124,7 +2132,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>本体にドロップされた場合は0、相方は1。</dd>
+						<dd>　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2248,7 +2256,7 @@
 					これに対してスクリプトを返すと、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
 					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
 					<dl class="reference">
-						<dt>Reference1</dt>
+						<dt>Reference0</dt>
 						<dd>URLパス。</dd>
 						<dt>Reference1</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -2275,7 +2283,7 @@
 						<dt>Reference3</dt>
 						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2296,7 +2304,7 @@
 						<dt>Reference3</dt>
 						<dd>更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -2312,13 +2320,13 @@
 					<p class="description">ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
+						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
 						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2333,13 +2341,13 @@
 					<p class="description">ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
+						<dd><a href="#notes_updateresultfailure">※失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSPのみ　失敗したファイル名。</dd>
 						<dt>Reference3</dt>
 						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：更新する種類。(shell ghost balloon headline plugin)</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2356,13 +2364,13 @@
 						<dt>Reference0</dt>
 						<dd>ダウンロードするファイル名。</dd>
 						<dt>Reference1</dt>
-						<dd>更新総数の現在のファイル数。</dd>
+						<dd>CROW以外　0から始まる、ダウンロード中の更新ファイルの番号。</dd>
 						<dt>Reference2</dt>
-						<dd>更新総数。</dd>
+						<dd>CROW以外　更新ファイルの総数。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>SSPのみ　更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2383,9 +2391,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>SSP　<a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2399,14 +2407,16 @@
 				<dd class="entry">
 					<p class="description">MD5が一致した際に発生。</p>
 					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>落としたファイル名。</dd>
 						<dt>Reference1</dt>
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>SSP　<a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2420,14 +2430,16 @@
 				<dd class="entry">
 					<p class="description">MD5が一致しなかった際に発生。</p>
 					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>落としたファイル名。</dd>
 						<dt>Reference1</dt>
 						<dd>正しいMD5値。</dd>
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP：更新する種類。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>SSP　<a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2446,9 +2458,9 @@
 						<dt>Reference1</dt>
 						<dd>フルパス。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2465,9 +2477,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateOtherReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -2483,13 +2495,13 @@
 					<p class="description">ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
+						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2502,13 +2514,13 @@
 					<p class="description">ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresult">※成功/失敗理由</a></dd>
+						<dd><a href="#notes_updateresultfailure">※失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2527,9 +2539,9 @@
 						<dt>Reference2</dt>
 						<dd>更新総数。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2548,9 +2560,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2567,9 +2579,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2586,9 +2598,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>更新する種類。<br />(shell ghost balloon headline plugin)</dd>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。auto(自動)かmanual(手動)</dd>
+						<dd>SSP 2.3：<a href="notes_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2601,9 +2613,11 @@
 					<p class="description">ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新総数の現在のファイル数。</dd>
+						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dt>Reference3</dt>
+						<dd><a href="#notes_updatetype">※更新する種類</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2618,7 +2632,7 @@
 					<p class="description">ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresult">※失敗理由</a></dd>
+						<dd><a href="#notes_updateresultfaulure">※失敗理由</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2627,15 +2641,22 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_updateresult">
-				<h1>※成功/失敗理由</h1>
+			<div class="caption" id="notes_updateresultcomplete">
+				<h1>※ネットワーク更新成功理由</h1>
 				<dl>
 					<dt>none</dt>
 					<dd>更新するファイルが無かった。</dd>
 					<dt>changed</dt>
 					<dd>更新された。</dd>
+				</dl>
+			</div>
+			<div class="caption" id="notes_updateresultfailure">
+				<h1>※ネットワーク更新失敗理由</h1>
+				<dl>
 					<dt>timeout</dt>
 					<dd>タイムアウトした。</dd>
+					<dt>too slow</dt>
+					<dd><em>SSPではtimeoutになるため不出</em>。回線が非常に重い。</dd>
 					<dt>md5 miss</dt>
 					<dd>MD5が一致しなかった。</dd>
 					<dt>artificial</dt>
@@ -2643,9 +2664,31 @@
 					<dt>404 等</dt>
 					<dd>そのステータスコードでの失敗。</dd>
 					<dt>fileio</dt>
-					<dd>※SSPのみ。ファイルの書き込み失敗、容量不足。</dd>
+					<dd>※SSPのみ。容量不足による更新対象への書き込み失敗、容量不足。</dd>
 					<dt>readonly</dt>
-					<dd>※SSPのみ。読取専用フラグがついている。</dd>
+					<dd>※SSPのみ。読み取り専用フラグによる更新対象への書き込み失敗。ファイルやフォルダに読み取り専用フラグがついていると発生。</dd>
+				</dl>
+			</div>
+			<div class="caption" id="notes_updatetype">
+				<h1>※ネットワーク更新をする種類</h1>
+				<ul>
+					<li>ghost</li>
+					<li>shell</li>
+					<li>balloon</li>
+					<li>plugin</li>
+					<li>headline</li>
+					<li>baseware　※CROWのみ</li>
+				</ul>
+			</div>
+			<div class="caption" id="notes_updatereason">
+				<h1>※ネットワーク更新理由</h1>
+				<dl>
+					<dt>auto</dt>
+					<dd>SSPの設定などによる自動更新。</dd>
+					<dt>manual</dt>
+					<dd>オーナードローメニューからの選択などによる手動実行。</dd>
+					<dt>script</dt>
+					<dd>さくらスクリプトタグ（<a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>など）による更新。</dd>
 				</dl>
 			</div>
 			<dl id="OnUpdateResult">
@@ -2668,12 +2711,12 @@
 					<dd>(※１)[\1](※２)[\1](※３)[\1](※４)　または<br />
 					(※１)[\1](※２)[\1](※３)</dd>
 					<dt>※１</dt>
-					<dd>ghost、shell、balloon、plugin　のいずれか</dd>
+					<dd>ghost、shell、balloon、plugin、headlineのいずれか</dd>
 					<dt>※２</dt>
 					<dd>OK、NGのいずれか。OKで成功、NGで失敗。</dd>
 					<dt>※３</dt>
 					<dd>成功した場合＝更新ファイル数(0もあり)<br />
-					失敗した場合＝失敗理由。md5 failureなど通常のネットワーク更新時と同じ。（「<a href="#notes_updateresult">※成功/失敗理由</a>」も参照）</dd>
+					失敗した場合＝失敗理由。通常のネットワーク更新時と同じ。（「<a href="#notes_updateresultfailure">ネットワーク更新失敗理由</a>」も参照）</dd>
 					<dt>※４</dt>
 					<dd>失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</dd>
 				</dl>
@@ -2701,12 +2744,6 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
-						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
-						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
-						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2728,6 +2765,8 @@
 						<dd>カンマでセパレートされたローカル側の現時刻</dd>
 						<dt>Reference3</dt>
 						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
+						<dt>Reference3</dt>
+						<dd>※SSPのみ　サーバとローカルの時刻のずれ。（ミリ秒単位）</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2764,12 +2803,6 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
-						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
-						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
-						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2810,11 +2843,11 @@
 						<dt>Reference3</dt>
 						<dd>メールの新着差分。</dd>
 						<dt>Reference4</dt>
-						<dd>全メールのTopResult。</dd>
+						<dd>全メールのTopResult。POP通信全ヘッダリスト。メールごとバイト値2区切りの、ヘッダごとバイト値1区切り（通常はReference7の情報を利用すればよい）。</dd>
 						<dt>Reference5</dt>
-						<dd>ListResult。</dd>
+						<dd>ListResult。メールサーバ上のID。POPコマンドの「LIST」の結果に相当する内容。</dd>
 						<dt>Reference6</dt>
-						<dd>UidlResult。</dd>
+						<dd>UidlResult。メールを区別するためのID。POPコマンドの「UIDL」の結果に相当する内容。</dd>
 						<dt>Reference7</dt>
 						<dd>バイト値1区切りの送信者とタイトル。</dd>
 					</dl>
@@ -2828,7 +2861,7 @@
 			<dl id="OnBIFF2Complete">
 				<dt class="entry">OnBIFF2Complete</dt>
 				<dd class="entry">
-					<p class="description">メールスプール数が増加した際に発生。</p>
+					<p class="description">メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スプールされているメールの通数、１オリジン表記。</dd>
@@ -2842,7 +2875,6 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -3110,7 +3142,11 @@
 					<p class="description">SSTPがブレイクされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>例外の起きたスクリプト。</dd>
+						<dd>中断の操作が起きたスクリプト。</dd>
+						<dt>Reference1</dt>
+						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dt>Reference2</dt>
+						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3128,7 +3164,6 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
