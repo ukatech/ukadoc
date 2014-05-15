@@ -1,0 +1,60 @@
+[OPTIONS]
+Compatibility=1.0
+Compiled file=ssphelp.chm
+Contents file=ssphelp_toc.hhc
+Default Window=Default
+Default topic=index.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=ssphelp_index.hhk
+Language=0x411 ì˙ñ{åÍ
+Title=SSP
+
+[WINDOWS]
+Default="SSP","ssphelp_toc.hhc",,"index.htm","index.htm","info.htm","òAóçêÊ",,,0x62520,200,0x4304e,[50,50,650,450],,,,,,,0
+
+
+[FILES]
+calendar-menu.htm
+calendar-schedule.htm
+calendar.htm
+config-conn1.htm
+config-conn2.htm
+config-dev.htm
+config-disp.htm
+config-extprog.htm
+config-ghost.htm
+config-ghost2.htm
+config-i18n.htm
+config-im.htm
+config-ipmes.htm
+config-ippan.htm
+config-menu.htm
+config-pop.htm
+config-talk.htm
+disclaimer.htm
+explorer-rclick.htm
+explorer.htm
+faq.htm
+howto-add-baloon.htm
+howto-add-ghost.htm
+howto-add-shell.htm
+howto-boot.htm
+howto-headline.htm
+howto-rclick.htm
+howto-use.htm
+howto-verup.htm
+index.htm
+info.htm
+links.htm
+option.htm
+reference.htm
+scriptlog.htm
+shortcut.htm
+sspim-addto.htm
+sspim-sendto.htm
+sspim.htm
+about.css
+
+[INFOTYPES]
+

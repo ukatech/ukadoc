@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IM">
+		<param name="Name" value="設定：IM">
+		<param name="Local" value="config-im.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="IPMessenger">
+		<param name="Name" value="設定：IPMessenger">
+		<param name="Local" value="config-ipmes.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="POP">
+		<param name="Name" value="設定：POP">
+		<param name="Local" value="config-pop.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="しゃべり">
+		<param name="Name" value="設定：しゃべり">
+		<param name="Local" value="config-talk.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="一般">
+		<param name="Name" value="設定：一般">
+		<param name="Local" value="config-ippan.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="接続(1)">
+		<param name="Name" value="設定：接続">
+		<param name="Local" value="config-conn.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="接続(2)">
+		<param name="Name" value="設定：ヘッドライン">
+		<param name="Local" value="config-conn2.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="外部アプリ">
+		<param name="Name" value="設定：外部アプリ">
+		<param name="Local" value="config-extapp.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="表示">
+		<param name="Name" value="設定：表示">
+		<param name="Local" value="config-disp.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>
