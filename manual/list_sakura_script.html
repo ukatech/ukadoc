@@ -104,8 +104,6 @@
 				<li><a href="#_c_line,数値_">\c[line,数値]</a></li>
 				<li><a href="#_c_line,数値,開始位置_">\c[line,数値,開始位置]</a></li>
 				<li><a href="#__l_x,y_">\_l[x,y]</a></li>
-				<li><a href="#__l_xem,yem_">\_l[xem,yem]</a></li>
-				<li><a href="#__l_@x,@y_">\_l[@x,@y]</a></li>
 				<li><a href="#_C">\C</a></li>
 				<li><a href="#_!_set,autoscroll,disable_">\![set,autoscroll,disable]</a></li>
 				<li><a href="#_!_set,autoscroll,enable_">\![set,autoscroll,enable]</a></li>
@@ -910,28 +908,25 @@
 				<dt class="entry">\_l[x,y]</dt>
 				<dd class="entry">
 					<p class="description">現スコープ側のカーソル位置をXYの座標に移動する。</p>
+					<div class="caption" id="notes_inputbox">
+					<p>X,Yについては、以下の定義方法が可能である。</p>
+					<dl>
+						<dt>数値</dt>
+						<dd>バルーンの文字描画範囲左上からのピクセル単位座標</dd>
+						<dt>(省略)</dt>
+						<dd>移動しない。X,Y両方ともに省略すると無効果。</dd>
+						<dt>XXem</dt>
+						<dd>後ろにemとつけると、文字高さを基準とした座標指定となる。1em＝タグを書いた時点での文字高さ。小数点指定可能。</dd>
+						<dt>XX%</dt>
+						<dd>後ろに%とつけると、文字高さを基準とした座標指定となる。100%＝タグを書いた時点での文字高さ。小数点指定可能。</dd>
+						<dt>@XX</dt>
+						<dd>現在の文字描画位置からの相対座標となる。emや%指定との共存可能。</dd>
+					</dl>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="__l_xem,yem_">
-				<dt class="entry">\_l[xem,yem]</dt>
-				<dd class="entry">
-					<p class="description">現スコープ側のカーソル位置をem単位でXY座標に移動する。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="__l_@x,@y_">
-				<dt class="entry">\_l[@x,@y]</dt>
-				<dd class="entry">
-					<p class="description">現スコープ側のカーソル位置をXY相対座標に移動する。<br />em単位でも可。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
