@@ -276,7 +276,9 @@
 				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,パラメータ]</a></li>
 				<li><a href="#___t">\__t</a></li>
 				<li><a href="#_!_open,teachbox_">\![open,teachbox]</a></li>
+				<li><a href="#_!_close,teachbox_">\![close,teachbox]</a></li>
 				<li><a href="#_!_open,communicatebox_">\![open,communicatebox]</a></li>
+				<li><a href="#_!_close,communicatebox_">\![close,communicatebox]</a></li>
 				<li><a href="#_!_open,inputbox,ID,表示時間,テキスト_">\![open,inputbox,ID,表示時間,テキスト]</a></li>
 				<li><a href="#_!_open,passwordinput,ID,表示時間,テキスト_">\![open,passwordinput,ID,表示時間,テキスト]</a></li>
 				<li><a href="#_!_close,inputbox,ID_">\![close,inputbox,ID]</a></li>
@@ -293,7 +295,7 @@
 				<li><a href="#_!_open,rateofusegraphballoon_">\![open,rateofusegraphballoon]</a></li>
 				<li><a href="#_!_open,rateofusegraphtotal_">\![open,rateofusegraphtotal]</a></li>
 				<li><a href="#_!_open,calendar_">\![open,calendar]</a></li>
-				<li><a href="#_!_open,help_">\![open,help]</a></li>
+				<li><a href="#_!_open,help,ダイアログID_">\![open,help,ダイアログID]</a></li>
 				<li><a href="#_!_open,messenger_">\![open,messenger]</a></li>
 				<li><a href="#_!_open,readme_">\![open,readme]</a></li>
 				<li><a href="#_!_open,file,ファイル名_">\![open,file,ファイル名]</a></li>
@@ -2349,6 +2351,15 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_close,teachbox_">
+				<dt class="entry">\![close,teachbox]</dt>
+				<dd class="entry">
+					<p class="description">TeachBoxを開く。<br />OnTeachInputCancelを発生させないので注意。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_open,communicatebox_">
 				<dt class="entry">\![open,communicatebox]</dt>
 				<dd class="entry">
@@ -2357,6 +2368,15 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_close,communicatebox_">
+				<dt class="entry">\![close,communicatebox]</dt>
+				<dd class="entry">
+					<p class="description">CommunicateBoxを閉じる。<br />OnCommunicateInputCancelを発生させないので注意。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -2522,10 +2542,10 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_open,help_">
-				<dt class="entry">\![open,help]</dt>
+			<dl id="_!_open,help,ダイアログID_">
+				<dt class="entry">\![open,help,ダイアログID]</dt>
 				<dd class="entry">
-					<p class="description">SSPヘルプを開く。</p>
+					<p class="description">SSPヘルプを開く。<br />ダイアログIDに設定ダイアログのID名（※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelpのReference0参照</a>）で、その設定ダイアログについてのヘルプを展開。省略時はインデックスページを開く。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
