@@ -37,6 +37,12 @@ dd {
   margin-top: 1px;
 }
 h1 {
+  background-color: #6666cc;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 10px;
+}
+h2 {
   border-style: none none solid solid;
   border-left: 12px solid #6666cc;
   border-bottom: 1px solid #6666cc;
@@ -48,13 +54,21 @@ h1 {
   background-color: #ddddff;
   margin-bottom: 10px;
 }
-h2 {
+h3 {
   border-style: none none dashed;
   border-bottom: 1px dashed #6666cc;
   font-size: medium;
   font-weight: bold;
   padding-bottom: 2px;
   margin-bottom: 10px;
+}
+div {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+p {
+  overflow: hidden;
 }
 .Doing {
   color: Navy;
@@ -72,6 +86,16 @@ h2 {
 .System {
   color: #006600;
   font-weight: bold;
+}
+.Hint {
+  margin: 5px;
+  padding: 5px;
+  border: 1px dashed #669;
+  background-color: #fef;
+  overflow: hidden;
+}
+.Figure {
+  float: right;
 }
 tr.q {
   background-color: #ffddff;
