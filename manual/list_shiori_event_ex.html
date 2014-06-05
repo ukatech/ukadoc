@@ -220,6 +220,11 @@
 				<li><a href="#OnSatolistStartEnumVariable">OnSatolistStartEnumVariable</a></li>
 				<li><a href="#OnSatolistSingleEnumVariable">OnSatolistSingleEnumVariable</a></li>
 				<li><a href="#OnSatolistDoubleEnumVariable">OnSatolistDoubleEnumVariable</a></li>
+				<li><a href="#OnSatolistBoot">OnSatolistBoot</a></li>
+				<li><a href="#OnSatolistGhostOpened">OnSatolistGhostOpened</a></li>
+				<li><a href="#OnSatolistSaved">OnSatolistSaved</a></li>
+				<li><a href="#OnSatolistClosed">OnSatolistClosed</a></li>
+				<li><a href="#OnSatolistEventAdded">OnSatolistEventAdded</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1885,14 +1890,34 @@
 					</dl>
 				</dd>
 			</dl>
-			<dl id="OnSatolistDoubleEnumVariable">
-				<dt class="entry">OnSatolistDoubleEnumVariable</dt>
+			<dl id="OnSatolistBoot">
+				<dt class="entry">OnSatolistBoot</dt>
 				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、さとりすとから変数名の列挙が２行タイプで指示されたことをトークとして通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変数名</dd>
-					</dl>
+					<p class="description">さとりすとが起動した時に発生。</p>
+				</dd>
+			</dl>
+			<dl id="OnSatolistGhostOpened">
+				<dt class="entry">OnSatolistGhostOpened</dt>
+				<dd class="entry">
+					<p class="description">さとりすとがゴーストを読み込んだ時に発生。</p>
+				</dd>
+			</dl>
+			<dl id="OnSatolistSaved">
+				<dt class="entry">OnSatolistSaved</dt>
+				<dd class="entry">
+					<p class="description">さとりすとでゴーストを保存した時に発生。</p>
+				</dd>
+			</dl>
+			<dl id="OnSatolistClosed">
+				<dt class="entry">OnSatolistClosed</dt>
+				<dd class="entry">
+					<p class="description">さとりすとが終了しようとした時に発生。</p>
+				</dd>
+			</dl>
+			<dl id="OnSatolistEventAdded">
+				<dt class="entry">OnSatolistEventAdded</dt>
+				<dd class="entry">
+					<p class="description">さとりすとでイベントを作成した時に発生。</p>
 				</dd>
 			</dl>
 		</section>
