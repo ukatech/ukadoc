@@ -94,6 +94,9 @@ p {
   background-color: #fef;
   overflow: hidden;
 }
+.Hint:before {
+  content:"HINT:";
+}
 .Figure {
   float: right;
 }
