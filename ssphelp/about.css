@@ -37,9 +37,10 @@ dd {
   margin-top: 1px;
 }
 h1 {
-  background-color: #6666cc;
+  background-color: #333399;
   font-size: x-large;
   font-weight: bold;
+  color: #ffffff;
   padding: 10px;
 }
 h2 {
