@@ -2110,7 +2110,7 @@
 			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br />第3引数は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br />第5引数以降はreference。</p>
+					<p class="description">第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br />第3引数は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br />第5引数以降はreference。<br />別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br />待ち時間に0を入れて上書きすると設定をキャンセルできる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2128,7 +2128,7 @@
 			<dl id="_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br />第6引数以降はreference。<br />ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br />バイト値1区切りで複数指定可。</p>
+					<p class="description">待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br />第6引数以降はreference。<br />別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br />待ち時間に0を入れて上書きすると設定をキャンセルできる。<br />ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br />ゴースト名はバイト値1区切りで複数指定可。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
