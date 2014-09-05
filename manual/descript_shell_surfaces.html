@@ -246,7 +246,7 @@
 ここに記述
 }
 </code></pre>
-				<p>※SSPのみ 追加指定（すでに定義済みのものに対してさらに定義を後付けする）</p>
+				<p>※SSPのみ 追加指定（すでに定義済みのものに対してさらに定義を後付けする）。<br /></p>
 <pre><code>surface.append*
 {
 ここに記述
@@ -254,6 +254,31 @@
 </code></pre>
 				<p>*部分には数値(ID)を指定する。0,1,5のようにカンマ区切りで複数可。<br />SSPのみ：1-9のように範囲指定も可。カンマ区切りと合わせて1-9,20-29のような指定も可。</p>
 				<p>これ以降の各定義の*には、各ブレス（中括弧の内側）内でダブらない数値を指定する。<br />*は重なり順序の基準などに用いられる。<br />animationの*は、さくらスクリプトなどでの操作IDとなるので、同じ意味のもの毎に同じ番号を与えたほうがよい。特に着せ替えの場合は同じ服について同じ数字である必要がある。</p>
+			</div>
+			<div class="caption" id="notes_surface.append">
+				<h1>普通のsurface*ブレスとsurface.append*ブレスの違い</h1>
+				<p>surface.appendによる定義は、「既に（surfaceブレス、またはsuface*.pngの存在によって）ある定義」に対してのみ付け加えられる。</p>
+				<p>従って例えば、</p>
+<pre><code>surface1,3
+{
+略
+}
+</code></pre>
+				<p>の後に、追加定義のつもりで</p>
+<pre><code>surface1-3
+{
+略
+}
+</code></pre>
+				<p>とすると、内部的には「surface2」が<em>新設される</em>が、</p>
+<pre><code>surface.append1-3
+{
+略
+}
+</code></pre>
+				<p>とした場合は、「surface1」および「surface3」のみにappendで追加した定義が加わり、予め存在しない「surface2」は<em>新設されない</em>。</p>
+				<p>※このような、appendを使わない範囲指定の追加定義は「定義した覚えの無いsurfaceに関するエラー」などの原因になり得る。</p>
+				<p>またこの関係から、surfaceブレスは定義ファイル（surfaces.txtなど）内でsurface.appendブレスより先に出現する必要がある。</p>
 			</div>
 			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
