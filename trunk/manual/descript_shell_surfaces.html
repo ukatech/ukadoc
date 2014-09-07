@@ -283,8 +283,8 @@
 			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフェスの設定。<br />加算したアニメーションパターンはこのサーフェス内で1枚のベースサーフェス扱いになる。</p>
-					<p class="default">不明</p>
+					<p class="description">ベースサーフェスの設定。<br />加算したアニメーションパターンはこのサーフェス内で1枚のベースサーフェス扱いになる。<br />*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -295,8 +295,8 @@
 			<dl id="animation*.interval,タイミング定義">
 				<dt class="entry">animation*.interval,タイミング定義</dt>
 				<dd class="entry">
-					<p class="description">アニメーションの開始タイミングの設定。<br />タイミング定義は下記のアニメーションタイミング参照。<br />この定義がアニメーション定義の開始を示すものになるので、必ず最初に来るようにする。<br />旧仕様：<em>*</em>interval</p>
-					<p class="default">不明</p>
+					<p class="description">アニメーションの開始タイミングの設定。<br />タイミング定義は下記の<a href="#h-animationinterval">アニメーションタイミング</a>参照。<br />この定義がアニメーション定義の開始を示すものになるので、一連のanimation定義の中では最初に記述する。<br />*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceでは、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。<br />アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。<br />旧仕様：<em>*</em>interval</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -307,8 +307,8 @@
 			<dl id="animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標">
 				<dt class="entry">animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">intervalで設定したタイミングで発動するアニメーションパターンの設定。<br />パターン定義は下記のアニメーションパターン参照。<br />ウエイトの単位はミリ秒。SSPのみ「最小ウエイト-最大ウエイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。<br />サーフェス番号に-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。<br />旧仕様：<em>*</em>pattern<em>*</em></p>
-					<p class="default">不明</p>
+					<p class="description">intervalで設定したタイミングで発動するアニメーションパターンの設定。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />patternに次ぐ*の部分（patternID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは128パターンが上限。<br />パターン定義は下記の<a href="#h-animationpattern">アニメーションパターン</a>参照。<br />ウエイトの単位はミリ秒。SSPのみ「最小ウエイト-最大ウエイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。<br />サーフェス番号に-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。<br />旧仕様：<em>*</em>pattern<em>*</em></p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -319,9 +319,9 @@
 			<dl id="animation*.option,exclusive">
 				<dt class="entry">animation*.option,exclusive</dt>
 				<dd class="entry">
-					<p class="description">これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。<br />
+					<p class="description">これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />
 					animation*.option,exclusive,(1,3,5)のようにすると、指定のアニメーションIDからの影響を受けない限定的な指定ができる（SSPのみ）</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -332,7 +332,7 @@
 			<dl id="animation*.option,background">
 				<dt class="entry">animation*.option,background</dt>
 				<dd class="entry">
-					<p class="description">これが定義されたアニメーションはベースサーフェスより裏に表示される。</p>
+					<p class="description">これが定義されたアニメーションはベースサーフェスより裏に表示される。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -341,7 +341,7 @@
 			<dl id="animation*.option,オプション">
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
-					<p class="description">(exclusive|background)<br />+区切りで複数オプション可。例：exclusive+background<br />
+					<p class="description">(exclusive|background)<br />+区切りで複数オプション可。例：exclusive+background<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />
 					animation*.option,exclusive+background,(1,3,5) のようにすると、<span style="text-decoration: underline;">exclusiveのみ</span>影響を受ける。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
@@ -352,7 +352,7 @@
 			<dl id="animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">
 				<dt class="entry">animation*.collision*,当たり判定定義<br />animation*.collisionex*,当たり判定定義(ex)</dt>
 				<dd class="entry">
-					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。</p>
+					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -362,7 +362,7 @@
 			<dl id="collision*,始点X,始点Y,終点X,終点Y,ID">
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
-					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。</p>
+					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。<br />*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br />当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -374,11 +374,14 @@
 			<dl id="collisionex*,ID,タイプ,座標1,座標2...">
 				<dt class="entry">collisionex*,ID,タイプ,座標1,座標2...</dt>
 				<dd class="entry">
-					<p class="description">不定形当たり判定。<br />タイプは以下の通り。<br />
+					<p class="description">不定形当たり判定。<br />
+					タイプは以下の通り。<br />
+					*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br />
 					rect 長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300<br />
 					ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300<br />
 					circle 真円。中心点のXYの値、半径の順で記述する。例：100,200,20<br />
-					polygon 多角形。座標は各頂点、交差可。例：100,100,200,300,50,200</p>
+					polygon 多角形。座標は各頂点、交差可。例：100,100,200,300,50,200
+					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -531,7 +534,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<h2>サーフェスのアニメーションタイミング(SERIKO)</h2>
+			<h2 id="h-animationinterval">サーフェスのアニメーションタイミング(SERIKO)</h2>
 			<dl id="sometimes">
 				<dt class="entry">sometimes</dt>
 				<dd class="entry">
@@ -649,7 +652,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<h2>サーフェスのアニメーションパターン(SERIKO)</h2>
+			<h2 id="h-animationpattern">サーフェスのアニメーションパターン(SERIKO)</h2>
 			<dl id="base">
 				<dt class="entry">base</dt>
 				<dd class="entry">
@@ -838,7 +841,7 @@
 			<dl id="mouseup*,当たり判定ID,ファイル名">
 				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上に乗った時表示するカーソルファイルを設定。<br />「*」部分はスコープごとに重複しない連番（0,1,2...）。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="description">当たり判定の上に乗った時表示するカーソルファイルを設定。<br />*部分は同じスコープのmouseup定義で重複しない番号。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:hand）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -848,7 +851,7 @@
 			<dl id="mousedown*,当たり判定ID,ファイル名">
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br />「*」部分はスコープごとに重複しない連番（0,1,2...）。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br />*部分は同じスコープのmousedown定義で重複しない番号。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">矢印カーソル</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
