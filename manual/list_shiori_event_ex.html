@@ -212,14 +212,6 @@
 		<section class="navigation-category">
 			<h1>アプリ「さとりすと」</h1>
 			<ul>
-				<li><a href="#OnSatolistDebugVersionCheck">OnSatolistDebugVersionCheck</a></li>
-				<li><a href="#OnSatolistSetVariableString">OnSatolistSetVariableString</a></li>
-				<li><a href="#OnSatolistSetVariableCalc">OnSatolistSetVariableCalc</a></li>
-				<li><a href="#OnSatolistReload">OnSatolistReload</a></li>
-				<li><a href="#OnSatolistActionCompleted">OnSatolistActionCompleted</a></li>
-				<li><a href="#OnSatolistStartEnumVariable">OnSatolistStartEnumVariable</a></li>
-				<li><a href="#OnSatolistSingleEnumVariable">OnSatolistSingleEnumVariable</a></li>
-				<li><a href="#OnSatolistDoubleEnumVariable">OnSatolistDoubleEnumVariable</a></li>
 				<li><a href="#OnSatolistBoot">OnSatolistBoot</a></li>
 				<li><a href="#OnSatolistGhostOpened">OnSatolistGhostOpened</a></li>
 				<li><a href="#OnSatolistSaved">OnSatolistSaved</a></li>
@@ -1828,68 +1820,6 @@
 			<ul class="supported-baseware">
 				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 			</ul>
-			<dl id="OnSatolistDebugVersionCheck">
-				<dt class="entry">OnSatolistDebugVersionCheck</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、バージョンが確認され、正常に動作するかどうかをトークとして通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>さとりすと側のデバッガバージョン（さとりすとのバージョンとは別）。</dd>
-					</dl>
-				</dd>
-			</dl>
-			<dl id="OnSatolistSetVariableString">
-				<dt class="entry">OnSatolistSetVariableString</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、変数を水平タブで文字列代入。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変数名</dd>
-						<dt>Reference1</dt>
-						<dd>値</dd>
-					</dl>
-				</dd>
-			</dl>
-			<dl id="OnSatolistSetVariableCalc">
-				<dt class="entry">OnSatolistSetVariableCalc</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、変数を「＝」で算術代入。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変数名</dd>
-						<dt>Reference1</dt>
-						<dd>値</dd>
-					</dl>
-				</dd>
-			</dl>
-			<dl id="OnSatolistReload">
-				<dt class="entry">OnSatolistReload</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、里々辞書をリロード。</p>
-				</dd>
-			</dl>
-			<dl id="OnSatolistActionCompleted">
-				<dt class="entry">OnSatolistActionCompleted</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述によりさとりすとからの操作が完了したことをトークとして通知。</p>
-				</dd>
-			</dl>
-			<dl id="OnSatolistStartEnumVariable">
-				<dt class="entry">OnSatolistStartEnumVariable</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、さとりすとから変数名の列挙の開始が指示されたことをトークとして通知。</p>
-				</dd>
-			</dl>
-			<dl id="OnSatolistSingleEnumVariable">
-				<dt class="entry">OnSatolistSingleEnumVariable</dt>
-				<dd class="entry">
-					<p class="description">拡張辞書デバッガ起動中に発生。<br />拡張辞書内の記述により、さとりすとから変数名の列挙が１行タイプで指示されたことをトークとして通知。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>変数名</dd>
-					</dl>
-				</dd>
-			</dl>
 			<dl id="OnSatolistBoot">
 				<dt class="entry">OnSatolistBoot</dt>
 				<dd class="entry">
