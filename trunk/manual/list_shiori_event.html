@@ -673,7 +673,9 @@
 			<dl id="OnDressupChanged">
 				<dt class="entry">OnDressupChanged</dt>
 				<dd class="entry">
-					<p class="description">着せ替えが切替えられた際に発生。</p>
+					<p class="description">着せ替えが切替えられた際に発生する。<br />
+					複数回通知される場合があり、その場合は<strong>一番最後のOnDressupChangedがGET、それ以外がNOTIFY</strong>となる。<br />
+					このイベントの後に発生する<a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a>も参照すること。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>着せ替え対象のキャラクターID。</dd>
@@ -4229,10 +4231,14 @@
 			<dl id="OnNotifyDressupInfo">
 				<dt class="entry">OnNotifyDressupInfo</dt>
 				<dd class="entry">
-					<p class="description">着せ替えの情報を通知。<strong>[起動時NOTIFY/メニューから切替はGET]</strong></p>
+					<p class="description">着せ替えの情報を通知。<br />
+					<strong>起動時のみNOTIFYで、メニューから切替などユーザーによる操作ならGET</strong>で送られる。<br />
+					このイベントの前に発生する<a href="#OnDressupChanged">OnDressupChanged</a>も参照すること。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>バイト値1区切りにされたキャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス。</dd>
+						<dd>バイト値1区切りにされた以下の情報：[キャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス] <br />
+						着せ替え定義の数だけ繰り返される。<br />
+						ゴースト側で前回の通知からの有効/無効の差分を処理すると、何が変わったかを把握できる。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
