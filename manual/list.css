@@ -123,10 +123,19 @@ a:hover {
 	background-color: #fef;
 }
 .categories .caption dt {
-	font-weight: bold;
+	margin: 15px 5px 5px 0px;
+	border-left: 7px solid #cc99cc;
+	padding: 0 0 0 5px;
 }
 .categories .caption dd {
-	margin-bottom: 0.5em;
+	margin: 5px 5px 15px 20px;
+	border-left: 1px solid #cc99cc;
+	padding: 0 0 0 5px;
+}
+.categories .caption pre {
+	padding:5px;
+	background-color:#dcd;
+	border:1px dotted #669;
 }
 .categories .caption .reference dd{
 	margin-bottom: 0;
