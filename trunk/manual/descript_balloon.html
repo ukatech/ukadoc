@@ -1405,8 +1405,14 @@
 			<dl id="windowposition.x,座標">
 				<dt class="entry">windowposition.x,座標</dt>
 				<dd class="entry">
-					<p class="description">基本調整位置から移動X座標。</p>
-					<p class="default">不明</p>
+					<p class="description">数値指定：基本調整位置から移動するX座標(バルーンがくっつく方向が＋、離れる方向が－)<br />
+					center または top(SSPのみ)：シェルの中央上に固定<br />
+					bottom：シェルの中央下に固定 (SSPのみ)<br />
+					SSPに限り、descript.txtにも書ける。</p>
+					<p class="default">下記の通り<br />
+					center,top,bottom：中央固定<br />
+					数値指定：バルーンが左側に出る時、バルーンの右端とシェル画像の左端がくっつく所がゼロ<br />
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1417,8 +1423,12 @@
 			<dl id="windowposition.y,座標">
 				<dt class="entry">windowposition.y,座標</dt>
 				<dd class="entry">
-					<p class="description">基本調整位置から移動Y座標。</p>
-					<p class="default">不明</p>
+					<p class="description">基本調整位置から移動するY座標(下が＋、上が－)。<br />
+					SSPに限り、descript.txtにも書ける。</p>
+					<p class="default">下記の通り<br />
+					windowposition.xがcenter,top：バルーン下端とシェル画像の上端がくっつく所がゼロ<br />
+					windowposition.xがbottom：バルーン上端とシェル画像の下端がくっつく所がゼロ<br />
+					数値指定：バルーンとシェル画像の上端がちょうど一致する所がゼロ</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
