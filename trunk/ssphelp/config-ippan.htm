@@ -8,9 +8,41 @@
   <link rel="stylesheet" type="text/css" href="about.css" />
 </head>
 <body>
+<div id="breadcrumb">
+	<span class="Upper"><a href="contents.htm">目次</a></span>
+	<span class="Upper"><a href="config.htm">設定</a></span>
+	<span class="Upper">本体設定</span>
+	ゴースト(2)
+</div>
+<!-------------------------------------------------------------------------------------------------------------------------------->
+
+
 
 <h1>設定：一般</h1>
+<p>
+	画像左側のリストを<span class="Doing">クリック</span>で、それぞれのダイアログのページに対応する解説のページへ移動します。
+	<br /><img src="image/config-ippan/0.png" usemap="#configdialog" width="557" height="590" alt="本体設定ダイアログ一般" />
+	<map name="configdialog" id="configdialog">
+		<area shape="rect" coords="14,31,137,46" href="config-ippan.htm" alt="一般">
+		<area shape="rect" coords="14,47,137,66" href="config-ghost.htm" alt="ゴースト(1)">
+		<area shape="rect" coords="14,66,137,82" href="config-ghost2.htm" alt="ゴースト(2)">
+		<area shape="rect" coords="14,82,137,98" href="config-folder.htm" alt="フォルダ">
+		<area shape="rect" coords="14,98,137,114" href="config-disp.htm" alt="表示">
 
+		<area shape="rect" coords="14,115,137,133" href="config-talk.htm" alt="喋り/バルーン">
+		<area shape="rect" coords="14,134,137,152" href="config-conn1.htm" alt="接続(1)">
+		<area shape="rect" coords="14,150,137,168" href="config-conn2.htm" alt="接続(2)">
+		<area shape="rect" coords="14,167,137,185" href="config-pop.htm" alt="POP">
+		<area shape="rect" coords="14,184,137,202" href="config-extprog.htm" alt="外部アプリ">
+
+		<area shape="rect" coords="14,201,137,219" href="config-im.htm" alt="IM">
+		<area shape="rect" coords="14,218,137,236" href="config-ipmes.htm" alt="IPMessenger">
+		<area shape="rect" coords="14,235,137,253" href="config-i18n.htm" alt="国際化">
+		<area shape="rect" coords="14,252,137,270" href="config-dev.htm" alt="開発/その他">
+	</map>
+</p>
+<p>このページでは右クリックメニューの「設定」サブメニューにある項目「本体設定」で開くダイアログの、「一般」ページについて解説しています。</p>
+<h2>各項目の解説</h2>
 <dl>
 
    <dt>SSPが更新されているか自動でチェックする</dt>   
@@ -52,17 +84,38 @@
   他のソフトと衝突する場合は無効にしてください。</dd>
 
   <dt>開発者用機能を有効にする</dt>
-  <dd>ゴースト開発者向けの、特定のロックを解除したり、エラー表示したりする機能を有効にします。<br />
-  使い所を誤るとキャラクターの実行に不具合があったり、内部を覗いて重大なネタバレの原因になる機能です。<br />
-  通常はOFFでお使い下さい。</dd>
+  <dd>
+  ゴースト開発者向けの、特定のロックを解除したり、エラー表示したりする機能を有効にします。
+  <br />使い所を誤るとキャラクターの実行に不具合があったり、内部の情報が見えてしまうことでの重大なネタバレの原因になります。
+  <br />通常はOFFでお使い下さい。
+  </dd>
 
 </dl>
 
-
-<h2>ユーザ情報 </h2>
-
+<h3>ユーザ情報</h3>
 <p>名前・呼ばれ方・誕生日・性別を設定しておくと、もしかしたら対応しているキャラクターでは何かいいことがあるかもしれません。</p>
 <p>なお、この情報はキャラクターへユーザ情報として通知したり、スクリプトを処理したりする以外に利用される事はありません。</p>
 
-</body>
-</html>
+<h2>下部のボタン</h2>
+<dl>
+	<dt>ヘルプ</dt>
+	<dd>
+		本体設定ダイアログの、設定中のページのヘルプ（つまりこのページ）を開きます。
+		<br />ダイアログ右上の「？」マークも同様です。
+	</dd>
+
+	<dt>閉じる</dt>
+	<dd>
+		本体設定ダイアログを閉じます。
+		<br />ダイアログ右上の「×」マークも同様です。
+	</dd>
+</dl>
+
+
+
+<!-------------------------------------------------------------------------------------------------------------------------------->
+<div id="navigation">
+	<span class="Prev"><a href="config-eachghost.htm">設定：ゴーストごとの設定</a></span>
+	<span class="Return"><a href="contents.htm">目次</a></span>
+	<span class="Next"><a href="config-ghost.htm">設定：ゴースト(1)</a></span>
+</div>

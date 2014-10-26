@@ -1,115 +1,210 @@
+@charset "UTF-8"
 body {
-  padding: 7px 7px 40px;
-  color: #000000;
-  background-color: #ffffff;
-  line-height: 1.3em;
-  font-family: MS UI Gothic;
+	padding: 7px 7px 40px;
+	color: #000000;
+	background-color: #ffffff;
+	line-height: 1.3em;
+	font-family: MS UI Gothic;
 }
 img {
-  border: 0;
+	border: 0;
 }
 a:link {
-  text-decoration: none;
-  color: #555599;
+	text-decoration: none;
+	color: #555599;
 }
 a:visited {
-  text-decoration: none;
-  color: #6666aa;
+	text-decoration: none;
+	color: #6666aa;
 }
 a:hover {
-  text-decoration: underline;
-  color: #0000ff;
+	text-decoration: underline;
+	color: #0000ff;
 }
 a:active {
-  text-decoration: underline;
-  color: #0000ff;
+	text-decoration: underline;
+	color: #0000ff;
+}
+pre {
+	border:1px dashed #666699;
+	background-color: #ffeeff;
+}
+dl {
+	margin-left:1em;
 }
 dt {
-  border-style: none none none solid;
-  border-left: 10px solid #ccccff;
-  font-weight: bold;
-  margin-top: 15px;
-  margin-bottom: 4px;
-  padding-left: 3px;
+	border-style: none none none solid;
+	border-left: 10px solid #ccccff;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 4px;
+	padding-left: 3px;
 }
 dd {
-  margin-bottom: 1px;
-  margin-top: 1px;
+	margin-bottom: 1px;
+	margin-top: 1px;
+	padding-left: 0.5em;
+	border-left: 1px solid #ccccff;
+}
+dd dt {
+	border-color:#ccffcc;
+}
+dd dd {
+	border-color:#ccffcc;
 }
 h1 {
-  background-color: #333399;
-  font-size: x-large;
-  font-weight: bold;
-  color: #ffffff;
-  padding: 10px;
+	background-color: #333399;
+	font-size: x-large;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 10px;
 }
 h2 {
-  border-style: none none solid solid;
-  border-left: 12px solid #6666cc;
-  border-bottom: 1px solid #6666cc;
-  font-size: large;
-  font-weight: bold;
-  padding-left: 3px;
-  padding-bottom: 2px;
-  padding-top: 2px;
-  background-color: #ddddff;
-  margin-bottom: 10px;
+	border-style: none none solid solid;
+	border-left: 12px solid #6666cc;
+	border-bottom: 1px solid #6666cc;
+	font-size: large;
+	font-weight: bold;
+	padding-left: 3px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background-color: #ddddff;
+	margin-bottom: 10px;
 }
 h3 {
-  border-style: none none dashed;
-  border-bottom: 1px dashed #6666cc;
-  font-size: medium;
-  font-weight: bold;
-  padding-bottom: 2px;
-  margin-bottom: 10px;
+	border-style: none none dashed;
+	border-bottom: 1px dashed #6666cc;
+	font-size: medium;
+	font-weight: bold;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
 }
 div {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
 }
 p {
-  overflow: hidden;
-}
-.Doing {
-  color: Navy;
-  font-weight: bold;
-}
-.Sentence {
-  color: Green;
-  font-weight: bold;
-}
-.Note {
-  font-size: small;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.System {
-  color: #006600;
-  font-weight: bold;
-}
-.Hint {
-  margin: 5px;
-  padding: 5px;
-  border: 1px dashed #669;
-  background-color: #fef;
-  overflow: hidden;
-}
-.Hint:before {
-  content:"HINT:";
-}
-.Figure {
-  float: right;
+	overflow: hidden;
 }
 tr.q {
-  background-color: #ffddff;
+	background-color: #ffddff;
 }
 tr.a {
-  background-color: #eeeeee;
+	background-color: #eeeeee;
 }
 th.qa {
-  text-align: right;
+	text-align: right;
 }
 table.qa {
-  margin-top: 20px;
+	margin-top: 20px;
+}
+table.Links {
+	background-color: #aaaabb;
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.Links td.Banner {
+	width: 250px;
+	text-align: center;
+	vertical-align: middle;
+}
+table.Links td.Name,
+table.Links td.Url {
+	background-color: #ddddee;
+	vertical-align: middle;
+	padding: 0.5em;
+}
+table.Links td.Intro {
+	background-color: #eeeeff;
+	padding: 0.5em;
+}
+table.Links td.Intro .Undertone {
+	color: #b0b0b0;
+	font-size: 95%;
+}
+table.KeyboardShortcut,
+table.CommandLineSwitch {
+	background-color: #aaaabb;
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.KeyboardShortcut td:first-child,
+table.CommandLineSwitch td:first-child {
+	width: 30%;
+	padding: 0.2em;
+	background-color: #ddddee;
+}
+table.KeyboardShortcut td + td,
+table.CommandLineSwitch td + td {
+	background-color: #eeeeff;
+	padding: 0.2em;
+}
+.Doing {
+	color: Navy;
+	font-weight: bold;
+}
+.Sentence,
+.Recommend,
+.Condition {
+	color: Green;
+	font-weight: bold;
+}
+.Note {
+	font-size: small;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.System {
+	color: #006600;
+	font-weight: bold;
+}
+.Hint {
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed #669;
+	background-color: #fef;
+	overflow: hidden;
+}
+.Hint:before {
+	content:"HINT:";
+}
+.Figure {
+	float: right;
+}
+
+#breadcrumb {
+	border-bottom:3px double #6666cc;
+}
+#breadcrumb .Upper:after {
+	content: "　＞　";
+}
+#navigation {
+	width: 100%;
+	border-top:3px double #6666cc;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+}
+#navigation .Prev {
+	text-align: left;
+}
+#navigation .Prev:before {
+	content: "＜　";
+}
+#navigation .Next   {
+	text-align: right;
+}
+#navigation .Next:after {
+	content: "　＞";
+}
+#navigation .Return {
+}
+#navigation .Return:before,
+#navigation .Return:after{
+	content: "　｜　";
 }
