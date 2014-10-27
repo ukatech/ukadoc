@@ -1,6 +1,11 @@
-@charset "UTF-8"
+@charset "UTF-8";
+
 body {
-	padding: 7px 7px 40px;
+	position: relative;
+	border: 1px solid #ffffff;
+	padding: 0;
+	margin: 0;
+	height: 100%;
 	color: #000000;
 	background-color: #ffffff;
 	line-height: 1.3em;
@@ -176,7 +181,28 @@ table.CommandLineSwitch td + td {
 .Figure {
 	float: right;
 }
+#sidebar {
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:3;
 
+	width: 250px;
+	height: 1500px;
+	overflow: hidden;
+}
+#sidebar iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+#text {
+	position: relative;
+
+	margin-left: 260px;
+	margin-right: 1em;
+}
 #breadcrumb {
 	border-bottom:3px double #6666cc;
 }
