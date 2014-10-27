@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* 京 */
+
+body,p,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,img,em,strong,blockquote,dfn,code,samp,del,ins,table,th,td{
+	font-size:100%;
+	font-style:normal;
+	font-weight:normal;
+	text-decoration:none;
+	text-indent:0;
+	white-space:normal;
+	margin:0;
+	padding:0;
+	outline-style:none;
+}
+
+html{
+	background-color:#94de84;
+}
+body{
+	width: 800px;
+	margin: 0 auto;
+	color: #333333;
+	font-size: 14px;
+}
+#navigation_body{
+	width:100%;
+	padding: 2;
+	margin: 2;
+}
+#navigation_body .menu{
+	margin-top:1px;
+	list-style-type: none;
+	float: left;
+}
+
+#navigation_body form.internal-search{
+	text-align: right;
+	padding-right: 3px;
+}
+#navigation_body form.internal-search input[type="text"]{
+	width: 200px;
+}
+#navigation_body form.internal-search input[type="submit"]{
+	margin-right: 50px;
+}
+
+
