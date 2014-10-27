@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+body {
+	padding: 0;
+	margin: 0;
+	color: #000000;
+	background-color: #ccccff;
+	line-height: 1.3em;
+	font-family: MS UI Gothic;
+	font-size:95%;
+}
+img {
+	border: 0;
+}
+a:link {
+	text-decoration: none;
+	color: #555599;
+}
+a:visited {
+	text-decoration: none;
+	color: #6666aa;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0000ff;
+}
+a:active {
+	text-decoration: underline;
+	color: #0000ff;
+}
+
+h1 {
+	background-color: #333399;
+	font-size: x-large;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 10px;
+}
+h2 {
+	border-style: none none solid solid;
+	border-left: 12px solid #6666cc;
+	border-bottom: 1px solid #6666cc;
+	font-size: large;
+	font-weight: bold;
+	padding-left: 3px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background-color: #ddddff;
+	margin-bottom: 10px;
+}
+h3 {
+	border-style: none none dashed;
+	border-bottom: 1px dashed #6666cc;
+	font-size: medium;
+	font-weight: bold;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+}
+div {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+p {
+	overflow: hidden;
+}
+ul {
+	list-style-type: disc;
+	text-indent: 0;
+	margin: 0;
+	padding: 0;
+
+	margin-left: 2em;
+}
+ul ul {
+	list-style-type: square;
+	
+}
+ul ul ul {
+	list-style-type: circle;
+}
+
+
+
+.Note {
+	font-size: small;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.System {
+	color: #006600;
+	font-weight: bold;
+}
+.Hint {
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed #669;
+	background-color: #fef;
+	overflow: hidden;
+}
+.Hint:before {
+	content:"HINT:";
+}
+.Figure {
+	float: right;
+}
