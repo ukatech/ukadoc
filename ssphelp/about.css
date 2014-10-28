@@ -2,12 +2,14 @@
 
 body {
 	position: relative;
-	border: 1px solid #ffffff;
 	padding: 0;
 	margin: 0;
 	height: 100%;
 	color: #000000;
 	background-color: #ffffff;
+	background-image: url("image/background.png");
+	background-position: left top;
+	background-repeat: repeat-y;
 	line-height: 1.3em;
 	font-family: MS UI Gothic;
 }
@@ -92,6 +94,7 @@ div {
 p {
 	overflow: hidden;
 }
+/*
 tr.q {
 	background-color: #ffddff;
 }
@@ -104,8 +107,31 @@ th.qa {
 table.qa {
 	margin-top: 20px;
 }
+*/
+table.QnA {
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.QnA tr td {
+	background-color: #ddddff;
+	padding: 0.5em;
+}
+table.QnA tr:first-child td {
+	background-color: transparent;
+	border: #cc6666 1px dashed;
+}
+table.QnA tr td span.Head {
+	font-weight: bold;
+	color: #6666cc;
+}
+table.QnA tr:first-child td span.Head {
+	font-weight: bold;
+	color: #cc6666;
+}
 table.Links {
-	background-color: #aaaabb;
+	background-color: #aaaadd;
 	margin: 0 auto 1em auto;
 	width: 95%;
 	border-collapse: separate;
@@ -188,7 +214,7 @@ table.CommandLineSwitch td + td {
 	z-index:3;
 
 	width: 250px;
-	height: 1500px;
+	height: 1200px;
 	overflow: hidden;
 }
 #sidebar iframe {
@@ -198,6 +224,7 @@ table.CommandLineSwitch td + td {
 	overflow: hidden;
 }
 #text {
+	border:#ffffff 1px solid;
 	position: relative;
 
 	margin-left: 260px;
