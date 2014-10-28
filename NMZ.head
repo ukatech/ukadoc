@@ -1,11 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-        "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<!-- LINK-REV-MADE -->
-<link rev="made" href="mailto:webmaster@mail2.shillest.net">
-<!-- LINK-REV-MADE -->
-<title>Namazu: a Full-Text Search Engine</title>
+<title>ukadoc全文検索</title>
 <style type="text/css"><!--
   strong.keyword { color: Red; }
   p.example      { text-indent: 1em; 
@@ -23,14 +19,7 @@
 --></style>
 </head>
 <body lang="ja">
-<h1>Namazu による全文検索システム</h1>
-<p>
-現在、<!-- FILE --> 79 <!-- FILE --> の文書がインデックス化され、
-<!-- KEY --> 14,528 <!-- KEY --> 個のキーワードが登録されています。
-</p>
-<p>
-<strong>インデックスの最終更新日: <!-- DATE --> 2014-10-28 <!-- DATE --></strong>
-</p>
+<h1>ukadoc全文検索</h1>
 <hr>
 <form method="get" action="{cgi}">
 <p>
