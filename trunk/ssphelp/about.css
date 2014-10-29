@@ -202,7 +202,7 @@ table.CommandLineSwitch td + td {
 	overflow: hidden;
 }
 .Hint:before {
-	content:"HINT:";
+	content: "HINT:";
 }
 .Figure {
 	float: right;
@@ -249,15 +249,12 @@ table.CommandLineSwitch td + td {
 #navigation .Prev:before {
 	content: "＜　";
 }
+#navigation .Prev:after {
+	content: "　||　";
+}
 #navigation .Next   {
 	text-align: right;
 }
 #navigation .Next:after {
 	content: "　＞";
-}
-#navigation .Return {
-}
-#navigation .Return:before,
-#navigation .Return:after{
-	content: "　｜　";
 }
