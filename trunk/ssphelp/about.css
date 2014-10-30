@@ -160,6 +160,10 @@ table.QnA tr:first-child td span.Head {
 	font-weight: bold;
 	color: #cc6666;
 }
+table.QnA td span.Undertone {
+	color: #aaaabb;
+	font-size: 95%;
+}
 table.Links {
 	background-color: #aaaadd;
 	margin: 0 auto 1em auto;
@@ -185,6 +189,15 @@ table.Links td.Intro {
 table.Links td.Intro .Undertone {
 	color: #b0b0b0;
 	font-size: 95%;
+}
+table.Links thead td {
+	border: 1px dashed #669;
+	background-color: #fef;
+	padding: 0.5em;
+}
+table.Links thead th:first-child {
+	background-color: #333399;
+	color: #ffffff;
 }
 table.KeyboardShortcut,
 table.CommandLineSwitch,
