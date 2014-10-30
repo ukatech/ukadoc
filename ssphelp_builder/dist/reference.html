@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="prev" href="faq.html">
+    <link rel="next" href="aboutssp.html">
+    <title>用語説明</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="breadcrumb">
+        <ul>
+                          <li><a href="index.html">SSP</a>
+                          </li>
+                          <li><a href="reference.html">用語説明</a>
+                          </li>
+        </ul>
+      </div>
+      <div id="contents"><h1>用語説明</h1>
+
+
+<dl>
+	<dt id="x30b4-x30fc-x30b9-x30c8">ゴースト</dt>
+	<dd>
+	キャラクターデータのこと、あるいはその擬似ＡＩを構成する部分の事です。
+	<br>キャラクターの「人格」を司り、いろいろな反応を返したり会話を交わしたりするための、いわば「心」「魂」の部分をゴーストといいます。
+	<br>ただし、当然ながら「魂」だけでは具現化できないわけで、上述の「シェル」と1セットにし、すぐに使えるようにパッケージ化されたものを指す場合が大半です。
+	<br>また文脈によっては後述の「伺か」と同様、漠然とジャンルのような意味合いでも用いられる言葉です。
+	</dd>
+
+	<dt id="x30b7-x30a7-x30eb">シェル</dt>
+	<dd>
+	キャラクターの立ち絵のデータの事です。
+	<br>キャラクターの「表示」を司る見かけの部分です。最近はそうでもありませんが、歴史的に開発者に男性が多い関係上(^_^;)、女性をかたどったものが多いようですが、男性や動物、非生物、また単純に情報ツールとして使うための「萌えレス(Moeless)」なものもあります。
+	<br>シェルはゴーストに複数くっつけて使うことができ、「シェル」メニューから切り替えが可能です。
+	</dd>
+
+	<dt id="x30d0-x30eb-x30fc-x30f3">バルーン</dt>
+	<dd>
+	要するに「吹き出し」です。キャラクターの会話を表示するための小さいウィンドウのことです。
+	<br>これも、上記のシェルと同様、様々な格好のものが多数配布され、簡単にインストールすることができます。
+	</dd>
+
+	<dt id="x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</dt>
+	<dd>
+	ある特定のサイトの更新情報などを自動的に取得し、そのリストを表示する機能です。
+	<br>ヘッドライン機能はプラグインによって拡張することができ、そのパッケージを現在表示中のゴーストに<span class="Doing">ドラッグ</span>するか、解凍してheadlineフォルダの中に入れてSSPを一度終了することで認識します。
+	<br>このヘッドラインを自動的に巡回する機能もあります。
+	</dd>
+
+	<dt id="x3055-x304f-x3089-x5074-x2f-x3046-x306b-x3085-x3046-x5074">さくら側/うにゅう側</dt>
+	<dd>
+	かつての「偽○○」と呼ばれていた頃や、「何か」のデフォルトゴーストでは、メインキャラクター側がさくら、サブキャラクター側がうにゅうという名であり、その呼称の名残です。
+	<br>SSPでのデフォルトゴーストである「Emily」では猫耳な女性側が「さくら側」、謎生物？のテディ側が「うにゅう側」となります。
+	<br>\h側/\u側、\0側/\1側、\p0側/\p1側、メインキャラ側/サブキャラ側、本体側/相方側等の呼称はすべてこれと同じ意味となります。
+	</dd>
+
+	<dt id="x53-x48-x49-x4f-x52-x49">SHIORI</dt>
+	<dd>
+	上記の「ゴースト」を作り上げるためのシステムの呼称です。
+	<br>通常WindowsのDLLとして提供されますが、OSに依存しない設計になっています。
+	</dd>
+
+	<dt id="x4d-x41-x4b-x4f-x54-x4f">MAKOTO</dt>
+	<dd>
+	ゴーストやSSTP通信から来た文章の中のある一定の単語を置き換えるための仕組みです。
+	<br>これも通常WindowsのDLLとして提供されますが、OSに依存しない設計になっています。
+	<br>なお、それを拡大解釈し、音楽を演奏したり、特殊な機能を提供したりするものも存在します。
+	</dd>
+
+	<dt id="x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</dt>
+	<dd>
+	上記のゴーストや下記のSSTP等で使われる、キャラクターの表情を制御したり、特定のURLを開いたり、バルーンに文字や絵を表示したりするのに使われる文字列（スクリプト言語）のことです。
+	</dd>
+
+	<dt id="x53-x53-x54-x50">SSTP</dt>
+	<dd>
+	Sakura Script Transfer Protocolの略。上記のSakuraScriptをネットワーク上でやりとりするための仕組みです。
+	<br>「毒電波」とも言われるようですが……(^_^;)
+	</dd>
+
+	<dt id="x4f3a-x304b">伺か</dt>
+	<dd>
+	うかがか、と読みます。
+	<br>本来はデスクトップマスコットと呼ばれる種類のアプリケーションの一つです。
+	<br>ただし現在では、その互換アプリケーション（SSPもその一つ）上でのみ動作するものも含めて、キャラクターデータである「ゴースト」をとりまく、ジャンルやコミュニティの漠然とした呼称ともなっています。
+	</dd>
+
+	<dt id="x30d9-x30fc-x30b9-x30a6-x30a7-x30a2">ベースウェア</dt>
+	<dd>
+	ソフトウェアとしての「伺か」と、その互換アプリケーションの総称です。SSPもその一種といえます。
+	<br>ゴーストからみて、動作の土台となる環境を提供するソフトウェアであることからの呼び方です。
+	<br>なお「伺か」の語は上記の通り、現在では意味の幅が広く曖昧なので、特にベースウェアとしての伺かを指す場合は「MATERIA」と呼ばれるのが一般的です。
+	</dd>
+</dl>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li class="previous"><a href="faq.html">よくある質問</a></li>
+          <li class="next"><a href="aboutssp.html">SSPの基本情報</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+              <li><a href="index.html">はじめに</a>
+              </li>
+              <li>基本的な使い方
+                <ul>
+                        <li><a href="howto-boot.html">起動する</a>
+                        </li>
+                        <li><a href="howto-use.html">ゴーストとあそぶ</a>
+                        </li>
+                        <li><a href="howto-rclick.html">右クリックメニュー</a>
+                        </li>
+                        <li><a href="howto-add.html">コンテンツを追加する</a>
+                        </li>
+                        <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                        </li>
+                        <li><a href="howto-plugin.html">プラグイン</a>
+                        </li>
+                        <li><a href="howto-headline.html">RSS/ヘッドライン</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="functions.html">機能</a>
+                <ul>
+                        <li><a href="calendar.html">カレンダー</a>
+                          <ul>
+                                  <li><a href="calendar-schedule.html">スケジュール編集</a>
+                                  </li>
+                                  <li><a href="calendar-menu.html">メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="sspim.html">SSPメッセンジャー</a>
+                          <ul>
+                                  <li><a href="sspim-addto.html">送信先の追加</a>
+                                  </li>
+                                  <li><a href="sspim-sendto.html">送信する</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="explorer.html">エクスプローラ</a>
+                          <ul>
+                                  <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="shortcut.html">ショートカット一覧</a>
+                        </li>
+                        <li><a href="option.html">起動オプション一覧</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="config.html">設定</a>
+                <ul>
+                        <li><a href="config-eachghost.html">ゴーストごとの設定</a>
+                        </li>
+                        <li>本体設定
+                          <ul>
+                                  <li><a href="config-ippan.html">一般</a>
+                                  </li>
+                                  <li><a href="config-ghost.html">ゴースト(1)</a>
+                                  </li>
+                                  <li><a href="config-ghost2.html">ゴースト(2)</a>
+                                  </li>
+                                  <li><a href="config-folder.html">フォルダ</a>
+                                  </li>
+                                  <li><a href="config-disp.html">表示</a>
+                                  </li>
+                                  <li><a href="config-talk.html">喋り/バルーン</a>
+                                  </li>
+                                  <li><a href="config-conn1.html">接続(1)</a>
+                                  </li>
+                                  <li><a href="config-conn2.html">接続(2)</a>
+                                  </li>
+                                  <li><a href="config-pop.html">POP</a>
+                                  </li>
+                                  <li><a href="config-extprog.html">外部アプリ</a>
+                                  </li>
+                                  <li><a href="config-im.html">IM</a>
+                                  </li>
+                                  <li><a href="config-ipmes.html">IP Messenger</a>
+                                  </li>
+                                  <li><a href="config-i18n.html">国際化</a>
+                                  </li>
+                                  <li><a href="config-dev.html">開発/その他</a>
+                                  </li>
+                          </ul>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="information.html">情報</a>
+              </li>
+              <li><a href="links.html">リンク集</a>
+              </li>
+              <li><a href="faq.html">よくある質問</a>
+              </li>
+              <li><a href="reference.html">用語説明</a>
+              </li>
+              <li><a href="aboutssp.html">SSPの基本情報</a>
+              </li>
+              <li><a href="dev.html">開発者向けヘルプ</a>
+                <ul>
+                        <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                        </li>
+                        <li><a href="dev-palette.html">開発用パレット</a>
+                        </li>
+                        <li><a href="dev-links.html">開発リンク集</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="search.html">検索</a>
+              </li>
+      </ul>
+    </div>
+  </body>
+</html>

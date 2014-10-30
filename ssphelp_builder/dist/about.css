@@ -1,0 +1,313 @@
+@charset "UTF-8";
+
+html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	position: relative;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	color: #000000;
+	background-color: #ffffff;
+	background-image: url("image/background.png");
+	background-position: left top;
+	background-repeat: repeat-y;
+	line-height: 1.3em;
+	font-family: MS UI Gothic;
+}
+img {
+	border: 0;
+}
+a:link {
+	text-decoration: none;
+	color: #555599;
+}
+a:visited {
+	text-decoration: none;
+	color: #6666aa;
+}
+a:hover {
+	text-decoration: underline;
+	color: #0000ff;
+}
+a:active {
+	text-decoration: underline;
+	color: #0000ff;
+}
+pre {
+	border:1px dashed #666699;
+	background-color: #ffeeff;
+}
+dl {
+	margin-left:1em;
+}
+dt {
+	border-style: none none none solid;
+	border-left: 10px solid #ccccff;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 4px;
+	padding-left: 3px;
+}
+dd {
+	margin-bottom: 1px;
+	margin-top: 1px;
+	padding-left: 0.5em;
+	border-left: 1px solid #ccccff;
+}
+dd dt {
+	border-color:#ccffcc;
+}
+dd dd {
+	border-color:#ccffcc;
+}
+h1 {
+	background-color: #333399;
+	font-size: x-large;
+	font-weight: bold;
+	color: #ffffff;
+	padding: 10px;
+}
+h2 {
+	border-style: none none solid solid;
+	border-left: 12px solid #6666cc;
+	border-bottom: 1px solid #6666cc;
+	font-size: large;
+	font-weight: bold;
+	padding-left: 3px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background-color: #ddddff;
+	margin-bottom: 10px;
+}
+h3 {
+	border-style: none none dashed;
+	border-bottom: 1px dashed #6666cc;
+	font-size: medium;
+	font-weight: bold;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+}
+div {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+}
+p {
+	overflow: hidden;
+}
+/*
+tr.q {
+	background-color: #ffddff;
+}
+tr.a {
+	background-color: #eeeeee;
+}
+th.qa {
+	text-align: right;
+}
+table.qa {
+	margin-top: 20px;
+}
+*/
+table.QnA {
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.QnA tr td {
+	background-color: #ddddff;
+	padding: 0.5em;
+}
+table.QnA tr:first-child td {
+	background-color: transparent;
+	border: #cc6666 1px dashed;
+}
+table.QnA tr td span.Head {
+	font-weight: bold;
+	color: #6666cc;
+}
+table.QnA tr:first-child td span.Head {
+	font-weight: bold;
+	color: #cc6666;
+}
+table.Links {
+	background-color: #aaaadd;
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.Links td.Banner {
+	width: 250px;
+	text-align: center;
+	vertical-align: middle;
+}
+table.Links td.Name,
+table.Links td.Url {
+	background-color: #ddddee;
+	vertical-align: middle;
+	padding: 0.5em;
+}
+table.Links td.Intro {
+	background-color: #eeeeff;
+	padding: 0.5em;
+}
+table.Links td.Intro .Undertone {
+	color: #b0b0b0;
+	font-size: 95%;
+}
+table.KeyboardShortcut,
+table.CommandLineSwitch {
+	background-color: #aaaabb;
+	margin: 0 auto 1em auto;
+	width: 95%;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+table.KeyboardShortcut td:first-child,
+table.CommandLineSwitch td:first-child {
+	width: 30%;
+	padding: 0.2em;
+	background-color: #ddddee;
+}
+table.KeyboardShortcut td + td,
+table.CommandLineSwitch td + td {
+	background-color: #eeeeff;
+	padding: 0.2em;
+}
+.Doing {
+	color: Navy;
+	font-weight: bold;
+}
+.Sentence,
+.Recommend,
+.Condition {
+	color: Green;
+	font-weight: bold;
+}
+.Note {
+	font-size: small;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.System {
+	color: #006600;
+	font-weight: bold;
+}
+.Hint {
+	margin: 5px;
+	padding: 5px;
+	border: 1px dashed #669;
+	background-color: #fef;
+	overflow: hidden;
+}
+.Hint:before {
+	content:"HINT:";
+}
+.Figure {
+	float: right;
+}
+#menu {
+	position: absolute;
+	height: 100%;
+	top:0;
+	left:0;
+	z-index:3;
+
+	width: 250px;
+	overflow: auto;
+}
+
+#menu {
+	padding: 0;
+	margin: 0 0 3em 0;
+	color: #000000;
+	background-color: #ccccff;
+	line-height: 1.3em;
+	font-family: MS UI Gothic;
+	font-size:95%;
+}
+
+ul {
+	list-style-type: disc;
+	text-indent: 0;
+	margin: 0 0 0 2em;
+	padding: 0;
+}
+ul ul {
+	list-style-type: square;
+	
+}
+ul ul ul {
+	list-style-type: circle;
+}
+
+#main {
+	position: relative;
+
+	margin-left: 260px;
+	padding-right: 1em;
+	height: 100%;
+	overflow: auto;
+}
+#breadcrumb {
+	border-bottom:3px double #6666cc;
+}
+#breadcrumb ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+#breadcrumb li{
+	margin: 0;
+	padding: 0;
+	display: inline;
+}
+#breadcrumb li:before {
+	content: "　＞　";
+}
+#breadcrumb li:first-child:before {
+	content: "";
+}
+#navigation {
+	width: 100%;
+	border-top:3px double #6666cc;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+}
+#navigation ul{
+	list-style none;
+	margin 0;
+	padding 0;
+}
+#navigation li{
+	margin 0;
+	padding 0;
+	display: inline;
+}
+#navigation .previous {
+	text-align: left;
+}
+#navigation .previous:before {
+	content: "＜　";
+}
+#navigation .next   {
+	text-align: right;
+}
+#navigation .next:after {
+	content: "　＞";
+}
+#navigation .Return {
+}
+#navigation .Return:before,
+#navigation .Return:after{
+	content: "　｜　";
+}

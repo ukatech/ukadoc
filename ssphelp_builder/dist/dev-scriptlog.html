@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="prev" href="dev.html">
+    <link rel="next" href="dev-palette.html">
+    <title>スクリプトログ</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="breadcrumb">
+        <ul>
+                                  <li><a href="index.html">SSP</a>
+                                  </li>
+                                  <li><a href="dev.html">開発者向けヘルプ</a>
+                                  </li>
+                                  <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                                  </li>
+        </ul>
+      </div>
+      <div id="contents"><h1>開発者向けヘルプ：スクリプトログ</h1>
+<p>このページでは、<span class="Sentence">スクリプトログ</span>について解説しています。</p>
+<p>また、スクリプトログ左下から切り替えられる<span class="Sentence">エラーログ</span>についても解説しています。</p>
+
+
+
+<h2 id="chapter1">スクリプトログ</h2>
+<img src="image/dev-scriptlog/5.png" width="651" height="347" alt="スクリプトログ">
+<p>
+	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が受け取った<a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>は、設定した件数分、内部的に保存されています。
+	<br>スクリプトログでは、そのように内部に保存されているスクリプトを参照したり、保存したり、もう一度しゃべらせることができます。
+</p><p>
+<h3>(左下)Script</h3>
+</p><p><a href="#chapter2">エラーログ</a>と切り替えるためのプルダウンメニューです。</p>
+<h3>ログ行数</h3>
+<p>内部に保存しておくログの件数を設定します。</p>
+<h3>ボタン類</h3>
+<p>リストで選択されている行などを対象に、以下の操作を行います。</p>
+<dl>
+	<dt>消去</dt>
+	<dd>リスト内の全ての内容を削除します。</dd>
+
+	<dt>コピー</dt>
+	<dd>選択しているスクリプトをクリップボードにコピーします。<br>テキストなどに貼り付けて、検証に用いることができます。</dd>
+
+	<dt>保存</dt>
+	<dd>保存ダイアログを開き、指定位置にログをcsv形式で出力します。</dd>
+
+	<dt>実行</dt>
+	<dd>選択しているログを<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に再実行させます。</dd>
+</dl>
+
+<h2 id="chapter2">エラーログ</h2>
+<img src="image/dev-scriptlog/6.png" width="651" height="347" alt="エラーログ">
+<p>
+	SSPの動作中に発生したエラーの履歴を表示します。
+	<br>エラーの内容を確認し、対処するための参考にしてください。
+</p>
+<h3>エラーのレベル</h3>
+<p>
+	リスト左端のアイコンおよび、エラー文の先頭にある語句はエラーのレベルを表します。
+	<br>おおよそ以下のような意味合いです。
+</p>
+<dl>
+	<dt><img src="image/dev-scriptlog/4.png" width="16" height="16" alt="">Critical</dt>
+	<dd>重大な誤りがあります。起動不能・動作停止などの結果に繋がる場合があります。<br>直ちに修正が必要です。</dd>
+	<dt><img src="image/dev-scriptlog/3.png" width="16" height="16" alt="">Error</dt>
+	<dd>誤りがあります。補正不能なファイルの記述が一部読み飛ばされるなど、意図した動作をしていません。<br>正常動作のためには修正が必要です。</dd>
+	<dt><img src="image/dev-scriptlog/2.png" width="16" height="16" alt="">Warning</dt>
+	<dd>ファイルの記述などに軽微な誤りがありますが、SSPの内部的な補正により、（おそらく）正常動作しています。<br>他の<a href="reference.html#x30d9-x30fc-x30b9-x30a6-x30a7-x30a2">ベースウェア</a>との互換性の観点から、またSSPの仕様変更に際して「何もしてないのに動かなくなった」などという事態が起こり得ますので、可能な限り修正してください。</dd>
+	<dt><img src="image/dev-scriptlog/1.png" width="16" height="16" alt="">Notice</dt>
+	<dd>何らかの誤りの（潜在的な）可能性・危険性が発見されました。</dd>
+	<dt><img src="image/dev-scriptlog/0.png" width="16" height="16" alt="">Info</dt>
+	<dd>システム開発者用の参考情報です。基本的に気にしなくとも構いません。</dd>
+</dl>
+
+
+<h3>(左下)Error</h3>
+<p><a href="#chapter2">スクリプトログ</a>と切り替えるためのプルダウンメニューです。</p>
+<h3>ログ行数</h3>
+<p>内部に保存しておくログの件数を設定します。</p>
+<h3>ボタン類</h3>
+<p>リストで選択されている行などを対象に、以下の操作を行います。</p>
+<dl>
+	<dt>消去</dt>
+	<dd>リスト内の全ての内容を削除します。</dd>
+
+	<dt>コピー</dt>
+	<dd>選択しているエラーの内容をクリップボードにコピーします。<br>テキストなどに貼り付けて、検証に用いることができます。</dd>
+
+	<dt>保存</dt>
+	<dd>保存ダイアログを開き、指定位置にログをcsv形式で出力します。</dd>
+</dl>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li class="previous"><a href="dev.html">開発者向けヘルプ</a></li>
+          <li class="next"><a href="dev-palette.html">開発用パレット</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+              <li><a href="index.html">はじめに</a>
+              </li>
+              <li>基本的な使い方
+                <ul>
+                        <li><a href="howto-boot.html">起動する</a>
+                        </li>
+                        <li><a href="howto-use.html">ゴーストとあそぶ</a>
+                        </li>
+                        <li><a href="howto-rclick.html">右クリックメニュー</a>
+                        </li>
+                        <li><a href="howto-add.html">コンテンツを追加する</a>
+                        </li>
+                        <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                        </li>
+                        <li><a href="howto-plugin.html">プラグイン</a>
+                        </li>
+                        <li><a href="howto-headline.html">RSS/ヘッドライン</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="functions.html">機能</a>
+                <ul>
+                        <li><a href="calendar.html">カレンダー</a>
+                          <ul>
+                                  <li><a href="calendar-schedule.html">スケジュール編集</a>
+                                  </li>
+                                  <li><a href="calendar-menu.html">メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="sspim.html">SSPメッセンジャー</a>
+                          <ul>
+                                  <li><a href="sspim-addto.html">送信先の追加</a>
+                                  </li>
+                                  <li><a href="sspim-sendto.html">送信する</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="explorer.html">エクスプローラ</a>
+                          <ul>
+                                  <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="shortcut.html">ショートカット一覧</a>
+                        </li>
+                        <li><a href="option.html">起動オプション一覧</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="config.html">設定</a>
+                <ul>
+                        <li><a href="config-eachghost.html">ゴーストごとの設定</a>
+                        </li>
+                        <li>本体設定
+                          <ul>
+                                  <li><a href="config-ippan.html">一般</a>
+                                  </li>
+                                  <li><a href="config-ghost.html">ゴースト(1)</a>
+                                  </li>
+                                  <li><a href="config-ghost2.html">ゴースト(2)</a>
+                                  </li>
+                                  <li><a href="config-folder.html">フォルダ</a>
+                                  </li>
+                                  <li><a href="config-disp.html">表示</a>
+                                  </li>
+                                  <li><a href="config-talk.html">喋り/バルーン</a>
+                                  </li>
+                                  <li><a href="config-conn1.html">接続(1)</a>
+                                  </li>
+                                  <li><a href="config-conn2.html">接続(2)</a>
+                                  </li>
+                                  <li><a href="config-pop.html">POP</a>
+                                  </li>
+                                  <li><a href="config-extprog.html">外部アプリ</a>
+                                  </li>
+                                  <li><a href="config-im.html">IM</a>
+                                  </li>
+                                  <li><a href="config-ipmes.html">IP Messenger</a>
+                                  </li>
+                                  <li><a href="config-i18n.html">国際化</a>
+                                  </li>
+                                  <li><a href="config-dev.html">開発/その他</a>
+                                  </li>
+                          </ul>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="information.html">情報</a>
+              </li>
+              <li><a href="links.html">リンク集</a>
+              </li>
+              <li><a href="faq.html">よくある質問</a>
+              </li>
+              <li><a href="reference.html">用語説明</a>
+              </li>
+              <li><a href="aboutssp.html">SSPの基本情報</a>
+              </li>
+              <li><a href="dev.html">開発者向けヘルプ</a>
+                <ul>
+                        <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                        </li>
+                        <li><a href="dev-palette.html">開発用パレット</a>
+                        </li>
+                        <li><a href="dev-links.html">開発リンク集</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="search.html">検索</a>
+              </li>
+      </ul>
+    </div>
+  </body>
+</html>

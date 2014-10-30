@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="stylesheet" type="text/css" href="about.css">
+    <link rel="prev" href="howto-add.html">
+    <link rel="next" href="howto-plugin.html">
+    <title>本体のバージョンアップ</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="breadcrumb">
+        <ul>
+                                  <li><a href="index.html">SSP</a>
+                                  </li>
+                                  <li>基本的な使い方
+                                  </li>
+                                  <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                                  </li>
+        </ul>
+      </div>
+      <div id="contents"><h1>基本的な使い方：本体のバージョンアップ</h1>
+<p>
+	SSPに問題が発見される・新機能が追加されるなどの理由で本体の更新が必要になることがあります。
+</p>
+
+<h2>右クリックメニューからの更新</h2>
+<p>
+	右クリックメニューの「機能」から「本体更新をチェック」をクリックする事で、SSPの更新の有無を確認できます。
+	<br><img src="image/howto-verup/dialog-sspupdatecheck.png" width="421" height="208" alt="更新を発見した場合のダイアログ">
+	<br>更新があった場合は、ダウンロードするかどうかを確認するダイアログウィンドウが開くので、「はい」を押すと更新が始まります。
+</p>
+<div class="Hint">
+ダウンロードが終了すると<em>自動で全ての<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が終了</em>し、再起動するので注意してください。
+</div>
+<h3>自動で本体更新をチェックする</h3>
+<p>
+	「本体設定」の「一般」で設定する事で、定期的に自動でSSPの更新の有無を確認するようにできます。
+	<br>
+</p>
+<p>⇒　詳しくは<a href="config-ippan.html">「一般」</a>のページをご覧ください。</p>
+
+<h2>手動での更新</h2>
+<p>
+	手動でダウンロードして更新したい場合は以下のようにします。
+</p>
+<h3>1,差分ファイルのダウンロード</h3>
+<p>
+	更新ファイルは<a href="http://ssp.shillest.net/">SSP BUGTRAQ</a>で配布されます。
+	<br>最新版の他、ある程度過去のバージョンのSSPも配布しています（2014年現在は、ページ左側に大きく表示されています）。
+	<br>fullset（フルセット）とdiff（差分ファイル）の両方が配布されている場合、更新にはどちらも使えますが、差分の方が容量が小さく済むでしょう。
+</p>
+<p>
+	またSSP BUGTRAQでは通常最新版だけでなく、<a href="links.html">過去のバージョンもいくらか配布しています</a>。
+	<br>最新版ではなく特定のバージョンまで更新したい場合や、バージョンダウンしたい場合に利用してください（その場合も差分適応で大丈夫です）。
+</p>
+
+<h3>2,現バージョンの「SSP」を終了させる</h3>
+<p>
+	SSPが起動したままだと上書きに失敗してしまいます。
+</p>
+
+<h3>3,新しいバージョンを展開・上書きする</h3>
+<p>
+	「SSP」をインストールしたときと同じように、EXEファイルを実行して展開します。
+	<br>基本的には、現バージョンと同じフォルダに展開して上書きしてしまってＯＫです。
+</p>
+
+<h2>更新でエラーが出た場合</h2>
+<p>
+	何らかのエラーが発生したら、ダウンロードに失敗していたか、ファイルの上書きに失敗しています。
+	<br>メッセージ内容で、どちらに該当するか判断してください。
+	<br>「書庫が壊れています」のようなメッセージの場合は、ダウンロードに失敗しています。もう一度ダウンロードしなおしてください。
+</p>
+<p class="Hint">
+	何度か試してもダウンロードに失敗する場合、ウェブブラウザではなくダウンロード専用アプリケーションを使用してみるのも手かもしれません。
+</p>
+<p>
+	それ以外の場合はいくつか原因が考えられます。
+	<br>「<a href="faq.html">よくある質問</a>」のページにもある程度の対処法をかいてありますのでご覧ください。
+</p>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li class="previous"><a href="howto-add.html">コンテンツを追加する</a></li>
+          <li class="next"><a href="howto-plugin.html">プラグイン</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+              <li><a href="index.html">はじめに</a>
+              </li>
+              <li>基本的な使い方
+                <ul>
+                        <li><a href="howto-boot.html">起動する</a>
+                        </li>
+                        <li><a href="howto-use.html">ゴーストとあそぶ</a>
+                        </li>
+                        <li><a href="howto-rclick.html">右クリックメニュー</a>
+                        </li>
+                        <li><a href="howto-add.html">コンテンツを追加する</a>
+                        </li>
+                        <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                        </li>
+                        <li><a href="howto-plugin.html">プラグイン</a>
+                        </li>
+                        <li><a href="howto-headline.html">RSS/ヘッドライン</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="functions.html">機能</a>
+                <ul>
+                        <li><a href="calendar.html">カレンダー</a>
+                          <ul>
+                                  <li><a href="calendar-schedule.html">スケジュール編集</a>
+                                  </li>
+                                  <li><a href="calendar-menu.html">メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="sspim.html">SSPメッセンジャー</a>
+                          <ul>
+                                  <li><a href="sspim-addto.html">送信先の追加</a>
+                                  </li>
+                                  <li><a href="sspim-sendto.html">送信する</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="explorer.html">エクスプローラ</a>
+                          <ul>
+                                  <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="shortcut.html">ショートカット一覧</a>
+                        </li>
+                        <li><a href="option.html">起動オプション一覧</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="config.html">設定</a>
+                <ul>
+                        <li><a href="config-eachghost.html">ゴーストごとの設定</a>
+                        </li>
+                        <li>本体設定
+                          <ul>
+                                  <li><a href="config-ippan.html">一般</a>
+                                  </li>
+                                  <li><a href="config-ghost.html">ゴースト(1)</a>
+                                  </li>
+                                  <li><a href="config-ghost2.html">ゴースト(2)</a>
+                                  </li>
+                                  <li><a href="config-folder.html">フォルダ</a>
+                                  </li>
+                                  <li><a href="config-disp.html">表示</a>
+                                  </li>
+                                  <li><a href="config-talk.html">喋り/バルーン</a>
+                                  </li>
+                                  <li><a href="config-conn1.html">接続(1)</a>
+                                  </li>
+                                  <li><a href="config-conn2.html">接続(2)</a>
+                                  </li>
+                                  <li><a href="config-pop.html">POP</a>
+                                  </li>
+                                  <li><a href="config-extprog.html">外部アプリ</a>
+                                  </li>
+                                  <li><a href="config-im.html">IM</a>
+                                  </li>
+                                  <li><a href="config-ipmes.html">IP Messenger</a>
+                                  </li>
+                                  <li><a href="config-i18n.html">国際化</a>
+                                  </li>
+                                  <li><a href="config-dev.html">開発/その他</a>
+                                  </li>
+                          </ul>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="information.html">情報</a>
+              </li>
+              <li><a href="links.html">リンク集</a>
+              </li>
+              <li><a href="faq.html">よくある質問</a>
+              </li>
+              <li><a href="reference.html">用語説明</a>
+              </li>
+              <li><a href="aboutssp.html">SSPの基本情報</a>
+              </li>
+              <li><a href="dev.html">開発者向けヘルプ</a>
+                <ul>
+                        <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                        </li>
+                        <li><a href="dev-palette.html">開発用パレット</a>
+                        </li>
+                        <li><a href="dev-links.html">開発リンク集</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="search.html">検索</a>
+              </li>
+      </ul>
+    </div>
+  </body>
+</html>
