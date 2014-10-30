@@ -1,0 +1,44 @@
+extends layout
+block body
+	#main
+		unless element.root
+			#breadcrumb
+				mixin breadcrumb(element)
+					if element.parent != null
+						+breadcrumb(element.parent)
+							li
+								if element.has_link
+									a(href=element.place + '.html')= element.title
+								else
+									= element.title
+							if block
+								block
+					else
+						li
+							if element.has_link
+								a(href=element.place + '.html')
+									if element.root
+										= element.root_title
+									else
+										= element.title
+							else
+								if element.root
+									= element.root_title
+								else
+									= element.title
+						if block
+							block
+				ul
+					+breadcrumb(element)
+		#contents
+			!= contents
+		#navigation
+			ul
+				if element.previous
+					li.previous
+						a(href=element.previous.place + '.html')= element.previous.title
+				if element.next
+					li.next
+						a(href=element.next.place + '.html')= element.next.title
+	#menu
+		include index

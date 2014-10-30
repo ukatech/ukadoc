@@ -1,0 +1,100 @@
+- title: はじめに
+  place: index
+- title: 基本的な使い方
+  children:
+    - title: 起動する
+      place: howto-boot
+    - title: ゴーストとあそぶ
+      place: howto-use
+    - title: 右クリックメニュー
+      place: howto-rclick
+    - title: コンテンツを追加する
+      place: howto-add
+    - title: 本体のバージョンアップ
+      place: howto-verup
+    - title: プラグイン
+      place: howto-plugin
+    - title: RSS/ヘッドライン
+      place: howto-headline
+- title: 機能
+  place: functions
+  children:
+    - title: カレンダー
+      place: calendar
+      children:
+        - title: スケジュール編集
+          place: calendar-schedule
+        - title: メニュー
+          place: calendar-menu
+    - title: SSPメッセンジャー
+      place: sspim
+      children:
+        - title: 送信先の追加
+          place: sspim-addto
+        - title: 送信する
+          place: sspim-sendto
+    - title: エクスプローラ
+      place: explorer
+      children:
+        - title: 右クリック/機能メニュー
+          place: explorer-menu
+    - title: ショートカット一覧
+      place: shortcut
+    - title: 起動オプション一覧
+      place: option
+- title: 設定
+  place: config
+  children: 
+    - title: ゴーストごとの設定
+      place: config-eachghost
+    - title: 本体設定
+      children: 
+        - title: 一般
+          place: config-ippan
+        - title: ゴースト(1)
+          place: config-ghost
+        - title: ゴースト(2)
+          place: config-ghost2
+        - title: フォルダ
+          place: config-folder
+        - title: 表示
+          place: config-disp
+        - title: 喋り/バルーン
+          place: config-talk
+        - title: 接続(1)
+          place: config-conn1
+        - title: 接続(2)
+          place: config-conn2
+        - title: POP
+          place: config-pop
+        - title: 外部アプリ
+          place: config-extprog
+        - title: IM
+          place: config-im
+        - title: IP Messenger
+          place: config-ipmes
+        - title: 国際化
+          place: config-i18n
+        - title: 開発/その他
+          place: config-dev
+- title: 情報
+  place: information
+- title: リンク集
+  place: links
+- title: よくある質問
+  place: faq
+- title: 用語説明
+  place: reference
+- title: SSPの基本情報
+  place: aboutssp
+- title: 開発者向けヘルプ
+  place: dev
+  children:
+    - title: スクリプトログ
+      place: dev-scriptlog
+    - title: 開発用パレット
+      place: dev-palette
+    - title: 開発リンク集
+      place: dev-links
+- title: 検索
+  place: search
