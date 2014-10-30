@@ -17,7 +17,8 @@
 <div id="text">
 <ul id="breadcrumb">
 	<li class="Upper"><a href="index.html">はじめに</a></li>
-	よくある質問
+	<li>よくある質問</li>
+	
 </ul>
 <!-------------------------------------------------------------------------------------------------------------------------------->
 
@@ -28,8 +29,92 @@
 	ここでは、SSPによく寄せられる質問のうち、ヘルプ作成時点での既知の情報を載せています。
 	<br />質問する前に確認しましょう。
 </p>
-<h2>操作方法などの質問</h2>
-<h2>エラーメッセージがでた場合の質問</h2>
+<ul>
+	<li><a href="#q-howto">操作方法などの質問</a></li>
+	<li><a href="#q-trouble">不具合・あやしい動作についての質問</a></li>
+	<li><a href="#q-others">その他の質問</a></li>
+</ul>
+
+<h2 id="q-howto">操作方法などの質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			バルーンやシェルが画面外にいってしまって戻せなくなりました。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="shortcut.html">キーボードショートカット</a>の「シェル位置復帰」「バルーン位置復帰」で復帰可能です。
+			<br />またそれらの機能は、タスクトレイにあるゴーストのアイコンを右クリックして、<a href="functions.html">機能メニュー</a>からも実行できます。
+			<br />ただこの方法は初回起動の時点で既にシェルがおかしいような場合では使えません。
+			<br />そういった場合はゴースと作者にかけあってください。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			ゴースト（やバルーン）の数が多くなってきて、メニューから探すのが大変です。なんとかなりませんか。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="config-folder.html">フォルダ分け</a>はしていますか？
+			<br />フォルダ分けををすると、メニューもフォルダごとのサブメニューに分割されるので、探しやすくなるはずです。
+			<br /><img src="image/config-folder/3.png" usemap="#configdialog" width="314" height="166" alt="フォルダ別けした場合のゴーストメニューの例" />
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A2:</span>
+			<a href="explorer.html">エクスプローラ</a>を使いましょう。
+			<br />作者名やインストール日時などでソートできる他、検索機能もあるので、目的のものを見つけるのが簡単なはずです。
+			<br />またエクスプローラを使う場合でも、フォルダ分けをしている場合、フォルダを並べ替えの対象にできるので役立ちます。
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A3:</span>
+			探しているものを頻繁に使っているなら、<a href="howto-rclick.htm">右クリックメニュー</a>の「最近使ったもの」の項目にあるかもしれません。
+			<br />記憶しておく最大件数は、本体設定の「<a href="config-disp.html">表示</a>」で変更可能です。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			複数のゴーストをいっぺんにネットワーク更新したいです。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="explorer.html">エクスプローラ</a>で可能です。
+			<br />リストを選択中にCtrl + Aで全ゴーストを選択し、右クリックから「ネットワーク更新」を選んでください
+		</td>
+	</tr>
+</table>
+
+
+
+<h2 id="q-trouble">不具合・あやしい動作についての質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			バグ報告の仕方を教えてください。誰にどう報告すればよいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+		</td>
+	</tr>
+</table>
 <table class="QnA">
 	<tr>
 		<td>
@@ -57,134 +142,99 @@
 		</td>
 	</tr>
 </table>
-<h2>不具合・あやしい動作がでた場合の質問</h2>
-
-
-
-<table width="100%" class="qa">
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A4：</th>
-<!-- 
+<table class="QnA">
+	<tr>
 		<td>
-			無料ホームページサービスをやっている所でネットワーク更新をしようとすると
-			まれに広告を無理に挿入しようとするせいでMD5不一致が起こってしまいます。
+			<span class="Head">Q:</span>
+			ゴーストがしゃべらなくなりました。
 		</td>
-
 	</tr>
--->
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>GeForce系ビデオカードで半透明設定すると変です<br />
-
-		SiS系ビデオカードで半透明設定すると変です</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+	<tr>
 		<td>
-			SSPの半透明処理は、Windowsでも比較的新しい機能を使っていますので、まだ未テストもしくは未対応のドライバがあるようです。<br />
-
-			できるだけ最新版のドライバをお試しください。<br />
-
-			もし症状が解決しない場合は、半透明設定をOFFにして利用することをおすすめします。
+			<span class="Head">A1:</span>
+			<br />ゴーストによっては、画面端からはみ出していると喋らなくなってしまう場合があります。
+			<br />一見はみ出しているように見えなくても
 		</td>
-
 	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>バグバグなゴーストに切り替えたら起動しなくなりました(T_T)</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+</table>
+<table class="QnA">
+	<tr>
 		<td>
+			<span class="Head">Q:</span>
+			SSPが突然落ちます。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="config-disp.html">クロスフェード機能</a>を切にすると比較的安定するという報告もあります。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A2:</span>
+			<a href="config-dev.html">例外ハンドラを使う</a>、をONにしてみてください。ただしゴースト開発中はおすすめできません（異常が判らなくなるので）。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A3:</span>
+			STACKTRC.TXTというファイルが、ssp.exeのあるフォルダと同じ場所にできているかもしれません。
+			<br />その場合は、<a href="aboutssp.html">SSP BUGTRAQのToDo</a>へ報告をおねがいします。
+			<br />環境情報はすべてそのファイルに載ってはいますが、起動していたゴーストや標準状態から行った設定変更の情報など、できるだけ詳しい情報があると修正が容易になります。
+			<br />詳しくは先述の「バグ報告の仕方を教えてください。誰にどう報告すればよいですか？」も参考に。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A3:</span>
+			STACKTRC.TXTさえなくても、頻繁に落ちる場合はToDoまで報告をお願いします。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			バグバグなゴーストに切り替えたらSSPが起動しなくなりました。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
 			data -&gt; profile -&gt; app.datが設定ファイルです。
-			これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルトゴーストに戻ります。<br />
-
-			また、ghostフォルダから該当するゴーストを一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。<br />
-
-			なお、一応起動時に停止した時に自動的にこれらの処理を行なう機能も含まれております。
+			<br />これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルトゴーストに戻ります。
+			<br />また、ghostフォルダから該当するゴーストを一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。
+			<br />なお、一応起動時に停止した時に自動的にこれらの処理を行なう機能も含まれております。
 		</td>
-
 	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>上の方法をやってみましたがそれでも起動しません</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+	<tr>
 		<td>
-			data -&gt; profileフォルダ、realize.txt、各ゴースト内に作られるprofileフォルダを削除してみてください。<br />
-
-			もしくは、SSPを別の場所に解凍してクリーンな状態のものを作ったのちghostフォルダやballoonフォルダなどだけ移動するというテもあります。
+			<span class="Head">A2:</span>
+			data -&gt; profileフォルダ、realize.txt、各ゴースト内に作られるprofileフォルダを削除してみてください。
+			<br />もしくは、SSPを別の場所に解凍してクリーンな状態のものを作ったのちghostフォルダやballoonフォルダなどだけ移動するという手もあります。
 		</td>
-
-	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>落ちます。</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A1：</th>
-
-		<td>
-			クロスフェード機能を切にすると比較的安定するという報告もあります。
-		</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A2：</th>
-
-		<td>
-			例外ハンドラを使う、をONにしてみてください。ただしゴースト開発中はおすすめできません。
-		</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A3：</th>
-
-		<td>
-			STACKTRC.TXTというファイルが、SSPのあるフォルダと同じ場所にできているかもしれません。<br />
-
-			その場合は、<a href="http://ssp.shillest.net/">SSP BUGTRAQ</a>の掲示板への報告をおねがいします。<br />
-
-			環境等の情報はすべてそのファイルに載ってはいますが、起動していたゴースト、標準状態から行った設定変更の情報など、できるだけ詳しい情報が把握できると、修正が容易になります。
-		</td>
-
 	</tr>
 </table>
 
 
+
+<h2 id="q-others">その他の質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			SSPって何の略ですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			元々はSakura Script Playerの略称でしたが、現在は何の略でもないという事になっています。
+			<br /><span class="Undertone">意外かもしれませんがShima-Shima-Panchuの略ではありません。</span>
+		</td>
+	</tr>
+</table>
 
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <ul id="navigation">

@@ -26,9 +26,17 @@
 
 <h1>開発者向けヘルプ：開発リンク集</h1>
 <p>伺か/SSP関連コンテンツの製作に役立つ情報・プログラム・素材・ツールなどのリンク集です。</p>
-<p>なお冗長になるのでここには乗せていませんが、コンテンツの公開および公開後の宣伝などには、もう一つの<a href="links.html">リンク集</a>ページにあるサイトを活用して、ユーザの目に触れる工夫をするとみんなで幸せになれます。</p>
+<p>なお、冗長を避けここに再び載せることはしませんが、コンテンツの公開および公開後の宣伝などには、もう一つの<a href="links.html">リンク集</a>にあるサイトを活用してユーザの目に触れる工夫をすると、みんなで幸せになれます。</p>
+<ul>
+	<li><a href="#links-reference">仕様書・リファレンス</a></li>
+	<li><a href="#links-shiori">SHIORI</a></li>
+	<li><a href="#links-material">パーツ・プログラム・ツール配布元</a></li>
+	<li><a href="#links-others">その他製作情報など</a></li>
+</ul>
 
-<h2>仕様書・リファレンス</h2>
+
+
+<h2 id="links-reference">仕様書・リファレンス</h2>
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://ukadoc.googlecode.com/svn/trunk/manual/index.html" target="_blank"><img src="image/ukadoc_banner1.png" alt="UKAODC" height="40" width="200" /></a></td>
@@ -41,7 +49,6 @@
 		<td colspan="2" class="Intro">SSPの公式仕様文章集です。<br />Sakura ScriptやSHIORI Eventのリファレンスがあります。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://www.ooyashima.net/db/" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
@@ -54,7 +61,6 @@
 		<td colspan="2" class="Intro">伺か関係の非公式仕様集です。<br />非公式とはいえかなり充実した情報がわかり易く揃っているので、他の資料と合わせて読む機会もあるでしょう。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://www36.atwiki.jp/sakurascript/pages/1.html" target="_blank"><img src="image/sakurascriptwiki.png" alt="SAKURA SCRIPT WIKI" height="23" width="94" /></a></td>
@@ -67,7 +73,6 @@
 		<td colspan="2" class="Intro">さくらスクリプトに関するまとめwikiです。<br />用例などの面でukadocより踏み込んだ解説も多々あるので、併せて活用しましょう。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://emily.shillest.net/specwiki/" target="_blank"><img src="image/specwiki.png" alt="駄でべwiki" height="40" width="200" /></a></td>
@@ -77,10 +82,9 @@
 		<td class="Url">http://emily.shillest.net/specwiki/</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="Intro">通称駄でべ。不特定多数の開発・製作者が自由に色んなメモをつづる場所です。<br />現在進行形のメモと、過去の資料や議論の痕跡とが混在しているので、書かれた時期に気をつけて読んでいってください。</td>
+		<td colspan="2" class="Intro">通称駄でべ。不特定多数の開発・製作者が自由に色んなメモをつづる場所です。<br />現在進行形のメモと、過去の（既に半ば放棄された）資料や議論の痕跡とが混在しているので、書かれた時期に気をつけて読んでいってください。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://usada.sakura.vg/" target="_blank"><img src="image/usadasakura.png" alt="伺か" height="40" width="200" /></a></td>
@@ -94,12 +98,86 @@
 	</tr>
 </table>
 
-<h2>SHIORI</h2>
-【未遂】
-<h2>その他素材・プログラム・ツール</h2>
+
+
+<h2 id="links-shiori">SHIORI</h2>
+<p>
+	ここでは独断と偏見で（2014年現在開発が継続している・ゴーストにおける利用シェアが高いなどの観点は一応ありますが……）SHIORIをいくつか取り上げています。
+	<br />これ以外にも、特に汎用言語系のSHIORIは色々ありますので、場合によっては探して見るとよいかもしれません。
+</p>
+<table class="Links">
+	<thead>
+		<tr><th colspan="2">里々</th></tr>
+		<tr>
+			<td colspan="2">
+				<p>
+					里々は現在最も多くの利用者をもつSHIORIです。
+					<br />全角記号による、平易にトークをかけるように工夫された辞書記法や、難しい処理部はだいたい勝手にやってくれる気の利いた設計が、プログラミング未経験者や、何よりもランダムトークを肝にしたゴーストを作りたい層などを中心に支持されています。
+					<br />また有志によるドキュメントが整っており、有用なゴースト製作ツールやテンプレートゴーストも開発されていて、環境面で恵まれたSHIORIといえます。
+				</p>
+				<p>
+					一方で、内部的・自動的に処理が行われてしまう結果、その不透明性がSHIORIやSSP本来の機能や役割の理解を妨げ、応用的な開発時に初心者がつまづきやすいところがあります。
+					<br />加えて、高速に複雑な処理を行う事が苦手である事、構文の記号と単なる文字列の区別がつかないことが原因で関数の引数区切り字問題といった諸々の固有の弱点を抱えている事などもあり、総じて「難しいこと」をやるのには向かない面があります。
+				</p>
+			</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://ms.shillest.net/satoriya.xhtml" target="_blank"><img src="image/maintenance.png" alt="整備班" height="40" width="200" /></a></td>
+			<td class="Name">里々／整備班カスタム</td>
+		</tr>
+		<tr>
+			<td class="Url">http://ms.shillest.net/satoriya.xhtml</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">現在里々を整備・配布しているところです。本家による開発終了後、メンテナンスを引き継いでいます。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://www.geocities.jp/poskoma/" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">電気で動くうにゅう・廃屋の夏</td>
+		</tr>
+		<tr>
+			<td class="Url">http://www.geocities.jp/poskoma/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">本家の里々公開・配布場所です。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://soliton.sub.jp/satori/" target="_blank"><img src="image/satorib.png" alt="里々wiki" height="40" width="200" /></a></td>
+			<td class="Name">里々wiki</td>
+		</tr>
+		<tr>
+			<td class="Url">http://soliton.sub.jp/satori/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">里々に関する解説やTIPSを扱うwikiです。非公式ですが、実質的に里々のマニュアル的な役割を果たしています。<br />他のSHIORIのwikiと比べても充実した情報量を持っており、SHIORI選びにおいて初心者に里々を勧めやすい根拠の一つです。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://wikiwiki.jp/satolist/" target="_blank"><img src="image/satolist.png" alt="さとりすと" height="40" width="200" /></a></td>
+			<td class="Name">さとりすとwiki</td>
+		</tr>
+		<tr>
+			<td class="Url">http://wikiwiki.jp/satolist/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">里々ゴーストエディタ「さとりすと」のオンラインマニュアルです。<br />単なるテキストエディタではなく、開発に役立つ諸々のツールを内蔵した、いわば統合開発環境に近いものとなっています。<br />新たに里々でゴーストを作りはじめる場合、とりあえず導入してみてはいかがでしょうか。</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<h2 id="links-material">素材・プログラム・ツール配布元</h2>
 <table class="Links">
 	<tr>
-		<td rowspan="2" class="Banner"><a href="http://wikiwiki.jp/feeshell/" target="_blank"><img src="image/freeshellwiki.png" alt="no banner" height="40" width="200" /></a></td>
+		<td rowspan="2" class="Banner"><a href="http://wikiwiki.jp/feeshell/" target="_blank"><img src="image/freeshellwiki.png" alt="freeshell wiki" height="40" width="200" /></a></td>
 		<td class="Name">freeshell wiki</td>
 	</tr>
 	<tr>
@@ -109,10 +187,9 @@
 		<td colspan="2" class="Intro">フリーシェルのまとめwikiです。<br />無料で使えるシェル素材をお探しの方はこちら。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
-		<td rowspan="2" class="Banner"><a href="http://ms.shillest.net/" target="_blank"><img src="image/maintenance.png" alt="no banner" height="40" width="200" /></a></td>
+		<td rowspan="2" class="Banner"><a href="http://ms.shillest.net/" target="_blank"><img src="image/maintenance.png" alt="整備班 The Maintenance Shop" height="40" width="200" /></a></td>
 		<td class="Name">整備班</td>
 	</tr>
 	<tr>
@@ -122,7 +199,6 @@
 		<td colspan="2" class="Intro">ばぐとら研直営サイト。いろいろ置いてます。<br />代表的なSHIORIである里々、YAYAや、公開配布に有用なツール、素材、もちろんゴーストもあります。</td>
 	</tr>
 </table>
-
 <table class="Links">
 	<tr>
 		<td rowspan="2" class="Banner"><a href="http://priest.so.land.to/nisesakura/saorin.html" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
@@ -136,7 +212,9 @@
 	</tr>
 </table>
 
-<h2>TIPS類</h2>
+
+
+<h2 id="links-others">その他製作情報など</h2>
 【未遂】
 <!-- テンプレート
 <table class="Links">
@@ -156,7 +234,7 @@
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <ul id="navigation">
 	<li class="Prev"><a href="dev-palette.html">開発者向けヘルプ：開発用パレット</a></li>
-	<li class="Next">-</li>
+	<li class="Next"><a href="dev-faq.html">開発者向けヘルプ：開発よくある質問</a></li>
 </ul>
 
 </div>
