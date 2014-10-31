@@ -101,20 +101,64 @@ div {
 p {
 	overflow: hidden;
 }
-/*
-tr.q {
-	background-color: #ffddff;
+#breadcrumb {
+	border-bottom:3px double #6666cc;
+	margin: 0.5em 0 1em 0;
+	padding: 0;
 }
-tr.a {
-	background-color: #eeeeee;
+#breadcrumb ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
-th.qa {
+#breadcrumb li{
+	margin: 0;
+	padding: 0;
+	display: inline;
+	white-space: nowrap;
+}
+#breadcrumb li:before {
+	content: "　＞　";
+}
+#breadcrumb li:first-child:before {
+	content: "";
+}
+#navigation {
+	width: 100%;
+	border-top:3px double #6666cc;
+	padding: 5px;
+	margin: 0 auto;
+	text-align: center;
+}
+#navigation ul{
+	list-style-type: none;
+	margin 0;
+	padding 0;
+}
+#navigation li{
+	margin 0;
+	padding 0;
+	display: inline;
+	white-space: nowrap;
+}
+#navigation .previous {
+	text-align: left;
+}
+#navigation .previous:before {
+	content: "＜　";
+}
+#navigation .previous:after {
+	content: "　|";
+}
+#navigation .next   {
 	text-align: right;
 }
-table.qa {
-	margin-top: 20px;
+#navigation .next:before {
+	content: "|　";
 }
-*/
+#navigation .next:after {
+	content: "　＞";
+}
 table.QnA {
 	margin: 0 auto 1em auto;
 	width: 95%;
@@ -136,6 +180,10 @@ table.QnA tr td span.Head {
 table.QnA tr:first-child td span.Head {
 	font-weight: bold;
 	color: #cc6666;
+}
+table.QnA td span.Undertone {
+	color: #aaaabb;
+	font-size: 95%;
 }
 table.Links {
 	background-color: #aaaadd;
@@ -163,8 +211,18 @@ table.Links td.Intro .Undertone {
 	color: #b0b0b0;
 	font-size: 95%;
 }
+table.Links thead td {
+	border: 1px dashed #669;
+	background-color: #fef;
+	padding: 0.5em;
+}
+table.Links thead th:first-child {
+	background-color: #333399;
+	color: #ffffff;
+}
 table.KeyboardShortcut,
-table.CommandLineSwitch {
+table.CommandLineSwitch,
+table#environment {
 	background-color: #aaaabb;
 	margin: 0 auto 1em auto;
 	width: 95%;
@@ -179,6 +237,15 @@ table.CommandLineSwitch td:first-child {
 }
 table.KeyboardShortcut td + td,
 table.CommandLineSwitch td + td {
+	background-color: #eeeeff;
+	padding: 0.2em;
+}
+table#environment th {
+	padding: 0.2em;
+	background-color: #ddddee;
+	text-align: left;
+}
+table#environment td {
 	background-color: #eeeeff;
 	padding: 0.2em;
 }
@@ -209,25 +276,25 @@ table.CommandLineSwitch td + td {
 	overflow: hidden;
 }
 .Hint:before {
-	content:"HINT:";
+	content: "HINT:";
 }
 .Figure {
 	float: right;
 }
 #menu {
 	position: absolute;
-	height: 100%;
 	top:0;
 	left:0;
 	z-index:3;
 
 	width: 250px;
+	height: 100%;
 	overflow: auto;
 }
 
 #menu {
-	padding: 0;
 	margin: 0 0 3em 0;
+	padding: 0;
 	color: #000000;
 	background-color: #ccccff;
 	line-height: 1.3em;
@@ -256,58 +323,4 @@ ul ul ul {
 	padding-right: 1em;
 	height: 100%;
 	overflow: auto;
-}
-#breadcrumb {
-	border-bottom:3px double #6666cc;
-}
-#breadcrumb ul{
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-}
-#breadcrumb li{
-	margin: 0;
-	padding: 0;
-	display: inline;
-}
-#breadcrumb li:before {
-	content: "　＞　";
-}
-#breadcrumb li:first-child:before {
-	content: "";
-}
-#navigation {
-	width: 100%;
-	border-top:3px double #6666cc;
-	padding: 5px;
-	margin: 0 auto;
-	text-align: center;
-}
-#navigation ul{
-	list-style none;
-	margin 0;
-	padding 0;
-}
-#navigation li{
-	margin 0;
-	padding 0;
-	display: inline;
-}
-#navigation .previous {
-	text-align: left;
-}
-#navigation .previous:before {
-	content: "＜　";
-}
-#navigation .next   {
-	text-align: right;
-}
-#navigation .next:after {
-	content: "　＞";
-}
-#navigation .Return {
-}
-#navigation .Return:before,
-#navigation .Return:after{
-	content: "　｜　";
 }
