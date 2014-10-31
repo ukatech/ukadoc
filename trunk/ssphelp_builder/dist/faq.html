@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="Content-Style-Type" content="text/css">
-    <link rel="stylesheet" type="text/css" href="about.css">
-    <link rel="prev" href="links.html">
-    <link rel="next" href="reference.html">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="links.html"/>
+    <link rel="next" href="reference.html"/>
     <title>よくある質問</title>
   </head>
   <body>
@@ -21,10 +21,95 @@
       <div id="contents"><h1>よくある質問</h1>
 <p>
 	ここでは、SSPによく寄せられる質問のうち、ヘルプ作成時点での既知の情報を載せています。
-	<br>質問する前に確認しましょう。
+	<br/>質問する前に確認しましょう。
 </p>
-<h2>操作方法などの質問</h2>
-<h2>エラーメッセージがでた場合の質問</h2>
+<ul>
+	<li><a href="#q-howto">操作方法などの質問</a></li>
+	<li><a href="#q-trouble">不具合・あやしい動作についての質問</a></li>
+	<li><a href="#q-others">その他の質問</a></li>
+</ul>
+
+<h2 id="q-howto">操作方法などの質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>や<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>が画面外にいってしまって戻せなくなりました。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="shortcut.html">キーボードショートカット</a>の「<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>位置復帰」「<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>位置復帰」で復帰可能です。
+			<br/>またこれらの機能は、右クリックメニュー（<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>が画面外にある場合も、タスクトレイにある<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のアイコンを右クリックすると開けます）の<a href="functions.html">機能メニュー</a>からも実行できます。
+			<br/>ただこの方法は初回起動の時点で既に位置がおかしいような場合では使えません。
+			<br/>そうした場合は<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>作者にかけあってください。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>（や<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>）の数が多くなってきて、メニューから探すのが大変です。なんとかなりませんか。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="config-folder.html">フォルダ分け</a>はしていますか？
+			<br/>フォルダ分けををすると、メニューもフォルダごとのサブメニューに分割されるので、探しやすくなるはずです。
+			<br/><img src="image/config-folder/3.png" usemap="#configdialog" width="314" height="166" alt="フォルダ別けした場合のゴーストメニューの例"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A2:</span>
+			<a href="explorer.html">エクスプローラ</a>を使いましょう。
+			<br/>作者名やインストール日時などでソートできる他、検索機能もあるので、目的のものを見つけるのが簡単なはずです。
+			<br/>またエクスプローラを使う場合でも、フォルダ分けをしている場合、フォルダを並べ替えの対象にできるので役立ちます。
+	</td></tr>
+	<tr>
+		<td>
+			<span class="Head">A3:</span>
+			探しているものを頻繁に使っているなら、<a href="howto-rclick.htm">右クリックメニュー</a>の「最近使ったもの」の項目にあるかもしれません。
+			<br/>記憶しておく最大件数は、本体設定の「<a href="config-disp.html">表示</a>」で変更可能です。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			複数の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をいっぺんにネットワーク更新したいです。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="explorer.html">エクスプローラ</a>で可能です。
+			<br/>リストを選択中にCtrl + Aで全<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を選択し、右クリックから「ネットワーク更新」を選んでください
+		</td>
+	</tr>
+</table>
+
+
+
+<h2 id="q-trouble">不具合・あやしい動作についての質問</h2>
+<table class="QnA">
+	<tr>
+		<td id="q-trouble0">
+			<span class="Head">Q:</span>
+			バグ報告の仕方を教えてください。誰にどう報告すればよいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<br/>【かきかけ】
+		</td>
+	</tr>
+</table>
 <table class="QnA">
 	<tr>
 		<td>
@@ -48,127 +133,102 @@
 		<td>
 			<span class="Head">A3:</span>
 			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の作者の方に問い合わせてください。
-			<br>もし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>からmd5不一致が起きているファイル名の通知があれば、それを併せて伝えると助けになるかも知れません。
+			<br/>もし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>からmd5不一致が起きているファイル名の通知があれば、それを併せて伝えると助けになるかも知れません。
 		</td>
 	</tr>
 </table>
-<h2>不具合・あやしい動作がでた場合の質問</h2>
-
-
-
-<table width="100%" class="qa">
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A4：</th>
-
-    </tr><tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>GeForce系ビデオカードで半透明設定すると変です<br>
-
-		SiS系ビデオカードで半透明設定すると変です</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+<table class="QnA">
+	<tr>
 		<td>
-			SSPの半透明処理は、Windowsでも比較的新しい機能を使っていますので、まだ未テストもしくは未対応のドライバがあるようです。<br>
-
-			できるだけ最新版のドライバをお試しください。<br>
-
-			もし症状が解決しない場合は、半透明設定をOFFにして利用することをおすすめします。
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>がしゃべらなくなりました。<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>固有メニューの設定を確認しても、特に喋らないようにはなっていないようです。
 		</td>
-
 	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>バグバグな<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に切り替えたら起動しなくなりました(T_T)</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+	<tr>
 		<td>
-			data -&gt; profile -&gt; app.datが設定ファイルです。
-			これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルト<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に戻ります。<br>
-
-			また、ghostフォルダから該当する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。<br>
-
-			なお、一応起動時に停止した時に自動的にこれらの処理を行なう機能も含まれております。
+			<span class="Head">A1:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>によっては、画面端からはみ出していると喋らなくなってしまう場合があります。
+			<br/>一見はみ出しているように見えなくても、「表示されていない（透明）がキャラクターウィンドウの範囲である領域」がはみ出しているというケースもあるので、多少余裕を持って配置してみてください。
 		</td>
-
 	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>上の方法をやってみましたがそれでも起動しません</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A：</th>
-
+</table>
+<table class="QnA">
+	<tr>
 		<td>
-			data -&gt; profileフォルダ、realize.txt、各<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>内に作られるprofileフォルダを削除してみてください。<br>
-
-			もしくは、SSPを別の場所に解凍してクリーンな状態のものを作ったのちghostフォルダやballoonフォルダなどだけ移動するというテもあります。
+			<span class="Head">Q:</span>
+			SSPが突然落ちます。
 		</td>
-
 	</tr>
-
-    <tr class="q" valign="top">
-
-		<th class="qa">Q：</th>
-
-		<td>落ちます。</td>
-
-	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A1：</th>
-
+	<tr>
 		<td>
-			クロスフェード機能を切にすると比較的安定するという報告もあります。
+			<span class="Head">A1:</span>
+			<a href="config-disp.html">クロスフェード機能</a>を切にすると比較的安定するという報告もあります。
 		</td>
-
 	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A2：</th>
-
+	<tr>
 		<td>
-			例外ハンドラを使う、をONにしてみてください。ただし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発中はおすすめできません。
+			<span class="Head">A2:</span>
+			<a href="config-dev.html">例外ハンドラを使う</a>、をONにしてみてください。ただし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発中はおすすめできません（異常が判らなくなるので）。
 		</td>
-
 	</tr>
-
-	<tr class="a" valign="top">
-
-		<th class="qa">A3：</th>
-
+	<tr>
 		<td>
-			STACKTRC.TXTというファイルが、SSPのあるフォルダと同じ場所にできているかもしれません。<br>
-
-			その場合は、<a href="http://ssp.shillest.net/">SSP BUGTRAQ</a>の掲示板への報告をおねがいします。<br>
-
-			環境等の情報はすべてそのファイルに載ってはいますが、起動していた<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>、標準状態から行った設定変更の情報など、できるだけ詳しい情報が把握できると、修正が容易になります。
+			<span class="Head">A3:</span>
+			STACKTRC.TXTというファイルが、ssp.exeのあるフォルダと同じ場所にできているかもしれません。
+			<br/>その場合は、<a href="aboutssp.html">SSP BUGTRAQのToDo</a>へ報告をおねがいします。
+			<br/>環境情報はすべてそのファイルに載ってはいますが、起動していた<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や標準状態から行った設定変更の情報など、できるだけ詳しい情報があると修正が容易になります。
+			<br/>詳しくは先述の質問「<a href="#q-trouble0">バグ報告の仕方を教えてください</a>」も参考に。
 		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A3:</span>
+			STACKTRC.TXTが出力されていなくても、頻繁に落ちる場合はToDoまで報告をお願いします。
+			<br/>その際も、なるべく詳しく環境情報・症状が再現しやすい操作・再現の頻度などを伝えてください。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			バグバグな<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に切り替えたらSSPが起動しなくなりました。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			ssp.exeのあるフォルダから、data → profile → app.datが設定ファイルです。
+			<br/>これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルト<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に戻ります。
+			<br/>また、ghostフォルダから該当する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。
+			<br/>なお、一応起動時に停止した時に自動的にこれらの処理を行なう機能も含まれております。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A2:</span>
+			ssp.exeのあるフォルダからdata → profileにあるrealize.txtおよび、各<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>内に作られるprofileフォルダを削除してみてください。
+			<br/>もしくは、SSPを別の場所に解凍してクリーンな状態のものを作ったのちghostフォルダやballoonフォルダなどだけ移動するという手もあります。
+		</td>
+	</tr>
+</table>
 
+
+
+<h2 id="q-others">その他の質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			SSPって何の略ですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			元々はSakura Script Playerの略称でしたが、現在は何の略でもないという事になっています。
+			<br/><span class="Undertone">意外かもしれませんがShima-Shima-Panchuの略ではありません。</span>
+		</td>
 	</tr>
 </table>
       </div>
@@ -286,6 +346,8 @@
                         <li><a href="dev-palette.html">開発用パレット</a>
                         </li>
                         <li><a href="dev-links.html">開発リンク集</a>
+                        </li>
+                        <li><a href="dev-faq.html">開発よくある質問</a>
                         </li>
                 </ul>
               </li>

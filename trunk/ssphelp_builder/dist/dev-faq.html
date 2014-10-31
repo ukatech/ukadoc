@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="dev-links.html"/>
+    <link rel="next" href="search.html"/>
+    <title>開発よくある質問</title>
+  </head>
+  <body>
+    <div id="main">
+      <div id="breadcrumb">
+        <ul>
+                                  <li><a href="index.html">SSP</a>
+                                  </li>
+                                  <li><a href="dev.html">開発者向けヘルプ</a>
+                                  </li>
+                                  <li><a href="dev-faq.html">開発よくある質問</a>
+                                  </li>
+        </ul>
+      </div>
+      <div id="contents"><h1>開発よくある質問</h1>
+<p>
+	開発者向けのよくある質問です。
+	<br/>あがってきたバグ報告の扱いに困っているような時にヒントになるかも知れません。
+	<br/>ただし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>ごとの情報まではカバーできませんので、<a href="dev-links.html">開発用リンク集</a>から各<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>ごとの解説などを参考に。
+</p>
+<ul>
+	<li><a href="#q-basic">開発の基本についての質問</a></li>
+	<li><a href="#q-trouble">バグについての質問</a></li>
+</ul>
+
+<h2 id="q-basic">開発の基本についての質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を作りたいのですが、<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>（栞）が必要だといわれました。どれを使えばよいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="dev-links.html#links-shiori">開発用リンク集のSHIORIの節</a>に、代表的な<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>についていくらか説明を書いています。
+			<br/>それを参考にして自分にあったものを選んでみてください。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を公開するにはどうしたらいいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<p>
+				<span class="Head">A1:</span>
+				もしあなたの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に、ネットワーク更新の機能をつけなくともよいのなら、方法は簡単です。
+				<br/>要はあなたの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のファイル一式をnar（やzip）にして公開すればよいだけです。
+				<br/>その時に必要な設定やファイルがいくらかありますが、詳細は【かきかけ】を読めばわかるでしょう。
+			</p>
+			<p>
+				しかしネットワーク更新機能をつけるつもりがあるならば、それに加えて（あるいは替わって）サーバの準備が必要です。
+				<br/>サーバといっても、通常個人ウェブサイトを設置するのに必要な、いわゆるサイト公開代理サービス、レンタルサーバ、ホームページスペースなどと呼ばれる類のものを利用すれば大丈夫です。
+				<br/>ただし、サーバの設定や利用規約によっては、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の公開に適さない場合があります。
+				<br/>他の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>作者がどのようなサーバを利用しているか観察してみるか、【かきかけ】といった記事を調べてみるとよいでしょう。
+			</p>
+			<p>
+				サーバを用意したなら、あとは<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のファイルをサーバ上にアップロードするだけです。
+				<br/>アップロードは通常のウェブサイト同様に、FTP通信を用います。
+				<br/>その辺りの詳細は【かきかけ】に詳しく書いてありますので、参考に。
+			</p>
+			<p>
+				なお、一般的なFTPソフトの他に、<a href="dev-links.html">開発用リンク集</a>にある「整備班」で配布している「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>配布系自動化システム」を導入すると、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のアップロードに関わるいくらかの手間やトラブルを回避する事ができます。
+				<br/>最初の導入と設定だけが少し手間ですが、是非試してみてください。
+			</p>
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>とSSPをセットで配布してもいいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<br/>【かきかけ】
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			製作したコンテンツはどうやって宣伝したらいいですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<br/>【かきかけ】
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			SSPの公式のリファレンスはどこにありますか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="dev-links.html">開発用リンク集</a>の一番上の「UKADOC」がそれです。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の「新定義」と「旧定義」ってなんですか？
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			正確には、<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>のと言うよりも「アニメーション（<a href="reference.html#x53-x45-x52-x49-x4b-x4f">SERIKO</a>）の」新・旧定義です。
+			<br/>基本的には書き方だけが違います。【かきかけ】
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			製作について、色々調べてもわからない事があります。どこか相談できる場所はありませんか。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="links.html#link-community">リンク集</a>にある「もどき板」の「うにゅう＠もどき」掲示板がその役割を果たしています。
+			<br/>なお、一見人が居ないように見えますが、話題がないだけです。
+			<br/>あなたが質問を投げればどこからともなく誰かがやって来るでしょう。
+			<br/>また、もしあなたがtwitterをやっているなら、「#<a href="reference.html#x4f3a-x304b">伺か</a>」「#ukagaka」タグをつけて質問をつぶやけば、まず間違いなく誰かには捕捉されます<span class="Undertone">（勢いあまって包囲される事がありますが怯まないでください……）</span>。
+		</td>
+	</tr>
+</table>
+
+<h2 id="q-trouble">バグについての質問</h2>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			何かエラーログにたくさん表示がでるんですが、無視してもいいですか。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			ものによります。詳しくは<a href="dev-scriptlog.html#chapter2">スクリプトログ</a>のページをご覧ください。
+		</td>
+	</tr>
+</table>
+<table class="QnA">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			MD5不一致エラーが出てネットワーク更新がうまく行きません。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			更新用ファイル（update.txt/update2.dau）を作成したあとに、更新対象のファイルに変更を加えていませんか？
+			<br/>また、FTP通信で更新用ファイルをアップロードする際に、アスキーモードで転送していませんか？
+			<br/>なお、こうしたミスの防止には、<a href="links">リンク集</a>にある「整備班」で配布されている、「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>配布系自動化システム」が役立つでしょう。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A2:</span>
+			サーバーの設定によって、アップロードされたファイルが改変されている可能性があります。
+			<br/>例えば無料ホームページサービスをやっている所でネットワーク更新をしようとすると、まれに広告を無理に挿入しようとするせいでMD5不一致が起こってしまいます。
+		</td>
+	</tr>
+</table>
+      </div>
+      <div id="navigation">
+        <ul>
+          <li class="previous"><a href="dev-links.html">開発リンク集</a></li>
+          <li class="next"><a href="search.html">検索</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="menu">
+      <ul>
+              <li><a href="index.html">はじめに</a>
+              </li>
+              <li>基本的な使い方
+                <ul>
+                        <li><a href="howto-boot.html">起動する</a>
+                        </li>
+                        <li><a href="howto-use.html">ゴーストとあそぶ</a>
+                        </li>
+                        <li><a href="howto-rclick.html">右クリックメニュー</a>
+                        </li>
+                        <li><a href="howto-add.html">コンテンツを追加する</a>
+                        </li>
+                        <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                        </li>
+                        <li><a href="howto-plugin.html">プラグイン</a>
+                        </li>
+                        <li><a href="howto-headline.html">RSS/ヘッドライン</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="functions.html">機能</a>
+                <ul>
+                        <li><a href="calendar.html">カレンダー</a>
+                          <ul>
+                                  <li><a href="calendar-schedule.html">スケジュール編集</a>
+                                  </li>
+                                  <li><a href="calendar-menu.html">メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="sspim.html">SSPメッセンジャー</a>
+                          <ul>
+                                  <li><a href="sspim-addto.html">送信先の追加</a>
+                                  </li>
+                                  <li><a href="sspim-sendto.html">送信する</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="explorer.html">エクスプローラ</a>
+                          <ul>
+                                  <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
+                                  </li>
+                          </ul>
+                        </li>
+                        <li><a href="shortcut.html">ショートカット一覧</a>
+                        </li>
+                        <li><a href="option.html">起動オプション一覧</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="config.html">設定</a>
+                <ul>
+                        <li><a href="config-eachghost.html">ゴーストごとの設定</a>
+                        </li>
+                        <li>本体設定
+                          <ul>
+                                  <li><a href="config-ippan.html">一般</a>
+                                  </li>
+                                  <li><a href="config-ghost.html">ゴースト(1)</a>
+                                  </li>
+                                  <li><a href="config-ghost2.html">ゴースト(2)</a>
+                                  </li>
+                                  <li><a href="config-folder.html">フォルダ</a>
+                                  </li>
+                                  <li><a href="config-disp.html">表示</a>
+                                  </li>
+                                  <li><a href="config-talk.html">喋り/バルーン</a>
+                                  </li>
+                                  <li><a href="config-conn1.html">接続(1)</a>
+                                  </li>
+                                  <li><a href="config-conn2.html">接続(2)</a>
+                                  </li>
+                                  <li><a href="config-pop.html">POP</a>
+                                  </li>
+                                  <li><a href="config-extprog.html">外部アプリ</a>
+                                  </li>
+                                  <li><a href="config-im.html">IM</a>
+                                  </li>
+                                  <li><a href="config-ipmes.html">IP Messenger</a>
+                                  </li>
+                                  <li><a href="config-i18n.html">国際化</a>
+                                  </li>
+                                  <li><a href="config-dev.html">開発/その他</a>
+                                  </li>
+                          </ul>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="information.html">情報</a>
+              </li>
+              <li><a href="links.html">リンク集</a>
+              </li>
+              <li><a href="faq.html">よくある質問</a>
+              </li>
+              <li><a href="reference.html">用語説明</a>
+              </li>
+              <li><a href="aboutssp.html">SSPの基本情報</a>
+              </li>
+              <li><a href="dev.html">開発者向けヘルプ</a>
+                <ul>
+                        <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                        </li>
+                        <li><a href="dev-palette.html">開発用パレット</a>
+                        </li>
+                        <li><a href="dev-links.html">開発リンク集</a>
+                        </li>
+                        <li><a href="dev-faq.html">開発よくある質問</a>
+                        </li>
+                </ul>
+              </li>
+              <li><a href="search.html">検索</a>
+              </li>
+      </ul>
+    </div>
+  </body>
+</html>
