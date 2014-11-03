@@ -82,7 +82,7 @@
 		<td class="Url">http://emily.shillest.net/specwiki/</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="Intro">通称駄でべ。不特定多数の開発・製作者が自由に色んなメモをつづる場所です。<br />現在進行形のメモと、過去の（既に半ば放棄された）資料や議論の痕跡とが混在しているので、書かれた時期に気をつけて読んでいってください。</td>
+		<td colspan="2" class="Intro">通称駄でべ。不特定多数の開発・技術者が自由に色んなメモをつづる場所です。<br />現在進行形のメモと、過去の（半ば放棄された）資料や議論の痕跡とが混在しているので、書かれた時期に気をつけて読んでいってください。</td>
 	</tr>
 </table>
 <table class="Links">
@@ -125,7 +125,7 @@
 	<tbody>
 		<tr>
 			<td rowspan="2" class="Banner"><a href="http://ms.shillest.net/satoriya.xhtml" target="_blank"><img src="image/maintenance.png" alt="整備班" height="40" width="200" /></a></td>
-			<td class="Name">里々／整備班カスタム</td>
+			<td class="Name">里々／整備班カスタム（整備班　内）</td>
 		</tr>
 		<tr>
 			<td class="Url">http://ms.shillest.net/satoriya.xhtml</td>
@@ -173,23 +173,64 @@
 </table>
 <table class="Links">
 	<thead>
-		<tr><th colspan="2">YAYA/文</th></tr>
+		<tr><th colspan="2">文/YAYA</th></tr>
 		<tr>
 			<td colspan="2">
-				【かきかけ】
+				<p>
+					文（あや）はC言語風の記法を持つSHIORIです。
+					<br />文の開発終了後、基本的な文法や機能を受け継ぎつつ、非公式に開発が継続されたものがYAYAです。
+				</p>
+				<p>
+					分岐・ループの基本的な制御構造を持ち、里々と比べればプログラミング経験者が直感的に扱いやすいSHIORIといえるでしょう。
+					<br />また組み込み関数としてテキスト操作・ファイル操作や基本的な数学的計算、正規表現を用いた文字列処理などの機能を備えており、ある程度複雑な機能を実装したいゴーストでの使用に耐えます。
+				</p>
+				<p>
+					しかしながら、配列は（擬似的な方法はありますが）一次元のもので、連想配列は未実装です。
+					<br />クラスなどの仕組みもないので、オブジェクト指向での記述は出来ず、汎用言語系のSHIORIほどの強力さ・柔軟さはありません。
+					<br />加えてC言語風とはいっても、様々の独特のクセがあるので慣れが要るかもしれません。
+				</p>
+				<p>
+					なお、大きな特徴として、文・YAYA自体は単なる汎用言語dllとして振る舞い、SHIORI等の通信規格への対応部分を辞書に委ねている事が挙げられます。
+					<br />これによって文・YAYAは、当該機能を実装する辞書をさしかえる事で、SHIORIのみならずdllをコアとする様々な伺かサブシステムとして機能できます。
+					<br />このためしばしば里々など他のSHIORIのゴーストが、SAORIとして文・YAYAを利用している場合があります。
+				</p>
 			</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-			<td class="Name">【かきかけ】</td>
+			<td rowspan="2" class="Banner"><a href="http://ms.shillest.net/yaya.xhtml" target="_blank"><img src="image/maintenance.png" alt="整備班" height="40" width="200" /></a></td>
+			<td class="Name">YAYA/Yet Another AYA（整備班　内）</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">http://ms.shillest.net/yaya.xhtml</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">文の非公式後継版にあたるYAYAを整備・配布しているところです。<br />現在もサポートが続いていますし、文からいくらか機能の追加もあるので、新たに使い始める場合はこちらの利用をおすすめします。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://umeici.onjn.jp/" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">umeici.onjn.jp</td>
+		</tr>
+		<tr>
+			<td class="Url">http://umeici.onjn.jp/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">本家文の配布元です。<br />また、文用デバッガ「玉」も配布しています。YAYAでも動くようです。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://emily.shillest.net/ayaya/" target="_blank"><img src="image/ayaya.png" alt="文屋" height="40" width="200" /></a></td>
+			<td class="Name">文屋</td>
+		</tr>
+		<tr>
+			<td class="Url">http://emily.shillest.net/ayaya/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">文/YAYA関連情報のまとめwikiです。<br />YAYA開発者も積極的に編集するなど、実質的なリファレンスマニュアルの役割も果たしています。</td>
 		</tr>
 	</tbody>
 </table>
@@ -215,14 +256,38 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td rowspan="2" class="Banner"><a href="http://kawari.sourceforge.net/" target="_blank"><img src="image/kawari.png" alt="華和梨" height="40" width="200" /></a></td>
+			<td class="Name">プログラマブル準AI 華和梨</td>
+		</tr>
+		<tr>
+			<td class="Url">http://kawari.sourceforge.net/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">【かきかけ】</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
 			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
 			<td class="Name">【かきかけ】</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">【かきかけ】</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">【かきかけ】</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">【かきかけ】</td>
+		</tr>
+		<tr>
+			<td class="Url">【かきかけ】</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">【かきかけ】</td>
 		</tr>
 	</tbody>
 </table>
@@ -232,19 +297,32 @@
 		<tr>
 			<td colspan="2">
 				【かきかけ】
+				<br />C言語風の記述を標榜する文・YAYAと比べても、ずっとC言語の文法に近い辞書構文を持っています。
 			</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-			<td class="Name">【かきかけ】</td>
+			<td rowspan="2" class="Banner"><a href="http://le.silk.to/?p=dll" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">夜天燈火</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">http://le.silk.to/?p=dll</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">灯の開発・配布元です。<br />サンプルゴーストおよびテスターも配布されています。</td>
+		</tr>
+	</tbody>
+	<tbody>
+		<tr>
+			<td rowspan="2" class="Banner"><a href="http://le.silk.to/akari/" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">灯wiki</td>
+		</tr>
+		<tr>
+			<td class="Url">http://le.silk.to/akari/</td>
+		</tr>
+		<tr>
+			<td colspan="2" class="Intro">灯の公式wikiです。<br />文法・組み込み関数についての説明などがあります。</td>
 		</tr>
 	</tbody>
 </table>
@@ -265,14 +343,14 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-			<td class="Name">【かきかけ】</td>
+			<td rowspan="2" class="Banner"><a href="https://github.com/Narazaka/miyojs/blob/master/Readme.ja.md" target="_blank"><img src="image/miyojs.png" alt="MiyoJS" height="50" width="200" /></a></td>
+			<td class="Name">MiyoJS - SHIORIサブシステム「美代」 for JavaScript</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">https://github.com/Narazaka/miyojs/blob/master/Readme.ja.md</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">MiyoJS（および美代全般）の開発・配布元です。<br />サンプルゴースト・公式のドキュメントもこちらにあります。</td>
 		</tr>
 	</tbody>
 </table>
@@ -281,20 +359,23 @@
 		<tr><th colspan="2">tkytk</th></tr>
 		<tr>
 			<td colspan="2">
-				【かきかけ】
+				汎用言語系のSHIORIの一つで、スクリプト言語Luaによる実装です。
+				<br />【かきかけ】
+				<br />辞書の記法はスクリプト言語Luaの文法そのままですので、ドキュメントも世の中にあるLuaについてのものを参照する事になります。
+				<br />SHIORIとしての共通的・頻出の処理は、サンプルゴーストに例があるので参考にできるでしょう。
 			</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-			<td class="Name">【かきかけ】</td>
+			<td rowspan="2" class="Banner"><a href="http://kinoko.pw/ukagaka/tkytk.html" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">きのこぱわー</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">http://kinoko.pw/</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">tkytkの開発・配布元です。<br />サンプルゴーストもこちらにあります。</td>
 		</tr>
 	</tbody>
 </table>
@@ -306,20 +387,20 @@
 				本家伺か(MATERIA)と同じ作者による汎用SHIORIです。
 				<br />開発自体はすでに終わっていますが動作に支障はありません。
 				<br />システムを記述しなくてもゴーストが一般に備える機能をすぐできるようになっているという意味で、里々に似た設計思想のあるSHIORIです。
-				<br />里々ほどなんでもやってくれるわけではなく、バランスのよい機能の取捨選択で比較的見通しのよい栞といえるでしょう。
+				<br />里々ほどなんでもやってくれるわけではなく、バランスのよい機能の取捨選択で比較的見通しのよいSHIORIといえるでしょう。
 			</td>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-			<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-			<td class="Name">【かきかけ】</td>
+			<td rowspan="2" class="Banner"><a href="http://lovelove.rabi-en-rose.net/index_misaka.php" target="_blank"><img src="image/misaka.png" alt="no banner" height="40" width="200" /></a></td>
+			<td class="Name">美坂（面屋　内）</td>
 		</tr>
 		<tr>
-			<td class="Url"></td>
+			<td class="Url">http://lovelove.rabi-en-rose.net/index_misaka.php</td>
 		</tr>
 		<tr>
-			<td colspan="2" class="Intro"></td>
+			<td colspan="2" class="Intro">美坂の開発・配布元です。</td>
 		</tr>
 	</tbody>
 </table>
@@ -367,22 +448,31 @@
 
 
 <h2 id="links-others">その他製作情報など</h2>
-【かきかけ】
-<!-- テンプレート
 <table class="Links">
 	<tr>
-		<td rowspan="2" class="Banner"><a href="" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
-		<td class="Name"></td>
+		<td rowspan="2" class="Banner"><a href="http://ukadev.shillest.net/" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+		<td class="Name">伺か開発情報検索</td>
 	</tr>
 	<tr>
-		<td class="Url"></td>
+		<td class="Url">http://ukadev.shillest.net/</td>
 	</tr>
 	<tr>
-		<td colspan="2" class="Intro"></td>
+		<td colspan="2" class="Intro">伺か関係の開発情報を扱っている複数サイトを対象にして一括検索できる検索フォームです。<br />なにか調べたい時は、ここで検索してみると見つかるかもしれません。</td>
+	</tr>
+</table>
+<table class="Links">
+	<tr>
+		<td rowspan="2" class="Banner"><a href="http://ghosttown.mikage.jp/cgi-bin/check/gd_checker.cgi" target="_blank"><img src="image/nobanner.png" alt="no banner" height="40" width="200" /></a></td>
+		<td class="Name">被り負けチェッカー</td>
+	</tr>
+	<tr>
+		<td class="Url">http://ghosttown.mikage.jp/cgi-bin/check/gd_checker.cgi</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="Intro">ゴーストの名前やゴーストのフォルダ名は、他のゴーストと被ってしまうと不具合の原因になる事があります（ゴーストのコミュニケート先を間違うなど）。<br />ゴーストの名前データベースを検索し、入力した文字列が既存のものと重複している場合には教えてくれます。<br />ただしデータベースのソースが古いため、最近のゴーストについて反映されていません。ここで検出されなくても油断はしない方がよいでしょう。</td>
 	</tr>
 </table>
 
--->
 <!-------------------------------------------------------------------------------------------------------------------------------->
 <ul id="navigation">
 	<li class="Prev"><a href="dev-palette.html">開発者向けヘルプ：開発用パレット</a></li>
