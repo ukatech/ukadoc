@@ -9,6 +9,10 @@ html(xmlns="http://www.w3.org/1999/xhtml", lang="ja", xml:lang="ja")
 			link(rel="prev", href=element.previous.place + '.html')
 		if element.next
 			link(rel="next", href=element.next.place + '.html')
+		!= '\n<!--[if lt IE 9]>'
+		script(type="text/javascript", src="lib/IE9.js")
+		script(type="text/javascript", src="lib/augment.min.js")
+		!= '\n<![endif]-->\n'
 		title= element.title
 	body
 		block body
