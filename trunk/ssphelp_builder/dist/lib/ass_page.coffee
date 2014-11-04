@@ -22,7 +22,6 @@ $.ajax
 			for section in sections
 				contents = section.contents
 				for query_token in query_tokens
-					console.log query_token
 					contents = contents.replace (new RegExp(query_token, 'gi')), '<span style="background:#ff0">' + query_token + '</span>'
 				results_field.append """
 					<dt><a href="#{section.id}">#{section.title}</a></dt>

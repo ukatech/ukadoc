@@ -35,7 +35,6 @@ $.ajax({
         contents = section.contents;
         for (_k = 0, _len2 = query_tokens.length; _k < _len2; _k++) {
           query_token = query_tokens[_k];
-          console.log(query_token);
           contents = contents.replace(new RegExp(query_token, 'gi'), '<span style="background:#ff0">' + query_token + '</span>');
         }
         _results.push(results_field.append("<dt><a href=\"" + section.id + "\">" + section.title + "</a></dt>\n<dd>" + contents + "</d>>"));
