@@ -7,7 +7,6 @@ if (typeof require !== "undefined" && require !== null) {
   cheerio = require('cheerio');
 }
 
-
 AllSiteSearchClass = (function() {
   function AllSiteSearchClass(lunr) {
     var tokenizer;
@@ -24,7 +23,7 @@ AllSiteSearchClass = (function() {
             return t.toLowerCase();
           });
         }
-        str = obj.toString().toLowerCase().replace(/^\s+/, '');console.log(_this.segmenter.segment(str));
+        str = obj.toString().toLowerCase().replace(/^\s+/, '');
         return _this.segmenter.segment(str);
       };
     })(this);
@@ -57,7 +56,6 @@ AllSiteSearchClass = (function() {
     var index, sections;
     index = _arg.index, sections = _arg.sections;
     this.index = this.lunr.Index.load(index);
-    console.log(index);
     this.sections = sections;
     return this._build_sections_dict();
   };
