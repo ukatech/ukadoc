@@ -1,0 +1,37 @@
+--- lunr.js	Sat Nov 01 00:01:40 2014
++++ lunr-ie7.js	Wed Nov 05 02:48:56 2014
+@@ -1736,9 +1736,9 @@
+   var node = this.root
+ 
+   for (var i = 0; i < token.length; i++) {
+-    if (!node[token[i]]) return false
++    if (!node[token.charAt(i)]) return false
+ 
+-    node = node[token[i]]
++    node = node[token.charAt(i)]
+   }
+ 
+   return true
+@@ -1762,9 +1762,9 @@
+   var node = this.root
+ 
+   for (var i = 0; i < token.length; i++) {
+-    if (!node[token[i]]) return {}
++    if (!node[token.charAt(i)]) return {}
+ 
+-    node = node[token[i]]
++    node = node[token.charAt(i)]
+   }
+ 
+   return node
+@@ -1806,8 +1806,8 @@
+   var node = this.root
+ 
+   for (var i = 0; i < token.length; i++) {
+-    if (!(token[i] in node)) return
+-    node = node[token[i]]
++    if (!(token.charAt(i) in node)) return
++    node = node[token.charAt(i)]
+   }
+ 
+   delete node.docs[ref]
