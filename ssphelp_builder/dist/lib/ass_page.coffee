@@ -1,7 +1,6 @@
 query_field = $('#query')
-results_field = $('#results')
+results_field = $('#main')
 query_field.attr 'disabled', true
-results_field.text '準備中...'
 
 segmenter = new TinySegmenter()
 
@@ -14,6 +13,7 @@ $.ajax
 		AllSiteSearch.load db
 		query_field.keypress ->
 			results_field.html('')
+			results_field.scrollTop 0
 			query_elements = query_field.val().split /\s+/
 			query_tokens = []
 			for query_element in query_elements
@@ -27,6 +27,6 @@ $.ajax
 					<dt><a href="#{section.id}">#{section.title}</a></dt>
 					<dd>#{contents}</d>>
 				"""
+			unless sections.length
+				results_field.html '<p>該当する結果がありません</p>'
 		query_field.removeAttr 'disabled'
-		results_field.text 'ready'
-		query_field.keypress()
