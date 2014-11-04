@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta http-equiv="Content-Style-Type" content="text/css"/>
-    <link rel="stylesheet" type="text/css" href="about.css"/>
-    <link rel="prev" href="config.html"/>
-    <link rel="next" href="config-ippan.html"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <link rel="stylesheet" type="text/css" href="about.css" />
+    <link rel="prev" href="config.html" />
+    <link rel="next" href="config-ippan.html" />
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="lib/IE9.js"></script>
+    <script type="text/javascript" src="lib/augment.min.js"></script>
+<![endif]-->
+
     <title>ゴーストごとの設定</title>
   </head>
   <body>
@@ -21,56 +26,56 @@
         </ul>
       </div>
       <div id="contents"><h1>設定：ゴーストごとの設定</h1>
-<img src="image/config-eachghost/0.png" width="431" height="545" alt="ゴーストごとの設定ダイアログ"/>
+<img src="image/config-eachghost/0.png" width="431" height="545" alt="ゴーストごとの設定ダイアログ" />
 <p class="Hint">
-			ここで行える設定の標準設定となるのは、本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えるものです。<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>ごとの設定が本体設定に優先します。
+	ここで行える設定の標準設定となるのは、本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えるものです。<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>ごとの設定が本体設定に優先します。
 </p>
 <h2>各項目の解説</h2>
 <p>
-チェックボックスが半チェック（■チェック）になっているものは、未設定（従って標準設定に従う）です。
+チェックボックスが半チェック（■チェック）になっているものは、未設定（＝標準設定）です。
 </p>
 
 <dl>
-   <dt>サウンドを鳴らさない</dt>
-   <dd>
-      本体経由で制御されるサウンド機能をすべて停止し、一切のサウンドを鳴らしません。
-      <br/>ただし、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が自分で（本体に頼らずに）サウンドを再生する場合には関係しません。
-   </dd>
+	<dt>サウンドを鳴らさない</dt>
+	<dd>
+		SSP経由で制御されるサウンドをすべて停止し、サウンドを鳴らさなくします。
+		<br />ただし、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が自分で（SSPに頼らずに）サウンドを再生する機能を持っている場合があり、そのようなものは制御できないので注意してください。
+	</dd>
 
-   <dt>常に手前に表示</dt>
-   <dd>
-      喋っているかどうかにかかわらず、常にデスクトップの一番手前に表示するようにします。
-   </dd>
+	<dt>常に手前に表示</dt>
+	<dd>
+		喋っているかどうかにかかわらず、常にデスクトップの一番手前に表示するようにします。
+	</dd>
 
-   <dt><a href="reference.html#x53-x45-x52-x49-x4b-x4f">SERIKO</a> Moveを無視</dt>
-   <dd>
-      常時<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が動いている（浮遊の表現等）機能を強制的にOFFにします。
-      <br/>ウィンドウの動きがかなりの負荷になっている場合等に有効にすると負荷を軽減することができます。
-   </dd>
+	<dt><a href="reference.html#x53-x45-x52-x49-x4b-x4f">SERIKO</a> Moveを無視</dt>
+	<dd>
+		常時<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が動いている（浮遊の表現等）機能を強制的にOFFにします。
+		<br />ウィンドウの動きがかなりの負荷になっている場合等に有効にすると負荷を軽減することができます。
+	</dd>
 
-   <dt><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>位置補正有効</dt>
-   <dd>
-      <a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を<span class="Doing">ドラッグ</span>して位置補正をするかどうかを設定します。
-      <br/>補正機能を動作させたくない場合は無効にしてください。
-   </dd>
+	<dt><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>位置補正有効</dt>
+	<dd>
+		<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を<span class="Doing">ドラッグ</span>して位置補正をするかどうかを設定します。
+		<br />補正機能を動作させたくない場合は無効にしてください。
+	</dd>
 </dl>
 <h3>開発用オプション</h3>
 <p class="Hint">
 	この項目は<a href="config-ippan.html">開発用オプションがオン</a>になっている場合のみ表示されます。
 </p>
 <dl>
-   <dt>定義なし<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>を無視</dt>
-   <dd>
-   <a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の表情として定義されていない、アニメーション用などの雑多な画像ファイルを無視します。通常OFFで問題ありません。
-   <br/>旧い<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>では特にONにすると問題が生じます。
-   </dd>
+	<dt>定義なし<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>を無視</dt>
+	<dd>
+	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の表情として定義されていない、アニメーション用などの雑多な画像ファイルを無視します。通常OFFで問題ありません。
+	<br />旧い<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>では特にONにすると問題が生じます。
+	</dd>
 
-   <dt>隠し指定された要素を表示する</dt>
-   <dd>
-   ネタバレ対策や、内部で使用するために、「ユーザーが操作できる形で表示しない」設定になっているものをすべて表示します。
-   <br/><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をリロードしないと反映されない場合があります。
-   <br/>デバッグ用途のみに使用することをおすすめします。 
-   </dd>
+	<dt>隠し指定された要素を表示する</dt>
+	<dd>
+	ネタバレ対策や、内部で使用するために、「ユーザーが操作できる形で表示しない」設定になっているものをすべて表示します。
+	<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をリロードしないと反映されない場合があります。
+	<br />デバッグ用途のみに使用することをおすすめします。 
+	</dd>
 </dl>
 
 <h3>キャラクター自由移動</h3>
@@ -107,12 +112,12 @@
 	<dt>標準設定</dt>
 	<dd>
 		本体設定ダイアログの「<a href="config-ghost2.html">ゴースト(2)</a>」のページを開きます。
-		<br/><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>(2)での設定が、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>別設定の標準設定（未設定時の設定）になっています。
+		<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>(2)での設定が、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>別設定の標準設定（未設定時の設定）になっています。
 	</dd>
 	<dt>標準に戻す</dt>
 	<dd>
 		全ての設定を標準設定に戻します。
-		<br/>標準設定は本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えます。
+		<br />標準設定は本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えます。
 	</dd>
 
 	<dt>適用</dt>
@@ -130,120 +135,132 @@
       </div>
     </div>
     <div id="menu">
-      <ul>
-              <li><a href="index.html">はじめに</a>
-              </li>
-              <li>基本的な使い方
-                <ul>
-                        <li><a href="howto-boot.html">起動する</a>
-                        </li>
-                        <li><a href="howto-use.html">ゴーストとあそぶ</a>
-                        </li>
-                        <li><a href="howto-rclick.html">右クリックメニュー</a>
-                        </li>
-                        <li><a href="howto-add.html">コンテンツを追加する</a>
-                        </li>
-                        <li><a href="howto-verup.html">本体のバージョンアップ</a>
-                        </li>
-                        <li><a href="howto-plugin.html">プラグイン</a>
-                        </li>
-                        <li><a href="howto-headline.html">RSS/ヘッドライン</a>
-                        </li>
-                </ul>
-              </li>
-              <li><a href="functions.html">機能</a>
-                <ul>
-                        <li><a href="calendar.html">カレンダー</a>
-                          <ul>
-                                  <li><a href="calendar-schedule.html">スケジュール編集</a>
-                                  </li>
-                                  <li><a href="calendar-menu.html">メニュー</a>
-                                  </li>
-                          </ul>
-                        </li>
-                        <li><a href="sspim.html">SSPメッセンジャー</a>
-                          <ul>
-                                  <li><a href="sspim-addto.html">送信先の追加</a>
-                                  </li>
-                                  <li><a href="sspim-sendto.html">送信する</a>
-                                  </li>
-                          </ul>
-                        </li>
-                        <li><a href="explorer.html">エクスプローラ</a>
-                          <ul>
-                                  <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
-                                  </li>
-                          </ul>
-                        </li>
-                        <li><a href="shortcut.html">ショートカット一覧</a>
-                        </li>
-                        <li><a href="option.html">起動オプション一覧</a>
-                        </li>
-                </ul>
-              </li>
-              <li><a href="config.html">設定</a>
-                <ul>
-                        <li><a href="config-eachghost.html">ゴーストごとの設定</a>
-                        </li>
-                        <li>本体設定
-                          <ul>
-                                  <li><a href="config-ippan.html">一般</a>
-                                  </li>
-                                  <li><a href="config-ghost.html">ゴースト(1)</a>
-                                  </li>
-                                  <li><a href="config-ghost2.html">ゴースト(2)</a>
-                                  </li>
-                                  <li><a href="config-folder.html">フォルダ</a>
-                                  </li>
-                                  <li><a href="config-disp.html">表示</a>
-                                  </li>
-                                  <li><a href="config-talk.html">喋り/バルーン</a>
-                                  </li>
-                                  <li><a href="config-conn1.html">接続(1)</a>
-                                  </li>
-                                  <li><a href="config-conn2.html">接続(2)</a>
-                                  </li>
-                                  <li><a href="config-pop.html">POP</a>
-                                  </li>
-                                  <li><a href="config-extprog.html">外部アプリ</a>
-                                  </li>
-                                  <li><a href="config-im.html">IM</a>
-                                  </li>
-                                  <li><a href="config-ipmes.html">IP Messenger</a>
-                                  </li>
-                                  <li><a href="config-i18n.html">国際化</a>
-                                  </li>
-                                  <li><a href="config-dev.html">開発/その他</a>
-                                  </li>
-                          </ul>
-                        </li>
-                </ul>
-              </li>
-              <li><a href="information.html">情報</a>
-              </li>
-              <li><a href="links.html">リンク集</a>
-              </li>
-              <li><a href="faq.html">よくある質問</a>
-              </li>
-              <li><a href="reference.html">用語説明</a>
-              </li>
-              <li><a href="aboutssp.html">SSPの基本情報</a>
-              </li>
-              <li><a href="dev.html">開発者向けヘルプ</a>
-                <ul>
-                        <li><a href="dev-scriptlog.html">スクリプトログ</a>
-                        </li>
-                        <li><a href="dev-palette.html">開発用パレット</a>
-                        </li>
-                        <li><a href="dev-links.html">開発リンク集</a>
-                        </li>
-                        <li><a href="dev-faq.html">開発よくある質問</a>
-                        </li>
-                </ul>
-              </li>
-              <li><a href="search.html">検索</a>
-              </li>
-      </ul>
+      <div id="search">
+        <p>
+          <label>検索
+            <input id="query" type="text" />
+          </label>
+        </p>
+        <script type="text/javascript" src="lib/lunr-ie7.js"></script>
+        <script type="text/javascript" src="lib/tiny_segmenter-0.2.js"></script>
+        <script type="text/javascript" src="lib/jquery.min.js"></script>
+        <script type="text/javascript" src="lib/all-site-search-ie8.js"></script>
+        <script type="text/javascript" src="lib/ass_page.js"></script>
+      </div>
+      <div id="index">
+        <ul>
+                  <li><a href="index.html">はじめに</a>
+                  </li>
+                  <li>基本的な使い方
+                    <ul>
+                              <li><a href="howto-boot.html">起動する</a>
+                              </li>
+                              <li><a href="howto-use.html">ゴーストとあそぶ</a>
+                              </li>
+                              <li><a href="howto-rclick.html">右クリックメニュー</a>
+                              </li>
+                              <li><a href="howto-add.html">コンテンツを追加する</a>
+                              </li>
+                              <li><a href="howto-verup.html">本体のバージョンアップ</a>
+                              </li>
+                              <li><a href="howto-plugin.html">プラグイン</a>
+                              </li>
+                              <li><a href="howto-headline.html">RSS/ヘッドライン</a>
+                              </li>
+                    </ul>
+                  </li>
+                  <li><a href="functions.html">機能</a>
+                    <ul>
+                              <li><a href="calendar.html">カレンダー</a>
+                                <ul>
+                                          <li><a href="calendar-schedule.html">スケジュール編集</a>
+                                          </li>
+                                          <li><a href="calendar-menu.html">メニュー</a>
+                                          </li>
+                                </ul>
+                              </li>
+                              <li><a href="sspim.html">SSPメッセンジャー</a>
+                                <ul>
+                                          <li><a href="sspim-addto.html">送信先の追加</a>
+                                          </li>
+                                          <li><a href="sspim-sendto.html">送信する</a>
+                                          </li>
+                                </ul>
+                              </li>
+                              <li><a href="explorer.html">エクスプローラ</a>
+                                <ul>
+                                          <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
+                                          </li>
+                                </ul>
+                              </li>
+                              <li><a href="shortcut.html">ショートカット一覧</a>
+                              </li>
+                              <li><a href="option.html">起動オプション一覧</a>
+                              </li>
+                    </ul>
+                  </li>
+                  <li><a href="config.html">設定</a>
+                    <ul>
+                              <li><a href="config-eachghost.html">ゴーストごとの設定</a>
+                              </li>
+                              <li>本体設定
+                                <ul>
+                                          <li><a href="config-ippan.html">一般</a>
+                                          </li>
+                                          <li><a href="config-ghost.html">ゴースト(1)</a>
+                                          </li>
+                                          <li><a href="config-ghost2.html">ゴースト(2)</a>
+                                          </li>
+                                          <li><a href="config-folder.html">フォルダ</a>
+                                          </li>
+                                          <li><a href="config-disp.html">表示</a>
+                                          </li>
+                                          <li><a href="config-talk.html">喋り/バルーン</a>
+                                          </li>
+                                          <li><a href="config-conn1.html">接続(1)</a>
+                                          </li>
+                                          <li><a href="config-conn2.html">接続(2)</a>
+                                          </li>
+                                          <li><a href="config-pop.html">POP</a>
+                                          </li>
+                                          <li><a href="config-extprog.html">外部アプリ</a>
+                                          </li>
+                                          <li><a href="config-im.html">IM</a>
+                                          </li>
+                                          <li><a href="config-ipmes.html">IP Messenger</a>
+                                          </li>
+                                          <li><a href="config-i18n.html">国際化</a>
+                                          </li>
+                                          <li><a href="config-dev.html">開発/その他</a>
+                                          </li>
+                                </ul>
+                              </li>
+                    </ul>
+                  </li>
+                  <li><a href="information.html">情報</a>
+                  </li>
+                  <li><a href="links.html">リンク集</a>
+                  </li>
+                  <li><a href="faq.html">よくある質問</a>
+                  </li>
+                  <li><a href="reference.html">用語説明</a>
+                  </li>
+                  <li><a href="aboutssp.html">SSPの基本情報</a>
+                  </li>
+                  <li><a href="dev.html">開発者向けヘルプ</a>
+                    <ul>
+                              <li><a href="dev-scriptlog.html">スクリプトログ</a>
+                              </li>
+                              <li><a href="dev-palette.html">開発用パレット</a>
+                              </li>
+                              <li><a href="dev-links.html">開発リンク集</a>
+                              </li>
+                              <li><a href="dev-faq.html">開発よくある質問</a>
+                              </li>
+                    </ul>
+                  </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

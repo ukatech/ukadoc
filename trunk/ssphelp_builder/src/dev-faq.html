@@ -10,22 +10,40 @@
 </ul>
 
 <h2 id="q-basic">開発の基本についての質問</h2>
-<table class="QnA">
+<table class="QnA" id="qna-ghostmaking">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			ゴーストを作りたいのですが、SHIORI（栞）が必要だといわれました。どれを使えばよいですか？
+			ゴーストを作りたいです！　最初は何から始めればいいですか？
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<span class="Head">A1:</span>
-			<a href="dev-links.html#links-shiori">開発用リンク集のSHIORIの節</a>に、代表的なSHIORIについていくらか説明を書いています。
-			<br />それを参考にして自分にあったものを選んでみてください。
+			<p>
+				<span class="Head">A1:</span>
+				どんなゴーストを作りたいか大体イメージしたら、最初は二つのものを用意するところから始める事になるでしょう。
+			</p>
+			<p>
+				一つはシェル、つまりは立ち絵のセットで、自分で描くか他の人に描いてもらうかの二択です（あたりまえですが）。
+				<br />自力で用意する場合は、<a href="dev-links.html#links-reference">開発用リンク集</a>にある「ukadoc」の「シェルの作成」あたりを参考に。
+				<br />そうでない場合、ありがたい事に世の中には「フリーシェル」と呼ばれる自由に使えるシェルが公開されています。
+				<br />フリーシェルを探すのは、<a href="dev-links.html#links-material">開発用リンク集</a>の「freeshell wiki」が役立つでしょう。
+			</p>
+			<p>
+				シェルの他にもう一つ必要なのが、SHIORIと呼ばれるゴーストの核となるものです。
+				<br />SHIORIによって、ゴーストがどんな時にどう喋ったり動いたりするかという頭脳の部分の作り方が全く変わります。
+				<br /><a href="dev-links.html#links-shiori">開発用リンク集</a>に、代表的なSHIORIにはどんなものがあるか書いています。
+				<br />それを参考にして自分とゴーストにあったものを選んでみてください。
+			</p>
+			<p>
+				シェルもSHIORIも用意できたら、いよいよ作成に取り掛かるのですが、ここから先の作業はほとんどSHIORI次第といっていいです。
+				<br />ですからまずはSHIORIについて解説されているサイトをよく読んでみるといいかもしれません。
+				<br />そういったサイトも、なるべく<a href="dev-links.html#links-shiori">開発用リンク集</a>に載せています。
+			</p>
 		</td>
 	</tr>
 </table>
-<table class="QnA">
+<table class="QnA" id="qna-ghostdistribution">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -38,18 +56,19 @@
 				<span class="Head">A1:</span>
 				もしあなたのゴーストに、ネットワーク更新の機能をつけなくともよいのなら、方法は簡単です。
 				<br />要はあなたのゴーストのファイル一式をnar（やzip）にして公開すればよいだけです。
-				<br />その時に必要な設定やファイルがいくらかありますが、詳細は【かきかけ】を読めばわかるでしょう。
+				<br />その時に必要な設定やファイルがいくらかありますが、詳細は<a href="dev-links.html#links-reference">開発リンク集</a>の「ukadoc」から「配布用ファイルを作る」のページをお読みください。
 			</p>
 			<p>
 				しかしネットワーク更新機能をつけるつもりがあるならば、それに加えて（あるいは替わって）サーバの準備が必要です。
-				<br />サーバといっても、通常個人ウェブサイトを設置するのに必要な、いわゆるサイト公開代理サービス、レンタルサーバ、ホームページスペースなどと呼ばれる類のものを利用すれば大丈夫です。
+				<br />サーバといっても、通常個人ウェブサイトを設置するのに必要な、いわゆるレンタルサーバ、レンタルスペース、サイト公開代理サービスなどと呼ばれるサービスを利用すれば大丈夫です。
 				<br />ただし、サーバの設定や利用規約によっては、ゴーストの公開に適さない場合があります。
-				<br />他のゴースト作者がどのようなサーバを利用しているか観察してみるか、【かきかけ】といった記事を調べてみるとよいでしょう。
+				<br />他のゴースト作者がどのようなサーバを利用しているか観察してみるか、<a href="dev-links.html#links-others">開発リンク集</a>にある「ゴースト配布するなら」の記事が役立つはずです。
 			</p>
 			<p>
 				サーバを用意したなら、あとはゴーストのファイルをサーバ上にアップロードするだけです。
 				<br />アップロードは通常のウェブサイト同様に、FTP通信を用います。
-				<br />その辺りの詳細は【かきかけ】に詳しく書いてありますので、参考に。
+				<br />この辺りの詳細は<a href="dev-links.html#links-reference">開発リンク集</a>の「ukadoc」から「ネットワーク更新に対応する」のページをお読みください。
+				<br />※FTP通信によるサーバへのアップロード自体がよくわからない方は、「ウェブサイト　公開」などで検索されるとよろしいでしょう。
 			</p>
 			<p>
 				なお、一般的なFTPソフトの他に、<a href="dev-links.html">開発用リンク集</a>にある「整備班」で配布している「ゴースト配布系自動化システム」を導入すると、ゴーストのアップロードに関わるいくらかの手間やトラブルを回避する事ができます。
@@ -58,7 +77,7 @@
 		</td>
 	</tr>
 </table>
-<table class="QnA">
+<table class="QnA" id="qna-sspbundling">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -68,11 +87,11 @@
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<br />【かきかけ】
+			禁止はしていませんが、技術的な問題が多いため、非推奨としています。
 		</td>
 	</tr>
 </table>
-<table class="QnA">
+<table class="QnA" id="qna-advertising">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -82,11 +101,13 @@
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<br />【かきかけ】
+			<a href="links.html">リンク集</a>にある、「disc-2」や「SiReFaSo」に登録されるとよいでしょう。余裕があれば是非「GHOST TOWN」にも。
+			<br />また「回覧板」にも、宣伝してよいスレッドがあります。一番迅速なリアクションがあるのは、twitterかもしれません。
+			<br />なお「うわひょ改」は<em>自薦禁止</em>ですのでご自分のゴーストは登録しないように注意してください。
 		</td>
 	</tr>
 </table>
-<table class="QnA">
+<table class="QnA" id="qna-whereisreference">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -100,22 +121,7 @@
 		</td>
 	</tr>
 </table>
-<table class="QnA">
-	<tr>
-		<td>
-			<span class="Head">Q:</span>
-			シェルの「新定義」と「旧定義」ってなんですか？
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<span class="Head">A1:</span>
-			正確には、シェルのと言うよりも「アニメーション（SERIKO）の」新・旧定義です。
-			<br />基本的には書き方だけが違います。【かきかけ】
-		</td>
-	</tr>
-</table>
-<table class="QnA">
+<table class="QnA" id="qna-whereisguidance">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -126,15 +132,15 @@
 		<td>
 			<span class="Head">A1:</span>
 			<a href="links.html#link-community">リンク集</a>にある「もどき板」の「うにゅう＠もどき」掲示板がその役割を果たしています。
-			<br />なお、一見人が居ないように見えますが、話題がないだけです。
+			<br />一見人が居ないように見えますが、基本的には話題がないだけです。
 			<br />あなたが質問を投げればどこからともなく誰かがやって来るでしょう。
-			<br />また、もしあなたがtwitterをやっているなら、「#伺か」「#ukagaka」タグをつけて質問をつぶやけば、まず間違いなく誰かには捕捉されます<span class="Undertone">（勢いあまって包囲される事がありますが怯まないでください……）</span>。
+			<br />またもしあなたがtwitterをやっているなら、「#伺か」「#ukagaka」タグをつけて質問をつぶやけば、まず間違いなく誰かには捕捉されます<span class="Undertone">（時には勢いあまって包囲されるますがどうか怯まないでください）</span>。
 		</td>
 	</tr>
 </table>
 
 <h2 id="q-trouble">バグについての質問</h2>
-<table class="QnA">
+<table class="QnA" id="qna-errorlog">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -148,7 +154,7 @@
 		</td>
 	</tr>
 </table>
-<table class="QnA">
+<table class="QnA" id="qna-md5error">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
@@ -167,7 +173,7 @@
 		<td>
 			<span class="Head">A2:</span>
 			サーバーの設定によって、アップロードされたファイルが改変されている可能性があります。
-			<br />例えば無料ホームページサービスをやっている所でネットワーク更新をしようとすると、まれに広告を無理に挿入しようとするせいでMD5不一致が起こってしまいます。
+			<br />例えば無料ホームページサービスの中には、まれにテキストファイルにまで広告を無理矢理挿入しようとするものが見受けられます。
 		</td>
 	</tr>
 </table>
