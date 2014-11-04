@@ -3,11 +3,9 @@ var query_field, results_field, segmenter;
 
 query_field = $('#query');
 
-results_field = $('#results');
+results_field = $('#main');
 
 query_field.attr('disabled', true);
-
-results_field.text('準備中...');
 
 segmenter = new TinySegmenter();
 
@@ -20,8 +18,9 @@ $.ajax({
   success: function(db) {
     AllSiteSearch.load(db);
     query_field.keypress(function() {
-      var contents, query_element, query_elements, query_token, query_tokens, section, sections, _i, _j, _k, _len, _len1, _len2, _results;
+      var contents, query_element, query_elements, query_token, query_tokens, section, sections, _i, _j, _k, _len, _len1, _len2;
       results_field.html('');
+      results_field.scrollTop(0);
       query_elements = query_field.val().split(/\s+/);
       query_tokens = [];
       for (_i = 0, _len = query_elements.length; _i < _len; _i++) {
@@ -29,7 +28,6 @@ $.ajax({
         query_tokens = query_tokens.concat(segmenter.segment(query_element));
       }
       sections = AllSiteSearch.search_sections(query_elements);
-      _results = [];
       for (_j = 0, _len1 = sections.length; _j < _len1; _j++) {
         section = sections[_j];
         contents = section.contents;
@@ -37,12 +35,12 @@ $.ajax({
           query_token = query_tokens[_k];
           contents = contents.replace(new RegExp(query_token, 'gi'), '<span style="background:#ff0">' + query_token + '</span>');
         }
-        _results.push(results_field.append("<dt><a href=\"" + section.id + "\">" + section.title + "</a></dt>\n<dd>" + contents + "</d>>"));
+        results_field.append("<dt><a href=\"" + section.id + "\">" + section.title + "</a></dt>\n<dd>" + contents + "</d>>");
       }
-      return _results;
+      if (!sections.length) {
+        return results_field.html('<p>該当する結果がありません</p>');
+      }
     });
-    query_field.removeAttr('disabled');
-    results_field.text('ready');
-    return query_field.keypress();
+    return query_field.removeAttr('disabled');
   }
 });

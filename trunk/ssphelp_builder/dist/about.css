@@ -302,6 +302,18 @@ table#environment td {
 	font-size:95%;
 }
 
+#menu #search{
+	margin: 0;
+	padding: 0.2em;
+	color: #fff;
+	background-color: #333399;
+}
+
+#menu #search p{
+	margin: 0;
+	padding: 0;
+}
+
 ul {
 	list-style-type: disc;
 	text-indent: 0;
