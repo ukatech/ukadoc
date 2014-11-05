@@ -112,15 +112,31 @@ a:hover {
 }
 .categories .caption {
 	margin: 5px;
-	padding: 5px;
+	padding: 10px;
 	border: 1px dashed #669;
 	background-color: #fef;
 }
+.categories .caption p {
+	margin-top: 1em;
+}
+.categories .caption p:first-child {
+	margin-top: 0;
+}
 .categories .caption h1 {
-	font-size: medium;
-	padding: 5px;
+	border: solid 1px #669;
 	color: #000;
-	background-color: #fef;
+	font-size: medium;
+	text-align: center;
+	padding: 5px 0;
+}
+.categories .caption section h1 {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	border-bottom: double 3px #669;
+	margin-top: 1em;
+	margin-bottom: 5px;
+	background-color: transparent;
 }
 .categories .caption dt {
 	margin: 15px 5px 5px 0px;
@@ -137,24 +153,52 @@ a:hover {
 	background-color:#dcd;
 	border:1px dotted #669;
 }
-.categories .caption .reference dd{
+.categories .caption .surfaces .animationID {
+	color: #aa3030;
+}
+.categories .caption .surfaces .patternID {
+	color: #30aa30;
+}
+.categories .caption .surfaces .surfaceID {
+	color: #3030aa;
+}
+.categories .caption .surfaces .method {
+	color: #aaaa30;
+}
+.categories .caption .surfaces .wait {
+	color: #aa30aa;
+}
+.categories .caption .surfaces .posx {
+	color: #30aaaa;
+}
+.categories .caption .surfaces .posy {
+	color: #a07030;
+}
+
+.categories .caption .reference dd {
 	margin-bottom: 0;
 }
 .categories .caption p {
 }
 .categories .caption ul li {
-	margin-left:1.5em;
-	list-style-type:disc;
+	margin-left: 1.5em;
+	list-style-type: disc;
 }
 .categories .caption ul li ul li {
-	list-style-type:circle;
+	list-style-type: circle;
+}
+.categories .caption ol {
+	padding-left: 3em;
+}
+.categories .caption ol li {
+	list-style-type: decimal;
 }
 .category {
 	background-color: #ffe;
 	clear: left;
 	border: 1px solid #669;
 }
-.category h1 {
+.category>h1 {
 	font-size: x-large;
 	padding: 5px;
 	color: #fff;
@@ -163,11 +207,13 @@ a:hover {
 .category>dl{
 	margin-bottom:20px;
 }
-.category h2 {
+.category .subcategory h1 {
 	font-size: x-large;
 	padding: 5px;
+	color: #000;
 	border-top:1px solid #669;
 	border-bottom:1px solid #669;
+	background-color: transparent;
 }
 .category strong {
 	font-weight: normal;
