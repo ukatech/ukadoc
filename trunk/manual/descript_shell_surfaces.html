@@ -62,7 +62,7 @@
 			<ul>
 				<li><a href="#element*,パターン定義,ファイル名,X座標,Y座標">element*,パターン定義,ファイル名,X座標,Y座標</a></li>
 				<li><a href="#animation*.interval,タイミング定義">animation*.interval,タイミング定義</a></li>
-				<li><a href="#animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標">animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標</a></li>
+				<li><a href="#animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,パターン定義,サーフェス番号,ウェイト,X座標,Y座標</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
@@ -83,7 +83,7 @@
 				<li><a href="#point.basepos.y,座標">point.basepos.y,座標</a></li>
 			</ul>
 			<section>
-				<h1>サーフェスのアニメーションタイミング(SERIKO)</h1>
+				<h1>サーフェスのアニメーションタイミング</h1>
 				<ul>
 					<li><a href="#sometimes">sometimes</a></li>
 					<li><a href="#rarely">rarely</a></li>
@@ -99,7 +99,7 @@
 				</ul>
 			</section>
 			<section>
-				<h1>サーフェスのアニメーションパターン(SERIKO)</h1>
+				<h1>サーフェスの合成メソッド</h1>
 				<ul>
 					<li><a href="#base">base</a></li>
 					<li><a href="#overlay">overlay</a></li>
@@ -112,10 +112,10 @@
 					<li><a href="#add">add</a></li>
 					<li><a href="#reduce">reduce</a></li>
 					<li><a href="#insert">insert</a></li>
-					<li><a href="#start,_パターンID_">start,[パターンID]</a></li>
-					<li><a href="#stop,_パターンID_">stop,[パターンID]</a></li>
-					<li><a href="#alternativestart,_パターンID1,パターンID2..._">alternativestart,[パターンID1,パターンID2...]</a></li>
-					<li><a href="#alternativestop,_パターンID1,パターンID2..._">alternativestop,[パターンID1,パターンID2...]</a></li>
+					<li><a href="#start,_ID_">start,[ID]</a></li>
+					<li><a href="#stop,_ID_">stop,[ID]</a></li>
+					<li><a href="#alternativestart,_ID1,ID2..._">alternativestart,(ID1,ID2...)</a></li>
+					<li><a href="#alternativestop,_ID1,ID2..._">alternativestop,(ID1,ID2...)</a></li>
 				</ul>
 			</section>
 		</section>
@@ -164,11 +164,118 @@
 設定内容
 }
 </code></pre>
+			</p>
+			<p>ブレス名、{}、各設定として認識されない行はすべてコメント行として扱われる。慣例的には行頭を「//」から始める。</p>
+			<p>インデント可。</p>
+			<p>SSPのみ「surfaces***.txt（***は任意の文字列）」という名前のテキストファイルは全て読み込まれる。</p>
+			<p>記述例などは<a href="manual_shell.html">shellの構成説明の項</a>に。</p>
+		</section>
+		<section class="caption" id="notes_seriko-redifine">
+			<h1>SERIKOの旧定義と新定義について</h1>
+			<section>
+				<h1>SERIKOの新定義と旧定義とは</h1>
+				<p>
+					本家伺か（MATERIA）の開発末期のバージョンで、surfaces.txtへのSERIKO（アニメーション）に関する設定書式に変更がありました。
+					<br>これについて<a href="http://usada.sakura.vg/contents/seriko.html">本家仕様書</a>にあるSERIKO/1.x系の従来書式の事を旧定義、対する公式にドキュメント化されないままとなった新たな書式（SERIKO/2.0）のことを新定義と呼ぶ事があります。
 				</p>
-				<p>ブレス名、{}、各設定として認識されない行はすべてコメント行として扱われる。慣例的には行頭を「//」から始める。</p>
-				<p>インデント可。</p>
-				<p>SSPのみ「surfaces***.txt（***は任意の文字列）」という名前のテキストファイルは全て読み込まれる。</p>
-				<p>記述例などは<a href="manual_shell.html">shellの構成説明の項</a>に。</p>
+				<p>
+					なお、<em>これとは全く別に</em>、MATERIA開発終了後にSSPなどがsufraces.txtの書式について独自に追加した記法などがあります（例えばsurface.appendや、surface1-9といった範囲指定）。
+					<br>これを含めて新定義と呼ぶ人や文献があるかもしれませんが、少なくともukadocで言う新旧定義はあくまでそのような用法ではなく、SERIKOの書式についての言葉である点に注意してください。
+				</p>
+			</section>
+			<section>
+				<h1>新定義と旧定義の違い</h1>
+				<p>新定義における書式の変更点は以下の四つです。</p>
+				<ol>
+					<li><a href="#animation*.interval,タイミング定義">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
+					<li><a href="#animation*.pattern*,パターン定義,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（合成メソッド指定を先頭に移動）。</li>
+					<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
+					<li>合成メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
+				</ol>
+				<p>これに加え、descriptブレスを設けて「<a href="#version,*">version,1</a>」の定義を行うことが必要です。</p>
+				<p>以下は<em>同じ定義内容</em>の旧定義と新定義の例です。</p>
+<pre><code class="surfaces">// 旧定義
+surface1
+{
+<span class="animationID">0</span>interval,rarely
+<span class="animationID">0</span>pattern<span class="patternID">0</span>,<span class="surfaceID">0</span>,<span class="wait">0</span>,<span class="method">alternativestart,[1,2]</span>
+
+<span class="animationID">1</span>interval,never
+<span class="animationID">1</span>pattern<span class="patternID">0</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">1</span>pattern<span class="patternID">1</span>,<span class="surfaceID">102</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">1</span>pattern<span class="patternID">2</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">1</span>pattern<span class="patternID">3</span>,<span class="surfaceID">-1</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">0</span>,<span class="posy">0</span>
+
+<span class="animationID">2</span>interval,never
+<span class="animationID">2</span>pattern<span class="patternID">0</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">2</span>pattern<span class="patternID">1</span>,<span class="surfaceID">102</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">2</span>pattern<span class="patternID">2</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">2</span>pattern<span class="patternID">3</span>,<span class="surfaceID">-1</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">0</span>,<span class="posy">0</span>
+<span class="animationID">2</span>pattern<span class="patternID">4</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">2</span>pattern<span class="patternID">5</span>,<span class="surfaceID">102</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
+<span class="animationID">2</span>pattern<span class="patternID">6</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">0</span>,<span class="posy">0</span>
+<span class="animationID">2</span>pattern<span class="patternID">7</span>,<span class="surfaceID">-1</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">0</span>,<span class="posy">0</span>
+}
+</code></pre>
+<pre><code class="surfaces">// 新定義
+surface1
+{
+animation<span class="animationID">0</span>.interval,rarely
+animation<span class="animationID">0</span>.pattern<span class="patternID">0</span>,<span class="method">alternativestart,(1,2)</span>
+
+animation<span class="animationID">1</span>.interval,never
+animation<span class="animationID">1</span>.pattern<span class="patternID">0</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">1</span>.pattern<span class="patternID">1</span>,<span class="method">overlay</span>,<span class="surfaceID">102</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">1</span>.pattern<span class="patternID">2</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">1</span>.pattern<span class="patternID">3</span>,<span class="method">overlay</span>,<span class="surfaceID">-1</span>,<span class="wait">700</span>,<span class="posx">0</span>,<span class="posy">0</span>
+
+animation<span class="animationID">2</span>.interval,never
+animation<span class="animationID">2</span>.pattern<span class="patternID">0</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">1</span>,<span class="method">overlay</span>,<span class="surfaceID">102</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">2</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">3</span>,<span class="method">overlay</span>,<span class="surfaceID">-1</span>,<span class="wait">700</span>,<span class="posx">0</span>,<span class="posy">0</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">4</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">5</span>,<span class="method">overlay</span>,<span class="surfaceID">102</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">6</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
+animation<span class="animationID">2</span>.pattern<span class="patternID">7</span>,<span class="method">overlay</span>,<span class="surfaceID">-1</span>,<span class="wait">700</span>,<span class="posx">0</span>,<span class="posy">0</span>
+}
+</code></pre>
+				<ul class="surfaces">
+					<li class="animationID">アニメーションID</li>
+					<li class="patternID">パターンID</li>
+					<li class="surfaceID">サーフェスID</li>
+					<li class="method">合成メソッド</li>
+					<li class="wait">ウェイト</li>
+					<li class="posx">x座標</li>
+					<li class="posy">y座標</li>
+				</ul>
+				<p>
+					先頭が「animation」から始まるようになった他、ウェイトの数値が10倍になっていること、合成メソッドの指定がパラメータの先頭に移動したことに注意してください。
+					<br />またalternativestartは[]が()に変更されているほか、alternativestartの場合無視されるパラメータである「サーフェスID」「ウェイト」について、旧定義ではダミーの数値0を書いていたのに対し、新定義では合成メソッドが先頭に移動した関係から、「合成位置x,y」含めて丸ごと省略できていることもわかるかと思います。
+				</p>
+			</section>
+			<section>
+				<h1>新定義で記述する利点</h1>
+				<ul>
+					<li>
+						SSPが独自に追加した設定（このページにある項目で<img src="image/icon_m.png" alt="Materia" width="34" height="16" />の表示がなく<img src="image/icon_s.png" alt="SSP" width="34" height="16" />の表示のみがあるもの）については、旧定義で書かれえる事が想定されていない場合があります。
+						<br />今後追加されるあらゆる設定にも同様の事がいえます。
+						<br />こうした設定を利用する場合は、新定義で記述することが望ましいでしょう（旧定義だと正常動作しない可能性がある）。
+						<br />その場合、新旧定義を混在させるとエラーとなるので、新定義に統一する必要があります。
+					</li>
+					<li>
+						ウェイトの単位が10msから1msに変更され、より細やかな設定が可能になります。
+					</li>
+					<li>
+						また上例で見た通り、合成メソッドがパラメータの先頭に移動した事で、startやalternativestartのような特殊な合成メソッドで無視されるパラメータが綺麗に省略されることも利点かもしれません。
+					</li>
+					<li>
+						他に、「animation」の語句が明示される事で、SERIKOに関する定義のまとまりが強調され、よりその行の意味が解りやすくなる面もあるかもしれませんが、およそ見やすさというものは慣れや個人差によるところが大であり、旧定義の方が親しんでいるし見やすいというのも自然な感じ方です。
+					</li>
+				</ul>
+				<p>以上のような点にメリットを感じない場合、SSPのみでの対応を考えるなら必ずしも移行する意味はないかもしれません。</p>
+				<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で参考にされる場合は適宜読み替えが必要です。</p>
+			</section>
 		</section>
 		<section class="category">
 			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
@@ -196,7 +303,7 @@
 			<dl id="version,*">
 				<dt class="entry">version,*</dt>
 				<dd class="entry">
-					<p class="description">使用するSERIKO定義の書式のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p class="description">使用する<a href="#notes_seriko-redifine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -220,7 +327,7 @@
 			<dl id="collision-sort,ソート順序">
 				<dt class="entry">collision-sort,ソート順序</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br /> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p class="description">当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
 					<p class="default">none（IDによらず先に書かれている方が手前）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -230,7 +337,7 @@
 			<dl id="animation-sort,ソート順序">
 				<dt class="entry">animation-sort,ソート順序</dt>
 				<dd class="entry">
-					<p class="description">アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br /> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p class="description">アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
 					<p class="default">descend</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -246,14 +353,14 @@
 ここに記述
 }
 </code></pre>
-				<p>※SSPのみ 追加指定（すでに定義済みのものに対してさらに定義を後付けする）。<br /></p>
+				<p>※SSPのみ 追加指定（すでに定義済みのものに対してさらに定義を後付けする）。<br></p>
 <pre><code>surface.append*
 {
 ここに記述
 }
 </code></pre>
 				<p>*部分には数値(ID)を指定する。複数指定、範囲指定が可能（<a href="#notes_surfacebraceID">後述</a>）。</p>
-				<p>それ以外の各定義の番号「*」には、各ブレス（中括弧の内側）内で重複しない数字を指定する。<br />それぞれの数字が表示上の重なり順序の基準などに用いられる。<br />animationの番号は、さくらスクリプトなどでの操作IDとなるので、同じ意味のもの毎に同じ番号を与えたほうがよい。特に着せ替えの場合は同じ服・パーツについて同じ数字を指定する。</ul>
+				<p>それ以外の各定義の番号「*」には、各ブレス（中括弧の内側）内で重複しない数字を指定する。<br>それぞれの数字が表示上の重なり順序の基準などに用いられる。<br>animationの番号は、さくらスクリプトなどでの操作IDとなるので、同じ意味のもの毎に同じ番号を与えたほうがよい。特に着せ替えの場合は同じ服・パーツについて同じ数字を指定する。</ul>
 			</section>
 			<section class="caption" id="notes_surfacebraceID">
 				<h1>surface*ブレスで可能なID指定</h1>
@@ -284,7 +391,7 @@
 略
 }
 </code></pre>
-						のように、「!」に続けて単独または範囲指定したIDは、その定義の対象から除外される（例の場合結局surface1-14,16-19,20-30などとした場合と同義）。<br />
+						のように、「!」に続けて単独または範囲指定したIDは、その定義の対象から除外される（例の場合結局surface1-14,16-19,20-30などとした場合と同義）。<br>
 						なお、!による除外は記述の位置によらず他の指定よりも優先される（例えばsurface1-10,!2-4,3などと!の後に追記しても3は除外される）。
 					</dd>
 				</dl>
@@ -317,7 +424,7 @@
 			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">ベースサーフェスの設定。<br />加算したアニメーションパターンはこのサーフェス内で1枚のベースサーフェス扱いになる。<br />*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。</p>
+					<p class="description">ベースサーフェスの設定。<br>加算した合成メソッドはこのサーフェス内で1枚のベースサーフェス扱いになる。<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -329,7 +436,14 @@
 			<dl id="animation*.interval,タイミング定義">
 				<dt class="entry">animation*.interval,タイミング定義</dt>
 				<dd class="entry">
-					<p class="description">アニメーションの開始タイミングの設定。<br />タイミング定義は下記の<a href="#h-animationinterval">アニメーションタイミング</a>参照。<br />この定義がアニメーション定義の開始を示すものになるので、一連のanimation定義の中では最初に記述する。<br />*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceでは、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。<br />アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。<br />旧仕様：<em>*</em>interval</p>
+					<p class="description">
+						アニメーションの開始タイミングの設定。
+						<br>タイミング定義は下記の<a href="#h-animationinterval">アニメーションタイミング</a>参照。
+						<br>この定義がアニメーション定義の開始を示すものになるので、一連のanimation定義の中では最初に記述する。
+						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceでは、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
+						<br>アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。
+						<br><a href="#notes_seriko-redifine">旧定義</a>：*interval,タイミング定義
+					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -338,10 +452,16 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標">
-				<dt class="entry">animation*.pattern*,パターン定義,サーフェス番号,ウエイト,X座標,Y座標</dt>
+			<dl id="animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標">
+				<dt class="entry">animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">intervalで設定したタイミングで発動するアニメーションパターンの設定。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />patternに次ぐ*の部分（patternID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは128パターンが上限。<br />パターン定義は下記の<a href="#h-animationpattern">アニメーションパターン</a>参照。<br />ウエイトの単位はミリ秒。SSPのみ「最小ウエイト-最大ウエイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。<br />サーフェス番号に-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。<br />旧仕様：<em>*</em>pattern<em>*</em></p>
+					<p class="description">
+						intervalで設定したタイミングで発動する合成メソッドの設定。
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。
+						<br>合成メソッド定義は下記の<a href="#h-animationpattern">合成メソッド</a>参照。<br>ウェイトの単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
+						<br>サーフェスIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。
+						<br><a href="#notes_seriko-redifine">旧定義</a>：*pattern*,サーフェスID,ウェイト,合成メソッド定義,X座標,Y座標
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -353,8 +473,12 @@
 			<dl id="animation*.option,exclusive">
 				<dt class="entry">animation*.option,exclusive</dt>
 				<dd class="entry">
-					<p class="description">これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />
-					animation*.option,exclusive,(1,3,5)のようにすると、指定のアニメーションIDからの影響を受けない限定的な指定ができる（SSPのみ）</p>
+					<p class="description">
+						これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						<br>animation*.option,exclusive,(1,3,5)のようにすると、指定のアニメーションIDからの影響を受けない限定的な指定ができる（SSPのみ）
+						<br><a href="#notes_seriko-redifine">旧定義</a>：*option,exclusive
+					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -366,7 +490,10 @@
 			<dl id="animation*.option,background">
 				<dt class="entry">animation*.option,background</dt>
 				<dd class="entry">
-					<p class="description">これが定義されたアニメーションはベースサーフェスより裏に表示される。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。</p>
+					<p class="description">
+						これが定義されたアニメーションはベースサーフェスより裏に表示される。
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -375,8 +502,11 @@
 			<dl id="animation*.option,オプション">
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
-					<p class="description">(exclusive|background)<br />+区切りで複数オプション可。例：exclusive+background<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />
-					animation*.option,exclusive+background,(1,3,5) のようにすると、<span style="text-decoration: underline;">exclusiveのみ</span>影響を受ける。</p>
+					<p class="description">
+						(exclusive|background)
+						<br>+区切りで複数オプション可。例：exclusive+background<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<span style="text-decoration: underline;">exclusiveのみ</span>影響を受ける。
+					</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -384,9 +514,9 @@
 				</dd>
 			</dl>
 			<dl id="animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">
-				<dt class="entry">animation*.collision*,当たり判定定義<br />animation*.collisionex*,当たり判定定義(ex)</dt>
+				<dt class="entry">animation*.collision*,当たり判定定義<br>animation*.collisionex*,当たり判定定義(ex)</dt>
 				<dd class="entry">
-					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。<br />animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br />collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
+					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br>collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -396,7 +526,7 @@
 			<dl id="collision*,始点X,始点Y,終点X,終点Y,ID">
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
-					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。<br />*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br />当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
+					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。<br>*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -408,12 +538,12 @@
 			<dl id="collisionex*,ID,タイプ,座標1,座標2...">
 				<dt class="entry">collisionex*,ID,タイプ,座標1,座標2...</dt>
 				<dd class="entry">
-					<p class="description">不定形当たり判定。<br />
-					タイプは以下の通り。<br />
-					*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br />
-					rect 長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300<br />
-					ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300<br />
-					circle 真円。中心点のXYの値、半径の順で記述する。例：100,200,20<br />
+					<p class="description">不定形当たり判定。<br>
+					タイプは以下の通り。<br>
+					*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>
+					rect 長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300<br>
+					ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300<br>
+					circle 真円。中心点のXYの値、半径の順で記述する。例：100,200,20<br>
 					polygon 多角形。座標は各頂点、交差可。例：100,100,200,300,50,200
 					</p>
 					<p class="default">挙動なし</p>
@@ -426,7 +556,7 @@
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの本体側バルーン位置X座標。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br />
+					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -439,7 +569,7 @@
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの本体側バルーン位置Y座標。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br />
+					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -452,7 +582,7 @@
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの相方側バルーン位置X座標。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br />
+					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -465,7 +595,7 @@
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p class="description">そのサーフェスでのみの相方側バルーン位置Y座標。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br />
+					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -477,9 +607,9 @@
 			<dl id="_2_balloon.offsetx,座標">
 				<dt class="entry">balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみのバルーン位置X座標(本体・相方問わず)。<br />
+					<p class="description">そのサーフェスでのみのバルーン位置X座標(本体・相方問わず)。<br>
 					offset.xとも記述可能。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br />
+					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -489,9 +619,9 @@
 			<dl id="_2_balloon.offsety,座標">
 				<dt class="entry">balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみのバルーン位置Y座標(本体・相方問わず)。。<br />
+					<p class="description">そのサーフェスでのみのバルーン位置Y座標(本体・相方問わず)。。<br>
 					offset.xとも記述可能。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br />
+					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -501,7 +631,7 @@
 			<dl id="point.centerx,座標">
 				<dt class="entry">point.centerx,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心X座標。<br />通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p class="description">サーフェスの中心X座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
 					<p class="default">サーフィスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -513,7 +643,7 @@
 			<dl id="point.centery,座標">
 				<dt class="entry">point.centery,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心Y座標。<br />通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p class="description">サーフェスの中心Y座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
 					<p class="default">サーフェスの中心(高さ÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -549,7 +679,7 @@
 			<dl id="point.basepos.x,座標">
 				<dt class="entry">point.basepos.x,座標</dt>
 				<dd class="entry">
-					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のX座標。<br />
+					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のX座標。<br>
 					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
 					<p class="default">サーフェスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
@@ -560,7 +690,7 @@
 			<dl id="point.basepos.y,座標">
 				<dt class="entry">point.basepos.y,座標</dt>
 				<dd class="entry">
-					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のY座標です。<br />
+					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のY座標です。<br>
 					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
 					<p class="default">サーフェスの下端</p>
 					<ul class="supported-baseware">
@@ -568,276 +698,280 @@
 					</ul>
 				</dd>
 			</dl>
-			<h2 id="h-animationinterval">サーフェスのアニメーションタイミング(SERIKO)</h2>
-			<dl id="sometimes">
-				<dt class="entry">sometimes</dt>
-				<dd class="entry">
-					<p class="description">毎秒2分の1の確率で発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="rarely">
-				<dt class="entry">rarely</dt>
-				<dd class="entry">
-					<p class="description">毎秒4分の1の確率で発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="random,数値">
-				<dt class="entry">random,数値</dt>
-				<dd class="entry">
-					<p class="description">毎秒数値分の1の確率で発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="periodic,数値">
-				<dt class="entry">periodic,数値</dt>
-				<dd class="entry">
-					<p class="description">数値秒間隔で発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="always">
-				<dt class="entry">always</dt>
-				<dd class="entry">
-					<p class="description">ループ再生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="runonce">
-				<dt class="entry">runonce</dt>
-				<dd class="entry">
-					<p class="description">サーフェスに切り替わった瞬間に1回のみ発生。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="never">
-				<dt class="entry">never</dt>
-				<dd class="entry">
-					<p class="description">自動では発生しない。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="yen-e">
-				<dt class="entry">yen-e</dt>
-				<dd class="entry">
-					<p class="description">\eが来た時に発動。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="talk,数値">
-				<dt class="entry">talk,数値</dt>
-				<dd class="entry">
-					<p class="description">バルーン内のテキストに合わせて発動。<br />数値分の文字がくるごとにアニメーションする。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_1_bind">
-				<dt class="entry">bind</dt>
-				<dd class="entry">
-					<p class="description">着せ替えを定義する。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="bind+アニメーションタイミング">
-				<dt class="entry">bind+アニメーションタイミング</dt>
-				<dd class="entry">
-					<p class="description">定義した着せ替えになった場合に他のアニメーションタイミングを発生。<br />+で繋げて複数可。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<h2 id="h-animationpattern">サーフェスのアニメーションパターン(SERIKO)</h2>
-			<dl id="base">
-				<dt class="entry">base</dt>
-				<dd class="entry">
-					<p class="description">ベースになるサーフェス表示。<br />サーフェス番号を-1で初期ベースに戻すことができる。<br />XY座標は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="overlay">
-				<dt class="entry">overlay</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスの上に合成して表示。<br />サーフェス番号を-1で合成を消すことができる。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="overlayfast">
-				<dt class="entry">overlayfast</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスの上に合成して表示。<br />このアニメーションはベースサーフェスの表示領域のみ合成できる。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="replace">
-				<dt class="entry">replace</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスの上に合成して表示。<br />このアニメーションの透過部分はベースサーフェスも透過される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="interpolate">
-				<dt class="entry">interpolate</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスの<em>透明なところにのみ</em>画像を合成。<br />ベースサーフェスの半透明部分は、透明度が高い部分ほど強く合成が反映される。<br />interpolateで重なる部分はベースより上位（手前）側になければならない。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="asis">
-				<dt class="entry">asis</dt>
-				<dd class="entry">
-					<p class="description">抜き色やPNAを適応しないでそのまま表示。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="move">
-				<dt class="entry">move</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスをXY座標で指定して表示。<br />サーフェス番号は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_2_bind">
-				<dt class="entry">bind</dt>
-				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフェスを着せ替えパーツとする。<br />着せ替えパーツとして単純に一つのサーフェスの合成しか出来なかった頃の唯一のメソッドで、現在はaddが互換。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="add">
-				<dt class="entry">add</dt>
-				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフェスをベースサーフェスに合成する。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="reduce">
-				<dt class="entry">reduce</dt>
-				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したサーフェスの透過領域をベースサーフェスから削除する。透過領域の追加。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="insert">
-				<dt class="entry">insert</dt>
-				<dd class="entry">
-					<p class="description">着せ替え用メソッド。指定したidの着せ替えグループをそこに挿入する。<br />他の着せ替えパーツの下（裏）に、着せ替えを追加するなどの用途で用いることができる。insert先でのinsert（入れ子）も可。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="start,_パターンID_">
-				<dt class="entry">start,[パターンID]</dt>
-				<dd class="entry">
-					<p class="description">IDのパターンアニメーションを発動させる。<br />ウエイト、XY座標は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="stop,_パターンID_">
-				<dt class="entry">stop,[パターンID]</dt>
-				<dd class="entry">
-					<p class="description">IDのパターンアニメーションを停止させる。<br />ウエイト、XY座標は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="alternativestart,_パターンID1,パターンID2..._">
-				<dt class="entry">alternativestart,[パターンID1,パターンID2...]</dt>
-				<dd class="entry">
-					<p class="description">複数の内のどれかのIDパターンアニメーションを発動させる。<br />ウエイト、XY座標は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="alternativestop,_パターンID1,パターンID2..._">
-				<dt class="entry">alternativestop,[パターンID1,パターンID2...]</dt>
-				<dd class="entry">
-					<p class="description">複数の内のどれかのIDパターンアニメーションを停止させる。<br />ウエイト、XY座標は無視される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
+			<section class="subcategory">
+				<h1 id="h-animationinterval">サーフェスのアニメーションタイミング</h2>
+				<dl id="sometimes">
+					<dt class="entry">sometimes</dt>
+					<dd class="entry">
+						<p class="description">毎秒2分の1の確率で発生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="rarely">
+					<dt class="entry">rarely</dt>
+					<dd class="entry">
+						<p class="description">毎秒4分の1の確率で発生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="random,数値">
+					<dt class="entry">random,数値</dt>
+					<dd class="entry">
+						<p class="description">毎秒数値分の1の確率で発生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="periodic,数値">
+					<dt class="entry">periodic,数値</dt>
+					<dd class="entry">
+						<p class="description">数値秒間隔で発生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="always">
+					<dt class="entry">always</dt>
+					<dd class="entry">
+						<p class="description">ループ再生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="runonce">
+					<dt class="entry">runonce</dt>
+					<dd class="entry">
+						<p class="description">サーフェスに切り替わった瞬間に1回のみ発生。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="never">
+					<dt class="entry">never</dt>
+					<dd class="entry">
+						<p class="description">自動では発生しない。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="yen-e">
+					<dt class="entry">yen-e</dt>
+					<dd class="entry">
+						<p class="description">\eが来た時に発動。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="talk,数値">
+					<dt class="entry">talk,数値</dt>
+					<dd class="entry">
+						<p class="description">バルーン内のテキストに合わせて発動。<br>数値分の文字がくるごとにアニメーションする。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="_1_bind">
+					<dt class="entry">bind</dt>
+					<dd class="entry">
+						<p class="description">着せ替えを定義する。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="bind+アニメーションタイミング">
+					<dt class="entry">bind+アニメーションタイミング</dt>
+					<dd class="entry">
+						<p class="description">定義した着せ替えになった場合に他のアニメーションタイミングを発生。<br>+で繋げて複数可。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+			</section>
+			<section class="subcategory">
+				<h1 id="h-animationpattern">サーフェスの合成メソッド</h2>
+				<dl id="base">
+					<dt class="entry">base</dt>
+					<dd class="entry">
+						<p class="description">ベースになるサーフェス表示。<br>サーフェスIDを-1で初期ベースに戻すことができる。<br>XY座標は無視される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlay">
+					<dt class="entry">overlay</dt>
+					<dd class="entry">
+						<p class="description">ベースサーフェスの上に合成して表示。<br>サーフェスIDを-1で合成を消すことができる。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlayfast">
+					<dt class="entry">overlayfast</dt>
+					<dd class="entry">
+						<p class="description">ベースサーフェスの上に合成して表示。<br>このアニメーションはベースサーフェスの表示領域のみ合成できる。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="replace">
+					<dt class="entry">replace</dt>
+					<dd class="entry">
+						<p class="description">ベースサーフェスの上に合成して表示。<br>このアニメーションの透過部分はベースサーフェスも透過される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="interpolate">
+					<dt class="entry">interpolate</dt>
+					<dd class="entry">
+						<p class="description">ベースサーフェスの<em>透明なところにのみ</em>画像を合成。<br>ベースサーフェスの半透明部分は、透明度が高い部分ほど強く合成が反映される。<br>interpolateで重なる部分はベースより上位（手前）側になければならない。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="asis">
+					<dt class="entry">asis</dt>
+					<dd class="entry">
+						<p class="description">抜き色やPNAを適応しないでそのまま表示。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="move">
+					<dt class="entry">move</dt>
+					<dd class="entry">
+						<p class="description">ベースサーフェスをXY座標で指定して表示。<br>サーフェスIDは無視される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="_2_bind">
+					<dt class="entry">bind</dt>
+					<dd class="entry">
+						<p class="description">着せ替え用メソッド。指定したサーフェスを着せ替えパーツとする。<br>着せ替えパーツとして単純に一つのサーフェスの合成しか出来なかった頃の唯一のメソッドで、現在はaddが互換。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="add">
+					<dt class="entry">add</dt>
+					<dd class="entry">
+						<p class="description">着せ替え用メソッド。指定したサーフェスをベースサーフェスに合成する。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="reduce">
+					<dt class="entry">reduce</dt>
+					<dd class="entry">
+						<p class="description">着せ替え用メソッド。指定したサーフェスの透過領域をベースサーフェスから削除する。透過領域の追加。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="insert">
+					<dt class="entry">insert</dt>
+					<dd class="entry">
+						<p class="description">着せ替え用メソッド。指定したidの着せ替えグループをそこに挿入する。<br>他の着せ替えパーツの下（裏）に、着せ替えを追加するなどの用途で用いることができる。insert先でのinsert（入れ子）も可。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="start,_ID_">
+					<dt class="entry">start,[ID]</dt>
+					<dd class="entry">
+						<p class="description">指定したID（animation*の*の数字）のアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="stop,_ID_">
+					<dt class="entry">stop,[ID]</dt>
+					<dd class="entry">
+						<p class="description">指定したID（animation*の*の数字）のアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="alternativestart,_ID1,ID2..._">
+					<dt class="entry">alternativestart,(ID1,ID2...)</dt>
+					<dd class="entry">
+						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおSSPの場合ID指定の括弧は"[]"でも読まれる。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="alternativestop,_ID1,ID2..._">
+					<dt class="entry">alternativestop,(ID1,ID2...)</dt>
+					<dd class="entry">
+						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおID指定の括弧は"[]"でも読まれる。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>surface.aliasブレス</h1>
@@ -852,7 +986,7 @@
 			<dl id="*,[*]">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
-					<p class="description">サーフェスIDに対して任意のエイリアスIDを設定する。<br />例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br />また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br />この場合\s[1]で1,11,21からランダムで選ばれる。</p>
+					<p class="description">サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -875,7 +1009,7 @@
 			<dl id="mouseup*,当たり判定ID,ファイル名">
 				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上に乗った時表示するカーソルファイルを設定。<br />*部分は同じスコープのmouseup定義で重複しない番号。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="description">当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:hand）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -885,107 +1019,109 @@
 			<dl id="mousedown*,当たり判定ID,ファイル名">
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br />*部分は同じスコープのmousedown定義で重複しない番号。<br />当り判定名はcollision定義で設定した名前。<br />ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">矢印カーソル</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<h2>システムカーソル</h2>
-			<div class="caption">
-				<p>カーソルファイルの変わりに指定すると現在使われているカーソルの変形が表示ができます。</p>
-			</div>
-			<dl id="system:arrow">
-				<dt class="entry">system:arrow</dt>
-				<dd class="entry">
-					<p class="description">矢印</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:cross">
-				<dt class="entry">system:cross</dt>
-				<dd class="entry">
-					<p class="description">十字</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:no">
-				<dt class="entry">system:no</dt>
-				<dd class="entry">
-					<p class="description">禁止</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:hand">
-				<dt class="entry">system:hand</dt>
-				<dd class="entry">
-					<p class="description">手</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:grip">
-				<dt class="entry">system:grip</dt>
-				<dd class="entry">
-					<p class="description">つかんだ手</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:finger">
-				<dt class="entry">system:finger</dt>
-				<dd class="entry">
-					<p class="description">指差し</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:wait">
-				<dt class="entry">system:wait</dt>
-				<dd class="entry">
-					<p class="description">時計</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:text">
-				<dt class="entry">system:text</dt>
-				<dd class="entry">
-					<p class="description">I</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:move">
-				<dt class="entry">system:move</dt>
-				<dd class="entry">
-					<p class="description">移動</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="system:help">
-				<dt class="entry">system:help</dt>
-				<dd class="entry">
-					<p class="description">？</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
+			<section class="subcategory">
+				<h1>システムカーソル</h1>
+				<div class="caption">
+					<p>カーソルファイルの変わりに指定すると現在使われているカーソルの変形が表示ができます。</p>
+				</div>
+				<dl id="system:arrow">
+					<dt class="entry">system:arrow</dt>
+					<dd class="entry">
+						<p class="description">矢印</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:cross">
+					<dt class="entry">system:cross</dt>
+					<dd class="entry">
+						<p class="description">十字</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:no">
+					<dt class="entry">system:no</dt>
+					<dd class="entry">
+						<p class="description">禁止</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:hand">
+					<dt class="entry">system:hand</dt>
+					<dd class="entry">
+						<p class="description">手</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:grip">
+					<dt class="entry">system:grip</dt>
+					<dd class="entry">
+						<p class="description">つかんだ手</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:finger">
+					<dt class="entry">system:finger</dt>
+					<dd class="entry">
+						<p class="description">指差し</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:wait">
+					<dt class="entry">system:wait</dt>
+					<dd class="entry">
+						<p class="description">時計</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:text">
+					<dt class="entry">system:text</dt>
+					<dd class="entry">
+						<p class="description">I</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:move">
+					<dt class="entry">system:move</dt>
+					<dd class="entry">
+						<p class="description">移動</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="system:help">
+					<dt class="entry">system:help</dt>
+					<dd class="entry">
+						<p class="description">？</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>tooltipブレス</h1>
