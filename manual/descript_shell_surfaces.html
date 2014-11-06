@@ -170,7 +170,7 @@
 			<p>SSPのみ「surfaces***.txt（***は任意の文字列）」という名前のテキストファイルは全て読み込まれる。</p>
 			<p>記述例などは<a href="manual_shell.html">shellの構成説明の項</a>に。</p>
 		</section>
-		<section class="caption" id="notes_seriko-redifine">
+		<section class="caption" id="notes_seriko-redefine">
 			<h1>SERIKOの旧定義と新定義について</h1>
 			<section>
 				<h1>SERIKOの新定義と旧定義とは</h1>
@@ -303,7 +303,7 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 			<dl id="version,*">
 				<dt class="entry">version,*</dt>
 				<dd class="entry">
-					<p class="description">使用する<a href="#notes_seriko-redifine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p class="description">使用する<a href="#notes_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -442,7 +442,7 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 						<br>この定義がアニメーション定義の開始を示すものになるので、一連のanimation定義の中では最初に記述する。
 						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceでは、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
 						<br>アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。
-						<br><a href="#notes_seriko-redifine">旧定義</a>：*interval,タイミング定義
+						<br><a href="#notes_seriko-redefine">旧定義</a>：*interval,タイミング定義
 					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -461,7 +461,7 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。
 						<br>合成メソッド定義は下記の<a href="#h-animationpattern">合成メソッド</a>参照。<br>ウェイトの単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
 						<br>サーフェスIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。
-						<br><a href="#notes_seriko-redifine">旧定義</a>：*pattern*,サーフェスID,ウェイト,合成メソッド定義,X座標,Y座標
+						<br><a href="#notes_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,合成メソッド定義,X座標,Y座標
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -477,7 +477,7 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 						これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>animation*.option,exclusive,(1,3,5)のようにすると、指定のアニメーションIDからの影響を受けない限定的な指定ができる（SSPのみ）
-						<br><a href="#notes_seriko-redifine">旧定義</a>：*option,exclusive
+						<br><a href="#notes_seriko-redefine">旧定義</a>：*option,exclusive
 					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
