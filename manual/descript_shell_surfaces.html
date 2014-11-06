@@ -114,8 +114,8 @@
 					<li><a href="#insert">insert</a></li>
 					<li><a href="#start,_ID_">start,[ID]</a></li>
 					<li><a href="#stop,_ID_">stop,[ID]</a></li>
-					<li><a href="#alternativestart,_ID1,ID2..._">alternativestart,(ID1,ID2...)</a></li>
-					<li><a href="#alternativestop,_ID1,ID2..._">alternativestop,(ID1,ID2...)</a></li>
+					<li><a href="#alternativestart,_ID1.ID2..._">alternativestart,(ID1.ID2...)</a></li>
+					<li><a href="#alternativestop,_ID1.ID2..._">alternativestop,(ID1.ID2...)</a></li>
 				</ul>
 			</section>
 		</section>
@@ -198,7 +198,7 @@
 surface1
 {
 <span class="animationID">0</span>interval,rarely
-<span class="animationID">0</span>pattern<span class="patternID">0</span>,<span class="surfaceID">0</span>,<span class="wait">0</span>,<span class="method">alternativestart,[1,2]</span>
+<span class="animationID">0</span>pattern<span class="patternID">0</span>,<span class="surfaceID">0</span>,<span class="wait">0</span>,<span class="method">alternativestart,[1.2]</span>
 
 <span class="animationID">1</span>interval,never
 <span class="animationID">1</span>pattern<span class="patternID">0</span>,<span class="surfaceID">101</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">200</span>,<span class="posy">100</span>
@@ -221,7 +221,7 @@ surface1
 surface1
 {
 animation<span class="animationID">0</span>.interval,rarely
-animation<span class="animationID">0</span>.pattern<span class="patternID">0</span>,<span class="method">alternativestart,(1,2)</span>
+animation<span class="animationID">0</span>.pattern<span class="patternID">0</span>,<span class="method">alternativestart,(1.2)</span>
 
 animation<span class="animationID">1</span>.interval,never
 animation<span class="animationID">1</span>.pattern<span class="patternID">0</span>,<span class="method">overlay</span>,<span class="surfaceID">101</span>,<span class="wait">700</span>,<span class="posx">200</span>,<span class="posy">100</span>
@@ -952,9 +952,9 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 					</dd>
 				</dl>
 				<dl id="alternativestart,_ID1,ID2..._">
-					<dt class="entry">alternativestart,(ID1,ID2...)</dt>
+					<dt class="entry">alternativestart,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおSSPの場合ID指定の括弧は"[]"でも読まれる。</p>
+						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおSSPの場合ID指定の括弧は"[]"、区切り字は","でも読まれる。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -963,9 +963,9 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 					</dd>
 				</dl>
 				<dl id="alternativestop,_ID1,ID2..._">
-					<dt class="entry">alternativestop,(ID1,ID2...)</dt>
+					<dt class="entry">alternativestop,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおID指定の括弧は"[]"でも読まれる。</p>
+						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおID指定の括弧は"[]"、区切り字は","でも読まれる。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
