@@ -36,10 +36,10 @@ block body
 			ul
 				if element.previous
 					li.previous
-						a(href=element.previous.place + '.html')= element.previous.title
+						a(href=element.previous.place + '.html')= element.previous.hierarchy >= 2 ? element.previous.parent.title + ":" + element.previous.title : element.previous.title
 				if element.next
 					li.next
-						a(href=element.next.place + '.html')= element.next.title
+						a(href=element.next.place + '.html')= element.next.hierarchy >= 2 ? element.next.parent.title + ":" + element.next.title : element.next.title
 	#menu
 		#search
 			p

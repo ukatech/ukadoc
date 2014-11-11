@@ -13,6 +13,6 @@ html(xmlns="http://www.w3.org/1999/xhtml", lang="ja", xml:lang="ja")
 		script(type="text/javascript", src="lib/IE9.js")
 		script(type="text/javascript", src="lib/augment.min.js")
 		!= '\n<![endif]-->\n'
-		title= element.title
+		title= element.hierarchy >= 2 ? element.parent.title + ":" + element.title : element.title
 	body
 		block body
