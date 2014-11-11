@@ -5,5 +5,5 @@ node node_modules/all-site-search/ass-indexer.js -i search.html -o dist/assdb.js
 
 cp -f dist/* ../../ukadoc/ssphelp/
 cp -f -R dist/lib ../../ukadoc/ssphelp/
-cp -f -R ../ssphelp/image ../../ukadoc/ssphelp/
+cp -f -R dist/image ../../ukadoc/ssphelp/
 cp -f -R ../manual ../../ukadoc
