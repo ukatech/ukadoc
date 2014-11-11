@@ -1,5 +1,4 @@
 #!/bin/sh
-sh node_modules/.bin/coffee html_content_extract.coffee ../ssphelp src
 node node_modules/indexsite/indexsite.js do
 node node_modules/nwordlinks/nwordlinks.js -d ./dist/ -w reference.html -s "#contents dl" -c "#contents" -x -h
 node node_modules/all-site-search/ass-indexer.js -i search.html -o dist/assdb.json dist
