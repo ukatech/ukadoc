@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <title>UKADOC Project Ghost設定</title>
@@ -7,43 +7,133 @@
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
 	<h1 id="page-title">Ghost設定</h1>
 	<nav class="menu-header">
-		<ul>
-			<li><a href="./index.html">Index</a></li>
-		</ul>
-		<ul>
-			<li><a href="./descript_ghost.html">Ghost</a></li>
-			<li><a href="./descript_shell.html">Shell</a></li>
-			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
-			<li><a href="./descript_balloon.html">Balloon</a></li>
-			<li><a href="./descript_plugin.html">Plugin</a></li>
-			<li><a href="./descript_headline.html">Headline</a></li>
-			<li><a href="./descript_install.html">Install</a></li>
-		</ul>
-		<ul>
-			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
-			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
-			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
-			<li><a href="./list_propertysystem.html">Property System</a></li>
-			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
-		</ul>
-		<ul>
-			<li>×SHIORI/3.0</li>
-			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
-			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
-			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
-			<li><a href="./spec_dll.html">DLL</a></li>
-		</ul>
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</nav>
 	<section class="navigation-bar">
 		<h1>Ghost</h1>
 		<section class="navigation-category">
 			<h1>descript.txt</h1>
+			<ul>
+				<li class="caption legend"><a href="#legends_descript.txt">descript.txt（Ghostの）</a></li>
+			</ul>
 			<ul>
 				<li><a href="#charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#name,ゴースト名">name,ゴースト名</a></li>
@@ -105,11 +195,42 @@
 				<li><a href="#shiori.logo.align,位置情報">shiori.logo.align,位置情報</a></li>
 				<li><a href="#install.accept,名前1,名前2,名前3...">install.accept,名前1,名前2,名前3...</a></li>
 			</ul>
+			<ul>
+				<li class="caption"><a href="#notes_surfaceposition">サーフェスの位置情報</a></li>
+			</ul>
 		</section>
 	</section>
 	<div class="categories">
 		<section class="category">
 			<h1>descript.txt</h1>
+			<section class="caption legend" id="legends_descript.txt">
+				<h1>descript.txt（Ghostの）</h1>
+				<section>
+					<h1>概要</h1>
+					<p>ゴーストの基本設定ファイル。<br>ゴースト名や作者名を始め、shioriの設定や、バルーンの基本位置情報、アイコンなど様々な情報を設定する（できる）。</p>
+				</section>
+				<section>
+					<h1>記述例と基本の書き方</h1>
+<pre><code>charset,Shift_JIS
+type,ghost
+name,凡例さん
+sakuraname,凡例さん
+keroname,斑糲岩
+homeurl,http://ukadoc.googlecode.com/svn/trunk/manual/hogehoge/example/
+
+craftman,ukadog
+craftmanw,うか犬
+craftmanurl,http://ukadoc.googlecode.com/svn/trunk/manual/index.html
+
+shiori,satori.dll
+
+</code></pre>
+					<p>type、name、sakuraname、keroname、craftman、craftmanwは必須（SSPの場合省略可能なものもある）。</p>
+					<p>SHIORIに里々などのdll名が「shiori.dll」でないものを使う場合、shioriにdll名の指定を忘れないように注意。</p>
+					<p>homeurlはdescript.txtに書く他、ベースウェアからの<a href="list_shiori_resource.html#homeurl">SHIORI Resource</a>要求に返却する方法でも設定可能（方法はSHIORIによるため略）。<br>基本的にどちらか一方で指定すればよく、両方指定する場合はサイト移転時などに片方を修正し忘れるなどのミスに要注意。</p>
+					<p>なお、\や%で始まる文字列はさくらスクリプトや環境変数のタグと見なされ、セキュリティ上のリスクから破棄される。もし単なる文字としてそれらを含めたい場合は、\\や\%などとしてエスケープする必要がある。</p>
+				</section>
+			</section>
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
@@ -137,7 +258,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。ゴーストの場合はghost。</p>
-					<p class="default">省略不可 | ghost( on SSP)</p>
+					<p class="default">省略不可/SSPではghost/masterにあるdescript.txtならghostと識別される</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -149,7 +270,7 @@
 				<dt class="entry">craftman,作者名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの作者名。半角英数のみ。</p>
-					<p class="default">値なし</p>
+					<p class="default">省略不可/SSPでは値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -161,7 +282,7 @@
 				<dt class="entry">craftmanw,作者名</dt>
 				<dd class="entry">
 					<p class="description">そのゴーストの作者名。</p>
-					<p class="default">値なし</p>
+					<p class="default">省略不可/SSPでは値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -208,7 +329,7 @@
 			<dl id="homeurl,URL">
 				<dt class="entry">homeurl,URL</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新用のURL、SHIORI側の記述が優先される。</p>
+					<p class="description">ネットワーク更新用のURL、SHIORI側の記述が優先される。<br>urlの末尾に/を忘れないように注意。</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -251,7 +372,7 @@
 				<dt class="entry">kero.name,名前</dt>
 				<dd class="entry">
 					<p class="description">相方側のゴーストの名前。</p>
-					<p class="default">省略不可 | sakura.name( on SSP ※ウインドウのタイトル設定に使用)</p>
+					<p class="default">省略不可/SSPの場合sakura.name　※ウインドウのタイトル設定に使用される</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -263,7 +384,7 @@
 				<dt class="entry">char*.name,名前</dt>
 				<dd class="entry">
 					<p class="description">\p[*]の名前。</p>
-					<p class="default">kero.name( on SSP ※ウインドウのタイトル設定に使用)</p>
+					<p class="default">省略不可/SSPの場合kero.name　※ウインドウのタイトル設定に使用される</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -742,7 +863,7 @@
 				</dd>
 			</dl>
 			<div class="caption" id="notes_surfaceposition">
-				<h1>※サーフェスの位置情報</h1>
+				<h1>サーフェスの位置情報</h1>
 				<dl>
 					<dt>top</dt>
 					<dd>上部に貼り付き表示。</dd>

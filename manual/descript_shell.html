@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="index,follow">
@@ -7,43 +7,133 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Shell設定</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
 	<h1 id="page-title">Shell設定</h1>
 	<nav class="menu-header">
-		<ul>
-			<li><a href="./index.html">Index</a></li>
-		</ul>
-		<ul>
-			<li><a href="./descript_ghost.html">Ghost</a></li>
-			<li><a href="./descript_shell.html">Shell</a></li>
-			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
-			<li><a href="./descript_balloon.html">Balloon</a></li>
-			<li><a href="./descript_plugin.html">Plugin</a></li>
-			<li><a href="./descript_headline.html">Headline</a></li>
-			<li><a href="./descript_install.html">Install</a></li>
-		</ul>
-		<ul>
-			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
-			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
-			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
-			<li><a href="./list_propertysystem.html">Property System</a></li>
-			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
-		</ul>
-		<ul>
-			<li>×SHIORI/3.0</li>
-			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
-			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
-			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
-			<li><a href="./spec_dll.html">DLL</a></li>
-		</ul>
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</nav>
 	<section class="navigation-bar">
 		<h1>Shell</h1>
 		<section class="navigation-category">
 			<h1>descript.txt</h1>
+			<ul>
+				<li class="caption legend"><a href="#legends_descript.txt">descript.txt（Shellの）</a></li>
+			</ul>
 			<ul>
 				<li><a href="#name,シェル名">name,シェル名</a></li>
 				<li><a href="#type,種別">type,種別</a></li>
@@ -122,11 +212,67 @@
 				<li><a href="#seriko.paint_transparent_region_black,数値">seriko.paint_transparent_region_black,数値</a></li>
 				<li><a href="#seriko.use_self_alpha,数値">seriko.use_self_alpha,数値</a></li>
 			</ul>
+			<ul>
+				<li class="caption"><a href="#notes_surfaceposition">サーフェスの位置情報</a></li>
+				<li class="caption"><a href="#notes_balloonposition">バルーンの位置情報</a></li>
+			</ul>
 		</section>
 	</section>
 	<div class="categories">
 		<section class="category">
-			<h1>descript.txt</h1>
+			<h1>descript.txt</h1>			<section class="caption legend" id="legends_descript.txt">
+				<h1>descript.txt（Shellの）</h1>
+				<section>
+					<h1>概要</h1>
+					<p>シェルの基本設定ファイル。<br>シェル名や作者情報の他、バルーンの表示位置設定や、オーナードローメニュー（右クリックメニュー）の画像設定、着せ替えのオーナードローメニューでの表示設定などもここで行う。</p>
+				</section>
+				<section>
+					<h1>記述例と基本の書き方</h1>
+<pre><code>charset,Shift_JIS
+type,shell
+name,master
+
+craftman,ukadog
+craftmanw,うか犬
+craftmanurl,http://ukadoc.googlecode.com/svn/trunk/manual/index.html
+
+sakura.balloon.offsetx,0
+sakura.balloon.offsety,80
+kero.balloon.offsetx,-20
+kero.balloon.offsety,10
+sakura.balloon.alignment,none
+kero.balloon.alignment,none
+
+sakura.bindgroup0.name,服,エプロンドレス,apron
+sakura.bindgroup1.name,リボン,白リボン,ribbonwhite
+sakura.bindgroup2.name,服,黒服,black
+sakura.bindgroup3.name,リボン,黒リボン,ribbonblack
+sakura.bindgroup0.default,1
+sakura.bindgroup1.default,1
+
+kero.bindgroup0.name,ネクタイ,ネクタイ
+kero.bindgroup1.name,腕章,黒腕章
+kero.bindgroup2.name,腕,ドリル
+kero.bindgroup0.default,1
+kero.bindgroup1.default,1
+
+sakura.menuitem0,2
+sakura.menuitem1,3
+sakura.menuitem2,-
+sakura.menuitem3,0
+sakura.menuitem4,1
+
+kero.menuitem0,0
+kero.menuitem1,1
+kero.menuitem2,-
+kero.menuitem3,2
+</code></pre>
+					<p>type、nameは必須。</p>
+					<p>SSPでは、シェルに対してもhomeurlを設定しておくことで、エクスプローラなどからネットワーク更新が可能になる。</p>
+					<p>着せ替え設定の各項目については後述のそれぞれの節を参照。<br>基本的な仕組みは、<a href="descript_shell_surfaces.txt">surfaces.txt</a>で定義した、タイミングbindのanimationIDに対して、着せ替え名と着せ替えグループ名を与え（sakura(kero).bindgroup*.name,～）、またオーナードローメニュー上での配置を指定する必要がある（sakura(kero).menuitem*,～）。</p>
+					<p>なお、\や%で始まる文字列はさくらスクリプトや環境変数のタグと見なされ、セキュリティ上のリスクから破棄される。もし単なる文字としてそれらを含めたい場合は、\\や\%などとしてエスケープする必要がある。</p>
+				</section>
+			</section>
 			<dl id="name,シェル名">
 				<dt class="entry">name,シェル名</dt>
 				<dd class="entry">
@@ -143,7 +289,7 @@
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
 					<p class="description">ファイルセットの種別。シェルの場合はshell。</p>
-					<p class="default">省略不可 | shell( on SSP)</p>
+					<p class="default">省略不可/SSPの場合はシェルフォルダ内にあるものはshellと自動識別される</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -976,7 +1122,7 @@
 				</dd>
 			</dl>
 			<div class="caption" id="notes_surfaceposition">
-				<h1>※サーフェスの位置情報</h1>
+				<h1>サーフェスの位置情報</h1>
 				<dl>
 					<dt>top</dt>
 					<dd>上部に貼り付き表示。</dd>
@@ -987,7 +1133,7 @@
 				</dl>
 			</div>
 			<div class="caption" id="notes_balloonposition">
-				<h1>※吹き出しの位置情報</h1>
+				<h1>バルーンの位置情報</h1>
 				<dl>
 					<dt>none</dt>
 					<dd>自動調整、shellのY座標が画面中央より左なら右、右なら左に表示。</dd>

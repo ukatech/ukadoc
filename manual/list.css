@@ -39,12 +39,10 @@ a:hover {
 	font-size: x-large;
 }
 .menu-header {
-	margin: 1px 20px;
-	width: 90%;
-	border: 1px solid #669;
-	background-color: #eef;
-	padding: 1px;
-	text-align:center;
+	margin: 0 20px;
+	width: 91.5%;
+	text-align: center;
+	font-size: 95%;
 }
 .menu-header:after {
 	content: "\0020";
@@ -53,19 +51,42 @@ a:hover {
 	visibility: hidden;
 	clear: both;
 }
-.menu-header ul{
-	text-align: center;
+.menu-header table {
+	border-collapse: separate;
+	border-spacing: 0 1px;
+	width: 100%;
 }
-.menu-header ul:after{
-	content: "　";
+.menu-header table tr {
+	background-color: #eef;
 }
-.menu-header li {
+.menu-header table tr > * {
+	padding: 2px;
+	border-top: 1px solid #669;
+	border-bottom: 1px solid #669;
+	border-right: 1px solid #669;
+}
+.menu-header table tr th {
+	width: 7%;
+}
+.menu-header table tr:first-child th:first-child {
+	background-color: #669;
+	color: #eef;
+	width: 15%;
+}
+.menu-header table ul li {
 	float: left;
 	margin-left: 10px;
 }
-.menu-header li a:before {
-	content: "\25a0";
+.menu-header table ul li a:before {
+	content: url("./image/icon_doc-b.png");
 }
+.menu-header table ul li .not-created:before {
+	content: "×";
+}
+
+
+
+
 .navigation-bar {
 	border: 1px solid #669;
 	margin: 10px 0 0 20px;
@@ -96,62 +117,132 @@ a:hover {
 	padding: 3px 5px;
 	text-align: left;
 }
-.navigation-bar ul {
-	padding: 0 0 20px 20px;
+.navigation-category ul {
+	margin-bottom: 1em;
 }
-.navigation-bar li {
+.navigation-category li {
 	list-style-type: disc;
 	margin-top: 3px;
+	margin-left: 2em;
 	font-size: small;
 }
+.navigation-category li.caption {
+	list-style-type: none;
+	margin-left: 0.5em;
+}
+.navigation-category li.caption:before {
+	content: url("image/icon_doc-r.png") "　";
+}
+.navigation-category li.caption.legend {
+	list-style-type: none;
+	margin-left: 0.5em;
+}
+.navigation-category li.caption.legend:before {
+	content: url("image/icon_doc-b.png") "　";
+}
+
+
+
+
+
 .categories {
 	float: left;
 	margin: 10px 0 60px 0;
 	padding-left: 20px;
 	width: 65%;
 }
-.categories .caption {
+.categories .caption,
+.categories .caption.legend {
 	margin: 5px;
 	padding: 10px;
-	border: 1px dashed #669;
+	border: 1px dashed #966;
 	background-color: #fef;
 }
-.categories .caption p {
+.categories .caption.legend {
+	border:2px solid #669;
+	background-color: #dde;
+}
+.categories .caption p,
+.categories .caption.legend p {
 	margin-top: 1em;
 }
-.categories .caption p:first-child {
+.categories .caption p:first-child,
+.categories .caption.legend p:first-child {
 	margin-top: 0;
 }
-.categories .caption h1 {
-	border: solid 1px #669;
+.categories .caption h1,
+.categories .caption.legend h1 {
+	border: solid 1px #966;
 	color: #000;
 	font-size: medium;
 	text-align: center;
 	padding: 5px 0;
+	margin-bottom: 0.5em;
 }
-.categories .caption section h1 {
+.categories .caption.legend h1 {
+	border-color: #669;
+}
+.categories .caption section h1,
+.categories .caption.legend section h1 {
 	font-weight: bold;
 	text-align: left;
 	border: none;
-	border-bottom: double 3px #669;
+	border-bottom: double 3px #966;
 	margin-top: 1em;
 	margin-bottom: 5px;
 	background-color: transparent;
 }
-.categories .caption dt {
+.categories .caption.legend section h1 {
+	border-color: #669;
+}
+.categories .caption dt,
+.categories .caption.legend dt {
 	margin: 15px 5px 5px 0px;
-	border-left: 7px solid #cc99cc;
+	border-left: 7px solid #c9c;
 	padding: 0 0 0 5px;
 }
-.categories .caption dd {
+.categories .caption.legend dt {
+	border-color: #99c;
+}
+.categories .caption dd,
+.categories .caption.legend dd {
 	margin: 5px 5px 15px 20px;
-	border-left: 1px solid #cc99cc;
+	border-left: 1px solid #c9c;
 	padding: 0 0 0 5px;
 }
-.categories .caption pre {
+.categories .caption.legend dd {
+	border-color: #99c;
+}
+.categories .caption pre,
+.categories .caption.legend pre {
 	padding:5px;
-	background-color:#dcd;
-	border:1px dotted #669;
+	background-color:#edd;
+	border:1px dotted #966;
+}
+.categories .caption.legend pre {
+	background-color: #ccd;
+	border-color: #669;
+}
+.categories .caption ul li,
+.categories .caption.legend ul l {
+	margin-left: 1.5em;
+	list-style-type: disc;
+}
+.categories .caption ul li ul li,
+.categories .caption.legend ul li ul li {
+	list-style-type: circle;
+}
+.categories .caption ol,
+.categories .caption.legend ol {
+	padding-left: 3em;
+}
+.categories .caption ol li,
+.categories .caption.legend ol li {
+	list-style-type: decimal;
+}
+.categories .caption .reference dd,
+.categories .caption.legend .reference dd {
+	margin-bottom: 0;
 }
 .categories .caption .surfaces .animationID {
 	color: #aa3030;
@@ -175,24 +266,12 @@ a:hover {
 	color: #a07030;
 }
 
-.categories .caption .reference dd {
-	margin-bottom: 0;
-}
-.categories .caption p {
-}
-.categories .caption ul li {
-	margin-left: 1.5em;
-	list-style-type: disc;
-}
-.categories .caption ul li ul li {
-	list-style-type: circle;
-}
-.categories .caption ol {
-	padding-left: 3em;
-}
-.categories .caption ol li {
-	list-style-type: decimal;
-}
+
+
+
+
+
+
 .category {
 	background-color: #ffe;
 	clear: left;
@@ -204,7 +283,7 @@ a:hover {
 	color: #fff;
 	background-color: #669;
 }
-.category>dl{
+.category>d {
 	margin-bottom:20px;
 }
 .category .subcategory h1 {
@@ -229,61 +308,6 @@ a:hover {
 	clear: left;
 	background-color: #eef;
 }
-.category .description {
-	margin: 5px 5px 5px 15px;
-}
-.category .description dt {
-	margin: 15px 5px 5px 0px;
-	border-left: 7px solid #cccc99;
-	padding: 0 0 0 5px;
-}
-.category .description dd {
-	margin: 5px 5px 15px 20px;
-	border-left: 1px solid #cccc99;
-	padding: 0 0 0 5px;
-}
-.category .default {
-	margin: 5px 5px 5px 15px;
-	font-style: italic;
-	font-size: small;
-	color: #666;
-}
-.category .default:before {
-	content: "既定値: ";
-}
-.category .reference {
-	margin: 5px 5px 5px 15px;
-	padding: 2px;
-	background-color: #aba;
-}
-.category .reference dt {
-	font-weight: bold;
-	float: left;
-	clear: left;
-	padding: 5px;
-	min-width: 7em;
-	_width: 7em;
-}
-.category .reference dt:after {
-	content: ":";
-}
-.category .reference dd {
-	padding: 5px 5px 5px 10px;
-	overflow: hidden;
-	background-color: #efe;
-	_word-break: break-all;
-	_height: 1em;
-	_overflow-y: visible;
-}
-.category .reference dd:nth-of-type(odd) {
-	background-color: #ded;
-}
-.category .reference dd dt {
-	min-width: 0;
-}
-.category .reference dd dd:nth-of-type(even) {
-	background-color: #ded;
-}
 .category .supported-baseware {
 	margin: 0 0 30px 15px;
 }
@@ -291,11 +315,93 @@ a:hover {
 	float: left;
 	margin-left: 5px;
 }
-.category .remarks {
+.category dd.entry .description {
+	margin: 5px 5px 5px 15px;
+}
+.category dd.entry .description dt {
+	margin: 15px 5px 5px 0px;
+	border-left: 7px solid #ccb;
+	padding: 0 0 0 5px;
+}
+.category dd.entry .description dd {
+	margin: 5px 5px 15px 20px;
+	border-left: 1px solid #ccb;
+	padding: 0 0 0 5px;
+}
+.category dd.entry .default {
+	margin: 5px 5px 5px 15px;
+	font-style: italic;
+	font-size: small;
+	color: #666;
+}
+.category dd.entry .default:before {
+	content: "既定値: ";
+}
+.category dd.entry .reference {
+	margin: 5px 5px 5px 15px;
+	padding: 2px;
+	background-color: #aba;
+}
+.category dd.entry .reference dt {
+	font-weight: bold;
+	float: left;
+	clear: left;
+	padding: 5px;
+	min-width: 7em;
+	_width: 7em;
+}
+.category dd.entry .reference dt:after {
+	content: ":";
+}
+.category dd.entry .reference dd {
+	padding: 5px 5px 5px 10px;
+	overflow: hidden;
+	background-color: #efe;
+	_word-break: break-all;
+	_height: 1em;
+	_overflow-y: visible;
+}
+.category dd.entry .reference dd:nth-of-type(odd) {
+	background-color: #ded;
+}
+.category dd.entry .reference dd dt {
+	min-widdh: 0;
+}
+.category dd.entry .reference dd dd:nth-of-type(even) {
+	background-color: #ded;
+}
+.category dd.entry .remarks {
 	margin: 5px 5px 5px 15px;
 	padding: 5px;
 	border: 1px dashed #669;
 }
-.category .remarks p {
+.category dd.entry .remarks p {
 	margin: 0.5em auto;
+}
+.category dd.entry .legend h1 {
+	font-weight: normal;
+	border-left: 7px solid #bbc;
+	border-bottom: 1px solid #bbc;
+	margin: 5px 3px 5px 3px;
+	padding: 2px 2px 2px 5px;
+}
+.category dd.entry .legend ol {
+	font-size: 95%;
+	background-color: #bbc;
+	margin: 5px 5px 5px 15px;
+	padding: 2px;
+/*	padding-left: 2.2em; */
+}
+.category dd.entry .legend ol li {
+/*	list-style-type: decimal-leading-zero; */
+	position: relative;
+	padding: 3px 3px 3px 7px;
+	background-color: #dde;
+	font-weight: bold;
+}
+.category dd.entry .legend ol li code {
+	font-weight: normal;
+}
+.category dd.entry .legend ol li:nth-of-type(odd) {
+	background-color: #ccd;
 }

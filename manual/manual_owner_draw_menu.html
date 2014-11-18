@@ -7,7 +7,7 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,メニュー,オーナードロー">
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="styleOld.css" type="text/css">
 <base target="_blank">
 <title>UKADOC Project Owner Draw Menu</title>
 </head>
@@ -23,43 +23,50 @@
 	</h1>
 	<div class="body">
 		<div class="sidebar">
-			<iframe height="1100" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
+			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
 		</div>
 		<div class="text">
-			<h2>Owner Draw Menu</h2>
+			<h2>オーナードローメニュー</h2>
 			<div class="chapter">
-				<div class="section">				
-					<p>オーナードローメニューに使用する画像ファイルは以下の通り。</p>
+				<div class="section">
+					<p>オーナードローメニュー（右クリックメニュー）に使用する画像ファイルは以下の通り。</p>
 <pre>
-home
++-(myghost)
 　　+-shell
 　　　　+-master
 　　　　　　+-descript.txt
+　　　　　　+-readme.txt
 　　　　　　+-surface*.png
 　　　　　　+-surface*.pna
+　　　　　　+-(element).png
 　　　　　　+-surfaces.txt
+　　　　　　+-surfaces**.txt
+　　　　　　+-thumbnail.png
+　　　　　　+-makoto.dll
+　　　　　　+-surfacetable.txt
 　　　　　　<em>+-menu_background.png</em>
 　　　　　　<em>+-menu_foreground.png</em>
 　　　　　　<em>+-menu_sidebar.png</em>
-　　　　　　+-readme.txt
-　　　　　　+-thumbnail.png
 </pre>
 				</div>
 			</div>
 			<div class="chapter">
 				<div class="section">
 					<h3 class="component">menu_background.png</h3>
-					<p>メニューツリーの背景画像。</p>
+					<p>オーナードローメニューの背景画像。</p>
 					<p>メニューの領域は画像ではなくメニューの大きさになる。</p>
+					<p>省略可能（標準のメニュー表示になる）。</p>
 				</div>
 				<div class="section">
 					<h3 class="component">menu_foreground.png</h3>
-					<p>メニューツリーのカーソル選択部分の画像。</p>
+					<p>オーナードローメニューツリーのカーソル選択部分の画像。</p>
+					<p>省略可能（標準のメニュー表示になる）。</p>
 				</div>
 				<div class="section">
 					<h3 class="component">menu_sidebar.png</h3>
-					<p>メニューツリーの左側に追加できる画像。</p>
+					<p>オーナードローメニューツリーの左側に追加できる画像。</p>
 					<p>横幅のみ画像の幅となる。</p>
+					<p>省略可能。</p>
 				</div>
 				<div class="section">
 					<p>メニューの画像が切れた部分はその端の色を単色で塗り潰す。</p>
@@ -79,7 +86,6 @@ home
 		</p>
 	</div>
 </div>
-
 
 
 </body>
