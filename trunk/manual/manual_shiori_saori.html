@@ -7,7 +7,7 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,SHIORI,SAORI">
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="styleOld.css" type="text/css">
 <base target="_blank">
 <title>UKADOC Project SHIORI/SAORI</title>
 </head>
@@ -23,7 +23,7 @@
 	</h1>
 	<div class="body">
 		<div class="sidebar">
-			<iframe height="1100" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
+			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
 		</div>
 		<div class="text">
 			<h2>SHIORI/SAORI</h2>
@@ -32,30 +32,26 @@
 					shiori.dllは下記の位置に配置する。
 				</div>
 <pre>
-home
-　+-ghost
-　　　+-myghost
-　　　　　+-ghost
-　　　　　　　+-master
-　　　　　　　　　+-descirpt.txt
-　　　　　　　　　<em>+-shiori.dll</em>
-　　　　　　　　　+-makoto.dll
-　　　　　　　　　+-updates2.dau
-　　　　　　　　　+-*.ico
-　　　　　　　　　+-*.csr
++-(myghost)
+　　+-ghost
+　　　　+-master
+　　　　　　+-descirpt.txt
+　　　　　　<em>+-shiori.dll</em>
+　　　　　　<em>+-saori.dll</em>
+　　　　　　+-makoto.dll
+　　　　　　+-updates2.dau
+　　　　　　+-*.ico
+　　　　　　+-*.csr
 </pre>
 			</div>
 			<div class="chapter">
 				<div class="section">
 					<h3 class="component">shiori.dll</h3>
-					<p>偽AI部分に必要なファイル。</p>
-					<p>下記サイトより各SHIORIをダウンロードすることができる。</p>
+					<p>偽AI部分のコアとなるファイル。</p>
+					<p>ゴーストは、ベースウェアから一定のタイミング（マウスがシェル上で動いた、クリックされた、時間が経過した、起動した、シェルが変わったe.t.c.e.t.c...）で通知される<a href="list_shiori_event.html">SHIORI Event</a></p>
 				</div>
 				<div class="section">
-					<a href="http://disc2.s56.xrea.com/wiki/index.php?SHIORI" target="_blank">Disc-2wiki SHIORIリンク集</a>
-				</div>
-				<div class="section">
-					<p>また、SHIORIごとに記述方法も変わってくるので説明は各SHIORIサイトを参照。</p>
+					<p>実際のトークの書き方など、ゴーストづくりの中核的な部分は全てSHIORIによって記述方法などが異なるので、各SHIORI側のドキュメントを参照。</p>
 					<p>イベントについてはDisc-2内、スクリプト一覧を参照。</p>
 				</div>
 			</div>
@@ -67,10 +63,7 @@ home
 					<p>ただしSHIORIから呼び出す際に相対パスを指定することもできる。</p>
 				</div>
 				<div class="section">
-					使用するにはあらかじめSHIORIから呼び出しておく必要がある。
-				</div>
-				<div class="section">
-					<a href="http://disc2.s56.xrea.com/wiki/index.php?SAORI" target="_blank">Disc-2wiki SAORIリンク集</a>
+					使用手順はSHIORI次第なので、SHIORI側のドキュメントを参照。
 				</div>
 			</div>
 		</div>

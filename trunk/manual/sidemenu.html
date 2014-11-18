@@ -1,102 +1,128 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="ja" id="sidemenu">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<link rel="stylesheet" href="style.css" type="text/css">
-<base target="_top">
+<meta charset="utf-8" />
+<meta name="author" content="UKADOC Project">
 <title>UKADOC Project SideMenu</title>
-</head>
-<body class="menubody">
+<link rel="stylesheet" href="iframes.css">
+<base target="_top">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+<body>
 
 
 
-<div class="menuflame">
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">初心者向け</h1>
-	<ul>
+<section>
+	<h1>初心者向け</h1>
+	<ul class="doctype-intro">
 		<li><a href="dev_shell.html">シェルの作成</a></li>
 		<li><a href="dev_nar.html">配布用ファイルを作る</a></li>
 		<li><a href="dev_update.html">ネットワーク更新に対応する</a></li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">構成の説明</h1>
-	<ul>
+</section>
+<section>
+	<h1>ファイル構成</h1>
+	<ul class="doctype-manual">
 		<li><a href="manual_directory.html">全体の構成</a></li>
 		<li><a href="manual_ghost.html">ゴースト</a></li>
 		<li><a href="manual_shell.html">シェル</a></li>
 		<li><a href="manual_animation.html">アニメーション/着せ替え</a></li>
-		<li><a href="manual_owner_draw_menu.html">オーナードロー</a></li>
+		<li><a href="manual_owner_draw_menu.html">オーナードローメニュー</a></li>
 		<li><a href="manual_install.html">インストール</a></li>
 		<li><a href="manual_update.html">ネットワーク更新</a></li>
 		<li><a href="manual_shiori_saori.html">SHIORI/SAORI</a></li>
-		<li><a href="manual_translator.html">トランスレート</a></li>
+		<li><a href="manual_translator.html">トランスレータ</a></li>
 		<li><a href="manual_balloon.html">バルーン</a></li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">設定ファイル</h1>
-	<ul>
+</section>
+<section>
+	<h1>設定ファイル</h1>
+	<ul class="doctype-list">
 		<li>
-			<h2>Ghost</h2>
+			<p>Ghost</p>
 			<ul>
 				<li><a href="descript_ghost.html">descript.txt</a></li>
 			</ul>
 		</li>
 		<li>
-			<h2>Shell</h2>
+			<p>Shell</p>
 			<ul>
 				<li><a href="descript_shell.html">descript.txt</a></li>
 				<li><a href="descript_shell_surfaces.html">surfaces.txt</a></li>
+				<li><a href="descript_shell_surfacetable.html">surfacetable.txt</a></li>
 			</ul>
 		</li>
 		<li>
-			<h2>Balloon</h2>
+			<p>Balloon</p>
 			<ul>
 				<li><a href="descript_balloon.html">descript.txt</a></li>
 				<li><a href="descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
 			</ul>
 		</li>
 		<li>
-			<h2>Plugin</h2>
+			<p>Plugin</p>
 			<ul>
 				<li><a href="descript_plugin.html">descript.txt</a></li>
 			</ul>
 		</li>
 		<li>
-			<h2>Headline</h2>
+			<p>Headline</p>
 			<ul>
 				<li><a href="descript_headline.html">descript.txt</a></li>
 			</ul>
 		</li>
 		<li>
-			<h2>Install</h2>
+			<p>Install/Update</p>
 			<ul>
 				<li><a href="descript_install.html">install.txt</a></li>
+				<li><a href="descript_install.html#delete.txt">delete.txt</a></li>
+				<li><a href="descript_install.html#developer_options.txt">developer_options.txt</a></li>
 			</ul>
 		</li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">SHIORI関連</h1>
-	<ul>
-		<li><a href="list_shiori_event.html">SHIORI Event</a></li>
-		<li><a href="list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
-		<li><a href="list_shiori_resource.html">SHIORI Resource</a></li>
+</section>
+<section>
+	<h1>さくらスクリプト</h1>
+	<ul class="doctype-list">
 		<li><a href="list_sakura_script.html">SAKURA Script</a></li>
 		<li><a href="list_propertysystem.html">Property System</a></li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">PLUGIN関連</h1>
-	<ul>
-		<li><a href="list_plugin_event.html">PLUGIN Event</a></li>
+</section>
+<section>
+	<h1>イベント</h1>
+	<ul class="doctype-list">
+		<li>
+			<p>SHIORI</p>
+			<ul>
+				<li><a href="list_shiori_event.html">SHIORI Event</a></li>
+				<li><a href="list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+				<li><a href="list_shiori_resource.html">SHIORI Resource</a></li>
+			</ul>
+		</li>
+		<li>
+			<p>PLUGIN</p>
+			<ul>
+				<li><a href="list_plugin_event.html">PLUGIN Event</a></li>
+			</ul>
+		</li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">仕様文書類</h1>
-	<ul>
-		<li>SHIORI/3.0（整備中）</li>
+</section>
+<section>
+	<h1>規格</h1>
+	<ul class="doctype-list">
+		<li>SHIORI/3.1（整備中）</li>
 		<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0（外部サイト）</a></li>
 		<li><a href="spec_plugin.html">PLUGIN/2.0</a></li>
 		<li><a href="spec_headline.html">HEADLINE/2.0</a></li>
 		<li><a href="spec_dll.html">DLL</a></li>
 	</ul>
-	<h1><img src="image/icon_point.gif" width="16" height="16" border="0" alt="&gt;">その他</h1>
-	<ul>
+</section>
+<section>
+	<h1>その他</h1>
+	<ul class="doctype-others">
+		<li><a href="memo_shiorievent.html">補足: SHIORI Eventとは</a></li>
 		<li><a href="memo.html">メモ</a></li>
 	</ul>
-</div>
+</section>
 
 
 

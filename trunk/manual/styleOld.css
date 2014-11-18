@@ -34,7 +34,7 @@ p{
 }
 h1{
 }
-.menuflame h1{
+.menuframe h1{
 	width: 190px;
 	margin: 0 5px;
 	padding-bottom: 6px;
@@ -106,44 +106,65 @@ table.exmp-surfacenum{
 ul{
 	margin-left:1em;
 }
-.menuflame ul{
-	margin-top: 4px;
+ul.notelist{
+	list-style-type: none;
+}
+ul.notelist li{
+	margin: 1em 0;
+}
+.menuframe h1{
+	margin-bottom: 0.5em;
+}
+.menuframe li{
+	margin: 1px 0;
+}
+.menuframe ul{
 	margin-left: 2.2em;
 	margin-bottom: 1.5em;
 	list-style-type: none;
 	list-style-image: url(image/icon_doc.png);
 }
-ul.notelist{
-	list-style-type:none;
-}
-ul.notelist li{
-	margin:1em 0;
-}
-.menuflame li{
-	margin: 1px 0;
-}
-.menuflame ul ul{
-	margin-top: 4px;
+.menuframe ul ul{
 	margin-left: 0;
-	margin-bottom: 0.5em;
+	margin-bottom: 1em;
+	list-style-image: none;
+	list-style-type: disc;
 }
-.menuflame ul h2{
+.menuframe ul h2{
 	margin: 0;
-	padding: 1px 0 2px 0;
+	padding: 0;
 	border: none;
 	font-weight: normal;
 }
-.menuflame ul ul li{
+.menuframe ul ul li{
 	margin: 0;
 	margin-right: 0.5em;
+	margin-top: 0.2em;
 	padding: 0;
-	padding: 0;
-	display: inline;
+	color: #94de84;
+}
+.menuframe ul.doctype-manual {
+	list-style-image: url(image/icon_doc-r.png);
+}
+.menuframe ul.doctype-manual ul li {
+	color: #de8494;
+}
+.menuframe ul.doctype-list{
+	list-style-image: url(image/icon_doc-b.png);
+}
+.menuframe ul.doctype-list ul li {
+	color: #9484de;
+}
+.menuframe ul.doctype-others{
+	list-style-image: url(image/icon_doc-y.png);
+}
+.menuframe ul.doctype-others ul li {
+	color: #dede84;
 }
 pre{
 	line-height:1.2em;
 	white-space: pre;
-	font-family:sans-selif;
+	font-family: sans-selif;
 }
 pre.exmp-descript{
 	color: #006600;
@@ -182,22 +203,22 @@ a:hover{
 	color: #f00000;
 	text-decoration: none;
 }
-.menuflame a:link{
+.menuframe a:link{
 	color: #0000f0;
 	text-decoration: none;
 }
-.menuflame a:visited{
+.menuframe a:visited{
 	color: #4040f0;
 	text-decoration: none;
 }
-.menuflame a:active{
+.menuframe a:active{
 	position:relative;
 	top:0;
 	left:0;
 	color: #f00000;
 	text-decoration: none;
 }
-.menuflame a:hover{
+.menuframe a:hover{
 	position:relative;
 	top:0;
 	left:0;
@@ -237,7 +258,7 @@ a:hover{
 	width: 750px;
 	margin: 0 auto;
 }
-.menuflame{
+.menuframe{
 	width: 800px;
 	color: #333333;
 	font-size: 12px;
@@ -252,7 +273,7 @@ a:hover{
 .body{
 	position: relative;
 	width: 750px;
-	min-height: 800px;
+	min-height: 1400px;
 	margin-top: 0.5em;
 }
 .sidebar{

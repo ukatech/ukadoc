@@ -1,128 +1,150 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8" />
 <meta name="robots" content="index,follow">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,ゴースト">
-<link rel="stylesheet" href="style.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project Ghost</title>
+<title>UKADOC Project ゴースト</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
 		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1100" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
-		</div>
-		<div class="text">
-			<h2>Ghost</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>masterゴーストフォルダのファイルは以下の通り。</p>
-				</div>
-				<div class="section">
-<pre>
-home
-　+-ghost
-　　　+-myghost
-　　　　　+-ghost
-　　　　　　　+-master
-　　　　　　　　　<em>+-descirpt.txt</em>
-　　　　　　　　　<em>+-shiori.dll</em>
-　　　　　　　　　<em>+-makoto.dll</em>
-　　　　　　　　　<em>+-updates2.dau</em>
-　　　　　　　　　<em>+-*.ico</em>
-　　　　　　　　　<em>+-*.csr</em>
-　　　　　　　　　<em>+-thumbnail.png</em>
-</pre>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3><a href="descript_ghost.html" target="_top">descript.txt</a></h3>
-					<p>ゴーストを識別するためのファイル。</p>
-					<p>テキスト内の記載事項はリンク先を参照。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">*.ico</h3>
-					<p>アイコンファイル。</p>
-					<p>32×32と16×16を使用することができる。</p>
-					<p>アイコン化した時やゴーストエクスプローラなどで表示される。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">*.cur</h3>
-					<p>カーソルファイル。</p>
-					<p>ゴーストに乗ったカーソルが指定されたカーソルになる。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">thumbnail.png</h3>
-					<p>メニューツリーでゴーストの選択時に表示されるサムネイル。</p>
-					<p>使用可能な画像形式はpngもしくはjpg。</p>
-					<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
-					<p>このファイルは省略可能。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="manual_update.html" target="_top">updates2.dau</a></h3>
-					<p>更新情報が記載されたたファイル。</p>
-					<p>このファイルがないとネットワーク更新はできない。</p>
-					<p>詳しくはリンク先参照。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="manual_translator.html" target="_top">makoto.dll</a></h3>
-					<p>トランスレート用のDLL。</p>
-					<p>詳しくはリンク先参照。シェル側にも設置可能。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="manual_shiori_saori.html" target="_top">shiori.dll</a></h3>
-					<p>ゴーストのコア。</p>
-					<p>イベント制御に必要なファイル。</p>
-					<p>汎用SHIORIが多く出ているので通常はそれを使用する。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3><a href="http://disc2.s56.xrea.com/wiki/index.php?SHIORI" target="_top">Disc-2wiki SHIORIリンク集</a></h3>
-					<p>各SHIORIはそれぞれの特性があるので自分にあったものを使うと良い。</p>
-					<p>関連リンク　<a href="http://refrain.sakura.ne.jp/ghostmaker/shiori.dll_c.html">自分に一番合ったShioriモジュールの導入チェック。</a></p>
-				</div>
-			</div>
-		</div>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>ゴースト</h1>
+<section>
+	<div class="passage">
+		<p>masterゴーストフォルダのファイルは以下の通り。</p>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+	<div class="passage">
+<pre>
++-(myghost)
+　　+-ghost
+　　　　+-master
+　　　　　　<em class="phrase">+-descirpt.txt</em>
+　　　　　　<em class="phrase">+-shiori.dll</em>
+　　　　　　<em class="phrase">+-(saori).dll</em>
+　　　　　　<em class="phrase">+-makoto.dll</em>
+　　　　　　<em class="phrase">+-updates2.dau</em>
+　　　　　　<em class="phrase">+-*.ico</em>
+　　　　　　<em class="phrase">+-*.csr</em>
+　　　　　　<em class="phrase">+-thumbnail.png</em>
+</pre>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="descript_ghost.html" target="_top">descript.txt</a></dt>
+			<dd>
+				<p>ゴーストを識別するためのファイル。</p>
+				<p>これがないと本体に認識されない。</p>
+				<p>テキスト内の記載事項など詳細は<a href="descript_ghost.html" target="_top">リンク先</a>を参照。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="manual_update.html" target="_top">updates2.dau</a></dt>
+			<dd>
+				<p>更新情報が記載されたたファイル。</p>
+				<p>このファイルがないとネットワーク更新はできない。</p>
+				<p>詳しくは<a href="manual_update.html" target="_top">リンク先</a>参照。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="manual_shiori_saori.html" target="_top">shiori.dll</a></dt>
+			<dd>
+				<p>ゴーストのコア。</p>
+				<p>汎用SHIORIが多く出ているので通常はそれを使用する。</p>
+				<p>詳しくは<a href="manual_shiori_saori.html" target="_top">リンク先</a>参照。</a>
+			</dd>
+
+			<dt><a href="manual_shiori_saori.html" target="_top">(saori).dll</a></dt>
+			<dd>
+				<p>shioriの機能拡張モジュール。</p>
+				<p>詳しくは<a href="manual_shiori_saori.html" target="_top">リンク先</a>参照。</a>
+				<p>このファイルは省略可能。</p>
+			</dd>
+
+			<dt><a href="manual_translator.html" target="_top">makoto.dll</a></dt>
+			<dd>
+				<p>トランスレート用のDLL。</p>
+				<p>詳しくは<a href="manual_translator.html" target="_top">リンク先</a>参照。<a href="manual_shell.html" target="_top">シェル側</a>にも設置可能。</p>
+				<p>このファイルは省略可能。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt>*.ico</dt>
+			<dd>
+				<p>アイコンファイル。</p>
+				<p>32×32と16×16を使用することができる。</p>
+				<p>アイコン化した時やゴーストエクスプローラなどで表示される。</p>
+				<p>このファイルは省略可能。省略時はデフォルトアイコンが使用される。</p>
+			</dd>
+
+			<dt>*.cur</dt>
+			<dd>
+				<p>カーソルファイル。</p>
+				<p>ゴーストに乗ったカーソルが指定されたカーソルになる。</p>
+				<p>このファイルは省略可能。省略時は普段のカーソルのまま。</p>
+			</dd>
+
+			<dt>thumbnail.png</dt>
+			<dd>
+				<p>メニューツリーでゴーストの選択時に表示されるサムネイル。</p>
+				<p>使用可能な画像形式はpngもしくはjpg。</p>
+				<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
+				<p>このファイルは省略可能。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		この他、「辞書」と呼ばれる文字列のリソースファイルなど、SHIORI（など）がdll外部にいくつかのファイルを備えることが一般的である（むしろゴースト製作者はそういったファイルを中心的に編集する場合も多い）。
+		<br>そうしたものの詳細については、利用する各SHIORIのドキュメントを参照すること。
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

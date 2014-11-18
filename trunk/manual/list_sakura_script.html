@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="index,follow">
@@ -7,41 +7,133 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project さくらスクリプトリスト</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
 	<h1 id="page-title">さくらスクリプトリスト</h1>
 	<nav class="menu-header">
-		<ul>
-			<li><a href="./index.html">Index</a></li>
-		</ul>
-		<ul>
-			<li><a href="./descript_ghost.html">Ghost</a></li>
-			<li><a href="./descript_shell.html">Shell</a></li>
-			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
-			<li><a href="./descript_balloon.html">Balloon</a></li>
-			<li><a href="./descript_plugin.html">Plugin</a></li>
-			<li><a href="./descript_headline.html">Headline</a></li>
-			<li><a href="./descript_install.html">Install</a></li>
-		</ul>
-		<ul>
-			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
-			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
-			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
-			<li><a href="./list_propertysystem.html">Property System</a></li>
-			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
-		</ul>
-		<ul>
-			<li>×SHIORI/3.0</li>
-			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
-			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
-			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
-			<li><a href="./spec_dll.html">DLL</a></li>
-		</ul>
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</nav>
 	<section class="navigation-bar">
 		<h1>さくらスクリプト</h1>
+		<section class="navigation-category">
+			<ul>
+				<li class="caption"><a href="#notes_escape">さくらスクリプトのエスケープ</a></li>
+			</ul>
+		</section>
 		<section class="navigation-category">
 			<h1>スコープコマンド</h1>
 			<ul>
@@ -82,6 +174,16 @@
 				<li><a href="#_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
 				<li><a href="#_!_filter_">\![filter]</a></li>
+				<li><a href="#_4">\4</a></li>
+				<li><a href="#_5">\5</a></li>
+				<li><a href="#_!_move_">\![move]</a></li>
+				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
+				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,スコープID]</a></li>
+				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
+				<li class="caption"><a href="#notes_move">\![move]、\![moveasync]について</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -118,6 +220,9 @@
 				<li><a href="#_!_leave,nouserbreakmode_">\![leave,nouserbreakmode]</a></li>
 				<li><a href="#__!">\_!</a></li>
 				<li><a href="#__?">\_?</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#notes_imageresource">\_b[ファイルパス,...]について</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -202,18 +307,15 @@
 				<li><a href="#_f_anchorvisitedfontcolor,色指定_">\f[anchorvisitedfontcolor,色指定]</a></li>
 				<li><a href="#_f_anchorvisitedmethod,描画方法_">\f[anchorvisitedmethod,描画方法]</a></li>
 			</ul>
+			<ul>
+				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
+			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>イベントコマンド</h1>
 			<ul>
 				<li><a href="#_e">\e</a></li>
 				<li><a href="#_-">\-</a></li>
-				<li><a href="#_4">\4</a></li>
-				<li><a href="#_5">\5</a></li>
-				<li><a href="#_!_move_">\![move]</a></li>
-				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
-				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,スコープID]</a></li>
-				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
 				<li><a href="#_!_updatebymyself_">\![updatebymyself]</a></li>
 				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself,checkonly]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
@@ -306,6 +408,10 @@
 				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
 				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
 			</ul>
+			<ul>
+				<li class="caption"><a href="notes_inputbox-option">InputBoxオプション</a></li>
+				<li class="caption"><a href="notes_selectfile">ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</a></li>
+			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>プロパティシステム操作コマンド</h1>
@@ -348,6 +454,11 @@
 				<li><a href="#_&amp;_ID_">\&amp;[ID]</a></li>
 				<li><a href="#_m_umsg,wparam,lparam_">\m[umsg,wparam,lparam]</a></li>
 			</ul>
+			<ul>
+				<li class="caption"><a href="notes_passivemode">PassiveMode</a></li>
+				<li class="caption"><a href="notes_passivemode">InductionMode</a></li>
+				<li class="caption"><a href="notes_passivemode">http get/post オプション</a></li>
+			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>環境変数</h1>
@@ -384,13 +495,13 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption">
-			<h1>さくらスクリプトタグのエスケープ</h1>
+		<section class="caption" id="notes_escape">
+			<h1>さくらスクリプトのエスケープ</h1>
 			<ul>
 				<li>「\」をさくらスクリプトの開始記号でなく単に表示したい場合は「\\」とする</li>
-				<li>同様に「%」は「\%」と書く</li>
+				<li>同様に環境変数埋め込みタグの「%」は「\%」と書く</li>
 				<li>スクウェアブラケット内に引数を持つタグ（\q[ラベル名,ID]など）内でのみ、「]」は「\]」と書ける。</li>
-				<li>スクウェアブラケット内に複数の引数を持つタグの第２引数以降で、「,」を引数の内容としたい場合、その引数全体を""で囲うことにより回避できる。<br />例：\![raise,OnTest,"100,2"]</li>
+				<li>スクウェアブラケット内に複数の引数を持つタグの第２引数以降で、「,」を引数の内容としたい場合、その引数全体を""で囲うことで全体を一つの引数として扱える。<br />例：\![raise,OnTest,"100,2"]</li>
 			</ul>
 		</section>
 		<section class="category">
@@ -511,7 +622,23 @@
 			<dl id="_!_anim,add,overlay,ID_">
 				<dt class="entry">\![anim,add,overlay,ID]</dt>
 				<dd class="entry">
-					<p class="description">ID番号のサーフェスを現サーフェスに重ねる。<a href="#notes_animoverlay">※下記参照</a></p>
+					<p class="description">ID番号のサーフェスを現サーフェスに重ねる。</a></p>
+					<dl class="description">
+						<dt>\![anim,add,overlay,ID]</dt>
+						<dd>ID番号のサーフェスを現サーフェスに重ねる。</dd>
+						<dt>\![anim,add,overlayfast,ID]</dt>
+						<dd>ID番号のサーフェスを現サーフェスにoverlayfastで重ねる。</dd>
+						<dt>\![anim,add,base,ID]</dt>
+						<dd>現ベースサーフェスをID番号のサーフェスに変更する。</dd>
+						<dt>\![anim,add,move,x,y]</dt>
+						<dd>現サーフェスをXY座標に移動して表示。</dd>
+						<dt>\![anim,add,overlay,ID,x,y]</dt>
+						<dd>ID番号のサーフェスを現サーフェスにXY座標に移動して重ねる。</dd>
+						<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間...]</dt>
+						<dd>重ねたサーフェスをアニメーションする。(時間はms)</dd>
+						<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間,アニメーションタイミング]</dt>
+						<dd>アニメーションタイミングにはrunonce、alwaysが指定できる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -706,25 +833,90 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_animoverlay">
-				<h1>\![anim,add,overlay,ID]について</h1>
+			<dl id="_4">
+				<dt class="entry">\4</dt>
+				<dd class="entry">
+					<p class="description">現スコープのキャラクターが離れる距離まで移動。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_5">
+				<dt class="entry">\5</dt>
+				<dd class="entry">
+					<p class="description">現スコープのキャラクタが接触する距離まで移動。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_move_">
+				<dt class="entry">\![move]</dt>
+				<dd class="entry">
+					<p class="description">指定座標まで移動。<a href="#notes_move">※下記参照</a></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_moveasync_">
+				<dt class="entry">\![moveasync]</dt>
+				<dd class="entry">
+					<p class="description">指定座標まで非同期移動。<a href="#notes_move">※下記参照</a></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,position,x,y,スコープID_">
+				<dt class="entry">\![set,position,x,y,スコープID]</dt>
+				<dd class="entry">
+					<p class="description">指定スコープをXY座標に固定する。(ドラッグ等を不可能にする)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reset,position_">
+				<dt class="entry">\![reset,position]</dt>
+				<dd class="entry">
+					<p class="description">上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="notes_move">
+				<h1>\![move]、\![moveasync]について</h1>
+				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
+				<p>X座標、Y座標は目的の座標を指定。<br />負の値も指定可能。<br />どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
+				<p>移動時間はミリ秒単位。<br />移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
+				<p>移動基準は、移動の基準（相対座標の原点）とするキャラクターなど。<br />指定方法は以下。</p>
 				<dl>
-					<dt>\![anim,add,overlay,ID]</dt>
-					<dd>ID番号のサーフェスを現サーフェスに重ねる。</dd>
-					<dt>\![anim,add,overlayfast,ID]</dt>
-					<dd>ID番号のサーフェスを現サーフェスにoverlayfastで重ねる。</dd>
-					<dt>\![anim,add,base,ID]</dt>
-					<dd>現ベースサーフェスをID番号のサーフェスに変更する。</dd>
-					<dt>\![anim,add,move,x,y]</dt>
-					<dd>現サーフェスをXY座標に移動して表示。</dd>
-					<dt>\![anim,add,overlay,ID,x,y]</dt>
-					<dd>ID番号のサーフェスを現サーフェスにXY座標に移動して重ねる。</dd>
-					<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間...]</dt>
-					<dd>重ねたサーフェスをアニメーションする。(時間はms)</dd>
-					<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間,アニメーションタイミング]</dt>
-					<dd>アニメーションタイミングにはrunonce、alwaysが指定できる。</dd>
+					<dt>screen</dt>
+					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
+					<dt>ID</dt>
+					<dd>0,1等で指定したID番スコープ（\0,\1,\p[2]などの数に相当）のキャラクターとの相対座標</dd>
+					<dt>本体側名/ID</dt>
+					<dd>本体側名（sakura名,\0名）で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
+					<dt>me</dt>
+					<dd>移動するキャラクター自身との相対座標</dd>
+					<dt>primaryscreen</dt>
+					<dd>主モニター左上を原点とした座標</dd>
+					<dt>global</dt>
+					<dd>システム座標系（windowsの場合primaryscreenと同じ）</dd>
 				</dl>
-			</div>
+				<p>基準とするキャラ基準位置は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br />X基準.Y基準、という形で指定し、それぞれ<br />X基準：left,right,base,center<br />Y基準：top,bottom,base,center<br />の4つの指定を組み合わせ、right.base、などのように記述する。<br />なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
+				<p>省略時は、left.topを指定したとみなされる。<br />screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
+				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
+				<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
+			</section>
 		</section>
 		<section class="category">
 			<h1>バルーン、テキストコマンド</h1>
@@ -911,10 +1103,8 @@
 			<dl id="__l_x,y_">
 				<dt class="entry">\_l[x,y]</dt>
 				<dd class="entry">
-					<p class="description">現スコープ側のカーソル位置をXYの座標に移動する。</p>
-					<div class="caption" id="notes_inputbox">
-					<p>X,Yについては、以下の定義方法が可能である。</p>
-					<dl>
+					<p class="description">現スコープ側のカーソル位置をXYの座標に移動する。X,Yについては、以下の定義方法が可能である。</p>
+					<dl class="description">
 						<dt>数値</dt>
 						<dd>バルーンの文字描画範囲左上からのピクセル単位座標</dd>
 						<dt>(省略)</dt>
@@ -926,7 +1116,6 @@
 						<dt>@XX</dt>
 						<dd>現在の文字描画位置からの相対座標となる。emや%指定との共存可能。</dd>
 					</dl>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1373,7 +1562,7 @@
 			<dl id="_q_タイトル,ID,r2,r3..._">
 				<dt class="entry">\q[タイトル,ID,r<em>2</em>,r<em>3</em>...]</dt>
 				<dd class="entry">
-					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelect<em>Ex</em>が開始される。<br />r*はOnChoiceSelectExのReference*に格納される。<br />OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。<br /><em>またSHOIRIが里々である場合、Reference1が独特な形式となる点にも注意。（詳しくは<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>の項。）</em></p>
+					<p class="description">選択肢を表示。<br />選択後、SHIORIイベントOnChoiceSelect<em>Ex</em>が開始される。<br />r*はOnChoiceSelectExのReference*に格納される。<br />OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1403,7 +1592,7 @@
 			<dl id="___q_ID,..._">
 				<dt class="entry">\__q[ID,...]</dt>
 				<dd class="entry">
-					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br />実行後に発生するSHIORI Eventも同様。<br /><em>但しSHIORIが里々の場合、OnChoiceSelectExのReference1の形式が\qと異なるので注意。</em></p>
+					<p class="description">\__qがくるまでの範囲を選択肢とする。<br />ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br />実行後に発生するSHIORI Eventも同様。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1689,7 +1878,7 @@
 				</dd>
 			</dl>
 			<div class="caption" id="notes_color">
-				<h1>※色指定の方法</h1>
+				<h1>文字色指定の方法</h1>
 				<p>基本はHTML・CSSの色の表現と似ています。</p>
 				<dl>
 					<dt>R,G,B</dt>
@@ -1737,65 +1926,6 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_4">
-				<dt class="entry">\4</dt>
-				<dd class="entry">
-					<p class="description">現スコープのキャラクターが離れる距離まで移動。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_5">
-				<dt class="entry">\5</dt>
-				<dd class="entry">
-					<p class="description">現スコープのキャラクタが接触する距離まで移動。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_move_">
-				<dt class="entry">\![move]</dt>
-				<dd class="entry">
-					<p class="description">指定座標まで移動。<a href="#notes_move">※下記参照</a></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_moveasync_">
-				<dt class="entry">\![moveasync]</dt>
-				<dd class="entry">
-					<p class="description">指定座標まで非同期移動。<a href="#notes_move">※下記参照</a></p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_set,position,x,y,スコープID_">
-				<dt class="entry">\![set,position,x,y,スコープID]</dt>
-				<dd class="entry">
-					<p class="description">指定スコープをXY座標に固定する。(ドラッグ等を不可能にする)</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_reset,position_">
-				<dt class="entry">\![reset,position]</dt>
-				<dd class="entry">
-					<p class="description">上記を解除する。</p>
-					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2055,7 +2185,25 @@
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
 				<dt class="entry">\![set,trayballoon,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description">トレイアイコンからバルーンを表示する。<a href="#notes_trayballoon">※下記参照</a>。<br />バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br />タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。</p>
+					<p class="description">トレイアイコンからバルーンを表示する。<br>バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br>タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。<br>指定できるオプションは以下。</p>
+					<dl class="description">
+						<dt>--text=テキスト</dt>
+						<dd>バルーンに表示する文字列、複数指定で複数行に。</dd>
+						<dt>--title=タイトル</dt>
+						<dd>バルーンのタイトル。</dd>
+						<dt>--icon=アイコン設定名</dt>
+						<dd>バルーンに表示されるアイコンの設定。</dd>
+						<dt>info</dt>
+						<dd>情報アイコン</dd>
+						<dt>error</dt>
+						<dd>エラーアイコン</dd>
+						<dt>warning</dt>
+						<dd>警告アイコン</dd>
+						<dt>none</dt>
+						<dd>なし</dd>
+						<dt>--timeout=秒数</dt>
+						<dd>バルーンの表示時間。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2170,52 +2318,6 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_move">
-				<h1>※\![move]、\![moveasync]について</h1>
-				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br />移動時間以降は省略可能。</p>
-				<p>X座標、Y座標は目的の座標を指定。<br />負の値も指定可能。<br />どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
-				<p>移動時間はミリ秒単位。<br />移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
-				<p>移動基準は、移動の基準（相対座標の原点）とするキャラクターなど。<br />指定方法は以下。</p>
-				<dl>
-					<dt>screen</dt>
-					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
-					<dt>ID</dt>
-					<dd>0,1等で指定したID番スコープ（\0,\1,\p[2]などの数に相当）のキャラクターとの相対座標</dd>
-					<dt>本体側名/ID</dt>
-					<dd>本体側名（sakura名,\0名）で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
-					<dt>me</dt>
-					<dd>移動するキャラクター自身との相対座標</dd>
-					<dt>primaryscreen</dt>
-					<dd>主モニター左上を原点とした座標</dd>
-					<dt>global</dt>
-					<dd>システム座標系（windowsの場合primaryscreenと同じ）</dd>
-				</dl>
-				<p>基準とするキャラ基準位置は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br />X基準.Y基準、という形で指定し、それぞれ<br />X基準：left,right,base,center<br />Y基準：top,bottom,base,center<br />の4つの指定を組み合わせ、right.base、などのように記述する。<br />なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
-				<p>省略時は、left.topを指定したとみなされる。<br />screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
-				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
-				<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
-			</div>
-			<div class="caption" id="notes_trayballoon">
-				<h1>※\![set,trayballoon,オプション,オプション,オプション...]オプション</h1>
-				<dl>
-					<dt>--text=テキスト</dt>
-					<dd>バルーンに表示する文字列、複数指定で複数行に。</dd>
-					<dt>--title=タイトル</dt>
-					<dd>バルーンのタイトル。</dd>
-					<dt>--icon=アイコン設定名</dt>
-					<dd>バルーンに表示されるアイコンの設定。</dd>
-					<dt>info</dt>
-					<dd>情報アイコン</dd>
-					<dt>error</dt>
-					<dd>エラーアイコン</dd>
-					<dt>warning</dt>
-					<dd>警告アイコン</dd>
-					<dt>none</dt>
-					<dd>なし</dd>
-					<dt>--timeout=秒数</dt>
-					<dd>バルーンの表示時間。</dd>
-				</dl>
-			</div>
 		</section>
 		<section class="category">
 			<h1>サウンドコマンド</h1>
@@ -2385,7 +2487,15 @@
 			<dl id="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">
 				<dt class="entry">\![open,inputbox,ID,表示時間,テキスト,オプション,...]</dt>
 				<dd class="entry">
-					<p class="description">※InputBoxを開く。<br />表示時間はミリ秒で指定。<br />テキストはbox展開直後にあらかじめ表示するテキスト。<br />※SSPのみ　--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">
+						InputBoxを開く。
+						<br>表示時間はミリ秒で指定。
+						<br>テキストはbox展開直後にあらかじめ表示するテキスト（CROW不可）。
+						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。
+						<br>入力後、決定されるとSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
+						<br>
+						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2396,16 +2506,7 @@
 			<dl id="_!_open,passwordinput,ID,表示時間,テキスト,オプション_">
 				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト,オプション]</dt>
 				<dd class="entry">
-					<p class="description">※文字を隠すInputBoxを開く。<br />表示時間はミリ秒で指定。<br />テキストはbox展開直後にあらかじめ表示するテキスト。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="_!_close,inputbox,ID_">
-				<dt class="entry">\![close,inputbox,ID]</dt>
-				<dd class="entry">
-					<p class="description">IDで指定されたInputBoxを閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
+					<p class="description">文字を隠すInputBoxを開く。他はすべて通常の<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>に同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2414,7 +2515,7 @@
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
 				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
 				<dd class="entry">
-					<p class="description">年月日入力ダイアログを開く。<br />表示時間はミリ秒で指定。<br />年,月,日は初期値。<br />入力値はOnUserInputのReference1にカンマ区切りで年,月,日と入る。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">年月日入力InputBoxを開く。<br />表示時間はミリ秒で指定。<br />年,月,日は初期値。<br />入力値はOnUserInputのReference1にカンマ区切りで年,月,日と入る。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2423,7 +2524,7 @@
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
 				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</dt>
 				<dd class="entry">
-					<p class="description">スライダー調節ダイアログを開く。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">スライダー調節型のInputBoxを開く。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2432,7 +2533,16 @@
 			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_"">
 				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
 				<dd class="entry">
-					<p class="description">時間入力ダイアログを開く。<br />年,月,日は初期値。<br />入力値はOnUserInputのReference1にカンマ区切りで時,分,秒と入る。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">時間入力InputBoxを開く。<br />年,月,日は初期値。<br />入力値はOnUserInputのReference1にカンマ区切りで時,分,秒と入る。<br />--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_close,inputbox,ID_">
+				<dt class="entry">\![close,inputbox,ID]</dt>
+				<dd class="entry">
+					<p class="description">IDで指定されたInputBox（日付、時間、スライダー、入力非表示ボックスも含む）を閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2583,7 +2693,7 @@
 			<dl id="_!_open,dialog,open,パラメータ_">
 				<dt class="entry">\![open,dialog,open,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_selectfile">※ファイルを開く</a>のダイアログを開く。</p>
+					<p class="description">ファイルを開くのダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2592,7 +2702,7 @@
 			<dl id="_!_open,dialog,save,パラメータ_">
 				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_selectfile">※ファイルの保存</a>のダイアログを開く。</p>
+					<p class="description">ファイルの保存のダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2601,7 +2711,7 @@
 			<dl id="_!_open,dialog,folder,パラメータ_">
 				<dt class="entry">\![open,dialog,folder,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_selectfolder">※フォルダ選択</a>のダイアログを開く。</p>
+					<p class="description">フォルダ選択のダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2610,7 +2720,13 @@
 			<dl id="_!_open,dialog,color,パラメータ_">
 				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_colorpallet">※カラーパレット</a>のダイアログを開く。</p>
+					<p class="description">カラーパレットのダイアログを開く。<br>パラメータは以下をカンマ区切りで指定可能。</p>
+					<dl class="description">
+						<dt>--color=R G B</dt>
+						<dd>RGBをそれぞれ0～255で指定</dd>
+						<dt>--id=イベントID</dt>
+						<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2634,12 +2750,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_inputbox">
-				<h1>※InputBox</h1>
-				<p>このコマンドを指定すると入力ボックスが表示される。<br />入力後、決定されるとSHIORIイベント、OnUserInputが発生する。<br />IDはreference0に格納される。<br />タイムアウト時にはreference1はtimeoutと返る。<br />表示時間は-1でタイムアウト無しになる。単位はms。<br />入力の間、他の一切を受け付けない。<br />MATERI、SSPのみボックス内にあらかじめテキストを用意できる。<br />さらにSSPのみテキストの代わりにオプションを指定できる。(カンマ区切りで複数指定)<br />--text=標準で入力されているテキスト<br />--limit=入力制限文字数</p>
-			</div>
-			<div class="caption" id="notes_inputbox-option">
-				<h1>※InputBoxオプション</h1>
+			<section class="caption" id="notes_inputbox-option">
+				<h1>InputBoxオプション</h1>
 				<p>--option=○○の形で指定。</p>
 				<dl>
 					<dt>noclose</dt>
@@ -2647,11 +2759,11 @@
 					<dt>noclear</dt>
 					<dd>入力後、入力内容を初期化せずにそのまま表示し続ける。<br />nocloseと同時に指定する（例：\![inputbox,入力内容,,,--option=noclose,--option=noclear]）。<br />特殊なinputbox（slider,password,time,date）では無効。</dd>
 				</dl>
-			</div>
-			<div class="caption" id="notes_selectfile">
-				<h1>※ファイルを開く / ファイルを保存 パラメータ</h1>
+			</section>
+			<section class="caption" id="notes_selectfile">
+				<h1>ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</h1>
 				<dl>
-					<dt>--title</dt>
+					<dt>--title=テキスト</dt>
 					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
 					<dt>--dir=パス</dt>
 					<dd>
@@ -2676,39 +2788,7 @@
 					<dt>--id=イベントID</dt>
 					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
 				</dl>
-			</div>
-			<div class="caption" id="notes_selectfolder">
-				<h1>※フォルダ選択 パラメータ</h1>
-				<dl>
-					<dt>--title</dt>
-					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
-					<dt>--dir=パス</dt>
-					<dd>
-						<p>
-							初期表示フォルダ
-						</p>
-						<p>
-							パス部分に以下で、windowsの特殊なフォルダの指定が可能
-							<br />__system_mydocument__
-							<br />__system_mypictures__
-							<br />__system_myvideo__
-							<br />__system_mymusic__
-							<br />__system_desktop__
-						</p>
-					</dd>
-					<dt>--id=イベントID</dt>
-					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
-				</dl>
-			</div>
-			<div class="caption" id="notes_colorpallet">
-				<h1>※カラーパレット パラメータ</h1>
-				<dl>
-					<dt>--color=R G B</dt>
-					<dd>RGBをそれぞれ0～255で指定</dd>
-					<dt>--id=イベントID</dt>
-					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br />イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
-				</dl>
-			</div>
+			</section>
 		</section>
 		<section class="category">
 			<h1>プロパティシステム操作コマンド</h1>
@@ -2823,15 +2903,15 @@
 					<p class="description">指定したホストにpingを打つ。IPv6対応。<br />パラメータは以下の通り。</p>
 					<ul class="description">
 						<li>--host=ホスト名またはIP</li>
-						<li>--ttl=TTL(パケット生存期間(何回ルーティングできるか) 標準255</li>
-						<li>--count=送信回数 標準3</li>
-						<li>--size=送信サイズ(--data有効の時は--size無効) 標準32</li>
-						<li>--timeout=タイムアウト(ms) 標準5000</li>
-						<li>--df=(true|false) パケット分割不能true 分割可false 標準false</li>
-						<li>--data=文字列 ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
-						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
+						<li>--ttl=TTL……(パケット生存期間(何回ルーティングできるか) 標準255</li>
+						<li>--count=送信回数……標準3</li>
+						<li>--size=送信サイズ……(--data有効の時は--size無効) 標準32</li>
+						<li>--timeout=タイムアウト(ms)……標準5000</li>
+						<li>--df=(true|false)……パケット分割不能true 分割可false 標準false</li>
+						<li>--data=文字列……ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると（後述のイベントの替わりに）そのイベントが起きる</li>
 					</ul>
-					<p class="description">動作中・動作後のイベントに関する仕様はOnPingProgress・OnPingCompleteを参照。</p>
+					<p class="description">動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a>・<a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2843,9 +2923,9 @@
 					<p class="description">ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br />パラメータは以下の通り。</p>
 					<ul class="description">
 						<li>--host=ホスト名またはIP</li>
-						<li>--event=イベントまたは識別子 Onではじまる文字列を指定するとそのイベントが起きる</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると（後述のイベントの替わりに）そのイベントが起きる</li>
 					</ul>
-					<p class="description">動作中・動作後のイベントに関する仕様はOnNSLookupComplete・OnNSLookupFailureを参照。</p>
+					<p class="description">動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a>・<a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2896,7 +2976,7 @@
 			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
 				<dt class="entry">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</dt>
 				<dd class="entry">
-					<p class="description">選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br />実行後、OnSelectModeBeginが実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br />現在のところ、矩形選択モードを示す &quot;rect&quot; のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br />モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
+					<p class="description">選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br />実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br />現在のところ、矩形選択モードを示す &quot;rect&quot; のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br />モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2905,7 +2985,7 @@
 			<dl id="_!_leave,selectmode_">
 				<dt class="entry">\![leave,selectmode]</dt>
 				<dd class="entry">
-					<p class="description">上記を解除する。実行後OnSelectModeCompleteが実行される。<br />当たり判定領域が無効(未選択)などの場合はOnSelectModeCancelになる。</p>
+					<p class="description">上記を解除する。実行後<a href="list_shiori_event.html#OnSelectModeComplete">OnSelectModeComplete</a>が実行される。<br />当たり判定領域が無効(未選択)などの場合は<a href="list_shiori_event.html#OnSelectModeCancel">OnSelectModeCancel</a>になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3036,8 +3116,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_passivemode">
-				<h1>※PassiveMode</h1>
+			<section class="caption" id="notes_passivemode">
+				<h1>PassiveMode</h1>
 				<p>パッシブモードの時、以下の制限が発生する。</p>
 				<ul>
 					<li>オーナードローメニューが出ない。</li>
@@ -3054,9 +3134,9 @@
 					<li>最小化できない。</li>
 					<li>終了できない。</li>
 				</ul>
-			</div>
-			<div class="caption" id="notes_inductionmode">
-				<h1>※InductionMode</h1>
+			</section>
+			<section class="caption" id="notes_inductionmode">
+				<h1>InductionMode</h1>
 				<p>パッシブモードから以下の制限を解除したもの。</p>
 				<ul>
 					<li>タイムアウト発生。</li>
@@ -3064,9 +3144,9 @@
 					<li>終了可能。</li>
 					<li>コミュニケートボックス可能。</li>
 				</ul>
-			</div>
-			<div class="caption" id="notes_executehttp">
-				<h1>※http get/post オプション</h1>
+			</section>
+			<section class="caption" id="notes_executehttp">
+				<h1>http get/post オプション</h1>
 				<dl>
 					<dt>--async=識別ID</dt>
 					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。<br />Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br />例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
@@ -3083,7 +3163,7 @@
 					<dt>--cookie=クッキーデータ</dt>
 					<dd>Cookieのデータ、OnExecuteHTTPCompleteのReference5の値をそのまま指定する。</dd>
 				</dl>
-			</div>
+			</section>
 		</section>
 		<section class="category">
 			<h1>環境変数</h1>

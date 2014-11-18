@@ -7,7 +7,7 @@
 <meta name="robots" content="index,follow">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,バルーン,balloon">
-<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="stylesheet" href="styleOld.css" type="text/css">
 <base target="_blank">
 <title>UKADOC Project Balloon</title>
 </head>
@@ -23,37 +23,40 @@
 	</h1>
 	<div class="body">
 		<div class="sidebar">
-			<iframe height="1100" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"></iframe>
+			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
 		</div>
 		<div class="text">
-			<h2>Balloon</h2>
+			<h2>バルーン</h2>
 			<div class="chapter">
 				<div class="section">
 					<p>バルーンフォルダのファイルは以下の通り。</p>
 				</div>
 				<div class="section">
 <pre>
-home
-　+-balloon
-　　　+-myballoon
-　　　　　+-ghost
-　　　　　　　+-master
-　　　　　　　　　<em>+-descirpt.txt</em>
-　　　　　　　　　<em>+-balloonc*.png</em>
-　　　　　　　　　<em>+-balloons*.png</em>
-　　　　　　　　　<em>+-balloonk*.png</em>
-　　　　　　　　　<em>+-online*.png</em>
-　　　　　　　　　<em>+-sstp.png</em>
-　　　　　　　　　<em>+-arrow*.png</em>
-　　　　　　　　　<em>+-thumbnail.png</em>
-　　　　　　　　　<em>+-balloons*s.txt</em>
-　　　　　　　　　<em>+-balloonk*s.txt</em>
++-(myballoon)
+　　<em>+-descirpt.txt</em>
+　　<em>+-balloonc*.png</em>
+　　<em>+-balloons*.png</em>
+　　<em>+-balloonk*.png</em>
+　　<em>+-balloons*.pna</em>（MATERIA不可）
+　　<em>+-balloonk*.pna</em>（MATERIA不可）
+　　<em>+-online*.png</em>
+　　<em>+-sstp.png</em>
+　　<em>+-arrow*.png</em>
+　　<em>+-thumbnail.png</em>
+　　<em>+-balloons*s.txt</em>
+　　<em>+-balloonk*s.txt</em>
+　　<em>+-ok_down.png/ok_up.png</em>（SSP専用）
+　　<em>+-cancel_down.png/cancel_up.png</em>（SSP専用）
+　　<em>+-mode_down.png/mode_up.png</em>（SSP専用）
+　　<em>+-sstp_new.png</em>（SSP専用）
+　　<em>+-marker.png</em>（SSP専用）
 </pre>
 				</div>
 			</div>
 			<div class="chapter">
 				<div class="section">
-					<h3 class="component"><a href="descript_balloon.html" target="_top">descript.txt</a></h3>
+					<h3 class="component"><a href="descript_balloon.html">descript.txt</a></h3>
 					<p>バルーンを識別するためのファイル。</p>
 					<p>テキスト内の記載事項はリンク先を参照。</p>
 				</div>
@@ -83,9 +86,15 @@ home
 					<p>balloons3.png　縦長の吹き出し(右側)</p>
 				</div>
 				<div class="section">
+					<h3 class="component">balloons*.pna</h3>
+				</div>
+				<div class="section">
 					<h3 class="component">balloonk*.png</h3>
 					<p>相方側の吹き出し。</p>
 					<p>上記の本体側のバルーンと同じだが縦サイズがやや小さめなのが一般的。</p>
+				</div>
+				<div class="section">
+					<h3 class="component">balloonk*.pna</h3>
 				</div>
 				<div class="section">
 					<h3 class="component">online*.png</h3>
@@ -98,7 +107,7 @@ home
 					<p>0が上向き、1が下向き。</p>
 				</div>
 				<div class="section">
-					<h3 class="component">balloons*s.txt/balloonk*s.txt</h3>
+					<h3 class="component"><a href="descript_balloon.html#balloonsoption">balloons*s.txt/balloonk*s.txt</a></h3>
 					<p>バルーンごとの個別設定用ファイル。</p>
 					<p>descirpt.txtの記述より優先される。</p>
 					<p>そのバルーンのみ設定を変更したいとき等に使用する。</p>

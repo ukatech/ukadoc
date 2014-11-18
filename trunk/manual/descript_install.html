@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="index,follow">
@@ -7,43 +7,133 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Install設定</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-	<h1 id="page-title">Install設定</h1>
+	<h1 id="page-title">Install/Update設定</h1>
 	<nav class="menu-header">
-		<ul>
-			<li><a href="./index.html">Index</a></li>
-		</ul>
-		<ul>
-			<li><a href="./descript_ghost.html">Ghost</a></li>
-			<li><a href="./descript_shell.html">Shell</a></li>
-			<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
-			<li><a href="./descript_balloon.html">Balloon</a></li>
-			<li><a href="./descript_plugin.html">Plugin</a></li>
-			<li><a href="./descript_headline.html">Headline</a></li>
-			<li><a href="./descript_install.html">Install</a></li>
-		</ul>
-		<ul>
-			<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
-			<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
-			<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
-			<li><a href="./list_sakura_script.html">Sakura Script</a></li>
-			<li><a href="./list_propertysystem.html">Property System</a></li>
-			<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
-		</ul>
-		<ul>
-			<li>×SHIORI/3.0</li>
-			<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
-			<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
-			<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
-			<li><a href="./spec_dll.html">DLL</a></li>
-		</ul>
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</nav>
 	<section class="navigation-bar">
-		<h1>Install</h1>
+		<h1>Install/Update</h1>
 		<section class="navigation-category">
 			<h1>install.txt</h1>
+			<ul>
+				<li class="caption legend"><a href="#legends_install.txt">install.txt</a></li>
+			</ul>
 			<ul>
 				<li><a href="#charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#name,オブジェクト名">name,オブジェクト名</a></li>
@@ -58,10 +148,85 @@
 				<li><a href="#*.refreshundeletemask,ファイル名1:ファイル名2...">*.refreshundeletemask,ファイル名1:ファイル名2...</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>delete.txt</h1>
+			<ul>
+				<li class="caption legend"><a href="#legends_delete.txt">delete.txt</a></li>
+			</ul>
+			<ul>
+				<li><a href="#相対パス">相対パス</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>developer_options.txt</h1>
+			<ul>
+				<li class="caption legend"><a href="#legends_developeroptions.txt">developer_options.txt</a></li>
+			</ul>
+			<ul>
+				<li><a href="#相対パス,オプション1,オプション2,...">相対パス,オプション1,オプション2,...</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>updates_def.txt</h1>
+			<ul>
+				<li><a href="#相対パス,ignore">相対パス,ignore</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<section class="category">
 			<h1>install.txt</h1>
+			<section class="caption legend" id="legend_install.txt">
+				<h1>install.txt</h1>
+				<section>
+					<h1>概要</h1>
+					<p><a href="manual_install.html">ファイル構成「インストール」</a>のページも参考に。</p>
+					<p>
+						ゴースト、バルーン、シェル他の伺か/SSPコンテンツアーカイブ（.narなど）のインストール設定ファイル。
+						全てのアーカイブは解凍して手動でインストールする事もできるが、適切に設定されたinstall.txtの存在によって、インストーラ機能が有効になり、アーカイブのD&Dなどの簡易な手段でのインストールが可能となる。
+					</p>
+				</section>
+				<section>
+					<h1>記述例と基本の書き方</h1>
+						<p>ゴーストの場合（バルーンやプラグインもtype部分を変えるだけでほぼ同じ）</p>
+<pre><code>charset,Shift_JIS
+name,凡例さん
+type,ghost
+directory,example
+</code></pre>
+						<p>追加シェルの場合</p>
+<pre><code>charset,Shift_JIS
+name,凡例さんアルティメットフォーム
+type,shell
+directory,ultimate
+accept,凡例さん
+</code></pre>
+						<p>ゴーストのサプリメント（追加ファイル）の場合</p>
+<pre><code>charset,Shift_JIS
+name,凡例さん猫化パッチ
+type,supplement
+accept,凡例さん
+</code></pre>
+						<p>ゴーストにバルーンを同梱する場合</p>
+<pre><code>charset,Shift_JIS
+name,凡例さん
+type,ghost
+directory,example
+balloon.directory,example_balloon
+balloon.source.directory,balloon
+</code></pre>
+						<p>※SSPのみ　複数同時インストールパッケージの場合の最上位に置くもの<br>（同梱する各内容に置くinstall.txtは普通どおりの記述でよい）</p>
+<pre><code>charset,Shift_JIS
+name,凡例さんファミリー一括入居パッケージ
+type,package
+</code></pre>
+					<p>charset指定は必ず1行目で行う（Shift_JISの場合省略可）。</p>
+					<p>name、typeは必須。directoryもtypeがsupplementかpackage以外の場合は必須。<br>それ以外の項目は、必要に応じて指定する。</p>
+					<p>追加シェルやサプリメントの場合、想定外のゴーストにインストールされる事を避けるためにaccept指定が利用できる。<br>特にサプリメントは予期せぬファイルの上書き破損事故の危険性があるためほぼ必須。</p>
+					<p>SSPでは、バルーンやプラグインをゴーストかシェルに同梱させる場合、*.directoryを利用する。</p>
+					<p>なおnameは主に、<a href="list_shiori_event.html#OnInstallComplete">インストール系SHIORI Event</a>のReferenceでの通知内容に用いられる。<br>ゴーストによってはこの情報を利用して、インストールされた直後の対象へ切り替えを実行できるような機能を備えている場合があるが、descript.txtにある実際のゴーストのnameとinstall.txtでの表記が異なると、その切り替えが正常に働かなくなるので注意。</p>
+				</section>
+			</section>
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
@@ -88,7 +253,27 @@
 			<dl id="type,種別">
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットの種別。<br />ゴーストの場合はghost。<br />ゴーストへの追加ファイルの場合はsupplement。<br />バルーンの場合はballoon。<br />プラグインの場合はplugin。<br />ヘッドラインセンサの場合はheadline。<br />カレンダーの素金の場合はcalendar skin。<br />カレンダーのスケジュールセンサの場合はcalendar plugin。<br /><a href="dev_nar.html#package">複数パッケージの場合はpackage</a>。(SSPのみ)</p>
+					<p class="description">アーカイブの内容の種別。種類は下記の通り。</p>
+					<dl class="description">
+						<dt>ghost</dt>
+						<dd>ゴースト</dd>
+						<dt>shell</dt>
+						<dd>ゴーストへの追加シェル</dd>
+						<dt>supplement</dt>
+						<dd>ゴーストへの追加ファイル</dd>
+						<dt>balloon</dt>
+						<dd>バルーン</dd>
+						<dt>plugin</dt>
+						<dd>プラグイン</dd>
+						<dt>headline</dt>
+						<dd>ヘッドラインセンサ</dd>
+						<dt>calendar.skin</dt>
+						<dd>（SSPのみ）カレンダーの外見ファイル</dd>
+						<dt>calendar.plugin</dt>
+						<dd>（SSPのみ）カレンダーのスケジュールセンサ</dd>
+						<dt>package</dt>
+						<dd>（SSPのみ）複数同時インストールパッケージ</dd>
+					</dl>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -100,7 +285,7 @@
 			<dl id="accept,本体側名">
 				<dt class="entry">accept,本体側名</dt>
 				<dd class="entry">
-					<p class="description">ファイルセットを受け取ることができるゴーストの<em>本体側の</em>名前（＝\0名,sakura名）。<br />もしくはゴースト側descript.txtの<a href="descript_ghost.html#install.accept,名前1,名前2,名前3...">install.accept</a>に設定してある名前でも可。<br />追加シェルや追加ファイル（supplement）など、特定ゴーストに渡す内容では必ず用いる。</p>
+					<p class="description">アーカイブを受け取ることができるゴーストの<em>本体側の</em>名前（＝\0名,sakura名）。<br />もしくはゴースト側descript.txtの<a href="descript_ghost.html#install.accept,名前1,名前2,名前3...">install.accept</a>に設定してある名前でも可。<br />追加シェルや追加ファイル（supplement）など、特定ゴーストに渡す内容では必ず用いる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -112,8 +297,8 @@
 			<dl id="directory,ディレクトリ名">
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">そのオブジェクトのディレクトリ名。半角英数推奨。</p>
-					<p class="default">省略不可</p>
+					<p class="description">そのアーカイブインストール後のディレクトリ名。半角英数推奨。</p>
+					<p class="default">省略不可/type,packageの場合のみ不要。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -148,7 +333,7 @@
 			<dl id="*.directory,ディレクトリ名">
 				<dt class="entry">*.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールするオブジェクトのディレクトリ名。半角英数推奨。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。<br />typeが<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。<br />例えばゴーストにバルーンを同梱する場合などに利用できる。<br />この指定がある場合同時にインストールする側のinstall.txtは無視される。</p>
+					<p class="description">同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。<br />例えばゴーストにバルーンを同梱する場合などに利用できる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -158,7 +343,7 @@
 			<dl id="*.source.directory,ディレクトリ名">
 				<dt class="entry">*.source.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールするオブジェクトのアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。<br />同時にインストールするオブジェクトの、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
+					<p class="description">同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
 					<p class="default">*.directoryで設定したディレクトリ名</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -168,7 +353,7 @@
 			<dl id="*.refresh,数値">
 				<dt class="entry">*.refresh,数値</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールするオブジェクトの<a href="#refresh,数値">refresh</a>設定。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。</p>
+					<p class="description">同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
 					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -178,7 +363,128 @@
 			<dl id="*.refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">*.refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールするオブジェクトの<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分にはballoon、headline、plugin、calendar.skin、calendar.pluginのいずれかが入る。</p>
+					<p class="description">同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category" id="delete.txt">
+			<h1>delete.txt</h1>
+			<section class="caption legend" id="legends_delete.txt">
+				<h1>delete.txt</h1>
+				<section>
+					<h1>概要</h1>
+					<p><a href="manual_update.html">ファイル構成「ネットワーク更新」</a>のページも参考に。</p>
+					<p>
+						クライアント（ユーザ）のファイルは、更新時にサーバ（作者）のファイルで上書きされるだけで、同期されるわけではない。
+						<br>つまり、一度クライアント側にダウンロード・作成されたファイルは、例えサーバ側で削除したとしても取り除く事ができない。
+						<br>従って、公開後に一度公開したファイルを削除する必要がある場合にはdelete.txtにそのファイルを記載しなければならない。
+						<br>なおdelete.txtは削除実行後も自動で削除されず、一度記載した内容は、変更しない限り永久に除外され続ける。
+					</p>
+				</section>
+				<section>
+					<h1>記述例</h1>
+<pre><code>ghost\master\ai.dtx
+ghost\master\testdict\
+shell\master\surface110.png
+</code></pre>
+				</section>
+			</section>
+			<dl id="相対パス">
+				<dt class="entry">相対パス</dt>
+				<dd class="entry">
+					<p class="description">ネットワーク更新時に削除するファイルをゴーストのホームフォルダからの相対パスで列挙する。<br>相対パスの階層は「\」区切り。<br>フォルダごとの指定も可能で、その場合は末尾を\で終える。</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category" id="developer_options.txt">
+			<h1>developer_options.txt</h1>
+			<section class="caption legend" id="legends_developeroptions.txt">
+				<h1>developer_options.txt</h1>
+				<section>
+					<h1>概要</h1>
+					<p><a href="manual_update.html">ファイル構成「ネットワーク更新」</a>・<a href="manual_install.html">ファイル構成「インストール」</a>のページも参考に。</p>
+					<p>
+						インストールパッケージやネットワーク更新情報ファイルの作成時に、対象とするファイルにオプションを設定するためのもの。
+						<br>SSPにゴーストなどのパッケージのフォルダをD&Dすることで、アーカイブ（.nar）やupdateファイル（update2.dau）を作成する機能があるが、その機能の実行時に参照される。
+						<br>従って「そだて」や「ゴースト配布系自動化システム」を使ってそれらのファイルを作成した場合は<em>全く無関係</em>なので注意。
+					</p>
+				</section>
+				<section>
+					<h1>記述例</h1>
+<pre><code>ghost/master/savedata.txt,noupdate
+shell/old/,nonar
+ghost/master/profile/,nonar,noupdate
+</code></pre>
+				</section>
+			</section>
+			<dl id="相対パス,オプション1,オプション2,...">
+				<dt class="entry">相対パス,オプション1,オプション2,...</dt>
+				<dd class="entry">
+					<p class="description">
+						ゴーストのホームフォルダからの相対パスで指定したファイル・フォルダについて、カンマ区切りでオプションを指定する。
+						<br>相対パスの階層は「\」でなく「/」で区切る。
+						<br>フォルダを指定する場合は、末尾に/を付ける。
+						<br>オプションの内容は以下。
+					</p>
+					<dl class="description">
+						<dt>nonar</dt>
+						<dd>nar作成時に対象をnarに含めない。</dd>
+						<dt>noupdate</dt>
+						<dd>update2.dau（update.txt）作成時に対象を更新対象に含めない。</dd>
+					</dl>
+					<p class="description">
+						<br>いずれもファイル作成時の制御であるため、<em>SSPの機能でnar、更新ファイルを作成する場合</em>に限って有効である事に注意。
+					</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="notes_ignore">
+				<h1>自動的に除外される対象</h1>
+				<p>SSPがnar/update2.dau(update.txt)を作成する場合、developer_options.txtの指定がなくとも以下のファイル・フォルダは自動的に対象から除外される。</p>
+				<p>ファイル</p>
+				<ul>
+					<li>desktop.ini</li>
+					<li>thumbs.db</li>
+					<li>folder.htt</li>
+					<li>mscreate.dir</li>
+					<li>.DS_Store</li>
+					<li>_CATALOG.VIX</li>
+				</ul>
+				<p>フォルダ</p>
+				<ul>
+					<li>profile/</li>
+					<li>var/</li>
+					<li>__MACOSX/</li>
+					<li>XtraStuf.mac/</li>
+				</ul>
+			</section>
+		</section>
+		<section class="category" id="#updates_def.txt">
+			<h1>updates_def.txt</h1>
+			<section class="caption" id="notes_ignore">
+				<strong>[旧仕様]</strong>であり、現在はdeveloper_options.txtで指定する。
+			</section>
+			<dl id="相対パス,ignore">
+				<dt class="entry">相対パス,ignore</dt>
+				<dd class="entry">
+					<p class="description">
+						ゴーストのホームフォルダからの相対パスで指定したファイルについて、カンマ区切りでオプションを指定する。
+						<br>フォルダごとの指定は不可。
+						<br>ignoreオプションがあると、update2.dau（update.txt）作成時に対象を更新対象に含めない。
+					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

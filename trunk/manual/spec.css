@@ -39,12 +39,10 @@ a:hover	{
 	font-size: x-large;
 }
 .menu-header {
-	margin: 1px 20px;
-	width: 90%;
-	border: 1px solid #669;
-	background-color: #eef;
-	padding: 1px;
-	text-align:center;
+	margin: 0 20px;
+	width: 91.5%;
+	text-align: center;
+	font-size: 95%;
 }
 .menu-header:after {
 	content: "\0020";
@@ -53,19 +51,39 @@ a:hover	{
 	visibility: hidden;
 	clear: both;
 }
-.menu-header ul{
-	text-align: center;
+.menu-header table {
+	border-collapse: separate;
+	border-spacing: 0 1px;
+	width: 100%;
 }
-.menu-header ul:after{
-	content: "　";
+.menu-header table tr {
+	background-color: #eef;
 }
-.menu-header li {
+.menu-header table tr > * {
+	padding: 2px;
+	border-top: 1px solid #669;
+	border-bottom: 1px solid #669;
+	border-right: 1px solid #669;
+}
+.menu-header table tr th {
+	width: 7%;
+}
+.menu-header table tr:first-child th:first-child {
+	background-color: #669;
+	color: #eef;
+	width: 15%;
+}
+.menu-header table ul li {
 	float: left;
 	margin-left: 10px;
 }
-.menu-header li a:before {
-	content: "\25a0";
+.menu-header table ul li a:before {
+	content: url("./image/icon_doc-b.png");
 }
+.menu-header table ul li .not-created:before {
+	content: "×";
+}
+
 .navigation-bar {
 	border: 1px solid #669;
 	margin: 10px 0 0 20px;

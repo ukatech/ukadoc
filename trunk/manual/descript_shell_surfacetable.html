@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="index,follow">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project Shell設定 - surfacetable.txt</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">Shell設定 - surfacetable.txt</h1>
+	<nav class="menu-header">
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</nav>
+	<section class="navigation-bar">
+		<h1>Shell - surfacetable.txt</h1>
+		<section class="navigation-category">
+			<ul>
+				<li class="caption legend"><a href="#legends_surfacetable.txt">surfacetable.txt</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>surfacetable.txt</h1>
+			<ul>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#version,数値">version,数値</a></li>
+				<li><a href="#option,オプション1,オプション2,...">option,オプション1,オプション2,...</a></li>
+				<li><a href="#group,グループ名">group,グループ名</a></li>
+				<li><a href="#scope,数値">scope,数値</a></li>
+				<li><a href="#サーフェスID,名前">サーフェスID,名前</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="caption legend" id="legends_surfacetable.txt">
+			<h1>surfacetable.txt</h1>
+			<section>
+				<h1>概要</h1>
+				<p>SSP開発用パレットの「サーフィステスト」機能や、そのほかのシェル作成支援ユーティリティでの利用を目的としたサーフェス内容の定義ファイル。</p>
+			</section>
+			<section>
+				<h1>基本の書式</h1>
+				<p>記載例</p>
+<pre><code>charset,Shift_JIS
+version,1
+option,DisableNoDefineSurfaces
+
+//==========パーツ==========
+group,__disabled
+{
+	19,__parts
+}
+
+//==========クー==========
+group,[空]平日
+{
+	scope,0
+	
+	0,素
+	1,照れ
+	3,不安
+	4,はぅー
+	5,笑
+}
+</code></pre>
+				<p>// から始まる行はコメントとみなされ、完全に無視される。</p>
+				<p>半角スペースおよびタブによるインデントが可能。</p>
+			</section>
+		</section>
+		<section class="category">
+			<h1>surfacetable.txt</h1>
+			<dl id="charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。記載は必ずファイルの一行目に。</p>
+					<p class="default">Shifi_JIS</p>
+				</dd>
+			</dl>
+			<dl id="version,数値">
+				<dt class="entry">version,数値</dt>
+				<dd class="entry">
+					<p class="description">srufacetable.txtの書式のバージョン。現在のところ常に1でよい。</p>
+					<p class="default">1</p>
+				</dd>
+			</dl>
+			<dl id="option,オプション1,オプション2,...">
+				<dt class="entry">option,オプション1,オプション2,...</dt>
+				<dd class="entry">
+					<p class="description">オプション指定。カンマ区切りで複数列挙できる。<br>現在のところ指定できるのは「DisableNoDefineSurfaces」のみで、surfaces.txt等での定義がなく、surfacetable.txt内でも明示されていないサーフェスについて無視する。</p>
+					<p class="default">挙動なし</p>
+				</dd>
+			</dl>
+			<dl id="group,グループ名">
+				<dt class="entry">group,グループ名</dt>
+				<dd class="entry">
+					<p class="description">
+						後述の<a href="#サーフェスID,名前">サーフェス名</a>定義行をまとめたグループに識別上の名前を与える。
+						<br>すぐ下に「{」のみの行を続け、「}」のみの行で閉じる。
+						<br>グループ名を「__disabled」とした場合、そのグループ内のサーフェスは使用されていないことを示す（SSPのサーフェステストではリストに表示されなくなる）。
+					</p>
+					<p class="default">挙動なし</p>
+				</dd>
+			</dl>
+			<dl id="scope,数値">
+				<dt class="entry">scope,数値</dt>
+				<dd class="entry">
+					<p class="description">そのグループのサーフェスが主に属するスコープの番号。<br>グループ内に一つ記載する。<br>本体側なら0、相方側なら1など。</p>
+					<p class="default">挙動なし</p>
+				</dd>
+			</dl>
+			<dl id="サーフェスID,名前">
+				<dt class="entry">サーフェスID,名前</dt>
+				<dd class="entry">
+					<p class="description">
+						サーフェスIDに対して識別上の名前を与える。
+						<br>普通グループ内に記載する。
+						<br>グループ内で最初に書かれたものは、そのグループでの標準的なサーフェスとみなされる（scope,0なら0、scope,1なら10といったような）。
+						<br>名前を「__parts」とした場合、そのサーフェスは主にアニメーションや着せ替えなどのパーツとして用いられるものである事を示す（SSPのサーフェステストでは名前が無指定であるように扱われる）。
+						<br>名前を省略した場合、名前が見て意義であることを明示できる。SSPのサーフィステストでは<a href="descript_shell_surfaces.html#notes_standarddef">特定サーフェス</a>のみ未指定でも初期値が与えられるため、そういったサーフェスについて指定を解除したい場合に利用する。
+					</p>
+					<p class="default">挙動なし/SSPのサーフィステストでは、特定のサーフェスのみ<a href="descript_shell_surfaces.html#notes_standarddef">標準的なサーフェス定義</a>。</p>
+				</dd>
+			</dl>
+		</section>
+	</div>
+</body>
+</html>

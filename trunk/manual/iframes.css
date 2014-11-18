@@ -1,0 +1,156 @@
+@charset "utf-8";
+/* 京 */
+body,p,div,h1,h2,h3,h4,h5,h6,ul,ol,dl,li,dt,dd,img,em,strong,blockquote,dfn,code,samp,pre,del,ins,table,th,td {
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-indent: 0;
+	white-space: normal;
+	margin: 0;
+	padding: 0;
+	outline-style: none;
+}
+
+html#sidemenu > body {
+	background-color: #ffffff;
+	color: #333333;
+	font-size: 12px;
+	overflow: hidden
+}
+h1 {
+	width: 190px;
+	margin: 0 5px;
+	margin-bottom: 0.5em;
+	padding-bottom: 6px;
+	border-bottom: 2px solid #7bb56b;
+	color: #646464;
+	font-weight: bold;
+}
+em {
+	color: #006600;
+}
+strong {
+	color: #ff0000;
+}
+ul {
+	margin-left:1em;
+}
+ul.notelist {
+	list-style-type: none;
+}
+ul.notelist li {
+	margin: 1em 0;
+}
+li {
+	margin: 1px 0;
+}
+ul {
+	margin-left: 2.2em;
+	margin-bottom: 1.5em;
+	list-style-type: none;
+	list-style-image: url(image/icon_doc.png);
+}
+ul ul {
+	margin-left: 0;
+	margin-bottom: 1em;
+	list-style-image: none;
+	list-style-type: disc;
+}
+ul h2 {
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-weight: normal;
+}
+ul ul li {
+	margin: 0;
+	margin-right: 0.5em;
+	margin-top: 0.2em;
+	padding: 0;
+	color: #94de84;
+}
+ul.doctype-manual {
+	list-style-image: url(image/icon_doc-r.png);
+}
+ul.doctype-manual ul li {
+	color: #de8494;
+}
+ul.doctype-list {
+	list-style-image: url(image/icon_doc-b.png);
+}
+ul.doctype-list ul li {
+	color: #9484de;
+}
+ul.doctype-others {
+	list-style-image: url(image/icon_doc-y.png);
+}
+ul.doctype-others ul li {
+	color: #dede84;
+}
+
+h1:before {
+	content: url("image/icon_point.gif");
+}
+a:link {
+	color: #0000f0;
+	text-decoration: none;
+}
+a:visited {
+	color: #4040f0;
+	text-decoration: none;
+}
+a:active {
+	position:relative;
+	top:0;
+	left:0;
+	color: #f00000;
+	text-decoration: none;
+}
+a:hover {
+	position:relative;
+	top:0;
+	left:0;
+	color: #f00000;
+	text-decoration: none;
+}
+
+
+
+
+/* NAVIGATION */
+html#navigation {
+	background-color:#94de84;
+}
+html#navigation > body {
+	width: 800px;
+	margin: 0 auto;
+}
+#navigation_top {
+	background-image: url(image/title2.gif);
+	background-repeat: no-repeat;
+	height: 130px;
+	text-align: right;
+	vertical-align: top;
+	width: 750px;
+}
+#navigation_body {
+	width:100%;
+}
+#navigation_body .menu {
+	margin-top:1px;
+	list-style-type: none;
+	float: left;
+}
+
+#navigation_body form.internal-search {
+	text-align: right;
+	padding-right: 3px;
+}
+#navigation_body form.internal-search input[type="text"] {
+	width: 200px;
+}
+#navigation_body form.internal-search input[type="submit"] {
+	margin-right: 50px;
+}
+/* NAVIGATION */
