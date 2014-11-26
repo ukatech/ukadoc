@@ -22,16 +22,16 @@ em {
 	font-style: normal;
 	font-weight:bold;
 }
-a:link	{
+a:link {
   color : #0000FF;
 }
-a:visited	{
+a:visited {
   color : #4040FF;
 }
-a:active	{
+a:active {
   color : #FF0000;
 }
-a:hover	{
+a:hover {
   color : #FF0000;
 }
 #page-title {

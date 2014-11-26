@@ -1,35 +1,34 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,メニュー,オーナードロー">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project Owner Draw Menu</title>
+<meta name="keywords" content="ukadoc,メニュー,オーナードロー,右クリックメニュー">
+<title>UKADOC Project オーナードローメニュー</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>オーナードローメニュー</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>オーナードローメニュー（右クリックメニュー）に使用する画像ファイルは以下の通り。</p>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>オーナードローメニュー</h1>
+<section>
+	<div class="passage">
+		<p>オーナードローメニュー（右クリックメニュー）に使用する画像ファイル類。</p>
 <pre>
 +-(myghost)
 　　+-shell
@@ -44,50 +43,58 @@
 　　　　　　+-thumbnail.png
 　　　　　　+-makoto.dll
 　　　　　　+-surfacetable.txt
-　　　　　　<em>+-menu_background.png</em>
-　　　　　　<em>+-menu_foreground.png</em>
-　　　　　　<em>+-menu_sidebar.png</em>
+　　　　　　<em class="filename">+-menu_background.png</em>
+　　　　　　<em class="filename">+-menu_foreground.png</em>
+　　　　　　<em class="filename">+-menu_sidebar.png</em>
 </pre>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">menu_background.png</h3>
-					<p>オーナードローメニューの背景画像。</p>
-					<p>メニューの領域は画像ではなくメニューの大きさになる。</p>
-					<p>省略可能（標準のメニュー表示になる）。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">menu_foreground.png</h3>
-					<p>オーナードローメニューツリーのカーソル選択部分の画像。</p>
-					<p>省略可能（標準のメニュー表示になる）。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">menu_sidebar.png</h3>
-					<p>オーナードローメニューツリーの左側に追加できる画像。</p>
-					<p>横幅のみ画像の幅となる。</p>
-					<p>省略可能。</p>
-				</div>
-				<div class="section">
-					<p>メニューの画像が切れた部分はその端の色を単色で塗り潰す。</p>
-					<p>画像、文字色などの指定はシェルの<a href="descript_shell.html" target="_top">descript.txt</a>もしくは<a href="list_shiori_resource.html" target="_top">SHIORI Resource</a>によって行う。</p>
-					<p>これらの画像は必ずしもこのファイル名にする必要は無い。</p>
-					<p>指定が無かった場合は一般的なポップアップになる。</p>
-				</div>
-			</div>
-		</div>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt>menu_background.png</dt>
+			<dd>
+				<p>オーナードローメニューの背景画像。</p>
+				<p>メニューの領域は画像ではなくメニューの大きさになる。</p>
+				<p>省略可能（標準のメニュー表示になる）。</p>
+			</dd>
+
+			<dt>menu_foreground.png</dt>
+			<dd>
+				<p>オーナードローメニューツリーのカーソル選択部分の画像。</p>
+				<p>省略可能（標準のメニュー表示になる）。</p>
+			</dd>
+
+			<dt>menu_sidebar.png</dt>
+			<dd>
+				<p>オーナードローメニューツリーの左側に追加できる画像。</p>
+				<p>横幅のみ画像の幅となる。</p>
+				<p>省略可能。</p>
+			</dd>
+		</dl>
+	</div>
+	<div class="passage">
+		<p>これらの画像は必ずしもこのファイル名にする必要は無い。</p>
+		<p>いずれも画像、文字色などの指定はシェルの<a href="descript_shell.html">descript.txt</a>もしくは<a href="list_shiori_resource.html" target="_top">SHIORI Resource</a>によって行う。</p>
+		<p>メニューの画像が切れた部分はその端の色を単色で塗り潰す。</p>
+		<p>指定が無かった場合は一般的なポップアップになる。</p>
+	</dl>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

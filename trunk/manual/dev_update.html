@@ -1,114 +1,238 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,ネットワーク,更新">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project ネットワーク更新に対応する</title>
+<meta name="keywords" content="伺か,ゴースト,ネットワーク更新">
+<title>UKADOC Project ネットワーク更新への対応</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>ネットワーク更新に対応する</h2>
-			<div class="chapter">
-				<h3>1、サーバを用意する</h3>
-				<div class="section">
-					<p>まずネットワーク更新に必要なサーバを用意します。</p>
-					<p>無料ホームページ等では制限のある場合があるのでにファイルを置く時は下記の事に注意してください。</p>
-				</div>
-				<ul>
-					<li>必要なファイルの拡張子がアップロードできる。
-					<li>テキストなどに自動的に広告が入らない。
-				</ul>
-			</div>
-			<div class="chapter">
-				<h3>2、ゴーストに更新用URLを書く</h3>
-				<div class="section">
-					<p>SHIORIごとに書き方は違いますがhomeurlにサーバ側の<em>updates2.dau</em>までのURLを書きます。</p>
-					<pre class="exmp-descript2">例　http://xxx.yyy/myghost/</pre>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>3、更新したいファイルだけの構成を作る</h3>
-				<div class="section">
-					<p>自分のゴーストから更新したいファイルだけをコピーし、同じディレクトリ構成にします。</p>
-				</div>
-				<div class="section">
-					<p>全てのファイルをアップロードしても更新ファイルだけネットワーク更新されるので構いません。</p>
-					<p>ただし、その場合は下記の物は更新に含めないようにしてください。</p>
-				</div>
-				<ul>
-					<li>各種セーブデータファイル</li>
-					<li>全てのprofileフォルダ(ghost、shell内)</li>
-					<li>ディレクトリ直下の<em>profile.txt</em></li>
-					<li>ghost\masterフォルダ内の<em>updates2.dau</em></li>
-				</ul>
-				<div class="section">
-					<p>次にコピーしたディレクトリの一番上に空のテキストで<em>updates2.dau</em>を作ります。</p>
-					<p>そしてMATERIA、SSP等の本体を起動し、<em>updates2.dau</em>や更新したいファイルの入ったフォルダを本体にドロップします。</p>
-					<p>この時、<em>install.txt</em>が入ってるとそちらが優先されnarファイルができてしまうので含めないでください。</p>
-				</div>
-				<div class="section">
-					<em>updates2.dau</em>が作成できたら中身を確認してみてください。
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>4、サーバにアップロードする</h3>
-				<div class="section">
-					<p><strong>全てバイナリモードでアップロードしてください。</strong></p>
-					<p>アスキーモードでアップロードするとネットワーク更新に失敗します。</p>
-				</div>
-				<div class="section">
-					ローカルの<em>updates2.dau</em>とサーバ上の<em>updates2.dau</em>に違いがある個所だけネットワーク更新されます。<BR>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>05、ネットワーク更新用ツールでもっと楽に更新する</h3>
-				<div class="section">
-					<p>以下のようなツールを使えば、面倒な更新ファイルの選別やFTPアップロードを自動化できます。</p>
-					<ul>
-						<li><a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</a>(<a href="http://code.google.com/p/satoriya-shiori/">IE7以降対応版</a>)</li>
-						<li><a href="http://ms.shillest.net/#TOOL">ゴースト配布系自動化システム</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					さらに詳しい説明は構成の説明の<a href="manual_update.html" target="_top">Update</a>の項目にて。
-				</div>
-			</div>
-		</div>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>ネットワーク更新への対応</h1>
+<section>
+	<div class="passage">
+		<p><em>SSP2.3.00以降の場合、オーナードロー（右クリックメニュー）から「設定」→「本体設定」の「一般」にある「開発者機能を有効にする」がオンになっていないと、このページで使っている「フォルダを投下してupdates2.dauを作成する機能」が使えませんので注意してください。</em></p>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+	<div class="passage">
+		<p>ここではネットワーク更新に対応するために必要な、設定や準備について解説します。</p>
+		<p>なおSSPではゴースト以外にも、シェル、バルーン、プラグイン、ヘッドラインセンサのネットワーク更新が可能ですが、それらも含めて解説しています。</p>
+	</div>
+	<div class="passage">
+		<p>目次</p>
+		<ol class="list-of-contents">
+			<li><a href="#chapter1">サーバを用意する</a></li>
+			<li><a href="#chapter2">更新用URLを設定する</a></li>
+			<li><a href="#chapter3">不要なファイルを取り除く</a></li>
+			<li><a href="#chapter4">updates2.dauを作る</a></li>
+			<li><a href="#chapter5">サーバにアップロードする</a></li>
+		</ol>
+		<ol class="list-of-contents-ex">
+			<li><a href="#chapterEX1">developer_options.txtについて</a></li>
+			<li><a href="#chapterEX2">ゴースト配布系自動化システム(GDM)について</a></li>
+			<li><a href="#chapterEX3">「.dau」がサーバに弾かれてしまう場合について</a></li>
+		</ol>
+	</div>
+	<div class="passage">
+		<p>二度目以降の更新では、主に3,4,5を繰り返す事になるでしょう。</p>
+	</div>
+</section>
+<section id="chapter1">
+	<h1>1、サーバを用意する</h1>
+	<div class="passage">
+		<p>まずネットワーク更新に必要なサーバを用意します。</p>
+		<p>個人ウェブサイトを開設する場合などに使われる、無料レンタルサーバなどで構いません。</p>
+	</div>
+	<div class="passage">
+		<p>レンタルサーバの場合（特に無料サービスでは）、制限や設定によってネットワーク更新に不都合がある場合があります。</p>
+		<p>特に下記のような点に注意してください。</p>
+		<ul>
+			<li>必要なファイルの拡張子がアップロードできる。
+			<li>テキストファイルに自動的に広告が入らない。
+		</ul>
+	</div>
+	<div class="passage">
+		<p>無料レンタルサーバを探す場合は、以下のページが参考になるはずです。</p>
+		<p><a href="http://emily.shillest.net/specwiki/index.php?%E7%A5%9E%E5%A4%9C%E3%81%BF%E3%82%85%E3%82%93%2F%E3%82%B4%E3%83%BC%E3%82%B9%E3%83%88%E9%85%8D%E5%B8%83%E3%81%99%E3%82%8B%E3%81%AA%E3%82%89">駄でべwiki：ゴースト配布するならどこがいい？（無料スペース版）</a>（外部サイト）</p>
+	</div>
+</section>
+<section id="chapter2">
+	<h1>2、更新用URLを設定する</h1>
+	<div class="passage">
+		<p>基本的には<em class="filename">descript.txt</em>に記述する事になります。</p>
+		<p><em class="filename">descript.txt</em>内に以下のような行を書いて設定します。</p>
+		<pre class="exmp-descript2"><code>homeurl,http://xxx.yyy/myghost/</code></pre>
+	</div>
+	<div class="passage">
+		<p>ここに書くurlは、ネットワーク更新する内容が入ったフォルダ（後に<em class="filename">updates2.dau</em>を作成する位置）までの、ネットワーク上でのurlになります。</p>
+		<p>従ってどのようなurlになるかはサーバによるのですが、仮にそのサーバのルートディレクトリがhttp://xx.yyy/であったとして、</p>
+<pre>
++-root
+　　+-ukagaka
+　　　　<em class="filename">+-myghost1</em>
+　　　　　　<em class="filename">+-ghost</em>
+　　　　　　<em class="filename">+-shell</em>
+　　　　　　<em class="filename">+-readme.txt</em>
+　　　　　　<em class="filename">+-updates2.dau</em>
++-index.html
++-hogehoge.html
++-style.css
+:
+:
+</pre>
+		<p>ネットワーク更新に対応したいゴーストのフォルダ（myghost）が上のような配置でサーバ上にを置かれているなら、descript.txtには、</p>
+		<pre class="exmp-descript2"><code>homeurl,http://xxx.yyy/ukagaka/myghost1/</code></pre>
+		<p>と書く事になります。</p>
+	</div>
+	<div class="passage">
+		<p>なお、内容がゴーストの場合は<em class="filename">descript.txt</em>に書く他に、<a href="list_shiori_resource.html">SHIORI Resource</a>の「<a href="list_shiori_resource.html#homeurl">homeurl</a>」に対してurlを指定する法方があります。</p>
+		<p>具体的にゴースト側でSHIORI Resourceを利用してhomeurlを指定する方法は、SHIORIによるのでここでは触れません。それぞれのSHIORIのドキュメントを参照してください。</p>
+	</div>
+</section>
+<section id="chapter3">
+	<h1>3、不要なファイルを取り除く</h1>
+	<div class="passage">
+		<p>次に、ユーザにとっては不要なファイルを除去しましょう。例えばこんなものです。</p>
+		<ul>
+			<li>各種SHIORIなどのセーブデータファイル(初期値の設定に必要等の場合は別)</li>
+			<li>全てのprofileフォルダ(ghost、shell内両方にできる。SSPでは自動除去)</li>
+			<li>開発用ツール（里々に付属のさとりて、れしば等）</li>
+			<li>（MATERIAのみ）ディレクトリ直下のprofile.txt</li>
+			<li>desktop.iniなどのウィンドウズが生成する設定ファイル（SSPではある程度自動除去）</li>
+			<li>その他開発用辞書ファイル、設定ファイル、ログファイルなど</li>
+		</ul>
+	</div>
+	<div class="passage">
+		<p>SSPの場合、いちいち手動で取り除くのが面倒であれば<em class="filename">developer_options.txt</em>が役立つでしょう。</p>
+		<p>詳しい事は<a href="#chapterEX1">後述の解説</a>をお読みください。</p>
+	</div>
+	<div class="passage">
+		<p>ところで、もしこれら<em>不要なファイルが紛れ込んだ状態で更新してしまった</em>場合や、あるいは更新を重ねるうちに<em>かつて使っていたファイルが不要になった</em>（名前を変更した）場合にはどうしたらよいでしょうか。</p>
+		<p>こうした場合、<em>単純にサーバから不要なファイルを削除するだけでは、ユーザ側のファイルを削除する事はできません</em>。</p>
+		<p>なぜなら、ネットワーク更新で行われるのは、サーバにあるファイルでユーザ側にあるファイルを上書きすることであって、同期（ミラーリング）することではないからです。</p>
+	</div>
+	<div class="passage">
+		<p>一度配布してしまった不要ファイルをネットワーク更新を通じて取り除くためには、<em class="filename">delete.txt</em>を用います。</p>
+		<p>delete.txtは、ネットワーク更新をする内容の最上位のフォルダ（例えばゴーストの場合は、ghostフォルダ、shellフォルダ、readme.txtなどがある所。ほかはdescript.txtがある所）に配置します。</p>
+		<p>配置例はページ左側メニューのファイル構成にある「<a href="manual_update.html">ネットワーク更新</a>」）をご覧ください。</p>
+	</div>
+</section>
+<section id="chapter4">
+	<h1>4、updates2.dauを作る</h1>
+	<div class="passage">
+		<p>次にネットワーク更新用ファイル（<em class="filename">updates2.dau</em>）を作成します。</p>
+		<p>これは、サーバ側とクライアント側でファイルの内容に違いがないかを調べる事で、破損・改竄などの異常を検出するためのしくみです。</p>
+	</div>
+	<div class="passage">
+		<p>MATERIAやCROWで<em class="filename">updates2.dau</em>を作成する場合には、あらかじめ一番上のディレクトリ（例えばゴーストならghostフォルダ、shellフォルダ、readme.txtなどがある場所）に、<em class="filename">updates2.dau</em>と言う名前の空のテキストファイルを作っておく必要があります。</p>
+		<p>SSPでは自動的に作成されます。</p>
+	</div>
+	<div class="passage">
+		<p>そしてベースウェアを起動し、<em class="filename">updates2.dau</em>や更新したいファイルの入ったフォルダを本体にD&amp;Dします。</p>
+		<p>この時MATERIAやCROWでは、<em class="filename">install.txt</em>が入っているとnarファイルの作成が優先されてしまい、<em class="filename">updates2.dau</em>が作成されないので含めないように気をつけてください。</p>
+	</div>
+	<div class="passage">
+		<p>D&amp;Dした後、フォルダに<em class="filename">updates2.dau</em>というファイルが作成され（存在し）、その中身に何ごとか書きこまれているはずです。</p>
+		<p><em class="filename">updates2.dau</em>は右クリックなどから、メモ帳などの普通のテキストエディタで開けますので、中身を確認してみてください（内容自体はわからなくとも構いません）。</p>
+	</div>
+	<div class="passage hint">
+		<dl>
+			<dt>ベースウェア</dt>
+			<dd>
+				SSP、MATERIA（本家伺か）、CROWなどの、ゴーストを動かす土台となるソフトウェアのこと。
+			</dd>
+		</dl>
+	</div>
+</section>
+<section id="chapter5">
+	<h1>5、サーバにアップロードする</h1>
+	<div class="passage">
+		<p>ここまで来たら、後はいよいよFTP通信ソフトなどを用いてサーバにアップロードすれば終わりです。</p>
+		<p>ただしその時、通信モードは必ず<em>全ファイルバイナリモードでアップロード</em>しなければならない点に注意してください。</p>
+		<p>アスキーモードでアップロードするとネットワーク更新に失敗してしまいます。</p>
+	</div>
+	<div class="passage">
+		この時自分の手元のベースウェアに「ネットワーク更新される前」のものを残しておいて、アップロード後にネットワーク更新が正常に終了する事を確認できると安全でしょう。
+	</div>
+</section>
+<section id="chapterEX1">
+	<h1>EX1、developer_options.txtについて</h1>
+	<div class="passage">
+		<p>SSPによるアーカイブや<em class="filename">updates2.dau</em>の作成時に、一番上の階層（アーカイブ作成時にinstall.txtが置かれる場所）に<em class="filename">developer_options.txt</em>というファイルを用意することで、対象にするファイルを設定できます。</p>
+		<p>書き方の説明や例は<a href="descript_install.html#developer_options.txt">Install/Update設定のページのdeveloper_options.txtについての節</a>をご覧ください。</p>
+	</div>
+	<div class="passage">
+		なおこのファイルはあくまでSSPでアーカイブや<em class="filename">updates2.dau</em>を作成する時に働くので、後述の<a href="chapterEX2">ゴースト配布系自動化システム</a>や、他のベースウェアでそれらを作成する場合には無効である事に注意してください。
+	</div>
+</section>
+<section id="chapterEX2">
+	<h1>EX2、ゴースト配布系自動化システム(GDM)について</h1>
+	<div class="passage">
+		<p>ゴースト配布系自動化システム(GDM)は<em class="filename">updates2.dau</em>、ゴーストのアーカイブ化、そしてサーバへのアップロードまでを一括で行ってくれる支援ツールです。</p>
+		<p>導入してきちんと設定してしまえば、このページに書いてある内容の大部分が不要になるでしょう。</p>
+	</div>
+	<div class="passage">
+		<p>現在は下記の通り「整備班」で配布されています。</p>
+		<p><a href="http://ms.shillest.net/#TOOL">ゴースト配布系自動化システム</a></p>
+	</div>
+	<div class="passage">
+		<p>また詳しい導入・設定の解説は以下のサイトを参考にしてください（「1」の内容は不要）。</p>
+		<p><a href="http://navy.nm.land.to/post/jidouhaihu.html">ゴースト配布系自動化システム(GDM)のつかいかた</a></p>
+	</div>
+	<div class="passage">
+		<p>名前にこそ「ゴースト」とありますが、実際にはシェルやバルーンその他あらゆるもののアーカイブ・ネットワーク更新用ファイルのアップロードに使えます。</p>
+		<p>また複数の対象（ゴースト1,ゴースト2,シェル1,シェル2,シェル3,バルーン,...といったように）について、アーカイブ作成・ネットワーク更新などの操作ごとに設定を保存しておけて、その時々でしたい操作だけを選んで一括実行できます。</p>
+		<p>多くのコンテンツを管理している場合にはとても助かります。</p>
+	</div>
+	<div class="passage">
+		<p>最初の導入や設定は少しやる事が多く大変ですが、一度済ませてしまえば後はワンクリックで、複数コンテンツのネットワーク更新・アーカイブ更新を済ませてくれるのは非常に楽です。</p>
+		<p>それだけではなく、<em class="filename">updates2.dau</em>作成後にファイルを弄ってしまったり、FTP通信をアスキーモードに設定してアップロードしたりといったミスによるmd5不一致エラーを完全に防いでくれます。</p>
+		<p>もちろん適切な設定によって、不要ファイルの混入防止などにも大いに役立てることができます。</p>
+	</div>
+	<div class="passage">
+		<p>なお先述の<a href="#chapterEX1">developer_options.txt</a>は、SSPの機能でnarや<em class="filename">updates2.dau</em>を作成する場合にはたらく設定ファイルですので、GDMを使って作成する場合には関係ないことに注意してください。</p>
+		<p>といってもGDMはそれ自体の機能としてアップロードするファイル/しないファイルの設定ができますので、本来不要です。</p>
+	</div>
+</section>
+<section id="chapterEX3">
+	<h1>EX3、「.dau」がサーバに弾かれてしまう場合について</h1>
+	<div class="passage">
+		<p>レンタルサーバの設定によっては、「.dau」という見慣れない拡張子のファイルを扱わない場合があるかもしれません。</p>
+		<p>そのような場合、<em class="filename">updates.txt</em>で代用する事ができます。</p>
+		<p>使い方は、このページに書かれている「<em class="filename">updates2.dau</em>」を全て「<em class="filename">updates.txt</em>」に読み替えてください。</p>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->
-

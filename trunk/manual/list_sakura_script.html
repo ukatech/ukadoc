@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project さくらスクリプトリスト</title>
@@ -451,7 +451,7 @@
 				<li><a href="#_!_reload,ghost_">\![reload,ghost]</a></li>
 				<li><a href="#__u_0x0000_">\_u[0x0000]</a></li>
 				<li><a href="#__m_0x00_">\_m[0x00]</a></li>
-				<li><a href="#_&amp;_ID_">\&amp;[ID]</a></li>
+				<li><a href="#_&_ID_">\&[ID]</a></li>
 				<li><a href="#_m_umsg,wparam,lparam_">\m[umsg,wparam,lparam]</a></li>
 			</ul>
 			<ul>
@@ -515,6 +515,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<section class="legend">
+						<h1>記述例</h1>
+						<ol>
+							<li><code>\0こんにちは。</code></li>
+						</ol>
+					</section>
 				</dd>
 			</dl>
 			<dl id="_1もしくは_u">
@@ -2447,7 +2453,7 @@
 			<dl id="_!_open,teachbox_">
 				<dt class="entry">\![open,teachbox]</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxを閉じる。</p>
+					<p class="description">TeachBoxを開く。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2458,7 +2464,7 @@
 			<dl id="_!_close,teachbox_">
 				<dt class="entry">\![close,teachbox]</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxを開く。<br />OnTeachInputCancelを発生させないので注意。</p>
+					<p class="description">TeachBoxを閉じる。<br />OnTeachInputCancelを発生させないので注意。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3095,8 +3101,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_&amp;_ID_">
-				<dt class="entry">\&amp;[ID]</dt>
+			<dl id="_&_ID_">
+				<dt class="entry">\&[ID]</dt>
 				<dd class="entry">
 					<p class="description">識別子による実体参照。</p>
 					<ul class="supported-baseware">

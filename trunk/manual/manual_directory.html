@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,ファイル構成">
 <title>UKADOC Project 全体の構成</title>
@@ -12,13 +12,13 @@
 <body>
 <section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
 	<section class="body">
 		<nav class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
 		<section class="text">
 
@@ -35,17 +35,17 @@
 		<p>従ってこれらのファイルの配置は、下記のようにシェルがゴーストに内包される形になる。</p>
 	</div>
 <pre>
-<em class="phrase">+-(myghost)</em>
-　　<em class="phrase">+-ghost</em>
-　　　　<em class="phrase">+-master</em>
+<em class="filename">+-(myghost)</em>
+　　<em class="filename">+-ghost</em>
+　　　　<em class="filename">+-master</em>
 　　　　　　+-descirpt.txt
 　　　　　　+-shiori.dll
 　　　　　　+-makoto.dll
 　　　　　　+-updates2.dau
 　　　　　　+-*.ico
 　　　　　　+-*.csr
-　　<em class="phrase">+-shell</em>
-　　　　<em class="phrase">+-master</em>
+　　<em class="filename">+-shell</em>
+　　　　<em class="filename">+-master</em>
 　　　　　　+-descript.txt
 　　　　　　+-surface*.png
 　　　　　　+-surface*.pna
@@ -59,11 +59,11 @@
 　　　　　　+-thumbnail.png
 　　　　　　+-surfaces**.txt （SSPのみ）
 　　　　　　+-surfacetable.txt (SSPのみ)
-　　　　<em class="phrase">+-(additional_shell)</em>
+　　　　<em class="filename">+-(additional_shell)</em>
 　　+-delete.txt
 　　+-developer_options.txt (SSPのみ)
-　　<em class="phrase">+-readme.txt</em>
-　　<em class="phrase">+-thumbnail.png</em>
+　　<em class="filename">+-readme.txt</em>
+　　<em class="filename">+-thumbnail.png</em>
 </pre>
 </section>
 <section>
@@ -73,22 +73,25 @@
 		<p>各バルーン構成ファイルはベースウェアのバルーン格納フォルダ以下に、下記のような形で配置される。</p>
 	</div>
 <pre>
-<em class="phrase">+-(myballoon)</em>
+<em class="filename">+-(myballoon)</em>
 　　+-descirpt.txt
-　　+-balloonc*.png
+　　+-balloons*s.txt
+　　+-balloonk*s.txt
+　　+-readme.txt
 　　+-balloons*.png
 　　+-balloonk*.png
+　　+-balloons*.pna （MATERIA不可）
+　　+-balloonk*.pna （MATERIA不可）
+　　+-balloonc*.png
 　　+-online*.png
 　　+-sstp.png
 　　+-arrow*.png
 　　+-thumbnail.png
-　　+-balloons*s.txt
-　　+-balloonk*s.txt
-　　+-ok_down.png/ok_up.png（SSPのみ）
-　　+-cancel_down.png/cancel_up.png（SSPのみ）
-　　+-mode_down.png/mode_up.png（SSPのみ）
-　　+-sstp_new.png（SSPのみ）
-　　+-marker.png（SSPのみ）
+　　+-ok_down.png/ok_up.png （SSPのみ）
+　　+-cancel_down.png/cancel_up.png （SSPのみ）
+　　+-mode_down.png/mode_up.png （SSPのみ）
+　　+-sstp_new.png （SSPのみ）
+　　+-marker.png （SSPのみ）
 </pre>
 </section>
 <section>
@@ -115,9 +118,11 @@
 				<p>ゴーストのデフォルトで使用されるフォルダ。</p>
 				<p>現在はmasterしか使用されない（過去の設計の名残）。</p>
 			</dd>
+		</dl>
 	</div>
 	<div class="passage">
 		<p>ゴーストフォルダ内のファイル構成の詳細は「<a href="manual_ghost.html">ゴースト</a>」のページへ。</p>
+		<p>makoto.dllについては「<a href="manual_translator.html">トランスレータ</a>」のページへ。</p>
 	</div>
 </section>
 <section>
@@ -140,7 +145,8 @@
 	</div>
 	<div class="passage">
 		<p>シェルフォルダ内のファイル構成の詳細は「<a href="manual_shell.html">シェル</a>」のページへ。</p>
-		<p>またmenu_background.png、menu_foreground.png、menu_sidebar.pngについては「<a href="manual_owner_draw_menu.html">オーナードローメニュー</a>」のページへ。</p>
+		<p>menu_background.png、menu_foreground.png、menu_sidebar.pngについては「<a href="manual_owner_draw_menu.html">オーナードローメニュー</a>」のページへ。</p>
+		<p>makoto.dllについては「<a href="manual_translator.html">トランスレータ</a>」のページへ。</p>
 	</div>
 </section>
 <section>
@@ -149,14 +155,14 @@
 			<dt><span class="directory">(myghost)\</span><a href="descript_install.html#delete.txt">delete.txt</a></dt>
 			<dd>
 				<p>ファイルの削除設定ファイル。</p>
-				<p>詳細は<a href="descript_install.html#delete.txt">リンク先</a>を参照。</p>
+				<p>詳細は<a href="descript_install.html#delete.txt" title="delete.txt">リンク先</a>を参照。</p>
 				<p>省略可能。</p>
 			</dd>
 
 			<dt><span class="directory">(myghost)\</span><a href="descript_install.html#developter_options.txt">developer_options.txt</a></dt>
 			<dd>
 				<p>SSP専用。narおよび更新ファイル作成機能の設定ファイル。</p>
-				<p>詳細は<a href="descript_install.html#developer_options.txt">リンク先</a>を参照。</p>
+				<p>詳細は<a href="descript_install.html#developer_options.txt" title="developer_options.txt">リンク先</a>を参照。</p>
 				<p>省略可能。</p>
 			</dd>
 
@@ -176,6 +182,7 @@
 				<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
 				<p>省略可能。</p>
 			</dd>
+		</dl>
 	</div>
 </section>
 <section>

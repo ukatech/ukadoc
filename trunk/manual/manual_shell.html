@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,シェル">
 <title>UKADOC Project シェル</title>
@@ -12,13 +12,13 @@
 <body>
 <section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
 	<section class="body">
 		<nav class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
 		<section class="text">
 
@@ -35,16 +35,16 @@
 +-(myghost)
 　　+-shell
 　　　　+-master
-　　　　　　<em class="phrase">+-descript.txt</em>
-　　　　　　<em class="phrase">+-readme.txt</em>
-　　　　　　<em class="phrase">+-surface*.png</em>
-　　　　　　<em class="phrase">+-surface*.pna</em>
-　　　　　　<em class="phrase">+-(element).png</em>
-　　　　　　<em class="phrase">+-surfaces.txt</em>
-　　　　　　<em class="phrase">+-surfaces**.txt</em> （SSPのみ）
-　　　　　　<em class="phrase">+-thumbnail.png</em>
-　　　　　　<em class="phrase">+-makoto.dll</em>
-　　　　　　<em class="phrase">+-surfacetable.txt</em> (SSPのみ)
+　　　　　　<em class="filename">+-descript.txt</em>
+　　　　　　<em class="filename">+-readme.txt</em>
+　　　　　　<em class="filename">+-surface*.png</em>
+　　　　　　<em class="filename">+-surface*.pna</em>
+　　　　　　<em class="filename">+-(element).png</em>
+　　　　　　<em class="filename">+-surfaces.txt</em>
+　　　　　　<em class="filename">+-surfaces**.txt</em> （SSPのみ）
+　　　　　　<em class="filename">+-thumbnail.png</em>
+　　　　　　<em class="filename">+-makoto.dll</em>
+　　　　　　<em class="filename">+-surfacetable.txt</em> (SSPのみ)
 　　　　　　+-menu_background.png
 　　　　　　+-menu_foreground.png
 　　　　　　+-menu_sidebar.png
@@ -55,16 +55,16 @@
 <section>
 	<div class="passage">
 		<dl class="component"
-			<dt><a href="descript_shell.html" target="_top">descript.txt</a></dt>
+			<dt><a href="descript_shell.html">descript.txt</a></dt>
 			<dd>
 				<p>シェルを識別し、基本的な設定を行うためのファイル。</p>
-				<p>テキスト内の記載事項は<a href="descript_shell.html" target="_top">リンク先</a>を参照。</p>
+				<p>テキスト内の記載事項は<a href="descript_shell.html">リンク先</a>を参照。</p>
 			</dd>
 
 			<dt>readme.txt</dt>
 			<dd>
-				<p>ゴースト製作者ではないシェル製作者が配布元などを記載するためのもの。</p>
-				<p>省略可能だが、用意しておくと、ベースウェアのメニューやゴーストの機能などで開ける。</p>
+				<p>シェル製作者が配布元などを記載するためのもの。</p>
+				<p>省略可能だが、用意しておくと、インストール時やベースウェアのメニューなどから参照できる。</p>
 				<p>特にゴースト作者とシェル作者が異なるような場合には、なるべく用意される事が望ましい。</p>
 			</dd>
 		</dl>
@@ -85,7 +85,7 @@
 					<p>画像左上の1ドット(座標0,0)と同色が透過される。</p>
 				</div>
 				<div class="passage">
-					<p>サーフェスの番号は<a href="descript_shell_surfaces.html#notes_standarddef" target="_top">ある程度の標準的な割り振り</a>があるものの、基本的には自由。</p>
+					<p>サーフェスの番号は<a href="descript_shell_surfaces.html#notes_standarddef">ある程度の標準的な割り振り</a>があるものの、基本的には自由。</p>
 					<p>ただし、surface0とsurface10は必須（SSPの場合推奨）とされる。</p>
 					<p>そのためたとえキャラクター一人のゴーストであっても、surface10.pngとして単色塗りつぶしの画像を用意するなどの必要がある。
 				</div>
@@ -99,7 +99,7 @@
 			<dd>
 				<div class="passage">
 					<p>サーフェスのアルファチャンネル定義ファイル。</p>
-					<p>PNA自体はPNGをリネームしたもの。</p>
+					<p>グレースケール（黒：透明←→不透明：白）のpng画像の拡張子部分pnaにリネームしたもの。</p>
 					<p>サーフェス番号と同じ番号のpnaファイルを置くことによってサーフェスの半透明化ができる。</p>
 				</div>
 				<div class="passage">
@@ -131,8 +131,8 @@
 
 			<dt>(element).png</dt>
 			<dd>
-				<p><a href="descript_shell_surfaces.html#element*,%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%AE%9A%E7%BE%A9,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,X%E5%BA%A7%E6%A8%99,Y%E5%BA%A7%E6%A8%99" target="_top">element</a>仕様によって、任意名のpng画像（SSPの場合jpegなども可）をパーツとして合成し、一つのsurfaceとして扱う事ができる。</p>
-				<p>※(element)の部分を好きな名前に読み換えてよい。当然何枚でも使用可能。</p>
+				<p><a href="descript_shell_surfaces.html#element*,%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%AE%9A%E7%BE%A9,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,X%E5%BA%A7%E6%A8%99,Y%E5%BA%A7%E6%A8%99">element</a>仕様によって、任意名のpng画像（SSPの場合jpegなども可）をパーツとして合成し、一つのsurfaceとして扱う事ができる。そのためのパーツ用画像。</p>
+				<p>※(element)の部分を好きな名前に読み換えてよい。何枚でも使用可能で、当然なくてもよい。</p>
 				<p>詳しくは後述の「surfaces.txt」も参照。</p>
 			</dd>
 		</dl>
@@ -141,25 +141,25 @@
 <section>
 	<div class="passage">
 		<dl class="component">
-			<dt><a href="descript_shell.html" target="_top">surfaces.txt</a></dt>
+			<dt><a href="descript_shell.html">surfaces.txt</a></dt>
 			<dd>
 				<div class="passage">
 					<p>サーフェスのID割り当て、レイヤー合成、アニメーション、当たり判定などを定義するファイル。</p>
-					<p>定義内容については<a href="descript_shell.html" target="_top">surfaces.txt</a>参照。</p>
+					<p>定義内容については<a href="descript_shell.html">surfaces.txt</a>参照。</p>
 				</div>
 				<div class="passage">
-					<p>アニメーション、着せ替えについては<a href="manual_animation.html" target="_top">アニメーション</a>を参照。</p>
+					<p>アニメーション、着せ替えについては<a href="manual_animation.html">アニメーション</a>を参照。</p>
 				</div>
 			</dd>
 
-			<dt><a href="descript_shell.html" target="_top">surfaces**.txt</a></dt>
+			<dt><a href="descript_shell.html">surfaces**.txt</a></dt>
 			<dd>
 				<p>SSP専用。</p>
 				<p>**には任意の文字列を与えてよい。</p>
 				<p>2.01系以降でsurfaces2.txtの名前に対応し、任意の文字列がつけられるようになったのは2.2.57以降。</p>
-				<p>機能は<em class="phrase">surfaces.txt</em>と同じ。</p>
+				<p>機能は<em class="filename">surfaces.txt</em>と同じ。</p>
 				<p>互換性を維持しつつSSP専用の機能を使うためのもの。</p>
-				<p>必要な部分のみを追記する形でも問題ない。</p>
+				<p>このファイルは省略可能。必要な部分のみを追記する形でも問題ない。</p>
 			</dd>
 		</dl>
 	</div>
@@ -175,17 +175,19 @@
 				<p>このファイルは省略可能。</p>
 			</dd>
 
-			<dt><a href="manual_translator.html" target="_top">makoto.dll</a></dt>
+			<dt><a href="manual_translator.html">makoto.dll</a></dt>
 			<dd>
 				<p>トランスレート機能を使うためのもの。</p>
-				<p>ゴースト側に用意できるものと同じ。シェル側のほうが後に変換される。</p>
+				<p><a href="manual_ghost.html">ゴースト側</a>に用意できるものと同じ。詳しくは<a href="manual_translator.html">リンク先</a>を参照。</p>
+				<p>このファイルは省略可能。</p>
 			</dd>
 
-			<dt><a href="descript_shell_surfacetable.html" target="_top">surfacetable.txt</a></dt>
+			<dt><a href="descript_shell_surfacetable.html">surfacetable.txt</a></dt>
 			<dd>
 				<p>SSP専用。</p>
 				<p>SSP開発用パレットの「サーフィステスト」機能や、そのほかのシェル作成支援ユーティリティでの利用を目的としたサーフェス内容の定義ファイル。</p>
-				<p>詳しくは<a href="descript_shell_surfacetable.html" target="_top">リンク先</a>を参照。</p>
+				<p>詳しくは<a href="descript_shell_surfacetable.html">リンク先</a>を参照。</p>
+				<p>このファイルは省略可能。</p>
 			</dd>
 		</dl>
 	</div>

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Shell設定 - surfaces.txt</title>
@@ -271,7 +271,7 @@
 			<section>
 				<h1>概要</h1>
 				<p>
-					シェルの各種定義を行うためのファイル。
+					シェルの各種定義を行うためのファイル。基本的に全て省略可。必要なものだけ書く。
 					<br>例えば各サーフェス（表情・パーツ・コマ・着せ替えパーツ）へのアニメーション、当り判定、画像の合成などの設定はここで行う。
 					<br>またサーフェスIDに対して別名（エイリアス）を与えたい場合もここで設定できる。
 					<br>SSPではその他にも、当り判定にカーソルを乗せ続けた時に表示されるツールチップや、カーソル表示の変更などの設定も行える。
@@ -1270,7 +1270,7 @@ mousedown1,Bust,system:grip
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
 					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
-					<p class="default">矢印カーソル</p>
+					<p class="default">system:arrow</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か,ゴースト">
 <title>UKADOC Project ゴースト</title>
@@ -12,13 +12,13 @@
 <body>
 <section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
 	<section class="body">
 		<nav class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
 		<section class="text">
 
@@ -35,25 +35,26 @@
 +-(myghost)
 　　+-ghost
 　　　　+-master
-　　　　　　<em class="phrase">+-descirpt.txt</em>
-　　　　　　<em class="phrase">+-shiori.dll</em>
-　　　　　　<em class="phrase">+-(saori).dll</em>
-　　　　　　<em class="phrase">+-makoto.dll</em>
-　　　　　　<em class="phrase">+-updates2.dau</em>
-　　　　　　<em class="phrase">+-*.ico</em>
-　　　　　　<em class="phrase">+-*.csr</em>
-　　　　　　<em class="phrase">+-thumbnail.png</em>
+　　　　　　<em class="filename">+-descirpt.txt</em>
+　　　　　　<em class="filename">+-shiori.dll</em>
+　　　　　　<em class="filename">+-(saori).dll</em>
+　　　　　　<em class="filename">+-makoto.dll</em>
+　　　　　　<em class="filename">+-updates2.dau</em> （旧仕様）
+　　　　　　<em class="filename">+-updates.txt</em> （旧仕様）
+　　　　　　<em class="filename">+-*.ico</em>
+　　　　　　<em class="filename">+-*.csr</em>
+　　　　　　<em class="filename">+-thumbnail.png</em>
 </pre>
 	</div>
 </section>
 <section>
 	<div class="passage">
 		<dl class="component">
-			<dt><a href="descript_ghost.html" target="_top">descript.txt</a></dt>
+			<dt><a href="descript_ghost.html">descript.txt</a></dt>
 			<dd>
 				<p>ゴーストを識別するためのファイル。</p>
 				<p>これがないと本体に認識されない。</p>
-				<p>テキスト内の記載事項など詳細は<a href="descript_ghost.html" target="_top">リンク先</a>を参照。</p>
+				<p>テキスト内の記載事項など詳細は<a href="descript_ghost.html">リンク先</a>を参照。</p>
 			</dd>
 		</dl>
 	</div>
@@ -61,11 +62,12 @@
 <section>
 	<div class="passage">
 		<dl class="component">
-			<dt><a href="manual_update.html" target="_top">updates2.dau</a></dt>
+			<dt><a href="manual_update.html">updates2.dau</a></dt>
+			<dt><a href="manual_update.html">updates.txt</a></dt>
 			<dd>
-				<p>更新情報が記載されたたファイル。</p>
-				<p>このファイルがないとネットワーク更新はできない。</p>
-				<p>詳しくは<a href="manual_update.html" target="_top">リンク先</a>参照。</p>
+				<p>更新情報が記載されたファイル。</p>
+				<p>この位置にあるのは旧仕様で、基本的にルート（(myghost)直下）にのみあればよい。</p>
+				<p>詳しくは<a href="manual_update.html">リンク先</a>参照</p>
 			</dd>
 		</dl>
 	</div>
@@ -73,24 +75,31 @@
 <section>
 	<div class="passage">
 		<dl class="component">
-			<dt><a href="manual_shiori_saori.html" target="_top">shiori.dll</a></dt>
+			<dt>shiori.dll</dt>
 			<dd>
-				<p>ゴーストのコア。</p>
-				<p>汎用SHIORIが多く出ているので通常はそれを使用する。</p>
-				<p>詳しくは<a href="manual_shiori_saori.html" target="_top">リンク先</a>参照。</a>
+				<div class="passage">
+					<p>ゴーストのコア。ほぼ必須。</p>
+					<p>汎用SHIORIが多く出ているので通常はそれを使用する。</p>
+					<p>ベースウェア（SSPなど）から送信されてくる<a href="list_shiori_event.html">SHIORI Event</a>（<a href="memo_shiorievent.html">補足説明</a>）を受けて、ゴーストの動作指示である<a href="list_sakura_script.html">さくらスクリプト</a>を構築してベースウェアに返却する役割を果たす。</p>
+				</div>
+				<div class="passage">
+					<p>実際のトークの書き方など、ゴーストの中核部分の作り方は、SHIORIによって全く異なるので、各SHIORI側のドキュメントを参照。</p>
+				</div>
 			</dd>
 
-			<dt><a href="manual_shiori_saori.html" target="_top">(saori).dll</a></dt>
+			<dt><a href="manual_shiori_saori.html">(saori).dll</a></dt>
 			<dd>
-				<p>shioriの機能拡張モジュール。</p>
-				<p>詳しくは<a href="manual_shiori_saori.html" target="_top">リンク先</a>参照。</a>
+				<p>SHIORIの機能拡張モジュール。</p>
+				<p>基本的にはshiori.dllと同じ階層に置く。</p>
+				<p>ただしSHIORIから呼び出す際に相対パスを指定することもできる。</p>
+				<p>使用手順はSHIORI次第なので、SHIORI側のドキュメントを参照。</p>
 				<p>このファイルは省略可能。</p>
 			</dd>
 
-			<dt><a href="manual_translator.html" target="_top">makoto.dll</a></dt>
+			<dt><a href="manual_translator.html">makoto.dll</a></dt>
 			<dd>
 				<p>トランスレート用のDLL。</p>
-				<p>詳しくは<a href="manual_translator.html" target="_top">リンク先</a>参照。<a href="manual_shell.html" target="_top">シェル側</a>にも設置可能。</p>
+				<p>詳しくは<a href="manual_translator.html">リンク先</a>参照。<a href="manual_shell.html">シェル側</a>にも設置可能。</p>
 				<p>このファイルは省略可能。</p>
 			</dd>
 		</dl>

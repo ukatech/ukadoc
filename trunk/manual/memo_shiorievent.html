@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,SHIORI Event">
 <title>UKADOC Project 補足: SHIORI Eventとは</title>
@@ -12,13 +12,13 @@
 <body>
 <section class="baseframe">
 	<h1>
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
 	<section class="body">
 		<nav class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
 		<section class="text">
 
@@ -86,7 +86,7 @@
 		<p>しかしIDによっては、Referenceの数が不定の場合もあります。</p>
 		<p>例えばSHIORI Eventの一覧ページで、<a href="list_shiori_event.html#installedghostname" target="_top">installedghostname</a>と言うSHIORI EventのReferenceをみると、「Reference*」といった形で番号が明記されていません。</p>
 		<p>installedghostnameは、起動直後などに発生し、そのベースウェアにインストールされているゴースト名を全て教えてくれるSHIORI Eventです。インストールされているゴースト数は当然ユーザによってまちまちですから、従ってReferenceも不定数となっているのです。</p>
-		<p>Referenceの総数が不定であっても、全てのReferenceには0から始まる通し番号付きで表されるという原則は変わりません。</p>
+		<p>Referenceの総数が不定であっても、全てのReferenceは0から始まる通し番号付きで表されるという原則は変わりません。</p>
 	</div>
 </section>
 <section id="chapter3">
@@ -109,10 +109,10 @@
 	<div class="passage">
 		<p>NOTIFYコマンドの目的は、SHIORIに対して情報（Reference）を知らせる（notify）ことにあります。</p>
 		<p>SHIORIは受け取った情報をそのSHIORI Eventで使うというよりは、今後のゴーストの動作のために役立てる事ができます。</p>
-		<p>先述の<a href="list_shiori_event.html#installedghostname">installedghostname</a>は、NOTIFYコマンドで発行されるIDの典型です。SHIORIはそのReferenceから、ユーザの環境にどんなゴーストがインストールされているかどうかを知る事ができます。ゴーストはその情報を元に、例えば「特定のゴーストがインストールされているなら、そのゴーストを呼び出すための項目をメニューに表示する」といった仕掛けを作る事ができるでしょう。</p>
+		<p>先述の<a href="list_shiori_event.html#installedghostname">installedghostname</a>は、NOTIFYコマンドで発行されるIDの典型です。SHIORIはそのReferenceから、ユーザの環境にどんなゴーストがインストールされているかを知る事ができます。ゴーストはその情報を元に、例えば「特定のゴーストがインストールされているなら、そのゴーストを呼び出すための項目をメニューに表示する」といった仕掛けを作る事ができるでしょう。</p>
 	</div>
 	<div class="passage">
-		<p>注意を要する点ですが、二つのコマンドの存在は、SHIORI Eventの全IDが二つの「種類」に分けられる<em>ということを意味しません</em>。</p>
+		<p>注意を要する点ですが、二つのコマンドの存在は、SHIORI EventのID全体が二つの「種類」に分けられる<em>ということを意味しません</em>。</p>
 		<p>何故なら、原則として<em>全てのSHIORI EventはNOTIFY、GETのいずれでも発行される</em>可能性があり、本質的にはIDに依存した設計にはなっていないからです。コマンドの種類とIDの種類はあくまでも独立したものです（しかしながら現実の実装を眺めてみたときには、一定の傾向や規則があります。そうした詳細については<a href="list_shiori_event.html">SHIORI Eventの一覧ページ</a>のそれぞれの節を参照してください）。</p>
 	</div>
 </section>

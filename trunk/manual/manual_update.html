@@ -1,155 +1,154 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,更新,ネットワーク">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project Update</title>
+<meta name="keywords" content="伺か,更新,ネットワーク">
+<title>UKADOC Project ネットワーク</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>ネットワーク更新</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>※初心者の方は「<a href="dev_update.html" target="_top">ネットワーク更新に対応する</a>」のページも参照の事。</p>
-				</div>
-				<div class="section">
-					<p>ネットワーク更新ではゴーストの全てのファイルが更新可能である。</p>
-				</div>
-				<div class="section">
-					<p>updates2.dauの作成</p>
-					<p>更新用URL（サーバ）の設定</p>
-					<p>サーバへのファイル配置</p>
-					<p>3つがそろってはじめて可能になる。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">updates2.dau</h3>
-					<p>更新用ファイルを作成するにはまず、適当なフォルダに更新用ファイルを、<br>ディレクトリ階層をそのまま再現して配置する。</p>
-					<p>ディレクトリの一番上の階層にupdates2.dauという空のtxtファイルを作る（SSPは勝手に作ってくれる）。</p>
-					<p>そのフォルダを本体にD&amp;DするとファイルのMD5が計算されupdates2.dauに書き込まれる。</p>
-					<p>フォルダの中身をサーバにそのままアップロードすれば更新用ファイルが出来上がる。</p>
-				</div>
-				<div class="section">
-					<p>サーバにファイルをアップロードする時は<strong>必ずバイナリモードでアップロードしなくてはならない</strong>。</p>
-					<p>本体にD&amp;Dする時、install.txtがあるとそちらが優先されてnarファイルを作ってしまうので注意。</p>
-					<p>SSPの場合はD&amp;D時の挙動は本体設定から設定可能。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">updates.txt</h3>
-					<p>updates2.dauとほぼ同じ扱い。</p>
-					<p>拡張子制限でdauがアップロードできない等の問題を解決できる。</p>
-					<p>ディレクトリの一番上の階層に配置する。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">更新用URL</h3>
-					<p>SHIORI Eventで指定する。</p>
-					<p>記述は各SHIORIにて。</p>
-					<p>サーバ側のupdates2.dauの場所を指定する。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">delete.txt</h3>
-					<p>このテキストに書かれたファイルを消去することができる。</p>
-					<p>サーバ側のupdates2.dauと同じ位置に配置する。</p>
-					<p>不要になったファイルが肥大するのを防ぐのに使う。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost\master\ai.dtx
-shell\master\surface0.png
-</pre>
-				</div>
-				<div class="section">
-					<p>上記のようにゴーストのホームディレクトリからの相対パスで記載する。</p>
-					<p>delete.txtはそのまま存在しつづけるため<br>内容を変更しない限り記載されたファイルが再び置かれても消されつづける。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">updates_def.txt</h3> 
-					<p>SSPのみ。</p>
-					<p>相対パスで書いておくと、更新ファイル作成時にそれを無視する。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost/maste/profile/mainform.txt,ignore
-ghost/master/profile/var.txt,ignore
-shell/master/profile/bind.txt,ignore
-shell/master/profile/keroform.txt,ignore
-shell/master/profile/mainform.txt,ignore
-shell/master/profile/crow.ini,ignore
-</pre>
-				</div>
-				<div class="section">
-					<h3 class="component">developer_options.txt</h3>
-					<p>SSPのみ。</p>
-					<p>updates_def.txtの改修版。NARに含めないものも指定可。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-ghost/master/profile/,nonar,noupdate
-shell/master/profile/,nonar,noupdate
-</pre>
-				</div>
-				<div class="section">
-					<p>なお、以下のフォルダやファイルは指定しなくても自動的に除外される</p>
-					<br>
-					<p>ファイル</p>
-					<ul>
-						<li>desktop.ini</li>
-						<li>thumbs.db</li>
-						<li>folder.htt</li>
-						<li>mscreate.dir</li>
-						<li>.DS_Store</li>
-						<li>_CATALOG.VIX</li>
-					</ul>
-					<br>
-					<p>ディレクトリ</p>
-					<ul>
-						<li>profile</li>
-						<li>var</li>
-						<li>__MACOSX</li>
-						<li>XtraStuf.mac</li>
-					</ul>
-				</div>
-			</div>
-		</div>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>ネットワーク更新</h1>
+<section>
+	<div class="passage">
+		<p>ネットワーク更新のための設定などは「<a href="dev_update.html">ネットワーク更新への対応</a>」のページを参照。</p>
+		<p>ネットワーク更新に関係するファイルの配置は以下の通り。</p>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+	<div class="passage">
+		<dl>
+			<dt>ゴーストの場合</dt>
+			<dd>
+<pre>
++-(myghost)
+　　+-ghost
+　　+-shell
+　　<em class="filename">+-updates2.dau</em>
+　　<em class="filename">+-updates.txt</em>
+　　<em class="filename">+-delete.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
+　　+-readme.txt
+　　+-thumbnail.png
+</pre>
+			</dd>
+
+
+			<dt>(SSPのみ)追加シェルをネットワーク更新に対応させる場合</dt>
+			<dd>
+<pre>
++-(myshell)
+　　+-ghost
+　　+-shell
+　　<em class="filename">+-updates2.dau</em>
+　　<em class="filename">+-updates.txt</em>
+　　<em class="filename">+-delete.txt</em>
+　　<em class="filename">+-developer_options.txt</em>
+　　+-readme.txt
+　　+-thumbnail.png
+</pre>
+			</dd>
+
+
+			<dt>(SSPのみ)バルーンをネットワーク更新に対応させる場合</dt>
+			<dd>
+<pre>
++-(myballoon)
+　　<em class="filename">+-updates2.dau</em>
+　　<em class="filename">+-updates.txt</em>
+　　<em class="filename">+-delete.txt</em>
+　　<em class="filename">+-developer_options.txt</em>
+　　+-descirpt.txt
+　　+-balloons*s.txt
+　　+-balloonk*s.txt
+　　+-readme.txt
+　　+-balloons*.png
+　　+-balloonk*.png
+　　:
+　　:
+</pre>
+				<p>他、プラグイン、ヘッドラインなども同様に、そのフォルダ内に設置すればよい。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt>updates2.dau</dt>
+			<dd>
+				<div class="passage">
+					<p>更新対象とするファイルのMD5ハッシュ値などが列挙されたファイル。</p>
+					<p>ネットワーク更新で、サーバにあるファイルと実際にダウンロードされたファイルの間で、ファイルが破損・改竄などされていないかを検出する目的で用いられる。</p>
+				</div>
+				<div class="passage">
+					<p>普通ベースウェアの機能を用いるなどして作成するもので、人が編集する必要はない。</p>
+					<p>作成手順などは「<a href="dev_update.html">ネットワーク更新への対応</a>」のページを参照</p>
+				</div>
+			</dd>
+
+			<dt>updates.txt</dt>
+			<dd>
+				<p>updates2.dauとほぼ同じ意味を果たすもの。どちらか一方があればよい（両方あっても問題ない）。</p>
+				<p>書式が多少異なるほか、拡張子制限でdauがアップロードできない等の問題を回避できる。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="descript_install.html#delete.txt">delete.txt</a></dt>
+			<dd>
+				<p>ファイルの削除設定ファイル。</p>
+				<p>サーバ上でupdates2.dauと同じ位置に配置する。</p>
+				<p>不要になったファイルが肥大するのを防ぐなどの目的で使う。</p>
+				<p>書式など詳しくは<a href="descript_install.html#delete.txt" title="delete.txt">リンク先</a>を参照。</p>
+			</dd>
+
+			<dt><a href="descript_install.html#developer_options.txt">developer_options.txt</a></dt>
+			<dd>
+				<p>SSPのみ。</p>
+				<p>updates2.dauを作成したい位置（一番上のディレクトリ）に配置する。</p>
+				<p>SSPでupdates2.dau（updates.txt）を作る場合に、対象に含めないファイルなどを指定するためのファイル。</p>
+				<p>サーバ上にアップロードする必要はない（自身を除外ファイルに指定するなどで可能）が、あっても害はないので、ユーザが再度narにしなおすなどの状況を考えつつ自由に。</p>
+				<p>書式など詳しくは<a href="descript_install.html#developer_options.txt" title="developer_options.txt">リンク先</a>を参照。</p>
+			</dd>
+		</dl>
+	</div>
+</pre>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

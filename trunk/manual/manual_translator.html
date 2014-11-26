@@ -1,107 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,トランスレート,MAKOTO">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project SHIORI/SAORI</title>
+<meta name="keywords" content="伺か,makoto,トランスレータ">
+<title>UKADOC Project トランスレータ</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>トランスレータ</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>トランスレータのことをゴーストではMAKOTOと称する。</p>
-					<p>ゴースト側・シェル側の両方に配置できる（CROWはゴースト側のみ）。</p>
-				</div>
-				<div class="section">
-					ゴースト側で使用する場合は下記の位置にmakoto.dllがある必要がある。
-				</div>
-				<div class="section">
-<pre>
-home
-　+-ghost
-　　　+-myghost
-　　　　　+-ghost
-　　　　　　　+-master
-　　　　　　　　　+-descirpt.txt
-　　　　　　　　　+-shiori.dll
-　　　　　　　　　<em>+-makoto.dll</em>
-　　　　　　　　　+-updates2.dau
-　　　　　　　　　+-*.ico
-　　　　　　　　　+-*.csr
-</pre>
-				</div>
-				<div class="section">
-					シェル側で使用する場合は下記の位置にmakoto.dllがある必要がある。
-				</div>
-				<div class="section">
-<pre>
-home
-　+-ghost
-　　　+-myghost
-　　　　　+-shell
-　　　　　　　+-myshell
-　　　　　　　　　+-descript.txt
-　　　　　　　　　+-surface*.png
-　　　　　　　　　+-surface*.pna
-　　　　　　　　　+-surfaces.txt
-　　　　　　　　　<em>+-makoto.dll</em>
-　　　　　　　　　+-menu_background.png
-　　　　　　　　　+-menu_foreground.png
-　　　　　　　　　+-menu_sidebar.png
-　　　　　　　　　+-readme.txt
-　　　　　　　　　+-thumbnail.png
-　　　　　　　　　+-surfaces**.txt
-　　　　　　　　　+-surfacetable.txt
-</pre>
-				</div>
-				<div class="section">
-					<p>スクリプトの上にフィルタとなり特定の文字列を書き換えることができる。</p>
-					<p>変換の順序はゴースト側⇒シェル側。</p>
-					<p>変換のタイミングはバルーンに表示される直前。</p>
-					<p>SHIORI同様MAKOTOとして使用できるファイルは多数あり、それぞれ使い方が異なる。</p>
-				</div>
-				<div class="section">
-					<p>過去、SHIORIのなかった時代にはトークを変更させるために使用されていたが、現在そのような使い方はあまりされない。</p>
-					<p>シェル側から使用できるので、シェルによって口調を変化させるなどの仕掛けに利用される。</p>
-				</div>
-				<div class="section">
-					<p>SHIORI EventのOnTranslateでもトランスレートが可能。</p>
-				</div>
-			</div>
-		</div>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>トランスレータ</h1>
+<section>
+	<div class="passage">
+		<p>トランスレータのことをゴーストではMAKOTOと称する。</p>
+		<p>ゴースト側・シェル側の両方に配置できる（CROWはゴースト側のみ）。</p>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+	<div class="passage">
+		<p>ゴースト側で使用する場合はmaster直下に<em class="filename">makoto.dll</em>がある必要がある。</p>
+<pre>
++-(myghost)
+　　+-ghost
+　　　　+-master
+　　　　　　<em class="filename">+-makoto.dll</em>
+　　　　　　+-descirpt.txt
+　　　　　　+-shiori.dll
+　　　　　　:
+　　　　　　:
+</pre>
+	</div>
+	<div class="passage">
+		<p>シェル側で使用する場合は各シェルのフォルダ直下にmakoto.dllがある必要がある。</p>
+<pre>
++-(myghost)
+　　+-shell
+　　　　+-master(またはadditional_shell)
+　　　　　　<em class="filename">+-makoto.dll</em>
+　　　　　　+-descript.txt
+　　　　　　+-surface*.png
+　　　　　　+-surface*.pna
+　　　　　　+-surfaces.txt
+　　　　　　:
+　　　　　　:
+</pre>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<p>SHIORIが作成したスクリプトに対し、フィルタとして働き文字列を置き換えることができる。</p>
+		<p>ゴースト側とシェル側療法にある場合、先にゴースト側のトランスレートが行われてから、続けてシェル側のトランスレートが行われる。</p>
+		<p>トランスレートのタイミングはバルーンに表示される直前。</p>
+		<p>SHIORI同様MAKOTOとして使用できるファイルは多数あり、詳しい使い方はそれぞれのドキュメントを参照する必要がある。</p>
+	</div>
+	<div class="passage">
+		<p>過去、SHIORIのなかった時代にトークを変更させるために使用されていたが、現在はそのような使い方はあまりされない。</p>
+		<p>シェルによって口調を変化させるなどの仕掛けに利用される。</p>
+	</div>
+	<div class="passage">
+		<p>SHIORI EventのOnTranslateでもトランスレートが可能（＝SHIORIがMAKOTOを兼ねる）。</p>
+		<p>もしMAKOTOとSHIORIの両方でトランスレートをする場合は、SHIORI⇒MAKOTOの処理順序。</p>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

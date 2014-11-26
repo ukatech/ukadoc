@@ -1,172 +1,227 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,バルーン,balloon">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project Balloon</title>
+<meta name="keywords" content="伺か,balloon,バルーン">
+<title>UKADOC Project バルーン</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>バルーン</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>バルーンフォルダのファイルは以下の通り。</p>
-				</div>
-				<div class="section">
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>バルーン</h1>
+<section>
+	<div class="passage">
+		<p>バルーンフォルダのファイルは以下の通り。</p>
+	</div>
+	<div class="passage">
 <pre>
 +-(myballoon)
-　　<em>+-descirpt.txt</em>
-　　<em>+-balloonc*.png</em>
-　　<em>+-balloons*.png</em>
-　　<em>+-balloonk*.png</em>
-　　<em>+-balloons*.pna</em>（MATERIA不可）
-　　<em>+-balloonk*.pna</em>（MATERIA不可）
-　　<em>+-online*.png</em>
-　　<em>+-sstp.png</em>
-　　<em>+-arrow*.png</em>
-　　<em>+-thumbnail.png</em>
-　　<em>+-balloons*s.txt</em>
-　　<em>+-balloonk*s.txt</em>
-　　<em>+-ok_down.png/ok_up.png</em>（SSP専用）
-　　<em>+-cancel_down.png/cancel_up.png</em>（SSP専用）
-　　<em>+-mode_down.png/mode_up.png</em>（SSP専用）
-　　<em>+-sstp_new.png</em>（SSP専用）
-　　<em>+-marker.png</em>（SSP専用）
+　　<em class="filename">+-descirpt.txt</em>
+　　<em class="filename">+-balloons*s.txt</em>
+　　<em class="filename">+-balloonk*s.txt</em>
+　　<em class="filename">+-readme.txt</em>
+　　<em class="filename">+-balloons*.png</em>
+　　<em class="filename">+-balloonk*.png</em>
+　　<em class="filename">+-balloons*.pna</em> （MATERIA不可）
+　　<em class="filename">+-balloonk*.pna</em> （MATERIA不可）
+　　<em class="filename">+-balloonc*.png</em>
+　　<em class="filename">+-online*.png</em>
+　　<em class="filename">+-sstp.png</em>
+　　<em class="filename">+-arrow*.png</em>
+　　<em class="filename">+-thumbnail.png</em>
+　　<em class="filename">+-ok_down.png/ok_up.png</em> （SSPのみ）
+　　<em class="filename">+-cancel_down.png/cancel_up.png</em> （SSPのみ）
+　　<em class="filename">+-mode_down.png/mode_up.png</em> （SSPのみ）
+　　<em class="filename">+-sstp_new.png</em> （SSPのみ）
+　　<em class="filename">+-marker.png</em> （SSPのみ）
 </pre>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_balloon.html">descript.txt</a></h3>
-					<p>バルーンを識別するためのファイル。</p>
-					<p>テキスト内の記載事項はリンク先を参照。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component">balloonc*.png</h3>
-					<p>バルーンの入力ウインドウ。</p>
-					<p>各ファイル名は下記に対応している。</p>
-				</div>
-				<div class="section">
-					<p>balloonc0.png　Sendボックス</p>
-					<p>balloonc1.png　Communicateボックス</p>
-					<p>balloonc2.png　Teachボックス</p>
-					<p>balloonc3.png　Inputボックス</p>
-					<p>balloonc4.png　Address Barボックス(SSP専用)</p>
-				</div>
-				<div class="section">
-					<h3 class="component">balloons*.png</h3>
-					<p>本体側の吹き出し。</p>
-					<p>一般的なバルーンは下記の様になっている。</p>
-				</div>
-				<div class="section">
-					<p>balloons0.png　通常の吹き出し(左側)</p>
-					<p>balloons1.png　通常の吹き出し(右側)</p>
-					<p>balloons2.png　縦長の吹き出し(左側)</p>
-					<p>balloons3.png　縦長の吹き出し(右側)</p>
-				</div>
-				<div class="section">
-					<h3 class="component">balloons*.pna</h3>
-				</div>
-				<div class="section">
-					<h3 class="component">balloonk*.png</h3>
-					<p>相方側の吹き出し。</p>
-					<p>上記の本体側のバルーンと同じだが縦サイズがやや小さめなのが一般的。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">balloonk*.pna</h3>
-				</div>
-				<div class="section">
-					<h3 class="component">online*.png</h3>
-					<p>ネットワーク情報受信中に表示される画像。</p>
-					<p>番号順にアニメーションを繰り返す。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">arrow*.png</h3>
-					<p>文章をスクロールさせるのに使用する画像。</p>
-					<p>0が上向き、1が下向き。</p>
-				</div>
-				<div class="section">
-					<h3 class="component"><a href="descript_balloon.html#balloonsoption">balloons*s.txt/balloonk*s.txt</a></h3>
-					<p>バルーンごとの個別設定用ファイル。</p>
-					<p>descirpt.txtの記述より優先される。</p>
-					<p>そのバルーンのみ設定を変更したいとき等に使用する。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">sstp.png</h3>
-					<ul>
-						<li>SSTP受信時に、送信者情報などを表示する際</li>
-						<li>\![*]タグ（SSPは%*でも同様）を実行した際</li>
-					</ul>
-					<p>に使用される画像。SSPでそれぞれ専用のものを設定したい場合は下記の仕様も参照。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">thumbnail.png</h3>
-					<p>メニューツリーでバルーンの選択時に表示されるサムネイル。</p>
-					<p>使用可能な画像形式はpngもしくはjpg。</p>
-					<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
-					<p>このファイルは省略可能。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					以下SSP専用
-				</div>
-				<div class="section">
-					<h3 class="component">ok_down.png/ok_up.png</h3>
-					<p>OKボタンの画像。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">cancel_down.png/cancel_up.png</h3>
-					<p>キャンセルボタンの画像。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">mode_down.png/mode_up.png</h3>
-					<p>モード切替ボタンの画像。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">sstp_new.png</h3>
-					<p>SSTP受信時に、送信者情報などを表示する際に使用される画像(専用)。</p>
-				</div>
-				<div class="section">
-					<h3 class="component">marker.png</h3>
-					<p>\![*]タグで表示される画像(専用)。</p>
-				</div>
-			</div>
-		</div>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="descript_balloon.html">descript.txt</a></dt>
+			<dd>
+				<p>バルーンを識別するためのファイル。</p>
+				<p>ゴーストやシェルのdescript.txtと比べても記載項目が多い。</p>
+				<p>詳細は<a href="descript_balloon.html" title="descript.txt">リンク先</a>を参照。</p>
+			</dd>
+
+			<dt><a href="descript_balloon.html#balloonsoption">balloons*s.txt/balloonk*s.txt</a></dt>
+			<dd>
+				<p>バルーンごとの個別設定用ファイル。</p>
+				<p>対応するIDのサーフェス（balloons1.pngに対してballoons1s.txt）について用意すると、そのサーフェスに対してdescirpt.txtの記述を上書きする形で適応される。</p>
+				<p>特定IDのサーフェスのみ設定を変更したいとき等に使用する。</p>
+				<p>※ファイル名のsに注意（balloons*.txtではなくてballoons*<em>s</em>.txt）</p>
+				<p>詳細は<a href="descript_balloon.html#balloonsoption" title="balloon(s|k)*s.txt">リンク先</a>を参照。</p>
+			</dd>
+
+			<dt>readme.txt</dt>
+			<dd>
+				<p>バルーン作者が配布元などを記載するためのもの。</p>
+				<p>省略可能だが、用意しておくと、インストール時やベースウェアのメニューなどから参照できる。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt>balloons*.png</dt>
+			<dd>
+				<div class="passage">
+					<p>本体側の吹き出し。</p>
+					<p>*はバルーンのサーフェスIDになる数字。</p>
+					<p>偶数番のIDは左向きのバルーン、奇数番のIDは右向きのバルーンとして、二つセットになる。</p>
+					<p>なお一般的に下記のような割り当てになっているが、自由。4-5、6-7とセットを追加していってもよいし0-1だけでもよい。</p>
+				</div>
+				<ul>
+					<li>balloons0.png　および　balloons1.png　……　通常の吹き出し(左・右)</li>
+					<li>balloons2.png　および　balloons3.png　……　縦長の吹き出し(左・右)</li>
+				</ul>
+			</dd>
+
+			<dt>balloons*.pna</dt>
+			<dd>
+				<p>MTERIAでは不可。</p>
+				<p>グレースケール（黒：透明←→不透明：白）のpng画像の拡張子部分pnaにリネームしたもの。</p>
+				<p>対応するID（balloons0.pngに対してballoons0.pna）のpngに対応したpnaを用意すると、それを透明度設定として利用できる。</p>
+				<p>SSPでは<a href="descript_balloon.html#use_self_alpha,%E6%95%B0%E5%80%A4">設定</a>でpng自体のαチャンネルを利用できる点も同じ。</p>
+				<p>このファイルは省略可。</p>
+			</dd>
+
+			<dt>balloonk*.png</dt>
+			<dd>
+				<p>相方側（または三人目以降）の吹き出し。</p>
+				<p>基本的にballoons*.pngと同じだが縦サイズがやや小さめなのが一般的。</p>
+				<p>このファイルは省略可。省略時は本体側の対応するIDのものが使われる。</p>
+			</dd>
+
+			<dt>balloonk*.pna</dt>
+			<dd>
+				<p>balloons*.pnaのballoonk*.png版。説明は先述のballoons*.pna参照。</p>
+			</dd>
+
+			<dt>balloonc*.png</dt>
+			<dd>
+				<div class="passage">
+					<p>バルーンの入力ウインドウ。</p>
+					<p>*には0から3（SSPは4）の数字が入り、各番号のファイルは以下に対応している。</p>
+				</div>
+				<ul>
+					<li>balloonc0.png　……　Sendボックス</li>
+					<li>balloonc1.png　……　Communicateボックス</li>
+					<li>balloonc2.png　……　Teachボックス</li>
+					<li>balloonc3.png　……　Inputボックス</li>
+					<li>balloonc4.png　……　Address Barボックス(SSP専用)</li>
+				</ul>
+				<div class="passage">
+					<p>なお、balloonc*.pngにはpnaを利用できない（半透明化できない）。</p>
+				</div>
+			</dd>
+
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt>online*.png</dt>
+			<dd>
+				<p>ネットワーク情報受信中に表示される画像。</p>
+				<p>番号順にアニメーションを繰り返す。</p>
+			</dd>
+
+			<dt>arrow*.png</dt>
+			<dd>
+				<p>文章をスクロールさせるのに使用する画像。</p>
+				<p>0が上向き、1が下向き。</p>
+			</dd>
+
+			<dt>sstp.png</dt>
+			<dd>
+				<ul>
+					<li>SSTP受信時に、送信者情報などを表示する際</li>
+					<li>\![*]タグ（SSPは%*でも同様）を実行した際</li>
+				</ul>
+				<p>に表示される画像。SSPではそれぞれ専用のものを設定できる。後述。</p>
+			</dd>
+
+			<dt>thumbnail.png</dt>
+			<dd>
+				<p>メニューツリーでバルーンの選択時に表示されるサムネイル。</p>
+				<p>使用可能な画像形式はpngもしくはjpg。</p>
+				<p>pngをpnrにリネームすると画像左上の1ドット(座標0,0)と同色が透過される。</p>
+				<p>このファイルは省略可能。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<section>
+	<div class="passage">
+		以下SSP専用。全て省略可能。
+	</div>
+	<div class="passage">
+		<dl class="component">
+			<dt>ok_down.png/ok_up.png</dt>
+			<dd>
+				<p>入力ボックス系のOKボタンの画像。</p>
+			</dd>
+
+			<dt>cancel_down.png/cancel_up.png</dt>
+			<dd>
+				<p>入力ボックス系のキャンセルボタンの画像。</p>
+			</dd>
+
+			<dt>mode_down.png/mode_up.png</dt>
+			<dd>
+				<p>モード切替ボタンの画像。</p>
+			</dd>
+
+			<dt>sstp_new.png</dt>
+			<dd>
+				<p>SSTP受信時に、送信者情報などを表示する際に使用される画像（sstp.pngと異なりこの用途専用）。</p>
+			</dd>
+
+			<dt>marker.png</dt>
+			<dd>
+				<p>\![*]タグ（SSPは%*でも同様）で表示される画像（sstp.pngと異なりこの用途専用）。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->
