@@ -1,276 +1,350 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,配布">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project 配布用ファイルを作る</title>
+<meta name="keywords" content="ゴースト,配布,nar,アーカイブ,伺か">
+<title>UKADOC Project 配布用ファイルの作成</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>配布用ファイルを作る</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>ゴーストのアーカイブはD&amp;Dインストールできるzipもしくはnarファイルが一般的です。</p>
-					<p>lzhでもインストールは可能ですが理由がない限りはzip、narにしてください。</p>	
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>1、ゴーストの更新用情報を作る</h3>
-				<div class="section">
-					<p>まずは自分のゴーストデータを全てをコピーし、下記のものを削除してください。</p>
-				</div>
-				<ul>
-					<li>各種セーブデータファイル(初期値が必要なものだけ含めてください)</li>
-					<li>全てのprofileフォルダ(ghost、shell内)</li>
-					<li>ディレクトリ直下の<em>profile.txt</em></li>
-				</ul>
-				<div class="section">
-					<p>次にコピーしたディレクトリの一番上に空のテキストで<em>updates2.dau</em>を作ります。</p>
-					<p>※この時ゴーストのmasterフォルダに<em>updates2.dau</em>は必要ありません。</p>
-				</div>
-				<div class="section">
-					<p>そしてMATERIA、SSP等の本体を起動し、<em>updates2.dau</em>や更新したいファイルの入ったフォルダを本体にドロップします。</p>
-					<p>この時、<em>install.txt</em>が入ってるとそちらが優先されnarファイルができてしまうので含めないでください。</p>
-				</div>
-				<div class="section">
-					<em>updates2.dau</em>が作成できたら中身を確認してみてください。
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>2、ゴーストのnarファイルを作成する</h3>
-				<div class="section">
-					<p>ディレクトリ直下に<em>install.txt</em>というファイルを作ります。</p>
-					<p>下記の内容をコピーして<em>install.txt</em>に貼り付けゴースト名等を適切に変更してください。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-charset,Shift_JIS
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>配布用ファイルの作成</h1>
+<section>
+	<div class="passage">
+		<p><em>SSP2.3.00以降の場合、オーナードロー（右クリックメニュー）から「設定」→「本体設定」の「一般」にある「開発者機能を有効にする」がオンになっていないと、このページで使っている「フォルダを投下してupdates2.dauやnarを作成する機能」が使えませんので注意してください。</em></p>
+	</div>
+	<div class="passage">
+		<p>ここでは配布用のファイル（アーカイブ）を作成する手順を解説します。</p>
+		<p>ゴーストに限らず、追加シェル、バルーン、その他の伺か/SSP関連コンテンツのアーカイブ作成をまとめて取り上げています。</p>
+		<p>ファイル構成の「<a href="manual_install.html">インストール</a>」のページも合わせてお読みください。</p>
+	</div>
+	<div class="passage">
+		<p>なおこのページでは、「ゴースト（やシェルやバルーン）の作り方」そのものの解説は行いませんので注意してください。</p>
+		<p>既にその辺りは済んだ段階を前提とした解説となっています。</p>
+	</div>
+	<div class="passage">
+		<p>目次</p>
+		<ol class="list-of-contents">
+			<li><a href="#chapter1">ファイルの準備</a></li>
+			<li><a href="#chapter2">初期updates2.dauの作成</a></li>
+			<li><a href="#chapter3">install.txtの準備</a></li>
+			<li><a href="#chapter4">アーカイブ化</a></li>
+		</ol>
+		<ol class="list-of-contents-ex">
+			<li><a href="#chapterEX1">developer_options.txtについて</a></li>
+			<li><a href="#chapterEX2">ゴースト配布系自動化システム(GDM)について</a></li>
+			<li><a href="#chapterEX3">refleshinstallについて</a></li>
+			<li><a href="#chapterEX4">バルーンなどの同梱配布について</a></li>
+			<li><a href="#chapterEX5">ゴーストへの追加ファイルについて</a></li>
+			<li><a href="#chapterEX6">複数インストール用パッケージについて</a></li>
+		</ol>
+	</div>
+</section>
+<section id="chapter1">
+	<h1>1、ファイルの準備</h1>
+	<div class="passage">
+		<p>まずはアーカイブに含める内容（ゴーストならそのゴーストを構成するファイル一式）を用意します。</p>
+		<p>もしベースウェアにインストールされている内容を直接編集して開発している場合は、それそのものではなくて、その内容を丸ごと別の場所にコピーしたものを配布用のファイルとして用意したうえで以下の作業をするとよいでしょう。</p>
+		<p>どんなファイルが必要なのかについては、ページ左のメニューの「ファイル構成」のカテゴリーにある、「<a href="manual_directory.html">全体の構成</a>」や、「<a href="manual_ghost.html">ゴースト</a>」「<a href="manual_shell.html">シェル</a>」などそれぞれのページを参考に。</p>
+	</div>
+	<div class="passage">
+		<p><em class="filename">install.txt</em>、<em class="filename">update2.dau</em>、<em class="filename">developer_options.txt</em>といったファイルについては、このページで追々用意していきますので今は無くて大丈夫です。</p>
+	</div>
+	<div class="passage">
+		<p>それからユーザにとっては不要なファイルを除去しましょう。例えばこんなものです。</p>
+		<ul>
+			<li>各種SHIORIなどのセーブデータファイル(初期値の設定に必要等の場合は別)</li>
+			<li>全てのprofileフォルダ(ghost、shell内両方にできる。SSPでは自動除去)</li>
+			<li>開発用ツール（里々に付属のさとりて、れしば等）</li>
+			<li>（MATERIAのみ）ディレクトリ直下のprofile.txt</li>
+			<li>desktop.iniなどのウィンドウズが生成する設定ファイル（SSPではある程度自動除去）</li>
+			<li>その他開発用辞書ファイル、設定ファイル、ログファイルなど</li>
+		</ul>
+	</div>
+	<div class="passage">
+		<p>SSPの場合、<em class="filename">developer_options.txt</em>を設定するとよいかもしれません。</p>
+		<p>詳しくは後述の「<a href="#chapterEX1">developer_options.txtについて</a>」を参照してください。</p>
+	</div>
+	<div class="passage hint">
+		<dl>
+			<dt>ベースウェア</dt>
+			<dd>
+				SSP、MATERIA（本家伺か）、CROWなどの、ゴーストを動かす土台となるソフトウェアのこと。
+			</dd>
+		</dl>
+	</div>
+</section>
+<section id="chapter2">
+	<h1>2、初期updates2.dauの作成</h1>
+	<div class="passage">
+		<p>次にネットワーク更新用ファイル（<em class="filename">updates2.dau</em>）の初期ファイルを作成します。</p>
+		<p>これは、ネットワーク更新時にサーバ側とクライアント側でファイルの内容に違いがないかを調べる事で、破損・改竄などの異常を検出するためのしくみです。</p>
+		<p>従ってネットワーク更新機能に対応する予定のない場合や、そもそもネットワーク更新機能の無効な内容（<a href="#chapterEX5">ゴーストへの追加ファイル</a>など）の場合などには無視して先に進んで構いません。</p>
+	</div>
+	<div class="passage">
+		<p>そもそも、実の所アーカイブにネットワーク更新用ファイルは必須ではありません。</p>
+		<p>しかし作成しておくと、最初のネットワーク更新時に、ベースウェアがユーザの手元でやらなければならない仕事が減ります。</p>
+		<p>アーカイブの内容ファイル数が多い場合には特に、作成しておく方が親切でしょう。</p>
+	</div>
+	<div class="passage">
+		<p>最初に、MATERIAやCROWで<em class="filename">updates2.dau</em>を作成する場合には、あらかじめ一番上のディレクトリ（例えばゴーストならghostフォルダ、shellフォルダ、readme.txtなどがある場所）に、<em class="filename">updates2.dau</em>と言う名前の空のテキストファイルを作っておく必要があります。</p>
+		<p>SSPでは自動的に作成されます。</p>
+	</div>
+	<div class="passage">
+		<p>そしてベースウェアを起動し、<em class="filename">updates2.dau</em>や更新したいファイルの入ったフォルダを本体にD&amp;Dします。</p>
+		<p>この時MATERIAやCROWでは、<em class="filename">install.txt</em>が入っているとnarファイルの作成が優先されてしまい、<em class="filename">updates2.dau</em>が作成されないので含めないように気をつけてください。</p>
+		<p>SSPの場合は逆に、<em class="filename">install.txt</em>の作成を済ませてからフォルダをD&amp;Dすると、<em class="filename">updates2.dau</em>の作成とアーカイブ化をいっぺんに済ませる事もできます。</p>
+	</div>
+	<div class="passage">
+		<p>D&amp;Dした後、フォルダに<em class="filename">updates2.dau</em>というファイルが作成され（存在し）、その中身に何ごとか書きこまれているはずです。</p>
+		<p><em class="filename">updates2.dau</em>は右クリックなどから、メモ帳などの普通のテキストエディタで開けますので、中身を確認してみてください（内容自体はわからなくとも構いません）。</p>
+	</div>
+</section>
+<section id="chapter3">
+	<h1>3、install.txtの準備</h1>
+	<div class="passage">
+		<p>続いて、インストール内容について記述・設定設定するためのファイルである<em class="filename">install.txt</em>を用意します。</p>
+		<p>一番上のディレクトリ（例えばゴーストならghostフォルダ、shellフォルダ、readme.txtなどがある場所）に、<em class="filename">install.txt</em>という名前のテキストファイルを用意し、内容に合わせて中身を書きます。</p>
+	</div>
+	<div class="passage">
+		<p>書きこむ内容については、配布したい内容がゴーストなのか、シェルなのかなどに応じて異なりますので、<a href="descript_install.html">Install/Update設定</a>のページを参照してください。凡例もそちらにあります。</p>
+	</div>
+</section>
+<section id="chapter4">
+	<h1>4、アーカイブ化</h1>
+	<div class="passage">
+		<p>いよいよアーカイブ化の段階に入りますが、ここまで来ればやる事はもうあまり残っていません。</p>
+		<p>なぜならベースウェアは、<em class="filename">install.txt</em>の入ったフォルダをD&amp;Dされると、それをアーカイブ化する機能を備えているからです。</p>
+		<p>従って、やる事と言えば今まで準備してきたフォルダを丸ごとベースウェア（で起動中のゴースト）にD&amp;Dすることだけです。</p>
+	</div>
+	<div class="passage">
+		<p>これで「[フォルダ名].nar」というファイルができたかと思います。これが配布用アーカイブファイルになります。</p>
+		<p>あとはこのnarファイルをサーバやアップローダにアップロードすれば、無事公開開始です。</p>
+	</div>
+	<div class="passage hint">
+		<dl>
+			<dt>nar</dt>
+			<dd>
+				Nanika ARchiveの略。「Nanika」は、伺かの旧称の一つである「何か」のこと。読みは「なー」。
+			</dd>
+		</dl>
+	</div>
+</section>
+<section id="chapterEX1">
+	<h1>EX1、developer_options.txtについて</h1>
+	<div class="passage">
+		<p>SSPによるアーカイブや<em class="filename">updates2.dau</em>の作成時に、一番上の階層（アーカイブ作成時にinstall.txtが置かれる場所）に<em class="filename">developer_options.txt</em>というファイルを用意することで、対象にするファイルを設定できます。</p>
+		<p>書き方の説明や例は<a href="descript_install.html#developer_options.txt">Install/Update設定のページのdeveloper_options.txtについての節</a>をご覧ください。</p>
+	</div>
+	<div class="passage">
+		なおこのファイルはあくまでSSPでアーカイブや<em class="filename">updates2.dau</em>を作成する時に働くので、後述の<a href="chapterEX2">ゴースト配布系自動化システム</a>や、他のベースウェアでそれらを作成する場合には無効である事に注意してください。
+	</div>
+</section>
+<section id="chapterEX2">
+	<h1>EX2、ゴースト配布系自動化システム(GDM)について</h1>
+	<div class="passage">
+		<p>ゴースト配布系自動化システム(GDM)は<em class="filename">updates2.dau</em>、ゴーストのアーカイブ化、そしてサーバへのアップロードまでを一括で行ってくれる支援ツールです。</p>
+		<p>導入してきちんと設定してしまえば、このページに書いてある内容の大部分が不要になるでしょう。</p>
+	</div>
+	<div class="passage">
+		<p>現在は下記の通り「整備班」で配布されています。</p>
+		<p><a href="http://ms.shillest.net/#TOOL">ゴースト配布系自動化システム</a></p>
+	</div>
+	<div class="passage">
+		<p>また詳しい導入・設定の解説は以下のサイトを参考にしてください（「1」の内容は不要）。</p>
+		<p><a href="http://navy.nm.land.to/post/jidouhaihu.html">ゴースト配布系自動化システム(GDM)のつかいかた</a></p>
+	</div>
+	<div class="passage">
+		<p>名前にこそ「ゴースト」とありますが、実際にはシェルやバルーンその他あらゆるもののアーカイブ・ネットワーク更新用ファイルのアップロードに使えます。</p>
+		<p>また複数の対象（ゴースト1,ゴースト2,シェル1,シェル2,シェル3,バルーン,...といったように）について、アーカイブ作成・ネットワーク更新などの操作ごとに設定を保存しておけて、その時々でしたい操作だけを選んで一括実行できます。</p>
+		<p>多くのコンテンツを管理している場合にはとても助かります。</p>
+	</div>
+	<div class="passage">
+		<p>最初の導入や設定は少しやる事が多く大変ですが、一度済ませてしまえば後はワンクリックで、複数コンテンツのネットワーク更新・アーカイブ更新を済ませてくれるのは非常に楽です。</p>
+		<p>それだけではなく、<em class="filename">updates2.dau</em>作成後にファイルを弄ってしまったり、FTP通信をアスキーモードに設定してアップロードしたりといったミスによるmd5不一致エラーを完全に防いでくれます。</p>
+		<p>もちろん適切な設定によって、不要ファイルの混入防止などにも大いに役立てることができます。</p>
+	</div>
+	<div class="passage">
+		<p>なお先述の<a href="#chapterEX1">developer_options.txt</a>は、SSPの機能でnarや<em class="filename">updates2.dau</em>を作成する場合にはたらく設定ファイルですので、GDMを使って作成する場合には関係ないことに注意してください。</p>
+		<p>といってもGDMはそれ自体の機能としてアップロードするファイル/しないファイルの設定ができますので、本来不要です。</p>
+	</div>
+</section>
+<section id="chapterEX3">
+	<h1>EX3、refleshinstallについて</h1>
+	<div class="passage">
+		<p>install.txtに下記の記述が含まれていると、特殊なインストールになります。</p>
+		<pre class="exmp-descript2"><code>refresh,1</code></pre>
+	</div>
+	<div class="passage">
+		<p>この指定があった場合、インストールされるフォルダにすでにファイルがあると、上書きするのではなく全て削除してからインストールされるようになります。</p>
+		<p>フォルダ・ファイル構成を変えるなどして、上書きされると不要なファイルが残ってしまう場合などに使います。</p>
+	</div>
+	<div class="passage">
+		<p>しかしリフレッシュインストールでは、<em>セーブデータ等も消えてしまう</em>点に注意が必要です。</p>
+		<p>リフレッシュインストールの際に残しておきたいファイルは以下のようにして指定できます。</p>
+		<pre class="exmp-descript2"><code>refreshundeletemask,save1.txt:save2.txt</code></pre>
+		<p>詳しい書式など、<a href="descript_install.html">Install/Update設定</a>のページもご覧ください。</p>
+	</div>
+</section>
+<section id="chapterEX4">
+	<h1>EX4、バルーンなどの同梱配布について</h1>
+	<div class="passage">
+		<p>install.txtへの記述とファイルの構成によって、ゴーストにバルーンを同梱して配布することができます。</p>
+		<p>またSSPの場合、バルーンの他にもプラグインとヘッドラインについて同梱する事ができ、さらにゴーストに対してでなくシェルにそれらを同梱することも可能です。</p>
+	</div>
+	<div class="passage">
+		<p>以下ではゴーストにバルーンを同梱する例を考えてみましょう。</p>
+		<p>ファイル構成はこのようになります。</p>
+
+<pre>
++-(myghost)
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt (SSPのみ)</em>
+　　+-ghost
+　　+-shell
+　　+-(myballoon)
+　　　　+-descript.txt
+　　　　+-balloons0.png
+　　　　:
+　　　　:
+</pre>
+	</div>
+	<div class="passage">
+		<p>この時install.txtを以下のように書けば、ゴーストと同時にバルーンのインストールができます。</p>
+<pre class="exmp-descript2">charset,Shift_JIS
 type,ghost
 name,ゴースト名
-directory,ゴーストのフォルダ名(英数で)
-</pre>
-				</div>
-				<div class="section">
-					<p>また、下記の記述を含めると特殊なインストールをします。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-refresh,1
-</pre>
-					<p>インストールされるフォルダにすでにファイルがあった場合は全て削除してからリフレッシュインストールします。</p>
-					<p>構成を変えたりして上書きしていらないファイルが残ってしまう場合などに使います。</p>
-					<p>セーブデータ等も消えてしまうので注意してください。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-refreshundeletemask,save1.txt:save2.txt
-</pre>
-					<p>リフレッシュインストールの際に残しておきたいファイルを指定します。</p>
-					<p>ファイル名のみでパスは含みません。</p>
-					<p>:で区切る事によっていくつでもマスクできます。</p>
-				</div>
-				<div class="section">
-<pre class="exmp-descript2">
-balloon.directory,バルーンフォルダ名
-</pre>
-					<p>一緒にバルーンを同梱しインストールできます。</p>
-				</div>
-				<div class="section">
-<pre>
-　　　-myghost
-　　　　　+-ghost
-　　　　　+-shell
-　　　　　<em>+-balloon(バルーンフォルダ名)</em>
-</pre>
-					<p>の位置に同梱するバルーンを配置してください。</p>
-					<p>インストールされればballoonフォルダの方に配置されます。</p>
-					<p>バルーンはネットワーク更新できないので<em>updates2.dau</em>作成の際に含めないようにしてください。</p>
-				</div>
-				<div class="section">
-					<p>全て記述し終わりフォルダごと本体にドロップするとフォルダ名のnarファイルが作成されます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>3、その他のnarファイルを作成する</h3>
-				<div class="section">
-					<p>ゴーストの追加ファイル用アーカイブを作る時は</p>
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,supplement
-name,内容
-accept,受け取るゴーストの本体側（\0,sakura）名
-</pre>
-					<p>とします。</p>
-					<p>この場合、指定されたゴーストでなければインストールできません。</p>
-					<p>ファイルの階層構成は普通のゴーストのnarファイルと同じです。</p>
-				</div>
-				<div class="section">
-					バルーンを単体でインストールさせるには、<br>typeの部分を
-<pre class="exmp-descript2">
-type,balloon
-</pre>
-					にします。
-				</div>
-				<div class="section">
-					<p>ゴーストと同じようにフォルダごと本体にドロップして作成してください。</p>
-					<p>refreshも使えます。</p>
-				</div>
-				<div class="section">
-					シェルをインストールさせるには<br>
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,shell
-name,シェル名
-accept,受け取るゴースト名
-directory,シェルのディレクトリ名
-</pre>
-					にします。
-				</div>
-				<div class="section">
-					<p>ゴーストと同じようにフォルダごと本体にドロップして作成してください。</p>
-					<p>指定されたゴーストのshellフォルダにインストールされます。</p>
-					<p>受け取るゴーストに指定されたゴーストでなければインストールできません。</p>
-					<p>refreshも使えます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>4、アーカイブにバルーンなどを同梱する</h3>
-				<div class="section">
-					<p>以下のようなファイルの配置を考えます。</p>
-<pre>
-　　-myghost
-　　-install.txt
-　　　　<em>-install.txt</em>
-　　　　+-ghost
-　　　　+-shell
-　　　　<em>-myballoon</em>
-　　　　　　-descript.txt
-　　　　　　-balloons0.png
-　　　　　　:
-　　　　　　:
-</pre>
-				</div>
-				<div class="section">
-					<p>この時install.txtを以下のように書けば、ゴーストと同時にバルーンのインストールができます。</p>
-<pre class="exmp-descript2">
-charset,Shift_JIS
-type,ghost
-name,ゴースト名
-directory,ゴーストのフォルダ名(英数で)
+directory,myghost（※ゴーストのフォルダ名。英数）
 <em>balloon.directory,myballoon</em>（※バルーンのフォルダ名。英数）
 </pre>
-					<p>この場合balloon側にinstall.txtは不要です<br>※あっても無視されます。単独配布を見越して入れておいても大丈夫。</p>
-				</div>
-				<div class="section">
-					<p>また、もし設置後のバルーンフォルダ名と、配布時のフォルダ名が異なる場合は以下のようにします。</p>
-<pre class="exmp-descript2">
-charset,Shift_JIS
+		<p>この場合balloon側にinstall.txtは不要です<br>※あっても無視されます。単独配布を見越して入れておいても構いません。</p>
+	</div>
+	<div class="passage">
+		<p>また、もし設置後のバルーンフォルダ名と、配布時のフォルダ名が異なる場合は以下のようにします。</p>
+<pre class="exmp-descript2">charset,Shift_JIS
 type,ghost
 name,ゴースト名
-directory,ゴーストのフォルダ名(英数で)
-balloon.directory,<em>hoge_balloon</em>（※設置後のバルーンフォルダ名。英数）
-<em>balloon.source.directory,myballoon</em>（※配布時のバルーンフォルダ名。英数）
+directory,myghost（※ゴーストのフォルダ名。英数）
+<em>balloon.directory,hoge_balloon</em>（※インストール後のバルーンフォルダ名。英数）
+<em>balloon.source.directory,myballoon</em>（※アーカイブ内のバルーンフォルダ名。英数）
 </pre>
-					<p>これで上例のmyballoonというバルーンのフォルダは、<br>実際のインストール後にはhoge_balloonというフォルダ名になります。</p>
-				</div>
-				<div class="section">
-					<p>同梱するファイルについてのrefreshの設定は以下のようにします。</p>
+		<p>これで上例のmyballoonというバルーンのフォルダは、<br>実際のインストール後にはhoge_balloonというフォルダ名になります。</p>
+	</div>
+	<div class="passage">
+		<p>同梱するファイルについてのrefreshの設定は以下のようにします。</p>
+		<pre class="exmp-descript2"><code>balloon.refresh,1<br>balloon.refreshundeletemask,hoge.png:huga.txt:...</code></pre>
+	</div>
+	<div class="passage">
+		<p>バルーン以外について同梱にする場合（SSPのみ可）には、「balloon.directory」「balloon.source.directiory」「balloon.refresh」などの「balloon」部分を、それぞれ同梱したい内容、すなわち</p>
+		<ul>
+			<li>headline</li>
+			<li>plugin</li>
+			<li>calendar.skin</li>
+			<li>calendar.plugin</li>
+		</ul>
+		<p>のいずれかに変更した上で、上例のバルーンと同様にファイルを同梱してください。</p>
+	</div>
+</section>
+<section id="chapterEX5">
+	<h1>EX5、ゴーストへの追加ファイルについて</h1>
+	<div class="passage">
+		<p>ゴーストへの追加ファイル（supplement）のアーカイブを作りたい場合は、ゴースト本来のフォルダ構造はそのまま、追加したいファイルだけを含めてアーカイブにします。</p>
+		<p>例えばghost/masterに「dic_supplement.txt」というファイルを追加したいなら、以下のようになります。</p>
+		<pre>
++-(mysupplement)
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt (SSPのみ)</em>
+　　+-ghost
+　　　　+-master
+　　　　　　+-dic_supplement.txt
+</pre>
+	</div>
+	<div class="passage">
+		<p>この時のinstall.txtの内容はこのようになります。</p>
 <pre class="exmp-descript2">
-balloon.refresh,1
-balloon.refreshundeletemask,hoge.png:huga.txt:...
+charset,Shift_JIS
+name,追加トークパッチ
+type,supplement
+accept,対象ゴーストの本体側名
 </pre>
-				</div>
-				<div class="section">
-					<p>なお、同様の同梱はballoon以外にheadlineとpluginについて可能です。</p>
-					<p>インストールの主体側も、ghost以外にshellについて同様に同梱の設定ができます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3 id="package">5、複数インストール用パッケージを作る</h3>
-				<div class="section">
-					<p>この方法はSSP専用となっています。</p>
-				</div>
-				<div class="section">
+	</div>
+</section>
+<section id="chapterEX6">
+	<h1>EX6、複数インストール用パッケージについて</h1>
+	<div class="passage">
+		<p>この方法はSSP専用となっています。</p>
+		<p>以下のようなファイル構成でアーカイブを作ると、複数の内容を同時にインストールするためのパッケージを作る事ができます。</p>
+		<pre>
++-(mypackage)
+　　<em class="filename">+-install.txt</em> (package用)
+　　+-(myghost1)
+　　　　+<em class="filename">-install.txt</em> (myghost1用)
+　　　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
+　　　　+-ghost
+　　　　+-shell
+　　　　:
+　　+-(myghost2)</em>
+　　　　<em class="filename">+-install.txt</em> (myghost2用)
+　　　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
+　　　　+-ghost
+　　　　+-shell
+　　　　:
+</pre>
+	</div>
+	<div class="passage">
+		<p>フォルダにpackage用の<em class="filename">install.txt</em>を用意して、そのフォルダの中にそれぞれの内容をいれます。</p>
+		<p>それぞれの内容は<em>個別のinstall.txt</em>を持った、単独でもアーカイブにできるような通常のインストール構造です。</p>
+		<p>いくつもの内容をフォルダで「梱包」して、箱書きとしてpackage用の<em class="filename">install.txt</em>を別に付ける、と考えると解りやすいかもしれません。</p>
+	</div>
+	<div class="passage">
+		<p>最上位フォルダにあるpackage用のinstall.txtは以下のように書きます。</p>
 <pre class="exmp-descript2">
 charset,Shift_JIS
 type,package
-name,内容
+name,パッケージ名
 </pre>
-					<p>とすると、複数インストール用パッケージを作ることができます。</p>
-				</div>
-				<div class="section">
-					<p>その際、中のファイルの配置は以下のようにします。</p>
-<pre>
-　　-mypackage
-　　-install.txt (package用)
-　　　　<em>-myghost1</em>
-　　　　　　<em>-install.txt (myghost1用)</em>
-　　　　　　<em>+-ghost</em>
-　　　　　　<em>+-shell</em>
-　　　　<em>-myghost2</em>
-　　　　　　<em>-install.txt (myghost2用)</em>
-　　　　　　<em>+-ghost</em>
-　　　　　　<em>+-shell</em>
-</pre>
-				</div>
-				<div class="section">
-					<p>直下のinstall.txtはtype,packageとnameが書かれたのみのもので、それ以下の各フォルダにそれぞれ単独でも機能するインストール構造を作ります。</p>
-					<p>単純にインストールするファイルの配置が多段になっただけと考えるとわかりやすいです。</p>
-					<p>なお、インストールで認識可能なものならなんでも複数パックにできます。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<h3>6、ツールでもっと楽にファイルを作る</h3>
-				<div class="section">
-					<p>以下のようなツールを使えば、面倒なファイルの選別やFTPアップロードを自動化できます。</p>
-					<p>また、必要ファイルの選別や<em>updates2.dau</em>の更新をしてからnarファイルを作成する事もできます。</p>
-					<ul>
-						<li><a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/tool/sodate.html" target="_blank">そだて</a>(<a href="http://code.google.com/p/satoriya-shiori/">IE7以降対応版</a>)</li>
-						<li><a href="http://ms.shillest.net/#TOOL">ゴースト配布系自動化システム</a></li>
-					</ul>
-				</div>
-				<div class="section">
-					SSPではエクスプローラーのメニューから<em>updates2.dau</em>やnarファイルを作成できます。
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					さらに詳しい説明は構成の説明の<a href="manual_install.html">Install</a>の項目にて。
-				</div>
-			</div>
-		</div>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+	<div class="passage">
+		<p>個々のinstall.txtは通常通りに記述します（<a href="descript_install.html">Install/Update設定</a>など参照）。</p>
+		<p>なお<a href="#chapterEX1">developer_options.txt</a>を使う場合も、最上位のフォルダにではなく<em>それぞれの内容側に用意する</em>点に注意してください。</p>
+	</div>
+	<div class="passage">
+		<p>上例のファイル構成はゴーストを二つ同梱している例ですが、もちろん実際にはゴーストに限らずアーカイブとして有効なあらゆる内容を含む事ができます。</p>
+		<p>ただし、type,shellやtype,supplementのようなacceptを指定する内容で、指定先がバラバラのものを一緒にしてしまわないように注意してください。</p>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

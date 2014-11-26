@@ -1,73 +1,89 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="Content-Style-Type" content="text/css">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="robots" content="index,follow">
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
-<meta name="keywords" content="ukadoc,伺か,install,インストール">
-<link rel="stylesheet" href="styleOld.css" type="text/css">
-<base target="_blank">
-<title>UKADOC Project Install</title>
+<meta name="keywords" content="ゴースト,install,インストール">
+<title>UKADOC Project インストール</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
 </head>
 <body>
-
-
-
-<div class="baseframe">
+<section class="baseframe">
 	<h1 class="head">
-		<iframe height="160" width="750" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="navigation.html" name="navigation">
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</h1>
-	<div class="body">
-		<div class="sidebar">
-			<iframe height="1400" width="200" frameborder="0" marginheight="1" marginwidth="1" scrolling="no" src="sidemenu.html" name="sidemenu"><a href="sidemenu.html">サイドバー</a></iframe>
-		</div>
-		<div class="text">
-			<h2>インストール</h2>
-			<div class="chapter">
-				<div class="section">
-					<p>※初心者の方は「<a href="dev_nar.html" target="_top">配布用ファイルを作る</a>」のページも参照のこと。</p>
-				</div>
-				<div class="section">
-					<p>ゴーストは一般的に<em>nar</em>という拡張子のアーカイブで配布される（なー。Nanika ARchive）。</p>
-					<p>narはzipの拡張子を変えただけのもので、実体はzipなので、サーバによってはzipで配布する場合もある。</p>
-					<p>lzhでも解凍DLLがあればインストール可能ではあるがよほどの理由が無い場合は使用しない。</p>
-					<p>SSPではcabや自己解凍exeでも一応インストール可能。</p>
-				</div>
-				<div class="section">
-					<p>アーカイブは解凍して手動でインストールすることもできるが、<em>install.txt</em>が適切に用意されていれば、D&Dなどの手段でインストーラ機能が働き、自動的にインストールできる。</p>
-				</div>
-				<div class="section">
-					<p>narはinstall.txtを含んだゴーストフォルダをベースウェア（SSP）本体にD&Dすることによって作成可能。</p>
-					<p>手動でzip圧縮しリネームしたものと同等だが、その場合フォルダの階層を深くしてしまわないように注意。</p>
-				</div>
-				<div class="section">
-					<p>ゴーストを配布する際にゴーストとシェルのフォルダにあるprofileフォルダや、セーブデータ等を含めないように注意すること。</p>
-					<p>ネットワーク更新でも同じことがいえる。</p>
-					<p>SSPでは、その制御のために<em>developer_options.txt</em>が用意されている。</p>
-				</div>
-				<div class="section">
-			</div>
-			<div class="chapter">
-					<h3>標準的なゴーストの場合</h3>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<section class="text">
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>インストール</h1>
+<section>
+	<div class="passage">
+		<p>配布用アーカイブの作成方法自体は「<a href="dev_nar.html">配布用ファイルの作成</a>」のページを参照。</p>
+	</div>
+	<div class="passage">
+		<p>ゴーストは一般的に<em class="filename">nar</em>という拡張子のアーカイブで配布される（なー。Nanika ARchive）。</p>
+		<p>narはzipの拡張子を変えただけのもので、実体はzipなので、サーバによってはzipで配布する場合もある。</p>
+		<p>lzhでも解凍DLLがあればインストール可能ではあるがよほどの理由が無い場合は使用しない。</p>
+		<p>SSPではcabや自己解凍exeでも一応インストール可能。</p>
+	</div>
+	<div class="passage">
+		<p>アーカイブは解凍して手動でインストールすることもできるが、<em class="filename">install.txt</em>が適切に用意されていれば、D&amp;Dなどの手段でインストーラ機能が働き、自動的にインストールできる。</p>
+	</div>
+	<div class="passage">
+		<p>narはinstall.txtを含んだゴーストフォルダをベースウェア（SSP）本体にD&amp;Dすることによって作成可能。</p>
+		<p>手動でzip圧縮しリネームしたものと同等だが、その場合フォルダの階層を深くしてしまわないように注意。</p>
+	</div>
+	<div class="passage">
+		<p>ゴーストを配布する際にゴーストとシェルのフォルダにあるprofileフォルダや、セーブデータ等を含めないように注意すること。</p>
+		<p>ネットワーク更新でも同じことがいえる。</p>
+		<p>SSPでは、その制御のために<em class="filename">developer_options.txt</em>が用意されている。</p>
+	</div>
+	<div class="passage">
+		<dl>
+			<dt>標準的なゴーストの場合</dt>
+			<dd>
 <pre>
 +-(myghost)
 　　+-ghost
 　　+-shell
-　　<em>+-install.txt</em>
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　+-readme.txt
 　　+-thumbnail.png
-　　<em>+-developer_options.txt</em> (SSPのみ)
+　　:
+　　:
 </pre>
-				</div>
-				<div class="section">
-					<h3>標準的な追加シェルの場合</h3>
+				<div class="passage hint">
+					<p><em>supplement</em>の場合、上記の内容の<em>フォルダ構造はそのまま</em>、追加するファイルのみ含めた状態でアーカイブ化する。</p>
+					<p>例えばdic_supplement.txtというファイルをghost/master/に追加したいなら</p>
 <pre>
-+-(additionalshell)
-　　<em>+-install.txt</em>
++-(mysupplement)
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
+　　+-ghost
+　　　　+-master
+　　　　　　+-dic_supplement.txt
+</pre>
+					<p>となる。</p>
+				</div>
+			</dd>
+
+			<dt>標準的な追加シェルの場合</dt>
+			<dd>
+<pre>
++-(additional_shell)
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　+-descript.txt
 　　+-readme.txt
 　　+-thumbnail.png
@@ -76,12 +92,14 @@
 　　:
 　　:
 </pre>
-				</div>
-				<div class="section">
-					<h3>標準的なバルーンの場合</h3>
+			</dd>
+
+			<dt>標準的なバルーンの場合</dt>
+			<dd>
 <pre>
 +-(myballoon)
-　　<em>+-install.txt</em>
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　+-descirpt.txt
 　　+-balloonc*.png
 　　+-balloons*.png
@@ -89,12 +107,14 @@
 　　:
 　　:
 </pre>
-				</div>
-				<div class="section">
-					<h3>ゴーストにバルーンなどを同梱する場合</h3>
+			</dd>
+
+			<dt>ゴーストにバルーンなどを同梱する場合</dt>
+			<dd>
 <pre>
 +-(myghost)
-　　<em>+-install.txt</em>
+　　<em class="filename">+-install.txt</em>
+　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　+-ghost
 　　+-shell
 　　+-(myballoon)
@@ -103,62 +123,75 @@
 　　　　:
 　　　　:
 </pre>
-					<p>※balloon側にinstall.txtは不要。プラグインなどでも同様（シェルは普通にshellフォルダ以下に）。</p>
-				</div>
-				<div class="section">
-					<h3>(SSP専用)複数同時インストールパッケージ</h3>
+				<p>プラグインなどでも同様（シェルを同梱する場合はこうせずに普通にshellフォルダ以下に置けばよい）。</p>
+				<p>また、同梱される側（上例のバルーン）にはinstall.txt不要。あっても無視される。</p>
+			</dd>
+
+			<dt>(SSP専用)複数インストール用パッケージ</dt>
+			<dd>
 <pre>
 +-(mypackage)
-<em>+-install.txt</em> (package用)
-　　+-myghost1
-　　　　<em>+-install.txt</em> (myghost1用)
+　　<em class="filename">+-install.txt</em> (package用)
+　　+-(myghost1)
+　　　　<em class="filename">+-install.txt</em> (myghost1用)
+　　　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　　　+-ghost
 　　　　+-shell
 　　　　:
-　　+-myghost2
-　　　　<em>+-install.txt</em> (myghost2用)
+　　+-(myghost2)
+　　　　<em class="filename">+-install.txt</em> (myghost2用)
+　　　　<em class="filename">+-developer_options.txt</em> (SSPのみ)
 　　　　+-ghost
 　　　　+-shell
 　　　　:
 </pre>
-					<p>※ghostに限らず単体のアーカイブにできるあらゆるものを同梱可能だが、shellやsupplementなど特定の対象があるものは、異なる対象のものを混ぜないように注意。</p>
-				</div>
-
-				<div class="section">
-					その他、ヘッドラインセンサ、プラグイン単体配布なども同様に、そのフォルダの直下にinstall.txtを置く。
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_install.html" target="_top">install.txt</a></h3>
-					<p>インストールするべきフォルダなどのインストール設定を記載するテキスト。</p>
-					<p>このファイルがなければD&amp;Dなどによる自動インストール機能は動作しない。</p>
-					<p>アーカイブ名称、ディレクトリ名、アーカイブの内容種別などを設定する。</p>
-					<p>詳細は<a href="descript_install.html" target="_top">リンク先</a>を参照。</p>
-				</div>
-			</div>
-			<div class="chapter">
-				<div class="section">
-					<h3 class="component"><a href="descript_install.html#developer_options.txt" target="_top">developer_options.txt</a></h3>
-					<p>SSP専用。</p>
-					<p>アーカイブや更新の対象とするファイルについて、除外指定などをするためのファイル。</p>
-					<p>詳細は<a href="descript_install.html#developer_options.txt" target="_top">リンク先</a>を参照。</p>
-				</div>
-			</div>
-		</div>
+			<p>パッケージ用および個別の内容用それぞれに、別のinstall.txtが必要な点に注意。</p>
+			<p>ghostに限らず単体のアーカイブにできるあらゆるものを同梱可能だが、shellやsupplementなど特定の対象があるものは、異なる対象のものを混ぜないように注意。</p>
+			</dd>
+		</dl>
 	</div>
-	<div class="foot">
-		<p class="disc2-author">
+
+	<div class="passage">
+		その他、ヘッドラインセンサ、プラグイン単体配布なども同様に、その一番上のディレクトリにinstall.txtを置く。
+	</div>
+</section>
+<section>
+	<div class="passage">
+		<dl class="component">
+			<dt><a href="descript_install.html">install.txt</a></dt>
+			<dd>
+				<p>インストール設定を記載するテキスト。</p>
+				<p>このファイルがなければD&amp;Dなどによる自動インストール機能は動作しない。</p>
+				<p>アーカイブの内容種別、アーカイブ名称、ディレクトリ名などを設定する。</p>
+				<p>詳細は<a href="descript_install.html" title="install.txt">リンク先</a>を参照。</p>
+			</dd>
+
+			<dt><a href="descript_install.html#developer_options.txt">developer_options.txt</a></dt>
+			<dd>
+				<p>SSPのみ。省略可。</p>
+				<p>install.txtと同じ場所に配置する。</p>
+				<p>ただし複数インストール用パッケージの場合、最上位のinstall.txtではなく、各コンテンツのinstall.txtのある場所に用意する点に注意。</p>
+				<p>SSPでnarを作る場合に、対象に含めないファイルなどを設定するためのファイル。</p>
+				<p>書式など詳しくは<a href="descript_install.html#developer_options.txt" title="developer_options.txt">リンク先</a>を参照。</p>
+			</dd>
+		</dl>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</section>
+	</section>
+	<footer>
+		<p class="author">
 			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project(文書内容)</a> / <a href="http://khmix.sakura.ne.jp/" target="_blank">緋龍華 麒麟(サイト)</a>
 		</p>
-		<p class="disc2-banner">
+		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
 		</p>
-	</div>
-</div>
-
-
-
+	</footer>
+</section>
 </body>
 </html>
 <!--nobanner-->

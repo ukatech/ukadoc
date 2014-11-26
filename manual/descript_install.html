@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="robots" content="index,follow">
+<meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Install設定</title>
@@ -183,7 +183,7 @@
 					<p><a href="manual_install.html">ファイル構成「インストール」</a>のページも参考に。</p>
 					<p>
 						ゴースト、バルーン、シェル他の伺か/SSPコンテンツアーカイブ（.narなど）のインストール設定ファイル。
-						全てのアーカイブは解凍して手動でインストールする事もできるが、適切に設定されたinstall.txtの存在によって、インストーラ機能が有効になり、アーカイブのD&Dなどの簡易な手段でのインストールが可能となる。
+						全てのアーカイブは解凍して手動でインストールする事もできるが、適切に設定されたinstall.txtの存在によって、インストーラ機能が有効になり、アーカイブのD&amp;Dなどの簡易な手段でのインストールが可能となる。
 					</p>
 				</section>
 				<section>
@@ -215,14 +215,14 @@ directory,example
 balloon.directory,example_balloon
 balloon.source.directory,balloon
 </code></pre>
-						<p>※SSPのみ　複数同時インストールパッケージの場合の最上位に置くもの<br>（同梱する各内容に置くinstall.txtは普通どおりの記述でよい）</p>
+						<p>※SSPのみ　複数インストール用パッケージの場合の最上位に置くもの<br>（同梱する各内容に置くinstall.txtは普通どおりの記述でよい）</p>
 <pre><code>charset,Shift_JIS
 name,凡例さんファミリー一括入居パッケージ
 type,package
 </code></pre>
 					<p>charset指定は必ず1行目で行う（Shift_JISの場合省略可）。</p>
 					<p>name、typeは必須。directoryもtypeがsupplementかpackage以外の場合は必須。<br>それ以外の項目は、必要に応じて指定する。</p>
-					<p>追加シェルやサプリメントの場合、想定外のゴーストにインストールされる事を避けるためにaccept指定が利用できる。<br>特にサプリメントは予期せぬファイルの上書き破損事故の危険性があるためほぼ必須。</p>
+					<p>追加シェルやサプリメントの場合、想定外のゴーストにインストールされる事を避けるためにaccept指定が利用できる。<br>特にサプリメントは予期せぬファイルの上書き破損事故の危険性があるためほぼ必須。<br>accept指定に用いるのはゴースト名ではなく<em>本体側名</em>であることに注意。</p>
 					<p>SSPでは、バルーンやプラグインをゴーストかシェルに同梱させる場合、*.directoryを利用する。</p>
 					<p>なおnameは主に、<a href="list_shiori_event.html#OnInstallComplete">インストール系SHIORI Event</a>のReferenceでの通知内容に用いられる。<br>ゴーストによってはこの情報を利用して、インストールされた直後の対象へ切り替えを実行できるような機能を備えている場合があるが、descript.txtにある実際のゴーストのnameとinstall.txtでの表記が異なると、その切り替えが正常に働かなくなるので注意。</p>
 				</section>
@@ -272,7 +272,7 @@ type,package
 						<dt>calendar.plugin</dt>
 						<dd>（SSPのみ）カレンダーのスケジュールセンサ</dd>
 						<dt>package</dt>
-						<dd>（SSPのみ）複数同時インストールパッケージ</dd>
+						<dd>（SSPのみ）複数インストール用パッケージ</dd>
 					</dl>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
@@ -415,7 +415,7 @@ shell\master\surface110.png
 					<p><a href="manual_update.html">ファイル構成「ネットワーク更新」</a>・<a href="manual_install.html">ファイル構成「インストール」</a>のページも参考に。</p>
 					<p>
 						インストールパッケージやネットワーク更新情報ファイルの作成時に、対象とするファイルにオプションを設定するためのもの。
-						<br>SSPにゴーストなどのパッケージのフォルダをD&Dすることで、アーカイブ（.nar）やupdateファイル（update2.dau）を作成する機能があるが、その機能の実行時に参照される。
+						<br>SSPにゴーストなどのパッケージのフォルダをD&amp;Dすることで、アーカイブ（.nar）やupdateファイル（updates2.dau）を作成する機能があるが、その機能の実行時に参照される。
 						<br>従って「そだて」や「ゴースト配布系自動化システム」を使ってそれらのファイルを作成した場合は<em>全く無関係</em>なので注意。
 					</p>
 				</section>
@@ -440,7 +440,7 @@ ghost/master/profile/,nonar,noupdate
 						<dt>nonar</dt>
 						<dd>nar作成時に対象をnarに含めない。</dd>
 						<dt>noupdate</dt>
-						<dd>update2.dau（update.txt）作成時に対象を更新対象に含めない。</dd>
+						<dd>updates2.dau（updates.txt）作成時に対象を更新対象に含めない。</dd>
 					</dl>
 					<p class="description">
 						<br>いずれもファイル作成時の制御であるため、<em>SSPの機能でnar、更新ファイルを作成する場合</em>に限って有効である事に注意。
@@ -453,7 +453,7 @@ ghost/master/profile/,nonar,noupdate
 			</dl>
 			<section class="caption" id="notes_ignore">
 				<h1>自動的に除外される対象</h1>
-				<p>SSPがnar/update2.dau(update.txt)を作成する場合、developer_options.txtの指定がなくとも以下のファイル・フォルダは自動的に対象から除外される。</p>
+				<p>SSPがnar/updates2.dau(updates.txt)を作成する場合、developer_options.txtの指定がなくとも以下のファイル・フォルダは自動的に対象から除外される。</p>
 				<p>ファイル</p>
 				<ul>
 					<li>desktop.ini</li>
@@ -483,7 +483,7 @@ ghost/master/profile/,nonar,noupdate
 					<p class="description">
 						ゴーストのホームフォルダからの相対パスで指定したファイルについて、カンマ区切りでオプションを指定する。
 						<br>フォルダごとの指定は不可。
-						<br>ignoreオプションがあると、update2.dau（update.txt）作成時に対象を更新対象に含めない。
+						<br>ignoreオプションがあると、updates2.dau（updates.txt）作成時に対象を更新対象に含めない。
 					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
