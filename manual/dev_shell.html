@@ -11,47 +11,85 @@
 </head>
 <body>
 <section class="baseframe">
-	<h1 class="head">
+	<header>
 		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
-	</h1>
+	</header>
 	<section class="body">
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
-		<section class="text">
+		<main>
 
 
 
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 <h1>シェルの作成</h1>
 <section>
-	<h1>1、立ち絵となる絵を用意する</h1>
 	<div class="passage">
-		自分で絵を描く、もしくはフリーシェルと称される用意されたサーフェスを使用します。
+		<p>ここでは基本的なシェルの作成手順について解説しています。</p>
+		<p>ただし設定ファイルの記述についてが中心で、作画や画像の加工などについてはほとんど触れていませんのでご了承ください。</p>
+		<p>ファイル構成の<a href="manual_shell.html">シェル</a>も参照してください。</p>
 	</div>
+</section>
+<nav>
+	<h1>目次</h1>
+	<ol>
+		<li><a href="#chapter1">立ち絵となる画像を用意する</a></li>
+		<li><a href="#chapter2">descript.txtを書く</a></li>
+		<li><a href="#chapter3">surfaces.txtを書く</a>
+			<ol>
+				<li><a href="#chapter3-1">surfaces.txtを書く - 当たり判定編</a></li>
+				<li><a href="#chapter3-2">surfaces.txtを書く - アニメーション編</a></li>
+				<li><a href="#chapter3-3">surfaces.txtを書く - element合成編</a></li>
+			</ol>
+		</li>
+		<li><a href="#chapter4">readme.txtを書く</a></li>
+	</ol>
+	<ol class="ex">
+		<li><a href="#chapterEX1">半透明のサーフェスについて</a></li>
+		<li><a href="#chapterEX2">追加シェルのネットワーク更新について</a></li>
+		<li><a href="#chapterEX3">着せ替えについて</a></li>
+		<li><a href="#chapterEX4">複数のサーフェスで共通の設定をまとめる</a></li>
+		<li><a href="#chapterEX5">オーナードローメニューの設定</a></li>
+		<li><a href="#chapterEX6">サムネイル画像の設定</a></li>
+	</ol>
+</nav>
+<section id="chapter1" class="ordered">
+	<h1>立ち絵となる画像を用意する</h1>
+	<div class="passage">
+		<p>まずは立ち絵とする画像を用意します。</p>
+		<p>自分で絵を描くか、フリーシェルと呼ばれる配布されている既成シェルを使用するなどします。</p>
+	</div>
+	<aside class="passage hint">
+		<p>フリーシェルは以下のようなサイトから探す事ができます。</p>
+		<p><a href="http://wikiwiki.jp/feeshell/">freeshell wiki</a></p>
+	</aside>
 	<div class="passage">
 		<p>ゴーストにおける画像形式の基本はpngです。</p>
-		<p>jpg、bmp等は使えません。</p>
-		<p>pngを使用していれば大きさ、色数に制限はありません。</p>
-		<p>ファイルサイズを小さくしたい場合は減色してください。</p>	
+		<p>jpg、bmp等は使えません（SSPでは可）。</p>
+		<p>pngを使用していれば大きさ、色数に制限はありませんが、透明度は基本的に無効です（SSPのみ設定次第で有効。後述の<a href="#chapterEX1">半透明のサーフェスについて</a>参照）。</p>
+		<p>ファイルサイズを小さくしたい場合は何らかのツールで減色してください。</p>
 	</div>
 	<div class="passage">
-		<p>まずは<em class="filename">surface0.png</em>と<em class="filename">surface10.png</em>を用意します。</p>
-		<p>この二枚の画像(サーフェス)は必須です。</p>
-		<p><em class="filename">surface0.png</em>はメイン側の基本立ち絵、<em class="filename">surface10.png</em>は相方側の基本立ち絵となります。</p>
-		<p>相方が要らない場合は<em class="filename">surface10.pngを</em>単色で塗り潰した画像(全て透明のサーフェス)を使用してください。</p>
+		<p>シェルを構成する立ち絵の一枚一枚や、後述のアニメーションの一コマは、<em>サーフェス</em>と言う単位で管理されます。</p>
+		<p>サーフェスは、「surface○○.png」（○○部分には0以上の数字が入る）という名前の画像を用意するか、<a href="#chapter5">後述のsurfaces.txt</a>で複数の画像を合成する事で用意します。</p>
 	</div>
 	<div class="passage">
-		サーフェスは<em class="filename">surface0000.png</em>、<em class="filename">surface0010.png</em>等の様に記述しても<em class="filename">surface0</em>、<em class="filename">surface10</em>と認識されます。
+		<p><em class="filename">surface0.png</em>と<em class="filename">surface10.png</em>の二つの画像は基本的に必須です。</p>
+		<p><em class="filename">surface0.png</em>はメイン側の基本サーフェス、<em class="filename">surface10.png</em>は相方側の基本サーフェスとなります。</p>
+		<p>ゴーストとしてキャラクターが一人だけで相方が要らない場合でも、単色で塗り潰した画像(＝全て透明表示。後述)などを<em class="filename">surface10.png</em>として用意してください。</p>
 	</div>
 	<div class="passage">
-		<h4>・画像の透過について</h4>
-		<p>サーフェス画像では左上端の1ドットが抜け色となります。</p>
-		<p>なので、左上端の1ドットと同じ色がキャラクター内にあった場合その部分も透過されてしまいますので、キャラクターには使用していない系統の色で塗り潰してください。</p>
+		<p>サーフェスは<em class="filename">surface0000.png</em>、<em class="filename">surface0010.png</em>等の様に記述しても<em class="filename">surface0.png</em>、<em class="filename">surface10.png</em>と同様に認識されます。</p>
 	</div>
 	<div class="passage">
+		<p>サーフェス画像では左上端の1ドットが「抜き色」としてゴーストとしての表示上透過されます。</p>
+		<p>抜き色と同じ色がキャラクター内にもあった場合、その部分も透過されてしまいますので、背景はキャラクターには使用していない系統の色を用いてください。</p>
+	</div>
+	<div class="passage">
+		<p>サーフェスとして用いる画像を自分で用意する場合、注意すべき特徴として輪郭の処理があります。</p>
 		<table class="exmp-surface">
 			<tr>
 				<td><img src="image/surface0_alias1.gif" width="225" height="239" alt=""></td>
@@ -59,7 +97,7 @@
 				<td><img src="image/surface0_alias2.gif" width="225" height="239" alt=""></td>
 			</tr>
 		</table>
-		<p>キャラクターの輪郭が半透明になっていると背景と混ざって右のように表示されてしまいます。</p>
+		<p>キャラクターの輪郭が半透明になって背景と混ざった結果、右のように表示されてしまいます。</p>
 		<table class="exmp-surface">
 			<tr>
 				<td><img src="image/surface0_alias3.gif" width="225" height="239" alt=""></td>
@@ -68,12 +106,302 @@
 			</tr>
 		</table>
 		<p>この様に輪郭が背景と混ざらないようにすると綺麗に色が抜けます。</p>
-		<br>
+	</div>
+	<aside class="passage hint">
 		<p>Photoshopをして作成する場合、<a href="http://homepage3.nifty.com/khsoft/cbs/">ClearBrain Systems</a>の<a href="http://homepage3.nifty.com/khsoft/cbs/software/">シェル＆縮小サーフェス制作補助プラグインセット for Photoshop</a>を使うと効率よく作業ができると思います。</p>
+		<p>また輪郭を識別して「ふち」をつけてくれる「<a href="http://ukiya.sakura.ne.jp/index.php?%E8%87%AA%E4%BD%9C%E3%82%BD%E3%83%95%E3%83%88%E4%B8%80%E8%A6%A7%2F%E3%81%B5%E3%81%A1%E3%81%A9%E3%82%8A%E3%80%82">ふちどり</a>」というツールが公開されています。</p>
+	</aside>
+</section>
+<section id="chapter2" class="ordered">
+	<h1>descript.txtを書く</h1>
+	<div class="passage">
+		<p><em class="filename">descript.txt</em>は、そのシェルの基本的な情報を設定するためのファイルです。</p>
+		<p><em class="filename">descript.txt</em>が適切に用意されていないと、シェルがゴーストに認識してもらえません。</p>
 	</div>
 	<div class="passage">
-		<p>半透明にするには半透明にしたい画像と同じファイル名のpnaを作ります。</p>
-		<p>pnaはアルファチャンネル定義用のpngをリネームしたものです。</p>
+		<p>基本的な記述を以下に例示しますが、</p>
+	</div>
+	<div class="passage">
+		<p>とりあえずは以下の内容をコピーして<em class="filename">descript.txt</em>という名前のテキストに貼り付け、自分のシェルに適切な内容へ書き替えましょう。</p>
+	</div>
+	<div class="passage">
+<pre class="exmp-descript">
+charset,Shift_JIS
+type,shell
+name,このシェルの名前
+
+craftman,制作者名(英数のみで書いてください)
+craftmanw,制作者名(日本語表記でも可能)
+craftmanurl,制作者のURL(配布サイトurlなど)
+</pre>
+	</div>
+	<div class="passage">
+		<p>charsetは基本的にShift_JISにしておいてください。</p>
+		<p>他にも色々設定できる項目はありますが、最低限必要なのは上記ぐらいです（厳密にはnameとtypeだけ必須）。</p>
+		<p>ここで取り上げていない設定や、各設定のより詳細な説明などは、「<a href="descript_shell.html">Shell設定</a>」のページを参照してください。</p>
+	</div>
+	<div class="passage">
+		<p>例として一つだけあげると、シェル全体の基本バルーン位置を変えるには</p>
+<pre class="exmp-descript">
+sakura.balloon.offsetx,0
+sakura.balloon.offsety,0
+kero.balloon.offsetx,0
+kero.balloon.offsety,0
+</pre>
+		<p>といった項目を書き足す事になります。</p>
+		<p>sakura.balloon.offsetがメイン側、kero.balloon.offsetが相方側のバルーン位置の変更になります。</p>
+		<p>数字を増やすとx座標はキャラクター寄りにy座標は下に表示されます。</p>
+		<p>マイナスをつけると表示位置が逆の方向になり、x座標はキャラクターから離れ、y座標は上に表示されるようになります。</p>
+	</div>
+	<div class="passage">
+		<p>着せ替えをメニューに表示する場合も<em class="filename">descript.txt</em>への記述が必要ですが、そのあたりについての説明は<a href="dev_bind.html">着せ替えの設定</a>のページをご覧ください。</p>
+	</div>
+</section>
+<section id="chapter3" class="ordered">
+	<h1>surfaces.txtを書く</h1>
+	<div class="passage">
+		<p>まずは<em class="filename">surfaces.txt</em>という名前のテキストを作ります。</p>
+		<p>これはアニメーションの設定や、画像の合成、マウスカーソルでキャラクターを操作する時の当たり判定の設定などを行うファイルです。</p>
+		<p>「<a href="descript_shell_surfaces.html">Shell設定 - surfaces.txt</a>」のページも合わせて参照してください。</p>
+	</div>
+	<div class="passage">
+		<p><em class="filename">surfaces.txt</em>を作ったら、まずは先頭に以下をコピーして下さい。</p>
+	</div>
+	<div class="passage">
+<pre class="exmp-descript">
+charset,Shift_JIS
+
+descript
+{
+version,1
+}
+</pre>
+	</div>
+	<div class="passage">
+		<p>先頭の一行は<em class="filename">descript.txt</em>のものと同じ文字コードの指定です。特に理由がなければShift_JISで構いません。</p>
+		<p>それより下の記述は、アニメーションの設定方法の書式についてのの設定です。</p>
+		<p>もしこの記述が無い場合は、アニメーション関係を旧来の定義（SERIKO/1.x）で書かねばなりません。</p>
+		<p>このページで以下登場する例は、新しい定義（SERIKO/2.0）によるものなので、注意してください。</p>
+	</div>
+	<aside class="passage hint">
+		<p>既に旧定義で書かれているsurfaces.txtは、以下のツールを用いて旧定義から新定義に変換する事が可能です。</p>
+		<ul>
+			<li>
+				<p><a href="http://gallnuts.webcrow.jp/etc/etc.shtml">サクラエディタ用マクロ「SERIKO1to2.js」</a></p>
+				<p>使用方法：<a href="http://sakura-editor.sourceforge.net/">サクラエディタ</a>を導入し、マクロとして使用します。詳細は付属のreadme.txt。</p>
+			</li>
+			<li>
+				<p><a href="http://typehoon.kusakage.com/zip/SurfacesTxtConverter.zip">surfaces.txtを旧定義から新定義に変換するツール</a></p>
+				<p>使用方法：解凍された.exeをsurfaces.txtと同じフォルダで実行して下さい。</p>
+			</li>
+		</ul>
+	</aside>
+	<section id="chapter3-1" class="ordered">
+		<h1>surfaces.txtを書く - 当たり判定編</h1>
+		<div class="passage">
+			<p>サーフェスに当たり判定を定義することから始めてみましょう。</p>
+			<p>最初に、以下を<em class="filename">surfaces.txt</em>に追記してください。</p>
+<pre class="exmp-descript">
+surface0
+{
+}
+</pre>
+			<p>これは、このブレス（{}中括弧）の中で、surface0について設定する、と言うような意味になります。</p>
+			<p>当たり判定によらず、後に触れるアニメーションやelementの設定もこの中に書いて行きます。</p>
+		</div>
+		<div class="passage">
+			<p>ここに以下のように書くと、当たり判定の定義になります。</p>
+<pre class="exmp-descript2">
+surface0
+{
+<em>collision0,117,71,185,130,Face</em>
+<em>collision1,115,174,174,217,Bust</em>
+}
+</pre>
+		</div>
+		<div class="passage">
+			<p>上のように当たり判定１箇所ごとにcollision0、collision1、collision2と順番に書いていきます。</p>
+			<p>番号は一つのサーフェス内で重複しないようにしてください。</p>
+			<p>1サーフェス辺りのcollision最大個数は256個です。</p>
+		</div>
+		<div class="passage">
+			<p>それに続く4つの数字は座標指定です。</p>
+			<p>サーフェス画像自体の左上を0,0として、四角形の左上x,y座標、右下のx,y座標と言う並びになっています。</p>
+		</div>
+		<div class="passage">
+			<p>最後の文字列はゴースト側で用いる当たり判定の名前になります。</p>
+			<p>なお、同じ名前（上例のFace、Bust）の当り判定を複数回設定しても構いません（例えば手をHandという名前の当たり判定にしたいとき、多くの場合右手と左手で領域が分かれるはずなので、Handを指定する行も2行に分かれるでしょう）。</p>
+		</div>
+		<aside class="passage hint">
+			<p>当たり判定の座標の取得には<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/" target="_blank">Coordin</a>というツールが便利です。</p>
+			<p>Coordinに画像をドロップしドラッグで四角い当たり判定を作ります。</p>
+			<p>自動的にクリップボードに座標がコピーされているので当たり判定の数字に貼り付けてください。</p>
+		</aside>
+		<aside class="passage hint">
+			<p>MATERIAの場合、設定で開発インターフェイスにチェックするとオーナードローメニューから当たり判定領域を確認できるようになります。</p>
+			<p>SSPの場合、設定→本体設定の「一般」で開発者機能をオンにして、機能→開発用パレットを開き、当たり判定を表示で確認できます。</p>
+		</aside>
+	</section>
+	<section id="chapter3-2" class="ordered">
+		<h1>surfaces.txtを書く - アニメーション編</h1>
+		<div class="passage">
+			<p>伺かにおけるアニメーション（SERIKOと呼ばれます）は、静止画を連続で描画する事で表現されます。</p>
+			<p>ここではアニメーションの実行タイミング、一枚一枚の静止画の重なり方等の設定方法について簡単に紹介します。</p>
+		</div>
+		<div class="passage">
+			<p>以下surface0をまばたきをさせる例でアニメーションを説明します。</p>
+		</div>
+		<div class="passage">
+<pre class="exmp-descript2">
+surface0
+{
+<em>animation0.interval,sometimes</em>
+<em>animation0.pattern0,overlayfast,100,50,0,0</em>
+<em>animation0.pattern1,overlayfast,101,50,0,0</em>
+<em>animation0.pattern2,overlayfast,100,50,0,0</em>
+<em>animation0.pattern3,overlay,-1,100,0,0</em>
+
+collision0,117,71,185,130,Face
+collision1,115,174,174,217,Bust
+}
+</pre>
+		</div>
+		<div class="passage">
+			<p>surface0.pngにアニメーションさせるにはこのようにsurface0と書き、その下のブレス（{}中括弧）内にアニメーションの内容を定義していきます。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript">animation0.interval,sometimes</pre>
+			<p>animation*,intervalという行は、その番号のアニメーションが実行されるタイミングの定義です。</p>
+			<p>「animation」に続く数字は、そのアニメーション定義（タイミングの設定であるintervalと、後に続く「コマ」の設定であるpatternなどのセット）のIDになります。</p>
+			<p>アニメーションIDは自由な番号でよく、連番である必要もありませんが、<em>同じ意味のアニメーションについて同じID</em>が与えられることが期待されます<a href="#note1" class="note" id="note1-symbol">※</a>。</p>
+		</div>
+		<div class="passage">
+			<p>animation0.interval,に続く「sometimes」がインターバル定義の内容です。</p>
+			<p>例のようにsometimesを指定した場合、そのアニメーションは時々（１秒当たり２分の１の確率）勝手に実行されます。</p>
+			<p>つまり「IDが0番のアニメーションは時々勝手に動く」といった指定をしている事になります。</p>
+			<p>他にどんなタイミング指定があるかについては、「Shell設定 - surfaces.txt」の<a href="descript_shell_surfaces.html#sometimes">アニメーションインターバルについての節</a>をご覧ください。</p>
+		</div>
+		<div class="passage">
+			<p>続けてアニメーションを構成する静止画（コマ）一枚一枚の定義を行います。</p>
+			<p>それぞれpattern0、pattern1、pattern2というように順番に書いていきます。パターン番号の抜け・重複はできません。</p>
+			<p>先頭に同じアニメーション群のID（animation*）を入れるのを忘れないでください。</p>
+			<p>また、interval定義行と一連のpattern定義行は別々の場所に分けて書いたりせずに、連続して書くようにしてください。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">animation0.pattern0,<em>overlay</em>,100,50,0,0</pre>
+			<p>overlayの部分は描画方法の指定です。</p>
+			<p>overlayとは元の画像の上に重ねて画像を表示する描画方法です。</p>
+			<p>この他にも様々な描画方法が用意されています。</p>
+			<p>詳しくは「Shell設定 - surfaces.txt」の<a href="descript_shell_surfaces.html#base">サーフェス描画メソッドについての節</a>をご覧ください。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">animation0.pattern0,overlayfast,<em>100</em>,50,0,0</pre>
+			<p>100という部分は、このコマで描画するのはsurface100だという意味です。</p>
+			<p>基本的には<em class="filename">surface100.png</em>のことだと考えてよいです。</p>
+			<p>101とすれば<em class="filename">surface101.png</em>の画像が用いられます。</p>
+			<p>-1とすると、そのアニメーションの描画を停止してベース画像（上例の場合はsurface0）に戻ります。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">animation0.pattern0,overlayfast,100,<em>50</em>,0,0</pre>
+			<p>50の部分は表示時間（単位:ミリ秒）です。</p>
+			<p>そのコマに<em>切り替わるまでの時間</em>を指定してください。</p>
+			<p>そのコマ自身の表示時間ではないので注意しましょう。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">animation0.pattern0,overlayfast,100,50,<em>0,0</em></pre>
+			<p>最後の0,0の部分はコマの表示位置です（x座標,y座標）。</p>
+			<p>元の画像からどれだけずらして表示するか指定します。</p>
+			<p>x方向は右が正、y方向は下が正です。</p>
+		</div>
+		<aside class="passage note" id="note1">
+			<h1><a href="#note1-symbol">※1</a></h1>
+			<p>例えばキャラクターに正面向きのポーズのsurface0と横向きのポーズのsurface5があったとして、その両方で「まばたき」アニメーションをしたいとします。</p>
+			<p>この時、上例のようにsurface0で瞬き定義をする他に、surface5でも同じような定義をすることになりますが、横向きと正面向きという違いがあるために、コマとして用いるサーフェス（画像）は異なるはずです。</p>
+			<p>しかし、両方同じように扱われる「まばたき」ではあるので、同じアニメーションID（例えば0）にする事が望ましいでしょう。</p>
+			<p>このルールは特に、別項で説明する「<a href="dev_bind.html">着せ替え</a>」の場合においては必須となります。</p>
+		</aside>
+	</section>
+	<section id="chapter3-3" class="ordered">
+		<h1>surfaces.txtを書く - element合成編</h1>
+		<div class="passage">
+			<p>elementは、複数のパーツ画像を合成して1枚のサーフェスとして扱うための仕組みです。</p>
+			<p>例えば、全てのサーフェスを必ずsurface0.pngといった画像として用意しなければならないなら、キャラクターの表情を増やす場合には、例え口の形が少し違うだけであっても、表情の数だけ全身の立ち絵を用意する必要があります。</p>
+			<p>しかし、身体パーツと表情パーツを分け、それを合成する事ができるならば、表情を増やす場合にも、画像としては表情差分だけ用意すればよくなるので、シェル全体の容量はずいぶん減るでしょう。</p>
+			<p>さらにもし目元と口元のパーツを分ければ、目と口の組み合わせで様々な表情になるので、実際にその表情自体を作画することなしに、ある程度の表情を作り出すことさえできます。</p>
+		</div>
+		<div class="passage">
+			<p>以下がelement定義の記述例となります。</p>
+<pre class="exmp-descript2">
+surface1
+{
+<em>element0,overlay,body0.png,0,0</em>
+<em>element1,overlay,face1.png,0,0</em>
+}
+</pre>
+			<p>これで、「body0.png」の上に「body1.png」を重ねたものがsurface1として定義されます。</p>
+			<p>重ねたいレイヤーの数だけいくつでも書き足して行く事ができます。</p>
+			<p>なおこの場合surface1.pngは不要です。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">element<em>0</em>,overlay,body0.png,0,0</pre>
+			<p>「element」のすぐ後に続く数字は、そのサーフェスにおける全elementのID（通し番号）です。</p>
+			<p>IDは0から始まる連番です。数字が小さい方が、より下に合成されるレイヤーになります。</p>
+			<p>なお、surface*.pngのような名前のpng画像は、element0より下のレイヤーとみなされる点に注意してください。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">element0,<em>overlay</em>,body0.png,0,0</pre>
+			<p>続くキーワードは描画メソッドです。</p>
+			<p>基本的に<a href="descript_shell_surfaces.html#base">アニメーションのものと同じ</a>ですが、startやmoveなど、純粋に画像を合成するのでない一部のメソッドは使用できません。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">element0,overlay,<em>body0.png</em>,0,0</pre>
+			<p>続けて合成するファイル名を指定します。</p>
+			<p>任意名のpngファイルが指定可能です。</p>
+		</div>
+		<div class="passage">
+			<pre class="exmp-descript2">element0,overlay,body0.png,<em>0,0</em></pre>
+			<p>最後の二つの数字は合成位置の指定です（x座標,y座標）。</p>
+			<p>ベース画像に対してどれだけずらして合成するかを指定します。</p>
+			<p>x方向は右が正、y方向は下が正です。</p>
+		</div>
+		<div class="passage">
+			<p>ところで今回の例では、先述の<a href="#chapter3-1">当たり判定</a>や<a href="chapter=3-2">アニメーション</a>の例の時と違って、surface0ではなくsurface1にelementの定義しています。</p>
+			<p>あくまで例示についての話ではありますが、これには一応理由があります。</p>
+			<p>surface0や10は、Webサービスなどに自分のゴーストを登録する時には、surfaces.txt<a href="#note2" class="note" id="note2-symbol">※</a>。</p>
+			<p>仕様上は、surface0や10でelementを用いる事にはまったく問題はありません。</p>
+		</div>
+		<aside class="passage note" id="note2">
+			<h1><a href="#note2-symbol">※2</a></h1>
+			<p>例えばゴーストのデータベースのようなWebサービスなどで、ゴーストのプレビューを表示したい場合を考えます。</p>
+			<p><a href="#chapter1" title="立ち絵となる画像を用意する">先にも述べた通り</a>、surface0とsurface10は基本サーフェスとされ、基本的に省略できません。</p>
+			<p>つまりsurface0と10は必ずあるものと考えられますから、プレビューに用いるのには都合が良いでしょう。</p>
+			<p>しかし、もしsurface0や10がelement合成によって構成されていると、プレビュー表示者はelement定義を読み取って意図どおりに合成する必要が出てきてしまいます。</p>
+			<p>これは人力はもとよりプログラムで自動化するシステムにおいてもいくらかの障壁になります。</p>
+			<p>従って、そうしたサービスの利用を視野に入れる場合には、surface0と10は実体のpngとして用意した方がよいかもしれません。</p>
+			<p>なお、こうしたプレビュー表示を行っているサービスとして、更新フィード「<a href="https://sirefaso.appspot.com/">SiReFaSo</a>」があげられます。</p>
+		</aside>
+	</section>
+</section>
+<section id="chapter4" class="ordered">
+	<h1>readme.txtを書く</h1>
+	<div class="passage">
+		<p><em class="filename">readme.txt</em>というファイルがあるとオーナードローメニューやインストール時などに表示できます。</p>
+		<p>省略できますが、ゴーストの作者とシェル作者が異なる場合などは、連絡先を明記した方がよいかもしれません。</p>
+		<p>シェルの説明や連絡事項など必要な事を記入してください。</p>
+	</div>
+	<div class="passage">
+		<p>reamdeも他のファイル同様、1行目にcharset,UTF-8などと書いておくか、BOMを含んでおけばShift JIS以外も使えます。</p>
+	</div>
+</section>
+<section id="chapterEX1" class="ordered ex">
+	<h1>半透明のサーフェスについて</h1>
+	<div class="passage">
+		<p>半透明にするには半透明にしたい画像と同じファイル名の「pna」を作ります。</p>
+		<p>例えば<em class="filename">surface0.png</em>に対して<em class="filename">surface0.pna</em>となります。</p>
+	</div>
+	<div class="passage">
+		<p>pnaは透明度をグレースケールで表したpngを単にリネームしたものです。</p>
+		<p>pnaで完全に白くした部分が不透明、完全に黒くした部分が透明となり、その中間が半透明となります。</p>
 	</div>
 	<table class="exmp-surface">
 		<tr>
@@ -92,223 +420,59 @@
 		</tr>
 	</table>
 	<div class="passage">
-		<p>pnaで白くした部分が残り黒くした部分が透明となります。</p>
-		<p>またその度合いにより半透明が出来ます。</p>
-	</div>
-	<div class="passage">
 		<p>半透明の部分はキャラクターとしてクリックできます。</p>
 		<p>ですので透明部分は完全な黒(RGBが0,0,0)色にしてください。</p>
 	</div>
 </section>
-<section>
-	<h1>2、descript.txtを書く</h1>
+<section id="chapterEX2" class="ordered ex">
+	<h1>追加シェルのネットワーク更新について</h1>
 	<div class="passage">
-		<p>シェルを作るにあたってdescript.txtの中身が書かれていなければ</p>
-		<p>本体に認識されません。</p>
-	</div>
-	<div class="passage">
-		<p>まずは以下の内容をコピーしてdescript.txtという名前のテキストに貼り付け</p>
-		<p>自分のゴーストに適切なネームへ変更してください。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript">
-charset,Shift_JIS
-
-name,このシェルの名前
-id,このシェルのIDもしくは名前(英数のみで書いてください)
-
-craftman,制作者名(英数のみで書いてください)
-craftmanw,一覧などで使用する制作者名(日本語表記でも可能)
-craftmanurl,制作者のURL(http://～など)
-</pre>
-	</div>
-	<div class="passage">
-		<p>charsetは基本的にShift_JISにしておいてください。</p>
-	</div>
-	<div class="passage">
-		<p>シェル全体の基本バルーン位置を変えるには</p>
-<pre class="exmp-descript">
-sakura.balloon.offsetx,0
-sakura.balloon.offsety,0
-kero.balloon.offsetx,0
-kero.balloon.offsety,0
-</pre>
-		<p>という項目を足してください。</p>
-		<p>sakura.balloon.offsetがメイン側、kero.balloon.offsetが相方側のバルーン位置の変更になります。</p>
-		<p>数字を増やすとx座標はキャラクター寄りにy座標は下に表示されます。</p>
-		<p>マイナスをつけると表示位置が逆の方向になり、x座標はキャラクターから離れ、y座標は上に表示されるようになります。</p>
+		<p>SSPでは、シェル自体にネットワーク更新機能をつける事ができます。</p>
+		<p>詳しくは「<a href="dev_update.html">ネットワーク更新への対応</a>」のページをお読みください。</p>
 	</div>
 </section>
-<section>
-	<h1>3a、surfaces.txtを書く - 当たり判定編</h1>
+<section id="chapterEX3" class="ordered ex">
+	<h1>着せ替えについて</h1>
 	<div class="passage">
-		当たり判定もアニメーション同様に指定したサーフェスのプレス内に記述します。
-	</div>
-	<div class="passage">
-<pre class="exmp-descript2">
-<em class="filename">surface0</em>
-<em class="filename">{</em>
-animation0.interval,sometimes
-animation0.pattern0,overlayfast,100,5,0,0
-animation0.pattern1,overlayfast,101,5,0,0
-animation0.pattern2,overlayfast,100,5,0,0
-animation0.pattern3,overlay,-1,10,0,0
-
-<em class="filename">collision0,117,71,185,130,Face</em>
-<em class="filename">collision1,115,174,174,217,Bust</em>
-<em class="filename">}</em>
-</pre>
-	</div>
-	<div class="passage">
-		<p>上のように当たり判定１箇所ごとにcollision0、collision1、collision2と順番に書いていきます。</p>
-		<p>最後の文字列はイベントで使われる当たり判定のIDになります。</p>
-		<p>1サーフェスの最大辺り判定個数は256個です。</p>
-	</div>
-	<div class="passage">
-		<p>当たり判定は<a href="http://www.geocities.co.jp/SiliconValley-Cupertino/8536/" target="_blank">Coordin</a>を使うと簡単に座標を取得出ます。</p>
-		<p>Coordinに画像をドロップしドラッグで四角い当たり判定を作ります。</p>
-		<p>自動的にクリップボードに座標がコピーされているので当たり判定の数字の部分を置き換えてください。</p>
-	</div>
-	<div class="passage">
-		MATERIAの設定で開発インターフェイスにチェックするとオーナードローメニューから当たり判定領域を確認できるようになります。
+		<p>伺かでは、着せ替えはアニメーションの一種として設定されます。</p>
+		<p>詳しくは「<a href="dev_bind.html">着せ替えの設定</a>」のページをお読みください。</p>
 	</div>
 </section>
-<section>
-	<h1>3b、surfaces.txtを書く - アニメーション編</h1>
+<section id="chapterEX4" class="ordered ex">
+	<h1>複数のサーフェスで共通の設定をまとめる</h1>
 	<div class="passage">
-		<p>伺かにおけるアニメーション（SERIKOと呼ばれます）は、静止画を連続で描画する事で表現されます。</p>
-		<p>ここではアニメーションの実行タイミング、一枚一枚の静止画の重なり方等の設定方法について簡単に紹介します。</p>
-	</div>
-	<div class="passage">
-		<p>まずはアニメーションの表示方法や順番を書くためのsurfaces.txtというテキストを作ります。</p>
-		<p>その後、まずは以下を追記して下さい。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript">
-charset,Shift_JIS
-
-descript
-{
-version,1
-}
-</pre>
-	</div>
-	<div class="passage">
-		<p>先頭の一行はdescript.txtのものと同じ文字コードの指定です。特に理由がなければShift_JISで構いません。</p>
-		<p>それより下の記述は、アニメーションの定義方法に関するバージョンの設定です。</p>
-		<p>もしこの記述が無い場合は、アニメーション関係を旧来の定義（SERIKO/1.x）で書かねばなりません。</p>
-		<p>ここにある例は、新しい定義（SERIKO/2.0）によるものなので、注意して下さい。</p>
-	</div>
-	<div class="passage">
-		<h4>・surfaces.txt変換ツール</h4>
-		<p>以下のツールを用いて旧定義から新定義に変換する事も可能です。</p>
-		<p><a href="http://typehoon.kusakage.com/zip/SurfacesTxtConverter.zip">surfaces.txtを旧定義から新定義に変換するツール</a></p>
-		<p>使用方法：解凍された.exeをsurfaces.txtと々フォルダで実行して下さい。</p>
-	</div>
-	<div class="passage">
-		<p>以下surface0をまばたきをさせる例でアニメーションを説明します。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript">
-surface0
-{
-animation0.interval,sometimes
-animation0.pattern0,overlayfast,100,5,0,0
-animation0.pattern1,overlayfast,101,5,0,0
-animation0.pattern2,overlayfast,100,5,0,0
-animation0.pattern3,overlay,-1,10,0,0
-}
-</pre>
-	</div>
-	<div class="passage">
-		<p>surface0.pngにアニメーションさせるにはこのようにsurface0と書き、その下のプレス内にアニメーションの内容を定義していきます。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript">
-animation0.interval,sometimes
-</pre>
-		<p>animation*,intervalという行は、その番号のアニメーションが実行されるタイミングの定義です。</p>
-		<p>animation*.interval,に続く「sometimes」がタイミング定義の内容になります。</p>
-		<p>例のようにsometimesを指定した場合、時々（１秒当たり２分の１の確率）実行されます。</p>
-		<p>つまり「0番のアニメーションIDが時々動作する」といった意味になります。</p>
-	</div>
-	<div class="passage">
-		<p>続けてアニメーションを構成する静止画一枚一枚の定義を行います。</p>
-		<p>それぞれpattern0、pattern1、pattern2というように順番に書いていきます。パターン番号の抜け・重複はできません。</p>
-		<p>また、先頭に同じアニメーション群のID（animation*）を入れるのを忘れないで下さい。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript2">
-animation0.pattern0,<em class="filename">overlayfast</em>,100,5,0,0
-</pre>
-		<p>overlayfastの部分は描画方法です。</p>
-		<p>overlayfastとは元の画像の上に重ねて画像を表示する命令です。</p>
-		<p>ただし、重ねる画像が下になっている画像の描画から出てしまう場合はoverlayを使います。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript2">
-animation0.pattern0,overlayfast,<em class="filename">100</em>,5,0,0
-</pre>
-		<p>100という部分はsurface100.pngの画像が使われます。</p>
-		<p>101とすればsurface101.pngの画像ということです。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript2">
-animation0.pattern0,overlayfast,100,<em class="filename">5</em>,0,0
-</pre>
-		<p>5の部分は表示時間（ミリセカンド）です。</p>
-		<p>その画像に切り替わるまでの時間を指定してください。</p>
-	</div>
-	<div class="passage">
-<pre class="exmp-descript2">
-animation0.pattern0,overlayfast,100,5,<em class="filename">0,0</em>
-</pre>
-		<p>最後の0,0の部分は画像の始点です。</p>
-		<p>元の画像からどれだけXY座標をずらして表示するか指定します。</p>
-	</div>
-	<div class="passage">
-		<p>画像の番号を-1にするとそのパターンを非表示にすることができます。</p>
+		<p>例えばキャラクターの姿勢が同じサーフェスがいくつもある場合、当たり判定やアニメーション指定なども全く同じというサーフェスが存在するかもしれません。</p>
+		<p>そうした場合、それぞれのsurfaceのブレスに何度も同じ設定をコピペする以外にも、便利な記述方法がいくつかあります。</p>
+		<p>ただし、そのうちのほとんどは<em>SSP限定</em>の方法です。</p>
+		<p>詳細は「Shell設定 - surfaces.txt」のページ内の「<a href="descript_shell_surfaces.html#caption_surfacebraceID">surface*ブレスで可能なID指定</a>」をご覧ください。</p>
 	</div>
 </section>
-<section>
-	<h1>3c、surfaces.txtを書く - element合成編</h1>
-</section>
-<section>
-	<h1>3d、surfaces.txtを書く - そのほかの設定編</h1>
-</section>
-<section>
-	<h1>4、readme.txtを書く</h1>
+<section id="chapterEX5" class="ordered ex">
+	<h1>オーナードローメニューを設定する</h1>
 	<div class="passage">
-		<p>readme.txtというファイルがあるとオーナードローメニューのシェル選択にあるReadMe!という項目を選択した時に表示できます。</p>
-		<p>シェルの説明や連絡事項など必要な事があれば記入してください。</p>
-		<p>特に無い場合はreadme.txtは無くても構いません。</p>
-		<p>ゴーストの作者とシェル作者が異なる場合などは、連絡先を明記した方がよいかもしれません。</p>
-	</div>
-		<div class="passage">
-		<p>reamdeも他のファイル同様、1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使えます。</p>
+		<p>オーナードローメニュー（右クリックメニュー）の背景画像や文字色なども、シェルで設定できます。</p>
+		<p>詳しくは「<a href="dev_ownerdrow.html">オーナードローメニューの設定</a>」を参照してください。</p>
 	</div>
 </section>
-<section>
-	<h1>5、サムネイル画像を作る</h1>
+<section id="chapterEX6" class="ordered ex">
+	<h1>サムネイル画像を設定する</h1>
 	<div class="passage">
-		<p>オーナードローメニューのシェル選択時に表示される画像です。</p>
-		<p>シェルが複数あるなどして一目でわかりやすくしたい場合などに使用します。</p>
-		<p>シェルがmasterのみ等の場合は必要無いと思います。</p>
+		<p>オーナードローメニューのシェル選択で、シェルにカーソルが乗った時にサムネイル画像を表示することができます。</p>
+		<p>シェルが複数あるなどして一目でわかりやすくしたい場合などに用意するとよいでしょう。</p>
 	</div>
 	<div class="passage">
-		<p>thumbnail.pngという画像が同じフォルダに入っていれば自動的に使用されます。</p>
-		<p>ファイル名をthumbnail.pnrとするとサーフェスのように左上1ピクセルと同じ色を透明にして表示させます。</p>
+		<p><em class="filename">thumbnail.png</em>という画像が同じフォルダに入っていれば自動的に使用されます。</p>
 	</div>
 </section>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
-		</section>
+		</main>
 	</section>
 	<footer>
 		<p class="author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
 		</p>
 		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">

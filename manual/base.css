@@ -24,6 +24,7 @@ body {
 	margin: 0 auto;
 	color: #333333;
 	font-size: 12px;
+	counter-reset: note;
 }
 iframe#sidemenu {
 	border: 0;
@@ -97,21 +98,6 @@ ul.notelist {
 ul.notelist li {
 	margin: 1em 0;
 }
-ol.list-of-contents,
-ol.list-of-contents-ex {
-	counter-reset: i;
-}
-ol.list-of-contents li,
-ol.list-of-contents-ex li {
-	list-style-type: none;
-	counter-increment: list-of-contents;
-}
-ol.list-of-contents li:before {
-	content: counter(list-of-contents)", ";
-}
-ol.list-of-contents-ex li:before {
-	content: "EX"counter(list-of-contents)", ";
-}
 dt {
 	margin-top: 1em;
 	font-weight: bold;
@@ -169,7 +155,9 @@ em.filename {
 	font-weight: normal;
 }
 strong {
-	color: #ff0000;
+	font-weight: bold;
+	font-size: 105%;
+	color: #006600;
 }
 figcaption {
 	text-decoration: underline;
@@ -202,7 +190,14 @@ a:hover {
 	color: #f00000;
 	text-decoration: none;
 }
-
+a.note {
+	font-size: 80%;
+	vertical-align: super;
+}
+a.note:after {
+	counter-increment: note;
+	content: counter(note);
+}
 
 
 section.baseframe {
@@ -210,7 +205,7 @@ section.baseframe {
 	width: 750px;
 	margin: 0 auto;
 }
-section.baseframe > h1:first-child {
+section.baseframe > header:first-child {
 	height: 174px;
 	background-image: url(image/shade_h.png);
 	background-repeat: repeat-x;
@@ -226,58 +221,81 @@ nav.sidebar {
 	float: left;
 	width: 200px;
 }
-section.text {
+main {
 	float: right;
 	width: 540px;
 	padding-right: 10px;
 	padding-bottom: 1em;
+	counter-reset: chapter-h chapter-ex-h;
 }
-section.text > h1 {
+main > h1 {
 	width: 100%;
 	font-weight: bold;
 	padding-bottom: 6px;
 	border-bottom: 2px solid #7bb56b;
 }
-section.text > h1 + section {
+main > h1 + section {
 	border: none;
 }
-section.text > section {
+main > section {
 	border-top: 2px solid #7bb56b;
 	margin-bottom: 1.5em;
 	padding-top: 1em;
 }
-section.text > section h1 {
+main > nav {
+	margin-bottom: 1.5em;
+}
+main > nav ol {
+	counter-reset: list-of-contents;
+}
+main > nav ol li {
+	list-style-type: none;
+	counter-increment: list-of-contents;
+}
+main > nav ol li:before {
+	content: counters(list-of-contents, "-")", ";
+}
+main > nav ol.ex li:before {
+	content: "EX"counters(list-of-contents, "-")", ";
+}
+main > section h1 {
 	font-weight: bold;
 	margin: 0.2em 0;
 }
-section.text > section h1#manual_seriko {
-	color: #006600;
+main > section.ordered {
+	counter-reset: chapter-h-sub chapter-ex-h-sub;
 }
-section.text > section h1#manual_mayuna {
-	color: #006600;
+main > section.ordered > h1:before {
+	counter-increment: chapter-h;
+	content: counter(chapter-h)", ";
 }
-section.text > section > section h1 {
+main > section.ordered.ex > h1:before {
+	counter-increment: chapter-ex-h;
+	content: "EX"counter(chapter-ex-h)", ";
+}
+main > section.ordered > section >h1:before {
+	counter-increment: chapter-h-sub;
+	content: counter(chapter-h)"-"counter(chapter-h-sub)", ";
+}
+main > section.ordered.ex > section >h1:before {
+	counter-increment: chapter-ex-h-sub;
+	content: "EX"counter(chapter-ex-h)"-"counter(chapter-ex-h-sub)", ";
+}
+main > section > section h1 {
 	margin-top: 1em;
 }
-section.text > section > section:first-child h1 {
+main > section:first-child h1 {
 	margin-top: 0;
 }
-.passage {
-	margin-top: 1em;
-	line-height: 1.2em;
+main > section > section > .passage {
+	margin-left: 1em;
 }
-.passage.hint {
-	border: 1px dashed #7bb56b;
-	background-color: #d0ffa0;
-	padding: 0.2em;
+main.toppage > section  h1:before {
+	content: "【";
 }
-.passage:first-child {
-	margin-top: 0;
+main.toppage > section  h1:after {
+	content: "】"
 }
-.directory {
-	color: #808080;
-}
-
 
 footer {
 	clear: both;
@@ -318,4 +336,25 @@ footer .author a:active {
 footer .banner {
 	margin-right: 1em;
 	text-align: right;
+}
+
+
+.passage {
+	margin-top: 1em;
+	line-height: 1.2em;
+}
+.passage.hint,
+.passage.note {
+	border: 1px dashed #7bb56b;
+	background-color: #d0ffa0;
+	padding: 0.2em;
+}
+.passage:first-child {
+	margin-top: 0;
+}
+.note > h1:first-child {
+	margin-top: 0;
+}
+.directory {
+	color: #808080;
 }

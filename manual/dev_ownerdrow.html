@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="伺か,オーナードロー,右クリックメニュー,ukadoc">
+<title>UKADOC Project オーナードローメニューの設定</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<section class="baseframe">
+	<header>
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
+			UKADOC Project(Powered by Disc-2)
+		</iframe>
+	</header>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<main>
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>オーナードローメニューの設定</h1>
+<section>
+	<div class="passage">
+		<p>オーナードローメニュー（右クリックメニュー）の表示を設定する方法について解説します。</p>
+		<p>ファイル構成の「<a href="manual_owner_draw_menu.html">オーナードローメニュー</a>」もあわせて参考にしてください。</p>
+	</div>
+	<div class="passage">
+		<p>設定は、シェルの<em class="filename">descript.txt</em>に記載するか、リソース取得用に発行されるいくつかのSHIORI Eventに対するレスポンスとして設定します。</p>
+	</div>
+</section>
+<nav>
+	<h1>目次</h1>
+	<ol>
+		<li><a href="#chapter1">シェルのdescript.txtで設定する</a></li>
+		<li><a href="#chapter2">SHIORI Eventで設定する</a></li>
+	</ol>
+</nav>
+<section id="chapter1" class="ordered">
+	<h1>シェルのdescript.txtで設定する</h1>
+	<div class="passage">
+		<p>シェルの<em class="filename">descript.txt</em>で設定できるのは通常時・選択中の背景およびサイドバーとして使われる３枚の画像と、文字色です。</p>
+		<p>SSPのみ、文字サイズおよびフォントの指定も可能です。</p>
+		<p>また着せ替えメニューの項目の配置などもシェルの<em class="filename">descript.txt</em>で行いますが、これについては「<a href="dev_bind.html">着せ替えの設定</a>」のページを参照してください。</p>
+	</div>
+	<div class="passage">
+		<p>なお、同じ項目についてSHIORI Eventを利用する方法でも同時に設定されている場合、SHIORI Eventによる設定が優先されますので注意してください。</p>
+	</div>
+	<div class="passage">
+		<p>以下が<em class="filename">descript.txt</em>による記述の例です。</p>
+<pre class="exmp-descript">
+menu.background.bitmap.filename,background.png
+menu.foreground.bitmap.filename,foreground.png
+menu.sidebar.bitmap.filename,sidebar.png
+
+menu.background.alignment,lefttop
+menu.foreground.alignment,lefttop
+menu.sidebar.alignment,bottom
+
+menu.background.font.color.r,0
+menu.background.font.color.g,0
+menu.background.font.color.b,0
+menu.foreground.font.color.r,0
+menu.foreground.font.color.g,0
+menu.foreground.font.color.b,255
+menu.separator.color.r,0
+menu.separator.color.g,0
+menu.separator.color.b,0
+menu.disable.font.color.120
+menu.disable.font.color.120
+menu.disable.font.color.120
+</pre>
+		<p>各行の詳細は、「<a href="descript_shell.html#menu.font.name,フォント名">Shell設定</a>」にありますが、以下大まかに説明します。</p>
+	</div>
+	<div class="passage">
+<pre class="exmp-descript">
+menu.background.bitmap.filename,background.png
+menu.foreground.bitmap.filename,foreground.png
+menu.sidebar.bitmap.filename,sidebar.png
+</pre>
+		<p>上記三行は、オーナードローメニューに使われる3種類の画像それぞれについての設定です。</p>
+		<p>backgroundは、通常時のメニュー背景です。</p>
+		<p>foregroundは、選択されている項目の背景画像です。少しわかり難いですが、オーナードローメニューの現在カーソルが載っている部分だけ、foreground画像のその位置の部分でbackground画像から置き換わります。</p>
+		<p>sidebarは、オーナードローメニューの左側に付属する画像です。</p>
+		<figure id="model_shiori-event">
+			<p><a href="image/ownerdrow_materials.png"><img src="image/ownerdrow_materials.png" width="400" height="421"  alt="オーナードローメニューに使われる三つの画像"></a></p>
+			<p><a href="image/ownerdrow_view.png"><img src="image/ownerdrow_view.png" width="331" height="314"  alt="オーナードローメニューの表示"></a></p>
+			<figcaption>上が使われる3つの画像、下が実際の表示（例:Emily/Phase4.5）</figcaption>
+		</figure>
+	</div>
+	<div class="passage">
+<pre class="exmp-descript">
+menu.background.alignment,lefttop
+menu.foreground.alignment,lefttop
+menu.sidebar.alignment,bottom
+</pre>
+		<p>上記三行は、3種類の画像それぞれの配置についての設定です。</p>
+		<p>background、foregroundの画像は上例の場合左上を起点に配置され、もしメニューの文字数や項目数の関係で、メニューが背景画像よりも大きくなる時、はみ出す領域の右側及び下側は、それぞれ画像の右端と左端の色が延長されて表示されます。</p>
+	</div>
+	<div class="passage">
+<pre class="exmp-descript">
+menu.background.font.color.r,0
+menu.background.font.color.g,0
+menu.background.font.color.b,0
+menu.foreground.font.color.r,0
+menu.foreground.font.color.g,0
+menu.foreground.font.color.b,255
+menu.separator.color.r,0
+menu.separator.color.g,0
+menu.separator.color.b,0
+menu.disable.font.color.120
+menu.disable.font.color.120
+menu.disable.font.color.120
+</pre>
+		<p>上記は文字色の設定です。</p>
+		<p>backgroundは通常時のメニュー文字色、foregroundは項目にカーソルが載っている時の文字色、separatorはメニューの区切り字の色、disableは例えば着せ替えがないシェルでの着せ替えメニューやネットワーク更新に非対応なゴーストでのネットワーク更新の項目など、非アクティブな項目の文字色です。</p>
+		<p>RGBカラーのそれぞれの色要素について、0～255の数値で指定します。rgb全てが255なら白、全てが0なら黒になります。</p>
+	</div>
+</section>
+<section id="chapter2" class="ordered">
+	<h1>SHIORI Eventで設定する</h1>
+	<div class="passage">
+		<p>シェル側<em class="filename">descript.txt</em>による設定と同様の設定に加え、メニュー各項目の表示名や、お気に入り・ポータルのリンク集について内容の設定が可能です。</p>
+		<p>なお、同じ項目についてシェル側<em class="filename">descript.txt</em>に設定があったとしても、SHIORI Eventによる設定が優先されます。</p>
+	</div>
+	<div class="passage">
+		<p>メニューに関するリソースを取得するためのSHIORI Eventに対して、どのように値を設定し・返却するかは各SHIORIの解説を参照する必要があります。</p>
+		<p>例えば里々の場合は以下のページが参考になるでしょう。</p>
+		<p><a href="http://soliton.sub.jp/satori/index.php?%B1%A6%A5%AF%A5%EA%A5%C3%A5%AF%A5%E1%A5%CB%A5%E5%A1%BC">里々wiki - 右クリックメニュー</a></p>
+		<p>その他どのようなSHIORI Eventがあるかについては「<a href="list_shiori_resource.html#menu.sidebar.bitmap.filename">SHIORI Resource</a>」のページを参照してください。</p>
+	</div>
+</section>
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</main>
+	</section>
+	<footer>
+		<p class="author">
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+		</p>
+		<p class="banner">
+			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
+		</p>
+	</footer>
+</section>
+</body>
+</html>
+<!--nobanner-->
+

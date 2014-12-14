@@ -20,7 +20,7 @@
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
-		<section class="text">
+		<main>
 
 
 
@@ -30,17 +30,20 @@
 	<h1>このページについて</h1>
 	<div class="passage">
 		<p>このページでは、「SHIORI Event」について概説しています。</p>
-		<p>以下の記事はSHIORI/3.0ないしSHIORI3.1のきちんとした仕様書<em>ではなく</em>、その考え方を理解するための大まかな手引きにすぎません。</p>
+		<p>以下の記事はSHIORI/3.0ないしSHIORI/3.1のきちんとした仕様書<em>ではなく</em>、その考え方を理解するための大まかな手引きにすぎません。</p>
 	</div>
 	<div class="passage">
 		<p>なお個々のSHIORI Eventについての解説は、「<a href="list_shiori_event.html">SHIORI Event</a>」のページにある一覧から参照してください。</p>
 	</div>
+</section>
+<nav>
+	<h1>目次</h1>
 	<ul>
 		<li><a href="#chapter1">SHIORI Event（栞イベント）とは</a></li>
 		<li><a href="#chapter2">Reference（リファレンス）</a></li>
 		<li><a href="#chapter3">GETコマンドとNOTIFYコマンド</a></li>
 	</ul>
-</section>
+</nav>
 <section id="chapter1">
 	<h1>SHIORI Event（栞イベント）とは</h1>
 	<figure id="model_shiori-event">
@@ -50,12 +53,12 @@
 	<div class="passage">
 		<p>そもそもゴーストが動く（喋る、表情を変える、etc.）とはどういうことでしょうか。</p>
 		<p>大雑把に言えば、それは<em>ベースウェア</em>（MATERIA、CROW、SSPなど）と<em>SHIORI</em>（ゴーストのコアとなる部品）の連携によって実現される機能です。</p>
-		<p>SHIORI Eventは、ベースウェアとSHIORIがそれぞれどのような役割を果たしているのか、その連携の中身を理解するための重要なキーワードになります。</p>
+		<p>SHIORI Eventは、その現場においてベースウェアとSHIORIがそれぞれどんな役割を果たしているのか、その中身を理解するための重要なキーワードになります。</p>
 	</div>
 	<div class="passage">
 		<p>ゴーストの動作において、最初に働くのはベースウェアです。</p>
 		<p>ベースウェアが第一に果たす大きな仕事は、<em>ゴーストが喋ったり動いたりするタイミング</em>を作る事です。</p>
-		<p>べースウェアは時間やマウス入力などの様々な状態を監視し、特定の変化（例えば１秒や１分と言う時間の経過、あるいはマウスカーソルがゴーストに触れた、など）をきっかけにして、ゴースト（のコアであるSHIORI）に対して知らせます。</p>
+		<p>べースウェアは時間やマウス入力などの様々な状態を監視し、特定の変化（例えば１秒や１分と言う時間の経過、あるいはマウスカーソルがゴーストに触れた、など）をきっかけにして、ゴースト（のコアであるSHIORI）に対して知らせを発行します。</p>
 		<p>この知らせの事を、<em>SHIORI Event</em>と呼んでいます。</p>
 	</div>
 	<div class="passage">
@@ -72,10 +75,10 @@
 	<h1>Reference（リファレンス）</h1>
 	<div class="passage">
 		<p>多くのSHIORI Eventでは、SHIORI EventのID（名前・種類）と共に、関連する情報が<em>Reference</em>という形で通知されます。</p>
-		<p>たとえばゴーストがクリックされた時には<a href="list_shiori_event.html#OnMouseClick" target="_top">OnMouseClick</a>というIDでSHIORI Eventが発行されますが、これに伴って、どのスコープ（本体側、相方側、三人目...）がクリックされたのか、そのスコープのどの辺り判定がクリックされたのか、どのボタン（右、左、ホイール...）でクリックされたのか、といった情報がReferenceとして通知されます。</p>
+		<p>一例として、ゴーストがクリックされた時に発行される<a href="list_shiori_event.html#OnMouseClick" target="_top">OnMouseClick</a>というIDの場合を見てみると、どのスコープ（本体側、相方側、三人目...）がクリックされたのか、そのスコープのどの当たり判定がクリックされたのか、どのボタン（右、左、ホイール...）でクリックされたのか、といった情報がReferenceとして通知されています。</p>
 	</div>
 	<div class="passage">
-		<p>SHIORIは例えばReferenceをゴーストの動きに変化をつけることに使えるでしょう。</p>
+		<p>例えばSHIORIは、Referenceをゴーストの動きに変化をつけることに使えるでしょう。</p>
 		<p>OnMouseClickの例で言うならば、多くのゴーストはどのスコープのどの部位をクリックされたかに応じて、実行する機能やトークを変化させています。</p>
 	</div>
 	<div class="passage">
@@ -100,11 +103,11 @@
 	</div>
 	<div class="passage">
 		<p>一つが、ここまででも述べてきた、ゴーストの動くタイミングとしてのSHIORI Eventの発行です。</p>
-		<p>これを<em>GETコマンド</em>といって、その名の通りベースウェアがSHIORIから動作指示（さくらスクリプト）などの内容を受け取る（get）ためのSHIORI Eventです。</p>
+		<p>これは<em>GETコマンド</em>と呼ばれ、その名の通りベースウェアがSHIORIから動作指示（さくらスクリプト）などの内容を受け取る（get）ためのSHIORI Eventの発行です。</p>
 	</div>
 	<div class="passage">
 		<p>もう一つの<em>NOTIFY（ノーティファイ）コマンド</em>は少し特殊で、NOTIFYコマンドで発行されたSHIORI Eventでは、ゴーストは動く事ができません。</p>
-		<p>なぜなら、ベースウェアはNOTIFYコマンドのSHIORI EventにSHIORIが何かの内容を送り返してきたとしても、これを無視するようになっているからです。</p>
+		<p>なぜなら、NOTIFYコマンドのSHIORI Eventに対してSHIORIが何かの動作指示を送り返したとしても、ベースウェアはこれを無視することになっているからです。</p>
 	</div>
 	<div class="passage">
 		<p>NOTIFYコマンドの目的は、SHIORIに対して情報（Reference）を知らせる（notify）ことにあります。</p>
@@ -112,18 +115,18 @@
 		<p>先述の<a href="list_shiori_event.html#installedghostname">installedghostname</a>は、NOTIFYコマンドで発行されるIDの典型です。SHIORIはそのReferenceから、ユーザの環境にどんなゴーストがインストールされているかを知る事ができます。ゴーストはその情報を元に、例えば「特定のゴーストがインストールされているなら、そのゴーストを呼び出すための項目をメニューに表示する」といった仕掛けを作る事ができるでしょう。</p>
 	</div>
 	<div class="passage">
-		<p>注意を要する点ですが、二つのコマンドの存在は、SHIORI EventのID全体が二つの「種類」に分けられる<em>ということを意味しません</em>。</p>
-		<p>何故なら、原則として<em>全てのSHIORI EventはNOTIFY、GETのいずれでも発行される</em>可能性があり、本質的にはIDに依存した設計にはなっていないからです。コマンドの種類とIDの種類はあくまでも独立したものです（しかしながら現実の実装を眺めてみたときには、一定の傾向や規則があります。そうした詳細については<a href="list_shiori_event.html">SHIORI Eventの一覧ページ</a>のそれぞれの節を参照してください）。</p>
+		<p>注意を要する点ですが、二つのコマンドの存在は、SHIORI EventのID全体が二つの「グループ」に分けられる<em>ということを意味しません</em>。</p>
+		<p>何故なら、原則として<em>全てのIDのSHIORI EventがNOTIFY、GETのいずれでも発行される</em>可能性があるからです。コマンドの種類とIDの種類はあくまでも独立したもので、本質的には依存関係にありません（しかしながら現実の実装を眺めてみたときには、一定の傾向や規則が認められます。そうした詳細については<a href="list_shiori_event.html">SHIORI Eventの一覧ページ</a>のそれぞれの節を参照してください）。</p>
 	</div>
 </section>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
-		</section>
+		</main>
 	</section>
 	<footer>
 		<p class="author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
 		</p>
 		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">

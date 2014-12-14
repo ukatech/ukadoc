@@ -11,16 +11,16 @@
 </head>
 <body>
 <section class="baseframe">
-	<h1 class="head">
+	<header>
 		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
-	</h1>
+	</header>
 	<section class="body">
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
-		<section class="text">
+		<main>
 
 
 
@@ -47,6 +47,8 @@
 　　　　　　<em class="filename">+-menu_foreground.png</em>
 　　　　　　<em class="filename">+-menu_sidebar.png</em>
 </pre>
+		<p>実際には必ずしも上記位置にファイルがある必要はなく、フォルダ内などにあってもよい。</p>
+		<p>SHIORI Resourceによってオーナードローメニューの設定をする場合、ghost/master側にあった方が都合がよい（ghost/master基点の相対パスで指定するので）。</p>
 	</div>
 </section>
 <section>
@@ -74,8 +76,13 @@
 		</dl>
 	</div>
 	<div class="passage">
-		<p>これらの画像は必ずしもこのファイル名にする必要は無い。</p>
-		<p>いずれも画像、文字色などの指定はシェルの<a href="descript_shell.html">descript.txt</a>もしくは<a href="list_shiori_resource.html" target="_top">SHIORI Resource</a>によって行う。</p>
+		<p>いずれも画像、文字色などの指定はシェルの<a href="descript_shell.html">descript.txt</a>または<a href="list_shiori_resource.html" target="_top">SHIORI Resource</a>によって行う。</p>
+		<p>SHIORI Resourceで指定する場合は、キャラクターが入れ替わり制であったり、モード切替のような機能を持つゴーストで、その状態に応じてメニュー表示を変更するなどの仕掛けに使える。</p>
+		<p>shell側descript.txtとSHIORI Resourceの両方で指定した場合、SHIORI Resourceの方が優先される。</p>
+		<p>また、各画像のファイル名は必ずしも上例の通りにする必要は無い（任意名でよい）。</p>
+		<p>詳細は<a href="dev_ownerdrow.html">オーナードローメニューの設定</a>のページも参照。</p>
+	</div>
+	<div class="passage">
 		<p>メニューの画像が切れた部分はその端の色を単色で塗り潰す。</p>
 		<p>指定が無かった場合は一般的なポップアップになる。</p>
 	</dl>
@@ -84,11 +91,11 @@
 
 
 
-		</section>
+		</main>
 	</section>
 	<footer>
 		<p class="author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
 		</p>
 		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
