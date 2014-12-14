@@ -131,7 +131,7 @@
 		<h1>SHIORI Resource</h1>
 		<section class="navigation-category">
 			<ul>
-				<li class="caption"><a href="#notes_shioriresource">SHIORI Resource</a></li>
+				<li class="caption"><a href="#caption_shioriresource">SHIORI Resource</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -212,13 +212,13 @@
 		<section class="navigation-category">
 			<h1>オーナードローメニュー項目表示</h1>
 			<ul>
-				<li><a href="#note_visible">オーナードローメニュー項目表示</a></li>
+				<li><a href="#caption_visible">オーナードローメニュー項目表示</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>オーナードローメニュー項目名</h1>
 			<ul>
-				<li class="caption"><a href="#notes_menushortcut">ショートカットキー</a></li>
+				<li class="caption"><a href="#caption_menushortcut">ショートカットキー</a></li>
 			</ul>
 			<ul>
 				<li><a href="#-">-</a></li>
@@ -322,7 +322,7 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption" id="notes_shioriresource">
+		<section class="caption" id="caption_shioriresource">
 			<h1>SHIORI Resource</h1>
 			<p>SHIORI Resourceは、旧プロトコル<a href="http://usada.sakura.vg/contents/shiori.html#shiori25">SHIORI/2.5</a>において、オーナードローメニューの表示やhomeurlなどの<em>単純な文字列情報を取得するためのリクエスト</em>として定義されたものが元になっています。<br />この仕様によって、そうした情報をゴースト側の状態に応じて制御することができます。</p>
 			<p>現状最新のSHIORI/3.0においては、旧仕様の整理の結果通常のSHIORI Eventと実装上明確には区別されません。</p>
@@ -384,7 +384,7 @@
 				<dt class="entry">homeurl</dt>
 				<dd class="entry">
 					<p class="description">ネットワーク更新用ファイルの位置。<br>
-					何かSHIORIに重大な不具合が生じた際のバックアップ用に<a href="descript_ghost.html">descript.txtにも書ける</a>。<br>
+					何かSHIORIに重大な不具合が生じた際のバックアップ用に<a href="descript_ghost.html#homeurl,URL">descript.txtにも書ける</a>。<br>
 					どちらの記述が優先されるかはdescript.txtの説明を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -541,7 +541,15 @@
 			<dl id="sakura.recommendsites">
 				<dt class="entry">sakura.recommendsites</dt>
 				<dd class="entry">
-					<p class="description">本体側のおすすめリスト。<br />値は<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...<br />という形式で返す。<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。</p>
+					<p class="description">
+						本体側のおすすめリスト。
+						<br />値は
+						<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...
+						<br />という形式で返す。
+						<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。
+						<br />トークスクリプト部分は単なる文字列ではなくさくらスクリプト。
+						<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -552,7 +560,14 @@
 			<dl id="sakura.portalsites">
 				<dt class="entry">sakura.portalsites</dt>
 				<dd class="entry">
-					<p class="description">本体側のポータルリスト。<br />値は<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...<br />という形式で返す。<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。</p>
+					<p class="description">
+						本体側のポータルリスト。
+						<br />値は
+						<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...
+						<br />という形式で返す。
+						<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。
+						<br />トークスクリプト部分は単なる文字列ではなくさくらスクリプト。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -563,7 +578,15 @@
 			<dl id="kero.recommendsites">
 				<dt class="entry">kero.recommendsites</dt>
 				<dd class="entry">
-					<p class="description">相方側のおすすめリスト。<br />値は<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...<br />という形式で返す。<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。</p>
+					<p class="description">
+						相方側のおすすめリスト。
+						<br />値は
+						<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...
+						<br />という形式で返す。
+						<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。
+						<br />トークスクリプト部分は単なる文字列ではなくさくらスクリプト。
+						<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -574,7 +597,15 @@
 			<dl id="char*.recommendsites">
 				<dt class="entry">char*.recommendsites</dt>
 				<dd class="entry">
-					<p class="description">\p[*]のおすすめリスト。<br />値は<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...<br />という形式で返す。<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。</p>
+					<p class="description">
+						\p[0]側のおすすめリスト。
+						<br />値は
+						<br />項目名1[バイト値1]url1[バイト値1]バナー画像パス1[バイト値1]選択時トークスクリプト1[バイト値2]項目名2[バイト値1]...
+						<br />という形式で返す。
+						<br />ただしその形式への変換はSHIORIが内部的に行っている場合があるので詳しくは各SHIORIの解説を参照。
+						<br />トークスクリプト部分は単なる文字列ではなくさくらスクリプト。
+						<br />url部分にurlの変わりにscript:から始まる記述でそのスクリプトが実行される（<a href="list_sakura_script.html#_!_raise,%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E5%90%8D,r0,r1,r2..._">\![raise]</a>なども可能）。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -767,7 +798,7 @@
 			<dl id="menu.sidebar.bitmap.filename">
 				<dt class="entry">menu.sidebar.bitmap.filename</dt>
 				<dd class="entry">
-					<p class="description">サイドバー表示画像ファイル名。</p>
+					<p class="description">サイドバー表示画像ファイル名。SHIORIの位置からの相対パス。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -778,7 +809,7 @@
 			<dl id="menu.background.bitmap.filename">
 				<dt class="entry">menu.background.bitmap.filename</dt>
 				<dd class="entry">
-					<p class="description">バックグラウンド表示画像ファイル名。</p>
+					<p class="description">バックグラウンド表示画像ファイル名。SHIORIの位置からの相対パス。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -789,7 +820,7 @@
 			<dl id="menu.foreground.bitmap.filename">
 				<dt class="entry">menu.foreground.bitmap.filename</dt>
 				<dd class="entry">
-					<p class="description">フォアグラウンド表示画像ファイル名。</p>
+					<p class="description">フォアグラウンド表示画像ファイル名。SHIORIの位置からの相対パス。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -935,13 +966,13 @@
 		</section>
 		<section class="category">
 			<h1>オーナードローメニュー項目表示</h1>
-			<div class="caption" id="note_visible">
+			<div class="caption" id="caption_visible">
 				<p>以下項目名の「caption」の部分を「visible」に置き換えたものが、それぞれその項目の表示を制御するたのイベントとして存在する。<br>返却が1なら表示、0なら非表示（クリック出来なくなる）。</p>
 			</div>
 		</section>
 		<section class="category">
 			<h1>オーナードローメニュー項目名</h1>
-			<section class="caption" id="notes_menushortcut">
+			<section class="caption" id="caption_menushortcut">
 				<h1>ショートカットキー</h1>
 				<p>
 					以下の項目名を取得するSHIORI Resource系イベントに対して返却する文字列中で、「&○」というような、&に続けた一字があった場合、○に当たる文字のキーがその項目のショートカットキーになります。

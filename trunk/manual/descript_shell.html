@@ -132,15 +132,15 @@
 		<section class="navigation-category">
 			<h1>descript.txt</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_descript.txt">descript.txt（Shellの）</a></li>
+				<li class="caption introduction"><a href="#introduction_descript.txt">descript.txt（Shellの）</a></li>
 			</ul>
 			<ul>
+				<li><a href="#charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#name,シェル名">name,シェル名</a></li>
+				<li><a href="#id,ID名">id,ID名</a></li>
 				<li><a href="#type,種別">type,種別</a></li>
 				<li><a href="#craftman,作者名">craftman,作者名</a></li>
 				<li><a href="#craftmanw,作者名">craftmanw,作者名</a></li>
-				<li><a href="#id,ID名">id,ID名</a></li>
-				<li><a href="#charset,文字コード">charset,文字コード</a></li>
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
@@ -213,14 +213,14 @@
 				<li><a href="#seriko.use_self_alpha,数値">seriko.use_self_alpha,数値</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_surfaceposition">サーフェスの位置情報</a></li>
-				<li class="caption"><a href="#notes_balloonposition">バルーンの位置情報</a></li>
+				<li class="caption"><a href="#caption_surfaceposition">サーフェスの位置情報</a></li>
+				<li class="caption"><a href="#caption_balloonposition">バルーンの位置情報</a></li>
 			</ul>
 		</section>
 	</section>
 	<div class="categories">
 		<section class="category">
-			<h1>descript.txt</h1>			<section class="caption legend" id="legends_descript.txt">
+			<h1>descript.txt</h1>			<section class="caption introduction" id="introduction_descript.txt">
 				<h1>descript.txt（Shellの）</h1>
 				<section>
 					<h1>概要</h1>
@@ -277,11 +277,34 @@ kero.menuitem3,2
 					<p>なお、\や%で始まる文字列はさくらスクリプトや環境変数のタグと見なされ、セキュリティ上のリスクから破棄される。もし単なる文字としてそれらを含めたい場合は、\\や\%などとしてエスケープする必要がある。</p>
 				</section>
 			</section>
+			<dl id="charset,文字コード">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">不明/SSPはShift_JIS</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="name,シェル名">
 				<dt class="entry">name,シェル名</dt>
 				<dd class="entry">
 					<p class="description">そのシェルの名前。</p>
 					<p class="default">省略不可</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="id,ID名">
+				<dt class="entry">id,ID名</dt>
+				<dd class="entry">
+					<p class="description">そのシェルのID名。半角英数のみ。</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -320,29 +343,6 @@ kero.menuitem3,2
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="id,ID名">
-				<dt class="entry">id,ID名</dt>
-				<dd class="entry">
-					<p class="description">そのシェルのID名。半角英数のみ。</p>
-					<p class="default">値なし</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="charset,文字コード">
-				<dt class="entry">charset,文字コード</dt>
-				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">不明</p>
-					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -438,7 +438,7 @@ kero.menuitem3,2
 			<dl id="seriko.alignmenttodesktop,位置情報">
 				<dt class="entry">seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
-					<p class="description">全体のサーフェスのデフォルト<a href="#notes_surfaceposition">※表示位置情報</a>。</p>
+					<p class="description">全体のサーフェスのデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -449,7 +449,7 @@ kero.menuitem3,2
 			<dl id="sakura.seriko.alignmenttodesktop,位置情報">
 				<dt class="entry">sakura.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
-					<p class="description">本体側のデフォルト<a href="#notes_surfaceposition">※表示位置情報</a>。</p>
+					<p class="description">本体側のデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -459,7 +459,7 @@ kero.menuitem3,2
 			<dl id="kero.seriko.alignmenttodesktop,位置情報">
 				<dt class="entry">kero.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
-					<p class="description">相方側のデフォルト<a href="#notes_surfaceposition">※表示位置情報</a>。</p>
+					<p class="description">相方側のデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -469,7 +469,7 @@ kero.menuitem3,2
 			<dl id="char*.seriko.alignmenttodesktop,位置情報">
 				<dt class="entry">char*.seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
-					<p class="description">2人目以降の相方側のデフォルト<a href="#notes_surfaceposition">※表示位置情報</a>。</p>
+					<p class="description">2人目以降の相方側のデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -647,7 +647,7 @@ kero.menuitem3,2
 			<dl id="sakura.balloon.alignment,位置情報">
 				<dt class="entry">sakura.balloon.alignment,位置情報</dt>
 				<dd class="entry">
-					<p class="description">本体側の吹き出しの<a href="#notes_balloonposition">※位置情報</a>。</p>
+					<p class="description">本体側の吹き出しの<a href="#caption_balloonposition">※位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -659,7 +659,7 @@ kero.menuitem3,2
 			<dl id="kero.balloon.alignment,位置情報">
 				<dt class="entry">kero.balloon.alignment,位置情報</dt>
 				<dd class="entry">
-					<p class="description">相方側の吹き出しの<a href="#notes_balloonposition">※位置情報</a>。</p>
+					<p class="description">相方側の吹き出しの<a href="#caption_balloonposition">※位置情報</a>。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -870,7 +870,7 @@ kero.menuitem3,2
 			</dl>
 			<dl id="menu.background.alignment,位置">
 				<dt class="entry">menu.background.alignment,位置</dt>
-				<dd class="entry">rightbottom、leftbottom、centerbottom
+				<dd class="entry">
 					<p class="description">バックグラウンド画像をrighttopで右寄せ、lefttopで左寄せ、centertopで中央寄せ。<br />SSPのみrightbottom、leftbottom、centerbottomのような下方向固定も可。</p>
 					<p class="default">lefttop</p>
 					<ul class="supported-baseware">
@@ -1125,7 +1125,7 @@ kero.menuitem3,2
 					</ul>
 				</dd>
 			</dl>
-			<div class="caption" id="notes_surfaceposition">
+			<div class="caption" id="caption_surfaceposition">
 				<h1>サーフェスの位置情報</h1>
 				<dl>
 					<dt>top</dt>
@@ -1136,7 +1136,7 @@ kero.menuitem3,2
 					<dd>自由移動。</dd>
 				</dl>
 			</div>
-			<div class="caption" id="notes_balloonposition">
+			<div class="caption" id="caption_balloonposition">
 				<h1>バルーンの位置情報</h1>
 				<dl>
 					<dt>none</dt>

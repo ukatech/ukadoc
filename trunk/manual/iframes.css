@@ -69,10 +69,10 @@ ul ul li {
 	padding: 0;
 	color: #94de84;
 }
-ul.doctype-manual {
+ul.doctype-dev {
 	list-style-image: url(image/icon_doc-r.png);
 }
-ul.doctype-manual ul li {
+ul.doctype-dev ul li {
 	color: #de8494;
 }
 ul.doctype-list {

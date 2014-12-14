@@ -11,16 +11,16 @@
 </head>
 <body>
 <section class="baseframe">
-	<h1 class="head">
+	<header>
 		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
-	</h1>
+	</header>
 	<section class="body">
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
-		<section class="text">
+		<main>
 
 
 
@@ -39,29 +39,29 @@
 		<p>なおこのページでは、「ゴースト（やシェルやバルーン）の作り方」そのものの解説は行いませんので注意してください。</p>
 		<p>既にその辺りは済んだ段階を前提とした解説となっています。</p>
 	</div>
-	<div class="passage">
-		<p>目次</p>
-		<ol class="list-of-contents">
-			<li><a href="#chapter1">ファイルの準備</a></li>
-			<li><a href="#chapter2">初期updates2.dauの作成</a></li>
-			<li><a href="#chapter3">install.txtの準備</a></li>
-			<li><a href="#chapter4">アーカイブ化</a></li>
-		</ol>
-		<ol class="list-of-contents-ex">
-			<li><a href="#chapterEX1">developer_options.txtについて</a></li>
-			<li><a href="#chapterEX2">ゴースト配布系自動化システム(GDM)について</a></li>
-			<li><a href="#chapterEX3">refleshinstallについて</a></li>
-			<li><a href="#chapterEX4">バルーンなどの同梱配布について</a></li>
-			<li><a href="#chapterEX5">ゴーストへの追加ファイルについて</a></li>
-			<li><a href="#chapterEX6">複数インストール用パッケージについて</a></li>
-		</ol>
-	</div>
 </section>
-<section id="chapter1">
-	<h1>1、ファイルの準備</h1>
+<nav>
+	<h1>目次</h1>
+	<ol>
+		<li><a href="#chapter1">ファイルの準備</a></li>
+		<li><a href="#chapter2">初期updates2.dauの作成</a></li>
+		<li><a href="#chapter3">install.txtの準備</a></li>
+		<li><a href="#chapter4">アーカイブ化</a></li>
+	</ol>
+	<ol class="ex">
+		<li><a href="#chapterEX1">developer_options.txtについて</a></li>
+		<li><a href="#chapterEX2">ゴースト配布系自動化システム(GDM)について</a></li>
+		<li><a href="#chapterEX3">refleshinstallについて</a></li>
+		<li><a href="#chapterEX4">バルーンなどの同梱配布について</a></li>
+		<li><a href="#chapterEX5">ゴーストへの追加ファイルについて</a></li>
+		<li><a href="#chapterEX6">複数インストール用パッケージについて</a></li>
+	</ol>
+</nav>
+<section id="chapter1" class="ordered">
+	<h1>ファイルの準備</h1>
 	<div class="passage">
 		<p>まずはアーカイブに含める内容（ゴーストならそのゴーストを構成するファイル一式）を用意します。</p>
-		<p>もしベースウェアにインストールされている内容を直接編集して開発している場合は、それそのものではなくて、その内容を丸ごと別の場所にコピーしたものを配布用のファイルとして用意したうえで以下の作業をするとよいでしょう。</p>
+		<p>もしベースウェア<a href="#note1" class="note" id="note1-symbol">※</a>にインストールされている内容を直接編集して開発している場合は、それそのものではなくて、その内容を丸ごと別の場所にコピーしたものを配布用のファイルとして用意したうえで以下の作業をするとよいでしょう。</p>
 		<p>どんなファイルが必要なのかについては、ページ左のメニューの「ファイル構成」のカテゴリーにある、「<a href="manual_directory.html">全体の構成</a>」や、「<a href="manual_ghost.html">ゴースト</a>」「<a href="manual_shell.html">シェル</a>」などそれぞれのページを参考に。</p>
 	</div>
 	<div class="passage">
@@ -82,17 +82,9 @@
 		<p>SSPの場合、<em class="filename">developer_options.txt</em>を設定するとよいかもしれません。</p>
 		<p>詳しくは後述の「<a href="#chapterEX1">developer_options.txtについて</a>」を参照してください。</p>
 	</div>
-	<div class="passage hint">
-		<dl>
-			<dt>ベースウェア</dt>
-			<dd>
-				SSP、MATERIA（本家伺か）、CROWなどの、ゴーストを動かす土台となるソフトウェアのこと。
-			</dd>
-		</dl>
-	</div>
 </section>
-<section id="chapter2">
-	<h1>2、初期updates2.dauの作成</h1>
+<section id="chapter2" class="ordered">
+	<h1>初期updates2.dauの作成</h1>
 	<div class="passage">
 		<p>次にネットワーク更新用ファイル（<em class="filename">updates2.dau</em>）の初期ファイルを作成します。</p>
 		<p>これは、ネットワーク更新時にサーバ側とクライアント側でファイルの内容に違いがないかを調べる事で、破損・改竄などの異常を検出するためのしくみです。</p>
@@ -109,7 +101,7 @@
 	</div>
 	<div class="passage">
 		<p>そしてベースウェアを起動し、<em class="filename">updates2.dau</em>や更新したいファイルの入ったフォルダを本体にD&amp;Dします。</p>
-		<p>この時MATERIAやCROWでは、<em class="filename">install.txt</em>が入っているとnarファイルの作成が優先されてしまい、<em class="filename">updates2.dau</em>が作成されないので含めないように気をつけてください。</p>
+		<p>この時MATERIAやCROWでは、<em class="filename">install.txt</em>が入っているとアーカイブの作成が優先されてしまい、<em class="filename">updates2.dau</em>が作成されないので含めないように気をつけてください。</p>
 		<p>SSPの場合は逆に、<em class="filename">install.txt</em>の作成を済ませてからフォルダをD&amp;Dすると、<em class="filename">updates2.dau</em>の作成とアーカイブ化をいっぺんに済ませる事もできます。</p>
 	</div>
 	<div class="passage">
@@ -117,8 +109,8 @@
 		<p><em class="filename">updates2.dau</em>は右クリックなどから、メモ帳などの普通のテキストエディタで開けますので、中身を確認してみてください（内容自体はわからなくとも構いません）。</p>
 	</div>
 </section>
-<section id="chapter3">
-	<h1>3、install.txtの準備</h1>
+<section id="chapter3" class="ordered">
+	<h1>install.txtの準備</h1>
 	<div class="passage">
 		<p>続いて、インストール内容について記述・設定設定するためのファイルである<em class="filename">install.txt</em>を用意します。</p>
 		<p>一番上のディレクトリ（例えばゴーストならghostフォルダ、shellフォルダ、readme.txtなどがある場所）に、<em class="filename">install.txt</em>という名前のテキストファイルを用意し、内容に合わせて中身を書きます。</p>
@@ -127,28 +119,20 @@
 		<p>書きこむ内容については、配布したい内容がゴーストなのか、シェルなのかなどに応じて異なりますので、<a href="descript_install.html">Install/Update設定</a>のページを参照してください。凡例もそちらにあります。</p>
 	</div>
 </section>
-<section id="chapter4">
-	<h1>4、アーカイブ化</h1>
+<section id="chapter4" class="ordered">
+	<h1>アーカイブ化</h1>
 	<div class="passage">
 		<p>いよいよアーカイブ化の段階に入りますが、ここまで来ればやる事はもうあまり残っていません。</p>
 		<p>なぜならベースウェアは、<em class="filename">install.txt</em>の入ったフォルダをD&amp;Dされると、それをアーカイブ化する機能を備えているからです。</p>
 		<p>従って、やる事と言えば今まで準備してきたフォルダを丸ごとベースウェア（で起動中のゴースト）にD&amp;Dすることだけです。</p>
 	</div>
 	<div class="passage">
-		<p>これで「[フォルダ名].nar」というファイルができたかと思います。これが配布用アーカイブファイルになります。</p>
+		<p>これで「[フォルダ名].nar<a href="#note2" class="note" id="note2-symbol">※</a>」というファイルができたかと思います。これが配布用アーカイブファイルになります。</p>
 		<p>あとはこのnarファイルをサーバやアップローダにアップロードすれば、無事公開開始です。</p>
 	</div>
-	<div class="passage hint">
-		<dl>
-			<dt>nar</dt>
-			<dd>
-				Nanika ARchiveの略。「Nanika」は、伺かの旧称の一つである「何か」のこと。読みは「なー」。
-			</dd>
-		</dl>
-	</div>
 </section>
-<section id="chapterEX1">
-	<h1>EX1、developer_options.txtについて</h1>
+<section id="chapterEX1" class="ordered ex">
+	<h1>developer_options.txtについて</h1>
 	<div class="passage">
 		<p>SSPによるアーカイブや<em class="filename">updates2.dau</em>の作成時に、一番上の階層（アーカイブ作成時にinstall.txtが置かれる場所）に<em class="filename">developer_options.txt</em>というファイルを用意することで、対象にするファイルを設定できます。</p>
 		<p>書き方の説明や例は<a href="descript_install.html#developer_options.txt">Install/Update設定のページのdeveloper_options.txtについての節</a>をご覧ください。</p>
@@ -157,8 +141,8 @@
 		なおこのファイルはあくまでSSPでアーカイブや<em class="filename">updates2.dau</em>を作成する時に働くので、後述の<a href="chapterEX2">ゴースト配布系自動化システム</a>や、他のベースウェアでそれらを作成する場合には無効である事に注意してください。
 	</div>
 </section>
-<section id="chapterEX2">
-	<h1>EX2、ゴースト配布系自動化システム(GDM)について</h1>
+<section id="chapterEX2" class="ordered ex">
+	<h1>ゴースト配布系自動化システム(GDM)について</h1>
 	<div class="passage">
 		<p>ゴースト配布系自動化システム(GDM)は<em class="filename">updates2.dau</em>、ゴーストのアーカイブ化、そしてサーバへのアップロードまでを一括で行ってくれる支援ツールです。</p>
 		<p>導入してきちんと設定してしまえば、このページに書いてある内容の大部分が不要になるでしょう。</p>
@@ -186,8 +170,8 @@
 		<p>といってもGDMはそれ自体の機能としてアップロードするファイル/しないファイルの設定ができますので、本来不要です。</p>
 	</div>
 </section>
-<section id="chapterEX3">
-	<h1>EX3、refleshinstallについて</h1>
+<section id="chapterEX3" class="ordered ex">
+	<h1>refleshinstallについて</h1>
 	<div class="passage">
 		<p>install.txtに下記の記述が含まれていると、特殊なインストールになります。</p>
 		<pre class="exmp-descript2"><code>refresh,1</code></pre>
@@ -203,8 +187,8 @@
 		<p>詳しい書式など、<a href="descript_install.html">Install/Update設定</a>のページもご覧ください。</p>
 	</div>
 </section>
-<section id="chapterEX4">
-	<h1>EX4、バルーンなどの同梱配布について</h1>
+<section id="chapterEX4" class="ordered ex">
+	<h1>バルーンなどの同梱配布について</h1>
 	<div class="passage">
 		<p>install.txtへの記述とファイルの構成によって、ゴーストにバルーンを同梱して配布することができます。</p>
 		<p>またSSPの場合、バルーンの他にもプラグインとヘッドラインについて同梱する事ができ、さらにゴーストに対してでなくシェルにそれらを同梱することも可能です。</p>
@@ -262,8 +246,8 @@ directory,myghost（※ゴーストのフォルダ名。英数）
 		<p>のいずれかに変更した上で、上例のバルーンと同様にファイルを同梱してください。</p>
 	</div>
 </section>
-<section id="chapterEX5">
-	<h1>EX5、ゴーストへの追加ファイルについて</h1>
+<section id="chapterEX5" class="ordered ex">
+	<h1>ゴーストへの追加ファイルについて</h1>
 	<div class="passage">
 		<p>ゴーストへの追加ファイル（supplement）のアーカイブを作りたい場合は、ゴースト本来のフォルダ構造はそのまま、追加したいファイルだけを含めてアーカイブにします。</p>
 		<p>例えばghost/masterに「dic_supplement.txt」というファイルを追加したいなら、以下のようになります。</p>
@@ -287,7 +271,7 @@ accept,対象ゴーストの本体側名
 	</div>
 </section>
 <section id="chapterEX6">
-	<h1>EX6、複数インストール用パッケージについて</h1>
+	<h1>複数インストール用パッケージについて</h1>
 	<div class="passage">
 		<p>この方法はSSP専用となっています。</p>
 		<p>以下のようなファイル構成でアーカイブを作ると、複数の内容を同時にインストールするためのパッケージを作る事ができます。</p>
@@ -330,15 +314,27 @@ name,パッケージ名
 		<p>ただし、type,shellやtype,supplementのようなacceptを指定する内容で、指定先がバラバラのものを一緒にしてしまわないように注意してください。</p>
 	</div>
 </section>
+<aside class="passage hint">
+	<dl>
+		<dt id="note1"><a href="#note1-symbol">※1 ベースウェア</a></dt>
+		<dd>
+			SSP、MATERIA（本家伺か）、CROWなどの、ゴーストを動かす土台となるソフトウェアのこと。
+		</dd>
+		<dt id="note2"><a href="#note2-symbol">※2 nar</a></dt>
+		<dd>
+			Nanika ARchiveの略。「Nanika」は、伺かの旧称の一つである「何か」のこと。読みは「なー」。
+		</dd>
+	</dl>
+</aside>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 
-		</section>
+		</main>
 	</section>
 	<footer>
 		<p class="author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
 		</p>
 		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">

@@ -102,42 +102,42 @@ a:hover {
 	padding: 3px 5px;
 	text-align: center;
 }
-.navigation-category h1 {
+.navigation-bar > .navigation-category > h1 {
 	font-size: medium;
 	color: #fff;
 	background-color: #99c;
 	text-align: left;
 }
-.navigation-category section h1 {
+.navigation-bar > .navigation-category section h1 {
 	color: #000;
-	background-color: #eef;
 	font-size: medium;
+	background-color: #eef;
 	border-top:1px solid #99c;
 	border-bottom:1px solid #99c;
 	padding: 3px 5px;
 	text-align: left;
 }
-.navigation-category ul {
+.navigation-bar > .navigation-category ul {
 	margin-bottom: 1em;
 }
-.navigation-category li {
+.navigation-bar > .navigation-category li {
 	list-style-type: disc;
 	margin-top: 3px;
 	margin-left: 2em;
 	font-size: small;
 }
-.navigation-category li.caption {
+.navigation-bar > .navigation-category li.caption {
 	list-style-type: none;
 	margin-left: 0.5em;
 }
-.navigation-category li.caption:before {
+.navigation-bar > .navigation-category li.caption:before {
 	content: url("image/icon_doc-r.png") "　";
 }
-.navigation-category li.caption.legend {
+.navigation-bar > .navigation-category li.caption.introduction {
 	list-style-type: none;
 	margin-left: 0.5em;
 }
-.navigation-category li.caption.legend:before {
+.navigation-bar > .navigation-category li.caption.introduction:before {
 	content: url("image/icon_doc-b.png") "　";
 }
 
@@ -152,26 +152,26 @@ a:hover {
 	width: 65%;
 }
 .categories .caption,
-.categories .caption.legend {
+.categories .caption.introduction {
 	margin: 5px;
 	padding: 10px;
 	border: 1px dashed #966;
 	background-color: #fef;
 }
-.categories .caption.legend {
+.categories .caption.introduction {
 	border:2px solid #669;
 	background-color: #dde;
 }
 .categories .caption p,
-.categories .caption.legend p {
+.categories .caption.introduction p {
 	margin-top: 1em;
 }
 .categories .caption p:first-child,
-.categories .caption.legend p:first-child {
+.categories .caption.introduction p:first-child {
 	margin-top: 0;
 }
 .categories .caption h1,
-.categories .caption.legend h1 {
+.categories .caption.introduction h1 {
 	border: solid 1px #966;
 	color: #000;
 	font-size: medium;
@@ -179,11 +179,11 @@ a:hover {
 	padding: 5px 0;
 	margin-bottom: 0.5em;
 }
-.categories .caption.legend h1 {
+.categories .caption.introduction h1 {
 	border-color: #669;
 }
 .categories .caption section h1,
-.categories .caption.legend section h1 {
+.categories .caption.introduction section h1 {
 	font-weight: bold;
 	text-align: left;
 	border: none;
@@ -192,56 +192,56 @@ a:hover {
 	margin-bottom: 5px;
 	background-color: transparent;
 }
-.categories .caption.legend section h1 {
+.categories .caption.introduction section h1 {
 	border-color: #669;
 }
 .categories .caption dt,
-.categories .caption.legend dt {
+.categories .caption.introduction dt {
 	margin: 15px 5px 5px 0px;
 	border-left: 7px solid #c9c;
 	padding: 0 0 0 5px;
 }
-.categories .caption.legend dt {
+.categories .caption.introduction dt {
 	border-color: #99c;
 }
 .categories .caption dd,
-.categories .caption.legend dd {
+.categories .caption.introduction dd {
 	margin: 5px 5px 15px 20px;
 	border-left: 1px solid #c9c;
 	padding: 0 0 0 5px;
 }
-.categories .caption.legend dd {
+.categories .caption.introduction dd {
 	border-color: #99c;
 }
 .categories .caption pre,
-.categories .caption.legend pre {
+.categories .caption.introduction pre {
 	padding:5px;
 	background-color:#edd;
 	border:1px dotted #966;
 }
-.categories .caption.legend pre {
+.categories .caption.introduction pre {
 	background-color: #ccd;
 	border-color: #669;
 }
 .categories .caption ul li,
-.categories .caption.legend ul l {
+.categories .caption.introduction ul l {
 	margin-left: 1.5em;
 	list-style-type: disc;
 }
 .categories .caption ul li ul li,
-.categories .caption.legend ul li ul li {
+.categories .caption.introduction ul li ul li {
 	list-style-type: circle;
 }
 .categories .caption ol,
-.categories .caption.legend ol {
+.categories .caption.introduction ol {
 	padding-left: 3em;
 }
 .categories .caption ol li,
-.categories .caption.legend ol li {
+.categories .caption.introduction ol li {
 	list-style-type: decimal;
 }
 .categories .caption .reference dd,
-.categories .caption.legend .reference dd {
+.categories .caption.introduction .reference dd {
 	margin-bottom: 0;
 }
 .categories .caption .surfaces .animationID {
@@ -277,16 +277,13 @@ a:hover {
 	clear: left;
 	border: 1px solid #669;
 }
-.category>h1 {
+.category > h1 {
 	font-size: x-large;
 	padding: 5px;
 	color: #fff;
 	background-color: #669;
 }
-.category>d {
-	margin-bottom:20px;
-}
-.category .subcategory h1 {
+.category .subcategory > h1 {
 	font-size: x-large;
 	padding: 5px;
 	color: #000;
@@ -377,6 +374,9 @@ a:hover {
 }
 .category dd.entry .remarks p {
 	margin: 0.5em auto;
+}
+.category dd.entry .legend {
+	margin-left: 1em;
 }
 .category dd.entry .legend h1 {
 	font-weight: normal;

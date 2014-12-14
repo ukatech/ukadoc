@@ -132,7 +132,7 @@
 		<h1>SHIORI Event</h1>
 		<section class="navigation-category">
 			<ul>
-				<li class="caption"><a href="#notes_format">このページの書式について</a></li>
+				<li class="caption"><a href="#caption_format">このページの書式について</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -275,8 +275,8 @@
 				<li><a href="#OnInstallRefuse">OnInstallRefuse</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_install-identifier">インストールの識別子</a></li>
-				<li class="caption"><a href="#notes_install-reasonoffailure">インストールの失敗理由</a></li>
+				<li class="caption"><a href="#caption_install-identifier">インストールの識別子</a></li>
+				<li class="caption"><a href="#caption_install-reasonoffailure">インストールの失敗理由</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -329,10 +329,10 @@
 				<li><a href="#OnUpdateResultExplorer">OnUpdateResultExplorer</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_updateresultcomplete">ネットワーク更新成功理由</a></li>
-				<li class="caption"><a href="#notes_updateresultfailure">ネットワーク更新失敗理由</a></li>
-				<li class="caption"><a href="#notes_updatetype">ネットワーク更新対象の種別</a></li>
-				<li class="caption"><a href="#notes_updatereason">ネットワーク更新理由</a></li>
+				<li class="caption"><a href="#caption_updateresultcomplete">ネットワーク更新成功理由</a></li>
+				<li class="caption"><a href="#caption_updateresultfailure">ネットワーク更新失敗理由</a></li>
+				<li class="caption"><a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
+				<li class="caption"><a href="#caption_updatereason">ネットワーク更新理由</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -362,8 +362,8 @@
 				<li><a href="#OnHeadlinesenseFailure">OnHeadlinesenseFailure</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_headlinesensephase">ヘッドラインセンスOnFindフェーズ</a></li>
-				<li class="caption"><a href="#notes_headlinesenseresult">ヘッドラインセンス終了理由</a></li>
+				<li class="caption"><a href="#caption_headlinesensephase">ヘッドラインセンスOnFindフェーズ</a></li>
+				<li class="caption"><a href="#caption_headlinesenseresult">ヘッドラインセンス終了理由</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -378,7 +378,7 @@
 				<li><a href="#OnSchedulepostComplete">OnSchedulepostComplete</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_scheduletype">スケジュールタイプ</a></li>
+				<li class="caption"><a href="#caption_scheduletype">スケジュールタイプ</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -506,7 +506,7 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption" id="notes_format">
+		<section class="caption" id="caption_format">
 			<h1>このページの書式について</h1>
 			<p>
 				このページでは、SHIORI/3.0および3.1（SSP拡張定義）において発行されるSHIORI Eventの各IDについての解説しています。
@@ -2073,7 +2073,7 @@
 					<p class="description">インストールが正常終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。</dd>
+						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
 						<dt>Reference1</dt>
 						<dd>インストールした物の名前（install.txtのname指定）。</dd>
 						<dt>Reference2</dt>
@@ -2092,7 +2092,7 @@
 					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#notes_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
+						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
 						<dt>Reference1</dt>
 						<dd>インストールした物の名前。複数の場合はバイト値1区切り。</dd>
 						<dt>Reference2</dt>
@@ -2109,7 +2109,7 @@
 					<p class="description">インストールに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_install-reasonoffailure">※失敗理由</a>。</dd>
+						<dd><a href="#caption_install-reasonoffailure">※失敗理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2133,7 +2133,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption" id="notes_install-identifier">
+			<section class="caption" id="caption_install-identifier">
 				<h1>インストールの識別子</h1>
 				<ul>
 					<li>shell</li>
@@ -2155,7 +2155,7 @@
 					<li>package</li>
 				</ul>
 			</section>
-			<section class="caption" id="notes_install-reasonoffailure">
+			<section class="caption" id="caption_install-reasonoffailure">
 				<h1>インストールの失敗理由</h1>
 				<dl>
 					<dt>unlha32</dt>
@@ -2181,10 +2181,9 @@
 						<dt>Reference0</dt>
 						<dd>ドラッグしているファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -2198,10 +2197,9 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -2215,10 +2213,9 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたディレクトリのパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -2247,10 +2244,9 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -2264,7 +2260,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>※Materia非対応　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2281,7 +2277,7 @@
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
 						<dt>Reference1</dt>
-						<dd>　ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2320,7 +2316,7 @@
 						<dt>Reference1</dt>
 						<dd>narに出力されたファイル名。</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#notes_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2339,7 +2335,7 @@
 						<dt>Reference1</dt>
 						<dd>narに出力されたファイル名。</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#notes_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2430,9 +2426,9 @@
 						<dt>Reference1</dt>
 						<dd>フルパス。</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2453,7 +2449,7 @@
 						<dt>Reference3</dt>
 						<dd>更新対象種別。<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -2469,13 +2465,13 @@
 					<p class="description">ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
+						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2490,13 +2486,13 @@
 					<p class="description">ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultfailure">※失敗理由</a></dd>
+						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSPのみ　失敗したファイル名。</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2519,7 +2515,7 @@
 						<dt>Reference3</dt>
 						<dd>SSPのみ　更新対象種別。<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2540,9 +2536,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2563,9 +2559,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2586,9 +2582,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2607,9 +2603,9 @@
 						<dt>Reference1</dt>
 						<dd>フルパス。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2626,9 +2622,9 @@
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<div class="remarks">
 						<p id="OnUpdateOtherReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
@@ -2644,13 +2640,13 @@
 					<p class="description">ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
+						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2663,13 +2659,13 @@
 					<p class="description">ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultfailure">※失敗理由</a></dd>
+						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2688,9 +2684,9 @@
 						<dt>Reference2</dt>
 						<dd>更新総数。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2709,9 +2705,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2728,9 +2724,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2747,9 +2743,9 @@
 						<dt>Reference2</dt>
 						<dd>落としたファイルのMD5値。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#notes_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2762,11 +2758,11 @@
 					<p class="description">ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultcomplete">※成功理由</a></dd>
+						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#notes_updatetype">※更新対象種別</a></dd>
+						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2781,7 +2777,7 @@
 					<p class="description">ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_updateresultfaulure">※失敗理由</a></dd>
+						<dd><a href="#caption_updateresultfaulure">※失敗理由</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2804,9 +2800,9 @@
 								<br>(※1)[\1](※2)[\1](※3)
 							</p>
 							<ul>
-								<li>※1……<a href="notes_updatetype">ネットワーク更新対象の種別</a></li>
+								<li>※1……<a href="noteupdatetype">ネットワーク更新対象の種別</a></li>
 								<li>※2……成功時「OK」　失敗時「NG」</li>
-								<li>※3……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#notes_updateresultfailure">失敗理由</a>。</li>
+								<li>※3……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
 								<li>※4……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
 							</ul>
 						</dd>
@@ -2829,7 +2825,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption" id="notes_updateresultcomplete">
+			<section class="caption" id="caption_updateresultcomplete">
 				<h1>ネットワーク更新成功理由</h1>
 				<dl>
 					<dt>none</dt>
@@ -2838,7 +2834,7 @@
 					<dd>更新された。</dd>
 				</dl>
 			</section>
-			<section class="caption" id="notes_updateresultfailure">
+			<section class="caption" id="caption_updateresultfailure">
 				<h1>ネットワーク更新失敗理由</h1>
 				<dl>
 					<dt>timeout</dt>
@@ -2857,7 +2853,7 @@
 					<dd>※SSPのみ。読み取り専用フラグによる更新対象への書き込み失敗。ファイルやフォルダに読み取り専用フラグがついていると発生。</dd>
 				</dl>
 			</section>
-			<section class="caption" id="notes_updatetype">
+			<section class="caption" id="caption_updatetype">
 				<h1>ネットワーク更新対象の種別</h1>
 				<ul>
 					<li>ghost</li>
@@ -2868,7 +2864,7 @@
 					<li>baseware　※CROWのみ</li>
 				</ul>
 			</section>
-			<section class="caption" id="notes_updatereason">
+			<section class="caption" id="caption_updatereason">
 				<h1>ネットワーク更新理由</h1>
 				<dl>
 					<dt>auto</dt>
@@ -3069,7 +3065,7 @@
 						<dt>Reference1</dt>
 						<dd>ヘッドラインセンスするURL。</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#notes_headlinesensephase">※OnFind フェーズ</a></dd>
+						<dd><a href="#caption_headlinesensephase">※OnFind フェーズ</a></dd>
 						<dt>Reference3</dt>
 						<dd>ヘッドラインの内容。</dd>
 					</dl>
@@ -3085,7 +3081,7 @@
 					<p class="description">ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
+						<dd><a href="#caption_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3099,7 +3095,7 @@
 					<p class="description">ヘッドラインセンスに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_headlinesenseresult">※終了理由</a></dd>
+						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3107,7 +3103,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption" id="notes_headlinesensephase">
+			<section class="caption" id="caption_headlinesensephase">
 				<h1>ヘッドラインセンスOnFindフェーズ</h1>
 				<dl>
 					<dt>First</dt>
@@ -3120,7 +3116,7 @@
 					<dd>いずれでもないページ</dd>
 				</dl>
 			</section>
-			<section class="caption" id="notes_headlinesenseresult">
+			<section class="caption" id="caption_headlinesenseresult">
 				<h1>ヘッドラインセンス終了理由</h1>
 				<dl>
 					<dt>no update</dt>
@@ -3140,7 +3136,7 @@
 					<p class="description">本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#notes_scheduletype">タイプ</a></dd>
+						<dd>イベントの<a href="#caption_scheduletype">タイプ</a></dd>
 						<dt>Reference1</dt>
 						<dd>イベントの内容(caption)</dd>
 						<dt>Reference2</dt>
@@ -3159,7 +3155,7 @@
 					<p class="description">カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#notes_scheduletype">タイプ</a>。</dd>
+						<dd>イベントの<a href="#caption_scheduletype">タイプ</a>。</dd>
 						<dt>Reference1</dt>
 						<dd>イベントの内容(caption)</dd>
 						<dt>Reference2</dt>
@@ -3206,7 +3202,7 @@
 					<p class="description">スケジュールセンサの処理に失敗した場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#notes_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
+						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3239,7 +3235,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<section class="caption" id="notes_scheduletype">
+			<section class="caption" id="caption_scheduletype">
 				<h1>スケジュールタイプ</h1>
 				<dl>
 					<dt>default</dt>
@@ -3903,10 +3899,10 @@
 			<dl id="OnTranslate">
 				<dt class="entry">OnTranslate</dt>
 				<dd class="entry">
-					<p class="description">MAKOTOトランスレート機能。</p>
+					<p class="description">SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>処理するべきスクリプト。</dd>
+						<dd>元のスクリプト。</dd>
 						<dt>Reference1</dt>
 						<dd>※SSPのみ　コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate。<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
 						<dt>Reference2</dt>

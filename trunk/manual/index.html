@@ -12,16 +12,16 @@
 </head>
 <body>
 <section class="baseframe">
-	<h1 class="head">
+	<header>
 		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
-	</h1>
+	</header>
 	<section class="body">
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
 		</nav>
-		<section class="text">
+		<main class="toppage">
 
 
 
@@ -29,7 +29,7 @@
 <h1>UKADOC トップページ</h1>
 <section>
 	<section>
-		<h1>【このサイトについて】</h1>
+		<h1>ukadocについて</h1>
 		<div class="passage">
 			<p>伺か関連の仕様文書集約プロジェクトである<a href="http://code.google.com/p/ukadoc/">UKADOC project</a>の編集するドキュメント集です。</p>
 			<p><em><a href="http://ssp.shillest.net/" target="_blank">SSP</a>についてはここのドキュメントが公式文章</em>として扱われます。</p>
@@ -40,20 +40,63 @@
 		</div>
 	</section>
 	<section>
-		<h1>【対象version】</h1>
-		<p><a href="http://ssp.shillest.net/" target="_blank">SSP</a> 2.3.51</p>
-		<p><a href="http://usada.sakura.vg/" target="_blank">MATERIA</a> period 583</p>
-		<p><a href="http://crow.aqrs.jp/" target="_blank">CROW</a> ver0.5.2(開発版)</p>
+		<h1>対象version</h1>
+		<ul>
+			<li><a href="http://ssp.shillest.net/" target="_blank">SSP</a> 2.3.51</li>
+			<li><a href="http://usada.sakura.vg/" target="_blank">MATERIA</a> period 583</li>
+			<li><a href="http://crow.aqrs.jp/" target="_blank">CROW</a> ver0.5.2(開発版)</li>
+		</ul>
 	</section>
 	<section>
-		<h1>【外部リンク】</h1>
+		<h1>外部リンク</h1>
+		<ul>
+			<li><a href="http://ukadev.shillest.net/" target="_blank">伺か開発情報検索</a></li>
+			<li><a href="http://usada.sakura.vg/contents/specification.html" target="_blank">伺か公式仕様書</a></li>
+			<li><a href="http://crow.aqrs.jp/reference/all/" target="_blank">CROW・SSP仕様書</a></li>
+			<li><a href="http://www.ooyashima.net/db/" target="_blank">大八州.NET　非公式仕様書</a></li>
+			<li><a href="http://emily.shillest.net/specwiki/index.php?%E4%BB%95%E6%A7%98%E3%83%A1%E3%83%A2" target="_blank">駄目でべwiki　仕様メモ</a></li>
+		</ul>
+	</section>
+	<section>
+		<h1>ukadocの見方</h1>
 		<div class="passage">
-			<p><a href="http://ukadev.shillest.net/" target="_blank">伺か開発情報検索</a></p>
-		</div>
-		<div class="passage">
-			<p><a href="http://usada.sakura.vg/contents/specification.html" target="_blank">伺か公式仕様書</a></p>
-			<p><a href="http://crow.aqrs.jp/reference/all/" target="_blank">CROW・SSP仕様書</a></p>
-			<p><a href="http://www.ooyashima.net/db/" target="_blank">非公式仕様書</a></p>
+			<p>サイドバーにある記事はカテゴリーごとにそれぞれ以下のような内容を扱っています。</p>
+			<dl>
+				<dt>ファイル構成</dt>
+				<dd>
+					<p>各伺か関連コンテンツを構成するファイルの解説や、ディレクトリ構造について扱っています。</p>
+					<p>どのようなファイルが必要であるか・利用できるかの全体像を把握したい場合などに参照できるでしょう。</p>
+				</dd>
+				<dt>設定ファイル</dt>
+				<dd>
+					<p>各伺か関連コンテンツに用いられる個々の設定ファイルの、記述内容についての解説です。</p>
+					<p>それぞれの設定ファイルの記述時に参照できるでしょう。できる限り凡例も用意しています。</p>
+				</dd>
+				<dt>さくらスクリプト</dt>
+				<dd>
+					<p>ゴーストの動作指示である「さくらスクリプト」の各命令についての解説です。</p>
+					<p>どのような命令が可能であるか把握し、利用する際に参照できるでしょう。</p>
+				</dd>
+				<dt>イベント</dt>
+				<dd>
+					<p>ベースウェアがSHIORIやPLUGINなどに対して通知するイベントのIDそれぞれの解説です。</p>
+					<p>ゴーストやPLUGIN、SHIORIなどの製作にあたって、個々のイベントやそのReferenceについて知りたい場合に参照できるでしょう。</p>
+				</dd>
+				<dt>規格</dt>
+				<dd>
+					<p>各伺か関連コンテンツにまつわる諸々の規格のまとめです。</p>
+					<p>どちらかといえばSHIORIやSAORI、ベースウェアなどの、システムの基幹的部分に関係する情報です。</p>
+				</dd>
+				<dt>HowTo</dt>
+				<dd>
+					<p>各伺か関連コンテンツの作成にまつわる、基礎的な方法の紹介です。</p>
+					<p>ただし個別のケースに応じたTIPSまで網羅するのは現実的には難しいので、より具体的な情報をお求めの場合は、外部のサイトも探してみてください。</p>
+				</dd>
+				<dt>その他</dt>
+				<dd>
+					<p>その他、SSP等ベースウェアの仕様に関するメモや補足記事などです。</p>
+				</dd>
+			</dl>
 		</div>
 	</section>
 </section>
@@ -61,11 +104,11 @@
 
 
 
-		</section>
+		</main>
 	</section>
 	<footer>
 		<p class="author">
-			管理人 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
+			管理者 : <a href="http://code.google.com/p/ukadoc/" target="_blank">UKADOC Project</a>
 		</p>
 		<p class="banner">
 			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">

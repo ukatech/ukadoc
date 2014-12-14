@@ -131,8 +131,7 @@
 		<h1>Shell - surfaces.txt</h1>
 		<section class="navigation-category">
 			<ul>
-				<li class="caption legend"><a href="#legends_surfaces.txt">surfaces.txt</a></li>
-				<li class="caption"><a href="#notes_seriko-redefine">SERIKOの旧定義と新定義について</a></li>
+				<li class="caption introduction"><a href="#introduction_surfaces.txt">surfaces.txt</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -143,7 +142,7 @@
 		<section class="navigation-category">
 			<h1>descriptブレス</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_descriptbrace">descriptブレス記述例</a></li>
+				<li class="caption introduction"><a href="#introduction_descriptbrace">descriptブレス記述例</a></li>
 			</ul>
 			<ul>
 				<li><a href="#version,*">version,*</a></li>
@@ -155,16 +154,18 @@
 		<section class="navigation-category">
 			<h1>surfaceブレス</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_surfacebrace">surfaceブレス記述例</a></li>
-				<li class="caption"><a href="#notes_surfacebraceID">surface*ブレスで可能なID指定</a></li>
-				<li class="caption"><a href="#notes_surface.append">surface*ブレスとsurface.append*ブレス</a></li>
-				<li class="caption"><a href="#notes_standarddef">サーフェスIDの割り振り</a></li>
-				<li class="caption"><a href="#notes_elementalias">任意名の画像をアニメーションパーツとして用いる</a></li>
+				<li class="caption introduction"><a href="#introduction_surfacebrace">surfaceブレス記述例</a></li>
+				<li class="caption introduction"><a href="#introduction_seriko">アニメーション(SERIKO)</a></li>
+				<li class="caption introduction"><a href="#introduction_mayuna">着せ替え(MAYUNA)</a></li>
+				<li class="caption"><a href="#caption_seriko-redefine">SERIKOの旧定義と新定義について</a></li>
+				<li class="caption"><a href="#caption_surfacebraceID">surface*ブレスで可能なID指定</a></li>
+				<li class="caption"><a href="#caption_surface.append">surface*ブレスとsurface.append*ブレス</a></li>
+				<li class="caption"><a href="#caption_standarddef">サーフェスIDの割り振り</a></li>
 			</ul>
 			<ul>
-				<li><a href="#element*,パターン定義,ファイル名,X座標,Y座標">element*,パターン定義,ファイル名,X座標,Y座標</a></li>
-				<li><a href="#animation*.interval,タイミング定義">animation*.interval,タイミング定義</a></li>
-				<li><a href="#animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,パターン定義,サーフェス番号,ウェイト,X座標,Y座標</a></li>
+				<li><a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element*,描画メソッド,ファイル名,X座標,Y座標</a></li>
+				<li><a href="#animation*.interval,インターバル">animation*.interval,インターバル</a></li>
+				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
@@ -185,7 +186,10 @@
 				<li><a href="#point.basepos.y,座標">point.basepos.y,座標</a></li>
 			</ul>
 			<section>
-				<h1>サーフェスのアニメーションタイミング</h1>
+				<h1>アニメーションインターバル</h1>
+				<ul>
+					<li class="caption introduction"><a href="#introduction_animationinterval">アニメーションインターバル</a></li>
+				</ul>
 				<ul>
 					<li><a href="#sometimes">sometimes</a></li>
 					<li><a href="#rarely">rarely</a></li>
@@ -197,11 +201,13 @@
 					<li><a href="#yen-e">yen-e</a></li>
 					<li><a href="#talk,数値">talk,数値</a></li>
 					<li><a href="#_1_bind">bind</a></li>
-					<li><a href="#bind+アニメーションタイミング">bind+アニメーションタイミング</a></li>
 				</ul>
 			</section>
 			<section>
-				<h1>サーフェスの合成メソッド</h1>
+				<h1>描画メソッド</h1>
+				<ul>
+					<li class="caption introduction"><a href="#introduction_drawmethod">描画メソッド</a></li>
+				</ul>
 				<ul>
 					<li><a href="#base">base</a></li>
 					<li><a href="#overlay">overlay</a></li>
@@ -213,9 +219,9 @@
 					<li><a href="#_2_bind">bind</a></li>
 					<li><a href="#add">add</a></li>
 					<li><a href="#reduce">reduce</a></li>
-					<li><a href="#insert">insert</a></li>
-					<li><a href="#start,_ID_">start,[ID]</a></li>
-					<li><a href="#stop,_ID_">stop,[ID]</a></li>
+					<li><a href="#insert,ID">insert,ID</a></li>
+					<li><a href="#start,ID">start,ID</a></li>
+					<li><a href="#stop,ID">stop,ID</a></li>
 					<li><a href="#alternativestart,_ID1.ID2..._">alternativestart,(ID1.ID2...)</a></li>
 					<li><a href="#alternativestop,_ID1.ID2..._">alternativestop,(ID1.ID2...)</a></li>
 				</ul>
@@ -224,7 +230,7 @@
 		<section class="navigation-category">
 			<h1>surface.aliasブレス</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_surface.aliasbrace">surface.aliasブレス記述例</a></li>
+				<li class="caption introduction"><a href="#introduction_surface.aliasbrace">surface.aliasブレス記述例</a></li>
 			</ul>
 			<ul>
 				<li><a href="#*,[*]">*,[*]</a></li>
@@ -233,7 +239,7 @@
 		<section class="navigation-category">
 			<h1>cursorブレス</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_cursorbrace">cursorブレス記述例</a></li>
+				<li class="caption introduction"><a href="#introduction_cursorbrace">cursorブレス記述例</a></li>
 			</ul>
 			<ul>
 				<li><a href="#mouseup*,当たり判定ID,ファイル名">mouseup*,当たり判定ID,ファイル名</a></li>
@@ -258,7 +264,7 @@
 		<section class="navigation-category">
 			<h1>tooltipブレス</h1>
 			<ul>
-				<li class="caption legend"><a href="#legends_tooltipbrace">tooltipブレス記述例</a></li>
+				<li class="caption introduction"><a href="#introduction_tooltipbrace">tooltipブレス記述例</a></li>
 			</ul>
 			<ul>
 				<li><a href="#当たり判定名,表示内容">当たり判定名,表示内容</a></li>
@@ -266,7 +272,7 @@
 		</section>
 	</section>
 	<div class="categories">
-		<section class="caption legend" id="legends_surfaces.txt">
+		<section class="caption introduction" id="introduction_surfaces.txt">
 			<h1>surfaces.txt</h1>
 			<section>
 				<h1>概要</h1>
@@ -340,31 +346,232 @@ collision3,154,311,248,362,Skirt
 </code></pre>
 			</section>
 		</section>
-		<section class="caption" id="notes_seriko-redefine">
-			<h1>SERIKOの旧定義と新定義について</h1>
-			<section>
-				<h1>SERIKOの新定義と旧定義とは</h1>
-				<p>
-					本家伺か（MATERIA）の開発末期のバージョンで、surfaces.txtへのSERIKO（アニメーション）に関する設定書式に変更がありました。
-					<br>これについて<a href="http://usada.sakura.vg/contents/seriko.html">本家仕様書</a>にあるSERIKO/1.x系の従来書式の事を旧定義、対する公式にドキュメント化されないままとなった新たな書式（SERIKO/2.0）のことを新定義と呼ぶ事があります。
-				</p>
-				<p>
-					なお、<em>これとは全く別に</em>、MATERIA開発終了後にSSPなどがsufraces.txtの書式について独自に追加した記法などがあります（例えばsurface.appendや、surface1-9といった範囲指定）。
-					<br>これを含めて新定義と呼ぶ人や文献があるかもしれませんが、少なくともukadocで言う新旧定義はあくまでそのような用法ではなく、SERIKOの書式についての言葉である点に注意してください。
-				</p>
+		<section class="category">
+			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
+			<dl id="charset,文字コード-surfaces">
+				<dt class="entry">charset,文字コード</dt>
+				<dd class="entry">
+					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>descriptブレス</h1>
+			<section class="caption introduction" id="introduction_descriptbrace">
+				<h1>descriptブレス記述例</h1>
+<pre><code>descript
+{
+version,1
+collision-sort,ascend
+animation-sort,ascend
+}
+</code></pre>
 			</section>
-			<section>
-				<h1>新定義と旧定義の違い</h1>
-				<p>新定義における書式の変更点は以下の四つです。</p>
-				<ol>
-					<li><a href="#animation*.interval,タイミング定義">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
-					<li><a href="#animation*.pattern*,パターン定義,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（合成メソッド指定を先頭に移動）。</li>
-					<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
-					<li>合成メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
-				</ol>
-				<p>これに加え、descriptブレスを設けて「<a href="#version,*">version,1</a>」の定義を行うことが必要です。</p>
-				<p>以下は<em>同じ定義内容</em>の旧定義と新定義の例です。</p>
-<pre><code class="surfaces">// 旧定義
+			<dl id="version,*">
+				<dt class="entry">version,*</dt>
+				<dd class="entry">
+					<p class="description">使用する<a href="#caption_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="maxwidth,ピクセル">
+				<dt class="entry">maxwidth,ピクセル</dt>
+				<dd class="entry">
+					<p class="description">※SSPでは自動的に検出されるためこの情報は利用されない。<br>サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。</p>
+					<p class="default">定義なし/SSPでは実際のsurface定義における最大横幅</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="collision-sort,ソート順序">
+				<dt class="entry">collision-sort,ソート順序</dt>
+				<dd class="entry">
+					<p class="description">当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p class="default">none（IDによらず先に書かれている方が手前）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation-sort,ソート順序">
+				<dt class="entry">animation-sort,ソート順序</dt>
+				<dd class="entry">
+					<p class="description">アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p class="default">descend</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>surfaceブレス</h1>
+			<section class="caption introduction" id="introduction_surfacebrace">
+				<h1>surfaceブレス記述例</h1>
+<pre><code>surface1
+{
+element0,overlay,body0.png,0,0
+element1,overlay,face0.png,0,0
+
+collision0,188,25,252,63,Head
+collision1,190,92,236,118,Face
+collision2,180,191,220,222,Bust
+collision3,154,311,248,362,Skirt
+
+animation0.interval,sometimes
+animation0.pattern0,overlay,101,100,168,67
+animation0.pattern1,overlay,100,100,168,67
+animation0.pattern2,overlay,101,100,168,67
+animation0.pattern3,overlay,-1,100,168,67
+}
+</code></pre>
+				<p>SSPのみ追加指定（すでに定義済みのものに対してさらに定義を後付けする）用記法surace.appendがある。<br>詳細は<a href="#caption_surface.append">後述</a>。</p>
+<pre><code>surface.append1-9,20-29
+{
+// 略（ふつうのsurfaceブレスと同様）
+}
+</code></pre>
+				<p>surface(.append)*の*部分に、サーフェスIDとなる数字を指定。複数指定、範囲指定が可能（<a href="#caption_surfacebraceID">後述</a>）。</p>
+				<p>なおそれ以外の各行の数字部分については各定義の説明参照。</p>
+			</section>
+			<section class="caption introduction" id="introduction_seriko">
+				<h1>アニメーション（SERIKO）</h1>
+				<section>
+					<h1>概要</h1>
+					<p>伺かのシェルはアニメーション機能を持つ。これは静止画像であるコマを連続的に描画することによって動画的表現を行うものである。</p>
+					<p>アニメーションは各サーフェスに対して設定される。また、アニメーションの各コマとして用いる画像も別のサーフェスである。</p>
+					<p>各サーフェスへの設定では、アニメーション自体をいつ開始するか、各コマにどのサーフェスを使い、どのような方法・時間間隔で描画するかといった内容を定義する必要がある。</p>
+					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはSERIKOという名前が与えられている。</p>
+				</section>
+				<section>
+					<h1>基本書式と記述例</h1>
+<pre><code>
+surface0
+{
+// 瞬き
+animation0.interval,rarely
+animation0.pattern0,overlay,101,700,200,100
+animation0.pattern1,overlay,102,700,200,100
+animation0.pattern2,overlay,101,700,200,100
+animation0.pattern3,overlay,-1,700,0,0
+
+// トークに合わせて口を動かす - 口パクA-Cのうち一つをランダムに実行
+animation1.interval,talk,2
+animation10.pattern0,overlay,200,700,200,120
+animation10.pattern1,overlay,201,700,200,120
+animation10.pattern2,overlay,202,700,200,120
+animation10.pattern3,overlay,-1,700,0,0
+}
+</pre></code>
+					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
+					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
+					<p>上例の通り、全てのアニメーション定義はinterval定義とpattern定義を含んでいる。animationには他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つ以上存在する必要がある。</p>
+					<p><a href="animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>参照であるが、大意としてここでは「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが5文字喋るごとに再生される。</p>
+					<p><a href="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
+					<p>描画メソッドは、</p>
+					<p>各メソッドの詳細については。</p>
+				</section>
+				<section>
+					<h1>各アニメーションの関係</h1>
+					<p>全てのアニメーションにはIDが与えられる（具体的な指定はanimation*.intervalの節参照）。</p>
+					<p>IDは単一のサーフェス内で重複が許されず、また異なるサーフェス間において同じIDをもつアニメーションは同じ意味を持つことが期待される。例えばキャラクターが正面を向いているsurface0と、横を向いているsurface1があったときに、その両方に「瞬き」のアニメーションを設定するとする。この時、キャラクターの姿勢の違いから実際に瞬きを表現コマとして使われる画像は違うものになるはずであるが、それにもかかわらず両方のサーフェスでは同じアニメーションIDが与えられるべきである。特に後述の<a href="#introduction_mayuna">着せ替え</a>においてはこのIDと意味との関連付けは必須となる。</p>
+					<p>全ての異なるアニメーションは基本的に独立しており、非同期的に開始・終了する。<br>例えば瞬きをするアニメーションと、トークに合わせて口元が動くアニメーションは、互いに他方が動いていようがいまいが気にせず開始・終了すべきであろうし、実際IDの異なるアニメーションとして定義されている限りはそのように動作する。</p>
+					<p>しかしその一方で、startやalternativestartなどの、他のアニメーションを実行するための特殊な描画メソッドによって、アニメーション自体を他のアニメーションを実行するトリガとする仕組みも用意されている。<br>また、exclusiveオプションの指定により、排他的なアニメーションを実行することも可能である。</p>
+				</section>
+			</section>
+			<section class="caption introduction" id="introduction_mayuna">
+				<h1>着せ替え（MAYUNA）</h1>
+				<section>
+					<h1>概要</h1>
+					<p>伺かのシェルは、着せ替えと呼ばれる仕組みを持つ。これは単一のシェル内で、複数の衣装などのパーツの表示・非表示や種類の切り替えを行うためのものである。</p>
+					<p>伺かのシェルにおける着せ替えは、アニメーションの一種として位置づけられる。<br>ただし他のアニメーションのようにコマ送りされず、アニメーションの開始時に即時全てのコマ（pattern）およびベースのサーフェスが合成されて、以後静止画として扱われる点が特徴である（従ってpattern定義のウェイトパラメータは無視される）。<br>これによって着せ替えによるアニメーションは、あたかもベースのサーフェスと一体化したように振舞い、衣服のようなものを表現する目的に良く適う。</p>
+					<p>着せ替えのアニメーションとしての開始・終了は、主にオーナードローメニューの着せ替えメニューからスイッチする事で制御される。SSPの場合はそれに加えて、さくらスクリプトの<a href="#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a>タグを用いたゴースト側からの制御が可能である。<br>オーナードローメニュー側の設定は、surfaces.txtではなく<a href="descript_shell.html">descript.txt</a>で行うので、そちらのページを参照。</p>
+					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはMAYUNAという名前が与えられている。</p>
+				</section>
+				<section>
+					<h1>基本書式と記述例</h1>
+<pre><code>
+surface0
+{
+// 服1の定義　アニメーションIDは0
+animation0.interval,bind
+animation0.pattern0,add,500,0,50,100
+
+// 服2の定義　アニメーションIDは1
+animation0.interval,bind
+animation0.pattern0,add,501,0,50,100
+}
+
+//--- 以下着せ替えパーツ定義 ---
+// 服1
+surface500
+{
+element0,overlay,dress1.png,0,0
+}
+
+// 服2
+surface501
+{
+element0,overlay,dress2.png,0,0
+}
+</pre></code>
+					<p>surfaces.txtにおける着せ替えの定義は、例えば以上のようになる。</p>
+					<p>上記では、surface0に対して「服1」と「服2」の二つの着せ替えを定義している。</p>
+					<p>通常のアニメーション定義同様、interval定義とpattern定義が必要である。interval定義にbindを指定する事で、そのアニメーションが着せ替えの定義である事を示す。</p>
+					<p>アニメーションの場合pattern定義はコマの数だけ行うが、着せ替えの場合は静止画仕様であるので、コマというよりはパーツを必要なだけ合成することになる。例のように着せ替えを構成するパーツが一つで済むならば、pattern行は1行のみになる。また着せ替えの場合各パーツは即時合成されるので、ウェイトパラメータは無視される。</p>
+					<p>pattern定義の描画メソッドについては後述。</p>
+				</section>
+				<section>
+					<h1>利用可能な描画メソッド</h1>
+					<p>MATERIA（本家伺か）においては、着せ替えように用意された4つのメソッド、すなわち「bind」「add」「reduce」「insert」が利用可能であった。このうちbindは旧仕様で、addが互換である。</p>
+					<p>SSPにおいては、基本的にアニメーションの描画メソッドとして用意されている全てのものが着せ替えでも利用可能である。overlayとaddおよびbindは同義となる。</p>
+					<p>各メソッドの詳細については<a href="#introduction_drawmethod">描画メソッド</a>の節参照。</p>
+				</section>
+				<section>
+					<h1>インターバルの組み合わせ指定におけるbind</h1>
+					<p>SSPにおいては、<a href="introduction_anim.html">アニメーションインターバルの節</a>で触れているように、インターバルの組み合わせ指定が可能である。</p>
+					<p>組み合わせ指定の中にbindを含めた場合のアニメーションは、bind単体であれば本来持っていた静止画仕様であるという性質は失う（pattern定義のウェイトパラメータが無視されなくなる）。しかしアニメーションの寿命は変わらないので、例えばbind+runonceのような組み合わせ指定の場合、すべてのpatternの描画が終わった時点の表示が、以後ベースサーフェスの変更または着せ替え状態の変化があるまで継続し続けることになる。</p>
+					<p>従って、bindを含むインターバル組み合わせ指定では、pattern定義の最終行においてアニメーションの終了を行わず、静止状態として残したい描画を合成しておくべきである。</p>
+				</section>
+			</section>
+			<section class="caption" id="caption_seriko-redefine">
+				<h1>SERIKOの旧定義と新定義について</h1>
+				<section>
+					<h1>SERIKOの新定義と旧定義とは</h1>
+					<p>
+						本家伺か（MATERIA）の開発末期のバージョンで、surfaces.txtへのSERIKO（アニメーション）に関する設定書式に変更がありました。
+						<br>これについて<a href="http://usada.sakura.vg/contents/seriko.html">本家仕様書</a>にあるSERIKO/1.x系の従来書式の事を旧定義、対する公式にドキュメント化されないままとなった新たな書式（SERIKO/2.0）のことを新定義と呼ぶ事があります。
+					</p>
+					<p>
+						なお、<em>これとは全く別に</em>、MATERIA開発終了後にSSPなどがsufraces.txtの書式について独自に追加した記法などがあります（例えばsurface.appendや、surface1-9といった範囲指定）。
+						<br>これを含めて新定義と呼ぶ人や文献があるかもしれませんが、少なくともukadocで言う新旧定義はあくまでそのような用法ではなく、SERIKOの書式についての言葉である点に注意してください。
+					</p>
+				</section>
+				<section>
+					<h1>新定義と旧定義の違い</h1>
+					<p>新定義における書式の変更点は以下の四つです。</p>
+					<ol>
+						<li><a href="#animation*.interval,インターバル">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
+						<li><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
+						<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
+						<li>描画メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
+					</ol>
+					<p>これに加え、descriptブレスを設けて「<a href="#version,*">version,1</a>」の定義を行うことが必要です。</p>
+					<p>以下は<em>同じ定義内容</em>の旧定義と新定義の例です。</p>
+		<pre><code class="surfaces">// 旧定義
 surface1
 {
 <span class="animationID">0</span>interval,rarely
@@ -410,149 +617,48 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">6</sp
 animation<span class="animationID">2</span>.pattern<span class="patternID">7</span>,<span class="method">overlay</span>,<span class="surfaceID">-1</span>,<span class="wait">700</span>,<span class="posx">0</span>,<span class="posy">0</span>
 }
 </code></pre>
-				<ul class="surfaces">
-					<li class="animationID">アニメーションID</li>
-					<li class="patternID">パターンID</li>
-					<li class="surfaceID">サーフェスID</li>
-					<li class="method">合成メソッド</li>
-					<li class="wait">ウェイト</li>
-					<li class="posx">x座標</li>
-					<li class="posy">y座標</li>
-				</ul>
-				<p>
-					先頭が「animation」から始まるようになった他、ウェイトの数値が10倍になっていること、合成メソッドの指定がパラメータの先頭に移動したことに注意してください。
-					<br />またalternativestartは[]が()に変更されているほか、alternativestartの場合無視されるパラメータである「サーフェスID」「ウェイト」について、旧定義ではダミーの数値0を書いていたのに対し、新定義では合成メソッドが先頭に移動した関係から、「合成位置x,y」含めて丸ごと省略できていることもわかるかと思います。
-				</p>
+					<ul class="surfaces">
+						<li class="animationID">アニメーションID</li>
+						<li class="patternID">パターンID</li>
+						<li class="surfaceID">サーフェスID</li>
+						<li class="method">描画メソッド</li>
+						<li class="wait">ウェイト</li>
+						<li class="posx">x座標</li>
+						<li class="posy">y座標</li>
+					</ul>
+					<p>
+						先頭が「animation」から始まるようになった他、ウェイトの数値が10倍になっていること、描画メソッドの指定がパラメータの先頭に移動したことに注意してください。
+						<br />またalternativestartは[]が()に変更されているほか、alternativestartの場合無視されるパラメータである「サーフェスID」「ウェイト」について、旧定義ではダミーの数値0を書いていたのに対し、新定義では描画メソッドが先頭に移動した関係から、「合成位置x,y」含めて丸ごと省略できていることもわかるかと思います。
+					</p>
+				</section>
+				<section>
+					<h1>新定義で記述する利点</h1>
+					<ul>
+						<li>
+							SSPが独自に追加した設定（このページにある項目で<img src="image/icon_m.png" alt="Materia" width="34" height="16" />の表示がなく<img src="image/icon_s.png" alt="SSP" width="34" height="16" />の表示のみがあるもの）については、旧定義で書かれる事が想定されていない場合があります。
+							<br />今後追加されるあらゆる設定にも同様の事がいえます。
+							<br />こうした設定を利用する場合は、新定義で記述することが望ましいでしょう（旧定義だと正常動作しない可能性がある）。
+							<br />その場合、新旧定義を混在させるとエラーとなるので、新定義に統一する必要があります。
+						</li>
+						<li>
+							ウェイトの単位が10msから1msに変更され、より細やかな設定が可能になります。
+						</li>
+						<li>
+							また上例で見た通り、描画メソッドがパラメータの先頭に移動した事で、startやalternativestartのような特殊な描画メソッドで無視されるパラメータが綺麗に省略されることも利点かもしれません。
+						</li>
+						<li>
+							他に、「animation」の語句が明示される事で、SERIKOに関する定義のまとまりが強調され、よりその行の意味が解りやすくなる面もあるかもしれませんが、およそ見やすさというものは慣れや個人差によるところが大であり、旧定義の方が親しんでいるし見やすいというのも自然な感じ方です。
+						</li>
+					</ul>
+					<p>以上のような点にメリットを感じない場合、SSPのみでの対応を考えるなら必ずしも移行する意味はないかもしれません。</p>
+					<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で参考にされる場合は適宜読み替えが必要です。</p>
+				</section>
 			</section>
-			<section>
-				<h1>新定義で記述する利点</h1>
-				<ul>
-					<li>
-						SSPが独自に追加した設定（このページにある項目で<img src="image/icon_m.png" alt="Materia" width="34" height="16" />の表示がなく<img src="image/icon_s.png" alt="SSP" width="34" height="16" />の表示のみがあるもの）については、旧定義で書かれる事が想定されていない場合があります。
-						<br />今後追加されるあらゆる設定にも同様の事がいえます。
-						<br />こうした設定を利用する場合は、新定義で記述することが望ましいでしょう（旧定義だと正常動作しない可能性がある）。
-						<br />その場合、新旧定義を混在させるとエラーとなるので、新定義に統一する必要があります。
-					</li>
-					<li>
-						ウェイトの単位が10msから1msに変更され、より細やかな設定が可能になります。
-					</li>
-					<li>
-						また上例で見た通り、合成メソッドがパラメータの先頭に移動した事で、startやalternativestartのような特殊な合成メソッドで無視されるパラメータが綺麗に省略されることも利点かもしれません。
-					</li>
-					<li>
-						他に、「animation」の語句が明示される事で、SERIKOに関する定義のまとまりが強調され、よりその行の意味が解りやすくなる面もあるかもしれませんが、およそ見やすさというものは慣れや個人差によるところが大であり、旧定義の方が親しんでいるし見やすいというのも自然な感じ方です。
-					</li>
-				</ul>
-				<p>以上のような点にメリットを感じない場合、SSPのみでの対応を考えるなら必ずしも移行する意味はないかもしれません。</p>
-				<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で参考にされる場合は適宜読み替えが必要です。</p>
-			</section>
-		</section>
-		<section class="category">
-			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
-			<dl id="charset,文字コード-surfaces">
-				<dt class="entry">charset,文字コード</dt>
-				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">不明</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-		</section>
-		<section class="category">
-			<h1>descriptブレス</h1>
-			<section class="caption legend" id="legends_descriptbrace">
-				<h1>descriptブレス記述例</h1>
-<pre><code>descript
-{
-version,1
-collision-sort,ascend
-animation-sort,ascend
-}
-</code></pre>
-			</section>
-			<dl id="version,*">
-				<dt class="entry">version,*</dt>
-				<dd class="entry">
-					<p class="description">使用する<a href="#notes_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
-					<p class="default">0</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="maxwidth,ピクセル">
-				<dt class="entry">maxwidth,ピクセル</dt>
-				<dd class="entry">
-					<p class="description">※SSPでは自動的に検出されるためこの情報は利用されない。<br>サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。</p>
-					<p class="default">定義なし/SSPでは実際のsurface定義における最大横幅</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="collision-sort,ソート順序">
-				<dt class="entry">collision-sort,ソート順序</dt>
-				<dd class="entry">
-					<p class="description">当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
-					<p class="default">none（IDによらず先に書かれている方が手前）</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="animation-sort,ソート順序">
-				<dt class="entry">animation-sort,ソート順序</dt>
-				<dd class="entry">
-					<p class="description">アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
-					<p class="default">descend</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-		</section>
-		<section class="category">
-			<h1>surfaceブレス</h1>
-			<section class="caption legend" id="legends_surfacebrace">
-				<h1>surfaceブレス記述例</h1>
-<pre><code>surface1
-{
-element0,overlay,body0.png,0,0
-element1,overlay,face0.png,0,0
-
-collision0,188,25,252,63,Head
-collision1,190,92,236,118,Face
-collision2,180,191,220,222,Bust
-collision3,154,311,248,362,Skirt
-
-animation0.interval,sometimes
-animation0.pattern0,overlay,101,100,168,67
-animation0.pattern1,overlay,100,100,168,67
-animation0.pattern2,overlay,101,100,168,67
-animation0.pattern3,overlay,-1,100,168,67
-}
-</code></pre>
-				<p>SSPのみ追加指定（すでに定義済みのものに対してさらに定義を後付けする）用記法surace.appendがある。<br>詳細は<a href="#notes_surface.append">後述</a>。</p>
-<pre><code>surface.append1-9,20-29
-{
-// 略（ふつうのsurfaceブレスと同様）
-}
-</code></pre>
-				<p>surface(.append)*の*部分に、サーフェスIDとなる数字を指定。複数指定、範囲指定が可能（<a href="#notes_surfacebraceID">後述</a>）。</p>
-				<p>なおそれ以外の各行の数字部分については各定義の説明参照。</p>
-			</section>
-			<section class="caption" id="notes_surfacebraceID">
+			<section class="caption" id="caption_surfacebraceID">
 				<h1>surface*ブレスで可能なID指定</h1>
-				<p>以下の各記法は併用可能。</p>
+				<p>以下の各記法は併用可能。いずれもSSP専用。</p>
 				<dl>
-					<dt>複数指定「,」</dt>
+					<dt>列挙指定「,」</dt>
 					<dd>
 <pre><code>surface1,3,4,6,12
 {
@@ -561,7 +667,7 @@ animation0.pattern3,overlay,-1,100,168,67
 </code></pre>
 						のように「,」区切りでIDを指定することで、複数のサーフェスに対して同じ内容で定義することが可能。
 					</dd>
-					<dt>範囲指定「-」（SSP専用）</dt>
+					<dt>範囲指定「-」</dt>
 					<dd>
 <pre><code>surface1-12
 {
@@ -570,31 +676,25 @@ animation0.pattern3,overlay,-1,100,168,67
 </code></pre>
 						のように「-」を用いてIDを指定する事で、番号が連続する範囲の（例の場合surface1から12まで）複数のサーフェスに対して同じ内容で定義することが可能。
 					</dd>
-					<dt>範囲指定の除外指定「!」（SSP専用）</dt>
+					<dt>範囲指定の除外指定「!」</dt>
 					<dd>
 <pre><code>surface1-30,!15,!20-25
 {
 // 略
 }
 </code></pre>
-						のように、「!」に続けて単独または範囲指定したIDは、その定義の対象から除外される（例の場合結局surface1-14,16-19,20-30などとした場合と同義）。<br>
+						のように、「!」に続けて単独または範囲指定したIDは、その定義の対象から除外される（例の場合結局surface1-14,16-19,26-30などとした場合と同義）。<br>
 						なお、!による除外は記述の位置によらず他の指定よりも優先される（例えばsurface1-10,!2-4,3などと!の後に追記しても3は除外される）。
 					</dd>
 				</dl>
-				<p>また、各「,」の後ろに一々「surface」を書いてもよい（旧仕様）。</p>
+				<p>materia本来の仕様では、以下のようなsurface付での列挙指定のみ許される。</p>
 <pre><code>surface1,surface3,surface4
 {
 // 略
 }
 </code></pre>
-
-<pre><code>surface10,surface20-25
-{
-// 略
-}
-</code></pre>
 			</section>
-			<section class="caption" id="notes_surface.append">
+			<section class="caption" id="caption_surface.append">
 				<h1>surface*ブレスとsurface.append*ブレス</h1>
 				<p>surface.appendによる定義は、「既に（surfaceブレス、またはsuface*.pngの存在によって）ある定義」に対してのみ付け加えられる。</p>
 				<p>従って例えば、</p>
@@ -624,7 +724,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<p>とした場合は、既に定義のある「surface1」および「surface3」のみにappendで追加した定義が加わり、予め存在しない「surface2」は内部的にも<em>新設されない</em>。</p>
 				<p>なお、この関係から、<em>surfaceブレスは</em>定義ファイル（surfaces.txtなど）内で<em>surface.appendブレスより先に書く</em>必要がある事に注意。</p>
 			</section>
-			<section class="caption" id="notes_standarddef">
+			<section class="caption" id="caption_standarddef">
 				<h1>サーフェスIDの割り振り</h1>
 				<p>どんな表情・内容にどのサーフェスIDを割り振るかは、基本的に自由。</p>
 				<p>ただしsurface0,surface10はそれぞれデフォルトサーフェスとして必須とされ、たとえ相方側のないゴーストであってもsurface10として透明な画像などを用意する必要がある（SSPに限っては、必須とまではされない。またdescriptなどの設定でデフォルトサーフェスの変更も可能）。</p>
@@ -651,40 +751,14 @@ animation0.pattern3,overlay,-1,100,168,67
 				</ul>
 				<p>なお、MATERIAではsurfaceIDにつかえる数字は0から8192までという制限があります。</p>
 			</section>
-			<section class="caption" id="notes_elementalias">
-				<h1>任意名の画像をアニメーションパーツとして用いる</h1>
-				<p>
-					アニメーション（や着せ替え）のコマ（パーツ）の指定は、surfaceIDに対して行い、画像ファイル名を指定することはできない。
-					<br />そのためもし画像ファイル名をそのままにしてアニメーションに使いたい場合は、以下のように<a href="#element*,パターン定義,ファイル名,X座標,Y座標">element</a>定義を用いて、任意のpngに対してIDを割り当てる。
-				</p>
-<pre><code>surface1000
-{
-element0,overlay,hogehoge.png,0,0
-}
-</code></pre>
-			</section>
-			<dl id="element*,パターン定義,ファイル名,X座標,Y座標">
-				<dt class="entry">element*,パターン定義,ファイル名,X座標,Y座標</dt>
-				<dd class="entry">
-					<p class="description">ベースサーフェスの設定。<br>加算した合成メソッドはこのサーフェス内で1枚のベースサーフェス扱いになる。<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。</p>
-					<p class="default">挙動なし</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="animation*.interval,タイミング定義">
-				<dt class="entry">animation*.interval,タイミング定義</dt>
+			<dl id="element*,描画メソッド,ファイル名,X座標,Y座標">
+				<dt class="entry">element*,描画メソッド,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
 					<p class="description">
-						アニメーションの開始タイミングの設定。
-						<br>タイミング定義は下記の<a href="#h-animationinterval">アニメーションタイミング</a>参照。
-						<br>この定義がアニメーション定義の開始を示すものになるので、一連のanimation定義の中では最初に記述する。
-						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceでは、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
-						<br>アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。
-						<br><a href="#notes_seriko-redefine">旧定義</a>：*interval,タイミング定義
+						ベースサーフェスの設定。
+						<br>elementとして複数の画像を合成し、その結果をこのサーフェス内のベースとして一枚の画像のように扱う。
+						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
+						<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。
 					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -694,16 +768,37 @@ element0,overlay,hogehoge.png,0,0
 					</ul>
 				</dd>
 			</dl>
-			<dl id="animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標">
-				<dt class="entry">animation*.pattern*,合成メソッド定義,サーフェスID,ウェイト,X座標,Y座標</dt>
+			<dl id="animation*.interval,定義">
+				<dt class="entry">animation*.interval,インターバル</dt>
 				<dd class="entry">
 					<p class="description">
-						intervalで設定したタイミングで発動する合成メソッドの設定。
+						アニメーションが開始するタイミング（周期）の定義。
+						<br>インターバルは下記の<a href="#h-animationinterval">アニメーションインターバル</a>参照。SSPのみ+区切りで列挙する事で組み合わせ指定が可能。
+						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceで、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
+						<br>interval定義はそのIDのアニメーション定義全体の始点を示し、一連のanimation定義の中で必ず最初に記述されなければならない。
+						<br>アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。
+						<br><a href="#caption_seriko-redefine">旧定義</a>：*interval,インターバル
+					</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">
+				<dt class="entry">animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標</dt>
+				<dd class="entry">
+					<p class="description">
+						アニメーションの各コマの定義。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
-						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。
-						<br>合成メソッド定義は下記の<a href="#h-animationpattern">合成メソッド</a>参照。<br>ウェイトの単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
-						<br>サーフェスIDに-1でそのアニメーションの停止、-2で全てのアニメーションを停止する事ができる。
-						<br><a href="#notes_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,合成メソッド定義,X座標,Y座標
+						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。IDの番号の小さい方から積み重なる形で描画される。
+						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
+						<br>ウェイトはそのコマを描画する<em>まで</em>の待ち時間。単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
+						<br>X座標、Y座標はそのコマをベース（そのコマまでの描画結果）に対してどれだけずらして表示するかの指定。
+						<br>サーフェスIDに-1でそのアニメーションの停止、-2で現在実行中の他の全てのアニメーションを停止する事ができる。いずれの場合も描画メソッドやX座標、Y座標は無視される。
+						<br><a href="#caption_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,描画メソッド,X座標,Y座標
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -716,10 +811,11 @@ element0,overlay,hogehoge.png,0,0
 				<dt class="entry">animation*.option,exclusive</dt>
 				<dd class="entry">
 					<p class="description">
-						これが定義されたアニメーションは他のすべてのアニメーションの影響を受けない。
+						アニメーションの排他的実行オプション。
+						<br>即ちexclusiveオプションが指定されたアニメーションが実行された時点で、他のすべてのアニメーションが停止し、またexclusiveオプションのアニメーションの終了まで、他のいかなるアニメーションも新たに開始されない。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
-						<br>animation*.option,exclusive,(1,3,5)のようにすると、指定のアニメーションIDからの影響を受けない限定的な指定ができる（SSPのみ）
-						<br><a href="#notes_seriko-redefine">旧定義</a>：*option,exclusive
+						<br>SSPのみ、animation*.option,exclusive,(1,3,5)のようにすると、指定IDのアニメーションに対してのみ限定的に排他制御することができる。
+						<br><a href="#caption_seriko-redefine">旧定義</a>：*option,exclusive
 					</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -733,9 +829,11 @@ element0,overlay,hogehoge.png,0,0
 				<dt class="entry">animation*.option,background</dt>
 				<dd class="entry">
 					<p class="description">
-						これが定義されたアニメーションはベースサーフェスより裏に表示される。
+						アニメーションの背面実行オプション。
+						<br>backgroundオプションが指定されたアニメーションはベースサーフェスの後ろ（画面奥側）で実行される。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 					</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -745,11 +843,11 @@ element0,overlay,hogehoge.png,0,0
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
 					<p class="description">
-						(exclusive|background)
+						exclusiveおよびbackgroundオプションの同時指定。
 						<br>+区切りで複数オプション可。例：exclusive+background<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
-						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<span style="text-decoration: underline;">exclusiveのみ</span>影響を受ける。
+						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<em>exclusiveのみ</em>影響を受ける。
 					</p>
-					<p class="default">不明</p>
+					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -758,7 +856,10 @@ element0,overlay,hogehoge.png,0,0
 			<dl id="animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">
 				<dt class="entry">animation*.collision*,当たり判定定義<br>animation*.collisionex*,当たり判定定義(ex)</dt>
 				<dd class="entry">
-					<p class="description">以下の当たり判定定義と同じものを後ろに書くことで、アニメーション動作中にのみ有効な当たり判定が書けるようになる。タイミングbindにも有効。<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。<br>collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
+					<p class="description">
+						通常の<a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision</a>や<a href="#collisionex*,ID,タイプ,座標1,座標2...">collisionex</a>のアニメーション動作中限定の定義。インターバルbindにも有効。
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						<br>collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -941,11 +1042,46 @@ element0,overlay,hogehoge.png,0,0
 				</dd>
 			</dl>
 			<section class="subcategory">
-				<h1 id="h-animationinterval">サーフェスのアニメーションタイミング</h2>
+				<h1 id="h-animationinterval">アニメーションインターバル</h2>
+				<section class="caption introduction" id="introduction_animationinterval">
+					<h1>アニメーションインターバル</h1>
+					<section>
+						<h1>概要</h1>
+						<p><a href="animation*.interval,インターバル">animation*,interval</a>において指定される、アニメーションが動作する周期・タイミング（トリガー）の指定。</p>
+					</section>
+					<section>
+						<h1>組み合わせ指定（SSP拡張機能）</h1>
+						<p>SSPの場合、アニメーションインターバルは「+」区切りで列挙する事で複数の指定を組み合わせた指定をする事ができる。元来bindに対して指定する事が想定された仕様のため、bindなしでの指定については動いているとしても要注意。</p>
+						<p>以下に組み合わせの例を挙げる。</p>
+						<dl>
+							<dt>bind+always</dt>
+							<dd>その着せ替えがONの場合に、常に実行されるアニメーション。</dd>
+
+							<dt>bind+runonce</dt>
+							<dd>その着せ替えがONの場合に、その着せ替え定義のされているサーフェスに切り替わった時か、逆にそのサーフェス表示中にその着せ替え定義がONになった場合に一度だけ実行されるアニメーション。</dd>
+
+							<dt>bind+random,頻度</dt>
+							<dd>その着せ替えがONの場合に、毎秒(1/頻度)の確率で発生するアニメーション。</dd>
+
+							<dt>bind+periodic,間隔</dt>
+							<dd>その着せ替えがONの場合に、(間隔)秒毎に発生するアニメーション。</dd>
+
+							<dt>bind+runonce+random,5</dt>
+							<dd>その着せ替えがONの場合に、その着せ替え定義のされているサーフェスに切り替わった時か、逆にそのサーフェス表示中にその着せ替え定義がONになった場合に一度実行され、以後毎秒5分の1の確率で再生されるアニメーション。</dd>
+						</dl>
+						<p>bindに対して+区切りで他の指定をした場合、bindインターバルが本来帯びる「pattern定義のウェイトパラメータが無視されて静止画としてベースサーフェスと一体化する」といった性質は失われる。</p>
+						<p>また、random・periodic・talkのようなパラメータが必要な指定では、パラメータは組み合わせ指定の場合も末尾に書く。</p>
+						<p>以下は<em>誤り</em>。</p>
+						<pre>animation0.interval,random,5+bind</pre>
+						<p>以下は<em>正しい</em>。</p>
+						<pre>animation1.interval,bind+random,5</pre>
+						<p>パラメータのあるインターバル指定同士を組み合わせるのは不可。</p>
+					</section>
+				</section>
 				<dl id="sometimes">
 					<dt class="entry">sometimes</dt>
 					<dd class="entry">
-						<p class="description">毎秒2分の1の確率で発生。</p>
+						<p class="description">そのサーフェスである間毎秒2分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -956,7 +1092,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="rarely">
 					<dt class="entry">rarely</dt>
 					<dd class="entry">
-						<p class="description">毎秒4分の1の確率で発生。</p>
+						<p class="description">そのサーフェスである間毎秒4分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -967,7 +1103,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="random,数値">
 					<dt class="entry">random,数値</dt>
 					<dd class="entry">
-						<p class="description">毎秒数値分の1の確率で発生。</p>
+						<p class="description">そのサーフェスである間毎秒数値分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -978,7 +1114,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="periodic,数値">
 					<dt class="entry">periodic,数値</dt>
 					<dd class="entry">
-						<p class="description">数値秒間隔で発生。</p>
+						<p class="description">そのサーフェスである間数値秒間隔で定期的に再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -987,7 +1123,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="always">
 					<dt class="entry">always</dt>
 					<dd class="entry">
-						<p class="description">ループ再生。</p>
+						<p class="description">そのサーフェスである間ループ再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -998,7 +1134,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="runonce">
 					<dt class="entry">runonce</dt>
 					<dd class="entry">
-						<p class="description">サーフェスに切り替わった瞬間に1回のみ発生。</p>
+						<p class="description">サーフェスに切り替わった瞬間に1回のみ再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1009,7 +1145,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="never">
 					<dt class="entry">never</dt>
 					<dd class="entry">
-						<p class="description">自動では発生しない。</p>
+						<p class="description">自動では実行されない。他のアニメーションからのstartメソッドやalternativestartメソッドなどによる呼びだしか、さくらスクリプトの<a href="list_sakura_script.html#_i_ID%E7%95%AA%E5%8F%B7_">\i[*]</a>などによる命令以外では再生しないアニメーションに対して指定する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1020,7 +1156,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="yen-e">
 					<dt class="entry">yen-e</dt>
 					<dd class="entry">
-						<p class="description">\eが来た時に発動。</p>
+						<p class="description">そのサーフェスで\eが来た時に実行。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1031,7 +1167,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="talk,数値">
 					<dt class="entry">talk,数値</dt>
 					<dd class="entry">
-						<p class="description">バルーン内のテキストに合わせて発動。<br>数値分の文字がくるごとにアニメーションする。</p>
+						<p class="description">そのサーフェスでバルーン内にテキストが表示されていく時に実行。<br>数値分の文字がくるごとにアニメーションする。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1042,7 +1178,7 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="_1_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p class="description">着せ替えを定義する。</p>
+						<p class="description">そのアニメーションをサーフェスの<a href="#introduction-mayuna">着せ替え</a>として定義する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1050,22 +1186,49 @@ element0,overlay,hogehoge.png,0,0
 						</ul>
 					</dd>
 				</dl>
-				<dl id="bind+アニメーションタイミング">
-					<dt class="entry">bind+アニメーションタイミング</dt>
-					<dd class="entry">
-						<p class="description">定義した着せ替えになった場合に他のアニメーションタイミングを発生。<br>+で繋げて複数可。</p>
-						<ul class="supported-baseware">
-							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						</ul>
-					</dd>
-				</dl>
 			</section>
 			<section class="subcategory">
-				<h1 id="h-animationpattern">サーフェスの合成メソッド</h2>
+				<h1 id="h-drowmethod">描画メソッド</h1>
+				<section class="caption introduction" id="introduction_drawmethod">
+					<h1>描画メソッド</h1>
+					<section>
+						<h1>概要</h1>
+						<p><a href="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
+						<p>一部、画像の合成というよりも、既存レイヤに位置の移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
+					</section>
+					<section>
+						<h1>描画の流れ</h1>
+						<p>合成は、animation*.patternの場合もelementの場合もコマ（パーツ）を一つ一つ積み上げるように合成・描画していく。</p>
+						<p>言い換えると、各描画メソッドの処理は基本的に「その時点までの合成結果」と「次のコマ（パーツ）」という二つの画像間の問題である（moveやstartなど画像の合成でないメソッドを除く）。</p>
+						<p>以下では、簡便のために「その時点までの合成結果」を<em>下位レイヤ</em>と称し、「次のコマ（パーツ）」を単に<em>コマ</em>と呼んでいる。</p>
+					</section>
+					<section>
+						<h1>ベース（最下層）画像の扱い</h1>
+						<p>surface*.pngといった画像がある場合、その画像がsurface*において最下層（ベース）に存在する。この場合element0の合成はその画像に対して行われる。</p>
+						<p>surface*.pngがなく、element定義のみで構成されるサーフェスの場合、element0の解決時点では下位レイヤが存在しない。この場合element0の描画メソッドは、自明ではあるがほとんどのものがbaseと同義になる（後述のelement定義で無効なメソッドも含め）。ただしasisメソッドで透過が無視される点は有効である。</p>
+						<p>すべてのanimation指定はsurface*.pngまたはelement定義をベースとしてその上に合成されていく（SSPの<a href="#animation*.option,background">backgroundオプション</a>指定時以外）</p>
+					</section>
+					<section>
+						<h1>抜き色の扱い</h1>
+						<p>サーフェスの抜き色（左上1ピクセルの色）が抜き色として扱われ、実際の表示上は同色の部分を透過して表示するのは、animationおよびelementのコマとして扱われる場合も同様である。</p>
+						<p>つまり下位レイヤに対してコマが合成される時、コマの抜き色部分は基本的に何も合成されない（この時下位レイヤとコマそれぞれの抜き色に当たる実際の色が<em>一致する必要はない</em>）。</p>
+						<p>ただしいくつかの合成メソッドには、抜き色について特別な扱いをするものがあるので注意を要する（replace、reduce、asisなど）。</p>
+					</section>
+					<section>
+						<h1>element定義における描画メソッドの扱い</h1>
+						<p>element定義中では、moveのようにコマの合成でないメソッドは無効である（単なるoverlayとみなされる）。</p>
+						<p>またinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドは、pattern定義行とelement定義行の書式の違いから記述不能であり無効である。</p>
+					</section>
+				</section>
 				<dl id="base">
 					<dt class="entry">base</dt>
 					<dd class="entry">
-						<p class="description">ベースになるサーフェス表示。<br>サーフェスIDを-1で初期ベースに戻すことができる。<br>XY座標は無視される。</p>
+						<p class="description">
+							下位レイヤをコマで完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
+							<br>このメソッドのパターンを重ねると、サーフェス全面を描画し直すことによるアニメーション（いわばパラパラ漫画）が実現される。
+							<br>この描画メソッドが指定されたpattern定義では、XY座標は無視される。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1076,7 +1239,10 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="overlay">
 					<dt class="entry">overlay</dt>
 					<dd class="entry">
-						<p class="description">ベースサーフェスの上に合成して表示。<br>サーフェスIDを-1で合成を消すことができる。</p>
+						<p class="description">
+							下位レイヤにコマを重ねる。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1087,7 +1253,10 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="overlayfast">
 					<dt class="entry">overlayfast</dt>
 					<dd class="entry">
-						<p class="description">ベースサーフェスの上に合成して表示。<br>このアニメーションはベースサーフェスの表示領域のみ合成できる。</p>
+						<p class="description">
+							下位レイヤの非透過部分（半透明含む）にのみコマを重ねる。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1098,7 +1267,10 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="replace">
 					<dt class="entry">replace</dt>
 					<dd class="entry">
-						<p class="description">ベースサーフェスの上に合成して表示。<br>このアニメーションの透過部分はベースサーフェスも透過される。</p>
+						<p class="description">
+							下位レイヤにコマを重ねるが、コマの透過部分について下位レイヤにも反映する（reduce + overlayに近い）。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1107,7 +1279,12 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="interpolate">
 					<dt class="entry">interpolate</dt>
 					<dd class="entry">
-						<p class="description">ベースサーフェスの<em>透明なところにのみ</em>画像を合成。<br>ベースサーフェスの半透明部分は、透明度が高い部分ほど強く合成が反映される。<br>interpolateで重なる部分はベースより上位（手前）側になければならない。</p>
+						<p class="description">
+							下位レイヤの<em>透明なところにのみ</em>コマを重ねる。
+							<br>下位レイヤの半透明部分に対しても、透明度が高い部分ほど強くコマを合成する。
+							<br>interpolateで重なる部分はベースより上位（手前）側になければならない（interpolateのコマが描画している部分に、上位のレイヤで不透明な部分が重なると反映されなくなる）。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1116,7 +1293,10 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="asis">
 					<dt class="entry">asis</dt>
 					<dd class="entry">
-						<p class="description">抜き色やPNAを適応しないでそのまま表示。</p>
+						<p class="description">
+							下位レイヤに、抜き色やアルファチャンネルを適応しないままそのコマを重ねる。
+							<br>着せ替え・elementでも使用できる。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1125,7 +1305,11 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="move">
 					<dt class="entry">move</dt>
 					<dd class="entry">
-						<p class="description">ベースサーフェスをXY座標で指定して表示。<br>サーフェスIDは無視される。</p>
+						<p class="description">
+							下位レイヤをXY座標指定分ずらす。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
+							<br>着せ替え・elementでは使用不可。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1136,7 +1320,11 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="_2_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p class="description">着せ替え用メソッド。指定したサーフェスを着せ替えパーツとする。<br>着せ替えパーツとして単純に一つのサーフェスの合成しか出来なかった頃の唯一のメソッドで、現在はaddが互換。</p>
+						<p class="description">
+							そのコマを着せ替えパーツとして重ねる。現在ではoverlayと同じ。
+							<br>着せ替えパーツとして単純に一つのサーフェスを重ねることしか出来なかった頃の唯一のメソッドで、現在はaddが互換。
+							<br>着せ替えでないアニメーション・elementでの使用は未定義。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1146,7 +1334,10 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="add">
 					<dt class="entry">add</dt>
 					<dd class="entry">
-						<p class="description">着せ替え用メソッド。指定したサーフェスをベースサーフェスに合成する。</p>
+						<p class="description">
+							下位レイヤにそのコマを着せ替えパーツとして重ねる。本質的にはoverlayと同じ。
+							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1156,17 +1347,25 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="reduce">
 					<dt class="entry">reduce</dt>
 					<dd class="entry">
-						<p class="description">着せ替え用メソッド。指定したサーフェスの透過領域をベースサーフェスから削除する。透過領域の追加。</p>
+						<p class="description">
+							下位レイヤの抜き色による透過領域に、そのコマの抜き色による透過領域を追加する。コマの抜き色で無い部分は無視される。
+							<br>着せ替え用に用意されたメソッドだが、着せ替えでないアニメーション・elementでも使用可能。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
 					</dd>
 				</dl>
-				<dl id="insert">
-					<dt class="entry">insert</dt>
+				<dl id="insert,ID">
+					<dt class="entry">insert,ID</dt>
 					<dd class="entry">
-						<p class="description">着せ替え用メソッド。指定したidの着せ替えグループをそこに挿入する。<br>他の着せ替えパーツの下（裏）に、着せ替えを追加するなどの用途で用いることができる。insert先でのinsert（入れ子）も可。</p>
+						<p class="description">
+							指定したID（animation*の*の番号）の着せ替えグループ（intervalがbindのアニメーション）をその位置に挿入する。
+							<br>例えばある着せ替えAが、他の着せ替えBよりも部分的に前・部分的に後ろといった位置関係の構造を持つ場合に、着せ替えAの後ろになる部分のコマと前になる部分のコマとの間に着せ替えBをinsertで挿入する事によって、自然な前後関係の表示が実現される。この時、<em>着せ替えBの表示・非表示の状態に関わらず表示の完全性が維持される</em>。
+							<br>insert先でのinsert（入れ子）も可能。
+							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1174,20 +1373,27 @@ element0,overlay,hogehoge.png,0,0
 					</dd>
 				</dl>
 				<dl id="start,_ID_">
-					<dt class="entry">start,[ID]</dt>
+					<dt class="entry">start,ID</dt>
 					<dd class="entry">
-						<p class="description">指定したID（animation*の*の数字）のアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。</p>
+						<p class="description">
+							指定したID（animation*の*の番号）のアニメーションを再生させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>着せ替え・elementでの使用不可。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 						</ul>
 					</dd>
 				</dl>
 				<dl id="stop,_ID_">
-					<dt class="entry">stop,[ID]</dt>
+					<dt class="entry">stop,ID</dt>
 					<dd class="entry">
-						<p class="description">指定したID（animation*の*の数字）のアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。</p>
+						<p class="description">
+							指定したID（animation*の*の数字）のアニメーションを停止させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>着せ替え・elementでの使用不可。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1196,18 +1402,28 @@ element0,overlay,hogehoge.png,0,0
 				<dl id="alternativestart,_ID1,ID2..._">
 					<dt class="entry">alternativestart,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを発動させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおSSPの場合ID指定の括弧は"[]"、区切り字は","でも読まれる。</p>
+						<p class="description">
+							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを再生させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>SSPの場合括弧が[]、区切りが「.」でなく「,」でも読み込まれる。
+							<br>着せ替え・elementでの使用不可。
+							<br><a href="#caption_seriko-redefine">旧定義</a>：alternativestart,[ID1.ID2...]
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 						</ul>
 					</dd>
 				</dl>
 				<dl id="alternativestop,_ID1,ID2..._">
 					<dt class="entry">alternativestop,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。<br>サーフェスID、ウェイト、XY座標は無視される。<br>なおID指定の括弧は"[]"、区切り字は","でも読まれる。</p>
+						<p class="description">
+							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>SSPの場合括弧が[]、区切りが「.」でなく「,」でも読み込まれる。
+							<br>着せ替え・elementでの使用不可。
+						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1217,7 +1433,7 @@ element0,overlay,hogehoge.png,0,0
 		</section>
 		<section class="category">
 			<h1>surface.aliasブレス</h1>
-			<section class="caption legend" id="legends_surface.aliasbrace">
+			<section class="caption introduction" id="introduction_surface.aliasbrace">
 				<h1>surface.aliasブレス記述例</h1>
 <pre><code>sakura.surface.alias
 {
@@ -1243,7 +1459,7 @@ element0,overlay,hogehoge.png,0,0
 		</section>
 		<section class="category">
 			<h1>cursorブレス</h1>
-			<section class="caption legend" id="legends_cursorbrace">
+			<section class="caption introduction" id="introduction_cursorbrace">
 				<h1>cursorブレス記述例</h1>
 <pre><code>sakura.cursor
 {
@@ -1375,7 +1591,7 @@ mousedown1,Bust,system:grip
 		</section>
 		<section class="category">
 			<h1>tooltipブレス</h1>
-			<section class="caption legend" id="legends_cursorbrace">
+			<section class="caption introduction" id="introduction_cursorbrace">
 				<h1>tooltipブレス記述例</h1>
 <pre><code>sakura.tooltips
 {
