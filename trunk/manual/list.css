@@ -390,7 +390,6 @@ a:hover {
 	background-color: #bbc;
 	margin: 5px 5px 5px 15px;
 	padding: 2px;
-	overflow: auto;
 /*	padding-left: 2.2em; */
 }
 .category dd.entry .legend ol li {
@@ -399,6 +398,7 @@ a:hover {
 	padding: 3px 3px 3px 7px;
 	background-color: #dde;
 	font-weight: bold;
+	overflow: auto;
 }
 .category dd.entry .legend ol li code {
 	font-weight: normal;
