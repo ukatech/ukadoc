@@ -390,6 +390,7 @@ a:hover {
 	background-color: #bbc;
 	margin: 5px 5px 5px 15px;
 	padding: 2px;
+	overflow: auto;
 /*	padding-left: 2.2em; */
 }
 .category dd.entry .legend ol li {
@@ -401,6 +402,7 @@ a:hover {
 }
 .category dd.entry .legend ol li code {
 	font-weight: normal;
+	white-space: normal;
 }
 .category dd.entry .legend ol li:nth-of-type(odd) {
 	background-color: #ccd;
