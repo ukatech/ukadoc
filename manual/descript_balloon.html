@@ -7,7 +7,8 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Balloon設定</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<!--<script src="ukadocred.js" charset="Shift_JIS"></script>-->
 </head>
 <body>
 	<h1 id="page-title">Balloon設定</h1>
@@ -1562,8 +1563,8 @@ communicatebox.height,20
 			<dl id="use_self_alpha,数値">
 				<dt class="entry">use_self_alpha,数値</dt>
 				<dd class="entry">
-					<p class="description">数値が1だった場合、PNAの代わりにバルーンのサーフェス画像自らのアルファチャンネルを透明度として利用する。</p>
-					<p class="default">1以外の任意の値</p>
+					<p class="description">数値が1だった場合はPNAでなくバルーンのサーフェス自体（32bitPNG）のアルファチャンネルを透明度として使用する。アルファチャンネルを持たないサーフェスについてはPNAが有効。</p>
+					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

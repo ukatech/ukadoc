@@ -7,7 +7,8 @@
 <meta name="keywords" content="ukadoc,伺か,シェル">
 <title>UKADOC Project シェルの作成</title>
 <link rel="stylesheet" href="base.css">
-<!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<!--<script src="ukadocred.js" charset="Shift_JIS"></script>-->
 </head>
 <body>
 <section class="baseframe">
@@ -86,7 +87,7 @@
 	</div>
 	<div class="passage">
 		<p>サーフェス画像では左上端の1ドットが「抜き色」としてゴーストとしての表示上透過されます。</p>
-		<p>抜き色と同じ色がキャラクター内にもあった場合、その部分も透過されてしまいますので、背景はキャラクターには使用していない系統の色を用いてください。</p>
+		<p>抜き色と同じ色がキャラクター内にもあった場合、その部分も透過されてしまいますので、抜き色にはキャラクターに使っていない系統の色を用いるなどしてください。</p>
 	</div>
 	<div class="passage">
 		<p>サーフェスとして用いる画像を自分で用意する場合、注意すべき特徴として輪郭の処理があります。</p>
@@ -117,9 +118,6 @@
 	<div class="passage">
 		<p><em class="filename">descript.txt</em>は、そのシェルの基本的な情報を設定するためのファイルです。</p>
 		<p><em class="filename">descript.txt</em>が適切に用意されていないと、シェルがゴーストに認識してもらえません。</p>
-	</div>
-	<div class="passage">
-		<p>基本的な記述を以下に例示しますが、</p>
 	</div>
 	<div class="passage">
 		<p>とりあえずは以下の内容をコピーして<em class="filename">descript.txt</em>という名前のテキストに貼り付け、自分のシェルに適切な内容へ書き替えましょう。</p>
@@ -207,7 +205,7 @@ surface0
 }
 </pre>
 			<p>これは、このブレス（{}中括弧）の中で、surface0について設定する、と言うような意味になります。</p>
-			<p>当たり判定によらず、後に触れるアニメーションやelementの設定もこの中に書いて行きます。</p>
+			<p>当たり判定に限らず、後に触れるアニメーションやelementの設定もこの中に書いて行きます。</p>
 		</div>
 		<div class="passage">
 			<p>ここに以下のように書くと、当たり判定の定義になります。</p>
@@ -299,7 +297,7 @@ collision1,115,174,174,217,Bust
 			<p>100という部分は、このコマで描画するのはsurface100だという意味です。</p>
 			<p>基本的には<em class="filename">surface100.png</em>のことだと考えてよいです。</p>
 			<p>101とすれば<em class="filename">surface101.png</em>の画像が用いられます。</p>
-			<p>-1とすると、そのアニメーションの描画を停止してベース画像（上例の場合はsurface0）に戻ります。</p>
+			<p>-1とすると、そのアニメーションの描画を停止してベース画像（上例の場合はsurface0）の表示にリセットされます。</p>
 		</div>
 		<div class="passage">
 			<pre class="exmp-descript2">animation0.pattern0,overlayfast,100,<em>50</em>,0,0</pre>
@@ -338,15 +336,15 @@ surface1
 <em>element1,overlay,face1.png,0,0</em>
 }
 </pre>
-			<p>これで、「body0.png」の上に「body1.png」を重ねたものがsurface1として定義されます。</p>
-			<p>重ねたいレイヤーの数だけいくつでも書き足して行く事ができます。</p>
+			<p>これで、「body0.png」の上に「face1.png」を重ねたものがsurface1として定義されます。</p>
+			<p>重ねたいパーツの数だけいくつでも書き足して行く事ができます。</p>
 			<p>なおこの場合surface1.pngは不要です。</p>
 		</div>
 		<div class="passage">
 			<pre class="exmp-descript2">element<em>0</em>,overlay,body0.png,0,0</pre>
-			<p>「element」のすぐ後に続く数字は、そのサーフェスにおける全elementのID（通し番号）です。</p>
-			<p>IDは0から始まる連番です。数字が小さい方が、より下に合成されるレイヤーになります。</p>
-			<p>なお、surface*.pngのような名前のpng画像は、element0より下のレイヤーとみなされる点に注意してください。</p>
+			<p>「element」のすぐ後に続く数字は、そのサーフェスにおけるelementのID（通し番号）です。</p>
+			<p>IDは0から始まる連番です。数字が小さい方が、より下（画面奥側）に合成されるパーツになります。</p>
+			<p>なお、surface*.pngのような名前のpng画像は、element0より下のパーツとみなされる点に注意してください。</p>
 		</div>
 		<div class="passage">
 			<pre class="exmp-descript2">element0,<em>overlay</em>,body0.png,0,0</pre>
@@ -366,9 +364,8 @@ surface1
 		</div>
 		<div class="passage">
 			<p>ところで今回の例では、先述の<a href="#chapter3-1">当たり判定</a>や<a href="chapter=3-2">アニメーション</a>の例の時と違って、surface0ではなくsurface1にelementの定義しています。</p>
-			<p>あくまで例示についての話ではありますが、これには一応理由があります。</p>
-			<p>surface0や10は、Webサービスなどに自分のゴーストを登録する時には、surfaces.txt<a href="#note2" class="note" id="note2-symbol">※</a>。</p>
-			<p>仕様上は、surface0や10でelementを用いる事にはまったく問題はありません。</p>
+			<p>あくまで例示についての話ではありますが、これには一応理由があります<a href="#note2" class="note" id="note2-symbol">※</a>。</p>
+			<p>シェル（ゴースト）そのものの動作だけ考える時には、surface0や10でelementを用いる事にはまったく問題はありません。</p>
 		</div>
 		<aside class="passage note" id="note2">
 			<h1><a href="#note2-symbol">※2</a></h1>
@@ -422,6 +419,12 @@ surface1
 	<div class="passage">
 		<p>半透明の部分はキャラクターとしてクリックできます。</p>
 		<p>ですので透明部分は完全な黒(RGBが0,0,0)色にしてください。</p>
+	</div>
+	<div class="passage">
+		<p>またSSPの場合、pnaを用いずに、<em class="filename">surface*.png</em>画像をアルファチャンネル付きPNGとして作成し、そのアルファチャンネルを透明度として利用する事ができます。</p>
+		<p>その場合、<em class="filename">descript.txt</em>に以下の記述を追加する必要があります。</p>
+		<pre class="exmp-descript">seriko.use_self_alpha,1</pre>
+		<p>なおアルファチャンネル付きPNGの作成方法自体は各種ペイントソフトなどの説明を参照してください（ソフトによっては扱えないこともあります。透明度付きPNG、32bitPNG、αPNGなどのキーワードでも検索してみてください）。</p>
 	</div>
 </section>
 <section id="chapterEX2" class="ordered ex">
