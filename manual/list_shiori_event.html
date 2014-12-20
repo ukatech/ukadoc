@@ -1300,13 +1300,10 @@
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
+						<dd>選択肢のID。</dd>
 						<dt>Reference*</dt>
 						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
 					</dl>
-					<div class="remarks">
-						<p id="OnChoiceSelectEx-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>で発生したOnChoiceSelectExには、他のSHIORI同様に選択肢IDのみが入る。</p>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1315,14 +1312,14 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p class="description">選択肢上にカーソルが乗った際に発生。<br />選択肢から外れた際に全Referenceは解除される。<br /><strong>[NOTIFY]</strong></p>
+					<p class="description">選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
 						<dt>Reference1</dt>
 						<dd>選択肢のID。</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報。</dd>
+						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1351,14 +1348,13 @@
 				<dd class="entry">
 					<p class="description">選択肢上で静止された際に発生。</p>
 					<dl class="reference">
-						<dt>Reference*(0)</dt>
+						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
-						<dt>Reference*(1)</dt>
-						<dd>選択肢のID。 <a href="#OnChoiceSelectEx-note1">*1</a></dd>
+						<dt>Reference1</dt>
+						<dd>選択肢のID。</dd>
+						<dt>Reference*</dt>
+						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
 					</dl>
-					<div class="remarks">
-						<p id="OnChoiceHover-note1">*1<br />SHIORIが里々の場合のみバイト値1でセパレートされた、選択ラベル・選択ID・選択番号に当たる文字列が入る。<br />但し<a href="list_sakura_script.html#___q_ID,..._"">\__q[ID,...]</a>による選択肢上で発生したOnChoiceHoverには、他のSHIORI同様に選択肢IDのみが入る。</p>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

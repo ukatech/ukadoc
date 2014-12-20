@@ -440,6 +440,14 @@ shell/old/,nonar
 ghost/master/profile/,nonar,noupdate
 </code></pre>
 				</section>
+				<section>
+					<h1>注意点</h1>
+					<p>設定は一つの対象（ファイル・フォルダ）に対して<em>1行で行う</em>事に注意。例えば以下のような記述を行うと、<em>後ろ（下）で行っている設定だけが反映されて、nonarオプションが無効</em>になる。</p>
+					<pre><code>ghost/master/profile/,nonar<br>ghost/master/profile/,noupdate</code></pre>
+					<p>二つのオプションを指定する場合、正しくは先述の通り</p>
+					<pre><code>ghost/master/profile/,nonar,noupdate</code></pre>
+					<p>とする。</p>
+				</section>
 			</section>
 			<dl id="相対パス,オプション1,オプション2,...">
 				<dt class="entry">相対パス,オプション1,オプション2,...</dt>
