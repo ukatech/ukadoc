@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/</loc>
+  <priority>1.0</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/index.html</loc>
+  <priority>0.9</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_balloon.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_ghost.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_install.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_plugin.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_shell.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_shell_surfacetable.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/dev_bind.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/dev_nar.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/dev_ownerdrow.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/dev_shell.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/dev_update.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_plugin_event.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_propertysystem.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_shiori_event_ex.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/list_shiori_resource.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_balloon.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_directory.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_ghost.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_install.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_owner_draw_menu.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_shell.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_translator.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/manual_update.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/memo_shiorievent.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/memo.html</loc>
+  <priority>0.6</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_dll.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_headline.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_plugin.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+
+</urlset>
