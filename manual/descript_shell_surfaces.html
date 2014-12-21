@@ -792,7 +792,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<p class="description">
 						アニメーションの各コマの定義。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
-						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。IDの番号の小さい方から積み重なる形で描画される。
+						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。番号の小さい方から積み重なる形で描画される。
 						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
 						<br>ウェイトはそのコマを描画する<em>まで</em>の待ち時間。単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
 						<br>X座標、Y座標はそのコマをベース（そのコマまでの描画結果）に対してどれだけずらして表示するかの指定。
@@ -1193,7 +1193,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>概要</h1>
 						<p><a href="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
-						<p>一部、画像の合成というよりも、既存レイヤに位置の移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
+						<p>一部、画像の合成というよりも、既存レイヤの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
 					</section>
 					<section>
 						<h1>描画の流れ</h1>
@@ -1204,7 +1204,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>ベース（最下層）画像の扱い</h1>
 						<p>surface*.pngといった画像がある場合、その画像がsurface*において最下層（ベース）に存在する。この場合element0の合成はその画像に対して行われる。</p>
-						<p>surface*.pngがなく、element定義のみで構成されるサーフェスの場合、element0の解決時点では下位レイヤが存在しない。この場合element0の描画メソッドは、自明ではあるがほとんどのものがbaseと同義になる（後述のelement定義で無効なメソッドも含め）。ただしasisメソッドで透過が無視される点は有効である。</p>
+						<p>surface*.pngがなく、element定義のみで構成されるサーフェスの場合、element0の解決時点では下位レイヤが存在しない。この場合element0の描画メソッドは、自明ではあるがほとんどのものがbaseと同義になる。ただしasisメソッドで透過が無視される点は有効である。</p>
 						<p>すべてのanimation指定はsurface*.pngまたはelement定義をベースとしてその上に合成されていく（SSPの<a href="#animation*.option,background">backgroundオプション</a>指定時以外）</p>
 					</section>
 					<section>
@@ -1215,8 +1215,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					</section>
 					<section>
 						<h1>element定義における描画メソッドの扱い</h1>
-						<p>element定義中では、moveのようにコマの合成でないメソッドは無効である（単なるoverlayとみなされる）。</p>
-						<p>またinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドは、pattern定義行とelement定義行の書式の違いから記述不能であり無効である。</p>
+						<p>element定義中では、moveのようにコマの合成でないメソッドは無効である。</p>
+						<p>またinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドも無効である。</p>
+						<p>その他着せ替え用のメソッドadd、bindも無効である（が、SSPの現実装において無効な指定はoverlayと読み替えられるため、結果的に指定どおりの描画にはなる）。</p>
 					</section>
 				</section>
 				<dl id="base">
