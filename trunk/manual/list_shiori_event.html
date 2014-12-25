@@ -1745,7 +1745,7 @@
 			<dl id="OnMouseWheel">
 				<dt class="entry">OnMouseWheel</dt>
 				<dd class="entry">
-					<p class="description">マウスホイールが回転した際に発生。</p>
+					<p class="description">マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1947,7 +1947,7 @@
 			<dl id="OnMouseGesture">
 				<dt class="entry">OnMouseGesture</dt>
 				<dd class="entry">
-					<p class="description">マウスを右ドラッグまたはホイールをドラッグした際に発生。</p>
+					<p class="description">マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
