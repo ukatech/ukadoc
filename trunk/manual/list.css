@@ -377,32 +377,20 @@ a:hover {
 }
 .category dd.entry .legend {
 	margin-left: 1em;
-}
-.category dd.entry .legend h1 {
-	font-weight: normal;
-	border-left: 7px solid #bbc;
-	border-bottom: 1px solid #bbc;
-	margin: 5px 3px 5px 3px;
-	padding: 2px 2px 2px 5px;
-}
-.category dd.entry .legend ol {
 	font-size: 95%;
+	margin: 5px 3px 5px 1em;
+	padding: 3px;
 	background-color: #bbc;
-	margin: 5px 5px 5px 15px;
-	padding: 2px;
-/*	padding-left: 2.2em; */
 }
-.category dd.entry .legend ol li {
-/*	list-style-type: decimal-leading-zero; */
-	position: relative;
-	padding: 3px 3px 3px 7px;
-	background-color: #dde;
-	font-weight: bold;
-	overflow: auto;
+.category dd.entry .legend section h1 {
+	padding: 2px 2px 2px 5px;
+	margin-bottom: 3px;
 }
-.category dd.entry .legend ol li code {
-	font-weight: normal;
+.category dd.entry .legend section p {
 	white-space: normal;
+	padding: 3px;
+	background-color: #dde;
+	overflow: auto;
 }
 .category dd.entry .legend ol li:nth-of-type(odd) {
 	background-color: #ccd;
