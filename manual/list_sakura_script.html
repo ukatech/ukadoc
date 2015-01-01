@@ -539,12 +539,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは\0になっている。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは\0になっている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -559,12 +559,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s1本体側にサーフェス1番を表示。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s1本体側にサーフェス1番を表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_s_ID番号_">
@@ -576,12 +576,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[100]本体側にサーフェス100番を表示。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[100]本体側にサーフェス100番を表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_i_ID番号_">
@@ -593,12 +593,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[0]本体側にサーフェス0番を表示。\i[1]サーフェス0番に設定された、アニメーション1番を表示。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]本体側にサーフェス0番を表示。\i[1]サーフェス0番に設定された、アニメーション1番を表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_i_ID,wait_">
@@ -608,12 +608,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。\e</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。\e</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,clear,ID_">
@@ -623,12 +623,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[0]\i[100]長いアニメーションを再生中。\![anim,clear,100]ここで、まだ再生中でも強制終了させる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[100]長いアニメーションを再生中。\![anim,clear,100]ここで、まだ再生中でも強制終了させる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,pauseID_">
@@ -647,12 +647,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。\![anim,resume,200]ここで、再び再生開始。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。\![anim,resume,200]ここで、再び再生開始。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,offset,ID,x座標,y座標_">
@@ -662,12 +662,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[0]\i[300]長いアニメーションを再生中。\![anim,offset,300,40,50]ここで、アニメーションを右に40pixel下に50pixelずらす。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[300]長いアニメーションを再生中。\![anim,offset,300,40,50]ここで、アニメーションを右に40pixel下に50pixelずらす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,add,overlay,ID_">
@@ -720,12 +720,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
@@ -735,12 +735,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_lock,repaint_">
@@ -761,12 +761,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。描画自体は実行されているので、停止中に描画された分は表示されない。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。描画自体は実行されているので、停止中に描画された分は表示されない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmentondesktop,top_">
@@ -778,12 +778,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,top]本体側がデスクトップ上部にくっつく。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,top]本体側がデスクトップ上部にくっつく。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmentondesktop,bottom_">
@@ -795,12 +795,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部（タスクバーの上）にくっつく。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部（タスクバーの上）にくっつく。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,left_">
@@ -810,12 +810,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,left]本体側がデスクトップ左端にくっつく。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,left]本体側がデスクトップ左端にくっつく。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,right_">
@@ -825,12 +825,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,right]本体側がデスクトップ右端にくっつく。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,right]本体側がデスクトップ右端にくっつく。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,free_">
@@ -841,12 +841,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,free]本体側が自由移動可能になる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,free]本体側が自由移動可能になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,default_">
@@ -856,12 +856,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alignmentondesktop,default]本体側のドラッグ移動の自由度をデフォルトに戻す。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,default]本体側のドラッグ移動の自由度をデフォルトに戻す。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,倍率_">
@@ -873,12 +873,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,scaling,50]本体側のサーフェスの大きさが、50%になる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,scaling,50]本体側のサーフェスの大きさが、50%になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率_">
@@ -888,12 +888,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,scaling,50,100]本体側のサーフェスの大きさが、横50%縦100%になる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,scaling,50,100]本体側のサーフェスの大きさが、横50%縦100%になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
@@ -912,12 +912,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,70]相方側がだいたい半透明になる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,70]相方側がだいたい半透明になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_effect,プラグイン名,速度倍率,パラメータ_">
@@ -965,12 +965,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\4この文章は本体側が別スコープと離れる方向に一定距離移動してから表示される。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\4この文章は本体側が別スコープと離れる方向に一定距離移動してから表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_5">
@@ -982,12 +982,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\1\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_move_">
@@ -998,12 +998,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下から数えて、右方向に80pixel上方向に400pixelに、サーフェスの左上を合わせた位置へ、2.5秒かけて移動する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下から数えて、右方向に80pixel上方向に400pixelに、サーフェスの左上を合わせた位置へ、2.5秒かけて移動する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_moveasync_">
@@ -1013,12 +1013,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されている画面の右上から数えて、左方向に175pixel下方向に400pixelに、サーフェスの右下を合わせた位置へ、5秒で移動しようとする。このスクリプトの再生中に、別のイベントが発生しその中で\![moveasync,cancel]が記述され実行された場合、移動をキャンセルする。ダブルクリックすると移動を中断する、という演出などに使える。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されている画面の右上から数えて、左方向に175pixel下方向に400pixelに、サーフェスの右下を合わせた位置へ、5秒で移動しようとする。このスクリプトの再生中に、別のイベントが発生しその中で\![moveasync,cancel]が記述され実行された場合、移動をキャンセルする。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,position,x,y,スコープID_">
@@ -1076,12 +1076,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なる。SSP同梱バルーン「SSPデフォルト+」では本体側バルーン2番は表示文字数の多い大きなバルーンとなる。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なる。SSP同梱バルーン「SSPデフォルト+」では本体側バルーン2番は表示文字数の多い大きなバルーンとなる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y_">
@@ -1093,12 +1093,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\_b[image\test.png,50,100]本体側バルーンに、ghost\master\imageフォルダにあるtest.pngを左上のpixelを透過色として、X座標50Y座標100に表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_b[image\test.png,50,100]本体側バルーンに、ghost\master\imageフォルダにあるtest.pngを左上のpixelを透過色として、X座標50Y座標100に表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,opaque_">
@@ -1108,12 +1108,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\_b[..\..\shell\master\surface0.png,0,0,opaque]本体側バルーンに、shell\masterフォルダにあるsurface0.pngを、X座標0Y座標0に、左上透過せずに表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_b[..\..\shell\master\surface0.png,0,0,opaque]本体側バルーンに、shell\masterフォルダにあるsurface0.pngを、X座標0Y座標0に、左上透過せずに表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,オプション,オプション..._">
@@ -1138,12 +1138,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、ghost\masterフォルダにあるtest.pngを、X座標10Y座標20に、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を、バルーンの文字の上に表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、ghost\masterフォルダにあるtest.pngを、X座標10Y座標20に、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline_">
@@ -1153,12 +1153,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline,opaque_">
@@ -1168,12 +1168,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード（文字列化）した画像データを、透過せずに表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード（文字列化）した画像データを、透過せずに表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline,オプション,オプション..._">
@@ -1189,12 +1189,12 @@
 						<dt>--clipping=左 上 右 下</dt>
 						<dd>画像の一部分を矩形に切り抜いて表示する。<br>切り抜く範囲は左上右下と数値で指定。</dd>
 					</dl>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を表示する。</code></p>
+						</section>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1210,12 +1210,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>文章が\n改行されて表示される。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>文章が\n改行されて表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_n_half_">
@@ -1227,12 +1227,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>文章が\n[half]半行改行されて表示される。\n\n[half]1行半の改行をすることで段落のような表現が出来る。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>文章が\n[half]半行改行されて表示される。\n\n[half]1行半の改行をすることで段落のような表現が出来る。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_n_パーセント_">
@@ -1243,12 +1243,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>文章が\n[150]1行半改行されて表示される。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>文章が\n[150]1行半改行されて表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__n">
@@ -1259,12 +1259,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\_nここに書かれた文章は改行されない。バルーンの表示領域を超えた場合は、表示されない。\_n</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_nここに書かれた文章は改行されない。バルーンの表示領域を超えた場合は、表示されない。\_n</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_c">
@@ -1276,12 +1276,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上（初期位置）から表示する。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上（初期位置）から表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_c_char,数値_">
@@ -1291,12 +1291,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>あいうえお\c[char,3]かきくけこ。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>あいうえお\c[char,3]かきくけこ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_c_char,数値,開始位置_">
@@ -1306,12 +1306,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>あいうえお\nかきくけこ\c[line,1,1]さしすせそ。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>あいうえお\nかきくけこ\c[line,1,1]さしすせそ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_c_line,数値_">
@@ -1321,12 +1321,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>あいうえお\nかきくけこ\c[line,1]さしすせそ。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>あいうえお\nかきくけこ\c[line,1]さしすせそ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_c_line,数値,開始位置_">
@@ -1336,12 +1336,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>あいうえお\nかきくけこ\c[line,2]さしすせそ。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>あいうえお\nかきくけこ\c[line,2]さしすせそ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__l_x,y_">
@@ -1365,12 +1365,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\_l[30,5em]座標X=30pixel、座標Y=5文字分高さに表示。\_l[@-1650%,100]座標X=最後の文字から文字高さ1650%分左、座標Y=100pixelに表示。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_l[30,5em]座標X=30pixel、座標Y=5文字分高さに表示。\_l[@-1650%,100]座標X=最後の文字から文字高さ1650%分左、座標Y=100pixelに表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_C">
@@ -1380,12 +1380,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\Cこの文章は前回のトークの後ろに追記される。スコープも前回の最後の状態が反映されるので注意。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\Cこの文章は前回のトークの後ろに追記される。スコープも前回の最後の状態が反映されるので注意。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,autoscroll,disable_">
@@ -1406,12 +1406,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,autoscroll,disable]スクロールロック\n[2500]この文字は見えない\![set,autoscroll,enable]スクロール解除。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,autoscroll,disable]スクロールロック\n[2500]この文字は見えない\![set,autoscroll,enable]スクロール解除。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonoffset,x,y_">
@@ -1421,12 +1421,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
-					<section class="legend">
-						<h1>記述例</h1>
-						<ol>
-							<li><code>\![set,balloonoffset,100,-50]バルーン位置をX100Y-50に移動。</code></li>
-						</ol>
-					</section>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,balloonoffset,100,-50]バルーン位置をX100Y-50に移動。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonalign,ID_">
@@ -1436,6 +1436,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\0\![set,balloonalign,top]頭上にバルーン表示。\1\![set,balloonalign,right]右側にバルーン表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonnum,ファイル名,現在の数,最大数_">
@@ -1445,6 +1451,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,balloonnum,テスト表示,1,5]ファイル受信時の表示テスト。\![set,balloonnum,,,]表示内容削除。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloontimeout,時間_">
@@ -1464,6 +1476,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![*]マーカーをつける。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,onlinemode_">
@@ -1482,6 +1500,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\0\![enter,onlinemode]この間は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,nouserbreakmode_">
@@ -1500,6 +1524,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。\![leave,nouserbreakmode]ここからブレーク出来るようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_lock,balloonrepaint_">
@@ -1518,12 +1548,18 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで前の文章が描画される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__!">
 				<dt class="entry">\_!</dt>
 				<dd class="entry">
-					<p class="description">次の\_!までタグを実行せずにそのまま表示する。</p>
+					<p class="description">[旧仕様]次の\_!までタグを実行せずにそのまま表示する。</p>
 				</dd>
 			</dl>
 			<dl id="__?">
@@ -1533,6 +1569,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_?\1この文章はさくらスクリプトが実行されず\nそのまま表示される。\_?</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<div class="caption" id="notes_imageresource">
@@ -1562,6 +1604,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければSSP本体設定のデフォルトフォントで表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_height,数値_">
@@ -1571,6 +1619,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,120%]デフォルトサイズの120%で表示。\f[height,default]元のサイズに戻す。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_color,色指定_">
@@ -1580,6 +1634,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[color,red]赤色で表示。\f[color,100,150,200]色指定で表示。\f[color,default]バルーンのデフォルト色に戻す。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_shadowcolor,色指定_">
@@ -1589,6 +1649,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[shadowcolor,#ffff00]文字の影の色を黄色で表示。\f[shadowcolor,default]バルーンのデフォルト色に戻す。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_shadowcolor,none_">
@@ -1598,6 +1664,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]影を再度表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_outline,パラメータ_">
@@ -1607,6 +1679,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[height,30]\f[outline,1]白抜きにする。\f[outline,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchor.font.color,色指定_">
@@ -1616,6 +1694,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_bold,パラメータ_">
@@ -1625,6 +1709,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[bold,1]太字にする。\f[bold,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_italic,パラメータ_">
@@ -1634,6 +1724,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[italic,1]斜体にする。\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_strike,パラメータ_">
@@ -1643,6 +1739,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[strike,1]文字に打ち消し線を引く。\f[strike,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_underline,パラメータ_">
@@ -1652,6 +1754,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[underline,1]文字に下部線を引く。\f[underline,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_sub,パラメータ_">
@@ -1661,6 +1769,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>文字を\f[sub,1]下付き文字にする。\f[sub,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_sup,パラメータ_">
@@ -1670,6 +1784,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>文字を\f[sup,1]上付き文字にする。\f[sup,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_default_">
@@ -1679,6 +1799,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[shadowcolor,#6699cc]色々な\f[bold,1]装飾を\f[underline,1]した\f[height,20]文字を\f[default]全てバルーンのデフォルト設定に戻す。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -1693,6 +1819,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>0.45秒のウェイトをかける。\w9\n1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__w_時間_">
@@ -1703,6 +1835,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>1.234秒のウェイトをかける。\_w[1234]ウェイト終了。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="___w_時間_">
@@ -1712,6 +1850,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>１\_w[1000]２\__w[2500]３。\_?最初に\_w[1000]で1000msが経過しているので、\__w[2500]のウェイトは、差分の1500msから、文字表示時間を引いた値になる。\_?\__w[clear]か\xが実行された時点で最初からカウントしなおす。\_?\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_x">
@@ -1723,6 +1867,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ここで\f[bold,1]トークする。\xクリック後、フォント変更のさくらスクリプトは解除される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_x_noclear_">
@@ -1732,6 +1882,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ここで\f[bold,1]トークする。\x[noclear]クリック後もさくらスクリプトは有効。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_t">
@@ -1743,6 +1899,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>この文章表示中はマウス反応を受け付ける。\tこれ以降スクリプト再生終了まで受け付けない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__q">
@@ -1754,6 +1916,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_q文字を瞬間表示する。里々等、自動でウェイトが挿入される場合は注意。\_q</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_quicksession,true_">
@@ -1772,6 +1940,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![quicksession,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksession,0]また、クイックセッションのさくらスクリプトは\![quicksession,1]混ぜて使っても有効。\_q</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__s">
@@ -1783,6 +1957,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_s本体側と相方側が同時に喋る。\_s</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__s_ID1,ID2,ID3..._">
@@ -1792,6 +1972,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_s[0,2,3]本体側と3人目のキャラと4人目のキャラが同時に喋る。\_s</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">
@@ -1819,6 +2005,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,OnID,r0,r1,..._">
@@ -1830,6 +2022,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID1,ID2,ID3..._">
@@ -1839,6 +2037,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>好きな季節は？\q[春,花見,桜]\q[夏,花火,ひまわり]\q[秋,月見,菊]\q[冬,年越し,山茶花]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID,r2,r3..._">
@@ -1848,6 +2052,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,script:実行内容_">
@@ -1857,6 +2067,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\q[バルーンを閉じる,script:\e]\n入れ子も可能。\n\q[その１,"script:\q[その２,script:その３はない]"]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_q_ID__タイトル_または_q_*ID__タイトル_">
@@ -1878,6 +2094,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\__q[OnTest,testrefelence]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__q</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_*">
@@ -1889,6 +2111,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\*\q[タイムアウトしない選択肢,NotTimeout]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,choicetimeout,時間_">
@@ -1900,6 +2128,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,choicetimeout,500]\q[早押し,FastPush]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__a_ID_">
@@ -1911,6 +2145,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_a[Hint]ヒント\_aが欲しいならクリックしよう。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__a_OnID,r0,r1..._">
@@ -1920,6 +2160,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__a_ID,r2,r3..._">
@@ -1929,6 +2175,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_a[CharactorName,テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -2022,6 +2274,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorstyle,underline]\f[cursorcolor,0,0,255]\f[cursorpencolor,0,0,255]\f[cursorfontcolor,default.anchor]\f[cursormethod,none]\f[cursornotselectstyle,none]\f[cursornotselectcolor,default.anchor]\f[cursornotselectfontcolor,default.anchor]\f[cursornotselectmethod,none]\q[選択肢の描画をSSPデフォルト+のアンカーと同じに,OnTest]\n\_a[OnTest]アンカー\_a</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorstyle,形状_">
@@ -2031,6 +2289,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorstyle,underline]\f[cursorcolor,0,0,255]\f[cursorpencolor,0,0,255]\f[cursorfontcolor,default.anchor]\f[cursormethod,none]\f[cursornotselectstyle,none]\f[cursornotselectcolor,default.anchor]\f[cursornotselectfontcolor,default.anchor]\f[cursornotselectmethod,none]\q[選択肢の描画をSSPデフォルト+のアンカーと同じに,OnTest]\n\_a[OnTest]アンカー\_a</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">
@@ -2157,6 +2421,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorstyle,square]\f[anchorbrushcolor,150,100,100]\f[anchorpencolor,84,32,27]\f[anchorfontcolor,default.cursor]\f[anchormethod,notmaskpen]\f[anchornotselectstyle,none]\f[anchornotselectbrushcolor,0,0,0]\f[anchornotselectpencolor,0,0,0]\f[anchornotselectfontcolor,84,32,27]\f[anchornotselectmethod,nop]\f[anchorvisitedstyle,none]\f[anchorvisitedbrushcolor,0,0,0]\f[anchorvisitedpencolor,0,0,0]\f[anchorvisitedfontcolor,84,32,27]\f[anchorvisitedmethod,nop]\q[選択肢,OnTest]\n\_a[OnTest]アンカーの描画をSSPデフォルト+の選択肢と同じに\_a</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<div class="caption" id="notes_color">
@@ -2199,6 +2469,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>この文章は表示される。\eここから表示されない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_-">
@@ -2210,6 +2486,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>このスクリプトの再生後、ゴーストが終了する。\-</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_updatebymyself_">
@@ -2221,6 +2503,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ネットワーク更新を開始。\![updatebymyself]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_updatebymyself,checkonly_">
@@ -2230,6 +2518,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>更新があるかチェック。\![updatebymyself,checkonly]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_update,platform_">
@@ -2240,6 +2534,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ベースウェアの更新を実行。\![update,platform]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_update,更新対象_">
@@ -2249,6 +2549,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>シェルの更新を実行。\![update,shell]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_6">
@@ -2260,6 +2566,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>時間をサーバと合わせる。\6</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_7">
@@ -2277,6 +2589,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>時刻サーバに問い合わせを行う。\![executesntp]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,headline,ヘッドライン名_">
@@ -2286,6 +2604,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ヘッドラインをどれか1つランダムに実行。\![execute,headline,random]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_biff_">
@@ -2297,6 +2621,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>メールチェックイベントを開始。\![biff]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_vanishbymyself_">
@@ -2307,6 +2637,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>自分自身を削除。\![vanishbymyself]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_vanishbymyself,ゴースト名_">
@@ -2316,6 +2652,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>自分自身を削除した後、Emily/Phase4を呼び出す。\![vanishbymyself,Emily/Phase4]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_+">
@@ -2326,6 +2668,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>ランダムチェンジ。\+</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__+">
@@ -2336,6 +2684,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>リストの次のゴーストへチェンジ。\_+</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,ghost,ゴースト名_">
@@ -2347,6 +2701,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Emily/Phase4に交代。\![change,ghost,Emily/Phase4]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,shell,シェル名_">
@@ -2357,6 +2717,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>masterシェルに切り替え。\![change,shell,master]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,balloon,バルーン名_">
@@ -2366,6 +2732,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>SSPデフォルト+にバルーン変更。\![change,balloon,SSPデフォルト+]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,ghost,lastinstalled_">
@@ -2375,6 +2747,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>最後にインストールしたゴーストに交代。\![change,ghost,lastinstalled]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,shell,lastinstalled_">
@@ -2384,6 +2762,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>最後にインストールしたシェルに変更。\![change,shell,lastinstalled]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,balloon,lastinstalled_">
@@ -2393,6 +2777,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>最後にインストールしたバルーンに変更。\![change,balloon,lastinstalled]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_call,ghost,ゴースト名_">
@@ -2402,6 +2792,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Emily/Phase4を呼び出す。\![call,ghost,Emily/Phase4]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_v">
@@ -2412,6 +2808,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\vこのスクリプト以降、最前面に表示されるようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,windowstate,stayontop_">
@@ -2423,6 +2825,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,windowstate,stayontop]このスクリプト以降、最前面に表示されるようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,windowstate,!stayontop_">
@@ -2434,6 +2842,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,windowstate,!stayontop]このスクリプト以降、アクティブなウインドウが手前に表示されるようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,windowstate,minimize_">
@@ -2444,6 +2858,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>最小化。\![set,windowstate,minimize]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,wallpaper,ファイル名,オプション_">
@@ -2453,6 +2873,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Emily/Phase4のサムネイルを壁紙にする。\![set,wallpaper,ghost\emily4\thumbnail.png]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
@@ -2462,6 +2888,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>アイコンをnormal.icoにし、マウスオン時のメッセージを変更する。\![set,tasktrayicon,normal.ico,ゴースト/通常モード]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
