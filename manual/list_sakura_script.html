@@ -259,6 +259,7 @@
 				<li><a href="#_!_quicksession,false_">\![quicksession,false]</a></li>
 				<li><a href="#__s">\_s</a></li>
 				<li><a href="#__s_ID1,ID2,ID3..._">\_s[ID1,ID2,ID3...]</a></li>
+				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1788,6 +1789,19 @@
 				<dt class="entry">\_s[ID1,ID2,ID3...]</dt>
 				<dd class="entry">
 					<p class="description">IDのスコープをシンクロナイズセッションする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">
+				<dt class="entry">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</dt>
+				<dd class="entry">
+					<p class="description">
+						指定した名前つき同期オブジェクト(Windows上の場合はMutex,Semaphore,Event)がシグナル状態になるまで待機する。
+						<br>Mutexは待機後解放、Semaphoreは待機後1解放、Eventは取得後特に何も操作しない。
+						<br>タイムアウト時間は省略または0で(スクリプトブレークされるまで)無限待機、1以上を指定すると指定ミリ秒間待機。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
