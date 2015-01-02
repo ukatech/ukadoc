@@ -241,34 +241,34 @@
 				<h1>プロパティシステム</h1>
 				<section>
 					<h1>概要</h1>
-					<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みです。</p>
+					<p>プロパティシステムはベースウェアが起動中に保持している各種パラメータに、ゴースト側からアクセスして読み書きする仕組みである。</p>
 					<ul>
 						<li><a href="http://crow.aqrs.jp/devtest.html" target="_blank">参考:CROW テスト項目資料</a></li>
 					</ul>
 				</section>
 				<section>
 					<h1>記述例</h1>
-					<p>プロパティシステムは環境変数とタグの両方で使えます。<br />※詳細はSAKURA Scriptおよび環境変数のプロパティシステムの項参考。</p>
+					<p>プロパティシステムを利用するには、環境変数と通常のタグの二つの方法がある。<br />SAKURA Scriptおよび環境変数のプロパティシステムの項もそれぞれ参照のこと。</p>
 					<dl>
 						<dt><a href="list_sakura_script.html#_property_取得内容_">%property[プロパティ名]</a></dt>
 						<dd>
-							環境変数としてプロパティを参照し、値を埋め込みます。
-							<br />単に値をそのまま表示したい場合に用います。
-							<br />以下はベースウェアの名前とバージョンをその場に埋め込み（表示し）ます。
+							環境変数としてプロパティを参照し、値を埋め込む。
+							<br />単に値をそのまま表示したい場合に用いる。
+							<br />以下はベースウェアの名前とバージョンをその場に埋め込む（表示する）。
 							<pre><code>%property[baseware.name] ver,%property[baseware.version]</pre></code>
 						</dd>
 						<dt><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a></dt>
 						<dd>
-							さくらスクリプトのタグによって任意名のSHIORI Eventを発生させ、そのReferenceを通じてプロパティを取得します。
-							<br />プロパティをもとにSHIORI側でアクションを起こしたい場合に用います。
-							<br />以下はID「OnGetSakuraName」というSHIORI Eventを発生させ、そのreference0としてゴースト「Emily/Phase4.5」の相方側名（Teddy）を通知させます。
+							さくらスクリプトのタグによって任意名のSHIORI Eventを発生させ、そのReferenceを通じてプロパティを取得する。
+							<br />プロパティをもとにSHIORI側でアクションを起こしたい場合に用いる。
+							<br />以下はID「OnGetSakuraName」というSHIORI Eventを発生させ、そのreference0としてゴースト「Emily/Phase4.5」の相方側名（Teddy）を通知させる。
 							<pre><code>\![get,property,OnGetSakuraName,ghostlist(Emily/Phase4.5).keroname]</pre></code>
 						</dd>
 						<dt><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a></dt>
 						<dd>
-							さくらスクリプトのタグによってプロパティを書き替えます。
-							<br />全てのプロパティに対して書き込みが許されているわけではありませんが、このページの項目で<strong>[SET有効]</strong>とあるものはこのようにして操作可能です。
-							<br />以下はシェル「ULTIMATE FORM」を、オーナードローメニューのシェル切り替えメニューから隠します。
+							さくらスクリプトのタグによってプロパティを書き替える。
+							<br />全てのプロパティに対して書き込みが許されているわけではないが、このページの項目で<strong>[SET有効]</strong>とあるものはこのようにして操作可能。
+							<br />以下はシェル「ULTIMATE FORM」を、オーナードローメニューのシェル切り替えメニューから隠す例。
 							<pre><code>\![set,property,currentghost.shelllist(ULTIMATE FORM).menu,hidden]</pre></code>
 						</dd>
 					</dl>
