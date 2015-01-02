@@ -117,7 +117,7 @@
 					<th rowspan="2">規格</th>
 					<td colspan="2">
 						<ul>
-							<li><span class="not-created">SHIORI/3.1</a></li>
+							<li><span class="not-created">SHIORI/3.1</span></li>
 							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
 							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
@@ -908,7 +908,7 @@
 			<dl id="_!_set,alpha,数値_">
 				<dt class="entry">\![set,alpha,数値]</dt>
 				<dd class="entry">
-					<p class="description">現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。</p>
+					<p class="description">現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1294,7 +1294,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>あいうえお\c[char,3]かきくけこ。</code></p>
+							<p><code>トークを3文字削除\c[char,3]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1309,7 +1309,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>あいうえお\nかきくけこ\c[line,1,1]さしすせそ。</code></p>
+							<p><code>トークの5文字目から、3文字削除\c[char,4,3]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1324,7 +1324,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>あいうえお\nかきくけこ\c[line,1]さしすせそ。</code></p>
+							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1339,7 +1339,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>あいうえお\nかきくけこ\c[line,2]さしすせそ。</code></p>
+							<p><code>トークを2行目から、1行削除。\nこの部分が\_l[,]削除される。\c[line,1,1]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1376,7 +1376,7 @@
 			<dl id="_C">
 				<dt class="entry">\C</dt>
 				<dd class="entry">
-					<p class="description">先頭に記述すると直前に表示したバルーンのテキストに追記をする。</p>
+					<p class="description">先頭に記述すると直前に表示したバルーンのテキストに追記をする。スコープも前回の最後の状態が反映される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1409,7 +1409,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,autoscroll,disable]スクロールロック\n[2500]この文字は見えない\![set,autoscroll,enable]スクロール解除。</code></p>
+							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。\![set,autoscroll,enable]スクロール解除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1417,14 +1417,14 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。\eで解除される<!-- が、次のスクリプトでバルーンに表示される文字が半角アルファベットで始まる場合のみ設定したオフセット値が保持される。この場合、次の\eで解除される-->。</p>
+					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。\s[ID]などサーフェスが再描画されるタイミングと、\eで解除される。<!-- \eでの解除は、次のスクリプトでバルーンに表示される文字が半角アルファベットで始まる場合のみ設定したオフセット値が保持される。この場合、次の\eで解除される。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,balloonoffset,100,-50]バルーン位置をX100Y-50に移動。</code></p>
+							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX100Y-50に移動。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1432,7 +1432,23 @@
 			<dl id="_!_set,balloonalign,ID_">
 				<dt class="entry">\![set,balloonalign,ID]</dt>
 				<dd class="entry">
-					<p class="description">バルーンを下記IDの表示方向へ切り替える。<br>left　center　top　right　bottom　auto</p>
+					<p class="description">バルーンを下記IDの表示方向へ切り替える。IDは以下の方法が定義可能である。<br>下記の位置を基準に、descript.txt、surfaces.txtのballoon.offsetx及びballoon.offsetyの値が反映される。<br>ゴースト終了まで有効。</p>
+					<dl class="description">
+						<dt>left</dt>
+						<dd>シェルの左上座標に、バルーンの右上座標が接する。</dd>
+						<dt>center</dt>
+						<dd>シェルの中央上座標に、バルーンの中央下座標が接する。</dd>
+						<dt>top</dt>
+						<dd>centerと同じ。</dd>
+						<dt>right</dt>
+						<dd>シェルの右上座標に、バルーンの左上座標が接する。</dd>
+						<dt>bottom</dt>
+						<dd>シェルの中央下座標に、バルーンの中央上座標が接する。</dd>
+						<dt>none</dt>
+						<dd>座標によってleftとrightが入れ替わる。シェルのドラッグ移動後、バルーンが見切れる場合、スイッチする。</dd>
+						<dt>auto</dt>
+						<dd>noneと同じ。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1447,7 +1463,7 @@
 			<dl id="_!_set,balloonnum,ファイル名,現在の数,最大数_">
 				<dt class="entry">\![set,balloonnum,ファイル名,現在の数,最大数]</dt>
 				<dd class="entry">
-					<p class="description">ファイル受信時に表示されるデータ書式を表示する。</p>
+					<p class="description">ファイル受信時に表示されるデータ書式を表示する。現在の数、最大数は半角数値のみ。どのスコープで実行しても、\0バルーンにのみ表示される。<br>各引数は省略可。消去する場合は全引数を空欄にする。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1462,7 +1478,7 @@
 			<dl id="_!_set,balloontimeout,時間_">
 				<dt class="entry">\![set,balloontimeout,時間]</dt>
 				<dd class="entry">
-					<p class="description">バルーン表示のタイムアウトの時間を指定する。単位はミリ秒。<br>そのスクリプト中のみ有効。<br>0または負数でタイムアウトなし。</p>
+					<p class="description">バルーン表示のタイムアウトの時間を指定する。単位はミリ秒。<br>タイムアウトの時間はスクリプトの表示が終わってからカウントされる。0または負数でタイムアウトなし。<br>そのスクリプト中のみ有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1487,7 +1503,7 @@
 			<dl id="_!_enter,onlinemode_">
 				<dt class="entry">\![enter,onlinemode]</dt>
 				<dd class="entry">
-					<p class="description">オンラインマーカーを強制的に表示する。</p>
+					<p class="description">オンラインマーカーを強制的に表示する。相方側に表示内容があり、本体側バルーンに表示内容がない場合でも、本体側バルーンが表示される。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1496,7 +1512,7 @@
 			<dl id="_!_leave,onlinemode_">
 				<dt class="entry">\![leave,onlinemode]</dt>
 				<dd class="entry">
-					<p class="description">オンラインマーカーを強制的に非表示にする。</p>
+					<p class="description">オンラインマーカーを強制的に非表示にする。<!--\0側で行った場合、このスクリプトの後にバルーンに表示内容がない場合は、バルーンタイムアウトまでオンラインマーカーが表示されたままになる。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1511,7 +1527,7 @@
 			<dl id="_!_enter,nouserbreakmode_">
 				<dt class="entry">\![enter,nouserbreakmode]</dt>
 				<dd class="entry">
-					<p class="description">スクリプト実行中断(操作はSSPの設定次第。通常、バルーンダブルクリック)の無効化モード開始。<br>通常のSSTPでは私用不可(Auth.SSTP（= Owned SSTP）は可)。</p>
+					<p class="description">スクリプト実行中断(操作はSSPの設定次第。通常、バルーンダブルクリック)の無効化モード開始。<br>通常のSSTPでは使用不可(Auth.SSTP（= Owned SSTP）は可)。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1597,7 +1613,7 @@
 				<dt class="entry">\f[name,フォント名]</dt>
 				<dd class="entry">
 					<p class="description">テキストフォントを指定したフォント名に変更する。<br>
-					defaultを指定するとバルーン設定の標準に戻る。<br>
+					defaultを指定した場合、または指定したフォント候補が全てない場合はバルーン設定の標準に戻る。<br>
 					フォント名には、ghost/master以下やバルーンのフォルダに置いたフォントファイルも指定可能。<br>
 					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する（SSPのみ）。
 					</p>
@@ -1813,7 +1829,7 @@
 			<dl id="_w時間">
 				<dt class="entry">\w時間</dt>
 				<dd class="entry">
-					<p class="description">時間x50ms分の時間ウエイト。</p>
+					<p class="description">時間x50ms分の時間ウエイト。設定出来るのは1-9。\w10は、50msウェイト後に文字「0」がバルーンに表示される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1853,7 +1869,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。\_?最初に\_w[1000]で1000msが経過しているので、\__w[2500]のウェイトは、差分の1500msから、文字表示時間を引いた値になる。\_?\__w[clear]か\xが実行された時点で最初からカウントしなおす。\_?\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code>１\_w[1000]２\__w[2500]３。最初に\_w[1000]で1000msが経過しているので、\__w[2500]のウェイトは、差分の1500msから、文字表示時間を引いた値になる。\_?\__w[clear]か\xが実行された時点で最初からカウントしなおす。\_?\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1861,7 +1877,7 @@
 			<dl id="_x">
 				<dt class="entry">\x</dt>
 				<dd class="entry">
-					<p class="description">バルーンをクリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f系の効果も解除される。\tは継続。</p>
+					<p class="description">バルーンをクリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f系のさくらスクリプトの効果も解除される。\eで解除されるさくらスクリプトは継続。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1878,7 +1894,7 @@
 			<dl id="_x_noclear_">
 				<dt class="entry">\x[noclear]</dt>
 				<dd class="entry">
-					<p class="description">バルーンを一時クリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f系の効果も解除される。\tは継続。</p>
+					<p class="description">バルーンを一時クリック待ちにする。<br>クリック後、バルーンの内容とスコープは保持される。<br>\xと違い、\f系のさくらスクリプトの効果は残る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1893,7 +1909,7 @@
 			<dl id="_t">
 				<dt class="entry">\t</dt>
 				<dd class="entry">
-					<p class="description">タイムクリティカルセッション。<br>スクリプトブレイク（例:選択肢を選ぶ、バルーンダブルクリックによる中断）か\eまでの間、マウス系などのイベント通知を行わない。</p>
+					<p class="description">タイムクリティカルセッション。<br>スクリプトブレイク（例:選択肢を選ぶ、バルーンダブルクリックによる中断）か\eまでの間、マウス系などのイベント通知を行わない。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。<br>\tを再度記述しても解除されないので注意すること。途中で解除したい場合\![raise,]を用いる。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1910,7 +1926,7 @@
 			<dl id="__q">
 				<dt class="entry">\_q</dt>
 				<dd class="entry">
-					<p class="description">クイックセッション。<br>次の\_qか\eまでメッセージがノーウエイトで表示される。</p>
+					<p class="description">クイックセッション。<br>次の\_qか\eまでメッセージがノーウエイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1927,7 +1943,7 @@
 			<dl id="_!_quicksession,true_">
 				<dt class="entry">\![quicksession,true]</dt>
 				<dd class="entry">
-					<p class="description">クイックセッションを開始する。</p>
+					<p class="description">クイックセッションを開始する。\![quicksession,1]でも可。\_qとほぼ互換。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1936,7 +1952,7 @@
 			<dl id="_!_quicksession,false_">
 				<dt class="entry">\![quicksession,false]</dt>
 				<dd class="entry">
-					<p class="description">クイックセッションを終了する。</p>
+					<p class="description">クイックセッションを終了する。\![quicksession,0]でも可。\_qとほぼ互換。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2105,7 +2121,7 @@
 			<dl id="_*">
 				<dt class="entry">\*</dt>
 				<dd class="entry">
-					<p class="description">このコマンドの後の選択肢はタイムアウトされない。</p>
+					<p class="description">これが記述されたスクリプトでは、選択肢はタイムアウトされない。<br>そのスクリプト中のみ有効。選択肢より後ろに書いても有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2139,7 +2155,7 @@
 			<dl id="__a_ID_">
 				<dt class="entry">\_a[ID]</dt>
 				<dd class="entry">
-					<p class="description">\_aがくるまでの範囲をジャンパとする。選択肢タイムアウトしない。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される（SSPのみ先立ってOnAnchorSelectExが開始される）。<br>IDはReference0に格納される。</p>
+					<p class="description">\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される（SSPのみ先立ってOnAnchorSelectExが開始される）。<br>IDはReference0に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2156,7 +2172,7 @@
 			<dl id="__a_OnID,r0,r1..._">
 				<dt class="entry">\_a[OnID,r0,r1...]</dt>
 				<dd class="entry">
-					<p class="description">\_aがくるまでの範囲をジャンパとする。選択肢タイムアウトしない。<br>上記のようにIDが"On"で始まっている場合は、クリックするとSHIORIイベントOnID(書いた通りのイベント)が開始される。<br>IDに続く引数が順番にReference0以降に格納される。</p>
+					<p class="description">\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>上記のようにIDが"On"で始まっている場合は、クリックするとSHIORIイベントOnID(書いた通りのイベント)が開始される。<br>IDに続く引数が順番にReference0以降に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2171,7 +2187,7 @@
 			<dl id="__a_ID,r2,r3..._">
 				<dt class="entry">\_a[ID,r2,r3...]</dt>
 				<dd class="entry">
-					<p class="description">\_aがくるまでの範囲をジャンパとする。選択肢タイムアウトしない。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelect<em>Ex</em>が開始される。<br>ジャンパとなったテキストがReference0に、IDはReference1に、続く引数はReference2以降に格納される。<br>OnAnchorSelectExに続けてOnAnchorSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
+					<p class="description">\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelect<em>Ex</em>が開始される。<br>ジャンパとなったテキストがReference0に、IDはReference1に、続く引数はReference2以降に格納される。<br>OnAnchorSelectExに続けてOnAnchorSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2189,7 +2205,7 @@
 			<dl id="_f_cursorstyle,形状_">
 				<dt class="entry">\f[cursorstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">選択中マーカーの形状を変更。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。<br>defaultでバルーン設定の標準に戻る。</p>
+					<p class="description">選択中マーカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2216,7 +2232,7 @@
 			<dl id="_f_cursorfontcolor,色指定_">
 				<dt class="entry">\f[cursorfontcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中マーカーの文字色をRGB(0～255)で変更。</p>
+					<p class="description">選択中マーカーの文字色をRGB(0～255)で変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2234,7 +2250,7 @@
 			<dl id="_f_cursornotselectstyle,形状_">
 				<dt class="entry">\f[cursornotselectstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">非選択中マーカーの形状を変更。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。<br>defaultでバルーン設定の標準に戻る。</p>
+					<p class="description">非選択中マーカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2285,7 +2301,7 @@
 			<dl id="_f_anchorstyle,形状_">
 				<dt class="entry">\f[anchorstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの形状を変更。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。<br>defaultでバルーン設定の標準に戻る。</p>
+					<p class="description">選択中アンカーの形状を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2336,7 +2352,7 @@
 			<dl id="_f_anchornotselectstyle,形状_">
 				<dt class="entry">\f[anchornotselectstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの形状を変更。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。<br>defaultでバルーン設定の標準に戻る。</p>
+					<p class="description">非選択中アンカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2381,7 +2397,7 @@
 			<dl id="_f_anchorvisitedstyle,形状_">
 				<dt class="entry">\f[anchorvisitedstyle,形状]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの形状を変更。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。<br>defaultでバルーン設定の標準に戻る。</p>
+					<p class="description">訪問済みアンカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2429,6 +2445,21 @@
 					</div>
 				</dd>
 			</dl>
+			<div class="caption" id="notes_style">
+				<h1>形状指定の方法</h1>
+				<dl>
+					<dt>square</dt>
+					<dd>矩形を表示。</dd>
+					<dt>underline</dt>
+					<dd>下線を表示。</dd>
+					<dt>square+underline</dt>
+					<dd>矩形と下線を表示。</dd>
+					<dt>none</dt>
+					<dd>表示しない。</dd>
+					<dt>default</dt>
+					<dd>バルーン設定の標準に戻る。</dd>
+				</dl>
+			</div>
 			<div class="caption" id="notes_color">
 				<h1>文字色指定の方法</h1>
 				<p>基本はHTML・CSSの色の表現と似ています。</p>
@@ -2480,7 +2511,7 @@
 			<dl id="_-">
 				<dt class="entry">\-</dt>
 				<dd class="entry">
-					<p class="description">本体を終了する。</p>
+					<p class="description">本体を終了する。<br>SSPで複数ゴーストが起動している場合、実行したゴーストのみ終了する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2497,7 +2528,7 @@
 			<dl id="_!_updatebymyself_">
 				<dt class="entry">\![updatebymyself]</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新イベントを開始する。</p>
+					<p class="description">ネットワーク更新イベントを開始する。<br>右クリックメニューやゴーストエクスプローラからユーザが行うことも出来る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2514,7 +2545,7 @@
 			<dl id="_!_updatebymyself,checkonly_">
 				<dt class="entry">\![updatebymyself,checkonly]</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新チェックイベントを開始する。</p>
+					<p class="description">ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベントOnUpdateCheckCompleteが通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2529,7 +2560,7 @@
 			<dl id="_!_update,platform_">
 				<dt class="entry">\![update,platform]</dt>
 				<dd class="entry">
-					<p class="description">本体ネットワーク更新イベントを開始する。</p>
+					<p class="description">本体ネットワーク更新イベントを開始する。<br>更新があった場合、ゴーストは一旦終了（OnClose）して再度起動する（OnBoot）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2560,7 +2591,7 @@
 			<dl id="_6">
 				<dt class="entry">\6</dt>
 				<dd class="entry">
-					<p class="description">時計合わせイベントで実際に時間修正を行う。</p>
+					<p class="description">時計合わせイベントで実際に時間修正を行う。<br>時刻サーバに繋がった時通知されるSHIORIイベントOnSNTPCompareで行うのが一般的。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2632,7 +2663,7 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p class="description">消滅指示無しで自ゴーストをアンインストールする。</p>
+					<p class="description">消滅指示無しで自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2648,7 +2679,7 @@
 			<dl id="_!_vanishbymyself,ゴースト名_">
 				<dt class="entry">\![vanishbymyself,ゴースト名]</dt>
 				<dd class="entry">
-					<p class="description">消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。</p>
+					<p class="description">消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。指定したゴーストがインストールされていなければ交代先はランダム。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2679,7 +2710,7 @@
 			<dl id="__+">
 				<dt class="entry">\_+</dt>
 				<dd class="entry">
-					<p class="description">次の順番のゴーストに切り替わる。</p>
+					<p class="description">次の順番のゴーストに切り替わる。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2743,7 +2774,7 @@
 			<dl id="_!_change,ghost,lastinstalled_">
 				<dt class="entry">\![change,ghost,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたゴーストへの切り替えを行う。</p>
+					<p class="description">最後にインストールされたゴーストへの切り替えを行う。<br>該当するゴーストがなかった場合無視される。<br>SSPを終了すると無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2758,7 +2789,7 @@
 			<dl id="_!_change,shell,lastinstalled_">
 				<dt class="entry">\![change,shell,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたシェルへの切り替えを行う。</p>
+					<p class="description">最後にインストールされたシェルへの切り替えを行う。<br>SSPを終了すると無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2773,7 +2804,7 @@
 			<dl id="_!_change,balloon,lastinstalled_">
 				<dt class="entry">\![change,balloon,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたバルーンへの切り替えを行う。</p>
+					<p class="description">最後にインストールされたバルーンへの切り替えを行う。<br>該当するバルーンがなかった場合無視される。<br>SSPを終了すると無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2803,7 +2834,7 @@
 			<dl id="_v">
 				<dt class="entry">\v</dt>
 				<dd class="entry">
-					<p class="description">手前に表示する。</p>
+					<p class="description">手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2819,7 +2850,7 @@
 			<dl id="_!_set,windowstate,stayontop_">
 				<dt class="entry">\![set,windowstate,stayontop]</dt>
 				<dd class="entry">
-					<p class="description">手前に表示する。</p>
+					<p class="description">手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2836,7 +2867,7 @@
 			<dl id="_!_set,windowstate,!stayontop_">
 				<dt class="entry">\![set,windowstate,!stayontop]</dt>
 				<dd class="entry">
-					<p class="description">手前に表示しない。</p>
+					<p class="description">手前に表示しない。このスクリプト以降、他のウィンドウと同様に重なりが処理される。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2869,7 +2900,7 @@
 			<dl id="_!_set,wallpaper,ファイル名,オプション_">
 				<dt class="entry">\![set,wallpaper,ファイル名,オプション]</dt>
 				<dd class="entry">
-					<p class="description">指定したファイルを壁紙にする。<br>オプションにcenter、tile、stretchを指定できる、省略可。</p>
+					<p class="description">指定したファイルを壁紙にする。<br>ファイル名には、絶対パスの他、ssp.exeからの相対パスが使用可能。<br>オプションにcenter、tile、stretchを指定できる、省略可。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2884,7 +2915,7 @@
 			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
 				<dt class="entry">\![set,tasktrayicon,ファイル名,テキスト]</dt>
 				<dd class="entry">
-					<p class="description">指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。</p>
+					<p class="description">指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>ファイル名には、絶対パスの他、ghost\masterからの相対パスが使用可能。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4」など、SSP/[起動中のゴースト名]。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

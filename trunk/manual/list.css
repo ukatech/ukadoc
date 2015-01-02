@@ -384,10 +384,10 @@ a:hover {
 }
 .category dd.entry .legend section h1 {
 	padding: 2px 2px 2px 5px;
-	margin-bottom: 3px;
 }
 .category dd.entry .legend section p {
 	white-space: normal;
+	margin-top: 3px;
 	padding: 3px;
 	background-color: #dde;
 	overflow: auto;

@@ -480,8 +480,8 @@ animation10.pattern3,overlay,-1,700,0,0
 					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
 					<p>上例の通り、全てのアニメーション定義はinterval定義とpattern定義を含んでいる。animationには他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つ以上存在する必要がある。</p>
-					<p><a href="animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>参照であるが、大意としてここでは「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが5文字喋るごとに再生される。</p>
-					<p><a href="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
+					<p><a href="#animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>参照であるが、大意としてここでは「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが5文字喋るごとに再生される。</p>
+					<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
 				</section>
 				<section>
 					<h1>各アニメーションの関係</h1>
@@ -1194,7 +1194,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>描画メソッド</h1>
 					<section>
 						<h1>概要</h1>
-						<p><a href="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
+						<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
 						<p>一部、画像の合成というよりも、既存レイヤの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
 					</section>
 					<section>
