@@ -955,6 +955,8 @@
 				<dd class="entry">
 					<p class="description">TeachBoxが閉じられた際に発生。</p>
 					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
 						<dt>Reference1</dt>
 						<dd>閉じられた場合、cancel。</dd>
 					</dl>
@@ -968,10 +970,8 @@
 				<dd class="entry">
 					<p class="description">TeachBoxからの入力があった際に発生。</p>
 					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>入力された言葉。</dd>
 						<dt>Reference*</dt>
-						<dd>Reference0に対して入力された言葉。</dd>
+						<dd>入力された言葉の履歴。Reference0が1回目～最新の入力が末尾(n回目の入力がReference[n-1])</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1001,6 +1001,8 @@
 				<dd class="entry">
 					<p class="description">CommunicateBoxが閉じられた際に発生。</p>
 					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
 						<dt>Reference1</dt>
 						<dd>閉じられた場合、cancel。</dd>
 					</dl>
