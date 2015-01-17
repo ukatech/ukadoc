@@ -235,7 +235,6 @@
 				<li><a href="#_f_shadowcolor,色指定_">\f[shadowcolor,色指定]</a></li>
 				<li><a href="#_f_shadowcolor,none_">\f[shadowcolor,none]</a></li>
 				<li><a href="#_f_outline,パラメータ_">\f[outline,パラメータ]</a></li>
-				<li><a href="#_f_anchor.font.color,色指定_">\f[anchor.font.color,色指定]</a></li>
 				<li><a href="#_f_bold,パラメータ_">\f[bold,パラメータ]</a></li>
 				<li><a href="#_f_italic,パラメータ_">\f[italic,パラメータ]</a></li>
 				<li><a href="#_f_strike,パラメータ_">\f[strike,パラメータ]</a></li>
@@ -1703,21 +1702,6 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_f_anchor.font.color,色指定_">
-				<dt class="entry">\f[anchor.font.color,色指定]</dt>
-				<dd class="entry">
-					<p class="description">アンカー文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
 			<dl id="_f_bold,パラメータ_">
 				<dt class="entry">\f[bold,パラメータ]</dt>
 				<dd class="entry">
@@ -2338,6 +2322,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code\_a[OnTest]色変え前のアンカー\_a\n\f[anchorfontcolor,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchormethod,描画方法_">
