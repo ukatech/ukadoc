@@ -1416,7 +1416,7 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。\s[ID]などサーフェスが再描画されるタイミングと、\eで解除される。<!-- \eでの解除は、次のスクリプトでバルーンに表示される文字が半角アルファベットで始まる場合のみ設定したオフセット値が保持される。この場合、次の\eで解除される。--></p>
+					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。次のトーク時に解除される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3367,22 +3367,18 @@
 			<dl id="_!_open,rateofusegraphballoon_">
 				<dt class="entry">\![open,rateofusegraphballoon]</dt>
 				<dd class="entry">
-					<p class="description">バルーン使用率を表示する。</p>
+					<p class="description">バルーン使用率を表示する。現時点でMateria以外未対応(rateofusegraphを実行したのと同じになる)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_open,rateofusegraphtotal_">
 				<dt class="entry">\![open,rateofusegraphtotal]</dt>
 				<dd class="entry">
-					<p class="description">ゴースト使用率(合算)を表示する。</p>
+					<p class="description">ゴースト使用率(合算)を表示する。現時点でMateria以外未対応(rateofusegraphを実行したのと同じになる)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
