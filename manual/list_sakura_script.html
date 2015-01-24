@@ -371,6 +371,7 @@
 				<li><a href="#_!_sound,wait_">\![sound,wait]</a></li>
 				<li><a href="#_!_sound,pause_">\![sound,pause]</a></li>
 				<li><a href="#_!_sound,resume_">\![sound,resume]</a></li>
+				<li><a href="#_!_sound,stop_">\![sound,stop]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -3341,14 +3342,14 @@
 			<dl id="_!_sound,loop,ファイル名_">
 				<dt class="entry">\![sound,loop,ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">ループ再生する。\_Vの対象にならない。<br>再生を止める場合は\![sound,pause]を実行する。</p>
+					<p class="description">ループ再生する。\_Vの対象にならない。<br>再生を止める場合は\![sound,stop]を実行する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]ループ再生を停止する。</code></p>
+							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]ループ再生を停止する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3394,6 +3395,21 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_sound,stop_">
+				<dt class="entry">\![sound,stop]</dt>
+				<dd class="entry">
+					<p class="description">再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]再生を完全に停止する。</code></p>
 						</section>
 					</div>
 				</dd>
