@@ -235,6 +235,7 @@
 				<li><a href="#_f_shadowcolor,色指定_">\f[shadowcolor,色指定]</a></li>
 				<li><a href="#_f_shadowcolor,none_">\f[shadowcolor,none]</a></li>
 				<li><a href="#_f_outline,パラメータ_">\f[outline,パラメータ]</a></li>
+				<li><a href="#_f_anchor.font.color,色指定_">\f[anchor.font.color,色指定]</a></li>
 				<li><a href="#_f_bold,パラメータ_">\f[bold,パラメータ]</a></li>
 				<li><a href="#_f_italic,パラメータ_">\f[italic,パラメータ]</a></li>
 				<li><a href="#_f_strike,パラメータ_">\f[strike,パラメータ]</a></li>
@@ -310,6 +311,7 @@
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
+				<li class="caption"><a href="#notes_style">形状指定の方法</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -465,6 +467,9 @@
 		<section class="navigation-category">
 			<h1>環境変数</h1>
 			<ul>
+				<li class="caption"><a href="#notes_environmentvariable">環境変数の表示方法</a></li>
+			</ul>
+			<ul>
 				<li><a href="#_month">%month</a></li>
 				<li><a href="#_day">%day</a></li>
 				<li><a href="#_hour">%hour</a></li>
@@ -610,7 +615,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。\e</code></p>
+							<p><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -637,6 +642,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,resume,ID_">
@@ -730,7 +741,7 @@
 			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
 				<dt class="entry">\![bind,カテゴリ名,パーツ名,数値]</dt>
 				<dd class="entry">
-					<p class="description">着せ替えパーツを着衣、脱衣する。<br>数値部分は1で着衣、0で脱衣。<br>パーツ名を空欄にするとカテゴリ単位の動作になる。</p>
+					<p class="description">着せ替えパーツを着衣、脱衣する。<br>数値部分は1で着衣、0で脱衣。<br>パーツ名を空欄にするとカテゴリ単位の動作になる。<br>スクリプト実行後、SHIORIイベントOnDressupChangedが通知され、その後にSHIORIイベントOnNotifyDressupInfoが通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -750,6 +761,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_unlock,repaint_">
@@ -763,15 +780,33 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。描画自体は実行されているので、停止中に描画された分は表示されない。</code></p>
+							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。アニメーションの再生自体は実行されているので、停止中に描画された分は表示されない。</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmentondesktop,top_">
-				<dt class="entry">\![set,alignmentondesktop,top]</dt>
+				<dt class="entry">\![set,alignmentondesktop,方向]</dt>
 				<dd class="entry">
-					<p class="description">現スコープ側サーフェスをデスクトップ上部に吸着。<br>※SSPのみalignment<em>to</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
+					<p class="description">現スコープ側サーフェスをデスクトップ指定した方向に吸着。方向は以下の方法が指定可能。</p>
+					<dl class="description">
+						<dt>top</dt>
+						<dd>上部に吸着。</dd>
+						<dt>bottom</dt>
+						<dd>下部に吸着。</dd>
+						<dt>left</dt>
+						<dd>左部に吸着。</dd>
+						<dt>right</dt>
+						<dd>右部に吸着。</dd>
+						<dt>free</dt>
+						<dd>吸着なし。</dd>
+						<dt>default</dt>
+						<dd>ゴーストのデフォルト設定に戻す。</dd>
+					</dl>
+					<p>※SSPのみalignment<em>to</em>desktopでも有効。
+					<br>上または下に吸着した場合、上下方向へのドラッグ移動ができなくなる。
+					<br>左または右に吸着した場合、左右方向へのドラッグ移動ができなくなる。
+					<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -780,85 +815,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,top]本体側がデスクトップ上部にくっつく。</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmentondesktop,bottom_">
-				<dt class="entry">\![set,alignmentondesktop,bottom]</dt>
-				<dd class="entry">
-					<p class="description">現スコープ側サーフェスをデスクトップ下部に吸着。<br>※SSPのみalignment<em>to</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部（タスクバーの上）にくっつく。</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmenttodesktop,left_">
-				<dt class="entry">\![set,alignmenttodesktop,left]</dt>
-				<dd class="entry">
-					<p class="description">現スコープ側サーフェスをデスクトップ左部に吸着。<br>※alignment<em>on</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,left]本体側がデスクトップ左端にくっつく。</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmenttodesktop,right_">
-				<dt class="entry">\![set,alignmenttodesktop,right]</dt>
-				<dd class="entry">
-					<p class="description">現スコープ側サーフェスをデスクトップ右部に吸着。<br>※alignment<em>on</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,right]本体側がデスクトップ右端にくっつく。</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmenttodesktop,free_">
-				<dt class="entry">\![set,alignmenttodesktop,free]</dt>
-				<dd class="entry">
-					<p class="description">サーフェスを自由移動可能にする。<br>※alignment<em>on</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,free]本体側が自由移動可能になる。</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_set,alignmenttodesktop,default_">
-				<dt class="entry">\![set,alignmenttodesktop,default]</dt>
-				<dd class="entry">
-					<p class="description">サーフェスをdescript.txtの定義の位置に戻す。<br>※alignment<em>on</em>desktopでも有効。<br>ゴースト終了まで有効。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,default]本体側のドラッグ移動の自由度をデフォルトに戻す。</code></p>
+							<p><code>\![set,alignmentondesktop,top]本体側がデスクトップ上部にくっつく。\1\![set,alignmentondesktop,free]相方側が吸着なしで自由に動かせるようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -867,7 +824,7 @@
 				<dt class="entry">\![set,scaling,倍率]</dt>
 				<dd class="entry">
 					<p class="description">サーフェスの倍率を変更する。</p>
-					<p class="description">サーフェスの倍率を変更する。単位%。<br>ユーザの設定する倍率を１００％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。<br>ゴースト終了まで有効。</p>
+					<p class="description">サーフェスの倍率を変更する。単位%。<br>ユーザの設定する倍率を100％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -883,7 +840,7 @@
 			<dl id="_!_set,scaling,横倍率,縦倍率_">
 				<dt class="entry">\![set,scaling,横倍率,縦倍率]</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの倍率を縦比・横比別それぞれに変更する。単位%。<br>ユーザの設定する倍率を１００％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。<br>ゴースト終了まで有効。</p>
+					<p class="description">サーフェスの倍率を縦比・横比別それぞれに変更する。単位%。<br>ユーザの設定する倍率を100％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1095,7 +1052,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[image\test.png,50,100]本体側バルーンに、ghost\master\imageフォルダにあるtest.pngを左上のpixelを透過色として、X座標50Y座標100に表示する。</code></p>
+							<p><code>\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、X座標50Y座標100に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1122,7 +1079,7 @@
 					<p class="description">オプション</p>
 					<dl class="description">
 						<dt>--option=opaque</dt>
-						<dd>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>左上の色を透過しないで表示する。</dd>
+						<dd>左上の色を透過しないで表示する。</dd>
 						<dt>--option=use_self_alpha</dt>
 						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
 						<dt>--clipping=左 上 右 下</dt>
@@ -1140,7 +1097,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、ghost\masterフォルダにあるtest.pngを、X座標10Y座標20に、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
+							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、X座標10Y座標20に、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1155,7 +1112,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
+							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1191,7 +1148,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、ghost\masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を表示する。</code></p>
+							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を表示する。</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
@@ -1308,7 +1265,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークの5文字目から、3文字削除\c[char,4,3]削除終了。</code></p>
+							<p><code>トークの5文字目から、3文字削除\c[char,3,4]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1316,14 +1273,14 @@
 			<dl id="_c_line,数値_">
 				<dt class="entry">\c[line,数値]</dt>
 				<dd class="entry">
-					<p class="description">現スコープ側のカーソル位置から指定行数をクリア。トークを\_l[x,y],\n,\n[half],\n[パーセント]で分割したものが「行」の扱い。ただしバルーンに表示する内容のないものは行とみなされない。\c[char,数値]と同様に、スクリプト内の出現順が参照される。</p>
+					<p class="description">現スコープ側のカーソル位置から指定行数をクリア。<br>トークを\_l[x,y],\n,\n[half],\n[パーセント]で分割したものが「行」の扱い。ただし、\n\nなど、\_l[x,y]以外で分割された内容のないものは行とみなされない。<br>\c[char,数値]と同様に、スクリプト内の出現順が参照される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。</code></p>
+							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\c[line,1]\nこの行は削除されない。\_l[0,0]\c[line,1]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1395,6 +1352,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,autoscroll,enable_">
@@ -1416,7 +1379,7 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。次のトーク時に解除される。</p>
+					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。\s[ID]などサーフェスが再描画されるタイミングと、\eで解除される。<!-- \eでの解除は、次のスクリプトでバルーンに表示される文字が半角アルファベットで始まる場合のみ設定したオフセット値が保持される。この場合、次の\eで解除される。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1481,6 +1444,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,balloontimeout,3000]このトークは、喋り終わってから3秒でバルーンが閉じる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_*_">
@@ -1506,6 +1475,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\0\![enter,onlinemode]本体側のバルーンにオンラインマーカーが表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,onlinemode_">
@@ -1518,7 +1493,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![enter,onlinemode]この間は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
+							<p><code>\0\![enter,onlinemode]この文章の表示中は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1530,6 +1505,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,nouserbreakmode_">
@@ -1554,6 +1535,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![lock,balloonrepaint]この文章の描画はされない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_unlock,balloonrepaint_">
@@ -1612,8 +1599,8 @@
 				<dt class="entry">\f[name,フォント名]</dt>
 				<dd class="entry">
 					<p class="description">テキストフォントを指定したフォント名に変更する。<br>
-					defaultを指定した場合、または指定したフォント候補が全てない場合はバルーン設定の標準に戻る。<br>
-					フォント名には、ghost/master以下やバルーンのフォルダに置いたフォントファイルも指定可能。<br>
+					defaultを指定した場合、または指定したフォント候補が全てない場合は、バルーン設定の標準（SSP設定でバルーンフォント上書きしている場合はそちら）に戻る。<br>
+					フォント名には、[実行したゴーストのフォルダ]/ghost/master以下や現在のバルーンのフォルダに置いたフォントファイルも指定可能。<br>
 					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する（SSPのみ）。
 					</p>
 					<ul class="supported-baseware">
@@ -1622,7 +1609,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければSSP本体設定のデフォルトフォントで表示される。</code></p>
+							<p><code>\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければデフォルトフォントで表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1637,7 +1624,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,120%]デフォルトサイズの120%で表示。\f[height,default]元のサイズに戻す。</code></p>
+							<p><code>\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,200%]デフォルトサイズの200%で表示。\f[height,default]元のサイズに戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1682,7 +1669,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]影を再度表示。</code></p>
+							<p><code>\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1698,6 +1685,21 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\f[height,30]\f[outline,1]白抜きにする。\f[outline,default]バルーンのデフォルト設定にもどす。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_f_anchor.font.color,色指定_">
+				<dt class="entry">\f[anchor.font.color,色指定]</dt>
+				<dd class="entry">
+					<p class="description">アンカー文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1853,7 +1855,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。最初に\_w[1000]で1000msが経過しているので、\__w[2500]のウェイトは、差分の1500msから、文字表示時間を引いた値になる。\_?\__w[clear]か\xが実行された時点で最初からカウントしなおす。\_?\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msが経過しているので、実際にかかるウェイトは、差分の1500msから、文字表示時間を引いた値になる。クリアかクリック待ちが実行された時点で最初からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1910,7 +1912,7 @@
 			<dl id="__q">
 				<dt class="entry">\_q</dt>
 				<dd class="entry">
-					<p class="description">クイックセッション。<br>次の\_qか\eまでメッセージがノーウエイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
+					<p class="description">クイックセッション。<br>次の\_qか\eまでメッセージがノーウェイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1931,6 +1933,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![quicksession,1]文字を瞬間表示する。これもウェイトタグは実行される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_quicksession,false_">
@@ -2163,7 +2171,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。</code></p>
+							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。この2つのアンカーは、クリックするとSHIORIイベントOnHintが通知されるが、クリックしたものによってReference0の値が変わる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2193,15 +2201,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorstyle,underline]\q[選択肢,OnTest]選択中の選択肢の表示を下線に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">
 				<dt class="entry">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中マーカーの矩形内の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p class="description">選択中マーカーの矩形内の色を変更。\f[cursormethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorpencolor,色指定_">
@@ -2211,6 +2231,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorpencolor,0,255,0]\q[選択肢,OnTest]選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorfontcolor,色指定_">
@@ -2220,15 +2246,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursorfontcolor,default.anchor]\q[選択肢,OnTest]選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursormethod,描画方法_">
 				<dt class="entry">\f[cursormethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">選択中マーカー描画方法を変更。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p class="description">選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。例：notmaskpen</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursormethod,copypen]\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursorbrushcolorの色がそのまま描画される。<br></code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectstyle,形状_">
@@ -2238,15 +2276,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursornotselectstyle,underline]\q[選択肢,OnTest]非選択中の選択肢の表示を下線に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">
 				<dt class="entry">\f[cursornotselectcolor,色指定]もしくは\f[cursornotselectbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中マーカーの矩形内の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p class="description">非選択中マーカーの矩形内の色を変更。\f[cursornotselectmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectpencolor,色指定_">
@@ -2256,6 +2306,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursornotselectpencolor,0,255,0]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectfontcolor,色指定_">
@@ -2265,19 +2321,25 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[cursornotselectfontcolor,default.anchor]\q[選択肢,OnTest]非選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectmethod,描画方法_">
 				<dt class="entry">\f[cursornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">非選択中マーカー描画方法を変更。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p class="description">非選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorstyle,underline]\f[cursorcolor,0,0,255]\f[cursorpencolor,0,0,255]\f[cursorfontcolor,default.anchor]\f[cursormethod,none]\f[cursornotselectstyle,none]\f[cursornotselectcolor,default.anchor]\f[cursornotselectfontcolor,default.anchor]\f[cursornotselectmethod,none]\q[選択肢の描画をSSPデフォルト+のアンカーと同じに,OnTest]\n\_a[OnTest]アンカー\_a</code></p>
+							<p><code>\f[cursornotselectmethod,copypen]\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursornotselectbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2292,7 +2354,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorstyle,underline]\f[cursorcolor,0,0,255]\f[cursorpencolor,0,0,255]\f[cursorfontcolor,default.anchor]\f[cursormethod,none]\f[cursornotselectstyle,none]\f[cursornotselectcolor,default.anchor]\f[cursornotselectfontcolor,default.anchor]\f[cursornotselectmethod,none]\q[選択肢の描画をSSPデフォルト+のアンカーと同じに,OnTest]\n\_a[OnTest]アンカー\_a</code></p>
+							<p><code>\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠（矩形）に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2300,10 +2362,16 @@
 			<dl id="_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">
 				<dt class="entry">\f[anchorcolor,色指定]もしくは\f[anchorbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの矩形内の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p class="description">選択中アンカーの矩形内の色を変更。\f[anchormethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorpencolor,色指定_">
@@ -2313,6 +2381,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorpencolor,0,255,0]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorfontcolor,色指定_">
@@ -2325,7 +2399,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code\_a[OnTest]色変え前のアンカー\_a\n\f[anchorfontcolor,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
+							<p><code>\f[anchorfontcolor,default.cursor]\_a[OnTest]アンカー\_a選択中のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2333,10 +2407,16 @@
 			<dl id="_f_anchormethod,描画方法_">
 				<dt class="entry">\f[anchormethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">選択中アンカーの描画方法を変更。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p class="description">選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchormethod,copypen]\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの、枠内の描画方法を変更する。copypenの場合、anchorbrushcolorの色がそのまま描画される。<br></code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectstyle,形状_">
@@ -2346,15 +2426,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠（矩形）に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">
 				<dt class="entry">\f[anchornotselectcolor,色指定]もしくは\f[anchornotselectbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの矩形内の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p class="description">非選択中アンカーの矩形内の色を変更。\f[anchornotselectmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectpencolor,色指定_">
@@ -2364,6 +2456,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchornotselectpencolor,0,255,0]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectfontcolor,色指定_">
@@ -2373,15 +2471,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchornotselectfontcolor,default.cursor]\_a[OnTest]アンカー\_a非選択のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectmethod,描画方法_">
 				<dt class="entry">\f[anchornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">非選択中アンカーの描画方法を変更。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p class="description">非選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchornotselectmethod,copypen]\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの、枠内の描画方法を変更する。copypenの場合、anchornotselectbrushcolorの色がそのまま描画される。<br></code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedstyle,形状_">
@@ -2391,15 +2501,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠（矩形）に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">
 				<dt class="entry">\f[anchorvisitedcolor,色指定]もしくは\f[anchorvisitedbrushcolor,色指定]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの矩形内の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p class="description">訪問済みアンカーの矩形内の色を変更。\f[anchorvisitedmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedpencolor,色指定_">
@@ -2409,6 +2531,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorvisitedpencolor,0,255,0]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedfontcolor,色指定_">
@@ -2418,19 +2546,25 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\f[anchorvisitedfontcolor,default.cursor]\_a[OnTest]アンカー\_a訪問済みのアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedmethod,描画方法_">
 				<dt class="entry">\f[anchorvisitedmethod,描画方法]</dt>
 				<dd class="entry">
-					<p class="description">訪問済みアンカーの描画方法を変更。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p class="description">訪問済みアンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorstyle,square]\f[anchorbrushcolor,150,100,100]\f[anchorpencolor,84,32,27]\f[anchorfontcolor,default.cursor]\f[anchormethod,notmaskpen]\f[anchornotselectstyle,none]\f[anchornotselectbrushcolor,0,0,0]\f[anchornotselectpencolor,0,0,0]\f[anchornotselectfontcolor,84,32,27]\f[anchornotselectmethod,nop]\f[anchorvisitedstyle,none]\f[anchorvisitedbrushcolor,0,0,0]\f[anchorvisitedpencolor,0,0,0]\f[anchorvisitedfontcolor,84,32,27]\f[anchorvisitedmethod,nop]\q[選択肢,OnTest]\n\_a[OnTest]アンカーの描画をSSPデフォルト+の選択肢と同じに\_a</code></p>
+							<p><code>\f[anchorvisitedmethod,copypen]\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの、枠内の描画方法を変更する。copypenの場合、anchorvisitedbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2598,13 +2732,13 @@
 			<dl id="_7">
 				<dt class="entry">\7</dt>
 				<dd class="entry">
-					<p class="description">時計合わせイベントを開始する。</p>
+					<p class="description">時計合わせイベントを開始する。<br>SHIORIイベントOnSNTPBeginが通知され、時刻サーバから時刻が取得出来るとSHIORIイベントOnSNTPCompareが通知される。</p>
 				</dd>
 			</dl>
 			<dl id="_!_executesntp_">
 				<dt class="entry">\![executesntp]</dt>
 				<dd class="entry">
-					<p class="description">時計合わせイベントを開始する。</p>
+					<p class="description">\7と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2676,7 +2810,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>自分自身を削除した後、Emily/Phase4を呼び出す。\![vanishbymyself,Emily/Phase4]</code></p>
+							<p><code>自分自身を削除した後、Emily/Phase4.5を呼び出す。\![vanishbymyself,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2684,7 +2818,7 @@
 			<dl id="_+">
 				<dt class="entry">\+</dt>
 				<dd class="entry">
-					<p class="description">ランダムに他のゴーストに切り替わる。</p>
+					<p class="description">ランダムに他のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2700,7 +2834,7 @@
 			<dl id="__+">
 				<dt class="entry">\_+</dt>
 				<dd class="entry">
-					<p class="description">次の順番のゴーストに切り替わる。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。</p>
+					<p class="description">次の順番のゴーストに切り替わる。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2716,7 +2850,7 @@
 			<dl id="_!_change,ghost,ゴースト名_">
 				<dt class="entry">\![change,ghost,ゴースト名]</dt>
 				<dd class="entry">
-					<p class="description">そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ。<br>sequentialの場合はシーケンシャルチェンジ。<br>該当ゴーストがいなかった場合は無視される。</p>
+					<p class="description">そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ。<br>sequentialの場合はシーケンシャルチェンジ。<br>実行後<br>該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2725,7 +2859,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4に交代。\![change,ghost,Emily/Phase4]</code></p>
+							<p><code>Emily/Phase4.5に交代。\![change,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2733,7 +2867,7 @@
 			<dl id="_!_change,shell,シェル名_">
 				<dt class="entry">\![change,shell,シェル名]</dt>
 				<dd class="entry">
-					<p class="description">そのシェルへの切り替えを行う。<br>該当シェルがなかった場合は無視される。</p>
+					<p class="description">そのシェルへの切り替えを行う。<br>該当シェルがなかった場合は無視される。<br>変更後SHIORIイベントOnShellChangedが通知される。SHIORIイベントOnShellChangingは通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2749,7 +2883,7 @@
 			<dl id="_!_change,balloon,バルーン名_">
 				<dt class="entry">\![change,balloon,バルーン名]</dt>
 				<dd class="entry">
-					<p class="description">そのバルーンへの切り替えを行う。<br>該当バルーンがなかった場合は無視される。</p>
+					<p class="description">そのバルーンへの切り替えを行う。<br>該当バルーンがなかった場合は無視される。<br>変更後SHIORIイベントOnBalloonChangeが通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2764,7 +2898,7 @@
 			<dl id="_!_change,ghost,lastinstalled_">
 				<dt class="entry">\![change,ghost,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたゴーストへの切り替えを行う。<br>該当するゴーストがなかった場合無視される。<br>SSPを終了すると無効になる。</p>
+					<p class="description">SSP起動中、最後にインストールされたゴーストへの切り替えを行う。<br>該当するゴーストがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2779,7 +2913,7 @@
 			<dl id="_!_change,shell,lastinstalled_">
 				<dt class="entry">\![change,shell,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたシェルへの切り替えを行う。<br>SSPを終了すると無効になる。</p>
+					<p class="description">SSP起動中、最後にインストールされたシェルへの切り替えを行う。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2794,7 +2928,7 @@
 			<dl id="_!_change,balloon,lastinstalled_">
 				<dt class="entry">\![change,balloon,lastinstalled]</dt>
 				<dd class="entry">
-					<p class="description">最後にインストールされたバルーンへの切り替えを行う。<br>該当するバルーンがなかった場合無視される。<br>SSPを終了すると無効になる。</p>
+					<p class="description">SSP起動中、最後にインストールされたバルーンへの切り替えを行う。<br>該当するバルーンがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2809,14 +2943,14 @@
 			<dl id="_!_call,ghost,ゴースト名_">
 				<dt class="entry">\![call,ghost,ゴースト名]</dt>
 				<dd class="entry">
-					<p class="description">そのゴーストを呼び出す。<br>ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>ゴースト名をrandomにするとランダムに呼び出し。</p>
+					<p class="description">ゴースト名で指定されたゴーストを呼び出す。<br>ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>ゴースト名をrandomにするとランダムに呼び出し。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4を呼び出す。\![call,ghost,Emily/Phase4]</code></p>
+							<p><code>Emily/Phase4.5を呼び出す。\![call,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2824,7 +2958,7 @@
 			<dl id="_v">
 				<dt class="entry">\v</dt>
 				<dd class="entry">
-					<p class="description">手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ゴースト終了まで有効。</p>
+					<p class="description">手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ただしスコープごとの重なり（本体側と相方側どちらが上にくるか）はユーザの操作次第。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2897,7 +3031,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4のサムネイルを壁紙にする。\![set,wallpaper,ghost\emily4\thumbnail.png]</code></p>
+							<p><code>Emily/Phase4.5のサムネイルを壁紙にする。\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2905,14 +3039,14 @@
 			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
 				<dt class="entry">\![set,tasktrayicon,ファイル名,テキスト]</dt>
 				<dd class="entry">
-					<p class="description">指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>ファイル名には、絶対パスの他、ghost\masterからの相対パスが使用可能。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4」など、SSP/[起動中のゴースト名]。</p>
+					<p class="description">指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4.5」など、SSP/[起動中のゴースト名]。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>アイコンをnormal.icoにし、マウスオン時のメッセージを変更する。\![set,tasktrayicon,normal.ico,ゴースト/通常モード]</code></p>
+							<p><code>\![set,tasktrayicon,normal.ico,ゴースト/通常モード]アイコンを[実行したゴーストのフォルダ]/ghost/masterにあるnormal.icoにし、マウスオン時のメッセージを「ゴースト/通常モード」に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2942,26 +3076,48 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error,--timeout=10]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,otherghosttalk,true|false|before|after_">
 				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
 				<dd class="entry">
-					<p class="description">OnOtherGhostTalkを通知するかどうかを設定。通常無効。<br>
+					<p class="description">OnOtherGhostTalkを通知するかどうかを設定。初期値false。<br>
+					false以外を設定すると、同時起動している他ゴーストが喋った時OnOtherGhostTalkが通知されるようになる。<br>
 					beforeを指定すると喋る前、afterを指定すると喋った後に通知。<br>
-					trueはafterと同じ。</p>
+					trueはafterと同じ。
+					ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>
+							\![set,otherghosttalk,true]これ以降、同時に起動しているゴーストが何か喋り終わるたびに、OnOtherGhostTalkが通知されるようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,othersurfacechange,trueかfalse_">
 				<dt class="entry">\![set,othersurfacechange,trueかfalse]</dt>
 				<dd class="entry">
-					<p class="description">OnOtherSurfaceChangeを通知するかどうかを設定。通常無効。</p>
+					<p class="description">OnOtherSurfaceChangeを通知するかどうかを設定。初期値false。<br>trueで有効になり、同時起動している他ゴーストのサーフェスが変わるとOnOtherSurfaceChangeが通知されるようになる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>
+							\![set,othersurfacechange,true]これ以降、同時に起動しているゴーストのサーフェスが変わるたびに、OnOtherSurfaceChangeが通知されるようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raise,イベント名,r0,r1,r2..._">
@@ -2973,6 +3129,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>このトークの末端にあるraiseが再生された時、SHIORIイベント「OnRaiseTest」がSSPから通知される。Reference0には「test」が入っている。\![raise,OnRaiseTest,test]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_embed,イベント名,r0,r1,r2..._">
@@ -2988,15 +3150,28 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、\eで効果が切れるさくらスクリプト（\f[]のフォント変更など）が持続する。\![embed,OnEmbedTest]</code></p>
+							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br>第3引数は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>待ち時間に0を入れて上書きすると設定をキャンセルできる。</p>
+					<p class="description">第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後（5000ミリ秒）後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">
@@ -3006,15 +3181,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br>第6引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>待ち時間に0を入れて上書きすると設定をキャンセルできる。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>ゴースト名はバイト値1区切りで複数指定可。</p>
+					<p class="description">待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第6引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>ゴースト名はバイト値1区切りで複数指定可。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒（30000ミリ秒）おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
@@ -3024,33 +3211,58 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/
+							stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notify,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![notify,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">Notifyイベントを実行する。<br>第3引数以降はreference。</p>
+					<p class="description">Notifyイベントを実行する。<br>第3引数以降はreference。<br>\![raise,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![notify,OnNotifyTest,test]OnNotifyTestが通知され、Reference0に「test」が入っている。OnNotifyTestでトークを書いてもSSPに反映されない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">起動している他のゴーストへNotifyイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>バイト値1区切りで複数指定可。</p>
+					<p class="description">起動している他のゴーストへNotifyイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>バイト値1区切りで複数指定可。<br>\![raiseother,ゴースト名,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。もしこの通知イベントでEmily/Phase4.5が何かトークをしても、バルーンには何も表示されない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p class="description">プラグインに指定したNotifyイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。</p>
+					<p class="description">プラグインに指定したNotifyイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。<br>\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![notifyplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」の登録イベントをnotifyで呼び出す。プラグイン実行で処理は行われるが、ゴースト側への返答は無視される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -3065,12 +3277,18 @@
 			<dl id="__V">
 				<dt class="entry">\_v[ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">自ゴーストフォルダにあるwave、mp3、wmaを再生する。 <br>ファイルが存在しない場合は無視される。</p>
+					<p class="description">wave、mp3、wmaをSSPが再生する。[実行したゴーストのフォルダ]/ghost/masterから相対パス、または絶対パスで指定可。<br>ファイルが存在しない場合は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_v[se/test.wav]。[実行したゴーストのフォルダ]/ghost/master/seフォルダにあるtest.wavを再生する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_8_ファイル名_">
@@ -3082,6 +3300,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_v[test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\_V再生が終了するまで待ってからこの文章を表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,play,ファイル名_">
@@ -3091,24 +3315,42 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,cdplay,トラックNo._">
 				<dt class="entry">\![sound,cdplay,トラックNo.]</dt>
 				<dd class="entry">
-					<p class="description">音楽CDを再生する。</p>
+					<p class="description">音楽CDをSSPが再生する。音楽CDがセットされていない場合は無視される。<br>再生中でも、\_Vは無視される。再生中に\![sound,cdplay,トラックNo.]で別トラックを指定しても無視される。\![sound,pause]の実行が必要。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,loop,ファイル名_">
 				<dt class="entry">\![sound,loop,ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">ループ再生する。\_Vの対象にならない。</p>
+					<p class="description">ループ再生する。\_Vの対象にならない。<br>再生を止める場合は\![sound,pause]を実行する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]ループ再生を停止する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,wait_">
@@ -3118,6 +3360,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,wait]再生が終了するまで待ってからこの文章を表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,pause_">
@@ -3127,6 +3375,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,resume_">
@@ -3136,6 +3390,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -3144,33 +3404,52 @@
 			<dl id="_j_ID_">
 				<dt class="entry">\j[ID]</dt>
 				<dd class="entry">
-					<p class="description">IDにジャンプする。<br>http://～でURLジャンプする。<br>file://～でOSに関連付けられた拡張子でファイルを実行する。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+					<p class="description">IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
+							<p><code>\j[file:///descript.txt][実行したゴーストのフォルダ]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,browser,パラメータ_">
 				<dt class="entry">\![open,browser,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">本体で設定されたブラウザを開く。</p>
+					<p class="description">本体で設定されたブラウザを開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; ブラウザの設定」で指定されたもの。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,browser,http://ssp.shillest.net/]ばぐとら研究所をSSP本体設定で指定されたブラウザを立ち上げて表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,mailer,パラメータ_">
 				<dt class="entry">\![open,mailer,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">本体で設定されたメーラーを開く。</p>
+					<p class="description">本体で設定されたメーラーを開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; メーラの設定」で指定されたもの。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,mailer,test@example.com]送信先アドレスにtest@example.comが入ったメーラーを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="___t">
@@ -3182,12 +3461,18 @@
 			<dl id="_!_open,teachbox_">
 				<dt class="entry">\![open,teachbox]</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxを閉じる。</p>
+					<p class="description">TeachBoxを開く。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,teachbox]TeachBoxを開く。実行と同時にOnTeachStartが通知され、TeachBoxのOKボタンを押すとOnTeach、閉じるとOnTeachInputCancelが通知される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_close,teachbox_">
@@ -3197,6 +3482,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![close,teachbox]TeachBoxを閉じる。開いてない場合は無視される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="___c">
@@ -3214,6 +3505,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,communicatebox,テスト]CommunicateBoxを開く。最初から「テスト」の文字が入っている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_close,communicatebox_">
@@ -3223,6 +3520,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![close,communicatebox]CommunicateBoxを閉じる。開いてない場合は無視される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">
@@ -3230,11 +3533,11 @@
 				<dd class="entry">
 					<p class="description">
 						InputBoxを開く。
-						<br>表示時間はミリ秒で指定。
-						<br>テキストはbox展開直後にあらかじめ表示するテキスト（CROW不可）。
-						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。
-						<br>入力後、決定されるとSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
-						<br>
+						<br>表示時間はミリ秒で指定。省略するか、0以下の数を指定すると、表示時間無制限。
+						<br>テキストはbox展開直後にあらかじめ表示するテキスト（CROW不可）、省略可。
+						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。
+						<br>OKボタンを押すか、表示時間を過ぎるとSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
+						<br>表示時間を過ぎた（タイムアウトした）場合と、閉じるボタンを押して閉じた場合は、OnUserInputCancelが発生する。
 						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
 					</p>
 					<ul class="supported-baseware">
@@ -3242,42 +3545,72 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,passwordinput,ID,表示時間,テキスト,オプション_">
 				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト,オプション]</dt>
 				<dd class="entry">
-					<p class="description">文字を隠すInputBoxを開く。他はすべて通常の<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>に同じ。</p>
+					<p class="description">文字を隠すInputBoxを開く。他はすべて通常の<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,passwordinput,パスワードテスト,-1,--option==noclose]入力が●で伏せ字になるInputBoxを開く。OKボタンを押しても、時間経過でも自動的に閉じない。閉じるボタンを押すと閉じる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
 				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
 				<dd class="entry">
-					<p class="description">年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力値はOnUserInputのReference1にカンマ区切りで年,月,日と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力値はOnUserInputのReference1にカンマ区切りで年,月,日と入る。<br>タイムアウトした場合はTimeoutと入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>入力時や閉じた時、タイムアウト時の通知イベントは<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,dateinput,日付入力テスト,30000,2012,12,23]初期値が2012年12月23日の年月日入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
 				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</dt>
 				<dd class="entry">
-					<p class="description">スライダー調節型のInputBoxを開く。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">スライダー調節型のInputBoxを開く。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>入力時や閉じた時、タイムアウト時の通知イベントは<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,sliderinput,スライダーテスト,30000,50,0,100]初期値が50、最小値が0、最大が100のスライダー型InputBoxを開く。30秒でタイムアウトする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_"">
 				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
 				<dd class="entry">
-					<p class="description">時間入力InputBoxを開く。<br>年,月,日は初期値。<br>入力値はOnUserInputのReference1にカンマ区切りで時,分,秒と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<p class="description">時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで時,分,秒と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>閉じた時、タイムアウト時の通知イベントは<a href="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,timeinput,時間入力テスト,30000,23,45,12]初期値が23時45分12秒の時間入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_close,inputbox,ID_">
@@ -3287,6 +3620,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![close,inputbox,時間入力テスト]IDが「時間入力テスト」のInputBoxを閉じる。\![close,inputbox,__SYSTEM_ALL_INPUT__]その後、全てのInputBoxを閉じる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,configurationdialog,ダイアログID_">
@@ -3298,28 +3637,46 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,configurationdialog,talk]SSP本体設定ダイアログの喋り/バルーンのタブを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,ghostexplorer_">
 				<dt class="entry">\![open,ghostexplorer]</dt>
 				<dd class="entry">
-					<p class="description">ゴーストエクスプローラを開く。</p>
+					<p class="description">ゴーストエクスプローラを開く。<br>オーナードローメニューから開くことも可能。<br>以下～エクスプローラは、ゴーストエクスプローラの種類(T)から変更することで手動で変更も出来る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,ghostexplorer]ゴーストエクスプローラを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,shellexplorer_">
 				<dt class="entry">\![open,shellexplorer]</dt>
 				<dd class="entry">
-					<p class="description">シェルエクスプローラを開く。</p>
+					<p class="description">シェルエクスプローラを開く。表示されるのは現在起動中のゴーストのシェルのみ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,shellexplorer]シェルエクスプローラを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,balloonexplorer_">
@@ -3331,6 +3688,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,balloonexplorer]バルーンエクスプローラを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,headlinesensorexplorer_">
@@ -3342,6 +3705,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,headlinesensorexplorer]ヘッドラインエクスプローラを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,pluginexplorer_">
@@ -3351,6 +3720,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,pluginexplorer]プラグインエクスプローラを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,rateofusegraph_">
@@ -3362,6 +3737,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,rateofusegraph]ゴースト使用率を表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,rateofusegraphballoon_">
@@ -3389,6 +3770,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,help,ダイアログID_">
@@ -3398,33 +3785,59 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,help,talk]ブラウザで、http://ssp.shillest.net/ukadoc/ssphelp/の喋り/バルーンのページを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,messenger_">
 				<dt class="entry">\![open,messenger]</dt>
 				<dd class="entry">
-					<p class="description">インスタントメッセンジャーを開く。</p>
+					<p class="description">インスタントメッセンジャーを開く。<br>オーナードローメニューからは、「機能(F) -&gt; SSPメッセンジャ(M)」で実行できる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p class="description">readme.txtを開く。</p>
+					<p class="description">readme.txtを開く。<br>起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,readme]readme.txtを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,file,ファイル名_">
 				<dt class="entry">\![open,file,ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">ファイルを実行する。<br>windowsの環境変数（%SYSTEMROOT%,%SYSTEM%,%TEMP%等）を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
+					<p class="description">ファイルを実行する。install.txtのあるフォルダからの相対パスか、絶対パスで指定。<br>windowsの環境変数（%SYSTEMROOT%,%SYSTEM%,%TEMP%等）を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,file,shell/master/surface0.png]shell/masterフォルダのsurface0.pngが開かれる。</code></p>
+							<p><code>\![open,file,%ComSpec%]コマンドプロンプトが実行される。</code></p>
+							<p><code>\![open,file,TortoiseProc.exe]TortoiseSVNがインストールされていれば、パスを自動で検索して実行する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,open,パラメータ_">
@@ -3434,15 +3847,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[実行したゴーストのフォルダ]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,save,パラメータ_">
 				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">ファイルの保存のダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p class="description">ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,dialog,save,--title=セーブダイアログ表示テスト,--dir=__system_mydocument__,--filter=テキストファイル|*.txt;*.dic,--ext=txt,--name=test,--id=テスト保存ダイアログ]マイドキュメントを初期位置として、.txtと.dicのファイルのみを表示し、初期ファイル名「test.txt」の保存ダイアログを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,folder,パラメータ_">
@@ -3452,6 +3877,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,dialog,folder,--title=フォルダ選択ダイアログ表示テスト,--id=OnTestFolderDialog]ダイアログで前回開いた場所を初期位置として、フォルダ選択ダイアログを開く。保存ボタンを押すと、指定したID名が「OnTestFolderDialog」でOnで始まっているため、同名のSHIORIイベントOnTestFolderDialogが通知される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,color,パラメータ_">
@@ -3462,11 +3893,21 @@
 						<dt>--color=R G B</dt>
 						<dd>RGBをそれぞれ0～255で指定</dd>
 						<dt>--id=イベントID</dt>
-						<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br>イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+						<dd>
+							OnSystemDialog/OnSystemDialogCancelに送るID
+							<br>イベントIDをOn～にするとそのIDのイベントが発生する。Referenceの内容はOnSystemDialogと同じ。
+							<br>Reference0は固定で「color」が入っている。
+						</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,dialog,color,--color=255 0 0,--id=テストカラーダイアログ]初期表示色が赤のカラーパレットダイアログを表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_close,dialog,ID_">
@@ -3476,15 +3917,27 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![close,dialog,テストカラーダイアログ]現在表示されているダイアログのうち、idが「テストカラーダイアログ」のものを閉じる。ダイアログが閉じられた場合、OnSystemDialogCancelが通知される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,surfacetest_">
 				<dt class="entry">\![open,surfacetest]</dt>
 				<dd class="entry">
-					<p class="description">サーフェステストダイアログを開く 。</p>
+					<p class="description">サーフェステストダイアログを開く。本体設定で「開発者用機能」がONになっていない場合は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,surfacetest]サーフェステストダイアログを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_inputbox-option">
@@ -3498,17 +3951,18 @@
 				</dl>
 			</section>
 			<section class="caption" id="notes_selectfile">
-				<h1>ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</h1>
+				<h1>ファイルを開く / ファイルを保存 / フォルダ選択 / カラーパレット選択 パラメータ</h1>
 				<dl>
 					<dt>--title=テキスト</dt>
-					<dd>ダイアログのタイトルバーに表示されるテキスト</dd>
+					<dd>ダイアログのタイトルバーに表示されるテキスト<br>省略した場合、openダイアログなら「Open File」、saveダイアログなら「Save File」、folderダイアログなら空欄、colorダイアログなら「色の設定」。
+					</dd>
 					<dt>--dir=パス</dt>
 					<dd>
 						<p>
-							初期表示フォルダ
+							初期表示フォルダ、絶対パスで指定<br>省略した場合は前回ダイアログで開いたフォルダ
 						</p>
 						<p>
-							パス部分に以下で、windowsの特殊なフォルダの指定が可能
+							<br>パス部分に以下で、windowsの特殊なフォルダの指定が可能
 							<br>__system_mydocument__
 							<br>__system_mypictures__
 							<br>__system_myvideo__
@@ -3517,13 +3971,17 @@
 						</p>
 					</dd>
 					<dt>--filter=フィルタ</dt>
-					<dd>BMP|*.bmp|その他|*.png;*.gif のように記述</dd>
+					<dd>BMP|*.bmp|その他|*.png;*.gif のように記述<br>openダイアログとsaveダイアログのみ有効。</dd>
 					<dt>--ext=拡張子</dt>
-					<dd>保存時の標準拡張子</dd>
+					<dd>保存時の標準拡張子<br>saveダイアログのみ有効。</dd>
 					<dt>--name=ファイル名</dt>
-					<dd>保存時の標準ファイル名</dd>
+					<dd>保存時の標準ファイル名<br>saveダイアログのみ有効。</dd>
 					<dt>--id=イベントID</dt>
-					<dd>OnSystemDialog/OnSystemDialogCancelに送るID<br>イベントIDをOn～にするとそのIDのイベントが発生する。</dd>
+					<dd>
+						OnSystemDialog/OnSystemDialogCancelに送るID
+						<br>イベントIDをOn～にするとそのIDのイベントが発生する。Referenceの内容はOnSystemDialogと同じ。
+						<br>Reference0はダイアログの種類によって「open」「save」「folder」のいずれかが入っている。
+					</dd>
 				</dl>
 			</section>
 		</section>
@@ -3537,6 +3995,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で着せ替え出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_get,property,イベント名,プロパティ名,プロパティ名,..._">
@@ -3547,6 +4011,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在仕様中のバルーンの表示可能な幅（ピクセル数）、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth,currentghost.balloon.scope(0).validheight]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 		</section>
@@ -3555,47 +4025,77 @@
 			<dl id="_!_execute,http-get,URL_">
 				<dt class="entry">\![execute,http-get,URL]</dt>
 				<dd class="entry">
-					<p class="description">http get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description">http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト（このページ）を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,パラメータ_">
 				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description">パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,p=SSP 伺か]YAHOOでの「SSP 伺か」の検索結果ページを、そのまま保存する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-post,URL,パラメータ_">
 				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p class="description">パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description">パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,bbs=sakura&key=1177949884&MESSAGE=テストメッセージ]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。※実際に書き込みが行われるので注意。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[実行したゴーストのフォルダ]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。</p>
+					<p class="description"><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,--async=書き込みテスト,--param=bbs=sakura&key=1177949884&MESSAGE=テストメッセージ,--timeout=5]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※実際に書き込みが行われるので注意。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
@@ -3605,6 +4105,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,extractarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
@@ -3614,6 +4120,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,path,ファイル名_">
@@ -3623,6 +4135,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,install,path,C:/SSP/emily4.nar]C:/SSPにあるemily4.narをインストールする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
@@ -3632,6 +4150,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]Emily/Phase4.5のnarをダウンロードしてきてインストールする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,ping,パラメータ1,パラメータ2,..._">
@@ -3652,6 +4176,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,ping,--host=ssp.shillest.net,--event=pingテスト]ばぐとら研究所にデフォルト設定でpingを打つ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,nslookup,パラメータ1,パラメータ2,..._">
@@ -3666,6 +4196,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![execute,nslookup,--host=ssp.shillest.net,--event=nslookupテスト]ばぐとら研究所のホスト名指定でIPを調べる。調べた内容は成功時に通知されるOnNSLookupCompleteのReference3に入っている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,passivemode_">
@@ -3677,6 +4213,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>さくらスクリプトの再生後、パッシブモードになる。\![enter,passivemode]ここから、最小化も終了も出来ない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,passivemode_">
@@ -3688,6 +4230,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![leave,passivemode]パッシブモード解除。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,inductionmode_">
@@ -3698,6 +4246,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,inductionmode]インダクションモード開始。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,inductionmode_">
@@ -3708,6 +4262,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![leave,inductionmode]インダクションモード解除。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
@@ -3717,6 +4277,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,selectmode,rect,head]セレクトモードを開始する。判定名headの範囲が初期選択されている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,selectmode_">
@@ -3726,6 +4292,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![leave,selectmode]セレクトモードを解除する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,collisionmode__!_enter,collisionmode,rect_">
@@ -3735,6 +4307,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,collisionmode]コリジョンモードを開始する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_leave,collisionmode_">
@@ -3744,6 +4322,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![enter,collisionmode]コリジョンモードを開始する。\![leave,collisionmode]ここで解除する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reloadsurface_">
@@ -3754,6 +4338,12 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reloadsurface]シェルをリロードする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,descript_">
@@ -3763,6 +4353,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,descript]全descript.txtをリロードする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,descript,パラメータ_">
@@ -3772,6 +4368,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,descript,shell balloon]シェルとバルーンのdescript.txtをリロードする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,shiori_">
@@ -3781,6 +4383,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,shiori]shioriをリロードする。結果として辞書ファイルを全て読みなおす。起動中に書き換えた辞書ファイルの内容を適用する場合などに用いる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,makoto_">
@@ -3790,6 +4398,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,makoto]makotoをリロードする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,shell_">
@@ -3799,6 +4413,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,shell]シェルをリロードする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reload,ghost_">
@@ -3808,6 +4428,12 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reload,ghost]リロードする。自分自身へのゴースト切り替えと、SHIORIイベントが発生しないことを除けばほぼ同じ。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__u_0x0000_">
@@ -3819,6 +4445,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_u[0x22EE]縦三点リーダを表示。\_u[8942]最初のさくらスクリプトの10進数表記。10進数の場合は0xをつけない。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="__m_0x00_">
@@ -3830,6 +4462,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\_m[0x41]半角大文字Aを表示。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_&_ID_">
@@ -3841,6 +4479,12 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\&[amp]半角アンパサンドを表示。実体参照の書式、&ID;のID部分を記入する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_m_umsg,wparam,lparam_">
@@ -3851,25 +4495,35 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>SSTP経由でこのスクリプトを再生すると、再生したゴーストが終了する。\m[WM_CLOSE,0,0]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_passivemode">
 				<h1>PassiveMode</h1>
-				<p>パッシブモードの時、以下の制限が発生する。</p>
+				<p>パッシブモードの時、以下の制限が発生する。<br>ユーザの操作の制限で、さくらスクリプトで実行した場合は可能。</p>
 				<ul>
-					<li>オーナードローメニューが出ない。</li>
+					<li>オーナードローメニューの選択可能な項目が制限される。</li>
 					<li>メールチェックしない。</li>
 					<li>ヘッドラインセンスしない。</li>
 					<li>オートチェンジしない。</li>
+					<li>スクリプトブレークしない。</li>
 					<li>選択肢がタイムアウトしない。</li>
 					<li>吹き出しが時間経過で消えない。</li>
 					<li>ファイルが DnD されても無視。</li>
 					<li>nar ダブルクリックも無視。</li>
 					<li>OnSurfaceRestoreが来ない。</li>
 					<li>cantalk は常に false。（OnSecondChange および OnMinuteChange 自体は来る）</li>
+					<li>ゴーストを切り替えられない。</li>
 					<li>(Materiaのみ：)コミュニケートボックスは閉じられ、また開かない。</li>
 					<li>最小化できない。</li>
 					<li>終了できない。</li>
+					<li>ネットワーク更新できない。</li>
+					<li>アンインストールできない。</li>
 				</ul>
 			</section>
 			<section class="caption" id="notes_inductionmode">
@@ -3879,7 +4533,7 @@
 					<li>タイムアウト発生。</li>
 					<li>最小化可能。</li>
 					<li>終了可能。</li>
-					<li>コミュニケートボックス可能。</li>
+					<li>(Materiaのみ：)コミュニケートボックス可能。</li>
 				</ul>
 			</section>
 			<section class="caption" id="notes_executehttp">
@@ -3888,13 +4542,13 @@
 					<dt>--async=識別ID</dt>
 					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
 					<dt>--file=ファイル名</dt>
-					<dd>取得するデータの保存名を指定。myghost/ghost/master/var/ファイル名に保存される。</dd>
+					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
 					<dt>--nodescript</dt>
 					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
 					<dt>--param=パラメータ</dt>
-					<dd>get/postのパラメータを指定します。</dd>
+					<dd>get/postのパラメータを指定する。</dd>
 					<dt>--timeout=秒数</dt>
-					<dd>レスポンスを待つ時間（※ダウンロードに要する時間ではない）を指定します。最大300秒。</dd>
+					<dd>レスポンスを待つ時間（※ダウンロードに要する時間ではない）を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
 					<dt>--param-charset=文字コード</dt>
 					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
 					<dt>--cookie=クッキーデータ</dt>
@@ -3904,6 +4558,21 @@
 		</section>
 		<section class="category">
 			<h1>環境変数</h1>
+			<section class="caption" id="notes_environmentvariable">
+				<h1>環境変数の指定方法</h1>
+				<p>SSPがバルーンへ描画する時、環境変数を置き換える。<br>「単語-」で始まるものは候補が複数あり、ランダムで選択される。</p>
+			</section>
+			<dl id="environmentvariable">
+				<dt class="entry">環境変数の記述例</dt>
+				<dd class="entry">
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>%username、ちょっと聞いてよ。%msが%mpにある%mhで%meを食べてたら%mtを思いついたんだって。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
 			<dl id="_month">
 				<dt class="entry">%month</dt>
 				<dd class="entry">
