@@ -1380,7 +1380,7 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p class="description">バルーンをXY座標に移動。descript.txtのデフォルトのoffset値は無視される。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。\s[ID]などサーフェスが再描画されるタイミングと、\eで解除される。<!-- \eでの解除は、次のスクリプトでバルーンに表示される文字が半角アルファベットで始まる場合のみ設定したオフセット値が保持される。この場合、次の\eで解除される。--></p>
+					<p class="description">バルーンのオフセット値をXY座標に変更。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。次のトーク時に元の位置に戻る。<br>通常に数値を指定すればdescript.txtのデフォルトのoffset値は無視されるが、頭に@をつけるとdescript.txtやsurfaces.txt内のオフセット値からの相対座標指定となる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1388,6 +1388,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX100Y-50に移動。</code></p>
+							<p><code>\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX100Y-50(相対座標)に移動。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3327,7 +3328,7 @@
 			<dl id="_!_sound,cdplay,トラックNo._">
 				<dt class="entry">\![sound,cdplay,トラックNo.]</dt>
 				<dd class="entry">
-					<p class="description">音楽CDをSSPが再生する。音楽CDがセットされていない場合は無視される。<br>再生中でも、\_Vは無視される。再生中に\![sound,cdplay,トラックNo.]で別トラックを指定しても無視される。\![sound,pause]の実行が必要。</p>
+					<p class="description">音楽CDをSSPが再生する。音楽CDがセットされていない場合は無視される。<br>再生中でも、\_Vは無視される。再生中に\![sound,cdplay,トラックNo.]で別トラックを指定しても無視される。\![sound,stop]で一旦停止してから次のトラックを指定すること。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4117,7 +4118,7 @@
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p class="description">ZIPファイルの解凍をする。<br>ssp.exe以下のフォルダのみ可能。</p>
+					<p class="description">ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4132,7 +4133,7 @@
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,compressarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p class="description">ZIPファイルの圧縮をする。<br>ssp.exe以下のフォルダのみ可能。</p>
+					<p class="description">ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4147,7 +4148,7 @@
 			<dl id="_!_execute,install,path,ファイル名_">
 				<dt class="entry">\![execute,install,path,ファイル名]</dt>
 				<dd class="entry">
-					<p class="description">指定したnarファイルをインストールする。</p>
+					<p class="description">指定したnarファイルをインストールする。指定はフルパスで行うこと(相対パス指定不可)。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4162,7 +4163,7 @@
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
 				<dt class="entry">\![execute,install,url,URL,feedまたはnar]</dt>
 				<dd class="entry">
-					<p class="description">指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br>feed、narは省略可能。</p>
+					<p class="description">指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br>feed、narは省略可能。<br>ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
