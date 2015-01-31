@@ -538,7 +538,7 @@
 			<dl id="OnFirstBoot">
 				<dt class="entry">OnFirstBoot</dt>
 				<dd class="entry">
-					<p class="description">初回起動した際に発生。</p>
+					<p class="description">初回起動した際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>vanishされた回数。</dd>
@@ -553,7 +553,7 @@
 			<dl id="OnBoot">
 				<dt class="entry">OnBoot</dt>
 				<dd class="entry">
-					<p class="description">起動した際に発生。</p>
+					<p class="description">起動した際に発生。<br>SSPでは、<a href="#OnGhostChanged">OnGhostChanged</a>、<<a href="#OnGhostCalled">OnGhostCalled</a>、a href="#OnFirstBoot">OnFitstBoot</a>、<a href="#OnVanished">OnVanished</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>起動時のシェル名。</dd>
@@ -572,7 +572,7 @@
 			<dl id="OnClose">
 				<dt class="entry">OnClose</dt>
 				<dd class="entry">
-					<p class="description">終了が指示された際に発生。</p>
+					<p class="description">終了が指示された際に発生。<br>SSPでは、<a href="#OnGhostChanging">OnGhostChanging</a>、<a href="#OnCloseAll">OnCloseAll</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
@@ -587,7 +587,7 @@
 			<dl id="OnCloseAll">
 				<dt class="entry">OnCloseAll</dt>
 				<dd class="entry">
-					<p class="description">すべて終了が指示されるか、または最後のゴーストにおいて終了が指示され、SSP自体が終了する際に発生。</p>
+					<p class="description">SSP自体が終了する際に発生。<br>オーナードローメニューの「すべて終了」が指示された場合の他、唯一起動中のゴーストにおいて「終了」が指示された場合、およびOSのシャットダウンに伴いSSPが終了する場合にも発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
@@ -600,7 +600,7 @@
 			<dl id="OnGhostChanged">
 				<dt class="entry">OnGhostChanged</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストから自ゴーストに切り替えられた際に発生。</p>
+					<p class="description">他のゴーストから自ゴーストに切り替えられた際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>直前のゴーストの本体側の名前。</dd>
@@ -623,7 +623,7 @@
 			<dl id="OnGhostChanging">
 				<dt class="entry">OnGhostChanging</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストへの切り替え指示があった際に発生。</p>
+					<p class="description">他のゴーストへの切り替え指示があった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnClose">OnClose</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替わるゴーストの本体側の名前。</dd>
@@ -644,7 +644,7 @@
 			<dl id="OnGhostCalled">
 				<dt class="entry">OnGhostCalled</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストから呼び出された際に発生。</p>
+					<p class="description">他のゴーストから呼び出された際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び出したゴーストの本体側の名前。</dd>
@@ -1237,7 +1237,7 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p class="description">直前のゴーストの消滅により自分に切り替わった際に発生。<br />※SSPのみ　同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生。</p>
+					<p class="description">直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>消滅したゴーストの本体側の名前。</dd>
