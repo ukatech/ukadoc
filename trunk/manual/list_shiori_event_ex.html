@@ -308,6 +308,25 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>アプリ「さとりすと」</h1>
+			<ul>
+				<li><a href="#OnSatolistBoot">OnSatolistBoot</a></li>
+				<li><a href="#OnSatolistGhostOpened">OnSatolistGhostOpened</a></li>
+				<li><a href="#OnSatolistSaved">OnSatolistSaved</a></li>
+				<li><a href="#OnSatolistClosed">OnSatolistClosed</a></li>
+				<li><a href="#OnSatolistEventAdded">OnSatolistEventAdded</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>GoogleChrome拡張「とうらぶえくすてんしょん」</h1>
+			<ul>
+				<li><a href="#OnTourabuConquestStart">OnTourabuConquestStart</a></li>
+				<li><a href="#OnTourabuConquestEnd">OnTourabuConquestEnd</a></li>
+				<li><a href="#OnTourabuDutyStart">OnTourabuDutyStart</a></li>
+				<li><a href="#OnTourabuDutyEnd">OnTourabuDutyEnd</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>ゴースト間汎用イベント</h1>
 			<ul>
 				<li><a href="#OnRequestValues">OnRequestValues</a></li>
@@ -552,7 +571,6 @@
 				</dd>
 			</dl>
 		</section>
-
 		<section class="category">
 			<h1>SAORI「httpc.dll」</h1>
 			<ul class="caption link">
@@ -1898,8 +1916,6 @@
 				</dd>
 			</dl>
 		</section>
-
-
 		<section class="category">
 			<h1>アプリ「さとりすと」</h1>
 			<ul class="caption link">
@@ -1936,6 +1952,51 @@
 				<dt class="entry">OnSatolistEventAdded</dt>
 				<dd class="entry">
 					<p class="description">さとりすとでイベントを作成した時に発生。</p>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>GoogleChrome拡張「とうらぶえくすてんしょん」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://chrome.google.com/webstore/detail/%E3%81%A8%E3%81%86%E3%82%89%E3%81%B6%E3%81%88%E3%81%8F%E3%81%99%E3%81%A6%E3%82%93%E3%81%97%E3%82%87%E3%82%93/ncnkkaljbdmjhimpbnnncfjolomblglg?hl=ja">とうらぶえくすてんしょん - Chrome ウェブストア</a></li>
+				<li>関連：<a href="http://ayachi.hatenablog.com/entry/2015/03/14/183856">http://ayachi.hatenablog.com/entry/2015/03/14/183856</a></li>
+				<li>関連：<a href="http://ayachi.hatenablog.com/entry/2015/03/14/210107">http://ayachi.hatenablog.com/entry/2015/03/14/210107</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnTourabuConquestStart">
+				<dt class="entry">OnTourabuConquestStart</dt>
+				<dd class="entry">
+					<p class="description">遠征が開始されたときに発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>部隊の番号。1～4の整数</dd>
+						<dt>Reference1</dt>
+						<dd> 遠征が終わるまでのおよその時間。単位は分。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnTourabuConquestEnd">
+				<dt class="entry">OnTourabuConquestEnd</dt>
+				<dd class="entry">
+					<p class="description">遠征が終了したとき発生。<br />仕様上実際の遠征終了より通知が数秒早いことがある。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ディスク群全体のステータス（＝最も悪いものの情報）と、更新日付。<br />カンマ区切りで、「(Good|Caution|Bad|Unknown),YYYY,NN,DD,HH,MM,SS」のように入る。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnTourabuDutyStart">
+				<dt class="entry">OnTourabuDutyStart</dt>
+				<dd class="entry">
+					<p class="description">内番が開始されたとき発生。</p>
+				</dd>
+			</dl>
+			<dl id="OnTourabuDutyEnd">
+				<dt class="entry">OnTourabuDutyEnd</dt>
+				<dd class="entry">
+					<p class="description">内番が終了したとき発生。</p>
 				</dd>
 			</dl>
 		</section>
