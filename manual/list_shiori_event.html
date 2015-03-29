@@ -165,6 +165,8 @@
 				<li><a href="#OnDestroy">OnDestroy</a></li>
 				<li><a href="#OnSysResume">OnSysResume</a></li>
 				<li><a href="#OnSysSuspend">OnSysSuspend</a></li>
+				<li><a href="#OnBasewareUpdating">OnBasewareUpdating</a></li>
+				<li><a href="#OnBasewareUpdated">OnBasewareUpdated</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -932,6 +934,36 @@
 				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
 					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<strong>[NOTIFY]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBasewareUpdating">
+				<dt class="entry">OnBasewareUpdating</dt>
+				<dd class="entry">
+					<p class="description">本体更新時、ダウンロードが終わりファイル更新を開始する前に発生。このイベントに反応がない場合はOnCloseAll、OnCloseの順に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>更新前のバージョン番号　例：2.3.58</dd>
+						<dt>Reference1</dt>
+						<dd>更新前のWindowsエクスプローラで見られるプロパティと同じバージョン番号　例：2.3.58.3000</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBasewareUpdated">
+				<dt class="entry">OnBasewareUpdated</dt>
+				<dd class="entry">
+					<p class="description">本体更新終了後、ゴーストが起動する時に発生。このイベントに反応がない場合はOnBootが発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>更新後のバージョン番号　例：2.3.59</dd>
+						<dt>Reference1</dt>
+						<dd>更新後のWindowsエクスプローラで見られるプロパティと同じバージョン番号　例：2.3.59.3000</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
