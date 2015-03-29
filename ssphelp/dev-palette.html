@@ -28,7 +28,7 @@
       <div id="contents"><h1>開発者向けヘルプ：開発用パレット</h1>
 <p>
 	項目をクリックでその説明に飛びます。
-	<br /><img src="image/dev-palette/0.png" usemap="#palette" width="203" height="363" alt="開発用パレット" />
+	<br /><img src="image/dev-palette/0.png" usemap="#palette" width="203" height="381" alt="開発用パレット" />
 	<map name="palette" id="palette">
 		<area shape="rect" coords="13,36,188,52" href="#menuitem1" alt="当たり判定を表示" />
 		<area shape="rect" coords="13,52,188,68" href="#menuitem2" alt="バルーンテストモード" />
@@ -41,14 +41,15 @@
 		<area shape="rect" coords="13,157,188,173" href="#menuitem9" alt="自動切替無効" />
 		<area shape="rect" coords="13,172,188,188" href="#menuitem10" alt="自動チェック無効" />
 		<area shape="rect" coords="13,187,188,203" href="#menuitem11" alt="自動更新無効" />
+		<area shape="rect" coords="13,200,188,217" href="#menuitem12" alt="\-タグで終了しない" />
 
-		<area shape="rect" coords="15,205,188,223" href="#menuitem12" alt="スクリプト入力" />
-		<area shape="rect" coords="15,226,188,244" href="#menuitem13" alt="サーフィステスト" />
-		<area shape="rect" coords="15,247,188,265" href="#menuitem14" alt="エラーログを表示" />
-		<area shape="rect" coords="15,268,188,286" href="#menuitem15" alt="現在時刻の仮想的変更" />
-		<area shape="rect" coords="15,289,188,307" href="#menuitem16" alt="SERIKO Inspector" />
-		<area shape="rect" coords="15,310,188,328" href="#menuitem17" alt="リロード" />
-		<area shape="rect" coords="15,331,188,349" href="#menuitem18" alt="開く/実行" />
+		<area shape="rect" coords="15,221,188,240" href="#menuitem13" alt="スクリプト入力" />
+		<area shape="rect" coords="15,243,188,262" href="#menuitem14" alt="サーフィステスト" />
+		<area shape="rect" coords="15,264,188,283" href="#menuitem15" alt="エラーログを表示" />
+		<area shape="rect" coords="15,285,188,304" href="#menuitem16" alt="現在時刻の仮想的変更" />
+		<area shape="rect" coords="15,305,188,324" href="#menuitem17" alt="SERIKO Inspector" />
+		<area shape="rect" coords="15,327,188,346" href="#menuitem18" alt="リロード" />
+		<area shape="rect" coords="15,347,188,366" href="#menuitem19" alt="開く/実行" />
 	</map>
 </p>
 <p>
@@ -149,16 +150,21 @@ Charset: Shift_JIS
 	ONにすると、その<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>について<a href="config-ghost.html">自動更新機能</a>が無効になります。
 	<br />開発中<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のデータが更新によって上書きされてしまうような事故の防止に役立ちます。
 </p>
+<h3 id="menuitem12">\-タグで終了しない</h3>
+<p>
+	ONにすると、その<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>について、実行中のスクリプトに\-（ゴーストを終了させる命令）が出現してもそれを無視するようになります。
+	<br />開発中<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が予期せぬ終了をしてしまう事を回避する他、\-を含むトークのテストに利用できます。
+</p>
 
 
 <h2>ボタン</h2>
-<h3 id="menuitem12">スクリプト入力</h3>
+<h3 id="menuitem13">スクリプト入力</h3>
 <p>
 	SENDボックスが開かれ、<a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>を入力することで直接実行させる事ができます。
 	<br />入力できるのは各<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>の辞書の記法ではありませんので注意してください。
 </p>
 
-<h3 id="menuitem13">サーフィステスト</h3>
+<h3 id="menuitem14">サーフィステスト</h3>
 <img src="image/dev-palette/5.png" width="368" height="230" alt="サーフィステスト" />
 <p>
 	<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の動作についてさまざまなテストを行うためのダイアログを開きます。
@@ -183,13 +189,13 @@ Charset: Shift_JIS
 	<br /><span class="Sentence">Copy</span>がONになっている場合、<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>選択時にその<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>へ切り替えるためのスクリプトがクリップボードにコピーされます（例えば\0をsurface1にする場合\0\s[1]）。
 	<br /><span class="Sentence">Script</span>がONになっている場合、
 </p>
-<h3 id="menuitem14">エラーログを表示</h3>
+<h3 id="menuitem15">エラーログを表示</h3>
 <p>
 	通知されたエラーの履歴リストを表示します。
 	<br />詳細は「<a href="dev-scriptlog.html#chapter2">スクリプトログ</a>」のページをご覧ください。
 </p>
 
-<h3 id="menuitem15">現在時刻の仮想的変更</h3>
+<h3 id="menuitem16">現在時刻の仮想的変更</h3>
 <img src="image/dev-palette/9.png" width="333" height="155" alt="TimeMachine" />
 <p>
 	<br />時刻を設定すると、SSPが認識している現在日時を、設定した日時に仮想的に置き換えます。
@@ -202,7 +208,7 @@ Charset: Shift_JIS
 	<br /><span class="Sentence">Reset</span>ボタンを押すと、仮想時刻をSystem Timeに戻します。
 </p>
 
-<h3 id="menuitem16">SERIKO Inspector</h3>
+<h3 id="menuitem17">SERIKO Inspector</h3>
 <img src="image/dev-palette/8.png" width="343" height="203" alt="SERIKO Inspector" />
 <p>
 	<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の定義をツリービューで表示します。
@@ -212,14 +218,14 @@ Charset: Shift_JIS
 	右下の<span class="Sentence">Dump</span>ボタンから、ファイル保存ダイアログを開き、構造をタブ・インデントで表現したテキストファイルを出力できます。
 </p>
 
-<h3 id="menuitem17">リロード</h3>
+<h3 id="menuitem18">リロード</h3>
 <img src="image/dev-palette/10.png" width="147" height="152" alt="リロードメニュー" />
 <p>
 	メニューから選択した内容について、読み込み直します。
 	<br />開発中にファイルの書き変えや、追加・削除などを行った場合に利用してください。
 </p>
 
-<h3 id="menuitem18">開く/実行</h3>
+<h3 id="menuitem19">開く/実行</h3>
 <img src="image/dev-palette/11.png" width="306" height="320" alt="開く/実行メニュー" />
 <p>メニューから選択した項目を開くか実行します。</p>
 <dl>
