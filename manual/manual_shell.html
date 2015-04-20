@@ -44,6 +44,7 @@
 　　　　　　<em class="filename">+-(element).pna</em>
 　　　　　　<em class="filename">+-surfaces.txt</em>
 　　　　　　<em class="filename">+-surfaces**.txt</em> （SSPのみ）
+　　　　　　<em class="filename">+-alias.txt</em>（旧仕様）
 　　　　　　<em class="filename">+-thumbnail.png</em>
 　　　　　　<em class="filename">+-makoto.dll</em>
 　　　　　　<em class="filename">+-surfacetable.txt</em> (SSPのみ)
@@ -148,7 +149,7 @@
 <section>
 	<div class="passage">
 		<dl class="component">
-			<dt><a href="descript_shell.html">surfaces.txt</a></dt>
+			<dt><a href="descript_shell_surfaces.html">surfaces.txt</a></dt>
 			<dd>
 				<div class="passage">
 					<p>サーフェスのID割り当て、レイヤー合成、アニメーション、当たり判定などを定義するファイル。</p>
@@ -159,7 +160,7 @@
 				</div>
 			</dd>
 
-			<dt><a href="descript_shell.html">surfaces**.txt</a></dt>
+			<dt><a href="descript_shell_surfaces.html">surfaces**.txt</a></dt>
 			<dd>
 				<p>SSP専用。</p>
 				<p>**には任意の文字列を与えてよい。</p>
@@ -167,6 +168,12 @@
 				<p>機能は<em class="filename">surfaces.txt</em>と同じ。</p>
 				<p>互換性を維持しつつSSP専用の機能を使うためのもの。</p>
 				<p>このファイルは省略可能。必要な部分のみを追記する形でも問題ない。</p>
+			</dd>
+
+			<dt><a href="descript_shell_surfaces.html#caption_aliastxt">alias.txt</a></dt>
+			<dd>
+				<p>旧仕様。sakura(kero).aliasブレスを記述するためのテキストファイル。</p>
+				<p>現在はsurfaces.txtに機能が統合されている。</p>
 			</dd>
 		</dl>
 	</div>
