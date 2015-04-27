@@ -296,6 +296,38 @@ main.toppage > section  h1:before {
 main.toppage > section  h1:after {
 	content: "】"
 }
+main.toppage > section section.caution {
+	background-color: #ffffcc;
+	border: dashed 1px #ccaa00;
+	width: 90%;
+	margin: 0 auto;
+	padding: 0.2em 1em;
+	color: #000000;
+}
+main.toppage > section section.caution h1 {
+	border-bottom: solid 3px #ccaa00;
+	margin-bottom: 1em;
+}
+main.toppage > section section.caution h1:before {
+	content: none;
+}
+main.toppage > section section.caution h1:after {
+	content: none;
+}
+main.toppage > section section.caution table{
+	margin:0.4em;
+	border-color: #000000;
+}
+main.toppage > section section.caution table th{
+	background-color: #ddddaa;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+}
+main.toppage > section section.caution table td{
+	text-align: left;
+	vertical-align: middle;
+}
 
 footer {
 	clear: both;
