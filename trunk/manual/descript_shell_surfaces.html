@@ -542,7 +542,7 @@ element0,overlay,dress2.png,0,0
 				</section>
 				<section>
 					<h1>インターバルの組み合わせ指定におけるbind</h1>
-					<p>SSPにおいては、<a href="introduction_anim.html">アニメーションインターバルの節</a>で触れているように、インターバルの組み合わせ指定が可能である。</p>
+					<p>SSPにおいては、<a href="#introduction_animationinterval">アニメーションインターバルの節</a>で触れているように、インターバルの組み合わせ指定が可能である。</p>
 					<p>組み合わせ指定の中にbindを含めた場合のアニメーションは、bind単体であれば本来持っていた静止画仕様であるという性質は失う（pattern定義のウェイトパラメータが無視されなくなる）。しかしアニメーションの寿命は変わらないので、例えばbind+runonceのような組み合わせ指定の場合、すべてのpatternの描画が終わった時点の表示が、以後ベースサーフェスの変更または着せ替え状態の変化があるまで継続し続けることになる。</p>
 					<p>従って、bindを含むインターバル組み合わせ指定では、pattern定義の最終行においてアニメーションの終了を行わず、静止画として残したい描画を合成しておくべきである。</p>
 				</section>
@@ -1377,7 +1377,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
-				<dl id="start,_ID_">
+				<dl id="start,ID">
 					<dt class="entry">start,ID</dt>
 					<dd class="entry">
 						<p class="description">
@@ -1391,7 +1391,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
-				<dl id="stop,_ID_">
+				<dl id="stop,ID">
 					<dt class="entry">stop,ID</dt>
 					<dd class="entry">
 						<p class="description">
