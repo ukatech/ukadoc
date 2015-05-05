@@ -315,6 +315,7 @@
 				<li><a href="#OnSatolistSaved">OnSatolistSaved</a></li>
 				<li><a href="#OnSatolistClosed">OnSatolistClosed</a></li>
 				<li><a href="#OnSatolistEventAdded">OnSatolistEventAdded</a></li>
+				<li><a href="#OnSatolistDictionaryFolderChanged">OnSatolistDictionaryFolderChanged</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1919,7 +1920,7 @@
 		<section class="category">
 			<h1>アプリ「さとりすと」</h1>
 			<ul class="caption link">
-				<li>公開元：<a href="http://ukananachi.blog98.fc2.com/">http://ukananachi.blog98.fc2.com/</a></li>
+				<li>公開元：<a href="http://nanachi.sakura.ne.jp/">http://nanachi.sakura.ne.jp/</a></li>
 			</ul>
 			<ul class="supported-baseware">
 				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1934,6 +1935,12 @@
 				<dt class="entry">OnSatolistGhostOpened</dt>
 				<dd class="entry">
 					<p class="description">さとりすとがゴーストを読み込んだ時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体側キャラクタ名。</dd>
+						<dt>Reference1</dt>
+						<dd>ゴースト名。</dd>
+					</dl>
 				</dd>
 			</dl>
 			<dl id="OnSatolistSaved">
@@ -1952,6 +1959,22 @@
 				<dt class="entry">OnSatolistEventAdded</dt>
 				<dd class="entry">
 					<p class="description">さとりすとでイベントを作成した時に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>追加した項目名。</dd>
+						<dt>Reference1</dt>
+						<dd>追加先のファイル名。</dd>
+						<dt>Reference2</dt>
+						<dd>項目の種別。</dd>
+						<dt>Reference3</dt>
+						<dd>項目の発生条件。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnSatolistDictionaryFolderChanged">
+				<dt class="entry">OnSatolistDictionaryFolderChanged</dt>
+				<dd class="entry">
+					<p class="description">「辞書」で使用する辞書フォルダを変更した時に発生。</p>
 				</dd>
 			</dl>
 		</section>
