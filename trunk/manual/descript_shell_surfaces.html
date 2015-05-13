@@ -471,7 +471,7 @@ animation0.pattern2,overlay,101,700,200,100
 animation0.pattern3,overlay,-1,700,0,0
 
 // トークに合わせて口を動かす - 口パクA-Cのうち一つをランダムに実行
-animation1.interval,talk,2
+animation10.interval,talk,2
 animation10.pattern0,overlay,200,700,200,120
 animation10.pattern1,overlay,201,700,200,120
 animation10.pattern2,overlay,202,700,200,120
@@ -480,8 +480,8 @@ animation10.pattern3,overlay,-1,700,0,0
 </pre></code>
 					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
-					<p>上例の通り、全てのアニメーション定義はinterval定義とpattern定義を含んでいる。animationには他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つ以上存在する必要がある。</p>
-					<p><a href="#animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>参照であるが、大意としてここでは「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが5文字喋るごとに再生される。</p>
+					<p>全てのアニメーション定義はinterval定義とpattern定義を含んでいる。他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つは存在する必要がある。</p>
+					<p><a href="#animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
 					<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
 				</section>
 				<section>
@@ -498,7 +498,7 @@ animation10.pattern3,overlay,-1,700,0,0
 					<h1>概要</h1>
 					<p>伺かのシェルは、着せ替えと呼ばれる仕組みを持つ。これは単一のシェル内で、複数の衣装などのパーツの表示・非表示や種類の切り替えを行うためのものである。</p>
 					<p>伺かのシェルにおける着せ替えは、アニメーションの一種として位置づけられる。<br>ただし他のアニメーションのようにコマ送りされず、アニメーションの開始時に即時全てのコマ（pattern）およびベースのサーフェスが合成されて、以後静止画として扱われる点が特徴である（従ってpattern定義のウェイトパラメータは無視される）。<br>この「描画があたかもベース画像と一体化したかのように振舞う」という性質は、衣服のようなものを表現する目的に良く適う。</p>
-					<p>着せ替えのアニメーションとしての開始・終了は、主にオーナードローメニューの着せ替えメニューからスイッチする事で制御される。SSPの場合はそれに加えて、さくらスクリプトの<a href="#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a>タグを用いたゴースト側からの制御が可能である。<br>オーナードローメニュー側の設定は、surfaces.txtではなく<a href="descript_shell.html">descript.txt</a>で行うので、そちらのページを参照。</p>
+					<p>着せ替えのアニメーションとしての開始・終了は、主にオーナードローメニューの着せ替えメニューからスイッチする事で制御される。SSPの場合はそれに加えて、さくらスクリプトの<a href="list_sakura_script.html#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a>タグを用いたゴースト側からの制御が可能である。<br>オーナードローメニュー側の設定は、surfaces.txtではなく<a href="descript_shell.html">descript.txt</a>で行うので、そちらのページを参照。</p>
 					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはMAYUNAという名前が与えられている。</p>
 				</section>
 				<section>
@@ -537,8 +537,8 @@ element0,overlay,dress2.png,0,0
 				<section>
 					<h1>利用可能な描画メソッド</h1>
 					<p>MATERIA（本家伺か）においては、着せ替えのために用意された4つのメソッド、すなわち「bind」「add」「reduce」「insert」が利用可能であった。このうちbindは旧仕様で、addが上位互換にあたる。</p>
-					<p>SSPにおいては、基本的にアニメーションの描画メソッドとして用意されている全てのものが着せ替えでも利用可能である。overlayとaddおよびbindは同義となる。</p>
-					<p>各メソッドの詳細については<a href="#introduction_drawmethod">描画メソッド</a>の節参照。</p>
+					<p>SSPにおいては、普通のアニメーション描画メソッドとして用意されたものの一部が着せ替えでも利用可能である。</p>
+					<p>具体的に着せ替えで利用できる描画メソッドなどの詳細については<a href="#introduction_drawmethod">描画メソッド</a>の節参照。</p>
 				</section>
 				<section>
 					<h1>インターバルの組み合わせ指定におけるbind</h1>
@@ -770,7 +770,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					</ul>
 				</dd>
 			</dl>
-			<dl id="animation*.interval,定義">
+			<dl id="animation*.interval,インターバル">
 				<dt class="entry">animation*.interval,インターバル</dt>
 				<dd class="entry">
 					<p class="description">
@@ -1051,7 +1051,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>アニメーションインターバル</h1>
 					<section>
 						<h1>概要</h1>
-						<p><a href="#animation*.interval,インターバル">animation*,interval</a>において指定される、アニメーションが動作する周期・タイミング（トリガー）の指定。</p>
+						<p><a href="#animation*.interval,インターバル">animation*.interval</a>において指定される、アニメーションが動作する周期・タイミング（トリガー）の指定。</p>
 					</section>
 					<section>
 						<h1>組み合わせ指定（SSP拡張機能）</h1>
