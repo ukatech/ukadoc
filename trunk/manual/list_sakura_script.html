@@ -161,10 +161,7 @@
 				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a></li>
 				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
 				<li><a href="#_!_unlock,repaint_">\![unlock,repaint]</a></li>
-				<li><a href="#_!_set,alignmentondesktop,top_">\![set,alignmentondesktop,top]</a></li>
-				<li><a href="#_!_set,alignmentondesktop,bottom_">\![set,alignmentondesktop,bottom]</a></li>
-				<li><a href="#_!_set,alignmenttodesktop,left_">\![set,alignmenttodesktop,left]</a></li>
-				<li><a href="#_!_set,alignmenttodesktop,right_">\![set,alignmenttodesktop,right]</a></li>
+				<li><a href="#_!_set,alignmentondesktop,bottomまたはtop_">\![set,alignmentondesktop,bottomまたはtop]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,free_">\![set,alignmenttodesktop,free]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,default_">\![set,alignmenttodesktop,default]</a></li>
 				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
@@ -786,10 +783,43 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_set,alignmentondesktop,top_">
-				<dt class="entry">\![set,alignmentondesktop,方向]</dt>
+			<dl id="_!_set,alignmentondesktop,bottomまたはtop_">
+				<dt class="entry">\![set,alignmentondesktop,bottomまたはtop]</dt>
 				<dd class="entry">
-					<p class="description">現スコープ側サーフェスをデスクトップ指定した方向に吸着。方向は以下の方法が指定可能。</p>
+					<p class="description">現スコープ側サーフェスをデスクトップの指定方向の端に吸着。bottomでデスクトップ下部、topでデスクトップ上部。<br>ゴースト終了まで有効。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部（タスクバーの上）にくっつく。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,free_">
+				<dt class="entry">\![set,alignmenttodesktop,free]</dt>
+				<dd class="entry">
+					<p class="description">サーフェスを自由移動可能にする。<br>ゴースト終了まで有効。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,alignmenttodesktop,free]本体側が自由移動可能になる。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_set,alignmenttodesktop,方向_">
+				<dt class="entry">\![set,alignmenttodesktop,方向]</dt>
+				<dd class="entry">
+					<p class="description">現スコープ側サーフェスをデスクトップの指定した方向に吸着。方向は以下の方法が指定可能。</p>
 					<dl class="description">
 						<dt>top</dt>
 						<dd>上部に吸着。</dd>
@@ -804,19 +834,19 @@
 						<dt>default</dt>
 						<dd>ゴーストのデフォルト設定に戻す。</dd>
 					</dl>
-					<p>※SSPのみalignment<em>to</em>desktopでも有効。
+					<p class="description">
+					※SSPのみalignment<em>to</em>desktopでも有効。
 					<br>上または下に吸着した場合、上下方向へのドラッグ移動ができなくなる。
 					<br>左または右に吸着した場合、左右方向へのドラッグ移動ができなくなる。
-					<br>ゴースト終了まで有効。</p>
+					<br>ゴースト終了まで有効。
+					</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,top]本体側がデスクトップ上部にくっつく。\1\![set,alignmentondesktop,free]相方側が吸着なしで自由に動かせるようになる。</code></p>
+							<p><code>\1\![set,alignmenttodesktop,top]相方側がデスクトップ上部にくっつく。\![set,alignmenttodesktop,default]相方側の吸着が標準設定に戻る。</code></p>
 						</section>
 					</div>
 				</dd>
