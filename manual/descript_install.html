@@ -232,7 +232,7 @@ type,package
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p>表示する文字コード。Shift_JIS推奨。</p>
 					<p class="default">Shift_JIS</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -243,7 +243,7 @@ type,package
 			<dl id="name,オブジェクト名">
 				<dt class="entry">name,オブジェクト名</dt>
 				<dd class="entry">
-					<p class="description">そのオブジェクトの名前。</p>
+					<p>そのオブジェクトの名前。</p>
 					<p class="default">省略不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -255,7 +255,7 @@ type,package
 			<dl id="type,種別">
 				<dt class="entry">type,種別</dt>
 				<dd class="entry">
-					<p class="description">アーカイブの内容の種別。種類は下記の通り。</p>
+					<p>アーカイブの内容の種別。種類は下記の通り。</p>
 					<dl class="description">
 						<dt>ghost</dt>
 						<dd>ゴースト</dd>
@@ -287,7 +287,7 @@ type,package
 			<dl id="accept,本体側名">
 				<dt class="entry">accept,本体側名</dt>
 				<dd class="entry">
-					<p class="description">アーカイブを受け取ることができるゴーストの<em>本体側の</em>名前（＝\0名,sakura名）。<br />もしくはゴースト側descript.txtの<a href="descript_ghost.html#install.accept,名前1,名前2,名前3...">install.accept</a>に設定してある名前でも可。<br />追加シェルや追加ファイル（supplement）など、特定ゴーストに渡す内容では必ず用いる。</p>
+					<p>アーカイブを受け取ることができるゴーストの<em>本体側の</em>名前（＝\0名,sakura名）。<br />もしくはゴースト側descript.txtの<a href="descript_ghost.html#install.accept,名前1,名前2,名前3...">install.accept</a>に設定してある名前でも可。<br />追加シェルや追加ファイル（supplement）など、特定ゴーストに渡す内容では必ず用いる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -299,7 +299,7 @@ type,package
 			<dl id="directory,ディレクトリ名">
 				<dt class="entry">directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">そのアーカイブインストール後のディレクトリ名。半角英数推奨。</p>
+					<p>そのアーカイブインストール後のディレクトリ名。半角英数推奨。</p>
 					<p class="default">省略不可/type,packageの場合のみ不要。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -311,7 +311,7 @@ type,package
 			<dl id="refresh,数値">
 				<dt class="entry">refresh,数値</dt>
 				<dd class="entry">
-					<p class="description">数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
+					<p>数値に1をセットすると同じディレクトリのファイルを全て消去してからインストールする。</p>
 					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -323,7 +323,7 @@ type,package
 			<dl id="refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p class="description">refreshの消去から除外するファイル名。<br />複数ある場合はコロン「:」で区切る。<br />パス指定不可。全てのディレクトリの指定したファイル名のファイルが除外される。</p>
+					<p>refreshの消去から除外するファイル名。<br />複数ある場合はコロン「:」で区切る。<br />パス指定不可。全てのディレクトリの指定したファイル名のファイルが除外される。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -335,7 +335,7 @@ type,package
 			<dl id="balloon.directory,ディレクトリ名">
 				<dt class="entry">balloon.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">同時インストールするバルーンのインストール後のディレクトリ名。半角英数推奨。<br /><a href="#type,種別">type</a>が<em>ghost</em>の場合にのみ設定可能。</p>
+					<p>同時インストールするバルーンのインストール後のディレクトリ名。半角英数推奨。<br /><a href="#type,種別">type</a>が<em>ghost</em>の場合にのみ設定可能。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -347,7 +347,7 @@ type,package
 			<dl id="*.directory,ディレクトリ名">
 				<dt class="entry">*.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。</p>
+					<p>同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -357,7 +357,7 @@ type,package
 			<dl id="*.source.directory,ディレクトリ名">
 				<dt class="entry">*.source.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
+					<p>同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
 					<p class="default">*.directoryで設定したディレクトリ名</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -367,7 +367,7 @@ type,package
 			<dl id="*.refresh,数値">
 				<dt class="entry">*.refresh,数値</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
+					<p>同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
 					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -377,7 +377,7 @@ type,package
 			<dl id="*.refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">*.refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p class="description">同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
+					<p>同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -410,7 +410,7 @@ shell\master\surface110.png
 			<dl id="相対パス">
 				<dt class="entry">相対パス</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新時に削除するファイルをゴーストのホームフォルダからの相対パスで列挙する。<br>相対パスの階層は「\」区切り。<br>フォルダごとの指定も可能で、その場合は末尾を\で終える。</p>
+					<p>ネットワーク更新時に削除するファイルをゴーストのホームフォルダからの相対パスで列挙する。<br>相対パスの階層は「\」区切り。<br>フォルダごとの指定も可能で、その場合は末尾を\で終える。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -453,7 +453,7 @@ ghost/master/profile/,nonar,noupdate
 			<dl id="相対パス,オプション1,オプション2,...">
 				<dt class="entry">相対パス,オプション1,オプション2,...</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						ゴーストのホームフォルダからの相対パスで指定したファイル・フォルダについて、カンマ区切りでオプションを指定する。
 						<br>相対パスの階層は「\」でなく「/」で区切る。
 						<br>フォルダを指定する場合は、末尾に/を付ける。
@@ -465,7 +465,7 @@ ghost/master/profile/,nonar,noupdate
 						<dt>noupdate</dt>
 						<dd>updates2.dau（updates.txt）作成時に対象を更新対象に含めない。</dd>
 					</dl>
-					<p class="description">
+					<p>
 						<br>いずれもファイル作成時の制御であるため、<em>SSPの機能でnar、更新ファイルを作成する場合</em>に限って有効である事に注意。
 					</p>
 					<p class="default">挙動なし</p>
@@ -503,7 +503,7 @@ ghost/master/profile/,nonar,noupdate
 			<dl id="相対パス,ignore">
 				<dt class="entry">相対パス,ignore</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						ゴーストのホームフォルダからの相対パスで指定したファイルについて、カンマ区切りでオプションを指定する。
 						<br>フォルダごとの指定は不可。
 						<br>ignoreオプションがあると、updates2.dau（updates.txt）作成時に対象を更新対象に含めない。

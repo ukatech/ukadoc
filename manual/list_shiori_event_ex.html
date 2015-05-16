@@ -411,7 +411,7 @@
 			<dl id="OnBeerShower">
 				<dt class="entry">OnBeerShower</dt>
 				<dd class="entry">
-					<p class="description">プラグインが実行された際に発生。</p>
+					<p>プラグインが実行された際に発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -426,7 +426,7 @@
 			<dl id="OnDive">
 				<dt class="entry">OnDive</dt>
 				<dd class="entry">
-					<p class="description">プラグインが実行された際に発生。</p>
+					<p>プラグインが実行された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>飛び込む先（道頓堀）</dd>
@@ -445,7 +445,7 @@
 			<dl id="OnHitThunder">
 				<dt class="entry">OnHitThunder</dt>
 				<dd class="entry">
-					<p class="description">プラグインが実行された際に発生。</p>
+					<p>プラグインが実行された際に発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -460,7 +460,7 @@
 			<dl id="OnStampInfo">
 				<dt class="entry">OnStampInfo</dt>
 				<dd class="entry">
-					<p class="description">スタンプに関する情報を通知するイベント。<br />ゴースト起動時、プラグインのロード・アンロードおよびOnStampInfoCallを送信した任意のタイミングで発生。</p>
+					<p>スタンプに関する情報を通知するイベント。<br />ゴースト起動時、プラグインのロード・アンロードおよびOnStampInfoCallを送信した任意のタイミングで発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スタンプ総数。</dd>
@@ -478,7 +478,7 @@
 			<dl id="OnStampAdd">
 				<dt class="entry">OnStampAdd</dt>
 				<dd class="entry">
-					<p class="description">スタンプを押すためにraisepluginでスタンプ帳へ送信するイベント。</p>
+					<p>スタンプを押すためにraisepluginでスタンプ帳へ送信するイベント。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スタンプの画像ファイルのパス。</dd>
@@ -493,7 +493,7 @@
 			<dl id="OnStampInfoCall">
 				<dt class="entry">OnStampInfoCall</dt>
 				<dd class="entry">
-					<p class="description">OnStampInfoをゴースト側から任意のタイミングで発生させたい場合に、raisepluginでスタンプ帳へ送信するイベント。</p>
+					<p>OnStampInfoをゴースト側から任意のタイミングで発生させたい場合に、raisepluginでスタンプ帳へ送信するイベント。</p>
 				</dd>
 			</dl>
 		</section>
@@ -508,7 +508,7 @@
 			<dl id="OnPotatoReturn">
 				<dt class="entry">OnPotatoReturn</dt>
 				<dd class="entry">
-					<p class="description">フォルダ指定が正常で、セーブファイルが無事に見つかった場合に発生。</p>
+					<p>フォルダ指定が正常で、セーブファイルが無事に見つかった場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>要求した変数名をカンマ区切りで繋いだもの（<変数1>,<変数2>...）</dd>
@@ -520,7 +520,7 @@
 			<dl id="OnPotatoFileNotFound">
 				<dt class="entry">OnPotatoFileNotFound</dt>
 				<dd class="entry">
-					<p class="description">フォルダ指定は正常だがセーブファイルが見つからなかった場合に発生。</p>
+					<p>フォルダ指定は正常だがセーブファイルが見つからなかった場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>要求した変数名をカンマ区切りで繋いだもの（<変数1>,<変数2>...）</dd>
@@ -530,7 +530,7 @@
 			<dl id="OnPotatoError">
 				<dt class="entry">OnPotatoError</dt>
 				<dd class="entry">
-					<p class="description">フォルダ指定が間違っている、又は動作対象外のSHIORIだった場合に発生。</p>
+					<p>フォルダ指定が間違っている、又は動作対象外のSHIORIだった場合に発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -546,7 +546,7 @@
 			<dl id="OnCrystalDiskInfoEvent">
 				<dt class="entry">OnCrystalDiskInfoEvent</dt>
 				<dd class="entry">
-					<p class="description">ゴースト起動時に情報がある場合/情報が更新されたに発生。</p>
+					<p>ゴースト起動時に情報がある場合/情報が更新されたに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ディスク群全体のステータス（＝最も悪いものの情報）と、更新日付。<br />カンマ区切りで、「(Good|Caution|Bad|Unknown),YYYY,NN,DD,HH,MM,SS」のように入る。</dd>
@@ -558,7 +558,7 @@
 			<dl id="OnCrystalDiskInfoClear">
 				<dt class="entry">OnCrystalDiskInfoClear</dt>
 				<dd class="entry">
-					<p class="description">今まで情報があったのに消えてしまった場合に発生。<br />CrystalDiskInfoが終了した場合など。</p>
+					<p>今まで情報があったのに消えてしまった場合に発生。<br />CrystalDiskInfoが終了した場合など。</p>
 				</dd>
 			</dl>
 		</section>
@@ -575,7 +575,7 @@
 			<dl id="OnHttpcNotify">
 				<dt class="entry">OnHttpcNotify</dt>
 				<dd class="entry">
-					<p class="description">httpc.dllが提供する機能の非同期実行オプションでの実行後、同dllからDirectSSTPで送信される戻り値通知イベント。</p>
+					<p>httpc.dllが提供する機能の非同期実行オプションでの実行後、同dllからDirectSSTPで送信される戻り値通知イベント。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び出し時に引数１で渡した識別子。</dd>
@@ -592,7 +592,7 @@
 			<dl id="OnApplicationBoot">
 				<dt class="entry">OnApplicationBoot</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションが起動した際に発生。</p>
+					<p>外部アプリケーションが起動した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -609,7 +609,7 @@
 			<dl id="OnApplicationClose">
 				<dt class="entry">OnApplicationClose</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションが終了した際に発生。</p>
+					<p>外部アプリケーションが終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -626,7 +626,7 @@
 			<dl id="OnApplicationExist">
 				<dt class="entry">OnApplicationExist</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションの存在を通知された際に発生。</p>
+					<p>外部アプリケーションの存在を通知された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -643,7 +643,7 @@
 			<dl id="OnApplicationVersion">
 				<dt class="entry">OnApplicationVersion</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションのバージョン情報を通知された際に発生。</p>
+					<p>外部アプリケーションのバージョン情報を通知された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -666,7 +666,7 @@
 			<dl id="OnApplicationOperationFinish">
 				<dt class="entry">OnApplicationOperationFinish</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションか何らかの処理が完了した際に発生。</p>
+					<p>外部アプリケーションか何らかの処理が完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -685,7 +685,7 @@
 			<dl id="OnApplicationFileOpen">
 				<dt class="entry">OnApplicationFileOpen</dt>
 				<dd class="entry">
-					<p class="description">外部アプリケーションがドキュメントファイルを開いた際に発生。</p>
+					<p>外部アプリケーションがドキュメントファイルを開いた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>アプリケーション名。</dd>
@@ -702,7 +702,7 @@
 			<dl id="OnWebsiteUpdateNotify">
 				<dt class="entry">OnWebsiteUpdateNotify</dt>
 				<dd class="entry">
-					<p class="description">ウェブサイトの更新・新着情報を通知された際に発生。</p>
+					<p>ウェブサイトの更新・新着情報を通知された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ウェブサイト名。</dd>
@@ -732,7 +732,7 @@
 			<dl id="OnKinokoObjectCreate">
 				<dt class="entry">OnKinokoObjectCreate</dt>
 				<dd class="entry">
-					<p class="description">きのこスキンが頭に生えた際に発生。</p>
+					<p>きのこスキンが頭に生えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>そのきのこスキンの名前。</dd>
@@ -746,7 +746,7 @@
 			<dl id="OnKinokoObjectDestroy">
 				<dt class="entry">OnKinokoObjectDestroy</dt>
 				<dd class="entry">
-					<p class="description">きのこスキンが頭から消えた際に発生。</p>
+					<p>きのこスキンが頭から消えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>そのきのこスキンの名前。</dd>
@@ -760,7 +760,7 @@
 			<dl id="OnKinokoObjectChanging">
 				<dt class="entry">OnKinokoObjectChanging</dt>
 				<dd class="entry">
-					<p class="description">きのこスキンを切り替えようとしている際に発生。</p>
+					<p>きのこスキンを切り替えようとしている際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替える直前のきのこスキンの名前。</dd>
@@ -774,7 +774,7 @@
 			<dl id="OnKinokoObjectChanged">
 				<dt class="entry">OnKinokoObjectChanged</dt>
 				<dd class="entry">
-					<p class="description">きのこスキンを切り替えた際に発生。</p>
+					<p>きのこスキンを切り替えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替えた後のきのこスキンの名前。</dd>
@@ -788,7 +788,7 @@
 			<dl id="OnKinokoObjectInstalled">
 				<dt class="entry">OnKinokoObjectInstalled</dt>
 				<dd class="entry">
-					<p class="description">きのこスキンをドロップでインストールした際に発生。</p>
+					<p>きのこスキンをドロップでインストールした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールされたきのこスキンの名前。</dd>
@@ -802,7 +802,7 @@
 			<dl id="OnBatteryLow-kinoko">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p class="description">バッテリ残量が40％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event.html#OnBatteryLow">同名の物</a>があるので注意。</p>
+					<p>バッテリ残量が40％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event.html#OnBatteryLow">同名の物</a>があるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -812,7 +812,7 @@
 			<dl id="OnBatteryCritical-kinoko">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p class="description">バッテリ残量が20％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event.html#OnBatteryCritical">同名の物</a>があるので注意。</p>
+					<p>バッテリ残量が20％を切った際に発生。<br />SSPが通知するイベントに<a href="list_shiori_event.html#OnBatteryCritical">同名の物</a>があるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -822,7 +822,7 @@
 			<dl id="OnSysResourceLow">
 				<dt class="entry">OnSysResourceLow</dt>
 				<dd class="entry">
-					<p class="description">システムリソースが50％を切った際に発生。</p>
+					<p>システムリソースが50％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -832,7 +832,7 @@
 			<dl id="OnSysResourceCritical">
 				<dt class="entry">OnSysResourceCritical</dt>
 				<dd class="entry">
-					<p class="description">システムリソースが30％を切った際に発生。</p>
+					<p>システムリソースが30％を切った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>パーセンテージの数値。</dd>
@@ -853,7 +853,7 @@
 			<dl id="OnNekodorifObjectEmerge">
 				<dt class="entry">OnNekodorifObjectEmerge</dt>
 				<dd class="entry">
-					<p class="description">落下物が可視領域内に出現した際に発生。</p>
+					<p>落下物が可視領域内に出現した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落下物の名前。</dd>
@@ -871,7 +871,7 @@
 			<dl id="OnNekodorifObjectHit">
 				<dt class="entry">OnNekodorifObjectHit</dt>
 				<dd class="entry">
-					<p class="description">落下物がヒットした際に発生。</p>
+					<p>落下物がヒットした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落下物の名前。</dd>
@@ -889,7 +889,7 @@
 			<dl id="OnNekodorifObjectDrop">
 				<dt class="entry">OnNekodorifObjectDrop</dt>
 				<dd class="entry">
-					<p class="description">落下物を再投下する際に発生。</p>
+					<p>落下物を再投下する際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落下物の名前。</dd>
@@ -907,7 +907,7 @@
 			<dl id="OnNekodorifObjectVanish">
 				<dt class="entry">OnNekodorifObjectVanish</dt>
 				<dd class="entry">
-					<p class="description">ヒットした落下物が可視領域内から消滅した際に発生。</p>
+					<p>ヒットした落下物が可視領域内から消滅した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落下物の名前。</dd>
@@ -925,7 +925,7 @@
 			<dl id="OnNekodorifObjectDodge">
 				<dt class="entry">OnNekodorifObjectDodge</dt>
 				<dd class="entry">
-					<p class="description">ヒットしなかった落下物が可視領域内から消滅した際に発生。</p>
+					<p>ヒットしなかった落下物が可視領域内から消滅した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落下物の名前。</dd>
@@ -954,7 +954,7 @@
 			<dl id="OnMusicPlay">
 				<dt class="entry">OnMusicPlay</dt>
 				<dd class="entry">
-					<p class="description">音楽を再生した際に発生。</p>
+					<p>音楽を再生した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>曲タイトル。</dd>
@@ -975,7 +975,7 @@
 			<dl id="OnFleetClockComplete">
 				<dt class="entry">OnFleetClockComplete</dt>
 				<dd class="entry">
-					<p class="description">設定した予定のタイマーが0になった際に発生。</p>
+					<p>設定した予定のタイマーが0になった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>カテゴリ名。</dd>
@@ -998,7 +998,7 @@
 			<dl id="OnElonaOmakeMMAEventNewGame">
 				<dt class="entry">OnElonaOmakeMMAEventNewGame</dt>
 				<dd class="entry">
-					<p class="description">新規ゲーム開始時に発生。</p>
+					<p>新規ゲーム開始時に発生。</p>
 					<dl class="reference" id="reference_elonamma_common">
 						<dt>Reference0</dt>
 						<dd>ゲームバージョン。</dd>
@@ -1098,7 +1098,7 @@
 			<dl id="OnElonaOmakeMMAEventGameLoad">
 				<dt class="entry">OnElonaOmakeMMAEventGameLoad</dt>
 				<dd class="entry">
-					<p class="description">ゲーム開始時に発生。</p>
+					<p>ゲーム開始時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1108,7 +1108,7 @@
 			<dl id="OnElonaOmakeMMAEventGameQuit">
 				<dt class="entry">OnElonaOmakeMMAEventGameQuit</dt>
 				<dd class="entry">
-					<p class="description">ゲーム終了時に発生。</p>
+					<p>ゲーム終了時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1118,7 +1118,7 @@
 			<dl id="OnElonaOmakeMMAEventHourPlayed">
 				<dt class="entry">OnElonaOmakeMMAEventHourPlayed</dt>
 				<dd class="entry">
-					<p class="description">ゲーム開始から現実の1時間毎に発生。</p>
+					<p>ゲーム開始から現実の1時間毎に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1130,7 +1130,7 @@
 			<dl id="OnElonaOmakeMMAEventMapChanged">
 				<dt class="entry">OnElonaOmakeMMAEventMapChanged</dt>
 				<dd class="entry">
-					<p class="description">別マップに移動した時に発生。</p>
+					<p>別マップに移動した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1140,7 +1140,7 @@
 			<dl id="OnElonaOmakeMMAEventLevelUp">
 				<dt class="entry">OnElonaOmakeMMAEventLevelUp</dt>
 				<dd class="entry">
-					<p class="description">PCまたはペットのレベルが上がった時に発生。</p>
+					<p>PCまたはペットのレベルが上がった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1150,7 +1150,7 @@
 			<dl id="OnElonaOmakeMMAEventSkillUp">
 				<dt class="entry">OnElonaOmakeMMAEventSkillUp</dt>
 				<dd class="entry">
-					<p class="description">PCまたはペットのスキルレベルが上がった時に発生。</p>
+					<p>PCまたはペットのスキルレベルが上がった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1164,7 +1164,7 @@
 			<dl id="OnElonaOmakeMMAEventSkillDown">
 				<dt class="entry">OnElonaOmakeMMAEventSkillDown</dt>
 				<dd class="entry">
-					<p class="description">PCまたはペットのスキルレベルが下がった時に発生。</p>
+					<p>PCまたはペットのスキルレベルが下がった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1178,7 +1178,7 @@
 			<dl id="OnElonaOmakeMMAEventBelieveGod">
 				<dt class="entry">OnElonaOmakeMMAEventBelieveGod</dt>
 				<dd class="entry">
-					<p class="description">PCが改宗した時に発生。</p>
+					<p>PCが改宗した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1188,7 +1188,7 @@
 			<dl id="OnElonaOmakeMMAEventJoinParty">
 				<dt class="entry">OnElonaOmakeMMAEventJoinParty</dt>
 				<dd class="entry">
-					<p class="description">ペットが仲間に加わった時に発生。</p>
+					<p>ペットが仲間に加わった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1198,7 +1198,7 @@
 			<dl id="OnElonaOmakeMMAEventSleep">
 				<dt class="entry">OnElonaOmakeMMAEventSleep</dt>
 				<dd class="entry">
-					<p class="description">睡眠に入った時に発生。</p>
+					<p>睡眠に入った時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1212,7 +1212,7 @@
 			<dl id="OnElonaOmakeMMAEventAwake">
 				<dt class="entry">OnElonaOmakeMMAEventAwake</dt>
 				<dd class="entry">
-					<p class="description">睡眠から目覚めた時に発生。</p>
+					<p>睡眠から目覚めた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1226,7 +1226,7 @@
 			<dl id="OnElonaOmakeMMAEventInvestNPC">
 				<dt class="entry">OnElonaOmakeMMAEventInvestNPC</dt>
 				<dd class="entry">
-					<p class="description">NPCの調査をした時に発生。</p>
+					<p>NPCの調査をした時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1236,7 +1236,7 @@
 			<dl id="OnElonaOmakeMMAEventRandomEvent">
 				<dt class="entry">OnElonaOmakeMMAEventRandomEvent</dt>
 				<dd class="entry">
-					<p class="description">ランダムイベント発生時に発生。</p>
+					<p>ランダムイベント発生時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1248,7 +1248,7 @@
 			<dl id="OnElonaOmakeMMAEventAddNewsTopic">
 				<dt class="entry">OnElonaOmakeMMAEventAddNewsTopic</dt>
 				<dd class="entry">
-					<p class="description">冒険者のニューストピックが追加された時に発生。</p>
+					<p>冒険者のニューストピックが追加された時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1260,7 +1260,7 @@
 			<dl id="OnElonaOmakeMMAEventWish">
 				<dt class="entry">OnElonaOmakeMMAEventWish</dt>
 				<dd class="entry">
-					<p class="description">願いの入力ダイアログが表示された時に発生。</p>
+					<p>願いの入力ダイアログが表示された時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1270,7 +1270,7 @@
 			<dl id="OnElonaOmakeMMAEventWished">
 				<dt class="entry">OnElonaOmakeMMAEventWished</dt>
 				<dd class="entry">
-					<p class="description">願いが入力された時に発生。</p>
+					<p>願いが入力された時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1282,7 +1282,7 @@
 			<dl id="OnElonaOmakeMMAEventDead">
 				<dt class="entry">OnElonaOmakeMMAEventDead</dt>
 				<dd class="entry">
-					<p class="description">PC死亡時に発生。</p>
+					<p>PC死亡時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1292,7 +1292,7 @@
 			<dl id="OnElonaOmakeMMAEventPetDead">
 				<dt class="entry">OnElonaOmakeMMAEventPetDead</dt>
 				<dd class="entry">
-					<p class="description">ペット死亡時に発生。</p>
+					<p>ペット死亡時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1302,7 +1302,7 @@
 			<dl id="OnElonaOmakeMMAEventLastword">
 				<dt class="entry">OnElonaOmakeMMAEventLastword</dt>
 				<dd class="entry">
-					<p class="description">遺言入力後に発生。</p>
+					<p>遺言入力後に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1314,7 +1314,7 @@
 			<dl id="OnElonaOmakeMMAEventTravelGuide">
 				<dt class="entry">OnElonaOmakeMMAEventTravelGuide</dt>
 				<dd class="entry">
-					<p class="description">ノルンの冒険ガイド表示時に発生。</p>
+					<p>ノルンの冒険ガイド表示時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1326,7 +1326,7 @@
 			<dl id="OnElonaOmakeMMAEventAbandonPet">
 				<dt class="entry">OnElonaOmakeMMAEventAbandonPet</dt>
 				<dd class="entry">
-					<p class="description">ペットと縁を切った時に発生。</p>
+					<p>ペットと縁を切った時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1336,7 +1336,7 @@
 			<dl id="OnElonaOmakeMMAEventSaleSlave">
 				<dt class="entry">OnElonaOmakeMMAEventSaleSlave</dt>
 				<dd class="entry">
-					<p class="description">ペットを奴隷商人に売った時に発生。</p>
+					<p>ペットを奴隷商人に売った時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1348,7 +1348,7 @@
 			<dl id="OnElonaOmakeMMAEventSaleWife">
 				<dt class="entry">OnElonaOmakeMMAEventSaleWife</dt>
 				<dd class="entry">
-					<p class="description">ラファエロに嫁を売った時に発生。</p>
+					<p>ラファエロに嫁を売った時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1360,7 +1360,7 @@
 			<dl id="OnElonaOmakeMMAEventMarriage">
 				<dt class="entry">OnElonaOmakeMMAEventMarriage</dt>
 				<dd class="entry">
-					<p class="description">結婚時に発生。</p>
+					<p>結婚時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1370,7 +1370,7 @@
 			<dl id="OnElonaOmakeMMAEventRefuseMarriage">
 				<dt class="entry">OnElonaOmakeMMAEventRefuseMarriage</dt>
 				<dd class="entry">
-					<p class="description">求婚を断られた時に発生。</p>
+					<p>求婚を断られた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1380,7 +1380,7 @@
 			<dl id="OnElonaOmakeMMAEventJoinGuild">
 				<dt class="entry">OnElonaOmakeMMAEventJoinGuild</dt>
 				<dd class="entry">
-					<p class="description">ギルド加入時に発生。</p>
+					<p>ギルド加入時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1390,7 +1390,7 @@
 			<dl id="OnElonaOmakeMMAEventMutation">
 				<dt class="entry">OnElonaOmakeMMAEventMutation</dt>
 				<dd class="entry">
-					<p class="description">変異発生時に発生。</p>
+					<p>変異発生時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1404,7 +1404,7 @@
 			<dl id="OnElonaOmakeMMAEventMutationCured">
 				<dt class="entry">OnElonaOmakeMMAEventMutationCured</dt>
 				<dd class="entry">
-					<p class="description">変異治療時に発生。</p>
+					<p>変異治療時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1418,7 +1418,7 @@
 			<dl id="OnElonaOmakeMMAEventEtherDisease">
 				<dt class="entry">OnElonaOmakeMMAEventEtherDisease</dt>
 				<dd class="entry">
-					<p class="description">エーテル病発生時に発生。</p>
+					<p>エーテル病発生時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1430,7 +1430,7 @@
 			<dl id="OnElonaOmakeMMAEventEtherDiseaseCured">
 				<dt class="entry">OnElonaOmakeMMAEventEtherDiseaseCured</dt>
 				<dd class="entry">
-					<p class="description">エーテル病治療時に発生。</p>
+					<p>エーテル病治療時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1442,7 +1442,7 @@
 			<dl id="OnElonaOmakeMMAEventAdventGod">
 				<dt class="entry">OnElonaOmakeMMAEventAdventGod</dt>
 				<dd class="entry">
-					<p class="description">神の降臨時に発生。</p>
+					<p>神の降臨時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1454,7 +1454,7 @@
 			<dl id="OnElonaOmakeMMAEventMewmewmew">
 				<dt class="entry">OnElonaOmakeMMAEventMewmewmew</dt>
 				<dd class="entry">
-					<p class="description">うみみゃぁ発動時に発生。</p>
+					<p>うみみゃぁ発動時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1464,7 +1464,7 @@
 			<dl id="OnElonaOmakeMMAEventBuyNuke">
 				<dt class="entry">OnElonaOmakeMMAEventBuyNuke</dt>
 				<dd class="entry">
-					<p class="description">核爆弾購入時に発生。</p>
+					<p>核爆弾購入時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1474,7 +1474,7 @@
 			<dl id="OnElonaOmakeMMAEventSetNuke">
 				<dt class="entry">OnElonaOmakeMMAEventSetNuke</dt>
 				<dd class="entry">
-					<p class="description">核爆弾設置時に発生。</p>
+					<p>核爆弾設置時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1484,7 +1484,7 @@
 			<dl id="OnElonaOmakeMMAEventNukeExploded">
 				<dt class="entry">OnElonaOmakeMMAEventNukeExploded</dt>
 				<dd class="entry">
-					<p class="description">核爆弾爆発時に発生。</p>
+					<p>核爆弾爆発時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1494,7 +1494,7 @@
 			<dl id="OnElonaOmakeMMAEventLomiasInTheParty">
 				<dt class="entry">OnElonaOmakeMMAEventLomiasInTheParty</dt>
 				<dd class="entry">
-					<p class="description">パーティに異形の森の使者『ロミアス』が参加してる時に発生。</p>
+					<p>パーティに異形の森の使者『ロミアス』が参加してる時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1504,7 +1504,7 @@
 			<dl id="OnElonaOmakeMMAEventLomiasKilled">
 				<dt class="entry">OnElonaOmakeMMAEventLomiasKilled</dt>
 				<dd class="entry">
-					<p class="description">異形の森の使者『ロミアス』殺害時に発生。</p>
+					<p>異形の森の使者『ロミアス』殺害時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1514,7 +1514,7 @@
 			<dl id="OnElonaOmakeMMAEventZeomeKilled">
 				<dt class="entry">OnElonaOmakeMMAEventZeomeKilled</dt>
 				<dd class="entry">
-					<p class="description">偽りの預言者『ゼーム』撃破時に発生。</p>
+					<p>偽りの預言者『ゼーム』撃破時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1524,7 +1524,7 @@
 			<dl id="OnElonaOmakeMMAEventConqueredLesimas">
 				<dt class="entry">OnElonaOmakeMMAEventConqueredLesimas</dt>
 				<dd class="entry">
-					<p class="description">レシマス征服時に発生。</p>
+					<p>レシマス征服時に発生。</p>
 					<dl class="reference">
 						<dt>Reference81</dt>
 						<dd>コメント。</dd>
@@ -1536,7 +1536,7 @@
 			<dl id="OnElonaOmakeMMAEventAtonement">
 				<dt class="entry">OnElonaOmakeMMAEventAtonement</dt>
 				<dd class="entry">
-					<p class="description">カルマが上昇して犯罪者でなくなった時に発生。</p>
+					<p>カルマが上昇して犯罪者でなくなった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1546,7 +1546,7 @@
 			<dl id="OnElonaOmakeMMAEventBecomeCriminal">
 				<dt class="entry">OnElonaOmakeMMAEventBecomeCriminal</dt>
 				<dd class="entry">
-					<p class="description">カルマが減少して犯罪者になった時に発生。</p>
+					<p>カルマが減少して犯罪者になった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1556,7 +1556,7 @@
 			<dl id="OnElonaOmakeMMAEventPerformance">
 				<dt class="entry">OnElonaOmakeMMAEventPerformance</dt>
 				<dd class="entry">
-					<p class="description">PCが演奏を開始した時に発生。</p>
+					<p>PCが演奏を開始した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1570,7 +1570,7 @@
 			<dl id="OnElonaOmakeMMAEventClothOut">
 				<dt class="entry">OnElonaOmakeMMAEventClothOut</dt>
 				<dd class="entry">
-					<p class="description">PCが気持ちいいことのために服を脱ぎ始めた時に発生。</p>
+					<p>PCが気持ちいいことのために服を脱ぎ始めた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1580,7 +1580,7 @@
 			<dl id="OnElonaOmakeMMAEventStealItem">
 				<dt class="entry">OnElonaOmakeMMAEventStealItem</dt>
 				<dd class="entry">
-					<p class="description">アイテムを盗み終わった時に発生。</p>
+					<p>アイテムを盗み終わった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1594,7 +1594,7 @@
 			<dl id="OnElonaOmakeMMAEventTreasureDigging">
 				<dt class="entry">OnElonaOmakeMMAEventTreasureDigging</dt>
 				<dd class="entry">
-					<p class="description">宝の地図の場所を掘り当てた時に発生。</p>
+					<p>宝の地図の場所を掘り当てた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1604,7 +1604,7 @@
 			<dl id="OnElonaOmakeMMAEventReadTreasureMap">
 				<dt class="entry">OnElonaOmakeMMAEventReadTreasureMap</dt>
 				<dd class="entry">
-					<p class="description">宝の地図を読んだ時に発生。</p>
+					<p>宝の地図を読んだ時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1614,7 +1614,7 @@
 			<dl id="OnElonaOmakeMMAEventSkillLearned">
 				<dt class="entry">OnElonaOmakeMMAEventSkillLearned</dt>
 				<dd class="entry">
-					<p class="description">トレーナーからスキルを習得した時に発生。</p>
+					<p>トレーナーからスキルを習得した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1626,7 +1626,7 @@
 			<dl id="OnElonaOmakeMMAEventWeatherChanged">
 				<dt class="entry">OnElonaOmakeMMAEventWeatherChanged</dt>
 				<dd class="entry">
-					<p class="description">天候が変わった時に発生。</p>
+					<p>天候が変わった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1638,7 +1638,7 @@
 			<dl id="OnElonaOmakeMMAEventRagnarok">
 				<dt class="entry">OnElonaOmakeMMAEventRagnarok</dt>
 				<dd class="entry">
-					<p class="description">終末の日が訪れた時に発生。</p>
+					<p>終末の日が訪れた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1648,7 +1648,7 @@
 			<dl id="OnElonaOmakeMMAEventSisterRagnarok">
 				<dt class="entry">OnElonaOmakeMMAEventSisterRagnarok</dt>
 				<dd class="entry">
-					<p class="description">妹の日が訪れた時に発生。</p>
+					<p>妹の日が訪れた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1658,7 +1658,7 @@
 			<dl id="OnElonaOmakeMMAEventPray">
 				<dt class="entry">OnElonaOmakeMMAEventPray</dt>
 				<dd class="entry">
-					<p class="description">神に祈った時に発生。</p>
+					<p>神に祈った時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1668,7 +1668,7 @@
 			<dl id="OnElonaOmakeMMAEventOffer">
 				<dt class="entry">OnElonaOmakeMMAEventOffer</dt>
 				<dd class="entry">
-					<p class="description">祭壇にアイテムを捧げた時に発生。</p>
+					<p>祭壇にアイテムを捧げた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1680,7 +1680,7 @@
 			<dl id="OnElonaOmakeMMAEventPrayFailed">
 				<dt class="entry">OnElonaOmakeMMAEventPrayFailed</dt>
 				<dd class="entry">
-					<p class="description">神に祈ったが無関心だった時に発生。</p>
+					<p>神に祈ったが無関心だった時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1690,7 +1690,7 @@
 			<dl id="OnElonaOmakeMMAEventPrayEyth">
 				<dt class="entry">OnElonaOmakeMMAEventPrayEyth</dt>
 				<dd class="entry">
-					<p class="description">無信仰で神に祈ってみた時に発生。</p>
+					<p>無信仰で神に祈ってみた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1700,7 +1700,7 @@
 			<dl id="OnElonaOmakeMMAEventAreaChanged*">
 				<dt class="entry">OnElonaOmakeMMAEventAreaChanged*</dt>
 				<dd class="entry">
-					<p class="description">別エリアに移動した時に発生（*はエリア番号）。</p>
+					<p>別エリアに移動した時に発生（*はエリア番号）。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1714,7 +1714,7 @@
 			<dl id="OnElonaOmakeMMAEventPayTax">
 				<dt class="entry">OnElonaOmakeMMAEventPayTax</dt>
 				<dd class="entry">
-					<p class="description">PCが請求書を納税箱に入れた時に発生。</p>
+					<p>PCが請求書を納税箱に入れた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1726,7 +1726,7 @@
 			<dl id="OnElonaOmakeMMAEventCooking">
 				<dt class="entry">OnElonaOmakeMMAEventCooking</dt>
 				<dd class="entry">
-					<p class="description">PCがアイテムを調理した時に発生。</p>
+					<p>PCがアイテムを調理した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1744,7 +1744,7 @@
 			<dl id="OnElonaOmakeMMAEventAreaChanged">
 				<dt class="entry">OnElonaOmakeMMAEventAreaChanged</dt>
 				<dd class="entry">
-					<p class="description">不特定の別エリアに移動した時に発生。</p>
+					<p>不特定の別エリアに移動した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1758,7 +1758,7 @@
 			<dl id="OnElonaOmakeMMAEventHour">
 				<dt class="entry">OnElonaOmakeMMAEventHour</dt>
 				<dd class="entry">
-					<p class="description">ゲーム内時間で1時間が経過した時に発生。</p>
+					<p>ゲーム内時間で1時間が経過した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1768,7 +1768,7 @@
 			<dl id="OnElonaOmakeMMAEventGrandmapocalypse">
 				<dt class="entry">OnElonaOmakeMMAEventGrandmapocalypse</dt>
 				<dd class="entry">
-					<p class="description">グランマ黙示録が訪れた時に発生。</p>
+					<p>グランマ黙示録が訪れた時に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>Reference0～80まで、<a href="#reference_elonamma_common">※共通リファレンス</a>。</dd>
@@ -1790,7 +1790,7 @@
 			<dl id="OnMahjong">
 				<dt class="entry">OnMahjong</dt>
 				<dd class="entry">
-					<p class="description">ゲームの各タイミングで通知。後述の<a href="#reference_ukajong">※サーバコマンド</a>参照。</p>
+					<p>ゲームの各タイミングで通知。後述の<a href="#reference_ukajong">※サーバコマンド</a>参照。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バージョン（UKAJONG/0.1）</dd>
@@ -1918,13 +1918,13 @@
 			<dl id="OnSatolistBoot">
 				<dt class="entry">OnSatolistBoot</dt>
 				<dd class="entry">
-					<p class="description">さとりすとが起動した時に発生。</p>
+					<p>さとりすとが起動した時に発生。</p>
 				</dd>
 			</dl>
 			<dl id="OnSatolistGhostOpened">
 				<dt class="entry">OnSatolistGhostOpened</dt>
 				<dd class="entry">
-					<p class="description">さとりすとがゴーストを読み込んだ時に発生。</p>
+					<p>さとりすとがゴーストを読み込んだ時に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体側キャラクタ名。</dd>
@@ -1936,19 +1936,19 @@
 			<dl id="OnSatolistSaved">
 				<dt class="entry">OnSatolistSaved</dt>
 				<dd class="entry">
-					<p class="description">さとりすとでゴーストを保存した時に発生。</p>
+					<p>さとりすとでゴーストを保存した時に発生。</p>
 				</dd>
 			</dl>
 			<dl id="OnSatolistClosed">
 				<dt class="entry">OnSatolistClosed</dt>
 				<dd class="entry">
-					<p class="description">さとりすとが終了しようとした時に発生。</p>
+					<p>さとりすとが終了しようとした時に発生。</p>
 				</dd>
 			</dl>
 			<dl id="OnSatolistEventAdded">
 				<dt class="entry">OnSatolistEventAdded</dt>
 				<dd class="entry">
-					<p class="description">さとりすとでイベントを作成した時に発生。</p>
+					<p>さとりすとでイベントを作成した時に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>追加した項目名。</dd>
@@ -1964,7 +1964,7 @@
 			<dl id="OnSatolistDictionaryFolderChanged">
 				<dt class="entry">OnSatolistDictionaryFolderChanged</dt>
 				<dd class="entry">
-					<p class="description">「辞書」で使用する辞書フォルダを変更した時に発生。</p>
+					<p>「辞書」で使用する辞書フォルダを変更した時に発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -1981,7 +1981,7 @@
 			<dl id="OnTourabuConquestStart">
 				<dt class="entry">OnTourabuConquestStart</dt>
 				<dd class="entry">
-					<p class="description">遠征が開始されたときに発生。</p>
+					<p>遠征が開始されたときに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>部隊の番号（1～4の整数）。</dd>
@@ -1993,7 +1993,7 @@
 			<dl id="OnTourabuConquestEnd">
 				<dt class="entry">OnTourabuConquestEnd</dt>
 				<dd class="entry">
-					<p class="description">遠征が終了したとき発生。<br />仕様上実際の遠征終了より通知が数秒早いことがある。</p>
+					<p>遠征が終了したとき発生。<br />仕様上実際の遠征終了より通知が数秒早いことがある。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>部隊の番号（1～4の整数）。</dd>
@@ -2003,13 +2003,13 @@
 			<dl id="OnTourabuDutyStart">
 				<dt class="entry">OnTourabuDutyStart</dt>
 				<dd class="entry">
-					<p class="description">内番が開始されたとき発生。</p>
+					<p>内番が開始されたとき発生。</p>
 				</dd>
 			</dl>
 			<dl id="OnTourabuDutyEnd">
 				<dt class="entry">OnTourabuDutyEnd</dt>
 				<dd class="entry">
-					<p class="description">内番が終了したとき発生。</p>
+					<p>内番が終了したとき発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -2018,7 +2018,7 @@
 			<dl id="OnRequestValues">
 				<dt class="entry">OnRequestValues</dt>
 				<dd class="entry">
-					<p class="description">他ゴーストが任意に送信した際に発生。<br />このイベントが送られた時、\[raiseother]でOnGetPropertyイベントを送信する必要がある。</p>
+					<p>他ゴーストが任意に送信した際に発生。<br />このイベントが送られた時、\[raiseother]でOnGetPropertyイベントを送信する必要がある。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信したゴースト名。</dd>
@@ -2035,7 +2035,7 @@
 			<dl id="OnGetProperty">
 				<dt class="entry">OnGetProperty</dt>
 				<dd class="entry">
-					<p class="description">OnRequestValuesを受けた際に返すべきイベント。</p>
+					<p>OnRequestValuesを受けた際に返すべきイベント。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信するゴースト名。</dd>
@@ -2085,7 +2085,7 @@
 			<dl id="OnTalkRequest">
 				<dt class="entry">OnTalkRequest</dt>
 				<dd class="entry">
-					<p class="description">ぬるぽ　いんたーはいからトークを求められた際に発生。</p>
+					<p>ぬるぽ　いんたーはいからトークを求められた際に発生。</p>
 				</dd>
 			</dl>
 		</section>
@@ -2100,7 +2100,7 @@
 			<dl id="OnHandActivate">
 				<dt class="entry">OnHandActivate</dt>
 				<dd class="entry">
-					<p class="description">The Handが他ゴーストを触りに行くまたは触り終わった際に発生。<br />触っている間、Sender:The Handでゴーストに(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)イベントを送る。</p>
+					<p>The Handが他ゴーストを触りに行くまたは触り終わった際に発生。<br />触っている間、Sender:The Handでゴーストに(OnMouseMove|OnMouseDoubleClick|OnMouseWheel)イベントを送る。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>通常触り開始：NormalStart<br />通常触り終了：NormalEnd<br />必殺技開始：SuperStart<br />必殺技途中：SuperContinue<br />必殺技終了：SuperEnd<br />必殺技途中でホーミング発動：SuperHoming</dd>
@@ -2128,7 +2128,7 @@
 			<dl id="OnJitenBattle">
 				<dt class="entry">OnJitenBattle</dt>
 				<dd class="entry">
-					<p class="description">ゴーストが行う模擬戦の毎ターン発生。</p>
+					<p>ゴーストが行う模擬戦の毎ターン発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信したゴーストの\0名。</dd>
@@ -2152,7 +2152,7 @@
 			<dl id="OnJitenTagBattle">
 				<dt class="entry">OnJitenTagBattle</dt>
 				<dd class="entry">
-					<p class="description">ゴーストが行う模擬戦の毎ターン発生。</p>
+					<p>ゴーストが行う模擬戦の毎ターン発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信したゴーストの\0名。</dd>
@@ -2185,7 +2185,7 @@
 			<dl id="OnMglBattle">
 				<dt class="entry">OnMglBattle</dt>
 				<dd class="entry">
-					<p class="description">マギルトリエが行うバーチャルバトルの結果ごとに発生。</p>
+					<p>マギルトリエが行うバーチャルバトルの結果ごとに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バージョン情報。</dd>
@@ -2210,13 +2210,13 @@
 			<dl id="Send60stair_Call">
 				<dt class="entry">Send60stair_Call</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が同時起動しているゴーストをゲームに誘う際に発生。</p>
+					<p>カレー家族／沙紀と右近が同時起動しているゴーストをゲームに誘う際に発生。</p>
 				</dd>
 			</dl>
 			<dl id="Send60stair_Start">
 				<dt class="entry">Send60stair_Start</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近がゲームを開始する際に発生。</p>
+					<p>カレー家族／沙紀と右近がゲームを開始する際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2225,7 +2225,7 @@
 			<dl id="Send60stair_YourTurnStart">
 				<dt class="entry">Send60stair_YourTurnStart</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中に自ゴーストの順番が来た際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中に自ゴーストの順番が来た際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在位置。</dd>
@@ -2237,7 +2237,7 @@
 			<dl id="Send60stair_Marking">
 				<dt class="entry">Send60stair_Marking</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中にマーキングした際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中にマーキングした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マーキング位置。</dd>
@@ -2247,7 +2247,7 @@
 			<dl id="Send60stair_DiceRoll">
 				<dt class="entry">Send60stair_DiceRoll</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中にゴーストがサイコロを振り、ドボンでない際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中にゴーストがサイコロを振り、ドボンでない際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>第一サイコロの出目。</dd>
@@ -2259,7 +2259,7 @@
 			<dl id="Send60stair_Dobon">
 				<dt class="entry">Send60stair_Dobon</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中に参加ゴーストのいずれかがドボンした際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中に参加ゴーストのいずれかがドボンした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドボンしたゴースト名。</dd>
@@ -2275,7 +2275,7 @@
 			<dl id="Send60stair_YourTurnEnd">
 				<dt class="entry">Send60stair_YourTurnEnd</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中に自ゴーストのターンが終了した際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中に自ゴーストのターンが終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在位置。</dd>
@@ -2287,7 +2287,7 @@
 			<dl id="Send60stair_Goal">
 				<dt class="entry">Send60stair_Goal</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム中にいずれかのゴーストがゴールした際に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム中にいずれかのゴーストがゴールした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>優勝したゴースト名。</dd>
@@ -2299,13 +2299,13 @@
 			<dl id="Send60stair_GameEnd">
 				<dt class="entry">Send60stair_GameEnd</dt>
 				<dd class="entry">
-					<p class="description">カレー家族／沙紀と右近が行うゲーム終了時、順位を表示した後に発生。</p>
+					<p>カレー家族／沙紀と右近が行うゲーム終了時、順位を表示した後に発生。</p>
 				</dd>
 			</dl>
 			<dl id="Send60stair_GetStatus">
 				<dt class="entry">Send60stair_GetStatus</dt>
 				<dd class="entry">
-					<p class="description">\[raiseother]で沙紀に送信するべきイベント。</p>
+					<p>\[raiseother]で沙紀に送信するべきイベント。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信するゴーストの\0名。</dd>
@@ -2326,7 +2326,7 @@
 			<dl id="OnKanadeTeaPartyInfomationRequest">
 				<dt class="entry">OnKanadeTeaPartyInfomationRequest</dt>
 				<dd class="entry">
-					<p class="description">お茶会開始前に、奏でる日常の音色から各ゴーストに通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,<a href="#可変名の返信イベント">返信イベント名</a>,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#caption_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
+					<p>お茶会開始前に、奏でる日常の音色から各ゴーストに通知されるイベント。<br />お茶会に参加するゴーストはこのイベントで直ちに、<br /><code>\![raiseother,かなで,<a href="#可変名の返信イベント">返信イベント名</a>,ゴーストの対応するお茶会バージョン番号,ゴーストの本体側名,<a href="#caption_kanade">※お茶会バージョンへの対応情報</a>]</code><br />のさくらスクリプトを実行する必要がある。<br />イベント内での、このスクリプトの実行以外のトークは非推奨。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>お茶会バージョン番号。</dd>
@@ -2340,7 +2340,7 @@
 			<dl id="可変名の返信イベント">
 				<dt class="entry">可変名の返信イベント</dt>
 				<dd class="entry">
-					<p class="description">OnKanadeTeaPartyInfomationRequestを受信したゴーストが、<em>奏でる日常の音色に対して</em>raiseotherで<em>通知する</em>イベント。<br />イベント名はOnKanadeTeaPartyInfomationRequestのreference2で通知されている。</p>
+					<p>OnKanadeTeaPartyInfomationRequestを受信したゴーストが、<em>奏でる日常の音色に対して</em>raiseotherで<em>通知する</em>イベント。<br />イベント名はOnKanadeTeaPartyInfomationRequestのreference2で通知されている。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストの対応するお茶会バージョン番号</dd>
@@ -2354,7 +2354,7 @@
 			<dl id="OnKanadeTeaParty">
 				<dt class="entry">OnKanadeTeaParty</dt>
 				<dd class="entry">
-					<p class="description">お茶会本体イベント。お茶会開始時に通知される。</p>
+					<p>お茶会本体イベント。お茶会開始時に通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Reference1以降の組み合わせが実装されたお茶会のバージョン。</dd>
@@ -2370,7 +2370,7 @@
 			<dl id="OnKanadeTeaPartyEnd">
 				<dt class="entry">OnKanadeTeaPartyEnd</dt>
 				<dd class="entry">
-					<p class="description">お茶会終了イベント。奏でる日常の音色が、お茶会終了トークをした後に通知される。</p>
+					<p>お茶会終了イベント。奏でる日常の音色が、お茶会終了トークをした後に通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>実行されたお茶会のバージョン。</dd>
@@ -2411,7 +2411,7 @@
 			<dl id="OnMopClear">
 				<dt class="entry">OnMopClear</dt>
 				<dd class="entry">
-					<p class="description">マップクリア時に通知。</p>
+					<p>マップクリア時に通知。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>クリア時のメンバーをバイト値1区切り（固有ユニットのみ）。</dd>

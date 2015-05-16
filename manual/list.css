@@ -312,15 +312,16 @@ a:hover {
 	float: left;
 	margin-left: 5px;
 }
-.category dd.entry .description {
+.category dd.entry > p,
+.category dd.entry > dl {
 	margin: 5px 5px 5px 15px;
 }
-.category dd.entry .description dt {
+.category dd.entry > dl > dt {
 	margin: 15px 5px 5px 0px;
 	border-left: 7px solid #ccb;
 	padding: 0 0 0 5px;
 }
-.category dd.entry .description dd {
+.category dd.entry > dl > dd {
 	margin: 5px 5px 15px 20px;
 	border-left: 1px solid #ccb;
 	padding: 0 0 0 5px;

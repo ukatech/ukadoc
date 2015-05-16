@@ -540,7 +540,7 @@
 			<dl id="OnFirstBoot">
 				<dt class="entry">OnFirstBoot</dt>
 				<dd class="entry">
-					<p class="description">初回起動した際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
+					<p>初回起動した際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>vanishされた回数。</dd>
@@ -555,7 +555,7 @@
 			<dl id="OnBoot">
 				<dt class="entry">OnBoot</dt>
 				<dd class="entry">
-					<p class="description">起動した際に発生。<br>SSPでは、<a href="#OnGhostChanged">OnGhostChanged</a>、<a href="#OnGhostCalled">OnGhostCalled</a>、<a href="#OnFirstBoot">OnFitstBoot</a>、<a href="#OnVanished">OnVanished</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
+					<p>起動した際に発生。<br>SSPでは、<a href="#OnGhostChanged">OnGhostChanged</a>、<a href="#OnGhostCalled">OnGhostCalled</a>、<a href="#OnFirstBoot">OnFitstBoot</a>、<a href="#OnVanished">OnVanished</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>起動時のシェル名。</dd>
@@ -574,7 +574,7 @@
 			<dl id="OnClose">
 				<dt class="entry">OnClose</dt>
 				<dd class="entry">
-					<p class="description">終了が指示された際に発生。<br>SSPでは、<a href="#OnGhostChanging">OnGhostChanging</a>、<a href="#OnCloseAll">OnCloseAll</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
+					<p>終了が指示された際に発生。<br>SSPでは、<a href="#OnGhostChanging">OnGhostChanging</a>、<a href="#OnCloseAll">OnCloseAll</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
@@ -589,7 +589,7 @@
 			<dl id="OnCloseAll">
 				<dt class="entry">OnCloseAll</dt>
 				<dd class="entry">
-					<p class="description">SSP自体が終了する際に発生。<br>オーナードローメニューの「すべて終了」が指示された場合の他、唯一起動中のゴーストにおいて「終了」が指示された場合、およびOSのシャットダウンに伴いSSPが終了する場合にも発生する。</p>
+					<p>SSP自体が終了する際に発生。<br>オーナードローメニューの「すべて終了」が指示された場合の他、唯一起動中のゴーストにおいて「終了」が指示された場合、およびOSのシャットダウンに伴いSSPが終了する場合にも発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
@@ -602,7 +602,7 @@
 			<dl id="OnGhostChanged">
 				<dt class="entry">OnGhostChanged</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストから自ゴーストに切り替えられた際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
+					<p>他のゴーストから自ゴーストに切り替えられた際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>直前のゴーストの本体側の名前。</dd>
@@ -625,7 +625,7 @@
 			<dl id="OnGhostChanging">
 				<dt class="entry">OnGhostChanging</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストへの切り替え指示があった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnClose">OnClose</a>が発生する。</p>
+					<p>他のゴーストへの切り替え指示があった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnClose">OnClose</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替わるゴーストの本体側の名前。</dd>
@@ -646,7 +646,7 @@
 			<dl id="OnGhostCalled">
 				<dt class="entry">OnGhostCalled</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストから呼び出された際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
+					<p>他のゴーストから呼び出された際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び出したゴーストの本体側の名前。</dd>
@@ -667,7 +667,7 @@
 			<dl id="OnGhostCalling">
 				<dt class="entry">OnGhostCalling</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストの呼び出しが指示された際に発生。</p>
+					<p>他のゴーストの呼び出しが指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び出すゴーストの本体側の名前。</dd>
@@ -686,7 +686,7 @@
 			<dl id="OnGhostCallComplete">
 				<dt class="entry">OnGhostCallComplete</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストを呼び出し、そのゴーストが起動スクリプトを完了後発生。</p>
+					<p>他のゴーストを呼び出し、そのゴーストが起動スクリプトを完了後発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び出したゴーストの本体側の名前。</dd>
@@ -705,7 +705,7 @@
 			<dl id="OnOtherGhostBooted">
 				<dt class="entry">OnOtherGhostBooted</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストに呼び出された、他のゴーストが起動した際に発生。<br />言い換えると、呼び出したゴーストにOnGhostCallCompleteが発生するタイミングで、無関係なゴーストに発生。</p>
+					<p>他のゴーストに呼び出された、他のゴーストが起動した際に発生。<br />言い換えると、呼び出したゴーストにOnGhostCallCompleteが発生するタイミングで、無関係なゴーストに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>起動したゴーストの本体側名。</dd>
@@ -724,7 +724,7 @@
 			<dl id="OnOtherGhostChanged">
 				<dt class="entry">OnOtherGhostChanged</dt>
 				<dd class="entry">
-					<p class="description">他のゴースト間で切り替わった際に発生。</p>
+					<p>他のゴースト間で切り替わった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>直前のゴーストの本体側の名前。</dd>
@@ -751,7 +751,7 @@
 			<dl id="OnOtherGhostClosed">
 				<dt class="entry">OnOtherGhostClosed</dt>
 				<dd class="entry">
-					<p class="description">複数起動中、他のゴーストが終了された際に発生。</p>
+					<p>複数起動中、他のゴーストが終了された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>終了したゴーストの本体側の名前。</dd>
@@ -770,7 +770,7 @@
 			<dl id="OnShellChanged">
 				<dt class="entry">OnShellChanged</dt>
 				<dd class="entry">
-					<p class="description">他のシェルから切り替わった際に発生。</p>
+					<p>他のシェルから切り替わった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在のシェル名。</dd>
@@ -789,7 +789,7 @@
 			<dl id="OnShellChanging">
 				<dt class="entry">OnShellChanging</dt>
 				<dd class="entry">
-					<p class="description">他のシェルへ切り替えた際に発生。</p>
+					<p>他のシェルへ切り替えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替わるシェル名。</dd>
@@ -808,7 +808,7 @@
 			<dl id="OnDressupChanged">
 				<dt class="entry">OnDressupChanged</dt>
 				<dd class="entry">
-					<p class="description">着せ替えが切替えられた際に発生する。<br />
+					<p>着せ替えが切替えられた際に発生する。<br />
 					複数回通知される場合があり、その場合は<strong>一番最後のOnDressupChangedが[GET]、それ以外が[NOTIFY]</strong>となる。<br />
 					このイベントの後に発生する<a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a>も参照すること。</p>
 					<dl class="reference">
@@ -829,7 +829,7 @@
 			<dl id="OnBalloonChange">
 				<dt class="entry">OnBalloonChange</dt>
 				<dd class="entry">
-					<p class="description">他のバルーンから切り替わった際に発生。</p>
+					<p>他のバルーンから切り替わった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>切り替わったバルーン名。</dd>
@@ -844,7 +844,7 @@
 			<dl id="OnWindowStateRestore">
 				<dt class="entry">OnWindowStateRestore</dt>
 				<dd class="entry">
-					<p class="description">最小化が解除された際に発生。</p>
+					<p>最小化が解除された際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -855,7 +855,7 @@
 			<dl id="OnWindowStateMinimize">
 				<dt class="entry">OnWindowStateMinimize</dt>
 				<dd class="entry">
-					<p class="description">最小化が指示された際に発生。<br />※SSPのみ設定で喋らすことが可能。</p>
+					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らすことが可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -866,7 +866,7 @@
 			<dl id="OnFullScreenAppMinimize">
 				<dt class="entry">OnFullScreenAppMinimize</dt>
 				<dd class="entry">
-					<p class="description">全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
+					<p>全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -875,7 +875,7 @@
 			<dl id="OnFullScreenAppRestore">
 				<dt class="entry">OnFullScreenAppRestore</dt>
 				<dd class="entry">
-					<p class="description">全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
+					<p>全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -884,7 +884,7 @@
 			<dl id="OnCacheSuspend">
 				<dt class="entry">OnCacheSuspend</dt>
 				<dd class="entry">
-					<p class="description">ゴーストキャッシュに入った際に発生。</p>
+					<p>ゴーストキャッシュに入った際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -893,7 +893,7 @@
 			<dl id="OnCacheRestore">
 				<dt class="entry">OnCacheRestore</dt>
 				<dd class="entry">
-					<p class="description">ゴーストキャッシュから出た際に発生。</p>
+					<p>ゴーストキャッシュから出た際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -902,7 +902,7 @@
 			<dl id="OnInitialize">
 				<dt class="entry">OnInitialize</dt>
 				<dd class="entry">
-					<p class="description">起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<p>起動した際に発生。<strong>[NOTIFY]</strong></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -911,7 +911,7 @@
 			<dl id="OnDestroy">
 				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
-					<p class="description">終了が指示された際に発生。<strong>[NOTIFY]</strong></p>
+					<p>終了が指示された際に発生。<strong>[NOTIFY]</strong></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -920,7 +920,7 @@
 			<dl id="OnSysResume">
 				<dt class="entry">OnSysResume</dt>
 				<dd class="entry">
-					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
+					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>解除理由。通常normal、システムのスケジュールによる自動解除時auto、バッテリー切れで非常停止した場合critical（Windows Vista以降廃止）</dd>
@@ -933,7 +933,7 @@
 			<dl id="OnSysSuspend">
 				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
-					<p class="description">サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<strong>[NOTIFY]</strong></p>
+					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<strong>[NOTIFY]</strong></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -942,7 +942,7 @@
 			<dl id="OnBasewareUpdating">
 				<dt class="entry">OnBasewareUpdating</dt>
 				<dd class="entry">
-					<p class="description">本体更新時、ダウンロードが終わりファイル更新を開始する前に発生。このイベントに反応がない場合はOnCloseAll、OnCloseの順に発生する。</p>
+					<p>本体更新時、ダウンロードが終わりファイル更新を開始する前に発生。このイベントに反応がない場合はOnCloseAll、OnCloseの順に発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>更新前のバージョン番号　例：2.3.58</dd>
@@ -957,7 +957,7 @@
 			<dl id="OnBasewareUpdated">
 				<dt class="entry">OnBasewareUpdated</dt>
 				<dd class="entry">
-					<p class="description">本体更新終了後、ゴーストが起動する時に発生。このイベントに反応がない場合はOnBootが発生する。</p>
+					<p>本体更新終了後、ゴーストが起動する時に発生。このイベントに反応がない場合はOnBootが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>更新後のバージョン番号　例：2.3.59</dd>
@@ -975,7 +975,7 @@
 			<dl id="OnTeachStart">
 				<dt class="entry">OnTeachStart</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxがオープンした際に発生。</p>
+					<p>TeachBoxがオープンした際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -985,7 +985,7 @@
 			<dl id="OnTeachInputCancel">
 				<dt class="entry">OnTeachInputCancel</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxが閉じられた際に発生。</p>
+					<p>TeachBoxが閉じられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
@@ -1000,7 +1000,7 @@
 			<dl id="OnTeach">
 				<dt class="entry">OnTeach</dt>
 				<dd class="entry">
-					<p class="description">TeachBoxからの入力があった際に発生。</p>
+					<p>TeachBoxからの入力があった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>入力された言葉の履歴。Reference0が1回目～最新の入力が末尾(n回目の入力がReference[n-1])</dd>
@@ -1013,7 +1013,7 @@
 			<dl id="OnCommunicate">
 				<dt class="entry">OnCommunicate</dt>
 				<dd class="entry">
-					<p class="description">CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
+					<p>CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Boxからはuser、ゴーストからはゴーストの本体側名。</dd>
@@ -1031,7 +1031,7 @@
 			<dl id="OnCommunicateInputCancel">
 				<dt class="entry">OnCommunicateInputCancel</dt>
 				<dd class="entry">
-					<p class="description">CommunicateBoxが閉じられた際に発生。</p>
+					<p>CommunicateBoxが閉じられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
@@ -1046,7 +1046,7 @@
 			<dl id="OnUserInput">
 				<dt class="entry">OnUserInput</dt>
 				<dd class="entry">
-					<p class="description">InputBoxに入力され決定された際に発生。</p>
+					<p>InputBoxに入力され決定された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>InputBoxのID。</dd>
@@ -1063,7 +1063,7 @@
 			<dl id="OnUserInputCancel">
 				<dt class="entry">OnUserInputCancel</dt>
 				<dd class="entry">
-					<p class="description">InputBoxが閉じられた際に発生。</p>
+					<p>InputBoxが閉じられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>入力のイベントID。</dd>
@@ -1078,7 +1078,7 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p class="description">ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<p>ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
@@ -1096,7 +1096,7 @@
 			<dl id="OnSystemDialog">
 				<dt class="entry">OnSystemDialog</dt>
 				<dd class="entry">
-					<p class="description">ファイル関連のダイアログで保存/OKが押された際に発生。</p>
+					<p>ファイル関連のダイアログで保存/OKが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>open・save・folder・colorのいずれか。</dd>
@@ -1113,7 +1113,7 @@
 			<dl id="OnSystemDialogCancel">
 				<dt class="entry">OnSystemDialogCancel</dt>
 				<dd class="entry">
-					<p class="description">ファイル関連のダイアログでキャンセルが押された際に発生。</p>
+					<p>ファイル関連のダイアログでキャンセルが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>open・save・folder・colorのいずれか。</dd>
@@ -1128,7 +1128,7 @@
 			<dl id="OnConfigurationDialogHelp">
 				<dt class="entry">OnConfigurationDialogHelp</dt>
 				<dd class="entry">
-					<p class="description">設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
+					<p>設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>
@@ -1168,7 +1168,7 @@
 			<dl id="OnSecondChange">
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
-					<p class="description">1秒ごとに発生。</p>
+					<p>1秒ごとに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1191,7 +1191,7 @@
 			<dl id="OnMinuteChange">
 				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
-					<p class="description">1分ごとに発生。</p>
+					<p>1分ごとに発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1217,7 +1217,7 @@
 			<dl id="OnVanishSelecting">
 				<dt class="entry">OnVanishSelecting</dt>
 				<dd class="entry">
-					<p class="description">消滅が指示された際に発生。</p>
+					<p>消滅が指示された際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1228,7 +1228,7 @@
 			<dl id="OnVanishSelected">
 				<dt class="entry">OnVanishSelected</dt>
 				<dd class="entry">
-					<p class="description">確認ダイアログでYESが選択された際に発生。</p>
+					<p>確認ダイアログでYESが選択された際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1239,7 +1239,7 @@
 			<dl id="OnVanishCancel">
 				<dt class="entry">OnVanishCancel</dt>
 				<dd class="entry">
-					<p class="description">確認ダイアログでNOが選択された際に発生。</p>
+					<p>確認ダイアログでNOが選択された際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1250,7 +1250,7 @@
 			<dl id="OnVanishButtonHold">
 				<dt class="entry">OnVanishButtonHold</dt>
 				<dd class="entry">
-					<p class="description">消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
+					<p>消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>中断の操作が起きたスクリプト。</dd>
@@ -1269,7 +1269,7 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p class="description">直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
+					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>消滅したゴーストの本体側の名前。</dd>
@@ -1290,7 +1290,7 @@
 			<dl id="OnOtherGhostVanish">
 				<dt class="entry">OnOtherGhostVanish</dt>
 				<dd class="entry">
-					<p class="description">複数起動中、他のゴーストが消滅した際に発生。</p>
+					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>消滅したゴーストの本体側の名前。</dd>
@@ -1312,7 +1312,7 @@
 			<dl id="OnChoiceSelect">
 				<dt class="entry">OnChoiceSelect</dt>
 				<dd class="entry">
-					<p class="description">選択肢が選択された際に発生。</p>
+					<p>選択肢が選択された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択された選択肢のID。</dd>
@@ -1329,7 +1329,7 @@
 			<dl id="OnChoiceSelectEx">
 				<dt class="entry">OnChoiceSelectEx</dt>
 				<dd class="entry">
-					<p class="description">選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
+					<p>選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -1346,7 +1346,7 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p class="description">選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><strong>[NOTIFY]</strong></p>
+					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -1365,7 +1365,7 @@
 			<dl id="OnChoiceTimeout">
 				<dt class="entry">OnChoiceTimeout</dt>
 				<dd class="entry">
-					<p class="description">選択肢待ち時間がタイムアウトした際に発生。</p>
+					<p>選択肢待ち時間がタイムアウトした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>タイムアウトしたスクリプト。</dd>
@@ -1380,7 +1380,7 @@
 			<dl id="OnChoiceHover">
 				<dt class="entry">OnChoiceHover</dt>
 				<dd class="entry">
-					<p class="description">選択肢上で静止された際に発生。</p>
+					<p>選択肢上で静止された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -1397,7 +1397,7 @@
 			<dl id="OnAnchorSelect">
 				<dt class="entry">OnAnchorSelect</dt>
 				<dd class="entry">
-					<p class="description">\_aジャンパがクリックされた瞬間に発生。</p>
+					<p>\_aジャンパがクリックされた瞬間に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択されたジャンパのID。</dd>
@@ -1412,7 +1412,7 @@
 			<dl id="OnAnchorSelectEx">
 				<dt class="entry">OnAnchorSelectEx</dt>
 				<dd class="entry">
-					<p class="description">\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
+					<p>\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択されたジャンパのテキスト。</dd>
@@ -1432,7 +1432,7 @@
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">サーフェスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
+					<p>サーフェスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体側の現在サーフェス。</dd>
@@ -1450,7 +1450,7 @@
 			<dl id="OnSurfaceRestore">
 				<dt class="entry">OnSurfaceRestore</dt>
 				<dd class="entry">
-					<p class="description">トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
+					<p>トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体側の現在サーフェス。</dd>
@@ -1467,7 +1467,7 @@
 			<dl id="OnOtherSurfaceChange">
 				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
-					<p class="description">（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
+					<p>（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
 					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
@@ -1494,7 +1494,7 @@
 			<dl id="OnMouseClick">
 				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
-					<p class="description">左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
+					<p>左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1521,7 +1521,7 @@
 			<dl id="OnMouseClickEx">
 				<dt class="entry">OnMouseClickEx</dt>
 				<dd class="entry">
-					<p class="description">左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
+					<p>左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1546,7 +1546,7 @@
 			<dl id="OnMouseDoubleClick">
 				<dt class="entry">OnMouseDoubleClick</dt>
 				<dd class="entry">
-					<p class="description">左・右ボタンでダブルクリックされた際に発生。</p>
+					<p>左・右ボタンでダブルクリックされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1573,7 +1573,7 @@
 			<dl id="OnMouseDoubleClickEx">
 				<dt class="entry">OnMouseDoubleClickEx</dt>
 				<dd class="entry">
-					<p class="description">左・右ボタン以外でダブルクリックされた際に発生。</p>
+					<p>左・右ボタン以外でダブルクリックされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1598,7 +1598,7 @@
 			<dl id="OnMouseMultipleClick">
 				<dt class="entry">OnMouseMultipleClick</dt>
 				<dd class="entry">
-					<p class="description">3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
+					<p>3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1625,7 +1625,7 @@
 			<dl id="OnMouseMultipleClickEx">
 				<dt class="entry">OnMouseMultipleClickEx</dt>
 				<dd class="entry">
-					<p class="description">左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
+					<p>左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1652,7 +1652,7 @@
 			<dl id="OnMouseUp">
 				<dt class="entry">OnMouseUp</dt>
 				<dd class="entry">
-					<p class="description">左・右のマウスボタンが放された際に発生。</p>
+					<p>左・右のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1677,7 +1677,7 @@
 			<dl id="OnMouseUpEx">
 				<dt class="entry">OnMouseUpEx</dt>
 				<dd class="entry">
-					<p class="description">左・右以外のマウスボタンが放された際に発生。</p>
+					<p>左・右以外のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1702,7 +1702,7 @@
 			<dl id="OnMouseDown">
 				<dt class="entry">OnMouseDown</dt>
 				<dd class="entry">
-					<p class="description">左・右のマウスボタンが押された際に発生。</p>
+					<p>左・右のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1727,7 +1727,7 @@
 			<dl id="OnMouseDownEx">
 				<dt class="entry">OnMouseDownEx</dt>
 				<dd class="entry">
-					<p class="description">左・右以外のマウスボタンが押された際に発生。</p>
+					<p>左・右以外のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1752,7 +1752,7 @@
 			<dl id="OnMouseMove">
 				<dt class="entry">OnMouseMove</dt>
 				<dd class="entry">
-					<p class="description">マウスが移動した際に発生。</p>
+					<p>マウスが移動した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1779,7 +1779,7 @@
 			<dl id="OnMouseWheel">
 				<dt class="entry">OnMouseWheel</dt>
 				<dd class="entry">
-					<p class="description">マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
+					<p>マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1806,7 +1806,7 @@
 			<dl id="OnMouseEnterAll">
 				<dt class="entry">OnMouseEnterAll</dt>
 				<dd class="entry">
-					<p class="description">マウスがキャラクターウインドウに入った際に発生。</p>
+					<p>マウスがキャラクターウインドウに入った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1831,7 +1831,7 @@
 			<dl id="OnMouseLeaveAll">
 				<dt class="entry">OnMouseLeaveAll</dt>
 				<dd class="entry">
-					<p class="description">マウスがキャラクターウインドウから出た際に発生。</p>
+					<p>マウスがキャラクターウインドウから出た際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1856,7 +1856,7 @@
 			<dl id="OnMouseEnter">
 				<dt class="entry">OnMouseEnter</dt>
 				<dd class="entry">
-					<p class="description">マウスが当たり判定に入った際に発生。</p>
+					<p>マウスが当たり判定に入った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1881,7 +1881,7 @@
 			<dl id="OnMouseLeave">
 				<dt class="entry">OnMouseLeave</dt>
 				<dd class="entry">
-					<p class="description">マウスが当たり判定から出た際に発生。</p>
+					<p>マウスが当たり判定から出た際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1906,7 +1906,7 @@
 			<dl id="OnMouseDragStart">
 				<dt class="entry">OnMouseDragStart</dt>
 				<dd class="entry">
-					<p class="description">マウスをドラッグし始めた際に発生。</p>
+					<p>マウスをドラッグし始めた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1931,7 +1931,7 @@
 			<dl id="OnMouseDragEnd">
 				<dt class="entry">OnMouseDragEnd</dt>
 				<dd class="entry">
-					<p class="description">マウスをドラッグし終えた際に発生。</p>
+					<p>マウスをドラッグし終えた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1956,7 +1956,7 @@
 			<dl id="OnMouseHover">
 				<dt class="entry">OnMouseHover</dt>
 				<dd class="entry">
-					<p class="description">マウスが静止している際に発生。</p>
+					<p>マウスが静止している際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1981,7 +1981,7 @@
 			<dl id="OnMouseGesture">
 				<dt class="entry">OnMouseGesture</dt>
 				<dd class="entry">
-					<p class="description">マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
+					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -2009,7 +2009,7 @@
 			<dl id="OnBalloonBreak">
 				<dt class="entry">OnBalloonBreak</dt>
 				<dd class="entry">
-					<p class="description">SSTP以外でブレイクされた際に発生。</p>
+					<p>SSTP以外でブレイクされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>中断の操作が起きたスクリプト。</dd>
@@ -2026,7 +2026,7 @@
 			<dl id="OnBalloonClose">
 				<dt class="entry">OnBalloonClose</dt>
 				<dd class="entry">
-					<p class="description">バルーンを閉じた際に発生。</p>
+					<p>バルーンを閉じた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>閉じる際に表示されていたスクリプト。</dd>
@@ -2039,7 +2039,7 @@
 			<dl id="OnBalloonTimeout">
 				<dt class="entry">OnBalloonTimeout</dt>
 				<dd class="entry">
-					<p class="description">選択肢以外でバルーンがタイムアウトした際に発生。</p>
+					<p>選択肢以外でバルーンがタイムアウトした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>タイムアウトした際に表示されていたスクリプト。</dd>
@@ -2057,7 +2057,7 @@
 			<dl id="OnTrayBalloonClick">
 				<dt class="entry">OnTrayBalloonClick</dt>
 				<dd class="entry">
-					<p class="description">トレイアイコンのバルーンをクリックして消した際に発生。</p>
+					<p>トレイアイコンのバルーンをクリックして消した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>タイトル文字列。</dd>
@@ -2072,7 +2072,7 @@
 			<dl id="OnTrayBalloonTimeout">
 				<dt class="entry">OnTrayBalloonTimeout</dt>
 				<dd class="entry">
-					<p class="description">トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
+					<p>トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>タイトル文字列。</dd>
@@ -2090,7 +2090,7 @@
 			<dl id="OnInstallBegin">
 				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
-					<p class="description">アーカイブのインストール開始の際に発生。</p>
+					<p>アーカイブのインストール開始の際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2101,7 +2101,7 @@
 			<dl id="OnInstallComplete">
 				<dt class="entry">OnInstallComplete</dt>
 				<dd class="entry">
-					<p class="description">インストールが正常終了した際に発生。</p>
+					<p>インストールが正常終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
@@ -2120,7 +2120,7 @@
 			<dl id="OnInstallCompleteEx">
 				<dt class="entry">OnInstallCompleteEx</dt>
 				<dd class="entry">
-					<p class="description">インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
+					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
@@ -2137,7 +2137,7 @@
 			<dl id="OnInstallFailure">
 				<dt class="entry">OnInstallFailure</dt>
 				<dd class="entry">
-					<p class="description">インストールに失敗した際に発生。</p>
+					<p>インストールに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_install-reasonoffailure">※失敗理由</a>。</dd>
@@ -2152,7 +2152,7 @@
 			<dl id="OnInstallRefuse">
 				<dt class="entry">OnInstallRefuse</dt>
 				<dd class="entry">
-					<p class="description">インストールするファイルが他のゴーストを指名していた際に発生。</p>
+					<p>インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
@@ -2207,7 +2207,7 @@
 			<dl id="OnFileDropping">
 				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
-					<p class="description">ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
+					<p>ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドラッグしているファイルパス。</dd>
@@ -2223,7 +2223,7 @@
 			<dl id="OnFileDropped">
 				<dt class="entry">OnFileDropped</dt>
 				<dd class="entry">
-					<p class="description">[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
@@ -2239,7 +2239,7 @@
 			<dl id="OnDirectoryDrop">
 				<dt class="entry">OnDirectoryDrop</dt>
 				<dd class="entry">
-					<p class="description">ディレクトリがDnD された際に発生。</p>
+					<p>ディレクトリがDnD された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたディレクトリのパス。</dd>
@@ -2255,7 +2255,7 @@
 			<dl id="OnWallpaperChange">
 				<dt class="entry">OnWallpaperChange</dt>
 				<dd class="entry">
-					<p class="description">画像ファイルのDnDによって壁紙が変更された際に発生。</p>
+					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
@@ -2270,7 +2270,7 @@
 			<dl id="OnFileDrop">
 				<dt class="entry">OnFileDrop</dt>
 				<dd class="entry">
-					<p class="description">[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
@@ -2286,7 +2286,7 @@
 			<dl id="OnFileDrop2">
 				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
-					<p class="description">ファイルがDnDされた際に発生。</p>
+					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
@@ -2303,7 +2303,7 @@
 			<dl id="OnFileDropEx">
 				<dt class="entry">OnFileDropEx</dt>
 				<dd class="entry">
-					<p class="description">ファイルがDnDされた際に発生。</p>
+					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
@@ -2318,7 +2318,7 @@
 			<dl id="OnUpdatedataCreating">
 				<dt class="entry">OnUpdatedataCreating</dt>
 				<dd class="entry">
-					<p class="description">ゴーストフォルダがDnDされた際に発生。</p>
+					<p>ゴーストフォルダがDnDされた際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2329,7 +2329,7 @@
 			<dl id="OnUpdatedataCreated">
 				<dt class="entry">OnUpdatedataCreated</dt>
 				<dd class="entry">
-					<p class="description">updates2.dauが作成された際に発生。</p>
+					<p>updates2.dauが作成された際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2340,7 +2340,7 @@
 			<dl id="OnNarCreating">
 				<dt class="entry">OnNarCreating</dt>
 				<dd class="entry">
-					<p class="description">install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
+					<p>install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>narにするオブジェクト名。</dd>
@@ -2359,7 +2359,7 @@
 			<dl id="OnNarCreated">
 				<dt class="entry">OnNarCreated</dt>
 				<dd class="entry">
-					<p class="description">narファイルが作成された際に発生。</p>
+					<p>narファイルが作成された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>narにするオブジェクト名。</dd>
@@ -2381,7 +2381,7 @@
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p class="description">URLがドロップされた際に発生。</p>
+					<p>URLがドロップされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>URLパス。</dd>
@@ -2396,7 +2396,7 @@
 			<dl id="OnURLDropped">
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
-					<p class="description">ドロップされたURLを受領し終わった際に発生。</p>
+					<p>ドロップされたURLを受領し終わった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードし終わったファイルのローカルパス。</dd>
@@ -2411,7 +2411,7 @@
 			<dl id="OnURLDropFailure">
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
-					<p class="description">ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</p>
+					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードし終わった分のファイルのローカルパス。</dd>
@@ -2428,7 +2428,7 @@
 			<dl id="OnURLQuery">
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
-					<p class="description">URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
+					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
 					これに対してスクリプトを返すと、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
 					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
 					<dl class="reference">
@@ -2450,7 +2450,7 @@
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新開始が指示された際に発生。</p>
+					<p>ネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名。</dd>
@@ -2471,7 +2471,7 @@
 			<dl id="OnUpdateReady">
 				<dt class="entry">OnUpdateReady</dt>
 				<dd class="entry">
-					<p class="description">更新ファイルが確認された際に発生。</p>
+					<p>更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateReady-note1">*1</a></dd>
@@ -2495,7 +2495,7 @@
 			<dl id="OnUpdateComplete">
 				<dt class="entry">OnUpdateComplete</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新が成功し完了した際に発生。</p>
+					<p>ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
@@ -2516,7 +2516,7 @@
 			<dl id="OnUpdateFailure">
 				<dt class="entry">OnUpdateFailure</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新に失敗した際に発生。</p>
+					<p>ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
@@ -2537,7 +2537,7 @@
 			<dl id="OnUpdate.OnDownloadBegin">
 				<dt class="entry">OnUpdate.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p class="description">ファイルダウンロード開始の際に発生。</p>
+					<p>ファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードするファイル名。</dd>
@@ -2560,7 +2560,7 @@
 			<dl id="OnUpdate.OnMD5CompareBegin">
 				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p class="description">MD5の照合開始の際に発生。</p>
+					<p>MD5の照合開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>比較するファイル名。</dd>
@@ -2583,7 +2583,7 @@
 			<dl id="OnUpdate.OnMD5CompareComplete">
 				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p class="description">MD5が一致した際に発生。</p>
+					<p>MD5が一致した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落としたファイル名。</dd>
@@ -2606,7 +2606,7 @@
 			<dl id="OnUpdate.OnMD5CompareFailure">
 				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p class="description">MD5が一致しなかった際に発生。</p>
+					<p>MD5が一致しなかった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>落としたファイル名。</dd>
@@ -2629,7 +2629,7 @@
 			<dl id="OnUpdateOtherBegin">
 				<dt class="entry">OnUpdateOtherBegin</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
+					<p>ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名。</dd>
@@ -2648,7 +2648,7 @@
 			<dl id="OnUpdateOtherReady">
 				<dt class="entry">OnUpdateOtherReady</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外の更新ファイルが確認された際に発生。</p>
+					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateOtherReady-note1">*1</a></dd>
@@ -2670,7 +2670,7 @@
 			<dl id="OnUpdateOtherComplete">
 				<dt class="entry">OnUpdateOtherComplete</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
+					<p>ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
@@ -2689,7 +2689,7 @@
 			<dl id="OnUpdateOtherFailure">
 				<dt class="entry">OnUpdateOtherFailure</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のネットワーク更新に失敗した際に発生。</p>
+					<p>ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
@@ -2708,7 +2708,7 @@
 			<dl id="OnUpdateOther.OnDownloadBegin">
 				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のファイルダウンロード開始の際に発生。</p>
+					<p>ゴースト以外のファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードするファイル名。</dd>
@@ -2729,7 +2729,7 @@
 			<dl id="OnUpdateOther.OnMD5CompareBegin">
 				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のMD5の照合開始の際に発生。</p>
+					<p>ゴースト以外のMD5の照合開始の際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>比較するファイル名。</dd>
@@ -2750,7 +2750,7 @@
 			<dl id="OnUpdateOther.OnMD5CompareComplete">
 				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のMD5が一致した際に発生。</p>
+					<p>ゴースト以外のMD5が一致した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
 						<dd>正しいMD5値。</dd>
@@ -2769,7 +2769,7 @@
 			<dl id="OnUpdateOther.OnMD5CompareFailure">
 				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p class="description">ゴースト以外のMD5が一致しなかった際に発生。</p>
+					<p>ゴースト以外のMD5が一致しなかった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
 						<dd>正しいMD5値。</dd>
@@ -2788,7 +2788,7 @@
 			<dl id="OnUpdateCheckComplete">
 				<dt class="entry">OnUpdateCheckComplete</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新のチェックに成功した際に発生。</p>
+					<p>ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
@@ -2807,7 +2807,7 @@
 			<dl id="OnUpdateCheckFailure">
 				<dt class="entry">OnUpdateCheckFailure</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新のチェックに失敗した際に発生。</p>
+					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_updateresultfaulure">※失敗理由</a></dd>
@@ -2822,7 +2822,7 @@
 			<dl id="OnUpdateResult">
 				<dt class="entry">OnUpdateResult</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
+					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
@@ -2848,7 +2848,7 @@
 			<dl id="OnUpdateResultExplorer">
 				<dt class="entry">OnUpdateResultExplorer</dt>
 				<dd class="entry">
-					<p class="description">ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
+					<p>ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>OnUpdateResultと同じ</dd>
@@ -2914,7 +2914,7 @@
 			<dl id="OnSNTPBegin">
 				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
-					<p class="description">時計合わせが開始が指示された際に発生。</p>
+					<p>時計合わせが開始が指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
@@ -2929,7 +2929,7 @@
 			<dl id="OnSNTPCompare">
 				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
-					<p class="description">サーバに接続が確立された際に発生。</p>
+					<p>サーバに接続が確立された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
@@ -2952,7 +2952,7 @@
 			<dl id="OnSNTPCorrect">
 				<dt class="entry">OnSNTPCorrect</dt>
 				<dd class="entry">
-					<p class="description">ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<p>ローカル時刻をサーバ時刻に修正した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
@@ -2973,7 +2973,7 @@
 			<dl id="OnSNTPFailure">
 				<dt class="entry">OnSNTPFailure</dt>
 				<dd class="entry">
-					<p class="description">時計合わせに失敗した際に発生。</p>
+					<p>時計合わせに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
@@ -2991,7 +2991,7 @@
 			<dl id="OnBIFFBegin">
 				<dt class="entry">OnBIFFBegin</dt>
 				<dd class="entry">
-					<p class="description">メールチェック開始が指示された際に発生。</p>
+					<p>メールチェック開始が指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference2</dt>
 						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
@@ -3006,7 +3006,7 @@
 			<dl id="OnBIFFComplete">
 				<dt class="entry">OnBIFFComplete</dt>
 				<dd class="entry">
-					<p class="description">メールチェックが成功した際に発生。</p>
+					<p>メールチェックが成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スプールされているメールの通数、１オリジン表記。</dd>
@@ -3035,7 +3035,7 @@
 			<dl id="OnBIFF2Complete">
 				<dt class="entry">OnBIFF2Complete</dt>
 				<dd class="entry">
-					<p class="description">メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
+					<p>メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スプールされているメールの通数、１オリジン表記。</dd>
@@ -3055,7 +3055,7 @@
 			<dl id="OnBIFFFailure">
 				<dt class="entry">OnBIFFFailure</dt>
 				<dd class="entry">
-					<p class="description">メールチェックに成功した際に発生。</p>
+					<p>メールチェックに成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※失敗理由</dd>
@@ -3075,7 +3075,7 @@
 			<dl id="OnHeadlinesenseBegin">
 				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
-					<p class="description">ヘッドラインセンス開始が指示された際に発生。</p>
+					<p>ヘッドラインセンス開始が指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ヘッドラインセンスするサイト名。</dd>
@@ -3091,7 +3091,7 @@
 			<dl id="OnHeadlinesense.OnFind">
 				<dt class="entry">OnHeadlinesense.OnFind</dt>
 				<dd class="entry">
-					<p class="description">読み上げるべきヘッドラインセンスがあった際に発生。</p>
+					<p>読み上げるべきヘッドラインセンスがあった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ヘッドラインセンスするサイト名。</dd>
@@ -3111,7 +3111,7 @@
 			<dl id="OnHeadlinesenseComplete">
 				<dt class="entry">OnHeadlinesenseComplete</dt>
 				<dd class="entry">
-					<p class="description">ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
+					<p>ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
@@ -3125,7 +3125,7 @@
 			<dl id="OnHeadlinesenseFailure">
 				<dt class="entry">OnHeadlinesenseFailure</dt>
 				<dd class="entry">
-					<p class="description">ヘッドラインセンスに失敗した際に発生。</p>
+					<p>ヘッドラインセンスに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
@@ -3166,7 +3166,7 @@
 			<dl id="OnSchedule5MinutesToGo">
 				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
-					<p class="description">本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
+					<p>本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>イベントの<a href="#caption_scheduletype">タイプ</a></dd>
@@ -3185,7 +3185,7 @@
 			<dl id="OnScheduleRead">
 				<dt class="entry">OnScheduleRead</dt>
 				<dd class="entry">
-					<p class="description">カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
+					<p>カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>イベントの<a href="#caption_scheduletype">タイプ</a>。</dd>
@@ -3204,7 +3204,7 @@
 			<dl id="OnSchedulesenseBegin">
 				<dt class="entry">OnSchedulesenseBegin</dt>
 				<dd class="entry">
-					<p class="description">スケジュールセンサが接続開始する際に発生。</p>
+					<p>スケジュールセンサが接続開始する際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -3217,7 +3217,7 @@
 			<dl id="OnSchedulesenseComplete">
 				<dt class="entry">OnSchedulesenseComplete</dt>
 				<dd class="entry">
-					<p class="description">スケジュールセンサの処理が完了した際に発生。</p>
+					<p>スケジュールセンサの処理が完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -3232,7 +3232,7 @@
 			<dl id="OnSchedulesenseFailure">
 				<dt class="entry">OnSchedulesenseFailure</dt>
 				<dd class="entry">
-					<p class="description">スケジュールセンサの処理に失敗した場合に発生。</p>
+					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
@@ -3245,7 +3245,7 @@
 			<dl id="OnSchedulepostBegin">
 				<dt class="entry">OnSchedulepostBegin</dt>
 				<dd class="entry">
-					<p class="description">スケジュールセンサが投稿モードで接続開始する際に発生。</p>
+					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -3258,7 +3258,7 @@
 			<dl id="OnSchedulepostComplete">
 				<dt class="entry">OnSchedulepostComplete</dt>
 				<dd class="entry">
-					<p class="description">スケジュールセンサが投稿処理を完了した際に発生。</p>
+					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -3313,7 +3313,7 @@
 			<dl id="OnSSTPBreak">
 				<dt class="entry">OnSSTPBreak</dt>
 				<dd class="entry">
-					<p class="description">SSTPがブレイクされた際に発生。</p>
+					<p>SSTPがブレイクされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>中断の操作が起きたスクリプト。</dd>
@@ -3331,7 +3331,7 @@
 			<dl id="OnSSTPBlacklisting">
 				<dt class="entry">OnSSTPBlacklisting</dt>
 				<dd class="entry">
-					<p class="description">最終クライアントのブラックリスト行きが指示された際に発生。</p>
+					<p>最終クライアントのブラックリスト行きが指示された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>最終クライアントのIPアドレス。</dd>
@@ -3347,7 +3347,7 @@
 			<dl id="OnExecuteHTTPComplete">
 				<dt class="entry">OnExecuteHTTPComplete</dt>
 				<dd class="entry">
-					<p class="description">execute-httpで正常に取得完了した際に発生。</p>
+					<p>execute-httpで正常に取得完了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
@@ -3370,7 +3370,7 @@
 			<dl id="OnExecuteHTTPFailure">
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
-					<p class="description">execute-httpで取得エラーした際に発生。</p>
+					<p>execute-httpで取得エラーした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
@@ -3393,7 +3393,7 @@
 			<dl id="OnExecuteHTTPSSLInfo">
 				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
 				<dd class="entry">
-					<p class="description">取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>async ID (無ければからっぽ)</dd>
@@ -3422,7 +3422,7 @@
 			<dl id="OnPingComplete">
 				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
 				<dd class="entry">
-					<p class="description">\![execute,ping]で指定回数のping実行完了時に発生。</p>
+					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>--eventで指定した文字列そのもの</dd>
@@ -3439,7 +3439,7 @@
 			<dl id="OnPingProgress">
 				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
 				<dd class="entry">
-					<p class="description">\![execute,ping]でping実行中に発生。</p>
+					<p>\![execute,ping]でping実行中に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>--eventで指定した文字列そのもの</dd>
@@ -3456,7 +3456,7 @@
 			<dl id="OnNSLookupComplete">
 				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
 				<dd class="entry">
-					<p class="description">\![execute,nslookup]で成功時に発生。</p>
+					<p>\![execute,nslookup]で成功時に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>--eventで指定した文字列そのもの</dd>
@@ -3475,7 +3475,7 @@
 			<dl id="OnNSLookupFailure">
 				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
 				<dd class="entry">
-					<p class="description">\![execute,nslookup]で失敗時に発生。</p>
+					<p>\![execute,nslookup]で失敗時に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>--eventで指定した文字列そのもの</dd>
@@ -3495,7 +3495,7 @@
 				<dl id="OnRaisePluginFailure">
 				<dt class="entry">OnRaisePluginFailure</dt>
 				<dd class="entry">
-					<p class="description">\![raiseplugin]が失敗した際に発生。</p>
+					<p>\![raiseplugin]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
@@ -3514,7 +3514,7 @@
 			<dl id="OnNotifyPluginFailure">
 				<dt class="entry">OnNotifyPluginFailure</dt>
 				<dd class="entry">
-					<p class="description">\![notifyplugin]が失敗した際に発生。</p>
+					<p>\![notifyplugin]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
@@ -3533,7 +3533,7 @@
 			<dl id="OnRaiseOtherFailure">
 				<dt class="entry">OnRaiseOtherFailure</dt>
 				<dd class="entry">
-					<p class="description">\![raiseother]が失敗した際に発生。</p>
+					<p>\![raiseother]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
@@ -3552,7 +3552,7 @@
 			<dl id="OnNotifyOtherFailure">
 				<dt class="entry">OnNotifyOtherFailure</dt>
 				<dd class="entry">
-					<p class="description">\![notifyother]が失敗した際に発生。</p>
+					<p>\![notifyother]が失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
@@ -3574,7 +3574,7 @@
 			<dl id="OnOverlap">
 				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
-					<p class="description">キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
+					<p>キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] はバイト値1<br />例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</dd>
@@ -3589,7 +3589,7 @@
 			<dl id="OnOtherOverlap">
 				<dt class="entry">OnOtherOverlap</dt>
 				<dd class="entry">
-					<p class="description">他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p>他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</dd>
@@ -3604,7 +3604,7 @@
 			<dl id="OnOffscreen">
 				<dt class="entry">OnOffscreen</dt>
 				<dd class="entry">
-					<p class="description">キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
+					<p>キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ID [\1] ID [\1] ID ...<br />[\1] はバイト値1<br />例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</dd>
@@ -3619,7 +3619,7 @@
 			<dl id="OnOtherOffscreen">
 				<dt class="entry">OnOtherOffscreen</dt>
 				<dd class="entry">
-					<p class="description">他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p>他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/1 [\1] 所長たん/0</dd>
@@ -3637,7 +3637,7 @@
 			<dl id="OnNetworkHeavy">
 				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
-					<p class="description">相手サーバが時間内に応答しなかった際に発生。</p>
+					<p>相手サーバが時間内に応答しなかった際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　タイムアウトするまでの時間。(秒単位)</dd>
@@ -3652,7 +3652,7 @@
 			<dl id="OnNetworkStatusChange">
 				<dt class="entry">OnNetworkStatusChange</dt>
 				<dd class="entry">
-					<p class="description">ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
+					<p>ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>onlineまたはoffline。</dd>
@@ -3670,7 +3670,7 @@
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
-					<p class="description">スクリーンセーバーが起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<p>スクリーンセーバーが起動した際に発生。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スクリーンセーバ名</dd>
@@ -3687,7 +3687,7 @@
 			<dl id="OnScreenSaverEnd">
 				<dt class="entry">OnScreenSaverEnd</dt>
 				<dd class="entry">
-					<p class="description">スクリーンセーバーが終了した際に発生。</p>
+					<p>スクリーンセーバーが終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スクリーンセーバ名</dd>
@@ -3704,7 +3704,7 @@
 			<dl id="OnDisplayChange">
 				<dt class="entry">OnDisplayChange</dt>
 				<dd class="entry">
-					<p class="description">デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<strong>[起動時NOTIFY/他GET]</strong></p>
+					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<strong>[起動時NOTIFY/他GET]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>変化後の色深度（bpp）</dd>
@@ -3725,7 +3725,7 @@
 			<dl id="OnBatteryLow">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryLow-kinoko">同名の物</a>があるので注意。</p>
+					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryLow-kinoko">同名の物</a>があるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
@@ -3740,7 +3740,7 @@
 			<dl id="OnBatteryCritical">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p class="description">Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。</p>
+					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
@@ -3755,7 +3755,7 @@
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
-					<p class="description">残りバッテリー量を通知。<strong>[NOTIFY]</strong></p>
+					<p>残りバッテリー量を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>残りバッテリー％。</dd>
@@ -3771,7 +3771,7 @@
 			<dl id="OnDeviceArrival">
 				<dt class="entry">OnDeviceArrival</dt>
 				<dd class="entry">
-					<p class="description">デバイスを検出された際に発生。</p>
+					<p>デバイスを検出された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
@@ -3784,7 +3784,7 @@
 			<dl id="OnDeviceRemove">
 				<dt class="entry">OnDeviceRemove</dt>
 				<dd class="entry">
-					<p class="description">デバイスを削除された際に発生。</p>
+					<p>デバイスを削除された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
@@ -3800,7 +3800,7 @@
 			<dl id="OnSelectModeBegin">
 				<dt class="entry">OnSelectModeBegin</dt>
 				<dd class="entry">
-					<p class="description">\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
+					<p>\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -3815,7 +3815,7 @@
 			<dl id="OnSelectModeCancel">
 				<dt class="entry">OnSelectModeCancel</dt>
 				<dd class="entry">
-					<p class="description">\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
+					<p>\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -3830,7 +3830,7 @@
 			<dl id="OnSelectModeComplete">
 				<dt class="entry">OnSelectModeComplete</dt>
 				<dd class="entry">
-					<p class="description">\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
+					<p>\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -3847,7 +3847,7 @@
 			<dl id="OnSelectModeMouseDown">
 				<dt class="entry">OnSelectModeMouseDown</dt>
 				<dd class="entry">
-					<p class="description">矩形選択モード中にマウスボタンが押された際に発生。</p>
+					<p>矩形選択モード中にマウスボタンが押された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -3864,7 +3864,7 @@
 			<dl id="OnSelectModeMouseUp">
 				<dt class="entry">OnSelectModeMouseUp</dt>
 				<dd class="entry">
-					<p class="description">矩形選択モード中にマウスボタンが離された際に発生。</p>
+					<p>矩形選択モード中にマウスボタンが離された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
@@ -3884,7 +3884,7 @@
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
-					<p class="description">本体がアクティブな状態でキーが入力された際に発生。</p>
+					<p>本体がアクティブな状態でキーが入力された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>入力されたキー。(キートップに書かれた文字)</dd>
@@ -3907,7 +3907,7 @@
 			<dl id="OnRecommendsiteChoice">
 				<dt class="entry">OnRecommendsiteChoice</dt>
 				<dd class="entry">
-					<p class="description">メニューからサイトのリンクが選択された際に発生。</p>
+					<p>メニューからサイトのリンクが選択された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択されたサイト名。</dd>
@@ -3932,7 +3932,7 @@
 			<dl id="OnTranslate">
 				<dt class="entry">OnTranslate</dt>
 				<dd class="entry">
-					<p class="description">SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
+					<p>SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>元のスクリプト。</dd>
@@ -3953,7 +3953,7 @@
 			<dl id="OnAITalk">
 				<dt class="entry">OnAITalk</dt>
 				<dd class="entry">
-					<p class="description">\aなどによる会話が求められた際に発生。</p>
+					<p>\aなどによる会話が求められた際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3962,7 +3962,7 @@
 			<dl id="OnOtherGhostTalk">
 				<dt class="entry">OnOtherGhostTalk</dt>
 				<dd class="entry">
-					<p class="description">他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
+					<p>他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名。</dd>
@@ -3985,7 +3985,7 @@
 			<dl id="OnEmbryoExist">
 				<dt class="entry">OnEmbryoExist</dt>
 				<dd class="entry">
-					<p class="description">SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
+					<p>SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3994,7 +3994,7 @@
 			<dl id="OnNekodorifExist">
 				<dt class="entry">OnNekodorifExist</dt>
 				<dd class="entry">
-					<p class="description">SSP起動時、先に猫どりふが起動されていた際に発生。</p>
+					<p>SSP起動時、先に猫どりふが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4003,7 +4003,7 @@
 			<dl id="OnSoundStop">
 				<dt class="entry">OnSoundStop</dt>
 				<dd class="entry">
-					<p class="description">サウンドが終了した際に発生。</p>
+					<p>サウンドが終了した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>再生ファイル名。</dd>
@@ -4016,7 +4016,7 @@
 			<dl id="OnTextDrop">
 				<dt class="entry">OnTextDrop</dt>
 				<dd class="entry">
-					<p class="description">テキストデータがDnDされた際に発生。</p>
+					<p>テキストデータがDnDされた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>テキスト内容。(改行はバイト値1)</dd>
@@ -4031,7 +4031,7 @@
 			<dl id="OnShellScaling">
 				<dt class="entry">OnShellScaling</dt>
 				<dd class="entry">
-					<p class="description">シェル倍率が変更された際に発生。</p>
+					<p>シェル倍率が変更された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>変更された後の倍率。（パーセント）</dd>
@@ -4049,7 +4049,7 @@
 			<dl id="basewareversion">
 				<dt class="entry">basewareversion</dt>
 				<dd class="entry">
-					<p class="description">ベースウェアの情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>ベースウェアの情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バージョン番号。</dd>
@@ -4067,7 +4067,7 @@
 			<dl id="hwnd">
 				<dt class="entry">hwnd</dt>
 				<dd class="entry">
-					<p class="description">hwndを通知。<strong>[NOTIFY]</strong></p>
+					<p>hwndを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストのhwnd。バイト値１区切りで各スコープ。</dd>
@@ -4083,7 +4083,7 @@
 			<dl id="uniqueid">
 				<dt class="entry">uniqueid</dt>
 				<dd class="entry">
-					<p class="description">unique IDを通知。<strong>[NOTIFY]</strong></p>
+					<p>unique IDを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストのユニークID。特殊なSSTPを送信する際に使用する。</dd>
@@ -4097,7 +4097,7 @@
 			<dl id="capability">
 				<dt class="entry">capability</dt>
 				<dd class="entry">
-					<p class="description">SHIORI拡張実装状態を通知。<strong>[NOTIFY]</strong></p>
+					<p>SHIORI拡張実装状態を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
@@ -4130,7 +4130,7 @@
 			<dl id="ownerghostname">
 				<dt class="entry">ownerghostname</dt>
 				<dd class="entry">
-					<p class="description">現在のゴースト名を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在のゴースト名を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在のゴースト名。</dd>
@@ -4145,7 +4145,7 @@
 			<dl id="otherghostname">
 				<dt class="entry">otherghostname</dt>
 				<dd class="entry">
-					<p class="description">他に起動しているゴーストの本体側名を通知。<strong>[NOTIFY]</strong></p>
+					<p>他に起動しているゴーストの本体側名を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
@@ -4160,7 +4160,7 @@
 			<dl id="installedghostname">
 				<dt class="entry">installedghostname</dt>
 				<dd class="entry">
-					<p class="description">インストールされているゴーストを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているゴーストを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているゴースト名。</dd>
@@ -4175,7 +4175,7 @@
 			<dl id="installedshellname">
 				<dt class="entry">installedshellname</dt>
 				<dd class="entry">
-					<p class="description">インストールされているシェルを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているシェルを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているシェル名。</dd>
@@ -4189,7 +4189,7 @@
 			<dl id="installedballoonname">
 				<dt class="entry">installedballoonname</dt>
 				<dd class="entry">
-					<p class="description">インストールされているバルーンを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているバルーンを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているバルーン名。</dd>
@@ -4203,7 +4203,7 @@
 			<dl id="installedheadlinename">
 				<dt class="entry">installedheadlinename</dt>
 				<dd class="entry">
-					<p class="description">インストールされているRSS/ヘッドラインを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているRSS/ヘッドラインを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているRSS/ヘッドライン名。</dd>
@@ -4216,7 +4216,7 @@
 			<dl id="installedplugin">
 				<dt class="entry">installedplugin</dt>
 				<dd class="entry">
-					<p class="description">インストールされているプラグインを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているプラグインを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りで、インストールされているプラグイン名,プラグインID</dd>
@@ -4229,7 +4229,7 @@
 			<dl id="ghostpathlist">
 				<dt class="entry">ghostpathlist</dt>
 				<dd class="entry">
-					<p class="description">ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>ゴースト格納フォルダの絶対パス</dd>
@@ -4242,7 +4242,7 @@
 			<dl id="balloonpathlist">
 				<dt class="entry">balloonpathlist</dt>
 				<dd class="entry">
-					<p class="description">バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バルーン格納フォルダの絶対パス</dd>
@@ -4255,7 +4255,7 @@
 			<dl id="headlinepathlist">
 				<dt class="entry">headlinepathlist</dt>
 				<dd class="entry">
-					<p class="description">ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>ヘッドライン格納フォルダの絶対パス</dd>
@@ -4268,7 +4268,7 @@
 			<dl id="pluginpathlist">
 				<dt class="entry">pluginpathlist</dt>
 				<dd class="entry">
-					<p class="description">プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>プラグイン格納フォルダの絶対パス</dd>
@@ -4281,7 +4281,7 @@
 			<dl id="calendarskinpathlist">
 				<dt class="entry">calendarskinpathlist</dt>
 				<dd class="entry">
-					<p class="description">カレンダースキン格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>カレンダースキン格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>カレンダースキン格納フォルダの絶対パス</dd>
@@ -4294,7 +4294,7 @@
 			<dl id="calendarpluginpathlist">
 				<dt class="entry">calendarpluginpathlist</dt>
 				<dd class="entry">
-					<p class="description">カレンダーのスケジュールセンサ格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>カレンダーのスケジュールセンサ格納フォルダの絶対パス</dd>
@@ -4307,7 +4307,7 @@
 			<dl id="rateofusegraph">
 				<dt class="entry">rateofusegraph</dt>
 				<dd class="entry">
-					<p class="description">使ってるぞグラフの情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>使ってるぞグラフの情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
@@ -4330,7 +4330,7 @@
 			<dl id="enable_log">
 				<dt class="entry">enable_log</dt>
 				<dd class="entry">
-					<p class="description">開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<strong>[NOTIFY]</strong></p>
+					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ONなら1、OFFなら0</dd>
@@ -4343,7 +4343,7 @@
 			<dl id="OnNotifySelfInfo">
 				<dt class="entry">OnNotifySelfInfo</dt>
 				<dd class="entry">
-					<p class="description">ゴースト自身の情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>ゴースト自身の情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名。</dd>
@@ -4369,7 +4369,7 @@
 			<dl id="OnNotifyBalloonInfo">
 				<dt class="entry">OnNotifyBalloonInfo</dt>
 				<dd class="entry">
-					<p class="description">現在使用中のバルーン情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在使用中のバルーン情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択しているバルーンの名前</dd>
@@ -4386,7 +4386,7 @@
 			<dl id="OnNotifyShellInfo">
 				<dt class="entry">OnNotifyShellInfo</dt>
 				<dd class="entry">
-					<p class="description">現在使用中のシェル情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在使用中のシェル情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択しているシェルの名前</dd>
@@ -4403,7 +4403,7 @@
 			<dl id="OnNotifyDressupInfo">
 				<dt class="entry">OnNotifyDressupInfo</dt>
 				<dd class="entry">
-					<p class="description">着せ替えの情報を通知。<br />
+					<p>着せ替えの情報を通知。<br />
 					<strong>起動時のみ[NOTIFY]で、メニューから切替などユーザーによる操作なら[GET]</strong>で送られる。<br />
 					このイベントの前に発生する<a href="#OnDressupChanged">OnDressupChanged</a>も参照すること。</p>
 					<dl class="reference">
@@ -4420,7 +4420,7 @@
 			<dl id="OnNotifyUserInfo">
 				<dt class="entry">OnNotifyUserInfo</dt>
 				<dd class="entry">
-					<p class="description">ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<strong>[NOTIFY]</strong></p>
+					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び方。</dd>
@@ -4439,7 +4439,7 @@
 			<dl id="OnNotifyOSInfo">
 				<dt class="entry">OnNotifyOSInfo</dt>
 				<dd class="entry">
-					<p class="description">OS情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>OS情報を通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSのシステム,バージョン,表示用の名前 [カンマ区切り]</dd>
@@ -4458,7 +4458,7 @@
 			<dl id="OnNotifyFontInfo">
 				<dt class="entry">OnNotifyFontInfo</dt>
 				<dd class="entry">
-					<p class="description">システムにインストールされているフォントを通知。<strong>[NOTIFY]</strong></p>
+					<p>システムにインストールされているフォントを通知。<strong>[NOTIFY]</strong></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>フォント名。</dd>
