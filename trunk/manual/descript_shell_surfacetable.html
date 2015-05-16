@@ -188,28 +188,28 @@ group,[空]平日
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
-					<p class="description">表示する文字コード。記載は必ずファイルの一行目に。</p>
+					<p>表示する文字コード。記載は必ずファイルの一行目に。</p>
 					<p class="default">Shifi_JIS</p>
 				</dd>
 			</dl>
 			<dl id="version,数値">
 				<dt class="entry">version,数値</dt>
 				<dd class="entry">
-					<p class="description">srufacetable.txtの書式のバージョン。現在のところ常に1でよい。</p>
+					<p>srufacetable.txtの書式のバージョン。現在のところ常に1でよい。</p>
 					<p class="default">1</p>
 				</dd>
 			</dl>
 			<dl id="option,オプション1,オプション2,...">
 				<dt class="entry">option,オプション1,オプション2,...</dt>
 				<dd class="entry">
-					<p class="description">オプション指定。カンマ区切りで複数列挙できる。<br>現在のところ指定できるのは「DisableNoDefineSurfaces」のみで、surfaces.txt等での定義がなく、surfacetable.txt内でも明示されていないサーフェスについて無視する。</p>
+					<p>オプション指定。カンマ区切りで複数列挙できる。<br>現在のところ指定できるのは「DisableNoDefineSurfaces」のみで、surfaces.txt等での定義がなく、surfacetable.txt内でも明示されていないサーフェスについて無視する。</p>
 					<p class="default">挙動なし</p>
 				</dd>
 			</dl>
 			<dl id="group,グループ名">
 				<dt class="entry">group,グループ名</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						後述の<a href="#サーフェスID,名前">サーフェス名</a>定義行をまとめたグループに識別上の名前を与える。
 						<br>すぐ下に「{」のみの行を続け、「}」のみの行で閉じる。
 						<br>グループ名を「__disabled」とした場合、そのグループ内のサーフェスは使用されていないことを示す（SSPのサーフェステストではリストに表示されなくなる）。
@@ -220,14 +220,14 @@ group,[空]平日
 			<dl id="scope,数値">
 				<dt class="entry">scope,数値</dt>
 				<dd class="entry">
-					<p class="description">そのグループのサーフェスが主に属するスコープの番号。<br>グループ内に一つ記載する。<br>本体側なら0、相方側なら1など。</p>
+					<p>そのグループのサーフェスが主に属するスコープの番号。<br>グループ内に一つ記載する。<br>本体側なら0、相方側なら1など。</p>
 					<p class="default">挙動なし</p>
 				</dd>
 			</dl>
 			<dl id="サーフェスID,名前">
 				<dt class="entry">サーフェスID,名前</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						サーフェスIDに対して識別上の名前を与える。
 						<br>普通グループ内に記載する。
 						<br>グループ内で最初に書かれたものは、そのグループでの標準的なサーフェスとみなされる（scope,0なら0、scope,1なら10といったような）。

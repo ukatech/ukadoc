@@ -13,6 +13,7 @@
 <body>
 	<h1 id="page-title">Shell設定 - surfaces.txt</h1>
 	<nav class="menu-header">
+
 		<table>
 			<tbody>
 				<tr>
@@ -353,7 +354,7 @@ collision3,154,311,248,362,Skirt
 			<dl id="charset,文字コード-surfaces">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
-					<p class="description">表示する文字コード。Shift_JIS推奨。</p>
+					<p>表示する文字コード。Shift_JIS推奨。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -377,7 +378,7 @@ animation-sort,ascend
 			<dl id="version,*">
 				<dt class="entry">version,*</dt>
 				<dd class="entry">
-					<p class="description">使用する<a href="#caption_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p>使用する<a href="#caption_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -389,7 +390,7 @@ animation-sort,ascend
 			<dl id="maxwidth,ピクセル">
 				<dt class="entry">maxwidth,ピクセル</dt>
 				<dd class="entry">
-					<p class="description">※SSPでは自動的に検出されるためこの情報は利用されない。<br>サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。</p>
+					<p>※SSPでは自動的に検出されるためこの情報は利用されない。<br>サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。</p>
 					<p class="default">定義なし/SSPでは実際のsurface定義における最大横幅</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -401,7 +402,7 @@ animation-sort,ascend
 			<dl id="collision-sort,ソート順序">
 				<dt class="entry">collision-sort,ソート順序</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p>当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
 					<p class="default">none（IDによらず先に書かれている方が手前）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -411,7 +412,7 @@ animation-sort,ascend
 			<dl id="animation-sort,ソート順序">
 				<dt class="entry">animation-sort,ソート順序</dt>
 				<dd class="entry">
-					<p class="description">アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p>アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
 					<p class="default">descend</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -761,7 +762,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="element*,描画メソッド,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,描画メソッド,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						ベース画像の合成。
 						<br>複数の画像を合成し、その結果をこのサーフェス内のベース画像として一枚の画像のように扱う仕組み。
 						<br>サーフェスに対応するsurface*.pngという画像がある場合は、その画像の上にelement合成された画像が重なる。
@@ -780,7 +781,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.interval,インターバル">
 				<dt class="entry">animation*.interval,インターバル</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						アニメーションが開始するタイミング（周期）の定義。
 						<br>インターバルは下記の<a href="#h-animationinterval">アニメーションインターバル</a>参照。SSPのみ+区切りで列挙する事で組み合わせ指定が可能。
 						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceで、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
@@ -799,7 +800,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">
 				<dt class="entry">animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						アニメーションの各コマの定義。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。番号の小さい方から積み重なる形で描画される。
@@ -819,7 +820,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.option,exclusive">
 				<dt class="entry">animation*.option,exclusive</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						アニメーションの排他的実行オプション。
 						<br>即ちexclusiveオプションが指定されたアニメーションが実行された時点で、他のすべてのアニメーションが停止し、またexclusiveオプションのアニメーションの終了まで、他のいかなるアニメーションも新たに開始されない。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
@@ -838,7 +839,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.option,background">
 				<dt class="entry">animation*.option,background</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						アニメーションの背面実行オプション。
 						<br>backgroundオプションが指定されたアニメーションはベースサーフェスの後ろ（画面奥側）で実行される。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
@@ -852,7 +853,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.option,オプション">
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						exclusiveおよびbackgroundオプションの同時指定。
 						<br>+区切りで複数オプション可。例：exclusive+background<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<em>exclusiveのみ</em>影響を受ける。
@@ -867,7 +868,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">
 				<dt class="entry">animation*.collision*,当たり判定定義<br>animation*.collisionex*,当たり判定定義(ex)</dt>
 				<dd class="entry">
-					<p class="description">
+					<p>
 						通常の<a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision</a>や<a href="#collisionex*,ID,タイプ,座標1,座標2...">collisionex</a>のアニメーション動作中限定の定義。インターバルbindにも有効。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
@@ -880,7 +881,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="collision*,始点X,始点Y,終点X,終点Y,ID">
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
-					<p class="description">当たり判定。囲まれた範囲がIDの領域となる。<br>*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
+					<p>当たり判定。囲まれた範囲がIDの領域となる。<br>*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -892,14 +893,20 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="collisionex*,ID,タイプ,座標1,座標2...">
 				<dt class="entry">collisionex*,ID,タイプ,座標1,座標2...</dt>
 				<dd class="entry">
-					<p class="description">不定形当たり判定。<br>
-					タイプは以下の通り。<br>
+					<p>不定形当たり判定。<br>
 					*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>
-					rect 長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300<br>
-					ellipse 楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300<br>
-					circle 真円。中心点のXYの値、半径の順で記述する。例：100,200,20<br>
-					polygon 多角形。座標は各頂点、交差可。例：100,100,200,300,50,200
+					タイプは以下の通り。
 					</p>
+					<dl>
+						<dt>rect</dt>
+						<dd>長方形。座標は始点XYと終点XYの4つ。例：100,100,200,300</dd>
+						<dt>ellipse</dt>
+						<dd>楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。例：100,100,200,300</dd>
+						<dt>circle</dt>
+						<dd>真円。中心点のXYの値、半径の順で記述する。例：100,200,20</dd>
+						<dt>polygon</dt>
+						<dd>多角形。座標は各頂点、交差可。例：100,100,200,300,50,200</dd>
+					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -909,7 +916,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_sakura.balloon.offsetx,座標">
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみの本体側バルーン位置X座標。</p>
+					<p>そのサーフェスでのみの本体側バルーン位置X座標。</p>
 					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
@@ -922,7 +929,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_sakura.balloon.offsety,座標">
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみの本体側バルーン位置Y座標。</p>
+					<p>そのサーフェスでのみの本体側バルーン位置Y座標。</p>
 					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
@@ -935,7 +942,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_kero.balloon.offsetx,座標">
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみの相方側バルーン位置X座標。</p>
+					<p>そのサーフェスでのみの相方側バルーン位置X座標。</p>
 					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
 					<ul class="supported-baseware">
@@ -948,7 +955,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_kero.balloon.offsety,座標">
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみの相方側バルーン位置Y座標。</p>
+					<p>そのサーフェスでのみの相方側バルーン位置Y座標。</p>
 					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
 					<ul class="supported-baseware">
@@ -961,7 +968,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_balloon.offsetx,座標">
 				<dt class="entry">balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみのバルーン位置X座標(本体・相方問わず)。<br>
+					<p>そのサーフェスでのみのバルーン位置X座標(本体・相方問わず)。<br>
 					offset.xとも記述可能。</p>
 					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
 					align=top/bottom：サーフェスの中央</p>
@@ -973,7 +980,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_balloon.offsety,座標">
 				<dt class="entry">balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p class="description">そのサーフェスでのみのバルーン位置Y座標(本体・相方問わず)。。<br>
+					<p>そのサーフェスでのみのバルーン位置Y座標(本体・相方問わず)。。<br>
 					offset.xとも記述可能。</p>
 					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
 					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
@@ -985,7 +992,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.centerx,座標">
 				<dt class="entry">point.centerx,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心X座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p>サーフェスの中心X座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
 					<p class="default">サーフィスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -997,7 +1004,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.centery,座標">
 				<dt class="entry">point.centery,座標</dt>
 				<dd class="entry">
-					<p class="description">サーフェスの中心Y座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
+					<p>サーフェスの中心Y座標。<br>通常は使用されないが、Sakura APIなど外部から取得可能。</p>
 					<p class="default">サーフェスの中心(高さ÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1009,7 +1016,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.kinoko.centerx,座標">
 				<dt class="entry">point.kinoko.centerx,座標</dt>
 				<dd class="entry">
-					<p class="description">きのこの生えるX座標。</p>
+					<p>きのこの生えるX座標。</p>
 					<p class="default">サーフェスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1021,7 +1028,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.kinoko.centery,座標">
 				<dt class="entry">point.kinoko.centery,座標</dt>
 				<dd class="entry">
-					<p class="description">きのこの生えるY座標。</p>
+					<p>きのこの生えるY座標。</p>
 					<p class="default">サーフェスの上端＋20ピクセル下(SSP)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1033,7 +1040,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.basepos.x,座標">
 				<dt class="entry">point.basepos.x,座標</dt>
 				<dd class="entry">
-					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のX座標。<br>
+					<p>ウインドウを初期配置・位置保存する際の基準位置のX座標。<br>
 					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
 					<p class="default">サーフェスの中心(幅÷2)</p>
 					<ul class="supported-baseware">
@@ -1044,7 +1051,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="point.basepos.y,座標">
 				<dt class="entry">point.basepos.y,座標</dt>
 				<dd class="entry">
-					<p class="description">ウインドウを初期配置・位置保存する際の基準位置のY座標です。<br>
+					<p>ウインドウを初期配置・位置保存する際の基準位置のY座標です。<br>
 					異なるサーフェスサイズの画像に切り替えた際の位置ずれなどを調整することができる。</p>
 					<p class="default">サーフェスの下端</p>
 					<ul class="supported-baseware">
@@ -1092,7 +1099,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="sometimes">
 					<dt class="entry">sometimes</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスである間毎秒2分の1の確率で再生。</p>
+						<p>そのサーフェスである間毎秒2分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1103,7 +1110,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="rarely">
 					<dt class="entry">rarely</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスである間毎秒4分の1の確率で再生。</p>
+						<p>そのサーフェスである間毎秒4分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1114,7 +1121,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="random,数値">
 					<dt class="entry">random,数値</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスである間毎秒数値分の1の確率で再生。</p>
+						<p>そのサーフェスである間毎秒数値分の1の確率で再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1125,7 +1132,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="periodic,数値">
 					<dt class="entry">periodic,数値</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスである間数値秒間隔で定期的に再生。</p>
+						<p>そのサーフェスである間数値秒間隔で定期的に再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1134,7 +1141,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="always">
 					<dt class="entry">always</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスである間ループ再生。</p>
+						<p>そのサーフェスである間ループ再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1145,7 +1152,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="runonce">
 					<dt class="entry">runonce</dt>
 					<dd class="entry">
-						<p class="description">サーフェスに切り替わった瞬間に1回のみ再生。</p>
+						<p>サーフェスに切り替わった瞬間に1回のみ再生。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1156,7 +1163,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="never">
 					<dt class="entry">never</dt>
 					<dd class="entry">
-						<p class="description">自動では実行されない。他のアニメーションからのstartメソッドやalternativestartメソッドなどによる呼びだしか、さくらスクリプトの<a href="list_sakura_script.html#_i_ID%E7%95%AA%E5%8F%B7_">\i[*]</a>などによる命令以外では再生しないアニメーションに対して指定する。</p>
+						<p>自動では実行されない。他のアニメーションからのstartメソッドやalternativestartメソッドなどによる呼びだしか、さくらスクリプトの<a href="list_sakura_script.html#_i_ID%E7%95%AA%E5%8F%B7_">\i[*]</a>などによる命令以外では再生しないアニメーションに対して指定する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1167,7 +1174,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="yen-e">
 					<dt class="entry">yen-e</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスで\eが来た時に実行。</p>
+						<p>そのサーフェスで\eが来た時に実行。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1178,7 +1185,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="talk,数値">
 					<dt class="entry">talk,数値</dt>
 					<dd class="entry">
-						<p class="description">そのサーフェスでバルーン内にテキストが表示されていく時に実行。<br>数値分の文字がくるごとにアニメーションする。</p>
+						<p>そのサーフェスでバルーン内にテキストが表示されていく時に実行。<br>数値分の文字がくるごとにアニメーションする。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1189,7 +1196,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="_1_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p class="description">そのアニメーションをサーフェスの<a href="#introduction-mayuna">着せ替え</a>として定義する。</p>
+						<p>そのアニメーションをサーフェスの<a href="#introduction-mayuna">着せ替え</a>として定義する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1236,7 +1243,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="base">
 					<dt class="entry">base</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤをコマで完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
 							<br>このメソッドのパターンを重ねると、サーフェス全面を描画し直すことによるアニメーション（いわばパラパラ漫画）が実現される。
 							<br>この描画メソッドが指定されたpattern定義では、XY座標は無視される。
@@ -1252,7 +1259,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="overlay">
 					<dt class="entry">overlay</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤにコマを重ねる。
 							<br>着せ替え・elementでも使用できる。
 						</p>
@@ -1266,7 +1273,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="overlayfast">
 					<dt class="entry">overlayfast</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤの非透過部分（半透明含む）にのみコマを重ねる。
 							<br>着せ替え・elementでも使用できる。
 						</p>
@@ -1280,7 +1287,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="replace">
 					<dt class="entry">replace</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤにコマを重ねるが、コマの透過部分について下位レイヤにも反映する（reduce + overlayに近い）。
 							<br>着せ替え・elementでも使用できる。
 						</p>
@@ -1292,7 +1299,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="interpolate">
 					<dt class="entry">interpolate</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤの<em>透明なところにのみ</em>コマを重ねる。
 							<br>下位レイヤの半透明部分に対しても、透明度が高い部分ほど強くコマを合成する。
 							<br>interpolateで重なる部分はベースより上位（手前）側になければならない（interpolateのコマが描画している部分に、上位のレイヤで不透明な部分が重なると反映されなくなる）。
@@ -1306,7 +1313,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="asis">
 					<dt class="entry">asis</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤに、抜き色やアルファチャンネルを適応しないままそのコマを重ねる。
 							<br>着せ替え・elementでも使用できる。
 							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の抜き色に関係なく黒（#000000）で表示されるだろう。
@@ -1319,7 +1326,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="move">
 					<dt class="entry">move</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤをXY座標指定分ずらす。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
 							<br>着せ替え・elementでは使用不可。
@@ -1334,7 +1341,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="_2_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							そのコマを着せ替えパーツとして重ねる。現在ではoverlayと同じ。
 							<br>着せ替えパーツとして単純に一つのサーフェスを重ねることしか出来なかった頃の唯一のメソッドで、現在はaddが互換。
 							<br>着せ替えでないアニメーション・elementでの使用は未定義。
@@ -1348,7 +1355,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="add">
 					<dt class="entry">add</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤにそのコマを着せ替えパーツとして重ねる。本質的にはoverlayと同じ。
 							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
 						</p>
@@ -1361,7 +1368,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="reduce">
 					<dt class="entry">reduce</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							下位レイヤの抜き色による透過領域に、そのコマの抜き色による透過領域を追加する。コマの抜き色で無い部分は無視される。
 							<br>着せ替え用に用意されたメソッドだが、着せ替えでないアニメーション・elementでも使用可能。
 						</p>
@@ -1374,7 +1381,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="insert,ID">
 					<dt class="entry">insert,ID</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							指定したID（animation*の*の番号）の着せ替えグループ（intervalがbindのアニメーション）をその位置に挿入する。
 							<br>例えばある着せ替えAが、他の着せ替えBよりも部分的に前・部分的に後ろといった位置関係の構造を持つ場合に、着せ替えAの後ろになる部分のコマと前になる部分のコマとの間に着せ替えBをinsertで挿入する事によって、自然な前後関係の表示が実現される。この時、<em>着せ替えBの表示・非表示の状態に関わらず表示の完全性が維持される</em>。
 							<br>insert先でのinsert（入れ子）も可能。
@@ -1389,7 +1396,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="start,ID">
 					<dt class="entry">start,ID</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							指定したID（animation*の*の番号）のアニメーションを再生させる。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>着せ替え・elementでの使用不可。
@@ -1403,7 +1410,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="stop,ID">
 					<dt class="entry">stop,ID</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							指定したID（animation*の*の数字）のアニメーションを停止させる。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>着せ替え・elementでの使用不可。
@@ -1416,7 +1423,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="alternativestart,_ID1,ID2..._">
 					<dt class="entry">alternativestart,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを再生させる。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>SSPの場合括弧が[]、区切りが「.」でなく「,」でも読み込まれる。
@@ -1432,7 +1439,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="alternativestop,_ID1,ID2..._">
 					<dt class="entry">alternativestop,(ID1.ID2...)</dt>
 					<dd class="entry">
-						<p class="description">
+						<p>
 							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>SSPの場合括弧が[]、区切りが「.」でなく「,」でも読み込まれる。
@@ -1466,7 +1473,7 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="*,[*]">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
-					<p class="description">サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
+					<p>サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1494,7 +1501,7 @@ mousedown1,Bust,system:grip
 			<dl id="mouseup*,当たり判定ID,ファイル名">
 				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:hand）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1504,7 +1511,7 @@ mousedown1,Bust,system:grip
 			<dl id="mousedown*,当たり判定ID,ファイル名">
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:arrow</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1519,7 +1526,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:arrow">
 					<dt class="entry">system:arrow</dt>
 					<dd class="entry">
-						<p class="description">矢印</p>
+						<p>矢印</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1528,7 +1535,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:cross">
 					<dt class="entry">system:cross</dt>
 					<dd class="entry">
-						<p class="description">十字</p>
+						<p>十字</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1537,7 +1544,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:no">
 					<dt class="entry">system:no</dt>
 					<dd class="entry">
-						<p class="description">禁止</p>
+						<p>禁止</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1546,7 +1553,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:hand">
 					<dt class="entry">system:hand</dt>
 					<dd class="entry">
-						<p class="description">手</p>
+						<p>手</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1555,7 +1562,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:grip">
 					<dt class="entry">system:grip</dt>
 					<dd class="entry">
-						<p class="description">つかんだ手</p>
+						<p>つかんだ手</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1564,7 +1571,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:finger">
 					<dt class="entry">system:finger</dt>
 					<dd class="entry">
-						<p class="description">指差し</p>
+						<p>指差し</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1573,7 +1580,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:wait">
 					<dt class="entry">system:wait</dt>
 					<dd class="entry">
-						<p class="description">時計</p>
+						<p>時計</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1582,7 +1589,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:text">
 					<dt class="entry">system:text</dt>
 					<dd class="entry">
-						<p class="description">I</p>
+						<p>I</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1591,7 +1598,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:move">
 					<dt class="entry">system:move</dt>
 					<dd class="entry">
-						<p class="description">移動</p>
+						<p>移動</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1600,7 +1607,7 @@ mousedown1,Bust,system:grip
 				<dl id="system:help">
 					<dt class="entry">system:help</dt>
 					<dd class="entry">
-						<p class="description">？</p>
+						<p>？</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1624,7 +1631,7 @@ Shoulder,つつくとコミュニケートボックスを表示します。
 			<dl id="当たり判定名,表示内容">
 				<dt class="entry">当たり判定名,表示内容</dt>
 				<dd class="entry">
-					<p class="description">当たり判定の上に来た時に表示するツールチップのテキストを設定。</p>
+					<p>当たり判定の上に来た時に表示するツールチップのテキストを設定。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
