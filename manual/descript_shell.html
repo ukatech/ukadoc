@@ -195,20 +195,20 @@
 				<li><a href="#sakura.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">sakura.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#sakura.bindgroup*.default,数値">sakura.bindgroup*.default,数値</a></li>
 				<li><a href="#sakura.bindgroup*.addid,ID">sakura.bindgroup*.addid,ID</a></li>
-				<li><a href="#sakura.bindoption*.group,グループ名,オプション">sakura.bindoption*.group,グループ名,オプション</a></li>
-				<li><a href="#sakura.menuitem*,数値">sakura.menuitem*,数値</a></li>
+				<li><a href="#sakura.bindoption*.group,カテゴリ名,オプション">sakura.bindoption*.group,カテゴリ名,オプション</a></li>
+				<li><a href="#sakura.menuitem*,ID">sakura.menuitem*,ID</a></li>
 				<li><a href="#sakura.menu,autoまたはhidden">sakura.menu,autoまたはhidden</a></li>
 				<li><a href="#kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#kero.bindgroup*.default,数値">kero.bindgroup*.default,数値</a></li>
 				<li><a href="#kero.bindgroup*.addid,ID">kero.bindgroup*.addid,ID</a></li>
-				<li><a href="#kero.bindoption*.group,グループ名,オプション">kero.bindoption*.group,グループ名,オプション</a></li>
-				<li><a href="#kero.menuitem*,数値">kero.menuitem*,数値</a></li>
+				<li><a href="#kero.bindoption*.group,カテゴリ名,オプション">kero.bindoption*.group,カテゴリ名,オプション</a></li>
+				<li><a href="#kero.menuitem*,ID">kero.menuitem*,ID</a></li>
 				<li><a href="#kero.menu,autoまたはhidden">kero.menu,autoまたはhidden</a></li>
 				<li><a href="#char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#char*.bindgroup*.default,数値">char*.bindgroup*.default,数値</a></li>
 				<li><a href="#char*.bindgroup*.addid,ID">char*.bindgroup*.addid,ID</a></li>
-				<li><a href="#char*.bindoption*.group,グループ名,オプション">char*.bindoption*.group,グループ名,オプション</a></li>
-				<li><a href="#char*.menuitem*,数値">char*.menuitem*,数値</a></li>
+				<li><a href="#char*.bindoption*.group,カテゴリ名,オプション">char*.bindoption*.group,カテゴリ名,オプション</a></li>
+				<li><a href="#char*.menuitem*,ID">char*.menuitem*,ID</a></li>
 				<li><a href="#char*.menu,autoまたはhidden">char*.menu,autoまたはhidden</a></li>
 				<li><a href="#seriko.paint_transparent_region_black,数値">seriko.paint_transparent_region_black,数値</a></li>
 				<li><a href="#seriko.use_self_alpha,数値">seriko.use_self_alpha,数値</a></li>
@@ -274,7 +274,7 @@ kero.menuitem3,2
 </code></pre>
 					<p>type、nameは必須。</p>
 					<p>SSPでは、シェルに対してもhomeurlを設定しておくことで、エクスプローラなどからネットワーク更新が可能になる。</p>
-					<p>着せ替え設定の各項目については後述のそれぞれの節を参照。<br>基本的な仕組みは、<a href="descript_shell_surfaces.txt">surfaces.txt</a>で定義した、タイミングbindのanimationIDに対して、着せ替え名と着せ替えグループ名を与え（sakura(kero).bindgroup*.name,～）、またオーナードローメニュー上での配置を指定する必要がある（sakura(kero).menuitem*,～）。</p>
+					<p>着せ替え設定の各項目については後述のそれぞれの節を参照。<br>基本的な仕組みは、<a href="descript_shell_surfaces.txt">surfaces.txt</a>で定義した、タイミングbindのanimationIDに対して、着せ替え名と着せ替えカテゴリ名を与え（sakura(kero).bindgroup*.name,～）、またオーナードローメニュー上での配置を指定する必要がある（sakura(kero).menuitem*,～）。</p>
 					<p>なお、\や%で始まる文字列はさくらスクリプトや環境変数のタグと見なされ、セキュリティ上のリスクから破棄される。もし単なる文字としてそれらを含めたい場合は、\\や\%などとしてエスケープする必要がある。</p>
 				</section>
 			</section>
@@ -909,12 +909,12 @@ kero.menuitem3,2
 				<dt class="entry">sakura.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</dt>
 				<dd class="entry">
 					<p>
-						ID*番のパーツにカテゴリ名とパーツ名を定義。(本体側)<br />
-						IDはsurfaces.txt等でそのパーツのbindを定義したanimation*の*の数字。<br />
+						アニメーションID*番のパーツにカテゴリ名とパーツ名を定義。(本体側)<br />
+						アニメーションIDはsurfaces.txtにおけるアニメーション定義の「animation*.interval,bind」の*にあたる数字。<br />
 						オーナードローメニューの着せ替えに表示するために必要。<br />
 						Sakura Scriptの<a href="list_sakura_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
 					</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -924,7 +924,7 @@ kero.menuitem3,2
 			<dl id="sakura.bindgroup*.default,数値">
 				<dt class="entry">sakura.bindgroup*.default,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合は最初からそのパーツを表示。(本体側)</p>
+					<p>アニメーションID*番の着せ替えを最初から表示するか否か。1で表示、0で非表示。(本体側)</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -935,28 +935,28 @@ kero.menuitem3,2
 			<dl id="sakura.bindgroup*.addid,ID">
 				<dt class="entry">sakura.bindgroup*.addid,ID</dt>
 				<dd class="entry">
-					<p>その着せ替え（bindgroup*.nameで名前を与えた*（ID）の着せ替え）が表示された時に、指定IDの着せ替えも同時に表示。カンマ区切りで複数可。(本体側)</p>
+					<p>着せ替えの同時実行設定。アニメーションID*番の着せ替えが有効になった（表示された）時に、addidとして指定した着せ替えも同時に有効にする。カンマ区切りで複数指定可。<br />同時実行中の着せ替えは、元となった着せ替えが無効になった時点で無効になる。複数の着せ替えのaddidとして同一の着せ替えが同時実行指定されている場合、元となったすべての着せ替えが無効になるまで同時実行指定の着せ替えも無効にならない。(本体側)</p>
 					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="sakura.bindoption*.group,グループ名,オプション">
-				<dt class="entry">sakura.bindoption*.group,グループ名,オプション</dt>
+			<dl id="sakura.bindoption*.group,カテゴリ名,オプション">
+				<dt class="entry">sakura.bindoption*.group,カテゴリ名,オプション</dt>
 				<dd class="entry">
-					<p>その着せ替えカテゴリにオプションを設定。(本体側)<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
+					<p>その着せ替えカテゴリにオプションを設定。*は単に0から始まる通し番号(本体側)。<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
 					<p class="default">選択解除可能、複数選択不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="sakura.menuitem*,数値">
-				<dt class="entry">sakura.menuitem*,数値</dt>
+			<dl id="sakura.menuitem*,ID">
+				<dt class="entry">sakura.menuitem*,ID</dt>
 				<dd class="entry">
-					<p>数値のパーツから順に着せ替えメニューを表示。(本体側)<br />数値部分に「-」で仕切り線表示。</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを表示。*は0から始まる通し番号。(本体側)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -977,12 +977,12 @@ kero.menuitem3,2
 				<dt class="entry">kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</dt>
 				<dd class="entry">
 					<p>
-						ID*番のパーツにカテゴリ名とパーツ名を定義。(相方側)<br />
-						IDはsurfaces.txt等でそのパーツのbindを定義したanimation*の*の数字。<br />
+						アニメーションID*番のパーツにカテゴリ名とパーツ名を定義。(相方側)<br />
+						アニメーションIDはsurfaces.txtにおけるアニメーション定義の「animation*.interval,bind」の*にあたる数字。<br />
 						オーナードローメニューの着せ替えに表示するために必要。<br />
-						Sakura Scriptの<a href="list_sakura_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
+						Sakura Scriptの<a href="list_kero_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
 					</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -992,7 +992,7 @@ kero.menuitem3,2
 			<dl id="kero.bindgroup*.default,数値">
 				<dt class="entry">kero.bindgroup*.default,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合は最初からそのパーツを表示。(相方側)</p>
+					<p>アニメーションID*番の着せ替えを最初から表示するか否か。1で表示、0で非表示。(相方側)</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1003,28 +1003,28 @@ kero.menuitem3,2
 			<dl id="kero.bindgroup*.addid,ID">
 				<dt class="entry">kero.bindgroup*.addid,ID</dt>
 				<dd class="entry">
-					<p>その着せ替え（bindgroup*.nameで名前を与えた*（ID）の着せ替え）が表示された時に、指定IDの着せ替えも同時に表示。カンマ区切りで複数可。(相方側)</p>
+					<p>着せ替えの同時実行設定。アニメーションID*番の着せ替えが有効になった（表示された）時に、addidとして指定した着せ替えも同時に有効にする。カンマ区切りで複数指定可。<br />同時実行中の着せ替えは、元となった着せ替えが無効になった時点で無効になる。複数の着せ替えのaddidとして同一の着せ替えが同時実行指定されている場合、元となったすべての着せ替えが無効になるまで同時実行指定の着せ替えも無効にならない。(相方側)</p>
 					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="kero.bindoption*.group,グループ名,オプション">
-				<dt class="entry">kero.bindoption*.group,グループ名,オプション</dt>
+			<dl id="kero.bindoption*.group,カテゴリ名,オプション">
+				<dt class="entry">kero.bindoption*.group,カテゴリ名,オプション</dt>
 				<dd class="entry">
-					<p>その着せ替えカテゴリにオプションを設定。(相方側)<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
+					<p>その着せ替えカテゴリにオプションを設定。*は単に0から始まる通し番号(相方側)。<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
 					<p class="default">選択解除可能、複数選択不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="kero.menuitem*,数値">
-				<dt class="entry">kero.menuitem*,数値</dt>
+			<dl id="kero.menuitem*,ID">
+				<dt class="entry">kero.menuitem*,ID</dt>
 				<dd class="entry">
-					<p>数値のパーツから順に着せ替えメニューを表示。(相方側)<br />数値部分に「-」で仕切り線表示。</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを表示。*は0から始まる通し番号。(相方側)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1045,12 +1045,12 @@ kero.menuitem3,2
 				<dt class="entry">char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</dt>
 				<dd class="entry">
 					<p>
-						ID*番のパーツにカテゴリ名とパーツ名を定義。(2人目以降の相方側)<br />
-						IDはsurfaces.txt等でそのパーツのbindを定義したanimation*の*の数字。<br />
+						アニメーションID*番のパーツにカテゴリ名とパーツ名を定義。(3人目以降)<br />
+						アニメーションIDはsurfaces.txtにおけるアニメーション定義の「animation*.interval,bind」の*にあたる数字。<br />
 						オーナードローメニューの着せ替えに表示するために必要。<br />
-						Sakura Scriptの<a href="list_sakura_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
+						Sakura Scriptの<a href="list_char*_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
 					</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1059,7 +1059,7 @@ kero.menuitem3,2
 			<dl id="char*.bindgroup*.default,数値">
 				<dt class="entry">char*.bindgroup*.default,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合は最初からそのパーツを表示。(2人目以降の相方側)</p>
+					<p>アニメーションID*番の着せ替えを最初から表示するか否か。1で表示、0で非表示。(3人目以降)</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1069,28 +1069,28 @@ kero.menuitem3,2
 			<dl id="char*.bindgroup*.addid,ID">
 				<dt class="entry">char*.bindgroup*.addid,ID</dt>
 				<dd class="entry">
-					<p>その着せ替え（bindgroup*.nameで名前を与えた*（ID）の着せ替え）が表示された時に、指定IDの着せ替えも同時に表示。カンマ区切りで複数可。(3人目以降のキャラクター)</p>
+					<p>着せ替えの同時実行設定。アニメーションID*番の着せ替えが有効になった（表示された）時に、addidとして指定した着せ替えも同時に有効にする。カンマ区切りで複数指定可。<br />同時実行中の着せ替えは、元となった着せ替えが無効になった時点で無効になる。複数の着せ替えのaddidとして同一の着せ替えが同時実行指定されている場合、元となったすべての着せ替えが無効になるまで同時実行指定の着せ替えも無効にならない。(3人目以降)</p>
 					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="char*.bindoption*.group,グループ名,オプション">
-				<dt class="entry">char*.bindoption*.group,グループ名,オプション</dt>
+			<dl id="char*.bindoption*.group,カテゴリ名,オプション">
+				<dt class="entry">char*.bindoption*.group,カテゴリ名,オプション</dt>
 				<dd class="entry">
-					<p>その着せ替えカテゴリにオプションを設定。(2人目以降の相方側)<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
+					<p>その着せ替えカテゴリにオプションを設定。*は単に0から始まる通し番号(3人目以降)。<br />mustselectでパーツを必ず1つ選択、multipleで複数のパーツを選択可能。<br />オプションは+区切りで複数可。</p>
 					<p class="default">選択解除可能、複数選択不可</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="char*.menuitem*,数値">
-				<dt class="entry">char*.menuitem*,数値</dt>
+			<dl id="char*.menuitem*,ID">
+				<dt class="entry">char*.menuitem*,ID</dt>
 				<dd class="entry">
-					<p>数値のパーツから順に着せ替えメニューを表示。(2人目以降の相方側)<br />数値部分に「-」で仕切り線表示。</p>
-					<p class="default">着せ替えがある場合省略不可</p>
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを表示。*は0から始まる通し番号。(3人目以降)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1099,7 +1099,7 @@ kero.menuitem3,2
 			<dl id="char*.menu,autoまたはhidden">
 				<dt class="entry">char*.menu,autoまたはhidden</dt>
 				<dd class="entry">
-					<p>シェルの*番スコープの着せ替えメニューの表示。<br />autoで自動表示、hiddenで非表示。</p>
+					<p>シェルの3人目以降の着せ替えメニューの表示。<br />autoで自動表示、hiddenで非表示。</p>
 					<p class="default">動作なし（手動設定）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
