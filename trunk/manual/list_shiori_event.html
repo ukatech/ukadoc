@@ -2474,7 +2474,7 @@
 					<p>更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateReady-note1">*1</a></dd>
+						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -2482,9 +2482,6 @@
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
-					<div class="remarks">
-						<p id="OnUpdateReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2542,9 +2539,9 @@
 						<dt>Reference0</dt>
 						<dd>ダウンロードするファイル名。</dd>
 						<dt>Reference1</dt>
-						<dd>CROW以外　0から始まる、ダウンロード中の更新ファイルの番号。</dd>
+						<dd>（CROW以外）ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
 						<dt>Reference2</dt>
-						<dd>CROW以外　更新ファイルの総数。</dd>
+						<dd>（CROW以外）更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
 						<dt>Reference3</dt>
 						<dd>SSPのみ　更新対象種別。<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
@@ -2651,7 +2648,7 @@
 					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの数-1（0～） <a href="#OnUpdateOtherReady-note1">*1</a></dd>
+						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -2659,9 +2656,6 @@
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
 					</dl>
-					<div class="remarks">
-						<p id="OnUpdateOtherReady-note1">*1 SHIORIが里々の場合のみ、更新を行うファイルの数が入る（1～）</p>
-					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2713,9 +2707,9 @@
 						<dt>Reference0</dt>
 						<dd>ダウンロードするファイル名。</dd>
 						<dt>Reference1</dt>
-						<dd>更新総数の現在のファイル数。</dd>
+						<dd>ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
 						<dt>Reference2</dt>
-						<dd>更新総数。</dd>
+						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
 						<dt>Reference3</dt>
 						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
 						<dt>Reference4</dt>
