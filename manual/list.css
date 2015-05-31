@@ -335,12 +335,14 @@ a:hover {
 .category dd.entry .default:before {
 	content: "既定値: ";
 }
-.category dd.entry .reference {
-	margin: 5px 5px 5px 15px;
+.category dd.entry > dl.reference {
 	padding: 2px;
 	background-color: #aba;
 }
-.category dd.entry .reference dt {
+.category dd.entry > dl.reference > dt {
+	margin: 0;
+	border: none;
+	padding: 0 ;
 	font-weight: bold;
 	float: left;
 	clear: left;
@@ -348,10 +350,12 @@ a:hover {
 	min-width: 7em;
 	_width: 7em;
 }
-.category dd.entry .reference dt:after {
+.category dd.entry > dl.reference > dt:after {
 	content: ":";
 }
-.category dd.entry .reference dd {
+.category dd.entry > dl.reference > dd {
+	margin: 0;
+	border: none;
 	padding: 5px 5px 5px 10px;
 	overflow: hidden;
 	background-color: #efe;
@@ -359,13 +363,13 @@ a:hover {
 	_height: 1em;
 	_overflow-y: visible;
 }
-.category dd.entry .reference dd:nth-of-type(odd) {
+.category dd.entry > dl.reference > dd:nth-of-type(odd) {
 	background-color: #ded;
 }
-.category dd.entry .reference dd dt {
-	min-widdh: 0;
+.category dd.entry > dl.reference > dd dt {
+	min-width: 0;
 }
-.category dd.entry .reference dd dd:nth-of-type(even) {
+.category dd.entry > dl.reference > dd dd:nth-of-type(even) {
 	background-color: #ded;
 }
 .category dd.entry .remarks {
