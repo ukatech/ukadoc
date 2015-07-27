@@ -138,7 +138,7 @@
 		</section>
 		<section class="navigation-category">
 			<ul>
-				<li><a href="#charset,文字コード">charset,文字コード</a></li>
+				<li><a href="#charset,文字コード-surfaces">charset,文字コード</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -302,6 +302,7 @@
 				<p>ブレス名、{}、各設定として認識されない行はすべてコメント行として扱われる。慣例的には行頭を「//」から始める。</p>
 				<p>各行インデント可。</p>
 				<p>SSPのみ「surfaces***.txt（***は任意の文字列）」という名前のテキストファイルは全て読み込まれ、surfaces.txtと同様に扱われる。読み込み対象となるファイルが複数ある場合、読み込まれる順序はファイル名順となる。</p>
+				<p>なお、複数のsurfaces***.txtを用意した場合、<a href="#introduction_descriptbrace">descriptブレス</a>の設定（および<a href="#charset,文字コード-surfaces">charset</a>）はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
 			</section>
 			<section>
 				<h1>記述例</h1>
@@ -355,6 +356,7 @@ collision3,154,311,248,362,Skirt
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
 					<p>表示する文字コード。Shift_JIS推奨。</p>
+					<p>SSPにおいて複数の<a href="#introduction_surfaces.txt">surfaces***.txtを用意</a>した場合はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -367,6 +369,7 @@ collision3,154,311,248,362,Skirt
 			<h1>descriptブレス</h1>
 			<section class="caption introduction" id="introduction_descriptbrace">
 				<h1>descriptブレス記述例</h1>
+				<p>SSPで複数の<a href="#introduction_surfaces.txt">surfaces***.txtを用意</a>した場合はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
 <pre><code>descript
 {
 version,1
