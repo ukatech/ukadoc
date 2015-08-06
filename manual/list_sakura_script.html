@@ -457,9 +457,9 @@
 				<li><a href="#_m_umsg,wparam,lparam_">\m[umsg,wparam,lparam]</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="notes_passivemode">PassiveMode</a></li>
-				<li class="caption"><a href="notes_passivemode">InductionMode</a></li>
-				<li class="caption"><a href="notes_passivemode">http get/post オプション</a></li>
+				<li class="caption"><a href="#notes_passivemode">PassiveMode</a></li>
+				<li class="caption"><a href="#notes_passivemode">InductionMode</a></li>
+				<li class="caption"><a href="#notes_passivemode">http get/post オプション</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1754,14 +1754,15 @@
 			<dl id="_f_italic,パラメータ_">
 				<dt class="entry">\f[italic,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<!-- 環境によっては標準フォントのメイリオだと、半角英数でないとで斜体にならないそうな。 -->
+					<p>パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[italic,1]斜体にする。\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[italic,1]This is italic.\f[italic,default]。バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
