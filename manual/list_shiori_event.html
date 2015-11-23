@@ -884,7 +884,7 @@
 			<dl id="OnVirtualDesktopChanged">
 				<dt class="entry">OnVirtualDesktopChanged</dt>
 				<dd class="entry">
-					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><span style="color: #cc0000;">実験的機能のため今後仕様が変わる可能性がある</span>。</p>
+					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><strong class="warning">実験的機能のため今後仕様が変わる可能性がある</strong>。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>current：現在の仮想デスクトップとゴースト表示中のデスクトップが同じ<br />hidden：仮想デスクトップが切り替えられ、非表示状態<br />minimize：ウインドウが最小化されておりどの仮想デスクトップに属するかわからない</dd>
@@ -1184,6 +1184,7 @@
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
 					<p>1秒ごとに発生。</p>
+					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1192,7 +1193,7 @@
 						<dt>Reference2</dt>
 						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
+						<dd>トーク再生可能なときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
 					</dl>
@@ -1207,6 +1208,7 @@
 				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
 					<p>1分ごとに発生。</p>
+					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1215,7 +1217,7 @@
 						<dt>Reference2</dt>
 						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
+						<dd>トーク再生可能なときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
 					</dl>
