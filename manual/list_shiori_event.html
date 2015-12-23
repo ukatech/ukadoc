@@ -195,6 +195,7 @@
 			<ul>
 				<li><a href="#OnSecondChange">OnSecondChange</a></li>
 				<li><a href="#OnMinuteChange">OnMinuteChange</a></li>
+				<li><a href="#OnHourTimeSignal">OnHourTimeSignal</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1225,6 +1226,28 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnHourTimeSignal">
+				<dt class="entry">OnHourTimeSignal</dt>
+				<dd class="entry">
+					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
+					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>OSの連続起動時間（hour）</dd>
+						<dt>Reference1</dt>
+						<dd>見切れ時に1、それ以外は0。</dd>
+						<dt>Reference2</dt>
+						<dd>重なり時に1、それ以外は0。</dd>
+						<dt>Reference3</dt>
+						<dd>常に1。(トーク再生可能になるまで待つため)</dd>
+						<dt>Reference4</dt>
+						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
