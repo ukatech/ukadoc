@@ -295,6 +295,10 @@ a:hover {
 	font-weight: normal;
 	color : #009900;
 }
+.category strong.warning {
+	font-weight: normal;
+	color : #CC0000;
+}
 .category dt.entry {
 	font-size: large;
 	font-weight: bold;

@@ -1224,7 +1224,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					</section>
 					<section>
 						<h1>ベース（最下層）画像の扱い</h1>
-						<p>surface*.pngといった画像がある場合、その画像がsurface*において最下層（ベース）に存在する。この場合element0の合成はその画像に対して行われる。</p>
+						<p>surface*.pngといった画像がある場合、その画像がsurface*において最下層（ベース）に存在する。この場合element1以降の合成はその画像に対して行われる。ただし、element0(ID0番)の定義のみ特殊で、その定義がある場合はsurface*.pngは破棄されelement0の内容に置き換わる。これは互換性確保のための仕様である。</p>
 						<p>surface*.pngがなく、element定義のみで構成されるサーフェスの場合、element0の解決時点では下位レイヤが存在しない。この場合element0の描画メソッドは、自明ではあるがほとんどのものがbaseと同義になる。ただしasisメソッドで透過が無視される点は有効である。</p>
 						<p>すべてのanimation指定はsurface*.pngまたはelement定義をベースとしてその上に合成されていく（SSPの<a href="#animation*.option,background">backgroundオプション</a>指定時以外）</p>
 					</section>

@@ -195,6 +195,7 @@
 			<ul>
 				<li><a href="#OnSecondChange">OnSecondChange</a></li>
 				<li><a href="#OnMinuteChange">OnMinuteChange</a></li>
+				<li><a href="#OnHourTimeSignal">OnHourTimeSignal</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -884,7 +885,7 @@
 			<dl id="OnVirtualDesktopChanged">
 				<dt class="entry">OnVirtualDesktopChanged</dt>
 				<dd class="entry">
-					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><span style="color: #cc0000;">実験的機能のため今後仕様が変わる可能性がある</span>。</p>
+					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><strong class="warning">実験的機能のため今後仕様が変わる可能性がある</strong>。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>current：現在の仮想デスクトップとゴースト表示中のデスクトップが同じ<br />hidden：仮想デスクトップが切り替えられ、非表示状態<br />minimize：ウインドウが最小化されておりどの仮想デスクトップに属するかわからない</dd>
@@ -1184,6 +1185,7 @@
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
 					<p>1秒ごとに発生。</p>
+					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1192,7 +1194,7 @@
 						<dt>Reference2</dt>
 						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
+						<dd>トーク再生可能なときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
 					</dl>
@@ -1207,6 +1209,7 @@
 				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
 					<p>1分ごとに発生。</p>
+					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSの連続起動時間（hour）</dd>
@@ -1215,7 +1218,7 @@
 						<dt>Reference2</dt>
 						<dd>重なり時に1、それ以外は0。</dd>
 						<dt>Reference3</dt>
-						<dd>cantalkが再生されるときに1、それ以外は0。</dd>
+						<dd>トーク再生可能なときに1、それ以外は0。</dd>
 						<dt>Reference4</dt>
 						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
 					</dl>
@@ -1223,6 +1226,28 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnHourTimeSignal">
+				<dt class="entry">OnHourTimeSignal</dt>
+				<dd class="entry">
+					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
+					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>OSの連続起動時間（hour）</dd>
+						<dt>Reference1</dt>
+						<dd>見切れ時に1、それ以外は0。</dd>
+						<dt>Reference2</dt>
+						<dd>重なり時に1、それ以外は0。</dd>
+						<dt>Reference3</dt>
+						<dd>常に1。(トーク再生可能になるまで待つため)</dd>
+						<dt>Reference4</dt>
+						<dd>※SSPのみ　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
