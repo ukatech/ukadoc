@@ -161,6 +161,7 @@
 				<li class="caption"><a href="#caption_seriko-redefine">SERIKOの旧定義と新定義について</a></li>
 				<li class="caption"><a href="#caption_surfacebraceID">surface*ブレスで可能なID指定</a></li>
 				<li class="caption"><a href="#caption_surface.append">surface*ブレスとsurface.append*ブレス</a></li>
+				<li class="caption"><a href="#caption_z-axis">各要素の上下構造</a></li>
 				<li class="caption"><a href="#caption_standarddef">サーフェスIDの割り振り</a></li>
 			</ul>
 			<ul>
@@ -734,6 +735,50 @@ animation0.pattern3,overlay,-1,100,168,67
 				<p>とした場合は、既に定義のある「surface1」および「surface3」のみにappendで追加した定義が加わり、予め存在しない「surface2」は内部的にも<em>新設されない</em>。</p>
 				<p>なお、この関係から、<em>surfaceブレスは</em>定義ファイル（surfaces.txtなど）内で<em>surface.appendブレスより先に書く</em>必要がある事に注意。</p>
 			</section>
+			<section class="caption" id="caption_z-axis">
+				<h1>各要素の上下構造</h1>
+				<section>
+					<h1>上位と下位</h1>
+					<p>以下画面手前側を上位、画面奥側を下位として表現する</p>
+				</section>
+				<section>
+					<h1>各パーツの上下構造</h1>
+					<p>elementおよび着せ替え（インターバルがbindのアニメーション）では、それぞれelementID・patternIDが小さい方が下位、大きい方が上位となる。</p>
+				</section>
+				<section>
+					<h1>ベースサーフェス</h1>
+					<p>各surfaceの、アニメーションなどが合成されていない基本的状態の画像をベースサーフェスと呼ぶ。</p>
+					<p>あるsurfaceのベースサーフェスは、対応するsurface*.pngとelement合成によって形成される。</p>
+					<p>surface*.pngがあるサーフェスでは、その画像がsurface*のベースサーフェスとなる。ただし同時にelement0が定義されている場合、surface*.pngの内容は破棄されelement0の定義内容で置き換わる（これは互換性確保のための仕様である）。element1以降の定義がある場合は、surface*.pngまたはelement0の定義の上に積み重なる形で順次合成され、共にベースサーフェスを成す。</p>
+					<p>animation指定はベースサーフェスを基準として、その上に（あるいはSSPの<a href="#animation*.option,background">backgroundオプション</a>指定時は下に）合成されていく。</p>
+					<p>なお、もしsurface*.pngがなくelement定義のみで構成されるサーフェスの場合、element0の定義で指定された描画メソッドは（自明だが）ほとんどのものがbaseと同義になる。ただしasisメソッドで抜き色がそのまま表示される点は有効である。</p>
+				</section>
+				<section>
+					<h1>ベースサーフェスと各アニメーションの上下構造</h1>
+					<p>ベースサーフェスは基本的にすべての合成の最下位に置かれる画像であるが、先述の通りSSPの<a href="#animation*.option,background">backgroundオプション</a>が指定されたアニメーションは、ベースサーフェスよりさらに下位に（裏に）合成される。</p>
+					<p>着せ替えを含む各アニメーション間の上下構造は、通常アニメーションIDの大きい方から降順で上位となる（番号が大きい方から画面手前側に配置される）。ただしSSPではdescriptブレスで<a href="#animation-sort,ソート順序">animation-sort</a>定義を行えば、昇順にもできる。</p>
+					<p>各アニメーション</p>
+				</section>
+				<section>
+					<h1>当たり判定（collision）の上下構造</h1>
+					<p>あるサーフェスの当たり判定は、基本的にsurfaces.txtにおいて先に登場したcollision定義が上位となる。ただしSSPではdescriptブレスで<a href="#collision-sort,ソート順序">collision-sort</a>定義を行えば、collisionIDを基準として昇順・降順にも設定できる。</p>
+					<p>またSSPでは<a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a>の設定によって、特定のアニメーションが表示されている場合にのみ有効な当たり判定が設定できる。この場合はまず各アニメーションの上下構造が考慮された上で、それぞれアニメーション・ベースサーフェスの当たり判定が通常道理の順序で評価される。</p>
+					<p>まとめると上位から下位へ順に</p>
+					<ol>
+						<li>IDがより大きい通常のアニメーションの、より上位の当たり判定</li>
+						<li>IDがより大きい通常のアニメーションの、より下位の当たり判定</li>
+						<li>IDがより小さい通常のアニメーションの、より上位の当たり判定</li>
+						<li>IDがより小さい通常のアニメーションの、より下位の当たり判定</li>
+						<li>ベースサーフェスの、より上位の当たり判定</li>
+						<li>ベースサーフェスの、より下位の当たり判定</li>
+						<li>IDがより大きいbackgroundオプション付アニメーションの、より上位の当たり判定</li>
+						<li>IDがより大きいbackgroundオプション付アニメーションの、より下位の当たり判定</li>
+						<li>IDがより小さいbackgroundオプション付アニメーションの、より上位の当たり判定</li>
+						<li>IDがより小さいbackgroundオプション付アニメーションの、より下位の当たり判定</li>
+					</ol>
+					<p>となる（ここでいうアニメーションには着せ替えも含む）。</p>
+				</section>
+			</section>
 			<section class="caption" id="caption_standarddef">
 				<h1>サーフェスIDの割り振り</h1>
 				<p>どんな表情・内容にどのサーフェスIDを割り振るかは、基本的に自由。</p>
@@ -803,7 +848,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標</dt>
 				<dd class="entry">
 					<p>
-						アニメーションの各コマの定義。
+						アニメーションの各コマの定義。各コマは通常それ以前のコマをリセットして新たにベースサーフェスに合成される形で描画される（厳密には描画メソッドによる）。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。番号の小さい方から積み重なる形で描画される。
 						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
@@ -1089,7 +1134,7 @@ animation0.pattern3,overlay,-1,100,168,67
 							<dt>bind+runonce+random,5</dt>
 							<dd>その着せ替えがONの場合に、その着せ替え定義のされているサーフェスに切り替わった時か、逆にそのサーフェス表示中にその着せ替え定義がONになった場合に一度実行され、以後毎秒5分の1の確率で再生されるアニメーション。</dd>
 						</dl>
-						<p>bindに対して+区切りで他の指定をした場合、bindインターバルが本来帯びる「pattern定義のウェイトパラメータが無視されて静止画としてベースサーフェスと一体化する」といった性質は失われる。</p>
+						<p>bindに対して+区切りで他の指定をした場合、bindインターバルが本来持つ「pattern定義のウェイトパラメータが無視されて静止画としてベースサーフェスと一体化する」といった性質は失われる。</p>
 						<p>また、random・periodic・talkのようなパラメータが必要な指定では、パラメータは組み合わせ指定の場合も末尾に書く。</p>
 						<p>以下は<em>誤り</em>。</p>
 						<pre>animation0.interval,random,5+bind</pre>
@@ -1214,24 +1259,20 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>概要</h1>
 						<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
-						<p>一部、画像の合成というよりも、既存レイヤの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
+						<p>一部、画像の合成というよりも、ベースサーフェスの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
 					</section>
 					<section>
-						<h1>描画の流れ</h1>
-						<p>合成は、animation*.patternの場合もelementの場合もコマ（パーツ）を一つ一つ積み上げるように合成・描画していく。</p>
-						<p>言い換えると、各描画メソッドの処理は基本的に「その時点までの合成結果」と「次のコマ（パーツ）」という二つの画像間の問題である（moveやstartなど画像の合成でないメソッドを除く）。</p>
-						<p>以下では、簡便のために「その時点までの合成結果」を<em>下位レイヤ</em>と称し、「次のコマ（パーツ）」を単に<em>コマ</em>と呼んでいる。</p>
-					</section>
-					<section>
-						<h1>ベース（最下層）画像の扱い</h1>
-						<p>surface*.pngといった画像がある場合、その画像がsurface*において最下層（ベース）に存在する。この場合element1以降の合成はその画像に対して行われる。ただし、element0(ID0番)の定義のみ特殊で、その定義がある場合はsurface*.pngは破棄されelement0の内容に置き換わる。これは互換性確保のための仕様である。</p>
-						<p>surface*.pngがなく、element定義のみで構成されるサーフェスの場合、element0の解決時点では下位レイヤが存在しない。この場合element0の描画メソッドは、自明ではあるがほとんどのものがbaseと同義になる。ただしasisメソッドで透過が無視される点は有効である。</p>
-						<p>すべてのanimation指定はsurface*.pngまたはelement定義をベースとしてその上に合成されていく（SSPの<a href="#animation*.option,background">backgroundオプション</a>指定時以外）</p>
+						<h1>element・アニメーション・着せ替えそれぞれのパーツの重なり方の違い</h1>
+						<p>element・アニメーション・着せ替えそれぞれにおいて、コマやパーツの合成・描画は多少異なっている。</p>
+						<p>element定義での各パーツの描画は、先述の通り一つ一つが積みあがるようにして合成され、最終的な合成結果の画像がベースサーフェスとなる。</p>
+						<p>対して通常のアニメーションでの各コマ（pattern定義）の描画は、一度それ以前のコマを除去した上でまっさらなベースサーフェスに対して行われる（ただし後述の通り着せ替えは除去されない）。</p>
+						<p>着せ替えでの各パーツ（pattern定義）の描画は、element定義の場合と同様に、ベースサーフェスとそのパーツ以前に合成されたすべてのパーツに対して積み重なる形で行われる。着せ替えは有効な間はあたかもベースサーフェスと一体化したかのように振る舞う（アニメーションとしての上下構造は保つ）。</p>
+						<p>言い換えると、elementおよび着せ替えではベースレイヤおよびそれ以前のすべてのコマを下位レイヤとして次のコマが重なり、通常のアニメーションではベースレイヤのみを下位レイヤとして次のコマが重なることになる。</p>
 					</section>
 					<section>
 						<h1>抜き色の扱い</h1>
 						<p>サーフェスの抜き色（左上1ピクセルの色）が抜き色として扱われ、実際の表示上は同色の部分を透過して表示するのは、animationおよびelementのコマとして扱われる場合も同様である。</p>
-						<p>つまり下位レイヤに対してコマが合成される時、コマの抜き色部分は基本的に何も合成されない（この時下位レイヤとコマそれぞれの抜き色に当たる実際の色が<em>一致する必要はない</em>）。</p>
+						<p>つまり各コマが合成される時、コマの抜き色部分は基本的に下位レイヤに影響しない（この時下位レイヤとコマそれぞれの抜き色に当たる実際の色が<em>一致する必要はない</em>）。</p>
 						<p>ただしいくつかの合成メソッドには、抜き色について特別な扱いをするものがあるので注意を要する（replace、reduce、asisなど）。</p>
 					</section>
 					<section>
@@ -1246,7 +1287,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">base</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤをコマで完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
+							ベースサーフェスをそのコマで完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
 							<br>このメソッドのパターンを重ねると、サーフェス全面を描画し直すことによるアニメーション（いわばパラパラ漫画）が実現される。
 							<br>この描画メソッドが指定されたpattern定義では、XY座標は無視される。
 							<br>着せ替え・elementでも使用できる。
@@ -1344,7 +1385,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">bind</dt>
 					<dd class="entry">
 						<p>
-							そのコマを着せ替えパーツとして重ねる。現在ではoverlayと同じ。
+							下位レイヤにそのコマを着せ替えパーツとして重ねる。現在ではoverlayと同じ。
 							<br>着せ替えパーツとして単純に一つのサーフェスを重ねることしか出来なかった頃の唯一のメソッドで、現在はaddが互換。
 							<br>着せ替えでないアニメーション・elementでの使用は未定義。
 						</p>
