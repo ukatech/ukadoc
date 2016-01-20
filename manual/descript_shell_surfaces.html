@@ -161,6 +161,7 @@
 				<li class="caption"><a href="#caption_seriko-redefine">SERIKOの旧定義と新定義について</a></li>
 				<li class="caption"><a href="#caption_surfacebraceID">surface*ブレスで可能なID指定</a></li>
 				<li class="caption"><a href="#caption_surface.append">surface*ブレスとsurface.append*ブレス</a></li>
+				<li class="caption"><a href="#caption_basesurface">ベースサーフェス</a></li>
 				<li class="caption"><a href="#caption_z-axis">各要素の上下構造</a></li>
 				<li class="caption"><a href="#caption_standarddef">サーフェスIDの割り振り</a></li>
 			</ul>
@@ -501,7 +502,7 @@ animation10.pattern3,overlay,-1,700,0,0
 				<section>
 					<h1>概要</h1>
 					<p>伺かのシェルは、着せ替えと呼ばれる仕組みを持つ。これは単一のシェル内で、複数の衣装などのパーツの表示・非表示や種類の切り替えを行うためのものである。</p>
-					<p>伺かのシェルにおける着せ替えは、アニメーションの一種として位置づけられる。<br>ただし他のアニメーションのようにコマ送りされず、アニメーションの開始時に即時全てのコマ（pattern）およびベースのサーフェスが合成されて、以後静止画として扱われる点が特徴である（従ってpattern定義のウェイトパラメータは無視される）。<br>この「描画があたかもベース画像と一体化したかのように振舞う」という性質は、衣服のようなものを表現する目的に良く適う。</p>
+					<p>伺かのシェルにおける着せ替えは、アニメーションの一種として位置づけられる。<br>ただし他のアニメーションのようにコマ送りされず、アニメーションの開始時に即時全てのコマ（pattern）およびベースのサーフェスが合成されて、以後静止画として扱われる点が特徴である（従ってpattern定義のウェイトパラメータは無視される）。<br>この「描画があたかもベースサーフェスと一体化したかのように振舞う」という性質は、衣服のようなものを表現する目的に良く適う。</p>
 					<p>着せ替えのアニメーションとしての開始・終了は、主にオーナードローメニューの着せ替えメニューからスイッチする事で制御される。SSPの場合はそれに加えて、さくらスクリプトの<a href="list_sakura_script.html#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a>タグを用いたゴースト側からの制御が可能である。<br>オーナードローメニュー側の設定は、surfaces.txtではなく<a href="descript_shell.html">descript.txt</a>で行うので、そちらのページを参照。</p>
 					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはMAYUNAという名前が与えられている。</p>
 				</section>
@@ -735,6 +736,27 @@ animation0.pattern3,overlay,-1,100,168,67
 				<p>とした場合は、既に定義のある「surface1」および「surface3」のみにappendで追加した定義が加わり、予め存在しない「surface2」は内部的にも<em>新設されない</em>。</p>
 				<p>なお、この関係から、<em>surfaceブレスは</em>定義ファイル（surfaces.txtなど）内で<em>surface.appendブレスより先に書く</em>必要がある事に注意。</p>
 			</section>
+			<section class="caption" id="caption_basesurface">
+				<h1>ベースサーフェス</h1>
+				<section>
+					<h1>ベースサーフェス</h1>
+					<p>各surfaceの基本的状態となる、アニメーションが合成される前の画像をベースサーフェスと呼ぶ。</p>
+					<p>アニメーションは通常ベースサーフェスの上位（画面手前側）に描画されることとなる。</p>
+				</section>
+				<section>
+					<h1>ベースサーフェスの実体</h1>
+					<p>あるsurfaceのベースサーフェスは、IDに対応するsurface*.pngと、IDに対応するsurfaceブレスでの<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element指定</a>で定義される。</p>
+					<p>surface*.pngがあるサーフェスでは、その画像がsurface*のベースサーフェスとなる。ただし同時にelement0が定義されている場合、surface*.pngの内容は破棄されelement0の定義内容で置き換わる（これは互換性確保のための仕様である）。</p>
+					<p>element1以降の定義がある場合は、それらの上に積み重なる形で順次合成され、共にベースサーフェスを成す。</p>
+				</section>
+				<section>
+					<h1>ベースサーフェスのサイズとアニメーション合成</h1>
+					<p>アニメーション定義で、ベースサーフェスの透過部分を含めたサイズよりも大きな画像を合成しようとした場合の挙動は、現状ベースウェアの実装に委ねられている。</p>
+					<p>MATERIAではベースサーフェスからはみ出した部分は表示されない。</p>
+					<p>CROWではベースサーフェスからはみ出すような画像を合成しようとすると、正しく描画されなくなる。</p>
+					<p>SSPにおいてはベースサーフェスよりも大きな画像を合成することが許されており、ベースサーフェス側で不足したサイズ分の透過領域が補われた上で合成が行われるような挙動となる。<a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation-pattern</a>のX座標・Y座標値が0,0の場合、ベースサーフェスの本来の画像左上と、アニメーション側の画像左上が重なるように配置される。座標値は負値を設定することも可能である。</p>
+				</section>
+			</section>
 			<section class="caption" id="caption_z-axis">
 				<h1>各要素の上下構造</h1>
 				<section>
@@ -746,16 +768,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					<p>elementおよび着せ替え（インターバルがbindのアニメーション）では、それぞれelementID・patternIDが小さい方が下位、大きい方が上位となる。</p>
 				</section>
 				<section>
-					<h1>ベースサーフェス</h1>
-					<p>各surfaceの、アニメーションなどが合成されていない基本的状態の画像をベースサーフェスと呼ぶ。</p>
-					<p>あるsurfaceのベースサーフェスは、対応するsurface*.pngとelement合成によって形成される。</p>
-					<p>surface*.pngがあるサーフェスでは、その画像がsurface*のベースサーフェスとなる。ただし同時にelement0が定義されている場合、surface*.pngの内容は破棄されelement0の定義内容で置き換わる（これは互換性確保のための仕様である）。element1以降の定義がある場合は、surface*.pngまたはelement0の定義の上に積み重なる形で順次合成され、共にベースサーフェスを成す。</p>
-					<p>animation指定はベースサーフェスを基準として、その上に（あるいはSSPの<a href="#animation*.option,background">backgroundオプション</a>指定時は下に）合成されていく。</p>
-					<p>なお、もしsurface*.pngがなくelement定義のみで構成されるサーフェスの場合、element0の定義で指定された描画メソッドは（自明だが）ほとんどのものがbaseと同義になる。ただしasisメソッドで抜き色がそのまま表示される点は有効である。</p>
-				</section>
-				<section>
 					<h1>ベースサーフェスと各アニメーションの上下構造</h1>
-					<p>ベースサーフェスは基本的にすべての合成の最下位に置かれる画像であるが、先述の通りSSPの<a href="#animation*.option,background">backgroundオプション</a>が指定されたアニメーションは、ベースサーフェスよりさらに下位に（裏に）合成される。</p>
+					<p>ベースサーフェスは基本的にすべての合成の最下位に置かれる画像だが、SSPの<a href="#animation*.option,background">backgroundオプション</a>が指定されたアニメーションは、ベースサーフェスより下位に（裏に）合成される。</p>
 					<p>着せ替えを含む各アニメーション間の上下構造は、通常アニメーションIDの大きい方から降順で上位となる（番号が大きい方から画面手前側に配置される）。ただしSSPではdescriptブレスで<a href="#animation-sort,ソート順序">animation-sort</a>定義を行えば、昇順にもできる。</p>
 					<p>各アニメーション</p>
 				</section>
@@ -763,7 +777,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>当たり判定（collision）の上下構造</h1>
 					<p>あるサーフェスの当たり判定は、基本的にsurfaces.txtにおいて先に登場したcollision定義が上位となる。ただしSSPではdescriptブレスで<a href="#collision-sort,ソート順序">collision-sort</a>定義を行えば、collisionIDを基準として昇順・降順にも設定できる。</p>
 					<p>またSSPでは<a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a>の設定によって、特定のアニメーションが表示されている場合にのみ有効な当たり判定が設定できる。この場合はまず各アニメーションの上下構造が考慮された上で、それぞれアニメーション・ベースサーフェスの当たり判定が通常道理の順序で評価される。</p>
-					<p>まとめると上位から下位へ順に</p>
+					<p>animation-sortの設定がdescendの場合を例としてまとめると、上位から下位へ順に</p>
 					<ol>
 						<li>IDがより大きい通常のアニメーションの、より上位の当たり判定</li>
 						<li>IDがより大きい通常のアニメーションの、より下位の当たり判定</li>
@@ -810,8 +824,8 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">element*,描画メソッド,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
 					<p>
-						ベース画像の合成。
-						<br>複数の画像を合成し、その結果をこのサーフェス内のベース画像として一枚の画像のように扱う仕組み。
+						ベースサーフェスの合成。
+						<br>複数の画像を合成し、その結果をこのサーフェス内のベースサーフェスとして一枚の画像のように扱う仕組み。
 						<br>サーフェスに対応するsurface*.pngという画像がある場合は、その画像の上にelement合成された画像が重なる。
 						<br>SSP2.3.53からは、element定義されたサーフェスをアニメーションパーツとして用いた場合も、あたかも最初から一枚の画像であったかのように扱うことができる（以前は未定義）。
 						<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。
@@ -1278,8 +1292,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>element定義における描画メソッドの扱い</h1>
 						<p>element定義中では、moveのようにコマの合成でないメソッドは無効である。</p>
-						<p>またinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドも無効である。</p>
+						<p>加えてinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドも無効である。</p>
 						<p>その他着せ替え用のメソッドadd、bindも無効である（が、SSPの現実装において無効な指定はoverlayと読み替えられるため、結果的に指定どおりの描画にはなる）。</p>
+						<p>自明ではあるが、element0の定義で指定された描画メソッドはほとんどのものがbaseと同義になる。ただしasisメソッドで抜き色がそのまま表示される点は有効である。</p>
 						<p>なお、element合成されたサーフェスがアニメーションパーツとして用いられた場合、element合成の結果が一枚の画像のように扱われる。ただしこの実装はSSP2.3.53からのもので、それ以前は未定義であった事に注意。</p>
 					</section>
 				</section>
