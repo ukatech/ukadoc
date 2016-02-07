@@ -171,8 +171,13 @@
 				<li><a href="#currentghost.balloon.scope(ID).count">currentghost.balloon.scope(ID).count</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).num">currentghost.balloon.scope(ID).num</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).validwidth">currentghost.balloon.scope(ID).validwidth</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).validwidth.initial">currentghost.balloon.scope(ID).validwidth.initial</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).validheight">currentghost.balloon.scope(ID).validheight</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).validheight.initial">currentghost.balloon.scope(ID).validheight.initial</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).lines">currentghost.balloon.scope(ID).lines</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).lines.initial">currentghost.balloon.scope(ID).lines.initial</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).basepos.x">currentghost.balloon.scope(ID).basepos.x</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).basepos.y">currentghost.balloon.scope(ID).basepos.y</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).char_width">currentghost.balloon.scope(ID).char_width</a></li>
 				<li><a href="#currentghost.balloon.count">currentghost.balloon.count</a></li>
 				<li><a href="#balloonlist(バルーン名/パス).汎用プロパティ名">balloonlist(バルーン名/パス).汎用プロパティ名</a></li>
@@ -644,27 +649,72 @@
 			<dl id="currentghost.balloon.scope(ID).validwidth">
 				<dt class="entry">currentghost.balloon.scope(ID).validwidth</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える幅。</p>
+					<p>現在のバルーンの文字描画に使える幅。baseposに関係なく描画範囲全てを示す。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).validwidth.initial">
+				<dt class="entry">currentghost.balloon.scope(ID).validwidth.initial</dt>
+				<dd class="entry">
+					<p>現在のバルーンの文字描画に使える幅（basepos.x＝文字開始点を考慮したもの）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="currentghost.balloon.scope(ID).validheight">
 				<dt class="entry">currentghost.balloon.scope(ID).validheight</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える高さ。</p>
+					<p>現在のバルーンの文字描画に使える高さ。baseposに関係なく描画範囲全てを示す。スクロール後の描画高さと一致。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).validheight.initial">
+				<dt class="entry">currentghost.balloon.scope(ID).validheight.initial</dt>
+				<dd class="entry">
+					<p>現在のバルーンの文字描画に使える高さ。basepos.y＝文字開始点を考慮したもの。スクロール前の描画高さと一致。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="currentghost.balloon.scope(ID).lines">
 				<dt class="entry">currentghost.balloon.scope(ID).lines</dt>
 				<dd class="entry">
-					<p>現在のバルーンのおさまる行数の最大値。</p>
+					<p>現在のバルーンのおさまる行数の最大値。baseposに関係なく描画範囲全てを示す。スクロール後の表示行数と一致。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).lines.initial">
+				<dt class="entry">currentghost.balloon.scope(ID).lines.initial</dt>
+				<dd class="entry">
+					<p>現在のバルーンのおさまる行数の最大値。basepos.y＝文字開始点を考慮したもの。スクロール前の表示行数と一致。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).basepos.x">
+				<dt class="entry">currentghost.balloon.scope(ID).basepos.x</dt>
+				<dd class="entry">
+					<p>現在のバルーンの文字描画開始点(X座標)。描画範囲の左端とは限らない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).basepos.y">
+				<dt class="entry">currentghost.balloon.scope(ID).basepos.y</dt>
+				<dd class="entry">
+					<p>現在のバルーンの文字描画開始点(Y座標)。描画範囲の上端とは限らない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
 				</dd>
 			</dl>
