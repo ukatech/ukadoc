@@ -543,7 +543,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは\\0になっている。</code></p>
+							<p><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは本体側になっている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1927,7 +1927,7 @@
 			<dl id="_t">
 				<dt class="entry">\t</dt>
 				<dd class="entry">
-					<p>タイムクリティカルセッション。<br>スクリプトブレイク（例:選択肢を選ぶ、バルーンダブルクリックによる中断）か\eまでの間、マウス系などのイベント通知を行わない。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。<br>\tを再度記述しても解除されないので注意すること。途中で解除したい場合\![raise,]を用いる。--></p>
+					<p>タイムクリティカルセクション。<br>スクリプトブレイク（例:選択肢を選ぶ、バルーンダブルクリックによる中断）か\eまでの間、マウス系などのイベント通知を行わない。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。<br>\tを再度記述しても解除されないので注意すること。途中で解除したい場合\![raise,]を用いる。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1944,7 +1944,7 @@
 			<dl id="__q">
 				<dt class="entry">\_q</dt>
 				<dd class="entry">
-					<p>クイックセッション。<br>次の\_qか\eまでメッセージがノーウェイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
+					<p>クイックセクション。<br>次の\_qか\eまでメッセージがノーウェイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1961,7 +1961,7 @@
 			<dl id="_!_quicksession,true_">
 				<dt class="entry">\![quicksession,true]</dt>
 				<dd class="entry">
-					<p>クイックセッションを開始する。\![quicksession,1]でも可。\_qとほぼ互換。</p>
+					<p>クイックセクションを開始する。\![quicksession,1]でも可。\_qとほぼ互換。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1976,14 +1976,14 @@
 			<dl id="_!_quicksession,false_">
 				<dt class="entry">\![quicksession,false]</dt>
 				<dd class="entry">
-					<p>クイックセッションを終了する。\![quicksession,0]でも可。\_qとほぼ互換。</p>
+					<p>クイックセクションを終了する。\![quicksession,0]でも可。\_qとほぼ互換。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![quicksession,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksession,0]また、クイックセッションのさくらスクリプトは\![quicksession,1]混ぜて使っても有効。\_q</code></p>
+							<p><code>\![quicksession,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksession,0]また、クイックセクションのさくらスクリプトは\![quicksession,1]混ぜて使っても有効。\_q</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1991,7 +1991,7 @@
 			<dl id="__s">
 				<dt class="entry">\_s</dt>
 				<dd class="entry">
-					<p>シククロナイズセッション。<br>次の\_sか\eまでメッセージを両バルーンに表示する。</p>
+					<p>シンクロナイズセクション。<br>次の\_sか\eまでメッセージを両バルーンに表示する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2008,7 +2008,7 @@
 			<dl id="__s_ID1,ID2,ID3..._">
 				<dt class="entry">\_s[ID1,ID2,ID3...]</dt>
 				<dd class="entry">
-					<p>IDのスコープをシンクロナイズセッションする。</p>
+					<p>IDのスコープをシンクロナイズセクションする。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
