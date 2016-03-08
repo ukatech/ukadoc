@@ -177,6 +177,10 @@
 				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
 				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,スコープID]</a></li>
 				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
+				<li><a href="#_!_set,zorder,スコープID,スコープID,_">\![set,zorder,スコープID,スコープID,...]</a></li>
+				<li><a href="#_!_reset,zorder_">\![reset,zorder]</a></li>
+				<li><a href="#_!_set,sticky-window,スコープID,スコープID,_">\![set,sticky-window,スコープID,スコープID,...]</a></li>
+				<li><a href="#_!_reset,sticky-window_">\![reset,sticky-window]</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
@@ -738,7 +742,7 @@
 			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
 				<dt class="entry">\![bind,カテゴリ名,パーツ名,数値]</dt>
 				<dd class="entry">
-					<p>着せ替えパーツを着衣、脱衣する。<br>数値部分は1で着衣、0で脱衣。<br>パーツ名を空欄にするとカテゴリ単位の動作になる。<br>スクリプト実行後、SHIORIイベントOnDressupChangedが通知され、その後にSHIORIイベントOnNotifyDressupInfoが通知される。</p>
+					<p>着せ替えパーツを着衣、脱衣する。<br>数値部分は1で着衣、0で脱衣。<br>パーツ名を空欄にするとカテゴリ単位の動作になる。<br>数値欄を空欄または省略するとメニュー操作時のようにON/OFFの繰り返しとなる。<br>スクリプト実行後、SHIORIイベントOnDressupChangedが通知され、その後にSHIORIイベントOnNotifyDressupInfoが通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1022,6 +1026,42 @@
 					<p>上記を解除する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,zorder,スコープID,スコープID,_">
+				<dt class="entry">\![set,zorder,スコープID,スコープID,...]</dt>
+				<dd class="entry">
+					<p>指定スコープのウインドウを左側から順に手前側に配置する。<br>例えば1,0と指定すると、必ず\1が\0ウインドウより手前に表示される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reset,zorder_">
+				<dt class="entry">\![reset,zorder]</dt>
+				<dd class="entry">
+					<p>上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,sticky-window,スコープID,スコープID,_">
+				<dt class="entry">\![set,sticky-window,スコープID,スコープID,...]</dt>
+				<dd class="entry">
+					<p>指定スコープのウインドウをドラッグ中やmoveタグを実行中にセットで動くようにする。<br>例えば1,0と指定すると、\1と\0ウインドウがセットで移動するようになる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reset,sticky-window_">
+				<dt class="entry">\![reset,sticky-window]</dt>
+				<dd class="entry">
+					<p>上記を解除する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
