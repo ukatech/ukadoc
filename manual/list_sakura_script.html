@@ -1032,7 +1032,15 @@
 			<dl id="_!_set,zorder,スコープID,スコープID,_">
 				<dt class="entry">\![set,zorder,スコープID,スコープID,...]</dt>
 				<dd class="entry">
-					<p>指定スコープのウインドウを左側から順に手前側に配置する。<br>例えば1,0と指定すると、必ず\1が\0ウインドウより手前に表示される。</p>
+					<p>指定スコープのウインドウを左側から順に手前側に配置する。<br>
+					例：\![set,zorder,1,0]と指定すると、必ず\1が\0ウインドウより手前に表示される。</p>
+					
+					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
+					例：\![set,zorder,1,0] \![set,zorder,3,2] と実行すると、\1が\0より前、\p[3]が\p[2]より前に表示される。</p>
+					
+					<p>指定できるスコープIDの数に制限はないが、大量に指定するとちょっと重くなるので、2～3個程度が望ましい。<br>
+					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
@@ -1041,7 +1049,7 @@
 			<dl id="_!_reset,zorder_">
 				<dt class="entry">\![reset,zorder]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>上記を解除する。複数回実行された分、descriptであらかじめ指定された分も含めて、全部リセットされる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
@@ -1050,7 +1058,18 @@
 			<dl id="_!_set,sticky-window,スコープID,スコープID,_">
 				<dt class="entry">\![set,sticky-window,スコープID,スコープID,...]</dt>
 				<dd class="entry">
-					<p>指定スコープのウインドウをドラッグ中やmoveタグを実行中にセットで動くようにする。<br>例えば1,0と指定すると、\1と\0ウインドウがセットで移動するようになる。</p>
+					<p>指定スコープのウインドウをドラッグ中やmoveタグを実行中にセットで動くようにする。<br>
+					例えば1,0と指定すると、\1と\0ウインドウがセットで移動するようになる。</p>
+					
+					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
+					例：\![set,sticky-window,1,0] \![set,sticky-window,3,2] と実行すると、\1と\0がセット、\p[3]と\p[2]がセットになる。</p>
+					
+					<p>指定できるスコープIDの数に制限はないが、大量に指定すると<strong>ずいぶん</strong>重くなるので、2～3個程度が望ましい。<br>
+					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
+					
+					<p>\![set,alignmenttodesktop]などでウインドウ位置に制限がある場合は、その制限が優先され、X,Yのうち自由に動かせるものだけが追従する。<br>
+					\![move]タグでグループ化したウインドウ内の1つを動かした場合でも、他のウインドウも追従する。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
@@ -1059,7 +1078,7 @@
 			<dl id="_!_reset,sticky-window_">
 				<dt class="entry">\![reset,sticky-window]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>上記を解除する。複数回実行された分、descriptであらかじめ指定された分も含めて、全部リセットされる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
