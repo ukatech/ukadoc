@@ -435,6 +435,7 @@
 				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
 				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
 				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
+				<li><a href="#OnDisplayPowerStatus">OnDisplayPowerStatus</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -3753,18 +3754,31 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnDisplayPowerStatus">
+				<dt class="entry">OnDisplayPowerStatus</dt>
+				<dd class="entry">
+					<p>モニタの電源がON/OFFされた時に発生する。単純にON/OFFされた時だけでなく、ノート型で蓋を閉じた時も対象となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>1 = ON / 0 = OFF</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4以降</li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>バッテリー状態イベント</h1>
 			<dl id="OnBatteryLow">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryLow-kinoko">同名の物</a>があるので注意。</p>
+					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。バッテリー残量が少なめ(通常1/3以下)になった際に発生する。<br />
+					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
+					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
-						<dt>Reference1</dt>
-						<dd>残り時間。不明の場合は-1。</dd>
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3774,12 +3788,12 @@
 			<dl id="OnBatteryCritical">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。<br />外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。</p>
+					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。バッテリー残量が極端に少なく(通常5%以下)になった際に発生する。<br />
+					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
+					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>バッテリ残量の割合(％)。不明の場合は-1。</dd>
-						<dt>Reference1</dt>
-						<dd>残り時間。不明の場合は-1。</dd>
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3793,6 +3807,18 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>残りバッテリー％。</dd>
+						<dt>Reference1</dt>
+						<dd>残り時間。不明の場合は-1。</dd>
+						<dt>Reference2</dt>
+						<dd>offline(バッテリー駆動)・online(電源供給中)・backup(UPSなど補助電源)　のいずれか。</dd>
+						<dt>Reference3</dt>
+						<dd>以下の状態を示す文字列をカンマ区切りで通知。例： low,charging <br />
+						high：バッテリー残量が2/3以上<br />
+						low：バッテリー残量が1/3以下 (OnBatteryLowも発生)<br />
+						critical：バッテリー残量が5％以下 (OnBatteryCriticalも発生)<br />
+						charging：バッテリーが充電中<br />
+						no_battery：バッテリーが取り外されている<br />
+						power_saving：バッテリー節約機能がON (SSP 2.4以降/Windows 10以降)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
