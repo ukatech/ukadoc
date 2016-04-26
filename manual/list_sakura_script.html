@@ -799,7 +799,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部（タスクバーの上）にくっつく。</code></p>
+							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部(タスクバーの上)にくっつく。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -815,7 +815,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmenttodesktop,free]本体側が自由移動可能になる。</code></p>
+							<p><code>\![set,alignmenttodesktop,free]本体側がマウスドラッグで位置を自由に移動出来るようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -906,7 +906,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,70]相方側がだいたい半透明になる。</code></p>
+							<p><code>\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,70]相方側がだいたい半透明になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -959,7 +959,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\4この文章は本体側が別スコープと離れる方向に一定距離移動してから表示される。</code></p>
+							<p><code>移動を実行。\4この文章は、本体側が別スコープと一定距離離れてから表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -976,7 +976,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
+							<p><code>\1相方側にスコープを設定。\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -992,7 +992,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下から数えて、右方向に80pixel上方向に400pixelに、サーフェスの左上を合わせた位置へ、2.5秒かけて移動する。</code></p>
+							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置へ、2.5秒かけて移動する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1007,7 +1007,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されている画面の右上から数えて、左方向に175pixel下方向に400pixelに、サーフェスの右下を合わせた位置へ、5秒で移動しようとする。このスクリプトの再生中に、別のイベントが発生しその中で\![moveasync,cancel]が記述され実行された場合、移動をキャンセルする。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されているモニタの右上から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置へ、5秒で移動しようとする。このスクリプトの再生中に、別のイベントが発生しその中で\![moveasync,cancel]が記述され実行された場合、移動をキャンセルする。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1090,20 +1090,20 @@
 				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br>移動時間以降は省略可能。</p>
 				<p>X座標、Y座標は目的の座標を指定。<br>負の値も指定可能。<br>どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
 				<p>移動時間はミリ秒単位。<br>移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
-				<p>移動基準は、移動の基準（相対座標の原点）とするキャラクターなど。<br>指定方法は以下。</p>
+				<p>移動基準は、移動の基準(相対座標の原点)とするキャラクターなど。<br>指定方法は以下。</p>
 				<dl>
 					<dt>screen</dt>
 					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
 					<dt>ID</dt>
-					<dd>0,1等で指定したID番スコープ（\0,\1,\p[2]などの数に相当）のキャラクターとの相対座標</dd>
+					<dd>0,1等で指定したID番スコープ(\0,\1,\p[2]などの数に相当)のキャラクターとの相対座標</dd>
 					<dt>本体側名/ID</dt>
-					<dd>本体側名（sakura名,\0名）で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
+					<dd>本体側名(sakura名,\0名)で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
 					<dt>me</dt>
 					<dd>移動するキャラクター自身との相対座標</dd>
 					<dt>primaryscreen</dt>
 					<dd>主モニター左上を原点とした座標</dd>
 					<dt>global</dt>
-					<dd>システム座標系（windowsの場合primaryscreenと同じ）</dd>
+					<dd>システム座標系(windowsの場合primaryscreenと同じ)</dd>
 				</dl>
 				<p>基準とするキャラ基準位置は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br>X基準.Y基準、という形で指定し、それぞれ<br>X基準：left,right,base,center<br>Y基準：top,bottom,base,center<br>の4つの指定を組み合わせ、right.base、などのように記述する。<br>なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
 				<p>省略時は、left.topを指定したとみなされる。<br>screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
@@ -1125,7 +1125,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なる。SSP同梱バルーン「SSPデフォルト+」では本体側バルーン2番は表示文字数の多い大きなバルーンとなる。</code></p>
+							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は専用バルーンを同梱するなどが必要。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1133,7 +1133,7 @@
 			<dl id="__b_ファイル名,x,y_">
 				<dt class="entry">\_b[ファイルパス,x,y]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br>※SSPのみ画像URLを指定可能。</p>
+					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上ピクセルの色が透過色となる。<br>※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br>※SSPのみ画像URLを指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1142,7 +1142,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、X座標50Y座標100に表示する。</code></p>
+							<p><code>\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、バルーン内座標X:50,Y:100に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1157,7 +1157,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[..\..\shell\master\surface0.png,0,0,opaque]本体側バルーンに、shell\masterフォルダにあるsurface0.pngを、X座標0Y座標0に、左上透過せずに表示する。</code></p>
+							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1187,7 +1187,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、X座標10Y座標20に、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
+							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、バルーン内座標X:10,Y:20に、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1217,7 +1217,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード（文字列化）した画像データを、透過せずに表示する。</code></p>
+							<p><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード(文字列化)した画像データを、透過せずに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1238,7 +1238,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel横30～90pixelの範囲を表示する。</code></p>
+							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を表示する。</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
@@ -1325,7 +1325,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上（初期位置）から表示する。</code></p>
+							<p><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上(初期位置)から表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1348,7 +1348,7 @@
 			<dl id="_c_char,数値,開始位置_">
 				<dt class="entry">\c[char,数値,開始位置]</dt>
 				<dd class="entry">
-					<p>現スコープ側の指定位置から指定文字数をクリア。0オリジン。クリアされる文字の判定は\c[char,数値]と同じ。</p>
+					<p>現スコープ側の指定位置から指定文字数をクリア。開始位置は0オリジン(1文字目なら0、2文字目なら1)。クリアされる文字の判定は\c[char,数値]と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1363,14 +1363,14 @@
 			<dl id="_c_line,数値_">
 				<dt class="entry">\c[line,数値]</dt>
 				<dd class="entry">
-					<p>現スコープ側のカーソル位置から指定行数をクリア。<br>トークを\_l[x,y],\n,\n[half],\n[パーセント]で分割したものが「行」の扱い。ただし、\n\nなど、\_l[x,y]以外で分割された内容のないものは行とみなされない。<br>\c[char,数値]と同様に、スクリプト内の出現順が参照される。</p>
+					<p>現スコープ側の、バルーンのカーソル位置から指定行数をクリア。<br>トークを\_l[x,y],\n,\n[half],\n[パーセント]で分割したものが「行」の扱い。ただし、\n\nなど、\_l[x,y]以外で分割された内容のないものは行とみなされない。<br>\c[char,数値]と同様に、スクリプト内の出現順が参照される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\c[line,1]\nこの行は削除されない。\_l[0,0]\c[line,1]</code></p>
+							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\n\n\n\n\c[line,1]削除終了。\nこの行は削除されない。\_l[0,0]\c[line,1]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1378,14 +1378,14 @@
 			<dl id="_c_line,数値,開始位置_">
 				<dt class="entry">\c[line,数値,開始位置]</dt>
 				<dd class="entry">
-					<p>現スコープ側の指定位置から指定行数をクリア。0オリジン。クリアされる文字の判定は\c[line,数値]と同じ。</p>
+					<p>現スコープ側の開始位置(行数)から、指定行数をクリア。開始位置は0オリジン(1行目なら0、2行目なら1)。クリアされる行の判定は\c[line,数値]と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを2行目から、1行削除。\nこの部分が\_l[,]削除される。\c[line,1,1]削除終了。</code></p>
+							<p><code>トークを3行目から、\n1行削除。\nこの部分が\_l[,]削除される。\c[line,1,2]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1414,7 +1414,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_l[30,5em]座標X=30pixel、座標Y=5文字分高さに表示。\_l[@-1650%,100]座標X=最後の文字から文字高さ1650%分左、座標Y=100pixelに表示。</code></p>
+							<p><code>\_l[30,5em]「座標X=30pixel、座標Y=5文字分高さ」に表示。\_l[@-1650%,100]「座標X=最後の文字から文字高さ1650%分左、座標Y=100pixel」に表示。\_l[,@-100]「座標X=変更なし、座標Y=最後の文字から100pixel上」に表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1469,7 +1469,7 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p>バルーンのオフセット値をXY座標に変更。この値にユーザーの設定座標が加算され、バルーン表示座標が決まる。次のトーク時に元の位置に戻る。<br>通常に数値を指定すればdescript.txtのデフォルトのoffset値は無視されるが、頭に@をつけるとdescript.txtやsurfaces.txt内のオフセット値からの相対座標指定となる。</p>
+					<p>バルーンのオフセット値をXY座標に変更。この値にユーザーがバルーンドラッグ移動で決定した座標が加算され、バルーン表示座標が決まる。\eで解除され、次のトーク時に元の位置に戻る。<br>通常に数値を指定すればdescript.txtのデフォルトのoffset値は無視されるが、頭に@をつけるとdescript.txtやsurfaces.txt内のオフセット値からの相対座標指定となる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1499,7 +1499,7 @@
 						<dd>シェルの中央下座標に、バルーンの中央上座標が接する。</dd>
 						<dt>none</dt>
 						<dd>座標によってleftとrightが入れ替わる。シェルのドラッグ移動後、バルーンが見切れる場合、スイッチする。</dd>
-						<dt>auto</dt>
+						<dt>上記以外</dt>
 						<dd>noneと同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
@@ -1508,7 +1508,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![set,balloonalign,top]頭上にバルーン表示。\1\![set,balloonalign,right]右側にバルーン表示。</code></p>
+							<p><code>\0\![set,balloonalign,top]本体側バルーンを、シェルの頭上に表示。\1\![set,balloonalign,right]相方側バルーンを、シェルの右側に表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1546,7 +1546,7 @@
 			<dl id="_!_*_">
 				<dt class="entry">\![*]</dt>
 				<dd class="entry">
-					<p>マーカーを表示する。</p>
+					<p>マーカーを表示する。マーカーはバルーンによって設定されている。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1577,7 +1577,7 @@
 			<dl id="_!_leave,onlinemode_">
 				<dt class="entry">\![leave,onlinemode]</dt>
 				<dd class="entry">
-					<p>オンラインマーカーを強制的に非表示にする。<!--\0側で行った場合、このスクリプトの後にバルーンに表示内容がない場合は、バルーンタイムアウトまでオンラインマーカーが表示されたままになる。--></p>
+					<p>オンラインマーカーを強制的に非表示にする。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1592,7 +1592,7 @@
 			<dl id="_!_enter,nouserbreakmode_">
 				<dt class="entry">\![enter,nouserbreakmode]</dt>
 				<dd class="entry">
-					<p>スクリプト実行中断(操作はSSPの設定次第。通常、バルーンダブルクリック)の無効化モード開始。<br>通常のSSTPでは使用不可(Auth.SSTP（= Owned SSTP）は可)。</p>
+					<p>スクリプト実行中断(操作はSSPの設定次第。通常、バルーンダブルクリック)の無効化モード開始。<br>通常のSSTPでは使用不可(Auth.SSTP(= Owned SSTP)は可)。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1644,7 +1644,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで前の文章が描画される。</code></p>
+							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで描画が再開され、前の文章も描画される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1690,9 +1690,9 @@
 				<dt class="entry">\f[name,フォント名]</dt>
 				<dd class="entry">
 					<p>テキストフォントを指定したフォント名に変更する。<br>
-					defaultを指定した場合、または指定したフォント候補が全てない場合は、バルーン設定の標準（SSP設定でバルーンフォント上書きしている場合はそちら）に戻る。<br>
+					defaultを指定した場合、または指定したフォント候補が全てない場合は、バルーン設定の標準(SSP設定でバルーンフォント上書きしている場合はそちら)に戻る。<br>
 					フォント名には、[実行したゴーストのフォルダ]/ghost/master以下や現在のバルーンのフォルダに置いたフォントファイルも指定可能。<br>
-					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する（SSPのみ）。
+					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する(SSPのみ)。<br>
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1798,7 +1798,7 @@
 			<dl id="_f_bold,パラメータ_">
 				<dt class="entry">\f[bold,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1814,14 +1814,14 @@
 				<dt class="entry">\f[italic,パラメータ]</dt>
 				<dd class="entry">
 					<!-- 環境によっては標準フォントのメイリオだと、半角英数でないとで斜体にならないそうな。 -->
-					<p>パラメータにtrueまたは1を指定するとイタリック（斜体） <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[italic,1]This is italic.\f[italic,default]。バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[italic,1]This is italic.\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1829,7 +1829,7 @@
 			<dl id="_f_strike,パラメータ_">
 				<dt class="entry">\f[strike,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1844,7 +1844,7 @@
 			<dl id="_f_underline,パラメータ_">
 				<dt class="entry">\f[underline,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1859,7 +1859,7 @@
 			<dl id="_f_sub,パラメータ_">
 				<dt class="entry">\f[sub,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1874,7 +1874,7 @@
 			<dl id="_f_sup,パラメータ_">
 				<dt class="entry">\f[sup,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1907,7 +1907,7 @@
 			<dl id="_w時間">
 				<dt class="entry">\w時間</dt>
 				<dd class="entry">
-					<p>時間x50ms分の時間ウエイト。設定出来るのは1-9。\w10は、50msウェイト後に文字「0」がバルーンに表示される。</p>
+					<p>時間x50ms分の時間ウェイト。設定出来るのは1-9。\w10は、50msウェイト後に文字「0」がバルーンに表示される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1916,7 +1916,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>0.45秒のウェイトをかける。\w9\n1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
+							<p><code>0.45秒のウェイトをかける。\w9\nその後、1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1947,7 +1947,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msが経過しているので、実際にかかるウェイトは、差分の1500msから、文字表示時間を引いた値になる。クリアかクリック待ちが実行された時点で最初からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、合計2500msウェイトする(=2500-1000で1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で最初からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1955,7 +1955,7 @@
 			<dl id="_x">
 				<dt class="entry">\x</dt>
 				<dd class="entry">
-					<p>バルーンをクリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f系のさくらスクリプトの効果も解除される。\eで解除されるさくらスクリプトは継続。</p>
+					<p>バルーンをクリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f(文字装飾)系のさくらスクリプトの効果も解除される。\eで解除されるさくらスクリプトは継続。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1964,7 +1964,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ここで\f[bold,1]トークする。\xクリック後、フォント変更のさくらスクリプトは解除される。</code></p>
+							<p><code>\1ここで相方が\f[bold,1]トークする。\xクリック後、スコープはデフォルトの本体側に戻り、フォント変更のさくらスクリプトは解除される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1972,14 +1972,14 @@
 			<dl id="_x_noclear_">
 				<dt class="entry">\x[noclear]</dt>
 				<dd class="entry">
-					<p>バルーンを一時クリック待ちにする。<br>クリック後、バルーンの内容とスコープは保持される。<br>\xと違い、\f系のさくらスクリプトの効果は残る。</p>
+					<p>バルーンを一時クリック待ちにする。<br>クリック後、バルーンの内容とスコープは保持される。<br>\xと違い、\f(文字装飾)系のさくらスクリプトの効果は残る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ここで\f[bold,1]トークする。\x[noclear]クリック後もさくらスクリプトは有効。</code></p>
+							<p><code>\1ここで相方が\f[bold,1]トークする。\x[noclear]クリック後、スコープも文字装飾系のさくらスクリプトは有効。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1987,7 +1987,7 @@
 			<dl id="_t">
 				<dt class="entry">\t</dt>
 				<dd class="entry">
-					<p>タイムクリティカルセクション。<br>スクリプトブレイク（例:選択肢を選ぶ、バルーンダブルクリックによる中断）か\eまでの間、マウス系などのイベント通知を行わない。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。<br>\tを再度記述しても解除されないので注意すること。途中で解除したい場合\![raise,]を用いる。--></p>
+					<p>タイムクリティカルセクション。<br>スクリプトブレーク(例:選択肢を選ぶ、バルーンダブルクリックによる中断)か\eまでの間、マウス系などのイベント通知を行わない。<br>\tを再度記述しても解除されないので注意。<br>どうしても途中で解除したい場合は、\![raise,イベント名]を用いて一旦スクリプトを終了させ、別のイベントを発生させる。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2021,7 +2021,7 @@
 			<dl id="_!_quicksection,true_">
 				<dt class="entry">\![quicksection,true]</dt>
 				<dd class="entry">
-					<p>クイックセクションを開始する。\![quicksection,1]でも可。\_qとほぼ互換。</p>
+					<p>クイックセクションを開始する。\![quicksection,1]でも可。<br>\_qとほぼ互換で、スイッチ式でなく開始を指定出来るのが違い。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2036,7 +2036,7 @@
 			<dl id="_!_quicksection,false_">
 				<dt class="entry">\![quicksection,false]</dt>
 				<dd class="entry">
-					<p>クイックセクションを終了する。\![quicksection,0]でも可。\_qとほぼ互換。</p>
+					<p>クイックセクションを終了する。\![quicksection,0]でも可。<br>\_qとほぼ互換で、スイッチ式でなく終了を指定出来るのが違い。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2099,7 +2099,7 @@
 			<dl id="_q_タイトル,ID_">
 				<dt class="entry">\q[タイトル,ID]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベントOnChoiceSelectが開始される（SSPのみそれに先立ってOnChoiceSelectExが開始される）。<br>IDはReference0に格納される。</p>
+					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される(SSPのみそれに先立って<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>が開始される)。<br>IDはReference0に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2108,7 +2108,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]</code></p>
+							<p><code>さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]。選択時に発生するOnChoiceSelectのReference0に、選んだものによって「like」か「hate」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2125,7 +2125,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]</code></p>
+							<p><code>好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]。選択時に、OnLikeSeasonイベントが発生し、例えば「春」を選択したならReference0に「花見」、Reference1に「桜」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2133,29 +2133,23 @@
 			<dl id="_q_タイトル,ID1,ID2,ID3..._">
 				<dt class="entry">\q[タイトル,ID1,ID2,ID3...]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベントOnChoiceSelectが開始される。<br>ID*はReference*に格納される。</p>
+					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される。<br>ID*はReference*に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,花見,桜]\q[夏,花火,ひまわり]\q[秋,月見,菊]\q[冬,年越し,山茶花]</code></p>
-						</section>
-					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID,r2,r3..._">
 				<dt class="entry">\q[タイトル,ID,r<em>2</em>,r<em>3</em>...]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベントOnChoiceSelect<em>Ex</em>が開始される。<br>r*はOnChoiceSelectExのReference*に格納される。<br>OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
+					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelect<em>Ex</em></a>が開始される。<br>r*はOnChoiceSelectExのReference*に格納される。<br>OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]</code></p>
+							<p><code>好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]。選択時に、OnChoiceSelectExイベントが発生し、例えば「秋」を選択したなら、Reference0に「秋」、Reference1に「LikeSeason」、Reference2に「月見」、Reference3に「菊」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2197,7 +2191,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\__q[OnTest,testrefelence]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__q</code></p>
+							<p><code>\__q[OnTest,testrefelence]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、Refelence0には「testrefelence」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2214,7 +2208,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\*\q[タイムアウトしない選択肢,NotTimeout]</code></p>
+							<p><code>\q[タイムアウトしない選択肢,NotTimeout]\*。選択時は通常通り、OnChoiceSelectExイベント(トークがなければOnChoiceSelectイベント)が発生する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2222,7 +2216,7 @@
 			<dl id="_!_set,choicetimeout,時間_">
 				<dt class="entry">\![set,choicetimeout,時間]</dt>
 				<dd class="entry">
-					<p>選択肢のタイムアウトの時間を指定する。単位はミリ秒。<br>そのスクリプト中のみ有効。選択肢より後ろに書いても有効。<br>0または-1でタイムアウトなし。</p>
+					<p>選択肢のタイムアウトの時間を指定する。単位はミリ秒。<br>時間のカウントはトークの表示が全て終わってから開始される。<br>そのスクリプト中のみ有効。選択肢より後ろに書いても有効。<br>0または-1でタイムアウトなし。<br>選択肢がタイムアウトした場合、<a href="list_shiori_event.html#OnChoiceTimeout">OnChoiceTimeout</a>イベントが発生する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2231,7 +2225,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,choicetimeout,500]\q[早押し,FastPush]</code></p>
+							<p><code>\q[早押し,FastPush]\![set,choicetimeout,500]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2239,7 +2233,7 @@
 			<dl id="__a_ID_">
 				<dt class="entry">\_a[ID]</dt>
 				<dd class="entry">
-					<p>\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelectが開始される（SSPのみ先立ってOnAnchorSelectExが開始される）。<br>IDはReference0に格納される。</p>
+					<p>\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベント<a href="list_shiori_event.html#OnAnchorSelect">OnAnchorSelect</a>が開始される(SSPのみ先立って<a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelectEx</a>が開始される)。<br>IDはReference0に格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2248,7 +2242,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[Hint]ヒント\_aが欲しいならクリックしよう。</code></p>
+							<p><code>\_a[Hint]アンカー\_aをクリックするとOnAnchorSelectExイベント(トークがなければOnAnchorSelectイベント)が発生する。Refelence0には「Hint」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2263,7 +2257,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。この2つのアンカーは、クリックするとSHIORIイベントOnHintが通知されるが、クリックしたものによってReference0の値が変わる。</code></p>
+							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。この2つのアンカーは、クリックするとSHIORIイベントOnHintが通知されるが、クリックしたものによってReference0の値が「0」か「1」に変わる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2271,14 +2265,14 @@
 			<dl id="__a_ID,r2,r3..._">
 				<dt class="entry">\_a[ID,r2,r3...]</dt>
 				<dd class="entry">
-					<p>\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベントOnAnchorSelect<em>Ex</em>が開始される。<br>ジャンパとなったテキストがReference0に、IDはReference1に、続く引数はReference2以降に格納される。<br>OnAnchorSelectExに続けてOnAnchorSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
+					<p>\_aがくるまでの範囲をアンカーとする。選択肢タイムアウトしないが、通常トーク同様バルーンタイムアウトする。<br>ジャンパをクリックするとSHIORIイベント<a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelect<em>Ex</em></a>が開始される。<br>ジャンパとなったテキストがReference0に、IDはReference1に、続く引数はReference2以降に格納される。<br>OnAnchorSelectExに続けてOnAnchorSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[CharactorName,テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。</code></p>
+							<p><code>\_a[CharactorName,対象テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,対象エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。アンカークリック時、OnAnchorSelectExイベントが発生する。「テディ」をクリックした場合、Refelence0に「テディ」、Refelence1に「CharactorName」、Refelence2に「対象テディ」、Refelence3に「年齢不詳」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2349,7 +2343,7 @@
 			<dl id="_f_cursormethod,描画方法_">
 				<dt class="entry">\f[cursormethod,描画方法]</dt>
 				<dd class="entry">
-					<p>選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。例：notmaskpen</p>
+					<p>選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。例：notmaskpen</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2424,7 +2418,7 @@
 			<dl id="_f_cursornotselectmethod,描画方法_">
 				<dt class="entry">\f[cursornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p>非選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>非選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2446,7 +2440,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠（矩形）に変更する。</code></p>
+							<p><code>\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2499,7 +2493,7 @@
 			<dl id="_f_anchormethod,描画方法_">
 				<dt class="entry">\f[anchormethod,描画方法]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2521,7 +2515,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠（矩形）に変更する。</code></p>
+							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2574,7 +2568,7 @@
 			<dl id="_f_anchornotselectmethod,描画方法_">
 				<dt class="entry">\f[anchornotselectmethod,描画方法]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>非選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2596,7 +2590,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠（矩形）に変更する。</code></p>
+							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2649,7 +2643,7 @@
 			<dl id="_f_anchorvisitedmethod,描画方法_">
 				<dt class="entry">\f[anchorvisitedmethod,描画方法]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数（外部サイト）</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>訪問済みアンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2687,9 +2681,9 @@
 					<dt>16進数カラーコード</dt>
 					<dd>#07fのように、赤・緑・青の三原色の明度を「#」に続けて<em>16進数で</em>表現し、つなげる。<br>赤・緑・青それぞれ2桁ずつの計6桁か、1桁ずつの計3桁で表現できる。<br>16進数のアルファベット表現は大文字・小文字いずれでも可。<br>#000000または#000で黒、#ffffffまたは#fffで白。</dd>
 					<dt>定義済みキーワード</dt>
-					<dd>red、white、blackというような色名を表すキーワード（全て小文字）で指定可能。<br>いわゆるX11 colorとW3C colorで定義が異なる色（green,gray等）については、W3C colorの定義。<br>色見本：<a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a>（外部リンク）</dd>
+					<dd>red、white、blackというような色名を表すキーワード(全て小文字)で指定可能。<br>いわゆるX11 colorとW3C colorで定義が異なる色(green,gray等)については、W3C colorの定義。<br>色見本：<a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a>(外部リンク)</dd>
 					<dt>default</dt>
-					<dd>色指定部分にdefaultと記述すると、指定した文字をその文字のデフォルト色に戻す。<br>デフォルト色は、バルーンのdescript.txtに定義されたものなど（未定義時黒）。</dd>
+					<dd>色指定部分にdefaultと記述すると、指定した文字をその文字のデフォルト色に戻す。<br>デフォルト色は、バルーンのdescript.txtに定義されたものなど(未定義時黒)。</dd>
 					<dt>default.anchor</dt>
 					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchorと指定すると、指定した文字の色を選択時のアンカーのデフォルト文字色に変更。</dd>
 					<dt>default.anchornotselect</dt>
@@ -2710,7 +2704,7 @@
 			<dl id="_e">
 				<dt class="entry">\e</dt>
 				<dd class="entry">
-					<p>イベント、メッセージの終了する。<br>この後に書かれたスクリプトは実行・表示されない。<br>いくつかのサクラスクリプトの効果が終了する。</p>
+					<p>イベント、メッセージを終了する。<br>この後に書かれたスクリプトは実行・表示されない。<br>いくつかのさくらスクリプトの効果が終了する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2761,7 +2755,7 @@
 			<dl id="_!_updatebymyself,checkonly_">
 				<dt class="entry">\![updatebymyself,checkonly]</dt>
 				<dd class="entry">
-					<p>ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベントOnUpdateCheckCompleteが通知される。</p>
+					<p>ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2776,7 +2770,7 @@
 			<dl id="_!_update,platform_">
 				<dt class="entry">\![update,platform]</dt>
 				<dd class="entry">
-					<p>本体ネットワーク更新イベントを開始する。<br>更新があった場合、ゴーストは一旦終了（OnClose）して再度起動する（OnBoot）。</p>
+					<p>本体ネットワーク更新イベントを開始する。<br>更新があった場合、ゴーストは一旦終了(<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdating">OnBasewareUpdating</a>、トークがなければ<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnClose">OnClose</a>)して再度起動する(<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdated">OnBasewareUpdated</a>、トークがなければ<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBoot">OnBoot</a>)。<br>更新が無い場合は、ポップアップが表示されるだけでSHIORIイベントは何も発生しない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2792,7 +2786,7 @@
 			<dl id="_!_update,更新対象_">
 				<dt class="entry">\![update,更新対象]</dt>
 				<dd class="entry">
-					<p>更新対象のネットワーク更新イベントを開始する。<br>ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>更新対象をallとすると、\![updatebymyself]と同義。<br>\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。</p>
+					<p>更新対象のネットワーク更新イベントを開始する。<br>ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>更新対象をallとすると、\![updatebymyself]と同義。<br>\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。<br>ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>、更新がなければ<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2807,7 +2801,7 @@
 			<dl id="_6">
 				<dt class="entry">\6</dt>
 				<dd class="entry">
-					<p>時計合わせイベントで実際に時間修正を行う。<br>時刻サーバに繋がった時通知されるSHIORIイベントOnSNTPCompareで行うのが一般的。</p>
+					<p>時計合わせイベントで実際に時間修正を行う。<br>時刻サーバに繋がった時通知されるSHIORIイベント<a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a>で行うのが一般的。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2824,7 +2818,7 @@
 			<dl id="_7">
 				<dt class="entry">\7</dt>
 				<dd class="entry">
-					<p>時計合わせイベントを開始する。<br>SHIORIイベントOnSNTPBeginが通知され、時刻サーバから時刻が取得出来るとSHIORIイベントOnSNTPCompareが通知される。</p>
+					<p>時計合わせイベントを開始する。<br>SHIORIイベント<a href="list_shiori_event.html#OnSNTPBegin">OnSNTPBegin</a>が通知され、時刻サーバから時刻が取得出来るとSHIORIイベント<a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a>が通知される。</p>
 				</dd>
 			</dl>
 			<dl id="_!_executesntp_">
@@ -2879,7 +2873,7 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p>消滅指示無しで自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。</p>
+					<p>消滅指示無しで自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。<br>削除が行われるかどうかはユーザ側のSSP設定次第。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2887,7 +2881,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>自分自身を削除。\![vanishbymyself]</code></p>
+							<p><code>自分自身を削除。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2895,14 +2889,14 @@
 			<dl id="_!_vanishbymyself,ゴースト名_">
 				<dt class="entry">\![vanishbymyself,ゴースト名]</dt>
 				<dd class="entry">
-					<p>消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。指定したゴーストがインストールされていなければ交代先はランダム。</p>
+					<p>消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。<br>削除が行われるかどうかはユーザ側のSSP設定次第。<br>指定したゴーストがインストールされていなければ交代先はランダム。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>自分自身を削除した後、Emily/Phase4.5を呼び出す。\![vanishbymyself,Emily/Phase4.5]</code></p>
+							<p><code>自分自身を削除した後、Emily/Phase4.5を呼び出す。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2910,7 +2904,7 @@
 			<dl id="_+">
 				<dt class="entry">\+</dt>
 				<dd class="entry">
-					<p>ランダムに他のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
+					<p>ランダムに他のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2926,7 +2920,7 @@
 			<dl id="__+">
 				<dt class="entry">\_+</dt>
 				<dd class="entry">
-					<p>次の順番のゴーストに切り替わる。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
+					<p>次の順番のゴーストに切り替わる(シーケンシャルチェンジ)。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2942,7 +2936,7 @@
 			<dl id="_!_change,ghost,ゴースト名_">
 				<dt class="entry">\![change,ghost,ゴースト名]</dt>
 				<dd class="entry">
-					<p>そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ。<br>sequentialの場合はシーケンシャルチェンジ。<br>実行後<br>該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベントOnGhostChangingは通知されない。</p>
+					<p>そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ。<br>sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>実行後、該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2959,7 +2953,7 @@
 			<dl id="_!_change,shell,シェル名_">
 				<dt class="entry">\![change,shell,シェル名]</dt>
 				<dd class="entry">
-					<p>そのシェルへの切り替えを行う。<br>該当シェルがなかった場合は無視される。<br>変更後SHIORIイベントOnShellChangedが通知される。SHIORIイベントOnShellChangingは通知されない。</p>
+					<p>そのシェルへの切り替えを行う。<br>該当シェルがなかった場合は無視される。<br>変更後SHIORIイベント<a href="list_shiori_event.html#OnShellChanged">OnShellChanged</a>が通知される。<br>SHIORIイベント<a href="list_shiori_event.html#OnShellChanging">OnShellChanging</a>は通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2975,7 +2969,7 @@
 			<dl id="_!_change,balloon,バルーン名_">
 				<dt class="entry">\![change,balloon,バルーン名]</dt>
 				<dd class="entry">
-					<p>そのバルーンへの切り替えを行う。<br>該当バルーンがなかった場合は無視される。<br>変更後SHIORIイベントOnBalloonChangeが通知される。</p>
+					<p>そのバルーンへの切り替えを行う。<br>該当バルーンがなかった場合は無視される。<br>変更後SHIORIイベント<a href="list_shiori_event.html#OnBalloonChange">OnBalloonChange</a>が通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3005,7 +2999,7 @@
 			<dl id="_!_change,shell,lastinstalled_">
 				<dt class="entry">\![change,shell,lastinstalled]</dt>
 				<dd class="entry">
-					<p>SSP起動中、最後にインストールされたシェルへの切り替えを行う。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
+					<p>SSP起動中、最後にインストールされたシェルへの切り替えを行う。<br>該当するシェルがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3035,7 +3029,7 @@
 			<dl id="_!_call,ghost,ゴースト名_">
 				<dt class="entry">\![call,ghost,ゴースト名]</dt>
 				<dd class="entry">
-					<p>ゴースト名で指定されたゴーストを呼び出す。<br>ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>ゴースト名をrandomにするとランダムに呼び出し。</p>
+					<p>ゴースト名で指定されたゴーストを呼び出す。<br>ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>ゴースト名をrandomにするとランダムに呼び出し。<br>SHIORIイベント<a href="list_shiori_event.html#OnGhostCalling">OnGhostCalling</a>は通知されない。</p><p></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3050,7 +3044,7 @@
 			<dl id="_v">
 				<dt class="entry">\v</dt>
 				<dd class="entry">
-					<p>手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ただしスコープごとの重なり（本体側と相方側どちらが上にくるか）はユーザの操作次第。<br>ゴースト終了まで有効。</p>
+					<p>手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ただしスコープごとの重なり(本体側と相方側どちらが上にくるか)はユーザの操作次第。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3179,10 +3173,9 @@
 			<dl id="_!_set,otherghosttalk,true|false|before|after_">
 				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
 				<dd class="entry">
-					<p>OnOtherGhostTalkを通知するかどうかを設定。初期値false。<br>
+					<p><a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a>を通知するかどうかを設定。初期値false。<br>
 					false以外を設定すると、同時起動している他ゴーストが喋った時OnOtherGhostTalkが通知されるようになる。<br>
-					beforeを指定すると喋る前、afterを指定すると喋った後に通知。<br>
-					trueはafterと同じ。
+					beforeを指定すると喋る前、afterを指定すると喋った後に通知。trueはafterと同じ。<br>
 					ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3199,7 +3192,7 @@
 			<dl id="_!_set,othersurfacechange,trueかfalse_">
 				<dt class="entry">\![set,othersurfacechange,trueかfalse]</dt>
 				<dd class="entry">
-					<p>OnOtherSurfaceChangeを通知するかどうかを設定。初期値false。<br>trueで有効になり、同時起動している他ゴーストのサーフェスが変わるとOnOtherSurfaceChangeが通知されるようになる。</p>
+					<p><a href="list_shiori_event.html#OnOtherSurfaceChange">OnOtherSurfaceChange</a>を通知するかどうかを設定。初期値false。<br>trueで有効になり、同時起動している他ゴーストのサーフェスが変わるとOnOtherSurfaceChangeが通知されるようになる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3245,7 +3238,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、\eで効果が切れるさくらスクリプト（\f[]のフォント変更など）が持続する。\![embed,OnEmbedTest]</code></p>
+							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、\eで効果が切れるさくらスクリプト(\f[]のフォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
 							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
 						</section>
 					</div>
@@ -3261,7 +3254,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後（5000ミリ秒）後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
+							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後(5000ミリ秒)後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3291,7 +3284,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒（30000ミリ秒）おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
+							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒(30000ミリ秒)おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3369,7 +3362,7 @@
 			<dl id="__V">
 				<dt class="entry">\_v[ファイル名]</dt>
 				<dd class="entry">
-					<p>wave、mp3、wmaをSSPが再生する。[実行したゴーストのフォルダ]/ghost/masterから相対パス、または絶対パスで指定可。<br>ファイルが存在しない場合は無視される。</p>
+					<p>wave、mp3、wmaをベースウェアが再生する。[実行したゴーストのフォルダ]/ghost/masterから相対パス、または絶対パスで指定可。<br>ファイルが存在しない場合は無視される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3568,7 +3561,7 @@
 			<dl id="_!_open,teachbox_">
 				<dt class="entry">\![open,teachbox]</dt>
 				<dd class="entry">
-					<p>TeachBoxを開く。</p>
+					<p>TeachBoxを開く。実行と同時に<a href="list_shiori_event.html#OnTeachStart">OnTeachStart</a>が通知され、TeachBoxのOKボタンを押すと<a href="list_shiori_event.html#OnTeach">OnTeach</a>、閉じると<a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a>が通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3577,7 +3570,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,teachbox]TeachBoxを開く。実行と同時にOnTeachStartが通知され、TeachBoxのOKボタンを押すとOnTeach、閉じるとOnTeachInputCancelが通知される。</code></p>
+							<p><code>\![open,teachbox]TeachBoxを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3585,7 +3578,7 @@
 			<dl id="_!_close,teachbox_">
 				<dt class="entry">\![close,teachbox]</dt>
 				<dd class="entry">
-					<p>TeachBoxを開く。<br>OnTeachInputCancelを発生させないので注意。</p>
+					<p>TeachBoxを閉じる。<br><a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a>を発生させないので注意。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3606,7 +3599,7 @@
 			<dl id="_!_open,communicatebox_">
 				<dt class="entry">\![open,communicatebox]</dt>
 				<dd class="entry">
-					<p>CommunicateBoxを開く。<br>入力決定後はOnCommunicateが発生する。<br>SSPのみ、続けてデフォルトのテキストを指定できる（\![open,communicatebox,テキスト]の形）。</p>
+					<p>CommunicateBoxを開く。<br>入力決定後は<a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a>が発生する。閉じると<a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>が発生する。<br>SSPのみ、続けてデフォルトのテキストを指定できる(\![open,communicatebox,テキスト]の形)。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3623,7 +3616,7 @@
 			<dl id="_!_close,communicatebox_">
 				<dt class="entry">\![close,communicatebox]</dt>
 				<dd class="entry">
-					<p>CommunicateBoxを閉じる。<br>OnCommunicateInputCancelを発生させないので注意。</p>
+					<p>CommunicateBoxを閉じる。<br><a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>を発生させないので注意。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3641,10 +3634,10 @@
 					<p>
 						InputBoxを開く。
 						<br>表示時間はミリ秒で指定。省略するか、0以下の数を指定すると、表示時間無制限。
-						<br>テキストはbox展開直後にあらかじめ表示するテキスト（CROW不可）、省略可。
+						<br>テキストはbox展開直後にあらかじめ表示するテキスト(CROW不可)、省略可。
 						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。
 						<br>OKボタンを押すか、表示時間を過ぎるとSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
-						<br>表示時間を過ぎた（タイムアウトした）場合と、閉じるボタンを押して閉じた場合は、OnUserInputCancelが発生する。
+						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
 						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
 					</p>
 					<ul class="supported-baseware">
@@ -3678,7 +3671,7 @@
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
 				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
 				<dd class="entry">
-					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力値はOnUserInputのReference1にカンマ区切りで年,月,日と入る。<br>タイムアウトした場合はTimeoutと入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>入力時や閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br>タイムアウトした場合は「Timeout」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3693,7 +3686,7 @@
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
 				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</dt>
 				<dd class="entry">
-					<p>スライダー調節型のInputBoxを開く。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>入力時や閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>スライダー調節型のInputBoxを開く。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1に入力値が入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3705,10 +3698,10 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_"">
+			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_" "="">
 				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
 				<dd class="entry">
-					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで時,分,秒と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3723,7 +3716,7 @@
 			<dl id="_!_close,inputbox,ID_">
 				<dt class="entry">\![close,inputbox,ID]</dt>
 				<dd class="entry">
-					<p>IDで指定されたInputBox（日付、時間、スライダー、入力非表示ボックスも含む）を閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
+					<p>IDで指定されたInputBox(日付、時間、スライダー、入力非表示ボックスも含む)を閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3738,7 +3731,7 @@
 			<dl id="_!_open,configurationdialog,ダイアログID_">
 				<dt class="entry">\![open,configurationdialog,ダイアログID]</dt>
 				<dd class="entry">
-					<p>設定ダイアログ（オーナードローメニューの「本体設定」）を開く。<br>ダイアログIDで初期表示する画面を指定できる（省略時は前回開いた画面）。<br>SHIORI Event ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a>のReference0参照。</p>
+					<p>設定ダイアログ(オーナードローメニューの「本体設定」)を開く。<br>ダイアログIDで初期表示する画面を指定できる(省略時は前回開いた画面)。<br>SHIORI Event ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a>のReference0参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3858,7 +3851,7 @@
 					<p>バルーン使用率を表示する。未対応環境ではrateofusegraphを実行したのと同じになる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4以降</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16"> 2.4以降</li>
 					</ul>
 				</dd>
 			</dl>
@@ -3889,7 +3882,7 @@
 			<dl id="_!_open,help,ダイアログID_">
 				<dt class="entry">\![open,help,ダイアログID]</dt>
 				<dd class="entry">
-					<p>SSPヘルプを開く。<br>ダイアログIDに設定ダイアログのID名（※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelpのReference0参照</a>）で、その設定ダイアログについてのヘルプを展開。省略時はインデックスページを開く。</p>
+					<p>SSPヘルプを開く。<br>ダイアログIDに設定ダイアログのID名(※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelpのReference0参照</a>)で、その設定ダイアログについてのヘルプを展開。省略時はインデックスページを開く。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3934,7 +3927,7 @@
 			<dl id="_!_open,file,ファイル名_">
 				<dt class="entry">\![open,file,ファイル名]</dt>
 				<dd class="entry">
-					<p>ファイルを実行する。install.txtのあるフォルダからの相対パスか、絶対パスで指定。<br>windowsの環境変数（%SYSTEMROOT%,%SYSTEM%,%TEMP%等）を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
+					<p>ファイルを実行する。install.txtのあるフォルダからの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3951,7 +3944,7 @@
 			<dl id="_!_open,dialog,open,パラメータ_">
 				<dt class="entry">\![open,dialog,open,パラメータ]</dt>
 				<dd class="entry">
-					<p>ファイルを開くのダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>ファイルを開くのダイアログを開く。このダイアログでファイルを選択しても、実際にファイルが開かれるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「open」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3966,7 +3959,7 @@
 			<dl id="_!_open,dialog,save,パラメータ_">
 				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
 				<dd class="entry">
-					<p>ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「save」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3981,7 +3974,7 @@
 			<dl id="_!_open,dialog,folder,パラメータ_">
 				<dt class="entry">\![open,dialog,folder,パラメータ]</dt>
 				<dd class="entry">
-					<p>フォルダ選択のダイアログを開く。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>フォルダ選択のダイアログを開く。このダイアログで選択しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「folder」、Reference2にフォルダパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3996,7 +3989,7 @@
 			<dl id="_!_open,dialog,color,パラメータ_">
 				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
 				<dd class="entry">
-					<p>カラーパレットのダイアログを開く。<br>パラメータは以下をカンマ区切りで指定可能。</p>
+					<p>カラーパレットのダイアログを開く。このダイアログで色を指定しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「color」、Reference2に「R,G,B」形式で選択した色が格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br>パラメータは以下をカンマ区切りで指定可能。</p>
 					<dl>
 						<dt>--color=R G B</dt>
 						<dd>RGBをそれぞれ0～255で指定</dd>
@@ -4051,10 +4044,16 @@
 			<dl id="_!_open,aigraph_">
 				<dt class="entry">\![open,aigraph]</dt>
 				<dd class="entry">
-					<p>AIグラフを開く。</p>
+					<p>AIグラフを開く。実行したゴーストがSHIORIリソース<a href="list_shiori_resource.html#getaistate">getaistate</a>に反応しない場合、何も起こらない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,aigraph]AIグラフを開く。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_inputbox-option">
@@ -4064,7 +4063,7 @@
 					<dt>noclose</dt>
 					<dd>入力後、inputboxを閉じないで表示し続ける。</dd>
 					<dt>noclear</dt>
-					<dd>入力後、入力内容を初期化せずにそのまま表示し続ける。<br>nocloseと同時に指定する（例：\![inputbox,入力内容,,,--option=noclose,--option=noclear]）。<br>特殊なinputbox（slider,password,time,date）では無効。</dd>
+					<dd>入力後、入力内容を初期化せずにそのまま表示し続ける。<br>nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。<br>特殊なinputbox(slider,password,time,date)では無効。</dd>
 				</dl>
 			</section>
 			<section class="caption" id="notes_selectfile">
@@ -4115,7 +4114,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で着せ替え出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
+							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で変更出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4131,7 +4130,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在仕様中のバルーンの表示可能な幅（ピクセル数）、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth,currentghost.balloon.scope(0).validheight]</code></p>
+							<p><code>このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在使用中のバルーンの、本体側の表示可能な幅(ピクセル数)、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth.initial,currentghost.balloon.scope(0).validheight.initial]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4142,7 +4141,7 @@
 			<dl id="_!_execute,http-get,URL_">
 				<dt class="entry">\![execute,http-get,URL]</dt>
 				<dd class="entry">
-					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>成功した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>、失敗した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>が通知される。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4150,7 +4149,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト（このページ）を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
+							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト(このページ)を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4158,7 +4157,7 @@
 			<dl id="_!_execute,http-get,URL,パラメータ_">
 				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4173,14 +4172,14 @@
 			<dl id="_!_execute,http-post,URL,パラメータ_">
 				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>成功した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>、失敗した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>が通知される。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,bbs=sakura&key=1177949884&MESSAGE=テストメッセージ]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。※実際に書き込みが行われるので注意。</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4188,7 +4187,7 @@
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4203,14 +4202,14 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-post,URL_">\![execute,http-post,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,--async=書き込みテスト,--param=bbs=sakura&key=1177949884&MESSAGE=テストメッセージ,--timeout=5]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※実際に書き込みが行われるので注意。</code></p>
+							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,--async=書き込みテスト,--param=bbs=sakura&amp;key=1177949884&amp;MESSAGE=テストメッセージ,--timeout=5]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※実際に書き込みが行われるので注意。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4287,7 +4286,7 @@
 						<li>--timeout=タイムアウト(ms)……標準5000</li>
 						<li>--df=(true|false)……パケット分割不能true 分割可false 標準false</li>
 						<li>--data=文字列……ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると（後述のイベントの替わりに）そのイベントが起きる</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
 					</ul>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a>・<a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a>を参照。</p>
 					<ul class="supported-baseware">
@@ -4307,7 +4306,7 @@
 					<p>ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br>パラメータは以下の通り。</p>
 					<ul class="description">
 						<li>--host=ホスト名またはIP</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると（後述のイベントの替わりに）そのイベントが起きる</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
 					</ul>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a>・<a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a>を参照。</p>
 					<ul class="supported-baseware">
@@ -4390,7 +4389,7 @@
 			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
 				<dt class="entry">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</dt>
 				<dd class="entry">
-					<p>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br>実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br>現在のところ、矩形選択モードを示す &quot;rect&quot; のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br>モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
+					<p>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br>実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br>現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br>モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4599,7 +4598,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\&[amp]半角アンパサンドを表示。実体参照の書式、&ID;のID部分を記入する。</code></p>
+							<p><code>\&amp;[amp]半角アンパサンドを表示。実体参照の書式、&amp;ID;のID部分を記入する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4634,7 +4633,7 @@
 					<li>ファイルが DnD されても無視。</li>
 					<li>nar ダブルクリックも無視。</li>
 					<li>OnSurfaceRestoreが来ない。</li>
-					<li>cantalk は常に false。（OnSecondChange および OnMinuteChange 自体は来る）</li>
+					<li>cantalk は常に false。(OnSecondChange および OnMinuteChange 自体は来る)</li>
 					<li>ゴーストを切り替えられない。</li>
 					<li>(Materiaのみ：)コミュニケートボックスは閉じられ、また開かない。</li>
 					<li>最小化できない。</li>
@@ -4665,7 +4664,7 @@
 					<dt>--param=パラメータ</dt>
 					<dd>get/postのパラメータを指定する。</dd>
 					<dt>--timeout=秒数</dt>
-					<dd>レスポンスを待つ時間（※ダウンロードに要する時間ではない）を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
+					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
 					<dt>--param-charset=文字コード</dt>
 					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
 					<dt>--cookie=クッキーデータ</dt>
@@ -4993,5 +4992,6 @@
 			</dl>
 		</section>
 	</div>
+
 </body>
 </html>
