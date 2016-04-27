@@ -1125,7 +1125,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は専用バルーンを同梱するなどが必要。</code></p>
+							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は推奨バルーンを指定する・専用バルーンを同梱するなどが必要。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1798,7 +1798,8 @@
 			<dl id="_f_bold,パラメータ_">
 				<dt class="entry">\f[bold,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<!-- MS明朝は太字非対応 -->
+					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>フォントが対応していない場合、太字にならない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1814,7 +1815,7 @@
 				<dt class="entry">\f[italic,パラメータ]</dt>
 				<dd class="entry">
 					<!-- 環境によっては標準フォントのメイリオだと、半角英数でないとで斜体にならないそうな。 -->
-					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>フォントが対応していない場合、斜体にならない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1947,7 +1948,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、合計2500msウェイトする(=2500-1000で1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で最初からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、累計2500msウェイトする(この場合、[2500-1000-2文字分の表示時間]で約1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で0からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2191,7 +2192,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\__q[OnTest,testrefelence]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、Refelence0には「testrefelence」が格納されている。</code></p>
+							<p><code>\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2242,7 +2243,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[Hint]アンカー\_aをクリックするとOnAnchorSelectExイベント(トークがなければOnAnchorSelectイベント)が発生する。Refelence0には「Hint」が格納されている。</code></p>
+							<p><code>\_a[Hint]アンカー\_aをクリックするとOnAnchorSelectExイベント(トークがなければOnAnchorSelectイベント)が発生する。reference0には「Hint」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2272,7 +2273,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[CharactorName,対象テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,対象エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。アンカークリック時、OnAnchorSelectExイベントが発生する。「テディ」をクリックした場合、Refelence0に「テディ」、Refelence1に「CharactorName」、Refelence2に「対象テディ」、Refelence3に「年齢不詳」が格納されている。</code></p>
+							<p><code>\_a[CharactorName,対象テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,対象エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。アンカークリック時、OnAnchorSelectExイベントが発生する。「テディ」をクリックした場合、reference0に「テディ」、reference1に「CharactorName」、reference2に「対象テディ」、reference3に「年齢不詳」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3238,7 +3239,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、\eで効果が切れるさくらスクリプト(\f[]のフォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
+							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(\f[]のフォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
 							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
 						</section>
 					</div>
@@ -3944,7 +3945,7 @@
 			<dl id="_!_open,dialog,open,パラメータ_">
 				<dt class="entry">\![open,dialog,open,パラメータ]</dt>
 				<dd class="entry">
-					<p>ファイルを開くのダイアログを開く。このダイアログでファイルを選択しても、実際にファイルが開かれるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「open」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>ファイルを開くのダイアログを開く。このダイアログでファイルを選択しても、実際にファイルが開かれるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「open」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3959,7 +3960,7 @@
 			<dl id="_!_open,dialog,save,パラメータ_">
 				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
 				<dd class="entry">
-					<p>ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「save」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「save」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3974,7 +3975,7 @@
 			<dl id="_!_open,dialog,folder,パラメータ_">
 				<dt class="entry">\![open,dialog,folder,パラメータ]</dt>
 				<dd class="entry">
-					<p>フォルダ選択のダイアログを開く。このダイアログで選択しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「folder」、Reference2にフォルダパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>フォルダ選択のダイアログを開く。このダイアログで選択しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「folder」、Reference2にフォルダパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3989,7 +3990,7 @@
 			<dl id="_!_open,dialog,color,パラメータ_">
 				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
 				<dd class="entry">
-					<p>カラーパレットのダイアログを開く。このダイアログで色を指定しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、Refelence0に「color」、Reference2に「R,G,B」形式で選択した色が格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br>パラメータは以下をカンマ区切りで指定可能。</p>
+					<p>カラーパレットのダイアログを開く。このダイアログで色を指定しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「color」、Reference2に「R,G,B」形式で選択した色が格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br>パラメータは以下をカンマ区切りで指定可能。</p>
 					<dl>
 						<dt>--color=R G B</dt>
 						<dd>RGBをそれぞれ0～255で指定</dd>
@@ -4141,7 +4142,7 @@
 			<dl id="_!_execute,http-get,URL_">
 				<dt class="entry">\![execute,http-get,URL]</dt>
 				<dd class="entry">
-					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>成功した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>、失敗した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>が通知される。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4157,7 +4158,7 @@
 			<dl id="_!_execute,http-get,URL,パラメータ_">
 				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4172,7 +4173,7 @@
 			<dl id="_!_execute,http-post,URL,パラメータ_">
 				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>成功した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>、失敗した場合、SHIORIイベント<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>が通知される。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4187,7 +4188,7 @@
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4202,14 +4203,14 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>成功・失敗時に通知されるSHIORIイベントは<a href="#_!_execute,http-post,URL_">\![execute,http-post,URL]</a>と同じ。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-post,http://uka.jpn.org/test/bbs.cgi,--async=書き込みテスト,--param=bbs=sakura&amp;key=1177949884&amp;MESSAGE=テストメッセージ,--timeout=5]さくら＠もどき板の、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※実際に書き込みが行われるので注意。</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
 						</section>
 					</div>
 				</dd>
