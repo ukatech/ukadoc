@@ -4279,16 +4279,24 @@
 				<dt class="entry">\![execute,ping,パラメータ1,パラメータ2,...]</dt>
 				<dd class="entry">
 					<p>指定したホストにpingを打つ。IPv6対応。<br>パラメータは以下の通り。</p>
-					<ul class="description">
-						<li>--host=ホスト名またはIP</li>
-						<li>--ttl=TTL……(パケット生存期間(何回ルーティングできるか) 標準255</li>
-						<li>--count=送信回数……標準3</li>
-						<li>--size=送信サイズ……(--data有効の時は--size無効) 標準32</li>
-						<li>--timeout=タイムアウト(ms)……標準5000</li>
-						<li>--df=(true|false)……パケット分割不能true 分割可false 標準false</li>
-						<li>--data=文字列……ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
-					</ul>
+					<dl>
+						<dt>--host=ホスト名またはIP</dt>
+						<dd>pingを打つ対象。</dd>
+						<dt>--ttl=TTL</dt>
+						<dd>パケット生存期間(何回ルーティングできるか。標準255</dd>
+						<dt>--count=回数</dt>
+						<dd>送信回数。標準3</dd>
+						<dt>--size=送信サイズ</dt>
+						<dd>送信サイズ。--data有効の時は--size無効。 標準32</dd>
+						<dt>--timeout=待ち時間</dt>
+						<dd>タイムアウトまでの時間。単位ms標準5000</dd>
+						<dt>--df=(true|false)</dt>
+						<dd>パケット分割可否。分割不可の場合true、分割可の場合false。標準false</dd>
+						<dt>--data=文字列</dt>
+						<dd>ICMP Echoのデータフィールドに埋め込む文字列。UTF-8に変換される。</dd>
+						<dt>--event=文字列</dt>
+						<dd>イベントまたは識別子。Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる。</dd>
+					</dl>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a>・<a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4305,10 +4313,12 @@
 				<dt class="entry">\![execute,nslookup,パラメータ1,パラメータ2,...]</dt>
 				<dd class="entry">
 					<p>ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br>パラメータは以下の通り。</p>
-					<ul class="description">
-						<li>--host=ホスト名またはIP</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
-					</ul>
+					<dl>
+						<dt>--host=ホスト名またはIP</dt>
+						<dd>調べる対象。</dd>
+						<dt>--event=文字列</dt>
+						<dd>イベントまたは識別子。Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる。</dd>
+					</dl>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a>・<a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
