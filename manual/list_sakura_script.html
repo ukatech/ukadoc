@@ -416,6 +416,7 @@
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_inputbox-option">InputBoxオプション</a></li>
+				<li class="caption"><a href="#notes_inputbox-ID">InputBoxのID</a></li>
 				<li class="caption"><a href="#notes_selectfile">ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</a></li>
 			</ul>
 		</section>
@@ -906,7 +907,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,70]相方側がだいたい半透明になる。</code></p>
+							<p><code>\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,50]相方側がだいたい半透明になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -992,7 +993,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置へ、2.5秒かけて移動する。</code></p>
+							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下(primaryscreen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1007,7 +1008,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されているモニタの右上から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置へ、5秒で移動しようとする。このスクリプトの再生中に、別のイベントが発生しその中で\![moveasync,cancel]が記述され実行された場合、移動をキャンセルする。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
+							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1133,7 +1135,7 @@
 			<dl id="__b_ファイル名,x,y_">
 				<dt class="entry">\_b[ファイルパス,x,y]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上ピクセルの色が透過色となる。<br>※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br>※SSPのみ画像URLを指定可能。</p>
+					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上ピクセルの色が透過色となる。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。<br>※SSPのみ画像URLを指定可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1150,14 +1152,14 @@
 			<dl id="__b_ファイル名,x,y,opaque_">
 				<dt class="entry">\_b[ファイルパス,x,y,opaque]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上の色を透過しないで表示する。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上の色を透過しないで表示する。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
+							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、[実行したゴーストのフォルダ]/shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1165,7 +1167,7 @@
 			<dl id="__b_ファイル名,x,y,オプション,オプション..._">
 				<dt class="entry">\_b[ファイルパス,x,y,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>画像をバルーンのXY座標に貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<p>オプション</p>
 					<dl>
 						<dt>--option=opaque</dt>
@@ -1195,7 +1197,7 @@
 			<dl id="__b_ファイル名,inline_">
 				<dt class="entry">\_b[ファイルパス,inline]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1210,7 +1212,7 @@
 			<dl id="__b_ファイル名,inline,opaque_">
 				<dt class="entry">\_b[ファイルパス,inline,opaque]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>左上の色を透過しないで表示する。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>左上の色を透過しないで表示する。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1225,7 +1227,7 @@
 			<dl id="__b_ファイル名,inline,オプション,オプション..._">
 				<dt class="entry">\_b[ファイルパス,inline,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
 					<p>オプション</p>
 					<dl>
 						<dt>--option=opaque</dt>
@@ -1437,7 +1439,7 @@
 			<dl id="_!_set,autoscroll,disable_">
 				<dt class="entry">\![set,autoscroll,disable]</dt>
 				<dd class="entry">
-					<p>バルーンの文字スクロールを停止する。</p>
+					<p>バルーンの自動スクロールを停止する。手動でのスクロールは可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1476,8 +1478,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX100Y-50に移動。</code></p>
-							<p><code>\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX100Y-50(相対座標)に移動。</code></p>
+							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX:100,Y:-50に移動。</code></p>
+							<p><code>\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX:100,Y:-50(相対座標)に移動。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1485,7 +1487,7 @@
 			<dl id="_!_set,balloonalign,ID_">
 				<dt class="entry">\![set,balloonalign,ID]</dt>
 				<dd class="entry">
-					<p>バルーンを下記IDの表示方向へ切り替える。IDは以下の方法が定義可能である。<br>下記の位置を基準に、descript.txt、surfaces.txtのballoon.offsetx及びballoon.offsetyの値が反映される。<br>ゴースト終了まで有効。</p>
+					<p>バルーンを下記IDの表示方向へ切り替える。IDは以下の方法が定義可能である。<br>下記の位置を基準に、<a href="descript_shell.html#_1_sakura.balloon.offsetx,座標">シェルのdescript.txtのballoon.offsetx及びballoon.offsetyの値</a>、<a href="descript_shell_surfaces.html#_2_sakura.balloon.offsetx,座標">surfaces.txtのballoon.offsetx及びballoon.offsetyの値</a>が反映される。<br>ゴースト終了まで有効。初期値none。</p>
 					<dl>
 						<dt>left</dt>
 						<dd>シェルの左上座標に、バルーンの右上座標が接する。</dd>
@@ -1768,7 +1770,7 @@
 			<dl id="_f_outline,パラメータ_">
 				<dt class="entry">\f[outline,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると白抜き。<br>パラメータにfalseまたは0を指定すると無効になります。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると白抜き。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2192,7 +2194,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動の他、\bで画像を貼った選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
+							<p><code>\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動も可能で、画像を貼れば画像が選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2937,7 +2939,7 @@
 			<dl id="_!_change,ghost,ゴースト名_">
 				<dt class="entry">\![change,ghost,ゴースト名]</dt>
 				<dd class="entry">
-					<p>そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ。<br>sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>実行後、該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
+					<p>そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ(\+と同様)。<br>sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>実行後、該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3239,7 +3241,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(\f[]のフォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
+							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(フォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
 							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
 						</section>
 					</div>
@@ -3263,7 +3265,7 @@
 			<dl id="_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p>起動している他のゴーストへイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>バイト値1区切りで複数指定可。</p>
+					<p>起動している他のゴーストへイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を「__SYSTEM_ALL_GHOST__」とすると起動している全てのゴーストに通知。<br>ゴースト名は直接指定のみ、バイト値1区切りで複数指定可。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3634,12 +3636,15 @@
 				<dd class="entry">
 					<p>
 						InputBoxを開く。
+						<br>決定時(OKボタンを押す)にSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
+						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
+						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
+					</p>
+					<p>
+						<br>IDは決定時に発生するOnUserInputに格納されるが、IDが「On」で始まる場合、ID名のイベントが発生する。<a href="#notes_inputbox-id">※ID</a>参照。
 						<br>表示時間はミリ秒で指定。省略するか、0以下の数を指定すると、表示時間無制限。
 						<br>テキストはbox展開直後にあらかじめ表示するテキスト(CROW不可)、省略可。
 						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。
-						<br>OKボタンを押すか、表示時間を過ぎるとSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
-						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
-						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3657,7 +3662,7 @@
 			<dl id="_!_open,passwordinput,ID,表示時間,テキスト,オプション_">
 				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト,オプション]</dt>
 				<dd class="entry">
-					<p>文字を隠すInputBoxを開く。他はすべて通常の<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>文字を隠すInputBoxを開く。その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3672,7 +3677,7 @@
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
 				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
 				<dd class="entry">
-					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br>タイムアウトした場合は「Timeout」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br>タイムアウトした場合は「Timeout」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3687,7 +3692,7 @@
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
 				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</dt>
 				<dd class="entry">
-					<p>スライダー調節型のInputBoxを開く。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1に入力値が入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>スライダー調節型のInputBoxを開く。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1に入力値が入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3702,7 +3707,7 @@
 			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_" "="">
 				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
 				<dd class="entry">
-					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>閉じた時、タイムアウト時の通知イベントは<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
+					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4067,6 +4072,31 @@
 					<dd>入力後、入力内容を初期化せずにそのまま表示し続ける。<br>nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。<br>特殊なinputbox(slider,password,time,date)では無効。</dd>
 				</dl>
 			</section>
+			<section class="caption" id="notes_inputbox-id">
+				<h1>InputBoxのID</h1>
+				<p>
+					決定時、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生するが、IDに「On」から始まる文字列を指定した場合、代わりにID名のイベントが発生する。<br>
+					OnUserInputではReference0に指定したID、Reference1に入力内容が入るが、ID名のイベントの場合、Reference0に入力内容が入る。<br>
+				</p>
+				<p>
+					例<br>
+					\![open,inputbox,インプットテスト,10000,テスト入力]で入力を決定した場合。
+				</p>
+				<ul>
+					<li>「OnUserInput」が発生</li>
+					<li>Reference0は「インプットテスト」</li>
+					<li>Reference1は入力内容</li>
+				</ul>
+				<p>
+					\![open,inputbox,<em>On</em>インプットテスト,10000,テスト入力]で入力を決定した場合。
+				</p>
+				<ul>
+					<li>「Onインプットテスト」が発生</li>
+					<li>Reference0は入力内容</li>
+				</p>
+					IDにかかわらず、閉じるボタンを押した時とタイムアウト時は<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
+				</p>
+			</section>
 			<section class="caption" id="notes_selectfile">
 				<h1>ファイルを開く / ファイルを保存 / フォルダ選択 / カラーパレット選択 パラメータ</h1>
 				<dl>
@@ -4279,24 +4309,16 @@
 				<dt class="entry">\![execute,ping,パラメータ1,パラメータ2,...]</dt>
 				<dd class="entry">
 					<p>指定したホストにpingを打つ。IPv6対応。<br>パラメータは以下の通り。</p>
-					<dl>
-						<dt>--host=ホスト名またはIP</dt>
-						<dd>pingを打つ対象。</dd>
-						<dt>--ttl=TTL</dt>
-						<dd>パケット生存期間(何回ルーティングできるか。標準255</dd>
-						<dt>--count=回数</dt>
-						<dd>送信回数。標準3</dd>
-						<dt>--size=送信サイズ</dt>
-						<dd>送信サイズ。--data有効の時は--size無効。 標準32</dd>
-						<dt>--timeout=待ち時間</dt>
-						<dd>タイムアウトまでの時間。単位ms標準5000</dd>
-						<dt>--df=(true|false)</dt>
-						<dd>パケット分割可否。分割不可の場合true、分割可の場合false。標準false</dd>
-						<dt>--data=文字列</dt>
-						<dd>ICMP Echoのデータフィールドに埋め込む文字列。UTF-8に変換される。</dd>
-						<dt>--event=文字列</dt>
-						<dd>イベントまたは識別子。Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる。</dd>
-					</dl>
+					<ul class="description">
+						<li>--host=ホスト名またはIP</li>
+						<li>--ttl=TTL……(パケット生存期間(何回ルーティングできるか) 標準255</li>
+						<li>--count=送信回数……標準3</li>
+						<li>--size=送信サイズ……(--data有効の時は--size無効) 標準32</li>
+						<li>--timeout=タイムアウト(ms)……標準5000</li>
+						<li>--df=(true|false)……パケット分割不能true 分割可false 標準false</li>
+						<li>--data=文字列……ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
+					</ul>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a>・<a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4313,12 +4335,10 @@
 				<dt class="entry">\![execute,nslookup,パラメータ1,パラメータ2,...]</dt>
 				<dd class="entry">
 					<p>ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br>パラメータは以下の通り。</p>
-					<dl>
-						<dt>--host=ホスト名またはIP</dt>
-						<dd>調べる対象。</dd>
-						<dt>--event=文字列</dt>
-						<dd>イベントまたは識別子。Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる。</dd>
-					</dl>
+					<ul class="description">
+						<li>--host=ホスト名またはIP</li>
+						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
+					</ul>
 					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a>・<a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5004,5 +5024,4 @@
 		</section>
 	</div>
 
-</body>
-</html>
+</body></html>
