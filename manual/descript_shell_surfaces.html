@@ -771,12 +771,11 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>ベースサーフェスと各アニメーションの上下構造</h1>
 					<p>ベースサーフェスは基本的にすべての合成の最下位に置かれる画像だが、SSPの<a href="#animation*.option,background">backgroundオプション</a>が指定されたアニメーションは、ベースサーフェスより下位に（裏に）合成される。</p>
 					<p>着せ替えを含む各アニメーション間の上下構造は、通常アニメーションIDの大きい方から降順で上位となる（番号が大きい方から画面手前側に配置される）。ただしSSPではdescriptブレスで<a href="#animation-sort,ソート順序">animation-sort</a>定義を行えば、昇順にもできる。</p>
-					<p>各アニメーション</p>
 				</section>
 				<section>
 					<h1>当たり判定（collision）の上下構造</h1>
 					<p>あるサーフェスの当たり判定は、基本的にsurfaces.txtにおいて先に登場したcollision定義が上位となる。ただしSSPではdescriptブレスで<a href="#collision-sort,ソート順序">collision-sort</a>定義を行えば、collisionIDを基準として昇順・降順にも設定できる。</p>
-					<p>またSSPでは<a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a>の設定によって、特定のアニメーションが表示されている場合にのみ有効な当たり判定が設定できる。この場合はまず各アニメーションの上下構造が考慮された上で、それぞれアニメーション・ベースサーフェスの当たり判定が通常道理の順序で評価される。</p>
+					<p>またSSPでは<a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a>の設定によって、特定のアニメーションが表示されている場合にのみ有効な当たり判定が設定できる。この場合はまず各アニメーションの上下構造が考慮された上で、それぞれアニメーション・ベースサーフェスの当たり判定が通常どおりの順序で評価される。</p>
 					<p>animation-sortの設定がdescendの場合を例としてまとめると、上位から下位へ順に</p>
 					<ol>
 						<li>IDがより大きい通常のアニメーションの、より上位の当たり判定</li>
