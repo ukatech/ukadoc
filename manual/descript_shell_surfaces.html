@@ -1272,7 +1272,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>概要</h1>
 						<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
-						<p>一部、画像の合成というよりも、ベースサーフェスの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
+						<p>一部、画像の合成というよりも、表示ウインドウの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
 					</section>
 					<section>
 						<h1>element・アニメーション・着せ替えそれぞれのパーツの重なり方の違い</h1>
@@ -1384,7 +1384,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">move</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤをXY座標指定分ずらす。
+							表示ウインドウをXY座標指定分ずらす。
+							<br>このコマンドはあくまでもウインドウを揺らしたりするための、現在位置からの相対座標の指定に限定され、実際にマウスで動かしたのと同じようにウインドウを自由に移動できるわけではない。ウインドウの自由な移動に関しては<a href="list_sakura_script.html#_!_move_">SakuraScript move</a>を参照すること。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
 							<br>着せ替え・elementでは使用不可。
 						</p>
