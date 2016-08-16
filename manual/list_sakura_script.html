@@ -132,6 +132,7 @@
 		<section class="navigation-category">
 			<ul>
 				<li class="caption"><a href="#notes_escape">さくらスクリプトのエスケープ</a></li>
+				<li class="caption"><a href="#notes_lifespan">さくらスクリプトの寿命</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -514,6 +515,13 @@
 				<li>スクウェアブラケット内に複数の引数を持つタグの第２引数以降で、「,」を引数の内容としたい場合、その引数全体を""で囲うことで全体を一つの引数として扱える。<br>例：\![raise,OnTest,"100,2"]</li>
 			</ul>
 		</section>
+		<section class="caption" id="notes_lifespan">
+			<h1>さくらスクリプトの寿命</h1>
+			<ul>
+				<li>基本的に、スクリプト終了(\eの実行時)まで。次のスクリプト実行時には解除されている</li>
+				<li>例外となるものは、各さくらスクリプトの説明に付記</li>
+			</ul>
+		</section>
 		<section class="category">
 			<h1>スコープコマンド</h1>
 			<dl id="_0もしくは_h">
@@ -671,7 +679,7 @@
 			<dl id="_!_anim,offset,ID,x座標,y座標_">
 				<dt class="entry">\![anim,offset,ID,x座標,y座標]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスアニメーションの位置を指定した座標分ずらす。</p>
+					<p>ID番号のサーフェスアニメーションの位置を指定した座標分ずらす。<br>着せ替えもずらすことが出来る。<br>サーフェス変更(\s[ID]実行)まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1044,9 +1052,16 @@
 					<p>指定できるスコープIDの数に制限はないが、大量に指定するとちょっと重くなるので、2～3個程度が望ましい。<br>
 					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
 					
+					<p>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,zorder,1,0]相方側が、必ず本体側の手前に表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reset,zorder_">
@@ -1054,15 +1069,22 @@
 				<dd class="entry">
 					<p>上記を解除する。複数回実行された分、descriptであらかじめ指定された分も含めて、全部リセットされる。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reset,zorder]ウインドウの表示を解除する。ユーザが最後に操作したものが最も手前に表示される。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,sticky-window,スコープID,スコープID,_">
 				<dt class="entry">\![set,sticky-window,スコープID,スコープID,...]</dt>
 				<dd class="entry">
 					<p>指定スコープのウインドウをドラッグ中やmoveタグを実行中にセットで動くようにする。<br>
-					例えば1,0と指定すると、\1と\0ウインドウがセットで移動するようになる。</p>
+					例えば1,0と指定すると、マウスのドラッグ移動などを実行した時、\0(相方側)と\1(本体側)ウインドウがセットで移動するようになる。<br>
+					これにより、<em>\4が正常に動かなくなる(一緒に移動するため、離れなくなる)ため注意</em>。</p>
 					
 					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
 					例：\![set,sticky-window,1,0] \![set,sticky-window,3,2] と実行すると、\1と\0がセット、\p[3]と\p[2]がセットになる。</p>
@@ -1073,9 +1095,18 @@
 					<p>\![set,alignmenttodesktop]などでウインドウ位置に制限がある場合は、その制限が優先され、X,Yのうち自由に動かせるものだけが追従する。<br>
 					\![move]タグでグループ化したウインドウ内の1つを動かした場合でも、他のウインドウも追従する。</p>
 					
+					<p>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,sticky-window,1,0]相方側が、本体側とセットで動く。</code></p>
+							<p><code>\![set,sticky-window,0,1,2]本体側と本体側と3人目がセットで動く。</code></p>
+							<p><code>\1\![move,40,100,0,0,left.top,left.top]相方側の左上を、本体側の左上に合わせた後、右へ40pixel下へ100pixel移動させる。\![set,sticky-window,1,0]その状態で、相方側と本体側をセットで動くようにする。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_reset,sticky-window_">
@@ -1083,8 +1114,14 @@
 				<dd class="entry">
 					<p>上記を解除する。複数回実行された分、descriptであらかじめ指定された分も含めて、全部リセットされる。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![reset,sticky-window]セットで動く設定を解除する。これ以降、ドラッグ移動時など個別に移動するようになる。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_move">
@@ -2758,7 +2795,8 @@
 			<dl id="_!_updatebymyself,checkonly_">
 				<dt class="entry">\![updatebymyself,checkonly]</dt>
 				<dd class="entry">
-					<p>ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知される。</p>
+					<p>ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知される。<br>
+					OnUpdateCheckCompleteまたはOnUpdateCheckFailureは、スクリプト再生終了後に通知される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3250,7 +3288,8 @@
 			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
 				<dd class="entry">
-					<p>第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。</p>
+					<p>第2引数に待ち時間(ミリ秒)を指定してイベントを実行する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>
+					シェルのリロード、シェルの切り替え、\![update,shell]で更新成功など、シェルの再読み込み時にキャンセルされる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3857,8 +3896,14 @@
 					<p>バルーン使用率を表示する。未対応環境ではrateofusegraphを実行したのと同じになる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16"> 2.4以降</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16"> 2.3.77</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,rateofusegraphballoon]バルーン使用率を表示する。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,rateofusegraphtotal_">
@@ -4354,7 +4399,7 @@
 			<dl id="_!_enter,passivemode_">
 				<dt class="entry">\![enter,passivemode]</dt>
 				<dd class="entry">
-					<p><a href="#notes_passivemode">※PassiveMode</a>を開始する。</p>
+					<p><a href="#notes_passivemode">※PassiveMode</a>を開始する。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4388,7 +4433,7 @@
 			<dl id="_!_enter,inductionmode_">
 				<dt class="entry">\![enter,inductionmode]</dt>
 				<dd class="entry">
-					<p><a href="#notes_inductionmode">※InductionMode</a>を開始する。</p>
+					<p><a href="#notes_inductionmode">※InductionMode</a>を開始する。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4420,7 +4465,9 @@
 			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
 				<dt class="entry">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</dt>
 				<dd class="entry">
-					<p>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br>実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br>現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br>モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。</p>
+					<p>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br>実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br>現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br>モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。<br>
+					このモード中、サーフェスは再描画されない。さくらスクリプト(\s[ID])や着せ替えを行っても描画は変化しないが、反映はされており、\![leave,selectmode]時に描画される。<br>
+					ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4450,7 +4497,7 @@
 			<dl id="_!_enter,collisionmode__!_enter,collisionmode,rect_">
 				<dt class="entry">\![enter,collisionmode]\![enter,collisionmode,rect]</dt>
 				<dd class="entry">
-					<p>開発用パレットの「当たり判定を表示」と同じことをする。3つめにrectと指定すると、当たり判定名を表示せず領域の枠のみ表示する。</p>
+					<p>開発用パレットの「当たり判定を表示」と同じことをする。3つめにrectと指定すると、当たり判定名を表示せず領域の枠のみ表示する。<br>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
