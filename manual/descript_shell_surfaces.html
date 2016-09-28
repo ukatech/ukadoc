@@ -248,6 +248,8 @@
 			<ul>
 				<li><a href="#mouseup*,当たり判定ID,ファイル名">mouseup*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousedown*,当たり判定ID,ファイル名">mousedown*,当たり判定ID,ファイル名</a></li>
+				<li><a href="#mousewheel*,当たり判定ID,ファイル名">mousewheel*,当たり判定ID,ファイル名</a></li>
+				<li><a href="#mousehover*,当たり判定ID,ファイル名">mousehover*,当たり判定ID,ファイル名</a></li>
 			</ul>
 			<section>
 				<h1>システムカーソル</h1>
@@ -1559,7 +1561,7 @@ mousedown1,Bust,system:grip
 			<dl id="mouseup*,当たり判定ID,ファイル名">
 				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p>当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:hand）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1569,7 +1571,27 @@ mousedown1,Bust,system:grip
 			<dl id="mousedown*,当たり判定ID,ファイル名">
 				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
 				<dd class="entry">
-					<p>当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名には画像のファイル名を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:grip）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousewheel*,当たり判定ID,ファイル名">
+				<dt class="entry">mousewheel*,当たり判定ID,ファイル名</dt>
+				<dd class="entry">
+					<p>当たり判定の上でマウスホイールを回した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousewheel定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="default">system:arrow</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousehover*,当たり判定ID,ファイル名">
+				<dt class="entry">mousehover*,当たり判定ID,ファイル名</dt>
+				<dd class="entry">
+					<p>当たり判定の上でマウスをしばらく動かさない時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousehover定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
 					<p class="default">system:arrow</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
