@@ -1009,7 +1009,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![move,80,-400,2500,primaryscreen,left.bottom,left.top]本体側が、画面の左下(primaryscreen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
+							<p><code>\![move,--X=80,--Y=-400,--time=2500,--base=screen,--base-offset=left.bottom,--move-offset=left.top]本体側が、画面の左下(screen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1018,14 +1018,15 @@
 				<dt class="entry">\![moveasync]</dt>
 				<dd class="entry">
 					<p>指定座標まで非同期移動。<a href="#notes_move">※下記参照</a></p>
+					<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
-							<p><code>\1\![movesync,-175,200,5000,screen,right.top,right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
+							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1091,8 +1092,7 @@
 				<dt class="entry">\![set,sticky-window,スコープID,スコープID,...]</dt>
 				<dd class="entry">
 					<p>指定スコープのウインドウをドラッグ中やmoveタグを実行中にセットで動くようにする。<br>
-					例えば1,0と指定すると、マウスのドラッグ移動などを実行した時、\0(相方側)と\1(本体側)ウインドウがセットで移動するようになる。<br>
-					これにより、<em>\4および\5が正常に動かなくなる(一緒に移動してしまう)ため注意</em>。</p>
+					例えば1,0と指定すると、マウスのドラッグ移動などを実行した時、\0(相方側)と\1(本体側)ウインドウがセットで移動するようになる。</p>
 					
 					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
 					例：\![set,sticky-window,1,0] \![set,sticky-window,3,2] と実行すると、\1と\0がセット、\p[3]と\p[2]がセットになる。</p>
@@ -1101,7 +1101,8 @@
 					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
 					
 					<p>\![set,alignmenttodesktop]などでウインドウ位置に制限がある場合は、その制限が優先され、X,Yのうち自由に動かせるものだけが追従する。<br>
-					\![move]タグでグループ化したウインドウ内の1つを動かした場合でも、他のウインドウも追従する。</p>
+					\![move]タグでグループ化したウインドウ内の1つを動かした場合でも、他のウインドウも追従する。<br>
+					ただし、moveタグの --option=ignore-sticky-window で単独移動可能になる。</p>
 					
 					<p>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
@@ -1134,13 +1135,26 @@
 			</dl>
 			<section class="caption" id="notes_move">
 				<h1>\![move]、\![moveasync]について</h1>
-				<p>\![move,X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]<br>移動時間以降は省略可能。</p>
-				<p>X座標、Y座標は目的の座標を指定。<br>負の値も指定可能。<br>どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。</p>
-				<p>移動時間はミリ秒単位。<br>移動時間を省略、もしくは0を指定した場合は瞬時に移動。</p>
-				<p>移動基準は、移動の基準(相対座標の原点)とするキャラクターなど。<br>指定方法は以下。</p>
+				
+				<p>新仕様：(SSP 2.3.85以降)</p>
+				<p>\![move(async),--X=X座標,--Y=Y座標,--time=移動時間,--base=移動基準,--base-offset=基準とするキャラ基準位置,--move-offset=動かすキャラ基準位置,--option=オプション]</p>
+				<p>どれも省略可能。また、順番が変わっても良い。指定名の大文字・小文字は無視される(たとえば--x=10と書いてもよい)</p>
+				
+				<p>旧仕様：</p>
+				<p>\![move(async),X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]</p>
+				<p>移動時間以降は省略可能。</p>
+				
+				<p><em>X座標、Y座標</em>は目的の座標を指定。<br>負の値も指定可能。<br>どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。<br>省略時は"fix"</p>
+				
+				<p><em>移動時間</em>はミリ秒単位。<br>移動時間を省略、もしくは0を指定した場合は瞬時に移動。<br>省略時0</p>
+				
+				<p><em>基準位置</em>は、移動の基準(相対座標の原点)とするキャラクターなど。<br>指定方法は以下。<br>省略時screen</p>
+				
 				<dl>
 					<dt>screen</dt>
 					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
+					<dt>primaryscreen</dt>
+					<dd>メインモニタ(ID=1)の左上を原点とした座標。</dd>
 					<dt>ID</dt>
 					<dd>0,1等で指定したID番スコープ(\0,\1,\p[2]などの数に相当)のキャラクターとの相対座標</dd>
 					<dt>本体側名/ID</dt>
@@ -1152,10 +1166,19 @@
 					<dt>global</dt>
 					<dd>システム座標系(windowsの場合primaryscreenと同じ)</dd>
 				</dl>
-				<p>基準とするキャラ基準位置は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br>X基準.Y基準、という形で指定し、それぞれ<br>X基準：left,right,base,center<br>Y基準：top,bottom,base,center<br>の4つの指定を組み合わせ、right.base、などのように記述する。<br>なお、baseはsurfaces.txt内のpoint.basepos指定に従う。</p>
-				<p>省略時は、left.topを指定したとみなされる。<br>screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
-				<p>動かすキャラ基準位置は、基準とするキャラ基準位置と同じように指定する。</p>
-				<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
+				
+				<p><em>基準とするキャラ基準位置</em>は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br>X基準.Y基準、という形で指定し、それぞれ<br>X基準：left,right,base,center<br>Y基準：top,bottom,base,center<br>の4つの指定を組み合わせ、right.base、などのように記述する。<br>なお、baseはsurfaces.txt内のpoint.basepos指定に従う。<br>省略時left.top</p>
+				
+				<p>screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
+				
+				<p><em>動かすキャラ基準位置</em>は、基準とするキャラ基準位置と同じように指定する。</p>
+				
+				<p><em>オプション</em>は複数回指定できる。指定方法は以下。新仕様の書式のみ指定可能。</p>
+				<dl>
+					<dt>ignore-sticky-window</dt>
+					<dd>\![set,sticky-window]での連携設定を無視して単独で動かす</dd>
+				</dl>
+				
 			</section>
 		</section>
 		<section class="category">
