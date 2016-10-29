@@ -155,10 +155,12 @@
 				<li><a href="#activeghostlist.current.汎用プロパティ名">activeghostlist.current.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.汎用プロパティ名">currentghost.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.status">currentghost.status</a></li>
+				
 				<li><a href="#currentghost.shelllist.current.汎用プロパティ名">currentghost.shelllist.current.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.shelllist(シェル名/パス).汎用プロパティ名">currentghost.shelllist(シェル名/パス).汎用プロパティ名</a></li>
 				<li><a href="#currentghost.shelllist.index(ID).汎用プロパティ名">currentghost.shelllist.index(ID).汎用プロパティ名</a></li>
 				<li><a href="#currentghost.shelllist.count">currentghost.shelllist.count</a></li>
+				
 				<li><a href="#currentghost.scope(ID).surface.num">currentghost.scope(ID).surface.num</a></li>
 				<li><a href="#currentghost.scope(ID).seriko.defaultsurface">currentghost.scope(ID).seriko.defaultsurface</a></li>
 				<li><a href="#currentghost.scope(番号).surface.x">currentghost.scope(番号).surface.x</a></li>
@@ -167,6 +169,7 @@
 				<li><a href="#currentghost.scope(番号).y">currentghost.scope(番号).y</a></li>
 				<li><a href="#currentghost.scope(番号).rect">currentghost.scope(番号).rect</a></li>
 				<li><a href="#currentghost.scope.count">currentghost.scope.count</a></li>
+				
 				<li><a href="#currentghost.balloon.汎用プロパティ名">currentghost.balloon.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).count">currentghost.balloon.scope(ID).count</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).num">currentghost.balloon.scope(ID).num</a></li>
@@ -180,6 +183,19 @@
 				<li><a href="#currentghost.balloon.scope(ID).basepos.y">currentghost.balloon.scope(ID).basepos.y</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).char_width">currentghost.balloon.scope(ID).char_width</a></li>
 				<li><a href="#currentghost.balloon.count">currentghost.balloon.count</a></li>
+				
+				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path</a></li>
+				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name</a></li>
+				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path">currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path</a></li>
+				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).name">currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).name</a></li>
+				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list.count">currentghost.seriko.cursor.scope(ID).mouse????list.count</a></li>
+				
+				<li><a href="#currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).path">currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text</a></li>
+				<li><a href="#currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).name">currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).name</a></li>
+				<li><a href="#currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).path">currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).text</a></li>
+				<li><a href="#currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).name">currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).name</a></li>
+				<li><a href="#currentghost.seriko.tooltip.scope(ID).textlist.count">currentghost.seriko.tooltip.scope(ID).textlist.count</a></li>
+				
 				<li><a href="#balloonlist(バルーン名/パス).汎用プロパティ名">balloonlist(バルーン名/パス).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.index(ID).汎用プロパティ名">balloonlist.index(ID).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.count">balloonlist.count</a></li>
@@ -628,6 +644,111 @@
 					</ul>
 				</dd>
 			</dl>
+			
+			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path">
+				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path</dt>
+				<dd class="entry">
+					<p>指定した当たり判定名のカーソルファイル名(相対パス：シェル→ゴーストフォルダ内の順で探索)<br />mouse????listは以下の指定が可能：mouseuplist・mousedownlist・mousehoverlist・mousewheellist<br />空文字列を指定してSETすると、定義削除扱いとなり、シェルの標準カーソルの表示に戻すことができる。<br />カーソル指定は<a href="descript_shell_surfaces.html#introduction_cursorbrace">surfaces.txtのcursorセクション</a>と同じ指定が可能。<br /><strong>[SET有効]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,property,currentghost.seriko.cursor.scope(0).mouseuplist(Head).path,頭.cur]Head当たり判定で使うカーソルを頭.curに変更\![set,property,currentghost.seriko.cursor.scope(0).mouseuplist(Head).path,]空っぽの指定だと定義削除となりシェルの標準カーソルとなる</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name">
+				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name</dt>
+				<dd class="entry">
+					<p>指定した当たり判定名の当たり判定名。index指定との互換用の記述であり、特に意味はない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path">
+				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path</dt>
+				<dd class="entry">
+					<p>マウスカーソル定義リスト内の指定した位置のカーソルファイル名(相対パス)。<br /><strong>[SET有効]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).name">
+				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).name</dt>
+				<dd class="entry">
+					<p>マウスカーソル定義リスト内の指定した位置の当たり判定名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list.count">
+				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list.count</dt>
+				<dd class="entry">
+					<p>マウスカーソル定義リストの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl id="currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text">
+				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text</dt>
+				<dd class="entry">
+					<p>指定した当たり判定名のツールチップ表示文字列。<br />空文字列を指定してSETすると、ツールチップ定義削除扱いとなり、ツールチップを表示しないようにできる。<br /><strong>[SET有効]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![set,property,currentghost.seriko.tooltip.scope(0).textlist(Head).text,頭をなでる]Head当たり判定で表示するツールチップを「頭をなでる」に変更\![set,property,currentghost.seriko.tooltip.scope(0).textlist(Head).text,]空っぽの指定だと定義削除となり表示されなくなる</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).name">
+				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).name</dt>
+				<dd class="entry">
+					<p>指定した当たり判定名の当たり判定名。index指定との互換用の記述であり、特に意味はない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).text">
+				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).text</dt>
+				<dd class="entry">
+					<p>ツールチップ定義リスト内の指定した位置のツールチップ文字列。<br /><strong>[SET有効]</strong></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).name">
+				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).name</dt>
+				<dd class="entry">
+					<p>ツールチップ定義リスト内の指定した位置の当たり判定名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.tooltip.scope(ID).textlist.count">
+				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist.count</dt>
+				<dd class="entry">
+					<p>ツールチップ定義リストの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
+					</ul>
+				</dd>
+			</dl>
+			
 			<dl id="currentghost.balloon.scope(ID).count">
 				<dt class="entry">currentghost.balloon.scope(ID).count</dt>
 				<dd class="entry">
