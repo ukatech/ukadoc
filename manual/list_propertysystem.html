@@ -287,7 +287,7 @@
 						<dt><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a></dt>
 						<dd>
 							さくらスクリプトのタグによってプロパティを書き替える。
-							<br />全てのプロパティに対して書き込みが許されているわけではないが、このページの項目で<strong>[SET有効]</strong>とあるものはこのようにして操作可能。
+							<br />全てのプロパティに対して書き込みが許されているわけではないが、このページの項目で<em class="specsign">[SET有効]</em>とあるものはこのようにして操作可能。
 							<br />以下はシェル「ULTIMATE FORM」を、オーナードローメニューのシェル切り替えメニューから隠す例。
 							<pre><code>\![set,property,currentghost.shelllist(ULTIMATE FORM).menu,hidden]</pre></code>
 						</dd>
@@ -648,7 +648,7 @@
 			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path">
 				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path</dt>
 				<dd class="entry">
-					<p>指定した当たり判定名のカーソルファイル名(相対パス：シェル→ゴーストフォルダ内の順で探索)<br />mouse????listは以下の指定が可能：mouseuplist・mousedownlist・mousehoverlist・mousewheellist<br />空文字列を指定してSETすると、定義削除扱いとなり、シェルの標準カーソルの表示に戻すことができる。<br />カーソル指定は<a href="descript_shell_surfaces.html#introduction_cursorbrace">surfaces.txtのcursorセクション</a>と同じ指定が可能。<br /><strong>[SET有効]</strong></p>
+					<p>指定した当たり判定名のカーソルファイル名(相対パス：シェル→ゴーストフォルダ内の順で探索)<br />mouse????listは以下の指定が可能：mouseuplist・mousedownlist・mousehoverlist・mousewheellist<br />空文字列を指定してSETすると、定義削除扱いとなり、シェルの標準カーソルの表示に戻すことができる。<br />カーソル指定は<a href="descript_shell_surfaces.html#introduction_cursorbrace">surfaces.txtのcursorセクション</a>と同じ指定が可能。<br /><em class="specsign">[SET有効]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
 					</ul>
@@ -672,7 +672,7 @@
 			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path">
 				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list.index(ID2).path</dt>
 				<dd class="entry">
-					<p>マウスカーソル定義リスト内の指定した位置のカーソルファイル名(相対パス)。<br /><strong>[SET有効]</strong></p>
+					<p>マウスカーソル定義リスト内の指定した位置のカーソルファイル名(相対パス)。<br /><em class="specsign">[SET有効]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
 					</ul>
@@ -700,7 +700,7 @@
 			<dl id="currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text">
 				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist(当たり判定名).text</dt>
 				<dd class="entry">
-					<p>指定した当たり判定名のツールチップ表示文字列。<br />空文字列を指定してSETすると、ツールチップ定義削除扱いとなり、ツールチップを表示しないようにできる。<br /><strong>[SET有効]</strong></p>
+					<p>指定した当たり判定名のツールチップ表示文字列。<br />空文字列を指定してSETすると、ツールチップ定義削除扱いとなり、ツールチップを表示しないようにできる。<br /><em class="specsign">[SET有効]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
 					</ul>
@@ -724,7 +724,7 @@
 			<dl id="currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).text">
 				<dt class="entry">currentghost.seriko.tooltip.scope(ID).textlist.index(ID2).text</dt>
 				<dd class="entry">
-					<p>ツールチップ定義リスト内の指定した位置のツールチップ文字列。<br /><strong>[SET有効]</strong></p>
+					<p>ツールチップ定義リスト内の指定した位置のツールチップ文字列。<br /><em class="specsign">[SET有効]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.83)</li>
 					</ul>
@@ -1273,7 +1273,7 @@
 				<dl id="menu">
 					<dt class="entry">menu</dt>
 					<dd class="entry">
-						<p>（currentghost.shelllistのみ有効）対象シェルの、シェル変更メニューでの、項目非表示状態。<br />非表示設定時hidden、さもなくば空<br /><strong>[SET有効]</strong>初期値はshell側descript.txtの「menu」</p>
+						<p>（currentghost.shelllistのみ有効）対象シェルの、シェル変更メニューでの、項目非表示状態。<br />非表示設定時hidden、さもなくば空<br /><em class="specsign">[SET有効]</em>初期値はshell側descript.txtの「menu」</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1282,7 +1282,7 @@
 				<dl id="sakura.bind.menu">
 					<dt class="entry">sakura.bind.menu</dt>
 					<dd class="entry">
-						<p>（currentghostのみ有効）対象シェルの本体側スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><strong>[SET有効]</strong>初期値はshell側descript.txtの<a href="descript_shell.html#sakura.menu,hidden">sakura.menu</a></p>
+						<p>（currentghostのみ有効）対象シェルの本体側スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><em class="specsign">[SET有効]</em>初期値はshell側descript.txtの<a href="descript_shell.html#sakura.menu,hidden">sakura.menu</a></p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1291,7 +1291,7 @@
 				<dl id="kero.bind.menu">
 					<dt class="entry">kero.bind.menu</dt>
 					<dd class="entry">
-						<p>（currentghostのみ有効）対象シェルの相方側スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><strong>[SET有効]</strong>初期値はshell側descript.txtの<a href="descript_shell.html#kero.menu,hidden">kero*.menu</a></p>
+						<p>（currentghostのみ有効）対象シェルの相方側スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><em class="specsign">[SET有効]</em>初期値はshell側descript.txtの<a href="descript_shell.html#kero.menu,hidden">kero*.menu</a></p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>
@@ -1300,7 +1300,7 @@
 				<dl id="char*.bind.menu">
 					<dt class="entry">char*.bind.menu</dt>
 					<dd class="entry">
-						<p>（currentghostのみ有効）対象シェルの*番スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><strong>[SET有効]</strong>初期値はshell側descript.txtの<a href="descript_shell.html#char*.menu,hidden">char*.menu</a></p>
+						<p>（currentghostのみ有効）対象シェルの*番スコープの着せ替えのメニューでの、項目非表示状態。<br />非表示設定時hidden、自動列挙モードはauto、さもなくばnone<br /><em class="specsign">[SET有効]</em>初期値はshell側descript.txtの<a href="descript_shell.html#char*.menu,hidden">char*.menu</a></p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						</ul>

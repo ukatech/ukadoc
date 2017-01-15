@@ -532,7 +532,7 @@
 			<section>
 				<h1>[NOTIFY]表示について</h1>
 				<p>
-					説明文中に<em>[NOTIFY]</em>と記載があるSHIORI Eventは、普通NOTIFYコマンドで発行されます。
+					説明文中に<em class="specsign">[NOTIFY]</em>と記載があるSHIORI Eventは、普通NOTIFYコマンドで発行されます。
 					<br>何も記載がない場合は普通GETコマンドで発行されます。
 				</p>
 			</section>
@@ -811,7 +811,7 @@
 				<dt class="entry">OnDressupChanged</dt>
 				<dd class="entry">
 					<p>着せ替えが切替えられた際に発生する。<br />
-					複数回通知される場合があり、その場合は<strong>一番最後のOnDressupChangedが[GET]、それ以外が[NOTIFY]</strong>となる。<br />
+					複数回通知される場合があり、その場合は一番最後のOnDressupChangedが<em class="specsign">[GET]</em>、それ以外が<em class="specsign">[NOTIFY]</em>となる。<br />
 					このイベントの後に発生する<a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a>も参照すること。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
@@ -919,7 +919,7 @@
 			<dl id="OnInitialize">
 				<dt class="entry">OnInitialize</dt>
 				<dd class="entry">
-					<p>起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<p>起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -928,7 +928,7 @@
 			<dl id="OnDestroy">
 				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
-					<p>終了が指示された際に発生。<strong>[NOTIFY]</strong></p>
+					<p>終了が指示された際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -950,7 +950,7 @@
 			<dl id="OnSysSuspend">
 				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
-					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<strong>[NOTIFY]</strong></p>
+					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1387,7 +1387,7 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><strong>[NOTIFY]</strong></p>
+					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -1473,7 +1473,7 @@
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p>サーフェスが変わった際に発生。<br /><strong>[NOTIFY]</strong></p>
+					<p>サーフェスが変わった際に発生。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>本体側の現在サーフェス。</dd>
@@ -3705,7 +3705,7 @@
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
-					<p>スクリーンセーバーが起動した際に発生。<strong>[NOTIFY]</strong></p>
+					<p>スクリーンセーバーが起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スクリーンセーバ名</dd>
@@ -3739,7 +3739,7 @@
 			<dl id="OnDisplayChange">
 				<dt class="entry">OnDisplayChange</dt>
 				<dd class="entry">
-					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<strong>[起動時NOTIFY/他GET]</strong></p>
+					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>変化後の色深度（bpp）</dd>
@@ -3803,7 +3803,7 @@
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
-					<p>残りバッテリー量を通知。<strong>[NOTIFY]</strong></p>
+					<p>残りバッテリー量を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>残りバッテリー％。</dd>
@@ -4109,7 +4109,7 @@
 			<dl id="basewareversion">
 				<dt class="entry">basewareversion</dt>
 				<dd class="entry">
-					<p>ベースウェアの情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>ベースウェアの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バージョン番号。</dd>
@@ -4127,7 +4127,7 @@
 			<dl id="hwnd">
 				<dt class="entry">hwnd</dt>
 				<dd class="entry">
-					<p>hwndを通知。<strong>[NOTIFY]</strong></p>
+					<p>hwndを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストのhwnd。バイト値１区切りで各スコープ。</dd>
@@ -4143,7 +4143,7 @@
 			<dl id="uniqueid">
 				<dt class="entry">uniqueid</dt>
 				<dd class="entry">
-					<p>unique IDを通知。<strong>[NOTIFY]</strong></p>
+					<p>unique IDを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴーストのユニークID。特殊なSSTPを送信する際に使用する。</dd>
@@ -4157,7 +4157,7 @@
 			<dl id="capability">
 				<dt class="entry">capability</dt>
 				<dd class="entry">
-					<p>SHIORI拡張実装状態を通知。<strong>[NOTIFY]</strong></p>
+					<p>SHIORI拡張実装状態を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
@@ -4190,7 +4190,7 @@
 			<dl id="ownerghostname">
 				<dt class="entry">ownerghostname</dt>
 				<dd class="entry">
-					<p>現在のゴースト名を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在のゴースト名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在のゴースト名。</dd>
@@ -4205,7 +4205,7 @@
 			<dl id="otherghostname">
 				<dt class="entry">otherghostname</dt>
 				<dd class="entry">
-					<p>他に起動しているゴーストの本体側名を通知。<strong>[NOTIFY]</strong></p>
+					<p>他に起動しているゴーストの本体側名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
@@ -4220,7 +4220,7 @@
 			<dl id="installedghostname">
 				<dt class="entry">installedghostname</dt>
 				<dd class="entry">
-					<p>インストールされているゴーストを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているゴーストを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているゴースト名。</dd>
@@ -4235,7 +4235,7 @@
 			<dl id="installedshellname">
 				<dt class="entry">installedshellname</dt>
 				<dd class="entry">
-					<p>インストールされているシェルを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているシェルを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているシェル名。</dd>
@@ -4249,7 +4249,7 @@
 			<dl id="installedballoonname">
 				<dt class="entry">installedballoonname</dt>
 				<dd class="entry">
-					<p>インストールされているバルーンを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているバルーンを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているバルーン名。</dd>
@@ -4263,7 +4263,7 @@
 			<dl id="installedheadlinename">
 				<dt class="entry">installedheadlinename</dt>
 				<dd class="entry">
-					<p>インストールされているRSS/ヘッドラインを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているRSS/ヘッドラインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>インストールされているRSS/ヘッドライン名。</dd>
@@ -4276,7 +4276,7 @@
 			<dl id="installedplugin">
 				<dt class="entry">installedplugin</dt>
 				<dd class="entry">
-					<p>インストールされているプラグインを通知。<strong>[NOTIFY]</strong></p>
+					<p>インストールされているプラグインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りで、インストールされているプラグイン名,プラグインID</dd>
@@ -4289,7 +4289,7 @@
 			<dl id="ghostpathlist">
 				<dt class="entry">ghostpathlist</dt>
 				<dd class="entry">
-					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>ゴースト格納フォルダの絶対パス</dd>
@@ -4302,7 +4302,7 @@
 			<dl id="balloonpathlist">
 				<dt class="entry">balloonpathlist</dt>
 				<dd class="entry">
-					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バルーン格納フォルダの絶対パス</dd>
@@ -4315,7 +4315,7 @@
 			<dl id="headlinepathlist">
 				<dt class="entry">headlinepathlist</dt>
 				<dd class="entry">
-					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>ヘッドライン格納フォルダの絶対パス</dd>
@@ -4328,7 +4328,7 @@
 			<dl id="pluginpathlist">
 				<dt class="entry">pluginpathlist</dt>
 				<dd class="entry">
-					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>プラグイン格納フォルダの絶対パス</dd>
@@ -4341,7 +4341,7 @@
 			<dl id="calendarskinpathlist">
 				<dt class="entry">calendarskinpathlist</dt>
 				<dd class="entry">
-					<p>カレンダースキン格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>カレンダースキン格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>カレンダースキン格納フォルダの絶対パス</dd>
@@ -4354,7 +4354,7 @@
 			<dl id="calendarpluginpathlist">
 				<dt class="entry">calendarpluginpathlist</dt>
 				<dd class="entry">
-					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<strong>[NOTIFY]</strong></p>
+					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>カレンダーのスケジュールセンサ格納フォルダの絶対パス</dd>
@@ -4367,7 +4367,7 @@
 			<dl id="rateofusegraph">
 				<dt class="entry">rateofusegraph</dt>
 				<dd class="entry">
-					<p>使ってるぞグラフの情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>使ってるぞグラフの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
@@ -4390,7 +4390,7 @@
 			<dl id="enable_log">
 				<dt class="entry">enable_log</dt>
 				<dd class="entry">
-					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<strong>[NOTIFY]</strong></p>
+					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ONなら1、OFFなら0</dd>
@@ -4403,7 +4403,7 @@
 			<dl id="OnNotifySelfInfo">
 				<dt class="entry">OnNotifySelfInfo</dt>
 				<dd class="entry">
-					<p>ゴースト自身の情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>ゴースト自身の情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ゴースト名。</dd>
@@ -4429,7 +4429,7 @@
 			<dl id="OnNotifyBalloonInfo">
 				<dt class="entry">OnNotifyBalloonInfo</dt>
 				<dd class="entry">
-					<p>現在使用中のバルーン情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在使用中のバルーン情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択しているバルーンの名前</dd>
@@ -4446,7 +4446,7 @@
 			<dl id="OnNotifyShellInfo">
 				<dt class="entry">OnNotifyShellInfo</dt>
 				<dd class="entry">
-					<p>現在使用中のシェル情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>現在使用中のシェル情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択しているシェルの名前</dd>
@@ -4464,7 +4464,7 @@
 				<dt class="entry">OnNotifyDressupInfo</dt>
 				<dd class="entry">
 					<p>着せ替えの情報を通知。<br />
-					<strong>起動時のみ[NOTIFY]で、メニューから切替などユーザーによる操作なら[GET]</strong>で送られる。<br />
+					起動時のみ<em class="specsign">[NOTIFY]</em>で、メニューから切替などユーザーによる操作なら<em class="specsign">[GET]</em>で送られる。<br />
 					このイベントの前に発生する<a href="#OnDressupChanged">OnDressupChanged</a>も参照すること。</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
@@ -4480,7 +4480,7 @@
 			<dl id="OnNotifyUserInfo">
 				<dt class="entry">OnNotifyUserInfo</dt>
 				<dd class="entry">
-					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<strong>[NOTIFY]</strong></p>
+					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>呼び方。</dd>
@@ -4499,7 +4499,7 @@
 			<dl id="OnNotifyOSInfo">
 				<dt class="entry">OnNotifyOSInfo</dt>
 				<dd class="entry">
-					<p>OS情報を通知。<strong>[NOTIFY]</strong></p>
+					<p>OS情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>OSのシステム,バージョン,表示用の名前 [カンマ区切り]</dd>
@@ -4518,7 +4518,7 @@
 			<dl id="OnNotifyFontInfo">
 				<dt class="entry">OnNotifyFontInfo</dt>
 				<dd class="entry">
-					<p>システムにインストールされているフォントを通知。<strong>[NOTIFY]</strong></p>
+					<p>システムにインストールされているフォントを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>フォント名。</dd>

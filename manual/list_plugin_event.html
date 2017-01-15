@@ -155,7 +155,7 @@
 			<p>PLUGIN/2.0の通信仕様そのものについて等は、<a href="spec_plugin.html">PLUGIN/2.0</a>のページにあります。</p>
 		</div>
 		<div class="caption">
-			<p><strong>[NOTIFY]</strong>の表示があるイベントは、必ずNOTIFYコマンドで通知されます。<br />NOTIFYコマンドで通知されたイベントにスクリプトを返却しても一切無視されます。</p>
+			<p><em class="specsign">[NOTIFY]</em>の表示があるイベントは、必ずNOTIFYコマンドで通知されます。<br />NOTIFYコマンドで通知されたイベントにスクリプトを返却しても一切無視されます。</p>
 			<p>特に表示がないイベントは、状況によってNOTIFY、GETのいずれでも通知される可能性があります。</p>
 		</div>
 		<section class="category">
@@ -172,7 +172,7 @@
 			<dl id="installedplugin">
 				<dt class="entry">installedplugin</dt>
 				<dd class="entry">
-					<p>インストール済プラグインを列挙して通知。<strong>[NOTIFY]</strong></p>
+					<p>インストール済プラグインを列挙して通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りで、プラグイン名,プラグインID</dd>
@@ -185,7 +185,7 @@
 			<dl id="ghostpathlist">
 				<dt class="entry">ghostpathlist</dt>
 				<dd class="entry">
-					<p>読み込んでいるゴーストフォルダのパス。<strong>[NOTIFY]</strong></p>
+					<p>読み込んでいるゴーストフォルダのパス。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>読み込んでいるゴーストフォルダのフルパス。<br />複数フォルダが指定されている場合Reference1以降もありうる。</dd>
@@ -198,7 +198,7 @@
 			<dl id="balloonpathlist">
 				<dt class="entry">balloonpathlist</dt>
 				<dd class="entry">
-					<p>読み込んでいるバルーンフォルダのパス。<strong>[NOTIFY]</strong></p>
+					<p>読み込んでいるバルーンフォルダのパス。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>読み込んでいるバルーンフォルダのフルパス。</dd>
@@ -211,7 +211,7 @@
 			<dl id="headlinepathlist">
 				<dt class="entry">headlinepathlist</dt>
 				<dd class="entry">
-					<p>読み込んでいるヘッドラインフォルダのパス。<strong>[NOTIFY]</strong></p>
+					<p>読み込んでいるヘッドラインフォルダのパス。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>読み込んでいるヘッドラインフォルダのフルパス。</dd>
@@ -224,7 +224,7 @@
 			<dl id="pluginpathlist">
 				<dt class="entry">pluginpathlist</dt>
 				<dd class="entry">
-					<p>読み込んでいるプラグインフォルダのパス。<strong>[NOTIFY]</strong></p>
+					<p>読み込んでいるプラグインフォルダのパス。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>読み込んでいるプラグインフォルダのフルパス。</dd>
@@ -267,7 +267,7 @@
 			<dl id="OnGhostExit">
 				<dt class="entry">OnGhostExit</dt>
 				<dd class="entry">
-					<p>ゴースト終了時に発生。<strong>[NOTIFY]</strong></p>
+					<p>ゴースト終了時に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バイト値1区切りで、終了したゴーストの\0以降各キャラクターウィンドウのHWND。<br />未構築の場合等、0が入る場合がある。</dd>
@@ -288,7 +288,7 @@
 			<dl id="OnGhostInfoUpdate">
 				<dt class="entry">OnGhostInfoUpdate</dt>
 				<dd class="entry">
-					<p>ゴーストの情報が変更されたときに発生。<br />ロード時にも発生する事がある。<strong>[NOTIFY]</strong></p>
+					<p>ゴーストの情報が変更されたときに発生。<br />ロード時にも発生する事がある。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>バイト値1区切りで、変更があったゴーストの\0以降各キャラクターウィンドウのHWND。<br />未構築の場合等、0が入る場合がある。</dd>
@@ -360,7 +360,7 @@
 			<dl id="_!_raiseplugin_および_!_notifyplugin_に指定された任意名イベント">
 				<dt class="entry">\![raiseplugin]および\![notifyplugin]に指定された任意名イベント</dt>
 				<dd class="entry">
-					<p><a href="list_sakura_script.html#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin]</a>および<a href="list_sakura_script.html#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin]</a>の実行で発生。<br />\![notifyplugin]の場合は<strong>[NOTIFY]</strong></p>
+					<p><a href="list_sakura_script.html#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin]</a>および<a href="list_sakura_script.html#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin]</a>の実行で発生。<br />\![notifyplugin]の場合は<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>指定された任意の引数。</dd>
