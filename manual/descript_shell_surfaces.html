@@ -665,7 +665,7 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 						</li>
 					</ul>
 					<p>以上のような点にメリットを感じない場合、SSPのみでの対応を考えるなら必ずしも移行する意味はないかもしれません。</p>
-					<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で参考にされる場合は適宜読み替えが必要です。</p>
+					<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で書きたい場合は上記を参考に適宜読み替えてください。</p>
 				</section>
 			</section>
 			<section class="caption" id="caption_surfacebraceID">
@@ -749,7 +749,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>ベースサーフェスの実体</h1>
 					<p>あるsurfaceのベースサーフェスは、IDに対応するsurface*.pngと、IDに対応するsurfaceブレスでの<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element指定</a>で定義される。</p>
 					<p>surface*.pngがあるサーフェスでは、その画像がsurface*のベースサーフェスとなる。ただし同時にelement0が定義されている場合、surface*.pngの内容は破棄されelement0の定義内容で置き換わる（これは互換性確保のための仕様である）。</p>
-					<p>element1以降の定義がある場合は、それらの上に積み重なる形で順次合成され、共にベースサーフェスを成す。</p>
+					<p>element1以降の定義がある場合は、それらの上に積み重なる形で順次合成され、最終的な合成結果がベースサーフェスとして扱われる。</p>
 				</section>
 				<section>
 					<h1>ベースサーフェスのサイズとアニメーション合成</h1>
@@ -763,7 +763,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<h1>各要素の上下構造</h1>
 				<section>
 					<h1>上位と下位</h1>
-					<p>以下画面手前側を上位、画面奥側を下位として表現する</p>
+					<p>以下画面手前側を上位、画面奥側を下位として表現する。</p>
 				</section>
 				<section>
 					<h1>各パーツの上下構造</h1>
@@ -819,16 +819,17 @@ animation0.pattern3,overlay,-1,100,168,67
 					<li>11	刮目</li>
 					<li>19	歌</li>
 				</ul>
-				<p>なお、MATERIAではsurfaceIDにつかえる数字は0から8192までという制限があります。</p>
+				<p>なお、MATERIAではsurfaceIDにつかえる数字は0から8192までという制限がある。</p>
 			</section>
 			<dl id="element*,描画メソッド,ファイル名,X座標,Y座標">
 				<dt class="entry">element*,描画メソッド,ファイル名,X座標,Y座標</dt>
 				<dd class="entry">
 					<p>
 						ベースサーフェスの合成。
-						<br>複数の画像を合成し、その結果をこのサーフェス内のベースサーフェスとして一枚の画像のように扱う仕組み。
-						<br>サーフェスに対応するsurface*.pngという画像がある場合は、その画像の上にelement合成された画像が重なる。
-						<br>SSP2.3.53からは、element定義されたサーフェスをアニメーションパーツとして用いた場合も、あたかも最初から一枚の画像であったかのように扱うことができる（以前は未定義）。
+						<br>複数の画像を合成し、その合成結果をベースサーフェスとして一枚の画像のように扱う仕組み。
+						<br>サーフェスに対応するsurface*.pngという画像がある場合、element0が定義されていると元のsurface*.pngの内容が破棄されて、element0で置き換えられる
+						<br>element1以降は、その上に順次合成されていく。
+						<br>SSP2.3.53からは、element定義されたサーフェスをアニメーションパーツとして用いた場合も、一枚の画像のように振る舞う（以前は未定義）。
 						<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。
 						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
 					</p>
@@ -1274,39 +1275,44 @@ animation0.pattern3,overlay,-1,100,168,67
 					<section>
 						<h1>概要</h1>
 						<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
-						<p>一部、画像の合成というよりも、ベースサーフェスの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった特殊なメソッドを含む事に注意。</p>
+						<p>画像の合成ではなく、<a href="#caption_basesurface">ベースサーフェス</a>の置き換え(base)、ベースサーフェスの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった様々な役割のメソッドが存在する。</p>
 					</section>
 					<section>
-						<h1>element・アニメーション・着せ替えそれぞれのパーツの重なり方の違い</h1>
-						<p>element・アニメーション・着せ替えそれぞれにおいて、コマやパーツの合成・描画は多少異なっている。</p>
-						<p>element定義での各パーツの描画は、先述の通り一つ一つが積みあがるようにして合成され、最終的な合成結果の画像がベースサーフェスとなる。</p>
-						<p>対して通常のアニメーションでの各コマ（pattern定義）の描画は、一度それ以前のコマを除去した上でまっさらなベースサーフェスに対して行われる（ただし後述の通り着せ替えは除去されない）。</p>
-						<p>着せ替えでの各パーツ（pattern定義）の描画は、element定義の場合と同様に、ベースサーフェスとそのパーツ以前に合成されたすべてのパーツに対して積み重なる形で行われる。着せ替えは有効な間はあたかもベースサーフェスと一体化したかのように振る舞う（アニメーションとしての上下構造は保つ）。</p>
-						<p>言い換えると、elementおよび着せ替えではベースレイヤおよびそれ以前のすべてのコマを下位レイヤとして次のコマが重なり、通常のアニメーションではベースレイヤのみを下位レイヤとして次のコマが重なることになる。</p>
-					</section>
-					<section>
-						<h1>抜き色の扱い</h1>
-						<p>サーフェスの抜き色（左上1ピクセルの色）が抜き色として扱われ、実際の表示上は同色の部分を透過して表示するのは、animationおよびelementのコマとして扱われる場合も同様である。</p>
-						<p>つまり各コマが合成される時、コマの抜き色部分は基本的に下位レイヤに影響しない（この時下位レイヤとコマそれぞれの抜き色に当たる実際の色が<em>一致する必要はない</em>）。</p>
-						<p>ただしいくつかの合成メソッドには、抜き色について特別な扱いをするものがあるので注意を要する（replace、reduce、asisなど）。</p>
+						<h1>着せ替えにおける描画メソッドの扱い</h1>
+						<p>着せ替え定義中では、画像の合成でないメソッド（move、insert、start、stop、alternativestart、alternativestop）は無効である（overlayとして扱われる）。ただしbaseは一番最初のpatternに使用した場合のみ有効であり、その着せ替えがONになっている場合のみベースサーフェスを置き換えるような仕組みが実現できる。</p>
+						<p>着せ替え用のメソッドとして実装されているaddとbindは、実装上はoverlayと同義である。着せ替えにおいてこの三つはどれを指定しても結局同じ効果となる。</p>
 					</section>
 					<section>
 						<h1>element定義における描画メソッドの扱い</h1>
-						<p>element定義中では、moveのようにコマの合成でないメソッドは無効である。</p>
-						<p>加えてinsert、start、stop、alternativestart、alternativestopのようにアニメーションIDのパラメータ指定を伴うメソッドも無効である。</p>
+						<p>element定義中では、画像の合成でないメソッド（base、move、insert、start、stop、alternativestart、alternativestop）は無効である（overlayとして扱われる）。</p>
 						<p>その他着せ替え用のメソッドadd、bindも無効である（が、SSPの現実装において無効な指定はoverlayと読み替えられるため、結果的に指定どおりの描画にはなる）。</p>
-						<p>自明ではあるが、element0の定義で指定された描画メソッドはほとんどのものがbaseと同義になる。ただしasisメソッドで抜き色がそのまま表示される点は有効である。</p>
+						<p>自明ではあるが、最初のelement（element0、surface*.pngが存在しない場合のはそれ以降の場合もある）で指定された描画メソッドはほとんどのものがbaseと同義になる。ただしasisメソッドで透過色がそのまま表示される点は有効である。</p>
 						<p>なお、element合成されたサーフェスがアニメーションパーツとして用いられた場合、element合成の結果が一枚の画像のように扱われる。ただしこの実装はSSP2.3.53からのもので、それ以前は未定義であった事に注意。</p>
+					</section>
+					<section>
+						<h1>合成系メソッドのelement・アニメーション・着せ替えでの相違点と共通点</h1>
+						<p>合成系のメソッドの意味合いは、element・アニメーション・着せ替えのそれぞれで異なってくる。</p>
+						<p>element定義は、ベースサーフェスとなる一枚の静止画を得ることが目的である。element定義では、直前までの合成結果に対してさらに次の合成が繰り返されてゆき、最終的な合成結果として一枚の静止画を得る。</p>
+						<p>着せ替え定義もelement定義と同様に、静止画を得るための仕組みであるので、描画メソッドの解決の流れはelement定義とよく似ている。着せ替えのpattern定義では、最初のpatternがベースサーフェスに対して合成され、以後直前までの合成結果に対してさらに次の合成が繰り返されてゆき、最終的な合成結果として得られた一枚の静止画を得る。従って、着せ替えはベースサーフェスと一体化したように振る舞うことになる。</p>
+						<p>対して着せ替えでない通常のアニメーションは、動画的表現であるので、前二者とは流れが大きく異なる。アニメーションの各pattern定義は、あくまでもアニメーションを構成する各コマの定義であり、それぞれ独立している。各pattern定義はベースサーフェスと新規画像の二つを合成して新たなコマを作り出すので、前のpattern定義（前のコマ）での合成結果は次のコマには影響しない。そうして次々と新しいコマを描画することで、動画的な表現が実現される。</p>
+						<p>しかしながらいずれの場合も、合成系メソッドは「合成の対象となる元の画像」と「その行のpattern定義またはelement定義で指定された画像」の二つ画像を合成する機能を担う点は共通している。そこでukadocでは、便宜上描画メソッドの説明において、<em>「合成の対象となる元の画像」</em>を<em class="term">ベースレイヤ</em>、後者の<em>「その行のpattern定義またはelement定義で指定された画像」</em>を<em class="term">新規レイヤ</em>と呼ぶことにする。</p>
+						<p>この二語を用いて言い換えると、アニメーションの各pattern定義は、ベースサーフェスをベースレイヤとして新規レイヤを合成することでコマを作り出すものである。対して着せ替え及びelement合成は、直前までの合成結果をベースレイヤとして新規レイヤを合成してゆく繰り返しの結果として、一枚の静止画を得るものである。</p>
+					</section>
+					<section>
+						<h1>描画メソッドと透過色</h1>
+						<p>画像の左上隅1ピクセルの色が透過色として扱われ、実際の表示上は同色の部分が透過されるのは、pattern定義に使われるsurfaceや、element定義に使われる画像についても同様である。</p>
+						<p>この時合成される各画像の透過色の実際の色は、特に<em>一致する必要はない</em>。</p>
+						<p>またいくつかの描画メソッドは、透過色について特別な扱いをするものがある（overlayfast、asis、interpolate、reduceなど）。</p>
 					</section>
 				</section>
 				<dl id="base">
 					<dt class="entry">base</dt>
 					<dd class="entry">
 						<p>
-							ベースサーフェスをそのコマで完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
+							<a href="#caption_basesurface">ベースサーフェス</a>を<em class="term">新規レイヤ</em>で完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
 							<br>このメソッドのパターンを重ねると、サーフェス全面を描画し直すことによるアニメーション（いわばパラパラ漫画）が実現される。
 							<br>この描画メソッドが指定されたpattern定義では、XY座標は無視される。
-							<br>着せ替え・elementでも使用できる。
+							<br>着せ替えおよびelementでは、baseメソッドは最初（element0、pattern0）にしか用いることができない。それ以外はoverlayに読み変えられる。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1319,8 +1325,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">overlay</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤにコマを重ねる。
-							<br>着せ替え・elementでも使用できる。
+							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を単に重ねる。
+							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#bind">bind</a>も同じ効果となる）。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1333,7 +1339,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">overlayfast</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤの非透過部分（半透明含む）にのみコマを重ねる。
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を重ねる。
+							<br><em class="term">ベースレイヤ</em>の半透明部分では、透明度が低い部分ほど濃く<em class="term">新規レイヤ</em>を合成し、不透明であれば完全に合成し、全透明であれば一切合成しない。
+							<br><a href="#interpolate">interpolate</a>メソッドの対になるメソッド。
 							<br>着せ替え・elementでも使用できる。
 						</p>
 						<ul class="supported-baseware">
@@ -1347,7 +1355,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">replace</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤにコマを重ねるが、コマの透過部分について下位レイヤにも反映する（reduce + overlayに近い）。
+							<em class="term">ベースレイヤ</em>の一部を<em class="term">新規レイヤ</em>で置き換える。
+							<br>透過色部分や、透明度情報があり半透明になっている部分についても、<em class="term">ベースレイヤ</em>の情報を残さずに上書きする。
 							<br>着せ替え・elementでも使用できる。
 						</p>
 						<ul class="supported-baseware">
@@ -1359,9 +1368,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">interpolate</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤの<em>透明なところにのみ</em>コマを重ねる。
-							<br>下位レイヤの半透明部分に対しても、透明度が高い部分ほど強くコマを合成する。
-							<br>interpolateで重なる部分はベースより上位（手前）側になければならない（interpolateのコマが描画している部分に、上位のレイヤで不透明な部分が重なると反映されなくなる）。
+							<em class="term">ベースレイヤ</em>の透明度に応じて<em class="term">新規レイヤ</em>を重ねる。
+							<br><em class="term">ベースレイヤ</em>の半透明部分では、透明度が高い部分ほど濃く<em class="term">新規レイヤ</em>を合成し、全透明であれば完全に合成し、不透明であれば一切合成しない。
+							<br><a href="#overlayfast">overlayfast</a>メソッドの対になるメソッド。
 							<br>着せ替え・elementでも使用できる。
 						</p>
 						<ul class="supported-baseware">
@@ -1373,9 +1382,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">asis</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤに、抜き色やアルファチャンネルを適応しないままそのコマを重ねる。
+							<a href="#overlay">overlay</a>に近いが、<em class="term">新規レイヤ</em>の透明度情報（透過色および、PNA・または<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャネル）を無視して重ねる。
 							<br>着せ替え・elementでも使用できる。
-							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の抜き色に関係なく黒（#000000）で表示されるだろう。
+							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の透過色に関係なく黒（#000000）で表示されるだろう。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1386,7 +1395,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">move</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤをXY座標指定分ずらす。
+							<em class="term">ベースレイヤ</em>をXY座標指定分ずらす。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
 							<br>着せ替え・elementでは使用不可。
 						</p>
@@ -1401,8 +1410,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">bind</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤにそのコマを着せ替えパーツとして重ねる。現在ではoverlayと同じ。
+							<em class="term">新規レイヤ</em>を着せ替えパーツとする。
 							<br>着せ替えパーツとして単純に一つのサーフェスを重ねることしか出来なかった頃の唯一のメソッドで、現在はaddが互換。
+							<br>処理の内容は<a href="#overlay">overlay</a>と同義。
 							<br>着せ替えでないアニメーション・elementでの使用は未定義。
 						</p>
 						<ul class="supported-baseware">
@@ -1415,8 +1425,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">add</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤにそのコマを着せ替えパーツとして重ねる。本質的にはoverlayと同じ。
-							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
+							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を着せ替えパーツとして重ねる。
+							<br>処理の内容は<a href="#overlay">overlay</a>と同義。
+							<br>着せ替えでないアニメーション・elementでの使用は未定義。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1428,8 +1439,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">reduce</dt>
 					<dd class="entry">
 						<p>
-							下位レイヤの抜き色による透過領域に、そのコマの抜き色による透過領域を追加する。コマの抜き色で無い部分は無視される。
-							<br>SSPの場合はコマの透明度情報（PNAまたは<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャネルに由来する情報）の合成となる。下位レイヤにも透明度情報がある場合、下位レイヤとreduce合成されるコマの<em>不透明度</em>が乗算される（例：下位レイヤが不透明度40%・コマが不透明度60%の領域は、合成後は不透明度24%＝透明度76%となる。従って、reduce合成を重ねるほど透明度があがってゆく）。この場合抜き色は透明度100%の領域として扱われる。
+							<em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の透明度情報（透過色および、PNAまたは<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャネル）の合成。
+							<br><em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の両方に透明度情報がある場合、双方の<em>不透明度</em>が乗算される（例：<em class="term">ベースレイヤ</em>が不透明度40%・<em class="term">新規レイヤ</em>が不透明度60%の領域は、合成後は不透明度24%＝透明度76%の領域となる。従って、reduce合成を重ねるほど透明度があがってゆく）。透過色は透明度100%の領域として扱われる。
+							<br>SSP以外の場合は透過色以外の情報は合成されず、単に<em class="term">新規レイヤ</em>の透過色部分について、<em class="term">ベースレイヤ</em>を削るようなイメージになる。
 							<br>着せ替え用に用意されたメソッドだが、着せ替えでないアニメーション・elementでも使用可能。
 						</p>
 						<ul class="supported-baseware">

@@ -80,15 +80,15 @@
 				<div class="passage">
 					<p>サーフェスファイル。</p>
 					<p>デスクトップに表示される絵。</p>
-					<p>対応形式はPNGのみ。</p>
 					<p>画像サイズ、色数に制限は無い。</p>
+					<p>ファイル形式はPNG<a href="#note1" class="note" id="note1-symbol">※</a>。</p>
 				</div>
 				<div class="passage">
-					<p>画像左上の1ドット(座標0,0)と同色が透過される。</p>
+					<p>画像左上の1ドット(座標0,0)と同色の領域は透過色（抜き色）とされ、表示上透過される。</p>
 				</div>
 				<div class="passage">
 					<p>サーフェスの番号は<a href="descript_shell_surfaces.html#caption_standarddef">ある程度の標準的な割り振り</a>があるものの、基本的には自由。</p>
-					<p>ただし、surface0とsurface10は必須（SSPの場合推奨）とされる。</p>
+					<p>ただし、surface0とsurface10は必須（SSPの場合推奨だが必須ではない）とされる。</p>
 					<p>そのためたとえキャラクター一人のゴーストであっても、surface10.pngとして単色塗りつぶしの画像を用意するなどの必要がある。
 				</div>
 				<div class="passage">
@@ -133,7 +133,7 @@
 
 			<dt>(element).png</dt>
 			<dd>
-				<p><a href="descript_shell_surfaces.html#element*,%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%AE%9A%E7%BE%A9,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,X%E5%BA%A7%E6%A8%99,Y%E5%BA%A7%E6%A8%99">element</a>仕様によって、任意名のpng画像（SSPの場合jpegなども可）をパーツとして合成し、一つのsurfaceとして扱う事ができる。そのためのパーツ用画像。</p>
+				<p><a href="descript_shell_surfaces.html#element*,%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E5%AE%9A%E7%BE%A9,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,X%E5%BA%A7%E6%A8%99,Y%E5%BA%A7%E6%A8%99">element</a>仕様によって、任意名のPNG画像<a href="#note2" class="note" id="note2-symbol">※</a>をパーツとして合成し、一つのsurfaceとして扱う事ができる。そのためのパーツ用画像。</p>
 				<p>※(element)の部分を好きな名前に読み換えてよい。何枚でも使用可能で、当然なくてもよい。</p>
 				<p>詳しくは後述の「surfaces.txt」も参照。</p>
 			</dd>
@@ -205,6 +205,16 @@
 		</dl>
 	</div>
 </section>
+<aside class="passage hint">
+	<dl>
+		<dt id="note1"><a href="#note1-symbol">※1</a>,<a href="#note2-symbol">※2</a></dt>
+		<dd>
+			<p>SSPでは暗号化PNG(DAP/DDP/DFP/DGP)・GIF（非アニメ）・JPEG・BMPも使用可能だが、<em>非推奨</em>。</p>
+			<p>過去互換の為読み込みは可能だが、今後追加される機能や仕様についてPNG以外の形式がサポートされる保証はない。</p>
+			<p>また現時点でも、PNG以外の全形式で透明度仕様（pnaおよび<a href="descript_shell.html#seriko.use_self_alpha,%E6%95%B0%E5%80%A4">seriko.use_self_alpha</a>）が利用不可であるし、JPEGについては圧縮によって色がずれやすいため透過色と相性が悪いという弊害もある。</p>
+		</dd>
+	</dl>
+</aside>
 <!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
