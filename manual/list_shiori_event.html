@@ -358,12 +358,17 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>ヘッドラインセンスイベント</h1>
+			<h1>ヘッドライン/RSSセンスイベント</h1>
 			<ul>
 				<li><a href="#OnHeadlinesenseBegin">OnHeadlinesenseBegin</a></li>
 				<li><a href="#OnHeadlinesense.OnFind">OnHeadlinesense.OnFind</a></li>
 				<li><a href="#OnHeadlinesenseComplete">OnHeadlinesenseComplete</a></li>
 				<li><a href="#OnHeadlinesenseFailure">OnHeadlinesenseFailure</a></li>
+			</ul>
+			<ul>
+				<li><a href="#OnRSSBegin">OnRSSBegin</a></li>
+				<li><a href="#OnRSSComplete">OnRSSComplete</a></li>
+				<li><a href="#OnRSSFailure">OnRSSFailure</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_headlinesensephase">ヘッドラインセンスOnFindフェーズ</a></li>
@@ -3106,7 +3111,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ヘッドラインセンスイベント</h1>
+			<h1>ヘッドライン/RSSセンスイベント</h1>
 			<dl id="OnHeadlinesenseBegin">
 				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
@@ -3167,6 +3172,50 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+
+			<dl id="OnRSSBegin">
+				<dt class="entry">OnRSSBegin</dt>
+				<dd class="entry">
+					<p>RSSセンス開始が指示された際に発生。本イベントに反応しない場合は、OnHeadlineSenseBeginが呼び出される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>RSSセンスするサイト名。</dd>
+						<dt>Reference1</dt>
+						<dd>RSSセンスするURL。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRSSComplete">
+				<dt class="entry">OnRSSComplete</dt>
+				<dd class="entry">
+					<p>ヘッドラインセンスが正常に終了した際に発生。本イベントに反応しない場合は、表示に適切なスクリプトを生成しヘッドライン完了系イベントが呼び出される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>no update　<a href="#caption_headlinesenseresult">※終了理由</a><br>更新が無い時はReference0のみでかつ"no update"という文字列のみ</dd>
+						<dt>Reference0～</dt>
+						<dd>タイトル [\1] URL [\1] 更新日時（フォーマットはカンマ区切り：年,月,日,時,分,秒）<br>更新がある時はRSSの要素数分Reference0,1,2～と続く<br>[\1]はバイト値1</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRSSFailure">
+				<dt class="entry">OnRSSFailure</dt>
+				<dd class="entry">
+					<p>RSSセンスに失敗した際に発生。本イベントに反応しない場合は、OnHeadlineSenseFailureが呼び出される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
+					</dl>
+					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
