@@ -1131,8 +1131,8 @@ kero.menuitem3,2
 			<dl id="seriko.paint_transparent_region_black,数値">
 				<dt class="entry">seriko.paint_transparent_region_black,数値</dt>
 				<dd class="entry">
-					<p>サーフェスの透過色（png画像左上の色）になっているにも関わらず、PNA等での透明度指定では透明でない領域の表示設定。<br />0を指定した場合はサーフェス本来の色（透過色）を指定の透明度で表示する。<br />1を指定した場合はサーフェスの色の替わりに黒で塗りつぶされてから指定の透明度で表示する。<br />例えば0を指定した上で全面真っ白のpnaを用意したサーフェスは、透過色なしで画像のまま表示される。</p>
-					<p class="default">1</p>
+					<p>サーフェスの透過色（画像左上の色）になっているにも関わらず、透明度の値では透明でない領域の表示設定。<br />0の場合はサーフェス本来の色（透過色）を指定の透明度で表示する。<br />1の場合はサーフェスの色の替わりに黒で塗りつぶされてから指定の透明度で表示する。<br />例えば0を指定した上で全面真っ白のpnaを用意したサーフェスは、透過色なしで画像のまま表示される。</p>
+					<p class="default">指定なし（pnaを透明度としている画像では1相当、画像自体のα値を透明度としている画像では0相当の動作になる）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
