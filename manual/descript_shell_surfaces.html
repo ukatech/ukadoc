@@ -1382,7 +1382,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">asis</dt>
 					<dd class="entry">
 						<p>
-							<a href="#overlay">overlay</a>に近いが、<em class="term">新規レイヤ</em>の透明度情報（透過色および、pna・または<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャンネル）を無視して重ねる。
+							<a href="#overlay">overlay</a>に近いが、<em class="term">新規レイヤ</em>の透過（透過色および、pna・または<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャンネル）を無視して重ねる。
 							<br>着せ替え・elementでも使用できる。
 							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の透過色に関係なく黒（#000000）で表示されるだろう。
 						</p>
@@ -1439,9 +1439,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">reduce</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の透明度情報（透過色および、pnaまたは<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャンネル）の合成。
-							<br><em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の両方に透明度情報がある場合、双方の<em>不透明度</em>が乗算される（例：<em class="term">ベースレイヤ</em>が不透明度40%・<em class="term">新規レイヤ</em>が不透明度60%の領域は、合成後は不透明度24%＝透明度76%の領域となる。従って、reduce合成を重ねるほど透明度があがってゆく）。透過色は透明度100%の領域として扱われる。
-							<br>SSP以外の場合は透過色以外の情報は合成されず、単に<em class="term">新規レイヤ</em>の透過色部分について、<em class="term">ベースレイヤ</em>を削るようなイメージになる。
+							<em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の透過の合成。
+							<br><em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の<em>不透明度</em>が乗算される（有効な透過色は不透明度0%の領域として扱われる）。
+							<br>例えば<em class="term">ベースレイヤ</em>が不透明度40%・<em class="term">新規レイヤ</em>が不透明度60%の領域は、合成後は不透明度24%＝透明度76%の領域となる。
+							<br>透明度以外の情報（RGB値）は単に無視される。
 							<br>着せ替え用に用意されたメソッドだが、着せ替えでないアニメーション・elementでも使用可能。
 						</p>
 						<ul class="supported-baseware">
