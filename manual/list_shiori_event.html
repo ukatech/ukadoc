@@ -1010,7 +1010,7 @@
 					<p>TeachBoxが閉じられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
+						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
 						<dt>Reference1</dt>
 						<dd>閉じられた場合、cancel。</dd>
 					</dl>
@@ -1056,7 +1056,7 @@
 					<p>CommunicateBoxが閉じられた際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの位置をあわせるため使用していない。)</dd>
+						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
 						<dt>Reference1</dt>
 						<dd>閉じられた場合、cancel。</dd>
 					</dl>
@@ -1392,7 +1392,7 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterは全Referenceが空である。<br /><em class="specsign">[NOTIFY]</em></p>
+					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterはReferenceなしで発生する。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>選択肢のテキスト（ラベル）。</dd>
@@ -4046,11 +4046,11 @@
 						<dt>Reference0</dt>
 						<dd>元のスクリプト。</dd>
 						<dt>Reference1</dt>
-						<dd>※SSPのみ　コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate。<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
+						<dd>※SSPのみ　コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate。<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。※該当がない場合欠番となる。</dd>
 						<dt>Reference2</dt>
-						<dd>※SSPのみ　このスクリプトが発生したイベントID (イベントが原因ではない場合空欄)。</dd>
+						<dd>※SSPのみ　このスクリプトが発生したイベントID 。イベントが原因ではない場合欠番。</dd>
 						<dt>Reference3</dt>
-						<dd>※SSPのみ　バイト値1区切りの上記イベントのReference (イベントが原因ではない場合空欄)。</dd>
+						<dd>※SSPのみ　バイト値1区切りの上記イベントのReference 。イベントが原因ではない場合欠番。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
