@@ -403,6 +403,9 @@
 				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
 				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
 				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
+				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
+				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
+				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a></li>
 				<li><a href="#OnPingComplete">OnPingComplete</a></li>
 				<li><a href="#OnPingProgress">OnPingProgress</a></li>
 				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
@@ -446,9 +449,11 @@
 		<section class="navigation-category">
 			<h1>バッテリー状態イベント</h1>
 			<ul>
+				<li><a href="#OnBatteryNotify">OnBatteryNotify</a></li>
 				<li><a href="#OnBatteryLow">OnBatteryLow</a></li>
 				<li><a href="#OnBatteryCritical">OnBatteryCritical</a></li>
-				<li><a href="#OnBatteryNotify">OnBatteryNotify</a></li>
+				<li><a href="#OnBatteryChargingStart">OnBatteryChargingStart</a></li>
+				<li><a href="#OnBatteryChargingStop">OnBatteryChargingStop</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -3503,6 +3508,45 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnExecuteRSSComplete">
+				<dt class="entry">OnExecuteRSSComplete</dt>
+				<dd class="entry">
+					<p>\![execute,rss-get/post]で正常に取得完了した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd><a href="#OnRSSComplete">OnRSSComplete</a>と同じ。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteRSSFailure">
+				<dt class="entry">OnExecuteRSSFailure</dt>
+				<dd class="entry">
+					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteRSS_SSLInfo">
+				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
+				<dd class="entry">
+					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnPingComplete">
 				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
 				<dd class="entry">
@@ -3819,36 +3863,6 @@
 		</section>
 		<section class="category">
 			<h1>バッテリー状態イベント</h1>
-			<dl id="OnBatteryLow">
-				<dt class="entry">OnBatteryLow</dt>
-				<dd class="entry">
-					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。バッテリー残量が少なめ(通常1/3以下)になった際に発生する。<br />
-					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
-					「きのこ」との互換用イベントとして実装されている。</p>
-					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnBatteryCritical">
-				<dt class="entry">OnBatteryCritical</dt>
-				<dd class="entry">
-					<p>Windowsの電源管理設定の設定により通知を受けた際に発生。バッテリー残量が極端に少なく(通常5%以下)になった際に発生する。<br />
-					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
-					「きのこ」との互換用イベントとして実装されている。</p>
-					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
@@ -3865,9 +3879,65 @@
 						high：バッテリー残量が2/3以上<br />
 						low：バッテリー残量が1/3以下 (OnBatteryLowも発生)<br />
 						critical：バッテリー残量が5％以下 (OnBatteryCriticalも発生)<br />
-						charging：バッテリーが充電中<br />
+						charging：バッテリーが充電中（OnBatteryChargingStart/Stopも発生）<br />
 						no_battery：バッテリーが取り外されている<br />
-						power_saving：バッテリー節約機能がON (SSP 2.4以降/Windows 10以降)</dd>
+						power_saving：バッテリー節約機能がON (SSP 2.3.94以降/Windows 10以降)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBatteryLow">
+				<dt class="entry">OnBatteryLow</dt>
+				<dd class="entry">
+					<p>バッテリー残量が少なめ(標準20%以下：OS設定に依存)になった際に発生する。<br />
+					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
+					「きのこ」との互換用イベントとして実装されている。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBatteryCritical">
+				<dt class="entry">OnBatteryCritical</dt>
+				<dd class="entry">
+					<p>バッテリー残量が極端に少なく(標準5%以下：OS設定に依存)になった際に発生する。<br />
+					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
+					「きのこ」との互換用イベントとして実装されている。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBatteryChargingStart">
+				<dt class="entry">OnBatteryChargingStart</dt>
+				<dd class="entry">
+					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnBatteryChargingStop">
+				<dt class="entry">OnBatteryChargingStop</dt>
+				<dd class="entry">
+					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

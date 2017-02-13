@@ -496,6 +496,8 @@
 						<dd>inductionモード中（\![enter,inductionmode]）。</dd>
 						<dt>timecritical</dt>
 						<dd>\tタグでロック中。</dd>
+						<dt>nouserbreak</dt>
+						<dd>nouserbreakモード中（\![enter,nouserbreak]）。</dd>
 						<dt>online</dt>
 						<dd>オンライン中（ヘッドラインデータ取得中や時刻あわせ中、自分自身のネットワーク更新中など）。</dd>
 						<dt>choosing</dt>
@@ -503,7 +505,9 @@
 						<dt>minimizing</dt>
 						<dd>最小化中（タスクトレイアイコン化中）。</dd>
 						<dt>opening(種類)</dt>
-						<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がカンマ区切りで入る。<br />例：opening(input,dialog)</dd>
+						<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がスラッシュ区切りで入る。<br />例：opening(input/dialog)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
+						<dt>balloon(情報)</dt>
+						<dd>バルーン表示中。<br />情報の部分には(キャラID)=(バルーンID)の形式で表示中のバルーンが列挙される。バルーンIDは左右の区別はない(常に偶数)。<br />例：balloon(0=2/1=0)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
 					</dl>
 					<p>※Statusヘッダは、SHIORI毎に以下のようにも取得出来ます。</p>
 					<ul>

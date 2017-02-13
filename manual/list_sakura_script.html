@@ -436,6 +436,8 @@
 				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,URL,パラメータ]</a></li>
 				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,ファイル名,ディレクトリ名]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,ファイル名,ディレクトリ名]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
@@ -1354,7 +1356,7 @@
 			<dl id="_n_パーセント_">
 				<dt class="entry">\n[パーセント]</dt>
 				<dd class="entry">
-					<p>通常のパーセント分改行する。</p>
+					<p>通常のパーセント分改行する。負の値を指定すると戻る　※SSP 2.3.97より。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -1363,6 +1365,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>文章が\n[150]1行半改行されて表示される。</code></p>
+							<p><code>文章が\n[-250]2行半分戻る。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4326,6 +4329,24 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_execute,rss-get,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,rss-get,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,rss-post,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
@@ -4773,7 +4794,9 @@
 				<h1>http get/post オプション</h1>
 				<dl>
 					<dt>--async=識別ID</dt>
-					<dd>処理が完了してからOnExecuteHTTPCompleteまたはOnExecuteHTTPFailureイベントを通知。<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
+					<dd>処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。<br>
+					RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
+					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
 					<dt>--nodescript</dt>
