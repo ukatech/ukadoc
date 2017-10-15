@@ -222,6 +222,7 @@
 				<li><a href="#_!_leave,nouserbreakmode_">\![leave,nouserbreakmode]</a></li>
 				<li><a href="#__!">\_!</a></li>
 				<li><a href="#__?">\_?</a></li>
+				<li><a href="#___v">\__v</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_imageresource">\_b[ファイルパス,...]について</a></li>
@@ -366,13 +367,16 @@
 				<li><a href="#_8_ファイル名_">\8[ファイル名]</a></li>
 				<li><a href="#__v_ファイル名_">\_v[ファイル名]</a></li>
 				<li><a href="#__V">\_V</a></li>
-				<li><a href="#_!_sound,play,ファイル名_">\![sound,play,ファイル名]</a></li>
+				<li><a href="#_!_sound,play,ファイル名_">\![sound,play,ファイル名,オプション...]</a></li>
+				<li><a href="#_!_sound,load,ファイル名_">\![sound,load,ファイル名,オプション...]</a></li>
 				<li><a href="#_!_sound,cdplay,トラックNo._">\![sound,cdplay,トラックNo.]</a></li>
 				<li><a href="#_!_sound,loop,ファイル名_">\![sound,loop,ファイル名]</a></li>
 				<li><a href="#_!_sound,wait_">\![sound,wait]</a></li>
 				<li><a href="#_!_sound,pause_">\![sound,pause]</a></li>
 				<li><a href="#_!_sound,resume_">\![sound,resume]</a></li>
 				<li><a href="#_!_sound,stop_">\![sound,stop]</a></li>
+				<li><a href="#_!_sound,option_">\![sound,option,ファイル名,オプション...]</a></li>
+				<li class="caption"><a href="#notes_sound">sound play/load/option のオプション</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -466,8 +470,8 @@
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_passivemode">PassiveMode</a></li>
-				<li class="caption"><a href="#notes_passivemode">InductionMode</a></li>
-				<li class="caption"><a href="#notes_passivemode">http get/post オプション</a></li>
+				<li class="caption"><a href="#notes_inductionmode">InductionMode</a></li>
+				<li class="caption"><a href="#notes_executehttp">http get/post オプション</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1742,6 +1746,23 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\_?\1この文章はさくらスクリプトが実行されず\nそのまま表示される。\_?</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="___v">
+				<dt class="entry">\__v[オプション]</dt>
+				<dd class="entry">
+					<p>次の\__vまでの文字列に対して、音声合成機能の発声内容を調整する。<br />
+					\__v[disable]：音声合成無効<br />
+					\__v[alternate,文字列]：読み方の違う単語に対して、正しい発声文字列を指定する。文字列は誤認識されないようひらがなが望ましい。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\1\__v[disable]この文章は音声合成機能でしゃべらない。\__v</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3475,18 +3496,27 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,play,ファイル名_">
-				<dt class="entry">\![sound,play,ファイル名]</dt>
+				<dt class="entry">\![sound,play,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
 				<dd class="entry">
-					<p>\_vと同じ機能。</p>
+					<p>\_vと同じ機能。ただし<a href="#notes_sound">オプション</a>を指定可能。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (オプションは2.4～)</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.mp4動画を再生する。ただしシークバー強制表示、音声のみ。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_sound,load,ファイル名_">
+				<dt class="entry">\![sound,load,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dd class="entry">
+					<p>再生前にあらかじめ読み込んで、play指定時にすぐに再生開始できるようにする。記述方法はplayと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_sound,cdplay,トラックNo._">
@@ -3579,6 +3609,30 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_sound,option_">
+				<dt class="entry">\![sound,option,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dd class="entry">
+					<p>再生中に<a href="#notes_sound">オプション</a>を変更する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="notes_sound">
+				<h1>sound play/load/option のオプション</h1>
+				<dl>
+					<dt>--volume=0～100</dt>
+					<dd>再生音量を変える。Maxが100。ただしOS全体の音量を操作するわけではない。</dd>
+					<dt>--balance=-100～0～100</dt>
+					<dd>ステレオ時の左右バランス。-100が左一杯、100が右一杯。</dd>
+					<dt>--rate=1～100～10000</dt>
+					<dd>再生速度。100が通常速度。</dd>
+					<dt>--window=false/true (=OFF/ON)</dt>
+					<dd>シークバーつきのウインドウを表示するかどうか。trueの場合は音声のみでも強制表示する。指定しなければ音声のみならなし、動画ならあり。</dd>
+					<dt>--sound-only=false/true (=OFF/ON)</dt>
+					<dd>load時限定：動画ファイルの音声のみ再生が可能。指定しなければfalseと同じ。</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>オープンコマンド</h1>

@@ -277,6 +277,7 @@
 				<li><a href="#OnInstallCompleteEx">OnInstallCompleteEx</a></li>
 				<li><a href="#OnInstallFailure">OnInstallFailure</a></li>
 				<li><a href="#OnInstallRefuse">OnInstallRefuse</a></li>
+				<li><a href="#OnInstallReroute">OnInstallReroute</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_install-identifier">インストールの識別子</a></li>
@@ -443,6 +444,8 @@
 				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
 				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
 				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
+				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
+				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
 				<li><a href="#OnDisplayPowerStatus">OnDisplayPowerStatus</a></li>
 			</ul>
 		</section>
@@ -472,6 +475,14 @@
 				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
 				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a></li>
 				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>音声認識・合成イベント</h1>
+			<ul>
+				<li><a href="#OnSpeechSynthesisStatus">OnSpeechSynthesisStatus</a></li>
+				<li><a href="#OnVoiceRecognitionStatus">OnVoiceRecognitionStatus</a></li>
+				<li><a href="#OnVoiceRecognitionWord">OnVoiceRecognitionWord</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1957,7 +1968,7 @@
 			<dl id="OnMouseDragStart">
 				<dt class="entry">OnMouseDragStart</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし始めた際に発生。</p>
+					<p>マウスをドラッグし始めた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -1982,7 +1993,7 @@
 			<dl id="OnMouseDragEnd">
 				<dt class="entry">OnMouseDragEnd</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし終えた際に発生。</p>
+					<p>マウスをドラッグし終えた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
@@ -2212,6 +2223,19 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnInstallReroute">
+				<dt class="entry">OnInstallReroute</dt>
+				<dd class="entry">
+					<p>インストールするファイルが他のゴーストを指名していた際、かつ、指名対象ゴーストが一緒に起動していた時に発生。以降のインストールイベントは指名対象ゴースト側に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
@@ -3847,6 +3871,43 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnDisplayHandover">
+				<dt class="entry">OnDisplayHandover</dt>
+				<dd class="entry">
+					<p>スクリーン間を跨いでウインドウを移動させた際に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>init (位置初期化完了時) か update (初期化後の更新) 。<br />
+						initは起動後ウインドウの位置が決定した際に通知され、OnBootより前とは限らない。</dd>
+						<dt>Reference1</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference2</dt>
+						<dd>移動前　左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)　init時は空欄<br />
+						例： 0,0,1600,900,32,1</dd>
+						<dt>Reference3</dt>
+						<dd>移動後　左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDisplayChangeEx">
+				<dt class="entry">OnDisplayChangeEx</dt>
+				<dd class="entry">
+					<p>スクリーンの解像度／色深度が変更された際に発生。マルチモニタ対応。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>init (起動時通知) か update (起動後の更新)</dd>
+						<dt>Reference1～</dt>
+						<dd>左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)<br />
+						例： 0,0,1600,900,32,1</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnDisplayPowerStatus">
 				<dt class="entry">OnDisplayPowerStatus</dt>
 				<dd class="entry">
@@ -4057,6 +4118,54 @@
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>音声認識・合成イベント</h1>
+			<dl id="OnSpeechSynthesisStatus">
+				<dt class="entry">OnSpeechSynthesisStatus</dt>
+				<dd class="entry">
+					<p>起動時と音声合成機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>0/1 (無効/有効)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.01</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnVoiceRecognitionStatus">
+				<dt class="entry">OnVoiceRecognitionStatus</dt>
+				<dd class="entry">
+					<p>起動時と音声認識機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>0/1 (無効/有効)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.01</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnVoiceRecognitionWord">
+				<dt class="entry">OnVoiceRecognitionWord</dt>
+				<dd class="entry">
+					<p>音声認識で単語が認識された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dt>Reference1</dt>
+						<dd>認識した単語。最初の名前呼びかけの時はキャラ名そのものになり、その際はメニューを表示するのが望ましい。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="about_voicetag">
+				<h1>音声認識・合成機能について</h1>
+				<p>音声認識・合成機能については、 \__vタグ などSakuraScriptの仕様も参照すること。</p>
+			</section>
 		</section>
 		<section class="category">
 			<h1>単体イベント</h1>
