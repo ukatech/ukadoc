@@ -179,8 +179,6 @@
 				<li><a href="#don&#39;t_need_onmousemove,数値">don&#39;t need onmousemove,数値</a></li>
 				<li><a href="#don&#39;t_need_bind,数値">don&#39;t need bind,数値</a></li>
 				<li><a href="#don&#39;t_need_seriko_talk,数値">don&#39;t need seriko talk,数値</a></li>
-				<li><a href="#balloon,バルーン名">balloon,バルーン名</a></li>
-				<li><a href="#default.balloon.path,パス">default.balloon.path,パス</a></li>
 				<li><a href="#balloon.dontmove,true">balloon.dontmove,true</a></li>
 				<li><a href="#icon,ファイル名">icon,ファイル名</a></li>
 				<li><a href="#icon.minimize,ファイル名">icon.minimize,ファイル名</a></li>
@@ -197,6 +195,16 @@
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_surfaceposition">サーフェスの位置情報</a></li>
+			</ul>
+			<h1>descript.txt - 推奨バルーン</h1>
+			<ul>
+				<li><a href="#balloon,バルーン名">balloon,バルーン名</a></li>
+				<li><a href="#default.balloon.path,パス">default.balloon.path,パス</a></li>
+				<li><a href="#recommended.balloon,バルーン名">recommended.balloon,バルーン名</a></li>
+				<li><a href="#recommended.balloon.path,パス">recommended.balloon.path,パス</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#caption_recommended">標準と推奨の使い分け</a></li>
 			</ul>
 		</section>
 	</section>
@@ -698,27 +706,6 @@ shiori,satori.dll
 					</ul>
 				</dd>
 			</dl>
-			<dl id="balloon,バルーン名">
-				<dt class="entry">balloon,バルーン名</dt>
-				<dd class="entry">
-					<p>デフォルトに使用するバルーン名。</p>
-					<p class="default">不明 | SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="default.balloon.path,パス">
-				<dt class="entry">default.balloon.path,パス</dt>
-				<dd class="entry">
-					<p>デフォルトに使用するバルーンの相対パス。</p>
-					<p class="default">不明| SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="balloon.dontmove,true">
 				<dt class="entry">balloon.dontmove,true</dt>
 				<dd class="entry">
@@ -875,6 +862,63 @@ shiori,satori.dll
 					<dd>自由移動。</dd>
 				</dl>
 			</div>
+		</section>
+		<section class="category">
+			<h1>descript.txt - 推奨バルーン</h1>
+			<dl id="balloon,バルーン名">
+				<dt class="entry">balloon,バルーン名</dt>
+				<dd class="entry">
+					<p>標準で使用するバルーン名。</p>
+					<p class="default">不明 | SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="default.balloon.path,パス">
+				<dt class="entry">default.balloon.path,パス</dt>
+				<dd class="entry">
+					<p>標準で使用するバルーンの相対パス。</p>
+					<p class="default">不明| SSPバルーンか、ユーザーが設定した標準バルーン( on SSP)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="recommended.balloon,バルーン名">
+				<dt class="entry">recommended.balloon,バルーン名</dt>
+				<dd class="entry">
+					<p>推奨使用バルーン名。これ以外に切り替えようとすると強い内容の警告が出る。</p>
+					<p class="default">指定なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="recommended.balloon.path,パス">
+				<dt class="entry">recommended.balloon.path,パス</dt>
+				<dd class="entry">
+					<p>推奨使用バルーンの相対パス。これ以外に切り替えようとすると強い内容の警告が出る。</p>
+					<p class="default">指定なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="caption_recommended">
+				<h1>標準と推奨の使い分け</h1>
+				<dl>
+					<dt>標準</dt>
+					<dd>初回起動時、または設定リセット時に選択すべきもの。<br />後からユーザーが自由に変えられる。</dd>
+					<dt>推奨</dt>
+					<dd>「標準」と同じ挙動だが、<em class="specsign">より強い依存関係を示す</em>もの。<br />
+					他のバルーンに切り替えようとすると警告が出たりする。<br />
+					安易に設定するとユーザーの選択肢を奪うことになるため、よほど強い依存関係がない限り、<em class="specsign">みだりに指定しない</em>こと。<br />
+					単に一部バルーンの削除を抑制したいだけなら、「標準」指定でも警告は出る。</dd>
+					<dt>その他</dt>
+					<dd>バルーン側からも「推奨」関係を設定できる。詳しくは<a href="descript_balloon.html">Balloonのdescript.txtの記述</a>を参照。</dd>
+				</dl>
 		</section>
 	</div>
 </body>

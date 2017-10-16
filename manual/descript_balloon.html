@@ -256,6 +256,16 @@
 				<li><a href="#windowposition.y,座標">windowposition.y,座標</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>descript.txt - 推奨ゴースト</h1>
+			<ul>
+				<li><a href="#recommended.ghost,ゴースト名">recommended.ghost,ゴースト名</a></li>
+				<li><a href="#recommended.ghost.path,パス">recommended.ghost.path,パス</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#caption_recommended">推奨の意味</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<div class="caption" id="note1">
@@ -1642,6 +1652,34 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>descript.txt - 推奨ゴースト</h1>
+			<dl id="recommended.ghost,ゴースト名">
+				<dt class="entry">recommended.ghost,ゴースト名</dt>
+				<dd class="entry">
+					<p>推奨使用ゴースト名。これ以外で使おうとすると強い内容の警告が出る。</p>
+					<p class="default">指定なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="recommended.ghost.path,パス">
+				<dt class="entry">recommended.ghost.path,パス</dt>
+				<dd class="entry">
+					<p>推奨使用ゴーストの相対パス。これ以外で使おうとすると強い内容の警告が出る。</p>
+					<p class="default">指定なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="caption_recommended">
+				<h1>推奨の意味</h1>
+				<p>上記の定義を書く時には、指定するバルーンが、形状・画像などの面で特定のゴースト向けに<em class="specsign">極端に特化</em>して作られていることを示すものであり、特定のゴーストのアンインストール時に一緒に削除するかどうか問い合わせが出るほどである。<br />
+				言い換えれば、少しでも他のゴーストで使用できる可能性がある設計であるなら、指定しないことを強くおすすめする。</p>
+			</section>
 		</section>
 	</div>
 </body>
