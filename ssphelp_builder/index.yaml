@@ -61,6 +61,8 @@
           place: config-disp
         - title: 喋り/バルーン
           place: config-talk
+        - title: 音声認識/合成
+          place: config-dictation
         - title: 接続(1)
           place: config-conn1
         - title: 接続(2)

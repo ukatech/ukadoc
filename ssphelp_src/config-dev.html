@@ -1,7 +1,7 @@
 <h1>設定：開発/その他</h1>
 <p>
 	画像左側のリストをクリックすると、それぞれの解説ページへ移動します。
-	<br /><img src="image/config-dev/0.png" usemap="#configdialog" width="557" height="590" alt="本体設定ダイアログ開発/その他" />
+	<br /><img src="image/config-dev/0.png" usemap="#configdialog" width="602" height="591" alt="本体設定ダイアログ開発/その他" />
 	<map name="configdialog" id="configdialog">
 		<area shape="rect" coords="14,31,137,46" href="config-ippan.html" alt="一般" />
 		<area shape="rect" coords="14,47,137,66" href="config-ghost.html" alt="ゴースト(1)" />
@@ -10,15 +10,17 @@
 		<area shape="rect" coords="14,98,137,114" href="config-disp.html" alt="表示" />
 
 		<area shape="rect" coords="14,115,137,133" href="config-talk.html" alt="喋り/バルーン" />
-		<area shape="rect" coords="14,134,137,152" href="config-conn1.html" alt="接続(1)" />
-		<area shape="rect" coords="14,150,137,168" href="config-conn2.html" alt="接続(2)" />
-		<area shape="rect" coords="14,167,137,185" href="config-pop.html" alt="POP" />
-		<area shape="rect" coords="14,184,137,202" href="config-extprog.html" alt="外部アプリ" />
+		<area shape="rect" coords="14,134,137,152" href="config-dictation.html" alt="音声合成" />
+		<area shape="rect" coords="14,150,137,168" href="config-conn1.html" alt="接続(1)" />
+		<area shape="rect" coords="14,167,137,185" href="config-conn2.html" alt="接続(2)" />
+		<area shape="rect" coords="14,184,137,202" href="config-pop.html" alt="POP" />
+		<area shape="rect" coords="14,201,137,219" href="config-extprog.html" alt="外部アプリ" />
 
-		<area shape="rect" coords="14,201,137,219" href="config-im.html" alt="IM" />
-		<area shape="rect" coords="14,218,137,236" href="config-ipmes.html" alt="IPMessenger" />
-		<area shape="rect" coords="14,235,137,253" href="config-i18n.html" alt="国際化" />
-		<!--<area shape="rect" coords="14,252,137,270" href="config-dev.html" alt="開発/その他" />-->
+		<area shape="rect" coords="14,218,137,236" href="config-im.html" alt="IM" />
+		<area shape="rect" coords="14,235,137,253" href="config-ipmes.html" alt="IPMessenger" />
+		<area shape="rect" coords="14,252,137,270" href="config-i18n.html" alt="国際化" />
+		<area shape="rect" coords="14,269,137,287" href="config-dev.html" alt="開発/その他" />
+		
 	</map>
 </p>
 <p>このページでは右クリックメニューの「設定」サブメニューにある項目「本体設定」で開くダイアログの、「開発/その他」ページについて解説しています。</p>
@@ -30,38 +32,38 @@
 
 <dl>
 	<dt>FMO名を変更する</dt>
-	<dd>現在起動中のゴーストをリストアップするFMOの名前を変更します。<br />
+	<dd>現在起動中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をリストアップするFMOの名前を変更します。<br />
 	通常は標準のSakuraのままで問題ありません。</dd>
 
 	<dt>ディレクトリをドロップした際に更新ファイルやNARを作成</dt>
-	<dd>ゴーストにディレクトリをドラッグ＆ドロップした際の動作を決定します。<br />
-	開発時はONにしておくと、ゴーストに通知するか開発系のコマンドを実行するかの動作を選択できるようになります。
+	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>にディレクトリをドラッグ＆ドロップした際の動作を決定します。<br />
+	開発時はONにしておくと、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に通知するか開発系のコマンドを実行するかの動作を選択できるようになります。
 	</dd>
 
 	 
-	<dt>ネットワーク更新時に旧ファイルを残す</dt>
-	<dd>ネットワーク更新で一時的に作成したファイルを、削除しないで保存しておきます。<br />
-	ネットワーク更新の際に起こった問題などを追跡するために使用することが出来ます。
+	<dt><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>時に旧ファイルを残す</dt>
+	<dd><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>で一時的に作成したファイルを、削除しないで保存しておきます。<br />
+	<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の際に起こった問題などを追跡するために使用することが出来ます。
 	</dd>
 
 	<dt>読み取り専用属性ファイルは更新対象にしない</dt>
-	<dd>ネットワーク更新の対象になっているファイルに読み取り専用属性がついている場合、更新せずにそのまま残しておきます。
+	<dd><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の対象になっているファイルに読み取り専用属性がついている場合、更新せずにそのまま残しておきます。
 	</dd>
 
-	<dt>サーフィスが存在しない時に非表示とする</dt>
-	<dd>スクリプトで指定されたサーフィスが存在しない時に、ゴーストのウィンドウを消去します（通常はデフォルトサーフィスが表示）。<br />
-	ゴーストのスクリプトの不具合の検証用途などに利用できます。
+	<dt><a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が存在しない時に非表示とする</dt>
+	<dd>スクリプトで指定された<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が存在しない時に、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のウィンドウを消去します（通常はデフォルト<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が表示）。<br />
+	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のスクリプトの不具合の検証用途などに利用できます。
 	</dd>
 
 	
 	<dt>Materiaが起動しているように見せかける</dt>
-	<dd>Mutex "sakura" を作成し、Materiaが起動しているかのようにふるまいます。<br />
+	<dd>Mutex &quot;sakura&quot; を作成し、Materiaが起動しているかのようにふるまいます。<br />
 	Materiaでしか動作しない設計となっているソフトが動作する可能性があります。
 	</dd>
 
 	<dt>Vanish（アンインストール）実行を抑制</dt>
 	<dd>絶対にVanish（アンインストール）を実行できない状態にします。<br />
-	ゴースト開発中等に誤ってVanishを実行してしまうのを防ぐ等に利用できます。　</dd>
+	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発中等に誤ってVanishを実行してしまうのを防ぐ等に利用できます。　</dd>
 
 	<dt>複数起動ロックを解除</dt>
 	<dd>通常SSPは1マシンに1つしか起動できないようになっていますが、開発用とその他用に分けたい場合など、複数起動したい場合にこのロックを解除してください。<br />
@@ -69,20 +71,25 @@
 	また、NARファイルを関連付けしている場合、NARを開いてのインストール実行ができなくなります（ドラッグ＆ドロップは利用可能）。</dd>
 
 	<dt>利用可能な場合は更新にバージョン管理ツールを使う</dt>
-	<dd>ゴーストの管理にバージョン管理ツールが使われている場合は、通常のネットワーク更新の代わりに、それを起動して「更新」処理を行います。</dd>
+	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の管理にバージョン管理ツールが使われている場合は、通常の<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の代わりに、それを起動して「更新」処理を行います。</dd>
 	
 	<dt>[XXX]レベル以上のエラー発生を通知</dt>
 	<dd>
-		選択したレベル以上のエラーが発生した際に、タスクトレイアイコンからバルーンを表示します。
-		<br />ゴースト開発者は、開発中NOTICEか少なくともWARNING以上を通知することが推奨されます。
+		選択したレベル以上のエラーが発生した際に、タスクトレイアイコンから<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を表示します。
+		<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発者は、開発中NOTICEか少なくともWARNING以上を通知することが推奨されます。
 		<br />通知レベルの意味については「<a href="dev-scriptlog.html#chapter2">スクリプトログ</a>」のページを参照してください。
 
 	</dd>
 
 	<dt>例外ハンドラを使う</dt>
 	<dd>
-		デバッグに協力していただける方や、ゴースト開発者はOFFにしておくと、メモリへのアクセス違反等で「ちゃんと落ちる」ようになります。
+		デバッグに協力していただける方や、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発者はOFFにしておくと、メモリへのアクセス違反等で「ちゃんと落ちる」ようになります。
 		<br />あまり頻繁にSSPが落ちるような場合はONにするといくらか軽減するかもしれませんが、開発中は非推奨です。
+	</dd>
+	
+	<dt>自動更新の際にテスト版も対象にする</dt>
+	<dd>
+		更新チェックの際の対象をテスト版まで広げます。次期メジャーバージョンアップのテスト版などを自動で入手できます。
 	</dd>
 </dl>
 
@@ -99,7 +106,7 @@
 
 	<dt>フォルダと同じ</dt>
 	<dd>
-		NARを作成するゴーストのフォルダと同じ場所に作成するようにします。
+		NARを作成する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のフォルダと同じ場所に作成するようにします。
 	</dd>
 
 	<dt>指定したフォルダ</dt>
