@@ -28,9 +28,9 @@ body {
 }
 iframe#sidemenu {
     border: 0;
+    min-height: inherit;
     overflow: hidden;
-    width: 200px;
-    height: 1400px;
+    width: 240px;
 }
 iframe#navigation {
     border: 0;
@@ -203,6 +203,7 @@ a.note:after {
 section.baseframe {
     border: 0;
     width: 750px;
+    min-height: 1600px;
     margin: 0 auto;
 }
 section.baseframe > header:first-child {
@@ -214,12 +215,14 @@ section.baseframe > header:first-child {
 section.body {
     position: relative;
     width: 750px;
-    min-height: 1400px;
+    min-height: inherit;
     margin-top: 0.5em;
 }
 nav.sidebar {
     float: left;
+    min-height: inherit;
     width: 200px;
+    overflow :hidden;
 }
 main {
     float: right;
