@@ -3552,7 +3552,7 @@
 			<dl id="_!_sound,wait_">
 				<dt class="entry">\![sound,wait]</dt>
 				<dd class="entry">
-					<p>\_Vと同じ機能。</p>
+					<p>\_Vと同じ機能。サウンド再生が終わるまで待機する。複数再生中の場合ははじめに再生が終わったものに反応する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3565,9 +3565,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,pause_">
-				<dt class="entry">\![sound,pause]</dt>
+				<dt class="entry">\![sound,pause(,ファイル名)]</dt>
 				<dd class="entry">
-					<p>再生を一時停止する。</p>
+					<p>再生を一時停止する。ファイル名を省略した場合、全再生中のサウンドを一時停止する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3580,9 +3580,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,resume_">
-				<dt class="entry">\![sound,resume]</dt>
+				<dt class="entry">\![sound,resume(,ファイル名)]</dt>
 				<dd class="entry">
-					<p>一時停止を解除する。</p>
+					<p>一時停止を解除する。ファイル名を省略した場合、全再生中のサウンドを一時停止解除する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3595,9 +3595,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,stop_">
-				<dt class="entry">\![sound,stop]</dt>
+				<dt class="entry">\![sound,stop(,ファイル名)]</dt>
 				<dd class="entry">
-					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。</p>
+					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。<br />ファイル名を省略した場合、全再生中のサウンドを停止する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
