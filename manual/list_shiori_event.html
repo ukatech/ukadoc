@@ -3813,9 +3813,21 @@
 						<dd>onlineまたはoffline。</dd>
 						<dt>Reference1</dt>
 						<dd>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</dd>
+						<dt>Reference2</dt>
+						<dd>接続の種類。<br />
+						cellular : 携帯回線もしくは通常のPPP(PPPoE等除く)<br />
+						ethernet : Ethernet (有線LAN)<br />
+						none : 接続なし<br />
+						wifi : 無線LAN<br />
+						wimax : WiMAX<br />
+						other : その他不明<br />
+						unknown : 検出に失敗
+						</dd>
+						<dt>Reference3</dt>
+						<dd>接続回線のダウンロード側の最大通信速度を示す数値。単位はMBps。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Reference2,3は2.4.22から</li>
 					</ul>
 				</dd>
 			</dl>
