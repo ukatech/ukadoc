@@ -221,6 +221,7 @@ table.Links thead th:first-child {
 	color: #ffffff;
 }
 table.KeyboardShortcut,
+table.SRCommand,
 table.CommandLineSwitch,
 table#environment {
 	background-color: #aaaabb;
@@ -230,12 +231,14 @@ table#environment {
 	border-spacing: 2px;
 }
 table.KeyboardShortcut td:first-child,
+table.SRCommand td:first-child,
 table.CommandLineSwitch td:first-child {
 	width: 30%;
 	padding: 0.2em;
 	background-color: #ddddee;
 }
 table.KeyboardShortcut td + td,
+table.SRCommand td + td,
 table.CommandLineSwitch td + td {
 	background-color: #eeeeff;
 	padding: 0.2em;
