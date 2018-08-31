@@ -38,6 +38,8 @@
       children:
         - title: 右クリック/機能メニュー
           place: explorer-menu
+    - title: 音声認識
+      place: speech_recognition
     - title: ショートカット一覧
       place: shortcut
     - title: 起動オプション一覧
