@@ -372,9 +372,9 @@
 				<li><a href="#_!_sound,cdplay,トラックNo._">\![sound,cdplay,トラックNo.]</a></li>
 				<li><a href="#_!_sound,loop,ファイル名_">\![sound,loop,ファイル名]</a></li>
 				<li><a href="#_!_sound,wait_">\![sound,wait]</a></li>
-				<li><a href="#_!_sound,pause_">\![sound,pause]</a></li>
-				<li><a href="#_!_sound,resume_">\![sound,resume]</a></li>
-				<li><a href="#_!_sound,stop_">\![sound,stop]</a></li>
+				<li><a href="#_!_sound,pause,ファイル名_">\![sound,pause,ファイル名]</a></li>
+				<li><a href="#_!_sound,resume,ファイル名_">\![sound,resume,ファイル名]</a></li>
+				<li><a href="#_!_sound,stop,ファイル名_">\![sound,stop,ファイル名]</a></li>
 				<li><a href="#_!_sound,option_">\![sound,option,ファイル名,オプション...]</a></li>
 				<li class="caption"><a href="#notes_sound">sound play/load/option のオプション</a></li>
 			</ul>
@@ -3565,9 +3565,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,pause_">
-				<dt class="entry">\![sound,pause]</dt>
+				<dt class="entry">\![sound,pause,ファイル名]</dt>
 				<dd class="entry">
-					<p>再生を一時停止する。</p>
+					<p>再生を一時停止する。ファイル名を省略した場合、全再生中のサウンドを一時停止する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3580,9 +3580,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,resume_">
-				<dt class="entry">\![sound,resume]</dt>
+				<dt class="entry">\![sound,resume,ファイル名]</dt>
 				<dd class="entry">
-					<p>一時停止を解除する。</p>
+					<p>一時停止を解除する。ファイル名を省略した場合、全再生中のサウンドを一時停止解除する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3595,9 +3595,9 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,stop_">
-				<dt class="entry">\![sound,stop]</dt>
+				<dt class="entry">\![sound,stop,ファイル名]</dt>
 				<dd class="entry">
-					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。</p>
+					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。<br />ファイル名を省略した場合、全再生中のサウンドを停止する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
