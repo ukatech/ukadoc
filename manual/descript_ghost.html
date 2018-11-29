@@ -301,7 +301,7 @@ shiori,satori.dll
 			<dl id="id,ID名">
 				<dt class="entry">id,ID名</dt>
 				<dd class="entry">
-					<p>そのゴーストのID名。半角英数のみ。<br />起動ログのないSSPでは無意味。</p>
+					<p>そのゴーストのID名。半角英数のみ。<br />SSPでは起動ログ表示モードでのみ有効。</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -313,7 +313,7 @@ shiori,satori.dll
 			<dl id="title,表示名">
 				<dt class="entry">title,表示名</dt>
 				<dd class="entry">
-					<p>そのゴーストの起動ログでIDの変わりに表示される名前。半角英数のみ。<br />起動ログのないSSPでは無意味。</p>
+					<p>そのゴーストの起動ログでIDの変わりに表示される名前。半角英数のみ。<br />SSPでは起動ログ表示モードでのみ有効。</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -797,18 +797,18 @@ shiori,satori.dll
 			<dl id="#shiori.logo.file,ファイル名">
 				<dt class="entry">shiori.logo.file,ファイル名</dt>
 				<dd class="entry">
-					<p>AIグラフ背景に使用する画像ファイル名です。</p>
-					<p class="default">SSP標準背景</p>
+					<p>AIグラフ背景に使用する画像ファイル名。<br />複数グラフ表示の場合は拡張子の前に数字をつけたものを読み込む。<br />例：aigraph.pngと指定した場合、aigraph0.png、aigraph1.png…<br />画像サイズは288x288pxでグラフ描画面一杯になる。</p>
+					<p class="default">ai.png（ai0.png、ai1.png…）、なければベースウェア標準背景</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 複数指定は2.4.26～</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="shiori.logo.x,X座標">
 				<dt class="entry">shiori.logo.x,X座標</dt>
 				<dd class="entry">
-					<p>AIグラフ背景に使用する画像ファイルを表示するX座標です。<br />
+					<p>AIグラフ背景に使用する画像ファイルを表示するX座標。<br />
 					shiori.logo.alignも参照してください。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
@@ -820,7 +820,7 @@ shiori,satori.dll
 			<dl id="shiori.logo.y,Y座標">
 				<dt class="entry">shiori.logo.y,Y座標</dt>
 				<dd class="entry">
-					<p>AIグラフ背景に使用する画像ファイルを表示するY座標です。<br />
+					<p>AIグラフ背景に使用する画像ファイルを表示するY座標。<br />
 					shiori.logo.alignも参照してください。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
@@ -832,8 +832,8 @@ shiori,satori.dll
 			<dl id="shiori.logo.align,位置情報">
 				<dt class="entry">shiori.logo.align,位置情報</dt>
 				<dd class="entry">
-					<p>shiori.logo.x,yで指定した座標の基準点を指定します。通常は左上です。<br />
-					左上(lefttop)・左下(leftbottom)・右上(righttop)・右下(rightbottom)を指定できます。</p>
+					<p>shiori.logo.x,yで指定した座標の基準点を指定。通常は左上。<br />
+					左上(lefttop)・左下(leftbottom)・右上(righttop)・右下(rightbottom)を指定可能。</p>
 					<p class="default">lefttop(左上基準)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m_discon.png" alt="Materia廃止仕様" width="34" height="16" /></li>

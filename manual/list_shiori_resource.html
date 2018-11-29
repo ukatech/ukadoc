@@ -181,6 +181,7 @@
 				<li><a href="#kero.popupmenu.type">kero.popupmenu.type</a></li>
 				<li><a href="#char*.popupmenu.type">char*.popupmenu.type</a></li>
 				<li><a href="#getaistate">getaistate</a></li>
+				<li><a href="#getaistateex">getaistateex</a></li>
 				<li><a href="#legacyinterface">legacyinterface</a></li>
 			</ul>
 		</section>
@@ -760,16 +761,16 @@
 					<p>グラフ表示値群 [バイト値1] グラフラベル群 [バイト値1] グラフ加算値群 [バイト値1] グラフ最大値群</p>
 					<dl>
 						<dt>グラフ表示値群</dt>
-						<dd>グラフに表示したい値を半角数値・カンマ区切りで返してください。</dd>
+						<dd>グラフに表示したい値を半角数値・カンマ区切りで返してください。<br />2.4.26から小数点以下可。</dd>
 						<dt>グラフラベル群(省略可)</dt>
 						<dd>グラフに表示したいラベルをカンマ区切りで返してください。<br />
 						省略時：Neuron,NeuronM,NeuronK,NeuronD,NeuronE,Synapse</dd>
 						<dt>グラフ加算値群(省略可)</dt>
-						<dd>グラフの「加算値」を半角数値・カンマ区切りで返してください。<br />
+						<dd>グラフの「加算値」を半角数値・カンマ区切りで返してください。<br />2.4.26から小数点以下可。<br />
 						加算値とは、学習で増えた値や、直近で変化した値などを強調表示する機能で、グラフ表示値に加算されて表示されます。<br />
 						省略時：すべてゼロで非表示</dd>
 						<dt>グラフ最大値群(省略可)</dt>
-						<dd>グラフの最大値を半角数値・カンマ区切りで返してください。最大値 ≧ (表示値 + 加算値) です。<br />
+						<dd>グラフの最大値を半角数値・カンマ区切りで返してください。最大値 ≧ (表示値 + 加算値) です。<br />2.4.26から小数点以下可。<br />
 						省略時：表示値＋加算値を計算しその最大値をすべての要素に設定</dd>
 					</dl>
 					
@@ -779,7 +780,23 @@
 					<img src="image/aigraph.png" width="288" height="288" alt="AI Graph" /></p>
 					
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.26から小数点以下認識</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="getaistateex">
+				<dt class="entry">getaistateex</dt>
+				<dd class="entry">
+					<p>getaisateの複数指定可能版。Reference0に何個目のグラフ用のデータを要求しているかが渡される(数値は0スタート)。<br />
+					グラフを2コだけ表示したい場合は、Reference0が0,1の時応答し、2以上なら値なし(204)を返すこと。<br />
+					フォーマットはgetaistateと同じ。</p>
+					
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>何個目のグラフ用のデータか（ゼロベース）。0、1、2…</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.26</li>
 					</ul>
 				</dd>
 			</dl>
