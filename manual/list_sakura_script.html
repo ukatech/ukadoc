@@ -3212,7 +3212,24 @@
 			<dl id="_!_set,wallpaper,ファイル名,オプション_">
 				<dt class="entry">\![set,wallpaper,ファイル名,オプション]</dt>
 				<dd class="entry">
-					<p>指定したファイルを壁紙にする。<br>ファイル名には、絶対パスの他、ssp.exeからの相対パスが使用可能。<br>オプションにcenter、tile、stretchを指定できる、省略可。</p>
+					<p>指定したファイルを壁紙にする。<br>
+					ファイル名には、絶対パスの他、ssp.exeからの相対パスが使用可能。<br>
+					ファイル名を指定しないか空にすると壁紙設定が解除される(OSデフォルトの設定に戻る)。<br>
+					オプションは以下の通り。</p>
+					<dl>
+						<dt>center</dt>
+						<dd>中央表示（省略時デフォルト）</dd>
+						<dt>tile</dt>
+						<dd>並べて表示する（タイリング）</dd>
+						<dt>stretch</dt>
+						<dd>画像の縦横比を無視して、モニタいっぱいに拡大する。</dd>
+						<dt>stretch-x</dt>
+						<dd>画像の横幅をモニタ幅いっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
+						<dt>stretch-y</dt>
+						<dd>画像の高さをモニタ高さいっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
+						<dt>span</dt>
+						<dd>マルチモニタ環境において、全モニタに渡るように拡大する。Windows 10以降のみ。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
