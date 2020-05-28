@@ -169,6 +169,7 @@
 				<li><a href="#sakura.defaulttop,Y座標">sakura.defaulttop,Y座標</a></li>
 				<li><a href="#kero.defaulttop,Y座標">kero.defaulttop,Y座標</a></li>
 				<li><a href="#char*.defaulttop,Y座標">char*.defaulttop,Y座標</a></li>
+				<li><a href="#seriko.defaultsurfacedirectoryname,ディレクトリ名">seriko.defaultsurfacedirectoryname,ディレクトリ名</a></li>
 				<li><a href="#sstp.allowunspecifiedsend,数値">sstp.allowunspecifiedsend,数値</a></li>
 				<li><a href="#sstp.allowcommunicate,数値">sstp.allowcommunicate,数値</a></li>
 				<li><a href="#sstp.alwaystranslate,数値">sstp.alwaystranslate,数値</a></li>
@@ -176,6 +177,7 @@
 				<li><a href="#shiori.version,バージョン">shiori.version,バージョン</a></li>
 				<li><a href="#shiori.cache,数値">shiori.cache,数値</a></li>
 				<li><a href="#shiori.encoding,文字コード">shiori.encoding,文字コード</a></li>
+				<li><a href="#shiori.forceencoding,文字コード">shiori.forceencoding,文字コード</a></li>
 				<li><a href="#don&#39;t_need_onmousemove,数値">don&#39;t need onmousemove,数値</a></li>
 				<li><a href="#don&#39;t_need_bind,数値">don&#39;t need bind,数値</a></li>
 				<li><a href="#don&#39;t_need_seriko_talk,数値">don&#39;t need seriko talk,数値</a></li>
@@ -601,6 +603,16 @@ shiori,satori.dll
 					</ul>
 				</dd>
 			</dl>
+			<dl id="seriko.defaultsurfacedirectoryname,ディレクトリ名">
+				<dt class="entry">seriko.defaultsurfacedirectoryname,ディレクトリ名</dt>
+				<dd class="entry">
+					<p>初回起動時や一度もシェルを切り替えたことのない時に、標準で読み込まれるシェルのディレクトリ名を指定する。</p>
+					<p class="default">master</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="sstp.allowunspecifiedsend,数値">
 				<dt class="entry">sstp.allowunspecifiedsend,数値</dt>
 				<dd class="entry">
@@ -666,8 +678,18 @@ shiori,satori.dll
 			<dl id="shiori.encoding,文字コード">
 				<dt class="entry">shiori.encoding,文字コード</dt>
 				<dd class="entry">
-					<p>SHIORIがCharsetを返さない場合に、指定した文字コードで強制的にエンコーディングする。</p>
-					<p class="default">0（loadしない）</p>
+					<p>SHIORIとの通信を指定した文字コードで行う。SHIORI側からCharsetヘッダが返された場合はSHIORI側が優先される。</p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.forceencoding,文字コード">
+				<dt class="entry">shiori.forceencoding,文字コード</dt>
+				<dd class="entry">
+					<p>SHIORIがCharsetヘッダを返したか否かに関係なく、SHIORIとの通信を指定した文字コードで強制的に行う。</p>
+					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
