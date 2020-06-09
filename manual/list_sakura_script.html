@@ -337,9 +337,6 @@
 				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,ゴースト名]</a></li>
 				<li><a href="#_!_change,shell,シェル名_">\![change,shell,シェル名]</a></li>
 				<li><a href="#_!_change,balloon,バルーン名_">\![change,balloon,バルーン名]</a></li>
-				<li><a href="#_!_change,ghost,lastinstalled_">\![change,ghost,lastinstalled]</a></li>
-				<li><a href="#_!_change,shell,lastinstalled_">\![change,shell,lastinstalled]</a></li>
-				<li><a href="#_!_change,balloon,lastinstalled_">\![change,balloon,lastinstalled]</a></li>
 				<li><a href="#_!_call,ghost,ゴースト名_">\![call,ghost,ゴースト名]</a></li>
 				<li><a href="#_v">\v</a></li>
 				<li><a href="#_!_set,windowstate,stayontop_">\![set,windowstate,stayontop]</a></li>
@@ -3033,9 +3030,21 @@
 				</dd>
 			</dl>
 			<dl id="_!_change,ghost,ゴースト名_">
-				<dt class="entry">\![change,ghost,ゴースト名]</dt>
+				<dt class="entry">\![change,ghost,ゴースト名(,--option=raise-event)]</dt>
 				<dd class="entry">
-					<p>そのゴーストへの切り替えを行う。<br>ゴースト名をrandomにするとランダムチェンジ(\+と同様)。<br>sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>実行後、該当ゴーストがいなかった場合は無視される。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
+					<p>そのゴーストへの切り替えを行う。<br>
+					ゴースト名をrandomにするとランダムチェンジ(\+と同様)。<br>
+					sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>
+					実行後、該当ゴーストがいなかった場合は無視される。</p>
+					
+					<p>ゴースト名をlastinstalledにすると最後にインストールしたゴーストに切り替え。ただしSSPを一度終了した場合は無効。<br>
+					ゴースト名をrandomにするとランダムに切り替え。
+					</p>
+					
+					<p>SSP 2.4.74以降で、ゴースト名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>が通知される。<br>
+					この場合、バルーンブレーク（通常ダブルクリック）による中止操作も可能な点に注意。<br>
+					指定しない場合は通知されない。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3050,9 +3059,20 @@
 				</dd>
 			</dl>
 			<dl id="_!_change,shell,シェル名_">
-				<dt class="entry">\![change,shell,シェル名]</dt>
+				<dt class="entry">\![change,shell,シェル名(,--option=raise-event)]</dt>
 				<dd class="entry">
-					<p>そのシェルへの切り替えを行う。<br>該当シェルがなかった場合は無視される。<br>変更後SHIORIイベント<a href="list_shiori_event.html#OnShellChanged">OnShellChanged</a>が通知される。<br>SHIORIイベント<a href="list_shiori_event.html#OnShellChanging">OnShellChanging</a>は通知されない。</p>
+					<p>そのシェルへの切り替えを行う。<br>
+					該当シェルがなかった場合は無視される。<br>
+					変更後SHIORIイベント<a href="list_shiori_event.html#OnShellChanged">OnShellChanged</a>が通知される。</p>
+					
+					<p>シェル名をlastinstalledにすると最後にインストールしたゴーストに切り替え。ただしSSPを一度終了した場合は無効。<br>
+					シェル名をrandomにするとランダムに切り替え。
+					</p>
+					
+					<p>SSP 2.4.74以降で、シェル名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnShellChanging">OnShellChanging</a>が通知される。<br>
+					この場合、バルーンブレーク（通常ダブルクリック）による中止操作も可能な点に注意。<br>
+					指定しない場合は通知されない。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -3068,7 +3088,14 @@
 			<dl id="_!_change,balloon,バルーン名_">
 				<dt class="entry">\![change,balloon,バルーン名]</dt>
 				<dd class="entry">
-					<p>そのバルーンへの切り替えを行う。<br>該当バルーンがなかった場合は無視される。<br>変更後SHIORIイベント<a href="list_shiori_event.html#OnBalloonChange">OnBalloonChange</a>が通知される。</p>
+					<p>そのバルーンへの切り替えを行う。<br>
+					該当バルーンがなかった場合は無視される。<br>
+					変更後SHIORIイベント<a href="list_shiori_event.html#OnBalloonChange">OnBalloonChange</a>が通知される。</p>
+					
+					<p>バルーン名をlastinstalledにすると最後にインストールしたバルーンに切り替え。ただしSSPを一度終了した場合は無効。<br>
+					バルーン名をrandomにするとランダムに切り替え。
+					</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3080,55 +3107,17 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_change,ghost,lastinstalled_">
-				<dt class="entry">\![change,ghost,lastinstalled]</dt>
-				<dd class="entry">
-					<p>SSP起動中、最後にインストールされたゴーストへの切り替えを行う。<br>該当するゴーストがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>最後にインストールしたゴーストに交代。\![change,ghost,lastinstalled]</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_change,shell,lastinstalled_">
-				<dt class="entry">\![change,shell,lastinstalled]</dt>
-				<dd class="entry">
-					<p>SSP起動中、最後にインストールされたシェルへの切り替えを行う。<br>該当するシェルがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>最後にインストールしたシェルに変更。\![change,shell,lastinstalled]</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_change,balloon,lastinstalled_">
-				<dt class="entry">\![change,balloon,lastinstalled]</dt>
-				<dd class="entry">
-					<p>SSP起動中、最後にインストールされたバルーンへの切り替えを行う。<br>該当するバルーンがなかった場合無視される。<br>SSPを終了すると最後にインストールしたものの情報が消えるので無効になる。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>最後にインストールしたバルーンに変更。\![change,balloon,lastinstalled]</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
 			<dl id="_!_call,ghost,ゴースト名_">
-				<dt class="entry">\![call,ghost,ゴースト名]</dt>
+				<dt class="entry">\![call,ghost,ゴースト名(,--option=raise-event)]</dt>
 				<dd class="entry">
-					<p>ゴースト名で指定されたゴーストを呼び出す。<br>ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>ゴースト名をrandomにするとランダムに呼び出し。<br>SHIORIイベント<a href="list_shiori_event.html#OnGhostCalling">OnGhostCalling</a>は通知されない。</p><p></p>
+					<p>ゴースト名で指定されたゴーストを呼び出す。<br>
+					ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>
+					ゴースト名をrandomにするとランダムに呼び出し。
+					</p>
+					
+					<p>SSP 2.4.74以降で、ゴースト名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnGhostCalling">OnGhostCalling</a>が通知される。<br>
+					指定しない場合は通知されない。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
