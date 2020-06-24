@@ -45,12 +45,16 @@
 　　<em class="filename">+-online*.png</em>
 　　<em class="filename">+-sstp.png</em>
 　　<em class="filename">+-arrow*.png</em>
+　　<em class="filename">+-arrows*.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrowk*.png</em>  (SSP 2.4.78～)
 　　<em class="filename">+-thumbnail.png</em>
 　　<em class="filename">+-ok_down.png/ok_up.png</em> （SSPのみ）
 　　<em class="filename">+-cancel_down.png/cancel_up.png</em> （SSPのみ）
 　　<em class="filename">+-mode_down.png/mode_up.png</em> （SSPのみ）
 　　<em class="filename">+-sstp_new.png</em> （SSPのみ）
 　　<em class="filename">+-marker.png</em> （SSPのみ）
+　　<em class="filename">+-markers.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-markerk.png</em>  (SSP 2.4.78～)
 </pre>
 	</div>
 </section>
@@ -100,7 +104,7 @@
 
 			<dt>balloons*.pna</dt>
 			<dd>
-				<p>MTERIAでは不可。</p>
+				<p>MATERIAでは不可。</p>
 				<p>グレースケール（黒：透明←→不透明：白）のpng画像の拡張子部分pnaにリネームしたもの。</p>
 				<p>対応するID（balloons0.pngに対してballoons0.pna）のpngに対応したpnaを用意すると、それを透明度設定として利用できる。</p>
 				<p>SSPでは<a href="descript_balloon.html#use_self_alpha,%E6%95%B0%E5%80%A4">設定</a>でpng自体のアルファチャンネルを利用できる点も同じ。</p>
@@ -153,6 +157,7 @@
 			<dd>
 				<p>文章をスクロールさせるのに使用する画像。</p>
 				<p>0が上向き、1が下向き。</p>
+				<p>SSPでは本体・相方専用のものを定義できる。後述。</p>
 			</dd>
 
 			<dt>sstp.png</dt>
@@ -200,9 +205,17 @@
 				<p>SSTP受信時に、送信者情報などを表示する際に使用される画像（sstp.pngと異なりこの用途専用）。</p>
 			</dd>
 
-			<dt>marker.png</dt>
+			<dt>marker.png / markers.png / markerk.png</dt>
 			<dd>
 				<p>\![*]タグ（SSPは%*でも同様）で表示される画像（sstp.pngと異なりこの用途専用）。</p>
+				<p>markersが本体用(旧バージョン対応のためにmarkerで代用を推奨)、markerkが相方用。</p>
+			</dd>
+			
+			<dt>arrows*.png / arrowk*.png</dt>
+			<dd>
+				<p>文章をスクロールさせるのに使用する画像。SSP 2.4.78以降専用。</p>
+				<p>0が上向き、1が下向き。</p>
+				<p>arrowsが本体用(旧バージョン対応のためにarrowで代用を推奨)、arrowkが相方用。</p>
 			</dd>
 		</dl>
 	</div>
