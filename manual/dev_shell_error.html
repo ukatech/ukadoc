@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="伺か,アニメーション,着せ替え,ukadoc,ゴースト">
+<title>UKADOC Project アニメーション/着せ替えの設定</title>
+<link rel="stylesheet" href="base.css">
+<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+</head>
+<body>
+<section class="baseframe">
+	<header>
+		<iframe src="navigation.html" id="navigation" name="navigation" title="ukadoc navigation">
+			UKADOC Project(Powered by Disc-2)
+		</iframe>
+	</header>
+	<section class="body">
+		<nav class="sidebar">
+			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
+		</nav>
+		<main>
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<h1>エラーメッセージの解消</h1>
+<section>
+	<h1 id="manual_shell_error">エラーメッセージの解消</h1>
+	<div class="passage">
+		<p>開発をしていると、時々SSPがこんなエラーを吐いた、というバグ報告に出くわすことがあります。<br />
+		ここでは、エラーメッセージの解消方法について、いくつか参考になる情報を列挙しています。<br />
+		完全に解決するためのマニュアルではありませんが、ちょっとしたヒントになるとは思います。</p>
+	</div>
+</section>
+<nav>
+	<h1>目次</h1>
+	<ol>
+		<li><a href="#chapter1">～が見つかりません</a></li>
+		<li><a href="#chapter2">旧定義/新定義がどうこう言われた</a></li>
+	</ol>
+</nav>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<section id="chapter1" class="ordered">
+	<h1>～ 存在していません。</h1>
+	
+	<div class="passage">
+		<p>最もよく表示されがちなエラーです。だいたいの場合はアニメーションIDの誤記とか、定義を書き損ねたとか、簡単に修正できる場合が多いのですが、一部対処に悩むものもあります。</p>
+	</div>
+
+	<section id="chapter1-1">
+		<h1>[GHOST]default(master) shell 存在していません。</h1>
+		<div class="passage">
+			<p>伺かの仕様上、shell/masterフォルダは必ず必要で、無いと互換性の問題が発生します。<br />
+			ただし、どうしてもmasterシェルを作りたくない場合は、以下の定義で回避できます。</p>
+			<p><a href="descript_ghost.html#seriko.defaultsurfacedirectoryname,%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E5%90%8D">seriko.defaultsurfacedirectoryname</a></p>
+		</div>
+	</section>
+	
+	<section id="chapter1-2">
+		<h1>[SERIKO]Surface=0(または10) 存在していません。</h1>
+		<div class="passage">
+			<p>伺かの仕様では、0番と10番サーフェスは特殊な扱いで、存在しない番号を\sタグで指定した時などに代わりに表示する「デフォルトサーフェス」となります。<br />
+			0番はともかくとしても、10番を作りたくない場合はそれなりにあると思うので、以下の定義を追加してみてください。</p>
+			<p><a href="descript_ghost.html#sakura.seriko.defaultsurface,%E6%95%B0%E5%80%A4">sakura.seriko.defaultsurface</a></p>
+			<p><a href="descript_ghost.html#kero.seriko.defaultsurface,%E6%95%B0%E5%80%A4">kero.seriko.defaultsurface</a></p>
+			<p><a href="descript_ghost.html#char*.seriko.defaultsurface,%E6%95%B0%E5%80%A4">char*.seriko.defaultsurface</a></p>
+		</div>
+	</section>
+</section>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<section id="chapter2" class="ordered">
+	<h1>旧定義/新定義がどうこう言われた</h1>
+	
+	<div class="passage">
+		<p>「旧定義を使用しているのに、新しい定義方法が使われている」<br />
+		「新定義を使用しているのに、旧い定義方法が使われている」<br />
+		などのようなエラーメッセージに出くわした場合、以下を見てみてください。</p>
+		
+		<p><a href="descript_shell_surfaces.html#version,*">descript - version</a></p>
+		<p><a href="descript_shell_surfaces.html#caption_seriko-redefine">SERIKOの旧定義と新定義について</a></p>
+		
+		<p>場合によっては、以下をsurfaces.txtの一番上に追加するだけでエラーが出なくなる時もあります。</p>
+		<pre class="exmp-descript2">
+descript
+{
+version,1
+}
+</pre>
+	</div>
+</section>
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+		</main>
+	</section>
+	<footer>
+		<p class="author">
+			管理者 : <a href="https://github.com/ponapalt/ukadoc/wiki" target="_blank">UKADOC Project</a>
+		</p>
+		<p class="banner">
+			<img src="image/ukadoc_banner1.png" width="200" height="40" alt="ukadocバナー">
+		</p>
+	</footer>
+</section>
+</body>
+</html>
+<!--nobanner-->
