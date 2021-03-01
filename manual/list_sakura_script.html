@@ -4862,8 +4862,9 @@
 					<dd>Cookieのデータ、必要に応じてOnExecuteHTTPCompleteのReference5の値をそのまま指定する。</dd>
 					
 					<dt>--content-type=(multipart/form-data|application/x-www-form-urlencoded)</dt>
-					<dd>http-post限定。param指定のパラメータをどのような形式で送るか指定する。何も指定しなければapplication/x-www-form-urlencoded。<br>
-					multipart/form-dataの場合はparamの書き方に制約があるので注意。</dd>
+					<dd>http-post限定。param指定のパラメータをどのような形式で送るか指定する。<br>
+					何も指定しなければapplication/x-www-form-urlencoded。<br>
+					指定形式によってはparamの書き方に制約があるので注意。</dd>
 					
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
@@ -4873,9 +4874,14 @@
 					
 					<dt>--param=パラメータ</dt>
 					<dd>get/postのパラメータを指定する。複数回の指定が可能。<br>
-					multipart/form-dataに限り、 --param=フィールド名=データ の形式を必要な数だけ繰り返す。<br>
-					例： --param=message_body=データ <br>
-					他のcontent-type指定の場合は、複数定義するとすべてを改行文字(CRLF)でつないでサーバに送る。</dd>
+					multipart/form-dataの時：<br>
+                    　--param=フィールド名=データ の形式を必要な数だけ繰り返す。<br>
+					　例： --param=message_body=データ <br>
+					application/x-www-form-urlencodedの時：<br>
+                    　--param=フィールド名=データ の形式を必要な数だけ繰り返した時は、すべて&amp;でつないでサーバに送る。<br>
+                    　それ以外の時はすべてを改行文字(CRLF)でつないでサーバに送る(過去互換処理)。<br>
+					他のcontent-type指定の時：<br>
+					　複数定義するとすべてを改行文字(CRLF)でつないでサーバに送る。</dd>
 					
 					<dt>--param-charset=文字コード</dt>
 					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
