@@ -3265,7 +3265,7 @@
 						<dt>none</dt>
 						<dd>なし</dd>
 						<dt>--timeout=秒数</dt>
-						<dd>バルーンの表示時間。</dd>
+						<dd>バルーンの表示時間(単位＝秒)。10～30秒の間でのみ指定可。Windows 7以降では無視される。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3273,7 +3273,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error,--timeout=10]</code></p>
+							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error]</code></p>
 						</section>
 					</div>
 				</dd>
