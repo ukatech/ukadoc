@@ -320,7 +320,7 @@
 			<h1>ゴースト間汎用イベント</h1>
 			<ul>
 				<li><a href="#OnRequestValues">OnRequestValues</a></li>
-				<li><a href="#OnGetProperty">OnGetProperty</a></li>
+				<li><a href="#OnGetValues">OnGetValues</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -2017,33 +2017,27 @@
 			<dl id="OnRequestValues">
 				<dt class="entry">OnRequestValues</dt>
 				<dd class="entry">
-					<p>他ゴーストが任意に送信した際に発生。<br />このイベントが送られた時、\[raiseother]でOnGetPropertyイベントを送信する必要がある。</p>
+					<p>他ゴーストが任意に送信した際に発生。<br />このイベントが送られた時、\[raiseother]でOnGetValuesイベントを送信する必要がある。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信したゴースト名。</dd>
 						<dt>Reference1</dt>
-						<dd>\0データの場合は0、\1データの場合は1。</dd>
-						<dt>Reference2</dt>
-						<dd>※要求するプロパティ名。</dd>
+						<dd>要求する変数名(key)。Reference2以降も同様に要求する変数がある限り続く。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnGetProperty">
-				<dt class="entry">OnGetProperty</dt>
+			<dl id="OnGetValues">
+				<dt class="entry">OnGetValues</dt>
 				<dd class="entry">
 					<p>OnRequestValuesを受けた際に返すべきイベント。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>送信するゴースト名。</dd>
 						<dt>Reference1</dt>
-						<dd>\0データの場合は0、\1データの場合は1。</dd>
-						<dt>Reference2</dt>
-						<dd>OnRequestValuesで受け取ったReference2の内容をそのまま。</dd>
-						<dt>Reference3</dt>
-						<dd>Reference2の項目に応じた内容。</dd>
+						<dd>key=value(keyはOnRequestValuesで受け取った変数名、valueはその値)。Reference2以降も同様に要求された変数がある限り続く。存在しない変数は返さない。OnRequestValuesで送られた順序に依存しない。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
