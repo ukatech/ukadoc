@@ -2880,9 +2880,14 @@
 				</dd>
 			</dl>
 			<dl id="_!_update,更新対象_">
-				<dt class="entry">\![update,更新対象]</dt>
+				<dt class="entry">\![update,更新対象(,checkonly)]</dt>
 				<dd class="entry">
-					<p>更新対象のネットワーク更新イベントを開始する。<br>ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>更新対象をallとすると、\![updatebymyself]と同義。<br>\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。<br>ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>、更新がなければ<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。</p>
+					<p>更新対象のネットワーク更新イベントを開始する。<br>
+					ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>
+					更新対象をallとすると、\![updatebymyself]と同義。<br>
+					\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。<br>
+					ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>、更新がなければ<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。<br>
+					checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
