@@ -220,6 +220,10 @@
 				<li><a href="#_!_leave,onlinemode_">\![leave,onlinemode]</a></li>
 				<li><a href="#_!_enter,nouserbreakmode_">\![enter,nouserbreakmode]</a></li>
 				<li><a href="#_!_leave,nouserbreakmode_">\![leave,nouserbreakmode]</a></li>
+				<li><a href="#_!_lock,balloonrepaint_">\![lock,balloonrepaint]</a></li>
+				<li><a href="#_!_unlock,balloonrepaint_">\![unlock,balloonrepaint]</a></li>
+				<li><a href="#_!_lock,balloonmove_">\![lock,balloonmove]</a></li>
+				<li><a href="#_!_unlock,balloonmove_">\![unlock,balloonmove]</a></li>
 				<li><a href="#__!">\_!</a></li>
 				<li><a href="#__?">\_?</a></li>
 				<li><a href="#___v">\__v</a></li>
@@ -1724,6 +1728,26 @@
 							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで描画が再開され、前の文章も描画される。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_lock,balloonmove_">
+				<dt class="entry">\![lock,balloonmove]</dt>
+				<dd class="entry">
+					<p>\![unlock,balloonmove]が呼ばれるまで、バルーンのユーザーによるドラッグ移動を抑制する。<br />
+					descript.txt上で<a href="descript_shell.html#sakura.balloon.dontmove_">sakura.balloon.dontmove</a>のように恒久的に指定可能。<br />
+					ユーザーの操作を阻害するので、濫用しないこと。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.96</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_unlock,balloonmove_">
+				<dt class="entry">\![unlock,balloonmove]</dt>
+				<dd class="entry">
+					<p>上記を解除する。descript.txtですでに指定されている場合は解除できない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.96</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="__!">
