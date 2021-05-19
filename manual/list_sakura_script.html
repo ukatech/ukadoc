@@ -357,6 +357,7 @@
 				<li><a href="#_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_notify,イベント名,r0,r1,r2..._">\![notify,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
@@ -3438,6 +3439,21 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
+				<dt class="entry">\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dd class="entry">
+					<p>待ち時間(ミリ秒)を指定してプラグインに指定したイベントを送信する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![timerraiseplugin,60000,0,実体化,OnMenuExec]プラグイン「実体化」を60秒(60000ミリ秒)おきに繰り返し実行。\![timerraiseplugin,0,0,実体化,OnMenuExec]ここで繰り返し実行をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
