@@ -333,7 +333,7 @@
 				<li><a href="#_7">\7</a></li>
 				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
 				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,ヘッドライン名]</a></li>
-				<li><a href="#_!_biff_">\![biff]</a></li>
+				<li><a href="#_!_biff_">\![biff(,アカウント名)]</a></li>
 				<li><a href="#_!_vanishbymyself_">\![vanishbymyself]</a></li>
 				<li><a href="#_!_vanishbymyself,ゴースト名_">\![vanishbymyself,ゴースト名]</a></li>
 				<li><a href="#_+">\+</a></li>
@@ -2993,12 +2993,15 @@
 				</dd>
 			</dl>
 			<dl id="_!_biff_">
-				<dt class="entry">\![biff]</dt>
+				<dt class="entry">\![biff(,アカウント名)]</dt>
 				<dd class="entry">
-					<p>メールチェックイベントを開始する。</p>
+					<p>メールチェックイベントを開始する。<br>
+					\![biff,アカウント名]とすると、特定のアカウント名のメールチェックを実行できる。<br>
+					アカウント名は<a href="./list_shiori_event.html#configuredbiffname">configuredbiffname</a>で通知される。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (名前指定2.5)</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
