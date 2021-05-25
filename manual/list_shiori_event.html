@@ -439,7 +439,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>スクリーン状態イベント</h1>
+			<h1>OS状態イベント</h1>
 			<ul>
 				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
 				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
@@ -447,23 +447,16 @@
 				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
 				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
 				<li><a href="#OnDisplayPowerStatus">OnDisplayPowerStatus</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>バッテリー状態イベント</h1>
-			<ul>
 				<li><a href="#OnBatteryNotify">OnBatteryNotify</a></li>
 				<li><a href="#OnBatteryLow">OnBatteryLow</a></li>
 				<li><a href="#OnBatteryCritical">OnBatteryCritical</a></li>
 				<li><a href="#OnBatteryChargingStart">OnBatteryChargingStart</a></li>
 				<li><a href="#OnBatteryChargingStop">OnBatteryChargingStop</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>デバイス状態イベント</h1>
-			<ul>
 				<li><a href="#OnDeviceArrival">OnDeviceArrival</a></li>
 				<li><a href="#OnDeviceRemove">OnDeviceRemove</a></li>
+				<li><a href="#OnTabletMode">OnTabletMode</a></li>
+				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
+				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -3800,7 +3793,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ネットワーク状態イベント</h1>
+			<h1>OS状態イベント</h1>
 			<dl id="OnNetworkHeavy">
 				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
@@ -3843,9 +3836,6 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>スクリーン状態イベント</h1>
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
@@ -3948,9 +3938,6 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>バッテリー状態イベント</h1>
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
@@ -4032,9 +4019,6 @@
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1>デバイス状態イベント</h1>
 			<dl id="OnDeviceArrival">
 				<dt class="entry">OnDeviceArrival</dt>
 				<dd class="entry">
@@ -4058,6 +4042,56 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnTabletMode">
+				<dt class="entry">OnTabletMode</dt>
+				<dd class="entry">
+					<p>OSがタブレット機の操作に最適化された状態に切り替えられた際に発生。<br>
+					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>0/1：1がタブレットモード(OSがタブレット機の操作に最適化された状態)、0がモードOFF</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDarkTheme">
+				<dt class="entry">OnDarkTheme</dt>
+				<dd class="entry">
+					<p>OSがダークテーマ(暗めの表示)に切り替えられた際に発生。<br>
+					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>0/1：1がダークテーマ、0が通常（明るい）テーマ</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOSUpdateInfo">
+				<dt class="entry">OnOSUpdateInfo</dt>
+				<dd class="entry">
+					<p>OSの更新確認日時・更新実行日時と、履歴情報の通知。<br>
+					起動直後にNOTIFY(喋れない)で通知され、更新が実行された時に少し遅れてGET(喋れる)で通知される。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>確認日時 年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
+						<dt>Reference1</dt>
+						<dd>実行日時 年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
+						<dt>Reference2～</dt>
+						<dd>以下のフォーマットで更新履歴情報が後ろに続く。[\1]はバイト値1。<br>
+						状態[\1]エラーコード[\1]更新時刻[\1]更新内容(タイトル)<br>
+						状態：not_started(未実行)・in_progress(更新中)・success(成功)・success_with_errors(一応成功したがエラーあり)・fail(失敗)・abort(中断)・unknown(不明)のいずれか<br>
+						エラーコード：更新時にエラーがあれば非0、なければ0。Windowsの場合は16進8桁。<br>
+						更新時刻：年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
 					</ul>
 				</dd>
 			</dl>
