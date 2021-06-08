@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project SHIORI/3.0拡張仕様</title>
+<link rel="stylesheet" href="spec.css" />
+<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">SHIORI/3.0拡張仕様</h1>
+	<nav class="menu-header">
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="http://ssp.shillest.net/ukadoc/manual/index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</nav>
+	<section class="navigation-bar">
+		<h1>SHIORI/3.0 拡張仕様</h1>
+		<section class="navigation-category">
+			<h1>SHIORI/3.0 拡張仕様</h1>
+			<ul>
+				<li><a href="#chapter0">前書</a></li>
+				<li><a href="#chapter1">request - response</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="text">
+		<div class="caption">
+			<p>最終変更：<time>2021-06-08</time></p>
+		</div>
+		<div class="caption">
+			<p>参考：<a href="http://usada.sakura.vg/contents/specification2.html#shioriprotocol">SHIORI/3.0</a>（外部サイト）</p>
+		</div>
+		<section id="chapter0">
+			<h1>前書</h1>
+			<p>SHIORI/3.0拡張仕様は、当初実装されたSHIORI/3.0との互換性を損なわない形で、ヘッダを追加する仕様になります。</p>
+		</section>
+		<section id="chapter1">
+			<h1>request - response 例</h1>
+			<section>
+				<h1>request例</h1>
+<pre><code><!--
+-->GET SHIORI/3.0
+Charset: UTF-8
+Sender: SSP
+SenderType: internal,raise
+SecurityLevel: local
+Status: choosing,balloon(0=0)
+ID: OnFirstBoot
+BaseID: OnBoot
+Reference0: 1
+</code></pre>
+			</section>
+			<section>
+				<h1>requestヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>文字コード。最初の行に来るのが望ましい。</dd>
+					<dt>Sender</dt>
+					<dd>イベント送信元。</dd>
+					<dt>SenderType [SSP 2.5.05～拡張]</dt>
+					<dd>イベント送信元の属性。下記の通り。複数ある場合はカンマでつなげたもの。<br>
+					internal：アプリケーション内部からのイベント。<br>
+					external：アプリケーション外部からのイベント。<br>
+					sakuraapi：Sakura APIによって起こされたイベント。<br>
+					embed：\![embed]タグによって起こされたイベント。<br>
+					raise：\![raise]タグによって起こされたイベント。<br>
+					property：プロパティシステムの参照命令の結果起こされたイベント。<br>
+					plugin：プラグインによって起こされたイベント。<br>
+					sstp：SSTPによって起こされたイベント。<br>
+					communicate：コミュニケート仕様によって起こされたイベント。</dd>
+					<dt>SecurityLevel</dt>
+					<dd>localかexternal。<br>
+					externalの場合は実行中マシンの外部からの通知なので、セキュリティ的に取り扱いに注意を要する。<br>
+					SenderTypeのinternal/externalとは別の概念であり、アプリケーション外から発生したイベントであっても、安全とみなして良いものはlocal判定となるので、SenderTypeがexternalでもSecurityLevelがlocalとなる場合がある。</dd>
+					<dt>Status [SSP拡張]</dt>
+					<dd>ゴーストの実行状態。下記の通り。複数ある場合はカンマでつなげたもの。<br>
+					talking：喋っている途中<br>
+					choosing：選択肢表示中<br>
+					minimizing：最小化中<br>
+					induction：\![enter,inductionmode]中<br>
+					passive：\![enter,passivemode]中<br>
+					timecritical：タイムクリティカルセクション(\t)中<br>
+					nouserbreak：\![enter,nouserbreak]中<br>
+					online：ネットワーク通信中<br>
+					opening(communicate/input/teach/dialog)：入力ボックス等が開いている。<br>複数種類が開いている場合は/区切りで列挙される。<br>
+					balloon(0=0/1=0)：バルーンが表示状態。<br>キャラクターID=バルーンID の形式で列挙される。<br>複数開いている場合は/区切りで列挙される。</dd>
+					<dt>ID</dt>
+					<dd>イベント名</dd>
+					<dt>BaseID [SSP拡張]</dt>
+					<dd>互換可能な基本のイベント名。<br>
+					例：OnFirstBootはOnBootと互換で、かつOnFirstBootはOnBootの亜種なので、OnFirstBootのBaseIDにはOnBootが入る。</dd>
+					<dt>Reference*</dt>
+					<dd>イベントに付随する追加情報群。Referenceの後には数字が入る。入れられる行数は制限なし（メモリが許す限り）</dd>
+				</dl>
+			</section>
+			<section>
+				<h1>response例</h1>
+<pre><code><!--
+-->SHIORI/3.0 200 OK
+Sender: AYA
+Charset: UTF-8
+Value: \1\s[10]\0\s[0]\e
+</code></pre>
+			</section>
+			<section>
+				<h1>responseヘッダ詳細</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>文字コード。最初の行に来るのが望ましい。</dd>
+					<dt>Sender</dt>
+					<dd>送り主。通常はSHIORIの名前。</dd>
+					<dt>Value</dt>
+					<dd>喋りたいスクリプト。</dd>
+					<dt>SecurityLevel [SSP拡張]</dt>
+					<dd>localかexternal。喋りたいスクリプトのSecurityLevel。externalだと一部のスクリプトがセキュリティ機能により実行不能になる。</dd>
+					<dt>Marker [SSP 2.5.04～拡張]</dt>
+					<dd>バルーンマーカー(バルーン下側の追加情報)に表示したい文字列。</dd>
+					<dt>X-SSTP-Return-(任意の文字列) [SSP拡張]</dt>
+					<dd>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
+					SSTP以外の時は無視される。<br>
+					複数のヘッダを指定可能だが、複数返したい場合はヘッダ名を変えること。</dd>
+					<dt>ErrorLevel [SSP拡張]</dt>
+					<dd>SHIORI内部で起きたエラーのレベル。info,notice,warning,error,criticalのいずれか。<br>
+					このヘッダがある場合は、ユーザーになにかしらのエラーが起きたことが通知される。<br>
+					SSPの場合はエラーログに記録され、エラーアイコンが通知領域に出る。</dd>
+					<dt>ErrorDescription [SSP拡張]</dt>
+					<dd>SHIORI内部で起きたエラーの詳細情報。ErrorLevelがある場合のみ有効。</dd>
+					<dt>BalloonOffset [SSP拡張]</dt>
+					<dd>バルーンのオフセット値(X,Y)。</dd>
+					<dt>Reference0</dt>
+					<dd>コミュニケートを送りたい場合、ゴーストの\0側の名前。</dd>
+					<dt>Reference1～</dt>
+					<dd>コミュニケートの追加情報。<br>
+					レスポンスのReference1＝SSTP CommunicateのReference0＝受け手のOnCommunicateのReference2<br>
+					互換性の問題で以上のようにずれてしまうことに注意。</dd>
+					<dt>Age [SSP拡張]</dt>
+					<dd>コミュニケートの世代数。初回はゼロ。やりとりを重ねるたびに+1。<br>
+					SSP拡張だが、実質はSHIORI/2.x互換処理。</dd>
+					<dt>MarkerSend [SSP拡張]</dt>
+					<dd>コミュニケート中に「相手側に」表示したいバルーンマーカー文字列。</dd>
+				</dl>
+			</section>
+		</section>
+	</div>
+</body>
+</html>
