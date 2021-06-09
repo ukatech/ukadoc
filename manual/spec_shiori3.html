@@ -252,6 +252,9 @@ Reference0: 1
 				例：OnFirstBootはOnBootと互換で、かつOnFirstBootはOnBootの亜種なので、OnFirstBootのBaseIDにはOnBootが入る。</p></dd>
 				<dt class="entry">Reference*</dt>
 				<dd class="entry"><p>イベントに付随する追加情報群。Referenceの後には数字が入る。入れられる行数は制限なし（メモリが許す限り）</p></dd>
+				<dt class="entry">X-SSTP-PassThru-(任意の文字列) [SSP 2.5.05～拡張]</dt>
+				<dd class="entry"><p>SSTPからイベント通知が来た場合に限り、SSTPのリクエストヘッダ内で"X-SSTP-PassThru-"ではじまるものがそのまま通知される。<br>
+				SSTP以外の時は追加されない。</p></dd>
 			</dl>
 		</section>
 		<section class="category" id="response">
@@ -285,10 +288,6 @@ Value: \1\s[10]\0\s[0]\e
 				<p>喋りたいスクリプトのSecurityLevel。externalだと一部のスクリプトがセキュリティ機能により実行不能になる。</p></dd>
 				<dt class="entry">Marker [SSP 2.5.04～拡張]</dt>
 				<dd class="entry"><p>バルーンマーカー(バルーン下側の追加情報)に表示したい文字列。</p></dd>
-				<dt class="entry">X-SSTP-Return-(任意の文字列) [SSP拡張]</dt>
-				<dd class="entry"><p>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
-				SSTP以外の時は無視される。<br>
-				複数のヘッダを指定可能だが、複数返したい場合はヘッダ名を変えること。</p></dd>
 				<dt class="entry">ErrorLevel [SSP拡張]</dt>
 				<dd class="entry"><p>SHIORI内部で起きたエラーのレベル。下記のいずれか。</p>
 				<dl class="property">
@@ -322,6 +321,11 @@ Value: \1\s[10]\0\s[0]\e
 				<dt class="entry">MarkerSend [SSP拡張]</dt>
 				<dd class="entry"><p>コミュニケート中に「相手側に」表示したいバルーンマーカー文字列。<br>
 				SSTPのMarkerヘッダとして送信される。</p></dd>
+				<dt class="entry">X-SSTP-PassThru-(任意の文字列) [SSP 2.5.03～拡張]</dt>
+				<dd class="entry"><p>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
+				SSTP以外の時は無視される。<br>
+				複数のヘッダを指定可能だが、複数返したい場合はヘッダ名を変えること。<br>
+				（旧ヘッダ名：X-SSTP-Return- は廃止予定）</p></dd>
 			</dl>
 		</section>
 	</div>
