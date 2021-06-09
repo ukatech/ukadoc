@@ -5,12 +5,12 @@
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
-<title>UKADOC Project SHIORI/3.0拡張仕様</title>
-<link rel="stylesheet" href="spec.css" />
+<title>UKADOC Project SHIORI/3.0</title>
+<link rel="stylesheet" href="list.css" />
 <!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
 </head>
 <body>
-	<h1 id="page-title">SHIORI/3.0拡張仕様</h1>
+	<h1 id="page-title">SHIORI/3.0</h1>
 	<nav class="menu-header">
 		<table>
 			<tbody>
@@ -117,6 +117,7 @@
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
+							<li><a href="./spec_sstp.html">SSTP/1.x</a></li>
 							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
 							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
@@ -128,31 +129,28 @@
 		</table>
 	</nav>
 	<section class="navigation-bar">
-		<h1>SHIORI/3.0 拡張仕様</h1>
+		<h1>SHIORI/3.0</h1>
 		<section class="navigation-category">
-			<h1>SHIORI/3.0 拡張仕様</h1>
+			<h1>SHIORI/3.0</h1>
 			<ul>
-				<li><a href="#chapter0">前書</a></li>
-				<li><a href="#chapter1">request - response</a></li>
+				<li><a href="#request">request</a></li>
+				<li><a href="#response">response</a></li>
 			</ul>
 		</section>
 	</section>
-	<div class="text">
-		<div class="caption">
-			<p>最終変更：<time>2021-06-08</time></p>
-		</div>
-		<div class="caption">
-			<p>参考：<a href="http://usada.sakura.vg/contents/specification2.html#shioriprotocol">SHIORI/3.0</a>（外部サイト）</p>
-		</div>
-		<section id="chapter0">
-			<h1>前書</h1>
-			<p>SHIORI/3.0拡張仕様は、当初実装されたSHIORI/3.0との互換性を損なわない形で、ヘッダを追加する仕様になります。</p>
+	<div class="categories">
+		<section class="category" id="chapter0">
+			<section class="caption introduction" id="chapter0">
+				<h1>SHIORI/3.0</h1>
+				<p>最終変更：<time>2021-06-09</time></p>
+				<p>参考：<a href="http://usada.sakura.vg/contents/specification2.html#shioriprotocol">SHIORI/3.0</a>（外部サイト）</p>
+			</section>
 		</section>
-		<section id="chapter1">
-			<h1>request - response 例</h1>
-			<section>
-				<h1>request例</h1>
-<pre><code><!--
+		<section class="category" id="request">
+			<h1>request</h1>
+			<section class="caption">
+			<h1>サンプル</h1>
+<pre><!--
 -->GET SHIORI/3.0
 Charset: UTF-8
 Sender: SSP
@@ -162,98 +160,169 @@ Status: choosing,balloon(0=0)
 ID: OnFirstBoot
 BaseID: OnBoot
 Reference0: 1
-</code></pre>
+</pre>
 			</section>
-			<section>
-				<h1>requestヘッダ詳細</h1>
-				<dl>
-					<dt>Charset</dt>
-					<dd>文字コード。最初の行に来るのが望ましい。</dd>
-					<dt>Sender</dt>
-					<dd>イベント送信元。</dd>
-					<dt>SenderType [SSP 2.5.05～拡張]</dt>
-					<dd>イベント送信元の属性。下記の通り。複数ある場合はカンマでつなげたもの。<br>
-					internal：アプリケーション内部からのイベント。<br>
-					external：アプリケーション外部からのイベント。<br>
-					sakuraapi：Sakura APIによって起こされたイベント。<br>
-					embed：\![embed]タグによって起こされたイベント。<br>
-					raise：\![raise]タグによって起こされたイベント。<br>
-					property：プロパティシステムの参照命令の結果起こされたイベント。<br>
-					plugin：プラグインによって起こされたイベント。<br>
-					sstp：SSTPによって起こされたイベント。<br>
-					communicate：コミュニケート仕様によって起こされたイベント。</dd>
-					<dt>SecurityLevel</dt>
-					<dd>localかexternal。<br>
-					externalの場合は実行中マシンの外部からの通知なので、セキュリティ的に取り扱いに注意を要する。<br>
-					SenderTypeのinternal/externalとは別の概念であり、アプリケーション外から発生したイベントであっても、安全とみなして良いものはlocal判定となるので、SenderTypeがexternalでもSecurityLevelがlocalとなる場合がある。</dd>
-					<dt>Status [SSP拡張]</dt>
-					<dd>ゴーストの実行状態。下記の通り。複数ある場合はカンマでつなげたもの。<br>
-					talking：喋っている途中<br>
-					choosing：選択肢表示中<br>
-					minimizing：最小化中<br>
-					induction：\![enter,inductionmode]中<br>
-					passive：\![enter,passivemode]中<br>
-					timecritical：タイムクリティカルセクション(\t)中<br>
-					nouserbreak：\![enter,nouserbreak]中<br>
-					online：ネットワーク通信中<br>
-					opening(communicate/input/teach/dialog)：入力ボックス等が開いている。<br>複数種類が開いている場合は/区切りで列挙される。<br>
-					balloon(0=0/1=0)：バルーンが表示状態。<br>キャラクターID=バルーンID の形式で列挙される。<br>複数開いている場合は/区切りで列挙される。</dd>
-					<dt>ID</dt>
-					<dd>イベント名</dd>
-					<dt>BaseID [SSP拡張]</dt>
-					<dd>互換可能な基本のイベント名。<br>
-					例：OnFirstBootはOnBootと互換で、かつOnFirstBootはOnBootの亜種なので、OnFirstBootのBaseIDにはOnBootが入る。</dd>
-					<dt>Reference*</dt>
-					<dd>イベントに付随する追加情報群。Referenceの後には数字が入る。入れられる行数は制限なし（メモリが許す限り）</dd>
+			<dl>
+				<dt class="entry">メソッド</dt>
+				<dd class="entry">
+				<dl class="property">
+					<dt>GET</dt>
+					<dd>レスポンスのValueヘッダでなにかしらを返すことを前提としているメソッド。</dd>
+					<dt>NOTIFY</dt>
+					<dd>何も値を返さないことを前提としているメソッド。レスポンスのValueヘッダは無視される。<br>
+					主に何かしらのモードの制約で「喋れない」状態の時や、起動直後の状態通知イベントに使用される。<br>
+					同じID(イベント名)でGET/NOTIFYの両方とも使われる場合があるので注意。</dd>
+				</dl>				</dd>
+				<dt class="entry">Charset</dt>
+				<dd class="entry"><p>文字コード。最初の行、または少なくとも文字コードがASCII範囲以外の行の前が望ましい。</p></dd>
+				<dt class="entry">Sender</dt>
+				<dd class="entry"><p>イベント送信元。</p></dd>
+				<dt class="entry">SenderType [SSP 2.5.05～拡張]</dt>
+				<dd class="entry">
+				<p>イベント送信元の属性。下記の通り。複数ある場合はカンマでつなげたもの。</p>
+				<dl class="property">
+					<dt>internal</dt>
+					<dd>アプリケーション内部からのイベント。 </dd>
+					<dt>external</dt>
+					<dd>アプリケーション外部からのイベント。 </dd>
+					<dt>sakuraapi</dt>
+					<dd>Sakura APIによって起こされたイベント。 </dd>
+					<dt>embed</dt>
+					<dd>\![embed]タグによって起こされたイベント。 </dd>
+					<dt>raise</dt>
+					<dd>\![raise]タグによって起こされたイベント。 </dd>
+					<dt>property</dt>
+					<dd>プロパティシステムの参照命令の結果起こされたイベント。 </dd>
+					<dt>plugin</dt>
+					<dd>プラグインによって起こされたイベント。 </dd>
+					<dt>sstp</dt>
+					<dd>SSTPによって起こされたイベント。 </dd>
+					<dt>communicate</dt>
+					<dd>コミュニケート仕様によって起こされたイベント。</dd>
+				</dl>				</dd>
+				<dt class="entry">SecurityLevel</dt>
+				<dd class="entry">
+				<p>下記のいずれか。</p>
+				<dl class="property">
+					<dt>local</dt>
+					<dd>実行中の端末内からの通知。</dd>
+					<dt>external</dt>
+					<dd>実行中端末の外部からの通知。</dd>
 				</dl>
-			</section>
-			<section>
-				<h1>response例</h1>
-<pre><code><!--
+				<p>externalの場合は実行中マシンの外部からの通知なので、セキュリティ的に取り扱いに注意を要する。<br>
+				SenderTypeのinternal/externalとは別の概念であり、アプリケーション外から発生したイベントであっても、安全とみなして良いものはlocal判定となるので、SenderTypeがexternalでもSecurityLevelがlocalとなる場合がある。</p>
+				</dd>
+				<dt class="entry">Status [SSP拡張]</dt>
+				<dd class="entry">
+				<p>ゴーストの実行状態。下記の通り。複数ある場合はカンマでつなげたもの。</p>
+				<dl class="property">
+					<dt>talking</dt>
+					<dd>喋っている途中 </dd>
+					<dt>choosing</dt>
+					<dd>選択肢表示中 </dd>
+					<dt>minimizing</dt>
+					<dd>最小化中 </dd>
+					<dt>induction</dt>
+					<dd>\![enter,inductionmode]中 </dd>
+					<dt>passive</dt>
+					<dd>\![enter,passivemode]中 </dd>
+					<dt>timecritical</dt>
+					<dd>タイムクリティカルセクション(\t)中 </dd>
+					<dt>nouserbreak</dt>
+					<dd>\![enter,nouserbreak]中 </dd>
+					<dt>online</dt>
+					<dd>ネットワーク通信中 </dd>
+					<dt>opening(種類)</dt>
+					<dd>入力ボックス等が開いている。<br>
+					複数種類が開いている場合は/区切りで列挙される。<br>
+					"dialog"はファイル選択・カラーピッカー等。<br>
+					例：opening(communicate/input/teach/dialog)</dd>
+					<dt>balloon(ID群)</dt>
+					<dd>バルーンが表示状態。<br>
+					キャラクターID=バルーンID の形式で列挙される。<br>
+					複数開いている場合は/区切りで列挙される。<br>
+					例：balloon(0=2/1=0) で、\0が大きいバルーン、\1が通常のバルーンを表示中の意。
+					</dd>
+				</dl>
+				</dd>
+				<dt class="entry">ID</dt>
+				<dd class="entry"><p>イベント名、またはテキストリソースの識別子。</p></dd>
+				<dt class="entry">BaseID [SSP拡張]</dt>
+				<dd class="entry"><p>互換可能な基本のイベント名。<br>
+				例：OnFirstBootはOnBootと互換で、かつOnFirstBootはOnBootの亜種なので、OnFirstBootのBaseIDにはOnBootが入る。</p></dd>
+				<dt class="entry">Reference*</dt>
+				<dd class="entry"><p>イベントに付随する追加情報群。Referenceの後には数字が入る。入れられる行数は制限なし（メモリが許す限り）</p></dd>
+			</dl>
+		</section>
+		<section class="category" id="response">
+			<h1>response</h1>
+			<section class="caption">
+			<h1>サンプル</h1>
+<pre><!--
 -->SHIORI/3.0 200 OK
-Sender: AYA
 Charset: UTF-8
+Sender: AYA
 Value: \1\s[10]\0\s[0]\e
-</code></pre>
+</pre>
 			</section>
-			<section>
-				<h1>responseヘッダ詳細</h1>
-				<dl>
-					<dt>Charset</dt>
-					<dd>文字コード。最初の行に来るのが望ましい。</dd>
-					<dt>Sender</dt>
-					<dd>送り主。通常はSHIORIの名前。</dd>
-					<dt>Value</dt>
-					<dd>喋りたいスクリプト。</dd>
-					<dt>SecurityLevel [SSP拡張]</dt>
-					<dd>localかexternal。喋りたいスクリプトのSecurityLevel。externalだと一部のスクリプトがセキュリティ機能により実行不能になる。</dd>
-					<dt>Marker [SSP 2.5.04～拡張]</dt>
-					<dd>バルーンマーカー(バルーン下側の追加情報)に表示したい文字列。</dd>
-					<dt>X-SSTP-Return-(任意の文字列) [SSP拡張]</dt>
-					<dd>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
-					SSTP以外の時は無視される。<br>
-					複数のヘッダを指定可能だが、複数返したい場合はヘッダ名を変えること。</dd>
-					<dt>ErrorLevel [SSP拡張]</dt>
-					<dd>SHIORI内部で起きたエラーのレベル。info,notice,warning,error,criticalのいずれか。<br>
-					このヘッダがある場合は、ユーザーになにかしらのエラーが起きたことが通知される。<br>
-					SSPの場合はエラーログに記録され、エラーアイコンが通知領域に出る。</dd>
-					<dt>ErrorDescription [SSP拡張]</dt>
-					<dd>SHIORI内部で起きたエラーの詳細情報。ErrorLevelがある場合のみ有効。</dd>
-					<dt>BalloonOffset [SSP拡張]</dt>
-					<dd>バルーンのオフセット値(X,Y)。</dd>
-					<dt>Reference0</dt>
-					<dd>コミュニケートを送りたい場合、ゴーストの\0側の名前。</dd>
-					<dt>Reference1～</dt>
-					<dd>コミュニケートの追加情報。<br>
-					レスポンスのReference1＝SSTP CommunicateのReference0＝受け手のOnCommunicateのReference2<br>
-					互換性の問題で以上のようにずれてしまうことに注意。</dd>
-					<dt>Age [SSP拡張]</dt>
-					<dd>コミュニケートの世代数。初回はゼロ。やりとりを重ねるたびに+1。<br>
-					SSP拡張だが、実質はSHIORI/2.x互換処理。</dd>
-					<dt>MarkerSend [SSP拡張]</dt>
-					<dd>コミュニケート中に「相手側に」表示したいバルーンマーカー文字列。</dd>
+
+			<dl>
+				<dt class="entry">Charset</dt>
+				<dd class="entry"><p>文字コード。最初の行、または少なくとも文字コードがASCII範囲以外の行の前が望ましい。</p></dd>
+				<dt class="entry">Sender</dt>
+				<dd class="entry"><p>送り主。通常はSHIORIの名前。</p></dd>
+				<dt class="entry">Value</dt>
+				<dd class="entry"><p>喋りたいスクリプト。</p></dd>
+				<dt class="entry">SecurityLevel [SSP拡張]</dt>
+				<dd class="entry">
+				<p>下記のいずれか。</p>
+				<dl class="property">
+					<dt>local</dt>
+					<dd>実行中の端末内からのスクリプト相当のセキュリティレベル。</dd>
+					<dt>external</dt>
+					<dd>実行中の端末の外部からのスクリプト相当のセキュリティレベル。</dd>
 				</dl>
-			</section>
+				<p>喋りたいスクリプトのSecurityLevel。externalだと一部のスクリプトがセキュリティ機能により実行不能になる。</p></dd>
+				<dt class="entry">Marker [SSP 2.5.04～拡張]</dt>
+				<dd class="entry"><p>バルーンマーカー(バルーン下側の追加情報)に表示したい文字列。</p></dd>
+				<dt class="entry">X-SSTP-Return-(任意の文字列) [SSP拡張]</dt>
+				<dd class="entry"><p>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
+				SSTP以外の時は無視される。<br>
+				複数のヘッダを指定可能だが、複数返したい場合はヘッダ名を変えること。</p></dd>
+				<dt class="entry">ErrorLevel [SSP拡張]</dt>
+				<dd class="entry"><p>SHIORI内部で起きたエラーのレベル。下記のいずれか。</p>
+				<dl class="property">
+					<dt>info</dt>
+					<dd>情報。エラーではない。</dd>
+					<dt>notice</dt>
+					<dd>通知。エラーとは言い難いものの修正すべき記述など。</dd>
+					<dt>warning</dt>
+					<dd>警告。記述ミスなどがあり、処理は停止していないが対処したほうがいいもの。</dd>
+					<dt>error</dt>
+					<dd>通常のエラー。記述ミスなどで何か処理が停止して再開できない。</dd>
+					<dt>critical</dt>
+					<dd>致命的エラー。errorより酷く、すぐに何かしら対処をしたほうが良いもの。</dd>
+				</dl>				
+				<p>このヘッダがある場合は、ユーザーになにかしらのエラーが起きたことが通知される。<br>
+				通知されるレベルはユーザーが設定変更可能。通常はerror以上。<br>
+				SSPの場合はエラーログに記録され、エラーアイコンが通知領域に出る。</p></dd>
+				<dt class="entry">ErrorDescription [SSP拡張]</dt>
+				<dd class="entry"><p>SHIORI内部で起きたエラーの詳細情報。ErrorLevelがある場合のみ有効。</p></dd>
+				<dt class="entry">BalloonOffset [SSP拡張]</dt>
+				<dd class="entry"><p>バルーンのオフセット値(X,Y)。</p></dd>
+				<dt class="entry">Reference0</dt>
+				<dd class="entry"><p>コミュニケートを送りたい場合、ゴーストの\0側の名前。</p></dd>
+				<dt class="entry">Reference1～</dt>
+				<dd class="entry"><p>コミュニケートの追加情報。<br>
+				レスポンスのReference1＝SSTP CommunicateのReference0＝受け手のOnCommunicateのReference2<br>
+				互換性の問題で以上のようにずれてしまうことに注意。</p></dd>
+				<dt class="entry">Age [SSP拡張]</dt>
+				<dd class="entry"><p>コミュニケートの世代数。初回はゼロ。やりとりを重ねるたびに+1。<br>
+				SSP拡張だが、実質はSHIORI/2.x互換処理。</p></dd>
+				<dt class="entry">MarkerSend [SSP拡張]</dt>
+				<dd class="entry"><p>コミュニケート中に「相手側に」表示したいバルーンマーカー文字列。<br>
+				SSTPのMarkerヘッダとして送信される。</p></dd>
+			</dl>
 		</section>
 	</div>
 </body>
