@@ -228,6 +228,8 @@
 					<li><a href="#stop,ID">stop,ID</a></li>
 					<li><a href="#alternativestart,_ID1,ID2..._">alternativestart,(ID1,ID2...)</a></li>
 					<li><a href="#alternativestop,_ID1,ID2..._">alternativestop,(ID1,ID2...)</a></li>
+					<li><a href="#parallelstart,_ID1,ID2..._">parallelstart,(ID1,ID2...)</a></li>
+					<li><a href="#parallelstop,_ID1,ID2..._">parallelstop,(ID1,ID2...)</a></li>
 				</ul>
 			</section>
 		</section>
@@ -1520,6 +1522,34 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dd class="entry">
 						<p>
 							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
+							<br>着せ替え・elementでの使用不可。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="parallelstart,_ID1,ID2..._">
+					<dt class="entry">parallelstart,(ID1,ID2...)</dt>
+					<dd class="entry">
+						<p>
+							指定した複数のID（animation*の*の数字）のすべてのアニメーションを再生させる。
+							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
+							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
+							<br>着せ替え・elementでの使用不可。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="alternativestop,_ID1,ID2..._">
+					<dt class="entry">parallelstop,(ID1,ID2...)</dt>
+					<dd class="entry">
+						<p>
+							指定した複数のID（animation*の*の数字）のすべてのアニメーションを停止させる。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
 							<br>着せ替え・elementでの使用不可。
