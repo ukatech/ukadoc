@@ -173,10 +173,13 @@ Reference0: 1
 					主に何かしらのモードの制約で「喋れない」状態の時や、起動直後の状態通知イベントに使用される。<br>
 					同じID(イベント名)でGET/NOTIFYの両方とも使われる場合があるので注意。</dd>
 				</dl>				</dd>
+				
 				<dt class="entry">Charset</dt>
 				<dd class="entry"><p>文字コード。最初の行、または少なくとも文字コードがASCII範囲以外の行の前が望ましい。</p></dd>
+				
 				<dt class="entry">Sender</dt>
 				<dd class="entry"><p>イベント送信元。</p></dd>
+				
 				<dt class="entry">SenderType [SSP 2.5.05～拡張]</dt>
 				<dd class="entry">
 				<p>イベント送信元の属性。下記の通り。複数ある場合はカンマでつなげたもの。<br>
@@ -200,7 +203,9 @@ Reference0: 1
 					<dd>SSTPによって起こされたイベント。 </dd>
 					<dt>communicate</dt>
 					<dd>コミュニケート仕様によって起こされたイベント。</dd>
-				</dl>				</dd>
+				</dl>
+				</dd>
+				
 				<dt class="entry">SecurityLevel</dt>
 				<dd class="entry">
 				<p>スクリプト実行時のセキュリティレベル。下記のいずれか。<br>
@@ -214,6 +219,7 @@ Reference0: 1
 				<p>externalの場合は実行中マシンの外部からの通知なので、セキュリティ的に取り扱いに注意を要する。<br>
 				SenderTypeのinternal/externalとは別の概念であり、アプリケーション外から発生したイベントであっても、安全とみなして良いものはlocal判定となるので、SenderTypeがexternalでもSecurityLevelがlocalとなる場合がある。</p>
 				</dd>
+				
 				<dt class="entry">Status [SSP拡張]</dt>
 				<dd class="entry">
 				<p>ゴーストの実行状態。下記の通り。複数ある場合はカンマでつなげたもの。</p>
@@ -249,11 +255,14 @@ Reference0: 1
 				</dd>
 				<dt class="entry">ID</dt>
 				<dd class="entry"><p>イベント名、またはテキストリソースの識別子。</p></dd>
+				
 				<dt class="entry">BaseID [SSP拡張]</dt>
 				<dd class="entry"><p>互換可能な基本のイベント名。<br>
 				例：OnFirstBootはOnBootと互換で、かつOnFirstBootはOnBootの亜種なので、OnFirstBootのBaseIDにはOnBootが入る。</p></dd>
+				
 				<dt class="entry">Reference*</dt>
 				<dd class="entry"><p>イベントに付随する追加情報群。Referenceの後には数字が入る。入れられる行数は制限なし（メモリが許す限り）</p></dd>
+				
 				<dt class="entry">X-SSTP-PassThru-(任意の文字列) [SSP 2.5.05～拡張]</dt>
 				<dd class="entry"><p>SSTPからイベント通知が来た場合に限り、SSTPのリクエストヘッダ内で"X-SSTP-PassThru-"ではじまるものがそのまま通知される。<br>
 				SSTP以外の時は追加されない。</p></dd>
@@ -279,26 +288,34 @@ Value: \1\s[10]\0\s[0]\e
 				<dl class="property">
 					<dt>200</dt>
 					<dd>200 OK<br>成功、返り値(Value)あり。</dd>
+					
 					<dt>204</dt>
 					<dd>204 No Content<br>成功、返り値なし。</dd>
+					
 					<dt>311</dt>
 					<dd>311 Not Enough<br>ID: OnTeach (SHIORI/2系のTEACHメソッド)において、さらなる追加情報を必要とすることを示す。<br>
 					入力ボックスを再度開いてユーザーに問い合わせ、入力完了後に入力文字列を含むReferenceを追加する。</dd>
+					
 					<dt>312</dt>
 					<dd>312 Advice<br>ID: OnTeach (SHIORI/2系のTEACHメソッド)において、直近で入力された文字列が解釈不能のため破棄すべきことを示す。<br>
 					一番最後のReferenceを破棄し、入力ボックスを再度開いてユーザーに問い合わせ、入力完了後に入力文字列を含むReferenceを追加する。</dd>
+					
 					<dt>400</dt>
 					<dd>400 Bad Request<br>リクエスト文字列が解釈不能だった。</dd>
+					
 					<dt>500</dt>
 					<dd>500 Internal Server Error<br>SHIORI内部でなにかしらのエラーが起き、レスポンスを返せなかった。</dd>
 				</dl>
 				</dd>
 				<dt class="entry">Charset</dt>
 				<dd class="entry"><p>文字コード。最初の行、または少なくとも文字コードがASCII範囲以外の行の前が望ましい。</p></dd>
+				
 				<dt class="entry">Sender</dt>
 				<dd class="entry"><p>送り主。通常はSHIORIの名前。</p></dd>
+				
 				<dt class="entry">Value</dt>
 				<dd class="entry"><p>喋りたいスクリプト。</p></dd>
+				
 				<dt class="entry">SecurityLevel [SSP拡張]</dt>
 				<dd class="entry">
 				<p>下記のいずれか。</p>
@@ -309,10 +326,12 @@ Value: \1\s[10]\0\s[0]\e
 					<dd>実行中の端末の外部からのスクリプト相当のセキュリティレベル。</dd>
 				</dl>
 				<p>喋りたいスクリプトのSecurityLevel。externalだと一部のスクリプトがセキュリティ機能により実行不能になる。</p></dd>
+				
 				<dt class="entry">Marker [SSP拡張]</dt>
 				<dd class="entry"><p>バルーンマーカー(バルーン下側の追加情報)に表示したい文字列。</p></dd>
+				
 				<dt class="entry">ErrorLevel [SSP拡張]</dt>
-				<dd class="entry"><p>SHIORI内部で起きたエラーのレベル。下記のいずれか。</p>
+				<dd class="entry"><p>SHIORI内部で起きたエラーのレベル。下記のいずれか。複数のエラーを表現したい時はバイト値1で区切る。</p>
 				<dl class="property">
 					<dt>info</dt>
 					<dd>情報。エラーではない。</dd>
@@ -328,22 +347,31 @@ Value: \1\s[10]\0\s[0]\e
 				<p>このヘッダがある場合は、ユーザーになにかしらのエラーが起きたことが通知される。<br>
 				通知されるレベルはユーザーが設定変更可能。通常はerror以上。<br>
 				SSPの場合はエラーログに記録され、エラーアイコンが通知領域に出る。</p></dd>
+				
 				<dt class="entry">ErrorDescription [SSP拡張]</dt>
-				<dd class="entry"><p>SHIORI内部で起きたエラーの詳細情報。ErrorLevelがある場合のみ有効。</p></dd>
+				<dd class="entry"><p>SHIORI内部で起きたエラーの詳細情報。ErrorLevelがある場合のみ有効。<br>
+				複数のエラーを表現したい時はバイト値1で区切る。<br>
+				ErrorLevelとErrorDescriptionの要素数は必ず同じでないといけない。</p></dd>
+				
 				<dt class="entry">BalloonOffset [SSP拡張]</dt>
 				<dd class="entry"><p>バルーンのオフセット値(X,Y)。</p></dd>
+				
 				<dt class="entry">Reference0</dt>
 				<dd class="entry"><p>コミュニケートを送りたい場合、ゴーストの\0側の名前。</p></dd>
+				
 				<dt class="entry">Reference1～</dt>
 				<dd class="entry"><p>コミュニケートの追加情報。<br>
 				レスポンスのReference1＝SSTP CommunicateのReference0＝受け手のOnCommunicateのReference2<br>
 				互換性の問題で以上のようにずれてしまうことに注意。</p></dd>
+				
 				<dt class="entry">Age [SSP拡張]</dt>
 				<dd class="entry"><p>コミュニケートの世代数。初回はゼロ。やりとりを重ねるたびに+1。<br>
 				SSP拡張だが、実質はSHIORI/2.x互換処理。</p></dd>
+				
 				<dt class="entry">MarkerSend [SSP拡張]</dt>
 				<dd class="entry"><p>コミュニケート中に「相手側に」表示したいバルーンマーカー文字列。<br>
 				SSTPのMarkerヘッダとして送信される。</p></dd>
+				
 				<dt class="entry">X-SSTP-PassThru-(任意の文字列) [SSP 2.5.03～拡張]</dt>
 				<dd class="entry"><p>SSTPからイベント通知が来た場合のレスポンスに限り、このヘッダがSSTPのレスポンスにそのまま追加される。<br>
 				SSTP以外の時は無視される。<br>
