@@ -146,6 +146,7 @@
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
+				<li><a href="#readme.charset,文字コード">readme.charset,文字コード</a></li>
 				<li><a href="#secondchangeinterval,秒数">secondchangeinterval,秒数</a></li>
 			</ul>
 		</section>
@@ -179,8 +180,8 @@ filename,rei.dll
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
-					<p>使用する文字コード。Shift_JIS推奨。</p>
-					<p class="default">Shift_JIS</p>
+					<p>使用する文字コード。旧い環境との互換性を考慮する場合はShift_JIS、それ以外はUTF-8を推奨。</p>
+					<p class="default">(OSの標準設定またはSSP->国際化->省略時の文字コード->テキスト定義)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -288,6 +289,16 @@ filename,rei.dll
 					<p class="default">readme.txt</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="readme.charset,文字コード">
+				<dt class="entry">readme.charset,文字コード</dt>
+				<dd class="entry">
+					<p>説明テキストファイルの文字コード。</p>
+					<p class="default">(OSの標準設定またはSSP->国際化->省略時の文字コード->readme)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.10</li>
 					</ul>
 				</dd>
 			</dl>

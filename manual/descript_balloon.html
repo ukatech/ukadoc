@@ -145,6 +145,7 @@
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
+				<li><a href="#readme.charset,文字コード">readme.charset,文字コード</a></li>
 				<li><a href="#cursor,カーソル名">cursor,カーソル名</a></li>
 				<li><a href="#origin.x,座標">origin.x,座標</a></li>
 				<li><a href="#origin.y,座標">origin.y,座標</a></li>
@@ -255,6 +256,7 @@
 			<ul>
 				<li><a href="#windowposition.x,座標">windowposition.x,座標</a></li>
 				<li><a href="#windowposition.y,座標">windowposition.y,座標</a></li>
+				<li><a href="#windowposition.limit,0/1">windowposition.limit,0/1</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -360,8 +362,8 @@ communicatebox.height,20
 			<dl id="charset,文字コード">
 				<dt class="entry">charset,文字コード</dt>
 				<dd class="entry">
-					<p>表示する文字コード。Shift_JIS推奨。</p>
-					<p class="default">Shift_JIS</p>
+					<p>表示する文字コード。旧い環境との互換性を考慮する場合はShift_JIS、それ以外はUTF-8を推奨。</p>
+					<p class="default">(OSの標準設定またはSSP->国際化->省略時の文字コード->テキスト定義)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -457,6 +459,16 @@ communicatebox.height,20
 					<p class="default">readme.txt</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="readme.charset,文字コード">
+				<dt class="entry">readme.charset,文字コード</dt>
+				<dd class="entry">
+					<p>説明テキストファイルの文字コード。</p>
+					<p class="default">(OSの標準設定またはSSP->国際化->省略時の文字コード->readme)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.10</li>
 					</ul>
 				</dd>
 			</dl>
@@ -1650,6 +1662,19 @@ communicatebox.height,20
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="windowposition.limit,0/1">
+				<dt class="entry">windowposition.limit,0/1</dt>
+				<dd class="entry">
+					<p>
+						バルーンを強制的に画面内に維持するかどうか。1で維持、0で維持しない(画面から出そうでも無視)
+					</p>
+					<p>SSPに限り、descript.txtにも書ける。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.10</li>
 					</ul>
 				</dd>
 			</dl>
