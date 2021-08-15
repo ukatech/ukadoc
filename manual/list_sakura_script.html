@@ -389,6 +389,8 @@
 				<li><a href="#_j_ID_">\j[ID]</a></li>
 				<li><a href="#_!_open,browser,パラメータ_">\![open,browser,パラメータ]</a></li>
 				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,パラメータ]</a></li>
+				<li><a href="#_!_open,editor,パラメータ_">\![open,editor,パラメータ,追加パラメータ]</a></li>
+				<li><a href="#_!_open,explorer,パラメータ_">\![open,explorer,パラメータ]</a></li>
 				<li><a href="#___t">\__t</a></li>
 				<li><a href="#_!_open,teachbox_">\![open,teachbox]</a></li>
 				<li><a href="#_!_close,teachbox_">\![close,teachbox]</a></li>
@@ -3765,6 +3767,26 @@
 							<p><code>\![open,mailer,test@example.com]送信先アドレスにtest@example.comが入ったメーラーを開く。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_open,editor,パラメータ_">
+				<dt class="entry">\![open,editor,ファイル,追加パラメータ]</dt>
+				<dd class="entry">
+					<p>本体で設定されたエディタで指定ファイルを編集する。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; エディタの設定」で指定されたもの。<br>「追加パラメータ」を指定すると、指定されたエディタの2個目以降のパラメータとして渡される(1個目はファイル名)。</p>
+					<p>エディタの指定がない場合は、エクスプローラ上で右クリックして「編集」を選んだ場合と同じ挙動となる。この時は「追加パラメータ」は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,explorer,パラメータ_">
+				<dt class="entry">\![open,explorer,ファイル]</dt>
+				<dd class="entry">
+					<p>本体で設定されたファイラーを指定ファイルつきで開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					<p>ファイラーの指定がない場合は、指定されたものがフォルダの場合はそれを開き、ファイルの場合はエクスプローラ上で指定ファイルを選択した状態になる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="___t">
