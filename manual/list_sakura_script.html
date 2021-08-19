@@ -389,7 +389,7 @@
 				<li><a href="#_j_ID_">\j[ID]</a></li>
 				<li><a href="#_!_open,browser,パラメータ_">\![open,browser,パラメータ]</a></li>
 				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,パラメータ]</a></li>
-				<li><a href="#_!_open,editor,パラメータ_">\![open,editor,パラメータ,追加パラメータ]</a></li>
+				<li><a href="#_!_open,editor,パラメータ_">\![open,editor,パラメータ,表示行]</a></li>
 				<li><a href="#_!_open,explorer,パラメータ_">\![open,explorer,パラメータ]</a></li>
 				<li><a href="#___t">\__t</a></li>
 				<li><a href="#_!_open,teachbox_">\![open,teachbox]</a></li>
@@ -3774,12 +3774,12 @@
 				</dd>
 			</dl>
 			<dl id="_!_open,editor,パラメータ_">
-				<dt class="entry">\![open,editor,ファイル,追加パラメータ]</dt>
+				<dt class="entry">\![open,editor,ファイル,表示行]</dt>
 				<dd class="entry">
-					<p>本体で設定されたエディタで指定ファイルを編集する。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; エディタの設定」で指定されたもの。<br>「追加パラメータ」を指定すると、指定されたエディタの2個目以降のパラメータとして渡される(1個目はファイル名)。</p>
-					<p>エディタの指定がない場合は、エクスプローラ上で右クリックして「編集」を選んだ場合と同じ挙動となる。この時は「追加パラメータ」は無視される。</p>
+					<p>本体で設定されたエディタで指定ファイルを編集する。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; エディタの設定」で指定されたもの。<br>「表示行」で開いた時に指定した行にカーソルをあらかじめ移動する。</p>
+					<p>エディタの指定がない場合は、エクスプローラ上で右クリックして「編集」を選んだ場合と同じ挙動となる。この時は「表示行」は無視される。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.16</li>
 					</ul>
 				</dd>
 			</dl>
