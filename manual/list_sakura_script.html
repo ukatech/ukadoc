@@ -783,7 +783,9 @@
 			<dl id="_!_lock,repaint_">
 				<dt class="entry">\![lock,repaint]</dt>
 				<dd class="entry">
-					<p>\![unlock,repaint]が呼ばれるまで再描画を停止する。</p>
+					<p>\![unlock,repaint]が呼ばれるまで再描画を停止する。<br />
+					この停止処理はスクリプト終端で自動的に解除される。<br />
+					ただし、\![lock,repaint,manual]と指定すると、明示的にunlockするまで停止される[2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1716,14 +1718,16 @@
 			<dl id="_!_lock,balloonrepaint_">
 				<dt class="entry">\![lock,balloonrepaint]</dt>
 				<dd class="entry">
-					<p>\![unlock,balloonrepaint]が呼ばれるか、スクリプト終端までバルーンの再描画を停止する。</p>
+					<p>\![unlock,balloonrepaint]が呼ばれるか、スクリプト終端までバルーンの再描画を停止する。<br />
+					この停止処理はスクリプト終端で自動的に解除される。<br />
+					ただし、\![lock,balloonrepaint,manual]と指定すると、明示的にunlockするまで停止される[2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![lock,balloonrepaint]この文章の描画はされない。</code></p>
+							<p><code>\![lock,balloonrepaint]この文章はスクリプト実行が終わるまで表示されない。</code></p>
 						</section>
 					</div>
 				</dd>

@@ -308,6 +308,7 @@
 				<li><a href="#OnURLDropped">OnURLDropped</a></li>
 				<li><a href="#OnURLDropFailure">OnURLDropFailure</a></li>
 				<li><a href="#OnURLQuery">OnURLQuery</a></li>
+				<li><a href="#OnXUkagakaLinkOpen">OnXUkagakaLinkOpen</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -480,7 +481,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>単体イベント</h1>
+			<h1>その他イベント</h1>
 			<ul>
 				<li><a href="#OnKeyPress">OnKeyPress</a></li>
 				<li><a href="#OnRecommendsiteChoice">OnRecommendsiteChoice</a></li>
@@ -493,6 +494,7 @@
 				<li><a href="#OnTextDrop">OnTextDrop</a></li>
 				<li><a href="#OnShellScaling">OnShellScaling</a></li>
 				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
+				<li><a href="#OnLanguageChange">OnLanguageChange</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -2525,6 +2527,23 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnXUkagakaLinkOpen">
+				<dt class="entry">OnXUkagakaLinkOpen</dt>
+				<dd class="entry">
+					<p>下記形式のURL関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
+					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
+					文字コードはUTF-8固定＋URLエンコード済<br />
+					サンプル：<a href="x-ukagaka-link:type=event%46ghost=Emily%46info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
+					<em>SecurityLevelは必ずexternalになる。</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>info=以降に指定した文字列(URLデコード済)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>ネットワーク更新イベント</h1>
@@ -4236,7 +4255,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>単体イベント</h1>
+			<h1>その他イベント</h1>
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
@@ -4416,6 +4435,26 @@
 						<dd>縦方向の変更された後の倍率。（パーセント）</dd>
 						<dt>Reference3</dt>
 						<dd>縦方向の変更される前の倍率。（パーセント）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnLanguageChange">
+				<dt class="entry">OnLanguageChange</dt>
+				<dd class="entry">
+					<p>言語設定が変更された際と、起動直後に通知される。<br>
+					起動直後に通知される場合は必ずNOTIFYとなり、イベントに応答してしゃべることはできない。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>言語名(name)</dd>
+						<dt>Reference1</dt>
+						<dd>言語ID(langid)</dd>
+						<dt>Reference2</dt>
+						<dd>言語設定ファイル群を格納したフォルダのフルパス</dd>
+						<dt>Reference3</dt>
+						<dd>ヘルプが記載されているURL</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5</li>
