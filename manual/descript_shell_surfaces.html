@@ -968,8 +968,10 @@ animation0.pattern3,overlay,-1,100,168,67
 						<dt>region</dt>
 						<dd>[SSP 2.5.19～]指定した画像ファイルの指定色の領域を当たり判定として扱う。
 						<br />大量に使用すると全体的に動作が重くなるので注意。
-						<br />指定フォーマット：ファイル名,R,G,B
-						<br />例：collisionex0,region,atari.png,255,0,0</dd>
+						<br />「領域反転」をtrueにすると「指定色でない領域」の意味になる。省略可能。
+						<br />指定フォーマット：ファイル名,R,G,B,領域反転(falseかtrue)
+						<br />例1: collisionex0,region,atari.png,255,0,0
+						<br />例2: collisionex1,region,atari.png,0,255,0,true</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
