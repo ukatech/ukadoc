@@ -331,6 +331,7 @@
 				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself,checkonly]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
 				<li><a href="#_!_update,更新対象_">\![update,更新対象]</a></li>
+				<li><a href="#_!_updateother_">\![updateother]</a></li>
 				<li><a href="#_6">\6</a></li>
 				<li><a href="#_7">\7</a></li>
 				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
@@ -2943,8 +2944,8 @@
 					ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>
 					更新対象をallとすると、\![updatebymyself]と同義。<br>
 					\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。<br>
-					ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>、更新がなければ<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。<br>
-					checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。</p>
+					ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。<br>
+					checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。また、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateCheckResult">OnUpdateCheckResult</a>が発生する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2952,6 +2953,29 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>シェルの更新を実行。\![update,shell]</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_updateother_">
+				<dt class="entry">\![updateother,更新対象/オプション群,...]</dt>
+				<dd class="entry">
+					<p>任意の名前の更新対象のネットワーク更新イベントを開始する。起動中でないものも指定できる。<br>
+					以下の指定をいくつでも追加できる。<br>
+					--balloon=バルーン名<br>
+					--shell=シェル名<br>
+					--plugin=プラグイン名<br>
+					--headline=ヘッドライン名<br>
+					--language=言語リソース名<br>
+					更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResultEx">OnUpdateResultEx</a>が発生する。<br>
+					--option=checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。また、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a>が発生する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>プラグイン「共有変数プラグイン」「うかてん」の更新を実行。\![update,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
 						</section>
 					</div>
 				</dd>
