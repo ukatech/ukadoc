@@ -292,9 +292,10 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>アプリ「テナリ君」用SSTP送信パッチ</h1>
+			<h1>麻雀通信イベント</h1>
 			<ul>
 				<li><a href="#OnMahjong">OnMahjong</a></li>
+				<li><a href="#OnMahjongResponse">OnMahjongResponse</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1777,30 +1778,34 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>アプリ「テナリ君」用SSTP送信パッチ</h1>
+			<h1>麻雀通信イベント</h1>
 			<ul class="caption link">
-				<li>公開元：<a href="http://nikolat.herokuapp.com/ukagaka/mahjong-with-ghost-enabled/">http://nikolat.herokuapp.com/ukagaka/mahjong-with-ghost-enabled/</a></li>
+				<li>仕様提唱元：<a href="http://nikolat.herokuapp.com/">http://nikolat.herokuapp.com/</a></li>
+				<li>サーバーの実装例：<a href="https://github.com/nikolat/jong-bari">https://github.com/nikolat/jong-bari</a></li>
+				<li>クライアントの実装例(YAYA)：<a href="https://github.com/nikolat/jong-rinrin">https://github.com/nikolat/jong-rinrin</a></li>
+				<li>クライアントの実装例(華和梨)：<a href="https://github.com/nikolat/jong-chunchun">https://github.com/nikolat/jong-chunchun</a></li>
+				<li>クライアントの実装例(里々)：<a href="https://github.com/nikolat/jong-whanwhan">https://github.com/nikolat/jong-whanwhan</a></li>
 			</ul>
 			<ul class="supported-baseware">
 				<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 				<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-				<li><em>※推奨　SSP2.3.13以上</em></li>
+				<li><em>※推奨　SSP2.5.05以上</em></li>
 			</ul>
 			<dl id="OnMahjong">
 				<dt class="entry">OnMahjong</dt>
 				<dd class="entry">
-					<p>ゲームの各タイミングで通知。後述の<a href="#reference_ukajong">※サーバコマンド</a>参照。</p>
+					<p>ゲームの各タイミングで通知。後述の<a href="#reference_OnMahjong">※サーバコマンド</a>参照。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>バージョン（UKAJONG/0.1）</dd>
+						<dd>バージョン（UKAJONG/0.2）</dd>
 						<dt>Reference1</dt>
-						<dd><a href="#reference_ukajong">※サーバコマンド</a></dd>
+						<dd><a href="#reference_OnMahjong">※サーバコマンド</a></dd>
 						<dt>Reference*</dt>
-						<dd><a href="#reference_ukajong">※サーバコマンド</a>に応じた追加情報</dd>
+						<dd><a href="#reference_OnMahjong">※サーバコマンド</a>に応じた追加情報</dd>
 					</dl>
-					<section id="reference_ukajong">
-						<h1>UKAJANG/0.1におけるサーバコマンドとその追加情報</h2>
+					<section id="reference_OnMahjong">
+						<h1>UKAJANG/0.2におけるサーバコマンドとその追加情報</h2>
 						<dl class="reference">
 							<dt>Reference1</dt>
 							<dd>gamestart（ゲーム開始時）</dd>
@@ -1869,6 +1874,14 @@
 						</dl>
 						<dl class="reference">
 							<dt>Reference1</dt>
+							<dd>open（手牌を公開する時 チー、ポン、カン等）</dd>
+							<dt>Reference2</dt>
+							<dd>プレイヤー名</dd>
+							<dt>Reference3</dt>
+							<dd>牌（例 1p2p3p）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
 							<dd>tsumo（ツモの時）</dd>
 							<dt>Reference2</dt>
 							<dd>プレイヤー名（自分）</dd>
@@ -1898,10 +1911,88 @@
 							<dd>agari（あがりの時）</dd>
 							<dt>Reference2</dt>
 							<dd>プレイヤー名</dd>
+							<dt>Reference3</dt>
+							<dd>符</dd>
+							<dt>Reference4</dt>
+							<dd>役,ハン数</dd>
+							<dt>Reference5</dt>
+							<dd>以降、Reference4同様</dd>
 						</dl>
 						<dl class="reference">
 							<dt>Reference1</dt>
 							<dd>ryukyoku（流局時）</dd>
+						</dl>
+						<p>以下のコマンドは返信が要求されている。要求元がGHOSTである場合は\![raiseother]等で返信しても良いが、要求元が外部アプリでSSTPによる通知であった場合はX-SSTP-PassThru-*ヘッダを用いて返信する必要がある。</p>
+						<p>\![raiseother]で返信する場合はOnMahjongResponseイベントを返す。SHIORIレスポンスヘッダを用いる場合はX-SSTP-PassThru-ID: OnMahjongResponseとする。</p>
+						<p>要求された対象に空文字を設定した場合、サーバーに対応を委任したものとみなす。</p>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>hello（接続確認）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>sutehai?（捨牌を尋ねる）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>naku?（牌を鳴くか尋ねる。クライアントが可能なコマンドも送る）</dd>
+							<dt>Reference2</dt>
+							<dd>(ron|kan|pon|chi)</dd>
+							<dt>Reference3</dt>
+							<dd>以降、Reference2同様</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>tenpai?（テンパイを宣言するか尋ねる）</dd>
+						</dl>
+					</section>
+				</dd>
+			</dl>
+			<dl id="OnMahjongResponse">
+				<dt class="entry">OnMahjongResponse</dt>
+				<dd class="entry">
+					<p>OnMahjongイベントに対する返信。後述の<a href="#reference_OnMahjongResponse">※クライアントコマンド</a>参照。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>バージョン（UKAJONG/0.2）</dd>
+						<dt>Reference1</dt>
+						<dd><a href="#reference_OnMahjongResponse">※クライアントコマンド</a></dd>
+						<dt>Reference*</dt>
+						<dd><a href="#reference_OnMahjongResponse">※クライアントコマンド</a>に応じた追加情報</dd>
+					</dl>
+					<section id="reference_OnMahjongResponse">
+						<h1>UKAJANG/0.2におけるクライアントコマンドとその追加情報</h2>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>hello（接続確認の返信）</dd>
+							<dt>Reference2</dt>
+							<dd>ump=(UMPバージョン)※厳密にUMPに準拠しているわけではないので特に見てないです。ump=?でOK</dd>
+							<dt>Reference3</dt>
+							<dd>name=(プレイヤー名)※sakura.nameを指定してください。</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>sutehai?（捨牌の返信）</dd>
+							<dt>Reference2</dt>
+							<dd>(sutehai|ankan|kakan|richi|tsumo)</dd>
+							<dt>Reference3</dt>
+							<dd>選択された牌(tsumoの時は空でよい)</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>naku?（牌を鳴くかの返信）</dd>
+							<dt>Reference2</dt>
+							<dd>(no|ron|kan|pon|chi)</dd>
+							<dt>Reference3</dt>
+							<dd>選択された牌1(chiの時に必要。2mに対し1mと3mまたは3mと4mのように指定する。そのうちの1枚目)</dd>
+							<dt>Reference4</dt>
+							<dd>選択された牌2(上記の2枚目)</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>tenpai?（テンパイを宣言するかの返信）</dd>
+							<dt>Reference2</dt>
+							<dd>(yes|no)</dd>
 						</dl>
 					</section>
 				</dd>
