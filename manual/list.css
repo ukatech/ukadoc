@@ -328,7 +328,7 @@ a:hover {
     margin-left: 5px;
 }
 .category dd.entry > p,
-.category dd.entry > dl {
+.category dd.entry dl {
     margin: 5px 5px 5px 15px;
 }
 .category dd.entry > dl > dt {
@@ -350,11 +350,11 @@ a:hover {
 .category dd.entry .default:before {
     content: "既定値: ";
 }
-.category dd.entry > dl.reference , .category dd.entry > dl.property {
+.category dd.entry dl.reference , .category dd.entry > dl.property {
     padding: 2px;
     background-color: #aba;
 }
-.category dd.entry > dl.reference > dt , .category dd.entry > dl.property > dt {
+.category dd.entry dl.reference > dt , .category dd.entry > dl.property > dt {
     margin: 0;
     border: none;
     padding: 0 ;
@@ -368,7 +368,7 @@ a:hover {
 .category dd.entry > dl.reference > dt:after {
     content: ":";
 }
-.category dd.entry > dl.reference > dd , .category dd.entry > dl.property > dd {
+.category dd.entry dl.reference > dd , .category dd.entry > dl.property > dd {
     margin: 0;
     border: none;
     padding: 5px 5px 5px 10px;
@@ -378,7 +378,7 @@ a:hover {
     _height: 1em;
     _overflow-y: visible;
 }
-.category dd.entry > dl.reference > dd:nth-of-type(odd) , .category dd.entry > dl.property > dd:nth-of-type(odd) {
+.category dd.entry dl.reference > dd:nth-of-type(odd) , .category dd.entry > dl.property > dd:nth-of-type(odd) {
     background-color: #ded;
 }
 .category dd.entry > dl.reference > dd dt , .category dd.entry > dl.property > dd dt {
