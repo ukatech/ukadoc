@@ -380,6 +380,16 @@
 				<li><a href="#OnMopClear">OnMopClear</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>ゴースト開発用の対話型exe「ゴースト・ターミナル」</h1>
+			<ul>
+				<li><a href="#ShioriEcho.GetName">ShioriEcho.GetName</a></li>
+				<li><a href="#ShioriEcho">ShioriEcho</a></li>
+				<li><a href="#ShioriEcho.GetResult">ShioriEcho.GetResult</a></li>
+				<li><a href="#ShioriEcho.TabPress">ShioriEcho.TabPress</a></li>
+				<li><a href="#ShioriEcho.End">ShioriEcho.End</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<section class="caption">
@@ -2503,6 +2513,79 @@
 						<dt>Reference1</dt>
 						<dd>クリアしたマップ名。</dd>
 					</dl>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>ゴースト開発用の対話型exe「ゴースト・ターミナル」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://github.com/Taromati2/ghost_terminal">https://github.com/Taromati2/ghost_terminal</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="ShioriEcho.GetName">
+				<dt class="entry">ShioriEcho.GetName</dt>
+				<dd class="entry">
+					<p>ゴーストターミナルの起動イベント。</p>
+					<dl class="reference">
+						<dt>戻り値（オプション）：X-SSTP-PassThru-GhostName</dt>
+						<dd>ゴースト名。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-UserName</dt>
+						<dd>ユーザー名。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho">
+				<dt class="entry">ShioriEcho</dt>
+				<dd class="entry">
+					<p>コマンドが入力された後のイベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>収集したコマンド。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.GetResult">
+				<dt class="entry">ShioriEcho.GetResult</dt>
+				<dd class="entry">
+					<p>値の結果イベントのクエリ。</p>
+					<p>可能な返答値 1：</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-Result</dt>
+						<dd>値の内容。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Type</dt>
+						<dd>値のタイプ。</dd>
+					</dl>
+					<p>可能な返答値 2：</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-Special</dt>
+						<dd>コンテンツを表示し、次のコマンド取得に進む。</dd>
+					</dl>
+					<p>可能な返答値 3：SHIORI/3.0 204（无値を返す）</p>
+					<p>1秒待って再起動 ShioriEcho.GetResult</p>
+					<p>可能な返答値 4：SHIORI/3.0 400（Bad Request）</p>
+					<p>警告メッセージを表示し、次のコマンド取得に進む。</p>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.TabPress">
+				<dt class="entry">ShioriEcho.TabPress</dt>
+				<dd class="entry">
+					<p>コマンドの補完が必要な時のイベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>収集したコマンド（カーソルの前の部分、それ以降は渡されない）。</dd>
+						<dt>Reference1</dt>
+						<dd>ユーザーが最初に連続してタブを押した回数（開始値0）。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Command</dt>
+						<dd>カーソル前のコマンドをこの内容に置き換える。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.End">
+				<dt class="entry">ShioriEcho.End</dt>
+				<dd class="entry">
+					<p>exitと入力して終了する際のイベント 。</p>
 				</dd>
 			</dl>
 		</section>
