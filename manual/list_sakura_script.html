@@ -405,6 +405,7 @@
 				<li><a href="#_!_open,dateinput,ID,表示時間,年,月,日,オプション_">\![open,dateinput,ID,表示時間,年,月,日,オプション]</a></li>
 				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</a></li>
 				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</a></li>
+				<li><a href="#_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">\![open,ipinput,ID,表示時間,IPアドレス,オプション]</a></li>
 				<li><a href="#_!_open,configurationdialog,ダイアログID_">\![open,configurationdialog,ダイアログID]</a></li>
 				<li><a href="#_!_open,ghostexplorer_">\![open,ghostexplorer]</a></li>
 				<li><a href="#_!_open,shellexplorer_">\![open,shellexplorer]</a></li>
@@ -3888,7 +3889,10 @@
 			<dl id="_!_open,communicatebox_">
 				<dt class="entry">\![open,communicatebox]</dt>
 				<dd class="entry">
-					<p>CommunicateBoxを開く。<br>入力決定後は<a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a>が発生する。閉じると<a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>が発生する。<br>SSPのみ、続けてデフォルトのテキストを指定できる(\![open,communicatebox,テキスト]の形)。</p>
+					<p>CommunicateBoxを開く。
+					<br>入力決定後は<a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a>が発生する。閉じると<a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>が発生する。
+					<br>SSPのみ、続けてデフォルトのテキストを指定できる(\![open,communicatebox,テキスト]の形)。
+					<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3898,6 +3902,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,communicatebox,テスト]CommunicateBoxを開く。最初から「テスト」の文字が入っている。</code></p>
+							<p><code>\![open,communicatebox,--text=テスト]上記と同じ(オプション指定の書き方)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3941,6 +3946,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
+							<p><code>\![open,inputbox,インプットテスト,--timeout=10000,--text=テスト入力] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3956,6 +3962,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,passwordinput,パスワードテスト,-1,--option==noclose]入力が●で伏せ字になるInputBoxを開く。OKボタンを押しても、時間経過でも自動的に閉じない。閉じるボタンを押すと閉じる。</code></p>
+							<p><code>\![open,passwordinput,パスワードテスト,--timeout=-1,--option==noclose] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3971,6 +3978,7 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,dateinput,日付入力テスト,30000,2012,12,23]初期値が2012年12月23日の年月日入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code>\![open,dateinput,日付入力テスト,--timeout=30000,--text="2012,12,23"] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3986,11 +3994,12 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,sliderinput,スライダーテスト,30000,50,0,100]初期値が50、最小値が0、最大が100のスライダー型InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code>\![open,sliderinput,スライダーテスト,--timeout=30000,--text="50,0,100"] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_" "="">
+			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">
 				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
 				<dd class="entry">
 					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
@@ -4001,6 +4010,26 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>\![open,timeinput,時間入力テスト,30000,23,45,12]初期値が23時45分12秒の時間入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code>\![open,timeinput,時間入力テスト,--timeout=30000,--text="23,45,12"] 上記と同じ(新オプション指定)</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">
+				<dt class="entry">\![open,ipinput,ID,表示時間,IP1桁目,IP2桁目,IP3桁目,IP4桁目,オプション]</dt>
+				<dd class="entry">
+					<p>IPアドレス入力InputBoxを開く。
+					<br>Windows上では入力ボックスの制限のため、IPv4アドレスのみ受け入れ可能。
+					<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
+					<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>\![open,ipinput,IP入力テスト,30000,192,168,0,1]</code></p>
+							<p><code>\![open,ipinput,IP入力テスト,--timeout=30000,--text="192,168,0,1"]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4356,12 +4385,22 @@
 			</dl>
 			<section class="caption" id="notes_inputbox-option">
 				<h1>InputBoxオプション</h1>
-				<p>--option=○○の形で指定。</p>
+				<p>○○の形で指定。</p>
 				<dl>
-					<dt>noclose</dt>
-					<dd>入力後、inputboxを閉じないで表示し続ける。</dd>
-					<dt>noclear</dt>
-					<dd>入力後、入力内容を初期化せずにそのまま表示し続ける。<br>nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。<br>特殊なinputbox(slider,password,time,date)では無効。</dd>
+					<dt>--option=(noclose|noclear)</dt>
+					<dd>noclose:入力後、inputboxを閉じないで表示し続ける。
+					<br />noclear:入力後、入力内容を初期化せずにそのまま表示し続ける。
+					<br />nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。
+					<br />特殊なinputbox(slider,password,time,date)では無効。</dd>
+					<dt>--text=デフォルト表示</dt>
+					<dd>最初から表示すべき文字列。
+					<br />sliderinputでは初期値,最小,最大/dateinputでは年,月,日/timeinputでは時,分,秒</dd>
+					<dt>--timeout=タイムアウトミリ秒</dt>
+					<dd>入力ボックスを自動的に閉じるまでの時間。ゼロ以下を指定すると閉じない。</dd>
+					<dt>--limit=文字入力制限長さ</dt>
+					<dd>入力ボックスに入れられる文字数を制限する。</dd>
+					<dt>--reference=追加情報</dt>
+					<dd>OnUserInputのReference3、またはOnではじまる指定イベントのReference2以降に指定した追加情報を追加する。</dd>
 				</dl>
 			</section>
 			<section class="caption" id="notes_inputbox-id">
@@ -4378,6 +4417,8 @@
 					<li>「OnUserInput」が発生</li>
 					<li>Reference0は「インプットテスト」</li>
 					<li>Reference1は入力内容</li>
+					<li>Reference2は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
+					<li>Reference3以降は--reference=で指定した追加情報</li>
 				</ul>
 				<p>
 					\![open,inputbox,<em>On</em>インプットテスト,10000,テスト入力]で入力を決定した場合。
@@ -4385,6 +4426,8 @@
 				<ul>
 					<li>「Onインプットテスト」が発生</li>
 					<li>Reference0は入力内容</li>
+					<li>Reference1は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
+					<li>Reference2以降は--reference=で指定した追加情報</li>
 				</p>
 					IDにかかわらず、閉じるボタンを押した時とタイムアウト時は<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
 				</p>

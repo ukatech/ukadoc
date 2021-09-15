@@ -1088,11 +1088,16 @@
 				<dt class="entry">OnUserInput</dt>
 				<dd class="entry">
 					<p>InputBoxに入力され決定された際に発生。</p>
+					<p><a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>も参照のこと。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>InputBoxのID。</dd>
 						<dt>Reference1</dt>
 						<dd>入力された内容。</dd>
+						<dt>Reference2</dt>
+						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
+						<dt>Reference3～</dt>
+						<dd>--reference=で指定した追加情報</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1110,6 +1115,10 @@
 						<dd>入力のイベントID。</dd>
 						<dt>Reference1</dt>
 						<dd>タイムアウトした場合、timeout。閉じられた場合、close。</dd>
+						<dt>Reference2</dt>
+						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
+						<dt>Reference3～</dt>
+						<dd>--reference=で指定した追加情報</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
