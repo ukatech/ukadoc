@@ -3916,7 +3916,7 @@
 						<dt>Reference1</dt>
 						<dd>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</dd>
 						<dt>Reference2</dt>
-						<dd>接続の種類。<br />
+						<dd>接続の種類。 [SSP 2.4.22]<br />
 						cellular : 携帯回線もしくは通常のPPP(PPPoE等除く)<br />
 						ethernet : Ethernet (有線LAN)<br />
 						none : 接続なし<br />
@@ -3926,10 +3926,13 @@
 						unknown : 検出に失敗
 						</dd>
 						<dt>Reference3</dt>
-						<dd>接続回線のダウンロード側の最大通信速度を示す数値。単位はMBps。</dd>
+						<dd>接続回線のダウンロード側の最大通信速度を示す数値。単位はMBps。 [SSP 2.4.22]</dd>
+						<dt>Reference4</dt>
+						<dd>接続回線のダウンロード側の推定有効通信速度を示す数値。単位はMBps。 [SSP 2.5.26]
+						<br />通信統計が取得できない環境や、統計値が不正確な状態ではReference3と同じ値となる。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Reference2,3は2.4.22から</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
