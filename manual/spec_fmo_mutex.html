@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project FMO/Mutex</title>
+<link rel="stylesheet" href="list.css" />
+<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+</head>
+<body>
+	<h1 id="page-title">FMO/Mutex</h1>
+	<nav class="menu-header">
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="http://ssp.shillest.net/ukadoc/manual/index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">規格</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
+							<li><a href="./spec_sstp.html">SSTP/1.x</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</nav>
+	<section class="navigation-bar">
+		<h1>FMO/Mutex</h1>
+		<section class="navigation-category">
+			<h1>FMO/Mutex</h1>
+			<ul>
+				<li><a href="#mutex">Mutex</a></li>
+				<li><a href="#fmo">FMO</a></li>
+				<li><a href="#fmo-mutex">FMO用Mutex</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category" id="chapter0">
+			<section class="caption introduction" id="chapter0">
+				<h1>FMO/Mutex</h1>
+				<p>参考：<a href="http://usada.sakura.vg/contents/objects.html">メモリオブジェクト</a>（外部サイト）</p>
+				<p>現在のところ本仕様はWindowsの仕様に大きく依存しており、他OSでの実装を想定していません。
+				<br />共有メモリ・Mutex自体は他OSにも存在するため、別途仕様を規定することが望ましいと思われます。
+				<br />もし仕様が決定した場合は別途掲載を考えておりますので、<a href="https://github.com/ponapalt/ukadoc">Ukadoc Project</a>までご連絡ください。</p>
+			</section>
+		</section>
+		<section class="category" id="mutex">
+			<h1>Mutex</h1>
+			<p>ベースウェアが起動中であることを示すため、SSPは"ssp"、MateriaとCROWは"sakura"という名前のMutexを保持しています。
+			<br />この名前つきMutexの存在を確認することで、起動中かどうかをローコストに判定できます。
+			<br />Mutex自体の状態は決められておらず、シグナル状態か否かの確認は不要です。</p>
+
+			<section class="caption">
+				<h1>存在確認のみのコード例(C++)</h1>
+<pre><code><!--
+-->HANDLE hmutex = OpenMutex(MUTEX_ALL_ACCESS,FALSE,"ssp");
+if ( hmutex ) {
+  // いる
+  CloseHandle(hmutex);
+}
+else {
+  //いない
+}
+</code></pre>
+			</section>
+		</section>
+		<section class="category" id="fmo">
+			<h1>FMO (File Mapping Object)</h1>
+			<p>すべてのベースウェアは起動中に名前つきファイルマッピングオブジェクト(FMO)を保持しています。
+			<br />このプロセス間共有メモリを読み取ることで、起動中のゴーストを比較的低コストで取得できます。
+			<br />書き込み中の不完全な情報の読み取りを避けるため、排他制御は<a href="#fmo-mutex">FMO用Mutex</a>で行っています。あわせて確認してください。</p>
+			
+			<section>
+			<dl>
+				<dt class="entry">FMOの名前と文字コード</dt>
+				<dd class="entry"><p>Sakura : OS依存、日本語OS上はShift JIS
+				<br />SakuraUnicode : UTF-8固定 [SSP 2.5.26以降～]</p></dd>
+				
+				<dt class="entry">FMOのサイズ</dt>
+				<dd class="entry"><p>最初の4バイト(0～3バイト目)は確保されているFMOのサイズを示します。
+				<br />これは書き込まれている情報の長さではなく、あくまでもFMO自体の確保サイズを示す固定値です。
+				<br />値は現在のところリトルエンディアンで0x00010000、つまり64KB固定になります。
+				<br />他プログラムとの互換性確保のため、現在のところサイズ変更は考慮されていません。</p></dd>
+				
+				<dt class="entry">データ本体</dt>
+				<dd class="entry"><p>4バイト目以降はFMOのデータ本体になります。これは以下のフォーマットになります。
+				<br />(32バイトの識別ID).(キー名)[\1]値[\r\n]
+				<br />[\1]はバイト値1、[\r\n]はCR+LF(改行)になります。
+				<br />このフォーマットを複数行繰り返す形になります。</p></dd>
+				
+				<dt class="entry">データ終端</dt>
+				<dd class="entry"><p>データ終端はC言語文字列と同じバイト値0になります。
+				<br />ゆえに、データ本体で使用可能な最大サイズは65531バイト(65536 - 4 - 1)になります。
+				<br />FMOに書き込む必要がある場合、サイズの限界を超えそうな場合は、不完全な情報の書き込みにならないよう留意してください。
+				<br />サイズを超えそうな場合は1組分のデータを丸々書き込まないようにするのが望ましく、それが無理な場合でも1行の途中で終わらないようにしてください。</p>
+				</dd>
+			</dl>
+			<section class="caption">
+				<h1>データ本体の例</h1>
+			
+<pre><code><!--
+-->ssp_fmo_header_00004468_000f0dea.path[\1]D:\ssp\
+ssp_fmo_header_00004468_000f0dea.hwnd[\1]986602
+ssp_fmo_header_00004468_000f0dea.name[\1]ラーシェ
+ssp_fmo_header_00004468_000f0dea.keroname[\1]ティセ
+ssp_fmo_header_00004468_000f0dea.sakura.surface[\1]0
+ssp_fmo_header_00004468_000f0dea.kero.surface[\1]10
+ssp_fmo_header_00004468_000f0dea.kerohwnd[\1]1052114
+ssp_fmo_header_00004468_000f0dea.hwndlist[\1]986602,1052114
+ssp_fmo_header_00004468_000f0dea.ghostpath[\1]D:\ssp\ghost\DE10_3001\
+ssp_fmo_header_00004468_00120da6.path[\1]D:\ssp\
+ssp_fmo_header_00004468_00120da6.hwnd[\1]1183142
+ssp_fmo_header_00004468_00120da6.name[\1]Emily
+ssp_fmo_header_00004468_00120da6.keroname[\1]Teddy
+ssp_fmo_header_00004468_00120da6.sakura.surface[\1]20
+ssp_fmo_header_00004468_00120da6.kero.surface[\1]10
+ssp_fmo_header_00004468_00120da6.kerohwnd[\1]1117626
+ssp_fmo_header_00004468_00120da6.hwndlist[\1]1183142,1117626,921002,2035340,658950
+ssp_fmo_header_00004468_00120da6.ghostpath[\1]D:\ssp\ghost\emily4\
+</code></pre>
+			</section>
+			
+			<dl>
+				<dt class="entry">32バイトの識別ID</dt>
+				<dd class="entry"><p>ゴースト1組分を示すユニークな識別IDです。少なくともFMO内では他と重複しない文字列を選ぶ必要があります。
+				<br />何かユニークな情報を組み合わせてMD5ハッシュを取ったり、HWND(ウインドウハンドル)を組み合わせたりしている場合が多いです。
+				<br />Materiaでの規格上は長さは規定されていませんが、互換性のため32バイト固定長とすべきです。</p></dd>
+				<dt class="entry">キー名・値</dt>
+				<dd class="entry"><p>情報の種類を示すキーと情報本体です。以下の通りです。</p>
+					<dl class="property">
+						<dt>path</dt>
+						<dd>起動しているベースウェアのルートフォルダのフルパス。</dd>
+						<dt>hwnd</dt>
+						<dd>メインとなるウインドウのウインドウハンドル。10進表記。</dd>
+						<dt>name</dt>
+						<dd>descript.txtのsakura.nameと同じもの。</dd>
+						<dt>keroname</dt>
+						<dd>descript.txtのkero.nameと同じもの。</dd>
+						<dt>sakura.surface</dt>
+						<dd>\0側で現在表示しているサーフィスID。10進表記。</dd>
+						<dt>kero.surface</dt>
+						<dd>\1側で現在表示しているサーフィスID。10進表記。</dd>
+						<dt>kerohwnd</dt>
+						<dd>\1側ウインドウのウインドウハンドル。10進表記。[SSPのみ]</dd>
+						<dt>hwndlist</dt>
+						<dd>現在使用しているウインドウハンドルをすべてカンマ区切りで列挙。10進表記。[SSPのみ]</dd>
+						<dt>ghostpath</dt>
+						<dd>起動中ゴーストのフルパス。[SSPのみ]</dd>
+					</dl>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="fmo-mutex">
+			<h1>FMO用Mutex</h1>
+			
+			<p>FMO自体に排他制御の仕組みはないため、書き込み・読み取りの衝突を避けるために、別途Mutexを保持しています。
+			<br />FMO名+"FMO"という名前になり、例えば以下のようになります。
+			<br />FMO = Sakura : Mutex = SakuraFMO
+			<br />FMO = SakuraUnicode : Mutex = SakuraUnicodeFMO
+			<br />こちらはシグナル状態・非シグナル状態の判定が重要になります。
+			<br />読み書きを行う際は、必ずWaitForSingleObjectや同等の待機関数を使い所有権を取得し、終わったらReleaseMutexで所有権を開放してください。</p>
+			
+			<p>旧いベースウェア等でFMO用Mutexに対応していない場合があるので、Mutexの取得に失敗してもエラーにはしないでください。
+			<br />ただしこの場合は、不完全な書き込み中のFMOを取得する可能性を考慮して、できるだけ安全に処理できるコードを書くよう留意してください。</p>
+        
+			<section class="caption">
+				<h1>FMOを読み書きするコード例(C++)</h1>
+<pre><code><!--
+-->//ベースウェア等の保持すべきアプリは代わりにCreateMutexを使う
+HANDLE hMutex = OpenMutex(MUTEX_ALL_ACCESS,FALSE,"SakuraFMO");
+
+//FMO用Mutexに対応していないベースウェアもあるので、見つからなかったら単にスキップ
+bool isWaitSuccess = true;
+
+if ( hMutex ) {
+
+    //INFINITEで待機すると永遠に待ち続けてGUIが止まるので適宜工夫すること
+    DWORD result = WaitForSingleObject(hMutex,INFINITE);
+    
+    if ( result != WAIT_OBJECT_0 ) {
+        isWaitSuccess = false;
+    }
+}
+
+if ( isWaitSuccess ) {
+
+    //保持すべきアプリは代わりにCreateMutexを使う
+    HANDLE hFMO = OpenFileMapping(FILE_MAP_ALL_ACCESS,FALSE,"Sakura");
+
+    if ( hFMO ) {
+
+        char *pDataStart = static_cast&lt;char*&gt;(MapViewOfFile(hFMO,FILE_MAP_ALL_ACCESS,0,0,0));
+
+        if ( pDataStart ) {
+
+            //頭の4バイトはFMO最大サイズ。
+            //文字列終端（C言語文字列のゼロ終端）とは異なるので注意。
+            unsigned long length = *reinterpret_cast&lt;unsigned long*&gt;(pDataStart);
+
+            char *pData = pDataStart;
+            pData += 4;
+
+            //****************************************
+            //ここでpDataとlengthをつかってなにかやる
+            //****************************************
+
+            //MapViewOfFileの解除
+            UnmapViewOfFile(pDataStart);
+        }
+            
+        //FMOハンドルを開放
+        //ベースウェア等の保持すべきアプリは開放せず持ち続けること
+        CloseHandle(hFMO);
+    }
+}
+
+if ( hMutex ) {
+    if ( isWaitSuccess ) {
+    
+        //WaitForSingleObjectでMutexが非シグナル状態になるので、シグナル状態に戻す(Release)
+        ReleaseMutex(hMutex);
+    }
+
+    //最後にMutexのハンドルも要らないので開放
+    //ベースウェア等の保持すべきアプリは開放せず持ち続けること
+    CloseHandle(hMutex);
+}
+
+</code></pre>
+			</section>
+		</section>
+	</div>
+</body>
+</html>
