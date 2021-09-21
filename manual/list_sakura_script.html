@@ -329,11 +329,11 @@
 				<li><a href="#_e">\e</a></li>
 				<li><a href="#_-">\-</a></li>
 				<li><a href="#_a">\a</a></li>
-				<li><a href="#_!_updatebymyself_">\![updatebymyself]</a></li>
-				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself,checkonly]</a></li>
+				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself(,オプション,オプション...)]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
-				<li><a href="#_!_update,更新対象_">\![update,更新対象]</a></li>
-				<li><a href="#_!_updateother_">\![updateother]</a></li>
+				<li><a href="#_!_update,更新対象_">\![update,更新対象(,オプション,オプション...)]</a></li>
+				<li><a href="#_!_updateother_">\![updateother,更新対象/オプション群,...]</a></li>
+				<li class="caption"><a href="#notes_update_options">更新オプション指定</a></li>
 				<li><a href="#_6">\6</a></li>
 				<li><a href="#_7">\7</a></li>
 				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
@@ -2914,10 +2914,12 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_updatebymyself_">
-				<dt class="entry">\![updatebymyself]</dt>
+			<dl id="_!_updatebymyself,checkonly_">
+				<dt class="entry">\![updatebymyself(,オプション,オプション...)]</dt>
 				<dd class="entry">
-					<p>ネットワーク更新イベントを開始する。<br>右クリックメニューやゴーストエクスプローラからユーザが行うことも出来る。</p>
+					<p>ネットワーク更新チェックイベントを開始する。
+					<br>右クリックメニューやゴーストエクスプローラからユーザが行うことも出来る。
+					<br>オプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2927,22 +2929,6 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>ネットワーク更新を開始。\![updatebymyself]</code></p>
-						</section>
-					</div>
-				</dd>
-			</dl>
-			<dl id="_!_updatebymyself,checkonly_">
-				<dt class="entry">\![updatebymyself,checkonly]</dt>
-				<dd class="entry">
-					<p>ネットワーク更新チェックイベントを開始する。<br>実行後、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知される。<br>
-					OnUpdateCheckCompleteまたはOnUpdateCheckFailureは、スクリプト再生終了後に通知される。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-					<div class="legend">
-						<section class="code">
-							<h1>記述例</h1>
-							<p><code>更新があるかチェック。\![updatebymyself,checkonly]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2964,14 +2950,14 @@
 				</dd>
 			</dl>
 			<dl id="_!_update,更新対象_">
-				<dt class="entry">\![update,更新対象(,checkonly)]</dt>
+				<dt class="entry">\![update,更新対象(,オプション,オプション...)]</dt>
 				<dd class="entry">
-					<p>更新対象のネットワーク更新イベントを開始する。<br>
-					ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。<br>
-					更新対象をallとすると、\![updatebymyself]と同義。<br>
-					\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。<br>
-					ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。<br>
-					checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。また、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateCheckResult">OnUpdateCheckResult</a>が発生する。</p>
+					<p>更新対象のネットワーク更新イベントを開始する。
+					<br>ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。
+					<br>更新対象をallとすると、\![updatebymyself]と同義。
+					<br>\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。
+					<br>ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。
+					<br>オプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2994,7 +2980,7 @@
 					--headline=ヘッドライン名<br>
 					--language=言語リソース名<br>
 					更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResultEx">OnUpdateResultEx</a>が発生する。<br>
-					--option=checkonlyを付けた場合、\![updatebymyself,checkonly]と同じ挙動となり、普通の更新イベントの代わりにOnUpdateCheckCompleteまたはOnUpdateCheckFailureが発生し、更新チェックのみで処理が打ち切られる。また、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a>が発生する。</p>
+					--option=で指定できるオプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3006,6 +2992,22 @@
 					</div>
 				</dd>
 			</dl>
+
+			<div class="caption" id="notes_update_options">
+				<h1>更新オプション指定</h1>
+				<dl>
+					<dt>checkonly</dt>
+					<dd><p>普通の更新イベントの代わりに、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知され、更新の有無を判定でき次第処理を中断する。
+					<br>すべて更新が終わった後に、結果の総括として、updateotherの時は<a href="list_shiori_event.html#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a>、そのほかは<a href="list_shiori_event.html#OnUpdateCheckResult">OnUpdateCheckResult</a>が発生する。</p></dd>
+					<dt>testonly</dt>
+					<dd><p>本番と同じように更新ファイルのダウンロードを行うが、実際のファイルの置き換えは行わない。
+					<br>SSPでは開発用パレットから実行できる"Update Full Check"と同じ挙動。</p></dd>
+					<dt>recovery [SSP 2.5.26～]</dt>
+					<dd>修復モードで更新を実行する。SSPでは設定-ゴースト(1)-修復モードへの切り替えキー有効、で設定したキーを押しながら更新した際と同じ挙動。
+					<br>ローカル側にある更新定義ファイルを全部無視し、ネットワーク上からダウンロードしてきた更新定義のみを採用した上で、ローカル側の全ファイルのハッシュ値と比較し、異なるものをダウンロードする。</dd>
+				</dl>
+			</div>
+
 			<dl id="_6">
 				<dt class="entry">\6</dt>
 				<dd class="entry">
