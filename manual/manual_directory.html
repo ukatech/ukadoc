@@ -52,19 +52,20 @@
 　　　　　　+-(element).png
 　　　　　　+-(element).pna
 　　　　　　+-surfaces.txt
-　　　　　　+-makoto.dll
+　　　　　　+-makoto.dll (必要な時のみ)
 　　　　　　+-menu_background.png
 　　　　　　+-menu_foreground.png
 　　　　　　+-menu_sidebar.png
-　　　　　　+-readme.txt
+　　　　　　+-readme.txt (必要な時のみ)
 　　　　　　+-thumbnail.png
-　　　　　　+-surfaces**.txt （SSPのみ）
-　　　　　　+-surfacetable.txt (SSPのみ)
-　　　　　　+-alias.txt（旧仕様）
+　　　　　　+-surfaces**.txt (SSPのみ）
+　　　　　　+-surfacetable.txt (必要な時のみ)(SSPのみ)
+　　　　　　+-alias.txt (必要な時のみ)(旧仕様）
 　　　　<em class="filename">+-(additional_shell)</em>
-　　+-delete.txt
-　　+-developer_options.txt (SSPのみ)
-　　<em class="filename">+-readme.txt</em>
+　　+-delete.txt (必要な時のみ)
+　　+-developer_options.txt (必要な時のみ)(SSPのみ)
+　　<em class="filename">+-readme.txt (必要な時のみ)</em>
+　　<em class="filename">+-terms.txt (必要な時のみ)</em>
 　　<em class="filename">+-thumbnail.png</em>
 </pre>
 </section>
@@ -79,7 +80,8 @@
 　　+-descirpt.txt
 　　+-balloons*s.txt
 　　+-balloonk*s.txt
-　　+-readme.txt
+　　<em class="filename">+-readme.txt (必要な時のみ)</em>
+　　<em class="filename">+-terms.txt (必要な時のみ)</em>
 　　+-balloons*.png
 　　+-balloonk*.png
 　　+-balloons*.pna （MATERIA不可）
@@ -175,6 +177,14 @@
 				<p>1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使える。</p>
 				<p>インストール時に開かれるほか、オーナードローメニューなどからも開ける。</p>
 				<p>省略可能だが存在するのが望ましい。</p>
+			</dd>
+
+			<dt><span class="directory">(myghost)\</span>terms.txt</dt>
+			<dd>
+				<p>利用条件表示。NAR/ZIPファイルのインストール前にこの内容を表示するダイアログが出る。</p>
+				<p>インストールを中断してダイアログ表示するので、どうしても必要な場合のみ入れること。</p>
+				<p>readmeと同じく、1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使える。</p>
+				<p>省略可能、かつ<em>不要なら省略することが望ましい</em>。</p>
 			</dd>
 
 			<dt><span class="directory">(myghost)\</span>thumbnail.png</dt>
