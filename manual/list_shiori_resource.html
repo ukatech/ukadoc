@@ -189,6 +189,12 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>更新情報</h1>
+			<ul>
+				<li><a href="#other_homeurl_override">other_homeurl_override</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>オーナードローメニュー画像</h1>
 			<ul>
 				<li><a href="#menu.sidebar.bitmap.filename">menu.sidebar.bitmap.filename</a></li>
@@ -821,6 +827,31 @@
 					<p>右クリックメニュー中の、レガシーインターフェースを使うか否か。<br />これに 0 を返すと、「ゴースト、シェル、バルーンの各切り替えボタン」が表示されなくなる。<br />materia582でのみ動作。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+		<section class="category">
+			<h1>更新情報</h1>
+			<dl id="other_homeurl_override">
+				<dt class="entry">other_homeurl_override</dt>
+				<dd class="entry">
+					<p>\![updateother]やシェル・バルーン同時更新機能において、更新対象の更新先URL(homeurl)を強制的に置き換える。
+					<br />置き換える必要がない場合は、204を返すか空文字列とすること。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>更新対象の種類(shell,balloon,headline,plugin,languageなど)</dd>
+						<dt>Reference1</dt>
+						<dd>更新対象の名前(descript.txtのname)</dd>
+						<dt>Reference2</dt>
+						<dd>更新対象の作者名(descript.txtのcraftmanname)</dd>
+						<dt>Reference3</dt>
+						<dd>更新対象のフォルダ名。</dd>
+						<dt>Reference4</dt>
+						<dd>本来更新に使用すべきだったhomeurl。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
 				</dd>
 			</dl>
