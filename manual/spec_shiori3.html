@@ -134,6 +134,7 @@
 		<section class="navigation-category">
 			<h1>SHIORI/3.0</h1>
 			<ul>
+				<li><a href="#capability">実装対応状況の検知</a></li>
 				<li><a href="#request">request</a></li>
 				<li><a href="#response">response</a></li>
 			</ul>
@@ -146,6 +147,14 @@
 				<p>参考：<a href="http://usada.sakura.vg/contents/specification2.html#shioriprotocol">SHIORI/3.0</a>（外部サイト） <a href="http://usada.sakura.vg/contents/shiori.html">SHIORI/2.x</a>（外部サイト）</p>
 			</section>
 		</section>
+		
+		<section class="category" id="capability">
+			<h1>実装対応状況の検知</h1>
+			<section class="caption">
+				<p>拡張ヘッダの実装対応状況については、<a href="./list_shiori_event.html#capability">ID: capability</a>でSHIORI実行の初期に通知される。</p>
+			</section>
+		</section>
+		
 		<section class="category" id="request">
 			<h1>request</h1>
 			<section class="caption">
@@ -316,6 +325,14 @@ Value: \1\s[10]\0\s[0]\e
 				<dt class="entry">Value</dt>
 				<dd class="entry"><p>喋りたいスクリプト。</p></dd>
 				
+				<dt class="entry">ValueNotify [SSP拡張]</dt>
+				<dd class="entry"><p>リクエストメソッドがNOTIFYの場合でもSakuraScriptを実行するための拡張機能。
+				<br />このヘッダでSakuraScriptを返すと、即時実行される。
+				<br />実行できるタグは極めて限られ、他のタグやその他文字列は全て無視される。
+				<br />メソッドがNOTIFYでない時や、Valueヘッダがすでにある時は無視される。
+				<br />現在実行できるタグは以下のみ：
+				<br />\![sound] \![set,trayicon] \![set,trayballoon]</p></dd>
+
 				<dt class="entry">SecurityLevel [SSP拡張]</dt>
 				<dd class="entry">
 				<p>下記のいずれか。</p>

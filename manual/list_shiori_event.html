@@ -4616,24 +4616,14 @@
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							<p>実装レベルに応じて下記がReferenceに1つずつ送られる。</p>
+							<p>実装レベルに応じて下記がReferenceに1つずつ送られる。
+							<br />ヘッダ名を小文字に直したものが通知される点に注意。例：SecurityLevel→securitylevel
+							<br /><a href="spec_shiori3.html">SHIORI/3.0仕様書</a>も参照。</p>
 							<dl>
-								<dt>equest.status</dt>
-								<dd>Statusヘッダ実装</dd>
-								<dt>request.securitylevel</dt>
-								<dd>SecurityLevelヘッダ実装</dd>
-								<dt>request.baseid</dt>
-								<dd>BaseIDヘッダ実装</dd>
-								<dt>response.marker</dt>
-								<dd>Markerヘッダ有効</dd>
-								<dt>response.errorlevel</dt>
-								<dd>エラーログ有効</dd>
-								<dt>response.errordescription</dt>
-								<dd>(エラーログ有効)</dd>
-								<dt>response.securitylevel</dt>
-								<dd>返り値のSecurityLevel有効</dd>
-								<dt>response.requestcharset</dt>
-								<dd>次の呼び出しの文字コード指定有効</dd>
+								<dt>request.(ヘッダ名小文字)</dt>
+								<dd>SHIORIリクエストの対応状況。例：request.status</dd>
+								<dt>response.(ヘッダ名小文字)</dt>
+								<dd>SHIORIレスポンスの対応状況。例：response.marker</dd>
 							</dl>
 						</dd>
 					</dl>
