@@ -497,6 +497,7 @@
 				<li><a href="#OnEmbryoExist">OnEmbryoExist</a></li>
 				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
 				<li><a href="#OnSoundStop">OnSoundStop</a></li>
+				<li><a href="#OnSoundError">OnSoundError</a></li>
 				<li><a href="#OnTextDrop">OnTextDrop</a></li>
 				<li><a href="#OnShellScaling">OnShellScaling</a></li>
 				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
@@ -4479,6 +4480,25 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>再生ファイル名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSoundError">
+				<dt class="entry">OnSoundError</dt>
+				<dd class="entry">
+					<p>サウンド処理に失敗した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>エラーを起こした再生コマンド。現在のところplay固定。</dd>
+						<dt>Reference1</dt>
+						<dd>サウンド再生エンジン内部のエラーコード(数値)。</dd>
+						<dt>Reference2</dt>
+						<dd>再生ファイル名。</dd>
+						<dt>Reference3</dt>
+						<dd>サウンド再生エンジンから出力されたエラーメッセージ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
