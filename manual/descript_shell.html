@@ -223,6 +223,7 @@
 			<ul>
 				<li class="caption"><a href="#caption_surfaceposition">サーフェスの位置情報</a></li>
 				<li class="caption"><a href="#caption_balloonposition">バルーンの位置情報</a></li>
+				<li class="caption"><a href="#caption_menualign">メニュー画像の位置指定</a></li>
 			</ul>
 		</section>
 	</section>
@@ -952,7 +953,7 @@ kero.menuitem3,2
 			<dl id="menu.background.alignment,位置">
 				<dt class="entry">menu.background.alignment,位置</dt>
 				<dd class="entry">
-					<p>バックグラウンド画像をrighttopで右寄せ、lefttopで左寄せ、centertopで中央寄せ。<br />SSPのみrightbottom、leftbottom、centerbottomのような下方向固定も可。</p>
+					<p>バックグラウンド画像の位置を指定する。<a href="#caption_menualign">メニュー画像の位置指定</a>を参照。</p>
 					<p class="default">lefttop</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -964,7 +965,7 @@ kero.menuitem3,2
 			<dl id="menu.foreground.alignment,位置">
 				<dt class="entry">menu.foreground.alignment,位置</dt>
 				<dd class="entry">
-					<p>フォアグラウンド画像をrighttopで右寄せ、lefttopで左寄せ、centertopで中央寄せ。<br />SSPのみrightbottom、leftbottom、centerbottomのような下方向固定も可。</p>
+					<p>フォアグラウンド画像の位置を指定する。<a href="#caption_menualign">メニュー画像の位置指定</a>を参照。</p>
 					<p class="default">lefttop</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -976,7 +977,7 @@ kero.menuitem3,2
 			<dl id="menu.sidebar.alignment,位置">
 				<dt class="entry">menu.sidebar.alignment,位置</dt>
 				<dd class="entry">
-					<p>サイドバー画像をtopで上寄せ、bottomで下寄せ。</p>
+					<p>サイドバー画像の位置を指定する。<a href="#caption_menualign">メニュー画像の位置指定</a>を参照。</p>
 					<p class="default">bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1226,6 +1227,38 @@ kero.menuitem3,2
 					<dd>常に左に表示。</dd>
 					<dt>right</dt>
 					<dd>常に右に表示。</dd>
+				</dl>
+			</div>
+			<div class="caption" id="caption_menualign">
+				<h1>メニュー画像の位置指定</h1>
+				<p>寄せる方向のいずれか+繰り返し(タイリング)指定 という形式で指定する。
+				<br />例：lefttop
+                <br />例：leftbottom+repeat-x+repeat-y</p>
+				<dl>
+					<dt>lefttop</dt>
+					<dd>[background/foreground]左上端に寄せる。</dd>
+					<dt>centertop</dt>
+					<dd>[background/foreground]上端中央に寄せる。 [SSP]</dd>
+					<dt>righttop</dt>
+					<dd>[background/foreground]右上端に寄せる。</dd>
+					<dt>leftbottom</dt>
+					<dd>[background/foreground]左下端に寄せる。 [SSP]</dd>
+					<dt>centerbottom</dt>
+					<dd>[background/foreground]下端中央に寄せる。 [SSP]</dd>
+					<dt>rightbottom</dt>
+					<dd>[background/foreground]右下端に寄せる。 [SSP]</dd>
+				</dl>
+				<dl>
+					<dt>top</dt>
+					<dd>[sidebar]上端に寄せる。</dd>
+					<dt>bottom</dt>
+					<dd>[sidebar]下端に寄せる。</dd>
+				</dl>
+				<dl>
+					<dt>+repeat-x</dt>
+					<dd>[background/foreground]横方向に繰り返して（タイリングして）画像を表示する。 [SSP 2.5.39]</dd>
+					<dt>+repeat-y</dt>
+					<dd>[background/foreground/sidebar]縦方向に繰り返して（タイリングして）画像を表示する。 [SSP 2.5.39]</dd>
 				</dl>
 			</div>
 		</section>
