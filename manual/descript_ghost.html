@@ -190,7 +190,9 @@
 				<li><a href="#balloon.dontmove,true">balloon.dontmove,true</a></li>
 				<li><a href="#icon,ファイル名">icon,ファイル名</a></li>
 				<li><a href="#icon.minimize,ファイル名">icon.minimize,ファイル名</a></li>
-				<li><a href="#cursor,ファイル名">cursor,ファイル名</a></li>
+				<li><a href="#cursor,ファイル名">cursor,ファイル名/mousecursor,ファイル名</a></li>
+				<li><a href="#mousecursor.text,ファイル名">mousecursor.text,ファイル名</a></li>
+				<li><a href="#mousecursor.wait,ファイル名">mousecursor.wait,ファイル名</a></li>
 				<li><a href="#shiori,ファイル名">shiori,ファイル名</a></li>
 				<li><a href="#makoto,ファイル名">makoto,ファイル名</a></li>
 				<li><a href="#menu.font.name,フォント名">menu.font.name,フォント名</a></li>
@@ -810,14 +812,34 @@ shiori,satori.dll
 				</dd>
 			</dl>
 			<dl id="cursor,ファイル名">
-				<dt class="entry">cursor,ファイル名</dt>
+				<dt class="entry">cursor,ファイル名 / mousecursor,ファイル名</dt>
 				<dd class="entry">
-					<p>そのゴーストに使用するカーソル。</p>
-					<p class="default">矢印カーソル</p>
+					<p>そのゴーストに使用するカーソル。mousecursorと書けるのはSSP 2.5.41から。</p>
+					<p class="default">OSで設定されたカーソル(矢印)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.text,ファイル名">
+				<dt class="entry">mousecursor.text,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストの入力ボックスに使用するカーソル(I-BEAM)。</p>
+					<p class="default">OSで設定されたカーソル(I型)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.41</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.wait,ファイル名">
+				<dt class="entry">mousecursor.wait,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストがなにか処理中で応答できないときに使用するカーソル(腕時計型)。</p>
+					<p class="default">OSで設定されたカーソル(腕時計)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.41</li>
 					</ul>
 				</dd>
 			</dl>

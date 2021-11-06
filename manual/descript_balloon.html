@@ -147,8 +147,9 @@
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
 				<li><a href="#readme.charset,文字コード">readme.charset,文字コード</a></li>
-				<li><a href="#cursor,カーソル名">cursor,カーソル名/mousecursor,カーソル名</a></li>
-				<li><a href="#mousecursor.text,カーソル名">mousecursor.text,カーソル名</a></li>
+				<li><a href="#cursor,ファイル名">cursor,ファイル名/mousecursor,ファイル名</a></li>
+				<li><a href="#mousecursor.text,ファイル名">mousecursor.text,ファイル名</a></li>
+				<li><a href="#mousecursor.wait,ファイル名">mousecursor.wait,ファイル名</a></li>
 				<li><a href="#origin.x,座標">origin.x,座標</a></li>
 				<li><a href="#origin.y,座標">origin.y,座標</a></li>
 				<li><a href="#validrect.left,座標">validrect.left,座標</a></li>
@@ -499,24 +500,34 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
-			<dl id="cursor,カーソル名">
-				<dt class="entry">cursor,カーソル名 / mousecursor,カーソル名</dt>
+			<dl id="cursor,ファイル名">
+				<dt class="entry">cursor,ファイル名 / mousecursor,ファイル名</dt>
 				<dd class="entry">
 					<p>バルーンに使用するカーソル。mousecursorと書けるのはSSP 2.5.40から。</p>
-					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル</p>
+					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(矢印)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="mousecursor.text,カーソル名">
-				<dt class="entry">mousecursor.text,カーソル名</dt>
+			<dl id="mousecursor.text,ファイル名">
+				<dt class="entry">mousecursor.text,ファイル名</dt>
 				<dd class="entry">
-					<p>入力ボックスに使用するカーソル。</p>
-					<p class="default">OSで設定されたカーソル</p>
+					<p>入力ボックスに使用するカーソル(I-BEAM)。</p>
+					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(I型)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.40</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.wait,ファイル名">
+				<dt class="entry">mousecursor.wait,ファイル名</dt>
+				<dd class="entry">
+					<p>なにか処理中で応答できないときに使用するカーソル(腕時計型)。</p>
+					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(腕時計)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.41</li>
 					</ul>
 				</dd>
 			</dl>
