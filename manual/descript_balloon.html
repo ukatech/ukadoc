@@ -147,7 +147,8 @@
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
 				<li><a href="#readme.charset,文字コード">readme.charset,文字コード</a></li>
-				<li><a href="#cursor,カーソル名">cursor,カーソル名</a></li>
+				<li><a href="#cursor,カーソル名">cursor,カーソル名/mousecursor,カーソル名</a></li>
+				<li><a href="#mousecursor.text,カーソル名">mousecursor.text,カーソル名</a></li>
 				<li><a href="#origin.x,座標">origin.x,座標</a></li>
 				<li><a href="#origin.y,座標">origin.y,座標</a></li>
 				<li><a href="#validrect.left,座標">validrect.left,座標</a></li>
@@ -499,13 +500,23 @@ communicatebox.height,20
 				</dd>
 			</dl>
 			<dl id="cursor,カーソル名">
-				<dt class="entry">cursor,カーソル名</dt>
+				<dt class="entry">cursor,カーソル名 / mousecursor,カーソル名</dt>
 				<dd class="entry">
-					<p>バルーンに使用するカーソル。</p>
-					<p class="default">OSで設定されたカーソル</p>
+					<p>バルーンに使用するカーソル。mousecursorと書けるのはSSP 2.5.40から。</p>
+					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.text,カーソル名">
+				<dt class="entry">mousecursor,カーソル名</dt>
+				<dd class="entry">
+					<p>入力ボックスに使用するカーソル。</p>
+					<p class="default">OSで設定されたカーソル</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.40</li>
 					</ul>
 				</dd>
 			</dl>
