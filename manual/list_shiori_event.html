@@ -210,7 +210,7 @@
 				<li><a href="#OnVanishCancel">OnVanishCancel</a></li>
 				<li><a href="#OnVanishButtonHold">OnVanishButtonHold</a></li>
 				<li><a href="#OnVanished">OnVanished</a></li>
-				<li><a href="#OnOtherGhostVanish">OnOtherGhostVanish</a></li>
+				<li><a href="#OnOtherGhostVanished">OnOtherGhostVanished</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1367,7 +1367,7 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
+					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishedへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>消滅したゴーストの本体側の名前。</dd>
@@ -1385,8 +1385,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnOtherGhostVanish">
-				<dt class="entry">OnOtherGhostVanish</dt>
+			<dl id="OnOtherGhostVanished">
+				<dt class="entry">OnOtherGhostVanished</dt>
 				<dd class="entry">
 					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
 					<dl class="reference">
