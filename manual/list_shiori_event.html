@@ -451,6 +451,8 @@
 			<ul>
 				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
 				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
+				<li><a href="#OnSessionLock">OnSessionLock</a></li>
+				<li><a href="#OnSessionUnlock">OnSessionUnlock</a></li>
 				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
 				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
 				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
@@ -3992,6 +3994,25 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSessionLock">
+				<dt class="entry">OnSessionLock</dt>
+				<dd class="entry">
+					<p>ログイン状態のままロック画面に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。
+					<br />本イベントはNOTIFYではないが、当然何を実行してもユーザーには見えないので注意。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.50</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSessionUnlock">
+				<dt class="entry">OnSessionUnlock</dt>
+				<dd class="entry">
+					<p>ロック画面から通常の操作に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.50</li>
 					</ul>
 				</dd>
 			</dl>
