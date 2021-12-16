@@ -34,27 +34,38 @@
 <pre>
 +-(myballoon)
 　　<em class="filename">+-descirpt.txt</em>
-　　<em class="filename">+-balloons*s.txt</em>
-　　<em class="filename">+-balloonk*s.txt</em>
 　　<em class="filename">+-readme.txt</em>
 　　<em class="filename">+-balloons*.png</em>
-　　<em class="filename">+-balloonk*.png</em>
 　　<em class="filename">+-balloons*.pna</em> （MATERIA不可）
+　　<em class="filename">+-balloons*s.txt</em>
+　　<em class="filename">+-balloonk*.png</em>
 　　<em class="filename">+-balloonk*.pna</em> （MATERIA不可）
+　　<em class="filename">+-balloonk*s.txt</em>
+　　<em class="filename">+-balloonp*def*.png</em>  (SSP 2.5.51～)
+　　<em class="filename">+-balloonp*def*.pna</em>  (SSP 2.5.51～)
+　　<em class="filename">+-balloonp*def*s.txt</em>
 　　<em class="filename">+-balloonc*.png</em>
 　　<em class="filename">+-online*.png</em>
 　　<em class="filename">+-sstp.png</em>
-　　<em class="filename">+-arrow*.png</em>
-　　<em class="filename">+-arrows*.png</em>  (SSP 2.4.78～)
-　　<em class="filename">+-arrowk*.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrow0.png</em>
+　　<em class="filename">+-arrow1.png</em>
+　　<em class="filename">+-arrows0.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrows1.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrowk0.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrowk1.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-arrowp*def0.png</em>  (SSP 2.5.51～)
+　　<em class="filename">+-arrowp*def1.png</em>  (SSP 2.5.51～)
 　　<em class="filename">+-thumbnail.png</em>
 　　<em class="filename">+-ok_down.png/ok_up.png</em> （SSPのみ）
 　　<em class="filename">+-cancel_down.png/cancel_up.png</em> （SSPのみ）
 　　<em class="filename">+-mode_down.png/mode_up.png</em> （SSPのみ）
 　　<em class="filename">+-sstp_new.png</em> （SSPのみ）
+　　<em class="filename">+-sstp_newk.png</em>  (SSP 2.5.51～)
+　　<em class="filename">+-sstp_newp*def.png</em>  (SSP 2.5.51～)
 　　<em class="filename">+-marker.png</em> （SSPのみ）
 　　<em class="filename">+-markers.png</em>  (SSP 2.4.78～)
 　　<em class="filename">+-markerk.png</em>  (SSP 2.4.78～)
+　　<em class="filename">+-markerp*def.png</em>  (SSP 2.4.78～)
 </pre>
 	</div>
 </section>
@@ -121,6 +132,17 @@
 			<dt>balloonk*.pna</dt>
 			<dd>
 				<p>balloons*.pnaのballoonk*.png版。説明は先述のballoons*.pna参照。</p>
+			</dd>
+
+			<dt>balloonp*def*.png</dt>
+			<dd>
+				<p>三人目以降の吹き出し。\p[2]に当たるバルーンが balloonp2def0.png / balloonp2def1.png になる。</p>
+				<p>このファイルは省略可。省略時はballoonk、さらになければballoonsが使われる。</p>
+			</dd>
+
+			<dt>balloonp*def*.pna</dt>
+			<dd>
+				<p>balloons*.pnaのballoonp*def*.png版。説明は先述のballoons*.pna参照。</p>
 			</dd>
 
 			<dt>balloonc*.png</dt>
@@ -200,22 +222,22 @@
 				<p>モード切替ボタンの画像。</p>
 			</dd>
 
-			<dt>sstp_new.png</dt>
+			<dt>sstp_new.png / sstp_newk.png / sstp_newp*def.png</dt>
 			<dd>
 				<p>SSTP受信時に、送信者情報などを表示する際に使用される画像（sstp.pngと異なりこの用途専用）。</p>
 			</dd>
 
-			<dt>marker.png / markers.png / markerk.png</dt>
+			<dt>marker.png / markers.png / markerk.png / markerp*def.png</dt>
 			<dd>
 				<p>\![*]タグ（SSPは%*でも同様）で表示される画像（sstp.pngと異なりこの用途専用）。</p>
-				<p>markersが本体用(旧バージョン対応のためにmarkerで代用を推奨)、markerkが相方用。</p>
+				<p>markersが本体用(旧バージョン対応のためにmarkerで代用を推奨)、markerkが相方用、markerp2def以降が\p[2]以降用。</p>
 			</dd>
 			
-			<dt>arrows*.png / arrowk*.png</dt>
+			<dt>arrows*.png / arrowk*.png / arrowp*def.png</dt>
 			<dd>
 				<p>文章をスクロールさせるのに使用する画像。SSP 2.4.78以降専用。</p>
 				<p>0が上向き、1が下向き。</p>
-				<p>arrowsが本体用(旧バージョン対応のためにarrowで代用を推奨)、arrowkが相方用。</p>
+				<p>arrowsが本体用(旧バージョン対応のためにarrowで代用を推奨)、arrowkが相方用、arrowp2def以降が\p[2]以降用。</p>
 			</dd>
 		</dl>
 	</div>

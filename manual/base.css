@@ -103,10 +103,10 @@ dt {
     font-weight: bold;
 }
 dl:first-child dt {
-    margin-top: 0;
+    margin-top: 0.5em;
 }
 dt + dt {
-    margin-top: 0;
+    margin-top: 0.5em;
 }
 dd {
     margin-left: 1em;
