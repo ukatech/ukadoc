@@ -254,6 +254,7 @@
 				<li><a href="#_f_sub,パラメータ_">\f[sub,パラメータ]</a></li>
 				<li><a href="#_f_sup,パラメータ_">\f[sup,パラメータ]</a></li>
 				<li><a href="#_f_default_">\f[default]</a></li>
+				<li><a href="#_f_disable_">\f[disable]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1875,6 +1876,7 @@
 				<dd class="entry">
 					<p>テキストフォントを指定したフォント名に変更する。<br>
 					defaultを指定した場合、または指定したフォント候補が全てない場合は、バルーン設定の標準(SSP設定でバルーンフォント上書きしている場合はそちら)に戻る。<br>
+					disableを指定した場合、無効表示と同じフォントに設定される。<br>
 					フォント名には、[実行したゴーストのフォルダ]/ghost/master以下や現在のバルーンのフォルダに置いたフォントファイルも指定可能。<br>
 					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する(SSPのみ)。<br>
 					</p>
@@ -1967,7 +1969,7 @@
 			<dl id="_f_outline,パラメータ_">
 				<dt class="entry">\f[outline,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると白抜き。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると白抜き。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1998,7 +2000,7 @@
 				<dt class="entry">\f[bold,パラメータ]</dt>
 				<dd class="entry">
 					<!-- MS明朝は太字非対応 -->
-					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>フォントが対応していない場合、太字にならない。</p>
+					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。<br>フォントが対応していない場合、太字にならない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2014,7 +2016,7 @@
 				<dt class="entry">\f[italic,パラメータ]</dt>
 				<dd class="entry">
 					<!-- 環境によっては標準フォントのメイリオだと、半角英数でないとで斜体にならないそうな。 -->
-					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>フォントが対応していない場合、斜体にならない。</p>
+					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。<br>フォントが対応していない場合、斜体にならない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2029,7 +2031,7 @@
 			<dl id="_f_strike,パラメータ_">
 				<dt class="entry">\f[strike,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2044,7 +2046,7 @@
 			<dl id="_f_underline,パラメータ_">
 				<dt class="entry">\f[underline,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2059,7 +2061,7 @@
 			<dl id="_f_sub,パラメータ_">
 				<dt class="entry">\f[sub,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2074,7 +2076,7 @@
 			<dl id="_f_sup,パラメータ_">
 				<dt class="entry">\f[sup,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2099,6 +2101,15 @@
 							<p><code>\f[shadowcolor,#6699cc]色々な\f[bold,1]装飾を\f[underline,1]した\f[height,20]文字を\f[default]全てバルーンのデフォルト設定に戻す。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_f_default_">
+				<dt class="entry">\f[disable]</dt>
+				<dd class="entry">
+					<p>全てのバルーン属性を無効なテキスト表示に戻す。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.51</li>
+					</ul>
 				</dd>
 			</dl>
 		</section>
@@ -2891,6 +2902,8 @@
 					<dd>red、white、blackというような色名を表すキーワード(全て小文字)で指定可能。<br>いわゆるX11 colorとW3C colorで定義が異なる色(green,gray等)については、W3C colorの定義。<br>色見本：<a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a>(外部リンク)</dd>
 					<dt>default</dt>
 					<dd>色指定部分にdefaultと記述すると、指定した文字をその文字のデフォルト色に戻す。<br>デフォルト色は、バルーンのdescript.txtに定義されたものなど(未定義時黒)。</dd>
+					<dt>disable</dt>
+					<dd>色指定部分にdisableと記述すると、無効表示用の色に設定できる。</dd>
 					<dt>default.anchor</dt>
 					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchorと指定すると、指定した文字の色を選択時のアンカーのデフォルト文字色に変更。</dd>
 					<dt>default.anchornotselect</dt>

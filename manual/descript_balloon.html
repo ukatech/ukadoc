@@ -171,6 +171,7 @@
 				<li><a href="#font.underline,0/1">font.underline,0/1</a></li>
 				<li><a href="#font.strike,0/1">font.strike,0/1</a></li>
 				<li><a href="#font.outline,0/1">font.outline,0/1</a></li>
+				<li><a href="#disable.font.(フォント定義),(指定)">disable.font.(フォント定義),(指定)</a></li>
 				<li><a href="#cursor.style,形状">cursor.style,形状</a></li>
 				<li><a href="#cursor.blendmethod,コマンド">cursor.blendmethod,コマンド</a></li>
 				<li><a href="#cursor.font.color.r,数値">cursor.font.color.r,数値</a></li>
@@ -772,6 +773,18 @@ communicatebox.height,20
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="disable.font.(フォント定義),(指定)">
+				<dt class="entry">disable.font.(フォント定義),(指定)</dt>
+				<dd class="entry">
+					<p>操作無効を意味する薄い色の文字を定義する。\f[disable](または\f[color,disable]など)で活用する。
+					<br>「フォント定義」には、font.ではじまる各定義をそのまま定義できる。定義方法も同じ。
+					<br>例：disable.font.color</p>
+					<p class="default">disable.font.colorのみバルーンの画像色とミックスした色、ほかはfont.定義群と同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.51</li>
 					</ul>
 				</dd>
 			</dl>
