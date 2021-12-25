@@ -453,6 +453,8 @@
 				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
 				<li><a href="#OnSessionLock">OnSessionLock</a></li>
 				<li><a href="#OnSessionUnlock">OnSessionUnlock</a></li>
+				<li><a href="#OnSessionDisconnect">OnSessionDisconnect</a></li>
+				<li><a href="#OnSessionReconnect">OnSessionReconnect</a></li>
 				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
 				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
 				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
@@ -4015,6 +4017,28 @@
 					<p>ロック画面から通常の操作に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.50</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSessionDisconnect">
+				<dt class="entry">OnSessionDisconnect</dt>
+				<dd class="entry">
+					<p>簡易ユーザー切り替えで他のユーザーアカウントへの切り替え操作を行った時に発生する。
+					<br />Windows上ではOnSessionLockとセットで通知され、さらに強制最小化されるためOnWindowStateMinimizeも発生する。
+					<br />この挙動はWindows特有の制約であり、他のOS上で同様の動きになるとは限らない点に注意。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSessionReconnect">
+				<dt class="entry">OnSessionReconnect</dt>
+				<dd class="entry">
+					<p>簡易ユーザー切り替えで実行中のユーザーアカウントに戻ってきた時に発生する。
+					<br />Windows上ではOnSessionUnlockとセットで通知され、さらに強制最小化されたのが解除されるためOnWindowStateRestoreも発生する。
+					<br />この挙動はWindows特有の制約であり、他のOS上で同様の動きになるとは限らない点に注意。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.53</li>
 					</ul>
 				</dd>
 			</dl>
