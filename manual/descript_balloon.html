@@ -1915,7 +1915,12 @@ communicatebox.height,20
 			<dl id="paint_transparent_region_black,数値">
 				<dt class="entry">paint_transparent_region_black,数値</dt>
 				<dd class="entry">
-					<p>画像の透過色（画像左上の色）になっているにも関わらず、透明度の値では透明でない領域の表示設定。<br />0の場合は画像本来の色（透過色）を指定の透明度で表示する。<br />1の場合は画像の色の替わりに黒で塗りつぶされてから指定の透明度で表示する。<br />例えば0を指定した上で全面真っ白のpnaを用意した画像は、透過色なしで画像のまま表示される。</p>
+					<p>画像の透過色（画像左上の色）になっているにも関わらず、透明度の値では透明でない領域の表示設定。
+					<br />0の場合は画像本来の色（透過色）を指定の透明度で表示する。
+					<br />1の場合は画像の色の替わりに黒で塗りつぶされてから指定の透明度で表示する。
+					<br />例えば0を指定した上で全面真っ白のpnaを用意した画像は、透過色なしで画像のまま表示される。
+					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
+					
 					<p class="default">指定なし（pnaを透明度としている画像では1相当、<a href="#use_self_alpha,数値">画像自体のアルファチャンネルを透明度としている画像</a>では0相当の動作になる）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1925,7 +1930,10 @@ communicatebox.height,20
 			<dl id="use_self_alpha,数値">
 				<dt class="entry">use_self_alpha,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合はpnaでなくバルーンのサーフェス自体のアルファチャンネルを透明度として使用する。<br />なお、1の場合でもアルファチャンネルを持たないサーフェスについてはpnaが有効。<br>入力ボックス系のバルーンはuse_input_alphaも1にしないと半透明化できないため注意。</p>
+					<p>数値が1だった場合はpnaでなくバルーンのサーフェス自体のアルファチャンネルを透明度として使用する。
+					<br />なお、1の場合でもアルファチャンネルを持たないサーフェスについてはpnaが有効。
+					<br />入力ボックス系のバルーンはuse_input_alphaも1にしないと半透明化できないため注意。
+					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1935,7 +1943,8 @@ communicatebox.height,20
 			<dl id="use_input_alpha,数値">
 				<dt class="entry">use_input_alpha,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合は入力ボックス系のバルーンも半透明化する。ただし入力ボックスの枠は半透明にはできない。</p>
+					<p>数値が1だった場合は入力ボックス系のバルーンも半透明化する。ただし入力ボックスの枠は半透明にはできない。
+					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.40</li>
@@ -1945,7 +1954,8 @@ communicatebox.height,20
 			<dl id="overlay_outside_balloon,数値">
 				<dt class="entry">overlay_outside_balloon,数値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合は、オンライン表示・SSTPマーカー等の画像パーツをバルーンの外にも描画できるようにする。</p>
+					<p>数値が1だった場合は、オンライン表示・SSTPマーカー等の画像パーツをバルーンの外にも描画できるようにする。
+					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.54</li>
