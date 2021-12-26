@@ -152,7 +152,10 @@ Charset: Shift_JIS
 </p>
 <p>
 	左下にある「▼」ボタンを押すと機能メニューが開きます。
-	<br />現状選択できるのは「Copy Surface List」のみで、選択すると認識されている全<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>について、「surface**」の形で改行区切りで列挙された内容が、クリップボードにコピーされます。
+	<br /><span class="Sentence">Copy Surface List</span>：選択すると認識されている全<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>について、「surface**」の形で改行区切りで列挙された内容が、クリップボードにコピーされます。
+	<br /><span class="Sentence">ID Multi Select</span>：チェックをつけると [GO] ボタンが追加で出現し、ID欄を複数選択してGOを押すと一括実行できます。
+	<br /><span class="Sentence">Sort by Name</span>：番号順ではなく名前でソートします。エイリアス指定はソート対象外になります。
+	<br /><span class="Sentence">Reverse Sort</span>：昇順ではなく降順でソートします。
 </p>
 <p>
 	その隣には、読み込まれている画像ファイル数と合計容量が記載されています。
@@ -161,7 +164,7 @@ Charset: Shift_JIS
 	さらにその横に3つのチェックボックスがあります。
 	<br /><span class="Sentence">Sort</span>がONになっている場合、Surfaceリストの並び順が記述順ではなくID昇順になります。
 	<br /><span class="Sentence">Copy</span>がONになっている場合、<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>選択時にその<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>へ切り替えるためのスクリプトがクリップボードにコピーされます（例えば\0をsurface1にする場合\0\s[1]）。
-	<br /><span class="Sentence">Script</span>がONになっている場合、
+	<br /><span class="Sentence">Script</span>がONになっている場合、直接内部で切り替え指示するのではなく、スクリプトを実行することでサーフィスを切り替えます。ゴーストのトランスレータを通したい場合や、エイリアス指定を有効にしたい場合はチェックをつけてください。
 </p>
 <h3 id="menuitem15">エラーログを表示</h3>
 <p>
