@@ -244,6 +244,8 @@
 				<li><a href="#anchor.visited.brush.color.r,数値">anchor.visited.brush.color.r,数値</a></li>
 				<li><a href="#anchor.visited.brush.color.g,数値">anchor.visited.brush.color.g,数値</a></li>
 				<li><a href="#anchor.visited.brush.color.b,数値">anchor.visited.brush.color.b,数値</a></li>
+				<li><a href="#clickwaitmarker.x,座標">clickwaitmarker.x,座標</a></li>
+				<li><a href="#clickwaitmarker.y,座標">clickwaitmarker.y,座標</a></li>
 				<li><a href="#sstpmarker.x,座標">sstpmarker.x,座標</a></li>
 				<li><a href="#sstpmarker.y,座標">sstpmarker.y,座標</a></li>
 				<li><a href="#sstpmessage.x,座標">sstpmessage.x,座標</a></li>
@@ -278,6 +280,7 @@
 				<li><a href="#paint_transparent_region_black,数値">paint_transparent_region_black,数値</a></li>
 				<li><a href="#use_self_alpha,数値">use_self_alpha,数値</a></li>
 				<li><a href="#use_input_alpha,数値">use_input_alpha,数値</a></li>
+				<li><a href="#overlay_outside_balloon,数値">overlay_outside_balloon,数値</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -290,6 +293,7 @@
 				<li><a href="#sstpmarker.filename,ファイル名">sstpmarker.filename,ファイル名</a></li>
 				<li><a href="#marker.filename,ファイル名">marker.filename,ファイル名</a></li>
 				<li><a href="#onlinemarker.filename,ファイル名">onlinemarker.filename,ファイル名</a></li>
+				<li><a href="#clickwaitmarker.filename,ファイル名">clickwaitmarker.filename,ファイル名</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1526,6 +1530,26 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+			<dl id="clickwaitmarker.x,座標">
+				<dt class="entry">clickwaitmarker.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>クリック待ちマーカーのX座標。</p>
+					<p class="default">arrow1と同じ</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="clickwaitmarker.y,座標">
+				<dt class="entry">clickwaitmarker.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>クリック待ちマーカーのY座標。</p>
+					<p class="default">arrow1と同じ</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.54</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="sstpmarker.x,座標">
 				<dt class="entry">sstpmarker.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
@@ -1918,6 +1942,16 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+			<dl id="overlay_outside_balloon,数値">
+				<dt class="entry">overlay_outside_balloon,数値</dt>
+				<dd class="entry">
+					<p>数値が1だった場合は、オンライン表示・SSTPマーカー等の画像パーツをバルーンの外にも描画できるようにする。</p>
+					<p class="default">0</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.54</li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1 id="balloonsoption">balloons*s.txt/balloonk*s.txt(個別指定)</h1>
@@ -2032,6 +2066,16 @@ communicatebox.height,20
 					<p class="default">online / 個別 : onlines,onlinek,onlinep*def</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.51</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="clickwaitmarker.filename,ファイル名">
+				<dt class="entry">clickwaitmarker.filename,ファイル名</dt>
+				<dd class="entry">
+					<p>クリック待ち表示の画像ファイル名を指定する。拡張子は不要。</p>
+					<p class="default">clickwait / 個別 : clickwaits,clickwaitk,clickwaitp*def</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.54</li>
 					</ul>
 				</dd>
 			</dl>
