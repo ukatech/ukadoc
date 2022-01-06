@@ -455,6 +455,10 @@
 				<li><a href="#OnSessionUnlock">OnSessionUnlock</a></li>
 				<li><a href="#OnSessionDisconnect">OnSessionDisconnect</a></li>
 				<li><a href="#OnSessionReconnect">OnSessionReconnect</a></li>
+				<li><a href="#OnCPULoadHigh">OnCPULoadHigh</a></li>
+				<li><a href="#OnCPULoadLow">OnCPULoadLow</a></li>
+				<li><a href="#OnMemoryLoadHigh">OnMemoryLoadHigh</a></li>
+				<li><a href="#OnMemoryLoadLow">OnMemoryLoadLow</a></li>
 				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
 				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
 				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
@@ -4039,6 +4043,58 @@
 					<br />この挙動はWindows特有の制約であり、他のOS上で同様の動きになるとは限らない点に注意。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCPULoadHigh">
+				<dt class="entry">OnCPULoadHigh</dt>
+				<dd class="entry">
+					<p>CPU負荷が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在の負荷率％</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCPULoadLow">
+				<dt class="entry">OnCPULoadLow</dt>
+				<dd class="entry">
+					<p>CPU負荷が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在の負荷率％</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMemoryLoadHigh">
+				<dt class="entry">OnMemoryLoadHigh</dt>
+				<dd class="entry">
+					<p>メモリ使用量が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在の使用量％</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMemoryLoadLow">
+				<dt class="entry">OnMemoryLoadLow</dt>
+				<dd class="entry">
+					<p>メモリ使用量が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在の使用量％</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
 					</ul>
 				</dd>
 			</dl>
