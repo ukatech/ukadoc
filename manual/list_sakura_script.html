@@ -532,24 +532,28 @@
 			<h1>Escaping SakuraScript</h1>
 			<ul>
 				<li>If you want to display "\" as plain text instead of starting a SakuraScript tag, write "\\".</li>
-				<li>Similarly, "%" in the environment variable embed tag is written as "\%".</li>
+				<li>Similarly, the environment variable embed tag "%"  is written as "\%".</li>
 				<li>In tags with arguments in square brackets (such as \q[label name,ID]), "]" can be written as "\]".</li>
-				<li>If you want to use "," as the content of an argument of a tag with square brackets, you can treat the entire argument as a single argument by enclosing it in "".<br>Example：\![raise,OnTest,"100,2"]</li>
+				<li>If you want to include "," as part of an argument in a tag with square brackets, you can treat the entire argument as a single argument by enclosing it in "".<br>Example：\![raise,OnTest,"100,2"]</li>
 			</ul>
 		</section>
 		<section class="caption" id="notes_lifespan">
 			<h1>SakuraScript Lifespan</h1>
 			<ul>
-				<li>Basically, until the end of the script (when \e is executed). The next time the script is executed, it will be released.</li>
+				<!--TODO: Find out what exactly "The next time the script is executed, it will be released" is referring to. (The execution of any script, or certain scripts? What's being released?)-->
+				<li>Typically until the end of the script (when \e is executed). The next time the script is executed, it will be released.</li>
 				<li>Exceptions are noted in the description of each Sakura script.</li>
 			</ul>
 		</section>
 		<section class="category">
-			<h1>スコープコマンド</h1>
-			<dl id="_0もしくは_h">
-				<dt class="entry">\0もしくは\h</dt>
+			<h1>Character Commands</h1>
 				<dd class="entry">
-					<p>本体側のスコープに移る。</p>
+					<p>Translator Note: These are often referred to as "Scope Commands" in Japanese.</p>
+				</dd>
+			<dl id="_0もしくは_h">
+				<dt class="entry">\0 or \h</dt>
+				<dd class="entry">
+					<p>Moves the focus to the main character.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -558,9 +562,9 @@
 				</dd>
 			</dl>
 			<dl id="_1もしくは_u">
-				<dt class="entry">\1もしくは\u</dt>
+				<dt class="entry">\1 or \u</dt>
 				<dd class="entry">
-					<p>相方側のスコープに移る。</p>
+					<p>Moves the focus to the side character.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -569,28 +573,28 @@
 				</dd>
 			</dl>
 			<dl id="_p_ID番号_">
-				<dt class="entry">\p[ID番号]</dt>
+				<dt class="entry">\p[ID number]</dt>
 				<dd class="entry">
-					<p>ID番号のスコープを表示する。</p>
+					<p>Displays an extra character of the specified ID number.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは本体側になっている。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\0The main character will talk.\1The side character will talk.\p[2]A third character will talk.\p[3]A fourth character will talk. The default character is the main character.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サーフェスコマンド</h1>
+			<h1>Surface Commands</h1>
 			<dl id="_sID番号">
 				<dt class="entry">\sID番号</dt>
 				<dd class="entry">
-					<p>現スコープ側のサーフェスをID番号のサーフェスに変更する。<br>この場合0～9のみ使用可能。</p>
+					<p>Changes the surface of the character that is currently the focus to the surface with the specified ID number.<br>This tag can only be used with surfaces 0~9.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -598,16 +602,16 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s1本体側にサーフェス1番を表示。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s1This displays surface number 1 for the main character.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_s_ID番号_">
-				<dt class="entry">\s[ID番号]</dt>
+				<dt class="entry">\s[ID number]</dt>
 				<dd class="entry">
-					<p>現スコープ側のサーフェスをID番号のサーフェスに変更する。<br>\s[-1]で非表示サーフェス。</p>
+					<p>Changes the surface of the character that is currently the focus to the surface with the specified ID number.<br>\s[-1] will hide the character.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -615,16 +619,16 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[100]本体側にサーフェス100番を表示。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[100]This displays surface number 100 for the main character.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_i_ID番号_">
-				<dt class="entry">\i[ID番号]</dt>
+				<dt class="entry">\i[ID number]</dt>
 				<dd class="entry">
-					<p>現スコープ側にID番号のサーフェスアニメーションを表示する。</p>
+					<p>Displays the surface animation with the specified ID number for the character that is currently the focus.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -632,8 +636,8 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]本体側にサーフェス0番を表示。\i[1]サーフェス0番に設定された、アニメーション1番を表示。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]This displays surface 0 for the main character.\i[1]Displays animation 1 defined for surface 0.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -641,14 +645,14 @@
 			<dl id="_i_ID,wait_">
 				<dt class="entry">\i[ID,wait]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスアニメーションを待ちながら表示する。</p>
+					<p>Waits for the surface animation of the specified ID number.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\1\s[10]This displays surface 10 for the side character.\i[2,wait]This sentence is displayed after surface 10's animation 2 has finished.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -656,14 +660,14 @@
 			<dl id="_!_anim,clear,ID_">
 				<dt class="entry">\![anim,clear,ID]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスアニメーションの再生を終了する。</p>
+					<p>Ends the animation of the specified ID number.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[100]長いアニメーションを再生中。\![anim,clear,100]ここで、まだ再生中でも強制終了させる。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[100]A long animation is being played.\![anim,clear,100]Even if the animation has not finished playing yet, it is ended by force.</code></p>
 						</section>
 					</div>
 				</dd>
