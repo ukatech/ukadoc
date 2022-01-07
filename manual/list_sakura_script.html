@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="INDEX,FOLLOW">
@@ -529,19 +529,19 @@
 	</section>
 	<div class="categories">
 		<section class="caption" id="notes_escape">
-			<h1>さくらスクリプトのエスケープ</h1>
+			<h1>Escaping SakuraScript</h1>
 			<ul>
-				<li>「\」をさくらスクリプトの開始記号でなく単に表示したい場合は「\\」とする</li>
-				<li>同様に環境変数埋め込みタグの「%」は「\%」と書く</li>
-				<li>スクウェアブラケット内に引数を持つタグ（\q[ラベル名,ID]など）内でのみ、「]」は「\]」と書ける。</li>
-				<li>スクウェアブラケット内に複数の引数を持つタグの第２引数以降で、「,」を引数の内容としたい場合、その引数全体を""で囲うことで全体を一つの引数として扱える。<br>例：\![raise,OnTest,"100,2"]</li>
+				<li>If you want to display "\" as plain text instead of starting a SakuraScript tag, write "\\".</li>
+				<li>Similarly, "%" in the environment variable embed tag is written as "\%".</li>
+				<li>In tags with arguments in square brackets (such as \q[label name,ID]), "]" can be written as "\]".</li>
+				<li>If you want to use "," as the content of an argument of a tag with square brackets, you can treat the entire argument as a single argument by enclosing it in "".<br>Example：\![raise,OnTest,"100,2"]</li>
 			</ul>
 		</section>
 		<section class="caption" id="notes_lifespan">
-			<h1>さくらスクリプトの寿命</h1>
+			<h1>SakuraScript Lifespan</h1>
 			<ul>
-				<li>基本的に、スクリプト終了(\eの実行時)まで。次のスクリプト実行時には解除されている</li>
-				<li>例外となるものは、各さくらスクリプトの説明に付記</li>
+				<li>Basically, until the end of the script (when \e is executed). The next time the script is executed, it will be released.</li>
+				<li>Exceptions are noted in the description of each Sakura script.</li>
 			</ul>
 		</section>
 		<section class="category">
