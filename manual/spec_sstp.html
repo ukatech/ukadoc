@@ -375,8 +375,8 @@ Script: \0\s[3]巨人っていっても、身長は列車数両分しかない�
 		<section class="category" id="method_communicate">
 			<h1>メソッド：COMMUNICATE</h1>
 			
-			<p>COMMUNICATEメソッドで、ゴーストに外部から任意の文字列を与えて、反応させることができる。
-			<br />基本的にゴースト内部でのコミュニケートボックスを使った反応と同じになる。</p>
+			<p>COMMUNICATEメソッドで、ゴーストに外部から任意の文字列を与えて、反応させることができます。
+			<br />基本的にゴースト内部でのコミュニケートボックスを使った反応と同じになりますが、SSTPなのでゴースト側で受理されない場合があります。</p>
 			
 			<section class="caption">
 				<h1>単純なCOMMUNICATE(COMMUNICATE/1.1)</h1>
@@ -389,9 +389,9 @@ Sentence: おはよう。
 </pre>
 			</section>
 
-			<p>コミュニケートはSSTPサーバ同士（≒ゴースト同士）で送受信を繰り返すことができる。
-			<br />SHIORI/3.0のレスポンスReference0での送信の場合は、SSTP送信タイミングはSakuraScriptを再生し終わった時となる。
-			<br />これを用いて、同時起動しているゴースト同士が会話しているような処理を組むことが可能となる。</p>
+			<p>コミュニケートはSSTPサーバ同士（≒ゴースト同士）で送受信を繰り返すことができます。
+			<br />SHIORI/3.0のレスポンスReference0での送信の場合は、SSTP送信タイミングはSakuraScriptを再生し終わった時となります。
+			<br />これを用いて、同時起動しているゴースト同士が会話しているような処理を組むことが可能となります。</p>
 
 			<section class="caption">
 				<h1>ゴースト間コミュニケート(COMMUNICATE/1.2)</h1>
