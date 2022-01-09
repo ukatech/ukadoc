@@ -234,14 +234,20 @@ a:hover {
     background-color: #ccd;
     border-color: #669;
 }
+.categories ul li,
 .categories .caption ul li,
-.categories .caption.introduction ul l {
+.categories .caption.introduction ul li {
     margin-left: 1.5em;
     list-style-type: disc;
 }
+.categories ul li ul li,
 .categories .caption ul li ul li,
 .categories .caption.introduction ul li ul li {
     list-style-type: circle;
+}
+.categories ul.supported-baseware li {
+    margin-left: 0em;
+    list-style-type: none;
 }
 .categories .caption ol,
 .categories .caption.introduction ol {

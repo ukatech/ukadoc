@@ -134,20 +134,337 @@
 		<section class="navigation-category">
 			<h1>SSTP/1.x</h1>
 			<ul>
-				<li><a href="#request">request</a></li>
-				<li><a href="#response">response</a></li>
+				<li><a href="#sstp">概要</a></li>
+				<li><a href="#direct">Direct SSTP</a></li>
+				<li><a href="#req_res">request/response</a></li>
+				<li><a href="#method_notify">メソッド：NOTIFY</a></li>
+				<li><a href="#method_send">メソッド：SEND</a></li>
+				<li><a href="#method_communicate">メソッド：COMMUNICATE</a></li>
+				<li><a href="#method_execute">メソッド：EXECUTE</a></li>
+				<li><a href="#method_give">メソッド：GIVE</a></li>
 			</ul>
 		</section>
 	</section>
 	<div class="categories">
+	
+	
 		<section class="category" id="chapter0">
 			<section class="caption introduction" id="chapter0">
 				<h1>SSTP/1.x</h1>
-				<p>最終変更：<time>2021-06-09</time></p>
 				<p>参考：<a href="http://usada.sakura.vg/contents/sstp.html">SSTP</a>（外部サイト）</p>
-				<p>執筆中…</p>
+				<p>現在のところDirectSSTPについてはWindowsの仕様に大きく依存しており、他OSでの実装を想定していません。
+				<br />IPCの仕組み自体は他OSにも存在するため、別途仕様を規定することが望ましいと思われます。
+				<br />もし仕様が決定した場合は別途掲載を考えておりますので、<a href="https://github.com/ponapalt/ukadoc">Ukadoc Project</a>までご連絡ください。</p>
 			</section>
 		</section>
+		<section class="category" id="sstp">
+			<h1>概要</h1>
+			<p>SSTPはゴースト間の汎用通信仕様です。単純なSakuraScriptの再生や、外部からのイベント通知等に使えます。
+			<br />通信は基本的にはTCP/IPで行われます。ポート9801または9821(SSPのみ)をリスニングしており、SSTPプロトコルに従ってリクエストを投げると、処理結果が返ってきます。
+			<br />セキュリティ上の都合で、現在は設定を変更しない限りlocalhost限定でのリスニングとなり、端末外部からは通信できません。また、昔はポート11000番もリスニングしていましたが、マルウェアによる通信と誤認されたことから現在では廃止されています。
+			<br /><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=sakura+script">IANAのPort number registory</a>には7743と9801番が登録されていますが、実運用されているのは9801番のみです。
+			<br />同じ略称のプロトコルにMicrosoftが策定したVPN通信のためのSecure Socket Tunneling Protocolがありますが、技術上の関連性はありません。
+			<br />パフォーマンスの必要な頻繁な通信を考慮しておらず、HTTPのようなkeep-aliveの仕組みはありません。毎回通信終了時に切断されます。</p>
+		</section>
+		
+		
+		<section class="category" id="direct">
+			<h1>Direct SSTP</h1>
+			<p>Direct SSTPはOSに強く依存したIPCの仕組みを利用した通信仕様です。プロトコル仕様は(Socket) SSTPと同じですが、比較的処理が重いTCP/IPを使用せず、直接ゴーストを指定して軽量な通信を行うことを目的としています。
+			<br />現在のところWindows上のみ仕様が決まっており、下記の通りとなります。</p>
+			<section class="caption">
+				<p><a href="https://docs.microsoft.com/en-us/windows/win32/dataxchg/wm-copydata">WM_COPYDATA</a>をSendMessage系関数で送信(Postは不可)
+				<br />SendMessageのhWnd = 通信先ゴーストのHWND <a href="spec_fmo_mutex.html">FMOから取得</a>
+				<br />wParam = 返信先の「自身の」HWND レスポンスはWM_COPYDATAを指定したHWND（ウインドウ）で受ける。
+				<br />lParam = <a href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/ns-winuser-copydatastruct">COPYDATASTRUCT</a>へのポインタ
+				<br />copydatastruct.lpData = SSTPプロトコルに従った文字列
+				<br />copydatastruct.cbData = 文字列の長さ
+				<br />copydatastruct.dwData = 9801
+				<br />備考：
+				<br />送信側は安全のためlpDataにゼロ終端の文字列を用意し、cbDataにはゼロ終端を含むことが望ましい。
+				<br />受信側は安全のためゼロ終端を期待せず、必ずcbDataを考慮して処理を行うこと。
+				<br />受信側は通信先として指定されたHWNDを、受信すべきゴーストがSSTPプロトコル内で指定されたものと同等として取り扱い、できる限りそのゴーストを優先する。
+				<br />受信側・送信側共にウインドウを1つ以上持つGUIアプリのみを想定しており、コンソールアプリでは使用できない。</p>
+			</section>
+		</section>
+		
+		
+		<section class="category" id="req_res">
+			<h1>request/response</h1>
+			<p>SHIORIなど他のプロトコルと同じく、HTTPに似せた独自プロトコルである。
+			<br />リクエストのCharset指定は必須。指定が無い場合はエラーとなるか、OS標準指定の文字コードとなる。</p>
+
+			<ul>
+				<li>改行コードはCR+LF。</li>
+				<li>リクエストの最後は空行（前行の終端と合わせて(CR+LF)x2）で終わる。</li>
+				<li>レスポンスの最後にはEXECUTEなどの場合追加データが入ることがある。ヘッダ終了後空行を一つ挟み、追加データが入り、さらに空行が1つ入って終了となる。追加データが無い場合はヘッダ直後の空行だけで終わる場合がある。</li>
+				<li>追加データありのレスポンスでは、互換性の都合でCharsetを含むヘッダが一切無く追加データだけが返る場合がある。その場合はリクエストの文字コードと同じと仮定して良い。</li>
+				<li>リクエストとレスポンスのSSTPバージョンが異なる場合がある。バージョン番号に依存する解釈はしないこと。</li>
+			</ul>
+
+<h2>request</h2>
+
+			<section class="caption">
+				<h1>requestサンプル</h1>
+<pre><!--
+-->SEND SSTP/1.0
+Charset: UTF-8
+Sender: SSTPクライアント
+Script: \h\s0テストー。\u\s[10]テストやな。
+Option: notranslate
+
+</pre>
+				<h1>requestの各メソッドに共通するヘッダ</h1>
+				<p>メソッド固有のものについては、後ろのメソッド別の説明を確認すること。</p>
+				<dl>
+					<dt>Charset</dt>
+					<dd>リクエストの文字コード。一番最初の行に現れるのが望ましい。
+					<br />特に理由がなければUTF-8を推奨する。</dd>
+					<dt>Sender</dt>
+					<dd>送信者を示す文字列。「SSTP送信ツール」など。COMMUNICATEメソッドの場合は、送信元のゴースト\0名。</dd>
+					<dt>SecurityLevel</dt>
+					<dd>SHIORIやSakuraScriptで処理する際のセキュリティレベルの指定。local/externalのいずれか。
+					<br />DirectSSTP、または127.0.0.1等明らかにローカルから来たリクエストのみ有効。</dd>
+					<dt>ID</dt>
+					<dd>"Owned SSTP"と呼ばれるもの。<a href="list_shiori_event.html#uniqueid">SHIORI uniqueid</a>で送られてきたIDか、<a href="spec_fmo_mutex.html">FMOの識別ID(SSPのみ)</a>を指定すると、各種セキュリティチェックやロック等を無視して、本SSTPをゴースト内部での処理と同じ優先度で扱う。
+					<br />SecurityLevel指定がlocalになり、さらに\tなどの割り込み禁止状態でも強制的に割り込み再生を可能とする。</dd>
+					<dt>X-SSTP-PassThru-(任意の文字列)</dt>
+					<dd>NOTIFYなどゴースト側との通信の際に、SHIORIに直接渡されるヘッダ。
+					<br />文字コード変換等最低限の処理が行われるだけで、(任意の文字列)の部分や中身はそのまま中継される。</dd>
+					<dt>HWnd</dt>
+					<dd>DirectSSTP限定で、responseを返信すべきウインドウハンドルを示す。省略時はWM_COMMUNICATEのwParam。</dd>
+				</dl>
+
+			</section>
+
+			<h2>response</h2>
+
+			<section class="caption">
+				<h1>responseサンプル(データなし)</h1>
+<pre><!--
+-->SSTP/1.4 200 OK
+Charset: UTF-8
+Script: \h\s0テストー。\u\s[10]テストやな。
+
+</pre>
+				<h1>responseサンプル(データあり)</h1>
+<pre><!--
+-->SSTP/1.4 200 OK
+Charset: UTF-8
+Script: \h\s0テストー。\u\s[10]テストやな。
+
+追加データはここ
+
+</pre>
+
+				<h1>responseの各メソッドに共通するヘッダ</h1>
+				<dl>
+					<dt>Charset</dt>
+					<dd>リクエストの文字コード。一番最初の行に現れるのが望ましい。
+					<br />特に理由がなければUTF-8を推奨する。
+					<br />互換性の問題解消のため、わざと省略される場合がある。その場合はrequestと同じ文字コードと仮定すること。</dd>
+					<dt>X-SSTP-PassThru-(任意の文字列)</dt>
+					<dd>NOTIFYなどゴースト側との通信の際に、SHIORIから直接返されてきたヘッダ。
+					<br />文字コード変換等最低限の処理が行われるだけで、(任意の文字列)の部分や中身はそのまま中継される。</dd>
+				</dl>
+
+				<h1>responseのステータスコード</h1>
+				<p>HTTPと同じく、200番台は正常受理、その他はエラー。</p>
+				<dl>
+					<dt>200 OK</dt>
+					<dd>正常終了（返り値つき）</dd>
+					<dt>204 No Content</dt>
+					<dd>正常終了（返り値なし）</dd>
+					<dt>210 Break</dt>
+					<dd>実行はされたがスクリプト実行中にブレークされた
+					<br />※EntryつきのSEND/1.xなど極めて限られた状況に限り、通常は即時200か204リターン。</dd>
+					<dt>400 Bad Request</dt>
+					<dd>リクエストに何かしらカバーしきれない不備がある</dd>
+					<dt>404 Not Found ※SSPのみ</dt>
+					<dd>ゴースト指定のSSTPで該当ゴーストがインストールや起動がされていない</dd>
+					<dt>408 Request Timeout</dt>
+					<dd>タイムアウト：ゴースト/SHIORI側と通信できない時など（普段はほぼ起こらない）</dd>
+					<dt>409 Conflict</dt>
+					<dd>\tタグなどの割り込み禁止状態か、他のリクエストの処理中</dd>
+					<dt>413 Payload Too Large ※SSPのみ</dt>
+					<dd>SSTPリクエストが長すぎて処理を拒否した</dd>
+					<dt>420 Refuse</dt>
+					<dd>ゴースト側の設定の都合で受信拒否された</dd>
+					<dt>500 Internal Server Error ※SSPのみ</dt>
+					<dd>処理系内部で検出されたなにかしらの問題で処理しきれなかった</dd>
+					<dt>501 Not Implemented</dt>
+					<dd>未実装のコマンドなどが含まれて処理できなかった</dd>
+					<dt>503 Service Unavailable</dt>
+					<dd>処理系内部の都合でSSTPを受け付けられない状態</dd>
+					<dt>505 Version Not Supported ※SSPのみ</dt>
+					<dd>SSTPのバージョンがおかしい（1.0未満、3.0以上など）</dd>
+					<dt>512 Invisible</dt>
+					<dd>最小化などでゴーストが表示されておらず、何も処理できない状態</dd>
+				</dl>
+			</section>
+		</section>
+
+
+		<section class="category" id="method_notify">
+			<h1>メソッド：NOTIFY</h1>
+
+			<p>ゴーストにイベントを通知するためのメソッドです。
+			<br />Eventヘッダ＝SHIORI/3.0 IDに対応し、Reference*はそのままです。</p>
+
+			<section class="caption">
+				<h1>イベント通知のみサンプル(NOTIFY/1.0)</h1>
+<pre><!--
+-->NOTIFY SSTP/1.0
+Charset: UTF-8
+Sender: Media Player
+Event: OnMusicPlay
+Reference0: 自由の翼
+Reference1: Linked Horizon
+
+</pre>
+
+			</section>
+
+			<p>ゴースト側で指定したイベントIDに反応しない場合に、「保険用の」スクリプトを指定して再生させることができます。
+			<br />その際に、IfGhostヘッダを指定すると、直後にあるScriptヘッダは指定したゴースト専用のスクリプトとして扱います。</p>
+
+			<section class="caption">
+				<h1>保険反応つきサンプル(NOTIFY/1.1)</h1>
+<pre><!--
+-->NOTIFY SSTP/1.1
+Charset: UTF-8
+Sender: Media Player
+Event: OnMusicPlay
+Reference0: 紅蓮の弓矢
+Reference1: Linked Horizon
+IfGhost: Emily,Teddy
+Script: \0\s[6]その日、エミリは思い出した…\n\s[7]まだ今日は芋食べてない！\1\s[11]わざわざ今思い出したの？
+IfGhost: ラーシェ,ティセ
+Script: \0\s[3]巨人っていっても、身長は列車数両分しかないよね。\1\s[14]それが縦に立ち上がるとさすがに大きいと思うけどね。
+
+</pre>
+				<h1>request固有ヘッダ</h1>
+				<dl>
+					<dt>Event</dt>
+					<dd>イベントID。SHIORI/3.0ではIDヘッダの指定として取り扱われる。</dd>
+					<dt>Reference*</dt>
+					<dd>イベントのReferenceヘッダ。SHIORIには文字コード変換等最低限の処理を行い、そのまま引き渡される。</dd>
+					<dt>Script</dt>
+					<dd>イベントに反応しなかった場合に再生されるSakuraScript。</dd>
+					<dt>IfGhost</dt>
+					<dd>\0側名,\1側名 の書式でゴーストの名前を指定すると、直後に来たScriptヘッダを特定のゴースト専用として取り扱う。
+					<br />IfGhostの直後ではないScriptヘッダが存在した場合は、IfGhostに該当しない場合のデフォルト処理用Scriptとなる。
+					<br />省略した場合はどのゴーストに対しても同じScriptヘッダが再生される。
+					<br />SSTPのゴースト起動オプションを有効にしていた場合は、ここで指定したゴーストが一時的に起動される。</dd>
+				</dl>
+				<h1>response固有ヘッダ</h1>
+				<dl>
+					<dt>Script</dt>
+					<dd>イベント通知の結果再生されたスクリプト。現在SSPのみ対応。</dd>
+				</dl>
+			</section>
+		</section>
+
+
+		<section class="category" id="method_send">
+			<h1>メソッド：SEND</h1>
+			<p>(執筆中)</p>
+		</section>
+
+
+		<section class="category" id="method_communicate">
+			<h1>メソッド：COMMUNICATE</h1>
+			
+			<p>COMMUNICATEメソッドで、ゴーストに外部から任意の文字列を与えて、反応させることができる。
+			<br />基本的にゴースト内部でのコミュニケートボックスを使った反応と同じになる。</p>
+			
+			<section class="caption">
+				<h1>単純なCOMMUNICATE(COMMUNICATE/1.1)</h1>
+<pre><!--
+-->COMMUNICATE SSTP/1.1
+Charset: UTF-8
+Sender: User
+Sentence: おはよう。
+
+</pre>
+			</section>
+
+			<p>コミュニケートはSSTPサーバ同士（≒ゴースト同士）で送受信を繰り返すことができる。
+			<br />SHIORI/3.0のレスポンスReference0での送信の場合は、SSTP送信タイミングはSakuraScriptを再生し終わった時となる。
+			<br />これを用いて、同時起動しているゴースト同士が会話しているような処理を組むことが可能となる。</p>
+
+			<section class="caption">
+				<h1>ゴースト間コミュニケート(COMMUNICATE/1.2)</h1>
+
+<pre><!--
+-->COMMUNICATE SSTP/1.2
+Charset: UTF-8
+Sender: Emily
+HWnd: 28236
+Sentence: \0\s[5]ちゃっらーん！エミリでーす！\nボクのお腹にはまだ若干の余裕が…？\1\s[11]そんなこと言ってたらまた太るよ？
+Surface: 5,11
+Reference0: 芋ちょうだい
+Reference1: たくさんちょうだい
+Reference2: 今すぐちょうだい
+
+</pre>
+
+				<h1>request固有ヘッダ</h1>
+				<dl>
+					<dt>Reference*</dt>
+					<dd>コミュニケートの拡張情報。SHIORI/3.0ではReference2以降に格納される。SSTP Reference0 = SHIORI Reference2。</dd>
+					<dt>Surface</dt>
+					<dd>送信元ゴーストのコミュニケート送信時点（≒スクリプト実行終了時点）での\0と\1のサーフィス番号。
+					<br />OnCommunicateイベントでSurfaceヘッダとして渡される。</dd>
+					<dt>Option</dt>
+					<dd><em class="specsign">[旧仕様]</em>substituteを指定すると、Sentenceの内容を\1が喋る。 ※SSP未実装</dd>
+				</dl>
+			</section>
+		</section>
+
+
+		<section class="category" id="method_execute">
+			<h1>メソッド：EXECUTE</h1>
+			<p>(執筆中)</p>
+		</section>
+
+
+		<section class="category" id="method_give">
+			<h1>メソッド：GIVE</h1>
+			<p><em class="specsign">[旧仕様]</em> ゴーストに各種データを与え、処理したり反応させたりするためのメソッドです。
+			<br />相当昔の仕様であり、現在これを使用する意味はありません。NOTIFYやCOMMUNICATEを使用してください。</p>
+			
+			<section class="caption">
+				<h1>requestサンプル</h1>
+<pre><!--
+-->GIVE SSTP/1.1
+Charset: UTF-8
+Sender: SSTPクライアント
+Document: まず水や。それから粉やな。
+
+</pre>
+
+<pre><!--
+-->GIVE SSTP/1.1
+Charset: UTF-8
+Sender: SSTPクライアント
+Song: 佐世保の時雨
+
+</pre>
+
+				<h1>request固有ヘッダ</h1>
+				<dl>
+					<dt>Document</dt>
+					<dd>文書（汎用的な文字列）<br />
+					SHIORI/3.0ではユーザーコミュニケートと同じ扱いとなり、OnCommunicateイベントが発生する。</dd>
+					<dt>Song</dt>
+					<dd>歌の名前。<br />
+					SHIORI/3.0ではOnMusicPlayイベントが発生し、Reference0がSongヘッダに指定された文字列となる。</dd>
+				</dl>
+			</section>
+		</section>
+
+
 	</div>
 </body>
 </html>
