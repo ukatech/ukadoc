@@ -191,8 +191,8 @@
 		
 		<section class="category" id="req_res">
 			<h1>request/response</h1>
-			<p>SHIORIなど他のプロトコルと同じく、HTTPに似せた独自プロトコルである。
-			<br />リクエストのCharset指定は必須。指定が無い場合はエラーとなるか、OS標準指定の文字コードとなる。</p>
+			<p>SHIORIなど他のプロトコルと同じく、HTTPに似せた独自プロトコルです。
+			<br />リクエストのCharset指定は必須で、指定が無い場合はエラーとなるか、OS標準指定の文字コードとして解釈されます。</p>
 
 			<ul>
 				<li>改行コードはCR+LF。</li>
@@ -425,7 +425,107 @@ Reference2: 今すぐちょうだい
 
 		<section class="category" id="method_execute">
 			<h1>メソッド：EXECUTE</h1>
-			<p>(執筆中)</p>
+			<p>EXECUTEメソッドで、ゴーストの各種情報取得や、SakuraScriptによらない各種コマンド実行などを行うことができます。。
+			<br />このメソッドの実行では、ゴーストは喋りませんが、内部状態が書き換わる可能性があります。</p>
+			
+			<section class="caption">
+				<h1>EXECUTEサンプル</h1>
+<pre><!--
+-->EXECUTE SSTP/1.1
+Charset: UTF-8
+Sender: SSTPクライアント
+Command: GetName
+
+</pre>
+				<h1>request固有ヘッダ</h1>
+				<dl>
+					<dt>Command または Command[param1,param2...]</dt>
+					<dd>実行すべきコマンド。実行する内容と返ってくる情報は後述。
+					<br />大かっこ以降は実行すべきコマンドに渡すパラメータを指定する。</dd>
+					
+					<dt>Reference* [SSP]</dt>
+					<dd>大かっこ指定の代わりにReference0～のヘッダでパラメータを指定することもできる。</dd>
+				</dl>
+			</section>
+			
+			<p>Commandヘッダに指定できる文字列と、responseの「追加データ」で返ってくる結果については、下記を参照してください。</p>
+			
+			<section class="caption">
+				<h1>Commandヘッダに指定できるコマンドと、返ってくる追加データ</h1>
+				<dl>
+					<dt>GetName</dt>
+					<dd>起動中のゴーストの (\0名),(\1名) カンマ区切り</dd>
+					
+					<dt>GetNames [SSP]</dt>
+					<dd>現在インストールされている\0名のリスト。改行区切り。空行で終端。</dd>
+					
+					<dt>GetGhostName [SSP]</dt>
+					<dd>起動中のゴースト本体の名前(descript.txtのname)</dd>
+					
+					<dt>GetShellName [SSP]</dt>
+					<dd>起動中のゴーストの現在使用中のシェルの名前</dd>
+					
+					<dt>GetBalloonName [SSP]</dt>
+					<dd>起動中のゴーストの現在使用中のバルーンの名前</dd>
+					
+					<dt>GetVersion</dt>
+					<dd>ベースウェア(実行中のソフト)のバージョン</dd>
+					
+					<dt>Quiet</dt>
+					<dd>Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>Restore</dt>
+					<dd>Quietを解除。追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>CompressArchive [SSP]</dt>
+					<dd>指定したフォルダ内のファイル群を圧縮ファイルに圧縮する。
+					<br />パラメータ0：圧縮ファイル名
+					<br />パラメータ1：圧縮すべきフォルダのフルパス
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>ExtractArchive [SSP]</dt>
+					<dd>指定した圧縮ファイルを解凍する。
+					<br />パラメータ0：圧縮ファイル名
+					<br />パラメータ1：解凍先のフォルダのフルパス
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>MoveAsync [SSP]</dt>
+					<dd><a href="list_sakura_script.html#notes_move">\![moveasync]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
+					<br />SSTPのタイムアウトまでにresponseを返せないのとデッドロックの原因になるため、asyncなしのmoveは実行できない。
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>SetTrayIcon [SSP]</dt>
+					<dd><a href="list_sakura_script.html#_!_set,tasktrayicon,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88_">\![set,tasktrayicon]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>SetTrayBalloon [SSP]</dt>
+					<dd><a href="list_sakura_script.html#_!_set,trayballoon,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3..._">\![set,trayballoon]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>SetProperty [SSP]</dt>
+					<dd><a href="list_propertysystem.html">プロパティシステム</a>に値を書き込む。
+					<br />パラメータ0：プロパティの名前
+					<br />パラメータ1：設定すべき値
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>GetProperty [SSP]</dt>
+					<dd><a href="list_propertysystem.html">プロパティシステム</a>から値を読み出す。
+					<br />パラメータ0：プロパティの名前
+					<br />追加データは取得したプロパティの値。</dd>
+					
+					<dt>SetCookie</dt>
+					<dd>Senderで指定したクライアント名ごとに保存される、汎用データ保存領域に書き込む。
+					<br />ブラウザの「クッキー」と同様の使い方を想定している。
+					<br />パラメータ0：クッキーの名前
+					<br />パラメータ1：設定すべき値
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+					
+					<dt>GetCookie</dt>
+					<dd>Senderで指定したクライアント名ごとに保存される、汎用データ保存領域から読み出す。
+					<br />パラメータ0：クッキーの名前
+					<br />追加データは取得したクッキーの値。</dd>
+				</dl>
+			</section>
 		</section>
 
 
