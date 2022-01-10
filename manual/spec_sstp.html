@@ -220,19 +220,36 @@ Option: notranslate
 					<dt>Charset</dt>
 					<dd>リクエストの文字コード。一番最初の行に現れるのが望ましい。
 					<br />特に理由がなければUTF-8を推奨する。</dd>
+					
 					<dt>Sender</dt>
 					<dd>送信者を示す文字列。「SSTP送信ツール」など。COMMUNICATEメソッドの場合は、送信元のゴースト\0名。</dd>
+					
 					<dt>SecurityLevel</dt>
 					<dd>SHIORIやSakuraScriptで処理する際のセキュリティレベルの指定。local/externalのいずれか。
 					<br />DirectSSTP、または127.0.0.1等明らかにローカルから来たリクエストのみ有効。</dd>
+					
 					<dt>ID</dt>
 					<dd>"Owned SSTP"と呼ばれるもの。<a href="list_shiori_event.html#uniqueid">SHIORI uniqueid</a>で送られてきたIDか、<a href="spec_fmo_mutex.html">FMOの識別ID(SSPのみ)</a>を指定すると、各種セキュリティチェックやロック等を無視して、本SSTPをゴースト内部での処理と同じ優先度で扱う。
 					<br />SecurityLevel指定がlocalになり、さらに\tなどの割り込み禁止状態でも強制的に割り込み再生を可能とする。</dd>
+					
 					<dt>X-SSTP-PassThru-(任意の文字列)</dt>
 					<dd>NOTIFYなどゴースト側との通信の際に、SHIORIに直接渡されるヘッダ。
 					<br />文字コード変換等最低限の処理が行われるだけで、(任意の文字列)の部分や中身はそのまま中継される。</dd>
+					
 					<dt>HWnd</dt>
-					<dd>DirectSSTP限定で、responseを返信すべきウインドウハンドルを示す。省略時はWM_COMMUNICATEのwParam。</dd>
+					<dd>DirectSSTP限定で、responseを返信すべきウインドウハンドルを示す。
+					<br />ウインドウハンドル(ポインタ相当)のデータを符号なし10進整数として扱い、それを文字列化したもの。
+					<br />省略時はWM_COMMUNICATEのwParam。</dd>
+					
+					<dt>ReceiverGhostHWnd [SSP 2.5.57]</dt>
+					<dd>(Socket)SSTP限定で、requestを送るべきゴーストの\0のウインドウハンドルを示す。
+					<br />これを指定すると、処理すべきゴーストが固定され、Socket経由でもDirectSSTPと同じ処理が可能になる。
+					<br />見つからなかった場合は、404 Not Foundで即時エラー終了する。</dd>
+					
+					<dt>ReceiverGhostName [SSP 2.5.57]</dt>
+					<dd>(Socket)SSTP限定で、requestを送るべきゴーストの\0名を示す。
+					<br />これを指定すると、処理すべきゴーストが固定され、Socket経由でもDirectSSTPと同じ処理が可能になる。HWndの名前版。
+					<br />見つからなかった場合は、404 Not Foundで即時エラー終了する。</dd>
 				</dl>
 
 			</section>
