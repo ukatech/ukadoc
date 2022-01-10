@@ -385,6 +385,7 @@
 			<h1>ゴースト開発用の対話型exe「ゴースト・ターミナル」</h1>
 			<ul>
 				<li><a href="#ShioriEcho.GetName">ShioriEcho.GetName</a></li>
+				<li><a href="#ShioriEcho.Begin">ShioriEcho.Begin</a></li>
 				<li><a href="#ShioriEcho">ShioriEcho</a></li>
 				<li><a href="#ShioriEcho.GetResult">ShioriEcho.GetResult</a></li>
 				<li><a href="#ShioriEcho.TabPress">ShioriEcho.TabPress</a></li>
@@ -2528,12 +2529,25 @@
 			<dl id="ShioriEcho.GetName">
 				<dt class="entry">ShioriEcho.GetName</dt>
 				<dd class="entry">
-					<p>ゴーストターミナルの起動イベント。</p>
+					<p>ゴーストターミナルがゴーストから名前を取得したときのイベント。</p>
+					<p>Ver.10以前：ゴーストターミナルの起動イベント。</p>
 					<dl class="reference">
+						<dt>Reference0（Ver 10以降）</dt>
+						<dd>ゴーストターミナルのバージョン。</dd>
 						<dt>戻り値（オプション）：X-SSTP-PassThru-GhostName</dt>
 						<dd>ゴースト名。</dd>
 						<dt>戻り値（オプション）：X-SSTP-PassThru-UserName</dt>
 						<dd>ユーザー名。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.Begin">
+				<dt class="entry">ShioriEcho.Begin（Ver 10以降）</dt>
+				<dd class="entry">
+					<p>このゴーストのゴーストターミナルが起動したときのイベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ゴーストターミナルのバージョン。</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -2562,7 +2576,7 @@
 					<dl class="reference">
 						<dt>戻り値：X-SSTP-PassThru-Special</dt>
 						<dd>コンテンツを表示し、次のコマンド取得に進む。<br />
-						    var 8以降のこの戻り値は簡単な意味で変換されます。<br />
+						    Ver 8以降のこの戻り値は簡単な意味で変換されます。<br />
 						    '\n'は改行に変換されます。<br />
 						    '\t'はタブに変わります。<br />
 						    「\\」は「\」に変わります。</dd>
@@ -2571,7 +2585,7 @@
 					<p>1秒待って再起動 ShioriEcho.GetResult</p>
 					<p>返信可能ヘッダ 4：SHIORI/3.0 400（Bad Request）</p>
 					<p>警告メッセージを表示し、次のコマンド取得に進む。</p>
-					<p>var9以降：ShioriEcho.GetResultリクエストにghostが正常に応答した場合、返信可能ヘッダ 3があるため、そのような応答を無視して1秒待ちます。</p>
+					<p>Ver9以降：ShioriEcho.GetResultリクエストにghostが正常に応答した場合、返信可能ヘッダ 3があるため、そのような応答を無視して1秒待ちます。</p>
 				</dd>
 			</dl>
 			<dl id="ShioriEcho.TabPress">
@@ -2592,7 +2606,7 @@
 				<dt class="entry">ShioriEcho.End</dt>
 				<dd class="entry">
 					<p>exitと入力して終了する際のイベント 。</p>
-					<p>var9の後：通常のプログラムの終了がトリガーされる。</p>
+					<p>Ver9の後：通常のプログラムの終了がトリガーされる。</p>
 				</dd>
 			</dl>
 		</section>
