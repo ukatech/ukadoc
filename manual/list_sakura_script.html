@@ -542,7 +542,7 @@
 			<ul>
 				<!--TODO: Find out what exactly "The next time the script is executed, it will be released" is referring to. (The execution of any script, or certain scripts? What's being released?)-->
 				<li>Typically until the end of the script (when \e is executed). The next time the script is executed, it will be released.</li>
-				<li>Exceptions are noted in the description of each Sakura script.</li>
+				<li>Exceptions are noted in the description of each SakuraScript.</li>
 			</ul>
 		</section>
 		<section class="category">
@@ -637,7 +637,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]This displays surface 0 for the main character.\i[1]Displays animation 1 defined for surface 0.</code></p>
+							<p><code>\s[0]This displays surface 0 for the main character.\i[1] Displays animation 1 defined for surface 0.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -652,7 +652,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\1\s[10]This displays surface 10 for the side character.\i[2,wait]This sentence is displayed after surface 10's animation 2 has finished.</code></p>
+							<p><code>\1\s[10]This displays surface 10 for the side character.\i[2,wait] This sentence is displayed after surface 10's animation 2 has finished.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -667,7 +667,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[100]A long animation is being played.\![anim,clear,100]Even if the animation has not finished playing yet, it is ended by force.</code></p>
+							<p><code>\s[0]\i[100]A long animation is being played.\![anim,clear,100] Even if the animation has not finished playing yet, it is ended by force.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -675,15 +675,15 @@
 			<dl id="_!_anim,pauseID_">
 				<dt class="entry">\![anim,pause,ID]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスアニメーションを一時停止する。</p>
-					<p>サーフェス変更(\s[ID]実行)まで有効。</p>
+					<p>Pauses the animation of the specified ID number.</p>
+					<p>Valid until the surface is changed (\s[ID] is executed).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[200]A long animation is being played.\![anim,pause,200] The animation will pause here.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -691,14 +691,14 @@
 			<dl id="_!_anim,resume,ID_">
 				<dt class="entry">\![anim,resume,ID]</dt>
 				<dd class="entry">
-					<p>上記の一時停止を解除する。</p>
+					<p>Cancel the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。\![anim,resume,200]ここで、再び再生開始。</code></p>
+							<p><code>\s[0]\i[200]A long animation is being played.\![anim,pause,200] The animation will pause here.\![anim,resume,200] The playback will start again here.</code></p>
 						</section>
 					</div>
 				</dd>
