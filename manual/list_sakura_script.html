@@ -645,7 +645,7 @@
 			<dl id="_i_ID,wait_">
 				<dt class="entry">\i[ID,wait]</dt>
 				<dd class="entry">
-					<p>Waits for the surface animation of the specified ID number.</p>
+					<p>Starts the surface animation of the specified ID number, and waits for it to end to display dialogue.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -691,30 +691,30 @@
 			<dl id="_!_anim,resume,ID_">
 				<dt class="entry">\![anim,resume,ID]</dt>
 				<dd class="entry">
-					<p>Cancel the above command.</p>
+					<p>Resumes an animation paused by the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[200]A long animation is being played.\![anim,pause,200] The animation will pause here.\![anim,resume,200] The playback will start again here.</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[200]A long animation is being played.\![anim,pause,200] The animation will pause here.\![anim,resume,200] The animation will resume here.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_anim,offset,ID,x座標,y座標_">
-				<dt class="entry">\![anim,offset,ID,x座標,y座標]</dt>
+				<dt class="entry">\![anim,offset,ID,x coordinate,y coordinate]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスアニメーションの位置を指定した座標分ずらす。<br>着せ替えもずらすことが出来る。</p>
-					<p>サーフェス変更(\s[ID]実行)まで有効。</p>
+					<p>Moves the surface animation of the specified ID number the same distance as the entered coordinates.<br>It is also possible to move dressups.</p>
+					<p>Valid until the surface is changed (\s[ID] is executed).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[300]長いアニメーションを再生中。\![anim,offset,300,40,50]ここで、アニメーションを右に40pixel下に50pixelずらす。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[300]A long animation is being played.\![anim,offset,300,40,50]Here, the animation is moved 40 pixels to the right and 50 pixels down.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -722,22 +722,22 @@
 			<dl id="_!_anim,add,overlay,ID_">
 				<dt class="entry">\![anim,add,overlay,ID]</dt>
 				<dd class="entry">
-					<p>ID番号のサーフェスを現サーフェスに重ねる。</p>
+					<p>Overlays the current surface with the surface of the specified ID number.</p>
 					<dl>
 						<dt>\![anim,add,overlay,ID]</dt>
-						<dd>ID番号のサーフェスを現サーフェスに重ねる。</dd>
+						<dd>Overlays the current surface with the surface of the specified ID number.</dd>
 						<dt>\![anim,add,overlayfast,ID]</dt>
-						<dd>ID番号のサーフェスを現サーフェスにoverlayfastで重ねる。</dd>
+						<dd>Clips the surface of the specified ID number to the current surface, making only pixels that overlap with the base surface visible.</dd>
 						<dt>\![anim,add,base,ID]</dt>
-						<dd>現ベースサーフェスをID番号のサーフェスに変更する。</dd>
+						<dd>Changes the current surface to the surface with the specified ID number.</dd>
 						<dt>\![anim,add,move,x,y]</dt>
-						<dd>現サーフェスをXY座標に移動して表示。</dd>
+						<dd>Moves the current surface and displays it at the entered coordinates.</dd>
 						<dt>\![anim,add,overlay,ID,x,y]</dt>
-						<dd>ID番号のサーフェスを現サーフェスにXY座標に移動して重ねる。</dd>
-						<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間...]</dt>
-						<dd>重ねたサーフェスをアニメーションする。(時間はms)</dd>
-						<dt>\![anim,add,overlay,ID,x,y,表示時間,ID,x,y,表示時間,ID,x,y,表示時間,アニメーションタイミング]</dt>
-						<dd>アニメーションタイミングにはrunonce、alwaysが指定できる。</dd>
+						<dd>Moves the surface of the specified ID number to the entered coordinates and overlays it with the current surface.</dd>
+						<dt>\![anim,add,overlay,ID,x,y,display time,ID,x,y,display time,ID,x,y,display time...]</dt>
+						<dd>Animates the surface displayed on top of the base surface. (Time is in milliseconds.)</dd>
+						<dt>\![anim,add,overlay,ID,x,y,display time,ID,x,y,display time,ID,x,y,display time,animation timing]</dt>
+						<dd>"Animation timing" can be set to either runonce or always.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -747,16 +747,16 @@
 			<dl id="_!_anim,stop_">
 				<dt class="entry">\![anim,stop]</dt>
 				<dd class="entry">
-					<p>サーフェスアニメーションを停止する。</p>
+					<p>Stops the surface animation.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">
-				<dt class="entry">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]</dt>
+				<dt class="entry">\![anim,add,text,x,y,width,height,string,display time,r,g,b,font size,character name]</dt>
 				<dd class="entry">
-					<p>サーフェス上にテキストを表示する。<br>文字列までは必須。</p>
+					<p>Displays text on top of the surface.<br>Arguments after the string are optional.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -765,29 +765,29 @@
 			<dl id="___w_animation,ID_">
 				<dt class="entry">\__w[animation,ID]</dt>
 				<dd class="entry">
-					<p>ID番号のアニメーションが完了するまで待機。</p>
+					<p>Waits for an already running animation of the specified ID number to end to display dialogue.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\1\s[10]This displays surface 10 for the side character.\i[400]Animation 400 is started at the same time as this sentence is displayed.\__w[animation,400]This sentence is displayed after animation 400 ends.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
-				<dt class="entry">\![bind,カテゴリ名,パーツ名,数値]</dt>
+				<dt class="entry">\![bind,category name,part name,value]</dt>
 				<dd class="entry">
-					<p>着せ替えパーツを着衣、脱衣する。<br>数値部分は1で着衣、0で脱衣。<br>パーツ名を空欄にするとカテゴリ単位の動作になる。<br>数値欄を空欄または省略するとメニュー操作時のようにON/OFFの繰り返しとなる。<br>スクリプト実行後、SHIORIイベントOnDressupChangedが通知され、その後にSHIORIイベントOnNotifyDressupInfoが通知される。</p>
+					<p>Puts on and takes off dressup parts.<br>Parts are put on when the value is 1, and taken off when 0.<br>Whole categories can be added or removed by leaving the part name argument blank.<br>If the value argument is blank or is omitted, the dressup will alternate between ON and OFF, similarly to dressup options in the menu.<br>When the script is run, the SHIORI event OnDressupChanged will be notified, and the SHIORI event OnNotifyDressupInfo will be notified afterwards.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![bind,head,ribbon,1]The main character is now wearing its defined head category's ribbon. \1\![bind,arm,,0]All parts in the arm category defined for the side character are removed.</code></p>
 						</section>
 					</div>
 				</dd>
