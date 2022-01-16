@@ -795,9 +795,9 @@
 			<dl id="_!_lock,repaint_">
 				<dt class="entry">\![lock,repaint]</dt>
 				<dd class="entry">
-					<p>Stops redrawing the shell until \![unlock,repaint] is called.<br />
+					<p>Stops drawing a running animation until \![unlock,repaint] is called.<br />
 					This will be automatically cancelled at the end of the script.<br />
-					However, if you specify \![lock,repaint,manual], it will stop redrawing until you explicitly unlock it [2.5.16].</p>
+					However, if you specify \![lock,repaint,manual], it will be valid until you explicitly unlock it. [2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -805,7 +805,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop displaying the animation here.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -813,7 +813,7 @@
 			<dl id="_!_unlock,repaint_">
 				<dt class="entry">\![unlock,repaint]</dt>
 				<dd class="entry">
-					<p>Cancel the above command and resume redrawing the shell.</p>
+					<p>Cancels the above command and resumes showing the hidden animation.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -821,16 +821,16 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation is still playing, the portions of the animation that were drawn while it was stopped will not be displayed.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop displaying the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation was still running, the parts of the animation that were played while hidden will be skipped.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmentondesktop,bottomまたはtop_">
-				<dt class="entry">\![set,alignmentondesktop,bottomまたはtop]</dt>
+				<dt class="entry">\![set,alignmentondesktop,bottom/top]</dt>
 				<dd class="entry">
-					<p>現スコープ側サーフェスをデスクトップの指定方向の端に吸着。bottomでデスクトップ下部、topでデスクトップ上部。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Attaches the character that currently has the focus to the specified edge of the desktop.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -838,8 +838,8 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部(タスクバーの上)にくっつく。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![set,alignmentondesktop,bottom]The main character is now stuck to the bottom of the desktop (right above the taskbar).</code></p>
 						</section>
 					</div>
 				</dd>
@@ -847,16 +847,16 @@
 			<dl id="_!_set,alignmenttodesktop,free_">
 				<dt class="entry">\![set,alignmenttodesktop,free]</dt>
 				<dd class="entry">
-					<p>サーフェスを自由移動可能にする。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Allows the surface to be moved freely.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,alignmenttodesktop,free]本体側がマウスドラッグで位置を自由に移動出来るようになる。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![set,alignmenttodesktop,free]The main character can now be moved freely around the desktop by dragging with the mouse.</code></p>
 						</section>
 					</div>
 				</dd>
