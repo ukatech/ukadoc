@@ -795,17 +795,17 @@
 			<dl id="_!_lock,repaint_">
 				<dt class="entry">\![lock,repaint]</dt>
 				<dd class="entry">
-					<p>\![unlock,repaint]が呼ばれるまで再描画を停止する。<br />
-					この停止処理はスクリプト終端で自動的に解除される。<br />
-					ただし、\![lock,repaint,manual]と指定すると、明示的にunlockするまで停止される[2.5.16]</p>
+					<p>Stops redrawing the shell until \![unlock,repaint] is called.<br />
+					This will be automatically cancelled at the end of the script.<br />
+					However, if you specify \![lock,repaint,manual], it will stop redrawing until you explicitly unlock it [2.5.16].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -813,15 +813,15 @@
 			<dl id="_!_unlock,repaint_">
 				<dt class="entry">\![unlock,repaint]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancel the above command and resume redrawing the shell.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。アニメーションの再生自体は実行されているので、停止中に描画された分は表示されない。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation is still playing, the portions of the animation that were drawn while it was stopped will not be displayed.</code></p>
 						</section>
 					</div>
 				</dd>
