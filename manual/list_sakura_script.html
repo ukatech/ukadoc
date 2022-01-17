@@ -795,9 +795,9 @@
 			<dl id="_!_lock,repaint_">
 				<dt class="entry">\![lock,repaint]</dt>
 				<dd class="entry">
-					<p>Stops drawing a running animation until \![unlock,repaint] is called.<br />
+					<p>Stops drawing running animations until \![unlock,repaint] is called.<br />
 					This will be automatically cancelled at the end of the script.<br />
-					However, if you specify \![lock,repaint,manual], it will be valid until you explicitly unlock it. [2.5.16]</p>
+					However, if you specify \![lock,repaint,manual], it will be valid until explicitly unlocked. [2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -805,7 +805,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop displaying the animation here.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -813,7 +813,7 @@
 			<dl id="_!_unlock,repaint_">
 				<dt class="entry">\![unlock,repaint]</dt>
 				<dd class="entry">
-					<p>Cancels the above command and resumes showing the hidden animation.</p>
+					<p>Cancels the above command and resumes drawing the hidden animations.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -821,7 +821,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop displaying the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation was still running, the parts of the animation that were played while hidden will be skipped.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation was still running, the parts of the animation that were played while hidden will be skipped.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -862,79 +862,79 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,方向_">
-				<dt class="entry">\![set,alignmenttodesktop,方向]</dt>
+				<dt class="entry">\![set,alignmenttodesktop,direction]</dt>
 				<dd class="entry">
-					<p>現スコープ側サーフェスをデスクトップの指定した方向に吸着。方向は以下の方法が指定可能。</p>
+					<p>Attaches the character that currently has the focus to the specified edge of the desktop. The directions below can be specified.</p>
 					<dl>
 						<dt>top</dt>
-						<dd>上部に吸着。</dd>
+						<dd>Attaches to the top.</dd>
 						<dt>bottom</dt>
-						<dd>下部に吸着。</dd>
+						<dd>Attaches to the bottom.</dd>
 						<dt>left</dt>
-						<dd>左部に吸着。</dd>
+						<dd>Attaches to the left.</dd>
 						<dt>right</dt>
-						<dd>右部に吸着。</dd>
+						<dd>Attaches to the right.</dd>
 						<dt>free</dt>
-						<dd>吸着なし。</dd>
+						<dd>The character will not be attached to anything.</dd>
 						<dt>default</dt>
-						<dd>ゴーストのデフォルト設定に戻す。</dd>
+						<dd>The character will be returned to its default position settings.</dd>
 					</dl>
 					<p>
-					※SSPのみalignment<em>to</em>desktopでも有効。
-					<br>上または下に吸着した場合、上下方向へのドラッグ移動ができなくなる。
-					<br>左または右に吸着した場合、左右方向へのドラッグ移動ができなくなる。
+					<!--TODO: Check if this line "SSP only alignmenttodesktop can also be used" is a mistake, since it is already under the section for alignmenttodesktop-->
+					※(SSP only) alignment<em>to</em>desktop can also be used.
+					<br>When a character is attached to the top or bottom of the screen, it cannot be moved up or down by dragging.
+					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Valid until the ghost is closed.</p>
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\1\![set,alignmenttodesktop,top]相方側がデスクトップ上部にくっつく。\![set,alignmenttodesktop,default]相方側の吸着が標準設定に戻る。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\1\![set,alignmenttodesktop,top]The side character is attached to the top of the desktop.\![set,alignmenttodesktop,default]The side character's position is returned to the default.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,倍率_">
-				<dt class="entry">\![set,scaling,倍率]</dt>
+				<dt class="entry">\![set,scaling,scaling factor]</dt>
 				<dd class="entry">
-					<p>サーフェスの倍率を変更する。</p>
-					<p>サーフェスの倍率を変更する。単位%。<br>ユーザの設定する倍率を100％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Changes the size of the surface. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the X axis.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,scaling,50]本体側のサーフェスの大きさが、50%になる。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![set,scaling,50]The size of the main character's surface is reduced to 50%.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率_">
-				<dt class="entry">\![set,scaling,横倍率,縦倍率]</dt>
+				<dt class="entry">\![set,scaling,horizontal scaling factor,vertical scaling factor]</dt>
 				<dd class="entry">
-					<p>サーフェスの倍率を縦比・横比別それぞれに変更する。単位%。<br>ユーザの設定する倍率を100％とした倍率。<br>負数の指定が可能で、-100でその軸方向に反転する。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Changes the relative width and length of the surface respectively. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the respective axes.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,scaling,50,100]本体側のサーフェスの大きさが、横50%縦100%になる。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![set,scaling,50,100]The size of the main character's surface is set to 50% width, 100% length.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
-				<dt class="entry">\![set,scaling,横倍率,縦倍率,変化時間]</dt>
+				<dt class="entry">\![set,scaling,horizontal scaling facotr,vertical scaling factor,change time]</dt>
 				<dd class="entry">
-					<p>サーフェスの倍率を精密に変更する。<br>倍率の単位は%、変化時間の単位はミリ秒。</p>
+					<p>Changes the size of the surface minutely.<br>The unit of the scaling factor is in percent, and the change time is in milliseconds.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
