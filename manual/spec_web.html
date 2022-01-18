@@ -5,12 +5,12 @@
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
-<title>UKADOC Project URL関連</title>
+<title>UKADOC Project Web関連</title>
 <link rel="stylesheet" href="list.css" />
 <!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
 </head>
 <body>
-	<h1 id="page-title">URL関連</h1>
+	<h1 id="page-title">Web関連</h1>
 	<nav class="menu-header">
 		<table>
 			<tbody>
@@ -123,7 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
-							<li><a href="./spec_url.html">URL関連</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -131,19 +131,45 @@
 		</table>
 	</nav>
 	<section class="navigation-bar">
-		<h1>URL関連</h1>
+		<h1>Web関連</h1>
 		<section class="navigation-category">
 			<ul>
-				<li><a href="#x-ukagaka-url">x-ukagaka-url</a></li>
+				<li><a href="#x-ukagaka-link">x-ukagaka-link</a></li>
+				<li><a href="#application-x-nar">application/x-nar</a></li>
 			</ul>
 		</section>
 	</section>
 	<div class="categories">
 		<section class="category" id="chapter0">
 			<section class="caption introduction" id="chapter0">
-				<h1>URL関連</h1>
+				<h1>Web関連</h1>
 				<p>(執筆中)</p>
 			</section>
+		</section>
+		<section class="category" id="x-ukagaka-link">
+			<h1>x-ukagaka-link スキーム</h1>
+			<p>[現在SSP限定] ワンクリックでWebサイト上からなにかしらを実行するために、x-ukagaka-link というURLスキームを用意しています。
+			<br />必ず文字コードはUTF-8で、URLエンコードされた文字列である必要があります。
+			<br />書き方は以下の通りです。</p>
+			
+			<section>
+				<dl>
+					<dt class="entry">x-ukagaka-link:type=event&amp;ghost=(ゴースト名)&amp;info=(追加情報)</dt>
+					<dd class="entry">URLを開くと<a href="list_shiori_event.html#OnXUkagakaLinkOpen">OnXUkagakaLinkOpen</a>イベントが発生する。
+					<br />(ゴースト名)はdescript.txtのnameかsakura.nameと同じもの、(追加情報)内は任意の文字列。
+					<br />サンプル：<a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a></dd>
+					
+					<dt class="entry">x-ukagaka-link:type=install&amp;url=(エンコード済URL)</dt>
+					<dd class="entry">URLを開くと、指定したURLにあるNARファイルをインストールする。
+					<br />(エンコード済URL)はURLエンコードされたNARの置き場所。
+					<br />サンプル：<a href="x-ukagaka-link:type=install&url=http%3A%2F%2Fssp.shillest.net%2Fghost%2Fbonsyou.nar">x-ukagaka-link:type=install&amp;url=http%3A%2F%2Fssp.shillest.net%2Fghost%2Fbonsyou.nar</a></dd>
+				</dl>
+			</section>
+		</section>
+		<section class="category" id="application-x-nar">
+			<h1>application/x-nar MIMEタイプ</h1>
+			<p>[現在SSP限定] NARファイル用に、application/x-nar というMIMEタイプを推奨しています。
+			<br />ただし、application/zip等も受け入れ可能です。</p>
 		</section>
 	</div>
 </body>

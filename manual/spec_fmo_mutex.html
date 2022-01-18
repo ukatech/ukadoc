@@ -123,7 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
-							<li><a href="./spec_url.html">URL関連</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -178,30 +178,31 @@ else {
 			<br />書き込み中の不完全な情報の読み取りを避けるため、排他制御は<a href="#fmo-mutex">FMO用Mutex</a>で行っています。あわせて確認してください。</p>
 			
 			<section>
-			<dl>
-				<dt class="entry">FMOの名前と文字コード</dt>
-				<dd class="entry"><p>Sakura : OS依存、日本語OS上はShift JIS
-				<br />SakuraUnicode : UTF-8固定 [SSP 2.5.26以降～]</p></dd>
-				
-				<dt class="entry">FMOのサイズ</dt>
-				<dd class="entry"><p>最初の4バイト(0～3バイト目)は確保されているFMOのサイズを示します。
-				<br />これは書き込まれている情報の長さではなく、あくまでもFMO自体の確保サイズを示す固定値です。
-				<br />値は現在のところリトルエンディアンで0x00010000、つまり64KB固定になります。
-				<br />他プログラムとの互換性確保のため、現在のところサイズ変更は考慮されていません。</p></dd>
-				
-				<dt class="entry">データ本体</dt>
-				<dd class="entry"><p>4バイト目以降はFMOのデータ本体になります。これは以下のフォーマットになります。
-				<br />(32バイトの識別ID).(キー名)[\1]値[\r\n]
-				<br />[\1]はバイト値1、[\r\n]はCR+LF(改行)になります。
-				<br />このフォーマットを複数行繰り返す形になります。</p></dd>
-				
-				<dt class="entry">データ終端</dt>
-				<dd class="entry"><p>データ終端はC言語文字列と同じバイト値0になります。
-				<br />ゆえに、データ本体で使用可能な最大サイズは65531バイト(65536 - 4 - 1)になります。
-				<br />FMOに書き込む必要がある場合、サイズの限界を超えそうな場合は、不完全な情報の書き込みにならないよう留意してください。
-				<br />サイズを超えそうな場合は1組分のデータを丸々書き込まないようにするのが望ましく、それが無理な場合でも1行の途中で終わらないようにしてください。</p>
-				</dd>
-			</dl>
+				<dl>
+					<dt class="entry">FMOの名前と文字コード</dt>
+					<dd class="entry"><p>Sakura : OS依存、日本語OS上はShift JIS
+					<br />SakuraUnicode : UTF-8固定 [SSP 2.5.26以降～]</p></dd>
+					
+					<dt class="entry">FMOのサイズ</dt>
+					<dd class="entry"><p>最初の4バイト(0～3バイト目)は確保されているFMOのサイズを示します。
+					<br />これは書き込まれている情報の長さではなく、あくまでもFMO自体の確保サイズを示す固定値です。
+					<br />値は現在のところリトルエンディアンで0x00010000、つまり64KB固定になります。
+					<br />他プログラムとの互換性確保のため、現在のところサイズ変更は考慮されていません。</p></dd>
+					
+					<dt class="entry">データ本体</dt>
+					<dd class="entry"><p>4バイト目以降はFMOのデータ本体になります。これは以下のフォーマットになります。
+					<br />(32バイトの識別ID).(キー名)[\1]値[\r\n]
+					<br />[\1]はバイト値1、[\r\n]はCR+LF(改行)になります。
+					<br />このフォーマットを複数行繰り返す形になります。</p></dd>
+					
+					<dt class="entry">データ終端</dt>
+					<dd class="entry"><p>データ終端はC言語文字列と同じバイト値0になります。
+					<br />ゆえに、データ本体で使用可能な最大サイズは65531バイト(65536 - 4 - 1)になります。
+					<br />FMOに書き込む必要がある場合、サイズの限界を超えそうな場合は、不完全な情報の書き込みにならないよう留意してください。
+					<br />サイズを超えそうな場合は1組分のデータを丸々書き込まないようにするのが望ましく、それが無理な場合でも1行の途中で終わらないようにしてください。</p>
+					</dd>
+				</dl>
+			</section>
 			<section class="caption">
 				<h1>データ本体の例</h1>
 			
@@ -227,37 +228,39 @@ ssp_fmo_header_00004468_00120da6.ghostpath[\1]D:\ssp\ghost\emily4\
 </code></pre>
 			</section>
 			
-			<dl>
-				<dt class="entry">32バイトの識別ID</dt>
-				<dd class="entry"><p>ゴースト1組分を示すユニークな識別IDです。少なくともFMO内では他と重複しない文字列を選ぶ必要があります。
-				<br />何かユニークな情報を組み合わせてMD5ハッシュを取ったり、HWND(ウインドウハンドル)を組み合わせたりしている場合が多いです。
-				<br />Materiaでの規格上は長さは規定されていませんが、互換性のため32バイト固定長とすべきです。</p></dd>
-				<dt class="entry">キー名・値</dt>
-				<dd class="entry"><p>情報の種類を示すキーと情報本体です。以下の通りです。</p>
-					<dl class="property">
-						<dt>path</dt>
-						<dd>起動しているベースウェアのルートフォルダのフルパス。</dd>
-						<dt>hwnd</dt>
-						<dd>メインとなるウインドウのウインドウハンドル。10進表記。</dd>
-						<dt>name</dt>
-						<dd>descript.txtのsakura.nameと同じもの。</dd>
-						<dt>keroname</dt>
-						<dd>descript.txtのkero.nameと同じもの。</dd>
-						<dt>sakura.surface</dt>
-						<dd>\0側で現在表示しているサーフィスID。10進表記。</dd>
-						<dt>kero.surface</dt>
-						<dd>\1側で現在表示しているサーフィスID。10進表記。</dd>
-						<dt>kerohwnd</dt>
-						<dd>\1側ウインドウのウインドウハンドル。10進表記。[SSPのみ]</dd>
-						<dt>hwndlist</dt>
-						<dd>現在使用しているウインドウハンドルをすべてカンマ区切りで列挙。10進表記。[SSPのみ]</dd>
-						<dt>ghostpath</dt>
-						<dd>起動中ゴーストのフルパス。[SSPのみ]</dd>
-						<dt>fullname</dt>
-						<dd>起動中ゴーストのdescript.txtのnameエントリ。[SSP 2.5.58～]</dd>
-					</dl>
-				</dd>
-			</dl>
+			<section>
+				<dl>
+					<dt class="entry">32バイトの識別ID</dt>
+					<dd class="entry"><p>ゴースト1組分を示すユニークな識別IDです。少なくともFMO内では他と重複しない文字列を選ぶ必要があります。
+					<br />何かユニークな情報を組み合わせてMD5ハッシュを取ったり、HWND(ウインドウハンドル)を組み合わせたりしている場合が多いです。
+					<br />Materiaでの規格上は長さは規定されていませんが、互換性のため32バイト固定長とすべきです。</p></dd>
+					<dt class="entry">キー名・値</dt>
+					<dd class="entry"><p>情報の種類を示すキーと情報本体です。以下の通りです。</p>
+						<dl class="property">
+							<dt>path</dt>
+							<dd>起動しているベースウェアのルートフォルダのフルパス。</dd>
+							<dt>hwnd</dt>
+							<dd>メインとなるウインドウのウインドウハンドル。10進表記。</dd>
+							<dt>name</dt>
+							<dd>descript.txtのsakura.nameと同じもの。</dd>
+							<dt>keroname</dt>
+							<dd>descript.txtのkero.nameと同じもの。</dd>
+							<dt>sakura.surface</dt>
+							<dd>\0側で現在表示しているサーフィスID。10進表記。</dd>
+							<dt>kero.surface</dt>
+							<dd>\1側で現在表示しているサーフィスID。10進表記。</dd>
+							<dt>kerohwnd</dt>
+							<dd>\1側ウインドウのウインドウハンドル。10進表記。[SSPのみ]</dd>
+							<dt>hwndlist</dt>
+							<dd>現在使用しているウインドウハンドルをすべてカンマ区切りで列挙。10進表記。[SSPのみ]</dd>
+							<dt>ghostpath</dt>
+							<dd>起動中ゴーストのフルパス。[SSPのみ]</dd>
+							<dt>fullname</dt>
+							<dd>起動中ゴーストのdescript.txtのnameエントリ。[SSP 2.5.58～]</dd>
+						</dl>
+					</dd>
+				</dl>
+			</section>
 		</section>
 
 		<section class="category" id="fmo-mutex">
