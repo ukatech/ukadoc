@@ -573,7 +573,7 @@
 				</dd>
 			</dl>
 			<dl id="_p_ID番号_">
-				<dt class="entry">\p[ID number]</dt>
+				<dt class="entry">\p[(ID number)]</dt>
 				<dd class="entry">
 					<p>Displays an extra character of the specified ID number.</p>
 					<ul class="supported-baseware">
@@ -592,7 +592,7 @@
 		<section class="category">
 			<h1>Surface Commands</h1>
 			<dl id="_sID番号">
-				<dt class="entry">\sID番号</dt>
+				<dt class="entry">\s(ID number)</dt>
 				<dd class="entry">
 					<p>Changes the surface of the character that is currently the focus to the surface with the specified ID number.<br>This tag can only be used with surfaces 0~9.</p>
 					<ul class="supported-baseware">
@@ -609,7 +609,7 @@
 				</dd>
 			</dl>
 			<dl id="_s_ID番号_">
-				<dt class="entry">\s[ID number]</dt>
+				<dt class="entry">\s[(ID number)]</dt>
 				<dd class="entry">
 					<p>Changes the surface of the character that is currently the focus to the surface with the specified ID number.<br>\s[-1] will hide the character.</p>
 					<ul class="supported-baseware">
@@ -626,7 +626,7 @@
 				</dd>
 			</dl>
 			<dl id="_i_ID番号_">
-				<dt class="entry">\i[ID number]</dt>
+				<dt class="entry">\i[(ID number)]</dt>
 				<dd class="entry">
 					<p>Displays the surface animation with the specified ID number for the character that is currently the focus.</p>
 					<ul class="supported-baseware">
@@ -704,7 +704,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,offset,ID,x座標,y座標_">
-				<dt class="entry">\![anim,offset,ID,x coordinate,y coordinate]</dt>
+				<dt class="entry">\![anim,offset,ID,(x coordinate),(y coordinate)]</dt>
 				<dd class="entry">
 					<p>Moves the surface animation of the specified ID number the same distance as the entered coordinates.<br>It is also possible to move dressups.</p>
 					<p>Valid until the surface is changed (\s[ID] is executed).</p>
@@ -754,7 +754,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">
-				<dt class="entry">\![anim,add,text,x,y,width,height,string,display time,r,g,b,font size,character name]</dt>
+				<dt class="entry">\![anim,add,text,x,y,(width),(height),(string),(display time),r,g,b,(font size),(character identifier)]</dt>
 				<dd class="entry">
 					<p>Displays text on top of the surface.<br>Arguments after the string are optional.</p>
 					<ul class="supported-baseware">
@@ -778,7 +778,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_bind,カテゴリ名,パーツ名,数値_">
-				<dt class="entry">\![bind,category name,part name,value]</dt>
+				<dt class="entry">\![bind,(category name),(part name),(value)]</dt>
 				<dd class="entry">
 					<p>Puts on and takes off dressup parts.<br>Parts are put on when the value is 1, and taken off when 0.<br>Whole categories can be added or removed by leaving the part name argument blank.<br>If the value argument is blank or is omitted, the dressup will alternate between ON and OFF, similarly to dressup options in the menu.<br>When the script is run, the SHIORI event OnDressupChanged will be notified, and the SHIORI event OnNotifyDressupInfo will be notified afterwards.</p>
 					<ul class="supported-baseware">
@@ -827,7 +827,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmentondesktop,bottomまたはtop_">
-				<dt class="entry">\![set,alignmentondesktop,bottom/top]</dt>
+				<dt class="entry">\![set,alignmentondesktop,(bottom or top)]</dt>
 				<dd class="entry">
 					<p>Attaches the character that currently has the focus to the specified edge of the desktop.</p>
 					<p>Valid until the ghost is closed.</p>
@@ -862,7 +862,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,alignmenttodesktop,方向_">
-				<dt class="entry">\![set,alignmenttodesktop,direction]</dt>
+				<dt class="entry">\![set,alignmenttodesktop,(direction)]</dt>
 				<dd class="entry">
 					<p>Attaches the character that currently has the focus to the specified edge of the desktop. The directions below can be specified.</p>
 					<dl>
@@ -899,7 +899,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,倍率_">
-				<dt class="entry">\![set,scaling,scaling factor]</dt>
+				<dt class="entry">\![set,scaling,(scaling factor)]</dt>
 				<dd class="entry">
 					<p>Changes the size of the surface. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the X axis.</p>
 					<p>Valid until the ghost is closed.</p>
@@ -916,7 +916,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率_">
-				<dt class="entry">\![set,scaling,horizontal scaling factor,vertical scaling factor]</dt>
+				<dt class="entry">\![set,scaling,(horizontal scaling factor),(vertical scaling factor)]</dt>
 				<dd class="entry">
 					<p>Changes the relative width and length of the surface respectively. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the respective axes.</p>
 					<p>Valid until the ghost is closed.</p>
@@ -932,7 +932,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
-				<dt class="entry">\![set,scaling,horizontal scaling facotr,vertical scaling factor,change time]</dt>
+				<dt class="entry">\![set,scaling,(horizontal scaling factor),(vertical scaling factor),(change time)]</dt>
 				<dd class="entry">
 					<p>Changes the size of the surface minutely.<br>The unit of the scaling factor is in percent, and the change time is in milliseconds.</p>
 					<ul class="supported-baseware">
