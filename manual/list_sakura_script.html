@@ -479,6 +479,10 @@
 				<li><a href="#_!_reload,makoto_">\![reload,makoto]</a></li>
 				<li><a href="#_!_reload,shell_">\![reload,shell]</a></li>
 				<li><a href="#_!_reload,ghost_">\![reload,ghost]</a></li>
+				<li><a href="#_!_unload,shiori_">\![unload,shiori]</a></li>
+				<li><a href="#_!_unload,makoto_">\![unload,makoto]</a></li>
+				<li><a href="#_!_load,shiori_">\![load,shiori]</a></li>
+				<li><a href="#_!_load,makoto_">\![load,makoto]</a></li>
 				<li><a href="#__u_0x0000_">\_u[0x0000]</a></li>
 				<li><a href="#__m_0x00_">\_m[0x00]</a></li>
 				<li><a href="#_&_ID_">\&[ID]</a></li>
@@ -5027,6 +5031,43 @@
 							<p><code>\![reload,ghost]リロードする。自分自身へのゴースト切り替えと、SHIORIイベントが発生しないことを除けばほぼ同じ。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_unload,shiori_">
+				<dt class="entry">\![unload,shiori]</dt>
+				<dd class="entry">
+					<p>shiori.dllをアンロード（読み込み解除）し、そのままを維持する。
+					<br />unload後は適切なタイミングでloadを実行すること。unloadしたままでは何も反応できなくなる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_unload,makoto_">
+				<dt class="entry">\![unload,makoto]</dt>
+				<dd class="entry">
+					<p>makoto.dllをアンロード（読み込み解除）し、そのままを維持する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_load,shiori_">
+				<dt class="entry">\![load,shiori]</dt>
+				<dd class="entry">
+					<p>unload実行後にshiori.dllを読み込む。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_load,makoto_">
+				<dt class="entry">\![load,makoto]</dt>
+				<dd class="entry">
+					<p>unload実行後にmakoto.dllを読み込む。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="__u_0x0000_">
