@@ -941,43 +941,43 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,alpha,数値_">
-				<dt class="entry">\![set,alpha,数値]</dt>
+				<dt class="entry">\![set,alpha,(value)]</dt>
 				<dd class="entry">
-					<p>現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Changes the opacity of the surface that currently has the focus from 0~100. The smaller the value, the more translucent it becomes.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,50]相方側がだいたい半透明になる。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\0\![set,alpha,0]The main character is now completely transparent and invisible.\1\![set,alpha,50]The side character is now about halfway transparent.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_effect,プラグイン名,速度倍率,パラメータ_">
-				<dt class="entry">\![effect,プラグイン名,速度倍率,パラメータ]</dt>
+				<dt class="entry">\![effect,(plugin name),(speed scaling),(parameter)]</dt>
 				<dd class="entry">
-					<p>サーフェスをプラグインにより変化させる。</p>
+					<p>Modifies surfaces using a plugin.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">
-				<dt class="entry">\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]</dt>
+				<dt class="entry">\![effect2,(additional surface ID),(plugin name),(speed scaling),(parameter)]</dt>
 				<dd class="entry">
-					<p>追加したサーフェスをプラグインにより変化させる。</p>
+					<p>Modifies additional surfaces using a plugin.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_filter,プラグイン名,起動時間,パラメータ_">
-				<dt class="entry">\![filter,プラグイン名,起動時間,パラメータ]</dt>
+				<dt class="entry">\![filter,(plugin name),(startup time),(parameter)]</dt>
 				<dd class="entry">
-					<p>サーフェスを変化があるたびにプラグインにより変化させる。</p>
+					<p>Modifies surfaces using a plugin every time a change is made.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -986,7 +986,7 @@
 			<dl id="_!_filter_">
 				<dt class="entry">\![filter]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -995,7 +995,7 @@
 			<dl id="_4">
 				<dt class="entry">\4</dt>
 				<dd class="entry">
-					<p>現スコープのキャラクターが本体側または相方側のキャラクターから離れる方向に一定距離移動。</p>
+					<p>The character that currently has the focus will move a set distance away from either the main or side character.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1003,8 +1003,8 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>移動を実行。\4この文章は、本体側が別スコープと一定距離離れてから表示される。</code></p>
+							<h1>Usage example</h1>
+							<p><code>Begin moving here.\4This sentence will be displayed after the main character has moved a set distance away from the other character.</code></p>
 						</section>
 					</div>
 				</dd>
