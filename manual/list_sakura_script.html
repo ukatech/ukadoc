@@ -995,7 +995,7 @@
 			<dl id="_4">
 				<dt class="entry">\4</dt>
 				<dd class="entry">
-					<p>The character that currently has the focus will move a set distance away from either the main or side character.</p>
+					<p>The character that is currently the focus will move a set distance away from either the main or side character.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1004,7 +1004,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>Begin moving here.\4This sentence will be displayed after the main character has moved a set distance away from the other character.</code></p>
+							<p><code>The moving function will be executed.\4This sentence will be displayed after the main character has moved a set distance away from the other character.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1012,7 +1012,7 @@
 			<dl id="_5">
 				<dt class="entry">\5</dt>
 				<dd class="entry">
-					<p>現スコープのキャラクタが接触する距離まで移動。<br>移動する必要がない場合は移動しない。</p>
+					<p>The character that is currently the focus will move until in contact with the other character.<br>The character will not move if it is not necessary to do so.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1020,8 +1020,8 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\1相方側にスコープを設定。\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\1The focus is now on the side character.\5This sentence will be displayed after the side character has moved to a position right next to the other character.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1029,15 +1029,15 @@
 			<dl id="_!_move_">
 				<dt class="entry">\![move]</dt>
 				<dd class="entry">
-					<p>指定座標まで移動。<a href="#notes_move">※下記参照</a></p>
+					<p>Moves to the specified coordinates.<a href="#notes_move">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![move,--X=80,--Y=-400,--time=2500,--base=screen,--base-offset=left.bottom,--move-offset=left.top]本体側が、画面の左下(screen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![move,--X=80,--Y=-400,--time=2500,--base=screen,--base-offset=left.bottom,--move-offset=left.top]The main character will move 80 pixels to the right and 400 pixels upwards, counting from the bottom left of the screen (screen,left.bottom). The movement will use the top left pixel of the surface as a base point (left.top), and will occur over the course of 2.5 seconds.</code></p>
 						</section>
 					</div>
 				</dd>
