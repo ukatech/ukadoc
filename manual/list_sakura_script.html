@@ -1029,7 +1029,7 @@
 			<dl id="_!_move_">
 				<dt class="entry">\![move]</dt>
 				<dd class="entry">
-					<p>Moves to the specified coordinates.<a href="#notes_move">※Refer to the section below</a></p>
+					<p>Moves to the specified coordinates. <a href="#notes_move">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -1045,24 +1045,24 @@
 			<dl id="_!_moveasync_">
 				<dt class="entry">\![moveasync]</dt>
 				<dd class="entry">
-					<p>指定座標まで非同期移動。<a href="#notes_move">※下記参照</a></p>
-					<p>\![moveasync]は、動作途中に\![moveasync,cancel]で停止することができる。</p>
+					<p>Moves asynchronously to the specified coordinates. <a href="#notes_move">※Refer to the section below</a></p>
+					<p>\![moveasync] can be stopped in the middle of movement with \![moveasync,cancel].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
-							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]The side character will move 175 pixels to the left and 400 pixels down, counting from the top right corner of the screen (screen,right.top). The movement will use the bottom right pixel of the surface as a base point (right.bottom), and will occur over the course of 5 seconds.</code></p>
+							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]The side character's movement has started.\![moveasync,cancel]The movement is stopped here. Movement can also be stopped in the case a separate event that includes a cancellation script occurs. This can be used to stop movement upon double clicking, for example.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,position,x,y,スコープID_">
-				<dt class="entry">\![set,position,x,y,スコープID]</dt>
+				<dt class="entry">\![set,position,x,y,(character ID)]</dt>
 				<dd class="entry">
-					<p>指定スコープをXY座標に固定する。(ドラッグ等を不可能にする)</p>
+					<p>Fixes the specified character to the entered x and y coordinates. (The character will no longer be movable by dragging.)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
@@ -1071,32 +1071,32 @@
 			<dl id="_!_reset,position_">
 				<dt class="entry">\![reset,position]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_set,zorder,スコープID,スコープID,_">
-				<dt class="entry">\![set,zorder,スコープID,スコープID,...]</dt>
+				<dt class="entry">\![set,zorder,(character ID),(character ID),...]</dt>
 				<dd class="entry">
-					<p>指定スコープのウインドウを左側から順に手前側に配置する。<br>
-					例：\![set,zorder,1,0]と指定すると、必ず\1が\0ウインドウより手前に表示される。</p>
+					<p>Layers the windows of the specified characters such that the leftmost character is on top.<br>
+					Example: With \![set,zorder,1,0], \1's window will be displayed on top of \0's.</p>
 					
-					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
-					例：\![set,zorder,1,0] \![set,zorder,3,2] と実行すると、\1が\0より前、\p[3]が\p[2]より前に表示される。</p>
+					<p>By running multiple tags each with different character IDs, separate groups can be made.<br>
+					Example: With \![set,zorder,1,0] \![set,zorder,3,2], \1's window will be displayed on top of \0's, and \p[3]'s window will be displayed on top of \p[2]'s.</p>
 					
-					<p>指定できるスコープIDの数に制限はないが、大量に指定するとちょっと重くなるので、2～3個程度が望ましい。<br>
-					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
+					<p>There is no technical limit on the number of character IDs that can be specified in the command, but large amounts may cause the ghost to slow down, so using two to three IDs is recommended.<br>
+					Running the command again with a character that has already been paired with another will cause an error. When changing the pairing of the characters, \![reset] must be run first before ordering the windows again.</p>
 					
-					<p>ゴースト終了まで有効。</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![set,zorder,1,0]相方側が、必ず本体側の手前に表示される。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![set,zorder,1,0]The side character will be displayed on top of the main character without fail.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1104,14 +1104,14 @@
 			<dl id="_!_reset,zorder_">
 				<dt class="entry">\![reset,zorder]</dt>
 				<dd class="entry">
-					<p>上記を解除する。複数回実行された分、descriptであらかじめ指定された分も含めて、全部リセットされる。</p>
+					<p>Cancels the above command. Everything is reset, including the results of the command having been run multiple times, as well as anything specified beforehand in descript.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\![reset,zorder]ウインドウの表示を解除する。ユーザが最後に操作したものが最も手前に表示される。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\![reset,zorder]Cancels the window layering display. The surface that the user last interacted with will be displayed on top</code></p>
 						</section>
 					</div>
 				</dd>
