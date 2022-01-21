@@ -356,7 +356,7 @@
 				<li><a href="#_!_set,windowstate,!stayontop_">\![set,windowstate,!stayontop]</a></li>
 				<li><a href="#_!_set,windowstate,minimize_">\![set,windowstate,minimize]</a></li>
 				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
-				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
+				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト(,--duration=待機時間)]</a></li>
 				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_set,otherghosttalk,true|false|before|after_">\![set,otherghosttalk,true|false|before|after]</a></li>
 				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
@@ -3403,9 +3403,13 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
-				<dt class="entry">\![set,tasktrayicon,ファイル名,テキスト]</dt>
+				<dt class="entry">\![set,tasktrayicon,ファイル名.ico,テキスト(,--duration=待機時間)]</dt>
 				<dd class="entry">
-					<p>指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4.5」など、SSP/[起動中のゴースト名]。</p>
+					<p>指定したアイコンファイルを通知領域（タスクトレイ）のアイコンに適用する。
+					<br />ファイル名には、[実行したゴーストのフォルダ]から、または[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。
+					<br />テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4.5」など、SSP/[起動中のゴースト名]。
+					<br />--duration=待機時間(ms)を指定すると、アイコンをアニメーションさせることができる。この時、ファイル名.icoを指定すると、ファイル名00.ico・ファイル名01.ico…のように後ろの数字順に複数読み込んで、指定した待機時間（ミリ秒）ごとにアニメーション表示する。 [SSP 2.5.58～]</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
