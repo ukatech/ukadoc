@@ -1162,49 +1162,49 @@
 				</dd>
 			</dl>
 			<section class="caption" id="notes_move">
-				<h1>\![move]、\![moveasync]について</h1>
+				<h1>Regarding \![move], \![moveasync]</h1>
 				
-				<p>新仕様：(SSP 2.3.85以降)</p>
-				<p>\![move(async),--X=X座標,--Y=Y座標,--time=移動時間,--base=移動基準,--base-offset=基準とするキャラ基準位置,--move-offset=動かすキャラ基準位置,--option=オプション]</p>
-				<p>どれも省略可能。また、順番が変わっても良い。指定名の大文字・小文字は無視される(たとえば--x=10と書いてもよい)</p>
+				<p>New operating method: (From SSP 2.3.85 onwards)</p>
+				<p>\![move(async),--X=(X coordinate),--Y=(Y coordinate),--time=(movement time),--base=(origin),--base-offset=(base point of origin character),--move-offset=(base point of moving character),--option=(options)]</p>
+				<p>Any of the arguments can be omitted. Additionally, the order may be changed. The specification names may be in either uppercase or lowercase letters (e.g. --x=10 is also acceptable).</p>
 				
-				<p>旧仕様：</p>
-				<p>\![move(async),X座標,Y座標,移動時間,移動基準,基準とするキャラ基準位置,動かすキャラ基準位置]</p>
-				<p>移動時間以降は省略可能。</p>
+				<p>Old operating method:</p>
+				<p>\![move(async),(X coordinate),(Y coordinate),(movement time),(movement base point),(base point of origin character),(base point of moving character)]</p>
+				<p>Arguments after movement time can be omitted.</p>
 				
-				<p><em>X座標、Y座標</em>は目的の座標を指定。<br>負の値も指定可能。<br>どちらかを省略するか、"fix"と指定した場合は、その座標を保持する。<br>省略時は"fix"</p>
+				<p><em>X coordinate, Y coordinate</em> specify the coordinates of the goal location.<br>Negative values will also be accepted.<br>If one is either omitted or "fix" is specified, that coordinate will not be changed.<br>"fix" can be used to omit an argument.</p>
 				
-				<p><em>移動時間</em>はミリ秒単位。<br>移動時間を省略、もしくは0を指定した場合は瞬時に移動。<br>省略時0</p>
+				<p><em>movement time</em> is in milliseconds.<br>If omitted or 0 is specified, the movement will occur instantaneously.<br>0 can be used to omit the argument.</p>
 				
-				<p><em>基準位置</em>は、移動の基準(相対座標の原点)とするキャラクターなど。<br>指定方法は以下。<br>省略時screen</p>
+				<p><em>base position</em> uses characters or other positions to define where the base point for movement is.<br>The possible specification methods are below.<br>screen should be used for omitting the argument.</p>
 				
 				<dl>
 					<dt>screen</dt>
-					<dd>現在キャラクターウィンドウがあるモニタの左上を原点とした座標。初期値</dd>
+					<dd>The origin of the coordinates will be at the top left of the monitor that the character's window is currently on. This is the default setting.</dd>
 					<dt>primaryscreen</dt>
-					<dd>メインモニタ(ID=1)の左上を原点とした座標。</dd>
+					<dd>The origin of the coordinates will be at the top left of the main monitor (ID=1).</dd>
 					<dt>ID</dt>
-					<dd>0,1等で指定したID番スコープ(\0,\1,\p[2]などの数に相当)のキャラクターとの相対座標</dd>
-					<dt>本体側名/ID</dt>
-					<dd>本体側名(sakura名,\0名)で指定した他のゴーストの、ID番スコープのキャラクターとの相対座標</dd>
+					<dd>The relative coordinates from the character of the specified ID number, such as 0 and 1 (equivalent to \0,\1,\p[2] and so on), will be used.</dd>
+					<dt>main character name/ID</dt>
+					<dd>By specifying another ghost's main character name (sakura name, \0 name), the relative coordinates from that ghost's character with the specified ID number will be used.</dd>
 					<dt>me</dt>
-					<dd>移動するキャラクター自身との相対座標</dd>
+					<dd>The relative coordinates from the character being moved itself will be used.</dd>
 					<dt>primaryscreen</dt>
-					<dd>主モニター左上を原点とした座標</dd>
+					<dd>The origin of the coordinates will be at the top left of the primary monitor.</dd>
 					<dt>global</dt>
-					<dd>システム座標系(windowsの場合primaryscreenと同じ)</dd>
+					<dd>The system-defined coordinates will be used. (This is the same as primaryscreen if using Windows.)</dd>
 				</dl>
 				
-				<p><em>基準とするキャラ基準位置</em>は、移動基準にキャラクターやscreenを指定した場合に、そのどこを原点とするかを指定する。<br>X基準.Y基準、という形で指定し、それぞれ<br>X基準：left,right,base,center<br>Y基準：top,bottom,base,center<br>の4つの指定を組み合わせ、right.base、などのように記述する。<br>なお、baseはsurfaces.txt内のpoint.basepos指定に従う。<br>省略時left.top</p>
+				<p><em>base point of origin character</em> defines where the base point will be, in the case that screen or a character was specified in the previous argument.<br>The format is (x coordinate).(y coordinate), and they respectively take one of the following four<br>x coordinate: left,right,base,center<br>y coordinate: top,bottom,base,center<br>and are written as right.base, for example.<br>Furthermore, base will follow the point.basepos defined in surfaces.txt.<br>left.top can be used to omit the argument.</p>
 				
-				<p>screen指定の場合はbase、global指定の場合はright,bottom,centerが利用できない。</p>
+				<p>When specifying screen, base cannot be used, and when specifying global, right, bottom, and center cannot be used.</p>
 				
-				<p><em>動かすキャラ基準位置</em>は、基準とするキャラ基準位置と同じように指定する。</p>
+				<p><em>base point of moving character</em> is specified in the same way as the base point of origin character.</p>
 				
-				<p><em>オプション</em>は複数回指定できる。指定方法は以下。新仕様の書式のみ指定可能。</p>
+				<p><em>options</em> can be specified multiple times. The specification method is given below. Options can only be specified in the new operating method.</p>
 				<dl>
 					<dt>ignore-sticky-window</dt>
-					<dd>\![set,sticky-window]での連携設定を無視して単独で動かす</dd>
+					<dd>\![set,sticky-window] is used to ignore joint movement settings and move the character alone.</dd>
 				</dl>
 				
 			</section>
