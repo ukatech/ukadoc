@@ -2310,11 +2310,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択肢コマンド</h1>
+			<h1>Choice commands</h1>
 			<dl id="_q_タイトル,ID_">
-				<dt class="entry">\q[タイトル,ID]</dt>
+				<dt class="entry">\q[(Title),(ID)]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される(SSPのみそれに先立って<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>が開始される)。<br>IDはReference0に格納される。</p>
+					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run. (In SSP only, <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a> will run prior to OnChoiceSelect。<br>The ID is stored in reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2322,16 +2322,16 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]。選択時に発生するOnChoiceSelectのReference0に、選んだものによって「like」か「hate」が格納されている。</code></p>
+							<h1>Usage example</h1>
+							<p><code>Do you like SakuraScript? \q[Yes,Like] \q[No,Hate]. 'Like' or 'Hate' is stored in reference0 depending on what you choose, then sent to the event OnChoiceSelect.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,OnID,r0,r1,..._">
-				<dt class="entry">\q[タイトル,OnID,r0,r1,...]</dt>
+				<dt class="entry">\q[(Title),On(ID),r0,r1,...]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>上記のようにIDが"On"で始まっている場合は、選択後、SHIORIイベントOnID(書いた通りのイベント)が開始される。<br>それパラメータはr0,r1,...の順番にReference0以降に格納される。</p>
+					<p>Show a menu choice.<br>If the ID starts with "On" as shown above, the SHIORI event On(ID) (with the name that was written) will be started when the choice is clicked.<br>Additional arguments may be sent in the r0,r1,... and will be stored as reference0, reference1, and onwards.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2339,74 +2339,74 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]。選択時に、OnLikeSeasonイベントが発生し、例えば「春」を選択したならReference0に「花見」、Reference1に「桜」が格納されている。</code></p>
+							<h1>Usage example</h1>
+							<p><code>What is your favorite season? \q[Spring,OnLikeSeason,Rain,Budding trees]\q[Summer,OnLikeSeason,Heat,Lush green]\q[Autumn,OnLikeSeason,Breezy,Falling leaves]\q[Winter,OnLikeSeason,Cold,Snowing]. When a choice is selected, the OnLikeSeason event is triggered. reference0 and reference1 in OnLikeSeason will vary depending on which choice was selected. For example, if Spring is selected, reference0 would be 'Rain' and reference1 would be 'Budding trees'.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID1,ID2,ID3..._">
-				<dt class="entry">\q[タイトル,ID1,ID2,ID3...]</dt>
+				<dt class="entry">\q[(Title),(ID1),(ID2),(ID3),...]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される。<br>ID*はReference*に格納される。</p>
+					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run.<br>ID* is stored in reference*.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID,r2,r3..._">
-				<dt class="entry">\q[タイトル,ID,r<em>2</em>,r<em>3</em>...]</dt>
+				<dt class="entry">\q[(Title),(ID),(r<em>2</em>),(r<em>3</em>),...]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelect<em>Ex</em></a>が開始される。<br>r*はOnChoiceSelectExのReference*に格納される。<br>OnChoiceSelectExに続いてOnChoiceSelectも発生するが、Reference1以降に何も入らずこの書き方では無意味。</p>
+					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelect<em>Ex</em></a> will be run.<br>r* is stored in reference* and sent to OnChoiceSelectEx.<br>OnChoiceSelect also occurs after OnChoiceSelectEx, but references after reference1 are ignored, so it is pointless to write it this way.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]。選択時に、OnChoiceSelectExイベントが発生し、例えば「秋」を選択したなら、Reference0に「秋」、Reference1に「LikeSeason」、Reference2に「月見」、Reference3に「菊」が格納されている。</code></p>
+							<h1>Usage example</h1>
+							<p><code>What is your favorite season? \q[Spring,OnLikeSeason,Rain,Budding trees]\q[Summer,OnLikeSeason,Heat,Lush green]\q[Autumn,OnLikeSeason,Breezy,Falling leaves]\q[Winter,OnLikeSeason,Cold,Snowing]. When a choice is selected, the OnChoiceSelectEx event is triggered. The references in OnChoiceSelectEx will vary depending on which choice was selected. For example, if 'Autumn' was selected, reference0 would be 'Autumn', reference1 would be 'OnLikeSeason', reference2 would be 'Breezy', and reference3 would be 'Falling leaves'</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,script:実行内容_">
-				<dt class="entry">\q[タイトル,script:実行内容]</dt>
+				<dt class="entry">\q[(Title),script:(script to execute)]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、script:以下の内容をさくらスクリプトとして実行する。</p>
+					<p>Show a menu choice.<br>After selecting, the contents after "script:" are executed as a SakuraScript.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\q[バルーンを閉じる,script:\e]\n入れ子も可能。\n\q[その１,"script:\q[その２,script:その３はない]"]</code></p>
+							<h1>Usage example</h1>
+							<p><code>\q[Close balloon,script:\e]\nNesting is also possible.\n\q[No. 1,"script:\q[No. 2,script:There is no 3.]"]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_q_ID__タイトル_または_q_*ID__タイトル_">
-				<dt class="entry">\q[ID][タイトル]または\q*[ID][タイトル]</dt>
+				<dt class="entry">\q[(ID)][(Title)] or \q*[(ID)][(Title)]</dt>
 				<dd class="entry">
-					<p>[旧仕様]選択肢を表示。*は通し番号<br>選択後、ID番号のSHIORIイベントが開始される。<br>上記のものとは違い選択肢は改行される。</p>
+					<p>[Old specification] Show a menu choice. * is a serial number.<br>After selection, the SHIORI event for the ID number will be started.<br>Unlike the above, the choices will be separated by a new line.</p>
 				</dd>
 			</dl>
 			<dl id="_z">
 				<dt class="entry">\z</dt>
 				<dd class="entry">
-					<p>[旧仕様]選択肢を含むスクリプトにおける<a href="#_e">\e</a>。</p>
+					<p>[Old specification] Acts like <a href="#_e">\e</a>, but in scripts that contain menu choices.</p>
 				</dd>
 			</dl>
 			<dl id="___q_ID,..._">
-				<dt class="entry">\__q[ID,...]</dt>
+				<dt class="entry">\__q[(ID),...]</dt>
 				<dd class="entry">
-					<p>\__qがくるまでの範囲を選択肢とする。<br>ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br>実行後に発生するSHIORI Eventも同様。</p>
+					<p>All of the text will be used as a menu choice, up to the next \__q.<br>The ID specification is the same as \q, including the special treatment of IDs that start with "On" or "script:", as well as additional arguments.<br>The specification for which SHIORI event should be run after selection is also the same as \q.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動も可能で、画像を貼れば画像が選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\__q[OnTest,testreference]SakuraScript can be used in this menu choice. \nNewline, \_l[50,50]Cursor movement is also possible, and if you use an image tag, the image will be a clickable choice.\__q In this example, the ID starts with 'On', so the event 'OnTest' is triggered when the selection is made, and 'testreference' is stored in reference0.</code></p>
 						</section>
 					</div>
 				</dd>
