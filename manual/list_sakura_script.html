@@ -1169,14 +1169,14 @@
 				<p>Any of the arguments can be omitted. Additionally, the order may be changed. The specification names may be in either uppercase or lowercase letters (e.g. --x=10 is also acceptable).</p>
 				
 				<p>Old operating method:</p>
-				<p>\![move(async),(X coordinate),(Y coordinate),(movement time),(movement base point),(base point of origin character),(base point of moving character)]</p>
+				<p>\![move(async),(X coordinate),(Y coordinate),(movement time),(origin),(base point of origin character),(base point of moving character)]</p>
 				<p>Arguments after movement time can be omitted.</p>
 				
 				<p><em>X coordinate, Y coordinate</em> specify the coordinates of the goal location.<br>Negative values will also be accepted.<br>If one is either omitted or "fix" is specified, that coordinate will not be changed.<br>"fix" can be used to omit an argument.</p>
 				
 				<p><em>movement time</em> is in milliseconds.<br>If omitted or 0 is specified, the movement will occur instantaneously.<br>0 can be used to omit the argument.</p>
 				
-				<p><em>base position</em> uses characters or other positions to define where the base point for movement is.<br>The possible specification methods are below.<br>screen should be used for omitting the argument.</p>
+				<p><em>origin</em> uses characters or other positions to define where the origin for movement is.<br>The possible specification methods are below.<br>screen should be used for omitting the argument.</p>
 				
 				<dl>
 					<dt>screen</dt>
