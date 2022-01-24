@@ -1172,11 +1172,11 @@
 				<p>\![move(async),(X coordinate),(Y coordinate),(movement time),(origin),(base point of origin character),(base point of moving character)]</p>
 				<p>Arguments after movement time can be omitted.</p>
 				
-				<p><em>X coordinate, Y coordinate</em> specify the coordinates of the goal location.<br>Negative values will also be accepted.<br>If one is either omitted or "fix" is specified, that coordinate will not be changed.<br>"fix" can be used to omit an argument.</p>
+				<p><em>X coordinate, Y coordinate</em> specify the coordinates of the goal location.<br>Negative values will also be accepted.<br>If one is either omitted or "fix" is specified, that coordinate will not be changed.<br>"fix" is the default value.</p>
 				
-				<p><em>movement time</em> is in milliseconds.<br>If omitted or 0 is specified, the movement will occur instantaneously.<br>0 can be used to omit the argument.</p>
+				<p><em>movement time</em> is in milliseconds.<br>If omitted or 0 is specified, the movement will occur instantaneously.<br>0 is the default value.</p>
 				
-				<p><em>origin</em> uses characters or other positions to define where the origin for movement is.<br>The possible specification methods are below.<br>screen should be used for omitting the argument.</p>
+				<p><em>origin</em> uses characters or other positions to define where the origin for movement is.<br>The possible specification methods are below.<br>screen is the default value.</p>
 				
 				<dl>
 					<dt>screen</dt>
@@ -1195,7 +1195,7 @@
 					<dd>The system-defined coordinates will be used. (This is the same as primaryscreen if using Windows.)</dd>
 				</dl>
 				
-				<p><em>base point of origin character</em> defines where the base point will be, in the case that screen or a character was specified in the previous argument.<br>The format is (x coordinate).(y coordinate), and they respectively take one of the following four<br>x coordinate: left,right,base,center<br>y coordinate: top,bottom,base,center<br>and are written as right.base, for example.<br>Furthermore, base will follow the point.basepos defined in surfaces.txt.<br>left.top can be used to omit the argument.</p>
+				<p><em>base point of origin character</em> defines where the origin will be, in the case that screen or a character was specified in the previous argument.<br>The format is (x coordinate).(y coordinate), and they respectively take one of the following four<br>x coordinate: left,right,base,center<br>y coordinate: top,bottom,base,center<br>and are written as right.base, for example.<br>Furthermore, base will follow the point.basepos defined in surfaces.txt.<br>left.top is the default value.</p>
 				
 				<p>When specifying screen, base cannot be used, and when specifying global, right, bottom, and center cannot be used.</p>
 				
@@ -1210,11 +1210,11 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>バルーン、テキストコマンド</h1>
+			<h1>Balloon and Text Commands</h1>
 			<dl id="_b_ID番号_">
-				<dt class="entry">\b[ID番号]</dt>
+				<dt class="entry">\b[(ID number)]</dt>
 				<dd class="entry">
-					<p>現スコープ側のバルーンをID番号のバルーンに変更する。<br>\b[-1]でバルーンを非表示。</p>
+					<p>Changes the balloon of the character that currently has the focus to the balloon of the specified ID number.<br>\b[-1] will hide the balloon.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1222,21 +1222,22 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は推奨バルーンを指定する・専用バルーンを同梱するなどが必要。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\b[2]The main character's dialogue will be displayed on balloon number 2. Some balloons may be implemented differently, so there may also be cases where a balloon with the ID number 2 does not exist. In "SSP Default+", the balloon bundled with SSP, the main character's balloon number 2 is a bigger balloon that displays a large number of characters. However, since different balloons can vary in which ID is what size, it is necessary to specify a recommended balloon or bundle a dedicated balloon when using this command.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y_">
-				<dt class="entry">\_b[ファイルパス,x,y]</dt>
+				<dt class="entry">\_b[(filepath),x,y]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。
-					<br>左上ピクセルの色が透過色となる。
-					<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。
-					<br>※SSPのみファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。
-					<br>※SSPのみ画像URLを指定可能。
-					<br>※SSPのみプラグインフォルダ内のファイルも探索する。</p>
+					<p>Attaches an image in the balloon at the specified XY coordinates. The image will be displayed below any text.
+					<br>The top left pixel of the image will define the color that becomes transparent.
+					<br>'[(folder of the ghost executing the command)]/ghost/master' is the standard folder.
+					<!--TODO: find out what the base64 encoding/exe/dll resource line means-->
+					<br>※In SSP only, instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a>
+					<br>※In SSP only, image URLs can also be specified.
+					<br>※In SSP only, files in plugin folders are also searched.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1244,8 +1245,8 @@
 					</ul>
 					<div class="legend">
 						<section class="code">
-							<h1>記述例</h1>
-							<p><code>\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、バルーン内座標X:50,Y:100に表示する。</code></p>
+							<h1>Usage example</h1>
+							<p><code>\_b[image\test.png,50,100]In the main character's balloon, test.png in the folder '[(folder of the ghost executing the command)]/ghost/master/image' is displayed using its top left pixel as the transparent color, at the balloon coordinates X:50,Y:100.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2314,7 +2315,7 @@
 			<dl id="_q_タイトル,ID_">
 				<dt class="entry">\q[(Title),(ID)]</dt>
 				<dd class="entry">
-					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run. (In SSP only, <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a> will run prior to OnChoiceSelect。<br>The ID is stored in reference0.</p>
+					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run. (In SSP only, <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a> will run prior to OnChoiceSelect.)<br>The ID is stored in reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2364,7 +2365,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>What is your favorite season? \q[Spring,OnLikeSeason,Rain,Budding trees] \q[Summer,OnLikeSeason,Heat,Lush green] \q[Autumn,OnLikeSeason,Breezy,Falling leaves] \q[Winter,OnLikeSeason,Cold,Snowing]. When a choice is selected, the OnChoiceSelectEx event is triggered. The references in OnChoiceSelectEx will vary depending on which choice was selected. For example, if 'Autumn' was selected, reference0 would be 'Autumn', reference1 would be 'OnLikeSeason', reference2 would be 'Breezy', and reference3 would be 'Falling leaves'</code></p>
+							<p><code>What is your favorite season? \q[Spring,OnLikeSeason,Rain,Budding trees] \q[Summer,OnLikeSeason,Heat,Lush green] \q[Autumn,OnLikeSeason,Breezy,Falling leaves] \q[Winter,OnLikeSeason,Cold,Snowing]. When a choice is selected, the OnChoiceSelectEx event is triggered. The references in OnChoiceSelectEx will vary depending on which choice was selected. For example, if 'Autumn' was selected, reference0 would be 'Autumn', reference1 would be 'OnLikeSeason', reference2 would be 'Breezy', and reference3 would be 'Falling leaves'.</code></p>
 						</section>
 					</div>
 				</dd>
