@@ -1164,11 +1164,11 @@
 			<section class="caption" id="notes_move">
 				<h1>Regarding \![move], \![moveasync]</h1>
 				
-				<p>New operating method: (From SSP 2.3.85 onwards)</p>
+				<p>New specification: (From SSP 2.3.85 onwards)</p>
 				<p>\![move(async),--X=(X coordinate),--Y=(Y coordinate),--time=(movement time),--base=(origin),--base-offset=(base point of origin character),--move-offset=(base point of moving character),--option=(options)]</p>
 				<p>Any of the arguments can be omitted. Additionally, the order may be changed. The specification names may be in either uppercase or lowercase letters (e.g. --x=10 is also acceptable).</p>
 				
-				<p>Old operating method:</p>
+				<p>Old specification:</p>
 				<p>\![move(async),(X coordinate),(Y coordinate),(movement time),(origin),(base point of origin character),(base point of moving character)]</p>
 				<p>Arguments after movement time can be omitted.</p>
 				
@@ -1201,7 +1201,7 @@
 				
 				<p><em>base point of moving character</em> is specified in the same way as the base point of origin character.</p>
 				
-				<p><em>options</em> can be specified multiple times. The specification method is given below. Options can only be specified in the new operating method.</p>
+				<p><em>options</em> can be specified multiple times. The specification method is given below. Options can only be used in the new specification.</p>
 				<dl>
 					<dt>ignore-sticky-window</dt>
 					<dd>\![set,sticky-window] is used to ignore joint movement settings and move the character alone.</dd>
@@ -1233,7 +1233,7 @@
 				<dd class="entry">
 					<p>Attaches an image in the balloon at the specified XY coordinates. The image will be displayed below any text.
 					<br>The top left pixel of the image will define the color that becomes transparent.
-					<br>'[(folder of the ghost executing the command)]/ghost/master' is the standard folder.
+					<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.
 					<!--TODO: find out what the base64 encoding/exe/dll resource line means-->
 					<br>※In SSP only, instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a>
 					<br>※In SSP only, image URLs can also be specified.
@@ -1246,44 +1246,44 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_b[image\test.png,50,100]In the main character's balloon, test.png in the folder '[(folder of the ghost executing the command)]/ghost/master/image' is displayed using its top left pixel as the transparent color, at the balloon coordinates X:50,Y:100.</code></p>
+							<p><code>\_b[image\test.png,50,100]In the main character's balloon, test.png in the folder [(folder of the ghost executing the command)]/ghost/master/image is displayed using its top left pixel as the transparent color, at the balloon coordinates X:50,Y:100.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,opaque_">
-				<dt class="entry">\_b[ファイルパス,x,y,opaque]</dt>
+				<dt class="entry">\_b[(filepath),x,y,opaque]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。画像は文字の下に表示される。<br>左上の色を透過しないで表示する。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>Attaches an image in the balloon at the specified XY coordinates. The image will be displayed below any text.<br>The image will be displayed without using the top left pixel as the transparency color.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、[実行したゴーストのフォルダ]/shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
+							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]In the main character's balloon, surface0.png in the folder [(folder of the ghost executing the command)]/shell/master is displayed at the balloon coordinates X:50,Y:15, without any parts becoming transparent.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,オプション,オプション..._">
-				<dt class="entry">\_b[ファイルパス,x,y,オプション,オプション...]</dt>
+				<dt class="entry">\_b[(filepath),x,y,(option),(option)...]</dt>
 				<dd class="entry">
-					<p>画像をバルーンのXY座標に貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
-					<p>オプション</p>
+					<p>Attaches an image in the balloon at the specified XY coordinates.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
+					<p>Options</p>
 					<dl>
 						<dt>--option=opaque</dt>
-						<dd>左上の色を透過しないで表示する。</dd>
+						<dd>Displays the image without using the top left pixel as the transparency color.</dd>
 						<dt>--option=use_self_alpha</dt>
-						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
-						<dt>--clipping=左 上 右 下</dt>
-						<dd>画像の一部分を矩形に切り抜いて表示する。<br>切り抜く範囲は左上右下と数値で指定。</dd>
+						<dd>Displays a PNG using the alpha channel for transparency.</dd>
+						<dt>--clipping=(left) (up) (right) (down)</dt>
+						<dd>Takes part of the picture and clips it as a rectanble shape.<br>The area to be clipped is determined with the values specified for left, up, right, and down.</dd>
 						<dt>--option=fixed</dt>
-						<dd>スクロールした時に画像を動かさない。</dd>
+						<dd>Stops the image from moving when scrolled.</dd>
 						<dt>--option=background</dt>
-						<dd>文字の下に画像を表示する。このオプションで、文字の背景として画像を使用することができる。</dd>
+						<dd>Displays the image below the text. Using this option, the image can be used as a background for the text.</dd>
 						<dt>--option=foreground</dt>
-						<dd>画像を前面に表示する。</dd>
+						<dd>Displays the image in the foreground.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1291,7 +1291,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、バルーン内座標X:10,Y:20に、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
+							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]In the main character's balloon, test.png in the folder [(folder of the ghost executing the command)]/ghost/master is displayed at the balloon coordinates X:10,Y:20, using the transparency information of the file. It will be clipped from the range of 100-150 pixels horizontally and 30-90 pixels vertically, laid over the text.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2495,7 +2495,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_a[CharacterName,Target Teddy,Age Unknown]Teddy\_a was a good guy. You just ate \_a[CharacterName,Target Emily,0x10 years old]Emily's\_a special treat... When the anchor is clicked, OnAnchorSelectEx is run. When 'Teddy' is clicked, 'Teddy' is stored in reference0, 'CharacterName' in reference1, 'Target Teddy' in reference2, and 'Age Unknown' in reference3.</code></p>
+							<p><code>\_a[CharacterName,Target Teddy,Age Unknown]Teddy\_a was such a good guy. But, he ate \_a[CharacterName,Target Emily,0x10 years old]Emily's\_a special treat that she'd been saving, so... When the anchor is clicked, OnAnchorSelectEx is run. When 'Teddy' is clicked, 'Teddy' is stored in reference0, 'CharacterName' in reference1, 'Target Teddy' in reference2, and 'Age Unknown' in reference3.</code></p>
 						</section>
 					</div>
 				</dd>
