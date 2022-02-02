@@ -353,7 +353,9 @@
 			<h1>時計合わせイベント</h1>
 			<ul>
 				<li><a href="#OnSNTPBegin">OnSNTPBegin</a></li>
+				<li><a href="#OnSNTPCompareEx">OnSNTPCompareEx</a></li>
 				<li><a href="#OnSNTPCompare">OnSNTPCompare</a></li>
+				<li><a href="#OnSNTPCorrectEx">OnSNTPCorrectEx</a></li>
 				<li><a href="#OnSNTPCorrect">OnSNTPCorrect</a></li>
 				<li><a href="#OnSNTPFailure">OnSNTPFailure</a></li>
 			</ul>
@@ -3129,6 +3131,27 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnSNTPCompareEx">
+				<dt class="entry">OnSNTPCompareEx</dt>
+				<dd class="entry">
+					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>接続先サーバ名。</dd>
+						<dt>Reference1</dt>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference2</dt>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference3</dt>
+						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dt>Reference4</dt>
+						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnSNTPCompare">
 				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
@@ -3137,18 +3160,39 @@
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
+						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
 						<dt>Reference4</dt>
-						<dd>※SSPのみ　サーバとローカルの時刻のずれ。（ミリ秒単位）</dd>
+						<dd>※SSPのみ　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSNTPCorrectEx">
+				<dt class="entry">OnSNTPCorrectEx</dt>
+				<dd class="entry">
+					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>接続先サーバ名。</dd>
+						<dt>Reference1</dt>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference2</dt>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference3</dt>
+						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dt>Reference4</dt>
+						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
 					</ul>
 				</dd>
 			</dl>
@@ -3160,13 +3204,13 @@
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
+						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
 						<dt>Reference4</dt>
-						<dd>※SSPのみ　サーバとローカルの時刻のずれ。（ミリ秒単位）</dd>
+						<dd>※SSPのみ　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
