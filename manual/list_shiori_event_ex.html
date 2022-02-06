@@ -391,6 +391,17 @@
 				<li><a href="#ShioriEcho.End">ShioriEcho.End</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>Plugin "Weather Station"</h1>
+			<ul>
+				<li><a href="#OnWeatherStation.Weather">OnWeatherStation.Weather</a></li>
+				<li><a href="#OnWeatherStation.Astro">OnWeatherStation.Astro</a></li>
+				<li><a href="#OnWeatherStation.Alerts">OnWeatherStation.Alerts</a></li>
+				<li><a href="#OnWeatherStation.Forecast.Day">OnWeatherStation.Forecast.Day</a></li>
+				<li><a href="#OnWeatherStation.Forecast.Hourly">OnWeatherStation.Forecast.Hourly</a></li>
+				<li><a href="#OnWeatherStation.Error">OnWeatherStation.Error</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<section class="caption">
@@ -2595,6 +2606,562 @@
 					<p>var9の後：通常のプログラムの終了がトリガーされる。</p>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>Plugin "Weather Station"</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://zichqec.github.io/s-the-skeleton/saoris_plugins_tools#weather_station">https://zichqec.github.io/s-the-skeleton/saoris_plugins_tools#weather_station</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnWeatherStation.Weather">
+				<dt class="entry">OnWeatherStation.Weather</dt>
+				<dd class="entry">
+					<p>Sends information about the current weather conditions to all open ghosts. This event occurs every hour, every time another ghost boots, and any time any ghost requests it with \![raiseplugin].</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Weather condition. <a href="#caption_weather_station_conditions">※See below</a> for a list of possible weather conditions.</dd>
+						<dt>Reference1</dt>
+						<dd>Weather condition icon filename. To be used with weatherapi's <a href="https://cdn.weatherapi.com/weather.zip">weather icon pack</a>.</dd>
+						<dt>Reference2</dt>
+						<dd>Weather condition code. <a href="#caption_weather_station_conditions">※See below</a> for a list of possible weather condition codes.</dd>
+						<dt>Reference3</dt>
+						<dd>If it is daytime or not. 1 if the sun is up, 0 if the sun is down.</dd>
+						<dt>Reference4</dt>
+						<dd>Temperature in Fahrenheit.</dd>
+						<dt>Reference5</dt>
+						<dd>Temperature in Celsius.</dd>
+						<dt>Reference6</dt>
+						<dd>"Feels like" temperature in Fahrenheit.</dd>
+						<dt>Reference7</dt>
+						<dd>"Feels like" temperature in Celsius.</dd>
+						<dt>Reference8</dt>
+						<dd>Humidity as a percentage.</dd>
+						<dt>Reference9</dt>
+						<dd>Wind speed in miles per hour.</dd>
+						<dt>Reference10</dt>
+						<dd>Wind speed in kilometers per hour.</dd>
+						<dt>Reference11</dt>
+						<dd>Wind direction as a 16 point compass. (e.g.: NNE for north/northeast.)</dd>
+						<dt>Reference12</dt>
+						<dd>Wind direction in degrees.</dd>
+						<dt>Reference13</dt>
+						<dd>Wind gust speed in miles per hour.</dd>
+						<dt>Reference14</dt>
+						<dd>Wind gust speed in kilometers per hour.</dd>
+						<dt>Reference15</dt>
+						<dd>Precipitation in inches.</dd>
+						<dt>Reference16</dt>
+						<dd>Precipitation in millimeters.</dd>
+						<dt>Reference17</dt>
+						<dd>Cloud cover as a percentage.</dd>
+						<dt>Reference18</dt>
+						<dd>"Will it rain today". 1 for yes, 0 for no. Same information as the "Will it rain today" in OnWeatherStation.Forecast.Day.</dd>
+						<dt>Reference19</dt>
+						<dd>Chance of rain today, as a percentage. Same information as the chance of rain in OnWeatherStation.Forecast.Day.</dd>
+						<dt>Reference20</dt>
+						<dd>"Will it snow today". 1 for yes, 0 for no. Same information as the "Will it snow today" in OnWeatherStation.Forecast.Day.</dd>
+						<dt>Reference21</dt>
+						<dd>Chance of snow today, as a percentage. Same information as the chance of snow in OnWeatherStation.Forecast.Day.</dd>
+						<dt>Reference22</dt>
+						<dd>Visibility in miles.</dd>
+						<dt>Reference23</dt>
+						<dd>Visibility in kilometers.</dd>
+						<dt>Reference24</dt>
+						<dd>Pressure in inches.</dd>
+						<dt>Reference25</dt>
+						<dd>Pressure in millibars.</dd>
+						<dt>Reference26</dt>
+						<dd>UV index.</dd>
+						<dt>Reference27</dt>
+						<dd>CO (Carbon Monoxide) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference28</dt>
+						<dd>O3 (Ozone) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference29</dt>
+						<dd>NO2 (Nitrogen Dioxide) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference30</dt>
+						<dd>SO2 (Sulfur Dioxide) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference31</dt>
+						<dd>PM2.5 (Particulate Matter smaller than 2.5 microns in diameter) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference32</dt>
+						<dd>PM10 (Particulate Matter smaller than 10 microns in diameter) in μg/m3 (Micrograms per cubic meter).</dd>
+						<dt>Reference33</dt>
+						<dd>US EPA index. 1 means Good, 2 means Moderate, 3 means Unhealthy for sensitive group, 4 means Unhealthy, 5 means Very unhealthy, 6 means Hazardous.</dd>
+						<dt>Reference34</dt>
+						<dd>UK Defra Index. <a href="#caption_weather_station_uk_defra_index">※See below</a> for details.</dd>
+						<dt>Reference35</dt>
+						<dd>The time the plugin last updated the weather data, in seconds since EPOCH (1970/1/1 00:00:00).</dd>
+						<dt>Reference36</dt>
+						<dd>The current version number of the plugin.</dd>
+						<dt>Reference37</dt>
+						<dd>The user's choice of units (Imperial or Metric).</dd>
+						<dt>Reference38</dt>
+						<dd>The user's location name. Only available if the user has chosen to share their location data.</dd>
+						<dt>Reference39</dt>
+						<dd>The url for the user's location, to be used with the API. Only available if the user has chosen to share their location data.</dd>
+						<dt>Reference40</dt>
+						<dd>The user's latitude. Only available if the user has chosen to share their location data.</dd>
+						<dt>Reference41</dt>
+						<dd>The user's longitude. Only available if the user has chosen to share their location data.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnWeatherStation.Astro">
+				<dt class="entry">OnWeatherStation.Astro</dt>
+				<dd class="entry">
+					<p>Sends information about the sun and moon to all open ghosts. Must be called with \![raiseplugin]. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The day the following information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.</dd>
+						<dt>Reference1</dt>
+						<dd>Sunrise time, given as 12 hour time with the format ##:## *M</dd>
+						<dt>Reference2</dt>
+						<dd>Sunset time, given as 12 hour time with the format ##:## *M</dd>
+						<dt>Reference3</dt>
+						<dd>Moonrise time, given as 12 hour time with the format ##:## *M</dd>
+						<dt>Reference4</dt>
+						<dd>Moonset time, given as 12 hour time with the format ##:## *M</dd>
+						<dt>Reference5</dt>
+						<dd>Sunrise time, given as 24 hour time with the format ##:##</dd>
+						<dt>Reference6</dt>
+						<dd>Sunset time, given as 24 hour time with the format ##:##</dd>
+						<dt>Reference7</dt>
+						<dd>Moonrise time, given as 24 hour time with the format ##:##</dd>
+						<dt>Reference8</dt>
+						<dd>Moonset time, given as 24 hour time with the format ##:##</dd>
+						<dt>Reference9</dt>
+						<dd>Moon phase as a string. Can be "New Moon", "Waxing Crescent". "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".</dd>
+						<dt>Reference10</dt>
+						<dd>Moon phase number. Numbers correspond to the following phases.
+						<dl>
+						<dd>0 - New Moon</dd>
+						<dd>1 - Waxing Crescent</dd>
+						<dd>2 - First Quarter</dd>
+						<dd>3 - Waxing Gibbous</dd>
+						<dd>4 - Full Moon</dd>
+						<dd>5 - Waning Gibbous</dd>
+						<dd>6 - Last Quarter</dd>
+						<dd>7 - Waning Crescent</dd>
+						</dl>
+						</dd>
+						<dt>Reference11</dt>
+						<dd>Moon illumination as a percentage.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnWeatherStation.Alerts">
+				<dt class="entry">OnWeatherStation.Alerts</dt>
+				<dd class="entry">
+					<p>Sends information about weather alerts to all open ghosts. Must be called with \![raiseplugin]. Will return nothing if there are no alerts.</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>An array containing information for a weather alert. Some elements may not be filled. Elements are separated by a 1 byte value.
+						<dl>
+						<!--I have no idea what a lot of these mean! If anyone else knows please feel free to detail it.-->
+						<dd>[0] - Headline</dd>
+						<dd>[1] - Type of alert</dd>
+						<dd>[2] - Severity</dd>
+						<dd>[3] - Urgency</dd>
+						<dd>[4] - Areas covered</dd>
+						<dd>[5] - Category</dd>
+						<dd>[6] - Certainty</dd>
+						<dd>[7] - Event</dd>
+						<dd>[8] - Note</dd>
+						<dd>[9] - Effective time</dd>
+						<dd>[10] - Expires time</dd>
+						<dd>[11] - Description</dd>
+						<dd>[12] - Instructions</dd>
+						</dl>
+						</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnWeatherStation.Forecast.Day">
+				<dt class="entry">OnWeatherStation.Forecast.Day</dt>
+				<dd class="entry">
+					<p>Sends information about the overall forecast for a day to all open ghosts. Must be called with \![raiseplugin]. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The day the following information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.</dd>
+						<dt>Reference1</dt>
+						<dd>Maximum temperature for the day, in Fahrenheit.</dd>
+						<dt>Reference2</dt>
+						<dd>Maximum temperature for the day, in Celsius.</dd>
+						<dt>Reference3</dt>
+						<dd>Minimum temperature for the day, in Fahrenheit.</dd>
+						<dt>Reference4</dt>
+						<dd>Minimum temperature for the day, in Celsius.</dd>
+						<dt>Reference5</dt>
+						<dd>Average temperature for the day, in Fahrenheit.</dd>
+						<dt>Reference6</dt>
+						<dd>Average temperature for the day, in Celsius.</dd>
+						<dt>Reference7</dt>
+						<dd>Average humidity for the day, as a percentage.</dd>
+						<dt>Reference8</dt>
+						<dd>Maximum windspeed for the day, in mph.</dd>
+						<dt>Reference9</dt>
+						<dd>Maximum windspeed for the day, in kph.</dd>
+						<dt>Reference10</dt>
+						<dd>Total precipitation for the day, in inches.</dd>
+						<dt>Reference11</dt>
+						<dd>Total precipitation for the day, in millimeters.</dd>
+						<dt>Reference12</dt>
+						<dd>"Will it rain this day", 1 if yes, 0 if no.</dd>
+						<dt>Reference13</dt>
+						<dd>Chance that it will rain this day, as a percentage.</dd>
+						<dt>Reference14</dt>
+						<dd>"Will it snow this day", 1 if yes, 0 if no.</dd>
+						<dt>Reference15</dt>
+						<dd>Chance that it will snow this day, as a percentage.</dd>
+						<dt>Reference16</dt>
+						<dd>Average visiblity for the day, in miles.</dd>
+						<dt>Reference17</dt>
+						<dd>Average visiblity for the day, in kilometers.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnWeatherStation.Forecast.Hourly">
+				<dt class="entry">OnWeatherStation.Forecast.Hourly</dt>
+				<dd class="entry">
+					<p>Sends information about the hour-by-hour forecast for a day to all open ghosts. Must be called with \![raiseplugin]. An additional argument can be sent to specify which day's data should be sent. 0 for today, 1 for tomorrow, 2 for the day after tomorrow. If no argument is given, it will default to today.</p>
+					<dl class="reference">
+						<dt>Reference0～23</dt>
+						<dd>A comma separated array containing forecast information. The number of the reference corresponds to the number of the hour the data is for, in 24 hour time (e.g.: reference0 is for 00:00/12AM, reference14 is for 14:00/2PM).
+						<dl>
+							<dd>[0] - Date and time the information is for.</dd>
+							<dd>[1] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.</dd>
+							<dd>[2] - Temperature in Fahrenheit.</dd>
+							<dd>[3] - Temperature in Celsius.</dd>
+							<dd>[4] - "Feels like" temperature in Fahrenheit.</dd>
+							<dd>[5] - "Feels like" temperature in Celsius.</dd>
+							<dd>[6] - Humidity as a percentage.</dd>
+							<dd>[7] - Wind speed in miles per hour.</dd>
+							<dd>[8] - Wind speed in kilometers per hour.</dd>
+							<dd>[9] - Wind direction as a 16 point compass (e.g.: NNW for north/northwest).</dd>
+							<dd>[10] - Wind direction in degrees.</dd>
+							<dd>[11] - Wind gusts in miles per hour.</dd>
+							<dd>[12] - Wind gusts in kilometers per hour.</dd>
+							<dd>[13] - Precipitation in inches.</dd>
+							<dd>[14] - Precipitation in millimeters.</dd>
+							<dd>[15] - Cloud cover as a percentage.</dd>
+							<dd>[16] - "Will it rain", 1 if yes, 0 if no.</dd>
+							<dd>[17] - Chance of rain as a percentage.</dd>
+							<dd>[18] - "Will it snow", 1 if yes, 0 if no.</dd>
+							<dd>[19] - Chance of snow as a percentage.</dd>
+							<dd>[20] - Visibility in miles.</dd>
+							<dd>[21] - Visibility in kilometers.</dd>
+							<dd>[22] - Wind chill in Fahrenheit.</dd>
+							<dd>[23] - Wind chill in Celsius.</dd>
+							<dd>[24] - Heat index in Fahrenheit.</dd>
+							<dd>[25] - Heat index in Celsius.</dd>
+							<dd>[26] - Dew point in Fahrenheit.</dd>
+							<dd>[27] - Dew point in Celsius.</dd>
+							<dd>[28] - Pressure in inches.</dd>
+							<dd>[29] - Pressure in millibars.</dd>
+							<dd>[30] - UV index.</dd>
+						</dl>
+						</dd>
+						<dt>Reference24</dt>
+						<dd>The day the preceding information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnWeatherStation.Error">
+				<dt class="entry">OnWeatherStation.Error</dt>
+				<dd class="entry">
+					<p>Sends error information to all open ghosts. This event is sent in place of the previous events if there is an error of any kind.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The error message. <a href="#caption_weather_station_errors">※See below</a> for possible error messages.</dd>
+						<dt>Reference1</dt>
+						<dd>A more descriptive error message, provided by weatherapi.com. <em>These error messages do not match the online documentation for weatherapi and should not be used for identifying errors.</em></dd>
+						<dt>Reference2</dt>
+						<dd>The error code, as listed on weatherapi.com's documentation.</dd>
+						<dt>Reference3</dt>
+						<dd>The time the plugin last attempted to update the weather data, in seconds since EPOCH (1970/1/1 00:00:00).</dd>
+						<dt>Reference4</dt>
+						<dd>The current version number of the plugin.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<div class="caption" id="caption_weather_station_conditions">
+				<h1>Weather Condition & Code List</h1>
+				<p>A list of conditions can be downloaded from <a href="https://www.weatherapi.com/docs/">weatherapi's documentation page</a>. This list is also available in other languages, but information from the plugin will always be sent in english.</p>
+				<dl>
+					<dt>1000</dt>
+					<dd>
+						Sunny (If the sun is down, it will be "Clear" instead.)
+					</dd>
+					<dt>1003</dt>
+					<dd>
+						Partly cloudy
+					</dd>
+					<dt>1006</dt>
+					<dd>
+						Cloudy
+					</dd>
+					<dt>1009</dt>
+					<dd>
+						Overcast
+					</dd>
+					<dt>1030</dt>
+					<dd>
+						Mist
+					</dd>
+					<dt>1063</dt>
+					<dd>
+						Patchy rain possible
+					</dd>
+					<dt>1066</dt>
+					<dd>
+						Patchy snow possible
+					</dd>
+					<dt>1069</dt>
+					<dd>
+						Patchy sleet possible
+					</dd>
+					<dt>1072</dt>
+					<dd>
+						Patchy freezing drizzle possible
+					</dd>
+					<dt>1087</dt>
+					<dd>
+						Thundery outbreaks possible
+					</dd>
+					<dt>1114</dt>
+					<dd>
+						Blowing snow
+					</dd>
+					<dt>1117</dt>
+					<dd>
+						Blizzard
+					</dd>
+					<dt>1135</dt>
+					<dd>
+						Fog
+					</dd>
+					<dt>1147</dt>
+					<dd>
+						Freezing fog
+					</dd>
+					<dt>1150</dt>
+					<dd>
+						Patchy light drizzle
+					</dd>
+					<dt>1153</dt>
+					<dd>
+						Light drizzle
+					</dd>
+					<dt>1168</dt>
+					<dd>
+						Freezing drizzle
+					</dd>
+					<dt>1171</dt>
+					<dd>
+						Heavy freezing drizzle
+					</dd>
+					<dt>1180</dt>
+					<dd>
+						Patchy light rain
+					</dd>
+					<dt>1183</dt>
+					<dd>
+						Light rain
+					</dd>
+					<dt>1186</dt>
+					<dd>
+						Moderate rain at times
+					</dd>
+					<dt>1189</dt>
+					<dd>
+						Moderate rain
+					</dd>
+					<dt>1192</dt>
+					<dd>
+						Heavy rain at times
+					</dd>
+					<dt>1195</dt>
+					<dd>
+						Heavy rain
+					</dd>
+					<dt>1198</dt>
+					<dd>
+						Light freezing rain
+					</dd>
+					<dt>1201</dt>
+					<dd>
+						Moderate or heavy freezing rain
+					</dd>
+					<dt>1204</dt>
+					<dd>
+						Light sleet
+					</dd>
+					<dt>1207</dt>
+					<dd>
+						Moderate or heavy sleet
+					</dd>
+					<dt>1210</dt>
+					<dd>
+						Patchy light snow
+					</dd>
+					<dt>1213</dt>
+					<dd>
+						Light snow
+					</dd>
+					<dt>1216</dt>
+					<dd>
+						Patchy moderate snow
+					</dd>
+					<dt>1219</dt>
+					<dd>
+						Moderate snow
+					</dd>
+					<dt>1222</dt>
+					<dd>
+						Patchy heavy snow
+					</dd>
+					<dt>1225</dt>
+					<dd>
+						Heavy snow
+					</dd>
+					<dt>1237</dt>
+					<dd>
+						Ice pellets
+					</dd>
+					<dt>1240</dt>
+					<dd>
+						Light rain shower
+					</dd>
+					<dt>1243</dt>
+					<dd>
+						Moderate or heavy rain shower
+					</dd>
+					<dt>1246</dt>
+					<dd>
+						Torrential rain shower
+					</dd>
+					<dt>1249</dt>
+					<dd>
+						Light sleet showers
+					</dd>
+					<dt>1252</dt>
+					<dd>
+						Moderate or heavy sleet showers
+					</dd>
+					<dt>1255</dt>
+					<dd>
+						Light snow showers
+					</dd>
+					<dt>1258</dt>
+					<dd>
+						Moderate or heavy snow showers
+					</dd>
+					<dt>1261</dt>
+					<dd>
+						Light showers of ice pellets
+					</dd>
+					<dt>1264</dt>
+					<dd>
+						Moderate or heavy showers of ice pellets
+					</dd>
+					<dt>1273</dt>
+					<dd>
+						Patchy light rain with thunder
+					</dd>
+					<dt>1276</dt>
+					<dd>
+						Moderate or heavy rain with thunder
+					</dd>
+					<dt>1279</dt>
+					<dd>
+						Patchy light snow with thunder
+					</dd>
+					<dt>1282</dt>
+					<dd>
+						Moderate or heavy snow with thunder
+					</dd>
+				</dl>
+			</div>
+			<div class="caption" id="caption_weather_station_uk_defra_index">
+				<h1>UK Defra Index reference</h1>
+				<dl>
+					<table align="center" border=1px>
+						<tr>
+							<th>Index</th>
+							<td>1</td>
+							<td>2</td>
+							<td>3</td>
+							<td>4</td>
+							<td>5</td>
+							<td>6</td>
+							<td>7</td>
+							<td>8</td>
+							<td>9</td>
+							<td>10</td>
+						</tr>
+						<tr>
+							<th>Band</th>
+							<td>Low</td>
+							<td>Low</td>
+							<td>Low</td>
+							<td>Moderate</td>
+							<td>Moderate</td>
+							<td>Moderate</td>
+							<td>High</td>
+							<td>High</td>
+							<td>High</td>
+							<td>Very High</td>
+						</tr>
+						<tr>
+							<th>µgm-3</th>
+							<td>0-11</td>
+							<td>12-23</td>
+							<td>24-35</td>
+							<td>36-41</td>
+							<td>42-47</td>
+							<td>48-53</td>
+							<td>54-58</td>
+							<td>59-64</td>
+							<td>65-70</td>
+							<td>71 or more</td>
+						</tr>
+					</table>
+				</dl>
+			</div>
+			<div class="caption" id="caption_weather_station_errors">
+				<h1>Reason for Error</h1>
+				<dl>
+					<dt>no_location</dt>
+					<dd>
+						The user has not added their location, or has removed it.
+					</dd>
+					<dt>location_invalid</dt>
+					<dd>
+						The user's location is invalid and data cannot be gathered.
+					</dd>
+					<dt>api_quota_exceeded</dt>
+					<dd>
+						The 1 million free API calls per month has been exceeded.
+					</dd>
+					<dt>api_key_disabled</dt>
+					<dd>
+						The API key has been disabled by the plugin developer. Please check if a plugin update is available to provide a new key.
+					</dd>
+					<dt>api_internal_error</dt>
+					<dd>
+						The API responded with an internal error.
+					</dd>
+					<dt>no_api_response</dt>
+					<dd>
+						The API did not respond, or the SAORI used by the plugin failed to work.
+					</dd>
+					<dt>other</dt>
+					<dd>
+						Any other error sent by the API. reference1 will have the error message provided by the API.
+					</dd>
+				</dl>
+			</div>
 		</section>
 	</div>
 </body>

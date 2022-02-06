@@ -97,7 +97,7 @@
 					<td>
 						<ul>
 							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
-							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event (External)</a></li>
 							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
 						</ul>
 					</td>
@@ -118,7 +118,7 @@
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
 							<li><a href="./spec_sstp.html">SSTP/1.x</a></li>
-							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a> (External site)</li>
 							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
@@ -133,70 +133,70 @@
 		<h1>さくらスクリプト</h1>
 		<section class="navigation-category">
 			<ul>
-				<li class="caption"><a href="#notes_escape">さくらスクリプトのエスケープ</a></li>
-				<li class="caption"><a href="#notes_lifespan">さくらスクリプトの寿命</a></li>
+				<li class="caption"><a href="#notes_escape">Escaping SakuraScript</a></li>
+				<li class="caption"><a href="#notes_lifespan">SakuraScript Lifespan</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>スコープコマンド</h1>
+			<h1>Character Commands</h1>
 			<ul>
-				<li><a href="#_0もしくは_h">\0もしくは\h</a></li>
-				<li><a href="#_1もしくは_u">\1もしくは\u</a></li>
-				<li><a href="#_p_ID番号_">\p[ID番号]</a></li>
+				<li><a href="#_0もしくは_h">\0 or \h</a></li>
+				<li><a href="#_1もしくは_u">\1 or \u</a></li>
+				<li><a href="#_p_ID番号_">\p[(ID number)]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>サーフェスコマンド</h1>
 			<ul>
-				<li><a href="#_sID番号">\sID番号</a></li>
-				<li><a href="#_s_ID番号_">\s[ID番号]</a></li>
-				<li><a href="#_i_ID番号_">\i[ID番号]</a></li>
+				<li><a href="#_sID番号">\s(ID number)</a></li>
+				<li><a href="#_s_ID番号_">\s[(ID number)]</a></li>
+				<li><a href="#_i_ID番号_">\i[(ID number)]</a></li>
 				<li><a href="#_i_ID,wait_">\i[ID,wait]</a></li>
 				<li><a href="#_!_anim,clear,ID_">\![anim,clear,ID]</a></li>
 				<li><a href="#_!_anim,pauseID_">\![anim,pauseID]</a></li>
 				<li><a href="#_!_anim,resume,ID_">\![anim,resume,ID]</a></li>
-				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,ID,x座標,y座標]</a></li>
+				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,ID,(x coordinate),(y coordinate)]</a></li>
 				<li><a href="#_!_anim,add,overlay,ID_">\![anim,add,overlay,ID]</a></li>
 				<li><a href="#_!_anim,stop_">\![anim,stop]</a></li>
-				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]</a></li>
+				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,x,y,(width),(height),(string),(display time),r,g,b,(font size),(character identifier)]</a></li>
 				<li><a href="#___w_animation,ID_">\__w[animation,ID]</a></li>
-				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a></li>
+				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,(category name),(part name),(value)]</a></li>
 				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
 				<li><a href="#_!_unlock,repaint_">\![unlock,repaint]</a></li>
-				<li><a href="#_!_set,alignmentondesktop,bottomまたはtop_">\![set,alignmentondesktop,bottomまたはtop]</a></li>
+				<li><a href="#_!_set,alignmentondesktop,bottomまたはtop_">\![set,alignmentondesktop,(bottom or top)]</a></li>
 				<li><a href="#_!_set,alignmenttodesktop,free_">\![set,alignmenttodesktop,free]</a></li>
-				<li><a href="#_!_set,alignmenttodesktop,方向_">\![set,alignmenttodesktop,方向]</a></li>
-				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
-				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,横倍率,縦倍率]</a></li>
-				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
-				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値]</a></li>
-				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,プラグイン名,速度倍率,パラメータ]</a></li>
-				<li><a href="#_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]</a></li>
-				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
+				<li><a href="#_!_set,alignmenttodesktop,方向_">\![set,alignmenttodesktop,(direction)]</a></li>
+				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,(scaling factor)]</a></li>
+				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,(horizontal scaling factor),(vertical scaling factor)]</a></li>
+				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,(horizontal scaling factor),(vertical scaling factor),(change time)]</a></li>
+				<li><a href="#_!_set,alpha,数値_">\![set,alpha,(value)]</a></li>
+				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,(plugin name),(speed scaling),(parameter)]</a></li>
+				<li><a href="#_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">\![effect2,(additional surface ID),(plugin name),(speed scaling),(parameter)]</a></li>
+				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,(plugin name),(startup time),(parameter)]</a></li>
 				<li><a href="#_!_filter_">\![filter]</a></li>
 				<li><a href="#_4">\4</a></li>
 				<li><a href="#_5">\5</a></li>
 				<li><a href="#_!_move_">\![move]</a></li>
 				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
-				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,スコープID]</a></li>
+				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,(character ID)]</a></li>
 				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
-				<li><a href="#_!_set,zorder,スコープID,スコープID,_">\![set,zorder,スコープID,スコープID,...]</a></li>
+				<li><a href="#_!_set,zorder,スコープID,スコープID,_">\![set,zorder,(character ID),(character ID),...]</a></li>
 				<li><a href="#_!_reset,zorder_">\![reset,zorder]</a></li>
-				<li><a href="#_!_set,sticky-window,スコープID,スコープID,_">\![set,sticky-window,スコープID,スコープID,...]</a></li>
+				<li><a href="#_!_set,sticky-window,スコープID,スコープID,_">\![set,sticky-window,(character ID),(character ID),...]</a></li>
 				<li><a href="#_!_reset,sticky-window_">\![reset,sticky-window]</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
-				<li class="caption"><a href="#notes_move">\![move]、\![moveasync]について</a></li>
+				<li class="caption"><a href="#notes_move">Regarding \![move], \![moveasync]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>バルーン、テキストコマンド</h1>
+			<h1>Balloon and Text Commands</h1>
 			<ul>
-				<li><a href="#_b_ID番号_">\b[ID番号]</a></li>
-				<li><a href="#__b_ファイル名,x,y_">\_b[ファイルパス,x,y]</a></li>
-				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[ファイルパス,x,y,opaque]</a></li>
-				<li><a href="#__b_ファイル名,x,y,オプション,オプション..._">\_b[ファイルパス,x,y,オプション,オプション...]</a></li>
+				<li><a href="#_b_ID番号_">\b[(ID number)]</a></li>
+				<li><a href="#__b_ファイル名,x,y_">\_b[(filepath),x,y]</a></li>
+				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[(filepath),x,y,opaque]</a></li>
+				<li><a href="#__b_ファイル名,x,y,オプション,オプション..._">\_b[(filepath),x,y,(option),(option)...]</a></li>
 				<li><a href="#__b_ファイル名,inline_">\_b[ファイルパス,inline]</a></li>
 				<li><a href="#__b_ファイル名,inline,opaque_">\_b[ファイルパス,inline,opaque]</a></li>
 				<li><a href="#__b_ファイル名,inline,オプション,オプション..._">\_b[ファイルパス,inline,オプション,オプション...]</a></li>
@@ -275,21 +275,21 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>選択肢コマンド</h1>
+			<h1>Choice commands</h1>
 			<ul>
-				<li><a href="#_q_タイトル,ID_">\q[タイトル,ID]</a></li>
-				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[タイトル,OnID,r0,r1,...]</a></li>
-				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[タイトル,ID1,ID2,ID3...]</a></li>
-				<li><a href="#_q_タイトル,ID,r2,r3..._">\q[タイトル,ID,r2,r3...]</a></li>
-				<li><a href="#_q_タイトル,script:実行内容_">\q[タイトル,script:実行内容]</a></li>
-				<li><a href="#_q_ID__タイトル_または_q_*ID__タイトル_">\q[ID][タイトル]または\q*[ID][タイトル]</a></li>
+				<li><a href="#_q_タイトル,ID_">\q[(Title),(ID)]</a></li>
+				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[(Title),On(ID),(r0),(r1),...]</a></li>
+				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[(Title),(ID1),(ID2),(ID3),...]</a></li>
+				<li><a href="#_q_タイトル,ID,r2,r3..._">\q[(Title),(ID),(r2),(r3),...]</a></li>
+				<li><a href="#_q_タイトル,script:実行内容_">\q[(Title),script:(script to execute)]</a></li>
+				<li><a href="#_q_ID__タイトル_または_q_*ID__タイトル_">\q[(ID)][(Title)] or \q*[(ID)][(Title)]</a></li>
 				<li><a href="#_z">\z</a></li>
-				<li><a href="#___q_ID,..._">\__q[ID,...]</a></li>
+				<li><a href="#___q_ID,..._">\__q[(ID),...]</a></li>
 				<li><a href="#_*">\*</a></li>
-				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,時間]</a></li>
-				<li><a href="#__a_ID_">\_a[ID]</a></li>
-				<li><a href="#__a_OnID,r0,r1..._">\_a[OnID,r0,r1...]</a></li>
-				<li><a href="#__a_ID,r2,r3..._">\_a[ID,r2,r3...]</a></li>
+				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,(Time)]</a></li>
+				<li><a href="#__a_ID_">\_a[(ID)]</a></li>
+				<li><a href="#__a_OnID,r0,r1..._">\_a[On(ID),(r0),(r1),...]</a></li>
+				<li><a href="#__a_ID,r2,r3..._">\_a[(ID),(r2),(r3),...]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -2495,7 +2495,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_a[CharacterName,Target Teddy,Age Unknown]Teddy\_a was such a good guy. But, he ate \_a[CharacterName,Target Emily,0x10 years old]Emily's\_a special treat that she'd been saving, so... When the anchor is clicked, OnAnchorSelectEx is run. When 'Teddy' is clicked, 'Teddy' is stored in reference0, 'CharacterName' in reference1, 'Target Teddy' in reference2, and 'Age Unknown' in reference3.</code></p>
+							<p><code>\_a[CharacterName,Target Teddy,Age Unknown]Teddy\_a was such a good guy. But, he ate \_a[CharacterName,Target Emily,0x10 years old]Emily's\_a special treat that she'd been saving, so... When an anchor is clicked, OnAnchorSelectEx is run. If 'Teddy' is clicked, 'Teddy' is stored in reference0, 'CharacterName' in reference1, 'Target Teddy' in reference2, and 'Age Unknown' in reference3.</code></p>
 						</section>
 					</div>
 				</dd>
