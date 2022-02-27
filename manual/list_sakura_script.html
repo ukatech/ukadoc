@@ -3901,8 +3901,14 @@
 			<dl id="_!_open,explorer,パラメータ_">
 				<dt class="entry">\![open,explorer,ファイル]</dt>
 				<dd class="entry">
-					<p>本体で設定されたファイラーを指定ファイルつきで開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					<p>本体で設定されたファイラーを指定ファイルつきで開く。
+					<br />オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					
 					<p>ファイラーの指定がない場合は、指定されたものがフォルダの場合はそれを開き、ファイルの場合はエクスプローラ上で指定ファイルを選択した状態になる。</p>
+					
+					<p>\![open,explorer,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、開くフォルダを種類と名前で指定できる。
+					<br />例：\![open,explorer,ghost,Emily/Phase4]</p>
+
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
 					</ul>
@@ -4305,7 +4311,9 @@
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p>readme.txtを開く。<br>起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
+					<p>readme.txtを開く。
+					<br />何も指定しな場合、起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。
+					<br />\![open,readme,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、指定したreadmeが開く。例：\![open,readme,ghost,Emily/Phase4]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
