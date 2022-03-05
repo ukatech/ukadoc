@@ -1277,7 +1277,7 @@
 						<dt>--option=use_self_alpha</dt>
 						<dd>Displays a PNG using the alpha channel for transparency.</dd>
 						<dt>--clipping=(left) (up) (right) (down)</dt>
-						<dd>Takes part of the picture and clips it as a rectanble shape.<br>The area to be clipped is determined with the values specified for left, up, right, and down.</dd>
+						<dd>Takes part of the picture and clips it as a rectangle shape.<br>The area to be clipped is determined with the values specified for left, up, right, and down.</dd>
 						<dt>--option=fixed</dt>
 						<dd>Stops the image from moving when scrolled.</dd>
 						<dt>--option=background</dt>
@@ -1297,52 +1297,52 @@
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline_">
-				<dt class="entry">\_b[ファイルパス,inline]</dt>
+				<dt class="entry">\_b[(filepath),inline]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>Attaches an image in the balloon, treating it as a letter in a line of text.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
+							<p><code>In the main character's balloon, \_b[test.png,inline] test.png in the folder [(folder of the ghost executing the command)]/ghost/master is displayed as a letter in the current balloon's text, using its top left pixel as the transparent color.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline,opaque_">
-				<dt class="entry">\_b[ファイルパス,inline,opaque]</dt>
+				<dt class="entry">\_b[(filepath),inline,opaque]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>左上の色を透過しないで表示する。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
+					<p>Attaches an image in the balloon, treating it as a letter in a line of text.<br>The image will be displayed without using the top left pixel as the transparency color.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード(文字列化)した画像データを、透過せずに表示する。</code></p>
+							<p><code>In the main character's balloon, \_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque] base64 encoded image data is displayed in the same way as a letter, without becoming transparent.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline,オプション,オプション..._">
-				<dt class="entry">\_b[ファイルパス,inline,オプション,オプション...]</dt>
+				<dt class="entry">\_b[(filepath),inline,(option),(option)...]</dt>
 				<dd class="entry">
-					<p>バルーンのテキスト行内に1文字分扱いとして画像を貼り付ける。<br>[実行したゴーストのフォルダ]/ghost/masterが基準のフォルダとなる。<br>※ファイル名の代わりにbase64エンコードやexe/dllのリソースを画像として指定可能、<a href="#notes_imageresource">※下記参照</a>。</p>
-					<p>オプション</p>
+					<p>Attaches an image in the balloon, treating it as a letter in a line of text.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※下Refer to the section below</a></p>
+					<p>Options</p>
 					<dl>
 						<dt>--option=opaque</dt>
-						<dd>左上の色を透過しないで表示する。</dd>
+						<dd>Displays the image without using the top left pixel as the transparency color.</dd>
 						<dt>--option=use_self_alpha</dt>
-						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
-						<dt>--clipping=左 上 右 下</dt>
-						<dd>画像の一部分を矩形に切り抜いて表示する。<br>切り抜く範囲は左上右下と数値で指定。</dd>
+						<dd>Displays a PNG using the alpha channel for transparency.</dd>
+						<dt>--clipping=(left) (up) (right) (down)</dt>
+						<dd>Takes part of the picture and clips it as a rectangle shape.<br>The area to be clipped is determined with the values specified for left, up, right, and down.</dd>
 					</dl>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を表示する。</code></p>
+							<p><code>In the main character's balloon, \_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90] test.png in the folder [(folder of the ghost executing the command)]/ghost/master is clipped from the range of 100-150 pixels horizontally and 30-90 pixels vertically, and displayed as a letter using the alpha channel for transparency.</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
@@ -1354,7 +1354,7 @@
 			<dl id="_n">
 				<dt class="entry">\n</dt>
 				<dd class="entry">
-					<p>バルーン内の文字を改行。</p>
+					<p>Inserts a line break in the text in a balloon.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1363,7 +1363,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>文章が\n改行されて表示される。</code></p>
+							<p><code>This sentence\nis displayed with a line break halfway through.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1371,7 +1371,7 @@
 			<dl id="_n_half_">
 				<dt class="entry">\n[half]</dt>
 				<dd class="entry">
-					<p>通常の半分の高さで改行。</p>
+					<p>Inserts a line break of half of the normal height.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1380,15 +1380,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>文章が\n[half]半行改行されて表示される。\n\n[half]1行半の改行をすることで段落のような表現が出来る。</code></p>
+							<p><code>This sentence is\n[half]displayed with a half height line break halfway through.\n\n[half]Using one and a half height line breaks, a paragraph-like format can be achieved.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_n_パーセント_">
-				<dt class="entry">\n[パーセント]</dt>
+				<dt class="entry">\n[(percent)]</dt>
 				<dd class="entry">
-					<p>通常のパーセント分改行する。負の値を指定すると戻る　※SSP 2.3.97より。</p>
+					<p>Inserts a line break of the size specified in percentage relative to the normal height. Specifying a negative value will cause the following text to return upwards.　※From SSP 2.3.97 onwards</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -1396,8 +1396,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>文章が\n[150]1行半改行されて表示される。</code></p>
-							<p><code>文章が\n[-250]2行半分戻る。</code></p>
+							<p><code>This sentence is\n[150]displayed with a one and a half height line break halfway through.</code></p>
+							<p><code>This sentence\n[-250]goes back up by two and a half lines.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1405,7 +1405,7 @@
 			<dl id="__n">
 				<dt class="entry">\_n</dt>
 				<dd class="entry">
-					<p>次の\_nがくるまで自動改行されない。</p>
+					<p>Until the next \_n, there will be no automatic line breaks.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1413,7 +1413,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_nここに書かれた文章は改行されない。バルーンの表示領域を超えた場合は、表示されない。\_n</code></p>
+							<p><code>\_nThe sentence written here will not have any line breaks. If it goes out of the balloon's text area, it will not be displayed.\_n</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1421,7 +1421,7 @@
 			<dl id="_c">
 				<dt class="entry">\c</dt>
 				<dd class="entry">
-					<p>現スコープ側のバルーン内の文字をクリア。</p>
+					<p>Clears the text in the balloon of the character that is currently the focus.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1430,37 +1430,37 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上(初期位置)から表示する。</code></p>
+							<p><code>\1This sentence is displayed by the side character.\0This sentence is displayed by the main character. The text in the balloon of the character that is currently the focus will all be cleared.\cAny text that comes afterwards will start from the top left (the initial setting).</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_c_char,数値_">
-				<dt class="entry">\c[char,数値]</dt>
+				<dt class="entry">\c[char,(value)]</dt>
 				<dd class="entry">
-					<p>現スコープ側のカーソル位置から指定文字数をクリア。クリアされる文字は、バルーン表示位置に関係なく、スクリプト内の出現順が参照される。\_b[ファイルパス,inline]で貼り付けた画像は1文字扱いとなりクリアされる。</p>
+					<p>Deletes the specified number of characters, starting from the cursor position in the balloon of the character that is currently the focus. Which characters are deleted is based on their order in the script, rather than their position in the balloon. Images attached using \_b[(filepath),inline] will be considered one character each and deleted as such.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>トークを3文字削除\c[char,3]削除終了。</code></p>
+							<p><code>Three characters of this dialogue will be deleted.\c[char,3]Deletion has been completed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_c_char,数値,開始位置_">
-				<dt class="entry">\c[char,数値,開始位置]</dt>
+				<dt class="entry">\c[char,(value),(starting point)]</dt>
 				<dd class="entry">
-					<p>現スコープ側の指定位置から指定文字数をクリア。開始位置は0オリジン(1文字目なら0、2文字目なら1)。クリアされる文字の判定は\c[char,数値]と同じ。</p>
+					<p>Deletes the specified number of characters from the starting point, in the balloon of the character that is currently the focus. The starting point origin is 0 (the first character is 0, the second character is 1). Characters to be deleted are evaluated in the same way as \c[char,(value)].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>トークの5文字目から、3文字削除\c[char,3,4]削除終了。</code></p>
+							<p><code>Three characters of this dialogue will be deleted, starting from the 5th character.\c[char,3,4]Deletion has been completed.</code></p>
 						</section>
 					</div>
 				</dd>
