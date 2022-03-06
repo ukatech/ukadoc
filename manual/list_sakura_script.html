@@ -433,6 +433,8 @@
 				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
 				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
 				<li><a href="#_!_open,aigraph_">\![open,aigraph]</a></li>
+				<li><a href="#_!_open,developer_">\![open,developer]</a></li>
+				<li><a href="#_!_open,shiorirequest_">\![open,shiorirequest]</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_inputbox-option">InputBoxオプション</a></li>
@@ -484,6 +486,8 @@
 				<li><a href="#_!_unload,makoto_">\![unload,makoto]</a></li>
 				<li><a href="#_!_load,shiori_">\![load,shiori]</a></li>
 				<li><a href="#_!_load,makoto_">\![load,makoto]</a></li>
+				<li><a href="#_!_load,makoto_">\![load,makoto]</a></li>
+				<li><a href="#_!_set,shioridebugmode_">\![set,shioridebugmode]</a>
 				<li><a href="#__u_0x0000_">\_u[0x0000]</a></li>
 				<li><a href="#__m_0x00_">\_m[0x00]</a></li>
 				<li><a href="#_&_ID_">\&[ID]</a></li>
@@ -4474,6 +4478,24 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_open,developer_">
+				<dt class="entry">\![open,developer]</dt>
+				<dd class="entry">
+					<p>開発用パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,shiorirequest_">
+				<dt class="entry">\![open,shiorirequest]</dt>
+				<dd class="entry">
+					<p>SHIORI Request 送信パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
+					</ul>
+				</dd>
+			</dl>
 			<section class="caption" id="notes_inputbox-option">
 				<h1>InputBoxオプション</h1>
 				<p>○○の形で指定。</p>
@@ -5084,6 +5106,15 @@
 					<p>unload実行後にmakoto.dllを読み込む。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,shioridebugmode_">
+				<dt class="entry">\![set,shioridebugmode,(true/false)]</dt>
+				<dd class="entry">
+					<p>開発者用パレットのSHIORIデバッグモードをON/OFFする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
 					</ul>
 				</dd>
 			</dl>
