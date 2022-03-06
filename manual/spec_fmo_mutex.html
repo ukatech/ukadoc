@@ -257,6 +257,13 @@ ssp_fmo_header_00004468_00120da6.ghostpath[\1]D:\ssp\ghost\emily4\
 							<dd>起動中ゴーストのフルパス。[SSPのみ]</dd>
 							<dt>fullname</dt>
 							<dd>起動中ゴーストのdescript.txtのnameエントリ。[SSP 2.5.58～]</dd>
+							<dt>modulestate</dt>
+							<dd>起動中のゴーストに読み込まれているモジュール群の状態を示すカンマ区切りの文字列。[SSP 2.5.78～]
+							<br />shiori: SHIORIがロードされている(ロードされていない場合は文字列自体が存在しない)
+							<br />makoto-ghost: ゴースト側のMAKOTOがロードされている
+							<br />makoto-shell: シェル側のMAKOTOがロードされている
+							<br />compatible: 互換モードに切り替わりscript.txtなどがロードされている
+							<br />例： ssp_fmo_header_00004468_00120da6.modulestate[\1]shiori,makoto\r\n</dd>
 						</dl>
 					</dd>
 				</dl>
