@@ -3148,7 +3148,14 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p>消滅指示無しで自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。<br>削除が行われるかどうかはユーザ側のSSP設定次第。</p>
+					<p>消滅指示無しで自ゴーストをアンインストールする。
+					<br />実行時、確認ダイアログなども出ず即実行されるため注意。
+					<br />削除が行われるかどうかはユーザ側のSSP設定次第。</p>
+					
+					<p>SSPでは以下のオプションを指定可能
+					<br />\![vanishbymyself,ゴースト名] 削除後のゴースト切り替え先を指定（見つからなければSSP側で適宜自動選択）
+					<br />\![vanishbymyself,--option=query] 2.5.82 : 削除問い合わせダイアログを表示する。メニューから実行した時と同じ。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
