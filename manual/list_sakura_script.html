@@ -130,7 +130,7 @@
 		</table>
 	</nav>
 	<section class="navigation-bar">
-		<h1>さくらスクリプト</h1>
+		<h1>SakuraScript</h1>
 		<section class="navigation-category">
 			<ul>
 				<li class="caption"><a href="#notes_escape">Escaping SakuraScript</a></li>
@@ -146,7 +146,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>サーフェスコマンド</h1>
+			<h1>Surface Commands</h1>
 			<ul>
 				<li><a href="#_sID番号">\s(ID number)</a></li>
 				<li><a href="#_s_ID番号_">\s[(ID number)]</a></li>
@@ -805,7 +805,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \![lock,repaint]Stop drawing the animation here.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -821,7 +821,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \! [lock,repaint]Stop drawing the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation was still running, the parts of the animation that were played while hidden will be skipped.</code></p>
+							<p><code>\s[0]\i[500]Start playing animation 500 on surface 0. \![lock,repaint]Stop drawing the animation here. \![unlock,repaint]Resume drawing the animation here. Since the animation was still running, the parts of the animation that were played while hidden will be skipped.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -881,7 +881,7 @@
 					</dl>
 					<p>
 					<!--TODO: Check if this line "SSP only alignmenttodesktop can also be used" is a mistake, since it is already under the section for alignmenttodesktop-->
-					※(SSP only) alignment<em>to</em>desktop can also be used.
+					※(SSP only) Also applies to alignment<em>to</em>desktop.
 					<br>When a character is attached to the top or bottom of the screen, it cannot be moved up or down by dragging.
 					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
@@ -1438,7 +1438,7 @@
 			<dl id="_c_char,数値_">
 				<dt class="entry">\c[char,(value)]</dt>
 				<dd class="entry">
-					<p>Deletes the specified number of characters, starting from the cursor position in the balloon of the character that is currently the focus. Which characters are deleted is based on their order in the script, rather than their position in the balloon. Images attached using \_b[(filepath),inline] will be considered one character each and deleted as such.</p>
+					<p>Deletes the specified number of characters, starting from the caret position in the balloon of the character that is currently the focus. Evaluation of characters to be deleted is based on their order in the script, rather than their position in the balloon. Images attached using \_b[(filepath),inline] will be considered one character each and deleted as such.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1466,31 +1466,31 @@
 				</dd>
 			</dl>
 			<dl id="_c_line,数値_">
-				<dt class="entry">\c[line,数値]</dt>
+				<dt class="entry">\c[line,(value)]</dt>
 				<dd class="entry">
-					<p>現スコープ側の、バルーンのカーソル位置から指定行数をクリア。<br>トークを\_l[x,y],\n,\n[half],\n[パーセント]で分割したものが「行」の扱い。ただし、\n\nなど、\_l[x,y]以外で分割された内容のないものは行とみなされない。<br>\c[char,数値]と同様に、スクリプト内の出現順が参照される。</p>
+					<p>Deletes the specified number of lines, starting from the caret position in the balloon of the character that is currently the focus.<br>Dialogue broken with \_l[x,y], \n, \n[half], or \n[(percent)] is treated as a "line." However, excluding that which is broken using \_l[x,y], double breaks with no text in between, such as in \n\n, will not be considered individual lines.<br>Evaluation is based on the order of the script, in the same way as \c[char,(value)].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\n\n\n\n\c[line,1]削除終了。\nこの行は削除されない。\_l[0,0]\c[line,1]削除終了。</code></p>
+							<p><code>One line of dialogue will be deleted.\nThis line will be deleted.\c[line,1]Deletion has been completed.\nThis line will be deleted.\n\n\n\n\n\c[line,1]Deletion has been completed.\nThis line will not be deleted.\_l[0,0]\c[line,1]Deletion has been completed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_c_line,数値,開始位置_">
-				<dt class="entry">\c[line,数値,開始位置]</dt>
+				<dt class="entry">\c[line,(value),(starting point)]</dt>
 				<dd class="entry">
-					<p>現スコープ側の開始位置(行数)から、指定行数をクリア。開始位置は0オリジン(1行目なら0、2行目なら1)。クリアされる行の判定は\c[line,数値]と同じ。</p>
+					<p>Deletes the specified number of lines from the starting point, in the balloon of the character that is currently the focus. The starting point origin is 0 (the first character is 0, the second character is 1). Lines to be deleted are evaluated in the same way as \c[line,(value)].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>トークを3行目から、\n1行削除。\nこの部分が\_l[,]削除される。\c[line,1,2]削除終了。</code></p>
+							<p><code>Starting from the third line,\none line of dialogue will be deleted.\nThis part will\_l[,]be deleted.\c[line,1,2]Deletion has been completed.</code></p>
 						</section>
 					</div>
 				</dd>
