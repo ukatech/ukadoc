@@ -1498,18 +1498,18 @@
 			<dl id="__l_x,y_">
 				<dt class="entry">\_l[x,y]</dt>
 				<dd class="entry">
-					<p>現スコープ側のカーソル位置をXYの座標に移動する。X,Yについては、以下の定義方法が可能である。</p>
+					<p>Moves the caret position on the side that is currently the focus to the XY coordinates. Regarding X and Y, the definition methods below can be used.</p>
 					<dl>
-						<dt>数値</dt>
-						<dd>バルーンの文字描画範囲左上からのピクセル単位座標</dd>
-						<dt>(省略)</dt>
-						<dd>移動しない。X,Y両方ともに省略すると無効果。</dd>
+						<dt>Value</dt>
+						<dd>The entered values are coordinates in pixels, using the upper left corner of the balloon's text area as the origin point.</dd>
+						<dt>(Omitted)</dt>
+						<dd>The caret will not be moved. If both X and Y are omitted, there will be no effect.</dd>
 						<dt>XXem</dt>
-						<dd>後ろにemとつけると、文字高さを基準とした座標指定となる。1em＝タグを書いた時点での文字高さ。小数点指定可能。</dd>
+						<dd>When "em" is appended, coordinates will be based on letter height. 1em is equivalent to the letter height at the time the tag is written. Decimals can also be specified.</dd>
 						<dt>XX%</dt>
-						<dd>後ろに%とつけると、文字高さを基準とした座標指定となる。100%＝タグを書いた時点での文字高さ。小数点指定可能。</dd>
+						<dd>When "%" is appended, coordinates will be based on letter height. 100% is equivalent to the letter height at the time the tag is written. Decimals can also be specified.</dd>
 						<dt>@XX</dt>
-						<dd>現在の文字描画位置からの相対座標となる。Xがマイナス値だと左、Yがマイナス値だと上。emや%指定との共存可能。</dd>
+						<dd>X and Y will become relative coordinates from the current caret position. A negative value will result in leftwards movement for X, and upwards movement for Y. Can be used alongside em and %.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1519,7 +1519,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_l[30,5em]「座標X=30pixel、座標Y=5文字分高さ」に表示。\_l[@-1650%,100]「座標X=最後の文字から文字高さ1650%分左、座標Y=100pixel」に表示。\_l[,@-100]「座標X=変更なし、座標Y=最後の文字から100pixel上」に表示。</code></p>
+							<p><code>\_l[30,5em] \_l[30,5em]Displayed at 「X coordinate=30 pixels,Y coordinate=5 times the letter height」.\_l[@-1650%,100]Displayed at 「X coordinate=1650% of the letter height leftwards from the last letter, Y coordinate=100 pixels」.\_l[,@-100]Displayed at 「X coordinate=no change,Y coordinate=100 pixels above the last letter」.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1527,14 +1527,14 @@
 			<dl id="_C">
 				<dt class="entry">\C</dt>
 				<dd class="entry">
-					<p>先頭に記述すると直前に表示したバルーンのテキストに追記をする。スコープも前回の最後の状態が反映される。</p>
+					<p>When written at the start of a line, it will be added to the previously displayed text in the balloon. The last state of the character will also be reflected.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\Cこの文章は前回のトークの後ろに追記される。スコープも前回の最後の状態が反映されるので注意。</code></p>
+							<p><code>\CThis sentence will be added to the previous dialogue. It is important to note that the last state of the character will also be reflected.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1542,7 +1542,7 @@
 			<dl id="_!_set,autoscroll,disable_">
 				<dt class="entry">\![set,autoscroll,disable]</dt>
 				<dd class="entry">
-					<p>バルーンの自動スクロールを停止する。手動でのスクロールは可能。</p>
+					<p>Stops automatic scrolling in balloons. Manual scrolling is possible.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1550,7 +1550,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。</code></p>
+							<p><code>\![set,autoscroll,disable]Scrolling is locked.\n[5000]This text is not visible while scrolling is locked.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1558,7 +1558,7 @@
 			<dl id="_!_set,autoscroll,enable_">
 				<dt class="entry">\![set,autoscroll,enable]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1566,7 +1566,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。\![set,autoscroll,enable]スクロール解除。</code></p>
+							<p><code>\![set,autoscroll,disable]Scrolling is locked.\n[5000]This text is not visible while scrolling is locked.\![set,autoscroll,enable]Scrolling is unlocked.</code></p>
 						</section>
 					</div>
 				</dd>
