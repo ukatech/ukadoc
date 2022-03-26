@@ -1574,15 +1574,15 @@
 			<dl id="_!_set,balloonoffset,x,y_">
 				<dt class="entry">\![set,balloonoffset,x,y]</dt>
 				<dd class="entry">
-					<p>バルーンのオフセット値をXY座標に変更。この値にユーザーがバルーンドラッグ移動で決定した座標が加算され、バルーン表示座標が決まる。<br>通常に数値を指定すればdescript.txtのデフォルトのoffset値は無視されるが、頭に@をつけるとdescript.txtやsurfaces.txt内のオフセット値からの相対座標指定となる。</p>
+					<p>Changes the balloon's offset value to XY coordinates. The coordinates set by the user dragging the balloon are added to this value to decide the final balloon display coordinates.<br>If the value is specified normally, descript.txt's default offset will be ignored, but if @ is added at the start, X and Y will become relative coordinates using the offset values in descript.txt and surfaces.txt as the origin.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX:100,Y:-50に移動。</code></p>
-							<p><code>\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX:100,Y:-50(相対座標)に移動。</code></p>
+							<p><code>\![set,balloonoffset,100,-50]Moves the base point of the balloon position to X:100,Y:-50.</code></p>
+							<p><code>\![set,balloonoffset,@100,@-50]Moves the base point of the balloon position to the specifications in descript.txt or surfaces.txt, plus X:100,Y:-50 (relative coordinates).</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1590,23 +1590,23 @@
 			<dl id="_!_set,balloonalign,ID_">
 				<dt class="entry">\![set,balloonalign,ID]</dt>
 				<dd class="entry">
-					<p>バルーンを下記IDの表示方向へ切り替える。IDは以下の方法が定義可能である。<br>下記の位置を基準に、<a href="descript_shell.html#_1_sakura.balloon.offsetx,座標">シェルのdescript.txtのballoon.offsetx及びballoon.offsetyの値</a>、<a href="descript_shell_surfaces.html#_2_sakura.balloon.offsetx,座標">surfaces.txtのballoon.offsetx及びballoon.offsetyの値</a>が反映される。初期値none。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Switches the balloon to the display direction of one of the following IDs. The definition methods below can be used for the ID.<br>Using the positions below as the base, <a href="descript_shell.html#_1_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in the shell's descript.txt</a> and <a href="descript_shell_surfaces.html#_2_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in surfaces.txt</a> are reflected. The initial value is none.</p>
+					<p>Valid until the ghost is closed.</p>
 					<dl>
 						<dt>left</dt>
-						<dd>シェルの左上座標に、バルーンの右上座標が接する。</dd>
+						<dd>The balloon's upper right coordinates meet the shell's upper left coordinates.</dd>
 						<dt>center</dt>
-						<dd>シェルの中央上座標に、バルーンの中央下座標が接する。</dd>
+						<dd>The balloon's lower middle coordinates meet the shell's upper middle coordinates.</dd>
 						<dt>top</dt>
-						<dd>centerと同じ。</dd>
+						<dd>Functions in the same way as center.</dd>
 						<dt>right</dt>
-						<dd>シェルの右上座標に、バルーンの左上座標が接する。</dd>
+						<dd>The balloon's upper left coordinates meet the shell's upper right coordinates.</dd>
 						<dt>bottom</dt>
-						<dd>シェルの中央下座標に、バルーンの中央上座標が接する。</dd>
+						<dd>The balloon's upper middle coordinates meet the shell's lower middle coordinates.</dd>
 						<dt>none</dt>
-						<dd>座標によってleftとrightが入れ替わる。シェルのドラッグ移動後、バルーンが見切れる場合、スイッチする。</dd>
-						<dt>上記以外</dt>
-						<dd>noneと同じ。</dd>
+						<dd>Depending on the coordinates left and right will be switched. If the balloon is cut off after dragging the shell, it will switch.</dd>
+						<dt>Anything not specified here</dt>
+						<dd>Functions in the same was as none.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1614,23 +1614,23 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\0\![set,balloonalign,top]本体側バルーンを、シェルの頭上に表示。\1\![set,balloonalign,right]相方側バルーンを、シェルの右側に表示。</code></p>
+							<p><code>\0\![set,balloonalign,top]The main character's balloon will be displayed above the shell.\1\![set,balloonalign,right]The side character's balloon will be displayed on the right side of the shell.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonnum,ファイル名,現在の数,最大数_">
-				<dt class="entry">\![set,balloonnum,ファイル名,現在の数,最大数]</dt>
+				<dt class="entry">\![set,balloonnum,(file name),(current number),(total number)]</dt>
 				<dd class="entry">
-					<p>ファイル受信時に表示されるデータ書式を表示する。現在の数、最大数は半角数値のみ。どのスコープで実行しても、\0バルーンにのみ表示される。<br>各引数は省略可。消去する場合は全引数を空欄にする。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Displays the data format shown when downloading a file. The current number and total number must be written with half-width numbers. Regardless of which character the script is run from, it will only be displayed on the \0 balloon.<br>Each argument can be omitted. To remove it, all arguments should be omitted.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,balloonnum,テスト表示,1,5]ファイル受信時の表示テスト。\![set,balloonnum,,,]表示内容削除。</code></p>
+							<p><code>\![set,balloonnum,Test Display,1,5]Testing the file downloading display.\![set,balloonnum,,,]The display contents have been deleted.</code></p>
 						</section>
 					</div>
 				</dd>
