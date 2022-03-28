@@ -1606,7 +1606,7 @@
 						<dt>none</dt>
 						<dd>Depending on the coordinates left and right will be switched. If the balloon is cut off after dragging the shell, it will switch.</dd>
 						<dt>Anything not specified here</dt>
-						<dd>Functions in the same was as none.</dd>
+						<dd>Functions in the same way as none.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1636,14 +1636,13 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,balloontimeout,時間_">
-				<dt class="entry">\![set,balloontimeout,時間]</dt>
+				<dt class="entry">\![set,balloontimeout,(time)]</dt>
 				<dd class="entry">
-					<p>バルーン表示のタイムアウトの時間を指定する。単位はミリ秒。<br>
-					タイムアウトの時間はスクリプトの表示が終わってからカウントされる。0または負数でタイムアウトなし。<br>
-					そのスクリプト中のみ有効。</p>
+					<p>Specifies the time for the balloon to time out. Units are in milliseconds.<br>
+					The time is counted from when the script display has finished. Specifying 0 or a negative number will stop the balloon from timing out.</p>
 					
-					<p>時間指定を省略：デフォルト値に戻す<br>
-					時間指定が0か-1：タイムアウトしない</p>
+					<p>When the time specification is omitted: Return to the original value<br>
+					When 0 or -1 for the time specification is entered: No timeout</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1651,23 +1650,23 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,balloontimeout,3000]このトークは、喋り終わってから3秒でバルーンが閉じる。</code></p>
+							<p><code>\![set,balloontimeout,3000]The balloon of this dialogue will close 3 seconds after the ghost has stopped talking.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonwait,倍率_">
-				<dt class="entry">\![set,balloonwait,倍率]</dt>
+				<dt class="entry">\![set,balloonwait,(scaling factor)]</dt>
 				<dd class="entry">
-					<p>バルーン表示の文字列が流れる表示の速度（文字ごとのウエイト）の倍率を指定する。
-                    <br>数値のみ：0～100を指定可能。1で等倍。小数点指定可。例：1.5指定で5割増の遅さ。
-                    <br>後ろに％：0～10000を指定可能。100で等倍。0以上の整数のみ。
-                    <br>後ろにms：0～10000を指定可能。1文字あたりの待機時間をミリ秒単位で絶対値指定。</p>
+					<p>Specifies the scaling factor of the speed at which text is shown (weight per individual letter) in the balloon. 
+                    <br>Lone value: 1~100 can be specified. 1 is the equal scale. Decimals can also be specified. Example: Specifying 1.5 will increase the slowness by 50%.
+                    <br>With % appended: 0~10000 can be specified. 100 is the equal value. Only integers above 0 can be used.
+                    <br>With ms appended: 0~10000 can be specified. Specifies the absolute value of the waiting time for each letter in miliseconds.</p>
 					
-					<p>指定を省略するか指定が1：デフォルト値に戻す
-					<br>指定が0：常時即時表示</p>
+					<p>When omitted or 1 is specified: Return to the original value
+					<br>When 0 is specified: Always display instantly</p>
 					
-					<p>スクリプト実行終了後に100%指定相当にリセットされる。</p>
+					<p>After the script has finished running, it will be reset to the specification equivalent to 100%.</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1677,7 +1676,7 @@
 			<dl id="_!_*_">
 				<dt class="entry">\![*]</dt>
 				<dd class="entry">
-					<p>マーカーを表示する。マーカーはバルーンによって設定されている。</p>
+					<p>Displays the marker. The marker is set depending on the balloon.マーカーを表示する。マーカーはバルーンによって設定されている。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1685,7 +1684,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![*]マーカーをつける。</code></p>
+							<p><code>\![*]Add a marker.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1693,15 +1692,15 @@
 			<dl id="_!_enter,onlinemode_">
 				<dt class="entry">\![enter,onlinemode]</dt>
 				<dd class="entry">
-					<p>オンラインマーカーを強制的に表示する。相方側に表示内容があり、本体側バルーンに表示内容がない場合でも、本体側バルーンが表示される。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Forces the online marker to be displayed. Even in cases where the side character has content to be displayed and the main character has none, the main character's balloon will be brought up.</p>
+					<p>Valid until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\0\![enter,onlinemode]本体側のバルーンにオンラインマーカーが表示される。</code></p>
+							<p><code>\0\![enter,onlinemode]The online marker is displayed in the main character's balloon.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1709,14 +1708,14 @@
 			<dl id="_!_leave,onlinemode_">
 				<dt class="entry">\![leave,onlinemode]</dt>
 				<dd class="entry">
-					<p>オンラインマーカーを強制的に非表示にする。</p>
+					<p>Forces the online marker to be hidden.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\0\![enter,onlinemode]この文章の表示中は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
+							<p><code>\0\![enter,onlinemode]While this sentence is being displayed, the online marker is shown in the main character's balloon.\![leave,onlinemode]Here, the online marker disappears.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1724,14 +1723,14 @@
 			<dl id="_!_enter,nouserbreakmode_">
 				<dt class="entry">\![enter,nouserbreakmode]</dt>
 				<dd class="entry">
-					<p>スクリプト実行中断(操作はSSPの設定次第。通常、バルーンダブルクリック)の無効化モード開始。<br>通常のSSTPでは使用不可(Auth.SSTP(= Owned SSTP)は可)。</p>
+					<p>Enters a mode where interruption of scripts (the operation depends on SSP settings; usually a balloon double-click) is disabled.<br>Cannot be used with normal SSTP (can be used with Auth.SSTP(= Owned SSTP)).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。</code></p>
+							<p><code>\![enter,nouserbreakmode]In this sentence, scripts cannot be broken.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1739,14 +1738,14 @@
 			<dl id="_!_leave,nouserbreakmode_">
 				<dt class="entry">\![leave,nouserbreakmode]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。\![leave,nouserbreakmode]ここからブレーク出来るようになる。</code></p>
+							<p><code>\![enter,nouserbreakmode]In this sentence, scripts cannot be broken.\![leave,nouserbreakmode]Script breaking is possible from here.</code></p>
 						</section>
 					</div>
 				</dd>
