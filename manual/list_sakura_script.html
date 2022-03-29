@@ -1753,16 +1753,16 @@
 			<dl id="_!_lock,balloonrepaint_">
 				<dt class="entry">\![lock,balloonrepaint]</dt>
 				<dd class="entry">
-					<p>\![unlock,balloonrepaint]が呼ばれるか、スクリプト終端までバルーンの再描画を停止する。<br />
-					この停止処理はスクリプト終端で自動的に解除される。<br />
-					ただし、\![lock,balloonrepaint,manual]と指定すると、明示的にunlockするまで停止される[2.5.16]</p>
+					<p>Stops drawing running balloon animations until either \![unlock,balloonrepaint] is called or the script ends.<br />
+					This will be automatically cancelled at the end of the script.<br />
+					However, if specified as \![lock,balloonrepaint,manual], drawing will be stopped until explicitly unlocked. [2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![lock,balloonrepaint]この文章はスクリプト実行が終わるまで表示されない。</code></p>
+							<p><code>\![lock,balloonrepaint]This sentence won't be displayed until the script ends.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1770,14 +1770,14 @@
 			<dl id="_!_unlock,balloonrepaint_">
 				<dt class="entry">\![unlock,balloonrepaint]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで描画が再開され、前の文章も描画される。</code></p>
+							<p><code>\![lock,balloonrepaint]This sentence won't be drawn.\![unlock,balloonrepaint]Here, drawing is started again, and the previous sentence is also drawn.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1785,9 +1785,9 @@
 			<dl id="_!_lock,balloonmove_">
 				<dt class="entry">\![lock,balloonmove]</dt>
 				<dd class="entry">
-					<p>\![unlock,balloonmove]が呼ばれるまで、バルーンのユーザーによるドラッグ移動を抑制する。<br />
-					descript.txt上で<a href="descript_shell.html#sakura.balloon.dontmove_">sakura.balloon.dontmove</a>のように恒久的に指定可能。<br />
-					ユーザーの操作を阻害するので、濫用しないこと。</p>
+					<p>Prevents the balloon from being dragged by the user until \![unlock,balloonmove] is called.<br />
+					Can be specified permanently, as in <a href="descript_shell.html#sakura.balloon.dontmove_">sakura.balloon.dontmove</a> in descript.txt.<br />
+					This can hinder user operation, so overuse should be avoided.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.96</li>
 					</ul>
@@ -1796,7 +1796,7 @@
 			<dl id="_!_unlock,balloonmove_">
 				<dt class="entry">\![unlock,balloonmove]</dt>
 				<dd class="entry">
-					<p>上記を解除する。descript.txtですでに指定されている場合は解除できない。</p>
+					<p>Cancels the above command. However, this command cannot restore balloon dragging if it has been locked in descript.txt.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.96</li>
 					</ul>
@@ -1805,52 +1805,52 @@
 			<dl id="__!">
 				<dt class="entry">\_!</dt>
 				<dd class="entry">
-					<p>[旧仕様]次の\_!までタグを実行せずにそのまま表示する。</p>
+					<p>[Old specification] Displays text as is without running any tags until the next \_!.</p>
 				</dd>
 			</dl>
 			<dl id="__?">
 				<dt class="entry">\_?</dt>
 				<dd class="entry">
-					<p>次の\_?までタグを実行せずにそのまま表示する。</p>
+					<p>Displays text as is without running any tags until the next \_?.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_?\1この文章はさくらスクリプトが実行されず\nそのまま表示される。\_?</code></p>
+							<p><code>\_?\1This sentence is displayed as is\nwithout SakuraScript being run.\_?</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="___v">
-				<dt class="entry">\__v[オプション]</dt>
+				<dt class="entry">\__v[(option)]</dt>
 				<dd class="entry">
-					<p>次の\__vまでの文字列に対して、音声合成機能の発声内容を調整する。<br />
-					\__v[disable]：音声合成無効<br />
-					\__v[alternate,文字列]：読み方の違う単語に対して、正しい発声文字列を指定する。文字列は誤認識されないようひらがなが望ましい。</p>
+					<p>Adjusts the speech synthesis function's vocalization content in the string enclosed between \__v.<br />
+					\__v[disable]: Disables speech synthesis<br />
+					\__v[alternate,(string)]: Specifies a string with the correct vocalization for words with different pronunciations. Hiragana is preferred in order to avoid misrecognition.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\1\__v[disable]この文章は音声合成機能でしゃべらない。\__v</code></p>
+							<p><code>\1\__v[disable]This sentence won't be spoken using the speech synthesis function.\__v</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<div class="caption" id="notes_imageresource">
-				<h1>\_b[ファイルパス,...]について</h1>
-				<p>パスは絶対パスの他、栞本体からの相対パスでも可。</p>
-				<p>※SSPのみ可、ファイル名等のパスには環境変数も使える。</p>
+				<h1>Regarding \_b[(filepath),...]</h1>
+				<p>Other than an absolute path, relative paths from SHIORI itself may also be used.</p>
+				<p>※In SSP only, environment variables can also be used for file names and such.</p>
 				<dl>
-					<dt>base64を使用する場合</dt>
-					<dd>例:"data:image/png;base64,iV～II"</dd>
-					<dt>exe/dllのリソースを使用する場合</dt>
-					<dd>例:D:\hogehoge.exe,20</dd>
-					<dt>exe/dllのリソースを使用する場合(リソースID指定)</dt>
-					<dd>例:D:\hogehoge.exe,-10</dd>
+					<dt>When using base64</dt>
+					<dd>Example: "data:image/png;base64,iV～II"</dd>
+					<dt>When using exe/dll resources</dt>
+					<dd>Example: D:\hogehoge.exe,20</dd>
+					<dt>When using exe/dll resources (resource ID specified)</dt>
+					<dd>Example: D:\hogehoge.exe,-10</dd>
 				</dl>
 			</div>
 		</section>
