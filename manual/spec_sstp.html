@@ -229,6 +229,13 @@ Option: notranslate
 					<dd>SHIORIやSakuraScriptで処理する際のセキュリティレベルの指定。local/externalのいずれか。
 					<br />DirectSSTP、または127.0.0.1等明らかにローカルから来たリクエストのみ有効。</dd>
 					
+					<dt>Option</dt>
+					<dd>SSTPで実行されるSakuraScriptがどのように扱われるかのオプションを指定する。
+					<br />カンマ区切りで複数指定可能。指定する文字列は以下の通り。
+					<br />nodescript : バルーンのSSTP表示を無効にする(リモートからのSSTPは無効)
+					<br />notranslate : OnTranslateやMAKOTOでのトランスレート処理を行わない
+					<br />nobreak : 現在実行中のスクリプトを中断せず、終わるまで待つ</dd>
+					
 					<dt>ID</dt>
 					<dd>"Owned SSTP"と呼ばれるもの。<a href="list_shiori_event.html#uniqueid">SHIORI uniqueid</a>で送られてきたIDか、<a href="spec_fmo_mutex.html">FMOの識別ID(SSPのみ)</a>を指定すると、各種セキュリティチェックやロック等を無視して、本SSTPをゴースト内部での処理と同じ優先度で扱う。
 					<br />SecurityLevel指定がlocalになり、さらに\tなどの割り込み禁止状態でも強制的に割り込み再生を可能とする。</dd>
