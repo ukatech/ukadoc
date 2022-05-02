@@ -2120,9 +2120,9 @@
 		<section class="category">
 			<h1>Wait Commands</h1>
 			<dl id="_w時間">
-				<dt class="entry">\w時間</dt>
+				<dt class="entry">\w(time)</dt>
 				<dd class="entry">
-					<p>時間x50ms分の時間ウェイト。設定出来るのは1-9。\w10は、50msウェイト後に文字「0」がバルーンに表示される。</p>
+					<p>Waits for the specified time multiplied by 50ms. 1-9 can be specified. \w10 will display the character "0" in the balloon after waiting for 50ms.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2131,15 +2131,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>0.45秒のウェイトをかける。\w9\nその後、1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
+							<p><code>Waits for 0.45 seconds.\w9\nAfter that, waits for 1 second.\w9\w9\w2Waiting has finished.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__w_時間_">
-				<dt class="entry">\_w[時間]</dt>
+				<dt class="entry">\_w[time]</dt>
 				<dd class="entry">
-					<p>精密ウエイト。[時間]ms。</p>
+					<p>Allows for more exact control over wait time. [time]ms.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2147,22 +2147,22 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>1.234秒のウェイトをかける。\_w[1234]ウェイト終了。</code></p>
+							<p><code>Waits for 1.234 seconds.\_w[1234]Waiting has finished.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="___w_時間_">
-				<dt class="entry">\__w[時間]</dt>
+				<dt class="entry">\__w[time]</dt>
 				<dd class="entry">
-					<p>再生開始、または\xから指定ミリ秒数が経つまで待機。<br>\__w[clear]で時間リセット。</p>
+					<p>Waits until the specified amount of milliseconds pass since either the last wait command or since \x.<br>\__w[clear] can be used to reset the time.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、累計2500msウェイトする(この場合、[2500-1000-2文字分の表示時間]で約1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で0からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code>1\_w[1000]2\__w[2500]3. After first waiting for 1000ms, it will wait for a total of 2500ms (in this case, [2500-1000-the time it takes to display 2 letters], equalling roughly 1500ms). As the length of time it takes to display characters (adjustable with SSP user settings) is factored in, exact control over wait time since the script started is possible. The wait timer starts counting from 0 again when a clear or click-wait is run.\__w[clear]\__w[500]A 0.5 second wait is added here.</code></p>
 						</section>
 					</div>
 				</dd>
