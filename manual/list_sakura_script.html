@@ -1855,34 +1855,34 @@
 			</div>
 		</section>
 		<section class="category">
-			<h1>文字変更コマンド</h1>
+			<h1>Text Modification Commands</h1>
 			<dl id="_f_align,寄せる側_">
-				<dt class="entry">\f[align,寄せる側]</dt>
+				<dt class="entry">\f[align,(alignment side)]</dt>
 				<dd class="entry">
-					<p>文字列の右寄せ(\f[align,right])・中央揃え(\f[align,center])・左寄せ(\f[align,left])を設定する。
-					<br />この設定は、次の\nや\_lなどの「意図的な改行」が来るまで影響する。
-					<br />また、文字等の追加の途中でこのコマンドを実行すると、すでに追加された同じ行に属する文字列も移動される。
-					<br />\_lタグが来た場合は左寄せに戻る。
-					<br />また、\_lタグで移動後に\f[align]タグで中央揃えを設定した場合、\_lタグのX座標分インデント処理されたと仮定して中央揃え処理される。</p>
+					<p>Sets align right (\f[align,right]) ・ center (\f[align,center]) ・ align left (\f[align,left]) for text.
+					<br />This setting is applied until the next \n, \_l, or other "intentional linebreak".
+					<br />Additionally, if this command is run in the middle of adding characters and such, the string already in the same line will also be moved.
+					<br />Text is returned to align left when an \_l tag is used.
+					<br />Furthermore, when align center is set using the \f[align] tag after moving with the \_l tag, the text will be center aligned based on the x coordinate indent of the \_l tag.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.31</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[align,center]これは中央揃え。\n\f[align,right]これは右揃え。\n\f[align,left]左揃えのつもりが\w9\w9\f[align,right]右揃えに。</code></p>
+							<p><code>\f[align,center]This text is centered.\n\f[align,right]This text is aligned to the right.\n\f[align,left]This left-aligned text \w9\w9\f[align,right]is moved to the right.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_name,文字名_">
-				<dt class="entry">\f[name,フォント名]</dt>
+				<dt class="entry">\f[name,(font name)]</dt>
 				<dd class="entry">
-					<p>テキストフォントを指定したフォント名に変更する。<br>
-					defaultを指定した場合、または指定したフォント候補が全てない場合は、バルーン設定の標準(SSP設定でバルーンフォント上書きしている場合はそちら)に戻る。<br>
-					disableを指定した場合、無効表示と同じフォントに設定される。<br>
-					フォント名には、[実行したゴーストのフォルダ]/ghost/master以下や現在のバルーンのフォルダに置いたフォントファイルも指定可能。<br>
-					カンマ区切りでフォント名を複数指定可で、書いた順＝優先度順で自動的にインストールされている中から選択する(SSPのみ)。<br>
+					<p>Changes the text font to the specified font name.<br>
+					When default is specified or the specified font candidates do not exist, the font reverts to the default balloon setting (or to the default SSP setting, in the case that it overwrites the balloon font).<br>
+					When disable is specified, the font is changed to the unselectable choice indicator font.<br>
+					It is also possible to specify a font from a file in [(folder of the ghost running the command)]/ghost/master, a child folder within it, or the current balloon's folder.<br>
+					When multiple fonts are specified and separated by commas, the font will be automatically selected from the fonts the user has installed with the first font written being the highest priority (SSP only).<br>
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1890,52 +1890,52 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければデフォルトフォントで表示される。</code></p>
+							<p><code>\f[name,Meiryo,meiryo.ttf]This text will be displayed with Meiryo if installed, meiryo.ttf if not installed, and the default font if neither exist.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_height,数値_">
-				<dt class="entry">\f[height,数値]</dt>
+				<dt class="entry">\f[height,(value)]</dt>
 				<dd class="entry">
-					<p>これテキストを指定した文字サイズに変更する。<br>+や-による相対的な変更が可能。<br>スタイルシートのサイズ指定も可能。<br>defaultを指定するとバルーン設定の標準に戻る。</p>
+					<p>Changes text to the specified font size.<br>Relative value adjustments using + and - may be used.<br>Size specifications as in style sheets are also possible.<br>When default is specified, the font size will return to the balloon's default setting.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,200%]デフォルトサイズの200%で表示。\f[height,default]元のサイズに戻す。</code></p>
+							<p><code>\f[height,15]This text is displayed at 15 pixels.\f[height,+3]It has been made 3 pixels larger.\f[height,200%]This text is displayed at 200% of the default size.\f[height,default]It has been returned to the original size.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_color,色指定_">
-				<dt class="entry">\f[color,色指定]</dt>
+				<dt class="entry">\f[color,(color specification)]</dt>
 				<dd class="entry">
-					<p>文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the font color.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[color,red]赤色で表示。\f[color,100,150,200]色指定で表示。\f[color,default]バルーンのデフォルト色に戻す。</code></p>
+							<p><code>\f[color,red]This text is displayed in red.\f[color,100,150,200]This text is displayed in the specified color.\f[color,default]It has been returned to the balloon's default color.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_shadowcolor,色指定_">
-				<dt class="entry">\f[shadowcolor,色指定]</dt>
+				<dt class="entry">\f[shadowcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>文字の陰落ち色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the drop shadow color.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[shadowcolor,#ffff00]文字の影の色を黄色で表示。\f[shadowcolor,default]バルーンのデフォルト色に戻す。</code></p>
+							<p><code>\f[shadowcolor,#ffff00]The drop shadow is displayed in yellow.\f[shadowcolor,default]It has been returned to the balloon's default drop shadow color.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1943,151 +1943,151 @@
 			<dl id="_f_shadowcolor,none_">
 				<dt class="entry">\f[shadowcolor,none]</dt>
 				<dd class="entry">
-					<p>文字の陰落ち色を無効化。</p>
+					<p>Disables the drop shadow.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
+							<p><code>\f[shadowcolor,none]This text is displayed without a drop shadow.\f[shadowcolor,default]It has been returned to the balloon's default drop shadow color.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_shadowstyle,形態指定_">
-				<dt class="entry">\f[shadowstyle,形態指定]</dt>
+				<dt class="entry">\f[shadowstyle,(type specification)]</dt>
 				<dd class="entry">
-					<p>文字の陰落ち表現の形態を変更する。offsetで右下にずれた表示、outlineで縁取りした表示になる。</p>
+					<p>Changes the type of drop shadow. Displays a drop shadow to the bottom right of the text when offset is specified, and a border surrounding the text when outline is specified.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.27</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[shadowcolor,#ff0000]\f[shadowstyle,outline]文字の周囲を黄色で縁取りして表示。\f[shadowstyle,default]\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
+							<p><code>\f[shadowcolor,#ff0000]\f[shadowstyle,outline]This text is displayed with a yellow border.\f[shadowstyle,default]\f[shadowcolor,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_outline,パラメータ_">
-				<dt class="entry">\f[outline,パラメータ]</dt>
+				<dt class="entry">\f[outline,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると白抜き。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
+					<p>When parameter is specified as true or 1, the text will become outline text.<br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[height,30]\f[outline,1]白抜きにする。\f[outline,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[height,30]\f[outline,1]This is outline text.\f[outline,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchor.font.color,色指定_">
-				<dt class="entry">\f[anchor.font.color,色指定]</dt>
+				<dt class="entry">\f[anchor.font.color,(color specification)]</dt>
 				<dd class="entry">
-					<p>アンカー文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of anchor text.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
+							<p><code>\_a[OnTest]This is an anchor before the color has been changed.\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]This is an anchor after the color has been changed.\_a</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_bold,パラメータ_">
-				<dt class="entry">\f[bold,パラメータ]</dt>
+				<dt class="entry">\f[bold,(parameter)]</dt>
 				<dd class="entry">
 					<!-- MS明朝は太字非対応 -->
-					<p>パラメータにtrueまたは1を指定すると太字。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。<br>フォントが対応していない場合、太字にならない。</p>
+					<p>When parameter is specified as true or 1, the text will become bold.<br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.<br>The text wil not become bold if the font is incompatible.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[bold,1]太字にする。\f[bold,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[bold,1]This text is bold.\f[bold,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_italic,パラメータ_">
-				<dt class="entry">\f[italic,パラメータ]</dt>
+				<dt class="entry">\f[italic,(parameter)]</dt>
 				<dd class="entry">
 					<!-- 環境によっては標準フォントのメイリオだと、半角英数でないとで斜体にならないそうな。 -->
-					<p>パラメータにtrueまたは1を指定するとイタリック(斜体) <span style="font-style: italic;">Sample</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。<br>フォントが対応していない場合、斜体にならない。</p>
+					<p>When parameter is specified as true or 1, the text will become italicized. <span style="font-style: italic;">Sample</span>.<br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.<br>The text wil not become italicized if the font is incompatible.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[italic,1]This is italic.\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[italic,1]This is italic.\f[italic,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_strike,パラメータ_">
-				<dt class="entry">\f[strike,パラメータ]</dt>
+				<dt class="entry">\f[strike,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると打ち消し線 <span style="text-decoration: line-through;">サンプル</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
+					<p>When parameter is specified as true or 1, the text will become strikethrough text. <span style="text-decoration: line-through;">Sample</span>.<br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[strike,1]文字に打ち消し線を引く。\f[strike,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[strike,1]This is strikethrough text.\f[strike,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_underline,パラメータ_">
-				<dt class="entry">\f[underline,パラメータ]</dt>
+				<dt class="entry">\f[underline,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると<span style="text-decoration: underline;">下線を引きます</span>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
+					<p>When parameter is specified as true or 1, <span style="text-decoration: underline;">the text will be underlined</span>.<br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[underline,1]文字に下部線を引く。\f[underline,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>\f[underline,1]This text has been underlined.\f[underline,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_sub,パラメータ_">
-				<dt class="entry">\f[sub,パラメータ]</dt>
+				<dt class="entry">\f[sub,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると下付き文字 <sub>サンプル</sub>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
+					<p>When parameter is specified as true or 1, the text will become a subscript. <sub>Sample.</sub><br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>文字を\f[sub,1]下付き文字にする。\f[sub,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>Turns the text into\f[sub,1]subscript text.\f[sub,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_sup,パラメータ_">
-				<dt class="entry">\f[sup,パラメータ]</dt>
+				<dt class="entry">\f[sup,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータにtrueまたは1を指定すると上付き文字 <sup>サンプル</sup>。<br>パラメータにfalseまたは0を指定すると無効。<br>defaultを指定するとバルーン設定の標準に戻る。<br>disableを指定すると無効表示と同じ設定になる。</p>
+					<p>When parameter is specified as true or 1, the text will become a superscript. <sup>Sample.</sup><br>Specifying false or 0 will disable it.<br>Specifying default will return to the balloon's default setting.<br>Specifying disable will have the same result as false and 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>文字を\f[sup,1]上付き文字にする。\f[sup,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code>Turns the text into\f[sup,1]superscript text.\f[sup,default]It has been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2095,14 +2095,14 @@
 			<dl id="_f_default_">
 				<dt class="entry">\f[default]</dt>
 				<dd class="entry">
-					<p>全てのバルーン属性をデフォルトに戻す。</p>
+					<p>Returns all balloon attributes to the default settings.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[shadowcolor,#6699cc]色々な\f[bold,1]装飾を\f[underline,1]した\f[height,20]文字を\f[default]全てバルーンのデフォルト設定に戻す。</code></p>
+							<p><code>\f[shadowcolor,#6699cc]Text that\f[bold,1]has been\f[underline,1]decorated in\f[height,20]many ways\f[default]has now been returned to the balloon's default settings.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2110,7 +2110,7 @@
 			<dl id="_f_default_">
 				<dt class="entry">\f[disable]</dt>
 				<dd class="entry">
-					<p>全てのバルーン属性を無効なテキスト表示に戻す。</p>
+					<p>Disables all balloon attributes for displaying text.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.51</li>
 					</ul>
@@ -2118,7 +2118,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ウエイトコマンド</h1>
+			<h1>Wait Commands</h1>
 			<dl id="_w時間">
 				<dt class="entry">\w時間</dt>
 				<dd class="entry">
