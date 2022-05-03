@@ -2170,7 +2170,7 @@
 			<dl id="_x">
 				<dt class="entry">\x</dt>
 				<dd class="entry">
-					<p>バルーンをクリック待ちにする。<br>クリック後、スコープはリセットされ\0となり、\f(文字装飾)系のさくらスクリプトの効果も解除される。\eで解除されるさくらスクリプトは継続。</p>
+					<p>Makes the balloon wait until clicked to close.<br>After being clicked, the character focus is reset to \0, and \f(text modification) SakuraScript effects are also cleared. SakuraScripts that end with \e remain uncleared.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2179,7 +2179,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\1ここで相方が\f[bold,1]トークする。\xクリック後、スコープはデフォルトの本体側に戻り、フォント変更のさくらスクリプトは解除される。</code></p>
+							<p><code>\1Here, the side character will \f[bold,1]speak.\xAfter being clicked, the focus returns to the main character and the SakuraScript that made modifications to the font is cleared.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2187,14 +2187,14 @@
 			<dl id="_x_noclear_">
 				<dt class="entry">\x[noclear]</dt>
 				<dd class="entry">
-					<p>バルーンを一時クリック待ちにする。<br>クリック後、バルーンの内容とスコープは保持される。<br>\xと違い、\f(文字装飾)系のさくらスクリプトの効果は残る。</p>
+					<p>Pauses the balloon until clicked.<br>After being clicked, the balloon's contents and the side with the focus will be kept.<br>Unlike \x, \f(text modification) SakuraScript effects will remain.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\1ここで相方が\f[bold,1]トークする。\x[noclear]クリック後、スコープも文字装飾系のさくらスクリプトは有効。</code></p>
+							<p><code>\1Here, the side character will \f[bold,1]speak. \x[noclear]After being clicked, the SakuraScript for both the character with the focus and the text modification remains in effect.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2202,7 +2202,7 @@
 			<dl id="_t">
 				<dt class="entry">\t</dt>
 				<dd class="entry">
-					<p>タイムクリティカルセクション。<br>スクリプトブレーク(例:選択肢を選ぶ、バルーンダブルクリックによる中断)か\eまでの間、マウス系などのイベント通知を行わない。<br>\tを再度記述しても解除されないので注意。<br>どうしても途中で解除したい場合は、\![raise,イベント名]を用いて一旦スクリプトを終了させ、別のイベントを発生させる。<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。--></p>
+					<p>Starts a time critical section.<br>Until a script break (ex: clicking a choice, interruption by double-clicking a balloon) or \e, event notifications such as those for mouse-based events will not be fired. <br>It is important to note that the section cannot be ended by a second \t.<br>If the time critical section must be ended halfway through, it is possible to use \![raise,(event name)] to temporarily stop the script and call a different event.<!-- <br>OnMouseEnter、OnMouseEnterAll、OnMouseLeave、OnMouseLeaveAll、OnMouseGestureは通知されるため、これらをはじく場合はstatusヘッダにあるtimecriticalの文字で判別する。<br>右クリックメニューの着せ替えは、\t中は選択しても変更されない。--></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2211,7 +2211,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>この文章表示中はマウス反応を受け付ける。\tこれ以降スクリプト再生終了まで受け付けない。</code></p>
+							<p><code>While this sentence is being displayed, mouse interactions are possible.\tFrom here, mouse interactions will be ignored until the script stops playing.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2219,7 +2219,7 @@
 			<dl id="__q">
 				<dt class="entry">\_q</dt>
 				<dd class="entry">
-					<p>クイックセクション。<br>次の\_qか\eまでメッセージがノーウェイトで表示される。<br>ただし、ウェイトのかかるさくらスクリプト全般は実行され、瞬間表示中もウェイトがかかる。</p>
+					<p>Starts a quick section.<br>Until the next \_q or \e, text will be displayed instantly.<br>However, general SakuraScripts with waits are run, causing waits even during instant display.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2228,7 +2228,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_q文字を瞬間表示する。里々等、自動でウェイトが挿入される場合は注意。\_q</code></p>
+							<p><code>\_qThis text will be displayed instantly. It is important to note that there are some situations, such as with Satori, when wait times will be inserted automatically.\_q</code></p>
 						</section>
 					</div>
 				</dd>
