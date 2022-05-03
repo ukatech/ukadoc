@@ -519,7 +519,11 @@ Command: GetName
 					<br />パラメータ0：圧縮ファイル名
 					<br />パラメータ1：解凍先のフォルダのフルパス
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
-					
+
+					<dt>DumpSurface [SSP 2.5.98]</dt>
+					<dd>合成済みのサーフェス画像を指定したディレクトリに出力する。パラメータは<a href="list_sakura_script.html#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface]</a>と同じ。
+					<br />追加データなし(ステータスコード200番台で成功)</dd>
+
 					<dt>MoveAsync [SSP]</dt>
 					<dd><a href="list_sakura_script.html#notes_move">\![moveasync]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
 					<br />SSTPのタイムアウトまでにresponseを返せないのとデッドロックの原因になるため、asyncなしのmoveは実行できない。
