@@ -4708,7 +4708,10 @@
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。
+					<br />処理が完了するまでスクリプトの実行は停止する。
+					<br />セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4723,7 +4726,10 @@
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,compressarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。
+					<br />処理が完了するまでスクリプトの実行は停止する。
+					<br />セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4739,12 +4745,13 @@
 				<dt class="entry">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト]</dt>
 				<dd class="entry">
 					<p>合成済みのサーフェス画像を指定したディレクトリに出力する。
-					<br/>スコープIDには\sタグに指定するものと同じIDを指定する。この指定で、着せ替え状態などのスコープに依存する処理が変わる。
-					<br/>サーフェスリストには<a href="descript_shell_surfaces.html#caption_surfacebraceID">surface ID指定</a>と同じ書式、または以下を指定する。
-					<br/>__system_surface_all__ : シェルとして有効なサーフェスをすべて出力する
-					<br/>__system_surface_defined__ : surfaces.txt内で定義されたサーフェスのみすべて出力する
-					<br/>セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
-					<br/>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<br />処理が完了するまでスクリプトの実行は停止する。
+					<br />スコープIDには\sタグに指定するものと同じIDを指定する。この指定で、着せ替え状態などのスコープに依存する処理が変わる。
+					<br />サーフェスリストには<a href="descript_shell_surfaces.html#caption_surfacebraceID">surface ID指定</a>と同じ書式、または以下を指定する。
+					<br />__system_surface_all__ : シェルとして有効なサーフェスをすべて出力する
+					<br />__system_surface_defined__ : surfaces.txt内で定義されたサーフェスのみすべて出力する
+					<br />セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.5.98]</li>
 					</ul>
