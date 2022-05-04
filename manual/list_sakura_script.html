@@ -1676,7 +1676,7 @@
 			<dl id="_!_*_">
 				<dt class="entry">\![*]</dt>
 				<dd class="entry">
-					<p>Displays the marker. The marker is set depending on the balloon.マーカーを表示する。マーカーはバルーンによって設定されている。</p>
+					<p>Displays the marker. The marker is set depending on the balloon.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2219,7 +2219,7 @@
 			<dl id="__q">
 				<dt class="entry">\_q</dt>
 				<dd class="entry">
-					<p>Starts a quick section.<br>Until the next \_q or \e, text will be displayed instantly.<br>However, general SakuraScripts with waits are run, causing waits even during instant display.</p>
+					<p>Starts a quick section.<br>Until the next \_q or \e, text will be displayed instantly.<br>However, general SakuraScripts with waits can be run, causing waits even during instant display.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2236,14 +2236,14 @@
 			<dl id="_!_quicksection,true_">
 				<dt class="entry">\![quicksection,true]</dt>
 				<dd class="entry">
-					<p>クイックセクションを開始する。\![quicksection,1]でも可。<br>\_qとほぼ互換で、スイッチ式でなく開始を指定出来るのが違い。</p>
+					<p>Starts a quick section. \![quicksection,1] can also be used.<br>It is almost interchangeable with \_q, the difference being that it can be specified as starting, as opposed to using a switching style.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。</code></p>
+							<p><code>\![quicksection,1]This text will be displayed instantly. Any wait tags will be run here as well.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2251,14 +2251,14 @@
 			<dl id="_!_quicksection,false_">
 				<dt class="entry">\![quicksection,false]</dt>
 				<dd class="entry">
-					<p>クイックセクションを終了する。\![quicksection,0]でも可。<br>\_qとほぼ互換で、スイッチ式でなく終了を指定出来るのが違い。</p>
+					<p>Ends a quick section. \![quicksection,0] can also be used.<br>It is almost interchangeable with \_q, the difference being that it can be specified as ending, as opposed to using a switching style.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksection,0]また、クイックセクションのさくらスクリプトは\![quicksection,1]混ぜて使っても有効。\_q</code></p>
+							<p><code>\![quicksection,1]This text will be displayed instantly. Any wait tags will be run here as well.\![quicksection,0]Furthermore, the SakuraScript tags for quick sections\![quicksection,1]are still valid when mixed.\_q</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2266,7 +2266,7 @@
 			<dl id="__s">
 				<dt class="entry">\_s</dt>
 				<dd class="entry">
-					<p>シンクロナイズセクション。<br>次の\_sか\eまでメッセージを両バルーンに表示する。</p>
+					<p>Starts a synchronize section.<br>Until the next \_s or \e, text will be displayed in both balloons.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2275,7 +2275,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_s本体側と相方側が同時に喋る。\_s</code></p>
+							<p><code>\_sThe main character and side character will speak at the same time.\_s</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2283,25 +2283,25 @@
 			<dl id="__s_ID1,ID2,ID3..._">
 				<dt class="entry">\_s[ID1,ID2,ID3...]</dt>
 				<dd class="entry">
-					<p>IDのスコープをシンクロナイズセクションする。</p>
+					<p>Starts a synchronize section with the characters of the specified ID numbers.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_s[0,2,3]本体側と3人目のキャラと4人目のキャラが同時に喋る。\_s</code></p>
+							<p><code>\_s[0,2,3]The main character, a third character, and a fourth character will speak at the same time.\_s</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">
-				<dt class="entry">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</dt>
+				<dt class="entry">\![wait,syncobject,(sync object name),(time out time)]</dt>
 				<dd class="entry">
 					<p>
-						指定した名前つき同期オブジェクト(Windows上の場合はMutex,Semaphore,Event)がシグナル状態になるまで待機する。
-						<br>Mutexは待機後解放、Semaphoreは待機後1解放、Eventは取得後特に何も操作しない。
-						<br>タイムアウト時間は省略または0で(スクリプトブレークされるまで)無限待機、1以上を指定すると指定ミリ秒間待機。
+						Waits until the sync object with the specified name (Mutex, Semaphore, Event on Windows) is in the signal state.
+						<br>Mutex is released after waiting, Semaphore is released once after waiting, and Event does not perform any particular operation after the signal is sent.
+						<br>If the time out time is omitted or specified as 0, it will wait indefinitely (until a script break), and if 1 or higher is specified it will wait using the specified number as milliseconds.
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2310,7 +2310,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>Choice commands</h1>
+			<h1>Choice Commands</h1>
 			<dl id="_q_タイトル,ID_">
 				<dt class="entry">\q[(Title),(ID)]</dt>
 				<dd class="entry">
