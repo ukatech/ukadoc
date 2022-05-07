@@ -174,6 +174,7 @@
 				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
+				<li><a href="#animation*.option,shared-index">animation*.option,shared-index</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
 				<li><a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)</a></li>
 				<li><a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision*,始点X,始点Y,終点X,終点Y,ID</a></li>
@@ -912,12 +913,27 @@ animation0.pattern3,overlay,-1,100,168,67
 					</ul>
 				</dd>
 			</dl>
+			<dl id="animation*.option,shared-index">
+				<dt class="entry">animation*.option,shared-index</dt>
+				<dd class="entry">
+					<p>
+						\sタグでのベースサーフェスの切り替えをまたいで、同じIDのアニメーションを途中から継続して実行する。
+						<br />具体的には、\s実行前に4コマ目までアニメーションが実行されていたとして、\s実行後も実行位置を維持し4コマ目から再スタートする。
+						<br />\s切り替え元・切り替え先の両方に指定が必要で、どちらか片方だけだと最初から実行する挙動となる。
+						<br />また、切り替え先のアニメーションのコマ数が切り替え元と異なる場合の挙動は保証されない。
+					</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.02</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="animation*.option,オプション">
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
 					<p>
-						exclusiveおよびbackgroundオプションの同時指定。
-						<br>+区切りで複数オプション可。例：exclusive+background<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						exclusive・background・shared-indexオプションは同時指定可能で、+区切りで複数オプション可。例：exclusive+background
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<em>exclusiveのみ</em>影響を受ける。
 						<br>なおintervalがbindのアニメーションについてはexclusive指定はそもそも未定義である。
 					</p>
