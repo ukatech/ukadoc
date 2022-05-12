@@ -476,6 +476,8 @@
 				<li><a href="#OnTabletMode">OnTabletMode</a></li>
 				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
 				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
+				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
+				<li><a href="#OnRecycleBinStatusUpdate">OnRecycleBinStatusUpdate</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -4368,6 +4370,44 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRecycleBinEmpty">
+				<dt class="entry">OnRecycleBinEmpty</dt>
+				<dd class="entry">
+					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ(空にした直後なのでふつうは0) 単位バイト</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
+						<dt>Reference2</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルの数の直前との差(空にした直後なのでふつうは負の値)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRecycleBinStatusUpdate">
+				<dt class="entry">OnRecycleBinStatusUpdate</dt>
+				<dd class="entry">
+					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ 単位バイト</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルの数</dd>
+						<dt>Reference2</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルの数の直前との差</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
 					</ul>
 				</dd>
 			</dl>

@@ -467,6 +467,7 @@
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
 				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata]</a></li>
+				<li><a href="#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a></li>
 				<li><a href="#_!_enter,passivemode_">\![enter,passivemode]</a></li>
 				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
 				<li><a href="#_!_enter,inductionmode_">\![enter,inductionmode]</a></li>
@@ -4851,6 +4852,15 @@
 					<p>スクリプトを実行したゴースト自身の更新定義ファイル(updates2.dau/updates.txt)を作る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,emptyrecyclebin">
+				<dt class="entry">\![execute,emptyrecyclebin]</dt>
+				<dd class="entry">
+					<p>ゴミ箱を空にする。実行後すぐには空にならず、削除処理が完了した時点で<a href="./list_shiori_event.html#OnRecycleBinEmpty">OnRecycleBinEmpty</a>が通知される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
 					</ul>
 				</dd>
 			</dl>
