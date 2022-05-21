@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -513,7 +513,6 @@
 						<dd>スタンプのコメント。<br />さくらスクリプトを含まない文字列（除去される）を指定。<br />&lt;br&gt;（&lt;BR&gt;、＜br＞、＜BR＞）で改行可能。<br />省略可。</dd>
 					</dl>
 				</dd>
-				</dd>
 			</dl>
 			<dl id="OnStampInfoCall">
 				<dt class="entry">OnStampInfoCall</dt>
@@ -536,7 +535,7 @@
 					<p>フォルダ指定が正常で、セーブファイルが無事に見つかった場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>要求した変数名をカンマ区切りで繋いだもの（<変数1>,<変数2>...）</dd>
+						<dd>要求した変数名をカンマ区切りで繋いだもの（&lt;変数1&gt;,&lt;変数2&gt;...）</dd>
 						<dt>Reference*</dt>
 						<dd>1以降、各変数の値</dd>
 					</dl>
@@ -548,7 +547,7 @@
 					<p>フォルダ指定は正常だがセーブファイルが見つからなかった場合に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>要求した変数名をカンマ区切りで繋いだもの（<変数1>,<変数2>...）</dd>
+						<dd>要求した変数名をカンマ区切りで繋いだもの（&lt;変数1&gt;,&lt;変数2&gt;...）</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -1829,7 +1828,7 @@
 						<dd><a href="#reference_OnMahjong">※サーバコマンド</a>に応じた追加情報</dd>
 					</dl>
 					<section id="reference_OnMahjong">
-						<h1>UKAJONG/0.2におけるサーバコマンドとその追加情報</h2>
+						<h1>UKAJONG/0.2におけるサーバコマンドとその追加情報</h1>
 						<dl class="reference">
 							<dt>Reference1</dt>
 							<dd>gamestart（ゲーム開始時）</dd>
@@ -1985,7 +1984,7 @@
 						<dd><a href="#reference_OnMahjongResponse">※クライアントコマンド</a>に応じた追加情報</dd>
 					</dl>
 					<section id="reference_OnMahjongResponse">
-						<h1>UKAJONG/0.2におけるクライアントコマンドとその追加情報</h2>
+						<h1>UKAJONG/0.2におけるクライアントコマンドとその追加情報</h1>
 						<dl class="reference">
 							<dt>Reference1</dt>
 							<dd>hello（接続確認の返信）</dd>
@@ -2501,7 +2500,6 @@
 					<dd>
 						「奏でる日常の音色」のバージョンよりもゴーストのバージョンが低いですが、ゴーストのバージョンよりも高いバージョンのお茶会イベントについて、単語を当てはめたりなどトークの内容を変化させて自動的に対応することができます。
 					</dd>
-					</dd>
 					<dt>固定対応</dt>
 					<dd>
 						「奏でる日常の音色」が提供するお茶会の内容によって対応は変化しません。返答イベントのReference0はゴーストの制作者が確認しているお茶会バージョンです。この対応情報を返送したゴーストについては、お茶会の内容選択を考慮しません。
@@ -2749,16 +2747,16 @@
 						<dd>Moon phase as a string. Can be "New Moon", "Waxing Crescent". "First Quarter", "Waxing Gibbous", "Full Moon", "Waning Gibbous", "Last Quarter", or "Waning Crescent".</dd>
 						<dt>Reference10</dt>
 						<dd>Moon phase number. Numbers correspond to the following phases.
-						<dl>
-						<dd>0 - New Moon</dd>
-						<dd>1 - Waxing Crescent</dd>
-						<dd>2 - First Quarter</dd>
-						<dd>3 - Waxing Gibbous</dd>
-						<dd>4 - Full Moon</dd>
-						<dd>5 - Waning Gibbous</dd>
-						<dd>6 - Last Quarter</dd>
-						<dd>7 - Waning Crescent</dd>
-						</dl>
+						<ul>
+							<li>0 - New Moon</li>
+							<li>1 - Waxing Crescent</li>
+							<li>2 - First Quarter</li>
+							<li>3 - Waxing Gibbous</li>
+							<li>4 - Full Moon</li>
+							<li>5 - Waning Gibbous</li>
+							<li>6 - Last Quarter</li>
+							<li>7 - Waning Crescent</li>
+						</ul>
 						</dd>
 						<dt>Reference11</dt>
 						<dd>Moon illumination as a percentage.</dd>
@@ -2772,22 +2770,22 @@
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>An array containing information for a weather alert. Some elements may not be filled. Elements are separated by a 1 byte value.
-						<dl>
-						<!--I have no idea what a lot of these mean! If anyone else knows please feel free to detail it.-->
-						<dd>[0] - Headline</dd>
-						<dd>[1] - Type of alert</dd>
-						<dd>[2] - Severity</dd>
-						<dd>[3] - Urgency</dd>
-						<dd>[4] - Areas covered</dd>
-						<dd>[5] - Category</dd>
-						<dd>[6] - Certainty</dd>
-						<dd>[7] - Event</dd>
-						<dd>[8] - Note</dd>
-						<dd>[9] - Effective time</dd>
-						<dd>[10] - Expires time</dd>
-						<dd>[11] - Description</dd>
-						<dd>[12] - Instructions</dd>
-						</dl>
+						<ul>
+							<!--I have no idea what a lot of these mean! If anyone else knows please feel free to detail it.-->
+							<li>[0] - Headline</li>
+							<li>[1] - Type of alert</li>
+							<li>[2] - Severity</li>
+							<li>[3] - Urgency</li>
+							<li>[4] - Areas covered</li>
+							<li>[5] - Category</li>
+							<li>[6] - Certainty</li>
+							<li>[7] - Event</li>
+							<li>[8] - Note</li>
+							<li>[9] - Effective time</li>
+							<li>[10] - Expires time</li>
+							<li>[11] - Description</li>
+							<li>[12] - Instructions</li>
+						</ul>
 						</dd>
 					</dl>
 				</dd>
@@ -2843,39 +2841,39 @@
 					<dl class="reference">
 						<dt>Reference0～23</dt>
 						<dd>A comma separated array containing forecast information. The number of the reference corresponds to the number of the hour the data is for, in 24 hour time (e.g.: reference0 is for 00:00/12AM, reference14 is for 14:00/2PM).
-						<dl>
-							<dd>[0] - Date and time the information is for.</dd>
-							<dd>[1] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.</dd>
-							<dd>[2] - Temperature in Fahrenheit.</dd>
-							<dd>[3] - Temperature in Celsius.</dd>
-							<dd>[4] - "Feels like" temperature in Fahrenheit.</dd>
-							<dd>[5] - "Feels like" temperature in Celsius.</dd>
-							<dd>[6] - Humidity as a percentage.</dd>
-							<dd>[7] - Wind speed in miles per hour.</dd>
-							<dd>[8] - Wind speed in kilometers per hour.</dd>
-							<dd>[9] - Wind direction as a 16 point compass (e.g.: NNW for north/northwest).</dd>
-							<dd>[10] - Wind direction in degrees.</dd>
-							<dd>[11] - Wind gusts in miles per hour.</dd>
-							<dd>[12] - Wind gusts in kilometers per hour.</dd>
-							<dd>[13] - Precipitation in inches.</dd>
-							<dd>[14] - Precipitation in millimeters.</dd>
-							<dd>[15] - Cloud cover as a percentage.</dd>
-							<dd>[16] - "Will it rain", 1 if yes, 0 if no.</dd>
-							<dd>[17] - Chance of rain as a percentage.</dd>
-							<dd>[18] - "Will it snow", 1 if yes, 0 if no.</dd>
-							<dd>[19] - Chance of snow as a percentage.</dd>
-							<dd>[20] - Visibility in miles.</dd>
-							<dd>[21] - Visibility in kilometers.</dd>
-							<dd>[22] - Wind chill in Fahrenheit.</dd>
-							<dd>[23] - Wind chill in Celsius.</dd>
-							<dd>[24] - Heat index in Fahrenheit.</dd>
-							<dd>[25] - Heat index in Celsius.</dd>
-							<dd>[26] - Dew point in Fahrenheit.</dd>
-							<dd>[27] - Dew point in Celsius.</dd>
-							<dd>[28] - Pressure in inches.</dd>
-							<dd>[29] - Pressure in millibars.</dd>
-							<dd>[30] - UV index.</dd>
-						</dl>
+						<ul>
+							<li>[0] - Date and time the information is for.</li>
+							<li>[1] - "Is it daytime". 1 if the sun is up, 0 if the sun is down.</li>
+							<li>[2] - Temperature in Fahrenheit.</li>
+							<li>[3] - Temperature in Celsius.</li>
+							<li>[4] - "Feels like" temperature in Fahrenheit.</li>
+							<li>[5] - "Feels like" temperature in Celsius.</li>
+							<li>[6] - Humidity as a percentage.</li>
+							<li>[7] - Wind speed in miles per hour.</li>
+							<li>[8] - Wind speed in kilometers per hour.</li>
+							<li>[9] - Wind direction as a 16 point compass (e.g.: NNW for north/northwest).</li>
+							<li>[10] - Wind direction in degrees.</li>
+							<li>[11] - Wind gusts in miles per hour.</li>
+							<li>[12] - Wind gusts in kilometers per hour.</li>
+							<li>[13] - Precipitation in inches.</li>
+							<li>[14] - Precipitation in millimeters.</li>
+							<li>[15] - Cloud cover as a percentage.</li>
+							<li>[16] - "Will it rain", 1 if yes, 0 if no.</li>
+							<li>[17] - Chance of rain as a percentage.</li>
+							<li>[18] - "Will it snow", 1 if yes, 0 if no.</li>
+							<li>[19] - Chance of snow as a percentage.</li>
+							<li>[20] - Visibility in miles.</li>
+							<li>[21] - Visibility in kilometers.</li>
+							<li>[22] - Wind chill in Fahrenheit.</li>
+							<li>[23] - Wind chill in Celsius.</li>
+							<li>[24] - Heat index in Fahrenheit.</li>
+							<li>[25] - Heat index in Celsius.</li>
+							<li>[26] - Dew point in Fahrenheit.</li>
+							<li>[27] - Dew point in Celsius.</li>
+							<li>[28] - Pressure in inches.</li>
+							<li>[29] - Pressure in millibars.</li>
+							<li>[30] - UV index.</li>
+						</ul>
 						</dd>
 						<dt>Reference24</dt>
 						<dd>The day the preceding information is for. 0 for today, 1 for tomorrow, 2 for the day after tomorrow.</dd>
@@ -3100,49 +3098,47 @@
 			</div>
 			<div class="caption" id="caption_weather_station_uk_defra_index">
 				<h1>UK Defra Index reference</h1>
-				<dl>
-					<table align="center" border=1px>
-						<tr>
-							<th>Index</th>
-							<td>1</td>
-							<td>2</td>
-							<td>3</td>
-							<td>4</td>
-							<td>5</td>
-							<td>6</td>
-							<td>7</td>
-							<td>8</td>
-							<td>9</td>
-							<td>10</td>
-						</tr>
-						<tr>
-							<th>Band</th>
-							<td>Low</td>
-							<td>Low</td>
-							<td>Low</td>
-							<td>Moderate</td>
-							<td>Moderate</td>
-							<td>Moderate</td>
-							<td>High</td>
-							<td>High</td>
-							<td>High</td>
-							<td>Very High</td>
-						</tr>
-						<tr>
-							<th>µgm-3</th>
-							<td>0-11</td>
-							<td>12-23</td>
-							<td>24-35</td>
-							<td>36-41</td>
-							<td>42-47</td>
-							<td>48-53</td>
-							<td>54-58</td>
-							<td>59-64</td>
-							<td>65-70</td>
-							<td>71 or more</td>
-						</tr>
-					</table>
-				</dl>
+				<table>
+					<tr>
+						<th>Index</th>
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+					</tr>
+					<tr>
+						<th>Band</th>
+						<td>Low</td>
+						<td>Low</td>
+						<td>Low</td>
+						<td>Moderate</td>
+						<td>Moderate</td>
+						<td>Moderate</td>
+						<td>High</td>
+						<td>High</td>
+						<td>High</td>
+						<td>Very High</td>
+					</tr>
+					<tr>
+						<th>µgm-3</th>
+						<td>0-11</td>
+						<td>12-23</td>
+						<td>24-35</td>
+						<td>36-41</td>
+						<td>42-47</td>
+						<td>48-53</td>
+						<td>54-58</td>
+						<td>59-64</td>
+						<td>65-70</td>
+						<td>71 or more</td>
+					</tr>
+				</table>
 			</div>
 			<div class="caption" id="caption_weather_station_errors">
 				<h1>Reason for Error</h1>

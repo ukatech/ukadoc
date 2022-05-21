@@ -189,6 +189,7 @@ a:hover {
     text-align: center;
     padding: 5px 0;
     margin-bottom: 0.5em;
+    background-color: #fdd;
 }
 .categories .caption.introduction h1 {
     border-color: #669;
@@ -420,4 +421,10 @@ a:hover {
 }
 .category dd.entry .legend ol li:nth-of-type(odd) {
     background-color: #ccd;
+}
+.category table, .category td, .category th {
+    border: 1px #333 solid;
+}
+.category table {
+    margin: 0 auto;
 }
