@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -282,21 +282,21 @@
 							環境変数としてプロパティを参照し、値を埋め込む。
 							<br />単に値をそのまま表示したい場合に用いる。
 							<br />以下はベースウェアの名前とバージョンをその場に埋め込む（表示する）。
-							<pre><code>%property[baseware.name] ver,%property[baseware.version]</pre></code>
+							<pre><code>%property[baseware.name] ver,%property[baseware.version]</code></pre>
 						</dd>
 						<dt><a href="list_sakura_script.html#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名]</a></dt>
 						<dd>
 							さくらスクリプトのタグによって任意名のSHIORI Eventを発生させ、そのReferenceを通じてプロパティを取得する。
 							<br />プロパティをもとにSHIORI側でアクションを起こしたい場合に用いる。
 							<br />以下はID「OnGetSakuraName」というSHIORI Eventを発生させ、そのreference0としてゴースト「Emily/Phase4.5」の相方側名（Teddy）を通知させる。
-							<pre><code>\![get,property,OnGetSakuraName,ghostlist(Emily/Phase4.5).keroname]</pre></code>
+							<pre><code>\![get,property,OnGetSakuraName,ghostlist(Emily/Phase4.5).keroname]</code></pre>
 						</dd>
 						<dt><a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a></dt>
 						<dd>
 							さくらスクリプトのタグによってプロパティを書き替える。
 							<br />全てのプロパティに対して書き込みが許されているわけではないが、このページの項目で<em class="specsign">[SET有効]</em>とあるものはこのようにして操作可能。
 							<br />以下はシェル「ULTIMATE FORM」を、オーナードローメニューのシェル切り替えメニューから隠す例。
-							<pre><code>\![set,property,currentghost.shelllist(ULTIMATE FORM).menu,hidden]</pre></code>
+							<pre><code>\![set,property,currentghost.shelllist(ULTIMATE FORM).menu,hidden]</code></pre>
 						</dd>
 					</dl>
 				</section>
@@ -500,39 +500,39 @@
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
-				<div class="caption">
-					<h1>※SHIORI Statusヘッダ</h1>
-					<p>複数がカンマ(,)区切りで返ったり、空が返る場合もある</p>
-					<dl>
-						<dt>talking</dt>
-						<dd>現在スクリプトを実行中（喋り中）。</dd>
-						<dt>passive</dt>
-						<dd>passiveモード中（\![enter,passivemode]）。</dd>
-						<dt>induction</dt>
-						<dd>inductionモード中（\![enter,inductionmode]）。</dd>
-						<dt>timecritical</dt>
-						<dd>\tタグでロック中。</dd>
-						<dt>nouserbreak</dt>
-						<dd>nouserbreakモード中（\![enter,nouserbreak]）。</dd>
-						<dt>online</dt>
-						<dd>オンライン中（ヘッドラインデータ取得中や時刻あわせ中、自分自身のネットワーク更新中など）。</dd>
-						<dt>choosing</dt>
-						<dd>\q、\__qタグによる選択肢表示中。</dd>
-						<dt>minimizing</dt>
-						<dd>最小化中（タスクトレイアイコン化中）。</dd>
-						<dt>opening(種類)</dt>
-						<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がスラッシュ区切りで入る。<br />例：opening(input/dialog)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
-						<dt>balloon(情報)</dt>
-						<dd>バルーン表示中。<br />情報の部分には(キャラID)=(バルーンID)の形式で表示中のバルーンが列挙される。バルーンIDは左右の区別はない(常に偶数)。<br />例：balloon(0=2/1=0)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
-					</dl>
-					<p>※Statusヘッダは、SHIORI毎に以下のようにも取得出来ます。</p>
-					<ul>
-						<li>華和梨……System.Request.Statusエントリ</li>
-						<li>YAYA……status変数内</li>
-						<li>里々……情報取得変数（Status）</li>
-					</ul>
-				</div>
 			</dl>
+			<div class="caption">
+				<h1>※SHIORI Statusヘッダ</h1>
+				<p>複数がカンマ(,)区切りで返ったり、空が返る場合もある</p>
+				<dl>
+					<dt>talking</dt>
+					<dd>現在スクリプトを実行中（喋り中）。</dd>
+					<dt>passive</dt>
+					<dd>passiveモード中（\![enter,passivemode]）。</dd>
+					<dt>induction</dt>
+					<dd>inductionモード中（\![enter,inductionmode]）。</dd>
+					<dt>timecritical</dt>
+					<dd>\tタグでロック中。</dd>
+					<dt>nouserbreak</dt>
+					<dd>nouserbreakモード中（\![enter,nouserbreak]）。</dd>
+					<dt>online</dt>
+					<dd>オンライン中（ヘッドラインデータ取得中や時刻あわせ中、自分自身のネットワーク更新中など）。</dd>
+					<dt>choosing</dt>
+					<dd>\q、\__qタグによる選択肢表示中。</dd>
+					<dt>minimizing</dt>
+					<dd>最小化中（タスクトレイアイコン化中）。</dd>
+					<dt>opening(種類)</dt>
+					<dd>入力ウィンドウ展開中。<br />種類の部分にはcommunicate,input,teach,dialogのうち、開いている物がスラッシュ区切りで入る。<br />例：opening(input/dialog)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
+					<dt>balloon(情報)</dt>
+					<dd>バルーン表示中。<br />情報の部分には(キャラID)=(バルーンID)の形式で表示中のバルーンが列挙される。バルーンIDは左右の区別はない(常に偶数)。<br />例：balloon(0=2/1=0)<br />※SSP 2.3.97よりスラッシュ。それ以前はカンマ区切り</dd>
+				</dl>
+				<p>※Statusヘッダは、SHIORI毎に以下のようにも取得出来ます。</p>
+				<ul>
+					<li>華和梨……System.Request.Statusエントリ</li>
+					<li>YAYA……status変数内</li>
+					<li>里々……情報取得変数（Status）</li>
+				</ul>
+			</div>
 			<dl id="currentghost.shelllist(シェル名/パス).汎用プロパティ名">
 				<dt class="entry">currentghost.shelllist(シェル名/パス).汎用プロパティ名</dt>
 				<dd class="entry">
@@ -604,7 +604,7 @@
 			<dl id="currentghost.scope(番号).surface.x">
 				<dt class="entry">currentghost.scope(番号).surface.x</dt>
 				<dd class="entry">
-					<p>現在のゴーストのスコープIDのサーフェスのX座標。</p></p>
+					<p>現在のゴーストのスコープIDのサーフェスのX座標。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>

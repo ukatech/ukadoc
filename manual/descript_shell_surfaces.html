@@ -82,7 +82,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -114,7 +114,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -244,7 +244,7 @@
 				<li class="caption"><a href="#caption_aliastxt">alias.txt</a></li>
 			</ul>
 			<ul>
-				<li><a href="#*,[*]">*,[*]</a></li>
+				<li><a href="#*,_*_">*,[*]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -491,7 +491,7 @@ animation10.pattern1,overlay,201,700,200,120
 animation10.pattern2,overlay,202,700,200,120
 animation10.pattern3,overlay,-1,700,0,0
 }
-</pre></code>
+</code></pre>
 					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
 					<p>全てのアニメーション定義はinterval定義とpattern定義を含んでいる。他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つは存在する必要がある。</p>
@@ -541,7 +541,7 @@ surface501
 {
 element0,overlay,dress2.png,0,0
 }
-</pre></code>
+</code></pre>
 					<p>surfaces.txtにおける着せ替えの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「服1」と「服2」の二つの着せ替えを定義している。</p>
 					<p>通常のアニメーション定義同様、interval定義とpattern定義が必要である。interval定義にbindを指定する事で、そのアニメーションが着せ替えの定義である事を示す。</p>
@@ -1145,7 +1145,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				</dd>
 			</dl>
 			<section class="subcategory">
-				<h1 id="h-animationinterval">アニメーションインターバル</h2>
+				<h1 id="h-animationinterval">アニメーションインターバル</h1>
 				<section class="caption introduction" id="introduction_animationinterval">
 					<h1>アニメーションインターバル</h1>
 					<section>
@@ -1584,7 +1584,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
-				<dl id="alternativestop,_ID1,ID2..._">
+				<dl id="parallelstop,_ID1,ID2..._">
 					<dt class="entry">parallelstop,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
@@ -1618,7 +1618,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<p>aliasブレスは、MATERIA period453まではsurfaces.txtでなくalias.txtという専用のファイルに記述される仕様であった。</p>
 				<p>現在では記述はsurfaces.txtに統合されているが、CROW・SSP共に互換性が保たれているため、別途alias.txtを用意する事も可能である。</p>
 			</section>
-			<dl id="*,[*]">
+			<dl id="*,_*_">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
 					<p>サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
@@ -1785,7 +1785,7 @@ mousedown1,Bust,system:grip
 		</section>
 		<section class="category">
 			<h1>tooltipブレス</h1>
-			<section class="caption introduction" id="introduction_cursorbrace">
+			<section class="caption introduction" id="introduction_tooltipbrace">
 				<h1>tooltipブレス記述例</h1>
 <pre><code>sakura.tooltips
 {

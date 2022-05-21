@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -357,7 +357,7 @@
 				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
 				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
 				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_set,otherghosttalk,true|false|before|after_">\![set,otherghosttalk,true|false|before|after]</a></li>
+				<li><a href="#_!_set,otherghosttalk,true_false_before_after_">\![set,otherghosttalk,true|false|before|after]</a></li>
 				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
 				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,イベント名,r0,r1,r2...]</a></li>
@@ -892,7 +892,6 @@
 					<br>左または右に吸着した場合、左右方向へのドラッグ移動ができなくなる。
 					</p>
 					<p>ゴースト終了まで有効。</p>
-					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2114,7 +2113,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_f_default_">
+			<dl id="_f_disable_">
 				<dt class="entry">\f[disable]</dt>
 				<dd class="entry">
 					<p>全てのバルーン属性を無効なテキスト表示に戻す。</p>
@@ -3456,7 +3455,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_set,otherghosttalk,true|false|before|after_">
+			<dl id="_!_set,otherghosttalk,true_false_before_after_">
 				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
 				<dd class="entry">
 					<p><a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a>を通知するかどうかを設定。初期値false。<br>
@@ -4536,7 +4535,8 @@
 					<li>Reference0は入力内容</li>
 					<li>Reference1は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
 					<li>Reference2以降は--reference=で指定した追加情報</li>
-				</p>
+				</ul>
+				<p>
 					IDにかかわらず、閉じるボタンを押した時とタイムアウト時は<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
 				</p>
 			</section>
