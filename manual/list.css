@@ -369,6 +369,7 @@ a:hover {
     float: left;
     clear: left;
     padding: 5px;
+    text-align: right;
     min-width: 7em;
     _width: 7em;
 }
