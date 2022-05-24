@@ -142,6 +142,7 @@
 				<li><a href="#headlinepathlist">headlinepathlist</a></li>
 				<li><a href="#pluginpathlist">pluginpathlist</a></li>
 				<li><a href="#OnSecondChange">OnSecondChange</a></li>
+				<li><a href="#OnOtherGhostTalk">OnOtherGhostTalk</a></li>
 				<li><a href="#OnGhostBoot">OnGhostBoot</a></li>
 				<li><a href="#OnGhostExit">OnGhostExit</a></li>
 				<li><a href="#OnGhostInfoUpdate">OnGhostInfoUpdate</a></li>
@@ -241,6 +242,29 @@
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
 					<p>秒経過で発生。<br />何秒ごとに通知されるかは、descript.txtの<a href="descript_plugin.html#secondchangeinterval,秒数">secondchangeintervalで設定可能。</a></p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherGhostTalk">
+				<dt class="entry">OnOtherGhostTalk</dt>
+				<dd class="entry">
+					<p>ゴーストが話した際に発生。<br />descript.txtの<a href="descript_plugin.html#otherghosttalk,オプション">otherghosttalkで設定可能。</a></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ゴースト名。</dd>
+						<dt>Reference1</dt>
+						<dd>ゴーストの本体側名。</dd>
+						<dt>Reference2</dt>
+						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
+						<dt>Reference3</dt>
+						<dd>ゴーストの話したイベントID。</dd>
+						<dt>Reference4</dt>
+						<dd>ゴーストの話した内容のスクリプト。</dd>
+						<dt>Reference5</dt>
+						<dd>バイト値1区切りのゴーストに渡されたReference。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
