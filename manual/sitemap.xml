@@ -23,6 +23,11 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/descript_headline.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
   <loc>http://ssp.shillest.net/ukadoc/manual/descript_install.html</loc>
   <priority>0.8</priority>
   <changefreq>weekly</changefreq>
@@ -158,12 +163,32 @@
   <changefreq>weekly</changefreq>
 </url>
 <url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_fmo_mutex.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
   <loc>http://ssp.shillest.net/ukadoc/manual/spec_headline.html</loc>
   <priority>0.8</priority>
   <changefreq>weekly</changefreq>
 </url>
 <url>
   <loc>http://ssp.shillest.net/ukadoc/manual/spec_plugin.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_shiori3.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_sstp.html</loc>
+  <priority>0.8</priority>
+  <changefreq>weekly</changefreq>
+</url>
+<url>
+  <loc>http://ssp.shillest.net/ukadoc/manual/spec_web.html</loc>
   <priority>0.8</priority>
   <changefreq>weekly</changefreq>
 </url>
