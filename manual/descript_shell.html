@@ -286,7 +286,7 @@ kero.menuitem3,2
 </code></pre>
 					<p>type、nameは必須。</p>
 					<p>SSPでは、シェルに対してもhomeurlを設定しておくことで、エクスプローラなどからネットワーク更新が可能になる。</p>
-					<p>着せ替え設定の各項目については後述のそれぞれの節を参照。<br>基本的な仕組みは、<a href="descript_shell_surfaces.txt">surfaces.txt</a>で定義した、タイミングbindのanimationIDに対して、着せ替え名と着せ替えカテゴリ名を与え（sakura(kero).bindgroup*.name,～）、またオーナードローメニュー上での配置を指定する必要がある（sakura(kero).menuitem*,～）。</p>
+					<p>着せ替え設定の各項目については後述のそれぞれの節を参照。<br>基本的な仕組みは、<a href="descript_shell_surfaces.html">surfaces.txt</a>で定義した、タイミングbindのanimationIDに対して、着せ替え名と着せ替えカテゴリ名を与え（sakura(kero).bindgroup*.name,～）、またオーナードローメニュー上での配置を指定する必要がある（sakura(kero).menuitem*,～）。</p>
 					<p>なお、\や%で始まる文字列はさくらスクリプトや環境変数のタグと見なされ、セキュリティ上のリスクから破棄される。もし単なる文字としてそれらを含めたい場合は、\\や\%などとしてエスケープする必要がある。</p>
 				</section>
 			</section>
@@ -482,7 +482,7 @@ kero.menuitem3,2
 			<dl id="seriko.alignmenttodesktop,位置情報">
 				<dt class="entry">seriko.alignmenttodesktop,位置情報</dt>
 				<dd class="entry">
-					<p>全体のサーフェスのデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。<br><a href="descript_ghost.html#seriko.alignmenttodesktop,位置情報">ゴースト側指定</a>より優先度が高く、シェル側個別指定（<a href="sakura.seriko.alignmenttodesktop,位置情報">sakura.seriko.alignmenttodesktop</a>など）より優先度が低い。<br>※ゴースト側全体指定＜ゴースト側スコープ個別指定＜これ＜シェル側スコープ個別指定</p>
+					<p>全体のサーフェスのデフォルト<a href="#caption_surfaceposition">※表示位置情報</a>。<br><a href="descript_ghost.html#seriko.alignmenttodesktop,位置情報">ゴースト側指定</a>より優先度が高く、シェル側個別指定（<a href="#sakura.seriko.alignmenttodesktop,位置情報">sakura.seriko.alignmenttodesktop</a>など）より優先度が低い。<br>※ゴースト側全体指定＜ゴースト側スコープ個別指定＜これ＜シェル側スコープ個別指定</p>
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1163,7 +1163,7 @@ kero.menuitem3,2
 						アニメーションID*番のパーツにカテゴリ名とパーツ名を定義。(3人目以降)<br />
 						アニメーションIDはsurfaces.txtにおけるアニメーション定義の「animation*.interval,bind」の*にあたる数字。<br />
 						オーナードローメニューの着せ替えに表示するために必要。<br />
-						Sakura Scriptの<a href="list_char*_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
+						Sakura Scriptの<a href="list_sakura_script.html#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a>で操作するためにも必要。（SSPのみ）
 					</p>
 					<p class="default">動作なし</p>
 					<ul class="supported-baseware">

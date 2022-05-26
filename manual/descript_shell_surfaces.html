@@ -301,7 +301,7 @@
 			<section>
 				<h1>基本の書式</h1>
 				<p>基本的にほとんどの設定が<em>省略可能</em>であり、必要に応じて各設定を行えばよい。</p>
-				<p>設定は、書くとすれば必ず一行目に書く必要がある<a href="#charset,文字コード">charset</a>の他は、それぞれ「{」と「}」で囲まれた各ブレス内に記述する（各ブレスについてはこのページ内のそれぞれの項目参照）。</p>
+				<p>設定は、書くとすれば必ず一行目に書く必要がある<a href="#charset,文字コード-surfaces">charset</a>の他は、それぞれ「{」と「}」で囲まれた各ブレス内に記述する（各ブレスについてはこのページ内のそれぞれの項目参照）。</p>
 				<p>「{」および「}」はそれのみが書かれた行として存在する必要があり、例えば「surface1 {」のようにブレス名に続けて書く事はできない。</p>
 <pre><code>ブレス名
 {
@@ -494,7 +494,7 @@ animation10.pattern3,overlay,-1,700,0,0
 					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
 					<p>全てのアニメーション定義はinterval定義とpattern定義を含んでいる。他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つは存在する必要がある。</p>
-					<p><a href="#animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
+					<p><a href="#animation*.interval,インターバル">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
 					<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
 				</section>
 				<section>
@@ -585,7 +585,7 @@ element0,overlay,dress2.png,0,0
 					<p>新定義における書式の変更点は以下の四つです。</p>
 					<ol>
 						<li><a href="#animation*.interval,インターバル">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
-						<li><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
+						<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
 						<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
 						<li>描画メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
 					</ol>
@@ -1280,7 +1280,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="_1_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p>そのアニメーションをサーフェスの<a href="#introduction-mayuna">着せ替え</a>として定義する。</p>
+						<p>そのアニメーションをサーフェスの<a href="#introduction_mayuna">着せ替え</a>として定義する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1355,7 +1355,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dd class="entry">
 						<p>
 							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を単に重ねる。
-							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#bind">bind</a>も同じ効果となる）。
+							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#_2_bind">bind</a>も同じ効果となる）。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
