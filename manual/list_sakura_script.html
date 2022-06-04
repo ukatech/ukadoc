@@ -236,7 +236,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>文字変更コマンド</h1>
+			<h1>Text Modification Commands</h1>
 			<ul>
 				<li><a href="#_f_align,寄せる側_">\f[align,寄せる側]</a></li>
 				<li><a href="#_f_name,文字名_">\f[name,フォント名]</a></li>
@@ -258,7 +258,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>ウエイトコマンド</h1>
+			<h1>Wait Commands</h1>
 			<ul>
 				<li><a href="#_w時間">\w時間</a></li>
 				<li><a href="#__w_時間_">\_w[時間]</a></li>
@@ -275,7 +275,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>Choice commands</h1>
+			<h1>Choice Commands</h1>
 			<ul>
 				<li><a href="#_q_タイトル,ID_">\q[(Title),(ID)]</a></li>
 				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[(Title),On(ID),(r0),(r1),...]</a></li>
@@ -293,7 +293,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>選択肢マーカー変更コマンド</h1>
+			<h1>Choice Marker Modification Commands</h1>
 			<ul>
 				<li><a href="#_f_cursorstyle,形状_">\f[cursorstyle,形状]</a></li>
 				<li><a href="#_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</a></li>
@@ -2501,228 +2501,228 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択肢マーカー変更コマンド</h1>
+			<h1>Choice Marker Modification Commands</h1>
 			<dl id="_f_cursorstyle,形状_">
-				<dt class="entry">\f[cursorstyle,形状]</dt>
+				<dt class="entry">\f[cursorstyle,style]</dt>
 				<dd class="entry">
-					<p>選択中マーカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
+					<p>Changes the appearance of choice text when being hovered over.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursorstyle,underline]\q[選択肢,OnTest]選択中の選択肢の表示を下線に変更する。</code></p>
+							<p><code>\f[cursorstyle,underline]\q[Choice,OnTest]This choice will be changed to have an underline when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">
-				<dt class="entry">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</dt>
+				<dt class="entry">\f[cursorcolor,(color specification)] or \f[cursorbrushcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中マーカーの矩形内の色を変更。\f[cursormethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the rectangular indicator when choice text is being hovered over. It is important to note that the color is affected by \f[cursormethod,(drawing method)].<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code>\f[cursorbrushcolor,red]\q[Choice,OnTest]When the style of the choice text is set to square, the background color will become red if hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorpencolor,色指定_">
-				<dt class="entry">\f[cursorpencolor,色指定]</dt>
+				<dt class="entry">\f[cursorpencolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中マーカーの矩形枠および下線の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the underline or rectangular indicator's outline when choice text is being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursorpencolor,0,255,0]\q[選択肢,OnTest]選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code>\f[cursorpencolor,0,255,0]\q[Choice,OnTest]When the style of the choice text is set to underline or square, the lines will become green if hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursorfontcolor,色指定_">
-				<dt class="entry">\f[cursorfontcolor,色指定]</dt>
+				<dt class="entry">\f[cursorfontcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中マーカーの文字色をRGB(0～255)で変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the choice text when being hovered over using RGB values (0~255).<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursorfontcolor,default.anchor]\q[選択肢,OnTest]選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+							<p><code>\f[cursorfontcolor,default.anchor]\q[Choice,OnTest]Changes the color of choice text to the same as the anchor color when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursormethod,描画方法_">
-				<dt class="entry">\f[cursormethod,描画方法]</dt>
+				<dt class="entry">\f[cursormethod,(drawing method)]</dt>
 				<dd class="entry">
-					<p>選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。例：notmaskpen</p>
+					<p>Changes the drawing method of the choice text when being hovered over. Only effective when the style is set to either square or square+underline.<br>All operators valid in Win32API's SetROP2 function can be specified.<br>Specifying default will return to the balloon's default setting.<br>Reference: <a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2 function (external site)</a><br>※The drawing method does not include "R2_" and should be specified as the mode name in lowercase. Ex: notmaskpen</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursormethod,copypen]\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursorbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code>\f[cursormethod,copypen]\f[cursorbrushcolor,red]\q[Choice,OnTest]Changes the drawing method inside the lines of the choice when hovered over. When copypen is specified, the color of cursorbrushcolor will be used as is.<br></code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectstyle,形状_">
-				<dt class="entry">\f[cursornotselectstyle,形状]</dt>
+				<dt class="entry">\f[cursornotselectstyle,(style)]</dt>
 				<dd class="entry">
-					<p>非選択中マーカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
+					<p>Changes the appearance of choice text when not being hovered over.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectstyle,underline]\q[選択肢,OnTest]非選択中の選択肢の表示を下線に変更する。</code></p>
+							<p><code>\f[cursornotselectstyle,underline]\q[Choice,OnTest]Changes unselected choice text to be displayed with an underline.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">
-				<dt class="entry">\f[cursornotselectcolor,色指定]もしくは\f[cursornotselectbrushcolor,色指定]</dt>
+				<dt class="entry">\f[cursornotselectcolor,(color specification)] or \f[cursornotselectbrushcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中マーカーの矩形内の色を変更。\f[cursornotselectmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the rectangular indicator when choice text is not being hovered over. It is important to note that the color is affected by \f[cursornotselectmethod,(drawing method)].<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code>\f[cursornotselectbrushcolor,red]\q[Choice,OnTest]When the style of the choice text is set to square, the background color will become red while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectpencolor,色指定_">
-				<dt class="entry">\f[cursornotselectpencolor,色指定]</dt>
+				<dt class="entry">\f[cursornotselectpencolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中マーカーの矩形枠および下線の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the underline or rectangular indicator's outline when choice text is not being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectpencolor,0,255,0]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code>\f[cursornotselectpencolor,0,255,0]\q[Choice,OnTest]When the stlye of the choice text is set to underline or square, the lines will become green while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectfontcolor,色指定_">
-				<dt class="entry">\f[cursornotselectfontcolor,色指定]</dt>
+				<dt class="entry">\f[cursornotselectfontcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中マーカーの文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the choice text when not being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectfontcolor,default.anchor]\q[選択肢,OnTest]非選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+							<p><code>\f[cursornotselectfontcolor,default.anchor]\q[Choice,OnTest]Changes the color of choice text to the same as the anchor color while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_cursornotselectmethod,描画方法_">
-				<dt class="entry">\f[cursornotselectmethod,描画方法]</dt>
+				<dt class="entry">\f[cursornotselectmethod,(drawing method)]</dt>
 				<dd class="entry">
-					<p>非選択中マーカー描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>Changes the drawing method of the choice text when not being hovered over. Only effective when the style is set to either square or square+underline.<br>All operators valid in Win32API's SetROP2 function can be specified.<br>Specifying default will return to the balloon's default setting.<br>Reference: <a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2 function (external site)</a><br>※The drawing method does not include "R2_" and should be specified as the mode name in lowercase.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectmethod,copypen]\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursornotselectbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code>\f[cursornotselectmethod,copypen]\f[cursornotselectbrushcolor,red]\q[Choice,OnTest]Changes the drawing method inside the lines of the choice while not hovered over. When copypen is specified, the color of cursornotselectbrushcolor will be used as is.<br></code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorstyle,形状_">
-				<dt class="entry">\f[anchorstyle,形状]</dt>
+				<dt class="entry">\f[anchorstyle,(style)]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの形状を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the appearance of anchor text when being hovered over.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code>\f[anchorstyle,square]\_a[OnTest]Anchor\_aChanges the style of the anchor's lines (rectangle) when being hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">
-				<dt class="entry">\f[anchorcolor,色指定]もしくは\f[anchorbrushcolor,色指定]</dt>
+				<dt class="entry">\f[anchorcolor,(color specification)] or \f[anchorbrushcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの矩形内の色を変更。\f[anchormethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the rectangular indicator when anchor text is being hovered over. It is important to note that the color is affected by \f[anchormethod,(drawing method)].<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code>\f[anchorbrushcolor,red]\_a[OnTest]Anchor\_aWhen the style of the anchor text is set to square, the background color will become red if hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorpencolor,色指定_">
-				<dt class="entry">\f[anchorpencolor,色指定]</dt>
+				<dt class="entry">\f[anchorpencolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの矩形枠および下線の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the underline or rectangular indicator's outline when anchor text is being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorpencolor,0,255,0]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code>\f[anchorpencolor,0,255,0]\_a[OnTest]Anchor\_aWhen the style of the anchor text is set to underline or square, the lines will become green if hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorfontcolor,色指定_">
-				<dt class="entry">\f[anchorfontcolor,色指定]</dt>
+				<dt class="entry">\f[anchorfontcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the anchor text when being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorfontcolor,default.cursor]\_a[OnTest]アンカー\_a選択中のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code>\f[anchorfontcolor,default.cursor]\_a[OnTest]Anchor\_aChanges the color of anchor text to the same as the selected choice text color when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchormethod,描画方法_">
-				<dt class="entry">\f[anchormethod,描画方法]</dt>
+				<dt class="entry">\f[anchormethod,(drawing method)]</dt>
 				<dd class="entry">
-					<p>選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>Changes the drawing method of the anchor text when being hovered over. Only effective when the style is set to either square or square+underline.<br>All operators valid in Win32API's SetROP2 function can be specified.<br>Specifying default will return to the balloon's default setting.<br>Reference: <a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2 function (external site)</a><br>※The drawing method does not include "R2_" and should be specified as the mode name in lowercase.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchormethod,copypen]\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの、枠内の描画方法を変更する。copypenの場合、anchorbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code>\f[anchormethod,copypen]\f[anchorbrushcolor,red]\_a[OnTest]Anchor\_aChanges the drawing method inside the lines of the choice when hovered over. When copypen is specified, the color of anchorbrushcolor will be used as is.<br></code></p>
 						</section>
 					</div>
 				</dd>
