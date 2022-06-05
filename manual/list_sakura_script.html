@@ -2501,9 +2501,9 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>Choice Marker Modification Commands</h1>
+			<h1>Choice Display Modification Commands</h1>
 			<dl id="_f_cursorstyle,形状_">
-				<dt class="entry">\f[cursorstyle,style]</dt>
+				<dt class="entry">\f[cursorstyle,(style)]</dt>
 				<dd class="entry">
 					<p>Changes the appearance of choice text when being hovered over.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
@@ -2512,7 +2512,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursorstyle,underline]\q[Choice,OnTest]This choice will be changed to have an underline when hovered over.</code></p>
+							<p><code>\f[cursorstyle,underline]\q[Choice,OnTest]Changes choice text to be displayed with an underline when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2587,7 +2587,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[cursornotselectstyle,underline]\q[Choice,OnTest]Changes unselected choice text to be displayed with an underline.</code></p>
+							<p><code>\f[cursornotselectstyle,underline]\q[Choice,OnTest]Changes choice text to be displayed with an underline while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2662,7 +2662,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorstyle,square]\_a[OnTest]Anchor\_aChanges the style of the anchor's lines (rectangle) when being hovered over.</code></p>
+							<p><code>\f[anchorstyle,square]\_a[OnTest]Anchor\_aChanges anchor text to be displayed in a rectangle when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2728,207 +2728,207 @@
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectstyle,形状_">
-				<dt class="entry">\f[anchornotselectstyle,形状]</dt>
+				<dt class="entry">\f[anchornotselectstyle,(style)]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
+					<p>Changes the appearance of anchor text when not being hovered over.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]Anchor\_aChanges anchor text to be displayed in a square while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">
-				<dt class="entry">\f[anchornotselectcolor,色指定]もしくは\f[anchornotselectbrushcolor,色指定]</dt>
+				<dt class="entry">\f[anchornotselectcolor,(color specification)] or \f[anchornotselectbrushcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの矩形内の色を変更。\f[anchornotselectmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the rectangular indicator when anchor text is not being hovered over. It is important to note that the color is affected by \f[anchornotselectmethod,(drawing method)].<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code>\f[anchornotselectbrushcolor,red]\_a[OnTest]Anchor\_aWhen the style of the anchor text is set to square, the background color will become red while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectpencolor,色指定_">
-				<dt class="entry">\f[anchornotselectpencolor,色指定]</dt>
+				<dt class="entry">\f[anchornotselectpencolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの矩形枠および下線の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the underline or rectangular indicator's outline when anchor text is not being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchornotselectpencolor,0,255,0]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code>\f[anchornotselectpencolor,0,255,0]\_a[OnTest]Anchor\_aWhen the stlye of the choice text is set to underline or square, the lines will become green while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectfontcolor,色指定_">
-				<dt class="entry">\f[anchornotselectfontcolor,色指定]</dt>
+				<dt class="entry">\f[anchornotselectfontcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the anchor text when not being hovered over.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchornotselectfontcolor,default.cursor]\_a[OnTest]アンカー\_a非選択のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code>\f[anchornotselectfontcolor,default.cursor]\_a[OnTest]Anchor\_aChanges the color of choice text to the same as the selected choice text color while not hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchornotselectmethod,描画方法_">
-				<dt class="entry">\f[anchornotselectmethod,描画方法]</dt>
+				<dt class="entry">\f[anchornotselectmethod,(drawing method)]</dt>
 				<dd class="entry">
-					<p>非選択中アンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>Changes the drawing method of the anchor text when not being hovered over. Only effective when the style is set to either square or square+underline.<br>All operators valid in Win32API's SetROP2 function can be specified.<br>Specifying default will return to the balloon's default setting.<br>Reference: <a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2 function (external site)</a><br>※The drawing method does not include "R2_" and should be specified as the mode name in lowercase.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchornotselectmethod,copypen]\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの、枠内の描画方法を変更する。copypenの場合、anchornotselectbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code>\f[anchornotselectmethod,copypen]\f[anchornotselectbrushcolor,red]\_a[OnTest]Anchor\_aChanges the drawing method inside the lines of the anchor while not hovered over. When copypen is specified, the color of anchornotselectbrushcolor will be used as is.<br></code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedstyle,形状_">
-				<dt class="entry">\f[anchorvisitedstyle,形状]</dt>
+				<dt class="entry">\f[anchorvisitedstyle,(style)]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの形状を変更。<br>指定方法については<a href="#notes_style">※下記参照</a>。</p>
+					<p>Changes the appearance of anchor text that has already been clicked on.<br><a href="#notes_style">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]Anchor\_aChanges already-visited anchor text to be displayed in a square.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">
-				<dt class="entry">\f[anchorvisitedcolor,色指定]もしくは\f[anchorvisitedbrushcolor,色指定]</dt>
+				<dt class="entry">\f[anchorvisitedcolor,(color specification)] or \f[anchorvisitedbrushcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの矩形内の色を変更。\f[anchorvisitedmethod,描画方法]の効果を受けて色が決まる点に注意。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the rectangular indicator on anchor text that has already been clicked on. It is important to note that the color is affected by \f[anchorvisitedmethod,(drawing method)].<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code>\f[anchorvisitedbrushcolor,red]\_a[OnTest]Anchor\_aWhen the style of already-visited anchor text is set to square, the background color will become red.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedpencolor,色指定_">
-				<dt class="entry">\f[anchorvisitedpencolor,色指定]</dt>
+				<dt class="entry">\f[anchorvisitedpencolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの矩形枠および下線の色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of the underline or rectangular indicator's outline of anchor text that has already been clicked on.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorvisitedpencolor,0,255,0]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code>\f[anchorvisitedpencolor,0,255,0]\_a[OnTest]Anchor\_aWhen the style of already-visited anchor text is set to underline or square, the lines will become green if hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedfontcolor,色指定_">
-				<dt class="entry">\f[anchorvisitedfontcolor,色指定]</dt>
+				<dt class="entry">\f[anchorvisitedfontcolor,(color specification)]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの文字色を変更。<br>指定方法については<a href="#notes_color">※下記参照</a>。</p>
+					<p>Changes the color of anchor text that has already been clicked on.<br><a href="#notes_color">※Refer to the section below</a> for specification methods.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorvisitedfontcolor,default.cursor]\_a[OnTest]アンカー\_a訪問済みのアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code>\f[anchorvisitedfontcolor,default.cursor]\_a[OnTest]Anchor\_aChanges the color of already-visited anchor text to the same as the selected choice text color when hovered over.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_f_anchorvisitedmethod,描画方法_">
-				<dt class="entry">\f[anchorvisitedmethod,描画方法]</dt>
+				<dt class="entry">\f[anchorvisitedmethod,(drawing method)]</dt>
 				<dd class="entry">
-					<p>訪問済みアンカーの描画方法を変更。形状がsquareまたはsquare+underlineの場合のみ有効。<br>Win32APIのSetROP2関数で使用できる全オペレータが指定可能。<br>defaultでバルーン設定の標準に戻る。<br>参考：<a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2関数(外部サイト)</a><br>※指定は「R2_」を含まず小文字のモード名。</p>
+					<p>Changes the drawing method of anchor text that has been clicked on. Only effective when the style is set to either square or square+underline.<br>All operators valid in Win32API's SetROP2 function can be specified.<br>Specifying default will return to the balloon's default setting.<br>Reference: <a href="http://msdn.microsoft.com/ja-jp/library/cc428718.aspx">SetROP2 function (external site)</a><br>※The drawing method does not include "R2_" and should be specified as the mode name in lowercase.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\f[anchorvisitedmethod,copypen]\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの、枠内の描画方法を変更する。copypenの場合、anchorvisitedbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code>\f[anchorvisitedmethod,copypen]\f[anchorvisitedbrushcolor,red]\_a[OnTest]Anchor\_aChanges the drawing method inside the lines of already-visited anchor text. When copypen is specified, the color of anchorvisitedbrushcolor will be used as is.<br></code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<div class="caption" id="notes_style">
-				<h1>形状指定の方法</h1>
+				<h1>Style specification methods</h1>
 				<dl>
 					<dt>square</dt>
-					<dd>矩形を表示。</dd>
+					<dd>Displays a square.</dd>
 					<dt>underline</dt>
-					<dd>下線を表示。</dd>
+					<dd>Displays an underline.</dd>
 					<dt>square+underline</dt>
-					<dd>矩形と下線を表示。</dd>
+					<dd>Displays a square and underline.</dd>
 					<dt>none</dt>
-					<dd>表示しない。</dd>
+					<dd>Displays nothing.</dd>
 					<dt>default</dt>
-					<dd>バルーン設定の標準に戻る。</dd>
+					<dd>Returns to the balloon's default settings.</dd>
 				</dl>
 			</div>
 			<div class="caption" id="notes_color">
-				<h1>文字色指定の方法</h1>
-				<p>基本はHTML・CSSの色の表現と似ています。</p>
+				<h1>Text color specification methods</h1>
+				<p>Fundamentally similar to HTML and CSS color expressions.</p>
 				<dl>
 					<dt>R,G,B</dt>
-					<dd>赤・緑・青の三原色の明度をそれぞれ0～255の10進数値で表現し、カンマで区切る。<br>0,0,0で黒、255,255,255で白。</dd>
+					<dd>Specifies a color using the values of the three primary colors red, green, and blue, expressed in decimal notation from 0~255 and separated by commas.<br>0,0,0 is black and 255,255,255 is white.</dd>
 					<dt>R%,G%,B%</dt>
-					<dd>赤・緑・青の三原色の明度をそれぞれ0～100%の百分率で表現し、カンマで区切る。<br>0%,0%,0%で黒、100%,100%,100%で白。</dd>
-					<dt>16進数カラーコード</dt>
-					<dd>#07fのように、赤・緑・青の三原色の明度を「#」に続けて<em>16進数で</em>表現し、つなげる。<br>赤・緑・青それぞれ2桁ずつの計6桁か、1桁ずつの計3桁で表現できる。<br>16進数のアルファベット表現は大文字・小文字いずれでも可。<br>#000000または#000で黒、#ffffffまたは#fffで白。</dd>
-					<dt>定義済みキーワード</dt>
-					<dd>red、white、blackというような色名を表すキーワード(全て小文字)で指定可能。<br>いわゆるX11 colorとW3C colorで定義が異なる色(green,gray等)については、W3C colorの定義。<br>色見本：<a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a>(外部リンク)</dd>
+					<dd>Specifies a color using the values of the three primary colors red, green, and blue, expressed in percentage from 0~100% and separated by commas.<br>0%,0%,0% is black and 100%,100%,100% is white.</dd>
+					<dt>Hex color codes</dt>
+					<dd>Specifies a color using the values of the three primary colors red, green, and blue, expressed in <em>hexadecimal notation</em> after a hash "#", as in #07f, and connected together.<br>The color can be specified using two digits for red, green, and blue respectively, adding up to six digits, or one digit each for a total of three digits.<br>Alphabetical characters may be in either upper or lower case for hex color codes.<br>#000000 or #000 are black, and #ffffff or #fff are white.</dd>
+					<dt>Predefined keywords</dt>
+					<dd>Specifies a color using a keyword such as red, white, black (all lowercase).<br>Follows W3C color definitions when the definition of a keyword differs between X11 color and W3C color (e.g. green, gray).<br>Color chart: <a href="http://www.w3.org/TR/css3-color/#svg-color">CSS Color Module Level 3 Extended color keywords</a> (external site)</dd>
 					<dt>default</dt>
-					<dd>色指定部分にdefaultと記述すると、指定した文字をその文字のデフォルト色に戻す。<br>デフォルト色は、バルーンのdescript.txtに定義されたものなど(未定義時黒)。</dd>
+					<dd>Returns the color to the default color of the text.<br>The default color is the color defined in the balloon's descript.txt (black when undefined).</dd>
 					<dt>disable</dt>
-					<dd>色指定部分にdisableと記述すると、無効表示用の色に設定できる。</dd>
+					<dd>Sets the specified section of text to the unselectable choice indicator color.</dd>
 					<dt>default.anchor</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchorと指定すると、指定した文字の色を選択時のアンカーのデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text when being hovered over.</dd>
 					<dt>default.anchornotselect</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchornotselectと指定すると、指定した文字の色を非選択時のアンカーのデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text while not hovered over.</dd>
 					<dt>default.anchorvisited</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchorvisitedと指定すると、指定した文字の色を訪問済みのアンカーのデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of already-visited anchor text.</dd>
 					<dt>default.cursor</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.cursorと指定すると、指定した文字の色を選択時の選択肢のデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text when being hovered over.</dd>
 					<dt>default.cursornotselect</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.anchorと指定すると、指定した文字の色を非選択時の選択肢のデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text while not hovered over.</dd>
 					<dt>default.plain</dt>
-					<dd><em>※選択肢・アンカーの文字の色に対してのみ指定可能</em>。<br>色指定部分にdefault.plainと指定すると、指定した文字の色を普通のテキストのデフォルト文字色に変更。</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of normal text.</dd>
 				</dl>
 			</div>
 		</section>
 		<section class="category">
-			<h1>イベントコマンド</h1>
+			<h1>Event Commands</h1>
 			<dl id="_e">
 				<dt class="entry">\e</dt>
 				<dd class="entry">
-					<p>イベント、メッセージを終了する。<br>この後に書かれたスクリプトは実行・表示されない。<br>いくつかのさくらスクリプトの効果が終了する。</p>
+					<p>Ends events and messages.<br>Script written after \e will not be run or displayed.<br>The effects of several SakuraScript commands will end.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2937,7 +2937,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>この文章は表示される。\eここから表示されない。</code></p>
+							<p><code>This sentence will be displayed.\eFrom here, it will not be displayed.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2945,7 +2945,7 @@
 			<dl id="_-">
 				<dt class="entry">\-</dt>
 				<dd class="entry">
-					<p>本体を終了する。<br>SSPで複数ゴーストが起動している場合、実行したゴーストのみ終了する。</p>
+					<p>Closes the ghost.<br>When multiple ghosts are open in SSP, only the ghost that ran the command will be closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2954,7 +2954,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このスクリプトの再生後、ゴーストが終了する。\-</code></p>
+							<p><code>After this script is played, the ghost will close.\-</code></p>
 						</section>
 					</div>
 				</dd>
