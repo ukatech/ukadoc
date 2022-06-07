@@ -2945,7 +2945,7 @@
 			<dl id="_-">
 				<dt class="entry">\-</dt>
 				<dd class="entry">
-					<p>Closes the ghost.<br>When multiple ghosts are open in SSP, only the ghost that ran the command will be closed.</p>
+					<p>Closes the software.<br>When multiple ghosts are open in SSP, only the ghost that ran the command will be closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2962,18 +2962,18 @@
 			<dl id="_a">
 				<dt class="entry">\a</dt>
 				<dd class="entry">
-					<p>[旧仕様]ランダムトークをしゃべる。<br>スクリプトを全て本体で管理していた時代の名残で、現行仕様では<a href="./list_shiori_event.html#OnAITalk">OnAITalkイベント</a>を発生させるだけのタグ。</p>
+					<p>[Old specification] Runs a line of dialogue from randomtalk.<br>This command is a remnant from the time when all scripts were handled by the baseware, and currently only calls the <a href="./list_shiori_event.html#OnAITalk">OnAITalk event</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_updatebymyself,checkonly_">
-				<dt class="entry">\![updatebymyself(,オプション,オプション...)]</dt>
+				<dt class="entry">\![updatebymyself(,option,option...)]</dt>
 				<dd class="entry">
-					<p>ネットワーク更新チェックイベントを開始する。
-					<br>右クリックメニューやゴーストエクスプローラからユーザが行うことも出来る。
-					<br>オプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
+					<p>Starts the network update check event.
+					<br>Network updates may also be started by the user from the right click menu or the ghost explorer.
+					<br>Specifying options is exclusive to SSP. Refer to the <a href="#notes_update_options">update option specifications section</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2982,7 +2982,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>ネットワーク更新を開始。\![updatebymyself]</code></p>
+							<p><code>The network update will be started.\![updatebymyself]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2990,7 +2990,7 @@
 			<dl id="_!_update,platform_">
 				<dt class="entry">\![update,platform]</dt>
 				<dd class="entry">
-					<p>本体ネットワーク更新イベントを開始する。<br>更新があった場合、ゴーストは一旦終了(<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdating">OnBasewareUpdating</a>、トークがなければ<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnClose">OnClose</a>)して再度起動する(<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdated">OnBasewareUpdated</a>、トークがなければ<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBoot">OnBoot</a>)。<br>更新が無い場合は、ポップアップが表示されるだけでSHIORIイベントは何も発生しない。</p>
+					<p>Starts the baseware network update event.<br>If an update is found, all ghosts will be closed once (running <a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdating">OnBasewareUpdating</a>, or if the ghost has no dialogue for the event <a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnClose">OnClose</a>) and restarting (<a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBasewareUpdated">OnBasewareUpdated</a>, or if the ghost has no dialogue for the event <a href="http://ssp.shillest.net/ukadoc/manual/list_shiori_event.html#OnBoot">OnBoot</a>).<br>If no update is found, a popup will be displayed and no SHIORI event will be run.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -2998,50 +2998,49 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>ベースウェアの更新を実行。\![update,platform]</code></p>
+							<p><code>The baseware will be updated.\![update,platform]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_update,更新対象_">
-				<dt class="entry">\![update,更新対象(,オプション,オプション...)]</dt>
+				<dt class="entry">\![update,(update target)(,option,option...)]</dt>
 				<dd class="entry">
-					<p>更新対象のネットワーク更新イベントを開始する。
-					<br>ghost、shell、balloonが指定可能で、同時に更新する場合それぞれを「+」で区切って指定できる。
-					<br>更新対象をallとすると、\![updatebymyself]と同義。
-					<br>\![update,ghost+shell+balloon]とした場合、\![updatebymyself]とは異なりSSP本体設定によらず強制的に更新が実行される。
-					<br>ghost以外の更新時、更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a>が発生する。
-					<br>オプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
-					<ul class="supported-baseware">
+					<p>Starts the network update event for the update target.
+					<br>ghost, shell, and balloon can be specified. Multiple targets may be specified by separating them with +.
+					<br>If the update target is specified as all, it will have the same effect as \![updatebymyself].
+					<br>When run as \![update,ghost+shell+balloon], unlike \![updatebymyself], it will ignore SSP's settings and force an update.
+					<br>If an update is found for a target other than ghost, the SHIORI event <a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a> and other events that replace OnUpdate with OnUpdateOther will be notified, and when all updates are finished <a href="list_shiori_event.html#OnUpdateResult">OnUpdateResult</a> will be run as a summary of the results.
+					<br>Specifying options is exclusive to SSP. Refer to the <a href="#notes_update_options">update option specifications section</a>.</p>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>シェルの更新を実行。\![update,shell]</code></p>
+							<p><code>The shell will be updated.\![update,shell]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_updateother_">
-				<dt class="entry">\![updateother,更新対象/オプション群,...]</dt>
+				<dt class="entry">\![updateother,(update target)/(options),...]</dt>
 				<dd class="entry">
-					<p>任意の名前の更新対象のネットワーク更新イベントを開始する。起動中でないものも指定できる。<br>
-					以下の指定をいくつでも追加できる。<br>
-					--balloon=バルーン名<br>
-					--shell=シェル名<br>
-					--plugin=プラグイン名<br>
-					--headline=ヘッドライン名<br>
-					--language=言語リソース名<br>
-					更新があればSHIORIイベント<a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a>などOnUpdateがOnUpdateOtherに変わったイベンド群が通知され、すべて更新が終わった後に結果の総括として<a href="list_shiori_event.html#OnUpdateResultEx">OnUpdateResultEx</a>が発生する。<br>
-					--option=で指定できるオプション指定はSSPのみ。<a href="#notes_update_options">更新オプション指定</a>を参照。</p>
+					<p>Starts the network update event for the chosen target. Update targets that are not currently open may also be specified.<br>
+					Any number of the below options may be specified.<br>
+					--balloon=(balloon name)<br>
+					--shell=(shell name)<br>
+					--plugin=(plugin name)<br>
+					--headline=(headline name)<br>
+					--language=(language resource name)<br>
+					If an update is found the SHIORI event <a href="list_shiori_event.html#OnUpdateOtherReady">OnUpdateOtherReady</a> and other events that replace OnUpdate with OnUpdateOther will be notified, and when all updates are finished <a href="list_shiori_event.html#OnUpdateResultEx">OnUpdateResultEx</a> will be run as a summary of the results.<br>
+					Specifying --option is exclusive to SSP. Refer to the <a href="#notes_update_options">update option specifications section</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>プラグイン「共有変数プラグイン」「うかてん」の更新を実行。\![update,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
+							<p><code>The plugins 'kyouyuuhensuupuraguin' and 'ukaten' will be updated.\![update,--plugin=kyouyuuhensuupuraguin,--plugin=ukaten]</code></p>
 						</section>
 					</div>
 				</dd>
