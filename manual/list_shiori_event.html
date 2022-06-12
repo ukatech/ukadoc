@@ -620,6 +620,8 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　終了操作したキャラクターのスコープ番号。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -635,6 +637,8 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　終了操作したキャラクターのスコープ番号。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -889,6 +893,14 @@
 				<dt class="entry">OnWindowStateRestore</dt>
 				<dd class="entry">
 					<p>最小化が解除された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。
+						<br />system : OSからの強制的な最小化操作（タスクバーから最小化された場合を含む）
+						<br />script : SakuraScriptから
+						<br />sakuraapi : Sakura APIから
+						<br />user : メニュー操作</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -899,7 +911,15 @@
 			<dl id="OnWindowStateMinimize">
 				<dt class="entry">OnWindowStateMinimize</dt>
 				<dd class="entry">
-					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らすことが可能。</p>
+					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らせることが可能。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。
+						<br />system : OSからの強制的な最小化操作（タスクバーから最小化された場合を含む）
+						<br />script : SakuraScriptから
+						<br />sakuraapi : Sakura APIから
+						<br />user : メニュー操作</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -911,6 +931,10 @@
 				<dt class="entry">OnFullScreenAppMinimize</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。常に fullscreen になる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -920,6 +944,10 @@
 				<dt class="entry">OnFullScreenAppRestore</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。常に fullscreen になる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
