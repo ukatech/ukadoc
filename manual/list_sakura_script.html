@@ -3040,31 +3040,31 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>The plugins 'kyouyuuhensuupuraguin' and 'ukaten' will be updated.\![update,--plugin=kyouyuuhensuupuraguin,--plugin=ukaten]</code></p>
+							<p><code>The plugins 'shared value' and 'ukaten' will be updated.\![update,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 
 			<div class="caption" id="notes_update_options">
-				<h1>更新オプション指定</h1>
+				<h1>Update option specifications</h1>
 				<dl>
 					<dt>checkonly</dt>
-					<dd><p>普通の更新イベントの代わりに、SHIORIイベント<a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>、失敗した場合は<a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a>が通知され、更新の有無を判定でき次第処理を中断する。
-					<br>すべて更新が終わった後に、結果の総括として、updateotherの時は<a href="list_shiori_event.html#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a>、そのほかは<a href="list_shiori_event.html#OnUpdateCheckResult">OnUpdateCheckResult</a>が発生する。</p></dd>
+					<dd><p>Instead of a normal update event, the SHIORI event <a href="list_shiori_event.html#OnUpdateCheckComplete">OnUpdateCheckComplete</a>, or in the case of failure <a href="list_shiori_event.html#OnUpdateCheckFailure">OnUpdateCheckFailure</a> will be notified, and the update process will be stopped based on whether an update is found or not.
+					<br>After all updates have been completed, when using updateother <a href="list_shiori_event.html#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a>, or when using other update commands, <a href="list_shiori_event.html#OnUpdateCheckResult">OnUpdateCheckResult</a> will be run as a summary of the results.</p></dd>
 					<dt>testonly</dt>
-					<dd><p>本番と同じように更新ファイルのダウンロードを行うが、実際のファイルの置き換えは行わない。
-					<br>SSPでは開発用パレットから実行できる"Update Full Check"と同じ挙動。</p></dd>
-					<dt>recovery [SSP 2.5.26～]</dt>
-					<dd>修復モードで更新を実行する。SSPでは設定-ゴースト(1)-修復モードへの切り替えキー有効、で設定したキーを押しながら更新した際と同じ挙動。
-					<br>ローカル側にある更新定義ファイルを全部無視し、ネットワーク上からダウンロードしてきた更新定義のみを採用した上で、ローカル側の全ファイルのハッシュ値と比較し、異なるものをダウンロードする。</dd>
+					<dd><p>Downloads files as in regular updates, but does not replace the old ones.
+					<br>Functions in the same way as the "Update Full Check" option in SSP's Dev. Palette.</p></dd>
+					<dt>recovery [SSP 2.5.26~]</dt>
+					<dd>Performs an update in recovery mode. In SSP, functions in the same way as updating while pressing the key set in Preferences - Ghost (1) - Enable modifier key of recovery mode.
+					<br>Using only files specified as update files on the network side and ignoring local specifications, downloads all files with differing hash values to the local files.</dd>
 				</dl>
 			</div>
 
 			<dl id="_6">
 				<dt class="entry">\6</dt>
 				<dd class="entry">
-					<p>時計合わせイベントで実際に時間修正を行う。<br>時刻サーバに繋がった時通知されるSHIORIイベント<a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a>で行うのが一般的。</p>
+					<p>Performs the time correction in the clock fixing function.<br>Generally, the SHIORI event <a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a>, which is notified when a connection to the time server has been made, is used.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3073,7 +3073,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>時間をサーバと合わせる。\6</code></p>
+							<p><code>The clock will be matched with the server time.\6</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3081,13 +3081,13 @@
 			<dl id="_7">
 				<dt class="entry">\7</dt>
 				<dd class="entry">
-					<p>時計合わせイベントを開始する。<br>SHIORIイベント<a href="list_shiori_event.html#OnSNTPBegin">OnSNTPBegin</a>が通知され、時刻サーバから時刻が取得出来るとSHIORIイベント<a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a>が通知される。</p>
+					<p>Starts the clock fixing event.<br>The SHIORI event <a href="list_shiori_event.html#OnSNTPBegin">OnSNTPBegin</a>is notified, and once the time is retrieved from the server, the SHIORI event <a href="list_shiori_event.html#OnSNTPCompare">OnSNTPCompare</a> is notified.</p>
 				</dd>
 			</dl>
 			<dl id="_!_executesntp_">
 				<dt class="entry">\![executesntp]</dt>
 				<dd class="entry">
-					<p>\7と同じ。</p>
+					<p>Performs the same function as \7.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3096,32 +3096,32 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>時刻サーバに問い合わせを行う。\![executesntp]</code></p>
+							<p><code>Sends a query to the time server.\![executesntp]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,headline,ヘッドライン名_">
-				<dt class="entry">\![execute,headline,ヘッドライン名]</dt>
+				<dt class="entry">\![execute,headline,(headline name)]</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスイベントを開始する。<br>ヘッドライン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたヘッドラインを開始。</p>
+					<p>Starts the headline sense event.<br>If the headline name is specified as random, a random headline will be chosen.<br>If specified as lastinstalled, the last headline to be installed will be started.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>ヘッドラインをどれか1つランダムに実行。\![execute,headline,random]</code></p>
+							<p><code>A randomly chosen headline will be executed.\![execute,headline,random]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_biff_">
-				<dt class="entry">\![biff(,アカウント名)]</dt>
+				<dt class="entry">\![biff(,account name)]</dt>
 				<dd class="entry">
-					<p>メールチェックイベントを開始する。<br>
-					\![biff,アカウント名]とすると、特定のアカウント名のメールチェックを実行できる。<br>
-					アカウント名は<a href="./list_shiori_event.html#configuredbiffname">configuredbiffname</a>で通知される。</p>
+					<p>Starts the mail check event.<br>
+					If written as \![biff,(account name)], a mail check for the specified account can be performed.<br>
+					Account names are notified with <a href="./list_shiori_event.html#configuredbiffname">configuredbiffname</a>.</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3131,7 +3131,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>メールチェックイベントを開始。\![biff]</code></p>
+							<p><code>The mail check event will be started.\![biff]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3139,7 +3139,7 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p>消滅指示無しで自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。<br>削除が行われるかどうかはユーザ側のSSP設定次第。</p>
+					<p>Uninstalls the ghost that ran the command without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3147,22 +3147,22 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>自分自身を削除。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself]</code></p>
+							<p><code>The ghost will delete itself. Use caution when testing the command using the Send Box.\![vanishbymyself]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_vanishbymyself,ゴースト名_">
-				<dt class="entry">\![vanishbymyself,ゴースト名]</dt>
+				<dt class="entry">\![vanishbymyself,(ghost name)]</dt>
 				<dd class="entry">
-					<p>消滅後に交代するゴーストを指定して自ゴーストをアンインストールする。<br>実行時、確認ダイアログなども出ず即実行されるため注意。<br>削除が行われるかどうかはユーザ側のSSP設定次第。<br>指定したゴーストがインストールされていなければ交代先はランダム。</p>
+					<p>Uninstalls the ghost that ran the command, specifying the ghost that will be called after uninstallation is complete.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.<br>If the specified ghost is not installed, the next ghost to be called will be chosen randomly.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>自分自身を削除した後、Emily/Phase4.5を呼び出す。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself,Emily/Phase4.5]</code></p>
+							<p><code>Emily/Phase4.5 will be called after the ghost deletes itself. Use caution when testing the command using the Send Box.\![vanishbymyself,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
