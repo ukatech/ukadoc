@@ -193,6 +193,12 @@
 				<li><a href="#currentghost.mousecursor.wait">currentghost.mousecursor.wait</a></li>
 				<li><a href="#currentghost.mousecursor.hand">currentghost.mousecursor.hand</a></li>
 				<li><a href="#currentghost.mousecursor.grip">currentghost.mousecursor.grip</a></li>
+				<li><a href="#currentghost.mousecursor.arrow">currentghost.mousecursor.arrow</a></li>
+				
+				<li><a href="#currentghost.balloon.mousecursor">currentghost.balloon.mousecursor</a></li>
+				<li><a href="#currentghost.balloon.mousecursor.text">currentghost.balloon.mousecursor.text</a></li>
+				<li><a href="#currentghost.balloon.mousecursor.wait">currentghost.balloon.mousecursor.wait</a></li>
+				<li><a href="#currentghost.balloon.mousecursor.arrow">currentghost.balloon.mousecursor.arrow</a></li>
 
 				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path</a></li>
 				<li><a href="#currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).name</a></li>
@@ -670,20 +676,17 @@
 					</ul>
 				</dd>
 			</dl>
-				<li><a href="#currentghost.mousecursor">currentghost.mousecursor</a></li>
-				<li><a href="#currentghost.mousecursor.text">currentghost.mousecursor.text</a></li>
-				<li><a href="#currentghost.mousecursor.wait">currentghost.mousecursor.wait</a></li>
-				<li><a href="#currentghost.mousecursor.hand">currentghost.mousecursor.hand</a></li>
-				<li><a href="#currentghost.mousecursor.grip">currentghost.mousecursor.grip</a></li>
 			
 			<dl id="currentghost.mousecursor">
 				<dt class="entry">currentghost.mousecursor</dt>
 				<dd class="entry">
-					<p>ゴースト標準のカーソルファイル名
-					<br />以降currentghost.mousecursorで始まるプロパティに共通：
+					<p>ゴーストで操作できる部分を示すカーソルファイル名（指先）
+					<br />以降currentghost.mousecursor / currentghost.balloon.mousecursor で始まるプロパティに共通：
 					<br />相対パス指定はシェル→ゴーストフォルダ内の順で探索する。
 					<br />空文字列を指定してSETすると、定義削除扱いとなり、set前の表示に戻すことができる。
-					<br />カーソル指定は<a href="descript_shell_surfaces.html#introduction_cursorbrace">surfaces.txtのcursorセクション</a>と同じ指定が可能。<br /><em class="specsign">[SET有効]</em></p>
+					<br />カーソル指定は<a href="descript_shell_surfaces.html#introduction_cursorbrace">surfaces.txtのcursorセクション</a>と同じ指定が可能。
+					<br /><em class="specsign">[SET有効]</em></p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
 					</ul>
@@ -692,7 +695,7 @@
 			<dl id="currentghost.mousecursor.text">
 				<dt class="entry">currentghost.mousecursor.text</dt>
 				<dd class="entry">
-					<p>入力ボックスのカーソルファイル名
+					<p>入力ボックスのカーソルファイル名</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
 					</ul>
@@ -701,7 +704,7 @@
 			<dl id="currentghost.mousecursor.wait">
 				<dt class="entry">currentghost.mousecursor.wait</dt>
 				<dd class="entry">
-					<p>なにか処理中で応答できないときに使用するカーソル(腕時計型)のファイル名。
+					<p>なにか処理中で応答できないときに使用するカーソル(腕時計型)のファイル名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
 					</ul>
@@ -710,7 +713,7 @@
 			<dl id="#currentghost.mousecursor.hand">
 				<dt class="entry">currentghost.mousecursor.hand</dt>
 				<dd class="entry">
-					<p>ゴーストの掴める部分を示すカーソル（手を開いた形）のファイル名。
+					<p>ゴーストの掴める部分を示すカーソル（手を開いた形）のファイル名。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
 					</ul>
@@ -719,13 +722,59 @@
 			<dl id="#currentghost.mousecursor.grip">
 				<dt class="entry">currentghost.mousecursor.grip</dt>
 				<dd class="entry">
-					<p>ゴーストの掴める部分を掴んだ状態を示すカーソル（手を握った形）のファイル名。
+					<p>ゴーストの掴める部分を掴んだ状態を示すカーソル（手を握った形）のファイル名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="#currentghost.mousecursor.arrow">
+				<dt class="entry">currentghost.mousecursor.arrow</dt>
+				<dd class="entry">
+					<p>ゴーストで操作できない部分を示すカーソルファイル名（矢印）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
 					</ul>
 				</dd>
 			</dl>
 			
+			<dl id="currentghost.balloon.mousecursor">
+				<dt class="entry">currentghost.balloon.mousecursor</dt>
+				<dd class="entry">
+					<p>バルーンで操作できる部分を示すカーソルファイル名（指先）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.mousecursor.text">
+				<dt class="entry">currentghost.balloon.mousecursor.text</dt>
+				<dd class="entry">
+					<p>バルーンの入力ボックスのカーソルファイル名</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.mousecursor.wait">
+				<dt class="entry">currentghost.balloon.mousecursor.wait</dt>
+				<dd class="entry">
+					<p>バルーンでなにか処理中で応答できないときに使用するカーソル(腕時計型)のファイル名。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="#currentghost.balloon.mousecursor.arrow">
+				<dt class="entry">currentghost.balloon.mousecursor.arrow</dt>
+				<dd class="entry">
+					<p>バルーンで操作できない部分を示すカーソルファイル名（矢印）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.11]</li>
+					</ul>
+				</dd>
+			</dl>
+						
 			<dl id="currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path">
 				<dt class="entry">currentghost.seriko.cursor.scope(ID).mouse????list(当たり判定名).path</dt>
 				<dd class="entry">

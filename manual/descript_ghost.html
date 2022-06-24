@@ -196,6 +196,7 @@
 				<li><a href="#mousecursor.wait,ファイル名">mousecursor.wait,ファイル名</a></li>
 				<li><a href="#mousecursor.hand,ファイル名">mousecursor.hand,ファイル名</a></li>
 				<li><a href="#mousecursor.grip,ファイル名">mousecursor.grip,ファイル名</a></li>
+				<li><a href="#mousecursor.arrow,ファイル名">mousecursor.arrow,ファイル名</a></li>
 				<li><a href="#shiori,ファイル名">shiori,ファイル名</a></li>
 				<li><a href="#makoto,ファイル名">makoto,ファイル名</a></li>
 				<li><a href="#menu.font.name,フォント名">menu.font.name,フォント名</a></li>
@@ -817,7 +818,7 @@ shiori,satori.dll
 			<dl id="cursor,ファイル名">
 				<dt class="entry">cursor,ファイル名 / mousecursor,ファイル名</dt>
 				<dd class="entry">
-					<p>そのゴーストに使用するカーソル。mousecursorと書けるのはSSP 2.5.41から。</p>
+					<p>ゴーストの操作できる部分に使用するカーソル（指先）。mousecursorと書けるのはSSP 2.5.41から。</p>
 					<p class="default">OSで設定されたカーソル(指先) (system:finger)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -856,11 +857,21 @@ shiori,satori.dll
 					</ul>
 				</dd>
 			</dl>
-			<dl id="mousecursor.hand,ファイル名">
+			<dl id="mousecursor.grip,ファイル名">
 				<dt class="entry">mousecursor.grip,ファイル名</dt>
 				<dd class="entry">
 					<p>ゴーストの掴める部分を掴んだ状態を示すカーソル（手を握った形）。通常はBust当たり判定でマウスボタンを押した状態に自動で使用される。</p>
 					<p class="default">手を握ったカーソル (system:grip)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.arrow,ファイル名">
+				<dt class="entry">mousecursor.arrow,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストの操作できない部分を示すカーソル（矢印）。</p>
+					<p class="default">矢印カーソル (system:arrow)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
 					</ul>
