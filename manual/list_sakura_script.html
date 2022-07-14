@@ -3170,7 +3170,7 @@
 			<dl id="_+">
 				<dt class="entry">\+</dt>
 				<dd class="entry">
-					<p>ランダムに他のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
+					<p>Changes to a random ghost.<br>When the ghost is changed by this command, the SHIORI event <a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a> is not notified.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3178,7 +3178,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>ランダムチェンジ。\+</code></p>
+							<p><code>Random change.\+</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3186,7 +3186,7 @@
 			<dl id="__+">
 				<dt class="entry">\_+</dt>
 				<dd class="entry">
-					<p>次の順番のゴーストに切り替わる(シーケンシャルチェンジ)。ゴーストエクスプローラで下側にいるゴーストに切り替わる。<br>リストの一番下だった場合、リストの一番上のゴーストに切り替わる。<br>このスクリプトによる切り替えではSHIORIイベント<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>は通知されない。</p>
+					<p>Changes to the next ghost in the list (sequential change). The ghost below the current one in the Ghost Explorer is opened.<br>If the ghost currently open is at the bottom of the list, the ghost at the top of the list will be opened.<br>When the ghost is changed by this command, the SHIORI event <a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a> is not notified.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3194,26 +3194,25 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>リストの次のゴーストへチェンジ。\_+</code></p>
+							<p><code>Change to the next ghost in the list.\_+</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,ghost,ゴースト名_">
-				<dt class="entry">\![change,ghost,ゴースト名(,--option=raise-event)]</dt>
+				<dt class="entry">\![change,ghost,(ghost name),(--option=raise-event)]</dt>
 				<dd class="entry">
-					<p>そのゴーストへの切り替えを行う。<br>
-					ゴースト名をrandomにするとランダムチェンジ(\+と同様)。<br>
-					sequentialにするとシーケンシャルチェンジ(\_+と同様)。<br>
-					実行後、該当ゴーストがいなかった場合は無視される。</p>
+					<p>Changes to the specified ghost.<br>
+					If the ghost name is specified as random, it will change to a random ghost (the same as \+).<br>
+					If specified as sequential, it will perform a sequential change (the same as \_+).<br>
+					After the command is run, if the specified ghost is not there, it will be ignored.</p>
 					
-					<p>ゴースト名をlastinstalledにすると最後にインストールしたゴーストに切り替え。ただしSSPを一度終了した場合は無効。<br>
-					ゴースト名をrandomにするとランダムに切り替え。
+					<p>If the ghost name is specified as lastinstalled, it will change to the ghost that was installed last. However, if SSP has been closed once since installation, it will not have effect.
 					</p>
 					
-					<p>SSP 2.4.74以降で、ゴースト名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a>が通知される。<br>
-					この場合、バルーンブレーク（通常ダブルクリック）による中止操作も可能な点に注意。<br>
-					指定しない場合は通知されない。</p>
+					<p>From SSP 2.4.74 onwards, if --option=raise-event is specified after the ghost name, the SHIORI event <a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a> will be notified, as when the ghost is changed from the menu.<br>
+					It is important to note that this can be canceled by breaking the balloon (normally with a double-click).<br>
+					If not specified, the event will not be notified.</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3223,7 +3222,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>Emily/Phase4.5に交代。\![change,ghost,Emily/Phase4.5]</code></p>
+							<p><code>Changing to Emily/Phase4.5.\![change,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
