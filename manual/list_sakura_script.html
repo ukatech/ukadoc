@@ -676,7 +676,7 @@
 				<dt class="entry">\![anim,pause,ID]</dt>
 				<dd class="entry">
 					<p>Pauses the animation of the specified ID number.</p>
-					<p>Valid until the surface is changed (\s[ID] is executed).</p>
+					<p>Effective until the surface is changed (\s[ID] is executed).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -707,7 +707,7 @@
 				<dt class="entry">\![anim,offset,ID,(x coordinate),(y coordinate)]</dt>
 				<dd class="entry">
 					<p>Moves the surface animation of the specified ID number the same distance as the entered coordinates.<br>It is also possible to move dressups.</p>
-					<p>Valid until the surface is changed (\s[ID] is executed).</p>
+					<p>Effective until the surface is changed (\s[ID] is executed).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -797,7 +797,7 @@
 				<dd class="entry">
 					<p>Stops drawing running animations until \![unlock,repaint] is called.<br />
 					This will be automatically cancelled at the end of the script.<br />
-					However, if you specify \![lock,repaint,manual], it will be valid until explicitly unlocked. [2.5.16]</p>
+					However, if you specify \![lock,repaint,manual], it will be effective until explicitly unlocked. [2.5.16]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -830,7 +830,7 @@
 				<dt class="entry">\![set,alignmentondesktop,(bottom or top)]</dt>
 				<dd class="entry">
 					<p>Attaches the character that currently has the focus to the specified edge of the desktop.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -848,7 +848,7 @@
 				<dt class="entry">\![set,alignmenttodesktop,free]</dt>
 				<dd class="entry">
 					<p>Allows the surface to be moved freely.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -885,7 +885,7 @@
 					<br>When a character is attached to the top or bottom of the screen, it cannot be moved up or down by dragging.
 					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -902,7 +902,7 @@
 				<dt class="entry">\![set,scaling,(scaling factor)]</dt>
 				<dd class="entry">
 					<p>Changes the size of the surface. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the X axis.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -919,7 +919,7 @@
 				<dt class="entry">\![set,scaling,(horizontal scaling factor),(vertical scaling factor)]</dt>
 				<dd class="entry">
 					<p>Changes the relative width and length of the surface respectively. The unit of the scaling factor is in percent.<br>The scaling factor calculates taking the user's set shell scaling as 100%.<br>Negative numbers can also be specified, and -100 will flip the ghost over the respective axes.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -944,7 +944,7 @@
 				<dt class="entry">\![set,alpha,(value)]</dt>
 				<dd class="entry">
 					<p>Changes the opacity of the surface that currently has the focus from 0~100. The smaller the value, the more translucent it becomes.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1089,7 +1089,7 @@
 					<p>There is no technical limit on the number of character IDs that can be specified in the command, but large amounts may cause the ghost to slow down somewhat, so using two to three IDs is recommended.<br>
 					Running the command again with a character that has already been paired with another will cause an error. When changing the pairing of the characters, \![reset] must be run first before ordering the windows again.</p>
 					
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
@@ -1132,7 +1132,7 @@
 					Even if only one window in a group is moved with \![move], the others will also follow.<br>
 					However, with --option=ignore-sticky-window in the move tag, the window can move alone.</p>
 					
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
 					</ul>
@@ -1591,7 +1591,7 @@
 				<dt class="entry">\![set,balloonalign,ID]</dt>
 				<dd class="entry">
 					<p>Switches the balloon to the display direction of one of the following IDs. The definition methods below can be used for the ID.<br>Using the positions below as the base, <a href="descript_shell.html#_1_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in the shell's descript.txt</a> and <a href="descript_shell_surfaces.html#_2_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in surfaces.txt</a> are reflected. The initial value is none.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<dl>
 						<dt>left</dt>
 						<dd>The balloon's upper right coordinates meet the shell's upper left coordinates.</dd>
@@ -1623,7 +1623,7 @@
 				<dt class="entry">\![set,balloonnum,(file name),(current number),(total number)]</dt>
 				<dd class="entry">
 					<p>Displays the data format shown when downloading a file. The current number and total number must be written with half-width numbers. Regardless of which character the script is run from, it will only be displayed on the \0 balloon.<br>Each argument can be omitted. To remove it, all arguments should be omitted.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1693,7 +1693,7 @@
 				<dt class="entry">\![enter,onlinemode]</dt>
 				<dd class="entry">
 					<p>Forces the online marker to be displayed. Even in cases where the side character has content to be displayed and the main character has none, the main character's balloon will be brought up.</p>
-					<p>Valid until the ghost is closed.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2969,7 +2969,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_updatebymyself,checkonly_">
-				<dt class="entry">\![updatebymyself(,option,option...)]</dt>
+				<dt class="entry">\![updatebymyself,(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Starts the network update check event.
 					<br>Network updates may also be started by the user from the right click menu or the ghost explorer.
@@ -3004,7 +3004,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_update,更新対象_">
-				<dt class="entry">\![update,(update target)(,option,option...)]</dt>
+				<dt class="entry">\![update,(update target),(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Starts the network update event for the update target.
 					<br>ghost, shell, and balloon can be specified. Multiple targets may be specified by separating them with +.
@@ -3117,7 +3117,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_biff_">
-				<dt class="entry">\![biff(,account name)]</dt>
+				<dt class="entry">\![biff,(account name)]</dt>
 				<dd class="entry">
 					<p>Starts the mail check event.<br>
 					If written as \![biff,(account name)], a mail check for the specified account can be performed.<br>
@@ -3200,14 +3200,15 @@
 				</dd>
 			</dl>
 			<dl id="_!_change,ghost,ゴースト名_">
-				<dt class="entry">\![change,ghost,(ghost name),(--option=raise-event)]</dt>
+				<dt class="entry">\![change,ghost,(ghost name),--option=raise-event]</dt>
 				<dd class="entry">
 					<p>Changes to the specified ghost.<br>
 					If the ghost name is specified as random, it will change to a random ghost (the same as \+).<br>
 					If specified as sequential, it will perform a sequential change (the same as \_+).<br>
-					After the command is run, if the specified ghost is not there, it will be ignored.</p>
+					After the command is run, if the specified ghost is not installed, it will be ignored.</p>
 					
-					<p>If the ghost name is specified as lastinstalled, it will change to the ghost that was installed last. However, if SSP has been closed once since installation, it will not have effect.
+					<p>If the ghost name is specified as lastinstalled, it will change to the ghost that was installed last. However, if SSP has been closed once since installation, it will not have effect.<br>
+					If the ghost name is specified as random, it will change to a random ghost.
 					</p>
 					
 					<p>From SSP 2.4.74 onwards, if --option=raise-event is specified after the ghost name, the SHIORI event <a href="list_shiori_event.html#OnGhostChanging">OnGhostChanging</a> will be notified, as when the ghost is changed from the menu.<br>
@@ -3228,19 +3229,19 @@
 				</dd>
 			</dl>
 			<dl id="_!_change,shell,シェル名_">
-				<dt class="entry">\![change,shell,シェル名(,--option=raise-event)]</dt>
+				<dt class="entry">\![change,shell,(shell name),--option=raise-event]</dt>
 				<dd class="entry">
-					<p>そのシェルへの切り替えを行う。<br>
-					該当シェルがなかった場合は無視される。<br>
-					変更後SHIORIイベント<a href="list_shiori_event.html#OnShellChanged">OnShellChanged</a>が通知される。</p>
+					<p>Changes to the specified shell.<br>
+					If the specified shell does not exist, the command will be ignored.<br>
+					After the shell is changed, the SHIORI event <a href="list_shiori_event.html#OnShellChanged">OnShellChanged</a> is notified.</p>
 					
-					<p>シェル名をlastinstalledにすると最後にインストールしたゴーストに切り替え。ただしSSPを一度終了した場合は無効。<br>
-					シェル名をrandomにするとランダムに切り替え。
+					<p>If the shell name is specified as lastinstalled, it will change to the shell that was installed last. However, if SSP has been closed once since installation, it will not have effect.<br>
+					If the shell name is specified as random, it will change to a random shell.
 					</p>
 					
-					<p>SSP 2.4.74以降で、シェル名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnShellChanging">OnShellChanging</a>が通知される。<br>
-					この場合、バルーンブレーク（通常ダブルクリック）による中止操作も可能な点に注意。<br>
-					指定しない場合は通知されない。</p>
+					<p>From SSP 2.4.74 onwards, if --option=raise-event is specified after the shell name, the SHIORI event <a href="list_shiori_event.html#OnShellChanging">OnShellChanging</a> will be notified in the same way as when changing shells from the menu.<br>
+					It is important to note that this can be canceled by breaking the balloon (normally with a double-click).<br>
+					If not specified, the event will not be notified.</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3249,20 +3250,20 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>masterシェルに切り替え。\![change,shell,master]</code></p>
+							<p><code>Change to the master shell.\![change,shell,master]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_change,balloon,バルーン名_">
-				<dt class="entry">\![change,balloon,バルーン名]</dt>
+				<dt class="entry">\![change,balloon,(balloon name)]</dt>
 				<dd class="entry">
-					<p>そのバルーンへの切り替えを行う。<br>
-					該当バルーンがなかった場合は無視される。<br>
-					変更後SHIORIイベント<a href="list_shiori_event.html#OnBalloonChange">OnBalloonChange</a>が通知される。</p>
+					<p>Changes to the specified balloon.<br>
+					If the specified balloon does not exist, the command will be ignored.<br>
+					After changing balloon, the SHIORI event <a href="list_shiori_event.html#OnBalloonChange">OnBalloonChange</a> is notified.</p>
 					
-					<p>バルーン名をlastinstalledにすると最後にインストールしたバルーンに切り替え。ただしSSPを一度終了した場合は無効。<br>
-					バルーン名をrandomにするとランダムに切り替え。
+					<p>If the balloon name is specified as lastinstalled, it will change to the balloon that was installed last. However, if SSP has been closed once since installation, it will have no effect.<br>
+					If the balloon name is specified as random, it will change to a random balloon.
 					</p>
 					
 					<ul class="supported-baseware">
@@ -3271,21 +3272,21 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>SSPデフォルト+にバルーン変更。\![change,balloon,SSPデフォルト+]</code></p>
+							<p><code>The balloon will be changed to SSP Default+.\![change,balloon,SSPデフォルト+]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_call,ghost,ゴースト名_">
-				<dt class="entry">\![call,ghost,ゴースト名(,--option=raise-event)]</dt>
+				<dt class="entry">\![call,ghost,(ghost name),--option=raise-event]</dt>
 				<dd class="entry">
-					<p>ゴースト名で指定されたゴーストを呼び出す。<br>
-					ゴースト名をlastinstalledにすると最後にインストールしたゴーストを呼び出し。<br>
-					ゴースト名をrandomにするとランダムに呼び出し。
+					<p>Calls the specified ghost.<br>
+					If the ghost name is specified as lastinstalled, it will call the ghost that was installed last.<br>
+					If the ghost name is specified as random, it will call a random ghost.
 					</p>
 					
-					<p>SSP 2.4.74以降で、ゴースト名の後に--option=raise-eventとすると、メニューから切り替え操作をした場合と同じく<a href="list_shiori_event.html#OnGhostCalling">OnGhostCalling</a>が通知される。<br>
-					指定しない場合は通知されない。</p>
+					<p>From SSP 2.4.74 onwards, if --option=raise-event is specified after the ghost name, <a href="list_shiori_event.html#OnGhostCalling">OnGhostCalling</a> will be notified in the same way as when calling ghosts from the menu.<br>
+					When not specified, the event will not be notified.</p>
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3293,7 +3294,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>Emily/Phase4.5を呼び出す。\![call,ghost,Emily/Phase4.5]</code></p>
+							<p><code>The ghost Emily/Phase4.5 will be called.\![call,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3301,8 +3302,8 @@
 			<dl id="_v">
 				<dt class="entry">\v</dt>
 				<dd class="entry">
-					<p>手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。<br>ただしスコープごとの重なり(本体側と相方側どちらが上にくるか)はユーザの操作次第。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Brings the window of the ghost to the front. After running this script, it will always be displayed at the frontmost layer.<br>However, the layering of the characters (which of the main character and side character is on top) is controlled by the user.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3310,7 +3311,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\vこのスクリプト以降、最前面に表示されるようになる。</code></p>
+							<p><code>\vAfter running this script, the window of the ghost will be displayed in the frontmost layer.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3318,8 +3319,8 @@
 			<dl id="_!_set,windowstate,stayontop_">
 				<dt class="entry">\![set,windowstate,stayontop]</dt>
 				<dd class="entry">
-					<p>手前に表示する。このスクリプト以降、常に最前面に表示されるようになる。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Brings the window of the ghost to the front. After running this script, it will always be displayed at the frontmost layer.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3328,7 +3329,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,windowstate,stayontop]このスクリプト以降、最前面に表示されるようになる。</code></p>
+							<p><code>\![set,windowstate,stayontop]After running this script, the window of the ghost will be displayed in the frontmost layer.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3336,8 +3337,8 @@
 			<dl id="_!_set,windowstate,!stayontop_">
 				<dt class="entry">\![set,windowstate,!stayontop]</dt>
 				<dd class="entry">
-					<p>手前に表示しない。このスクリプト以降、他のウィンドウと同様に重なりが処理される。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Stops displaying the window of the ghost in front. After running this script, overlapping will be handled in the same way as other windows.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3346,7 +3347,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,windowstate,!stayontop]このスクリプト以降、アクティブなウインドウが手前に表示されるようになる。</code></p>
+							<p><code>\![set,windowstate,!stayontop]After running this script, active windows will be displayed over the ghost's window.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3354,7 +3355,7 @@
 			<dl id="_!_set,windowstate,minimize_">
 				<dt class="entry">\![set,windowstate,minimize]</dt>
 				<dd class="entry">
-					<p>最小化する。</p>
+					<p>Minimizes the window.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3362,31 +3363,31 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>最小化。\![set,windowstate,minimize]</code></p>
+							<p><code>The window will be minimized.\![set,windowstate,minimize]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,wallpaper,ファイル名,オプション_">
-				<dt class="entry">\![set,wallpaper,ファイル名,オプション]</dt>
+				<dt class="entry">\![set,wallpaper,(file name),(option)]</dt>
 				<dd class="entry">
-					<p>指定したファイルを壁紙にする。<br>
-					ファイル名には、絶対パスの他、ssp.exeからの相対パスが使用可能。<br>
-					ファイル名を指定しないか空にすると壁紙設定が解除される(OSデフォルトの設定に戻る)。<br>
-					オプションは以下の通り。</p>
+					<p>Sets the specified file as the wallpaper.<br>
+					Aside from absolute paths, relative paths from ssp.exe can also be used for the file name.<br>
+					If the file name is omitted or left blank, the wallpaper settings will be reset (reverted to the OS' default wallpaper).<br>
+					The options are as below.</p>
 					<dl>
 						<dt>center</dt>
-						<dd>中央表示（省略時デフォルト）</dd>
+						<dd>Displays the image in the center (default setting when the option is omitted).</dd>
 						<dt>tile</dt>
-						<dd>並べて表示する（タイリング）</dd>
+						<dd>Tiles the image.</dd>
 						<dt>stretch</dt>
-						<dd>画像の縦横比を無視して、モニタいっぱいに拡大する。</dd>
+						<dd>Stretches the image to fill the screen, disregarding the proportions of the image.</dd>
 						<dt>stretch-x</dt>
-						<dd>画像の横幅をモニタ幅いっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
+						<dd>Stretches the image horizontally to meet the edges of the screen, adjusting to keep the relative proportions of the image. Only functions on Windows 7 and later.</dd>
 						<dt>stretch-y</dt>
-						<dd>画像の高さをモニタ高さいっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
+						<dd>Stretches the image vertically to meet the edges of the screen, adjusting to keep the relative proportions of the image. Only functions on Windows 7 and later.</dd>
 						<dt>span</dt>
-						<dd>マルチモニタ環境において、全モニタに渡るように拡大する。Windows 10以降のみ。</dd>
+						<dd>Stretches the image to go over all screens in a multi-screen environment. Only functions on Windows 10 and later.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3394,22 +3395,27 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>Emily/Phase4.5のサムネイルを壁紙にする。\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
+							<p><code>Sets Emily/Phase4.5's thumbnail as the wallpaper.\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,tasktrayicon,ファイル名,テキスト_">
-				<dt class="entry">\![set,tasktrayicon,ファイル名,テキスト]</dt>
+				<dt class="entry">\![set,tasktrayicon,(file name).ico,(text),--duration=(wait time),--runcount=(times to repeat)]</dt>
 				<dd class="entry">
-					<p>指定したアイコンファイルをタスクトレイのアイコンに変更する。<br>ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>テキストはアイコンにマウスを重ねたときの表示、省略可。デフォルトでは「SSP/Emily/Phase4.5」など、SSP/[起動中のゴースト名]。</p>
+					<p>Uses the specified icon file as the icon in the notification area (system tray).
+					<br/>Relative filepaths from [(folder of the ghost executing the command)] or [(folder of the ghost executing the command)]/ghost/master can be used.
+					<br/>Text is displayed when hovering the mouse cursor over the icon, and can be omitted. The default is SSP/[(name of the currently running ghost)], e.g. [SSP/Emily/Phase4.5].
+					<br/>The icon can be animated by specifying --duration=(wait time) (ms). When doing so, after specifying filename.ico, multiple files will be loaded in the order of the numbers following the file name (filename00.ico, filename01.ico, and so on), displaying each frame after the specified wait time has passed. [SSP 2.5.58~]
+					<br/>If --runcount is specified in addition to --duration, the number of times to repeat the animation can be set. If left unspecified, the animation will repeat indefinitely. [SSP 2.5.59~]</p>
+
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,tasktrayicon,normal.ico,ゴースト/通常モード]アイコンを[実行したゴーストのフォルダ]/ghost/masterにあるnormal.icoにし、マウスオン時のメッセージを「ゴースト/通常モード」に変更する。</code></p>
+							<p><code>\![set,tasktrayicon,normal.ico,ghost/normal mode] Sets the icon to normal.ico in [(folder of the ghost executing the command)]/ghost/master, and changes the message displayed when the mouse cursor is over it to "ghost/normal mode."</code></p>
 						</section>
 					</div>
 				</dd>
