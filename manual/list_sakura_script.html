@@ -332,7 +332,7 @@
 				<li><a href="#_e">\e</a></li>
 				<li><a href="#_-">\-</a></li>
 				<li><a href="#_a">\a</a></li>
-				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself(,オプション,オプション...)]</a></li>
+				<li><a href="#_!_updatebymyself_">\![updatebymyself(,オプション,オプション...)]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
 				<li><a href="#_!_update,更新対象_">\![update,更新対象(,オプション,オプション...)]</a></li>
 				<li><a href="#_!_updateother_">\![updateother,更新対象/オプション群,...]</a></li>
@@ -886,7 +886,6 @@
 					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
 					<p>Effective until the ghost is closed.</p>
-					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1661,7 +1660,7 @@
 					<p>Specifies the scaling factor of the speed at which text is shown (weight per individual letter) in the balloon. 
                     <br>Lone value: 1~100 can be specified. 1 is the equal scale. Decimals can also be specified. Example: Specifying 1.5 will increase the slowness by 50%.
                     <br>With % appended: 0~10000 can be specified. 100 is the equal value. Only integers above 0 can be used.
-                    <br>With ms appended: 0~10000 can be specified. Specifies the absolute value of the waiting time for each letter in miliseconds.</p>
+                    <br>With ms appended: 0~10000 can be specified. Specifies the absolute value of the waiting time for each letter in milliseconds.</p>
 					
 					<p>When omitted or 1 is specified: Return to the original value
 					<br>When 0 is specified: Always display instantly</p>
@@ -2907,19 +2906,19 @@
 					<dt>default</dt>
 					<dd>Returns the color to the default color of the text.<br>The default color is the color defined in the balloon's descript.txt (black when undefined).</dd>
 					<dt>disable</dt>
-					<dd>Sets the specified section of text to the unselectable choice indicator color.</dd>
+					<dd>Sets the text to the unselectable choice indicator color.</dd>
 					<dt>default.anchor</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text when being hovered over.</dd>
+					<dd>Sets the text to the default color of anchor text when being hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
 					<dt>default.anchornotselect</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text while not hovered over.</dd>
+					<dd>Sets the text to the default color of anchor text while not hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
 					<dt>default.anchorvisited</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of already-visited anchor text.</dd>
+					<dd>Sets the text to the default color of already-visited anchor text.<br />[2.5.76 - Can be used with regular strings]</dd>
 					<dt>default.cursor</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text when being hovered over.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of choice text when being hovered over.</dd>
 					<dt>default.cursornotselect</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text while not hovered over.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of choice text while not hovered over.</dd>
 					<dt>default.plain</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of normal text.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of normal text.</dd>
 				</dl>
 			</div>
 		</section>
@@ -2968,7 +2967,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_updatebymyself,checkonly_">
+			<dl id="_!_updatebymyself_">
 				<dt class="entry">\![updatebymyself,(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Starts the network update check event.
@@ -3139,7 +3138,10 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p>Uninstalls the ghost that ran the command without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
+					<p>Uninstalls the ghost without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
+					<p>The below options are specifiable in SSP.
+                    <br />\![vanishbymyself,(ghost name)] Specify the name of the ghost to be switched to after uninstallation. (If not found, the ghost to be switched to will be decided by SSP.)
+                    <br />\![vanishbymyself,--option=query] 2.5.82: Displays dialog to confirm whether the ghost should be uninstalled or not. Functions the same as when uninstalling from the menu.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3421,26 +3423,26 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
-				<dt class="entry">\![set,trayballoon,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![set,trayballoon,(option),(option),(option)...]</dt>
 				<dd class="entry">
-					<p>トレイアイコンからバルーンを表示する。<br>バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br>タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。<br>指定できるオプションは以下。</p>
+					<p>Displays a system tray notification balloon.<br>OnTrayBalloonClick is run when the balloon is closed by being clicked on.<br>OnTrayBalloonTimeout is run when the balloon is closed with the close button or from timing out.<br>The specifiable options are as below.</p>
 					<dl>
-						<dt>--text=テキスト</dt>
-						<dd>バルーンに表示する文字列、複数指定で複数行に。</dd>
-						<dt>--title=タイトル</dt>
-						<dd>バルーンのタイトル。</dd>
-						<dt>--icon=アイコン設定名</dt>
-						<dd>バルーンに表示されるアイコンの設定。</dd>
+						<dt>--text=(text)</dt>
+						<dd>The string to be displayed in the main body of the balloon. Multiple lines can be written by specifying this option more than once.</dd>
+						<dt>--title=(title)</dt>
+						<dd>The balloon title.</dd>
+						<dt>--icon=(icon setting name)</dt>
+						<dd>The setting for the icon to be displayed on the balloon.</dd>
 						<dt>info</dt>
-						<dd>情報アイコン</dd>
+						<dd>Information icon.</dd>
 						<dt>error</dt>
-						<dd>エラーアイコン</dd>
+						<dd>Error icon.</dd>
 						<dt>warning</dt>
-						<dd>警告アイコン</dd>
+						<dd>Warning icon.</dd>
 						<dt>none</dt>
-						<dd>なし</dd>
-						<dt>--timeout=秒数</dt>
-						<dd>バルーンの表示時間(単位＝秒)。10～30秒の間でのみ指定可。Windows 7以降では無視される。</dd>
+						<dd>None.</dd>
+						<dt>--timeout=(time in seconds)</dt>
+						<dd>The length of time that the balloon will be displayed (units are in seconds). Only values from 10~30 are specifiable. This option is ignored in Windows 7 or later.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3448,18 +3450,18 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error]</code></p>
+							<p><code>\![set,trayballoon,--text=Due to an error, a process has failed.,--title=Error occurred,--icon=error]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,otherghosttalk,true|false|before|after_">
-				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
+				<dt class="entry">\![set,otherghosttalk,(true|false|before|after)]</dt>
 				<dd class="entry">
-					<p><a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a>を通知するかどうかを設定。初期値false。<br>
-					false以外を設定すると、同時起動している他ゴーストが喋った時OnOtherGhostTalkが通知されるようになる。<br>
-					beforeを指定すると喋る前、afterを指定すると喋った後に通知。trueはafterと同じ。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Sets whether <a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a> will be notified or not. The default value is false.<br>
+					When set to a value other than false, OnOtherGhostTalk will be notified when other ghosts that are open at the same time talk.<br>
+					Notifications happen before the other ghost talks when set to before and after talking when set to after. Specifying true is the same as specifying after.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3467,15 +3469,15 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>
-							\![set,otherghosttalk,true]これ以降、同時に起動しているゴーストが何か喋り終わるたびに、OnOtherGhostTalkが通知されるようになる。</code></p>
+							\![set,otherghosttalk,true]After this, OnOtherGhostTalk will be notified every time other currently open ghosts finish talking.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,othersurfacechange,trueかfalse_">
-				<dt class="entry">\![set,othersurfacechange,trueかfalse]</dt>
+				<dt class="entry">\![set,othersurfacechange,(true|false)]</dt>
 				<dd class="entry">
-					<p><a href="list_shiori_event.html#OnOtherSurfaceChange">OnOtherSurfaceChange</a>を通知するかどうかを設定。初期値false。<br>trueで有効になり、同時起動している他ゴーストのサーフェスが変わるとOnOtherSurfaceChangeが通知されるようになる。</p>
+					<p>Sets whether <a href="list_shiori_event.html#OnOtherSurfaceChange">OnOtherSurfaceChange</a> will be notified or not. The default value is false.<br>When set to true, OnOtherSurfaceChange will be notified when other ghosts that are open at the same time change surfaces.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3483,15 +3485,15 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>
-							\![set,othersurfacechange,true]これ以降、同時に起動しているゴーストのサーフェスが変わるたびに、OnOtherSurfaceChangeが通知されるようになる。</code></p>
+							\![set,othersurfacechange,true]After this, OnOtherSurfaceChange will be notified every time other currently open ghosts change surfaces.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raise,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raise,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raise,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>イベントを実行する。<br>第3引数以降はReference0以降に順番に格納される。</p>
+					<p>Raises an event.<br>Values from the third argument onwards are stored in order starting from Reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3500,157 +3502,157 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このトークの末端にあるraiseが再生された時、SHIORIイベント「OnRaiseTest」がSSPから通知される。Reference0には「test」が入っている。\![raise,OnRaiseTest,test]</code></p>
+							<p><code>When the raise command at the end of this dialog is run, the SHIORI event OnRaiseTest will be notified by SSP. "test" will be stored in Reference0.\![raise,OnRaiseTest,test]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_embed,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![embed,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![embed,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>イベントの実行結果を現在実行中のスクリプトのこのタグ内に<strong>「埋め込む」</strong>特殊タグ。<br>
-					オプション部分の使い方は\![raise]と同じで、第3引数以降はReference0以降に順番に格納される。</p>
+					<p>A special tag that <strong>"embeds"</strong> the results of an event into the script currently being run in real-time.<br>
+					The option arguments use the same method as \![raise], and values from the third argument onwards are stored in order starting from Reference0.</p>
 					
-					<p>実行中に\![embed]タグに遭遇すると、指定したイベント呼び出しが行われ、結果(Result)が返された場合には、\![embed]タグ全体がその結果文字列に置き換えられ、置き換えられた文字列の1文字目からスクリプト実行を続行する。<br>
-					(※里々の実行中SAORI呼び出し"sync"の仕組みをより広範囲・汎用的に提供するための機能)</p>
+					<p>When a script finds an \![embed] tag while running, the specified event is called, and in the case that a result is returned, the entire \![embed] tag is replaced with the resulting string, with the script continuing to run from the first letter of the string that replaced the tag.<br>
+					(※Made to offer wider and more general functioning than the Satori in-script SAORI calling mechanism "sync.")</p>
 					
-					<p>当初プロパティシステムと合わせて使用し、プロパティシステム呼び出し自体は結果を返さず、直後に埋め込んだ\![embed]タグで結果に応じて動的に処理を変えるのを「1回のスクリプト実行内で」行う機構として実装されたが、特にそのような縛りはなく、スクリプト実行に同期させて同時に何か処理したい場合すべてに使える仕様である。</p>
+					<p>At first, this tag was implemented as a function to run entirely within a single execution of a script, by usage alongside the property system, with the property system call itself returning no results, and then dynamically changing the process depending on the result from an \![embed] tag placed directly afterwards. However, there are no such restrictions, and it is possible to synchronize with the script execution and process multiple things simultaneously.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(フォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
-							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
+							<p><code>At the end of this dialog, the results of the execution of the SHIORI event OnEmbedTest will be displayed. Contrary to raise, the results are contained within the same script, so SakuraScript effects that would become ineffective with the end of a script (such as font changes) will continue to be effective.\![embed,OnEmbedTest]</code></p>
+							<p><code>When this script is run on a Satori template, a line of randomtalk will be appended to this dialog.\![embed,OnTalk]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraise,(time),(repetition),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>「時間」に待ち時間(ミリ秒)を指定してイベントを実行する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>タイマーはネットワーク更新後も引き継がれる。</p>
-					<p>「繰り返すか否か」が0の場合、指定したイベント発生まで有効。「繰り返すか否か」が1以上の場合、ゴースト終了まで有効。</p>
+					<p>Raises an event with a wait time specified.<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Values from the fifth argument onwards are references.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.<br>The timer is kept after network updates.</p>
+					<p>Effective until the specified event runs when repetition is specified as 0. Effective until the ghost is closed when repetition is specified as 1 or higher.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後(5000ミリ秒)後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
+							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]In 5 seconds (5000 milliseconds), OnTimerraiseTest will be run. The time is counted starting from the moment the SakuraScript is run. \![timerraise,0,1,OnTimerraiseTest]The timer that was set earlier has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raiseother,(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>起動している他のゴーストへイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を「__SYSTEM_ALL_GHOST__」とすると起動している全てのゴーストに通知。<br>ゴースト名は直接指定のみ、バイト値1区切りで複数指定可。</p>
+					<p>Sends an event notification to another currently running ghost.<br>Values from the fourth argument onwards are references.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>The ghost name can only be specified directly. Multiple can be specified by separating them using the byte value 1.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。</code></p>
+							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification. Reference0 stores the value sweet potato.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraiseother,(time),(repetition),(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第6引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>ゴースト名はバイト値1区切りで複数指定可。</p>
+					<p>Sends an event notification to another currently running ghost with a wait time specified (milliseconds).<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Values from the sixth argument onwards are references.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>Multiple ghost names can be specified by separating them using the byte value 1.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒(30000ミリ秒)おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
+							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification every 30 seconds (30000 milliseconds). Reference0 stores the value sweet potato.\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotato]The repeat notification has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raiseplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>プラグインに指定したイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。</p>
+					<p>Sends the specified event to the plugin.<br>If the plugin name is specified as random, a random plugin will be chosen.<br>If specified as lastinstalled, the last installed plugin will be started.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
+							<p><code>\![raiseplugin,StampCollection,OnStampAdd,[(folder of the ghost executing the command)]/ghost/master/stamp.png,MyStamp,I gave you my stamp.]Registers the image from (folder of the ghost executing the command) and message to the plugin StampCollection.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraiseplugin,(time),(repetition),(plugin IG or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>待ち時間(ミリ秒)を指定してプラグインに指定したイベントを送信する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。</p>
+					<p>Sends the specified event to the plugin with a wait time specified (milliseconds).<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraiseplugin,60000,0,実体化,OnMenuExec]プラグイン「実体化」を60秒(60000ミリ秒)おきに繰り返し実行。\![timerraiseplugin,0,0,実体化,OnMenuExec]ここで繰り返し実行をキャンセル。</code></p>
+							<p><code>\![timerraiseplugin,60000,0,Jittaika,OnMenuExec]Runs the plugin Jittaika every 60 seconds (60000 milliseconds).\![timerraiseplugin,0,0,Jittaika,OnMenuExec]The repeat notification has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notify,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notify,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notify,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>Notifyイベントを実行する。<br>第3引数以降はreference。<br>\![raise,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Runs a Notify event.<br>Values from the third argument onwards are references.<br>Functionally almost the same as \![raise,(event name),r0,r1,r2...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notify,OnNotifyTest,test]OnNotifyTestが通知され、Reference0に「test」が入っている。OnNotifyTestでトークを書いてもSSPに反映されない。</code></p>
+							<p><code>\![notify,OnNotifyTest,test]OnNotifyTest is notified, and test is stored in Reference0. Even if there is dialog in OnNotifyTest, it will not be output by SSP.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notifyother,(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>起動している他のゴーストへNotifyイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>バイト値1区切りで複数指定可。<br>\![raiseother,ゴースト名,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Sends a Notify event notification to another currently running ghost.<br>Values from the fourth argument onwards are references.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>Multiple ghost names can be specified by separating them using the byte value 1.<br>Functionally almost the same as \![raiseother,(ghost name),(event name),(r0),(r1),(r2),...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。もしこの通知イベントでEmily/Phase4.5が何かトークをしても、バルーンには何も表示されない。</code></p>
+							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification. Reference0 stores the value sweet potato. Even if Emily/Phase4.5 says something in response to this notification event, nothing will be displayed in the balloon.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notifyplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>プラグインに指定したNotifyイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。<br>\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Sends the specified Notify event to the plugin.<br>If the plugin name is specified as random, a random plugin will be chosen.<br>If specified as lastinstalled, the last installed plugin will be started.<br>Functionally almost the same as  \![raiseplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notifyplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」の登録イベントをnotifyで呼び出す。プラグイン実行で処理は行われるが、ゴースト側への返答は無視される。</code></p>
+							<p><code>\![notifyplugin,StampCollection,OnStampAdd,[(folder of the ghost executing the command)]/ghost/master/stamp.png,MyStamp,I gave you my stamp.]Calls the registration event of the plugin StampCollection with notify. The plugin and subsequent processes will run, but responses to the ghost will be ignored.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サウンドコマンド</h1>
+			<h1>Sound Commands</h1>
 			<dl id="__v_ファイル名_">
 				<dt class="entry">\8[ファイル名]</dt>
 				<dd class="entry">
