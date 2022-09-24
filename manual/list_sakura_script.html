@@ -1672,7 +1672,7 @@
 					<p>Specifies the scaling factor of the speed at which text is shown (weight per individual letter) in the balloon. 
                     <br>Lone value: 1~100 can be specified. 1 is the equal scale. Decimals can also be specified. Example: Specifying 1.5 will increase the slowness by 50%.
                     <br>With % appended: 0~10000 can be specified. 100 is the equal value. Only integers above 0 can be used.
-                    <br>With ms appended: 0~10000 can be specified. Specifies the absolute value of the waiting time for each letter in miliseconds.</p>
+                    <br>With ms appended: 0~10000 can be specified. Specifies the absolute value of the waiting time for each letter in milliseconds.</p>
 					
 					<p>When omitted or 1 is specified: Return to the original value
 					<br>When 0 is specified: Always display instantly</p>
@@ -2918,19 +2918,19 @@
 					<dt>default</dt>
 					<dd>Returns the color to the default color of the text.<br>The default color is the color defined in the balloon's descript.txt (black when undefined).</dd>
 					<dt>disable</dt>
-					<dd>Sets the specified section of text to the unselectable choice indicator color.</dd>
+					<dd>Sets the text to the unselectable choice indicator color.</dd>
 					<dt>default.anchor</dt>
 					<dd>Sets the text to the default color of anchor text when being hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
-                    <dt>default.anchornotselect</dt>
-                    <dd>Sets the text to the default color of anchor text while not hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
-                    <dt>default.anchorvisited</dt>
-                    <dd>Sets the text to the default color of already-visited anchor text.<br />[2.5.76 - Can be used with regular strings]</dd>
+					<dt>default.anchornotselect</dt>
+					<dd>Sets the text to the default color of anchor text while not hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
+					<dt>default.anchorvisited</dt>
+					<dd>Sets the text to the default color of already-visited anchor text.<br />[2.5.76 - Can be used with regular strings]</dd>
 					<dt>default.cursor</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text when being hovered over.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of choice text when being hovered over.</dd>
 					<dt>default.cursornotselect</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text while not hovered over.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of choice text while not hovered over.</dd>
 					<dt>default.plain</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of normal text.</dd>
+					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the text to the default color of normal text.</dd>
 				</dl>
 			</div>
 		</section>
@@ -3151,7 +3151,7 @@
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
 					<p>Uninstalls the ghost without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
-                    <p>The below options are specifiable in SSP.
+					<p>The below options are specifiable in SSP.
                     <br />\![vanishbymyself,(ghost name)] Specify the name of the ghost to be switched to after uninstallation. (If not found, the ghost to be switched to will be decided by SSP.)
                     <br />\![vanishbymyself,--option=query] 2.5.82: Displays dialog to confirm whether the ghost should be uninstalled or not. Functions the same as when uninstalling from the menu.</p>
 					<ul class="supported-baseware">
@@ -3434,26 +3434,26 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
-				<dt class="entry">\![set,trayballoon,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![set,trayballoon,(option),(option),(option)...]</dt>
 				<dd class="entry">
-					<p>トレイアイコンからバルーンを表示する。<br>バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br>タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。<br>指定できるオプションは以下。</p>
+					<p>Displays a system tray notification balloon.<br>OnTrayBalloonClick is run when the balloon is closed by being clicked on.<br>OnTrayBalloonTimeout is run when the balloon is closed with the close button or from timing out.<br>The specifiable options are as below.</p>
 					<dl>
-						<dt>--text=テキスト</dt>
-						<dd>バルーンに表示する文字列、複数指定で複数行に。(必須)</dd>
-						<dt>--title=タイトル</dt>
-						<dd>バルーンのタイトル。</dd>
-						<dt>--icon=アイコン設定名</dt>
-						<dd>バルーンに表示されるアイコンの設定。</dd>
+						<dt>--text=(text)</dt>
+						<dd>The string to be displayed in the main body of the balloon. Multiple lines can be written by specifying this option more than once.</dd>
+						<dt>--title=(title)</dt>
+						<dd>The balloon title.</dd>
+						<dt>--icon=(icon setting name)</dt>
+						<dd>The setting for the icon to be displayed on the balloon.</dd>
 						<dt>info</dt>
-						<dd>情報アイコン</dd>
+						<dd>Information icon.</dd>
 						<dt>error</dt>
-						<dd>エラーアイコン</dd>
+						<dd>Error icon.</dd>
 						<dt>warning</dt>
-						<dd>警告アイコン</dd>
+						<dd>Warning icon.</dd>
 						<dt>none</dt>
-						<dd>なし</dd>
-						<dt>--timeout=秒数</dt>
-						<dd>バルーンの表示時間(単位＝秒)。10～30秒の間でのみ指定可。Windows 7以降では無視される。</dd>
+						<dd>None.</dd>
+						<dt>--timeout=(time in seconds)</dt>
+						<dd>The length of time that the balloon will be displayed (units are in seconds). Only values from 10~30 are specifiable. This option is ignored in Windows 7 or later.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3461,18 +3461,18 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error]</code></p>
+							<p><code>\![set,trayballoon,--text=Due to an error, a process has failed.,--title=Error occurred,--icon=error]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_set,otherghosttalk,true_false_before_after_">
-				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
+			<dl id="_!_set,otherghosttalk,true|false|before|after_">
+				<dt class="entry">\![set,otherghosttalk,(true|false|before|after)]</dt>
 				<dd class="entry">
-					<p><a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a>を通知するかどうかを設定。初期値false。<br>
-					false以外を設定すると、同時起動している他ゴーストが喋った時OnOtherGhostTalkが通知されるようになる。<br>
-					beforeを指定すると喋る前、afterを指定すると喋った後に通知。trueはafterと同じ。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Sets whether <a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a> will be notified or not. The default value is false.<br>
+					When set to a value other than false, OnOtherGhostTalk will be notified when other ghosts that are open at the same time talk.<br>
+					Notifications happen before the other ghost talks when set to before and after talking when set to after. Specifying true is the same as specifying after.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3480,15 +3480,15 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>
-							\![set,otherghosttalk,true]これ以降、同時に起動しているゴーストが何か喋り終わるたびに、OnOtherGhostTalkが通知されるようになる。</code></p>
+							\![set,otherghosttalk,true]After this, OnOtherGhostTalk will be notified every time other currently open ghosts finish talking.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,othersurfacechange,trueかfalse_">
-				<dt class="entry">\![set,othersurfacechange,trueかfalse]</dt>
+				<dt class="entry">\![set,othersurfacechange,(true|false)]</dt>
 				<dd class="entry">
-					<p><a href="list_shiori_event.html#OnOtherSurfaceChange">OnOtherSurfaceChange</a>を通知するかどうかを設定。初期値false。<br>trueで有効になり、同時起動している他ゴーストのサーフェスが変わるとOnOtherSurfaceChangeが通知されるようになる。</p>
+					<p>Sets whether <a href="list_shiori_event.html#OnOtherSurfaceChange">OnOtherSurfaceChange</a> will be notified or not. The default value is false.<br>When set to true, OnOtherSurfaceChange will be notified when other ghosts that are open at the same time change surfaces.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3496,15 +3496,15 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>
-							\![set,othersurfacechange,true]これ以降、同時に起動しているゴーストのサーフェスが変わるたびに、OnOtherSurfaceChangeが通知されるようになる。</code></p>
+							\![set,othersurfacechange,true]After this, OnOtherSurfaceChange will be notified every time other currently open ghosts change surfaces.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raise,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raise,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raise,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>イベントを実行する。<br>第3引数以降はReference0以降に順番に格納される。</p>
+					<p>Raises an event.<br>Values from the third argument onwards are stored in order starting from Reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3513,167 +3513,167 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このトークの末端にあるraiseが再生された時、SHIORIイベント「OnRaiseTest」がSSPから通知される。Reference0には「test」が入っている。\![raise,OnRaiseTest,test]</code></p>
+							<p><code>When the raise command at the end of this dialog is run, the SHIORI event OnRaiseTest will be notified by SSP. "test" will be stored in Reference0.\![raise,OnRaiseTest,test]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_embed,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![embed,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![embed,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>イベントの実行結果を現在実行中のスクリプトのこのタグ内に<strong>「埋め込む」</strong>特殊タグ。<br>
-					オプション部分の使い方は\![raise]と同じで、第3引数以降はReference0以降に順番に格納される。</p>
+					<p>A special tag that <strong>"embeds"</strong> the results of an event into the script currently being run in real-time.<br>
+					The option arguments use the same method as \![raise], and values from the third argument onwards are stored in order starting from Reference0.</p>
 					
-					<p>実行中に\![embed]タグに遭遇すると、指定したイベント呼び出しが行われ、結果(Result)が返された場合には、\![embed]タグ全体がその結果文字列に置き換えられ、置き換えられた文字列の1文字目からスクリプト実行を続行する。<br>
-					(※里々の実行中SAORI呼び出し"sync"の仕組みをより広範囲・汎用的に提供するための機能)</p>
+					<p>When a script finds an \![embed] tag while running, the specified event is called, and in the case that a result is returned, the entire \![embed] tag is replaced with the resulting string, with the script continuing to run from the first letter of the string that replaced the tag.<br>
+					(※Made to offer wider and more general functioning than the Satori in-script SAORI calling mechanism "sync.")</p>
 					
-					<p>当初プロパティシステムと合わせて使用し、プロパティシステム呼び出し自体は結果を返さず、直後に埋め込んだ\![embed]タグで結果に応じて動的に処理を変えるのを「1回のスクリプト実行内で」行う機構として実装されたが、特にそのような縛りはなく、スクリプト実行に同期させて同時に何か処理したい場合すべてに使える仕様である。</p>
+					<p>At first, this tag was implemented as a function to run entirely within a single execution of a script, by usage alongside the property system, with the property system call itself returning no results, and then dynamically changing the process depending on the result from an \![embed] tag placed directly afterwards. However, there are no such restrictions, and it is possible to synchronize with the script execution and process multiple things simultaneously.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(フォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
-							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
+							<p><code>At the end of this dialog, the results of the execution of the SHIORI event OnEmbedTest will be displayed. Contrary to raise, the results are contained within the same script, so SakuraScript effects that would become ineffective with the end of a script (such as font changes) will continue to be effective.\![embed,OnEmbedTest]</code></p>
+							<p><code>When this script is run on a Satori template, a line of randomtalk will be appended to this dialog.\![embed,OnTalk]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraise,(time),(repetition),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>「時間」に待ち時間(ミリ秒)を指定してイベントを実行する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第5引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>タイマーはネットワーク更新後も引き継がれる。</p>
-					<p>「繰り返すか否か」が0の場合、指定したイベント発生まで有効。「繰り返すか否か」が1以上の場合、ゴースト終了まで有効。</p>
+					<p>Raises an event with a wait time specified.<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Values from the fifth argument onwards are references.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.<br>The timer is kept after network updates.</p>
+					<p>Effective until the specified event runs when repetition is specified as 0. Effective until the ghost is closed when repetition is specified as 1 or higher.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後(5000ミリ秒)後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
+							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]In 5 seconds (5000 milliseconds), OnTimerraiseTest will be run. The time is counted starting from the moment the SakuraScript is run. \![timerraise,0,1,OnTimerraiseTest]The timer that was set earlier has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raiseother,(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>起動している他のゴーストへイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を「__SYSTEM_ALL_GHOST__」とすると起動している全てのゴーストに通知。<br>ゴースト名は直接指定のみ、バイト値1区切りで複数指定可。</p>
+					<p>Sends an event notification to another currently running ghost.<br>Values from the fourth argument onwards are references.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>The ghost name can only be specified directly. Multiple can be specified by separating them using the byte value 1.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。</code></p>
+							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification. Reference0 stores the value sweet potato.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraiseother,(time),(repetition),(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>待ち時間(ミリ秒)を指定して起動している他のゴーストへイベントを通知する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>第6引数以降はreference。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>ゴースト名はバイト値1区切りで複数指定可。</p>
+					<p>Sends an event notification to another currently running ghost with a wait time specified (milliseconds).<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Values from the sixth argument onwards are references.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>Multiple ghost names can be specified by separating them using the byte value 1.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒(30000ミリ秒)おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
+							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification every 30 seconds (30000 milliseconds). Reference0 stores the value sweet potato.\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotato]The repeat notification has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![raiseplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>プラグインに指定したイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。</p>
+					<p>Sends the specified event to the plugin.<br>If the plugin name is specified as random, a random plugin will be chosen.<br>If specified as lastinstalled, the last installed plugin will be started.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
+							<p><code>\![raiseplugin,StampCollection,OnStampAdd,[(folder of the ghost executing the command)]/ghost/master/stamp.png,MyStamp,I gave you my stamp.]Registers the image from (folder of the ghost executing the command) and message to the plugin StampCollection.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![timerraiseplugin,(time),(repetition),(plugin IG or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>待ち時間(ミリ秒)を指定してプラグインに指定したイベントを送信する。<br>「繰り返すか否か」は0で指定時間ごとに繰り返しイベントが発生し、1以上で一回のみイベントが発生。<br>別名のイベントはそれぞれに実行可能だが、同名のイベントに対して繰り返し実行した場合は上書きされる。<br>同じイベント名で時間が0のさくらスクリプトを実行するとキャンセルできる。</p>
+					<p>Sends the specified event to the plugin with a wait time specified (milliseconds).<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![timerraiseplugin,60000,0,実体化,OnMenuExec]プラグイン「実体化」を60秒(60000ミリ秒)おきに繰り返し実行。\![timerraiseplugin,0,0,実体化,OnMenuExec]ここで繰り返し実行をキャンセル。</code></p>
+							<p><code>\![timerraiseplugin,60000,0,Jittaika,OnMenuExec]Runs the plugin Jittaika every 60 seconds (60000 milliseconds).\![timerraiseplugin,0,0,Jittaika,OnMenuExec]The repeat notification has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notify,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notify,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notify,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>Notifyイベントを実行する。<br>第3引数以降はreference。<br>\![raise,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Runs a Notify event.<br>Values from the third argument onwards are references.<br>Functionally almost the same as \![raise,(event name),r0,r1,r2...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notify,OnNotifyTest,test]OnNotifyTestが通知され、Reference0に「test」が入っている。OnNotifyTestでトークを書いてもSSPに反映されない。</code></p>
+							<p><code>\![notify,OnNotifyTest,test]OnNotifyTest is notified, and test is stored in Reference0. Even if there is dialog in OnNotifyTest, it will not be output by SSP.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notifyother,(ghost name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>起動している他のゴーストへNotifyイベントを通知する。<br>第4引数以降はreference。<br>ゴースト名を__SYSTEM_ALL_GHOST__とすると起動している全てのゴーストに通知。<br>バイト値1区切りで複数指定可。<br>\![raiseother,ゴースト名,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Sends a Notify event notification to another currently running ghost.<br>Values from the fourth argument onwards are references.<br>If the ghost name is specified as __SYSTEM_ALL_GHOST__, a notification will be sent to all other running ghosts.<br>Multiple ghost names can be specified by separating them using the byte value 1.<br>Functionally almost the same as \![raiseother,(ghost name),(event name),(r0),(r1),(r2),...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。もしこの通知イベントでEmily/Phase4.5が何かトークをしても、バルーンには何も表示されない。</code></p>
+							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotato,sweet potato]If currently open, Emily/Phase4.5 will receive OnRoastedPotato as a notification. Reference0 stores the value sweet potato. Even if Emily/Phase4.5 says something in response to this notification event, nothing will be displayed in the balloon.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</dt>
+				<dt class="entry">\![notifyplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>プラグインに指定したNotifyイベントを送信する。<br>プラグイン名をrandomにするとランダムに選択。<br>lastinstalledにすると最後にインストールされたプラグインを開始。<br>\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]とほぼ同じで、違いはこの通知イベントで何か値を返してもSSPに反映されないということのみ。</p>
+					<p>Sends the specified Notify event to the plugin.<br>If the plugin name is specified as random, a random plugin will be chosen.<br>If specified as lastinstalled, the last installed plugin will be started.<br>Functionally almost the same as  \![raiseplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![notifyplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」の登録イベントをnotifyで呼び出す。プラグイン実行で処理は行われるが、ゴースト側への返答は無視される。</code></p>
+							<p><code>\![notifyplugin,StampCollection,OnStampAdd,[(folder of the ghost executing the command)]/ghost/master/stamp.png,MyStamp,I gave you my stamp.]Calls the registration event of the plugin StampCollection with notify. The plugin and subsequent processes will run, but responses to the ghost will be ignored.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サウンドコマンド</h1>
+			<h1>Sound Commands</h1>
 			<dl id="__v_ファイル名_">
-				<dt class="entry">\8[ファイル名]</dt>
+				<dt class="entry">\8[(file name)]</dt>
 				<dd class="entry">
-					<p>自ゴーストフォルダにあるwaveを再生する。</p>
+					<p>Plays a wave file from the folder of the ghost.</p>
 				</dd>
 			</dl>
 			<dl id="__V">
-				<dt class="entry">\_v[ファイル名]</dt>
+				<dt class="entry">\_v[(file name)]</dt>
 				<dd class="entry">
-					<p>wave、mp3、wmaをベースウェアが再生する。[実行したゴーストのフォルダ]/ghost/masterから相対パス、または絶対パスで指定可。<br>ファイルが存在しない場合は無視される。</p>
+					<p>The baseware plays a wave, mp3, or wma file. Absolute paths or relative paths from [(folder of the ghost executing the command)]/ghost/master can be specified.<br>The command is ignored if the folder does not exist.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3682,7 +3682,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_v[se/test.wav]。[実行したゴーストのフォルダ]/ghost/master/seフォルダにあるtest.wavを再生する。</code></p>
+							<p><code>\_v[se/test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master/se is being played.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3690,7 +3690,7 @@
 			<dl id="_8_ファイル名_">
 				<dt class="entry">\_V</dt>
 				<dd class="entry">
-					<p>\_vのファイル再生が終了するのを待つ。<br>既に終了しているか存在しない場合は無視される。</p>
+					<p>Waits until the playback of the file played by \_v ends.<br>The command is ignored if it has already ended or the folder does not exist.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3699,61 +3699,61 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_v[test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\_V再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code>\_v[se/test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master/se is being played.\_VThis sentence will be displayed only once the playback ends.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,play,ファイル名_">
-				<dt class="entry">\![sound,play,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,play,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>\_vと同じ機能。ただし<a href="#notes_sound">オプション</a>を指定可能。</p>
+					<p>Functionally the same as \_v. However, <a href="#notes_sound">options</a> may be specified.</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (オプションは2.4～)</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (Options are from 2.4 onwards)</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.mp4動画を再生する。ただしシークバー強制表示、音声のみ。</code></p>
+							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true]The video file test.mp4 in the folder [(folder of the ghost executing the command)]/ghost/master is being played. However, the seek bar will be continuously displayed, and only sound will be played.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,load,ファイル名_">
-				<dt class="entry">\![sound,load,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,load,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>再生前にあらかじめ読み込んで、play指定時にすぐに再生開始できるようにする。記述方法はplayと同じ。</p>
+					<p>Load the file in advance so that it can be played immediately when requested. The specification method is the same as play.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_sound,cdplay,トラックNo._">
-				<dt class="entry">\![sound,cdplay,トラックNo.]</dt>
+				<dt class="entry">\![sound,cdplay,(Track No.)]</dt>
 				<dd class="entry">
-					<p>音楽CDをSSPが再生する。音楽CDがセットされていない場合は無視される。<br>再生中でも、\_Vは無視される。再生中に\![sound,cdplay,トラックNo.]で別トラックを指定しても無視される。\![sound,stop]で一旦停止してから次のトラックを指定すること。</p>
+					<p>SSP plays a music CD. The command is ignored if there is no music CD.<br>\_V is ignored, even while playing a track. Specifying another track with \![sound,cdplay,(Track No.)] during playback will also be ignored. Instead, \![sound,stop] should be used to stop the playback once before specifying the next track.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+							<p><code>\![sound,cdplay,6]The sixth track on a music CD is being played.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,loop,ファイル名_">
-				<dt class="entry">\![sound,loop,ファイル名]</dt>
+				<dt class="entry">\![sound,loop,(file name)]</dt>
 				<dd class="entry">
-					<p>ループ再生する。\_Vの対象にならない。<br>再生を止める場合は\![sound,stop]を実行する。</p>
+					<p>Loops a track. \_V does not apply to this command.<br>Playback can be stopped with \![sound,stop].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]ループ再生を停止する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,stop]The playback has stopped looping.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3761,95 +3761,94 @@
 			<dl id="_!_sound,wait_">
 				<dt class="entry">\![sound,wait]</dt>
 				<dd class="entry">
-					<p>\_Vと同じ機能。</p>
+					<p>Functionally the same as \_V.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,wait]再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code>\![sound,play,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,wait]This sentence will be displayed only once the playback ends.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,pause,ファイル名_">
-				<dt class="entry">\![sound,pause,ファイル名]</dt>
+			<dl id="_!_sound,pause_">
+				<dt class="entry">\![sound,pause,(file name)]</dt>
 				<dd class="entry">
-					<p>再生を一時停止する。ファイル名を省略した場合、全再生中のサウンドを一時停止する。</p>
+					<p>Pauses the playback. When the file name is omitted, all sounds currently being played will be paused.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,pause]The playback is paused as this sentence is displayed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,resume,ファイル名_">
-				<dt class="entry">\![sound,resume,ファイル名]</dt>
+			<dl id="_!_sound,resume_">
+				<dt class="entry">\![sound,resume,(file name)]</dt>
 				<dd class="entry">
-					<p>一時停止を解除する。ファイル名を省略した場合、全再生中のサウンドを一時停止解除する。</p>
+					<p>Unpauses playback. When the file name is omitted, all paused sounds will be unpaused.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,pause]The playback is paused as this sentence is displayed. \![sound,resume]The playback is resumed from where it was stopped.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,stop,ファイル名_">
-				<dt class="entry">\![sound,stop,ファイル名]</dt>
+			<dl id="_!_sound,stop_">
+				<dt class="entry">\![sound,stop,(file name)]</dt>
 				<dd class="entry">
-					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。<br />ファイル名を省略した場合、全再生中のサウンドを停止する。</p>
+					<p>Stops playback entirely. Differs from pause in that it releases the sound data entirely and stops playback. In some cases, other sound data cannot be played without using this command to stop the original playback.<br />When the file name is omitted, all sounds currently being played will be stopped.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]再生を完全に停止する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,stop]The playback is stopped entirely.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,option_">
-				<dt class="entry">\![sound,option,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,option,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>再生中に<a href="#notes_sound">オプション</a>を変更する。</p>
+					<p>Changes <a href="#notes_sound">options</a> during playback.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_sound">
-				<h1>sound play/load/option のオプション</h1>
+				<h1>sound play/load/option options</h1>
 				<dl>
-					<dt>--volume=0～100</dt>
-					<dd>再生音量を変える。Maxが100。ただしOS全体の音量を操作するわけではない。</dd>
-					<dt>--balance=-100～0～100</dt>
-					<dd>ステレオ時の左右バランス。-100が左一杯、100が右一杯。</dd>
-					<dt>--rate=1～100～10000</dt>
-					<dd>再生速度。100が通常速度。
-					<br />実際に指定可能な範囲はサウンドドライバ等の実装に依存し、400程度以上(435以上)はエラーになる場合が多い。</dd>
+					<dt>--volume=0~100</dt>
+					<dd>Adjusts the playback volume. The maximum value is 100. However, this option cannot control the volume of the whole OS.</dd>
+					<dt>--balance=-100~0~100</dt>
+					<dd>Adjusts the right and left balance when playing stereo. -100 is the full left value and 100 is the full right value.</dd>
+					<dt>--rate=1~100~10000</dt>
+					<dd>Adjusts the playback speed. 100 is the default speed.</dd>
 					<dt>--window=false/true (=OFF/ON)</dt>
-					<dd>シークバーつきのウインドウを表示するかどうか。trueの場合は音声のみでも強制表示する。指定しなければ音声のみならなし、動画ならあり。</dd>
+					<dd>Whether or not to display a window with the seek bar. When set as true, it will be displayed even if only sound is being played. If left unspecified, sound will not have a seek bar, whereas videos will.</dd>
 					<dt>--sound-only=false/true (=OFF/ON)</dt>
-					<dd>load時限定：動画ファイルの音声のみ再生が可能。指定しなければfalseと同じ。</dd>
+					<dd>Only specifiable with load. Plays only the sound of a video file. If left unspecified, it will function the same as specifying false.</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>オープンコマンド</h1>
+			<h1>Open Commands</h1>
 			<dl id="_j_ID_">
 				<dt class="entry">\j[ID]</dt>
 				<dd class="entry">
-					<p>IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+					<p>IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[(folder of the ghost executing the command)]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3859,7 +3858,7 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
-							<p><code>\j[file:///descript.txt][実行したゴーストのフォルダ]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
+							<p><code>\j[file:///descript.txt][(folder of the ghost executing the command)]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4320,9 +4319,7 @@
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p>readme.txtを開く。
-					<br />何も指定しな場合、起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。
-					<br />\![open,readme,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、指定したreadmeが開く。例：\![open,readme,ghost,Emily/Phase4]</p>
+					<p>readme.txtを開く。<br>起動中ゴーストの、[(folder of the ghost executing the command)]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4337,7 +4334,7 @@
 			<dl id="_!_open,terms_">
 				<dt class="entry">\![open,terms]</dt>
 				<dd class="entry">
-					<p>起動中ゴーストの、[実行したゴーストのフォルダ]/terms.txtを使用し、利用条件ダイアログを表示する。
+					<p>起動中ゴーストの、[(folder of the ghost executing the command)]/terms.txtを使用し、利用条件ダイアログを表示する。
 					<br />terms.txtがない場合は効果がない（エラー音のみ）
 					<br />ユーザーの操作をダイアログで強制的に中断するので、濫用すべきではない。</p>
 					<ul class="supported-baseware">
@@ -4354,7 +4351,7 @@
 			<dl id="_!_open,file,ファイル名_">
 				<dt class="entry">\![open,file,ファイル名]</dt>
 				<dd class="entry">
-					<p>ファイルを実行する。[実行したゴーストのフォルダ]/ghost/master/からの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
+					<p>ファイルを実行する。[(folder of the ghost executing the command)]/ghost/master/からの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4378,7 +4375,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[実行したゴーストのフォルダ]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
+							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[(folder of the ghost executing the command)]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4626,7 +4623,7 @@
 			<dl id="_!_execute,http-get,URL_">
 				<dt class="entry">\![execute,http-get,URL]</dt>
 				<dd class="entry">
-					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4642,7 +4639,7 @@
 			<dl id="_!_execute,http-get,URL,パラメータ_">
 				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4657,7 +4654,7 @@
 			<dl id="_!_execute,http-post,URL,パラメータ_">
 				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4672,14 +4669,14 @@
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[実行したゴーストのフォルダ]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[(folder of the ghost executing the command)]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4687,7 +4684,7 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5286,7 +5283,7 @@
 					指定形式によってはparamの書き方に制約があるので注意。</dd>
 					
 					<dt>--file=ファイル名</dt>
-					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
+					<dd>取得するデータの保存名を指定。[(folder of the ghost executing the command)]/ghost/master/var/ファイル名に保存される。</dd>
 					
 					<dt>--nodescript</dt>
 					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
