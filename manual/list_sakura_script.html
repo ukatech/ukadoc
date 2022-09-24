@@ -3654,15 +3654,15 @@
 		<section class="category">
 			<h1>Sound Commands</h1>
 			<dl id="__v_ファイル名_">
-				<dt class="entry">\8[ファイル名]</dt>
+				<dt class="entry">\8[(file name)]</dt>
 				<dd class="entry">
-					<p>自ゴーストフォルダにあるwaveを再生する。</p>
+					<p>Plays a wave file from the folder of the ghost.</p>
 				</dd>
 			</dl>
 			<dl id="__V">
-				<dt class="entry">\_v[ファイル名]</dt>
+				<dt class="entry">\_v[(file name)]</dt>
 				<dd class="entry">
-					<p>wave、mp3、wmaをベースウェアが再生する。[実行したゴーストのフォルダ]/ghost/masterから相対パス、または絶対パスで指定可。<br>ファイルが存在しない場合は無視される。</p>
+					<p>The baseware plays a wave, mp3, or wma file. Absolute paths or relative paths from [(folder of the ghost executing the command)]/ghost/master can be specified.<br>The command is ignored if the folder does not exist.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3671,7 +3671,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_v[se/test.wav]。[実行したゴーストのフォルダ]/ghost/master/seフォルダにあるtest.wavを再生する。</code></p>
+							<p><code>\_v[se/test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master/se is being played.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3679,7 +3679,7 @@
 			<dl id="_8_ファイル名_">
 				<dt class="entry">\_V</dt>
 				<dd class="entry">
-					<p>\_vのファイル再生が終了するのを待つ。<br>既に終了しているか存在しない場合は無視される。</p>
+					<p>Waits until the playback of the file played by \_v ends.<br>The command is ignored if it has already ended or the folder does not exist.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3688,61 +3688,61 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_v[test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\_V再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code>\_v[se/test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master/se is being played.\_VThis sentence will be displayed only once the playback ends.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,play,ファイル名_">
-				<dt class="entry">\![sound,play,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,play,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>\_vと同じ機能。ただし<a href="#notes_sound">オプション</a>を指定可能。</p>
+					<p>Functionally the same as \_v. However, <a href="#notes_sound">options</a> may be specified.</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (オプションは2.4～)</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (Options are from 2.4 onwards)</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.mp4動画を再生する。ただしシークバー強制表示、音声のみ。</code></p>
+							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true]The video file test.mp4 in the folder [(folder of the ghost executing the command)]/ghost/master is being played. However, the seek bar will be continuously displayed, and only sound will be played.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,load,ファイル名_">
-				<dt class="entry">\![sound,load,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,load,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>再生前にあらかじめ読み込んで、play指定時にすぐに再生開始できるようにする。記述方法はplayと同じ。</p>
+					<p>Load the file in advance so that it can be played immediately when requested. The specification method is the same as play.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_sound,cdplay,トラックNo._">
-				<dt class="entry">\![sound,cdplay,トラックNo.]</dt>
+				<dt class="entry">\![sound,cdplay,(Track No.)]</dt>
 				<dd class="entry">
-					<p>音楽CDをSSPが再生する。音楽CDがセットされていない場合は無視される。<br>再生中でも、\_Vは無視される。再生中に\![sound,cdplay,トラックNo.]で別トラックを指定しても無視される。\![sound,stop]で一旦停止してから次のトラックを指定すること。</p>
+					<p>SSP plays a music CD. The command is ignored if there is no music CD.<br>\_V is ignored, even while playing a track. Specifying another track with \![sound,cdplay,(Track No.)] during playback will also be ignored. Instead, \![sound,stop] should be used to stop the playback once before specifying the next track.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+							<p><code>\![sound,cdplay,6]The sixth track on a music CD is being played.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,loop,ファイル名_">
-				<dt class="entry">\![sound,loop,ファイル名]</dt>
+				<dt class="entry">\![sound,loop,(file name)]</dt>
 				<dd class="entry">
-					<p>ループ再生する。\_Vの対象にならない。<br>再生を止める場合は\![sound,stop]を実行する。</p>
+					<p>Loops a track. \_V does not apply to this command.<br>Playback can be stopped with \![sound,stop].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]ループ再生を停止する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,stop]The playback has stopped looping.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3750,94 +3750,94 @@
 			<dl id="_!_sound,wait_">
 				<dt class="entry">\![sound,wait]</dt>
 				<dd class="entry">
-					<p>\_Vと同じ機能。</p>
+					<p>Functionally the same as \_V.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,wait]再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code>\![sound,play,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,wait]This sentence will be displayed only once the playback ends.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,pause_">
-				<dt class="entry">\![sound,pause,ファイル名]</dt>
+				<dt class="entry">\![sound,pause,(file name)]</dt>
 				<dd class="entry">
-					<p>再生を一時停止する。ファイル名を省略した場合、全再生中のサウンドを一時停止する。</p>
+					<p>Pauses the playback. When the file name is omitted, all sounds currently being played will be paused.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,pause]The playback is paused as this sentence is displayed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,resume_">
-				<dt class="entry">\![sound,resume,ファイル名]</dt>
+				<dt class="entry">\![sound,resume,(file name)]</dt>
 				<dd class="entry">
-					<p>一時停止を解除する。ファイル名を省略した場合、全再生中のサウンドを一時停止解除する。</p>
+					<p>Unpauses playback. When the file name is omitted, all paused sounds will be unpaused.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,pause]The playback is paused as this sentence is displayed. \![sound,resume]The playback is resumed from where it was stopped.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,stop_">
-				<dt class="entry">\![sound,stop,ファイル名]</dt>
+				<dt class="entry">\![sound,stop,(file name)]</dt>
 				<dd class="entry">
-					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。<br />ファイル名を省略した場合、全再生中のサウンドを停止する。</p>
+					<p>Stops playback entirely. Differs from pause in that it releases the sound data entirely and stops playback. In some cases, other sound data cannot be played without using this command to stop the original playback.<br />When the file name is omitted, all sounds currently being played will be stopped.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]再生を完全に停止する。</code></p>
+							<p><code>\![sound,loop,test.wav]The file test.wav in the folder [(folder of the ghost executing the command)]/ghost/master is being played. \![sound,stop]The playback is stopped entirely.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_sound,option_">
-				<dt class="entry">\![sound,option,ファイル名,<a href="#notes_sound">オプション</a>...]</dt>
+				<dt class="entry">\![sound,option,(file name),<a href="#notes_sound">(option)</a>...]</dt>
 				<dd class="entry">
-					<p>再生中に<a href="#notes_sound">オプション</a>を変更する。</p>
+					<p>Changes <a href="#notes_sound">options</a> during playback.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
 					</ul>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_sound">
-				<h1>sound play/load/option のオプション</h1>
+				<h1>sound play/load/option options</h1>
 				<dl>
-					<dt>--volume=0～100</dt>
-					<dd>再生音量を変える。Maxが100。ただしOS全体の音量を操作するわけではない。</dd>
-					<dt>--balance=-100～0～100</dt>
-					<dd>ステレオ時の左右バランス。-100が左一杯、100が右一杯。</dd>
-					<dt>--rate=1～100～10000</dt>
-					<dd>再生速度。100が通常速度。</dd>
+					<dt>--volume=0~100</dt>
+					<dd>Adjusts the playback volume. The maximum value is 100. However, this option cannot control the volume of the whole OS.</dd>
+					<dt>--balance=-100~0~100</dt>
+					<dd>Adjusts the right and left balance when playing stereo. -100 is the full left value and 100 is the full right value.</dd>
+					<dt>--rate=1~100~10000</dt>
+					<dd>Adjusts the playback speed. 100 is the default speed.</dd>
 					<dt>--window=false/true (=OFF/ON)</dt>
-					<dd>シークバーつきのウインドウを表示するかどうか。trueの場合は音声のみでも強制表示する。指定しなければ音声のみならなし、動画ならあり。</dd>
+					<dd>Whether or not to display a window with the seek bar. When set as true, it will be displayed even if only sound is being played. If left unspecified, sound will not have a seek bar, whereas videos will.</dd>
 					<dt>--sound-only=false/true (=OFF/ON)</dt>
-					<dd>load時限定：動画ファイルの音声のみ再生が可能。指定しなければfalseと同じ。</dd>
+					<dd>Only specifiable with load. Plays only the sound of a video file. If left unspecified, it will function the same as specifying false.</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>オープンコマンド</h1>
+			<h1>Open Commands</h1>
 			<dl id="_j_ID_">
 				<dt class="entry">\j[ID]</dt>
 				<dd class="entry">
-					<p>IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[実行したゴーストのフォルダ]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+					<p>IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[(folder of the ghost executing the command)]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3847,7 +3847,7 @@
 						<section class="code">
 							<h1>Usage example</h1>
 							<p><code>\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
-							<p><code>\j[file:///descript.txt][実行したゴーストのフォルダ]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
+							<p><code>\j[file:///descript.txt][(folder of the ghost executing the command)]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4302,7 +4302,7 @@
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p>readme.txtを開く。<br>起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
+					<p>readme.txtを開く。<br>起動中ゴーストの、[(folder of the ghost executing the command)]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4317,7 +4317,7 @@
 			<dl id="_!_open,terms_">
 				<dt class="entry">\![open,terms]</dt>
 				<dd class="entry">
-					<p>起動中ゴーストの、[実行したゴーストのフォルダ]/terms.txtを使用し、利用条件ダイアログを表示する。
+					<p>起動中ゴーストの、[(folder of the ghost executing the command)]/terms.txtを使用し、利用条件ダイアログを表示する。
 					<br />terms.txtがない場合は効果がない（エラー音のみ）
 					<br />ユーザーの操作をダイアログで強制的に中断するので、濫用すべきではない。</p>
 					<ul class="supported-baseware">
@@ -4334,7 +4334,7 @@
 			<dl id="_!_open,file,ファイル名_">
 				<dt class="entry">\![open,file,ファイル名]</dt>
 				<dd class="entry">
-					<p>ファイルを実行する。[実行したゴーストのフォルダ]/ghost/master/からの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
+					<p>ファイルを実行する。[(folder of the ghost executing the command)]/ghost/master/からの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4358,7 +4358,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[実行したゴーストのフォルダ]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
+							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[(folder of the ghost executing the command)]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4587,7 +4587,7 @@
 			<dl id="_!_execute,http-get,URL_">
 				<dt class="entry">\![execute,http-get,URL]</dt>
 				<dd class="entry">
-					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4603,7 +4603,7 @@
 			<dl id="_!_execute,http-get,URL,パラメータ_">
 				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4618,7 +4618,7 @@
 			<dl id="_!_execute,http-post,URL,パラメータ_">
 				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4633,14 +4633,14 @@
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[実行したゴーストのフォルダ]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[(folder of the ghost executing the command)]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4648,7 +4648,7 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[実行したゴーストのフォルダ]/ghost/master/varフォルダに格納される。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5156,7 +5156,7 @@
 					指定形式によってはparamの書き方に制約があるので注意。</dd>
 					
 					<dt>--file=ファイル名</dt>
-					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
+					<dd>取得するデータの保存名を指定。[(folder of the ghost executing the command)]/ghost/master/var/ファイル名に保存される。</dd>
 					
 					<dt>--nodescript</dt>
 					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
