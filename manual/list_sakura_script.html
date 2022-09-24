@@ -3848,7 +3848,7 @@
 			<dl id="_j_ID_">
 				<dt class="entry">\j[ID]</dt>
 				<dd class="entry">
-					<p>IDにジャンプする。<br>http://～でURLジャンプする。<br>file:///～でOSに関連付けられた拡張子でファイルを実行する。ファイル名には、絶対パスの他、[(folder of the ghost executing the command)]/ghost/masterからの相対パスが使用可能。<br>※SSPのみ mailto:～でその宛先の新規メールを作成する</p>
+					<p>Jumps to the ID.<br>Jumps to a URL with http://~.<br>Executes a file with file:///~ and a file extension related to the OS. Aside from absolute paths, relative paths from [(folder of the ghost executing the command)]/ghost/master can also be used for the file name.<br>※SSP only: Creates a new email to the specified address with mailto:~.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3857,16 +3857,16 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
-							<p><code>\j[file:///descript.txt][(folder of the ghost executing the command)]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
+							<p><code>\j[http://ssp.shillest.net/]Opens the browser and displays the SSP BUGTRAQ Lab.</code></p>
+							<p><code>\j[file:///descript.txt]Opens the descript.txt file in the folder [(folder of the ghost executing the command)]/ghost/master.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,browser,パラメータ_">
-				<dt class="entry">\![open,browser,パラメータ]</dt>
+				<dt class="entry">\![open,browser,(parameter)]</dt>
 				<dd class="entry">
-					<p>本体で設定されたブラウザを開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; ブラウザの設定」で指定されたもの。</p>
+					<p>Opens the browser set in the baseware.<br>This is set in the Applications -&gt; Browser option in the baseware settings, accessed from the user menu.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3875,15 +3875,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,browser,http://ssp.shillest.net/]ばぐとら研究所をSSP本体設定で指定されたブラウザを立ち上げて表示する。</code></p>
+							<p><code>\![open,browser,http://ssp.shillest.net/]Displays the SSP BUGTRAQ Lab in the browser specified in SSP's Preference settings.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,mailer,パラメータ_">
-				<dt class="entry">\![open,mailer,パラメータ]</dt>
+				<dt class="entry">\![open,mailer,(parameter)]</dt>
 				<dd class="entry">
-					<p>本体で設定されたメーラーを開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; メーラの設定」で指定されたもの。</p>
+					<p>Opens the mailer set in the baseware.<br>This is set in the Applications -&gt; Mailer option in the baseware settings, accessed from the user menu.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3891,32 +3891,29 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,mailer,test@example.com]送信先アドレスにtest@example.comが入ったメーラーを開く。</code></p>
+							<p><code>\![open,mailer,test@example.com]Opens a mailer with the address test@example.com in the To: field.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,editor,パラメータ_">
-				<dt class="entry">\![open,editor,ファイル,表示行]</dt>
+				<dt class="entry">\![open,editor,(file),(display line number)]</dt>
 				<dd class="entry">
-					<p>本体で設定されたエディタで指定ファイルを編集する。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; エディタの設定」で指定されたもの。<br>「表示行」で開いた時に指定した行にカーソルをあらかじめ移動する。</p>
-					<p>エディタの指定がない場合は、エクスプローラ上で右クリックして「編集」を選んだ場合と同じ挙動となる。この時は「表示行」は無視される。</p>
+					<p>Edits the specified file with the editor set in the baseware.<br>This is set in the Applications -&gt; Editor option in the baseware settings, accessed from the user menu.<br>The display line number moves the cursor to the specified line in advance when the file is opened.</p>
+					<p>When an editor is not specified, this command has the same behaviour as choosing Edit after right clicking the file in a file manager. The display line number is ignored in this situation.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.16</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_open,explorer,パラメータ_">
-				<dt class="entry">\![open,explorer,ファイル]</dt>
+				<dt class="entry">\![open,explorer,(file)]</dt>
 				<dd class="entry">
-					<p>本体で設定されたファイラーを指定ファイルつきで開く。
-					<br />オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					<p>Opens the file location of the specified file with the file manager set in the baseware.<br>This is set in the Applications -&gt; File Manager option in the baseware settings, accessed from the user menu.</p>
+					<p>When a file manager is not specified, if the file argument is a folder it is opened, and if it is a file, its location will be opened in Explorer with the file in a selected state.</p>
+					<p>If written as \![open,explorer,(type=ghost/shell/balloon/headline/plugin),(name)], the type and name of folder to be opened can be specified.
+					<br />Ex: \![open,explorer,ghost,Emily/Phase4]</p>
 					
-					<p>ファイラーの指定がない場合は、指定されたものがフォルダの場合はそれを開き、ファイルの場合はエクスプローラ上で指定ファイルを選択した状態になる。</p>
-					
-					<p>\![open,explorer,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、開くフォルダを種類と名前で指定できる。
-					<br />例：\![open,explorer,ghost,Emily/Phase4]</p>
-
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
 					</ul>
@@ -3925,13 +3922,13 @@
 			<dl id="___t">
 				<dt class="entry">\__t</dt>
 				<dd class="entry">
-					<p>[旧仕様]TeachBoxを開く。</p>
+					<p>[Old specification] Opens the TeachBox.</p>
 				</dd>
 			</dl>
 			<dl id="_!_open,teachbox_">
 				<dt class="entry">\![open,teachbox]</dt>
 				<dd class="entry">
-					<p>TeachBoxを開く。実行と同時に<a href="list_shiori_event.html#OnTeachStart">OnTeachStart</a>が通知され、TeachBoxのOKボタンを押すと<a href="list_shiori_event.html#OnTeach">OnTeach</a>、閉じると<a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a>が通知される。</p>
+					<p>Opens the TeachBox. On execution, <a href="list_shiori_event.html#OnTeachStart">OnTeachStart</a> is notified, <a href="list_shiori_event.html#OnTeach">OnTeach</a> is notified when the TeachBox OK button is pressed, and <a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a> is notified when the TeachBox is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3940,7 +3937,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,teachbox]TeachBoxを開く。</code></p>
+							<p><code>\![open,teachbox]The TeachBox is opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3948,14 +3945,14 @@
 			<dl id="_!_close,teachbox_">
 				<dt class="entry">\![close,teachbox]</dt>
 				<dd class="entry">
-					<p>TeachBoxを閉じる。<br><a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a>を発生させないので注意。</p>
+					<p>Closes the TeachBox.<br>It is important to keep in mind that <a href="list_shiori_event.html#OnTeachInputCancel">OnTeachInputCancel</a> will not be notified.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![close,teachbox]TeachBoxを閉じる。開いてない場合は無視される。</code></p>
+							<p><code>\![close,teachbox]The TeachBox is closed. If not open, this command will be ignored.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3963,16 +3960,16 @@
 			<dl id="___c">
 				<dt class="entry">\__c</dt>
 				<dd class="entry">
-					<p>[旧仕様]CommunicateBoxを開く。</p>
+					<p>[Old specification] Opens the CommunicateBox.</p>
 				</dd>
 			</dl>
 			<dl id="_!_open,communicatebox_">
 				<dt class="entry">\![open,communicatebox]</dt>
 				<dd class="entry">
-					<p>CommunicateBoxを開く。
-					<br>入力決定後は<a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a>が発生する。閉じると<a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>が発生する。
-					<br>SSPのみ、続けてデフォルトのテキストを指定できる(\![open,communicatebox,テキスト]の形)。
-					<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。</p>
+					<p>Opens the CommunicateBox.
+					<br>After input has been confirmed, <a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a> will be run, and if the CommunicateBox is closed <a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a> will be run.
+					<br>In SSP only, the default text may also be specified (by using \![open,communicatebox,(text)]).
+					<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option. Omission is also possible.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3981,8 +3978,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,communicatebox,テスト]CommunicateBoxを開く。最初から「テスト」の文字が入っている。</code></p>
-							<p><code>\![open,communicatebox,--text=テスト]上記と同じ(オプション指定の書き方)</code></p>
+							<p><code>\![open,communicatebox,test]The CommunicateBox is opened. The word "test" is in the text box from the start.</code></p>
+							<p><code>\![open,communicatebox,--text=test]The same happens as above (an example of writing the command with an option specification).</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3990,32 +3987,32 @@
 			<dl id="_!_close,communicatebox_">
 				<dt class="entry">\![close,communicatebox]</dt>
 				<dd class="entry">
-					<p>CommunicateBoxを閉じる。<br><a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a>を発生させないので注意。</p>
+					<p>Closes the CommunicateBox.<br>It is important to keep in mind that <a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a> will not be notified.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![close,communicatebox]CommunicateBoxを閉じる。開いてない場合は無視される。</code></p>
+							<p><code>\![close,communicatebox]The CommunicateBox is closed. If not open, this command will be ignored.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">
-				<dt class="entry">\![open,inputbox,ID,表示時間,テキスト,オプション,...]</dt>
+				<dt class="entry">\![open,inputbox,(ID),(display time),(text),(option),...]</dt>
 				<dd class="entry">
 					<p>
-						InputBoxを開く。
-						<br>決定時(OKボタンを押す)にSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
-						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
-						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
+						Opens the InputBox.
+						<br>The SHIORI event <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run on confirmation (when the OK button is pressed).
+						<br><a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a> is run when the display time has passed (timed out) or when the close button was pressed.
+						<br>Moreover, measures were taken to prevent any other interaction with the ghost during input, however, SSP does not have these.
 					</p>
 					<p>
-						<br>IDは決定時に発生するOnUserInputに格納されるが、IDが「On」で始まる場合、ID名のイベントが発生する。<a href="#notes_inputbox-id">※ID</a>参照。
-						<br>表示時間はミリ秒で指定。省略するか、0以下の数を指定すると、表示時間無制限。
-						<br>テキストはbox展開直後にあらかじめ表示するテキスト(CROW不可)、省略可。
-						<br>SSPのみ、--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。省略可。
+						<br>The ID is stored in OnUserInput, which runs on confirmation, but if the ID starts with On, the event will run instead. ※Refer to <a href="#notes_inputbox-id">ID</a>.
+						<br>The display time is specified in milliseconds. If omitted or 0 or lower is specified, there will be no time limit.
+						<br>The text argument is the text that will be displayed as soon as the InputBox is opened (incompatible with CROW) and can be omitted.
+						<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option. Omission is also possible.
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4025,8 +4022,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
-							<p><code>\![open,inputbox,インプットテスト,--timeout=10000,--text=テスト入力] 上記と同じ(新オプション指定)</code></p>
+							<p><code>\![open,inputbox,inputtest,10000,Test Input]Opens the InputBox with the text "Test Input" already in it. It will be closed either manually when the OK button is pressed or automatically 10 seconds pass.</code></p>
+							<p><code>\![open,inputbox,inputtest,--timeout=10000,--text=Test Input]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
 				</dd>
