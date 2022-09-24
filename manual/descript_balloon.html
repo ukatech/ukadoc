@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -123,6 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -150,6 +151,7 @@
 				<li><a href="#cursor,ファイル名">cursor,ファイル名/mousecursor,ファイル名</a></li>
 				<li><a href="#mousecursor.text,ファイル名">mousecursor.text,ファイル名</a></li>
 				<li><a href="#mousecursor.wait,ファイル名">mousecursor.wait,ファイル名</a></li>
+				<li><a href="#mousecursor.arrow,ファイル名">mousecursor.arrow,ファイル名</a></li>
 				<li><a href="#origin.x,座標">origin.x,座標</a></li>
 				<li><a href="#origin.y,座標">origin.y,座標</a></li>
 				<li><a href="#validrect.left,座標">validrect.left,座標</a></li>
@@ -251,6 +253,7 @@
 				<li><a href="#sstpmessage.x,座標">sstpmessage.x,座標</a></li>
 				<li><a href="#sstpmessage.y,座標">sstpmessage.y,座標</a></li>
 				<li><a href="#sstpmessage.xr,座標">sstpmessage.xr,座標</a></li>
+				<li><a href="#onlinemarker.interval,待機時間">onlinemarker.interval,待機時間</a></li>
 				<li><a href="#onlinemarker.x,座標">onlinemarker.x,座標</a></li>
 				<li><a href="#onlinemarker.y,座標">onlinemarker.y,座標</a></li>
 				<li><a href="#sstpmessage.font.name,フォント名">sstpmessage.font.name,フォント名</a></li>
@@ -512,7 +515,7 @@ communicatebox.height,20
 			<dl id="cursor,ファイル名">
 				<dt class="entry">cursor,ファイル名 / mousecursor,ファイル名</dt>
 				<dd class="entry">
-					<p>バルーンに使用するカーソル。mousecursorと書けるのはSSP 2.5.40から。</p>
+					<p>バルーンで操作できる部分に使用するカーソル。mousecursorと書けるのはSSP 2.5.40から。</p>
 					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(矢印)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -537,6 +540,16 @@ communicatebox.height,20
 					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(腕時計)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.43</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.arrow,ファイル名">
+				<dt class="entry">mousecursor.arrow,ファイル名</dt>
+				<dd class="entry">
+					<p>バルーンで操作できない部分に使用するカーソル（矢印）。</p>
+					<p class="default">ゴーストで指定されたカーソル→OSで設定されたカーソル(矢印)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
 					</ul>
 				</dd>
 			</dl>
@@ -961,6 +974,16 @@ communicatebox.height,20
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="cursor.notselect.style,形状">
+				<dt class="entry">cursor.notselect.style,形状</dt>
+				<dd class="entry">
+					<p>非選択中選択肢マーカの形状。<br>squareで矩形を表示。<br>underlineで下線を表示。<br>square+underlineで矩形と下線を表示。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
@@ -1608,6 +1631,16 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+			<dl id="onlinemarker.interval,待機時間">
+				<dt class="entry">onlinemarker.interval,待機時間</dt>
+				<dd class="entry">
+					<p>オンライン表示のアニメーション表示切り替え間隔。負荷が必要以上に増えるのを避けるため、50ミリ秒未満は設定できない。</p>
+					<p class="default">500ミリ秒</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.77</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="onlinemarker.x,座標">
 				<dt class="entry">onlinemarker.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
@@ -1965,7 +1998,7 @@ communicatebox.height,20
 		</section>
 		<section class="category">
 			<h1 id="balloonsoption">balloons*s.txt/balloonk*s.txt(個別指定)</h1>
-			<section class="caption introduction" id="introduction_descript.txt">
+			<section class="caption introduction">
 				<h1>balloons*s.txt/balloonk*s.txt</h1>
 				<section>
 					<h1>概要</h1>

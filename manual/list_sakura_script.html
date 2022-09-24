@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -123,6 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -132,6 +133,7 @@
 	<section class="navigation-bar">
 		<h1>SakuraScript</h1>
 		<section class="navigation-category">
+			<h1>さくらスクリプトの仕様</h1>
 			<ul>
 				<li class="caption"><a href="#notes_escape">Escaping SakuraScript</a></li>
 				<li class="caption"><a href="#notes_lifespan">SakuraScript Lifespan</a></li>
@@ -332,7 +334,7 @@
 				<li><a href="#_e">\e</a></li>
 				<li><a href="#_-">\-</a></li>
 				<li><a href="#_a">\a</a></li>
-				<li><a href="#_!_updatebymyself,checkonly_">\![updatebymyself(,オプション,オプション...)]</a></li>
+				<li><a href="#_!_updatebymyself_">\![updatebymyself(,オプション,オプション...)]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
 				<li><a href="#_!_update,更新対象_">\![update,更新対象(,オプション,オプション...)]</a></li>
 				<li><a href="#_!_updateother_">\![updateother,更新対象/オプション群,...]</a></li>
@@ -343,7 +345,6 @@
 				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,ヘッドライン名]</a></li>
 				<li><a href="#_!_biff_">\![biff(,アカウント名)]</a></li>
 				<li><a href="#_!_vanishbymyself_">\![vanishbymyself]</a></li>
-				<li><a href="#_!_vanishbymyself,ゴースト名_">\![vanishbymyself,ゴースト名]</a></li>
 				<li><a href="#_+">\+</a></li>
 				<li><a href="#__+">\_+</a></li>
 				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,ゴースト名]</a></li>
@@ -357,7 +358,7 @@
 				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
 				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
 				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_set,otherghosttalk,true|false|before|after_">\![set,otherghosttalk,true|false|before|after]</a></li>
+				<li><a href="#_!_set,otherghosttalk,true_false_before_after_">\![set,otherghosttalk,true|false|before|after]</a></li>
 				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
 				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,イベント名,r0,r1,r2...]</a></li>
 				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,イベント名,r0,r1,r2...]</a></li>
@@ -432,10 +433,12 @@
 				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
 				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
 				<li><a href="#_!_open,aigraph_">\![open,aigraph]</a></li>
+				<li><a href="#_!_open,developer_">\![open,developer]</a></li>
+				<li><a href="#_!_open,shiorirequest_">\![open,shiorirequest]</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#notes_inputbox-option">InputBoxオプション</a></li>
-				<li class="caption"><a href="#notes_inputbox-ID">InputBoxのID</a></li>
+				<li class="caption"><a href="#notes_inputbox-id">InputBoxのID</a></li>
 				<li class="caption"><a href="#notes_selectfile">ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</a></li>
 			</ul>
 		</section>
@@ -458,12 +461,14 @@
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,ファイル名,ディレクトリ名]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,ファイル名,ディレクトリ名]</a></li>
+				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,feedまたはnar]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
 				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata]</a></li>
+				<li><a href="#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a></li>
 				<li><a href="#_!_enter,passivemode_">\![enter,passivemode]</a></li>
 				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
 				<li><a href="#_!_enter,inductionmode_">\![enter,inductionmode]</a></li>
@@ -479,9 +484,16 @@
 				<li><a href="#_!_reload,makoto_">\![reload,makoto]</a></li>
 				<li><a href="#_!_reload,shell_">\![reload,shell]</a></li>
 				<li><a href="#_!_reload,ghost_">\![reload,ghost]</a></li>
+				<li><a href="#_!_unload,shiori_">\![unload,shiori]</a></li>
+				<li><a href="#_!_unload,makoto_">\![unload,makoto]</a></li>
+				<li><a href="#_!_load,shiori_">\![load,shiori]</a></li>
+				<li><a href="#_!_load,makoto_">\![load,makoto]</a></li>
+				<li><a href="#_!_load,makoto_">\![load,makoto]</a></li>
+				<li><a href="#_!_set,shioridebugmode_">\![set,shioridebugmode]</a>
+				<li><a href="#_!_create,shortcut_">\![create,shortcut]</a>
 				<li><a href="#__u_0x0000_">\_u[0x0000]</a></li>
 				<li><a href="#__m_0x00_">\_m[0x00]</a></li>
-				<li><a href="#_&_ID_">\&[ID]</a></li>
+				<li><a href="#_&amp;_ID_">\&amp;[ID]</a></li>
 				<li><a href="#_m_umsg,wparam,lparam_">\m[umsg,wparam,lparam]</a></li>
 			</ul>
 			<ul>
@@ -886,7 +898,6 @@
 					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
 					<p>Effective until the ghost is closed.</p>
-					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2107,7 +2118,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_f_default_">
+			<dl id="_f_disable_">
 				<dt class="entry">\f[disable]</dt>
 				<dd class="entry">
 					<p>Disables all balloon attributes for displaying text.</p>
@@ -2909,11 +2920,11 @@
 					<dt>disable</dt>
 					<dd>Sets the specified section of text to the unselectable choice indicator color.</dd>
 					<dt>default.anchor</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text when being hovered over.</dd>
-					<dt>default.anchornotselect</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of anchor text while not hovered over.</dd>
-					<dt>default.anchorvisited</dt>
-					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of already-visited anchor text.</dd>
+					<dd>Sets the text to the default color of anchor text when being hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
+                    <dt>default.anchornotselect</dt>
+                    <dd>Sets the text to the default color of anchor text while not hovered over.<br />[2.5.76 - Can be used with regular strings]</dd>
+                    <dt>default.anchorvisited</dt>
+                    <dd>Sets the text to the default color of already-visited anchor text.<br />[2.5.76 - Can be used with regular strings]</dd>
 					<dt>default.cursor</dt>
 					<dd><em>※Only effective when specified for the text color of choices and anchors</em>.<br>Sets the specified section of text to the default color of choice text when being hovered over.</dd>
 					<dt>default.cursornotselect</dt>
@@ -2968,7 +2979,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="_!_updatebymyself,checkonly_">
+			<dl id="_!_updatebymyself_">
 				<dt class="entry">\![updatebymyself,(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Starts the network update check event.
@@ -3139,7 +3150,10 @@
 			<dl id="_!_vanishbymyself_">
 				<dt class="entry">\![vanishbymyself]</dt>
 				<dd class="entry">
-					<p>Uninstalls the ghost that ran the command without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
+					<p>Uninstalls the ghost without user input.<br>It is important to keep in mind that when this command is executed, the uninstallation will happen immediately without a confirmation dialog.<br>Whether the ghost will be deleted or not is determined by the user's SSP settings.</p>
+                    <p>The below options are specifiable in SSP.
+                    <br />\![vanishbymyself,(ghost name)] Specify the name of the ghost to be switched to after uninstallation. (If not found, the ghost to be switched to will be decided by SSP.)
+                    <br />\![vanishbymyself,--option=query] 2.5.82: Displays dialog to confirm whether the ghost should be uninstalled or not. Functions the same as when uninstalling from the menu.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3408,7 +3422,6 @@
 					<br/>Text is displayed when hovering the mouse cursor over the icon, and can be omitted. The default is SSP/[(name of the currently running ghost)], e.g. [SSP/Emily/Phase4.5].
 					<br/>The icon can be animated by specifying --duration=(wait time) (ms). When doing so, after specifying filename.ico, multiple files will be loaded in the order of the numbers following the file name (filename00.ico, filename01.ico, and so on), displaying each frame after the specified wait time has passed. [SSP 2.5.58~]
 					<br/>If --runcount is specified in addition to --duration, the number of times to repeat the animation can be set. If left unspecified, the animation will repeat indefinitely. [SSP 2.5.59~]</p>
-
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3426,7 +3439,7 @@
 					<p>トレイアイコンからバルーンを表示する。<br>バルーンをクリックして消した時にOnTrayBalloonClickが発生。<br>タイムアウトした時や閉じるボタンで閉じた時にOnTrayBalloonTimeoutが発生。<br>指定できるオプションは以下。</p>
 					<dl>
 						<dt>--text=テキスト</dt>
-						<dd>バルーンに表示する文字列、複数指定で複数行に。</dd>
+						<dd>バルーンに表示する文字列、複数指定で複数行に。(必須)</dd>
 						<dt>--title=タイトル</dt>
 						<dd>バルーンのタイトル。</dd>
 						<dt>--icon=アイコン設定名</dt>
@@ -3453,7 +3466,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_set,otherghosttalk,true|false|before|after_">
+			<dl id="_!_set,otherghosttalk,true_false_before_after_">
 				<dt class="entry">\![set,otherghosttalk,true|false|before|after]</dt>
 				<dd class="entry">
 					<p><a href="list_shiori_event.html#OnOtherGhostTalk">OnOtherGhostTalk</a>を通知するかどうかを設定。初期値false。<br>
@@ -3760,7 +3773,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,pause_">
+			<dl id="_!_sound,pause,ファイル名_">
 				<dt class="entry">\![sound,pause,ファイル名]</dt>
 				<dd class="entry">
 					<p>再生を一時停止する。ファイル名を省略した場合、全再生中のサウンドを一時停止する。</p>
@@ -3775,7 +3788,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,resume_">
+			<dl id="_!_sound,resume,ファイル名_">
 				<dt class="entry">\![sound,resume,ファイル名]</dt>
 				<dd class="entry">
 					<p>一時停止を解除する。ファイル名を省略した場合、全再生中のサウンドを一時停止解除する。</p>
@@ -3790,7 +3803,7 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_sound,stop_">
+			<dl id="_!_sound,stop,ファイル名_">
 				<dt class="entry">\![sound,stop,ファイル名]</dt>
 				<dd class="entry">
 					<p>再生を完全に停止する。pauseと異なり音声データを解放し完全に再生停止する。このコマンドで停止しないと、別の音声データを再生できない場合がある。<br />ファイル名を省略した場合、全再生中のサウンドを停止する。</p>
@@ -3822,7 +3835,8 @@
 					<dt>--balance=-100～0～100</dt>
 					<dd>ステレオ時の左右バランス。-100が左一杯、100が右一杯。</dd>
 					<dt>--rate=1～100～10000</dt>
-					<dd>再生速度。100が通常速度。</dd>
+					<dd>再生速度。100が通常速度。
+					<br />実際に指定可能な範囲はサウンドドライバ等の実装に依存し、400程度以上(435以上)はエラーになる場合が多い。</dd>
 					<dt>--window=false/true (=OFF/ON)</dt>
 					<dd>シークバーつきのウインドウを表示するかどうか。trueの場合は音声のみでも強制表示する。指定しなければ音声のみならなし、動画ならあり。</dd>
 					<dt>--sound-only=false/true (=OFF/ON)</dt>
@@ -3896,8 +3910,14 @@
 			<dl id="_!_open,explorer,パラメータ_">
 				<dt class="entry">\![open,explorer,ファイル]</dt>
 				<dd class="entry">
-					<p>本体で設定されたファイラーを指定ファイルつきで開く。<br>オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					<p>本体で設定されたファイラーを指定ファイルつきで開く。
+					<br />オーナードローメニューの本体設定より、「外部アプリ -&gt; ファイラーの設定」で指定されたもの。</p>
+					
 					<p>ファイラーの指定がない場合は、指定されたものがフォルダの場合はそれを開き、ファイルの場合はエクスプローラ上で指定ファイルを選択した状態になる。</p>
+					
+					<p>\![open,explorer,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、開くフォルダを種類と名前で指定できる。
+					<br />例：\![open,explorer,ghost,Emily/Phase4]</p>
+
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.12</li>
 					</ul>
@@ -4300,7 +4320,9 @@
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p>readme.txtを開く。<br>起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
+					<p>readme.txtを開く。
+					<br />何も指定しな場合、起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。
+					<br />\![open,readme,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、指定したreadmeが開く。例：\![open,readme,ghost,Emily/Phase4]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4461,6 +4483,24 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_open,developer_">
+				<dt class="entry">\![open,developer]</dt>
+				<dd class="entry">
+					<p>開発用パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_open,shiorirequest_">
+				<dt class="entry">\![open,shiorirequest]</dt>
+				<dd class="entry">
+					<p>SHIORI Request 送信パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
+					</ul>
+				</dd>
+			</dl>
 			<section class="caption" id="notes_inputbox-option">
 				<h1>InputBoxオプション</h1>
 				<p>○○の形で指定。</p>
@@ -4506,7 +4546,8 @@
 					<li>Reference0は入力内容</li>
 					<li>Reference1は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
 					<li>Reference2以降は--reference=で指定した追加情報</li>
-				</p>
+				</ul>
+				<p>
 					IDにかかわらず、閉じるボタンを押した時とタイムアウト時は<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
 				</p>
 			</section>
@@ -4679,7 +4720,10 @@
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。
+					<br />処理が完了するまでスクリプトの実行は停止する。
+					<br />セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4694,7 +4738,10 @@
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,compressarchive,ファイル名,ディレクトリ名]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。<br>セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。<br>また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。
+					<br />処理が完了するまでスクリプトの実行は停止する。
+					<br />セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4704,6 +4751,26 @@
 							<p><code>\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">
+				<dt class="entry">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</dt>
+				<dd class="entry">
+					<p>合成済みのサーフェス画像を指定したディレクトリに出力する。
+					<br />イベントIDを指定しない場合は、処理が完了するまでスクリプトの実行は停止する。
+					<br />スコープID : \sタグに指定するものと同じIDを指定する。この指定で、着せ替え状態などのスコープに依存する処理が変わる。
+					<br />サーフェスリスト : <a href="descript_shell_surfaces.html#caption_surfacebraceID">surface ID指定</a>と同じ書式、または以下を指定する。
+					<br />__system_surface_all__ : シェルとして有効なサーフェスをすべて出力する
+					<br />__system_surface_defined__ : surfaces.txt内で定義されたサーフェスのみすべて出力する
+					<br />参考 SakuraScriptの大かっこパラメータ内でカンマを指定したい場合は " " で囲むと良い。
+					<br />prefix : (省略可) 出力したいファイルの頭につける文字列。省略した場合はsurface。
+					<br />イベントID : (省略可) これを指定するとSakuraScriptの続きを実行しながら出力を続け、終わり次第指定したイベントを発生させる。Reference0には出力に成功したファイル数が入る。
+					<br />ゼロ位置切り出し : 1を指定すると、アニメーション定義に関わらず必ず0,0からダンプし、負の座標部分を無視する。
+					<br />セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.5.98]</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,path,ファイル名_">
@@ -4797,6 +4864,15 @@
 					<p>スクリプトを実行したゴースト自身の更新定義ファイル(updates2.dau/updates.txt)を作る。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,emptyrecyclebin">
+				<dt class="entry">\![execute,emptyrecyclebin]</dt>
+				<dd class="entry">
+					<p>ゴミ箱を空にする。実行後すぐには空にならず、削除処理が完了した時点で<a href="./list_shiori_event.html#OnRecycleBinEmpty">OnRecycleBinEmpty</a>が通知される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
 					</ul>
 				</dd>
 			</dl>
@@ -5037,6 +5113,62 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_unload,shiori_">
+				<dt class="entry">\![unload,shiori]</dt>
+				<dd class="entry">
+					<p>shiori.dllをアンロード（読み込み解除）し、そのままを維持する。
+					<br />unload後は適切なタイミングでloadを実行すること。unloadしたままでは何も反応できなくなる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_unload,makoto_">
+				<dt class="entry">\![unload,makoto]</dt>
+				<dd class="entry">
+					<p>makoto.dllをアンロード（読み込み解除）し、そのままを維持する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_load,shiori_">
+				<dt class="entry">\![load,shiori]</dt>
+				<dd class="entry">
+					<p>unload実行後にshiori.dllを読み込む。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_load,makoto_">
+				<dt class="entry">\![load,makoto]</dt>
+				<dd class="entry">
+					<p>unload実行後にmakoto.dllを読み込む。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,shioridebugmode_">
+				<dt class="entry">\![set,shioridebugmode,(true/false)]</dt>
+				<dd class="entry">
+					<p>開発者用パレットのSHIORIデバッグモードをON/OFFする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_create,shortcut_">
+				<dt class="entry">\![create,shortcut]</dt>
+				<dd class="entry">
+					<p>起動中のゴーストの起動用ショートカットをデスクトップに作成する。
+                    <br />\![create,shortcut,startup] とすると代わりにスタートアップフォルダに作成する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.86</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="__u_0x0000_">
 				<dt class="entry">\_u[0x0000]</dt>
 				<dd class="entry">
@@ -5071,8 +5203,8 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_&_ID_">
-				<dt class="entry">\&[ID]</dt>
+			<dl id="_&amp;_ID_">
+				<dt class="entry">\&amp;[ID]</dt>
 				<dd class="entry">
 					<p>識別子による実体参照。</p>
 					<ul class="supported-baseware">
@@ -5158,6 +5290,11 @@
 					
 					<dt>--nodescript</dt>
 					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
+					
+					<dt>--nofile=パラメータ(文字コード) [2.5.77]</dt>
+					<dd>一時ファイルを作成せずメモリ上に取得したデータを展開し、イベントのReference3に格納する。
+					<br />パラメータ指定は取得したデータを解釈すべき文字コード。指定しない場合はUTF-8とみなす。
+					<br />取得可能なサイズは128KBまで。</dd>
 					
 					<dt>--param=パラメータ</dt>
 					<dd>get/postのパラメータを指定する。複数回の指定が可能。<br>

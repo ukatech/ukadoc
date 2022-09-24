@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- dummy -->
 <meta charset="utf-8" />
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
@@ -82,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -114,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -124,6 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -352,7 +352,9 @@
 			<h1>時計合わせイベント</h1>
 			<ul>
 				<li><a href="#OnSNTPBegin">OnSNTPBegin</a></li>
+				<li><a href="#OnSNTPCompareEx">OnSNTPCompareEx</a></li>
 				<li><a href="#OnSNTPCompare">OnSNTPCompare</a></li>
+				<li><a href="#OnSNTPCorrectEx">OnSNTPCorrectEx</a></li>
 				<li><a href="#OnSNTPCorrect">OnSNTPCorrect</a></li>
 				<li><a href="#OnSNTPFailure">OnSNTPFailure</a></li>
 			</ul>
@@ -473,6 +475,8 @@
 				<li><a href="#OnTabletMode">OnTabletMode</a></li>
 				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
 				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
+				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
+				<li><a href="#OnRecycleBinStatusUpdate">OnRecycleBinStatusUpdate</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -616,6 +620,8 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　終了操作したキャラクターのスコープ番号。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -631,6 +637,8 @@
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSPのみ　終了理由。<br />ユーザーが終了した場合、user<br />シャットダウンした場合、systemが返される。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　終了操作したキャラクターのスコープ番号。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -858,6 +866,8 @@
 						<dd>有効になった時に1、無効になった時に0。</dd>
 						<dt>Reference3</dt>
 						<dd>パーツのカテゴリ名。</dd>
+						<dt>Reference4</dt>
+						<dd>スクリプトから実行された時はscript、メニューから実行された時はuser [2.5.90～]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -883,6 +893,14 @@
 				<dt class="entry">OnWindowStateRestore</dt>
 				<dd class="entry">
 					<p>最小化が解除された際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。
+						<br />system : OSからの強制的な最小化操作（タスクバーから最小化された場合を含む）
+						<br />script : SakuraScriptから
+						<br />sakuraapi : Sakura APIから
+						<br />user : メニュー操作</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -893,7 +911,15 @@
 			<dl id="OnWindowStateMinimize">
 				<dt class="entry">OnWindowStateMinimize</dt>
 				<dd class="entry">
-					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らすことが可能。</p>
+					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らせることが可能。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。
+						<br />system : OSからの強制的な最小化操作（タスクバーから最小化された場合を含む）
+						<br />script : SakuraScriptから
+						<br />sakuraapi : Sakura APIから
+						<br />user : メニュー操作</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -905,6 +931,10 @@
 				<dt class="entry">OnFullScreenAppMinimize</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。常に fullscreen になる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -914,6 +944,10 @@
 				<dt class="entry">OnFullScreenAppRestore</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>（SSPのみ）最小化された理由。常に fullscreen になる。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -956,6 +990,10 @@
 				<dt class="entry">OnInitialize</dt>
 				<dd class="entry">
 					<p>起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>リロード時にreload、それ以外は無し（空文字列またはReference0自体が来ない）</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -965,6 +1003,10 @@
 				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
 					<p>終了が指示された際に発生。<em class="specsign">[NOTIFY]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>リロード時にreload、それ以外は無し（空文字列またはReference0自体が来ない）</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2577,7 +2619,7 @@
 			<dl id="OnXUkagakaLinkOpen">
 				<dt class="entry">OnXUkagakaLinkOpen</dt>
 				<dd class="entry">
-					<p>下記形式のURL関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
+					<p>下記形式のWeb関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
 					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
 					文字コードはUTF-8固定＋URLエンコード済<br />
 					サンプル：<a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
@@ -2951,7 +2993,7 @@
 					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfaulure">※失敗理由</a></dd>
+						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
 						<dt>Reference4</dt>
 						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
 					</dl>
@@ -2974,7 +3016,7 @@
 								<br>(※1)[\1](※2)[\1](※3)
 							</p>
 							<ul>
-								<li>※1……<a href="#noteupdatetype">ネットワーク更新対象の種別</a></li>
+								<li>※1……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
 								<li>※2……成功時「OK」　失敗時「NG」</li>
 								<li>※3……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
 								<li>※4……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
@@ -3001,7 +3043,7 @@
 							</p>
 							<ul>
 								<li>※1……ネットワーク更新対象の名前</li>
-								<li>※2……<a href="#noteupdatetype">ネットワーク更新対象の種別</a></li>
+								<li>※2……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
 								<li>※3……成功時「OK」　失敗時「NG」</li>
 								<li>※4……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
 								<li>※5……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
@@ -3128,6 +3170,27 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnSNTPCompareEx">
+				<dt class="entry">OnSNTPCompareEx</dt>
+				<dd class="entry">
+					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>接続先サーバ名。</dd>
+						<dt>Reference1</dt>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference2</dt>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference3</dt>
+						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dt>Reference4</dt>
+						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnSNTPCompare">
 				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
@@ -3136,18 +3199,39 @@
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
+						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
 						<dt>Reference4</dt>
-						<dd>※SSPのみ　サーバとローカルの時刻のずれ。（ミリ秒単位）</dd>
+						<dd>※SSPのみ　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSNTPCorrectEx">
+				<dt class="entry">OnSNTPCorrectEx</dt>
+				<dd class="entry">
+					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>接続先サーバ名。</dd>
+						<dt>Reference1</dt>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference2</dt>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dt>Reference3</dt>
+						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dt>Reference4</dt>
+						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
 					</ul>
 				</dd>
 			</dl>
@@ -3159,13 +3243,13 @@
 						<dt>Reference0</dt>
 						<dd>接続先サーバ名。</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻。</dd>
+						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻</dd>
+						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。（秒単位）</dd>
+						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
 						<dt>Reference4</dt>
-						<dd>※SSPのみ　サーバとローカルの時刻のずれ。（ミリ秒単位）</dd>
+						<dd>※SSPのみ　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3607,7 +3691,8 @@
 						<dt>Reference2</dt>
 						<dd>対象のURL。</dd>
 						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
+						<dd>--nofileオプションがある場合、取得したデータの中身。ただし改行コードはバイト値1に置き換えられている。
+						<br />そうでない場合は取得したファイルのフルパス。</dd>
 						<dt>Reference4</dt>
 						<dd>取得結果コード。(200|204)等</dd>
 						<dt>Reference5</dt>
@@ -4323,6 +4408,44 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnRecycleBinEmpty">
+				<dt class="entry">OnRecycleBinEmpty</dt>
+				<dd class="entry">
+					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ(空にした直後なのでふつうは0) 単位バイト</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
+						<dt>Reference2</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルの数の直前との差(空にした直後なのでふつうは負の値)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRecycleBinStatusUpdate">
+				<dt class="entry">OnRecycleBinStatusUpdate</dt>
+				<dd class="entry">
+					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ 単位バイト</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルの数</dd>
+						<dt>Reference2</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルの数の直前との差</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>選択領域モードイベント</h1>
@@ -4983,7 +5106,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="enable_log">
+			<dl id="enable_debug">
 				<dt class="entry">enable_debug</dt>
 				<dd class="entry">
 					<p>開発用パレットの「SHIORIデバッグモード有効」のON/OFF。<em class="specsign">[NOTIFY]</em></p>

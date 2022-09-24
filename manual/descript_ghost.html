@@ -2,10 +2,10 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<title>UKADOC Project Ghost設定</title>
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="author" content="UKADOC Project">
 <meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project Ghost設定</title>
 <link rel="stylesheet" href="list.css" />
 <!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
 </head>
@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -123,6 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -193,6 +194,9 @@
 				<li><a href="#cursor,ファイル名">cursor,ファイル名/mousecursor,ファイル名</a></li>
 				<li><a href="#mousecursor.text,ファイル名">mousecursor.text,ファイル名</a></li>
 				<li><a href="#mousecursor.wait,ファイル名">mousecursor.wait,ファイル名</a></li>
+				<li><a href="#mousecursor.hand,ファイル名">mousecursor.hand,ファイル名</a></li>
+				<li><a href="#mousecursor.grip,ファイル名">mousecursor.grip,ファイル名</a></li>
+				<li><a href="#mousecursor.arrow,ファイル名">mousecursor.arrow,ファイル名</a></li>
 				<li><a href="#shiori,ファイル名">shiori,ファイル名</a></li>
 				<li><a href="#makoto,ファイル名">makoto,ファイル名</a></li>
 				<li><a href="#menu.font.name,フォント名">menu.font.name,フォント名</a></li>
@@ -814,8 +818,8 @@ shiori,satori.dll
 			<dl id="cursor,ファイル名">
 				<dt class="entry">cursor,ファイル名 / mousecursor,ファイル名</dt>
 				<dd class="entry">
-					<p>そのゴーストに使用するカーソル。mousecursorと書けるのはSSP 2.5.41から。</p>
-					<p class="default">OSで設定されたカーソル(矢印)</p>
+					<p>ゴーストの操作できる部分に使用するカーソル（指先）。mousecursorと書けるのはSSP 2.5.41から。</p>
+					<p class="default">OSで設定されたカーソル(指先) (system:finger)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -827,7 +831,7 @@ shiori,satori.dll
 				<dt class="entry">mousecursor.text,ファイル名</dt>
 				<dd class="entry">
 					<p>ゴーストの入力ボックスに使用するカーソル(I-BEAM)。</p>
-					<p class="default">OSで設定されたカーソル(I型)</p>
+					<p class="default">OSで設定されたカーソル(I型) (system:text)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.41</li>
 					</ul>
@@ -837,9 +841,39 @@ shiori,satori.dll
 				<dt class="entry">mousecursor.wait,ファイル名</dt>
 				<dd class="entry">
 					<p>ゴーストがなにか処理中で応答できないときに使用するカーソル(腕時計型)。</p>
-					<p class="default">OSで設定されたカーソル(腕時計)</p>
+					<p class="default">OSで設定されたカーソル(腕時計) (system:wait)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.43</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.hand,ファイル名">
+				<dt class="entry">mousecursor.hand,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストの掴める部分を示すカーソル（手を開いた形）。通常はBust当たり判定に自動で使用される。</p>
+					<p class="default">手の形をしたカーソル (system:hand)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.grip,ファイル名">
+				<dt class="entry">mousecursor.grip,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストの掴める部分を掴んだ状態を示すカーソル（手を握った形）。通常はBust当たり判定でマウスボタンを押した状態に自動で使用される。</p>
+					<p class="default">手を握ったカーソル (system:grip)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mousecursor.arrow,ファイル名">
+				<dt class="entry">mousecursor.arrow,ファイル名</dt>
+				<dd class="entry">
+					<p>ゴーストの操作できない部分を示すカーソル（矢印）。</p>
+					<p class="default">矢印カーソル (system:arrow)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.11</li>
 					</ul>
 				</dd>
 			</dl>
@@ -887,7 +921,7 @@ shiori,satori.dll
 					</ul>
 				</dd>
 			</dl>
-			<dl id="#shiori.logo.file,ファイル名">
+			<dl id="shiori.logo.file,ファイル名">
 				<dt class="entry">shiori.logo.file,ファイル名</dt>
 				<dd class="entry">
 					<p>AIグラフ背景に使用する画像ファイル名。<br />複数グラフ表示の場合は拡張子の前に数字をつけたものを読み込む。<br />例：aigraph.pngと指定した場合、aigraph0.png、aigraph1.png…<br />画像サイズは288x288pxでグラフ描画面一杯になる。</p>
@@ -1012,6 +1046,7 @@ shiori,satori.dll
 					<dt>その他</dt>
 					<dd>バルーン側からも「推奨」関係を設定できる。詳しくは<a href="descript_balloon.html">Balloonのdescript.txtの記述</a>を参照。</dd>
 				</dl>
+			</section>
 		</section>
 	</div>
 </body>

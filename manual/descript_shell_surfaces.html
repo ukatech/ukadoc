@@ -12,7 +12,6 @@
 <body>
 	<h1 id="page-title">Shell設定 - surfaces.txt</h1>
 	<nav class="menu-header">
-
 		<table>
 			<tbody>
 				<tr>
@@ -82,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">さくらスクリプト</th>
+					<th>さくらスクリプト</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -114,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">規格</th>
+					<th>規格</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -124,6 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -173,6 +173,7 @@
 				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
+				<li><a href="#animation*.option,shared-index">animation*.option,shared-index</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
 				<li><a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)</a></li>
 				<li><a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision*,始点X,始点Y,終点X,終点Y,ID</a></li>
@@ -217,6 +218,7 @@
 					<li><a href="#base">base</a></li>
 					<li><a href="#overlay">overlay</a></li>
 					<li><a href="#overlayfast">overlayfast</a></li>
+					<li><a href="#overlaymultiply">overlaymultiply</a></li>
 					<li><a href="#replace">replace</a></li>
 					<li><a href="#interpolate">interpolate</a></li>
 					<li><a href="#asis">asis</a></li>
@@ -241,7 +243,7 @@
 				<li class="caption"><a href="#caption_aliastxt">alias.txt</a></li>
 			</ul>
 			<ul>
-				<li><a href="#*,[*]">*,[*]</a></li>
+				<li><a href="#*,_*_">*,[*]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -299,7 +301,7 @@
 			<section>
 				<h1>基本の書式</h1>
 				<p>基本的にほとんどの設定が<em>省略可能</em>であり、必要に応じて各設定を行えばよい。</p>
-				<p>設定は、書くとすれば必ず一行目に書く必要がある<a href="#charset,文字コード">charset</a>の他は、それぞれ「{」と「}」で囲まれた各ブレス内に記述する（各ブレスについてはこのページ内のそれぞれの項目参照）。</p>
+				<p>設定は、書くとすれば必ず一行目に書く必要がある<a href="#charset,文字コード-surfaces">charset</a>の他は、それぞれ「{」と「}」で囲まれた各ブレス内に記述する（各ブレスについてはこのページ内のそれぞれの項目参照）。</p>
 				<p>「{」および「}」はそれのみが書かれた行として存在する必要があり、例えば「surface1 {」のようにブレス名に続けて書く事はできない。</p>
 <pre><code>ブレス名
 {
@@ -488,11 +490,11 @@ animation10.pattern1,overlay,201,700,200,120
 animation10.pattern2,overlay,202,700,200,120
 animation10.pattern3,overlay,-1,700,0,0
 }
-</pre></code>
+</code></pre>
 					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
 					<p>全てのアニメーション定義はinterval定義とpattern定義を含んでいる。他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つは存在する必要がある。</p>
-					<p><a href="#animation*.interval,定義">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
+					<p><a href="#animation*.interval,インターバル">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
 					<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
 				</section>
 				<section>
@@ -538,7 +540,7 @@ surface501
 {
 element0,overlay,dress2.png,0,0
 }
-</pre></code>
+</code></pre>
 					<p>surfaces.txtにおける着せ替えの定義は、例えば以上のようになる。</p>
 					<p>上記では、surface0に対して「服1」と「服2」の二つの着せ替えを定義している。</p>
 					<p>通常のアニメーション定義同様、interval定義とpattern定義が必要である。interval定義にbindを指定する事で、そのアニメーションが着せ替えの定義である事を示す。</p>
@@ -583,7 +585,7 @@ element0,overlay,dress2.png,0,0
 					<p>新定義における書式の変更点は以下の四つです。</p>
 					<ol>
 						<li><a href="#animation*.interval,インターバル">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
-						<li><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
+						<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
 						<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
 						<li>描画メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
 					</ol>
@@ -910,12 +912,27 @@ animation0.pattern3,overlay,-1,100,168,67
 					</ul>
 				</dd>
 			</dl>
+			<dl id="animation*.option,shared-index">
+				<dt class="entry">animation*.option,shared-index</dt>
+				<dd class="entry">
+					<p>
+						\sタグでのベースサーフェスの切り替えをまたいで、同じIDのアニメーションを途中から継続して実行する。
+						<br />具体的には、\s実行前にpattern4までアニメーションが実行されていたとして、\s実行後もpattern4から再スタートする。
+						<br />\s切り替え元・切り替え先の両方に指定が必要で、どちらか片方だけだとリセットされる。
+						<br />また、切り替え先のアニメーションでpattern IDが見つからない場合もリセットされる。
+					</p>
+					<p class="default">挙動なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.02</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="animation*.option,オプション">
 				<dt class="entry">animation*.option,オプション</dt>
 				<dd class="entry">
 					<p>
-						exclusiveおよびbackgroundオプションの同時指定。
-						<br>+区切りで複数オプション可。例：exclusive+background<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
+						exclusive・background・shared-indexオプションは同時指定可能で、+区切りで複数オプション可。例：exclusive+background
+						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<em>exclusiveのみ</em>影響を受ける。
 						<br>なおintervalがbindのアニメーションについてはexclusive指定はそもそも未定義である。
 					</p>
@@ -959,20 +976,20 @@ animation0.pattern3,overlay,-1,100,168,67
 					</p>
 					<dl>
 						<dt>rect</dt>
-						<dd>長方形。座標は始点XYと終点XYの4つ。<br />例：collisionex0,rect,100,100,200,300</dd>
+						<dd>長方形。座標は始点XYと終点XYの4つ。<br />例：collisionex0,Head,rect,100,100,200,300</dd>
 						<dt>ellipse</dt>
-						<dd>楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。<br />例：collisionex0,ellipse,100,100,200,300</dd>
+						<dd>楕円。座標は楕円を囲む長方形、始点XYと終点XYの4つ。<br />例：collisionex0,Head,ellipse,100,100,200,300</dd>
 						<dt>circle</dt>
-						<dd>真円。中心点のXYの値、半径の順で記述する。<br />例：collisionex0,circle,100,200,20</dd>
+						<dd>真円。中心点のXYの値、半径の順で記述する。<br />例：collisionex0,Head,circle,100,200,20</dd>
 						<dt>polygon</dt>
-						<dd>多角形。座標は各頂点、交差可。<br />例：collisionex0,polygon,100,100,200,300,50,200</dd>
+						<dd>多角形。座標は各頂点、交差可。<br />例：collisionex0,Head,polygon,100,100,200,300,50,200</dd>
 						<dt>region</dt>
 						<dd>[SSP 2.5.19～]指定した画像ファイルの指定色の領域を当たり判定として扱う。
 						<br />大量に(100～)使用すると全体的に動作が重くなるので注意。
 						<br />「領域反転」をtrueにすると「指定色でない領域」の意味になる。省略可能。
 						<br />指定フォーマット：ファイル名,R,G,B,領域反転(falseかtrue)
-						<br />例1: collisionex0,region,atari.png,255,0,0
-						<br />例2: collisionex1,region,atari.png,0,255,0,true</dd>
+						<br />例1: collisionex0,Head,region,atari.png,255,0,0
+						<br />例2: collisionex1,Head,region,atari.png,0,255,0,true</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -1127,7 +1144,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				</dd>
 			</dl>
 			<section class="subcategory">
-				<h1 id="h-animationinterval">アニメーションインターバル</h2>
+				<h1 id="h-animationinterval">アニメーションインターバル</h1>
 				<section class="caption introduction" id="introduction_animationinterval">
 					<h1>アニメーションインターバル</h1>
 					<section>
@@ -1263,7 +1280,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="_1_bind">
 					<dt class="entry">bind</dt>
 					<dd class="entry">
-						<p>そのアニメーションをサーフェスの<a href="#introduction-mayuna">着せ替え</a>として定義する。</p>
+						<p>そのアニメーションをサーフェスの<a href="#introduction_mayuna">着せ替え</a>として定義する。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1338,7 +1355,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dd class="entry">
 						<p>
 							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を単に重ねる。
-							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#bind">bind</a>も同じ効果となる）。
+							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#_2_bind">bind</a>も同じ効果となる）。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1360,6 +1377,19 @@ animation0.pattern3,overlay,-1,100,168,67
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlaymultiply">
+					<dt class="entry">overlaymultiply</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を乗算合成で重ねる。
+							<br>挙動はoverlayfastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して乗算合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.91</li>
 						</ul>
 					</dd>
 				</dl>
@@ -1553,7 +1583,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
-				<dl id="alternativestop,_ID1,ID2..._">
+				<dl id="parallelstop,_ID1,ID2..._">
 					<dt class="entry">parallelstop,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
@@ -1587,7 +1617,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<p>aliasブレスは、MATERIA period453まではsurfaces.txtでなくalias.txtという専用のファイルに記述される仕様であった。</p>
 				<p>現在では記述はsurfaces.txtに統合されているが、CROW・SSP共に互換性が保たれているため、別途alias.txtを用意する事も可能である。</p>
 			</section>
-			<dl id="*,[*]">
+			<dl id="*,_*_">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
 					<p>サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
@@ -1754,7 +1784,7 @@ mousedown1,Bust,system:grip
 		</section>
 		<section class="category">
 			<h1>tooltipブレス</h1>
-			<section class="caption introduction" id="introduction_cursorbrace">
+			<section class="caption introduction" id="introduction_tooltipbrace">
 				<h1>tooltipブレス記述例</h1>
 <pre><code>sakura.tooltips
 {
