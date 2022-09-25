@@ -3969,7 +3969,7 @@
 					<p>Opens the CommunicateBox.
 					<br>After input has been confirmed, <a href="list_shiori_event.html#OnCommunicate">OnCommunicate</a> will be run, and if the CommunicateBox is closed <a href="list_shiori_event.html#OnCommunicateInputCancel">OnCommunicateInputCancel</a> will be run.
 					<br>In SSP only, the default text may also be specified (by using \![open,communicatebox,(text)]).
-					<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option. Omission is also possible.</p>
+					<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option=○○. Omission is also possible.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4012,7 +4012,7 @@
 						<br>The ID is stored in OnUserInput, which runs on confirmation, but if the ID starts with On, the event will run instead. ※Refer to <a href="#notes_inputbox-id">ID</a>.
 						<br>The display time is specified in milliseconds. If omitted or 0 or lower is specified, there will be no time limit.
 						<br>The text argument is the text that will be displayed as soon as the InputBox is opened (incompatible with CROW) and can be omitted.
-						<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option. Omission is also possible.
+						<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option=○○. Omission is also possible.
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4029,107 +4029,107 @@
 				</dd>
 			</dl>
 			<dl id="_!_open,passwordinput,ID,表示時間,テキスト,オプション_">
-				<dt class="entry">\![open,passwordinput,ID,表示時間,テキスト,オプション]</dt>
+				<dt class="entry">\![open,passwordinput,(ID),(display time),(text),(option)]</dt>
 				<dd class="entry">
-					<p>文字を隠すInputBoxを開く。その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>Opens an InputBox that hides the characters. Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,passwordinput,パスワードテスト,-1,--option==noclose]入力が●で伏せ字になるInputBoxを開く。OKボタンを押しても、時間経過でも自動的に閉じない。閉じるボタンを押すと閉じる。</code></p>
-							<p><code>\![open,passwordinput,パスワードテスト,--timeout=-1,--option==noclose] 上記と同じ(新オプション指定)</code></p>
+							<p><code>\![open,passwordinput,passwordtest,-1,--option==noclose]An InputBox with the characters hidden by ● has been opened. Neither time passing nor pressing the OK button will close it. It can be closed if the close button is pressed.</code></p>
+							<p><code>\![open,passwordinput,passwordtest,--timeout=-1,--option==noclose]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
-				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
+				<dt class="entry">\![open,dateinput,(ID),(display time),(year),(month),(day),(option)]</dt>
 				<dd class="entry">
-					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br>タイムアウトした場合は「Timeout」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>Opens a date InputBox.<br>The display time is specified in milliseconds.<br>Year, month, and day are the initial values.<br>The SHIORI event <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run on confirmation, and Reference1 stores the year,month,day separated by commas.<br>If it times out, it will contain "Timeout."<br><a href="#notes_inputbox-option">※Options</a> may be specified using --option=○○.<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dateinput,日付入力テスト,30000,2012,12,23]初期値が2012年12月23日の年月日入力InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,dateinput,日付入力テスト,--timeout=30000,--text="2012,12,23"] 上記と同じ(新オプション指定)</code></p>
+							<p><code>\![open,dateinput,dateinputtest,30000,2012,12,23]An InputBox with the initial values of the date 2012,12,23 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,dateinput,dateinputtest,--timeout=30000,--text="2012,12,23"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
-				<dt class="entry">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</dt>
+				<dt class="entry">\![open,sliderinput,(ID),(display time),(current value),(minimum),(maximum),(option)]</dt>
 				<dd class="entry">
-					<p>スライダー調節型のInputBoxを開く。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1に入力値が入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>Opens an InputBox with a slider.<br>The SHIORI event <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run on confirmation, and Reference1 stores the input value.<br><a href="#notes_inputbox-option">※Options</a> may be specified using --option=○○.<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,sliderinput,スライダーテスト,30000,50,0,100]初期値が50、最小値が0、最大が100のスライダー型InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,sliderinput,スライダーテスト,--timeout=30000,--text="50,0,100"] 上記と同じ(新オプション指定)</code></p>
+							<p><code>\![open,sliderinput,slidertest,30000,50,0,100]A slider-type InputBox with an initial value of 50, a minimum value of 0, and a maximum value of 100 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,sliderinput,slidertest,--timeout=30000,--text="50,0,100"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">
-				<dt class="entry">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</dt>
+				<dt class="entry">\![open,timeinput,(ID),(display time),(hour),(minute),(second),(option)]</dt>
 				<dd class="entry">
-					<p>時間入力InputBoxを開く。<br>時,分,秒は初期値。24時間表記。<br>入力値はOnUserInputのReference1にカンマ区切りで「時,分,秒」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p><br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
+					<p>Opens a time InputBox.<br>Hour, minute, and second are the initial values. Uses 24 hour time.<br>The input value is stored in OnUserInput's Reference1 as hour,minute,second separated by commas.<br><a href="#notes_inputbox-option">※Options</a> may also be specified using --option=○○.<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.<p></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,timeinput,時間入力テスト,30000,23,45,12]初期値が23時45分12秒の時間入力InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,timeinput,時間入力テスト,--timeout=30000,--text="23,45,12"] 上記と同じ(新オプション指定)</code></p>
+							<p><code>\![open,timeinput,timeinputtest,30000,23,45,12]An InputBox with the initial values of 23,45,12 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,timeinput,timeinputtest,--timeout=30000,--text="23,45,12"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">
-				<dt class="entry">\![open,ipinput,ID,表示時間,IP1桁目,IP2桁目,IP3桁目,IP4桁目,オプション]</dt>
+				<dt class="entry">\![open,ipinput,(ID),(display time),(IP line 1),(IP line 2),(IP line 3),(IP line 4),(option)]</dt>
 				<dd class="entry">
-					<p>IPアドレス入力InputBoxを開く。
-					<br>Windows上では入力ボックスの制限のため、IPv4アドレスのみ受け入れ可能。
-					<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。</p>
-					<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。<p></p>
+					<p>Opens an IP address InputBox.
+					<br>Due to input limitations on Windows, only IPv4 addresses will be accepted.
+					<br><a href="#notes_inputbox-option">※Options</a> may also be specified using --option=○○.
+					<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.<p></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,ipinput,IP入力テスト,30000,192,168,0,1]</code></p>
-							<p><code>\![open,ipinput,IP入力テスト,--timeout=30000,--text="192,168,0,1"]</code></p>
+							<p><code>\![open,ipinput,ipinputtest,30000,192,168,0,1]</code></p>
+							<p><code>\![open,ipinput,ipinputtest,--timeout=30000,--text="192,168,0,1"]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_close,inputbox,ID_">
-				<dt class="entry">\![close,inputbox,ID]</dt>
+				<dt class="entry">\![close,inputbox,(ID)]</dt>
 				<dd class="entry">
-					<p>IDで指定されたInputBox(日付、時間、スライダー、入力非表示ボックスも含む)を閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。</p>
+					<p>Closes the type of InputBox specified in the ID argument (date, time, slider, password are included). Specifying __SYSTEM_ALL_INPUT__ will close all boxes.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![close,inputbox,時間入力テスト]IDが「時間入力テスト」のInputBoxを閉じる。\![close,inputbox,__SYSTEM_ALL_INPUT__]その後、全てのInputBoxを閉じる。</code></p>
+							<p><code>\![close,inputbox,timeinputtest]The InputBox with the ID timeinputtest has been closed.\![close,inputbox,__SYSTEM_ALL_INPUT__]All InputBoxes have been closed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,configurationdialog,ダイアログID_">
-				<dt class="entry">\![open,configurationdialog,ダイアログID]</dt>
+				<dt class="entry">\![open,configurationdialog,(dialog ID)]</dt>
 				<dd class="entry">
-					<p>設定ダイアログ(オーナードローメニューの「本体設定」)を開く。<br>ダイアログIDで初期表示する画面を指定できる(省略時は前回開いた画面)。<br>SHIORI Event ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a>のReference0参照。</p>
+					<p>Opens the configuration dialog (baseware settings, accessed from the user menu).<br>The dialog ID specifies which section to show (when omitted, it will be the last opened section).<br>Refer to the SHIORI Event ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a>'s Reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4138,7 +4138,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,configurationdialog,talk]SSP本体設定ダイアログの喋り/バルーンのタブを開く。</code></p>
+							<p><code>\![open,configurationdialog,talk]The Talk/Balloon tab of the SSP baseware settings has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4146,7 +4146,7 @@
 			<dl id="_!_open,ghostexplorer_">
 				<dt class="entry">\![open,ghostexplorer]</dt>
 				<dd class="entry">
-					<p>ゴーストエクスプローラを開く。<br>オーナードローメニューから開くことも可能。<br>以下～エクスプローラは、ゴーストエクスプローラの種類(T)から変更することで手動で変更も出来る。</p>
+					<p>Opens the Ghost Explorer.<br>Can also be opened from the user menu.<br>The below explorers can also be manually changed to from the Ghost Explorer's Type section (T).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4155,7 +4155,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,ghostexplorer]ゴーストエクスプローラを開く。</code></p>
+							<p><code>\![open,ghostexplorer]The Ghost Explorer has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4163,7 +4163,7 @@
 			<dl id="_!_open,shellexplorer_">
 				<dt class="entry">\![open,shellexplorer]</dt>
 				<dd class="entry">
-					<p>シェルエクスプローラを開く。表示されるのは現在起動中のゴーストのシェルのみ。</p>
+					<p>Opens the Shell Explorer. Only shells for the currently open ghosts will be displayed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4172,7 +4172,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,shellexplorer]シェルエクスプローラを開く。</code></p>
+							<p><code>\![open,shellexplorer]The Shell Explorer has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4180,7 +4180,7 @@
 			<dl id="_!_open,balloonexplorer_">
 				<dt class="entry">\![open,balloonexplorer]</dt>
 				<dd class="entry">
-					<p>バルーンエクスプローラを開く。</p>
+					<p>Opens the Balloon Explorer.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4189,7 +4189,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,balloonexplorer]バルーンエクスプローラを開く。</code></p>
+							<p><code>\![open,balloonexplorer]The Balloon Explorer has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4197,7 +4197,7 @@
 			<dl id="_!_open,headlinesensorexplorer_">
 				<dt class="entry">\![open,headlinesensorexplorer]</dt>
 				<dd class="entry">
-					<p>ヘッドライセンスエクスプローラを開く。</p>
+					<p>Opens the Headline Explorer.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4206,7 +4206,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,headlinesensorexplorer]ヘッドラインエクスプローラを開く。</code></p>
+							<p><code>\![open,headlinesensorexplorer]The Headline Explorer has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4214,14 +4214,14 @@
 			<dl id="_!_open,pluginexplorer_">
 				<dt class="entry">\![open,pluginexplorer]</dt>
 				<dd class="entry">
-					<p>プラグインエクスプローラを開く。</p>
+					<p>Opens the Plugin Explorer.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,pluginexplorer]プラグインエクスプローラを開く。</code></p>
+							<p><code>\![open,pluginexplorer]The Plugin Explorer has been opened</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4229,7 +4229,7 @@
 			<dl id="_!_open,rateofusegraph_">
 				<dt class="entry">\![open,rateofusegraph]</dt>
 				<dd class="entry">
-					<p>ゴースト使用率を表示する。</p>
+					<p>Displays the ghost usage rate graph.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4238,7 +4238,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,rateofusegraph]ゴースト使用率を表示する。</code></p>
+							<p><code>\![open,rateofusegraph]The ghost usage rate graph is being displayed.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4246,7 +4246,7 @@
 			<dl id="_!_open,rateofusegraphballoon_">
 				<dt class="entry">\![open,rateofusegraphballoon]</dt>
 				<dd class="entry">
-					<p>バルーン使用率を表示する。未対応環境ではrateofusegraphを実行したのと同じになる。</p>
+					<p>Opens the balloon usage rate graph. In environments that are not compatible, it will behave the same way as when rateofusegraph has been executed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16"> 2.3.77</li>
@@ -4254,7 +4254,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,rateofusegraphballoon]バルーン使用率を表示する。</code></p>
+							<p><code>\![open,rateofusegraphballoon]The balloon usage rate graph is being displayed.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4262,7 +4262,7 @@
 			<dl id="_!_open,rateofusegraphtotal_">
 				<dt class="entry">\![open,rateofusegraphtotal]</dt>
 				<dd class="entry">
-					<p>ゴースト使用率(合算)を表示する。現時点でMateria以外未対応(rateofusegraphを実行したのと同じになる)</p>
+					<p>Displays the ghost usage rate (totals) graph. Currently only compatible with Materia (other baseware will behave the same way as when rateofusegraph has been executed).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 					</ul>
@@ -4271,29 +4271,29 @@
 			<dl id="_!_open,calendar_">
 				<dt class="entry">\![open,calendar]</dt>
 				<dd class="entry">
-					<p>カレンダーを開く。</p>
+					<p>Opens the calendar.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+							<p><code>\![open,calendar]The calendar has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,help,ダイアログID_">
-				<dt class="entry">\![open,help,ダイアログID]</dt>
+				<dt class="entry">\![open,help,(dialog ID)]</dt>
 				<dd class="entry">
-					<p>SSPヘルプを開く。<br>ダイアログIDに設定ダイアログのID名(※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelpのReference0参照</a>)で、その設定ダイアログについてのヘルプを展開。省略時はインデックスページを開く。</p>
+					<p>Opens the SSP help page.<br>Specifying a configuration section's ID name (refer to ※<a href="list_shiori_event.html#OnConfigurationDialogHelp">OnConfigurationDialogHelp's Reference0</a>) will open the related help page. Opens the index page if omitted.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,help,talk]ブラウザで、http://ssp.shillest.net/ukadoc/ssphelp/の喋り/バルーンのページを開く。</code></p>
+							<p><code>\![open,help,talk]Opens the Talk/Balloon section of the http://ssp.shillest.net/ukadoc/ssphelp/ page.</code></p>
 						</section>
 					</div>
 				</dd>
