@@ -6,6 +6,7 @@ jobs:
   check:
     name: ukadoc server update request
     runs-on: ubuntu-latest
+    environment: update_req
     steps:
       - name: update request
         run: |
