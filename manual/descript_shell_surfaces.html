@@ -254,6 +254,7 @@
 			<ul>
 				<li><a href="#mouseup*,当たり判定ID,ファイル名">mouseup*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousedown*,当たり判定ID,ファイル名">mousedown*,当たり判定ID,ファイル名</a></li>
+				<li><a href="#mouserightdown*,当たり判定ID,ファイル名">mouserightdown*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousewheel*,当たり判定ID,ファイル名">mousewheel*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousehover*,当たり判定ID,ファイル名">mousehover*,当たり判定ID,ファイル名</a></li>
 			</ul>
@@ -1662,6 +1663,16 @@ mousedown1,Bust,system:grip
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:grip）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mouserightdown*,当たり判定ID,ファイル名">
+				<dt class="entry">mouserightdown*,当たり判定ID,ファイル名</dt>
+				<dd class="entry">
+					<p>当たり判定の上でマウス右ボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="default">system:finger</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.14</li>
 					</ul>
 				</dd>
 			</dl>
