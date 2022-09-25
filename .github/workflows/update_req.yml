@@ -1,0 +1,12 @@
+on: [push]
+
+name: ukadoc server update request
+
+jobs:
+  check:
+    name: ukadoc server update request
+    runs-on: ubuntu-latest
+    steps:
+      - name: update request
+        run: |
+             curl ${{ secrets.UKADOC_UPDATE_REQ_WEB_URL }}
