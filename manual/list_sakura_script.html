@@ -4301,14 +4301,14 @@
 			<dl id="_!_open,messenger_">
 				<dt class="entry">\![open,messenger]</dt>
 				<dd class="entry">
-					<p>インスタントメッセンジャーを開く。<br>オーナードローメニューからは、「機能(F) -&gt; SSPメッセンジャ(M)」で実行できる。</p>
+					<p>Opens the instant messenger.<br>Can also be opened from the user menu's Utilities (F) -&gt; SSP Messenger (Ctrl+M).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+							<p><code>\![open,calendar]The instant messenger has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4316,14 +4316,15 @@
 			<dl id="_!_open,readme_">
 				<dt class="entry">\![open,readme]</dt>
 				<dd class="entry">
-					<p>readme.txtを開く。<br>起動中ゴーストの、[(folder of the ghost executing the command)]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。<br>初期値readme.txt。</p>
+					<p>Opens readme.txt.<br>When no further arguments have been specified, opens the file specified as the readme in the currently running ghost's [(folder of the ghost executing the command)]/ghost/master/descript.txt.
+					<br>When \![open,readme,(type=ghost/shell/balloon/headline/plugin),(name)], the specified readme file will be opened. Ex: \![open,readme,ghost,Emily/Phase4]</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,readme]readme.txtを開く。</code></p>
+							<p><code>\![open,readme]readme.txt has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4331,16 +4332,16 @@
 			<dl id="_!_open,terms_">
 				<dt class="entry">\![open,terms]</dt>
 				<dd class="entry">
-					<p>起動中ゴーストの、[(folder of the ghost executing the command)]/terms.txtを使用し、利用条件ダイアログを表示する。
-					<br />terms.txtがない場合は効果がない（エラー音のみ）
-					<br />ユーザーの操作をダイアログで強制的に中断するので、濫用すべきではない。</p>
+					<p>Opens the terms and conditions dialog using [(folder of the ghost executing the command)]/terms.txt.
+					<br />Nothing occurs (error sound only) if terms.txt does not exist.
+					<br />This command stops user interaction by force with the dialog, so overuse should be avoided.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,terms]terms.txtを開く。</code></p>
+							<p><code>\![open,terms]terms.txt has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
