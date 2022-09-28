@@ -4347,79 +4347,79 @@
 				</dd>
 			</dl>
 			<dl id="_!_open,file,ファイル名_">
-				<dt class="entry">\![open,file,ファイル名]</dt>
+				<dt class="entry">\![open,file,(file name)]</dt>
 				<dd class="entry">
-					<p>ファイルを実行する。[(folder of the ghost executing the command)]/ghost/master/からの相対パスか、絶対パスで指定。<br>windowsの環境変数(%SYSTEMROOT%,%SYSTEM%,%TEMP%等)を使う事ができる。<br>ファイル名に実行ファイルを指定した場合、自動でパス探索する。</p>
+					<p>Executes a file. Absolute paths or relative paths from [(folder of the ghost executing the command)]/ghost/master/ can be specified.<br>The Windows environment variables (%SYSTEMROOT%,%SYSTEM%, %TEMP% etc.) can be used.<br>When the file to be executed is specified as the file name, the path will be searched for automatically.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,file,shell/master/surface0.png]shell/masterフォルダのsurface0.pngが開かれる。</code></p>
-							<p><code>\![open,file,%ComSpec%]コマンドプロンプトが実行される。</code></p>
-							<p><code>\![open,file,TortoiseProc.exe]TortoiseSVNがインストールされていれば、パスを自動で検索して実行する。</code></p>
+							<p><code>\![open,file,shell/master/surface0.png]surface0.png in the shell/master has been opened.</code></p>
+							<p><code>\![open,file,%ComSpec%]The command prompt has been opened.</code></p>
+							<p><code>\![open,file,TortoiseProc.exe]Automatically searches for the path and executes TortoiseSVN if it is installed.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,open,パラメータ_">
-				<dt class="entry">\![open,dialog,open,パラメータ]</dt>
+				<dt class="entry">\![open,dialog,open,(parameter)]</dt>
 				<dd class="entry">
-					<p>ファイルを開くのダイアログを開く。このダイアログでファイルを選択しても、実際にファイルが開かれるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「open」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>Opens the file opening dialog. Selecting a file with this dialog will not open the file.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a> is run on confirmation, and Reference0 stores "open" and Reference2 stores the file path, so the actual process is made and executed by each ghost creator.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a> is run when closed.<br><a href="#notes_selectfile">Specifications for the parameter argument are as below</a>, and multiple may be specified by separating them with commas.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[(folder of the ghost executing the command)]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
+							<p><code>\![open,dialog,open,--title=Open dialog display test,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=DictionaryFiles|dic*.txt;*.dic;*.aym;*.kis|AllFiles|*.*,--id=testdialog]Using the [(folder of the ghost executing the command)]/ghost/master folder of Emily/Phase4.5 as the initial position, displays only dic~.txt, ~.dic, ~.aym, ~.kis files if SSP exists in a folder named SSP in the C drive.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,save,パラメータ_">
-				<dt class="entry">\![open,dialog,save,パラメータ]</dt>
+				<dt class="entry">\![open,dialog,save,(parameter)]</dt>
 				<dd class="entry">
-					<p>ファイルの保存のダイアログを開く。このダイアログで保存を行っても、実際に何かが保存されるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「save」、Reference2にファイルパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>Opens the file saving dialog. Saving a file with this dialog will not save the file.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a> is run on confirmation, and Reference0 stores "save" and Reference2 stores the file path, so the actual process is made and executed by each ghost creator.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a> is run when closed.<br><a href="#notes_selectfile">Specifications for the parameter argument are as below</a>, and multiple may be specified by separating them with commas.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,save,--title=セーブダイアログ表示テスト,--dir=__system_mydocument__,--filter=テキストファイル|*.txt;*.dic,--ext=txt,--name=test,--id=テスト保存ダイアログ]マイドキュメントを初期位置として、.txtと.dicのファイルのみを表示し、初期ファイル名「test.txt」の保存ダイアログを開く。</code></p>
+							<p><code>\![open,dialog,save,--title=Save dialog display test,--dir=__system_mydocument__,--filter=Text files|*.txt;*.dic,--ext=txt,--name=test,--id=Test saving dialog]Using the My Documents folder as the initial position, displays only .txt and .dic files, opening the saving dialog for the initial file name test.txt.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,folder,パラメータ_">
-				<dt class="entry">\![open,dialog,folder,パラメータ]</dt>
+				<dt class="entry">\![open,dialog,folder,(parameter)]</dt>
 				<dd class="entry">
-					<p>フォルダ選択のダイアログを開く。このダイアログで選択しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「folder」、Reference2にフォルダパスが格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br><a href="#notes_selectfile">パラメータ指定は後述</a>をカンマ区切りで複数指定。</p>
+					<p>Opens the folder selection dialog. Selecting a folder with this dialog will not lead to anything happening.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a> is run on confirmation, and Reference0 stores "folder" and Reference2 stores the folder path, so the actual process is made and executed by each ghost creator.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a> is run when closed.<br><a href="#notes_selectfile">Specifications for the parameter argument are as below</a>, and multiple may be specified by separating them with commas.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,folder,--title=フォルダ選択ダイアログ表示テスト,--id=OnTestFolderDialog]ダイアログで前回開いた場所を初期位置として、フォルダ選択ダイアログを開く。保存ボタンを押すと、指定したID名が「OnTestFolderDialog」でOnで始まっているため、同名のSHIORIイベントOnTestFolderDialogが通知される。</code></p>
+							<p><code>\![open,dialog,folder,--title=Folder selection dialog display test,--id=OnTestFolderDialog]Opens the folder selection dialog using the previously opened location as the initial position. The specified ID name OnTestFolderDialog starts with On, so when Save is pressed, the SHIORI event OnTestFolderDialog is notified.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_open,dialog,color,パラメータ_">
-				<dt class="entry">\![open,dialog,color,パラメータ]</dt>
+				<dt class="entry">\![open,dialog,color,(parameter)]</dt>
 				<dd class="entry">
-					<p>カラーパレットのダイアログを開く。このダイアログで色を指定しても、実際に何かが行われるわけではない。<br>決定時、SHIORIイベント<a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a>が発生し、reference0に「color」、Reference2に「R,G,B」形式で選択した色が格納されているため、ここで実際の処理を各ゴースト作者が作成し実行させる。<br>閉じるとSHIORIイベント<a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a>が発生する。<br>パラメータは以下をカンマ区切りで指定可能。</p>
+					<p>Opens the color palette dialog. Specifying a color with this dialog will not lead to anything happening.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialog">OnSystemDialog</a> is run on confirmation, and Reference0 stores "color" and Reference2 stores the selected color in the R,G,B format, so the actual process is made and executed by each ghost creator.<br>The SHIORI event <a href="list_shiori_event.html#OnSystemDialogCancel">OnSystemDialogCancel</a> is run when closed.<br>Specifications for the parameter argument are as below, and multiple may be specified by separating them with commas.</p>
 					<dl>
 						<dt>--color=R G B</dt>
-						<dd>RGBをそれぞれ0～255で指定</dd>
-						<dt>--id=イベントID</dt>
+						<dd>Specify RGB from 0 to 255 for each value.</dd>
+						<dt>--id=event ID</dt>
 						<dd>
-							OnSystemDialog/OnSystemDialogCancelに送るID
-							<br>イベントIDをOn～にするとそのIDのイベントが発生する。Referenceの内容はOnSystemDialogと同じ。
-							<br>Reference0は固定で「color」が入っている。
+							The ID to send to OnSystemDialog/OnSystemDialogCancel.
+							<br>When the event ID starts with On, the event of that name will be run. References contain the same information as OnSystemDialog.
+							<br>The value of Reference0 is fixed as "color."
 						</dd>
 					</dl>
 					<ul class="supported-baseware">
@@ -4428,7 +4428,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dialog,color,--color=255 0 0,--id=テストカラーダイアログ]初期表示色が赤のカラーパレットダイアログを表示。</code></p>
+							<p><code>\![open,dialog,color,--color=255 0 0,--id=Test color dialog]Opens the color palette dialog with red as the initial display color.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4436,14 +4436,14 @@
 			<dl id="_!_close,dialog,ID_">
 				<dt class="entry">\![close,dialog,ID]</dt>
 				<dd class="entry">
-					<p>指定したイベントIDのダイアログを閉じる。全部の場合は__SYSTEM_ALL_DIALOG__を指定。</p>
+					<p>Closes the dialog with the specified event ID. Specifying __SYSTEM_ALL_INPUT__ will close all dialogs.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![close,dialog,テストカラーダイアログ]現在表示されているダイアログのうち、idが「テストカラーダイアログ」のものを閉じる。ダイアログが閉じられた場合、OnSystemDialogCancelが通知される。</code></p>
+							<p><code>\![close,dialog,Test color dialog]Out of all currently displayed dialog boxes, closes those with the ID "Test color dialog" only." When a dialog is closed, OnSystemDialogCancel is notified.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4451,14 +4451,14 @@
 			<dl id="_!_open,surfacetest_">
 				<dt class="entry">\![open,surfacetest]</dt>
 				<dd class="entry">
-					<p>サーフェステストダイアログを開く。本体設定で「開発者用機能」がONになっていない場合は無視される。</p>
+					<p>Opens the surface test dialog. If Developer Mode is not turned on in the baseware settings, the command will be ignored.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,surfacetest]サーフェステストダイアログを開く。</code></p>
+							<p><code>\![open,surfacetest]The surface test dialog has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4466,14 +4466,14 @@
 			<dl id="_!_open,aigraph_">
 				<dt class="entry">\![open,aigraph]</dt>
 				<dd class="entry">
-					<p>AIグラフを開く。実行したゴーストがSHIORIリソース<a href="list_shiori_resource.html#getaistate">getaistate</a>に反応しない場合、何も起こらない。</p>
+					<p>Opens the AI graph. If the ghost executing the command does not react to the SHIORI resource <a href="list_shiori_resource.html#getaistate">getaistate</a>, nothing will happen.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,aigraph]AIグラフを開く。</code></p>
+							<p><code>\![open,aigraph]The AI graph has been opened.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4481,7 +4481,7 @@
 			<dl id="_!_open,developer_">
 				<dt class="entry">\![open,developer]</dt>
 				<dd class="entry">
-					<p>開発用パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<p>Opens the developer palette. If Developer Mode is not turned on in the baseware settings, the command will be ignored.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
 					</ul>
@@ -4490,7 +4490,7 @@
 			<dl id="_!_open,shiorirequest_">
 				<dt class="entry">\![open,shiorirequest]</dt>
 				<dd class="entry">
-					<p>SHIORI Request 送信パレットを開く。開発者用モードがOFFの場合は何も起こらない。</p>
+					<p>Opens the SHIORI Request send palette. If Developer Mode is not turned on in the baseware settings, the command will be ignored.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
 					</ul>
