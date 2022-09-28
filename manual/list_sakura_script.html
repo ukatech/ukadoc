@@ -4497,68 +4497,68 @@
 				</dd>
 			</dl>
 			<section class="caption" id="notes_inputbox-option">
-				<h1>InputBoxオプション</h1>
-				<p>○○の形で指定。</p>
+				<h1>InputBox Options</h1>
+				<p>Specified in the format ○○.</p>
 				<dl>
 					<dt>--option=(noclose|noclear)</dt>
-					<dd>noclose:入力後、inputboxを閉じないで表示し続ける。
-					<br />noclear:入力後、入力内容を初期化せずにそのまま表示し続ける。
-					<br />nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。
-					<br />特殊なinputbox(slider,password,time,date)では無効。</dd>
-					<dt>--text=デフォルト表示</dt>
-					<dd>最初から表示すべき文字列。
-					<br />sliderinputでは初期値,最小,最大/dateinputでは年,月,日/timeinputでは時,分,秒</dd>
-					<dt>--timeout=タイムアウトミリ秒</dt>
-					<dd>入力ボックスを自動的に閉じるまでの時間。ゼロ以下を指定すると閉じない。</dd>
-					<dt>--limit=文字入力制限長さ</dt>
-					<dd>入力ボックスに入れられる文字数を制限する。</dd>
-					<dt>--reference=追加情報</dt>
-					<dd>OnUserInputのReference3、またはOnではじまる指定イベントのReference2以降に指定した追加情報を追加する。</dd>
+					<dd>noclose: Continues to display the InputBox even after input has been finished.
+					<br />noclear: Continues to display the input contents event after input has been finished.
+					<br />Must be specified with noclose (Ex: \![inputbox,inputcontents,,,--option=noclose,--option=noclear])。
+					<br />Does not affect special InputBoxes (slider, password, time, date).</dd>
+					<dt>--text=Default display</dt>
+					<dd>The string to display before user input.
+					<br />Assigns the default value, minimum, and maximum for sliderinput/year, month, and day for dateinput/hour, minute, and second for timeinput.</dd>
+					<dt>--timeout=Milliseconds until timeout</dt>
+					<dd>The time until the InputBox closes automatically. If zero or below is specified, it will not close.</dd>
+					<dt>--limit=Character limit</dt>
+					<dd>The limit on the amount of characters that can be entered in the InputBox.</dd>
+					<dt>--reference=Additional information</dt>
+					<dd>Adds the specified additional information to the Reference2 onwards of a specified event starting with On, or the Reference3 onwards of OnUserInput.</dd>
 				</dl>
 			</section>
 			<section class="caption" id="notes_inputbox-id">
-				<h1>InputBoxのID</h1>
+				<h1>InputBox IDs</h1>
 				<p>
-					決定時、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生するが、IDに「On」から始まる文字列を指定した場合、代わりにID名のイベントが発生する。<br>
-					OnUserInputではReference0に指定したID、Reference1に入力内容が入るが、ID名のイベントの場合、Reference0に入力内容が入る。<br>
+					On confirmation, <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run, but if a string starting with On is specified for the ID, the event of the ID name will run instead.<br>
+					For OnUserInput, Reference0 stores the specified ID name and Reference1 stores the input contents, but if the ID name is an event, Reference0 will store the input contents.<br>
 				</p>
 				<p>
-					例<br>
-					\![open,inputbox,インプットテスト,10000,テスト入力]で入力を決定した場合。
-				</p>
-				<ul>
-					<li>「OnUserInput」が発生</li>
-					<li>Reference0は「インプットテスト」</li>
-					<li>Reference1は入力内容</li>
-					<li>Reference2は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
-					<li>Reference3以降は--reference=で指定した追加情報</li>
-				</ul>
-				<p>
-					\![open,inputbox,<em>On</em>インプットテスト,10000,テスト入力]で入力を決定した場合。
+					Example<br>
+					When something is input and confirmed with \![open,inputbox,inputtest,10000,Test Input]:
 				</p>
 				<ul>
-					<li>「Onインプットテスト」が発生</li>
-					<li>Reference0は入力内容</li>
-					<li>Reference1は入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</li>
-					<li>Reference2以降は--reference=で指定した追加情報</li>
+					<li>OnUserInput is run</li>
+					<li>Reference0 is "inputtest"</li>
+					<li>Reference1 is the input content</li>
+					<li>Reference2 is the supplementary information. (Only sliderinput's minimum and maximum; others will be left blank)</li>
+					<li>Reference3 onwards is additional information specified with --reference=.</li>
 				</ul>
 				<p>
-					IDにかかわらず、閉じるボタンを押した時とタイムアウト時は<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
+					When something is input and confirmed with \![open,inputbox,<em>On</em>InputTest,10000,Test Input]:
+				</p>
+				<ul>
+					<li>OnInputTest is run</li>
+					<li>Reference0 is the input content</li>
+					<li>Reference1 is the supplementary information. (Only sliderinput's minimum and maximum; others will be left blank)</li>
+					<li>Reference2 onwards is additional information specified with --reference=.</li>
+				</ul>
+				<p>
+					Regardless of the ID, when the close button is pressed or the InputBox timed out, <a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a> will run.
 				</p>
 			</section>
 			<section class="caption" id="notes_selectfile">
-				<h1>ファイルを開く / ファイルを保存 / フォルダ選択 / カラーパレット選択 パラメータ</h1>
+				<h1>Parameters for Opening files / Saving files / Selecting folders / Selecting the color palette</h1>
 				<dl>
-					<dt>--title=テキスト</dt>
-					<dd>ダイアログのタイトルバーに表示されるテキスト<br>省略した場合、openダイアログなら「Open File」、saveダイアログなら「Save File」、folderダイアログなら空欄、colorダイアログなら「色の設定」。
+					<dt>--title=Text</dt>
+					<dd>The text to be displayed in the dialog title bar.<br>When omitted, if the open dialog it will display Open File, if the save dialog then Save File, if the folder dialog then it will be blank, if the color dialog then Colour.
 					</dd>
-					<dt>--dir=パス</dt>
+					<dt>--dir=Path</dt>
 					<dd>
 						<p>
-							初期表示フォルダ、絶対パスで指定<br>省略した場合は前回ダイアログで開いたフォルダ
+							The initial display folder. Specified with absolute paths.<br>When omitted, the last folder opened with a dialog will be displayed.
 						</p>
 						<p>
-							<br>パス部分に以下で、windowsの特殊なフォルダの指定が可能
+							<br>The below special folders in Windows may be specified as a part of the path.
 							<br>__system_mydocument__
 							<br>__system_mypictures__
 							<br>__system_myvideo__
@@ -4566,27 +4566,27 @@
 							<br>__system_desktop__
 						</p>
 					</dd>
-					<dt>--filter=フィルタ</dt>
-					<dd>BMP|*.bmp|その他|*.png;*.gif のように記述<br>openダイアログとsaveダイアログのみ有効。</dd>
-					<dt>--ext=拡張子</dt>
-					<dd>保存時の標準拡張子<br>saveダイアログのみ有効。</dd>
-					<dt>--name=ファイル名</dt>
-					<dd>保存時の標準ファイル名<br>saveダイアログのみ有効。</dd>
-					<dt>--id=イベントID</dt>
+					<dt>--filter=Filter</dt>
+					<dd>Written as BMP|*.bmp|Others|*.png;*.gif<br>Only effective with the open dialog and save dialog.</dd>
+					<dt>--ext=Extension</dt>
+					<dd>The standard extension for saving a file.<br>Only effective with the save dialog.</dd>
+					<dt>--name=File name</dt>
+					<dd>The standard file name for saving a file.<br>Only effective with the save dialog.</dd>
+					<dt>--id=Event ID</dt>
 					<dd>
-						OnSystemDialog/OnSystemDialogCancelに送るID
-						<br>イベントIDをOn～にするとそのIDのイベントが発生する。Referenceの内容はOnSystemDialogと同じ。
-						<br>Reference0はダイアログの種類によって「open」「save」「folder」のいずれかが入っている。
+						IDs sent to OnSystemDialog/OnSystemDialogCancel
+						<br>If the event ID begins with On, the event of that ID will run. The contents of the References are the same as OnSystemDialog.
+						<br>Depending on the dialog type, Reference0 will contain one of open, save, or folder.
 					</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>プロパティシステム操作コマンド</h1>
+			<h1>Property System Manipulation Commands</h1>
 			<dl id="_!_set,property,プロパティ名,値_">
-				<dt class="entry">\![set,property,プロパティ名,値]</dt>
+				<dt class="entry">\![set,property,(property name),(value)]</dt>
 				<dd class="entry">
-					<p>プロパティシステムへの値の入力。<br>※プロパティシステムの詳細は<a href="list_propertysystem.html">プロパティシステム</a>のページ参照。</p>
+					<p>Inputs a value into the property system.<br>※Refer to the <a href="list_propertysystem.html">Property System</a> page for details about the property system.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -4594,15 +4594,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で変更出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
+							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]Hides the master shell in the Shell (S) section of the user menu, preventing the user from changing to it manually.\![set,property,currentghost.shelllist(master).menu,]Makes the master shell visible in the user menu again.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_get,property,イベント名,プロパティ名,プロパティ名,..._">
-				<dt class="entry">\![get,property,イベント名,プロパティ名,プロパティ名,...]</dt>
+				<dt class="entry">\![get,property,(event name),(property name),(property name),...]</dt>
 				<dd class="entry">
-					<p>プロパティシステムの値の取得。<br>イベント名で指定したイベントが発生し、そのreference0以降にひとつずつプロパティシステムの値が入る。<br>※プロパティシステムの詳細は<a href="list_propertysystem.html">プロパティシステム</a>のページ参照。</p>
+					<p>Gets a property system value.<br>The event specified is run, and each property system value is stored in references from reference0 onwards.<br>※Refer to the <a href="list_propertysystem.html">Property System</a> page for details about the property system.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -4610,7 +4610,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在使用中のバルーンの、本体側の表示可能な幅(ピクセル数)、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth.initial,currentghost.balloon.scope(0).validheight.initial]</code></p>
+							<p><code>After executing this script, the SHIORI event SSPGetBalloonInformation is notified. Reference0 stores the width of the current balloon that can be used by the main character (in pixels), and Reference1 stores the height. \![get,property,SSPGetBalloonInformation,currentghost.balloon.scope(0).validwidth.initial,currentghost.balloon.scope(0).validheight.initial]</code></p>
 						</section>
 					</div>
 				</dd>
