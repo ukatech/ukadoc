@@ -4617,11 +4617,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>未分類コマンド</h1>
+			<h1>Miscellaneous Commands</h1>
 			<dl id="_!_execute,http-get,URL_">
-				<dt class="entry">\![execute,http-get,URL]</dt>
+				<dt class="entry">\![execute,http-get,(URL)]</dt>
 				<dd class="entry">
-					<p>http get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
+					<p>Executes an http get request and stores the response in a file.<br>The file is stored in the [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4629,43 +4629,43 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト(このページ)を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
+							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html] Gets the UKADOC SakuraScript page (this page), and saves list_sakura_script.html in the var folder.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,パラメータ_">
-				<dt class="entry">\![execute,http-get,URL,パラメータ]</dt>
+				<dt class="entry">\![execute,http-get,URL,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
+					<p>Executes an http get request with a parameter and stores the response in a file.<br>The file is stored in the  [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,p=SSP 伺か]YAHOOでの「SSP 伺か」の検索結果ページを、そのまま保存する。</code></p>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,p=SSP Ukagaka]Saves the Yahoo search result pages for "SSP Ukagaka" as is.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-post,URL,パラメータ_">
-				<dt class="entry">\![execute,http-post,URL,パラメータ]</dt>
+				<dt class="entry">\![execute,http-post,URL,(parameter)]</dt>
 				<dd class="entry">
-					<p>パラメータ付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
+					<p>Executes an http post request with a parameter and stores the response in a file.<br>The file is stored in the [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-get,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,http-get,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
@@ -4680,7 +4680,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-post,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,http-post,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
 					<ul class="supported-baseware">
@@ -4695,7 +4695,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,rss-get,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,rss-get,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,rss-get,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
 					<ul class="supported-baseware">
@@ -4704,7 +4704,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,rss-post,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,rss-post,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,rss-post,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
 					<ul class="supported-baseware">
@@ -4713,7 +4713,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
-				<dt class="entry">\![execute,extractarchive,ファイル名,ディレクトリ名]</dt>
+				<dt class="entry">\![execute,extractarchive,(file name),(directory name)]</dt>
 				<dd class="entry">
 					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。
 					<br />処理が完了するまでスクリプトの実行は停止する。
@@ -4731,7 +4731,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
-				<dt class="entry">\![execute,compressarchive,ファイル名,ディレクトリ名]</dt>
+				<dt class="entry">\![execute,compressarchive,(file name),(directory name)]</dt>
 				<dd class="entry">
 					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。
 					<br />処理が完了するまでスクリプトの実行は停止する。
@@ -4749,7 +4749,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">
-				<dt class="entry">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</dt>
+				<dt class="entry">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),ゼロ位置切り出し]</dt>
 				<dd class="entry">
 					<p>合成済みのサーフェス画像を指定したディレクトリに出力する。
 					<br />イベントIDを指定しない場合は、処理が完了するまでスクリプトの実行は停止する。
@@ -4769,7 +4769,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,path,ファイル名_">
-				<dt class="entry">\![execute,install,path,ファイル名]</dt>
+				<dt class="entry">\![execute,install,path,(file name)]</dt>
 				<dd class="entry">
 					<p>指定したnarファイルをインストールする。指定はフルパスで行うこと(相対パス指定不可)。</p>
 					<ul class="supported-baseware">
@@ -4784,7 +4784,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
-				<dt class="entry">\![execute,install,url,URL,feedまたはnar]</dt>
+				<dt class="entry">\![execute,install,url,(URL),(feed|nar)]</dt>
 				<dd class="entry">
 					<p>指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br>feed、narは省略可能。<br>ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。</p>
 					<ul class="supported-baseware">
@@ -4799,7 +4799,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,ping,パラメータ1,パラメータ2,..._">
-				<dt class="entry">\![execute,ping,パラメータ1,パラメータ2,...]</dt>
+				<dt class="entry">\![execute,ping,(parameter 1),(parameter 2),...]</dt>
 				<dd class="entry">
 					<p>指定したホストにpingを打つ。IPv6対応。<br>パラメータは以下の通り。</p>
 					<ul class="description">
@@ -4825,7 +4825,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,nslookup,パラメータ1,パラメータ2,..._">
-				<dt class="entry">\![execute,nslookup,パラメータ1,パラメータ2,...]</dt>
+				<dt class="entry">\![execute,nslookup,(parameter 1),(parameter 2),...]</dt>
 				<dd class="entry">
 					<p>ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br>パラメータは以下の通り。</p>
 					<ul class="description">
@@ -5034,7 +5034,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_reload,descript,パラメータ_">
-				<dt class="entry">\![reload,descript,パラメータ]</dt>
+				<dt class="entry">\![reload,descript,(parameter)]</dt>
 				<dd class="entry">
 					<p>指定したdescript.txtをリロードする。<br>半角スペース区切りで複数指定可能。<br>ghost shell balloon headline plugin</p>
 					<ul class="supported-baseware">
