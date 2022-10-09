@@ -1,6 +1,6 @@
 on: [push]
 
-name: ukadoc server update request
+name: ukadoc server update request (update will be delayed up to 5 minutes)
 
 jobs:
   check:
