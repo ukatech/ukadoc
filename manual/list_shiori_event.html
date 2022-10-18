@@ -4056,6 +4056,13 @@
 						<dt>Reference4</dt>
 						<dd>接続回線のダウンロード側の推定有効通信速度を示す数値。単位はMBps。 [SSP 2.5.26]
 						<br />通信統計が取得できない環境や、統計値が不正確な状態ではReference3と同じ値となる。</dd>
+						<dt>Reference5</dt>
+						<dd>接続回線が従量課金回線かどうかを通知する。 [SSP 2.6.15]<br />
+						unknown : 未設定/不明<br />
+						unrestricted : 完全使い放題<br />
+						fixed : データ量の上限がある定額制<br />
+						variable : 従量課金<br />
+						Windwos 10/11で「従量制課金接続」を設定するとfixedになる。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
