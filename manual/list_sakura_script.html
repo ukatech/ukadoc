@@ -10,12 +10,12 @@
 <!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
 </head>
 <body>
-	<h1 id="page-title">さくらスクリプトリスト</h1>
+	<h1 id="page-title">SakuraScript List</h1>
 	<nav class="menu-header">
 		<table>
 			<tbody>
 				<tr>
-					<th>トップページへ戻る</th>
+					<th>Return to top page</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="http://ssp.shillest.net/ukadoc/manual/index.html">INDEX</a></li>
@@ -25,7 +25,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="6">設定ファイル</th>
+					<th rowspan="6">Settings files</th>
 					<th>Ghost</th>
 					<td>
 						<ul>
@@ -81,7 +81,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th>さくらスクリプト</th>
+					<th>SakuraScript</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
@@ -92,7 +92,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th rowspan="2">イベント</th>
+					<th rowspan="2">Events</th>
 					<th>SHIORI</th>
 					<td>
 						<ul>
@@ -113,7 +113,7 @@
 			</tbody>
 			<tbody>
 				<tr>
-					<th>規格</th>
+					<th>Standards</th>
 					<td colspan="2">
 						<ul>
 							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
@@ -123,7 +123,7 @@
 							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
 							<li><a href="./spec_dll.html">DLL</a></li>
 							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
-							<li><a href="./spec_web.html">Web関連</a></li>
+							<li><a href="./spec_web.html">Web-related</a></li>
 						</ul>
 					</td>
 				</tr>
@@ -133,7 +133,7 @@
 	<section class="navigation-bar">
 		<h1>SakuraScript</h1>
 		<section class="navigation-category">
-			<h1>さくらスクリプトの仕様</h1>
+			<h1>SakuraScript Specifications</h1>
 			<ul>
 				<li class="caption"><a href="#notes_escape">Escaping SakuraScript</a></li>
 				<li class="caption"><a href="#notes_lifespan">SakuraScript Lifespan</a></li>
@@ -153,15 +153,15 @@
 				<li><a href="#_sID番号">\s(ID number)</a></li>
 				<li><a href="#_s_ID番号_">\s[(ID number)]</a></li>
 				<li><a href="#_i_ID番号_">\i[(ID number)]</a></li>
-				<li><a href="#_i_ID,wait_">\i[ID,wait]</a></li>
-				<li><a href="#_!_anim,clear,ID_">\![anim,clear,ID]</a></li>
-				<li><a href="#_!_anim,pauseID_">\![anim,pauseID]</a></li>
-				<li><a href="#_!_anim,resume,ID_">\![anim,resume,ID]</a></li>
-				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,ID,(x coordinate),(y coordinate)]</a></li>
-				<li><a href="#_!_anim,add,overlay,ID_">\![anim,add,overlay,ID]</a></li>
+				<li><a href="#_i_ID,wait_">\i[(ID),wait]</a></li>
+				<li><a href="#_!_anim,clear,ID_">\![anim,clear,(ID)]</a></li>
+				<li><a href="#_!_anim,pauseID_">\![anim,pause,(ID)]</a></li>
+				<li><a href="#_!_anim,resume,ID_">\![anim,resume,(ID)]</a></li>
+				<li><a href="#_!_anim,offset,ID,x座標,y座標_">\![anim,offset,(ID),(x coordinate),(y coordinate)]</a></li>
+				<li><a href="#_!_anim,add,overlay,ID_">\![anim,add,overlay,(ID)]</a></li>
 				<li><a href="#_!_anim,stop_">\![anim,stop]</a></li>
-				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,x,y,(width),(height),(string),(display time),r,g,b,(font size),(character identifier)]</a></li>
-				<li><a href="#___w_animation,ID_">\__w[animation,ID]</a></li>
+				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,(x),(y),(width),(height),(string),(display time),(r),(g),(b),(font size),(character identifier)]</a></li>
+				<li><a href="#___w_animation,ID_">\__w[animation,(ID)]</a></li>
 				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,(category name),(part name),(value)]</a></li>
 				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
 				<li><a href="#_!_unlock,repaint_">\![unlock,repaint]</a></li>
@@ -180,7 +180,7 @@
 				<li><a href="#_5">\5</a></li>
 				<li><a href="#_!_move_">\![move]</a></li>
 				<li><a href="#_!_moveasync_">\![moveasync]</a></li>
-				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,x,y,(character ID)]</a></li>
+				<li><a href="#_!_set,position,x,y,スコープID_">\![set,position,(x),(y),(character ID)]</a></li>
 				<li><a href="#_!_reset,position_">\![reset,position]</a></li>
 				<li><a href="#_!_set,zorder,スコープID,スコープID,_">\![set,zorder,(character ID),(character ID),...]</a></li>
 				<li><a href="#_!_reset,zorder_">\![reset,zorder]</a></li>
@@ -188,7 +188,7 @@
 				<li><a href="#_!_reset,sticky-window_">\![reset,sticky-window]</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
+				<li class="caption"><a href="#notes_color">Text color specification methods</a></li>
 				<li class="caption"><a href="#notes_move">Regarding \![move], \![moveasync]</a></li>
 			</ul>
 		</section>
@@ -196,30 +196,30 @@
 			<h1>Balloon and Text Commands</h1>
 			<ul>
 				<li><a href="#_b_ID番号_">\b[(ID number)]</a></li>
-				<li><a href="#__b_ファイル名,x,y_">\_b[(filepath),x,y]</a></li>
-				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[(filepath),x,y,opaque]</a></li>
-				<li><a href="#__b_ファイル名,x,y,オプション,オプション..._">\_b[(filepath),x,y,(option),(option)...]</a></li>
-				<li><a href="#__b_ファイル名,inline_">\_b[ファイルパス,inline]</a></li>
-				<li><a href="#__b_ファイル名,inline,opaque_">\_b[ファイルパス,inline,opaque]</a></li>
-				<li><a href="#__b_ファイル名,inline,オプション,オプション..._">\_b[ファイルパス,inline,オプション,オプション...]</a></li>
+				<li><a href="#__b_ファイル名,x,y_">\_b[(filepath),(x),(y)]</a></li>
+				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[(filepath),(x),(y),opaque]</a></li>
+				<li><a href="#__b_ファイル名,x,y,オプション,オプション..._">\_b[(filepath),(x),(y),(option),(option),...]</a></li>
+				<li><a href="#__b_ファイル名,inline_">\_b[(filepath),inline]</a></li>
+				<li><a href="#__b_ファイル名,inline,opaque_">\_b[(filepath),inline,opaque]</a></li>
+				<li><a href="#__b_ファイル名,inline,オプション,オプション..._">\_b[(filepath),inline,(option),(option),...]</a></li>
 				<li><a href="#_n">\n</a></li>
 				<li><a href="#_n_half_">\n[half]</a></li>
-				<li><a href="#_n_パーセント_">\n[パーセント]</a></li>
+				<li><a href="#_n_パーセント_">\n[(percent)]</a></li>
 				<li><a href="#__n">\_n</a></li>
 				<li><a href="#_c">\c</a></li>
-				<li><a href="#_c_char,数値_">\c[char,数値]</a></li>
-				<li><a href="#_c_char,数値,開始位置_">\c[char,数値,開始位置]</a></li>
-				<li><a href="#_c_line,数値_">\c[line,数値]</a></li>
-				<li><a href="#_c_line,数値,開始位置_">\c[line,数値,開始位置]</a></li>
-				<li><a href="#__l_x,y_">\_l[x,y]</a></li>
+				<li><a href="#_c_char,数値_">\c[char,(value)]</a></li>
+				<li><a href="#_c_char,数値,開始位置_">\c[char,(value),(starting point)]</a></li>
+				<li><a href="#_c_line,数値_">\c[line,(value)]</a></li>
+				<li><a href="#_c_line,数値,開始位置_">\c[line,(value),(starting point)]</a></li>
+				<li><a href="#__l_x,y_">\_l[(x),(y)]</a></li>
 				<li><a href="#_C">\C</a></li>
 				<li><a href="#_!_set,autoscroll,disable_">\![set,autoscroll,disable]</a></li>
 				<li><a href="#_!_set,autoscroll,enable_">\![set,autoscroll,enable]</a></li>
-				<li><a href="#_!_set,balloonoffset,x,y_">\![set,balloonoffset,x,y]</a></li>
-				<li><a href="#_!_set,balloonalign,ID_">\![set,balloonalign,ID]</a></li>
-				<li><a href="#_!_set,balloonnum,ファイル名,現在の数,最大数_">\![set,balloonnum,ファイル名,現在の数,最大数]</a></li>
-				<li><a href="#_!_set,balloontimeout,時間_">\![set,balloontimeout,時間]</a></li>
-				<li><a href="#_!_set,balloonwait,倍率_">\![set,balloonwait,倍率]</a></li>
+				<li><a href="#_!_set,balloonoffset,x,y_">\![set,balloonoffset,(x),(y)]</a></li>
+				<li><a href="#_!_set,balloonalign,ID_">\![set,balloonalign,(ID)]</a></li>
+				<li><a href="#_!_set,balloonnum,ファイル名,現在の数,最大数_">\![set,balloonnum,(file name),(current number),(total number)]</a></li>
+				<li><a href="#_!_set,balloontimeout,時間_">\![set,balloontimeout,(time)]</a></li>
+				<li><a href="#_!_set,balloonwait,倍率_">\![set,balloonwait,(scaling factor)]</a></li>
 				<li><a href="#_!_*_">\![*]</a></li>
 				<li><a href="#_!_enter,onlinemode_">\![enter,onlinemode]</a></li>
 				<li><a href="#_!_leave,onlinemode_">\![leave,onlinemode]</a></li>
@@ -234,27 +234,27 @@
 				<li><a href="#___v">\__v</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_imageresource">\_b[ファイルパス,...]について</a></li>
+				<li class="caption"><a href="#notes_imageresource">Regarding \_b[(filepath),...]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>Text Modification Commands</h1>
 			<ul>
-				<li><a href="#_f_align,寄せる側_">\f[align,寄せる側]</a></li>
-				<li><a href="#_f_name,文字名_">\f[name,フォント名]</a></li>
-				<li><a href="#_f_height,数値_">\f[height,数値]</a></li>
-				<li><a href="#_f_color,色指定_">\f[color,色指定]</a></li>
-				<li><a href="#_f_shadowcolor,色指定_">\f[shadowcolor,色指定]</a></li>
+				<li><a href="#_f_align,寄せる側_">\f[align,(alignment side)]</a></li>
+				<li><a href="#_f_name,文字名_">\f[name,(font name)]</a></li>
+				<li><a href="#_f_height,数値_">\f[height,(value)]</a></li>
+				<li><a href="#_f_color,色指定_">\f[color,(color specification)]</a></li>
+				<li><a href="#_f_shadowcolor,色指定_">\f[shadowcolor,(color specification)]</a></li>
 				<li><a href="#_f_shadowcolor,none_">\f[shadowcolor,none]</a></li>
-				<li><a href="#_f_shadowstyle,形態指定_">\f[shadowstyle,形態指定]</a></li>
-				<li><a href="#_f_outline,パラメータ_">\f[outline,パラメータ]</a></li>
-				<li><a href="#_f_anchor.font.color,色指定_">\f[anchor.font.color,色指定]</a></li>
-				<li><a href="#_f_bold,パラメータ_">\f[bold,パラメータ]</a></li>
-				<li><a href="#_f_italic,パラメータ_">\f[italic,パラメータ]</a></li>
-				<li><a href="#_f_strike,パラメータ_">\f[strike,パラメータ]</a></li>
-				<li><a href="#_f_underline,パラメータ_">\f[underline,パラメータ]</a></li>
-				<li><a href="#_f_sub,パラメータ_">\f[sub,パラメータ]</a></li>
-				<li><a href="#_f_sup,パラメータ_">\f[sup,パラメータ]</a></li>
+				<li><a href="#_f_shadowstyle,形態指定_">\f[shadowstyle,(type specification)]</a></li>
+				<li><a href="#_f_outline,パラメータ_">\f[outline,(parameter)]</a></li>
+				<li><a href="#_f_anchor.font.color,色指定_">\f[anchor.font.color,(color specification)]</a></li>
+				<li><a href="#_f_bold,パラメータ_">\f[bold,(parameter)]</a></li>
+				<li><a href="#_f_italic,パラメータ_">\f[italic,(parameter)]</a></li>
+				<li><a href="#_f_strike,パラメータ_">\f[strike,(parameter)]</a></li>
+				<li><a href="#_f_underline,パラメータ_">\f[underline,(parameter)]</a></li>
+				<li><a href="#_f_sub,パラメータ_">\f[sub,(parameter)]</a></li>
+				<li><a href="#_f_sup,パラメータ_">\f[sup,(parameter)]</a></li>
 				<li><a href="#_f_default_">\f[default]</a></li>
 				<li><a href="#_f_disable_">\f[disable]</a></li>
 			</ul>
@@ -262,9 +262,9 @@
 		<section class="navigation-category">
 			<h1>Wait Commands</h1>
 			<ul>
-				<li><a href="#_w時間">\w時間</a></li>
-				<li><a href="#__w_時間_">\_w[時間]</a></li>
-				<li><a href="#___w_時間_">\__w[時間]</a></li>
+				<li><a href="#_w時間">\w(time)</a></li>
+				<li><a href="#__w_時間_">\_w[(time)]</a></li>
+				<li><a href="#___w_時間_">\__w[(time)]</a></li>
 				<li><a href="#_x">\x</a></li>
 				<li><a href="#_x_noclear_">\x[noclear]</a></li>
 				<li><a href="#_t">\t</a></li>
@@ -272,23 +272,23 @@
 				<li><a href="#_!_quicksection,true_">\![quicksection,true]</a></li>
 				<li><a href="#_!_quicksection,false_">\![quicksection,false]</a></li>
 				<li><a href="#__s">\_s</a></li>
-				<li><a href="#__s_ID1,ID2,ID3..._">\_s[ID1,ID2,ID3...]</a></li>
-				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</a></li>
+				<li><a href="#__s_ID1,ID2,ID3..._">\_s[(ID1),(ID2),(ID3),...]</a></li>
+				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,(sync object name),(time out time)]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>Choice Commands</h1>
 			<ul>
-				<li><a href="#_q_タイトル,ID_">\q[(Title),(ID)]</a></li>
-				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[(Title),On(ID),(r0),(r1),...]</a></li>
-				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[(Title),(ID1),(ID2),(ID3),...]</a></li>
-				<li><a href="#_q_タイトル,ID,r2,r3..._">\q[(Title),(ID),(r2),(r3),...]</a></li>
-				<li><a href="#_q_タイトル,script:実行内容_">\q[(Title),script:(script to execute)]</a></li>
-				<li><a href="#_q_ID__タイトル_または_q_*ID__タイトル_">\q[(ID)][(Title)] or \q*[(ID)][(Title)]</a></li>
+				<li><a href="#_q_タイトル,ID_">\q[(title),(ID)]</a></li>
+				<li><a href="#_q_タイトル,OnID,r0,r1,..._">\q[(title),On(ID),(r0),(r1),...]</a></li>
+				<li><a href="#_q_タイトル,ID1,ID2,ID3..._">\q[(title),(ID1),(ID2),(ID3),...]</a></li>
+				<li><a href="#_q_タイトル,ID,r2,r3..._">\q[(title),(ID),(r2),(r3),...]</a></li>
+				<li><a href="#_q_タイトル,script:実行内容_">\q[(title),script:(script to execute)]</a></li>
+				<li><a href="#_q_ID__タイトル_または_q_*ID__タイトル_">\q[(ID)][(title)] or \q*[(ID)][(title)]</a></li>
 				<li><a href="#_z">\z</a></li>
 				<li><a href="#___q_ID,..._">\__q[(ID),...]</a></li>
 				<li><a href="#_*">\*</a></li>
-				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,(Time)]</a></li>
+				<li><a href="#_!_set,choicetimeout,時間_">\![set,choicetimeout,(time)]</a></li>
 				<li><a href="#__a_ID_">\_a[(ID)]</a></li>
 				<li><a href="#__a_OnID,r0,r1..._">\_a[On(ID),(r0),(r1),...]</a></li>
 				<li><a href="#__a_ID,r2,r3..._">\_a[(ID),(r2),(r3),...]</a></li>
@@ -297,121 +297,121 @@
 		<section class="navigation-category">
 			<h1>Choice Marker Modification Commands</h1>
 			<ul>
-				<li><a href="#_f_cursorstyle,形状_">\f[cursorstyle,形状]</a></li>
-				<li><a href="#_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">\f[cursorcolor,色指定]もしくは\f[cursorbrushcolor,色指定]</a></li>
-				<li><a href="#_f_cursorpencolor,色指定_">\f[cursorpencolor,色指定]</a></li>
-				<li><a href="#_f_cursorfontcolor,色指定_">\f[cursorfontcolor,色指定]</a></li>
-				<li><a href="#_f_cursormethod,描画方法_">\f[cursormethod,描画方法]</a></li>
-				<li><a href="#_f_cursornotselectstyle,形状_">\f[cursornotselectstyle,形状]</a></li>
-				<li><a href="#_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">\f[cursornotselectcolor,色指定]もしくは\f[cursornotselectbrushcolor,色指定]</a></li>
-				<li><a href="#_f_cursornotselectpencolor,色指定_">\f[cursornotselectpencolor,色指定]</a></li>
-				<li><a href="#_f_cursornotselectfontcolor,色指定_">\f[cursornotselectfontcolor,色指定]</a></li>
-				<li><a href="#_f_cursornotselectmethod,描画方法_">\f[cursornotselectmethod,描画方法]</a></li>
-				<li><a href="#_f_anchorstyle,形状_">\f[anchorstyle,形状]</a></li>
-				<li><a href="#_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">\f[anchorcolor,色指定]もしくは\f[anchorbrushcolor,色指定]</a></li>
-				<li><a href="#_f_anchorpencolor,色指定_">\f[anchorpencolor,色指定]</a></li>
-				<li><a href="#_f_anchorfontcolor,色指定_">\f[anchorfontcolor,色指定]</a></li>
-				<li><a href="#_f_anchormethod,描画方法_">\f[anchormethod,描画方法]</a></li>
-				<li><a href="#_f_anchornotselectstyle,形状_">\f[anchornotselectstyle,形状]</a></li>
-				<li><a href="#_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">\f[anchornotselectcolor,色指定]もしくは\f[anchornotselectbrushcolor,色指定]</a></li>
-				<li><a href="#_f_anchornotselectpencolor,色指定_">\f[anchornotselectpencolor,色指定]</a></li>
-				<li><a href="#_f_anchornotselectfontcolor,色指定_">\f[anchornotselectfontcolor,色指定]</a></li>
-				<li><a href="#_f_anchornotselectmethod,描画方法_">\f[anchornotselectmethod,描画方法]</a></li>
-				<li><a href="#_f_anchorvisitedstyle,形状_">\f[anchorvisitedstyle,形状]</a></li>
-				<li><a href="#_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">\f[anchorvisitedcolor,色指定]もしくは\f[anchorvisitedbrushcolor,色指定]</a></li>
-				<li><a href="#_f_anchorvisitedpencolor,色指定_">\f[anchorvisitedpencolor,色指定]</a></li>
-				<li><a href="#_f_anchorvisitedfontcolor,色指定_">\f[anchorvisitedfontcolor,色指定]</a></li>
-				<li><a href="#_f_anchorvisitedmethod,描画方法_">\f[anchorvisitedmethod,描画方法]</a></li>
+				<li><a href="#_f_cursorstyle,形状_">\f[cursorstyle,(style)]</a></li>
+				<li><a href="#_f_cursorcolor,色指定_もしくは_f_cursorbrushcolor,色指定_">\f[cursorcolor,(color specification)] or \f[cursorbrushcolor,(color specification)]</a></li>
+				<li><a href="#_f_cursorpencolor,色指定_">\f[cursorpencolor,(color specification)]</a></li>
+				<li><a href="#_f_cursorfontcolor,色指定_">\f[cursorfontcolor,(color specification)]</a></li>
+				<li><a href="#_f_cursormethod,描画方法_">\f[cursormethod,(drawing method)]</a></li>
+				<li><a href="#_f_cursornotselectstyle,形状_">\f[cursornotselectstyle,(style)]</a></li>
+				<li><a href="#_f_cursornotselectcolor,色指定_もしくは_f_cursornotselectbrushcolor,色指定_">\f[cursornotselectcolor,(color specification)] or \f[cursornotselectbrushcolor,(color specification)]</a></li>
+				<li><a href="#_f_cursornotselectpencolor,色指定_">\f[cursornotselectpencolor,(color specification)]</a></li>
+				<li><a href="#_f_cursornotselectfontcolor,色指定_">\f[cursornotselectfontcolor,(color specification)]</a></li>
+				<li><a href="#_f_cursornotselectmethod,描画方法_">\f[cursornotselectmethod,(drawing method)]</a></li>
+				<li><a href="#_f_anchorstyle,形状_">\f[anchorstyle,(style)]</a></li>
+				<li><a href="#_f_anchorcolor,色指定_もしくは_f_anchorbrushcolor,色指定_">\f[anchorcolor,(color specification)] or \f[anchorbrushcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchorpencolor,色指定_">\f[anchorpencolor,(color specification)]</a></li>
+				<li><a href="#_f_anchorfontcolor,色指定_">\f[anchorfontcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchormethod,描画方法_">\f[anchormethod,(drawing method)]</a></li>
+				<li><a href="#_f_anchornotselectstyle,形状_">\f[anchornotselectstyle,(style)]</a></li>
+				<li><a href="#_f_anchornotselectcolor,色指定_もしくは_f_anchornotselectbrushcolor,色指定_">\f[anchornotselectcolor,(color specification)] or \f[anchornotselectbrushcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchornotselectpencolor,色指定_">\f[anchornotselectpencolor,(color specification)]</a></li>
+				<li><a href="#_f_anchornotselectfontcolor,色指定_">\f[anchornotselectfontcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchornotselectmethod,描画方法_">\f[anchornotselectmethod,(drawing method)]</a></li>
+				<li><a href="#_f_anchorvisitedstyle,形状_">\f[anchorvisitedstyle,(style)]</a></li>
+				<li><a href="#_f_anchorvisitedcolor,色指定_もしくは_f_anchorvisitedbrushcolor,色指定_">\f[anchorvisitedcolor,(color specification)] or \f[anchorvisitedbrushcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchorvisitedpencolor,色指定_">\f[anchorvisitedpencolor,(color specification)]</a></li>
+				<li><a href="#_f_anchorvisitedfontcolor,色指定_">\f[anchorvisitedfontcolor,(color specification)]</a></li>
+				<li><a href="#_f_anchorvisitedmethod,描画方法_">\f[anchorvisitedmethod,(drawing method)]</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_color">文字色指定の方法</a></li>
-				<li class="caption"><a href="#notes_style">形状指定の方法</a></li>
+				<li class="caption"><a href="#notes_color">Text color specification methods</a></li>
+				<li class="caption"><a href="#notes_style">Style specification methods</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>イベントコマンド</h1>
+			<h1>Event Commands</h1>
 			<ul>
 				<li><a href="#_e">\e</a></li>
 				<li><a href="#_-">\-</a></li>
 				<li><a href="#_a">\a</a></li>
-				<li><a href="#_!_updatebymyself_">\![updatebymyself(,オプション,オプション...)]</a></li>
+				<li><a href="#_!_updatebymyself_">\![updatebymyself,(option),(option),...)]</a></li>
 				<li><a href="#_!_update,platform_">\![update,platform]</a></li>
-				<li><a href="#_!_update,更新対象_">\![update,更新対象(,オプション,オプション...)]</a></li>
-				<li><a href="#_!_updateother_">\![updateother,更新対象/オプション群,...]</a></li>
-				<li class="caption"><a href="#notes_update_options">更新オプション指定</a></li>
+				<li><a href="#_!_update,更新対象_">\![update,(update target),(option),(option),...)]</a></li>
+				<li><a href="#_!_updateother_">\![updateother,(update target)/(options),...]</a></li>
+				<li class="caption"><a href="#notes_update_options">Update option specifications</a></li>
 				<li><a href="#_6">\6</a></li>
 				<li><a href="#_7">\7</a></li>
 				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
-				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,ヘッドライン名]</a></li>
-				<li><a href="#_!_biff_">\![biff(,アカウント名)]</a></li>
+				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,(headline name)]</a></li>
+				<li><a href="#_!_biff_">\![biff,(account name)]</a></li>
 				<li><a href="#_!_vanishbymyself_">\![vanishbymyself]</a></li>
 				<li><a href="#_+">\+</a></li>
 				<li><a href="#__+">\_+</a></li>
-				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,ゴースト名]</a></li>
-				<li><a href="#_!_change,shell,シェル名_">\![change,shell,シェル名]</a></li>
-				<li><a href="#_!_change,balloon,バルーン名_">\![change,balloon,バルーン名]</a></li>
-				<li><a href="#_!_call,ghost,ゴースト名_">\![call,ghost,ゴースト名]</a></li>
+				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,(ghost name)]</a></li>
+				<li><a href="#_!_change,shell,シェル名_">\![change,shell,(shell name)]</a></li>
+				<li><a href="#_!_change,balloon,バルーン名_">\![change,balloon,(balloon name)]</a></li>
+				<li><a href="#_!_call,ghost,ゴースト名_">\![call,ghost,(ghost name)]</a></li>
 				<li><a href="#_v">\v</a></li>
 				<li><a href="#_!_set,windowstate,stayontop_">\![set,windowstate,stayontop]</a></li>
 				<li><a href="#_!_set,windowstate,!stayontop_">\![set,windowstate,!stayontop]</a></li>
 				<li><a href="#_!_set,windowstate,minimize_">\![set,windowstate,minimize]</a></li>
-				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
-				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
-				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_set,otherghosttalk,true_false_before_after_">\![set,otherghosttalk,true|false|before|after]</a></li>
-				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,trueかfalse]</a></li>
-				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">\![timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">\![raiseother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">\![timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_notify,イベント名,r0,r1,r2..._">\![notify,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">\![notifyother,ゴースト名,イベント名,r0,r1,r2...]</a></li>
-				<li><a href="#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2...]</a></li>
+				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,(file name),(option)]</a></li>
+				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,(file name).ico,(text),--duration=(wait time),--runcount=(times to repeat)]</a></li>
+				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,(option),(option),(option),...]</a></li>
+				<li><a href="#_!_set,otherghosttalk,true_false_before_after_">\![set,otherghosttalk,(true|false|before|after)]</a></li>
+				<li><a href="#_!_set,othersurfacechange,trueかfalse_">\![set,othersurfacechange,(true|false)]</a></li>
+				<li><a href="#_!_raise,イベント名,r0,r1,r2..._">\![raise,(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_embed,イベント名,r0,r1,r2..._">\![embed,(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_timerraise,時間,繰り返すか否か,イベント名,r0,r1,r2..._">\![timerraise,(time),(repetition),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_raiseother,ゴースト名,イベント名,r0,r1,r2..._">\![raiseother,(ghost name),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_timerraiseother,時間,繰り返すか否か,ゴースト名,イベント名,r0,r1,r2..._">\![timerraiseother,(time),(repetition),(ghost name),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_raiseplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![raiseplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![timerraiseplugin,(time),(repetition),(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_notify,イベント名,r0,r1,r2..._">\![notify,(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_notifyother,ゴースト名,イベント名,r0,r1,r2..._">\![notifyother,(ghost name),(event name),(r0),(r1),(r2),...]</a></li>
+				<li><a href="#_!_notifyplugin,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">\![notifyplugin,(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>サウンドコマンド</h1>
+			<h1>Sound Commands</h1>
 			<ul>
-				<li><a href="#_8_ファイル名_">\8[ファイル名]</a></li>
-				<li><a href="#__v_ファイル名_">\_v[ファイル名]</a></li>
+				<li><a href="#_8_ファイル名_">\8[(file name)]</a></li>
+				<li><a href="#__v_ファイル名_">\_v[(file name)]</a></li>
 				<li><a href="#__V">\_V</a></li>
-				<li><a href="#_!_sound,play,ファイル名_">\![sound,play,ファイル名,オプション...]</a></li>
-				<li><a href="#_!_sound,load,ファイル名_">\![sound,load,ファイル名,オプション...]</a></li>
-				<li><a href="#_!_sound,cdplay,トラックNo._">\![sound,cdplay,トラックNo.]</a></li>
-				<li><a href="#_!_sound,loop,ファイル名_">\![sound,loop,ファイル名]</a></li>
+				<li><a href="#_!_sound,play,ファイル名_">\![sound,play,(file name),(option),...]</a></li>
+				<li><a href="#_!_sound,load,ファイル名_">\![sound,load,(file name),(option),...]</a></li>
+				<li><a href="#_!_sound,cdplay,トラックNo._">\![sound,cdplay,(track no.)]</a></li>
+				<li><a href="#_!_sound,loop,ファイル名_">\![sound,loop,(file name)]</a></li>
 				<li><a href="#_!_sound,wait_">\![sound,wait]</a></li>
-				<li><a href="#_!_sound,pause,ファイル名_">\![sound,pause,ファイル名]</a></li>
-				<li><a href="#_!_sound,resume,ファイル名_">\![sound,resume,ファイル名]</a></li>
-				<li><a href="#_!_sound,stop,ファイル名_">\![sound,stop,ファイル名]</a></li>
-				<li><a href="#_!_sound,option_">\![sound,option,ファイル名,オプション...]</a></li>
-				<li class="caption"><a href="#notes_sound">sound play/load/option のオプション</a></li>
+				<li><a href="#_!_sound,pause,ファイル名_">\![sound,pause,(file name)]</a></li>
+				<li><a href="#_!_sound,resume,ファイル名_">\![sound,resume,(file name)]</a></li>
+				<li><a href="#_!_sound,stop,ファイル名_">\![sound,stop,(file name)]</a></li>
+				<li><a href="#_!_sound,option_">\![sound,option,(file name),(option),...]</a></li>
+				<li class="caption"><a href="#notes_sound">sound play/load/option options</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>オープンコマンド</h1>
+			<h1>Open Commands</h1>
 			<ul>
 				<li><a href="#_j_ID_">\j[ID]</a></li>
-				<li><a href="#_!_open,browser,パラメータ_">\![open,browser,パラメータ]</a></li>
-				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,パラメータ]</a></li>
-				<li><a href="#_!_open,editor,パラメータ_">\![open,editor,パラメータ,表示行]</a></li>
-				<li><a href="#_!_open,explorer,パラメータ_">\![open,explorer,パラメータ]</a></li>
+				<li><a href="#_!_open,browser,パラメータ_">\![open,browser,(parameter)]</a></li>
+				<li><a href="#_!_open,mailer,パラメータ_">\![open,mailer,(parameter)]</a></li>
+				<li><a href="#_!_open,editor,パラメータ_">\![open,editor,(parameter),(display line number)]</a></li>
+				<li><a href="#_!_open,explorer,パラメータ_">\![open,explorer,(file)]</a></li>
 				<li><a href="#___t">\__t</a></li>
 				<li><a href="#_!_open,teachbox_">\![open,teachbox]</a></li>
 				<li><a href="#_!_close,teachbox_">\![close,teachbox]</a></li>
 				<li><a href="#___c">\__c</a></li>
 				<li><a href="#_!_open,communicatebox_">\![open,communicatebox]</a></li>
 				<li><a href="#_!_close,communicatebox_">\![close,communicatebox]</a></li>
-				<li><a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">\![open,inputbox,ID,表示時間,テキスト,オプション,...,]</a></li>
-				<li><a href="#_!_open,passwordinput,ID,表示時間,テキスト,オプション_">\![open,passwordinput,ID,表示時間,テキスト,オプション]</a></li>
+				<li><a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">\![open,inputbox,(ID),(display time),(text),(option),...]</a></li>
+				<li><a href="#_!_open,passwordinput,ID,表示時間,テキスト,オプション_">\![open,passwordinput,(ID),(display time),(text),(option)]</a></li>
 				<li><a href="#_!_close,inputbox,ID_">\![close,inputbox,ID]</a></li>
-				<li><a href="#_!_open,dateinput,ID,表示時間,年,月,日,オプション_">\![open,dateinput,ID,表示時間,年,月,日,オプション]</a></li>
-				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</a></li>
-				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</a></li>
-				<li><a href="#_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">\![open,ipinput,ID,表示時間,IPアドレス,オプション]</a></li>
-				<li><a href="#_!_open,configurationdialog,ダイアログID_">\![open,configurationdialog,ダイアログID]</a></li>
+				<li><a href="#_!_open,dateinput,ID,表示時間,年,月,日,オプション_">\![open,dateinput,(ID),(display time),(year),(month),(day),(option)]</a></li>
+				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">\![open,sliderinput,ID,(display time),(current value),(minimum),(maximum),(option)]</a></li>
+				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">\![open,timeinput,(ID),(display time),(hour),(minute),(second),(option)]</a></li>
+				<li><a href="#_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">\![open,ipinput,(ID),(display time),(IP address),(option)]</a></li>
+				<li><a href="#_!_open,configurationdialog,ダイアログID_">\![open,configurationdialog,(dialog ID)]</a></li>
 				<li><a href="#_!_open,ghostexplorer_">\![open,ghostexplorer]</a></li>
 				<li><a href="#_!_open,shellexplorer_">\![open,shellexplorer]</a></li>
 				<li><a href="#_!_open,balloonexplorer_">\![open,balloonexplorer]</a></li>
@@ -421,51 +421,51 @@
 				<li><a href="#_!_open,rateofusegraphballoon_">\![open,rateofusegraphballoon]</a></li>
 				<li><a href="#_!_open,rateofusegraphtotal_">\![open,rateofusegraphtotal]</a></li>
 				<li><a href="#_!_open,calendar_">\![open,calendar]</a></li>
-				<li><a href="#_!_open,help,ダイアログID_">\![open,help,ダイアログID]</a></li>
+				<li><a href="#_!_open,help,ダイアログID_">\![open,help,(dialog ID)]</a></li>
 				<li><a href="#_!_open,messenger_">\![open,messenger]</a></li>
 				<li><a href="#_!_open,readme_">\![open,readme]</a></li>
 				<li><a href="#_!_open,terms_">\![open,terms]</a></li>
-				<li><a href="#_!_open,file,ファイル名_">\![open,file,ファイル名]</a></li>
-				<li><a href="#_!_open,dialog,open,パラメータ_">\![open,dialog,open,パラメータ]</a></li>
-				<li><a href="#_!_open,dialog,save,パラメータ_">\![open,dialog,save,パラメータ]</a></li>
-				<li><a href="#_!_open,dialog,folder,パラメータ_">\![open,dialog,folder,パラメータ]</a></li>
-				<li><a href="#_!_open,dialog,color,パラメータ_">\![open,dialog,color,パラメータ]</a></li>
-				<li><a href="#_!_close,dialog,ID_">\![close,dialog,ID]</a></li>
+				<li><a href="#_!_open,file,ファイル名_">\![open,file,(file name)]</a></li>
+				<li><a href="#_!_open,dialog,open,パラメータ_">\![open,dialog,open,(parameter)]</a></li>
+				<li><a href="#_!_open,dialog,save,パラメータ_">\![open,dialog,save,(parameter)]</a></li>
+				<li><a href="#_!_open,dialog,folder,パラメータ_">\![open,dialog,folder,(parameter)]</a></li>
+				<li><a href="#_!_open,dialog,color,パラメータ_">\![open,dialog,color,(parameter)]</a></li>
+				<li><a href="#_!_close,dialog,ID_">\![close,dialog,(ID)]</a></li>
 				<li><a href="#_!_open,surfacetest_">\![open,surfacetest]</a></li>
 				<li><a href="#_!_open,aigraph_">\![open,aigraph]</a></li>
 				<li><a href="#_!_open,developer_">\![open,developer]</a></li>
 				<li><a href="#_!_open,shiorirequest_">\![open,shiorirequest]</a></li>
 			</ul>
 			<ul>
-				<li class="caption"><a href="#notes_inputbox-option">InputBoxオプション</a></li>
-				<li class="caption"><a href="#notes_inputbox-id">InputBoxのID</a></li>
-				<li class="caption"><a href="#notes_selectfile">ファイルを開く / ファイルを保存 / フォルダ選択 パラメータ</a></li>
+				<li class="caption"><a href="#notes_inputbox-option">InputBox Options</a></li>
+				<li class="caption"><a href="#notes_inputbox-id">InputBox IDs</a></li>
+				<li class="caption"><a href="#notes_selectfile">Parameters for opening files / saving files / selecting folders / selecting the color palette</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>プロパティシステム操作コマンド</h1>
+			<h1>Property System Manipulation Commands</h1>
 			<ul>
-				<li><a href="#_!_set,property,プロパティ名,値_">\![set,property,プロパティ名,値]</a></li>
-				<li><a href="#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,イベント名,プロパティ名,プロパティ名,...]</a></li>
+				<li><a href="#_!_set,property,プロパティ名,値_">\![set,property,(property name),(value)]</a></li>
+				<li><a href="#_!_get,property,イベント名,プロパティ名,プロパティ名,..._">\![get,property,(event name),(property name),(property name),...]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>未分類コマンド</h1>
+			<h1>Miscellaneous Commands</h1>
 			<ul>
-				<li><a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a></li>
-				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,URL,パラメータ]</a></li>
-				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,URL,パラメータ]</a></li>
-				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,URL,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
-				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,ファイル名,ディレクトリ名]</a></li>
-				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,ファイル名,ディレクトリ名]</a></li>
-				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID]</a></li>
-				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
-				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,feedまたはnar]</a></li>
-				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
-				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
+				<li><a href="#_!_execute,http-get,URL_">\![execute,http-get,(URL)]</a></li>
+				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,(URL),(parameter)]</a></li>
+				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,(URL),(parameter)]</a></li>
+				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,(file name),(directory name)]</a></li>
+				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,(file name),(directory name)]</a></li>
+				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),(zero position cutoff)]</a></li>
+				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,(file name)]</a></li>
+				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,(URL),(feed|nar)]</a></li>
+				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,(parameter 1),(parameter 2),...]</a></li>
+				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,(parameter 1),(parameter 2),...]</a></li>
 				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
 				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata]</a></li>
 				<li><a href="#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a></li>
@@ -473,13 +473,13 @@
 				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
 				<li><a href="#_!_enter,inductionmode_">\![enter,inductionmode]</a></li>
 				<li><a href="#_!_leave,inductionmode_">\![leave,inductionmode]</a></li>
-				<li><a href="#_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</a></li>
+				<li><a href="#_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">\![enter,selectmode,(mode(rect)),(left),(up),(right),(down)]\![enter,selectmode,(mode(rect)),(collision name)]\![enter,selectmode,(mode(rect))]</a></li>
 				<li><a href="#_!_leave,selectmode_">\![leave,selectmode]</a></li>
 				<li><a href="#_!_enter,collisionmode__!_enter,collisionmode,rect_">\![enter,collisionmode]\![enter,collisionmode,rect]</a></li>
 				<li><a href="#_!_leave,collisionmode_">\![leave,collisionmode]</a></li>
 				<li><a href="#_!_reloadsurface_">\![reloadsurface]</a></li>
 				<li><a href="#_!_reload,descript_">\![reload,descript]</a></li>
-				<li><a href="#_!_reload,descript,パラメータ_">\![reload,descript,パラメータ]</a></li>
+				<li><a href="#_!_reload,descript,パラメータ_">\![reload,descript,(parameter)]</a></li>
 				<li><a href="#_!_reload,shiori_">\![reload,shiori]</a></li>
 				<li><a href="#_!_reload,makoto_">\![reload,makoto]</a></li>
 				<li><a href="#_!_reload,shell_">\![reload,shell]</a></li>
@@ -499,13 +499,13 @@
 			<ul>
 				<li class="caption"><a href="#notes_passivemode">PassiveMode</a></li>
 				<li class="caption"><a href="#notes_inductionmode">InductionMode</a></li>
-				<li class="caption"><a href="#notes_executehttp">http get/post オプション</a></li>
+				<li class="caption"><a href="#notes_executehttp">http get/post options</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>環境変数</h1>
+			<h1>Environment Variables</h1>
 			<ul>
-				<li class="caption"><a href="#notes_environmentvariable">環境変数の表示方法</a></li>
+				<li class="caption"><a href="#notes_environmentvariable">Specification method of environment variables</a></li>
 			</ul>
 			<ul>
 				<li><a href="#_month">%month</a></li>
@@ -535,7 +535,7 @@
 				<li><a href="#_lastghostname">%lastghostname</a></li>
 				<li><a href="#_lastobjectname">%lastobjectname</a></li>
 				<li><a href="#_*2">%*</a></li>
-				<li><a href="#_property_取得内容_">%property[取得内容]</a></li>
+				<li><a href="#_property_取得内容_">%property[(property name)]</a></li>
 			</ul>
 		</section>
 	</section>
@@ -670,7 +670,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,clear,ID_">
-				<dt class="entry">\![anim,clear,ID]</dt>
+				<dt class="entry">\![anim,clear,(ID)]</dt>
 				<dd class="entry">
 					<p>Ends the animation of the specified ID number.</p>
 					<ul class="supported-baseware">
@@ -685,7 +685,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,pauseID_">
-				<dt class="entry">\![anim,pause,ID]</dt>
+				<dt class="entry">\![anim,pause,(ID)]</dt>
 				<dd class="entry">
 					<p>Pauses the animation of the specified ID number.</p>
 					<p>Effective until the surface is changed (\s[ID] is executed).</p>
@@ -701,7 +701,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,resume,ID_">
-				<dt class="entry">\![anim,resume,ID]</dt>
+				<dt class="entry">\![anim,resume,(ID)]</dt>
 				<dd class="entry">
 					<p>Resumes an animation paused by the above command.</p>
 					<ul class="supported-baseware">
@@ -716,7 +716,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,offset,ID,x座標,y座標_">
-				<dt class="entry">\![anim,offset,ID,(x coordinate),(y coordinate)]</dt>
+				<dt class="entry">\![anim,offset,(ID),(x coordinate),(y coordinate)]</dt>
 				<dd class="entry">
 					<p>Moves the surface animation of the specified ID number the same distance as the entered coordinates.<br>It is also possible to move dressups.</p>
 					<p>Effective until the surface is changed (\s[ID] is executed).</p>
@@ -732,23 +732,23 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,add,overlay,ID_">
-				<dt class="entry">\![anim,add,overlay,ID]</dt>
+				<dt class="entry">\![anim,add,overlay,(ID)]</dt>
 				<dd class="entry">
 					<p>Overlays the current surface with the surface of the specified ID number.</p>
 					<dl>
-						<dt>\![anim,add,overlay,ID]</dt>
+						<dt>\![anim,add,overlay,(ID)]</dt>
 						<dd>Overlays the current surface with the surface of the specified ID number.</dd>
-						<dt>\![anim,add,overlayfast,ID]</dt>
+						<dt>\![anim,add,overlayfast,(ID)]</dt>
 						<dd>Clips the surface of the specified ID number to the current surface, making only pixels that overlap with the base surface visible.</dd>
-						<dt>\![anim,add,base,ID]</dt>
+						<dt>\![anim,add,base,(ID)]</dt>
 						<dd>Changes the current surface to the surface with the specified ID number.</dd>
-						<dt>\![anim,add,move,x,y]</dt>
+						<dt>\![anim,add,move,(x),(y)]</dt>
 						<dd>Moves the current surface and displays it at the entered coordinates.</dd>
-						<dt>\![anim,add,overlay,ID,x,y]</dt>
+						<dt>\![anim,add,overlay,(ID),(x),(y)]</dt>
 						<dd>Moves the surface of the specified ID number to the entered coordinates and overlays it with the current surface.</dd>
-						<dt>\![anim,add,overlay,ID,x,y,display time,ID,x,y,display time,ID,x,y,display time...]</dt>
+						<dt>\![anim,add,overlay,(ID),(x),(y),(display time),(ID),(x),(y),(display time),(ID),(x),(y),(display time),...]</dt>
 						<dd>Animates the surface displayed on top of the base surface. (Time is in milliseconds.)</dd>
-						<dt>\![anim,add,overlay,ID,x,y,display time,ID,x,y,display time,ID,x,y,display time,animation timing]</dt>
+						<dt>\![anim,add,overlay,(ID),(x),(y),(display time),(ID),(x),(y),(display time),(ID),(x),(y),(display time),(animation timing)]</dt>
 						<dd>"Animation timing" can be set to either runonce or always.</dd>
 					</dl>
 					<ul class="supported-baseware">
@@ -766,7 +766,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">
-				<dt class="entry">\![anim,add,text,x,y,(width),(height),(string),(display time),r,g,b,(font size),(character identifier)]</dt>
+				<dt class="entry">\![anim,add,text,(x),(y),(width),(height),(string),(display time),(r),(g),(b),(font size),(character identifier)]</dt>
 				<dd class="entry">
 					<p>Displays text on top of the surface.<br>Arguments after the string are optional.</p>
 					<ul class="supported-baseware">
@@ -775,7 +775,7 @@
 				</dd>
 			</dl>
 			<dl id="___w_animation,ID_">
-				<dt class="entry">\__w[animation,ID]</dt>
+				<dt class="entry">\__w[animation,(ID)]</dt>
 				<dd class="entry">
 					<p>Waits for an already running animation of the specified ID number to end to display dialogue.</p>
 					<ul class="supported-baseware">
@@ -1071,7 +1071,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,position,x,y,スコープID_">
-				<dt class="entry">\![set,position,x,y,(character ID)]</dt>
+				<dt class="entry">\![set,position,(x),(y),(character ID)]</dt>
 				<dd class="entry">
 					<p>Fixes the specified character to the entered x and y coordinates. (The character will no longer be movable by dragging.)</p>
 					<ul class="supported-baseware">
@@ -1240,7 +1240,7 @@
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y_">
-				<dt class="entry">\_b[(filepath),x,y]</dt>
+				<dt class="entry">\_b[(filepath),(x),(y)]</dt>
 				<dd class="entry">
 					<p>Attaches an image in the balloon at the specified XY coordinates. The image will be displayed below any text.
 					<br>The top left pixel of the image will define the color that becomes transparent.
@@ -1263,7 +1263,7 @@
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,opaque_">
-				<dt class="entry">\_b[(filepath),x,y,opaque]</dt>
+				<dt class="entry">\_b[(filepath),(x),(y),opaque]</dt>
 				<dd class="entry">
 					<p>Attaches an image in the balloon at the specified XY coordinates. The image will be displayed below any text.<br>The image will be displayed without using the top left pixel as the transparency color.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
 					<ul class="supported-baseware">
@@ -1278,7 +1278,7 @@
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,x,y,オプション,オプション..._">
-				<dt class="entry">\_b[(filepath),x,y,(option),(option)...]</dt>
+				<dt class="entry">\_b[(filepath),(x),(y),(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Attaches an image in the balloon at the specified XY coordinates.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※Refer to the section below</a></p>
 					<p>Options</p>
@@ -1338,7 +1338,7 @@
 				</dd>
 			</dl>
 			<dl id="__b_ファイル名,inline,オプション,オプション..._">
-				<dt class="entry">\_b[(filepath),inline,(option),(option)...]</dt>
+				<dt class="entry">\_b[(filepath),inline,(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Attaches an image in the balloon, treating it as a letter in a line of text.<br>[(folder of the ghost executing the command)]/ghost/master is the default folder.<br>※Instead of a file name, base64 encoding or exe/dll resources can be specified as images. <a href="#notes_imageresource">※下Refer to the section below</a></p>
 					<p>Options</p>
@@ -1479,7 +1479,7 @@
 			<dl id="_c_line,数値_">
 				<dt class="entry">\c[line,(value)]</dt>
 				<dd class="entry">
-					<p>Deletes the specified number of lines, starting from the caret position in the balloon of the character that is currently the focus.<br>Dialogue broken with \_l[x,y], \n, \n[half], or \n[(percent)] is treated as a "line." However, excluding that which is broken using \_l[x,y], double breaks with no text in between, such as in \n\n, will not be considered individual lines.<br>Evaluation is based on the order of the script, in the same way as \c[char,(value)].</p>
+					<p>Deletes the specified number of lines, starting from the caret position in the balloon of the character that is currently the focus.<br>Dialogue broken with \_l[(x),(y)], \n, \n[half], or \n[(percent)] is treated as a "line." However, excluding that which is broken using \_l[(x),(y)], double breaks with no text in between, such as in \n\n, will not be considered individual lines.<br>Evaluation is based on the order of the script, in the same way as \c[char,(value)].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1507,7 +1507,7 @@
 				</dd>
 			</dl>
 			<dl id="__l_x,y_">
-				<dt class="entry">\_l[x,y]</dt>
+				<dt class="entry">\_l[(x),(y)]</dt>
 				<dd class="entry">
 					<p>Moves the caret position on the side that is currently the focus to the XY coordinates. Regarding X and Y, the definition methods below can be used.</p>
 					<dl>
@@ -1583,7 +1583,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonoffset,x,y_">
-				<dt class="entry">\![set,balloonoffset,x,y]</dt>
+				<dt class="entry">\![set,balloonoffset,(x),(y)]</dt>
 				<dd class="entry">
 					<p>Changes the balloon's offset value to XY coordinates. The coordinates set by the user dragging the balloon are added to this value to decide the final balloon display coordinates.<br>If the value is specified normally, descript.txt's default offset will be ignored, but if @ is added at the start, X and Y will become relative coordinates using the offset values in descript.txt and surfaces.txt as the origin.</p>
 					<ul class="supported-baseware">
@@ -1599,7 +1599,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,balloonalign,ID_">
-				<dt class="entry">\![set,balloonalign,ID]</dt>
+				<dt class="entry">\![set,balloonalign,(ID)]</dt>
 				<dd class="entry">
 					<p>Switches the balloon to the display direction of one of the following IDs. The definition methods below can be used for the ID.<br>Using the positions below as the base, <a href="descript_shell.html#_1_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in the shell's descript.txt</a> and <a href="descript_shell_surfaces.html#_2_sakura.balloon.offsetx,座標">the values of balloon.offsetx and balloon.offsety in surfaces.txt</a> are reflected. The initial value is none.</p>
 					<p>Effective until the ghost is closed.</p>
@@ -2148,7 +2148,7 @@
 				</dd>
 			</dl>
 			<dl id="__w_時間_">
-				<dt class="entry">\_w[time]</dt>
+				<dt class="entry">\_w[(time)]</dt>
 				<dd class="entry">
 					<p>Allows for more exact control over wait time. [time]ms.</p>
 					<ul class="supported-baseware">
@@ -2164,7 +2164,7 @@
 				</dd>
 			</dl>
 			<dl id="___w_時間_">
-				<dt class="entry">\__w[time]</dt>
+				<dt class="entry">\__w[(time)]</dt>
 				<dd class="entry">
 					<p>Waits until the specified amount of milliseconds pass since either the last wait command or since \x.<br>\__w[clear] can be used to reset the time.</p>
 					<ul class="supported-baseware">
@@ -2292,7 +2292,7 @@
 				</dd>
 			</dl>
 			<dl id="__s_ID1,ID2,ID3..._">
-				<dt class="entry">\_s[ID1,ID2,ID3...]</dt>
+				<dt class="entry">\_s[(ID1),(ID2),(ID3),...]</dt>
 				<dd class="entry">
 					<p>Starts a synchronize section with the characters of the specified ID numbers.</p>
 					<ul class="supported-baseware">
@@ -2323,7 +2323,7 @@
 		<section class="category">
 			<h1>Choice Commands</h1>
 			<dl id="_q_タイトル,ID_">
-				<dt class="entry">\q[(Title),(ID)]</dt>
+				<dt class="entry">\q[(title),(ID)]</dt>
 				<dd class="entry">
 					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run. (In SSP only, <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a> will run prior to OnChoiceSelect.)<br>The ID is stored in reference0.</p>
 					<ul class="supported-baseware">
@@ -2340,7 +2340,7 @@
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,OnID,r0,r1,..._">
-				<dt class="entry">\q[(Title),On(ID),(r0),(r1),...]</dt>
+				<dt class="entry">\q[(title),On(ID),(r0),(r1),...]</dt>
 				<dd class="entry">
 					<p>Show a menu choice.<br>If the ID starts with "On" as shown above, clicking it will start the SHIORI event On(ID) (with the name as written in the ID).<br>The arguments following the ID are stored in reference0, reference1, etc, in the order they are written.</p>
 					<ul class="supported-baseware">
@@ -2357,7 +2357,7 @@
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID1,ID2,ID3..._">
-				<dt class="entry">\q[(Title),(ID1),(ID2),(ID3),...]</dt>
+				<dt class="entry">\q[(title),(ID1),(ID2),(ID3),...]</dt>
 				<dd class="entry">
 					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a> will be run.<br>ID* is stored in reference*.</p>
 					<ul class="supported-baseware">
@@ -2366,7 +2366,7 @@
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,ID,r2,r3..._">
-				<dt class="entry">\q[(Title),(ID),(r<em>2</em>),(r<em>3</em>),...]</dt>
+				<dt class="entry">\q[(title),(ID),(r<em>2</em>),(r<em>3</em>),...]</dt>
 				<dd class="entry">
 					<p>Show a menu choice.<br>After selecting, the SHIORI event <a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelect<em>Ex</em></a> will be run.<br>r* is stored in reference* and sent to OnChoiceSelectEx.<br>OnChoiceSelect also occurs after OnChoiceSelectEx, but references after reference1 are ignored, so it is pointless to write it this way.</p>
 					<ul class="supported-baseware">
@@ -2381,7 +2381,7 @@
 				</dd>
 			</dl>
 			<dl id="_q_タイトル,script:実行内容_">
-				<dt class="entry">\q[(Title),script:(script to execute)]</dt>
+				<dt class="entry">\q[(title),script:(script to execute)]</dt>
 				<dd class="entry">
 					<p>Show a menu choice.<br>After selecting, the contents after "script:" are executed as a SakuraScript.</p>
 					<ul class="supported-baseware">
@@ -2396,7 +2396,7 @@
 				</dd>
 			</dl>
 			<dl id="_q_ID__タイトル_または_q_*ID__タイトル_">
-				<dt class="entry">\q[(ID)][(Title)] or \q*[(ID)][(Title)]</dt>
+				<dt class="entry">\q[(ID)][(title)] or \q*[(ID)][(title)]</dt>
 				<dd class="entry">
 					<p>[Old specification] Show a menu choice. * is a serial number.<br>After selection, the SHIORI event for the ID number will be started.<br>Unlike the above, the choices will be separated by a new line.</p>
 				</dd>
@@ -3136,7 +3136,7 @@
 					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (名前指定2.5)</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> (Name specification from 2.5)</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
@@ -3434,7 +3434,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,trayballoon,オプション,オプション,オプション..._">
-				<dt class="entry">\![set,trayballoon,(option),(option),(option)...]</dt>
+				<dt class="entry">\![set,trayballoon,(option),(option),(option),...]</dt>
 				<dd class="entry">
 					<p>Displays a system tray notification balloon.<br>OnTrayBalloonClick is run when the balloon is closed by being clicked on.<br>OnTrayBalloonTimeout is run when the balloon is closed with the close button or from timing out.<br>The specifiable options are as below.</p>
 					<dl>
@@ -3602,7 +3602,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_timerraiseplugin,時間,繰り返すか否か,プラグインのIDまたは名前,イベント名,r0,r1,r2..._">
-				<dt class="entry">\![timerraiseplugin,(time),(repetition),(plugin IG or plugin name),(event name),(r0),(r1),(r2),...]</dt>
+				<dt class="entry">\![timerraiseplugin,(time),(repetition),(plugin ID or plugin name),(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
 					<p>Sends the specified event to the plugin with a wait time specified (milliseconds).<br>If repetition is specified as 0, the event will be run every time the specified amount of time passes, and if any values that are 1 or higher are specified, the event will only be run once.<br>Multiple events with different names can be specified separately, but if an event of the same name is raised more than once, the first setting will be overwritten.<br>Can be canceled by running SakuraScript specifying the same event with a wait time of 0.</p>
 					<ul class="supported-baseware">
@@ -3619,7 +3619,7 @@
 			<dl id="_!_notify,イベント名,r0,r1,r2..._">
 				<dt class="entry">\![notify,(event name),(r0),(r1),(r2),...]</dt>
 				<dd class="entry">
-					<p>Runs a Notify event.<br>Values from the third argument onwards are references.<br>Functionally almost the same as \![raise,(event name),r0,r1,r2...], differing only in that any values from this notification event will not be output by SSP.</p>
+					<p>Runs a Notify event.<br>Values from the third argument onwards are references.<br>Functionally almost the same as \![raise,(event name),(r0),(r1),(r2),...], differing only in that any values from this notification event will not be output by SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3705,7 +3705,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,play,ファイル名_">
-				<dt class="entry">\![sound,play,(file name),<a href="#notes_sound">(option)</a>...]</dt>
+				<dt class="entry">\![sound,play,(file name),<a href="#notes_sound">(option)</a>,...]</dt>
 				<dd class="entry">
 					<p>Functionally the same as \_v. However, <a href="#notes_sound">options</a> may be specified.</p>
 					<ul class="supported-baseware">
@@ -3720,7 +3720,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,load,ファイル名_">
-				<dt class="entry">\![sound,load,(file name),<a href="#notes_sound">(option)</a>...]</dt>
+				<dt class="entry">\![sound,load,(file name),<a href="#notes_sound">(option)</a>,...]</dt>
 				<dd class="entry">
 					<p>Load the file in advance so that it can be played immediately when requested. The specification method is the same as play.</p>
 					<ul class="supported-baseware">
@@ -3731,7 +3731,7 @@
 			<dl id="_!_sound,cdplay,トラックNo._">
 				<dt class="entry">\![sound,cdplay,(Track No.)]</dt>
 				<dd class="entry">
-					<p>SSP plays a music CD. The command is ignored if there is no music CD.<br>\_V is ignored, even while playing a track. Specifying another track with \![sound,cdplay,(Track No.)] during playback will also be ignored. Instead, \![sound,stop] should be used to stop the playback once before specifying the next track.</p>
+					<p>SSP plays a music CD. The command is ignored if there is no music CD.<br>\_V is ignored, even while playing a track. Specifying another track with \![sound,cdplay,(track no.)] during playback will also be ignored. Instead, \![sound,stop] should be used to stop the playback once before specifying the next track.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -3819,7 +3819,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_sound,option_">
-				<dt class="entry">\![sound,option,(file name),<a href="#notes_sound">(option)</a>...]</dt>
+				<dt class="entry">\![sound,option,(file name),<a href="#notes_sound">(option)</a>,...]</dt>
 				<dd class="entry">
 					<p>Changes <a href="#notes_sound">options</a> during playback.</p>
 					<ul class="supported-baseware">
@@ -4009,7 +4009,7 @@
 						<br>Moreover, measures were taken to prevent any other interaction with the ghost during input, however, SSP does not have these.
 					</p>
 					<p>
-						<br>The ID is stored in OnUserInput, which runs on confirmation, but if the ID starts with On, the event will run instead. ※Refer to <a href="#notes_inputbox-id">ID</a>.
+						<br>The ID is stored in OnUserInput, which runs on confirmation, but if the ID starts with On, the event beginning with On will run instead. ※Refer to <a href="#notes_inputbox-id">ID</a>.
 						<br>The display time is specified in milliseconds. If omitted or 0 or lower is specified, there will be no time limit.
 						<br>The text argument is the text that will be displayed as soon as the InputBox is opened (incompatible with CROW) and can be omitted.
 						<br>In SSP only, <a href="#notes_inputbox-option">※options</a> may be specified using --option=○○. Omission is also possible.
@@ -4434,7 +4434,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_close,dialog,ID_">
-				<dt class="entry">\![close,dialog,ID]</dt>
+				<dt class="entry">\![close,dialog,(ID)]</dt>
 				<dd class="entry">
 					<p>Closes the dialog with the specified event ID. Specifying __SYSTEM_ALL_INPUT__ will close all dialogs.</p>
 					<ul class="supported-baseware">
@@ -4547,7 +4547,7 @@
 				</p>
 			</section>
 			<section class="caption" id="notes_selectfile">
-				<h1>Parameters for Opening files / Saving files / Selecting folders / Selecting the color palette</h1>
+				<h1>Parameters for opening files / saving files / selecting folders / selecting the color palette</h1>
 				<dl>
 					<dt>--title=Text</dt>
 					<dd>The text to be displayed in the dialog title bar.<br>When omitted, if the open dialog it will display Open File, if the save dialog then Save File, if the folder dialog then it will be blank, if the color dialog then Colour.
@@ -4629,13 +4629,13 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html] Gets the UKADOC SakuraScript page (this page), and saves list_sakura_script.html in the var folder.</code></p>
+							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]Gets the UKADOC SakuraScript page (this page), and saves list_sakura_script.html in the var folder.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,パラメータ_">
-				<dt class="entry">\![execute,http-get,URL,(parameter)]</dt>
+				<dt class="entry">\![execute,http-get,(URL),(parameter)]</dt>
 				<dd class="entry">
 					<p>Executes an http get request with a parameter and stores the response in a file.<br>The file is stored in the  [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
@@ -4659,22 +4659,22 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures.</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "Test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-get,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-get,URL,(option),(option),(option),...]</dt>
+				<dt class="entry">\![execute,http-get,(URL),(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
+					<p>Executes an http get request with <a href="#notes_executehttp">※options</a> and stores the response in a file.<br>The file is stored in the [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[(folder of the ghost executing the command)]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=SSP Ukagaka,--file=searchresultsfile.txt,--nodescript,--param=p=SSP Ukagaka,--timeout=5]Saves the Yahoo search result pages for "SSP Ukagaka" to [(folder of the ghost executing the command)]/ghost/master/var/searchresultsfile.txt When executing the request, the online marker and download status number will not be shown. If there is no response after 5 seconds, it will time out.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4682,14 +4682,14 @@
 			<dl id="_!_execute,http-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,http-post,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをファイルに格納する。<br>ファイルは[(folder of the ghost executing the command)]/ghost/master/varフォルダに格納される。</p>
+					<p>Executes an http post request with <a href="#notes_executehttp">※options</a> and stores the response in a file.<br>The file is stored in the [(folder of the ghost executing the command)]/ghost/master/var folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "Test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures. If there is no response after 5 seconds, it will time out.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4697,7 +4697,7 @@
 			<dl id="_!_execute,rss-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,rss-get,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<p>Executes an http get request with <a href="#notes_executehttp">※options</a>, parses the response as an RSS/Atom feed, and sends a notification of the parsing result in the form of an event.<br />The parameter specifications are the same as http-post.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4706,7 +4706,7 @@
 			<dl id="_!_execute,rss-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,rss-post,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<p>Executes an http post request with <a href="#notes_executehttp">※options</a>, parses the response as an RSS/Atom feed, and sends a notification of the parsing result in the form of an event.<br />The parameter specifications are the same as http-post.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4715,17 +4715,17 @@
 			<dl id="_!_execute,extractarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,extractarchive,(file name),(directory name)]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの解凍をする。指定はフルパスで行うこと(相対パス指定不可)。
-					<br />処理が完了するまでスクリプトの実行は停止する。
-					<br />セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
-					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>Extracts a zip file. Full paths must be specified (relative paths cannot be specified).
+					<br />Execution of other scripts is paused until the process has finished.
+					<br />For security reasons, extractions are limited to destinations within folders under the control of SSP (ghost folder, balloon folder, etc. other locations specified in the Folder Preferences).
+					<br />Furthermore, as this restriction may be tightened occasionally, it is also recommended to keep the file within the folder in which the ghost's own data is located.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,extractarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+							<p><code>\![execute,extractarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/testfolder]If SSP is installed in the C drive, an extracted copy of test.zip called testfolder will be created.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4733,36 +4733,36 @@
 			<dl id="_!_execute,compressarchive,ファイル名,ディレクトリ名_">
 				<dt class="entry">\![execute,compressarchive,(file name),(directory name)]</dt>
 				<dd class="entry">
-					<p>ZIPファイルの圧縮をする。指定はフルパスで行うこと(相対パス指定不可)。
-					<br />処理が完了するまでスクリプトの実行は停止する。
-					<br />セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
-					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>Compresses a file into a zip file. Full paths must be specified (relative paths cannot be specified).
+					<br />Execution of other scripts is paused until the process has finished.
+					<br />For security reasons, compressions are limited to destinations within folders under the control of SSP (ghost folder, balloon folder, etc. other locations specified in the Folder Preferences).
+					<br />Furthermore, as this restriction may be tightened from time to time, it is also recommended to keep the file within the folder in which the ghost's own data is located.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+							<p><code>\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]If SSP is installed in the C drive, a compressed copy of the Emily/Phase4.5 folder named test.zip will be created in the ghost folder.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">
-				<dt class="entry">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),ゼロ位置切り出し]</dt>
+				<dt class="entry">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),(zero position cutoff)]</dt>
 				<dd class="entry">
-					<p>合成済みのサーフェス画像を指定したディレクトリに出力する。
-					<br />イベントIDを指定しない場合は、処理が完了するまでスクリプトの実行は停止する。
-					<br />スコープID : \sタグに指定するものと同じIDを指定する。この指定で、着せ替え状態などのスコープに依存する処理が変わる。
-					<br />サーフェスリスト : <a href="descript_shell_surfaces.html#caption_surfacebraceID">surface ID指定</a>と同じ書式、または以下を指定する。
-					<br />__system_surface_all__ : シェルとして有効なサーフェスをすべて出力する
-					<br />__system_surface_defined__ : surfaces.txt内で定義されたサーフェスのみすべて出力する
-					<br />参考 SakuraScriptの大かっこパラメータ内でカンマを指定したい場合は " " で囲むと良い。
-					<br />prefix : (省略可) 出力したいファイルの頭につける文字列。省略した場合はsurface。
-					<br />イベントID : (省略可) これを指定するとSakuraScriptの続きを実行しながら出力を続け、終わり次第指定したイベントを発生させる。Reference0には出力に成功したファイル数が入る。
-					<br />ゼロ位置切り出し : 1を指定すると、アニメーション定義に関わらず必ず0,0からダンプし、負の座標部分を無視する。
-					<br />セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
-					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<p>Dumps a combined surface image to the specified directory.
+					<br />Unless an event ID is specified, execution of other scripts will be paused until the process has finished.
+					<br />Scope ID: specify the same ID as the \s tag. With this specification, processes that depend on the character, such as the dress-up state, are changed.
+					<br />Surface list: written using the same methods as <a href="descript_shell_surfaces.html#caption_surfacebraceID">surface ID specifications</a>, or with the below specifications.
+					<br />__system_surface_all__: dump all surfaces that are valid as a shell.
+					<br />__system_surface_defined__: dump only surfaces specified in surfaces.txt.
+					<br />[Note] Use " " to escape a comma in SakuraScript's square bracket parameters.
+					<br />Prefix: (can be omitted) the string that will be added as a prefix to the file name. When omitted, "surface."
+					<br />Event ID: (can be omitted) If specified, SakuraScript will continue to be executed as surfaces are being dumped, and when finished the specified event will be called. Reference0 contains the number of files successfully dumped.
+					<br />Zero position cutoff: When 1 is specified, dumping will start from 0,0 regardless of animation definitions, and parts with negative coordinates will be ignored.
+					<br />For security reasons, output is limited to destinations within folders under the control of SSP (ghost folder, balloon folder, etc. other locations specified in the Folder Preferences).
+					<br />Furthermore, as this restriction may be tightened from time to time, it is also recommended to keep within the folder in which the ghost's own data is located.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.5.98]</li>
 					</ul>
@@ -4771,14 +4771,14 @@
 			<dl id="_!_execute,install,path,ファイル名_">
 				<dt class="entry">\![execute,install,path,(file name)]</dt>
 				<dd class="entry">
-					<p>指定したnarファイルをインストールする。指定はフルパスで行うこと(相対パス指定不可)。</p>
+					<p>Installs the specified nar file. Full paths must be specified (relative paths cannot be specified).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,install,path,C:/SSP/emily4.nar]C:/SSPにあるemily4.narをインストールする。</code></p>
+							<p><code>\![execute,install,path,C:/SSP/emily4.nar]Installs the emily4.nar file in C:/SSP.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4786,14 +4786,14 @@
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
 				<dt class="entry">\![execute,install,url,(URL),(feed|nar)]</dt>
 				<dd class="entry">
-					<p>指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br>feed、narは省略可能。<br>ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。</p>
+					<p>Installs the nar file or registers the RSSFeed from the specified URL.<br>feed and nar can be omitted.<br>Automatically downloads the file to a folder for temporary files, and conducts the installation process as is appropriate.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]Emily/Phase4.5のnarをダウンロードしてきてインストールする。</code></p>
+							<p><code>\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]The nar file for Emily/Phase4.5 will be downloaded and installed.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4801,25 +4801,25 @@
 			<dl id="_!_execute,ping,パラメータ1,パラメータ2,..._">
 				<dt class="entry">\![execute,ping,(parameter 1),(parameter 2),...]</dt>
 				<dd class="entry">
-					<p>指定したホストにpingを打つ。IPv6対応。<br>パラメータは以下の通り。</p>
+					<p>Pings the specified host. Made for IPv6.<br>The parameters are as below.</p>
 					<ul class="description">
-						<li>--host=ホスト名またはIP</li>
-						<li>--ttl=TTL……(パケット生存期間(何回ルーティングできるか) 標準255</li>
-						<li>--count=送信回数……標準3</li>
-						<li>--size=送信サイズ……(--data有効の時は--size無効) 標準32</li>
-						<li>--timeout=タイムアウト(ms)……標準5000</li>
-						<li>--df=(true|false)……パケット分割不能true 分割可false 標準false</li>
-						<li>--data=文字列……ICMP Echoのデータフィールドに埋め込む文字列(UTF-8に変換される)</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
+						<li>--host=(host name or IP)</li>
+						<li>--ttl=(TTL)……[packet time to live [how many times routing is possible]] standard-255</li>
+						<li>--count=(transmission count)……standard-3</li>
+						<li>--size=(transmission size)……[--size does not apply when --data is valid] standard-32</li>
+						<li>--timeout=(timeout in milliseconds)……standard-5000</li>
+						<li>--df=(true|false)……packet splitting disabled-true, packet splitting enabled-false, standard-false</li>
+						<li>--data=(string)……[the string to embed into the ICMP Echo data field [will be converted to UTF-8]]</li>
+						<li>--event=(event or identifier)……[if a string starting with On is specified, that event will happen [instead of the event written later]]</li>
 					</ul>
-					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a>・<a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a>を参照。</p>
+					<p>Refer to <a href="list_shiori_event.html#OnPingProgress">OnPingProgress</a> and <a href="list_shiori_event.html#OnPingProgress">OnPingComplete</a> for functioning regarding events during or after the process.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,ping,--host=ssp.shillest.net,--event=pingテスト]ばぐとら研究所にデフォルト設定でpingを打つ。</code></p>
+							<p><code>\![execute,ping,--host=ssp.shillest.net,--event=pingtest]Pings the BUGTRAQ Lab with default settings.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4827,19 +4827,19 @@
 			<dl id="_!_execute,nslookup,パラメータ1,パラメータ2,..._">
 				<dt class="entry">\![execute,nslookup,(parameter 1),(parameter 2),...]</dt>
 				<dd class="entry">
-					<p>ホスト名を指定するとIP、IPを指定するとホスト名を調べる。IPv6対応。<br>パラメータは以下の通り。</p>
+					<p>Searches for the IP when the host name is entered and searches for the host name when the IP is entered. Made for IPv6.<br>The parameters are as below.</p>
 					<ul class="description">
-						<li>--host=ホスト名またはIP</li>
-						<li>--event=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
+						<li>--host=(host name or IP)</li>
+						<li>--event=(event or identifier)……[if a string starting with On is specified, that event will happen [instead of the event written later]]</li>
 					</ul>
-					<p>動作中・動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a>・<a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a>を参照。</p>
+					<p>Refer to <a href="list_shiori_event.html#OnNSLookupComplete">OnNSLookupComplete</a> and <a href="list_shiori_event.html#OnNSLookupFailure">OnNSLookupFailure</a> for functioning regarding events during or after the process.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,nslookup,--host=ssp.shillest.net,--event=nslookupテスト]ばぐとら研究所のホスト名指定でIPを調べる。調べた内容は成功時に通知されるOnNSLookupCompleteのReference3に入っている。</code></p>
+							<p><code>\![execute,nslookup,--host=ssp.shillest.net,--event=nslookuptest]Searches for the IP of the BUGTRAQ Lab by using the host name. If the lookup succeeds, OnNSLookupComplete will be notified and the IP will be stored in Reference3.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4847,7 +4847,7 @@
 			<dl id="_!_execute,createnar">
 				<dt class="entry">\![execute,createnar]</dt>
 				<dd class="entry">
-					<p>スクリプトを実行したゴースト自身のNARを作る。</p>
+					<p>Creates a nar file of the ghost that executed the command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
 					</ul>
@@ -4856,7 +4856,7 @@
 			<dl id="_!_execute,createupdatedata">
 				<dt class="entry">\![execute,createupdatedata]</dt>
 				<dd class="entry">
-					<p>スクリプトを実行したゴースト自身の更新定義ファイル(updates2.dau/updates.txt)を作る。</p>
+					<p>Creates update definition files (updates2.dau/updates.txt) for the ghost that executed the command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
 					</ul>
@@ -4865,7 +4865,7 @@
 			<dl id="_!_execute,emptyrecyclebin">
 				<dt class="entry">\![execute,emptyrecyclebin]</dt>
 				<dd class="entry">
-					<p>ゴミ箱を空にする。実行後すぐには空にならず、削除処理が完了した時点で<a href="./list_shiori_event.html#OnRecycleBinEmpty">OnRecycleBinEmpty</a>が通知される。</p>
+					<p>Empties the recycle bin. It will not be emptied immediately after execution, and <a href="./list_shiori_event.html#OnRecycleBinEmpty">OnRecycleBinEmpty</a> will be notified only after the deletion process is complete.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
 					</ul>
@@ -4874,8 +4874,8 @@
 			<dl id="_!_enter,passivemode_">
 				<dt class="entry">\![enter,passivemode]</dt>
 				<dd class="entry">
-					<p><a href="#notes_passivemode">※PassiveMode</a>を開始する。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Starts <a href="#notes_passivemode">※PassiveMode</a>.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4884,7 +4884,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>さくらスクリプトの再生後、パッシブモードになる。\![enter,passivemode]ここから、最小化も終了も出来ない。</code></p>
+							<p><code>After the SakuraScript is played, passive mode will start.\![enter,passivemode]From here, minimizing and closing the ghost are no longer possible.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4892,7 +4892,7 @@
 			<dl id="_!_leave,passivemode_">
 				<dt class="entry">\![leave,passivemode]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4901,7 +4901,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![leave,passivemode]パッシブモード解除。</code></p>
+							<p><code>\![leave,passivemode]Passive mode has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4909,8 +4909,8 @@
 			<dl id="_!_enter,inductionmode_">
 				<dt class="entry">\![enter,inductionmode]</dt>
 				<dd class="entry">
-					<p><a href="#notes_inductionmode">※InductionMode</a>を開始する。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Starts <a href="#notes_inductionmode">※InductionMode</a>.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4918,7 +4918,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,inductionmode]インダクションモード開始。</code></p>
+							<p><code>\![enter,inductionmode]Induction mode has started.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4926,7 +4926,7 @@
 			<dl id="_!_leave,inductionmode_">
 				<dt class="entry">\![leave,inductionmode]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4934,24 +4934,24 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![leave,inductionmode]インダクションモード解除。</code></p>
+							<p><code>\![leave,inductionmode]Induction mode has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_!_enter,selectmode,モード(rect),左,上,右,下__!_enter,selectmode,モード(rect),当たり判定名__!_enter,selectmode,モード(rect)_">
-				<dt class="entry">\![enter,selectmode,モード(rect),左,上,右,下]\![enter,selectmode,モード(rect),当たり判定名]\![enter,selectmode,モード(rect)]</dt>
+				<dt class="entry">\![enter,selectmode,(mode(rect)),(left),(up),(right),(down)]\![enter,selectmode,(mode(rect)),(collision name)]\![enter,selectmode,(mode(rect))]</dt>
 				<dd class="entry">
-					<p>選択モードを開始する。実行すると透明部分も表示され、マウスをドラッグすると領域を指定することができる。<br>実行後、<a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a>が実行される。その他OnSelectModeMouseUp、OnSelectModeMouseDown、OnSelectModeCancel、OnSelectModeCompleteも参照。<br>現在のところ、矩形選択モードを示す "rect" のみを指定可能。また、無指定の場合はrectを指定したのと同じ扱いになる。<br>モード以降に選択の初期位置を指定可能。座標か、同じ大きさに設定したい当たり判定名を入れる。<br>
-					このモード中、サーフェスは再描画されない。さくらスクリプト(\s[ID])や着せ替えを行っても描画は変化しないが、反映はされており、\![leave,selectmode]時に描画される。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Starts select mode. When executed, transparent areas are also displayed, and the area can be specified by dragging with the mouse.<br>After execution, <a href="list_shiori_event.html#OnSelectModeBegin">OnSelectModeBegin</a> is run. Refer also to OnSelectModeMouseUp, OnSelectModeMouseDown, OnSelectModeCancel, OnSelectModeComplete.<br>Currently, only the rectangular selection mode "rect" can be specified. Additionally, when nothing is specified, it will function the same as rect.<br>The initial position of the selection can be specified in the arguments after the mode specification. Either coordinates or the name of the collision to be set to the same size can be input.<br>
+					While in this mode, surfaces will not be redrawn. The effects of SakuraScript (\s[ID]) and dress-ups will not be displayed, but are reflected internally, and will be shown when \![leave,selectmode] is run.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,selectmode,rect,head]セレクトモードを開始する。判定名headの範囲が初期選択されている。</code></p>
+							<p><code>\![enter,selectmode,rect,head]Select mode has started. The range of the collision "head" has been preselected.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4959,14 +4959,14 @@
 			<dl id="_!_leave,selectmode_">
 				<dt class="entry">\![leave,selectmode]</dt>
 				<dd class="entry">
-					<p>上記を解除する。実行後<a href="list_shiori_event.html#OnSelectModeComplete">OnSelectModeComplete</a>が実行される。<br>当たり判定領域が無効(未選択)などの場合は<a href="list_shiori_event.html#OnSelectModeCancel">OnSelectModeCancel</a>になる。</p>
+					<p>Cancels the above command. After being executed, <a href="list_shiori_event.html#OnSelectModeComplete">OnSelectModeComplete</a> is run.<br>If collision areas are invalid (unselected), <a href="list_shiori_event.html#OnSelectModeCancel">OnSelectModeCancel</a> will be run instead.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![leave,selectmode]セレクトモードを解除する。</code></p>
+							<p><code>\![leave,selectmode]Select mode has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4974,15 +4974,15 @@
 			<dl id="_!_enter,collisionmode__!_enter,collisionmode,rect_">
 				<dt class="entry">\![enter,collisionmode]\![enter,collisionmode,rect]</dt>
 				<dd class="entry">
-					<p>開発用パレットの「当たり判定を表示」と同じことをする。3つめにrectと指定すると、当たり判定名を表示せず領域の枠のみ表示する。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>Functions the same as the "Display Hit Rect." option in the Developer Palette. If rect is specified as the third argument, the collision areas will be shown without the names specified in surfaces.txt.</p>
+					<p>Effective until the ghost is closed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,collisionmode]コリジョンモードを開始する。</code></p>
+							<p><code>\![enter,collisionmode]Collision mode has started.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4990,14 +4990,14 @@
 			<dl id="_!_leave,collisionmode_">
 				<dt class="entry">\![leave,collisionmode]</dt>
 				<dd class="entry">
-					<p>上記を解除する。</p>
+					<p>Cancels the above command.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![enter,collisionmode]コリジョンモードを開始する。\![leave,collisionmode]ここで解除する。</code></p>
+							<p><code>\![enter,collisionmode]Collision mode has started.\![leave,collisionmode]Collision mode has been canceled.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5005,7 +5005,7 @@
 			<dl id="_!_reloadsurface_">
 				<dt class="entry">\![reloadsurface]</dt>
 				<dd class="entry">
-					<p>サーフェスをリロードする。</p>
+					<p>Reloads the surface.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5013,7 +5013,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reloadsurface]シェルをリロードする。</code></p>
+							<p><code>\![reloadsurface]The surface has been reloaded.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5021,14 +5021,14 @@
 			<dl id="_!_reload,descript_">
 				<dt class="entry">\![reload,descript]</dt>
 				<dd class="entry">
-					<p>全descript.txtをリロードする。</p>
+					<p>Reloads all descript.txts.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,descript]全descript.txtをリロードする。</code></p>
+							<p><code>\![reload,descript]All descript.txts have been reloaded.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5036,14 +5036,14 @@
 			<dl id="_!_reload,descript,パラメータ_">
 				<dt class="entry">\![reload,descript,(parameter)]</dt>
 				<dd class="entry">
-					<p>指定したdescript.txtをリロードする。<br>半角スペース区切りで複数指定可能。<br>ghost shell balloon headline plugin</p>
+					<p>Reloads the specified descript.txt.<br>Multiple descript.txts may be specified with a half-width space as a delimiter.<br>ghost shell balloon headline plugin</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,descript,shell balloon]シェルとバルーンのdescript.txtをリロードする。</code></p>
+							<p><code>\![reload,descript,shell balloon]The descript.txt of the shell and balloon have been reloaded.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5051,14 +5051,14 @@
 			<dl id="_!_reload,shiori_">
 				<dt class="entry">\![reload,shiori]</dt>
 				<dd class="entry">
-					<p>shiori.dllをリロードする。</p>
+					<p>Reloads shiori.dll.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,shiori]shioriをリロードする。結果として辞書ファイルを全て読みなおす。起動中に書き換えた辞書ファイルの内容を適用する場合などに用いる。</code></p>
+							<p><code>\![reload,shiori]shiori.dll has been reloaded. As a result, all dictionary files will be read again. Used to apply changes such as rewriting contents of dictionary files while the ghost is still running.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5066,14 +5066,14 @@
 			<dl id="_!_reload,makoto_">
 				<dt class="entry">\![reload,makoto]</dt>
 				<dd class="entry">
-					<p>makoto.dllをリロードする。</p>
+					<p>Reloads makoto.dll.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,makoto]makotoをリロードする。</code></p>
+							<p><code>\![reload,makoto]makoto.dll has been reloaded.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5081,14 +5081,14 @@
 			<dl id="_!_reload,shell_">
 				<dt class="entry">\![reload,shell]</dt>
 				<dd class="entry">
-					<p>シェルをリロードする。</p>
+					<p>Reloads the shell.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,shell]シェルをリロードする。</code></p>
+							<p><code>\![reload,shell]The shell has been reloaded.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5096,14 +5096,14 @@
 			<dl id="_!_reload,ghost_">
 				<dt class="entry">\![reload,ghost]</dt>
 				<dd class="entry">
-					<p>ゴースト全体をリロードする。</p>
+					<p>Reloads the entire ghost.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![reload,ghost]リロードする。自分自身へのゴースト切り替えと、SHIORIイベントが発生しないことを除けばほぼ同じ。</code></p>
+							<p><code>\![reload,ghost]The ghost has been reloaded. Almost the same as changing to the same ghost, except in that a SHIORI event is not called.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5111,8 +5111,8 @@
 			<dl id="_!_unload,shiori_">
 				<dt class="entry">\![unload,shiori]</dt>
 				<dd class="entry">
-					<p>shiori.dllをアンロード（読み込み解除）し、そのままを維持する。
-					<br />unload後は適切なタイミングでloadを実行すること。unloadしたままでは何も反応できなくなる。</p>
+					<p>Unloads shiori.dll and remains in the unloaded state.
+					<br />load should be run after unload at an appropriate time. While in an unloaded state, nothing will respond.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
 					</ul>
@@ -5121,7 +5121,7 @@
 			<dl id="_!_unload,makoto_">
 				<dt class="entry">\![unload,makoto]</dt>
 				<dd class="entry">
-					<p>makoto.dllをアンロード（読み込み解除）し、そのままを維持する。</p>
+					<p>Unloads makoto.dll and remains in the unloaded state.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
 					</ul>
@@ -5130,7 +5130,7 @@
 			<dl id="_!_load,shiori_">
 				<dt class="entry">\![load,shiori]</dt>
 				<dd class="entry">
-					<p>unload実行後にshiori.dllを読み込む。</p>
+					<p>Loads shiori.dll after unload has been run.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
 					</ul>
@@ -5139,7 +5139,7 @@
 			<dl id="_!_load,makoto_">
 				<dt class="entry">\![load,makoto]</dt>
 				<dd class="entry">
-					<p>unload実行後にmakoto.dllを読み込む。</p>
+					<p>Loads makoto.dll after unload has been run.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.58</li>
 					</ul>
@@ -5148,7 +5148,7 @@
 			<dl id="_!_set,shioridebugmode_">
 				<dt class="entry">\![set,shioridebugmode,(true/false)]</dt>
 				<dd class="entry">
-					<p>開発者用パレットのSHIORIデバッグモードをON/OFFする。</p>
+					<p>Turns the SHIORI debug mode from the Developer Palette on or off.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.78</li>
 					</ul>
@@ -5157,17 +5157,17 @@
 			<dl id="_!_create,shortcut_">
 				<dt class="entry">\![create,shortcut]</dt>
 				<dd class="entry">
-					<p>起動中のゴーストの起動用ショートカットをデスクトップに作成する。
-                    <br />\![create,shortcut,startup] とすると代わりにスタートアップフォルダに作成する。</p>
+					<p>Creates a shortcut on the desktop for the currently running ghost.
+                    <br />\![create,shortcut,startup] will create the shortcut in the startup folder.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.86</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="__u_0x0000_">
-				<dt class="entry">\_u[0x0000]</dt>
+				<dt class="entry">\_u[(0x0000)]</dt>
 				<dd class="entry">
-					<p>UCS-2 コード埋め込み。</p>
+					<p>Embeds UCS-2 code.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5176,15 +5176,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_u[0x22EE]縦三点リーダを表示。\_u[8942]最初のさくらスクリプトの10進数表記。10進数の場合は0xをつけない。</code></p>
+							<p><code>\_u[0x22EE]Displays a vertical ellipsis.\_u[8942]The base 10 version of the first SakuraScript command. When expressed in base 10, the 0x should not be added.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="__m_0x00_">
-				<dt class="entry">\_m[0x00]</dt>
+				<dt class="entry">\_m[(0x00)]</dt>
 				<dd class="entry">
-					<p>ASCII コード埋め込み。</p>
+					<p>Embeds ASCII code.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5193,15 +5193,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\_m[0x41]半角大文字Aを表示。</code></p>
+							<p><code>\_m[0x41]Displays a capital half-width letter A.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_&amp;_ID_">
-				<dt class="entry">\&amp;[ID]</dt>
+				<dt class="entry">\&amp;[(ID)]</dt>
 				<dd class="entry">
-					<p>識別子による実体参照。</p>
+					<p>Embeds a character using entity reference as an identifier (ID).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5210,15 +5210,15 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\&amp;[amp]半角アンパサンドを表示。実体参照の書式、&amp;ID;のID部分を記入する。</code></p>
+							<p><code>\&amp;[amp]Displays a half-width ampersand. The entity reference is the ID part of &amp;ID;.</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<dl id="_m_umsg,wparam,lparam_">
-				<dt class="entry">\m[umsg,wparam,lparam]</dt>
+				<dt class="entry">\m[(umsg),(wparam),(lparam)]</dt>
 				<dd class="entry">
-					<p>SSTP専用。<br>Wndヘッダにより予めセットされたウインドウハンドルに対し<br>postmessage(hwnd,umsg,wparam,lparam) を実行する。</p>
+					<p>Specific to SSTP.<br>Executes postmessage(hwnd,umsg,wparam,lparam) for the window handle preset by Wnd header.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5226,103 +5226,103 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>SSTP経由でこのスクリプトを再生すると、再生したゴーストが終了する。\m[WM_CLOSE,0,0]</code></p>
+							<p><code>When this script is run through SSTP, the ghost that ran it will be closed.\m[WM_CLOSE,0,0]</code></p>
 						</section>
 					</div>
 				</dd>
 			</dl>
 			<section class="caption" id="notes_passivemode">
 				<h1>PassiveMode</h1>
-				<p>パッシブモードの時、以下の制限が発生する。<br>ユーザの操作の制限で、さくらスクリプトで実行した場合は可能。</p>
+				<p>During Passive Mode, the below restrictions apply.<br>Only the user's actions are restricted, and execution by SakuraScript is still possible.</p>
 				<ul>
-					<li>オーナードローメニューの選択可能な項目が制限される。</li>
-					<li>メールチェックしない。</li>
-					<li>ヘッドラインセンスしない。</li>
-					<li>オートチェンジしない。</li>
-					<li>スクリプトブレークしない。</li>
-					<li>選択肢がタイムアウトしない。</li>
-					<li>吹き出しが時間経過で消えない。</li>
-					<li>ファイルが DnD されても無視。</li>
-					<li>narダブルクリックのインストールも無視（SSPではインストールはされるがゴーストにイベントが来ない）。</li>
-					<li>OnSurfaceRestoreが来ない。</li>
-					<li>cantalk は常に false。(OnSecondChange および OnMinuteChange 自体は来る)</li>
-					<li>ゴーストを切り替えられない。</li>
-					<li>(Materiaのみ：)コミュニケートボックスは閉じられ、また開かない。</li>
-					<li>最小化できない。</li>
-					<li>終了できない。</li>
-					<li>ネットワーク更新できない。</li>
-					<li>アンインストールできない。</li>
+					<li>The selectable options in the user menu are limited.</li>
+					<li>Mail cannot be checked.</li>
+					<li>Headline sense events will not be run.</li>
+					<li>Automatic changes will not happen.</li>
+					<li>Script breaks will not happen.</li>
+					<li>Choices will not time out.</li>
+					<li>Balloons will not close due to time passing.</li>
+					<li>Files will be ignored even if drag-and-dropped.</li>
+					<li>nar file double-click installation will also be ignored (in SSP, the ghost will be installed but no event will happen).</li>
+					<li>OnSurfaceRestore will not happen.</li>
+					<li>cantalk will always be false (OnSecondChange and OnMinuteChange themselves will happen).</li>
+					<li>The ghost cannot be changed.</li>
+					<li>(Materia only:) The communicate box will be closed and cannot be opened again.</li>
+					<li>The ghost cannot be minimized.</li>
+					<li>The ghost cannot be closed.</li>
+					<li>Network updates cannot be performed.</li>
+					<li>The ghost cannot be uninstalled.</li>
 				</ul>
 			</section>
 			<section class="caption" id="notes_inductionmode">
 				<h1>InductionMode</h1>
-				<p>パッシブモードから以下の制限を解除したもの。</p>
+				<p>Similar to passive mode, but removes the below restrictions.</p>
 				<ul>
-					<li>タイムアウト発生。</li>
-					<li>最小化可能。</li>
-					<li>終了可能。</li>
-					<li>(Materiaのみ：)コミュニケートボックス可能。</li>
+					<li>Timing out is possible.</li>
+					<li>Minimizing is possible.</li>
+					<li>Closing the ghost is possible.</li>
+					<li>(Materia only:) The communicate box can be used.</li>
 				</ul>
 			</section>
 			<section class="caption" id="notes_executehttp">
-				<h1>http get/post オプション</h1>
+				<h1>http get/post options</h1>
 				<dl>
-					<dt>--async=識別ID</dt>
-					<dd>処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。<br>
-					RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
-					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
+					<dt>--async=identification ID</dt>
+					<dd>Notifies the SHIORI events <a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a> or <a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a> when the process has finished.<br>
+					<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a> or <a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a> are notified if the RSS commands are used.
+					<br>When an ID starting with On is specified, a SHIORI Event formatted as [Specified ID] or [Specified ID]Failure will run instead.<br>Ex: When --async=OnExample succeeds, OnExample will run, and when it fails, OnExampleFailure will run.</dd>
 					
-					<dt>--cookie=クッキーデータ</dt>
-					<dd>Cookieのデータ、必要に応じてOnExecuteHTTPCompleteのReference5の値をそのまま指定する。</dd>
+					<dt>--cookie=cookie data</dt>
+					<dd>When necessary, the value of Reference5 of OnExecuteHTTPComplete should be specified as is.</dd>
 					
 					<dt>--content-type=(multipart/form-data|application/x-www-form-urlencoded)</dt>
-					<dd>http-post限定。param指定のパラメータをどのような形式で送るか指定する。<br>
-					何も指定しなければapplication/x-www-form-urlencoded。<br>
-					指定形式によってはparamの書き方に制約があるので注意。</dd>
+					<dd>Limited to http-post. Specifies what format the param argument parameters should be sent in.<br>
+					Defaults to application/x-www-form-urlencoded if nothing is specified.<br>
+					It is important to keep in mind that there may be limitations on how to write the param arguments depending on the format of content-type.</dd>
 					
-					<dt>--file=ファイル名</dt>
-					<dd>取得するデータの保存名を指定。[(folder of the ghost executing the command)]/ghost/master/var/ファイル名に保存される。</dd>
+					<dt>--file=(file name)</dt>
+					<dd>Specifies the name of the file to save the acquired data to. Saved to [(folder of the ghost executing the command)]/ghost/master/var/(file name).</dd>
 					
 					<dt>--nodescript</dt>
-					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
+					<dd>Turns off the display of the online marker and download status.</dd>
 					
-					<dt>--nofile=パラメータ(文字コード) [2.5.77]</dt>
-					<dd>一時ファイルを作成せずメモリ上に取得したデータを展開し、イベントのReference3に格納する。
-					<br />パラメータ指定は取得したデータを解釈すべき文字コード。指定しない場合はUTF-8とみなす。
-					<br />取得可能なサイズは128KBまで。</dd>
+					<dt>--nofile=(parameter)[character encoding] [2.5.77]</dt>
+					<dd>Opens the acquired data on memory and stores it in Reference3 of the event without creating a temporary　file.
+					<br />Specifies the character encoding to use when interpreting the acquired data. Defaults to UTF-8 when not specified.
+					<br />The upper size limit for acquisition is 128KB.</dd>
 					
-					<dt>--param=パラメータ</dt>
-					<dd>get/postのパラメータを指定する。複数回の指定が可能。<br>
-					multipart/form-dataの時：<br>
-                    　--param=フィールド名=データ の形式を必要な数だけ繰り返す。<br>
-					　例： --param=message_body=データ <br>
-					application/x-www-form-urlencodedの時：<br>
-                    　--param=フィールド名=データ の形式を必要な数だけ繰り返した時は、すべて&amp;でつないでサーバに送る。<br>
-                    　それ以外の時はすべてを改行文字(CRLF)でつないでサーバに送る(過去互換処理)。<br>
-					他のcontent-type指定の時：<br>
-					　複数定義するとすべてを改行文字(CRLF)でつないでサーバに送る。</dd>
+					<dt>--param=(parameter)</dt>
+					<dd>Specifies the parameter for get/post. Can be specified multiple times.<br>
+					When multipart/form-data:<br>
+                    　The format --param=(field name)=(data) should be repeated only as many times as necessary.<br>
+					　Ex: --param=message_body=(data) <br>
+					When application/x-www-form-urlencoded:<br>
+                    　When the format --param=(field name)=(data) is repeated only as many times as necessary, everything will be sent to the server connected with &amp;.<br>
+                    　Otherwise, everything will be sent to the server connected with the line break character (CRLF) for backward compatibility processing.<br>
+					When specifying other content-type:<br>
+					　If specified multiple times, everything will be sent to the server connected with the line break character (CRLF).</dd>
 					
-					<dt>--param-charset=文字コード</dt>
-					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
+					<dt>--param-charset=(character encoding)</dt>
+					<dd>Specifies the character encoding. Shift_JIS, EUC-JP, UTF-8 and others can be specified. The default is UTF-8.</dd>
 					
-					<dt>--timeout=秒数</dt>
-					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
+					<dt>--timeout=(number of seconds)</dt>
+					<dd>Specifies the length of time to wait for a response (※not the length of time needed for a download). The upper limit is 300 seconds.<br>If there is no response within the specified number of seconds, the SHIORI event OnExecuteHTTPFailure will be notified, and Reference4 will contain "timeout."</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>環境変数</h1>
+			<h1>Environment Variables</h1>
 			<section class="caption" id="notes_environmentvariable">
-				<h1>環境変数の指定方法</h1>
-				<p>SSPがバルーンへ描画する時、環境変数を置き換える。<br>「単語-」で始まるものは候補が複数あり、ランダムで選択される。</p>
+				<h1>Specification method of environment variables</h1>
+				<p>When SSP writes to a balloon, it replaces the environment variables.<br>Those starting with "Word-" have multiple output candidates and are chosen randomly.</p>
 			</section>
 			<dl id="environmentvariable">
-				<dt class="entry">環境変数の記述例</dt>
+				<dt class="entry">An example using environment variables</dt>
 				<dd class="entry">
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>%username、ちょっと聞いてよ。%msが%mpにある%mhで%meを食べてたら%mtを思いついたんだって。</code></p>
+							<p><code>%username, listen to this. %ms said they came up with %mt while eating %me at the %mh in %mp.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5330,7 +5330,7 @@
 			<dl id="_month">
 				<dt class="entry">%month</dt>
 				<dd class="entry">
-					<p>現在月。</p>
+					<p>Current month.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5341,7 +5341,7 @@
 			<dl id="_day">
 				<dt class="entry">%day</dt>
 				<dd class="entry">
-					<p>現在日。</p>
+					<p>Current day.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5352,7 +5352,7 @@
 			<dl id="_hour">
 				<dt class="entry">%hour</dt>
 				<dd class="entry">
-					<p>現在時。</p>
+					<p>Current hour.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5363,7 +5363,7 @@
 			<dl id="_minute">
 				<dt class="entry">%minute</dt>
 				<dd class="entry">
-					<p>現在分。</p>
+					<p>Current minute.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5374,7 +5374,7 @@
 			<dl id="_second">
 				<dt class="entry">%second</dt>
 				<dd class="entry">
-					<p>現在秒。</p>
+					<p>Current second.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5385,7 +5385,7 @@
 			<dl id="_username">
 				<dt class="entry">%username</dt>
 				<dd class="entry">
-					<p>ユーザー名。</p>
+					<p>Username.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5396,7 +5396,7 @@
 			<dl id="_selfname">
 				<dt class="entry">%selfname</dt>
 				<dd class="entry">
-					<p>本体側の名前。</p>
+					<p>The main character's name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5407,7 +5407,7 @@
 			<dl id="_selfname2">
 				<dt class="entry">%selfname2</dt>
 				<dd class="entry">
-					<p>本体側の名前その2。</p>
+					<p>The main character's alternate name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5416,7 +5416,7 @@
 			<dl id="_keroname">
 				<dt class="entry">%keroname</dt>
 				<dd class="entry">
-					<p>相方側の名前。</p>
+					<p>The side character's name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5427,7 +5427,7 @@
 			<dl id="_screenwidth">
 				<dt class="entry">%screenwidth</dt>
 				<dd class="entry">
-					<p>ディスプレイスクリーンの幅。</p>
+					<p>The width of the screen display.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5438,7 +5438,7 @@
 			<dl id="_screenheight">
 				<dt class="entry">%screenheight</dt>
 				<dd class="entry">
-					<p>ディスプレイスクリーンの高さ。</p>
+					<p>The height of the screen display.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5449,7 +5449,7 @@
 			<dl id="_exh">
 				<dt class="entry">%exh</dt>
 				<dd class="entry">
-					<p>OSの連続起動時間。</p>
+					<p>The continued uptime of the OS.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5460,7 +5460,7 @@
 			<dl id="_et">
 				<dt class="entry">%et</dt>
 				<dd class="entry">
-					<p>間違った連続起動時間。(単位を含む)</p>
+					<p>The incorrect continued uptime (includes incorrect unit).</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5471,7 +5471,7 @@
 			<dl id="_wronghour">
 				<dt class="entry">%wronghour</dt>
 				<dd class="entry">
-					<p>正しくない現在時間。</p>
+					<p>Incorrect current hour.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5482,7 +5482,7 @@
 			<dl id="_ms">
 				<dt class="entry">%ms</dt>
 				<dd class="entry">
-					<p>単語-人。</p>
+					<p>Word-A person.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5493,7 +5493,7 @@
 			<dl id="_mz">
 				<dt class="entry">%mz</dt>
 				<dd class="entry">
-					<p>単語-無機物。</p>
+					<p>Word-An inorganic item.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5504,7 +5504,7 @@
 			<dl id="_ml">
 				<dt class="entry">%ml</dt>
 				<dd class="entry">
-					<p>単語-集合。</p>
+					<p>Word-A group.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5515,7 +5515,7 @@
 			<dl id="_mc">
 				<dt class="entry">%mc</dt>
 				<dd class="entry">
-					<p>単語-社名。</p>
+					<p>Word-A company name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5526,7 +5526,7 @@
 			<dl id="_mh">
 				<dt class="entry">%mh</dt>
 				<dd class="entry">
-					<p>単語-店名。</p>
+					<p>Word-A shop name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5537,7 +5537,7 @@
 			<dl id="_mt">
 				<dt class="entry">%mt</dt>
 				<dd class="entry">
-					<p>単語-技。</p>
+					<p>Word-A move name.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5548,7 +5548,7 @@
 			<dl id="_me">
 				<dt class="entry">%me</dt>
 				<dd class="entry">
-					<p>単語-食物。</p>
+					<p>Word-A food.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5559,7 +5559,7 @@
 			<dl id="_mp">
 				<dt class="entry">%mp</dt>
 				<dd class="entry">
-					<p>単語-地名。</p>
+					<p>Word-A location.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5570,7 +5570,7 @@
 			<dl id="_m?">
 				<dt class="entry">%m?</dt>
 				<dd class="entry">
-					<p>単語-非限定。</p>
+					<p>Word-A random concept.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5581,7 +5581,7 @@
 			<dl id="_dms">
 				<dt class="entry">%dms</dt>
 				<dd class="entry">
-					<p>単語-「～に～する～」。</p>
+					<p>Word-A noun phrase.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5592,7 +5592,7 @@
 			<dl id="_lastghostname">
 				<dt class="entry">%lastghostname</dt>
 				<dd class="entry">
-					<p>インストール時用。最後にイベントを行ったゴースト名。</p>
+					<p>Returns the name of the last ghost to run an event. For when a ghost is installed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5602,7 +5602,7 @@
 			<dl id="_lastobjectname">
 				<dt class="entry">%lastobjectname</dt>
 				<dd class="entry">
-					<p>インストール時用。最後にイベントを行ったオブジェクト名。</p>
+					<p>Returns the name of the last object to run an event. For when a ghost is installed.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5612,16 +5612,16 @@
 			<dl id="_*2">
 				<dt class="entry">%*</dt>
 				<dd class="entry">
-					<p>\![*]と同じ機能。</p>
+					<p>Functions the same as \![*].</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_property_取得内容_">
-				<dt class="entry">%property[プロパティ名]</dt>
+				<dt class="entry">%property[(property name)]</dt>
 				<dd class="entry">
-					<p>指定したプロパティシステムの値。<br>※プロパティシステムの詳細は<a href="list_propertysystem.html">プロパティシステム</a>のページ参照。</p>
+					<p>Returns the value of the specified property system.<br>※For details on the property system, refer to the <a href="list_propertysystem.html">Property System</a> page.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
