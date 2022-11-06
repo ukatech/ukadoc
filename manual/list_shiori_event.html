@@ -565,7 +565,7 @@
 				<p>
 					For each SHIORI Event that has a Reference, a list of References is provided.
 					<br>If the number part of the Reference is "*", it means that it is an indefinite Reference.
-					<br>In other words, the Reference has an indefinite number because it deals with <em>different numbers depending on the operating environment</em>, and that the indefinite number of References are all <em>all of the same form</em>.
+					<br>In other words, the Reference has an indefinite number because it deals with <em>different numbers depending on the operating environment</em>, and that the indefinite number of References are <em>all of the same form</em>.
 					<br>In this case, the principle that references are given serial numbers starting from 0 remains the same. So for example, if the list of references has only *, there will be a sequence of references in the same form (as many as are appropriate for the environment) from 0 to an undefined number. If the list contains references up to and including 2, and the next line is Reference*, then the list will contain references in the same format from 3 to an undefined number.
 				</p>
 			</section>
@@ -633,7 +633,7 @@
 			<dl id="OnCloseAll">
 				<dt class="entry">OnCloseAll</dt>
 				<dd class="entry">
-					<p>Occurs when SSP itself is closed.<br>Also Occurs when "Quit" is selected in the right-click menu, when "Close" is selected if only one ghost is open, or when SSP closes due to the OS shutting down.</p>
+					<p>Occurs when SSP itself is closed.<br>Also occurs when "Quit" is selected in the right-click menu, when "Close" is selected if only one ghost is open, or when SSP closes due to the OS shutting down.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
@@ -1002,7 +1002,7 @@
 			<dl id="OnDestroy">
 				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
-					<p>Occurs when instructed to close.<em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when instructed to close. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>"reload" when reloaded, nothing otherwise (Reference0 will either contain an empty string or not exist at all).</dd>
@@ -1028,7 +1028,7 @@
 			<dl id="OnSysSuspend">
 				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
-					<p>Occurs when the system enters sleep or hibernation.<em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the system enters sleep or hibernation. <em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1066,11 +1066,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>入力ボックスイベント</h1>
+			<h1>Input Box Events</h1>
 			<dl id="OnTeachStart">
 				<dt class="entry">OnTeachStart</dt>
 				<dd class="entry">
-					<p>TeachBoxがオープンした際に発生。</p>
+					<p>Occurs when the TeachBox is opened.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1080,12 +1080,12 @@
 			<dl id="OnTeachInputCancel">
 				<dt class="entry">OnTeachInputCancel</dt>
 				<dd class="entry">
-					<p>TeachBoxが閉じられた際に発生。</p>
+					<p>Occurs when the TeachBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
+						<dd>(Empty string. A vacant spot to match the number of the Reference that returns "close" with OnUserInputCancel.)</dd>
 						<dt>Reference1</dt>
-						<dd>閉じられた場合、cancel。</dd>
+						<dd>When closed, "cancel."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1095,10 +1095,10 @@
 			<dl id="OnTeach">
 				<dt class="entry">OnTeach</dt>
 				<dd class="entry">
-					<p>TeachBoxからの入力があった際に発生。</p>
+					<p>Occurs when something is input into the TeachBox.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>入力された言葉の履歴。Reference0が1回目～最新の入力が末尾(n回目の入力がReference[n-1])</dd>
+						<dd>The history of input words. Reference0 holds the first, and the latest input goes into the final Reference (the nth input will be Reference(n - 1).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1108,14 +1108,14 @@
 			<dl id="OnCommunicate">
 				<dt class="entry">OnCommunicate</dt>
 				<dd class="entry">
-					<p>CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
+					<p>Occurs when a script is received from the CommunicateBox or from another ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Boxからはuser、ゴーストからはゴーストの本体側名。</dd>
+						<dd>"user" if from the Box, the main character name of the ghost that sent the script if from a ghost.</dd>
 						<dt>Reference1</dt>
-						<dd>スクリプトの内容。</dd>
+						<dd>The script contents.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報。</dd>
+						<dd>Extra information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1126,12 +1126,12 @@
 			<dl id="OnCommunicateInputCancel">
 				<dt class="entry">OnCommunicateInputCancel</dt>
 				<dd class="entry">
-					<p>CommunicateBoxが閉じられた際に発生。</p>
+					<p>Occurs when the CommunicateBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
+						<dd>(Empty string. A vacant spot to match the number of the Reference that returns "close" with OnUserInputCancel.)</dd>
 						<dt>Reference1</dt>
-						<dd>閉じられた場合、cancel。</dd>
+						<dd>When closed, "cancel."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1141,17 +1141,17 @@
 			<dl id="OnUserInput">
 				<dt class="entry">OnUserInput</dt>
 				<dd class="entry">
-					<p>InputBoxに入力され決定された際に発生。</p>
-					<p><a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>も参照のこと。</p>
+					<p>Occurs when something is input and confirmed in the InputBox.</p>
+					<p>Refer to <a href="list_sakura_script.html#notes_inputbox-id">InputBox IDs</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>InputBoxのID。</dd>
+						<dd>The InputBox ID.</dd>
 						<dt>Reference1</dt>
-						<dd>入力された内容。</dd>
+						<dd>The input content.</dd>
 						<dt>Reference2</dt>
-						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
-						<dt>Reference3～</dt>
-						<dd>--reference=で指定した追加情報</dd>
+						<dd>The supplementary information. (Only sliderinput's minimum and maximum; others will be left blank.)</dd>
+						<dt>Reference3~</dt>
+						<dd>The additional information specified with --reference=.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1163,16 +1163,16 @@
 			<dl id="OnUserInputCancel">
 				<dt class="entry">OnUserInputCancel</dt>
 				<dd class="entry">
-					<p>InputBoxが閉じられた際に発生。</p>
+					<p>Occurs when the InputBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>入力のイベントID。</dd>
+						<dd>The input event ID.</dd>
 						<dt>Reference1</dt>
-						<dd>タイムアウトした場合、timeout。閉じられた場合、close。</dd>
+						<dd>"timeout" if the box timed out, "close" if it was closed.</dd>
 						<dt>Reference2</dt>
-						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
+						<dd>The supplementary information. (Only sliderinput's minimum and maximum; others will be left blank.)</dd>
 						<dt>Reference3～</dt>
-						<dd>--reference=で指定した追加情報</dd>
+						<dd>The additional information specified with --reference=.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1182,12 +1182,12 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p>ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<p>Occurs when the box is opened. If a list of text separated by the byte value 1 is returned to this event, the autocomplete function will active in the InputBox.<br />(WinMe/2000 onwards)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
+						<dd>The type of box. Either inputbox, teachbox, or communicatebox.</dd>
 						<dt>Reference1</dt>
-						<dd>inputboxの場合のみ、入力完了時に起きるイベント名／識別子。</dd>
+						<dd>The identifier or name of the event that was run after input. Only applies to the InputBox.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1196,18 +1196,18 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ダイアログボックスイベント</h1>
+			<h1>Dialog Box Events</h1>
 			<dl id="OnSystemDialog">
 				<dt class="entry">OnSystemDialog</dt>
 				<dd class="entry">
-					<p>ファイル関連のダイアログで保存/OKが押された際に発生。</p>
+					<p>Occurs when Save/OK buttons are pressed for dialog related to files.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>open・save・folder・colorのいずれか。</dd>
+						<dd>Either open, save, folder, or color.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
+						<dd>The event ID.</dd>
 						<dt>Reference2</dt>
-						<dd>ファイルのパスまたはカンマ区切りのRGB値。</dd>
+						<dd>Either the filepath or the RGB value separated by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1217,12 +1217,12 @@
 			<dl id="OnSystemDialogCancel">
 				<dt class="entry">OnSystemDialogCancel</dt>
 				<dd class="entry">
-					<p>ファイル関連のダイアログでキャンセルが押された際に発生。</p>
+					<p>Occurs when the Cancel button is pressed for dialog related to files.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>open・save・folder・colorのいずれか。</dd>
+						<dd>Either open, save, folder, or color.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
+						<dd>The event ID.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1232,34 +1232,35 @@
 			<dl id="OnConfigurationDialogHelp">
 				<dt class="entry">OnConfigurationDialogHelp</dt>
 				<dd class="entry">
-					<p>設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
+					<p>Occurs when a page is clicked from the Preferences dialog's help button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>
-							<p>ダイアログID。種類とページとの対応は以下。</p>
+							<p>The dialog ID. The correspondence between the type and the page is as below.</p>
 							<ul>
-								<li>setup …… 一般</li>
-								<li>ghost …… ゴースト(1)</li>
-								<li>ghost2 …… ゴースト(2)</li>
-								<li>folder …… フォルダ</li>
-								<li>display …… 表示</li>
-								<li>talk …… 喋り/バルーン</li>
-								<li>network …… 接続(1)</li>
-								<li>network2 …… 接続(2)</li>
+								<li>setup …… general</li>
+								<li>ghost …… ghost (1)</li>
+								<li>ghost2 …… ghost (2)</li>
+								<li>folder …… folder</li>
+								<li>display …… display</li>
+								<li>dictation …… voice synthesis/recognition</li>
+								<li>talk …… talk/balloon</li>
+								<li>network …… connection (1)</li>
+								<li>network2 …… connection (2)</li>
 								<li>biff …… POP</li>
-								<li>application …… 外部アプリ</li>
+								<li>application …… external applications</li>
 								<li>messenger …… IM</li>
 								<li>ipmessenger …… IPMessenger</li>
-								<li>international …… 国際化</li>
-								<li>developer …… 開発/その他</li>
+								<li>international …… international compatibility</li>
+								<li>developer …… development/other</li>
 							</ul>
 						</dd>
 						<dt>Reference1</dt>
-						<dd>ダイアログタイトル。</dd>
+						<dd>The dialog title.</dd>
 						<dt>Reference2</dt>
-						<dd>項目タイプ:項目名。</dd>
+						<dd>Page type: page name.</dd>
 						<dt>Reference3</dt>
-						<dd>項目内容テキスト。</dd>
+						<dd>The page contents text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1269,8 +1270,8 @@
 			<dl id="OnGhostTermsAccept">
 				<dt class="entry">OnGhostTermsAccept</dt>
 				<dd class="entry">
-					<p>利用条件ダイアログで受諾が押された際に発生。
-					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
+					<p>Occurs when the ghost's terms of use are agreed to.
+					<br />No event occurs if the terms of use are closed using the upper right button.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
@@ -1279,8 +1280,8 @@
 			<dl id="OnGhostTermsDecline">
 				<dt class="entry">OnGhostTermsDecline</dt>
 				<dd class="entry">
-					<p>利用条件ダイアログで拒否が押された際に発生。
-					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
+					<p>Occurs when the ghost's terms of use are declined.
+					<br />No event occurs if the terms of use are closed using the upper right button.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
@@ -1288,23 +1289,23 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>時間イベント</h1>
+			<h1>Time Events</h1>
 			<dl id="OnSecondChange">
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
-					<p>1秒ごとに発生。</p>
-					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
+					<p>Occurs every second.</p>
+					<p>When talking is disabled, the event is notified with NOTIFY, and Reference3 is 0.<strong class="warning">The returned script will be ignored.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>トーク再生可能なときに1、それ以外は0。</dd>
+						<dd>1 if talking is enabled, 0 otherwise.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1316,19 +1317,19 @@
 			<dl id="OnMinuteChange">
 				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
-					<p>1分ごとに発生。</p>
-					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
+					<p>Occurs every minute.</p>
+					<p>When talking is disabled, the event is notified with NOTIFY, and Reference3 is 0.<strong class="warning">The returned script will be ignored.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>トーク再生可能なときに1、それ以外は0。</dd>
+						<dd>1 if talking is enabled, 0 otherwise.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1340,19 +1341,19 @@
 			<dl id="OnHourTimeSignal">
 				<dt class="entry">OnHourTimeSignal</dt>
 				<dd class="entry">
-					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
-					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
+					<p>The time signal event. Occurs at the start of every hour (around x:00:00).</p>
+					<p>When talking is disabled, this event waits until it is enabled. Due to that, <strong class="warning">this event will occasionally be notified at inaccurate times.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>常に1。(トーク再生可能になるまで待つため)</dd>
+						<dd>Always 1 (exists to wait until talking is enabled).</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1361,7 +1362,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>消滅イベント</h1>
+			<h1>Uninstall Events</h1>
 			<dl id="OnVanishSelecting">
 				<dt class="entry">OnVanishSelecting</dt>
 				<dd class="entry">
@@ -1456,7 +1457,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択肢イベント</h1>
+			<h1>Choice Events</h1>
 			<dl id="OnChoiceSelect">
 				<dt class="entry">OnChoiceSelect</dt>
 				<dd class="entry">
@@ -1576,7 +1577,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サーフェスイベント</h1>
+			<h1>Surface Events</h1>
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
@@ -1638,7 +1639,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>マウスイベント</h1>
+			<h1>Mouse Events</h1>
 			<dl id="OnMouseClick">
 				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
@@ -2153,7 +2154,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>バルーンイベント</h1>
+			<h1>Balloon Events</h1>
 			<dl id="OnBalloonBreak">
 				<dt class="entry">OnBalloonBreak</dt>
 				<dd class="entry">
@@ -2201,7 +2202,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>トレイバルーンイベント</h1>
+			<h1>Tray Balloon Events</h1>
 			<dl id="OnTrayBalloonClick">
 				<dt class="entry">OnTrayBalloonClick</dt>
 				<dd class="entry">
@@ -2234,7 +2235,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>インストールイベント</h1>
+			<h1>Install Events</h1>
 			<dl id="OnInstallBegin">
 				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
@@ -2375,7 +2376,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>ファイルドロップイベント</h1>
+			<h1>File Drop Events</h1>
 			<dl id="OnFileDropping">
 				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
@@ -2549,7 +2550,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>URLドロップイベント</h1>
+			<h1>URL Drop Events</h1>
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
@@ -2635,7 +2636,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ネットワーク更新イベント</h1>
+			<h1>Network Update Events</h1>
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
@@ -3154,7 +3155,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>時計合わせイベント</h1>
+			<h1>Clock Fixing Events</h1>
 			<dl id="OnSNTPBegin">
 				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
@@ -3275,7 +3276,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>メールチェックイベント</h1>
+			<h1>Mail Checking Events</h1>
 			<dl id="OnBIFFBegin">
 				<dt class="entry">OnBIFFBegin</dt>
 				<dd class="entry">
@@ -3359,7 +3360,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ヘッドライン/RSSセンスイベント</h1>
+			<h1>Headline/RSS Sense Events</h1>
 			<dl id="OnHeadlinesenseBegin">
 				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
@@ -3497,7 +3498,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>カレンダーイベント</h1>
+			<h1>Calendar Events</h1>
 			<dl id="OnSchedule5MinutesToGo">
 				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
@@ -3644,7 +3645,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>SSTPイベント</h1>
+			<h1>SSTP Events</h1>
 			<dl id="OnSSTPBreak">
 				<dt class="entry">OnSSTPBreak</dt>
 				<dd class="entry">
@@ -3678,7 +3679,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>その他通信イベント</h1>
+			<h1>Other Transmission Events</h1>
 			<dl id="OnExecuteHTTPComplete">
 				<dt class="entry">OnExecuteHTTPComplete</dt>
 				<dd class="entry">
@@ -3868,7 +3869,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>イベント送信失敗イベント</h1>
+			<h1>Event Transmission Failure Events</h1>
 				<dl id="OnRaisePluginFailure">
 				<dt class="entry">OnRaisePluginFailure</dt>
 				<dd class="entry">
@@ -3947,7 +3948,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>見切れ・重なりイベント</h1>
+			<h1>Offscreen, Overlap Events</h1>
 			<dl id="OnOverlap">
 				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
@@ -4010,7 +4011,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>OS状態イベント</h1>
+			<h1>Network Status Events</h1>
 			<dl id="OnNetworkHeavy">
 				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
@@ -4056,6 +4057,9 @@
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>OS Status Events</h1>
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
@@ -4448,7 +4452,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択領域モードイベント</h1>
+			<h1>Selection Area Events</h1>
 			<dl id="OnSelectModeBegin">
 				<dt class="entry">OnSelectModeBegin</dt>
 				<dd class="entry">
@@ -4532,7 +4536,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>音声認識・合成イベント</h1>
+			<h1>Voice Recognition, Synthesis Events</h1>
 			<dl id="OnSpeechSynthesisStatus">
 				<dt class="entry">OnSpeechSynthesisStatus</dt>
 				<dd class="entry">
@@ -4580,7 +4584,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>その他イベント</h1>
+			<h1>Other Events</h1>
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
@@ -4807,7 +4811,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>Notifyイベント</h1>
+			<h1>Notify Events</h1>
 			<dl id="basewareversion">
 				<dt class="entry">basewareversion</dt>
 				<dd class="entry">
