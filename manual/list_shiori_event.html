@@ -1366,7 +1366,7 @@
 			<dl id="OnVanishSelecting">
 				<dt class="entry">OnVanishSelecting</dt>
 				<dd class="entry">
-					<p>消滅が指示された際に発生。</p>
+					<p>Occurs when instructed to uninstall.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1377,7 +1377,7 @@
 			<dl id="OnVanishSelected">
 				<dt class="entry">OnVanishSelected</dt>
 				<dd class="entry">
-					<p>確認ダイアログでYESが選択された際に発生。</p>
+					<p>Occurs when "YES" is selected for the confirmation dialog.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1388,7 +1388,7 @@
 			<dl id="OnVanishCancel">
 				<dt class="entry">OnVanishCancel</dt>
 				<dd class="entry">
-					<p>確認ダイアログでNOが選択された際に発生。</p>
+					<p>Occurs when "NO" is selected for the confirmation dialog.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1399,14 +1399,14 @@
 			<dl id="OnVanishButtonHold">
 				<dt class="entry">OnVanishButtonHold</dt>
 				<dd class="entry">
-					<p>消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
+					<p>Occurs when the uninstall event is interrupted by double clicking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the interruption occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon that was clicked to cause the interruption. 0 for the main character, 1 for the side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex: \s[2]abcde<br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1418,16 +1418,16 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishedへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
+					<p>Occurs when booted due to the previous ghost being uninstalled.<br>In SSP, if no script is returned for the event (204), <a href="#OnBoot">OnBoot</a> will occur afterwards.<br>Furthermore, in SSP, if another ghost that was open at the same time is uninstalled and no script is returned for OnOtherGhostVanished, this event will occur instead. In this situation, OnBoot is not used as a fallback.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>消滅したゴーストの本体側の名前。</dd>
+						<dd>The main character name of the ghost that was uninstalled.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only: 　消滅したゴーストのOnVanishSelectedイベントのスクリプト。</dd>
+						<dd>※SSP only: The OnVanishSelected event script of the ghost that was uninstalled.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　消滅したゴースト名。</dd>
+						<dd>※SSP only: The name of the ghost that was uninstalled.</dd>
 						<dt>Reference7</dt>
-						<dd>※SSP only: 　<em>切り替わったゴーストの</em>シェル名。</dd>
+						<dd>※SSP only: The shell name of <em>the ghost that was changed to</em>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1439,16 +1439,16 @@
 			<dl id="OnOtherGhostVanished">
 				<dt class="entry">OnOtherGhostVanished</dt>
 				<dd class="entry">
-					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
+					<p>Occurs when another ghost is uninstalled while multiple ghosts are open.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>消滅したゴーストの本体側の名前。</dd>
+						<dd>The main character name of the ghost that was uninstalled.</dd>
 						<dt>Reference1</dt>
-						<dd>消滅したゴーストのOnVanishSelectedイベントのスクリプト。</dd>
+						<dd>The OnVanishSelected event script of the ghost that was uninstalled.</dd>
 						<dt>Reference2</dt>
-						<dd>消滅したゴースト名。</dd>
+						<dd>The name of the ghost that was uninstalled.</dd>
 						<dt>Reference7</dt>
-						<dd><em>切り替わったゴーストの</em>シェル名。</dd>
+						<dd>The shell name of <em>the ghost that was changed to</em>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1461,12 +1461,12 @@
 			<dl id="OnChoiceSelect">
 				<dt class="entry">OnChoiceSelect</dt>
 				<dd class="entry">
-					<p>選択肢が選択された際に発生。</p>
+					<p>Occurs when a choice is selected.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択された選択肢のID。</dd>
+						<dd>The ID of the choice that was selected.</dd>
 						<dt>Reference*</dt>
-						<dd>※CROWのみ　選択肢の２番目以降のID。</dd>
+						<dd>※CROW only: The additional IDs of the choice.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1478,14 +1478,14 @@
 			<dl id="OnChoiceSelectEx">
 				<dt class="entry">OnChoiceSelectEx</dt>
 				<dd class="entry">
-					<p>選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
+					<p>Occurs when a choice is selected.<br />Starts before OnChoiceSelect.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1495,14 +1495,14 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterはReferenceなしで発生する。<br /><em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the cursor is hovered over <em>and moved away from</em> a choice.<br />When the cursor is moved away, the event occurs with no References. <br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1514,10 +1514,10 @@
 			<dl id="OnChoiceTimeout">
 				<dt class="entry">OnChoiceTimeout</dt>
 				<dd class="entry">
-					<p>選択肢待ち時間がタイムアウトした際に発生。</p>
+					<p>Occurs when a choice times out.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイムアウトしたスクリプト。</dd>
+						<dd>The script that timed out.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1529,14 +1529,14 @@
 			<dl id="OnChoiceHover">
 				<dt class="entry">OnChoiceHover</dt>
 				<dd class="entry">
-					<p>選択肢上で静止された際に発生。</p>
+					<p>Occurs when the cursor stops over a choice.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1546,10 +1546,10 @@
 			<dl id="OnAnchorSelect">
 				<dt class="entry">OnAnchorSelect</dt>
 				<dd class="entry">
-					<p>\_aジャンパがクリックされた瞬間に発生。</p>
+					<p>Occurs the moment an anchor (\_a) is clicked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択されたジャンパのID。</dd>
+						<dd>The ID of the anchor that was selected.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1561,14 +1561,14 @@
 			<dl id="OnAnchorSelectEx">
 				<dt class="entry">OnAnchorSelectEx</dt>
 				<dd class="entry">
-					<p>\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
+					<p>Occurs the moment an anchor (\_a) is clicked. Only if SHIORI returns nothing to this event will OnAnchorSelect occur afterwards.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択されたジャンパのテキスト。</dd>
+						<dd>The text of the anchor that was selected.</dd>
 						<dt>Reference1</dt>
-						<dd>選択されたジャンパのID。</dd>
+						<dd>The ID of the anchor that was selected.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\_aタグ内の2番目以降の引数)。</dd>
+						<dd>Additional information (from the second argument onwards in an \_a tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1581,14 +1581,14 @@
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p>サーフェスが変わった際に発生。<br /><em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when a surface changes. <br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフェス。</dd>
+						<dd>The main character's current surface.</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフェス。</dd>
+						<dd>The side character's current surface.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　キャラID,サーフェス番号,幅,高さ</dd>
+						<dd>※SSP only: Character ID, surface number, width, height.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1599,12 +1599,12 @@
 			<dl id="OnSurfaceRestore">
 				<dt class="entry">OnSurfaceRestore</dt>
 				<dd class="entry">
-					<p>トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
+					<p>Occurs once a set interval of time has passed after talking.<br />In SSP, this event occurs after the timeout interval set in the baseware settings + 15 seconds (in other words, 15 seconds after the balloon closes).<br />※Only in the case that the timeout interval is set to 0, the balloon will continue to be displayed until OnSurfaceRestore occurs.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフェス。</dd>
+						<dd>The main character's current surface.</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフェス。</dd>
+						<dd>The side character's current surface.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1616,21 +1616,21 @@
 			<dl id="OnOtherSurfaceChange">
 				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
-					<p>（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
-					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
+					<p>Occurs when another ghost's surface changes.<br />
+					In order to reduce lag, this event is usually invalid. To use it, \![set,othersurfacechange,true] must be run first.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴーストSakura名</dd>
+						<dd>The ghost's main character name.</dd>
 						<dt>Reference2</dt>
-						<dd>サーフェスが切り替わったウインドウID(Sakura=0)</dd>
+						<dd>The ID of the window that changed surfaces. (Sakura=0)</dd>
 						<dt>Reference3</dt>
-						<dd>新サーフェスID</dd>
+						<dd>The ID of the new surface.</dd>
 						<dt>Reference4</dt>
-						<dd>旧サーフェスID</dd>
+						<dd>The ID of the old surface.</dd>
 						<dt>Reference5</dt>
-						<dd>新しいサーフェスの大きさ(座標：左,上,右,下)</dd>
+						<dd>The size of the new surface. (Coordinates: left, up, right, down)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2165,7 +2165,7 @@
 						<dt>Reference1</dt>
 						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />Ex:\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3656,7 +3656,7 @@
 						<dt>Reference1</dt>
 						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />Ex:\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
