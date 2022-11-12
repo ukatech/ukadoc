@@ -377,6 +377,13 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>ゴースト「卓上誘技」</h1>
+			<ul>
+				<li><a href="#OnPoker">OnPoker</a></li>
+				<li><a href="#OnPokerNotify">OnPokerNotify</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>ゴースト「フォーリナー」サプリメント「march of phantasma」</h1>
 			<ul>
 				<li><a href="#OnMopClear">OnMopClear</a></li>
@@ -2506,6 +2513,135 @@
 					</dd>
 				</dl>
 			</div>
+		</section>
+		<section class="category">
+			<h1>ゴースト「卓上誘技」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://tatakinov.github.io/">https://tatakinov.github.io/</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnPoker">
+				<dt class="entry">OnPoker</dt>
+				<dd class="entry">
+					<p>応答が必要なイベント。応答方法はraiseotherかnotifyotherを使う。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>プロトコルバージョン(POKER/1.0)</dd>
+						<dt>Reference1</dt>
+						<dd>サーバーゴースト名</dd>
+						<dt>Reference2</dt>
+						<dd>サーバーのイベント名</dd>
+					</dl>
+					<section id="reference_OnPoker">
+						<h1>POKER/1.0におけるReference3以降の追加情報</h1>
+						<dl class="reference">
+							<dt>Reference3</dt>
+							<dd>hello（参加申請をする。断られることもある。）</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference3</dt>
+							<dd>action（Reference4以降に使用可能なアクションが入っている。）</dd>
+							<dt>Reference*</dt>
+							<dd>使用可能なアクションはbet,raise,allin,check,call,foldの6つの内のいくつか。<br />
+								返答しない場合は自動的にfoldになるので注意。<br />
+								bet/raiseする場合はレイズ額も送る必要がある。</dd>
+						</dl>
+					</section>
+				</dd>
+			</dl>
+			<dl id="OnPokerNotify">
+				<dt class="entry">OnPokerNotify</dt>
+				<dd class="entry">
+					<p>応答する必要の無いイベント。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>プロトコルバージョン(POKER/1.0)</dd>
+					</dl>
+					<section id="reference_OnPokerNotify">
+						<h1>POKER/1.0におけるReference1以降の追加情報</h1>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>game_start</dd>
+							<dt>Reference*</dt>
+							<dd>参加できたゴースト名</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>round_start</dd>
+							<dt>Reference2</dt>
+							<dd>ブラインドの金額</dd>
+							<dt>Reference*</dt>
+							<dd>ゴースト名(バイト値1)スタック</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>hand</dd>
+							<dt>Reference2</dt>
+							<dd>配られたカードの情報</dd>
+							<dt>Reference3</dt>
+							<dd>配られたカードの情報<br />
+								スートは頭文字(S,H,C,D)の4つのいずれか、その後に数字が続く。<br />
+								例:<br />
+								Reference2: S1<br />
+								Reference3: H12<br />
+								この形式はFLIPでも一緒。
+							</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>flip</dd>
+							<dt>Reference2</dt>
+							<dd>現在のポット</dd>
+							<dt>Reference*</dt>
+							<dd>コミュニティカードの情報<br />
+								プリフロップならReference3以降は存在しない</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>blind_bet</dd>
+							<dt>Reference2</dt>
+							<dd>強制ベットの金額<br />
+								SBやBBでの強制ベットをしたことが通知される。</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>bet（アクションを行ったプレイヤーとベット周りの情報。）</dd>
+							<dt>Reference2</dt>
+							<dd>現在のベット総額</dd>
+							<dt>Reference3</dt>
+							<dd>現在のベット額</dd>
+							<dt>Reference4</dt>
+							<dd>アクションを行ったプレイヤーのゴースト名</dd>
+							<dt>Reference5</dt>
+							<dd>行ったアクション</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>show_down（ショーダウン時のカード情報が送られてくる。）</dd>
+							<dt>Reference*</dt>
+							<dd>ゴースト名(バイト値1)1枚目のカード(バイト値1)2枚目のカード</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>round_result（そのラウンドの勝者、および参加者の残りスタックの情報。）</dd>
+							<dt>Reference2</dt>
+							<dd>現在のラウンドの勝者がバイト値1区切りで入っている。</dd>
+							<dt>Reference*</dt>
+							<dd>ゴースト名(バイト値1)スタック<br />
+								基本的に勝者は1人だが2人以上になるケースもある。<br />
+								また、スタックが0になったのはここでしか通知しないため注意。</dd>
+						</dl>
+						<dl class="reference">
+							<dt>Reference1</dt>
+							<dd>game_result</dd>
+							<dt>Reference2</dt>
+							<dd>ゲームの勝者のゴースト名</dd>
+						</dl>
+					</section>
+				</dd>
+			</dl>
 		</section>
 		<section class="category">
 			<h1>ゴースト「フォーリナー」サプリメント「march of phantasma」</h1>

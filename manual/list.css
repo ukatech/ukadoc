@@ -373,7 +373,7 @@ a:hover {
 	min-width: 7em;
 	_width: 7em;
 }
-.category dd.entry > dl.reference > dt:after {
+.category dd.entry dl.reference > dt:after {
 	content: ":";
 }
 .category dd.entry dl.reference > dd , .category dd.entry > dl.property > dd {
