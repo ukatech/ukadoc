@@ -1643,22 +1643,22 @@
 			<dl id="OnMouseClick">
 				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
-					<p>左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
+					<p>Occurs when the ghost is left, right, or middle button mouse clicked (the moment after releasing a pressed button) and OnMouseUp does not apply.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1670,22 +1670,22 @@
 			<dl id="OnMouseClickEx">
 				<dt class="entry">OnMouseClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
+					<p>Occurs when the ghost is clicked by a mouse button that is not the left or right button (the moment after releasing a pressed button) and OnMouseUpEx does not apply.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1695,22 +1695,22 @@
 			<dl id="OnMouseDoubleClick">
 				<dt class="entry">OnMouseDoubleClick</dt>
 				<dd class="entry">
-					<p>左・右ボタンでダブルクリックされた際に発生。</p>
+					<p>Occurs when the ghost is double-clicked with either the left or right button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1722,22 +1722,22 @@
 			<dl id="OnMouseDoubleClickEx">
 				<dt class="entry">OnMouseDoubleClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外でダブルクリックされた際に発生。</p>
+					<p>Occurs when the ghost is double-clicked with a button that is not the left or right button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1747,24 +1747,24 @@
 			<dl id="OnMouseMultipleClick">
 				<dt class="entry">OnMouseMultipleClick</dt>
 				<dd class="entry">
-					<p>3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
+					<p>Occurs when the ghost is clicked 3 or more times in a row.<br />※When there is no SHIORI response to this event, it will default to OnMouseClick or OnMouseDoubleClick instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
+						<dd>0 if the main character, 1 if the side character, and 2~ after that.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 						<dt>Reference7</dt>
-						<dd>連続クリック回数</dd>
+						<dd>The number of times clicked.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1774,24 +1774,24 @@
 			<dl id="OnMouseMultipleClickEx">
 				<dt class="entry">OnMouseMultipleClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
+					<p>Occurs when the ghost is clicked 3 or more times in a row with a button that is not the left or right button.<br />※When there is no SHIORI response to this event, it will default to OnMouseClickEx or OnMouseDoubleClickEx instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
+						<dd>0 if the main character, 1 if the side character, and 2~ after that.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 						<dt>Reference7</dt>
-						<dd>連続クリック回数</dd>
+						<dd>The number of times clicked.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1801,22 +1801,22 @@
 			<dl id="OnMouseUp">
 				<dt class="entry">OnMouseUp</dt>
 				<dd class="entry">
-					<p>左・右のマウスボタンが放された際に発生。</p>
+					<p>Occurs when either the left or right mouse button is released.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1826,22 +1826,22 @@
 			<dl id="OnMouseUpEx">
 				<dt class="entry">OnMouseUpEx</dt>
 				<dd class="entry">
-					<p>左・右以外のマウスボタンが放された際に発生。</p>
+					<p>Occurs when a button that is not the left or right button is released.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1851,22 +1851,22 @@
 			<dl id="OnMouseDown">
 				<dt class="entry">OnMouseDown</dt>
 				<dd class="entry">
-					<p>左・右のマウスボタンが押された際に発生。</p>
+					<p>Occurs when either the left or right mouse button is pressed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1876,22 +1876,22 @@
 			<dl id="OnMouseDownEx">
 				<dt class="entry">OnMouseDownEx</dt>
 				<dd class="entry">
-					<p>左・右以外のマウスボタンが押された際に発生。</p>
+					<p>Occurs when a button that is not the left or right button is pressed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1901,22 +1901,22 @@
 			<dl id="OnMouseMove">
 				<dt class="entry">OnMouseMove</dt>
 				<dd class="entry">
-					<p>マウスが移動した際に発生。</p>
+					<p>Occurs when the mouse is moved.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>※SSP only: 　常に0。</dd>
+						<dd>※SSP only: Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1928,22 +1928,22 @@
 			<dl id="OnMouseWheel">
 				<dt class="entry">OnMouseWheel</dt>
 				<dd class="entry">
-					<p>マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
+					<p>Occurs when the mouse wheel is scrolled.<br>From SSP 2.3.53 onwards, in a touch-panel environment, if SHIORI does not return anything when <a href="#OnMouseGesture">OnMouseGesture</a>'s Reference5 is "up" or "down" (returns 204 No Content), OnMouseWheel will occur as a replacement event. In that situation, the numerical value of Reference2 will be converted from the original scroll amount and up/down direction (positive number if up, negative number if down).</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>※SSP only: 　常に0。</dd>
+						<dd>※SSP only: Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1955,22 +1955,22 @@
 			<dl id="OnMouseEnterAll">
 				<dt class="entry">OnMouseEnterAll</dt>
 				<dd class="entry">
-					<p>マウスがキャラクターウインドウに入った際に発生。</p>
+					<p>Occurs when the mouse enters a character window.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1980,22 +1980,22 @@
 			<dl id="OnMouseLeaveAll">
 				<dt class="entry">OnMouseLeaveAll</dt>
 				<dd class="entry">
-					<p>マウスがキャラクターウインドウから出た際に発生。</p>
+					<p>Occurs when the mouse leaves a character window.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2005,22 +2005,22 @@
 			<dl id="OnMouseEnter">
 				<dt class="entry">OnMouseEnter</dt>
 				<dd class="entry">
-					<p>マウスが当たり判定に入った際に発生。</p>
+					<p>Occurs when the mouse enters a collision area.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2030,22 +2030,22 @@
 			<dl id="OnMouseLeave">
 				<dt class="entry">OnMouseLeave</dt>
 				<dd class="entry">
-					<p>マウスが当たり判定から出た際に発生。</p>
+					<p>Occurs when the mouse leaves a collision area.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2055,22 +2055,22 @@
 			<dl id="OnMouseDragStart">
 				<dt class="entry">OnMouseDragStart</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし始めた際に発生。ただしパッシブモードでは抑制される。</p>
+					<p>Occurs when mouse dragging is started. However, this event is disabled during Passive Mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2080,22 +2080,22 @@
 			<dl id="OnMouseDragEnd">
 				<dt class="entry">OnMouseDragEnd</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし終えた際に発生。ただしパッシブモードでは抑制される。</p>
+					<p>Occurs when mouse dragging is ended. However, this event is disabled during Passive Mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2105,22 +2105,22 @@
 			<dl id="OnMouseHover">
 				<dt class="entry">OnMouseHover</dt>
 				<dd class="entry">
-					<p>マウスが静止している際に発生。</p>
+					<p>Occurs when the mouse is being hovered over the ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2133,19 +2133,19 @@
 					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの xy 座標（バイト値1区切り）</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value)</dd>
 						<dt>Reference2</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference3</dt>
-						<dd>右ドラッグを開始したマウスカーソルの xy 座標（バイト値1区切り）</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value) when right dragging was started</dd>
 						<dt>Reference4</dt>
-						<dd>右ドラッグを開始した当たり判定の識別子。</dd>
+						<dd>The identifier name of the collision in which right dragging was started.</dd>
 						<dt>Reference5</dt>
-						<dd>ジェスチャー方向。<br />left_up(左上) up(上) right_up(右上)<br />left(左) right(右)<br />left_down(左下) down(下) right_down(右下)<br />circle.cw(時計回り) circle.ccw(反時計回り)<br />end(右ボタンをはなした)</dd>
+						<dd>The gesture direction.<br />left_up (upper left); up (up); right_up (upper right)<br />left (left); right (right)<br />left_down (lower left); down (down); right_down (lower right)<br />circle.cw (clockwise rotation); circle.ccw (counter-clockwise rotation)<br />end (the right mouse button is released)</dd>
 						<dt>Reference6</dt>
-						<dd>ジェスチャー移動角度。<br />右0度から反時計回りに360度。</dd>
+						<dd>The gesture movement degree.<br />0 at the right to 360, counter-clockwise.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
