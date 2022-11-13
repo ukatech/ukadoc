@@ -2130,7 +2130,7 @@
 			<dl id="OnMouseGesture">
 				<dt class="entry">OnMouseGesture</dt>
 				<dd class="entry">
-					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
+					<p>Occurs on dragging with the right button or wheel.<br>Furthermore, from SSP 2.3.53 onwards, in a touch-panel environment, if SHIORI does not return anything when OnMouseGesture's Reference5 is "up" or "down" (returns 204 No Content), <a href="#OnMouseWheel">OnMouseWheel</a> will occur as a replacement event. Refer to OnMouseWheel's entry for details.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
@@ -2158,14 +2158,14 @@
 			<dl id="OnBalloonBreak">
 				<dt class="entry">OnBalloonBreak</dt>
 				<dd class="entry">
-					<p>SSTP以外でブレイクされた際に発生。</p>
+					<p>Occurs when a balloon is broken for a reason other than SSTP.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the breaking occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon that was broken. 0 if main character, 1 if side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />Ex:\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex: \s[2]abcde <br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2175,10 +2175,10 @@
 			<dl id="OnBalloonClose">
 				<dt class="entry">OnBalloonClose</dt>
 				<dd class="entry">
-					<p>バルーンを閉じた際に発生。</p>
+					<p>Occurs when a balloon is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>閉じる際に表示されていたスクリプト。</dd>
+						<dd>The script that was being displayed when the balloon was closed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2188,12 +2188,12 @@
 			<dl id="OnBalloonTimeout">
 				<dt class="entry">OnBalloonTimeout</dt>
 				<dd class="entry">
-					<p>選択肢以外でバルーンがタイムアウトした際に発生。</p>
+					<p>Occurs when a balloon without choices times out.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイムアウトした際に表示されていたスクリプト。</dd>
+						<dd>The script that was being displayed when the balloon timed out.</dd>
 						<dt>Reference1</dt>
-						<dd>残り時間。</dd>
+						<dd>The remaining time.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2206,12 +2206,12 @@
 			<dl id="OnTrayBalloonClick">
 				<dt class="entry">OnTrayBalloonClick</dt>
 				<dd class="entry">
-					<p>トレイアイコンのバルーンをクリックして消した際に発生。</p>
+					<p>Occurs when the tray icon balloon is closed via clicking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
+						<dd>The title string.</dd>
 						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
+						<dd>The displayed text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2221,12 +2221,12 @@
 			<dl id="OnTrayBalloonTimeout">
 				<dt class="entry">OnTrayBalloonTimeout</dt>
 				<dd class="entry">
-					<p>トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
+					<p>Occurs when the tray icon balloon is closed via timing out or with the close button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
+						<dd>The title string.</dd>
 						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
+						<dd>The displayed text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
