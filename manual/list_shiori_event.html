@@ -3096,61 +3096,61 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_updateresultcomplete">
-				<h1>ネットワーク更新成功理由</h1>
+				<h1>Network update success reasons</h1>
 				<dl>
 					<dt>none</dt>
-					<dd>更新するファイルが無かった。</dd>
+					<dd>There were no new files.</dd>
 					<dt>changed</dt>
-					<dd>更新された。</dd>
+					<dd>The update was completed.</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_updateresultfailure">
-				<h1>ネットワーク失敗理由</h1>
+				<h1>Network failure reasons</h1>
 				<dl>
 					<dt>timeout</dt>
-					<dd>タイムアウトした。</dd>
+					<dd>The connection timed out.</dd>
 					<dt>too slow</dt>
-					<dd><em>SSPではtimeoutになるため不出</em>。回線が非常に重い。</dd>
+					<dd><em>This error message is not used in SSP and instead defaults to "timeout."</em> The connection was too slow.</dd>
 					<dt>md5 miss</dt>
-					<dd>MD5が一致しなかった。</dd>
+					<dd>The MD5 values did not match.</dd>
 					<dt>artificial</dt>
-					<dd>ユーザ操作による更新中断。</dd>
-					<dt>404 等</dt>
-					<dd>そのステータスコードでの失敗。</dd>
+					<dd>The user interrupted the update process.</dd>
+					<dt>404 etc.</dt>
+					<dd>Failed for the reason of the status code.</dd>
 					<dt>fileio</dt>
-					<dd>※SSP only: 。容量不足による更新対象への書き込み失敗。</dd>
+					<dd>※SSP only: Failed to write to the update target due to a lack of space.</dd>
 					<dt>readonly</dt>
-					<dd>※SSP only: 。読み取り専用フラグによる更新対象への書き込み失敗。ファイルやフォルダに読み取り専用フラグがついていると発生。</dd>
+					<dd>※SSP only: Failed to write to the update target due to a read-only flag. Occurs when there is a read-only flag on the file or folder.</dd>
 					<dt>virusdetect</dt>
-					<dd>※SSP only: 。データ内にウイルスを検出した可能性がある。 [2.5.15]</dd>
+					<dd>※SSP only: A potential virus was detected in the data. [2.5.15]</dd>
 					<dt>toomanyredirect</dt>
-					<dd>※SSP only: 。リダイレクトが発生しすぎたので処理を中止した。 [2.5.15]</dd>
+					<dd>※SSP only: The process was stopped due to too many redirects. [2.5.15]</dd>
 					<dt>executing</dt>
-					<dd>※SSP only: 。すでに更新を実行中のため、二重起動を阻止した。 [2.5.26]</dd>
+					<dd>※SSP only: The update is already in progress, so the second attempt was stopped. [2.5.26]</dd>
 					<dt>paramerror</dt>
-					<dd>※SSP only: 。更新実行タグの設定ミスにより更新を実行できなかった。 [2.5.26]</dd>
+					<dd>※SSP only: The update couldn't be performed due to a setting mistake in the update tags. [2.5.26]</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_updatetype">
-				<h1>ネットワーク更新対象の種別</h1>
+				<h1>Network update target classes</h1>
 				<ul>
 					<li>ghost</li>
 					<li>shell</li>
 					<li>balloon</li>
 					<li>plugin</li>
 					<li>headline</li>
-					<li>baseware　※CROWのみ</li>
+					<li>※CROW only: baseware</li>
 				</ul>
 			</section>
 			<section class="caption" id="caption_updatereason">
-				<h1>ネットワーク更新理由</h1>
+				<h1>Network update reasons</h1>
 				<dl>
 					<dt>auto</dt>
-					<dd>SSPの設定などによる自動更新。</dd>
+					<dd>Automatic update, e.g. due to SSP settings etc.</dd>
 					<dt>manual</dt>
-					<dd>オーナードローメニューからの選択などによる手動実行。</dd>
+					<dd>Manual update, e.g. the user selecting an option in the right-click menu.</dd>
 					<dt>script</dt>
-					<dd>さくらスクリプトタグ（<a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>など）による更新。</dd>
+					<dd>Update due to SakuraScript tags (e.g. <a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>).</dd>
 				</dl>
 			</section>
 		</section>
