@@ -1182,7 +1182,7 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p>Occurs when the box is opened. If a list of text separated by the byte value 1 is returned to this event, the autocomplete function will active in the InputBox.<br />(WinMe/2000 onwards)</p>
+					<p>Occurs when the box is opened. If a list of text separated by the 1-byte value is returned to this event, the autocomplete function will active in the InputBox.<br />(WinMe/2000 onwards)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The type of box. Either inputbox, teachbox, or communicatebox.</dd>
@@ -2135,11 +2135,11 @@
 						<dt>Reference0</dt>
 						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value)</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value).</dd>
 						<dt>Reference2</dt>
 						<dd>The collision identifier name.</dd>
 						<dt>Reference3</dt>
-						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value) when right dragging was started</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value) when right dragging was started.</dd>
 						<dt>Reference4</dt>
 						<dd>The identifier name of the collision in which right dragging was started.</dd>
 						<dt>Reference5</dt>
@@ -2239,7 +2239,7 @@
 			<dl id="OnInstallBegin">
 				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
-					<p>アーカイブのインストール開始の際に発生。</p>
+					<p>Occurs when an archive install begins.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2250,14 +2250,14 @@
 			<dl id="OnInstallComplete">
 				<dt class="entry">OnInstallComplete</dt>
 				<dd class="entry">
-					<p>インストールが正常終了した際に発生。</p>
+					<p>Occurs when an install finishes with no problems.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file.</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前（install.txtのname指定）。</dd>
+						<dd>The name of the installed file (the name specified in install.txt).</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした物の名前2（ghost with balloonなどの場合のballoon側の名前）。</dd>
+						<dd>The second name of the installed file (e.g. the balloon name when a balloon is bundled with a ghost).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2269,14 +2269,14 @@
 			<dl id="OnInstallCompleteEx">
 				<dt class="entry">OnInstallCompleteEx</dt>
 				<dd class="entry">
-					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
+					<p>Occurs when an install finishes with no problems.<br />If this event does not exist, OnInstallComplete will occur instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file. When there are multiple, they are delimited by a 1-byte value.</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前。複数の場合はバイト値1区切り。</dd>
+						<dd>The name of the installed file. When there are multiple, they are delimited by a 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした場所。複数の場合はバイト値1区切り。</dd>
+						<dd>The location of installation. When there are multiple, they are delimited by a 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2286,10 +2286,10 @@
 			<dl id="OnInstallFailure">
 				<dt class="entry">OnInstallFailure</dt>
 				<dd class="entry">
-					<p>インストールに失敗した際に発生。</p>
+					<p>Occurs when installation has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_install-reasonoffailure">※失敗理由</a>。</dd>
+						<dd>The <a href="#caption_install-reasonoffailure">※installation failure reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2301,14 +2301,14 @@
 			<dl id="OnInstallRefuse">
 				<dt class="entry">OnInstallRefuse</dt>
 				<dd class="entry">
-					<p>インストールするファイルが他のゴーストを指名していた際に発生。</p>
+					<p>Occurs when the file being installed is specified to be for another ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
+						<dd>The main character name of the ghost that was specified (the <a href="descript_install.html#accept,本体側名">accept</a> specification in install.txt, in other words the intended recipient of the file).</dd>
 						<dt>Reference1</dt>
-						<dd>インストールしようとした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the file that failed to install.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールしようとした物の名前。</dd>
+						<dd>The name of the file that failed to install.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2320,22 +2320,22 @@
 			<dl id="OnInstallReroute">
 				<dt class="entry">OnInstallReroute</dt>
 				<dd class="entry">
-					<p>インストールするファイルが他のゴーストを指名していた際、かつ、指名対象ゴーストが一緒に起動していた時に発生。以降のインストールイベントは指名対象ゴースト側に発生する。</p>
+					<p>Occurs when the file being installed is specified to be for another ghost, and that ghost is open at the same time. Install events following this will occur for the intended recipient ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
+						<dd>The main character name of the ghost that was specified (the <a href="descript_install.html#accept,本体側名">accept</a> specification in install.txt, in other words the intended recipient of the file).</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした物の名前。</dd>
+						<dd>The name of the installed file.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4 / Ref1以降は2.4.85</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4 / Ref1 and onwards are from 2.4.85</li>
 					</ul>
 				</dd>
 			</dl>
 			<section class="caption" id="caption_install-identifier">
-				<h1>インストールの識別子</h1>
+				<h1>Installation identifiers</h1>
 				<ul>
 					<li>shell</li>
 					<li>ghost</li>
@@ -2344,12 +2344,12 @@
 					<li>headline</li>
 					<li>supplement</li>
 				</ul>
-				<p>以下はOnInstallComplete / OnNarCreatedのみ</p>
+				<p>OnInstallComplete / OnNarCreated only</p>
 				<ul>
 					<li>ghost with balloon</li>
 					<li>shell with balloon</li>
 				</ul>
-				<p>以下はSSP専用</p>
+				<p>SSP only</p>
 				<ul>
 					<li>calendar skin</li>
 					<li>calendar plugin</li>
@@ -2358,20 +2358,20 @@
 				</ul>
 			</section>
 			<section class="caption" id="caption_install-reasonoffailure">
-				<h1>インストールの失敗理由</h1>
+				<h1>Installation failure reasons</h1>
 				<dl>
 					<dt>unlha32</dt>
-					<dd>lzh形式ファイルを展開するdllのロードに失敗した</dd>
+					<dd>Failed to load the dll to decompress the lzh format file.</dd>
 					<dt>extraction</dt>
-					<dd>解凍失敗（ファイル破損）</dd>
+					<dd>Failed to decompress the file (file corruption).</dd>
 					<dt>invalid type</dt>
-					<dd>install.txtに不備がある</dd>
+					<dd>The install.txt is incomplete.</dd>
 					<dt>artificial</dt>
-					<dd>ユーザがインストールを中断した（※SSP only: ）</dd>
+					<dd>The installation was interrupted by the user (※SSP only).</dd>
 					<dt>unsupported</dt>
-					<dd>その他サポートしていないアーカイブ</dd>
+					<dd>The archive is not supported.</dd>
 					<dt>password</dt>
-					<dd>パスワードつきアーカイブでパスワード誤りがあった(SSP 2.5.09以降)</dd>
+					<dd>The password was entered incorrectly on a password-locked archive (from SSP 2.5.09 onwards).</dd>
 				</dl>
 			</section>
 		</section>
@@ -2380,12 +2380,12 @@
 			<dl id="OnFileDropping">
 				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
-					<p>ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
+					<p>Occurs when the cursor goes over the ghost while dragging a file.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドラッグしているファイルパス。</dd>
+						<dd>The path of the file being dragged.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2396,12 +2396,12 @@
 			<dl id="OnFileDropped">
 				<dt class="entry">OnFileDropped</dt>
 				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[Old specification] Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2412,12 +2412,12 @@
 			<dl id="OnDirectoryDrop">
 				<dt class="entry">OnDirectoryDrop</dt>
 				<dd class="entry">
-					<p>ディレクトリがDnD された際に発生。</p>
+					<p>Occurs when a directory is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたディレクトリのパス。</dd>
+						<dd>The path of the directory that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the directory was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2428,10 +2428,10 @@
 			<dl id="OnWallpaperChange">
 				<dt class="entry">OnWallpaperChange</dt>
 				<dd class="entry">
-					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
+					<p>Occurs when the wallpaper is changed by drag-and-dropping an image file.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2443,12 +2443,12 @@
 			<dl id="OnFileDrop">
 				<dt class="entry">OnFileDrop</dt>
 				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[Old specification] Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2459,12 +2459,12 @@
 			<dl id="OnFileDrop2">
 				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
+					<p>Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dd>The path of the file that was dropped (delimited by a 1-byte value when there are multiple).</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2476,12 +2476,12 @@
 			<dl id="OnFileDropEx">
 				<dt class="entry">OnFileDropEx</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
+					<p>Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dd>The path of the file that was dropped (delimited by a 1-byte value when there are multiple).</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2491,7 +2491,7 @@
 			<dl id="OnUpdatedataCreating">
 				<dt class="entry">OnUpdatedataCreating</dt>
 				<dd class="entry">
-					<p>ゴーストフォルダがDnDされた際に発生。</p>
+					<p>Occurs when a ghost folder is drag-and-dropped.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2502,7 +2502,7 @@
 			<dl id="OnUpdatedataCreated">
 				<dt class="entry">OnUpdatedataCreated</dt>
 				<dd class="entry">
-					<p>updates2.dauが作成された際に発生。</p>
+					<p>Occurs when an updates2.dau has been created.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2513,14 +2513,14 @@
 			<dl id="OnNarCreating">
 				<dt class="entry">OnNarCreating</dt>
 				<dd class="entry">
-					<p>install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
+					<p>Occurs when a ghost folder containing an install.txt is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>narにするオブジェクト名。</dd>
+						<dd>The name of the object to be made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>narに出力されたファイル名。</dd>
+						<dd>The name and absolute file path of the nar to be created.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2532,14 +2532,14 @@
 			<dl id="OnNarCreated">
 				<dt class="entry">OnNarCreated</dt>
 				<dd class="entry">
-					<p>narファイルが作成された際に発生。</p>
+					<p>Occurs when a nar file has been created.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>narにするオブジェクト名。</dd>
+						<dd>The name of the object made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>narに出力されたファイル名。</dd>
+						<dd>The name and absolute file path of the nar that was created.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2554,10 +2554,10 @@
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされた際に発生。</p>
+					<p>Occurs when a URL has been dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>URLパス。</dd>
+						<dd>The URL path.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2569,10 +2569,10 @@
 			<dl id="OnURLDropped">
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
-					<p>ドロップされたURLを受領し終わった際に発生。</p>
+					<p>Occurs when the dropped URL has finished being received.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードし終わったファイルのローカルパス。</dd>
+						<dd>The local path of the file that was downloaded.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2584,12 +2584,12 @@
 			<dl id="OnURLDropFailure">
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
-					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</p>
+					<p>Occurs when the dropped URL could not be received or the operation was canceled.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードし終わった分のファイルのローカルパス。</dd>
+						<dd>The local path of the part of the file that was downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※failure reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2601,16 +2601,16 @@
 			<dl id="OnURLQuery">
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
-					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
-					これに対してスクリプトを返すと、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
-					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
+					<p>Notified when a URL is drag-and-dropped onto a character window.<br />
+					If a script is returned for this event, the regular download process OnURLDropping -> Dropped will be canceled.<br />
+					Only return a script if the URL needs to be processed individually on the ghost side.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>URLパス。</dd>
+						<dd>The URL path.</dd>
 						<dt>Reference1</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference2</dt>
-						<dd>ドロップされたURLのMIMEタイプ</dd>
+						<dd>The MIME type of the URL that was dropped.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2620,14 +2620,14 @@
 			<dl id="OnXUkagakaLinkOpen">
 				<dt class="entry">OnXUkagakaLinkOpen</dt>
 				<dd class="entry">
-					<p>下記形式のWeb関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
-					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
-					文字コードはUTF-8固定＋URLエンコード済<br />
-					サンプル：<a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
-					<em>SecurityLevelは必ずexternalになる。</em></p>
+					<p>Notified by the specified ghost when a web association in the below format is opened or dropped on the ghost.<br />
+					x-ukagaka-link:type=event&ghost=(the "name" or "sakura.name" in descript.txt)&info=(the string to be stored in Reference0)<br />
+					The character encoding is fixed to UTF-8 + URL encoded<br />
+					Ex: <a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
+					<em>SecurityLevel is always "external."</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>info=以降に指定した文字列(URLデコード済)</dd>
+						<dd>info=The specified string (URL decoded).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2640,16 +2640,16 @@
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
-					<p>ネットワーク更新開始が指示された際に発生。</p>
+					<p>Occurs when instructed to begin the network update.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>フルパス。</dd>
+						<dd>The full path.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2661,16 +2661,16 @@
 			<dl id="OnUpdateReady">
 				<dt class="entry">OnUpdateReady</dt>
 				<dd class="entry">
-					<p>更新ファイルが確認された際に発生。</p>
+					<p>Occurs when update files have been checked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd>更新対象種別。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>The update target class.<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2682,16 +2682,16 @@
 			<dl id="OnUpdateComplete">
 				<dt class="entry">OnUpdateComplete</dt>
 				<dd class="entry">
-					<p>ネットワーク更新が成功し完了した際に発生。</p>
+					<p>Occurs when the network update is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2703,16 +2703,16 @@
 			<dl id="OnUpdateFailure">
 				<dt class="entry">OnUpdateFailure</dt>
 				<dd class="entry">
-					<p>ネットワーク更新に失敗した際に発生。</p>
+					<p>Occurs when the network update has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSP only: 　失敗したファイル名。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.<br />※SSP only: The files that could not be updated.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2724,18 +2724,18 @@
 			<dl id="OnUpdate.OnDownloadBegin">
 				<dt class="entry">OnUpdate.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p>ファイルダウンロード開始の際に発生。</p>
+					<p>Occurs when the file download begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードするファイル名。</dd>
+						<dd>The name of the file being downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd>（CROW以外）ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
+						<dd>(Other than CROW) The number of the file being downloaded (serial number starting from 0).</dd>
 						<dt>Reference2</dt>
-						<dd>（CROW以外）更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>(Other than CROW) The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference3</dt>
-						<dd>※SSP only: <a href="#caption_updatetype">※更新対象種別</a>。</dd>
+						<dd>※SSP only: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2747,18 +2747,18 @@
 			<dl id="OnUpdate.OnMD5CompareBegin">
 				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p>MD5の照合開始の際に発生。</p>
+					<p>Occurs when the MD5 comparison begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>比較するファイル名。</dd>
+						<dd>The name of the file being compared.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2770,18 +2770,18 @@
 			<dl id="OnUpdate.OnMD5CompareComplete">
 				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p>MD5が一致した際に発生。</p>
+					<p>Occurs when the MD5 values match.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>落としたファイル名。</dd>
+						<dd>The name of the downloaded file.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2793,18 +2793,18 @@
 			<dl id="OnUpdate.OnMD5CompareFailure">
 				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p>MD5が一致しなかった際に発生。</p>
+					<p>Occurs when the MD5 values do not match.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>落としたファイル名。</dd>
+						<dd>The name of the downloaded file.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2816,16 +2816,16 @@
 			<dl id="OnUpdateOtherBegin">
 				<dt class="entry">OnUpdateOtherBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
+					<p>Occurs when instructed to begin a network update for something other than the ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>フルパス。</dd>
+						<dd>The full path.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2835,16 +2835,16 @@
 			<dl id="OnUpdateOtherReady">
 				<dt class="entry">OnUpdateOtherReady</dt>
 				<dd class="entry">
-					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
+					<p>Occurs when update files for something other than the ghost have been checked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2854,16 +2854,16 @@
 			<dl id="OnUpdateOtherComplete">
 				<dt class="entry">OnUpdateOtherComplete</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
+					<p>Occurs when the network update for something other than the ghost is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2873,16 +2873,16 @@
 			<dl id="OnUpdateOtherFailure">
 				<dt class="entry">OnUpdateOtherFailure</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新に失敗した際に発生。</p>
+					<p>Occurs when the network update for something other than the ghost has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2892,18 +2892,18 @@
 			<dl id="OnUpdateOther.OnDownloadBegin">
 				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のファイルダウンロード開始の際に発生。</p>
+					<p>Occurs when the file download for something other than the ghost begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードするファイル名。</dd>
+						<dd>The name of the file being downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd>ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
+						<dd>The number of the file being downloaded (serial number starting from 0).</dd>
 						<dt>Reference2</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2913,18 +2913,18 @@
 			<dl id="OnUpdateOther.OnMD5CompareBegin">
 				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5の照合開始の際に発生。</p>
+					<p>Occurs when the MD5 comparison for something other than the ghost begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>比較するファイル名。</dd>
+						<dd>The name of the file being compared.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2934,16 +2934,16 @@
 			<dl id="OnUpdateOther.OnMD5CompareComplete">
 				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5が一致した際に発生。</p>
+					<p>Occurs when the MD5 values for something other than the ghost match.</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2953,16 +2953,16 @@
 			<dl id="OnUpdateOther.OnMD5CompareFailure">
 				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5が一致しなかった際に発生。</p>
+					<p>Occurs when the MD5 values for something other than the ghost do not match.</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2972,16 +2972,16 @@
 			<dl id="OnUpdateCheckComplete">
 				<dt class="entry">OnUpdateCheckComplete</dt>
 				<dd class="entry">
-					<p>ネットワーク更新のチェックに成功した際に発生。</p>
+					<p>Occurs when the network update check is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
+						<dd>SSP 2.3: The network update reason. "script" only.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2991,12 +2991,12 @@
 			<dl id="OnUpdateCheckFailure">
 				<dt class="entry">OnUpdateCheckFailure</dt>
 				<dd class="entry">
-					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
+					<p>Occurs when the network update check has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
+						<dd>SSP 2.3: The network update reason. "script" only.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3006,21 +3006,21 @@
 			<dl id="OnUpdateResult">
 				<dt class="entry">OnUpdateResult</dt>
 				<dd class="entry">
-					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
+					<p>Occurs when a network update is performed, and notifies all update results at once, including the balloon and shell packaged update functions.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							更新を実行した順に、更新結果が以下のフォーマットで入っている（\1はバイト値1）
+							The update results are stored in the below format, in the order of update (\1 is the 1-byte value)
 							<p>
 								(※1)[\1](※2)[\1](※3)[\1](※4)
-								<br>または
+								<br>or
 								<br>(※1)[\1](※2)[\1](※3)
 							</p>
 							<ul>
-								<li>※1……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
-								<li>※2……成功時「OK」　失敗時「NG」</li>
-								<li>※3……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
-								<li>※4……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
+								<li>※1……The <a href="#caption_updatetype">network update target class</a>.</li>
+								<li>※2……"OK" on success, "NG" on failure</li>
+								<li>※3……If the update was successful, the number of updated files (0 when no new files=none), or if the update failed, <a href="#caption_updateresultfailure">network failure reason</a>.</li>
+								<li>※4……If the update failed and the file that caused the failure can be identified, the name of that file.</li>
 							</ul>
 						</dd>
 					</dl>
@@ -3032,22 +3032,22 @@
 			<dl id="OnUpdateResultEx">
 				<dt class="entry">OnUpdateResultEx</dt>
 				<dd class="entry">
-					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
+					<p>Occurs when a network update is performed, and notifies all update results at once, including the balloon and shell packaged update functions.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							更新を実行した順に、更新結果が以下のフォーマットで入っている（\1はバイト値1）
+							The update results are stored in the below format, in the order of update (\1 is the 1-byte value)
 							<p>
 								(※1)[\1](※2)[\1](※3)[\1](※4)[\1](※5)
-								<br>または
+								<br>or
 								<br>(※1)[\1](※2)[\1](※3)[\1](※4)
 							</p>
 							<ul>
-								<li>※1……ネットワーク更新対象の名前</li>
-								<li>※2……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
-								<li>※3……成功時「OK」　失敗時「NG」</li>
-								<li>※4……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
-								<li>※5……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
+								<li>※1……The name of the network update target.</li>
+								<li>※2……The <a href="#caption_updatetype">network update target class</a>.</li>
+								<li>※3……"OK" on success, "NG" on failure</li>
+								<li>※4……If the update was successful, the number of updated files (0 when no new files=none), or if the update failed, <a href="#caption_updateresultfailure">network failure reason</a>.</li>
+								<li>※5……If the update failed and the file that caused the failure can be identified, the name of that file.</li>
 							</ul>
 						</dd>
 					</dl>
@@ -3059,10 +3059,10 @@
 			<dl id="OnUpdateCheckResult">
 				<dt class="entry">OnUpdateCheckResult</dt>
 				<dd class="entry">
-					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultのエクスプローラ版。</p>
+					<p>Occurs at the end when the check only update option is selected. The explorer version of OnUpdateResult.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultと同じ</dd>
+						<dd>The same as OnUpdateResult.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3072,10 +3072,10 @@
 			<dl id="OnUpdateCheckResultEx">
 				<dt class="entry">OnUpdateCheckResultEx</dt>
 				<dd class="entry">
-					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultExのエクスプローラ版。</p>
+					<p>Occurs at the end when the check only update option is selected. The explorer version of OnUpdateResultEx.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultExと同じ</dd>
+						<dd>The same as OnUpdateResultEx.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3085,10 +3085,10 @@
 			<dl id="OnUpdateResultExplorer">
 				<dt class="entry">OnUpdateResultExplorer</dt>
 				<dd class="entry">
-					<p>ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
+					<p>Occurs when a network update is performed from the Ghost Explorer. The explorer version of OnUpdateResult.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultと同じ</dd>
+						<dd>The same as OnUpdateResult.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
