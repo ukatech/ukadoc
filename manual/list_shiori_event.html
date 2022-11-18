@@ -3159,10 +3159,10 @@
 			<dl id="OnSNTPBegin">
 				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
-					<p>時計合わせが開始が指示された際に発生。</p>
+					<p>Occurs when instructed to fix the clock.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the server being connected to.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3174,18 +3174,18 @@
 			<dl id="OnSNTPCompareEx">
 				<dt class="entry">OnSNTPCompareEx</dt>
 				<dd class="entry">
-					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<p>Occurs when the connection to the server has been established. A script containing the <a href="./list_sakura_script.html#_6">\6 tag</a> must be returned in order to perform the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds with numbers after the decimal point. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
@@ -3195,18 +3195,18 @@
 			<dl id="OnSNTPCompare">
 				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
-					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<p>Occurs when the connection to the server has been established. A script containing the <a href="./list_sakura_script.html#_6">\6 tag</a> must be returned in order to perform the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second (if the time difference is less than a second, the time will be treated as being the same)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds as a whole number. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>※SSP only: The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3218,18 +3218,18 @@
 			<dl id="OnSNTPCorrectEx">
 				<dt class="entry">OnSNTPCorrectEx</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<p>Occurs when the local time is corrected to match the server time using the <a href="./list_sakura_script.html#_6">\6 tag</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds with numbers after the decimal point. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
@@ -3239,18 +3239,18 @@
 			<dl id="OnSNTPCorrect">
 				<dt class="entry">OnSNTPCorrect</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<p>Occurs when the local time is corrected to match the server time using the <a href="./list_sakura_script.html#_6">\6 tag</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second (if the time difference is less than a second, the time will be treated as being the same)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds as a whole number. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>※SSP only: The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3262,10 +3262,10 @@
 			<dl id="OnSNTPFailure">
 				<dt class="entry">OnSNTPFailure</dt>
 				<dd class="entry">
-					<p>時計合わせに失敗した際に発生。</p>
+					<p>Occurs when the clock correction failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
