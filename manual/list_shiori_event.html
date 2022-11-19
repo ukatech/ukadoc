@@ -3159,7 +3159,7 @@
 			<dl id="OnSNTPBegin">
 				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
-					<p>Occurs when instructed to fix the clock.</p>
+					<p>Occurs when instructed to start the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The name of the server being connected to.</dd>
@@ -3280,10 +3280,10 @@
 			<dl id="OnBIFFBegin">
 				<dt class="entry">OnBIFFBegin</dt>
 				<dd class="entry">
-					<p>メールチェック開始が指示された際に発生。</p>
+					<p>Occurs when instructed to start the mail check.</p>
 					<dl class="reference">
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the email server being checked (account name if SSP or CROW).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3295,24 +3295,24 @@
 			<dl id="OnBIFFComplete">
 				<dt class="entry">OnBIFFComplete</dt>
 				<dd class="entry">
-					<p>メールチェックが成功した際に発生。</p>
+					<p>Occurs when the mail check is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スプールされているメールの通数、１オリジン表記。</dd>
+						<dd>The number of spooled emails, starting from 1.</dd>
 						<dt>Reference1</dt>
-						<dd>スプールされているメールのバイト数。</dd>
+						<dd>The byte count of the spooled emails.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名。</dd>
+						<dd>The name of the server being checked.</dd>
 						<dt>Reference3</dt>
-						<dd>メールの新着差分。</dd>
+						<dd>The difference in the number of new emails.</dd>
 						<dt>Reference4</dt>
-						<dd>全メールのTopResult。POP通信全ヘッダリスト。メールごとバイト値2区切りの、ヘッダごとバイト値1区切り（通常はReference7の情報を利用すればよい）。</dd>
+						<dd>The TopResult of all emails, and the list of all POP transmission headers. Each email is delimited by 2-byte values, and each header is delimited by 1-byte values (usually, the information from Reference7 should be used).</dd>
 						<dt>Reference5</dt>
-						<dd>ListResult。メールサーバ上のID。POPコマンドの「LIST」の結果に相当する内容。</dd>
+						<dd>ListResult. The email server ID. Equivalent to the results of the POP command "LIST."</dd>
 						<dt>Reference6</dt>
-						<dd>UidlResult。メールを区別するためのID。POPコマンドの「UIDL」の結果に相当する内容。</dd>
+						<dd>UidlResult. The ID for differentiating emails. Equivalent to the results of the POP command "UIDL."</dd>
 						<dt>Reference7</dt>
-						<dd>バイト値1区切りの送信者とタイトル。</dd>
+						<dd>The senders and titles delimited by the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3324,16 +3324,16 @@
 			<dl id="OnBIFF2Complete">
 				<dt class="entry">OnBIFF2Complete</dt>
 				<dd class="entry">
-					<p>メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
+					<p>Occurs when the number of spooled emails has increased.<br />In SSP, only occurs when there was no script returned to OnBIFFComplete.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スプールされているメールの通数、１オリジン表記。</dd>
+						<dd>The number of spooled emails, starting from 1.</dd>
 						<dt>Reference1</dt>
-						<dd>スプールされているメールのバイト数。</dd>
+						<dd>The byte count of the spooled emails.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the mail server being checked (account name if SSP or CROW).</dd>
 						<dt>Reference3</dt>
-						<dd>全メールのTopResult。</dd>
+						<dd>The TopResult of all emails.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3344,12 +3344,12 @@
 			<dl id="OnBIFFFailure">
 				<dt class="entry">OnBIFFFailure</dt>
 				<dd class="entry">
-					<p>メールチェックに成功した際に発生。</p>
+					<p>Occurs when the mail check has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※失敗理由</dd>
+						<dd>※The failure reason.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the mail server being checked (account name if SSP or CROW).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
