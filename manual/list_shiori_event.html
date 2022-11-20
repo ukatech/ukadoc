@@ -3364,12 +3364,12 @@
 			<dl id="OnHeadlinesenseBegin">
 				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンス開始が指示された際に発生。</p>
+					<p>Occurs when instructed to start the headline sensor.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ヘッドラインセンスするサイト名。</dd>
+						<dd>The name of the site to sense the headline of.</dd>
 						<dt>Reference1</dt>
-						<dd>ヘッドラインセンスするURL。</dd>
+						<dd>The URL to sense the headline of.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3380,16 +3380,16 @@
 			<dl id="OnHeadlinesense.OnFind">
 				<dt class="entry">OnHeadlinesense.OnFind</dt>
 				<dd class="entry">
-					<p>読み上げるべきヘッドラインセンスがあった際に発生。</p>
+					<p>Occurs when a headline to read was found.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ヘッドラインセンスするサイト名。</dd>
+						<dd>The name of the site to sense the headline of.</dd>
 						<dt>Reference1</dt>
-						<dd>ヘッドラインセンスするURL。</dd>
+						<dd>The URL to sense the headline of.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_headlinesensephase">※OnFind フェーズ</a></dd>
+						<dd>The <a href="#caption_headlinesensephase">※OnFind phase</a>.</dd>
 						<dt>Reference3</dt>
-						<dd>ヘッドラインの内容。</dd>
+						<dd>The headline contents.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3400,10 +3400,10 @@
 			<dl id="OnHeadlinesenseComplete">
 				<dt class="entry">OnHeadlinesenseComplete</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
+					<p>Occurs when the headline sensor is completed successfully.<br />Headline sensor success indicates the start of reading the headline, so this event is only notified when acquiration succeeded but there were no new updates.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>. Currently limited to "no update."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3414,10 +3414,10 @@
 			<dl id="OnHeadlinesenseFailure">
 				<dt class="entry">OnHeadlinesenseFailure</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスに失敗した際に発生。</p>
+					<p>Occurs when the headline sensor has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3429,12 +3429,12 @@
 			<dl id="OnRSSBegin">
 				<dt class="entry">OnRSSBegin</dt>
 				<dd class="entry">
-					<p>RSSセンス開始が指示された際に発生。本イベントに反応しない場合は、OnHeadlineSenseBeginが呼び出される。</p>
+					<p>Occurs when instructed to start the RSS sensor. If there is no response to this event, OnHeadlineSenseBegin is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>RSSセンスするサイト名。</dd>
+						<dd>The name of the site to sense the RSS of.</dd>
 						<dt>Reference1</dt>
-						<dd>RSSセンスするURL。</dd>
+						<dd>The URL to sense the RSS of.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3444,28 +3444,28 @@
 			<dl id="OnRSSComplete">
 				<dt class="entry">OnRSSComplete</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスが正常に終了した際に発生。本イベントに反応しない場合は、表示に適切なスクリプトを生成しヘッドライン完了系イベントが呼び出される。</p>
+					<p>Occurs when the RSS sensor is completed successfully. If there is no response to this event, a script appropriate to display is generated and a headline sensor completion event is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新が無い時：no update　<a href="#caption_headlinesenseresult">※終了理由</a><br>更新が無い時はReference0のみでかつ"no update"という文字列のみ<br />
-						更新が有る時：RSS配信サイト名。</dd>
+						<dd>When there are no updates: "no update"　<a href="#caption_headlinesenseresult">※Ending reason</a>.<br>When there are no updates, Reference0 will be the only reference, and contain only "no update."<br />
+						When there are updates: The name of the RSS transmission site.</dd>
 						<dt>Reference1</dt>
-						<dd>更新が有る時のみ：RSSの配信元URL(フィードそのものではなく配信サイトを指すもの)</dd>
-						<dt>Reference2～</dt>
-						<dd>更新が有る時のみ：タイトル [\1] URL [\1] 更新日時（フォーマットはカンマ区切り：年,月,日,時,分,秒）[\1] 作者名 [\1] 内容または要約<br>更新がある時はRSSの要素数分Reference0,1,2～と続く<br>[\1]はバイト値1</dd>
+						<dd>Only when there are updates: The name of the RSS transmission URL (the URL that points to the site, not the feed itself).</dd>
+						<dt>Reference2~</dt>
+						<dd>Only when there are updates: Title [\1] URL [\1] Time of update (year,month,day,hour,minute,second delimited by commas) [\1] Creator name [\1] Contents or summary<br>When there are updates, the references continue from 0,1,2~ according to the number of RSS elements.<br>[\1] is the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 作者名・内容 2.4.10～</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Creator name, contents are from 2.4.10~</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnRSSFailure">
 				<dt class="entry">OnRSSFailure</dt>
 				<dd class="entry">
-					<p>RSSセンスに失敗した際に発生。本イベントに反応しない場合は、OnHeadlineSenseFailureが呼び出される。</p>
+					<p>Occurs when the RSS sensor has failed. If there is no response to this event, OnHeadlineSenseFailure is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3473,27 +3473,27 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_headlinesensephase">
-				<h1>ヘッドラインセンスOnFindフェーズ</h1>
+				<h1>Headline sense OnFind phases</h1>
 				<dl>
 					<dt>First</dt>
-					<dd>1ページ目</dd>
+					<dd>Page 1.</dd>
 					<dt>First and Last</dt>
-					<dd>1ページ目で次がない</dd>
+					<dd>Page 1 when there is no next page.</dd>
 					<dt>Last</dt>
-					<dd>最後のページ</dd>
+					<dd>The last page.</dd>
 					<dt>Next</dt>
-					<dd>いずれでもないページ</dd>
+					<dd>A page that fits none of the above descriptions.</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_headlinesenseresult">
-				<h1>ヘッドラインセンス終了理由</h1>
+				<h1>Headline sense ending reasons</h1>
 				<dl>
 					<dt>no update</dt>
-					<dd>（現状OnHeadlinesenseCompleteのみ）更新がなかった</dd>
+					<dd>There were no new updates (currently only applicable to OnHeadlinesenseComplete).</dd>
 					<dt>can't download</dt>
-					<dd>ファイルが取れなかった</dd>
+					<dd>The file could not be downloaded.</dd>
 					<dt>can't analyze</dt>
-					<dd>ファイルは取れたが、有効なヘッドラインを取得できなかった</dd>
+					<dd>The file was downloadable, but there was no valid headline to acquire.</dd>
 				</dl>
 			</section>
 		</section>
