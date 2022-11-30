@@ -317,6 +317,7 @@
 		<section class="navigation-category">
 			<h1>ネットワーク更新イベント</h1>
 			<ul>
+				<li><a href="#OnUpdateProcessExec">OnUpdateProcessExec</a></li>
 				<li><a href="#OnUpdateBegin">OnUpdateBegin</a></li>
 				<li><a href="#OnUpdateReady">OnUpdateReady</a></li>
 				<li><a href="#OnUpdateComplete">OnUpdateComplete</a></li>
@@ -2642,6 +2643,23 @@
 		</section>
 		<section class="category">
 			<h1>ネットワーク更新イベント</h1>
+			<dl id="OnUpdateProcessExec">
+				<dt class="entry">OnUpdateProcessExec</dt>
+				<dd class="entry">
+					<p>メニューなどから更新を実行する指示がなされた場合に発生する。<br />
+					このイベントに対して何かスクリプトを返すと、更新処理をカスタマイズできる。<br />
+					イベントを無視した場合は標準の更新処理に自動的に移行する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>manual : メニューから更新の操作をした。<br />
+						auto : あらかじめ設定した定期自動更新処理が動いた。<br />
+						testonly : 開発用パレットのUpdate Full Checkを実行した。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.23</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">

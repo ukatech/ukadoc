@@ -4505,20 +4505,28 @@
 			</dl>
 			<section class="caption" id="notes_inputbox-option">
 				<h1>InputBoxオプション</h1>
-				<p>○○の形で指定。</p>
+				<p>○○の形で指定。すべて指定がなくても動く。</p>
 				<dl>
 					<dt>--option=(noclose|noclear)</dt>
 					<dd>noclose:入力後、inputboxを閉じないで表示し続ける。
 					<br />noclear:入力後、入力内容を初期化せずにそのまま表示し続ける。
 					<br />nocloseと同時に指定する(例：\![inputbox,入力内容,,,--option=noclose,--option=noclear])。
 					<br />特殊なinputbox(slider,password,time,date)では無効。</dd>
+					
 					<dt>--text=デフォルト表示</dt>
 					<dd>最初から表示すべき文字列。
 					<br />sliderinputでは初期値,最小,最大/dateinputでは年,月,日/timeinputでは時,分,秒</dd>
+					
 					<dt>--timeout=タイムアウトミリ秒</dt>
 					<dd>入力ボックスを自動的に閉じるまでの時間。ゼロ以下を指定すると閉じない。</dd>
+					
+					<dt>--balloon=ID</dt>
+					<dd>balloonc?.png/txtの?のところに入るIDを指定すると、そのIDに対応した画像を利用する。<br />
+					指定がない場合は入力ボックスごとに標準で決まっているIDになる。 (SSP 2.6.23)</dd>
+
 					<dt>--limit=文字入力制限長さ</dt>
 					<dd>入力ボックスに入れられる文字数を制限する。</dd>
+					
 					<dt>--reference=追加情報</dt>
 					<dd>OnUserInputのReference3、またはOnではじまる指定イベントのReference2以降に指定した追加情報を追加する。</dd>
 				</dl>
