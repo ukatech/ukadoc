@@ -1495,7 +1495,7 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p>Occurs when the cursor is hovered over <em>and moved away from</em> a choice.<br />When the cursor is moved away, the event occurs with no References. <br /><em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the cursor is hovered over and <em>when moved away from</em> a choice.<br />When the cursor is moved away, the event occurs with no References. <br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The choice text (label).</dd>
@@ -3502,16 +3502,16 @@
 			<dl id="OnSchedule5MinutesToGo">
 				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
-					<p>本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
+					<p>Occurs five minutes before a scheduled reminder registered in the baseware calendar.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#caption_scheduletype">タイプ</a></dd>
+						<dd>The <a href="#caption_scheduletype">schedule type</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントの内容(caption)</dd>
+						<dd>The schedule contents (caption).</dd>
 						<dt>Reference2</dt>
-						<dd>追加データ(subtitle)</dd>
+						<dd>The additional data (subtitle).</dd>
 						<dt>Reference3</dt>
-						<dd>スクリプト(script)</dd>
+						<dd>The script (script).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3521,16 +3521,16 @@
 			<dl id="OnScheduleRead">
 				<dt class="entry">OnScheduleRead</dt>
 				<dd class="entry">
-					<p>カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
+					<p>Occurs when the cursor is stopped over the calendar icon, at the timing of the scheduled reminder being read.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#caption_scheduletype">タイプ</a>。</dd>
+						<dd>The <a href="#caption_scheduletype">schedule type</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントの内容(caption)</dd>
+						<dd>The schedule contents (caption).</dd>
 						<dt>Reference2</dt>
-						<dd>追加データ(subtitle)</dd>
+						<dd>The additional data (subtitle).</dd>
 						<dt>Reference3</dt>
-						<dd>スクリプト(script)</dd>
+						<dd>The script (script).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3540,10 +3540,10 @@
 			<dl id="OnSchedulesenseBegin">
 				<dt class="entry">OnSchedulesenseBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが接続開始する際に発生。</p>
+					<p>Occurs when the schedule sensor begins to connect.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3553,12 +3553,12 @@
 			<dl id="OnSchedulesenseComplete">
 				<dt class="entry">OnSchedulesenseComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理が完了した際に発生。</p>
+					<p>Occurs when the schedule sensor has finished processing.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 						<dt>Reference1</dt>
-						<dd>スケジュールセンサの返したスケジュールデータの数</dd>
+						<dd>The number of schedule data returned by the schedule sensor.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3568,10 +3568,10 @@
 			<dl id="OnSchedulesenseFailure">
 				<dt class="entry">OnSchedulesenseFailure</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
+					<p>Occurs when the schedule sensor processing has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
+						<dd><a href="#caption_headlinesenseresult">The failure reason</a> (shared with the headline sensor).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3581,10 +3581,10 @@
 			<dl id="OnSchedulepostBegin">
 				<dt class="entry">OnSchedulepostBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
+					<p>Occurs when the schedule sensor begins to connect in post mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3594,10 +3594,10 @@
 			<dl id="OnSchedulepostComplete">
 				<dt class="entry">OnSchedulepostComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
+					<p>Occurs when the schedule sensor has finished the posting process.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3605,42 +3605,42 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_scheduletype">
-				<h1>スケジュールタイプ</h1>
+				<h1>Schedule types</h1>
 				<dl>
 					<dt>default</dt>
-					<dd>認識できないタイプ</dd>
+					<dd>Unrecognized events</dd>
 					<dt>event</dt>
-					<dd>汎用</dd>
+					<dd>General events</dd>
 					<dt>meeting</dt>
-					<dd>会議</dd>
+					<dd>Meetings</dd>
 					<dt>appointment</dt>
-					<dd>アポイントメント</dd>
+					<dd>Appointments</dd>
 					<dt>reservation</dt>
-					<dd>病院などの予約</dd>
+					<dd>Reservations such as hospital appointments</dd>
 					<dt>duedate</dt>
-					<dd>しめきり</dd>
+					<dd>Deadlines</dd>
 					<dt>party</dt>
-					<dd>パーティー・飲み会</dd>
+					<dd>Parties and get-togethers</dd>
 					<dt>date</dt>
-					<dd>デート</dd>
+					<dd>Dates</dd>
 					<dt>work</dt>
-					<dd>仕事</dd>
+					<dd>Work events</dd>
 					<dt>go</dt>
-					<dd>お出かけ</dd>
+					<dd>Outings</dd>
 					<dt>tv</dt>
-					<dd>テレビ番組</dd>
+					<dd>Television programs</dd>
 					<dt>recording</dt>
-					<dd>録画予約</dd>
+					<dd>Timer recording reservations</dd>
 					<dt>cd</dt>
-					<dd>CD発売日</dd>
+					<dd>CD release dates</dd>
 					<dt>game</dt>
-					<dd>ゲーム発売日</dd>
+					<dd>Game release dates</dd>
 					<dt>video</dt>
-					<dd>映像メディアの発売日</dd>
+					<dd>Video media release dates</dd>
 					<dt>book</dt>
-					<dd>書籍発売日</dd>
+					<dd>Book release dates</dd>
 					<dt>release</dt>
-					<dd>その他発売日</dd>
+					<dd>Miscellaneous release dates</dd>
 				</dl>
 			</section>
 		</section>
