@@ -408,13 +408,21 @@
 				<dd class="entry">
 					<p>起動中のOSの情報。(id)に入る文字列は以下の通り。</p>
 					<dl>
+						<dt>type</dt>
+						<dd>OSの種類。SSPの場合Windows固定。</dd>
 						<dt>name</dt>
 						<dd>OSの名前。例：Windows 11 22H2</dd>
+						<dt>version</dt>
+						<dd>OSのカーネルバージョン。例：10.0。OSの呼称と食い違う場合がある点に注意。例：Windows 10も11も10.0になる。</dd>
 						<dt>build</dt>
 						<dd>OSのビルド番号。例：22621</dd>
+						<dt>parenttype</dt>
+						<dd>何らかの互換OS/互換レイヤーで動作している場合はその種類。無い場合は空文字列。今のところ Wine か ReactOS 。</dd>
+						<dt>parentname</dt>
+						<dd>互換OS/互換レイヤーのホスト側（親側）OSの名前。無い場合は空文字列。例：Linux 5.19.0-23-generic</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.26</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.26/27</li>
 					</ul>
 				</dd>
 			</dl>
