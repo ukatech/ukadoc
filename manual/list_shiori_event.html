@@ -2312,7 +2312,7 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1以降は2.4.85</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1 and onwards are from 2.4.85</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -3649,14 +3649,14 @@
 			<dl id="OnSSTPBreak">
 				<dt class="entry">OnSSTPBreak</dt>
 				<dd class="entry">
-					<p>SSTPがブレイクされた際に発生。</p>
+					<p>Occurs when the SSTP is broken.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the breaking occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon to which the breaking occurred. 0 if main character, 1 if side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />Ex:\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex:\s[2]abcde<br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3667,10 +3667,10 @@
 			<dl id="OnSSTPBlacklisting">
 				<dt class="entry">OnSSTPBlacklisting</dt>
 				<dd class="entry">
-					<p>最終クライアントのブラックリスト行きが指示された際に発生。</p>
+					<p>Occurs when the blacklisting of the final client is instructed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>最終クライアントのIPアドレス。</dd>
+						<dd>The IP address of the final client.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3683,21 +3683,21 @@
 			<dl id="OnExecuteHTTPComplete">
 				<dt class="entry">OnExecuteHTTPComplete</dt>
 				<dd class="entry">
-					<p>execute-httpで正常に取得完了した際に発生。</p>
+					<p>Occurs when acquisition with execute-http is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
 						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
+						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
+						<dd>The URL of the target.</dd>
 						<dt>Reference3</dt>
-						<dd>--nofileオプションがある場合、取得したデータの中身。ただし改行コードはバイト値1に置き換えられている。
-						<br />そうでない場合は取得したファイルのフルパス。</dd>
+						<dd>The contents of the acquired data, if the --nofile option has been specified. However, newline codes will be replaced with the 1-byte value.
+						<br />Otherwise, the full path of the acquired file.</dd>
 						<dt>Reference4</dt>
-						<dd>取得結果コード。(200|204)等</dd>
+						<dd>The acquisition result code. (200|204) etc.</dd>
 						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
+						<dd>The cookie string.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3707,20 +3707,20 @@
 			<dl id="OnExecuteHTTPFailure">
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
-					<p>execute-httpで取得エラーした際に発生。</p>
+					<p>Occurs when an acquisition error is caused with execute-http.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
 						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
+						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
+						<dd>The URL of the target.</dd>
 						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
+						<dd>The full path of the acquired file.</dd>
 						<dt>Reference4</dt>
-						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等。<a href="#caption_updateresultfailure">[失敗理由]</a>も参照。</dd>
+						<dd>The acquisition result code. (timeout|fileio|200|204|403|404) etc. Refer to <a href="#caption_updateresultfailure">[network failure reason]</a>.</dd>
 						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
+						<dd>The cookie string.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3730,28 +3730,28 @@
 			<dl id="OnExecuteHTTPSSLInfo">
 				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
 				<dd class="entry">
-					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>Notified despite acquisition failure (outside of HTTP response 200), when a connection is successfully made on the SSL/TLS level.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>async ID (無ければからっぽ)</dd>
+						<dd>async ID (empty if there is no ID)</dd>
 						<dt>Reference1</dt>
-						<dd>取得URL</dd>
+						<dd>The acquired URL.</dd>
 						<dt>Reference2</dt>
-						<dd>httpレスポンスコード (エラーでも通知される)</dd>
+						<dd>The http response code (notified even if an error occurs).</dd>
 						<dt>Reference3</dt>
-						<dd>通信バージョン 今時はだいたい "TLSv1/SSLv3" (SSP内部でSSLv2は蹴るので実はこれだけしか来ない)</dd>
+						<dd>The transmission version. These days, mostly "TLSv1/SSLv3" (SSP internally prevents SSLv2, so in actuality these are the only working versions).</dd>
 						<dt>Reference4</dt>
-						<dd>暗号化方法<br />例：AES256-SHA</dd>
+						<dd>The encryption method.<br />Ex: AES256-SHA</dd>
 						<dt>Reference5</dt>
-						<dd>発行先 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
+						<dd>The place being published to. To check the name, take the string after /O=.<br />For programmers: The string has the results from passing through OpenSSL's X509_NAME_oneline.<br />Ex: /1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
 						<dt>Reference6</dt>
-						<dd>有効期限開始日時 年,月,日,時,分,秒<br />例：2011,7,7,9,0,0</dd>
+						<dd>The validity period starting date and time. Year,month,day,hour,minute,second<br />Ex: 2011,7,7,9,0,0</dd>
 						<dt>Reference7</dt>
-						<dd>有効期限終了日時 年,月,日,時,分,秒<br />例：2012,7,28,8,59,59</dd>
+						<dd>The validity period expiration date and time. Year,month,day,hour,minute,second<br />Ex: 2012,7,28,8,59,59</dd>
 						<dt>Reference8</dt>
-						<dd>発行者 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
-						<dt>Reference9 (2.4.51～)</dt>
-						<dd>証明書チェーン CommonName(CN)をカンマ区切りで順番に列挙</dd>
+						<dd>The publisher. To check the name, take the string after /O=.<br />For programmers: The string has the results from passing through OpenSSL's X509_NAME_oneline.<br />Ex: /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
+						<dt>Reference9 (2.4.51~)</dt>
+						<dd>The certificate chain. Displays CommonName(CN) in order delimited by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3761,23 +3761,23 @@
 			<dl id="OnExecuteRSSComplete">
 				<dt class="entry">OnExecuteRSSComplete</dt>
 				<dd class="entry">
-					<p>\![execute,rss-get/post]で正常に取得完了した際に発生。</p>
+					<p>Occurs when acquisition with \![execute,rss-get/post] is completed successfully.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>タイトル [\1] URL [\1] 更新日時（フォーマットはカンマ区切り：年,月,日,時,分,秒）[\1] 作者名 [\1] 内容または要約<br>更新がある時はRSSの要素数分Reference0,1,2～と続く<br>[\1]はバイト値1</dd>
+						<dt>Reference0~</dt>
+						<dd>Title [\1] URL [\1] Time of update (comma-separated format: Year,month,day,hour,minute,second)  [\1] Creator name [\1] Contents or summary<br>When there are updates, the references continue from 0,1,2~ according to the number of RSS elements.<br>[\1] is the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 作者名・内容 2.4.10～</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Creator name・Contents 2.4.10~</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSFailure">
 				<dt class="entry">OnExecuteRSSFailure</dt>
 				<dd class="entry">
-					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
+					<p>Occurs when an acquisition error is caused with \![execute,rss-get/post].</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>解析失敗時はReference4=parse。他は<a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a></dd>
+						<dt>Reference0~</dt>
+						<dd>When the analysis fails, Reference4=parse. Otherwise, the same as <a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3787,10 +3787,10 @@
 			<dl id="OnExecuteRSS_SSLInfo">
 				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
 				<dd class="entry">
-					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>Notified despite acquisition failure (outside of HTTP response 200), when a connection is successfully made on the SSL/TLS level.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
+						<dt>Reference0~</dt>
+						<dd>The same as <a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3798,16 +3798,16 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnPingComplete or the ID specified with --event</dt>
 				<dd class="entry">
-					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
+					<p>Occurs when the number of pings specified in \![execute,ping] have been executed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dd>The source address [\1] The total number of pings sent [\1] The number of successful pings [\1] The number of failed pings<br>[\1] is the 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+						<dd>"OK" or error information [\1] The reply address [\1] RTT (response time in milliseconds)<br>[\1] is the 1-byte value.<br />From Reference2 onwards, the information of each individual sent ping is recorded. "Progress" indicates an incomplete status.<br />Refer to <a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure Status Headers</a> for details on error information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
