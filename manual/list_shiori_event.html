@@ -3815,16 +3815,16 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
+				<dt class="entry">OnPingProgress or the ID specified with --event + Progress</dt>
 				<dd class="entry">
-					<p>\![execute,ping]でping実行中に発生。</p>
+					<p>Occurs while executing pings with \![execute,ping].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dd>The source address [\1] The total number of pings sent [\1] The number of successful pings [\1] The number of failed pings<br>[\1] is the 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+						<dd>"OK" or error information [\1] The reply address [\1] RTT (response time in milliseconds)<br>[\1] is the 1-byte value.<br />From Reference2 onwards, the information of each individual sent ping is recorded. "Progress" indicates an incomplete status.<br />Refer to <a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure Status Headers</a> for details on error information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3832,18 +3832,18 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnNSLookupComplete or the ID specified with --event</dt>
 				<dd class="entry">
-					<p>\![execute,nslookup]で成功時に発生。</p>
+					<p>Occurs when \![execute,nslookup] is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
+						<dd>The string specified with --host.</dd>
 						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dd>"lookup" when performing a DNS lookup, "reverse" when performing a reverse DNS lookup.</dd>
 						<dt>Reference3</dt>
-						<dd>実行結果。正引きでIP、逆引きでホスト名。</dd>
+						<dd>The search results. IP if a DNS lookup, host name if a reverse DNS lookup.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3851,16 +3851,16 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dt class="entry">OnNSLookupFailure or the ID specified with --event + Failure</dt>
 				<dd class="entry">
-					<p>\![execute,nslookup]で失敗時に発生。</p>
+					<p>Occurs when \![execute,nslookup] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
+						<dd>The string specified with --host.</dd>
 						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dd>"lookup" when performing a DNS lookup, "reverse" when performing a reverse DNS lookup.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3873,16 +3873,16 @@
 				<dl id="OnRaisePluginFailure">
 				<dt class="entry">OnRaisePluginFailure</dt>
 				<dd class="entry">
-					<p>\![raiseplugin]が失敗した際に発生。</p>
+					<p>Occurs when \![raiseplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3892,16 +3892,16 @@
 			<dl id="OnNotifyPluginFailure">
 				<dt class="entry">OnNotifyPluginFailure</dt>
 				<dd class="entry">
-					<p>\![notifyplugin]が失敗した際に発生。</p>
+					<p>Occurs when \![notifyplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3911,16 +3911,16 @@
 			<dl id="OnRaiseOtherFailure">
 				<dt class="entry">OnRaiseOtherFailure</dt>
 				<dd class="entry">
-					<p>\![raiseother]が失敗した際に発生。</p>
+					<p>Occurs when \![raiseother] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when not found.<br />"timecritical" when during \t.<br />"passivemode" when during passive mode.<br />"inductionmode" when during induction mode.<br />"minimized" when minimized.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The ghost name or \0 name.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3930,16 +3930,16 @@
 			<dl id="OnNotifyOtherFailure">
 				<dt class="entry">OnNotifyOtherFailure</dt>
 				<dd class="entry">
-					<p>\![notifyother]が失敗した際に発生。</p>
+					<p>Occurs when \![notifyother] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when not found.<br />"timecritical" when during \t.<br />"passivemode" when during passive mode.<br />"inductionmode" when during induction mode.<br />"minimized" when minimized.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The ghost name or \0 name.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
