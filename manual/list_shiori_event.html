@@ -4285,7 +4285,7 @@
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
-					<p>残りバッテリー量を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>残りバッテリー量を通知。起動時のみ<em class="specsign">[NOTIFY]</em>で通知され、他はGET。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>残りバッテリー％。</dd>
@@ -4302,6 +4302,7 @@
 						no_battery：バッテリーが取り外されている<br />
 						power_saving：バッテリー節約機能がON (SSP 2.3.94以降/Windows 10以降)</dd>
 					</dl>
+					<p>Windows 7より前のOSでは、high/lowの基準が異なることがある。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4310,12 +4311,12 @@
 			<dl id="OnBatteryLow">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p>バッテリー残量が少なめ(標準20%以下：OS設定に依存)になった際に発生する。<br />
+					<p>バッテリー残量が少なめ(OnBatteryNotify Reference3がlow以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
 					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。Reference3がlow以下になった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4325,7 +4326,7 @@
 			<dl id="OnBatteryCritical">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p>バッテリー残量が極端に少なく(標準5%以下：OS設定に依存)になった際に発生する。<br />
+					<p>バッテリー残量が極端に少なく(OnBatteryNotify Reference3がcritical以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
 					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
@@ -4343,7 +4344,7 @@
 					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4356,7 +4357,7 @@
 					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
