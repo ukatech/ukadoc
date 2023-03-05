@@ -191,11 +191,11 @@
 			<h1>SSTP over HTTP</h1>
 			<p>SSTP over HTTPは、SSP 2.6.32で実装された、HTTPリクエストメッセージボディにSSTPリクエストをそのまま突っ込み、HTTPレスポンスボディにSSTPレスポンスがそのまま返ってくるきわめて単純な仕組みです。
 			<br />ElectronなどJavaScriptを使ってアプリを作った時に、より簡単にSSTP通信をやりとりするために使うのを想定しています。
-			<br />127.0.0.1:9801(または別途指定されたSSTPポート) に対して、 /api/sstp/v1 に Content-Type: text/plainでHTTP/1.1でPOSTしてください。
+			<br />localhost:9801(または別途指定されたSSTPポート) に対して、 /api/sstp/v1 に Content-Type: text/plainでHTTP/1.1でPOSTしてください。
 			<br />レスポンスもそのまま、HTTP/1.1 200 OKのContent-Type: text/plainで返ってきます。
 			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。</p>
 			
-			<p><a href="http://127.0.0.1:9801/api/sstp/v1">お試し</a></p>
+			<p><a href="http://localhost:9801/api/sstp/v1">お試し</a></p>
 		</section>
 		
 		
