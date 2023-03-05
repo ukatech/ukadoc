@@ -196,6 +196,9 @@
 			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。</p>
 			
 			<p><a href="http://localhost:9801/api/sstp/v1">お試し</a></p>
+			
+			<p>注意：Originヘッダがlocalhostを指していない場合は、強制的にリモートアドレスからのSSTPリクエストとして扱われ、SakuraScriptタグや実行できるSSTPメソッドに強い制約がかかり、かつSecurityLevelヘッダも無視されます。
+			<br />この制約は、HTTPのOriginがlocalhost、かつSSTPのSecurityLevelがlocalの場合のみ緩和されます。</p>
 		</section>
 		
 		
