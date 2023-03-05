@@ -137,6 +137,7 @@
 			<ul>
 				<li><a href="#sstp">概要</a></li>
 				<li><a href="#direct">Direct SSTP</a></li>
+				<li><a href="#http">SSTP over HTTP</a></li>
 				<li><a href="#req_res">request/response</a></li>
 				<li><a href="#method_notify">メソッド：NOTIFY</a></li>
 				<li><a href="#method_send">メソッド：SEND</a></li>
@@ -183,6 +184,18 @@
 				<br />受信側は通信先として指定されたHWNDを、受信すべきゴーストがSSTPプロトコル内で指定されたものと同等として取り扱い、できる限りそのゴーストを優先する。
 				<br />受信側・送信側共にウインドウを1つ以上持つGUIアプリのみを想定しており、コンソールアプリでは使用できない。</p>
 			</section>
+		</section>
+		
+		
+		<section class="category" id="http">
+			<h1>SSTP over HTTP</h1>
+			<p>SSTP over HTTPは、SSP 2.6.32で実装された、HTTPリクエストメッセージボディにSSTPリクエストをそのまま突っ込み、HTTPレスポンスボディにSSTPレスポンスがそのまま返ってくるきわめて単純な仕組みです。
+			<br />ElectronなどJavaScriptを使ってアプリを作った時に、より簡単にSSTP通信をやりとりするために使うのを想定しています。
+			<br />127.0.0.1:9801(または別途指定されたSSTPポート) に対して、 /api/sstp/v1 に Content-Type: text/plainでHTTP/1.1でPOSTしてください。
+			<br />レスポンスもそのまま、HTTP/1.1 200 OKのContent-Type: text/plainで返ってきます。
+			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。</p>
+			
+			<p><a href="http://127.0.0.1:9801/api/sstp/v1">お試し</a></p>
 		</section>
 		
 		
