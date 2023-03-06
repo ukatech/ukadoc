@@ -493,14 +493,15 @@ Command: GetName
 					<dt>GetName</dt>
 					<dd>起動中のゴーストの (\0名),(\1名) カンマ区切り</dd>
 					
-					<dt>GetNames [SSP]</dt>
+					<dt>GetNames [SSP] [リモート不可]</dt>
 					<dd>現在インストールされている\0名のリスト。改行区切り。空行で終端。</dd>
 					
-					<dt>GetFMO [SSP 2.5.57]</dt>
+					<dt>GetFMO [SSP 2.5.57] [リモート制限あり]</dt>
 					<dd><a href="spec_fmo_mutex.html">FMO</a>の中身と同等の情報を取得する。
 					<br />ただしSSTPで通信したアプリケーション内部での管理分に限り、同時実行中のアプリケーション群共用である本来のFMOとは異なる。
 					<br />主にウインドウを持たずDirect SSTPを送信できないコンソールアプリなどで、Socket SSTPのみでReceiverGhostHWndヘッダを活用しDirect SSTP相当の機能を実現するために用いられる。
-					<br />改行区切り、空行で終端。</dd>
+					<br />改行区切り、空行で終端。
+					<br />リモートからの要求の場合は、各パス情報が抜け、ヘッダとhwndがダミーに置き換わる。</dd>
 					
 					<dt>GetGhostName [SSP]</dt>
 					<dd>起動中のゴースト本体の名前(descript.txtのname)</dd>
@@ -514,45 +515,45 @@ Command: GetName
 					<dt>GetVersion</dt>
 					<dd>ベースウェア(実行中のソフト)のバージョン</dd>
 					
-					<dt>Quiet</dt>
+					<dt>Quiet [リモート不可]</dt>
 					<dd>Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)</dd>
 					
 					<dt>Restore</dt>
 					<dd>Quietを解除。追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>CompressArchive [SSP]</dt>
+					<dt>CompressArchive [SSP] [リモート不可]</dt>
 					<dd>指定したフォルダ内のファイル群を圧縮ファイルに圧縮する。
 					<br />処理が終わるまでレスポンスが返らないので注意。
 					<br />パラメータ0：圧縮ファイル名
 					<br />パラメータ1：圧縮すべきフォルダのフルパス
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>ExtractArchive [SSP]</dt>
+					<dt>ExtractArchive [SSP] [リモート不可]</dt>
 					<dd>指定した圧縮ファイルを解凍する。
 					<br />処理が終わるまでレスポンスが返らないので注意。
 					<br />パラメータ0：圧縮ファイル名
 					<br />パラメータ1：解凍先のフォルダのフルパス
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 
-					<dt>DumpSurface [SSP 2.5.98]</dt>
+					<dt>DumpSurface [SSP 2.5.98] [リモート不可]</dt>
 					<dd>合成済みのサーフェス画像を指定したディレクトリに出力する。パラメータは<a href="list_sakura_script.html#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface]</a>と同じ。
 					<br />処理が終わるまでレスポンスが返らないので注意。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 
-					<dt>MoveAsync [SSP]</dt>
+					<dt>MoveAsync [SSP] [リモート不可]</dt>
 					<dd><a href="list_sakura_script.html#notes_move">\![moveasync]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
 					<br />SSTPのタイムアウトまでにresponseを返せないのとデッドロックの原因になるため、asyncなしのmoveは実行できない。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>SetTrayIcon [SSP]</dt>
+					<dt>SetTrayIcon [SSP] [リモート不可]</dt>
 					<dd><a href="list_sakura_script.html#_!_set,tasktrayicon,%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E5%90%8D,%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88_">\![set,tasktrayicon]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>SetTrayBalloon [SSP]</dt>
+					<dt>SetTrayBalloon [SSP] [リモート不可]</dt>
 					<dd><a href="list_sakura_script.html#_!_set,trayballoon,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3,%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3..._">\![set,trayballoon]</a>と同じことをSakuraScriptを介さずに実行する。パラメータ指定方法はSakuraScript版と同じ。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>SetProperty [SSP]</dt>
+					<dt>SetProperty [SSP] [リモート不可]</dt>
 					<dd><a href="list_propertysystem.html">プロパティシステム</a>に値を書き込む。
 					<br />パラメータ0：プロパティの名前
 					<br />パラメータ1：設定すべき値
