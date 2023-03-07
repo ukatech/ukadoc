@@ -4445,7 +4445,8 @@
 			<dl id="OnRecycleBinEmpty">
 				<dt class="entry">OnRecycleBinEmpty</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。</p>
+					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
+					<br />このイベントはスクリプトを実行したゴーストだけでなく、起動中の全ゴーストに通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
@@ -4456,6 +4457,10 @@
 						<dt>Reference3</dt>
 						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
 					</dl>
+					<p>正常にゴミ箱を空にできた場合は、必ずReference0と1が0になるので、以下のように判定できる。
+					<br />Reference0＝0 かつ Reference2＝0 ： もとから空っぽ
+					<br />Reference0＝0 かつ Reference2≠0 ： 正常に空にできた
+					<br />Reference0≠0 ： 何かエラーが起きて一部のファイルを消せなかった</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
 					</ul>
@@ -4464,7 +4469,7 @@
 			<dl id="OnRecycleBinStatusUpdate">
 				<dt class="entry">OnRecycleBinStatusUpdate</dt>
 				<dd class="entry">
-					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生する。</p>
+					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生し、起動中の全ゴーストに通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在ゴミ箱に入っているファイルの数</dd>
