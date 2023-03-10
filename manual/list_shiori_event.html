@@ -2607,9 +2607,9 @@
 			<dl id="OnURLQuery">
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
-					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
-					これに対してスクリプトを返すと、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
-					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
+					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知される。<br />
+					これに対してスクリプトを返すと、通常のダウンロード処理がキャンセルされる。<br />
+					ゴースト側でURLを独自に処理したい場合のみスクリプトを返すこと。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>URLパス。</dd>
@@ -2617,9 +2617,14 @@
 						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
 						<dt>Reference2</dt>
 						<dd>ドロップされたURLのMIMEタイプ</dd>
+						<dt>Reference3</dt>
+						<dd>反応しなかった場合にSSPがこの後実行予定の処理。
+						<br />feed・nar・homeurl・unknownのいずれか。
+						<br />unknownの場合は本体が処理に対応できないURLであり、本体側ではこれ以上の処理ができないことを示す。
+						<br />それ以外はそのまま <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> に渡すと処理の続きが行われる。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref3は2.6.35</li>
 					</ul>
 				</dd>
 			</dl>

@@ -4800,9 +4800,13 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
-				<dt class="entry">\![execute,install,url,URL,feedまたはnar]</dt>
+				<dt class="entry">\![execute,install,url,URL,(feed|nar|homeurlのいずれか)]</dt>
 				<dd class="entry">
-					<p>指定したURLのnarファイルをインストールまたはRSSFeedを登録。<br>feed、narは省略可能。<br>ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。</p>
+					<p>指定したURLのnarファイルをインストールまたはRSSFeedを登録。
+					<br />(feed|nar|homeurl)は省略可能。
+					<br />ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。
+					<br />このタグで実行されたダウンロード処理については、OnURLQueryは発生しない。</p>
+					
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
