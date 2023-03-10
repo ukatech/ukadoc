@@ -4446,7 +4446,7 @@
 				<dt class="entry">OnRecycleBinEmpty</dt>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
-					<br />このイベントはスクリプトを実行したゴーストだけでなく、起動中の全ゴーストに通知される。</p>
+					<br />スクリプトを実行したゴーストだけでなく、起動中の全ゴーストにもOnRecycleBinEmptyFromOtherが通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
@@ -4456,13 +4456,21 @@
 						<dd>現在ゴミ箱に入っているファイルの数の直前との差(空にした直後なのでふつうは負の値)</dd>
 						<dt>Reference3</dt>
 						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
+						<dt>Reference4</dt>
+						<dd>正常に空にできたら1、何かエラーが起きたら0(もとから空っぽでも0)</dd>
 					</dl>
-					<p>正常にゴミ箱を空にできた場合は、必ずReference0と1が0になるので、以下のように判定できる。
-					<br />Reference0＝0 かつ Reference2＝0 ： もとから空っぽ
-					<br />Reference0＝0 かつ Reference2≠0 ： 正常に空にできた
-					<br />Reference0≠0 ： 何かエラーが起きて一部のファイルを消せなかった</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRecycleBinEmpty">
+				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
+				<dd class="entry">
+					<p>\![execute,emptyrecyclebin]でゴミ箱を空にする指示を出したゴースト以外に送られる。<br />
+					ReferenceはOnRecycleBinEmptyと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
@@ -4479,9 +4487,11 @@
 						<dd>現在ゴミ箱に入っているファイルの数の直前との差</dd>
 						<dt>Reference3</dt>
 						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
+						<dt>Reference4</dt>
+						<dd>常に1 (OnRecycleBinEmptyとの互換用のダミー)</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
