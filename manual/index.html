@@ -17,6 +17,61 @@
 			UKADOC Project(Powered by Disc-2)
 		</iframe>
 	</header>
+	<script type="text/javascript">
+		//获取当前页面的URL的参数，保存在一个对象中
+		function getURLParams(){
+			var url = location.search;
+			var params = {};
+			if(url.indexOf("?") != -1){
+				var str = url.substr(1);
+				var strs = str.split("&");
+				for(var i = 0; i < strs.length; i ++){
+					params[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+				}
+			}
+			return params;
+		}
+		//获取当前页面的URL的参数
+		var params = getURLParams();
+		//若URL中有参数：event_name
+		if(params["event_name"]){
+			var event_name = params["event_name"];
+			var url = ".";
+			if(event_name.indexOf("On_") == 0){
+				switch(event_name.substr(3)){
+					case "basewareversion":
+					case "hwnd":
+					case "uniqueid":
+					case "capability":
+					case "ownerghostname":
+					case "otherghostname":
+					case "installedghostname":
+					case "installedshellname":
+					case "installedballoonname":
+					case "installedheadlinename":
+					case "installedplugin":
+					case "configuredbiffname":
+					case "ghostpathlist":
+					case "balloonpathlist":
+					case "headlinepathlist":
+					case "pluginpathlist":
+					case "calendarskinpathlist":
+					case "calendarpluginpathlist":
+					case "rateofusegraph":
+					case "inputbox.autocomplete":
+						url = "./list_shiori_resource.html#" + event_name;
+						break;
+					default:
+						url = "./list_shiori_event.html#" + event_name;
+						break;
+				}
+			}
+			else
+				url = "./list_shiori_event.html#" + event_name;
+			//进行跳转！
+			window.location.href=url;
+		}
+	</script>
 	<section class="body">
 		<nav class="sidebar">
 			<iframe src="sidemenu.html" id="sidemenu" name="sidemenu" title="ukadoc sidemenu"></iframe>
