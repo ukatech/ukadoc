@@ -2561,14 +2561,17 @@
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされた際に発生。</p>
+					<p>URLがドロップされた際に発生。
+					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>URLパス。</dd>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2576,14 +2579,19 @@
 			<dl id="OnURLDropped">
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
-					<p>ドロップされたURLを受領し終わった際に発生。</p>
+					<p>ドロップされたURLを受領し終わった際に発生。
+					<br />このイベントはNARインストールの直前、ダウンロード処理完了直後に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードし終わったファイルのローカルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1,2は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2591,16 +2599,21 @@
 			<dl id="OnURLDropFailure">
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
-					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</p>
+					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。
+					<br />このイベントはNARインストールを試行しようとして失敗した際に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ダウンロードし終わった分のファイルのローカルパス。</dd>
 						<dt>Reference1</dt>
 						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference3</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref2,3は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -4464,6 +4477,8 @@
 						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
 						<dt>Reference4</dt>
 						<dd>正常に空にできたら1、何かエラーが起きたら0(もとから空っぽでも0)</dd>
+						<dt>Reference5</dt>
+						<dd>タグを実行したゴーストの本体側の名前(sakuraname)。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
@@ -4495,6 +4510,8 @@
 						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
 						<dt>Reference4</dt>
 						<dd>常に1 (OnRecycleBinEmptyとの互換用のダミー)</dd>
+						<dt>Reference5</dt>
+						<dd>常に空 (OnRecycleBinEmptyとの互換用のダミー)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
