@@ -39,10 +39,16 @@
 			var url = ".";
 			if(event_name.indexOf("On_") == 0)
 				event_name = event_name.substr(3);
-			//若事件名以char任意数字.开头，替换为char*.
-			//正则表达式：/^char\d+\./
-			if(event_name.match(/^char\d+\./))
-				event_name = event_name.replace(/^char\d+\./, "char*.");
+			{
+				var re_charname_start = new RegExp(/^char\d+\./);
+				if(event_name.match(re_charname_start))
+					event_name = event_name.replace(re_charname_start, "char*.");
+			}
+			{
+				var re_boxname_start = new RegExp("^(communicatebox|scriptbox|addressbar|teachbox|dateinput|timeinput|ipinput|sliderinput|passwordinput|inputbox).");
+				if(event_name.match(re_boxname_start))
+					event_name = event_name.replace(re_boxname_start, "boxname.");
+			}
 			switch(event_name){
 case "OnBeerShower":
 case "OnDive":
@@ -189,16 +195,8 @@ case "OnWeatherStation.Forecast.Hourly":
 case "OnWeatherStation.Error":
 					url = "./list_shiori_event_ex.html#" + event_name;
 					break;
-case "communicatebox.defaultleft":
-case "scriptbox.defaultleft":
-case "addressbar.defaultleft":
-case "teachbox.defaultleft":
-case "dateinput.defaultleft":
-case "timeinput.defaultleft":
-case "ipinput.defaultleft":
-case "sliderinput.defaultleft":
-case "passwordinput.defaultleft":
-case "inputbox.defaultleft":
+case "boxname.defaultleft":
+case "boxname.defaulttop":
 					event_name = "boxname.defaultleft";
 case "caption_shioriresource":
 case "version":
