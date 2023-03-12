@@ -38,29 +38,153 @@
 			var event_name = params["event_name"];
 			var url = ".";
 			if(event_name.indexOf("On_") == 0)
-				event_name = event_name.substr(3)
+				event_name = event_name.substr(3);
 			switch(event_name){
-				case "basewareversion":
-				case "hwnd":
-				case "uniqueid":
-				case "capability":
-				case "ownerghostname":
-				case "otherghostname":
-				case "installedghostname":
-				case "installedshellname":
-				case "installedballoonname":
-				case "installedheadlinename":
-				case "installedplugin":
-				case "configuredbiffname":
-				case "ghostpathlist":
-				case "balloonpathlist":
-				case "headlinepathlist":
-				case "pluginpathlist":
-				case "calendarskinpathlist":
-				case "calendarpluginpathlist":
-				case "rateofusegraph":
-				case "inputbox.autocomplete":
-					url = "./list_shiori_resource.html#" + event_name;
+case "OnBeerShower":
+case "OnDive":
+case "OnHitThunder":
+case "OnStampInfo":
+case "OnStampAdd":
+case "OnStampInfoCall":
+case "OnPotatoReturn":
+case "OnPotatoFileNotFound":
+case "OnPotatoError":
+case "OnCrystalDiskInfoEvent":
+case "OnCrystalDiskInfoClear":
+case "OnHttpcNotify":
+case "OnApplicationBoot":
+case "OnApplicationClose":
+case "OnApplicationExist":
+case "OnApplicationVersion":
+case "OnApplicationOperationFinish":
+case "OnApplicationFileOpen":
+case "OnWebsiteUpdateNotify":
+case "OnKinokoObjectCreate":
+case "OnKinokoObjectDestroy":
+case "OnKinokoObjectChanging":
+case "OnKinokoObjectChanged":
+case "OnKinokoObjectInstalled":
+case "OnBatteryLow-kinoko":
+case "OnBatteryCritical-kinoko":
+case "OnSysResourceLow":
+case "OnSysResourceCritical":
+case "OnNekodorifObjectEmerge":
+case "OnNekodorifObjectHit":
+case "OnNekodorifObjectDrop":
+case "OnNekodorifObjectVanish":
+case "OnNekodorifObjectDodge":
+case "OnMusicPlay":
+case "OnFleetClockComplete":
+case "OnElonaOmakeMMAEventNewGame":
+case "OnElonaOmakeMMAEventGameLoad":
+case "OnElonaOmakeMMAEventGameQuit":
+case "OnElonaOmakeMMAEventHourPlayed":
+case "OnElonaOmakeMMAEventMapChanged":
+case "OnElonaOmakeMMAEventLevelUp":
+case "OnElonaOmakeMMAEventSkillUp":
+case "OnElonaOmakeMMAEventSkillDown":
+case "OnElonaOmakeMMAEventBelieveGod":
+case "OnElonaOmakeMMAEventJoinParty":
+case "OnElonaOmakeMMAEventSleep":
+case "OnElonaOmakeMMAEventAwake":
+case "OnElonaOmakeMMAEventInvestNPC":
+case "OnElonaOmakeMMAEventRandomEvent":
+case "OnElonaOmakeMMAEventAddNewsTopic":
+case "OnElonaOmakeMMAEventWish":
+case "OnElonaOmakeMMAEventWished":
+case "OnElonaOmakeMMAEventDead":
+case "OnElonaOmakeMMAEventPetDead":
+case "OnElonaOmakeMMAEventLastword":
+case "OnElonaOmakeMMAEventTravelGuide":
+case "OnElonaOmakeMMAEventAbandonPet":
+case "OnElonaOmakeMMAEventSaleSlave":
+case "OnElonaOmakeMMAEventSaleWife":
+case "OnElonaOmakeMMAEventMarriage":
+case "OnElonaOmakeMMAEventRefuseMarriage":
+case "OnElonaOmakeMMAEventJoinGuild":
+case "OnElonaOmakeMMAEventMutation":
+case "OnElonaOmakeMMAEventMutationCured":
+case "OnElonaOmakeMMAEventEtherDisease":
+case "OnElonaOmakeMMAEventEtherDiseaseCured":
+case "OnElonaOmakeMMAEventAdventGod":
+case "OnElonaOmakeMMAEventMewmewmew":
+case "OnElonaOmakeMMAEventBuyNuke":
+case "OnElonaOmakeMMAEventSetNuke":
+case "OnElonaOmakeMMAEventNukeExploded":
+case "OnElonaOmakeMMAEventLomiasInTheParty":
+case "OnElonaOmakeMMAEventLomiasKilled":
+case "OnElonaOmakeMMAEventZeomeKilled":
+case "OnElonaOmakeMMAEventConqueredLesimas":
+case "OnElonaOmakeMMAEventAtonement":
+case "OnElonaOmakeMMAEventBecomeCriminal":
+case "OnElonaOmakeMMAEventPerformance":
+case "OnElonaOmakeMMAEventClothOut":
+case "OnElonaOmakeMMAEventStealItem":
+case "OnElonaOmakeMMAEventTreasureDigging":
+case "OnElonaOmakeMMAEventReadTreasureMap":
+case "OnElonaOmakeMMAEventSkillLearned":
+case "OnElonaOmakeMMAEventWeatherChanged":
+case "OnElonaOmakeMMAEventRagnarok":
+case "OnElonaOmakeMMAEventSisterRagnarok":
+case "OnElonaOmakeMMAEventPray":
+case "OnElonaOmakeMMAEventOffer":
+case "OnElonaOmakeMMAEventPrayFailed":
+case "OnElonaOmakeMMAEventPrayEyth":
+case "OnElonaOmakeMMAEventAreaChanged*":
+case "OnElonaOmakeMMAEventPayTax":
+case "OnElonaOmakeMMAEventCooking":
+case "OnElonaOmakeMMAEventAreaChanged":
+case "OnElonaOmakeMMAEventHour":
+case "OnElonaOmakeMMAEventGrandmapocalypse":
+case "OnMahjong":
+case "OnMahjongResponse":
+case "OnSatolistBoot":
+case "OnSatolistGhostOpened":
+case "OnSatolistSaved":
+case "OnSatolistClosed":
+case "OnSatolistEventAdded":
+case "OnSatolistDictionaryFolderChanged":
+case "OnTourabuConquestStart":
+case "OnTourabuConquestEnd":
+case "OnTourabuDutyStart":
+case "OnTourabuDutyEnd":
+case "OnRequestValues":
+case "OnGetValues":
+case "OnTalkRequest":
+case "OnHandActivate":
+case "OnJitenBattle":
+case "OnJitenTagBattle":
+case "OnMglBattle":
+case "Send60stair_Call":
+case "Send60stair_Start":
+case "Send60stair_YourTurnStart":
+case "Send60stair_Marking":
+case "Send60stair_DiceRoll":
+case "Send60stair_Dobon":
+case "Send60stair_YourTurnEnd":
+case "Send60stair_Goal":
+case "Send60stair_GameEnd":
+case "Send60stair_GetStatus":
+case "OnKanadeTeaPartyInfomationRequest":
+case "可変名の返信イベント":
+case "OnKanadeTeaParty":
+case "OnKanadeTeaPartyEnd":
+case "OnPoker":
+case "OnPokerNotify":
+case "OnMopClear":
+case "ShioriEcho.GetName":
+case "ShioriEcho.Begin":
+case "ShioriEcho":
+case "ShioriEcho.GetResult":
+case "ShioriEcho.TabPress":
+case "ShioriEcho.End":
+case "OnWeatherStation.Weather":
+case "OnWeatherStation.Astro":
+case "OnWeatherStation.Alerts":
+case "OnWeatherStation.Forecast.Day":
+case "OnWeatherStation.Forecast.Hourly":
+case "OnWeatherStation.Error":
+					url = "./list_shiori_event_ex.html#" + event_name;
 					break;
 				default:
 					url = "./list_shiori_event.html#" + event_name;
