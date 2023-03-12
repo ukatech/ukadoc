@@ -39,6 +39,10 @@
 			var url = ".";
 			if(event_name.indexOf("On_") == 0)
 				event_name = event_name.substr(3);
+			//若事件名以char任意数字.开头，替换为char*.
+			//正则表达式：/^char\d+\./
+			if(event_name.match(/^char\d+\./))
+				event_name = event_name.replace(/^char\d+\./, "char*.");
 			switch(event_name){
 case "OnBeerShower":
 case "OnDive":
@@ -166,7 +170,6 @@ case "Send60stair_Goal":
 case "Send60stair_GameEnd":
 case "Send60stair_GetStatus":
 case "OnKanadeTeaPartyInfomationRequest":
-case "可変名の返信イベント":
 case "OnKanadeTeaParty":
 case "OnKanadeTeaPartyEnd":
 case "OnPoker":
@@ -186,6 +189,17 @@ case "OnWeatherStation.Forecast.Hourly":
 case "OnWeatherStation.Error":
 					url = "./list_shiori_event_ex.html#" + event_name;
 					break;
+case "communicatebox.defaultleft":
+case "scriptbox.defaultleft":
+case "addressbar.defaultleft":
+case "teachbox.defaultleft":
+case "dateinput.defaultleft":
+case "timeinput.defaultleft":
+case "ipimput.defaultleft":
+case "sliderinput.defaultleft":
+case "passwordinput.defaultleft":
+case "inputbox.defaultleft":
+					event_name = "boxname.defaultleft";
 case "caption_shioriresource":
 case "version":
 case "craftman":
@@ -207,7 +221,6 @@ case "char*.defaultleft":
 case "sakura.defaulttop":
 case "kero.defaulttop":
 case "char*.defaulttop":
-case "boxname.defaultleft":
 case "sakura.recommendsites":
 case "sakura.portalsites":
 case "kero.recommendsites":
@@ -345,6 +358,7 @@ case "texttospeechbutton.caption":
 case "tooltip":
 case "balloon_tooltip":
 					url = "./list_shiori_resource.html#" + event_name;
+					break;
 				default:
 					url = "./list_shiori_event.html#" + event_name;
 					break;
