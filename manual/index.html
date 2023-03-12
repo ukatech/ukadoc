@@ -38,7 +38,8 @@
 			var event_name = params["event_name"];
 			var url = ".";
 			if(event_name.indexOf("On_") == 0){
-				switch(event_name.substr(3)){
+				event_name = event_name.substr(3)
+				switch(event_name){
 					case "basewareversion":
 					case "hwnd":
 					case "uniqueid":
