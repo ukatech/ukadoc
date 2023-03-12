@@ -37,38 +37,35 @@
 		if(params["event_name"]){
 			var event_name = params["event_name"];
 			var url = ".";
-			if(event_name.indexOf("On_") == 0){
+			if(event_name.indexOf("On_") == 0)
 				event_name = event_name.substr(3)
-				switch(event_name){
-					case "basewareversion":
-					case "hwnd":
-					case "uniqueid":
-					case "capability":
-					case "ownerghostname":
-					case "otherghostname":
-					case "installedghostname":
-					case "installedshellname":
-					case "installedballoonname":
-					case "installedheadlinename":
-					case "installedplugin":
-					case "configuredbiffname":
-					case "ghostpathlist":
-					case "balloonpathlist":
-					case "headlinepathlist":
-					case "pluginpathlist":
-					case "calendarskinpathlist":
-					case "calendarpluginpathlist":
-					case "rateofusegraph":
-					case "inputbox.autocomplete":
-						url = "./list_shiori_resource.html#" + event_name;
-						break;
-					default:
-						url = "./list_shiori_event.html#" + event_name;
-						break;
-				}
+			switch(event_name){
+				case "basewareversion":
+				case "hwnd":
+				case "uniqueid":
+				case "capability":
+				case "ownerghostname":
+				case "otherghostname":
+				case "installedghostname":
+				case "installedshellname":
+				case "installedballoonname":
+				case "installedheadlinename":
+				case "installedplugin":
+				case "configuredbiffname":
+				case "ghostpathlist":
+				case "balloonpathlist":
+				case "headlinepathlist":
+				case "pluginpathlist":
+				case "calendarskinpathlist":
+				case "calendarpluginpathlist":
+				case "rateofusegraph":
+				case "inputbox.autocomplete":
+					url = "./list_shiori_resource.html#" + event_name;
+					break;
+				default:
+					url = "./list_shiori_event.html#" + event_name;
+					break;
 			}
-			else
-				url = "./list_shiori_event.html#" + event_name;
 			//进行跳转！
 			window.location.href=url;
 		}
