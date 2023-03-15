@@ -307,6 +307,7 @@
 		<section class="navigation-category">
 			<h1>URLドロップイベント</h1>
 			<ul>
+				<li><a href="#OnURLDragDropping">OnURLDragDropping</a></li>
 				<li><a href="#OnURLDropping">OnURLDropping</a></li>
 				<li><a href="#OnURLDropped">OnURLDropped</a></li>
 				<li><a href="#OnURLDropFailure">OnURLDropFailure</a></li>
@@ -2558,11 +2559,27 @@
 		</section>
 		<section class="category">
 			<h1>URLドロップイベント</h1>
+			<dl id="OnURLDragDropping">
+				<dt class="entry">OnURLDragDropping</dt>
+				<dd class="entry">
+					<p>URLがドロップされようとして、マウスカーソルが重なった際に発生。
+					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.37</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされた際に発生。
-					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
+					<p>URLがドロップされた後で、ダウンロードを開始する時に発生。
+					<br />このイベントはダウンロード処理前に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたURL。</dd>
