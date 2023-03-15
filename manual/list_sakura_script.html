@@ -5298,7 +5298,8 @@
 					<dt>--content-type=(multipart/form-data|application/x-www-form-urlencoded)</dt>
 					<dd>http-post限定。param指定のパラメータをどのような形式で送るか指定する。<br>
 					何も指定しなければapplication/x-www-form-urlencoded。<br>
-					指定形式によってはparamの書き方に制約があるので注意。</dd>
+					指定形式によってはparamの書き方に制約があるので注意。<br>
+					[2.6.37] より、Content-Typeリクエストヘッダに直接この情報を反映するようになった。</dd>
 					
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
@@ -5327,6 +5328,9 @@
 					
 					<dt>--timeout=秒数</dt>
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
+					
+					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
+					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
 				</dl>
 			</section>
 		</section>
