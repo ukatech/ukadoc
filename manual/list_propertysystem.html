@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project プロパティシステム</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">プロパティシステム</h1>
@@ -147,6 +147,9 @@
 				<li><a href="#system.millisecond">system.millisecond</a></li>
 				<li><a href="#system.dayofweek">system.dayofweek</a></li>
 				<li><a href="#system.cursor.pos">system.cursor.pos</a></li>
+				<li><a href="#system.os">system.os</a></li>
+				<li><a href="#system.cpu">system.cpu</a></li>
+				<li><a href="#system.memory">system.memory</a></li>
 				<li><a href="#baseware.version">baseware.version</a></li>
 				<li><a href="#baseware.name">baseware.name</a></li>
 				<li><a href="#ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名">ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名</a></li>
@@ -397,6 +400,69 @@
 					<p>現在のカーソルの位置。カンマ区切りで X,Y。単位ピクセル。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.43</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.os">
+				<dt class="entry">system.os.(id)</dt>
+				<dd class="entry">
+					<p>起動中のOSの情報。(id)に入る文字列は以下の通り。</p>
+					<dl>
+						<dt>type</dt>
+						<dd>OSの種類。SSPの場合Windows固定。</dd>
+						<dt>name</dt>
+						<dd>OSの名前。例：Windows 11 22H2</dd>
+						<dt>version</dt>
+						<dd>OSのカーネルバージョン。例：10.0。OSの呼称と食い違う場合がある点に注意。例：Windows 10も11も10.0になる。</dd>
+						<dt>build</dt>
+						<dd>OSのビルド番号。例：22621</dd>
+						<dt>parenttype</dt>
+						<dd>何らかの互換OS/互換レイヤーで動作している場合はその種類。無い場合は空文字列。今のところ Wine か ReactOS 。</dd>
+						<dt>parentname</dt>
+						<dd>互換OS/互換レイヤーのホスト側（親側）OSの名前。無い場合は空文字列。例：Linux 5.19.0-23-generic</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.26/27</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.cpu">
+				<dt class="entry">system.cpu.(id)</dt>
+				<dd class="entry">
+					<p>起動中の環境のCPUの情報。(id)に入る文字列は以下の通り。</p>
+					<dl>
+						<dt>load</dt>
+						<dd>負荷率（単位％、整数、適宜分単位程度で移動平均を計算して均されているもの）</dd>
+						<dt>num</dt>
+						<dd>OSが認識している全コア数</dd>
+						<dt>vendor</dt>
+						<dd>ベンダー名。例：GenuineIntel</dd>
+						<dt>name</dt>
+						<dd>名前。例：11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz</dd>
+						<dt>clock</dt>
+						<dd>クロック周波数</dd>
+						<dt>features</dt>
+						<dd>解釈可能な拡張命令のリスト(半角空白区切り)。例：MMX SSE SSE2 SSE3</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.26</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.memory">
+				<dt class="entry">system.memory.(id)</dt>
+				<dd class="entry">
+					<p>起動中の環境の物理メモリの情報。(id)に入る文字列は以下の通り。</p>
+					<dl>
+						<dt>load</dt>
+						<dd>使用率（単位％、整数、適宜分単位程度で移動平均を計算して均されているもの）</dd>
+						<dt>phyt</dt>
+						<dd>全物理メモリ量(MB)</dd>
+						<dt>phya</dt>
+						<dd>空き物理メモリ量(MB)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.26</li>
 					</ul>
 				</dd>
 			</dl>

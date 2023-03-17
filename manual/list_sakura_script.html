@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project SakuraScript List</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">SakuraScript List</h1>
@@ -241,6 +241,7 @@
 			<h1>Text Modification Commands</h1>
 			<ul>
 				<li><a href="#_f_align,寄せる側_">\f[align,(alignment side)]</a></li>
+				<li><a href="#_f_valign,寄せる側_">\f[valign,寄せる側]</a></li>
 				<li><a href="#_f_name,文字名_">\f[name,(font name)]</a></li>
 				<li><a href="#_f_height,数値_">\f[height,(value)]</a></li>
 				<li><a href="#_f_color,色指定_">\f[color,(color specification)]</a></li>
@@ -1234,6 +1235,7 @@
 				<dt class="entry">\b[(ID number)]</dt>
 				<dd class="entry">
 					<p>Changes the balloon of the character that currently has the focus to the balloon of the specified ID number.<br>\b[-1] will hide the balloon.</p>
+					<p>SSP 2.6.34より、 \b[ID1,--fallback=ID2,--fallback=ID3] のように記述すると、ID1がないときはID2、それもないときはID3、という挙動になる。</p> <!-- TODO: merged with upstream/master -->
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1892,6 +1894,17 @@
 							<p><code>\f[align,center]This text is centered.\n\f[align,right]This text is aligned to the right.\n\f[align,left]This left-aligned text \w9\w9\f[align,right]is moved to the right.</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_f_valign,寄せる側_">
+				<dt class="entry">\f[valign,寄せる側]</dt>
+				<dd class="entry">
+					<p>文字列の下揃え(\f[valign,bottom])・縦中央揃え(\f[valign,center])・上揃え(\f[valign,top])を設定する。
+					<br />文字等の追加の途中でこのコマンドを実行すると、すでに追加された同じ行に属する文字列も移動される。
+					<br />alignと異なり、\nや\_lではリセットされない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.19</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_f_name,文字名_">
@@ -3059,7 +3072,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>The plugins 'shared value' and 'ukaten' will be updated.\![update,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
+							<p><code>The plugins 'shared value' and 'ukaten' will be updated.\![updateother,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4071,7 +4084,7 @@
 			<dl id="_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">
 				<dt class="entry">\![open,sliderinput,(ID),(display time),(current value),(minimum),(maximum),(option)]</dt>
 				<dd class="entry">
-					<p>Opens an InputBox with a slider.<br>The SHIORI event <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run on confirmation, and Reference1 stores the input value.<br><a href="#notes_inputbox-option">※Options</a> may be specified using --option=○○.<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.</p>
+					<p>Opens an InputBox with a slider.<br>The SHIORI event <a href="list_shiori_event.html#OnUserInput">OnUserInput</a> is run on confirmation, and Reference1 stores the input value.<br><a href="#notes_inputbox-option">※Options</a> may be specified using --option=○○.<br>Other than that, functions the same as <a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>.<br>The minimum possible value is -2147483648 and the maximum is 2147483647.</p> <!-- TODO: merged with upstream/master - updated the info here myself, I think it was just about the minimum and maximum values -->
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4518,6 +4531,9 @@
 					<br />Assigns the default value, minimum, and maximum for sliderinput/year, month, and day for dateinput/hour, minute, and second for timeinput.</dd>
 					<dt>--timeout=Milliseconds until timeout</dt>
 					<dd>The time until the InputBox closes automatically. If zero or below is specified, it will not close.</dd>
+					<dt>--balloon=ID</dt>
+					<dd>balloonc?.png/txtの?のところに入るIDを指定すると、そのIDに対応した画像を利用する。<br /> <!-- TODO: merged with upstream/master -->
+					指定がない場合は入力ボックスごとに標準で決まっているIDになる。 (SSP 2.6.23)</dd>
 					<dt>--limit=Character limit</dt>
 					<dd>The limit on the amount of characters that can be entered in the InputBox.</dd>
 					<dt>--reference=Additional information</dt>
@@ -4792,9 +4808,10 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
-				<dt class="entry">\![execute,install,url,(URL),(feed|nar)]</dt>
+				<dt class="entry">\![execute,install,url,(URL),(feed|nar|homeurl)]</dt>
 				<dd class="entry">
-					<p>Installs the nar file or registers the RSSFeed from the specified URL.<br>feed and nar can be omitted.<br>Automatically downloads the file to a folder for temporary files, and conducts the installation process as is appropriate.</p>
+					<p>Installs the nar file or registers the RSSFeed from the specified URL.<br>feed, nar, and homeurl can be omitted.<br>Automatically downloads the file to a folder for temporary files, and conducts the installation process as is appropriate.</p>
+					<br />このタグで実行されたダウンロード処理については、OnURLQueryは発生しない。</p> <!-- TODO: merged with upstream/master - edited the text here to mention the homeurl, now, since that seems to be a new addition -->
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5013,7 +5030,7 @@
 			<dl id="_!_reloadsurface_">
 				<dt class="entry">\![reloadsurface]</dt>
 				<dd class="entry">
-					<p>Reloads the surface.</p>
+					<p>[旧仕様]サーフェスをリロードする。SSPでは\![reload,shell]と同じ。</p> <!-- TODO: merged with upstream/master -->
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5287,6 +5304,7 @@
 					<dd>Limited to http-post. Specifies what format the param argument parameters should be sent in.<br>
 					Defaults to application/x-www-form-urlencoded if nothing is specified.<br>
 					It is important to keep in mind that there may be limitations on how to write the param arguments depending on the format of content-type.</dd>
+					[2.6.37] より、Content-Typeリクエストヘッダに直接この情報を反映するようになった。</dd> <!-- TODO: merged with upstream/master -->
 					
 					<dt>--file=(file name)</dt>
 					<dd>Specifies the name of the file to save the acquired data to. Saved to [(folder of the ghost executing the command)]/ghost/master/var/(file name).</dd>
@@ -5315,6 +5333,9 @@
 					
 					<dt>--timeout=(number of seconds)</dt>
 					<dd>Specifies the length of time to wait for a response (※not the length of time needed for a download). The upper limit is 300 seconds.<br>If there is no response within the specified number of seconds, the SHIORI event OnExecuteHTTPFailure will be notified, and Reference4 will contain "timeout."</dd>
+					
+					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt> <!-- TODO: merged with upstream/master -->
+					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
 				</dl>
 			</section>
 		</section>

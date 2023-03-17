@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Shell設定 - surfaces.txt</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">Shell設定 - surfaces.txt</h1>
@@ -254,6 +254,7 @@
 			<ul>
 				<li><a href="#mouseup*,当たり判定ID,ファイル名">mouseup*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousedown*,当たり判定ID,ファイル名">mousedown*,当たり判定ID,ファイル名</a></li>
+				<li><a href="#mouserightdown*,当たり判定ID,ファイル名">mouserightdown*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousewheel*,当たり判定ID,ファイル名">mousewheel*,当たり判定ID,ファイル名</a></li>
 				<li><a href="#mousehover*,当たり判定ID,ファイル名">mousehover*,当たり判定ID,ファイル名</a></li>
 			</ul>
@@ -1502,9 +1503,11 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dd class="entry">
 						<p>
 							指定したID（animation*の*の番号）の着せ替えグループ（intervalがbindのアニメーション）をその位置に挿入する。
-							<br>例えばある着せ替えAが、他の着せ替えBよりも部分的に前・部分的に後ろといった位置関係の構造を持つ場合に、着せ替えAの後ろになる部分のコマと前になる部分のコマとの間に着せ替えBをinsertで挿入する事によって、自然な前後関係の表示が実現される。この時、<em>着せ替えBの表示・非表示の状態に関わらず表示の完全性が維持される</em>。
-							<br>insert先でのinsert（入れ子）も可能。
 							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
+							<br>例えばある着せ替えAが、他の着せ替えBよりも部分的に前・部分的に後ろといった位置関係の構造を持つ場合に、着せ替えAの後ろになる部分のコマと前になる部分のコマとの間に着せ替えBをinsertで挿入する事によって、自然な前後関係の表示が実現される。この時、着せ替えBの表示・非表示の状態に関わらず表示の完全性が維持される。
+							<br>insert先でのinsert（入れ子）も可能。
+							<br>ただし、あくまでも<em>着せ替えAとBの表示順を予約するだけ</em>で、強制的に着せ替えBを表示するものではない。
+							<br>実際に着せ替えBを表示するか否かは、着せ替えBの有効/無効状態に依存する。
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1662,6 +1665,16 @@ mousedown1,Bust,system:grip
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:grip）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="mouserightdown*,当たり判定ID,ファイル名">
+				<dt class="entry">mouserightdown*,当たり判定ID,ファイル名</dt>
+				<dd class="entry">
+					<p>当たり判定の上でマウス右ボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p class="default">system:finger</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.14</li>
 					</ul>
 				</dd>
 			</dl>

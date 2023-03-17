@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Shell設定</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">Shell設定</h1>
@@ -208,18 +208,21 @@
 				<li><a href="#sakura.bindgroup*.addid,ID">sakura.bindgroup*.addid,ID</a></li>
 				<li><a href="#sakura.bindoption*.group,カテゴリ名,オプション">sakura.bindoption*.group,カテゴリ名,オプション</a></li>
 				<li><a href="#sakura.menuitem*,ID">sakura.menuitem*,ID</a></li>
+				<li><a href="#sakura.menuitemex*,メニュー名,ID">sakura.menuitemex*,メニュー名,ID</a></li>
 				<li><a href="#sakura.menu,autoまたはhidden">sakura.menu,autoまたはhidden</a></li>
 				<li><a href="#kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">kero.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#kero.bindgroup*.default,数値">kero.bindgroup*.default,数値</a></li>
 				<li><a href="#kero.bindgroup*.addid,ID">kero.bindgroup*.addid,ID</a></li>
 				<li><a href="#kero.bindoption*.group,カテゴリ名,オプション">kero.bindoption*.group,カテゴリ名,オプション</a></li>
 				<li><a href="#kero.menuitem*,ID">kero.menuitem*,ID</a></li>
+				<li><a href="#kero.menuitemex*,メニュー名,ID">kero.menuitemex*,メニュー名,ID</a></li>
 				<li><a href="#kero.menu,autoまたはhidden">kero.menu,autoまたはhidden</a></li>
 				<li><a href="#char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名">char*.bindgroup*.name,カテゴリ名,パーツ名,サムネイル名</a></li>
 				<li><a href="#char*.bindgroup*.default,数値">char*.bindgroup*.default,数値</a></li>
 				<li><a href="#char*.bindgroup*.addid,ID">char*.bindgroup*.addid,ID</a></li>
 				<li><a href="#char*.bindoption*.group,カテゴリ名,オプション">char*.bindoption*.group,カテゴリ名,オプション</a></li>
 				<li><a href="#char*.menuitem*,ID">char*.menuitem*,ID</a></li>
+				<li><a href="#char*.menuitemex*,メニュー名,ID">char*.menuitemex*,メニュー名,ID</a></li>
 				<li><a href="#char*.menu,autoまたはhidden">char*.menu,autoまたはhidden</a></li>
 				<li><a href="#seriko.paint_transparent_region_black,数値">seriko.paint_transparent_region_black,数値</a></li>
 				<li><a href="#seriko.use_self_alpha,数値">seriko.use_self_alpha,数値</a></li>
@@ -1078,6 +1081,17 @@ kero.menuitem3,2
 					</ul>
 				</dd>
 			</dl>
+			<dl id="sakura.menuitemex*,メニュー名,ID">
+				<dt class="entry">sakura.menuitemex*,メニュー名,ID</dt>
+				<dd class="entry">
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを「メニュー名」で示した階層以下に表示。*は0から始まる通し番号。(本体側)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="sakura.menu,autoまたはhidden">
 				<dt class="entry">sakura.menu,autoまたはhidden</dt>
 				<dd class="entry">
@@ -1146,6 +1160,16 @@ kero.menuitem3,2
 					</ul>
 				</dd>
 			</dl>
+			<dl id="kero.menuitemex*,メニュー名,ID">
+				<dt class="entry">kero.menuitemex*,メニュー名,ID</dt>
+				<dd class="entry">
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを「メニュー名」で示した階層以下に表示。*は0から始まる通し番号。(相方側)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="kero.menu,autoまたはhidden">
 				<dt class="entry">kero.menu,autoまたはhidden</dt>
 				<dd class="entry">
@@ -1205,6 +1229,16 @@ kero.menuitem3,2
 				<dt class="entry">char*.menuitem*,ID</dt>
 				<dd class="entry">
 					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを表示。*は0から始まる通し番号。(3人目以降)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
+					<p class="default">動作なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.menuitemex*,メニュー名,ID">
+				<dt class="entry">char*.menuitemex*,メニュー名,ID</dt>
+				<dd class="entry">
+					<p>着せ替えメニュー上の*の位置にそのアニメーションIDの着せ替えを「メニュー名」で示した階層以下に表示。*は0から始まる通し番号。(3人目以降)<br />IDの代わりに「-」を指定すると、その位置に仕切り線表示。</p>
 					<p class="default">動作なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

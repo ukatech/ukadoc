@@ -1,0 +1,13 @@
+on: [push]
+
+name: ukadoc server update request (update will be delayed up to 5 minutes)
+
+jobs:
+  check:
+    name: ukadoc server update request
+    runs-on: ubuntu-latest
+    environment: update_req
+    steps:
+      - name: update request
+        run: |
+             curl ${{ secrets.UKADOC_UPDATE_REQ_WEB_URL }}

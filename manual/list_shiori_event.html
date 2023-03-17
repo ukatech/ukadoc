@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project SHIORI Eventリスト</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">SHIORI Event List</h1>
@@ -307,6 +307,7 @@
 		<section class="navigation-category">
 			<h1>URL Drop Events</h1>
 			<ul>
+				<li><a href="#OnURLDragDropping">OnURLDragDropping</a></li>
 				<li><a href="#OnURLDropping">OnURLDropping</a></li>
 				<li><a href="#OnURLDropped">OnURLDropped</a></li>
 				<li><a href="#OnURLDropFailure">OnURLDropFailure</a></li>
@@ -317,6 +318,7 @@
 		<section class="navigation-category">
 			<h1>Network Update Events</h1>
 			<ul>
+				<li><a href="#OnUpdateProcessExec">OnUpdateProcessExec</a></li>
 				<li><a href="#OnUpdateBegin">OnUpdateBegin</a></li>
 				<li><a href="#OnUpdateReady">OnUpdateReady</a></li>
 				<li><a href="#OnUpdateComplete">OnUpdateComplete</a></li>
@@ -476,6 +478,7 @@
 				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
 				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
 				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
+				<li><a href="#OnRecycleBinEmptyFromOther">OnRecycleBinEmptyFromOther</a></li>
 				<li><a href="#OnRecycleBinStatusUpdate">OnRecycleBinStatusUpdate</a></li>
 			</ul>
 		</section>
@@ -621,7 +624,10 @@
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only: The scope number of the character that handled the closing operation. (0 if main character, 1 if side character...)</dd>
+						<dd>※SSPのみ　終了操作したメニューが属するキャラクターのスコープ番号。popupmenu.typeに影響される。(本体側0,相方1...)</dd> <!-- TODO: merged with upstream/master -->
+						<dt>Reference2</dt>
+						<dd>※SSPのみ　終了操作したウインドウのキャラクターのスコープ番号。popupmenu.typeに影響されない。(本体側0,相方1...)</dd>
+						
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -638,7 +644,9 @@
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only: The scope number of the character that handled the closing operation. (0 if main character, 1 if side character...)</dd>
+						<dd>※SSPのみ　終了操作したメニューが属するキャラクターのスコープ番号。popupmenu.typeに影響される。(本体側0,相方1...)</dd> <!-- TODO: merged with upstream/master -->
+						<dt>Reference2</dt>
+						<dd>※SSPのみ　終了操作したウインドウのキャラクターのスコープ番号。popupmenu.typeに影響されない。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1247,7 +1255,7 @@
 								<li>talk …… talk/balloon</li>
 								<li>network …… connection (1)</li>
 								<li>network2 …… connection (2)</li>
-								<li>biff …… POP</li>
+								<li>biff …… メール</li> <!-- TODO: merged with upstream/master -->
 								<li>application …… external applications</li>
 								<li>messenger …… IM</li>
 								<li>ipmessenger …… IPMessenger</li>
@@ -2342,6 +2350,7 @@
 					<li>balloon</li>
 					<li>plugin</li>
 					<li>headline</li>
+					<li>rss</li>
 					<li>supplement</li>
 				</ul>
 				<p>OnInstallComplete / OnNarCreated only</p>
@@ -2518,7 +2527,7 @@
 						<dt>Reference0</dt>
 						<dd>The name of the object to be made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>The name and absolute file path of the nar to be created.</dd>
+						<dd>The filename and absolute file path of the nar to be created.</dd>
 						<dt>Reference2</dt>
 						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
@@ -2537,7 +2546,7 @@
 						<dt>Reference0</dt>
 						<dd>The name of the object made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>The name and absolute file path of the nar that was created.</dd>
+						<dd>The filename and absolute file path of the nar that was created.</dd>
 						<dt>Reference2</dt>
 						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
@@ -2550,18 +2559,38 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>URL Drop Events</h1>
+			<h1>URL Drop Events</h1> <!-- TODO: merged with upstream/master -->
+			<h1>URLドロップイベント</h1>
+			<dl id="OnURLDragDropping">
+				<dt class="entry">OnURLDragDropping</dt>
+				<dd class="entry">
+					<p>URLがドロップされようとして、マウスカーソルが重なった際に発生。
+					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.37</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>Occurs when a URL has been dropped.</p>
+					<p>URLがドロップされた後で、ダウンロードを開始する時に発生。
+					<br />このイベントはダウンロード処理前に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The URL path.</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2569,14 +2598,16 @@
 			<dl id="OnURLDropped">
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
-					<p>Occurs when the dropped URL has finished being received.</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>The local path of the file that was downloaded.</dd>
+					<p>Occurs when the dropped URL has finished being received.
+					<br />このイベントはNARインストールの直前、ダウンロード処理完了直後に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
+						<dt>Reference1</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd> <!-- TODO: merged with upstream/master -->
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1,2は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2584,16 +2615,21 @@
 			<dl id="OnURLDropFailure">
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
-					<p>Occurs when the dropped URL could not be received or the operation was canceled.</p>
+					<p>Occurs when the dropped URL could not be received or the operation was canceled.
+					<br />このイベントはNARインストールを試行しようとして失敗した際に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p> <!-- TODO: merged with upstream/master -->
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The local path of the part of the file that was downloaded.</dd>
 						<dt>Reference1</dt>
 						<dd>The <a href="#caption_updateresultfailure">※failure reason</a>.</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたURL。</dd>
+						<dt>Reference3</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd> <!-- TODO: merged with upstream/master -->
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref2,3は2.6.36</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2602,8 +2638,8 @@
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
 					<p>Notified when a URL is drag-and-dropped onto a character window.<br />
-					If a script is returned for this event, the regular download process OnURLDropping -> Dropped will be canceled.<br />
-					Only return a script if the URL needs to be processed individually on the ghost side.</p>
+					If a script is returned for this event, the regular download process will be canceled.<br />
+					Only return a script if the URL needs to be processed individually on the ghost side.</p> <!-- TODO: merged with upstream/master - I think some stuff got cut here... -->
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The URL path.</dd>
@@ -2611,9 +2647,14 @@
 						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference2</dt>
 						<dd>The MIME type of the URL that was dropped.</dd>
+						<dt>Reference3</dt>
+						<dd>反応しなかった場合にSSPがこの後実行予定の処理。 <!-- TODO: merged with upstream/master -->
+						<br />feed・nar・homeurl・unknownのいずれか。
+						<br />unknownの場合は本体が処理に対応できないURLであり、本体側ではこれ以上の処理ができないことを示す。
+						<br />それ以外はそのまま <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> に渡すと処理の続きが行われる。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref3は2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
@@ -2637,6 +2678,23 @@
 		</section>
 		<section class="category">
 			<h1>Network Update Events</h1>
+			<dl id="OnUpdateProcessExec">
+				<dt class="entry">OnUpdateProcessExec</dt>
+				<dd class="entry">
+					<p>メニューなどから更新を実行する指示がなされた場合に発生する。<br />
+					このイベントに対して何かスクリプトを返すと、更新処理をカスタマイズできる。<br />
+					イベントを無視した場合は標準の更新処理に自動的に移行する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>manual : メニューから更新の操作をした。<br />
+						auto : あらかじめ設定した定期自動更新処理が動いた。<br />
+						testonly : 開発用パレットのUpdate Full Checkを実行した。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.23</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
@@ -3876,9 +3934,9 @@
 					<p>Occurs when \![raiseplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.</dd>
 						<dt>Reference1</dt>
-						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
+						<dd>The plugin name or ID.</dd> <!-- TODO: merged with upstream/master - Same as below (I'm working from bottom to top) -->
 						<dt>Reference2</dt>
 						<dd>The ID of the event that should have been executed.</dd>
 						<dt>Reference3~</dt>
@@ -3895,9 +3953,9 @@
 					<p>Occurs when \![notifyplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.</dd>
 						<dt>Reference1</dt>
-						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
+						<dd>The plugin name or ID.</dd> <!-- TODO: merged with upstream/master - It seems that these events don't actually get the 1-byte delimited list...? -->
 						<dt>Reference2</dt>
 						<dd>The ID of the event that should have been executed.</dd>
 						<dt>Reference3~</dt>
@@ -4051,6 +4109,13 @@
 						<dt>Reference4</dt>
 						<dd>接続回線のダウンロード側の推定有効通信速度を示す数値。単位はMBps。 [SSP 2.5.26]
 						<br />通信統計が取得できない環境や、統計値が不正確な状態ではReference3と同じ値となる。</dd>
+						<dt>Reference5</dt>
+						<dd>接続回線が従量課金回線かどうかを通知する。 [SSP 2.6.15]<br />
+						unknown : 未設定/不明<br />
+						unrestricted : 完全使い放題<br />
+						fixed : データ量の上限がある定額制<br />
+						variable : 従量課金<br />
+						Windwos 10/11で「従量制課金接続」を設定するとfixedになる。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4234,11 +4299,11 @@
 						<dt>Reference0</dt>
 						<dd>init (起動時通知) か update (起動後の更新)</dd>
 						<dt>Reference1～</dt>
-						<dd>左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)<br />
-						例： 0,0,1600,900,32,1</dd>
+						<dd>左,上,右,下,ビット深度,プライマリモニタかどうか(0/1),タスクバーの位置(left,top,right,bottom,unknown),タスクバーと作業領域の区切り座標<br />
+						例： 0,0,1600,900,32,1,bottom,1560</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09/タスクバーは2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
@@ -4258,7 +4323,7 @@
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
-					<p>残りバッテリー量を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>残りバッテリー量を通知。起動時のみ<em class="specsign">[NOTIFY]</em>で通知され、他はGET。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>残りバッテリー％。</dd>
@@ -4275,6 +4340,7 @@
 						no_battery：バッテリーが取り外されている<br />
 						power_saving：バッテリー節約機能がON (SSP 2.3.94以降/Windows 10以降)</dd>
 					</dl>
+					<p>Windows 7より前のOSでは、high/lowの基準が異なることがある。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4283,12 +4349,12 @@
 			<dl id="OnBatteryLow">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p>バッテリー残量が少なめ(標準20%以下：OS設定に依存)になった際に発生する。<br />
+					<p>バッテリー残量が少なめ(OnBatteryNotify Reference3がlow以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
 					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。Reference3がlow以下になった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4298,7 +4364,7 @@
 			<dl id="OnBatteryCritical">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p>バッテリー残量が極端に少なく(標準5%以下：OS設定に依存)になった際に発生する。<br />
+					<p>バッテリー残量が極端に少なく(OnBatteryNotify Reference3がcritical以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
 					「きのこ」との互換用イベントとして実装されている。</p>
 					<dl class="reference">
@@ -4316,7 +4382,7 @@
 					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4329,7 +4395,7 @@
 					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dd>OnBatteryNotifyと同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4383,7 +4449,9 @@
 					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>0/1：1がダークテーマ、0が通常（明るい）テーマ</dd>
+						<dd>0/1：アプリ設定 1がダークテーマ、0が通常（明るい）テーマ</dd>
+						<dt>Reference1</dt>
+						<dd>0/1：システム設定 1がダークテーマ、0が通常（明るい）テーマ (2.6.29)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
@@ -4415,38 +4483,58 @@
 			<dl id="OnRecycleBinEmpty">
 				<dt class="entry">OnRecycleBinEmpty</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。</p>
+					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
+					<br />スクリプトを実行したゴーストだけでなく、起動中の全ゴーストにもOnRecycleBinEmptyFromOtherが通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズ(空にした直後なのでふつうは0) 単位バイト</dd>
-						<dt>Reference1</dt>
 						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ(空にした直後なのでふつうは0) 単位バイト</dd>
 						<dt>Reference2</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
-						<dt>Reference3</dt>
 						<dd>現在ゴミ箱に入っているファイルの数の直前との差(空にした直後なのでふつうは負の値)</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
+						<dt>Reference4</dt>
+						<dd>正常に空にできたら1、何かエラーが起きたら0(もとから空っぽでも0)</dd>
+						<dt>Reference5</dt>
+						<dd>タグを実行したゴーストの本体側の名前(sakuraname)。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnRecycleBinEmpty">
+				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
+				<dd class="entry">
+					<p>\![execute,emptyrecyclebin]でゴミ箱を空にする指示を出したゴースト以外に送られる。<br />
+					ReferenceはOnRecycleBinEmptyと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinStatusUpdate">
 				<dt class="entry">OnRecycleBinStatusUpdate</dt>
 				<dd class="entry">
-					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生する。</p>
+					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生し、起動中の全ゴーストに通知される。
+					<br />また、ゴースト起動時に<em class="specsign">[NOTIFY]</em>で通知される。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズ 単位バイト</dd>
-						<dt>Reference1</dt>
 						<dd>現在ゴミ箱に入っているファイルの数</dd>
+						<dt>Reference1</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズ 単位バイト</dd>
 						<dt>Reference2</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
-						<dt>Reference3</dt>
 						<dd>現在ゴミ箱に入っているファイルの数の直前との差</dd>
+						<dt>Reference3</dt>
+						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
+						<dt>Reference4</dt>
+						<dd>常に1 (OnRecycleBinEmptyとの互換用のダミー)</dd>
+						<dt>Reference5</dt>
+						<dd>常に空 (OnRecycleBinEmptyとの互換用のダミー)</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
 					</ul>
 				</dd>
 			</dl>
@@ -5192,6 +5280,7 @@
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>バイト値1区切りにされた以下の情報：[キャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス] <br />
+						オプションはカンマ区切りでいくつも追加されている場合もある。<br />
 						着せ替え定義の数だけ繰り返される。<br />
 						ゴースト側で前回の通知からの有効/無効の差分を処理すると、何が変わったかを把握できる。</dd>
 					</dl>

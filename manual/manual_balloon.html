@@ -7,7 +7,7 @@
 <meta name="keywords" content="伺か,balloon,バルーン">
 <title>UKADOC Project バルーン</title>
 <link rel="stylesheet" href="base.css">
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <section class="baseframe">
@@ -45,6 +45,8 @@
 　　<em class="filename">+-balloonp*def*.pna</em>  (SSP 2.5.51～)
 　　<em class="filename">+-balloonp*def*s.txt</em>
 　　<em class="filename">+-balloonc*.png</em>
+　　<em class="filename">+-balloonc*.pna</em>  (SSP 2.5.37～)
+　　<em class="filename">+-balloonc*s.txt</em>  (SSP 2.5.37～)
 　　<em class="filename">+-online*.png</em>
 　　<em class="filename">+-sstp.png</em>
 　　<em class="filename">+-arrow0.png</em>
@@ -79,12 +81,13 @@
 				<p>詳細は<a href="descript_balloon.html" title="descript.txt">リンク先</a>を参照。</p>
 			</dd>
 
-			<dt><a href="descript_balloon.html#balloonsoption">balloons*s.txt/balloonk*s.txt</a></dt>
+			<dt><a href="descript_balloon.html#balloonsoption">balloons*s.txt/balloonk*s.txt/balloonc*s.txt</a></dt>
 			<dd>
 				<p>バルーンごとの個別設定用ファイル。</p>
 				<p>対応するIDのサーフェス（balloons1.pngに対してballoons1s.txt）について用意すると、そのサーフェスに対してdescirpt.txtの記述を上書きする形で適応される。</p>
 				<p>特定IDのサーフェスのみ設定を変更したいとき等に使用する。</p>
 				<p>※ファイル名のsに注意（balloons*.txtではなくてballoons*<em>s</em>.txt）</p>
+				<p>入力ボックスにも利用できるようになった。balloonc*s.txtで指定すること。</p>
 				<p>詳細は<a href="descript_balloon.html#balloonsoption" title="balloon(s|k)*s.txt">リンク先</a>を参照。</p>
 			</dd>
 
@@ -158,9 +161,11 @@
 					<li>balloonc3.png　……　Inputボックス</li>
 					<li>balloonc4.png　……　Address Barボックス(SSP専用)</li>
 				</ul>
-				<div class="passage">
-					<p>なお、balloonc*.pngにはpnaを利用できない（半透明化できない）。</p>
-				</div>
+			</dd>
+			
+			<dt>balloonc*.pna</dt>
+			<dd>
+				<p>balloons*.pnaの入力ボックス版。</p>
 			</dd>
 
 		</dl>

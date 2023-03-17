@@ -7,7 +7,7 @@
 <meta name="keywords" content="ukadoc,伺か">
 <title>UKADOC Project Balloon設定</title>
 <link rel="stylesheet" href="list.css" />
-<!--[if lt IE 9]><script src="html5shiv.js" charset="Shift_JIS"></script><![endif]-->
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 </head>
 <body>
 	<h1 id="page-title">Balloon設定</h1>
@@ -276,6 +276,9 @@
 				<li><a href="#communicatebox.font.color.r,数値">communicatebox.font.color.r,数値</a></li>
 				<li><a href="#communicatebox.font.color.g,数値">communicatebox.font.color.g,数値</a></li>
 				<li><a href="#communicatebox.font.color.b,数値">communicatebox.font.color.b,数値</a></li>
+				<li><a href="#communicatebox.background.color.r,数値">communicatebox.background.color.r,数値</a></li>
+				<li><a href="#communicatebox.background.color.g,数値">communicatebox.background.color.g,数値</a></li>
+				<li><a href="#communicatebox.background.color.b,数値">communicatebox.background.color.b,数値</a></li>
 				<li><a href="#communicatebox.x,座標">communicatebox.x,座標</a></li>
 				<li><a href="#communicatebox.y,座標">communicatebox.y,座標</a></li>
 				<li><a href="#communicatebox.width,サイズ">communicatebox.width,サイズ</a></li>
@@ -284,14 +287,15 @@
 				<li><a href="#use_self_alpha,数値">use_self_alpha,数値</a></li>
 				<li><a href="#use_input_alpha,数値">use_input_alpha,数値</a></li>
 				<li><a href="#overlay_outside_balloon,数値">overlay_outside_balloon,数値</a></li>
-			</ul>
-		</section>
-		<section class="navigation-category">
-			<h1>balloons*s.txt/balloonk*s.txt(個別指定)</h1>
-			<ul>
 				<li><a href="#windowposition.x,座標">windowposition.x,座標</a></li>
 				<li><a href="#windowposition.y,座標">windowposition.y,座標</a></li>
 				<li><a href="#windowposition.limit,0/1">windowposition.limit,0/1</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>balloons*s.txt/balloonk*s.txt/balloonc*s.txt</h1>
+			<ul>
+				<li><a href="#balloonsoption">概要</a></li>
 				<li><a href="#arrow.filename,ファイル名">arrow.filename,ファイル名</a></li>
 				<li><a href="#sstpmarker.filename,ファイル名">sstpmarker.filename,ファイル名</a></li>
 				<li><a href="#marker.filename,ファイル名">marker.filename,ファイル名</a></li>
@@ -1897,6 +1901,36 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+			<dl id="communicatebox.background.color.r,数値">
+				<dt class="entry">communicatebox.background.color.r,数値</dt>
+				<dd class="entry">
+					<p>入力ボックスの背景色赤(0～255)</p>
+					<p class="default">入力ボックスの画像の中心色</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.39</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.background.color.g,数値">
+				<dt class="entry">communicatebox.background.color.g,数値</dt>
+				<dd class="entry">
+					<p>入力ボックスの背景色緑(0～255)</p>
+					<p class="default">入力ボックスの画像の中心色</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.39</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="communicatebox.background.color.b,数値">
+				<dt class="entry">communicatebox.background.color.b,数値</dt>
+				<dd class="entry">
+					<p>入力ボックスの背景色青(0～255)</p>
+					<p class="default">入力ボックスの画像の中心色</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.39</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="communicatebox.x,座標">
 				<dt class="entry">communicatebox.x,座標</dt>
 				<dd class="entry">
@@ -1995,27 +2029,6 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
-		</section>
-		<section class="category">
-			<h1 id="balloonsoption">balloons*s.txt/balloonk*s.txt(個別指定)</h1>
-			<section class="caption introduction">
-				<h1>balloons*s.txt/balloonk*s.txt</h1>
-				<section>
-					<h1>概要</h1>
-					<p>
-						バルーンの各サーフェス（balloons0.png、balloonk0.png、...）に対する個別設定ファイル。
-						<br>descript.txtでの設定を標準設定とし、こちらに同じ項目を設定すれば、設定した項目のみ上書きされる。
-					</p>
-					<p>
-						一つのサーフェスに対して一つ（例えばballoons0.pngに対してballoons0s.txt。ファイル名末尾のsに注意）用意できる。
-						<br>入力ボックス系（balloonc*.png）に対しては用意できないので注意。
-					</p>
-					<p>
-						基本的に全ての項目について設定できるが、バルーン全体に関する設定であるname、type、craftman、craftmanurl、id、homeurl、readmeについては設定不可（無意味）。
-						<br>また、シェル側サーフェスに対する表示位置の調整用にwindowposition.x、windowposition.yという設定が追加されている（SSPのみdescript.txt側でも設定可能）。
-					</p>
-				</section>
-			</section>
 			<dl id="windowposition.x,座標">
 				<dt class="entry">windowposition.x,座標</dt>
 				<dd class="entry">
@@ -2064,12 +2077,32 @@ communicatebox.height,20
 						バルーンを強制的に画面内に維持するかどうか。1で維持、0で維持しない(画面から出そうでも無視)
 					</p>
 					<p>SSPに限り、descript.txtにも書ける。</p>
-					<p class="default">0</p>
+					<p class="default">1</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.10</li>
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1 id="balloonsoption">balloons*s.txt/balloonk*s.txt/balloonc*s.txt(個別指定)</h1>
+			<section class="caption introduction">
+				<h1>balloons*s.txt/balloonk*s.txt</h1>
+				<section>
+					<h1>概要</h1>
+					<p>
+						バルーンの各サーフェス（balloons0.png、balloonk0.png、...）や入力ボックスに対する個別設定ファイル。
+						<br>descript.txtでの設定を標準設定とし、こちらに同じ項目を設定すれば、設定した項目のみ上書きされる。
+					</p>
+					<p>
+						一つのサーフェスに対して一つ（例えばballoons0.pngに対してballoons0s.txt。ファイル名末尾のsに注意）用意できる。
+					</p>
+					<p>
+						基本的に全ての項目について設定できるが、バルーン全体に関する設定であるname、type、craftman、craftmanurl、id、homeurl、readmeについては設定不可（無意味）。
+						<br>また、シェル側サーフェスに対する表示位置の調整用にwindowposition.x、windowposition.yという設定が追加されている（SSPのみdescript.txt側でも設定可能）。
+					</p>
+				</section>
+			</section>
 			<dl id="arrow.filename,ファイル名">
 				<dt class="entry">arrow.filename,ファイル名</dt>
 				<dd class="entry">
