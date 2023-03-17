@@ -565,7 +565,7 @@
 				<p>
 					For each SHIORI Event that has a Reference, a list of References is provided.
 					<br>If the number part of the Reference is "*", it means that it is an indefinite Reference.
-					<br>In other words, the Reference has an indefinite number because it deals with <em>different numbers depending on the operating environment</em>, and that the indefinite number of References are all <em>all of the same form</em>.
+					<br>In other words, the Reference has an indefinite number because it deals with <em>different numbers depending on the operating environment</em>, and that the indefinite number of References are <em>all of the same form</em>.
 					<br>In this case, the principle that references are given serial numbers starting from 0 remains the same. So for example, if the list of references has only *, there will be a sequence of references in the same form (as many as are appropriate for the environment) from 0 to an undefined number. If the list contains references up to and including 2, and the next line is Reference*, then the list will contain references in the same format from 3 to an undefined number.
 				</p>
 			</section>
@@ -633,7 +633,7 @@
 			<dl id="OnCloseAll">
 				<dt class="entry">OnCloseAll</dt>
 				<dd class="entry">
-					<p>Occurs when SSP itself is closed.<br>Also Occurs when "Quit" is selected in the right-click menu, when "Close" is selected if only one ghost is open, or when SSP closes due to the OS shutting down.</p>
+					<p>Occurs when SSP itself is closed.<br>Also occurs when "Quit" is selected in the right-click menu, when "Close" is selected if only one ghost is open, or when SSP closes due to the OS shutting down.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
@@ -1002,7 +1002,7 @@
 			<dl id="OnDestroy">
 				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
-					<p>Occurs when instructed to close.<em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when instructed to close. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>"reload" when reloaded, nothing otherwise (Reference0 will either contain an empty string or not exist at all).</dd>
@@ -1028,7 +1028,7 @@
 			<dl id="OnSysSuspend">
 				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
-					<p>Occurs when the system enters sleep or hibernation.<em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the system enters sleep or hibernation. <em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1066,11 +1066,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>入力ボックスイベント</h1>
+			<h1>Input Box Events</h1>
 			<dl id="OnTeachStart">
 				<dt class="entry">OnTeachStart</dt>
 				<dd class="entry">
-					<p>TeachBoxがオープンした際に発生。</p>
+					<p>Occurs when the TeachBox is opened.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1080,12 +1080,12 @@
 			<dl id="OnTeachInputCancel">
 				<dt class="entry">OnTeachInputCancel</dt>
 				<dd class="entry">
-					<p>TeachBoxが閉じられた際に発生。</p>
+					<p>Occurs when the TeachBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
+						<dd>(Empty string. A vacant spot to match the number of the Reference that returns "close" with OnUserInputCancel.)</dd>
 						<dt>Reference1</dt>
-						<dd>閉じられた場合、cancel。</dd>
+						<dd>When closed, "cancel."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1095,10 +1095,10 @@
 			<dl id="OnTeach">
 				<dt class="entry">OnTeach</dt>
 				<dd class="entry">
-					<p>TeachBoxからの入力があった際に発生。</p>
+					<p>Occurs when something is input into the TeachBox.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>入力された言葉の履歴。Reference0が1回目～最新の入力が末尾(n回目の入力がReference[n-1])</dd>
+						<dd>The history of input words. Reference0 holds the first, and the latest input goes into the final Reference (the nth input will be Reference(n - 1).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1108,14 +1108,14 @@
 			<dl id="OnCommunicate">
 				<dt class="entry">OnCommunicate</dt>
 				<dd class="entry">
-					<p>CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
+					<p>Occurs when a script is received from the CommunicateBox or from another ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Boxからはuser、ゴーストからはゴーストの本体側名。</dd>
+						<dd>"user" if from the Box, the main character name of the ghost that sent the script if from a ghost.</dd>
 						<dt>Reference1</dt>
-						<dd>スクリプトの内容。</dd>
+						<dd>The script contents.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報。</dd>
+						<dd>Extra information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1126,12 +1126,12 @@
 			<dl id="OnCommunicateInputCancel">
 				<dt class="entry">OnCommunicateInputCancel</dt>
 				<dd class="entry">
-					<p>CommunicateBoxが閉じられた際に発生。</p>
+					<p>Occurs when the CommunicateBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>(空文字列。OnUserInputCancelとReferenceの番号をあわせるための空席。)</dd>
+						<dd>(Empty string. A vacant spot to match the number of the Reference that returns "close" with OnUserInputCancel.)</dd>
 						<dt>Reference1</dt>
-						<dd>閉じられた場合、cancel。</dd>
+						<dd>When closed, "cancel."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1141,17 +1141,17 @@
 			<dl id="OnUserInput">
 				<dt class="entry">OnUserInput</dt>
 				<dd class="entry">
-					<p>InputBoxに入力され決定された際に発生。</p>
-					<p><a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>も参照のこと。</p>
+					<p>Occurs when something is input and confirmed in the InputBox.</p>
+					<p>Refer to <a href="list_sakura_script.html#notes_inputbox-id">InputBox IDs</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>InputBoxのID。</dd>
+						<dd>The InputBox ID.</dd>
 						<dt>Reference1</dt>
-						<dd>入力された内容。</dd>
+						<dd>The input content.</dd>
 						<dt>Reference2</dt>
-						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
-						<dt>Reference3～</dt>
-						<dd>--reference=で指定した追加情報</dd>
+						<dd>The supplementary information. (Only sliderinput's minimum and maximum; others will be left blank.)</dd>
+						<dt>Reference3~</dt>
+						<dd>The additional information specified with --reference=.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1163,16 +1163,16 @@
 			<dl id="OnUserInputCancel">
 				<dt class="entry">OnUserInputCancel</dt>
 				<dd class="entry">
-					<p>InputBoxが閉じられた際に発生。</p>
+					<p>Occurs when the InputBox is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>入力のイベントID。</dd>
+						<dd>The input event ID.</dd>
 						<dt>Reference1</dt>
-						<dd>タイムアウトした場合、timeout。閉じられた場合、close。</dd>
+						<dd>"timeout" if the box timed out, "close" if it was closed.</dd>
 						<dt>Reference2</dt>
-						<dd>入力内容補足(sliderinputのみ、最小,最大。ほかは空欄)</dd>
+						<dd>The supplementary information. (Only sliderinput's minimum and maximum; others will be left blank.)</dd>
 						<dt>Reference3～</dt>
-						<dd>--reference=で指定した追加情報</dd>
+						<dd>The additional information specified with --reference=.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1182,12 +1182,12 @@
 			<dl id="inputbox.autocomplete">
 				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
-					<p>ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
+					<p>Occurs when the box is opened. If a list of text separated by the 1-byte value is returned to this event, the autocomplete function will active in the InputBox.<br />(WinMe/2000 onwards)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>入力ボックスの種類。inputbox・teachbox・communicateboxのいずれか。</dd>
+						<dd>The type of box. Either inputbox, teachbox, or communicatebox.</dd>
 						<dt>Reference1</dt>
-						<dd>inputboxの場合のみ、入力完了時に起きるイベント名／識別子。</dd>
+						<dd>The identifier or name of the event that was run after input. Only applies to the InputBox.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1196,18 +1196,18 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ダイアログボックスイベント</h1>
+			<h1>Dialog Box Events</h1>
 			<dl id="OnSystemDialog">
 				<dt class="entry">OnSystemDialog</dt>
 				<dd class="entry">
-					<p>ファイル関連のダイアログで保存/OKが押された際に発生。</p>
+					<p>Occurs when Save/OK buttons are pressed for dialog related to files.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>open・save・folder・colorのいずれか。</dd>
+						<dd>Either open, save, folder, or color.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
+						<dd>The event ID.</dd>
 						<dt>Reference2</dt>
-						<dd>ファイルのパスまたはカンマ区切りのRGB値。</dd>
+						<dd>Either the filepath or the RGB value separated by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1217,12 +1217,12 @@
 			<dl id="OnSystemDialogCancel">
 				<dt class="entry">OnSystemDialogCancel</dt>
 				<dd class="entry">
-					<p>ファイル関連のダイアログでキャンセルが押された際に発生。</p>
+					<p>Occurs when the Cancel button is pressed for dialog related to files.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>open・save・folder・colorのいずれか。</dd>
+						<dd>Either open, save, folder, or color.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントID。</dd>
+						<dd>The event ID.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1232,34 +1232,35 @@
 			<dl id="OnConfigurationDialogHelp">
 				<dt class="entry">OnConfigurationDialogHelp</dt>
 				<dd class="entry">
-					<p>設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
+					<p>Occurs when a page is clicked from the Preferences dialog's help button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>
-							<p>ダイアログID。種類とページとの対応は以下。</p>
+							<p>The dialog ID. The correspondence between the type and the page is as below.</p>
 							<ul>
-								<li>setup …… 一般</li>
-								<li>ghost …… ゴースト(1)</li>
-								<li>ghost2 …… ゴースト(2)</li>
-								<li>folder …… フォルダ</li>
-								<li>display …… 表示</li>
-								<li>talk …… 喋り/バルーン</li>
-								<li>network …… 接続(1)</li>
-								<li>network2 …… 接続(2)</li>
+								<li>setup …… general</li>
+								<li>ghost …… ghost (1)</li>
+								<li>ghost2 …… ghost (2)</li>
+								<li>folder …… folder</li>
+								<li>display …… display</li>
+								<li>dictation …… voice synthesis/recognition</li>
+								<li>talk …… talk/balloon</li>
+								<li>network …… connection (1)</li>
+								<li>network2 …… connection (2)</li>
 								<li>biff …… POP</li>
-								<li>application …… 外部アプリ</li>
+								<li>application …… external applications</li>
 								<li>messenger …… IM</li>
 								<li>ipmessenger …… IPMessenger</li>
-								<li>international …… 国際化</li>
-								<li>developer …… 開発/その他</li>
+								<li>international …… international compatibility</li>
+								<li>developer …… development/other</li>
 							</ul>
 						</dd>
 						<dt>Reference1</dt>
-						<dd>ダイアログタイトル。</dd>
+						<dd>The dialog title.</dd>
 						<dt>Reference2</dt>
-						<dd>項目タイプ:項目名。</dd>
+						<dd>Page type: page name.</dd>
 						<dt>Reference3</dt>
-						<dd>項目内容テキスト。</dd>
+						<dd>The page contents text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1269,8 +1270,8 @@
 			<dl id="OnGhostTermsAccept">
 				<dt class="entry">OnGhostTermsAccept</dt>
 				<dd class="entry">
-					<p>利用条件ダイアログで受諾が押された際に発生。
-					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
+					<p>Occurs when the ghost's terms of use are agreed to.
+					<br />No event occurs if the terms of use are closed using the upper right button.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
@@ -1279,8 +1280,8 @@
 			<dl id="OnGhostTermsDecline">
 				<dt class="entry">OnGhostTermsDecline</dt>
 				<dd class="entry">
-					<p>利用条件ダイアログで拒否が押された際に発生。
-					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
+					<p>Occurs when the ghost's terms of use are declined.
+					<br />No event occurs if the terms of use are closed using the upper right button.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.33</li>
 					</ul>
@@ -1288,23 +1289,23 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>時間イベント</h1>
+			<h1>Time Events</h1>
 			<dl id="OnSecondChange">
 				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
-					<p>1秒ごとに発生。</p>
-					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
+					<p>Occurs every second.</p>
+					<p>When talking is disabled, the event is notified with NOTIFY, and Reference3 is 0.<strong class="warning">The returned script will be ignored.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>トーク再生可能なときに1、それ以外は0。</dd>
+						<dd>1 if talking is enabled, 0 otherwise.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1316,19 +1317,19 @@
 			<dl id="OnMinuteChange">
 				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
-					<p>1分ごとに発生。</p>
-					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
+					<p>Occurs every minute.</p>
+					<p>When talking is disabled, the event is notified with NOTIFY, and Reference3 is 0.<strong class="warning">The returned script will be ignored.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>トーク再生可能なときに1、それ以外は0。</dd>
+						<dd>1 if talking is enabled, 0 otherwise.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1340,19 +1341,19 @@
 			<dl id="OnHourTimeSignal">
 				<dt class="entry">OnHourTimeSignal</dt>
 				<dd class="entry">
-					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
-					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
+					<p>The time signal event. Occurs at the start of every hour (around x:00:00).</p>
+					<p>When talking is disabled, this event waits until it is enabled. Due to that, <strong class="warning">this event will occasionally be notified at inaccurate times.</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSの連続起動時間（hour）</dd>
+						<dd>The length of time the OS has been running (in hours).</dd>
 						<dt>Reference1</dt>
-						<dd>見切れ時に1、それ以外は0。</dd>
+						<dd>1 if offscreen, 0 otherwise.</dd>
 						<dt>Reference2</dt>
-						<dd>重なり時に1、それ以外は0。</dd>
+						<dd>1 if overlapped, 0 otherwise.</dd>
 						<dt>Reference3</dt>
-						<dd>常に1。(トーク再生可能になるまで待つため)</dd>
+						<dd>Always 1 (exists to wait until talking is enabled).</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　(OSレベルで)何も操作せず放置されている時間。秒単位。</dd>
+						<dd>※SSP only: The length of time since the last user interaction (at the OS level). The unit is seconds.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1361,11 +1362,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>消滅イベント</h1>
+			<h1>Uninstall Events</h1>
 			<dl id="OnVanishSelecting">
 				<dt class="entry">OnVanishSelecting</dt>
 				<dd class="entry">
-					<p>消滅が指示された際に発生。</p>
+					<p>Occurs when instructed to uninstall.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1376,7 +1377,7 @@
 			<dl id="OnVanishSelected">
 				<dt class="entry">OnVanishSelected</dt>
 				<dd class="entry">
-					<p>確認ダイアログでYESが選択された際に発生。</p>
+					<p>Occurs when "YES" is selected for the confirmation dialog.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1387,7 +1388,7 @@
 			<dl id="OnVanishCancel">
 				<dt class="entry">OnVanishCancel</dt>
 				<dd class="entry">
-					<p>確認ダイアログでNOが選択された際に発生。</p>
+					<p>Occurs when "NO" is selected for the confirmation dialog.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1398,14 +1399,14 @@
 			<dl id="OnVanishButtonHold">
 				<dt class="entry">OnVanishButtonHold</dt>
 				<dd class="entry">
-					<p>消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
+					<p>Occurs when the uninstall event is interrupted by double clicking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the interruption occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon that was clicked to cause the interruption. 0 for the main character, 1 for the side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex: \s[2]abcde<br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1417,16 +1418,16 @@
 			<dl id="OnVanished">
 				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
-					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishedへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
+					<p>Occurs when booted due to the previous ghost being uninstalled.<br>In SSP, if no script is returned for the event (204), <a href="#OnBoot">OnBoot</a> will occur afterwards.<br>Furthermore, in SSP, if another ghost that was open at the same time is uninstalled and no script is returned for OnOtherGhostVanished, this event will occur instead. In this situation, OnBoot is not used as a fallback.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>消滅したゴーストの本体側の名前。</dd>
+						<dd>The main character name of the ghost that was uninstalled.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only: 　消滅したゴーストのOnVanishSelectedイベントのスクリプト。</dd>
+						<dd>※SSP only: The OnVanishSelected event script of the ghost that was uninstalled.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　消滅したゴースト名。</dd>
+						<dd>※SSP only: The name of the ghost that was uninstalled.</dd>
 						<dt>Reference7</dt>
-						<dd>※SSP only: 　<em>切り替わったゴーストの</em>シェル名。</dd>
+						<dd>※SSP only: The shell name of <em>the ghost that was changed to</em>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1438,16 +1439,16 @@
 			<dl id="OnOtherGhostVanished">
 				<dt class="entry">OnOtherGhostVanished</dt>
 				<dd class="entry">
-					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
+					<p>Occurs when another ghost is uninstalled while multiple ghosts are open.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>消滅したゴーストの本体側の名前。</dd>
+						<dd>The main character name of the ghost that was uninstalled.</dd>
 						<dt>Reference1</dt>
-						<dd>消滅したゴーストのOnVanishSelectedイベントのスクリプト。</dd>
+						<dd>The OnVanishSelected event script of the ghost that was uninstalled.</dd>
 						<dt>Reference2</dt>
-						<dd>消滅したゴースト名。</dd>
+						<dd>The name of the ghost that was uninstalled.</dd>
 						<dt>Reference7</dt>
-						<dd><em>切り替わったゴーストの</em>シェル名。</dd>
+						<dd>The shell name of <em>the ghost that was changed to</em>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1456,16 +1457,16 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択肢イベント</h1>
+			<h1>Choice Events</h1>
 			<dl id="OnChoiceSelect">
 				<dt class="entry">OnChoiceSelect</dt>
 				<dd class="entry">
-					<p>選択肢が選択された際に発生。</p>
+					<p>Occurs when a choice is selected.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択された選択肢のID。</dd>
+						<dd>The ID of the choice that was selected.</dd>
 						<dt>Reference*</dt>
-						<dd>※CROWのみ　選択肢の２番目以降のID。</dd>
+						<dd>※CROW only: The additional IDs of the choice.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1477,14 +1478,14 @@
 			<dl id="OnChoiceSelectEx">
 				<dt class="entry">OnChoiceSelectEx</dt>
 				<dd class="entry">
-					<p>選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
+					<p>Occurs when a choice is selected.<br />Starts before OnChoiceSelect.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1494,14 +1495,14 @@
 			<dl id="OnChoiceEnter">
 				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
-					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterはReferenceなしで発生する。<br /><em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the cursor is hovered over and <em>when moved away from</em> a choice.<br />When the cursor is moved away, the event occurs with no References. <br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1513,10 +1514,10 @@
 			<dl id="OnChoiceTimeout">
 				<dt class="entry">OnChoiceTimeout</dt>
 				<dd class="entry">
-					<p>選択肢待ち時間がタイムアウトした際に発生。</p>
+					<p>Occurs when a choice times out.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイムアウトしたスクリプト。</dd>
+						<dd>The script that timed out.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1528,14 +1529,14 @@
 			<dl id="OnChoiceHover">
 				<dt class="entry">OnChoiceHover</dt>
 				<dd class="entry">
-					<p>選択肢上で静止された際に発生。</p>
+					<p>Occurs when the cursor stops over a choice.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択肢のテキスト（ラベル）。</dd>
+						<dd>The choice text (label).</dd>
 						<dt>Reference1</dt>
-						<dd>選択肢のID。</dd>
+						<dd>The choice ID.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\qタグ内の3番目以降の引数)。</dd>
+						<dd>Additional information (from the third argument onwards in a \q tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1545,10 +1546,10 @@
 			<dl id="OnAnchorSelect">
 				<dt class="entry">OnAnchorSelect</dt>
 				<dd class="entry">
-					<p>\_aジャンパがクリックされた瞬間に発生。</p>
+					<p>Occurs the moment an anchor (\_a) is clicked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択されたジャンパのID。</dd>
+						<dd>The ID of the anchor that was selected.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1560,14 +1561,14 @@
 			<dl id="OnAnchorSelectEx">
 				<dt class="entry">OnAnchorSelectEx</dt>
 				<dd class="entry">
-					<p>\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
+					<p>Occurs the moment an anchor (\_a) is clicked. Only if SHIORI returns nothing to this event will OnAnchorSelect occur afterwards.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択されたジャンパのテキスト。</dd>
+						<dd>The text of the anchor that was selected.</dd>
 						<dt>Reference1</dt>
-						<dd>選択されたジャンパのID。</dd>
+						<dd>The ID of the anchor that was selected.</dd>
 						<dt>Reference*</dt>
-						<dd>拡張情報(\_aタグ内の2番目以降の引数)。</dd>
+						<dd>Additional information (from the second argument onwards in an \_a tag).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1576,18 +1577,18 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>サーフェスイベント</h1>
+			<h1>Surface Events</h1>
 			<dl id="OnSurfaceChange">
 				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
-					<p>サーフェスが変わった際に発生。<br /><em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when a surface changes. <br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフェス。</dd>
+						<dd>The main character's current surface.</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフェス。</dd>
+						<dd>The side character's current surface.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　キャラID,サーフェス番号,幅,高さ</dd>
+						<dd>※SSP only: Character ID, surface number, width, height.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1598,12 +1599,12 @@
 			<dl id="OnSurfaceRestore">
 				<dt class="entry">OnSurfaceRestore</dt>
 				<dd class="entry">
-					<p>トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
+					<p>Occurs once a set interval of time has passed after talking.<br />In SSP, this event occurs after the timeout interval set in the baseware settings + 15 seconds (in other words, 15 seconds after the balloon closes).<br />※Only in the case that the timeout interval is set to 0, the balloon will continue to be displayed until OnSurfaceRestore occurs.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体側の現在サーフェス。</dd>
+						<dd>The main character's current surface.</dd>
 						<dt>Reference1</dt>
-						<dd>相方側の現在サーフェス。</dd>
+						<dd>The side character's current surface.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1615,21 +1616,21 @@
 			<dl id="OnOtherSurfaceChange">
 				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
-					<p>（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
-					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
+					<p>Occurs when another ghost's surface changes.<br />
+					In order to reduce lag, this event is usually invalid. To use it, \![set,othersurfacechange,true] must be run first.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴーストSakura名</dd>
+						<dd>The ghost's main character name.</dd>
 						<dt>Reference2</dt>
-						<dd>サーフェスが切り替わったウインドウID(Sakura=0)</dd>
+						<dd>The ID of the window that changed surfaces. (Sakura=0)</dd>
 						<dt>Reference3</dt>
-						<dd>新サーフェスID</dd>
+						<dd>The ID of the new surface.</dd>
 						<dt>Reference4</dt>
-						<dd>旧サーフェスID</dd>
+						<dd>The ID of the old surface.</dd>
 						<dt>Reference5</dt>
-						<dd>新しいサーフェスの大きさ(座標：左,上,右,下)</dd>
+						<dd>The size of the new surface. (Coordinates: left, up, right, down)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1638,26 +1639,26 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>マウスイベント</h1>
+			<h1>Mouse Events</h1>
 			<dl id="OnMouseClick">
 				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
-					<p>左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
+					<p>Occurs when the ghost is left, right, or middle button mouse clicked (the moment after releasing a pressed button) and OnMouseUp does not apply.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1669,22 +1670,22 @@
 			<dl id="OnMouseClickEx">
 				<dt class="entry">OnMouseClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
+					<p>Occurs when the ghost is clicked by a mouse button that is not the left or right button (the moment after releasing a pressed button) and OnMouseUpEx does not apply.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1694,22 +1695,22 @@
 			<dl id="OnMouseDoubleClick">
 				<dt class="entry">OnMouseDoubleClick</dt>
 				<dd class="entry">
-					<p>左・右ボタンでダブルクリックされた際に発生。</p>
+					<p>Occurs when the ghost is double-clicked with either the left or right button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1721,22 +1722,22 @@
 			<dl id="OnMouseDoubleClickEx">
 				<dt class="entry">OnMouseDoubleClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外でダブルクリックされた際に発生。</p>
+					<p>Occurs when the ghost is double-clicked with a button that is not the left or right button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1746,24 +1747,24 @@
 			<dl id="OnMouseMultipleClick">
 				<dt class="entry">OnMouseMultipleClick</dt>
 				<dd class="entry">
-					<p>3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
+					<p>Occurs when the ghost is clicked 3 or more times in a row.<br />※When there is no SHIORI response to this event, it will default to OnMouseClick or OnMouseDoubleClick instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
+						<dd>0 if the main character, 1 if the side character, and 2~ after that.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 						<dt>Reference7</dt>
-						<dd>連続クリック回数</dd>
+						<dd>The number of times clicked.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1773,24 +1774,24 @@
 			<dl id="OnMouseMultipleClickEx">
 				<dt class="entry">OnMouseMultipleClickEx</dt>
 				<dd class="entry">
-					<p>左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
+					<p>Occurs when the ghost is clicked 3 or more times in a row with a button that is not the left or right button.<br />※When there is no SHIORI response to this event, it will default to OnMouseClickEx or OnMouseDoubleClickEx instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。それ以降2～</dd>
+						<dd>0 if the main character, 1 if the side character, and 2~ after that.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 						<dt>Reference7</dt>
-						<dd>連続クリック回数</dd>
+						<dd>The number of times clicked.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1800,22 +1801,22 @@
 			<dl id="OnMouseUp">
 				<dt class="entry">OnMouseUp</dt>
 				<dd class="entry">
-					<p>左・右のマウスボタンが放された際に発生。</p>
+					<p>Occurs when either the left or right mouse button is released.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1825,22 +1826,22 @@
 			<dl id="OnMouseUpEx">
 				<dt class="entry">OnMouseUpEx</dt>
 				<dd class="entry">
-					<p>左・右以外のマウスボタンが放された際に発生。</p>
+					<p>Occurs when a button that is not the left or right button is released.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1850,22 +1851,22 @@
 			<dl id="OnMouseDown">
 				<dt class="entry">OnMouseDown</dt>
 				<dd class="entry">
-					<p>左・右のマウスボタンが押された際に発生。</p>
+					<p>Occurs when either the left or right mouse button is pressed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1、中クリックは2(互換仕様：OnMouseClickExへの移行を推奨)。</dd>
+						<dd>0 if a left click, 1 if a right click, 2 if a middle click (for compatibility reasons, changing to OnMouseClickEx is recommended).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1875,22 +1876,22 @@
 			<dl id="OnMouseDownEx">
 				<dt class="entry">OnMouseDownEx</dt>
 				<dd class="entry">
-					<p>左・右以外のマウスボタンが押された際に発生。</p>
+					<p>Occurs when a button that is not the left or right button is pressed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>ホイールクリック(または3ボタンマウスの中ボタン)はmiddle、拡張ボタン1(通常「戻る」に割当)はxbutton1、拡張ボタン2(通常「進む」に割当)はxbutton2。</dd>
+						<dd>"middle" if a wheel click (or a middle click on a three-button mouse), "xbutton1" if the 4th button (usually functions as a back button), "xbutton2" if the 5th button (typically functions as a forward button).</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1900,22 +1901,22 @@
 			<dl id="OnMouseMove">
 				<dt class="entry">OnMouseMove</dt>
 				<dd class="entry">
-					<p>マウスが移動した際に発生。</p>
+					<p>Occurs when the mouse is moved.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>※SSP only: 　常に0。</dd>
+						<dd>※SSP only: Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1927,22 +1928,22 @@
 			<dl id="OnMouseWheel">
 				<dt class="entry">OnMouseWheel</dt>
 				<dd class="entry">
-					<p>マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
+					<p>Occurs when the mouse wheel is scrolled.<br>From SSP 2.3.53 onwards, in a touch-panel environment, if SHIORI does not return anything when <a href="#OnMouseGesture">OnMouseGesture</a>'s Reference5 is "up" or "down" (returns 204 No Content), OnMouseWheel will occur as a replacement event. In that situation, the numerical value of Reference2 will be converted from the original scroll amount and up/down direction (positive number if up, negative number if down).</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>※SSP only: 　常に0。</dd>
+						<dd>※SSP only: Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>※SSP only: 　windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>※SSP only: From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1954,22 +1955,22 @@
 			<dl id="OnMouseEnterAll">
 				<dt class="entry">OnMouseEnterAll</dt>
 				<dd class="entry">
-					<p>マウスがキャラクターウインドウに入った際に発生。</p>
+					<p>Occurs when the mouse enters a character window.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1979,22 +1980,22 @@
 			<dl id="OnMouseLeaveAll">
 				<dt class="entry">OnMouseLeaveAll</dt>
 				<dd class="entry">
-					<p>マウスがキャラクターウインドウから出た際に発生。</p>
+					<p>Occurs when the mouse leaves a character window.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2004,22 +2005,22 @@
 			<dl id="OnMouseEnter">
 				<dt class="entry">OnMouseEnter</dt>
 				<dd class="entry">
-					<p>マウスが当たり判定に入った際に発生。</p>
+					<p>Occurs when the mouse enters a collision area.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2029,22 +2030,22 @@
 			<dl id="OnMouseLeave">
 				<dt class="entry">OnMouseLeave</dt>
 				<dd class="entry">
-					<p>マウスが当たり判定から出た際に発生。</p>
+					<p>Occurs when the mouse leaves a collision area.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2054,22 +2055,22 @@
 			<dl id="OnMouseDragStart">
 				<dt class="entry">OnMouseDragStart</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし始めた際に発生。ただしパッシブモードでは抑制される。</p>
+					<p>Occurs when mouse dragging is started. However, this event is disabled during Passive Mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2079,22 +2080,22 @@
 			<dl id="OnMouseDragEnd">
 				<dt class="entry">OnMouseDragEnd</dt>
 				<dd class="entry">
-					<p>マウスをドラッグし終えた際に発生。ただしパッシブモードでは抑制される。</p>
+					<p>Occurs when mouse dragging is ended. However, this event is disabled during Passive Mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>マウスホイールの回転量および回転方向。</dd>
+						<dd>The amount that the mouse wheel has been scrolled, and the direction it was scrolled in.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>左クリックは0、右クリックは1。</dd>
+						<dd>0 if a left click, 1 if a right click.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2104,22 +2105,22 @@
 			<dl id="OnMouseHover">
 				<dt class="entry">OnMouseHover</dt>
 				<dd class="entry">
-					<p>マウスが静止している際に発生。</p>
+					<p>Occurs when the mouse is being hovered over the ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>マウスカーソルの x 座標（ローカル座標）</dd>
+						<dd>The mouse cursor x coordinate (local coordinates).</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの y 座標（ローカル座標）</dd>
+						<dd>The mouse cursor y coordinate (local coordinates).</dd>
 						<dt>Reference2</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference3</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference4</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference5</dt>
-						<dd>常に0。</dd>
+						<dd>Always 0.</dd>
 						<dt>Reference6</dt>
-						<dd>windows7以降、マルチタッチ対応環境のタッチパネル（※タッチパッド不可）からの入力でtouch、マウスなどからの入力でmouse</dd>
+						<dd>From Windows 7 onwards, "touch" if the input is from a touch panel in a multi-touch supported environment (excludes touch pads), or "mouse" if the input is from a mouse.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2129,22 +2130,22 @@
 			<dl id="OnMouseGesture">
 				<dt class="entry">OnMouseGesture</dt>
 				<dd class="entry">
-					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
+					<p>Occurs on dragging with the right button or wheel.<br>Furthermore, from SSP 2.3.53 onwards, in a touch-panel environment, if SHIORI does not return anything when OnMouseGesture's Reference5 is "up" or "down" (returns 204 No Content), <a href="#OnMouseWheel">OnMouseWheel</a> will occur as a replacement event. Refer to OnMouseWheel's entry for details.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>マウスカーソルの xy 座標（バイト値1区切り）</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value).</dd>
 						<dt>Reference2</dt>
-						<dd>当たり判定の識別子。</dd>
+						<dd>The collision identifier name.</dd>
 						<dt>Reference3</dt>
-						<dd>右ドラッグを開始したマウスカーソルの xy 座標（バイト値1区切り）</dd>
+						<dd>The mouse cursor x and y coordinates (delimited by a 1-byte value) when right dragging was started.</dd>
 						<dt>Reference4</dt>
-						<dd>右ドラッグを開始した当たり判定の識別子。</dd>
+						<dd>The identifier name of the collision in which right dragging was started.</dd>
 						<dt>Reference5</dt>
-						<dd>ジェスチャー方向。<br />left_up(左上) up(上) right_up(右上)<br />left(左) right(右)<br />left_down(左下) down(下) right_down(右下)<br />circle.cw(時計回り) circle.ccw(反時計回り)<br />end(右ボタンをはなした)</dd>
+						<dd>The gesture direction.<br />left_up (upper left); up (up); right_up (upper right)<br />left (left); right (right)<br />left_down (lower left); down (down); right_down (lower right)<br />circle.cw (clockwise rotation); circle.ccw (counter-clockwise rotation)<br />end (the right mouse button is released)</dd>
 						<dt>Reference6</dt>
-						<dd>ジェスチャー移動角度。<br />右0度から反時計回りに360度。</dd>
+						<dd>The gesture movement degree.<br />0 at the right to 360, counter-clockwise.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2153,18 +2154,18 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>バルーンイベント</h1>
+			<h1>Balloon Events</h1>
 			<dl id="OnBalloonBreak">
 				<dt class="entry">OnBalloonBreak</dt>
 				<dd class="entry">
-					<p>SSTP以外でブレイクされた際に発生。</p>
+					<p>Occurs when a balloon is broken for a reason other than SSTP.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the breaking occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon that was broken. 0 if main character, 1 if side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex: \s[2]abcde <br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2174,10 +2175,10 @@
 			<dl id="OnBalloonClose">
 				<dt class="entry">OnBalloonClose</dt>
 				<dd class="entry">
-					<p>バルーンを閉じた際に発生。</p>
+					<p>Occurs when a balloon is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>閉じる際に表示されていたスクリプト。</dd>
+						<dd>The script that was being displayed when the balloon was closed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2187,12 +2188,12 @@
 			<dl id="OnBalloonTimeout">
 				<dt class="entry">OnBalloonTimeout</dt>
 				<dd class="entry">
-					<p>選択肢以外でバルーンがタイムアウトした際に発生。</p>
+					<p>Occurs when a balloon without choices times out.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイムアウトした際に表示されていたスクリプト。</dd>
+						<dd>The script that was being displayed when the balloon timed out.</dd>
 						<dt>Reference1</dt>
-						<dd>残り時間。</dd>
+						<dd>The remaining time.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2201,16 +2202,16 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>トレイバルーンイベント</h1>
+			<h1>Tray Balloon Events</h1>
 			<dl id="OnTrayBalloonClick">
 				<dt class="entry">OnTrayBalloonClick</dt>
 				<dd class="entry">
-					<p>トレイアイコンのバルーンをクリックして消した際に発生。</p>
+					<p>Occurs when the tray icon balloon is closed via clicking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
+						<dd>The title string.</dd>
 						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
+						<dd>The displayed text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2220,12 +2221,12 @@
 			<dl id="OnTrayBalloonTimeout">
 				<dt class="entry">OnTrayBalloonTimeout</dt>
 				<dd class="entry">
-					<p>トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
+					<p>Occurs when the tray icon balloon is closed via timing out or with the close button.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>タイトル文字列。</dd>
+						<dd>The title string.</dd>
 						<dt>Reference1</dt>
-						<dd>表示テキスト。</dd>
+						<dd>The displayed text.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2234,11 +2235,11 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>インストールイベント</h1>
+			<h1>Install Events</h1>
 			<dl id="OnInstallBegin">
 				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
-					<p>アーカイブのインストール開始の際に発生。</p>
+					<p>Occurs when an archive install begins.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2249,14 +2250,14 @@
 			<dl id="OnInstallComplete">
 				<dt class="entry">OnInstallComplete</dt>
 				<dd class="entry">
-					<p>インストールが正常終了した際に発生。</p>
+					<p>Occurs when an install finishes with no problems.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file.</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前（install.txtのname指定）。</dd>
+						<dd>The name of the installed file (the name specified in install.txt).</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした物の名前2（ghost with balloonなどの場合のballoon側の名前）。</dd>
+						<dd>The second name of the installed file (e.g. the balloon name when a balloon is bundled with a ghost).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2268,14 +2269,14 @@
 			<dl id="OnInstallCompleteEx">
 				<dt class="entry">OnInstallCompleteEx</dt>
 				<dd class="entry">
-					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
+					<p>Occurs when an install finishes with no problems.<br />If this event does not exist, OnInstallComplete will occur instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file. When there are multiple, they are delimited by a 1-byte value.</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の名前。複数の場合はバイト値1区切り。</dd>
+						<dd>The name of the installed file. When there are multiple, they are delimited by a 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした場所。複数の場合はバイト値1区切り。</dd>
+						<dd>The location of installation. When there are multiple, they are delimited by a 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2285,10 +2286,10 @@
 			<dl id="OnInstallFailure">
 				<dt class="entry">OnInstallFailure</dt>
 				<dd class="entry">
-					<p>インストールに失敗した際に発生。</p>
+					<p>Occurs when installation has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_install-reasonoffailure">※失敗理由</a>。</dd>
+						<dd>The <a href="#caption_install-reasonoffailure">※installation failure reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2300,18 +2301,18 @@
 			<dl id="OnInstallRefuse">
 				<dt class="entry">OnInstallRefuse</dt>
 				<dd class="entry">
-					<p>インストールするファイルが他のゴーストを指名していた際に発生。</p>
+					<p>Occurs when the file being installed is specified to be for another ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
+						<dd>The main character name of the ghost that was specified (the <a href="descript_install.html#accept,本体側名">accept</a> specification in install.txt, in other words the intended recipient of the file).</dd>
 						<dt>Reference1</dt>
-						<dd>インストールしようとした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the file that failed to install.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールしようとした物の名前。</dd>
+						<dd>The name of the file that failed to install.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1以降は2.4.85</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref1 and onwards are from 2.4.85</li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2319,22 +2320,22 @@
 			<dl id="OnInstallReroute">
 				<dt class="entry">OnInstallReroute</dt>
 				<dd class="entry">
-					<p>インストールするファイルが他のゴーストを指名していた際、かつ、指名対象ゴーストが一緒に起動していた時に発生。以降のインストールイベントは指名対象ゴースト側に発生する。</p>
+					<p>Occurs when the file being installed is specified to be for another ghost, and that ghost is open at the same time. Install events following this will occur for the intended recipient ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>指定されたゴーストの本体側名（install.txtの<a href="descript_install.html#accept,本体側名">accept</a>指定、つまり本来渡すべき相手）。</dd>
+						<dd>The main character name of the ghost that was specified (the <a href="descript_install.html#accept,本体側名">accept</a> specification in install.txt, in other words the intended recipient of the file).</dd>
 						<dt>Reference1</dt>
-						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a> of the installed file.</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした物の名前。</dd>
+						<dd>The name of the installed file.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4 / Ref1以降は2.4.85</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4 / Ref1 and onwards are from 2.4.85</li>
 					</ul>
 				</dd>
 			</dl>
 			<section class="caption" id="caption_install-identifier">
-				<h1>インストールの識別子</h1>
+				<h1>Installation identifiers</h1>
 				<ul>
 					<li>shell</li>
 					<li>ghost</li>
@@ -2343,12 +2344,12 @@
 					<li>headline</li>
 					<li>supplement</li>
 				</ul>
-				<p>以下はOnInstallComplete / OnNarCreatedのみ</p>
+				<p>OnInstallComplete / OnNarCreated only</p>
 				<ul>
 					<li>ghost with balloon</li>
 					<li>shell with balloon</li>
 				</ul>
-				<p>以下はSSP専用</p>
+				<p>SSP only</p>
 				<ul>
 					<li>calendar skin</li>
 					<li>calendar plugin</li>
@@ -2357,34 +2358,34 @@
 				</ul>
 			</section>
 			<section class="caption" id="caption_install-reasonoffailure">
-				<h1>インストールの失敗理由</h1>
+				<h1>Installation failure reasons</h1>
 				<dl>
 					<dt>unlha32</dt>
-					<dd>lzh形式ファイルを展開するdllのロードに失敗した</dd>
+					<dd>Failed to load the dll to decompress the lzh format file.</dd>
 					<dt>extraction</dt>
-					<dd>解凍失敗（ファイル破損）</dd>
+					<dd>Failed to decompress the file (file corruption).</dd>
 					<dt>invalid type</dt>
-					<dd>install.txtに不備がある</dd>
+					<dd>The install.txt is incomplete.</dd>
 					<dt>artificial</dt>
-					<dd>ユーザがインストールを中断した（※SSP only: ）</dd>
+					<dd>The installation was interrupted by the user (※SSP only).</dd>
 					<dt>unsupported</dt>
-					<dd>その他サポートしていないアーカイブ</dd>
+					<dd>The archive is not supported.</dd>
 					<dt>password</dt>
-					<dd>パスワードつきアーカイブでパスワード誤りがあった(SSP 2.5.09以降)</dd>
+					<dd>The password was entered incorrectly on a password-locked archive (from SSP 2.5.09 onwards).</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>ファイルドロップイベント</h1>
+			<h1>File Drop Events</h1>
 			<dl id="OnFileDropping">
 				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
-					<p>ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
+					<p>Occurs when the cursor goes over the ghost while dragging a file.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドラッグしているファイルパス。</dd>
+						<dd>The path of the file being dragged.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2395,12 +2396,12 @@
 			<dl id="OnFileDropped">
 				<dt class="entry">OnFileDropped</dt>
 				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[Old specification] Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2411,12 +2412,12 @@
 			<dl id="OnDirectoryDrop">
 				<dt class="entry">OnDirectoryDrop</dt>
 				<dd class="entry">
-					<p>ディレクトリがDnD された際に発生。</p>
+					<p>Occurs when a directory is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたディレクトリのパス。</dd>
+						<dd>The path of the directory that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the directory was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2427,10 +2428,10 @@
 			<dl id="OnWallpaperChange">
 				<dt class="entry">OnWallpaperChange</dt>
 				<dd class="entry">
-					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
+					<p>Occurs when the wallpaper is changed by drag-and-dropping an image file.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2442,12 +2443,12 @@
 			<dl id="OnFileDrop">
 				<dt class="entry">OnFileDrop</dt>
 				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>[Old specification] Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
+						<dd>The path of the file that was dropped.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2458,12 +2459,12 @@
 			<dl id="OnFileDrop2">
 				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
+					<p>Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dd>The path of the file that was dropped (delimited by a 1-byte value when there are multiple).</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2475,12 +2476,12 @@
 			<dl id="OnFileDropEx">
 				<dt class="entry">OnFileDropEx</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
+					<p>Occurs when a file is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dd>The path of the file that was dropped (delimited by a 1-byte value when there are multiple).</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2490,7 +2491,7 @@
 			<dl id="OnUpdatedataCreating">
 				<dt class="entry">OnUpdatedataCreating</dt>
 				<dd class="entry">
-					<p>ゴーストフォルダがDnDされた際に発生。</p>
+					<p>Occurs when a ghost folder is drag-and-dropped.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2501,7 +2502,7 @@
 			<dl id="OnUpdatedataCreated">
 				<dt class="entry">OnUpdatedataCreated</dt>
 				<dd class="entry">
-					<p>updates2.dauが作成された際に発生。</p>
+					<p>Occurs when an updates2.dau has been created.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2512,14 +2513,14 @@
 			<dl id="OnNarCreating">
 				<dt class="entry">OnNarCreating</dt>
 				<dd class="entry">
-					<p>install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
+					<p>Occurs when a ghost folder containing an install.txt is drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>narにするオブジェクト名。</dd>
+						<dd>The name of the object to be made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>narに出力されたファイル名。</dd>
+						<dd>The name and absolute file path of the nar to be created.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2531,14 +2532,14 @@
 			<dl id="OnNarCreated">
 				<dt class="entry">OnNarCreated</dt>
 				<dd class="entry">
-					<p>narファイルが作成された際に発生。</p>
+					<p>Occurs when a nar file has been created.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>narにするオブジェクト名。</dd>
+						<dd>The name of the object made into a nar.</dd>
 						<dt>Reference1</dt>
-						<dd>narに出力されたファイル名。</dd>
+						<dd>The name and absolute file path of the nar that was created.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_install-identifier">※識別子</a>。インストールの識別子参照。</dd>
+						<dd>The <a href="#caption_install-identifier">※identifier</a>. Refer to the installation identifiers.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2549,14 +2550,14 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>URLドロップイベント</h1>
+			<h1>URL Drop Events</h1>
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされた際に発生。</p>
+					<p>Occurs when a URL has been dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>URLパス。</dd>
+						<dd>The URL path.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2568,10 +2569,10 @@
 			<dl id="OnURLDropped">
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
-					<p>ドロップされたURLを受領し終わった際に発生。</p>
+					<p>Occurs when the dropped URL has finished being received.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードし終わったファイルのローカルパス。</dd>
+						<dd>The local path of the file that was downloaded.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2583,12 +2584,12 @@
 			<dl id="OnURLDropFailure">
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
-					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。</p>
+					<p>Occurs when the dropped URL could not be received or the operation was canceled.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードし終わった分のファイルのローカルパス。</dd>
+						<dd>The local path of the part of the file that was downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※failure reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2600,16 +2601,16 @@
 			<dl id="OnURLQuery">
 				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
-					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知されます。<br />
-					これに対してスクリプトを返すと、OnURLDropping -> Droppedという通常のダウンロード処理がキャンセルされます。<br />
-					ゴースト側でURLを独自に処理したい場合のみスクリプトを返してください。</p>
+					<p>Notified when a URL is drag-and-dropped onto a character window.<br />
+					If a script is returned for this event, the regular download process OnURLDropping -> Dropped will be canceled.<br />
+					Only return a script if the URL needs to be processed individually on the ghost side.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>URLパス。</dd>
+						<dd>The URL path.</dd>
 						<dt>Reference1</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference2</dt>
-						<dd>ドロップされたURLのMIMEタイプ</dd>
+						<dd>The MIME type of the URL that was dropped.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2619,14 +2620,14 @@
 			<dl id="OnXUkagakaLinkOpen">
 				<dt class="entry">OnXUkagakaLinkOpen</dt>
 				<dd class="entry">
-					<p>下記形式のWeb関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
-					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
-					文字コードはUTF-8固定＋URLエンコード済<br />
-					サンプル：<a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
-					<em>SecurityLevelは必ずexternalになる。</em></p>
+					<p>Notified by the specified ghost when a web association in the below format is opened or dropped on the ghost.<br />
+					x-ukagaka-link:type=event&ghost=(the "name" or "sakura.name" in descript.txt)&info=(the string to be stored in Reference0)<br />
+					The character encoding is fixed to UTF-8 + URL encoded<br />
+					Ex: <a href="x-ukagaka-link:type=event&ghost=Emily&info=sweet-potato-feeding">x-ukagaka-link:type=event&amp;ghost=Emily&amp;info=sweet-potato-feeding</a><br />
+					<em>SecurityLevel is always "external."</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>info=以降に指定した文字列(URLデコード済)</dd>
+						<dd>info=The specified string (URL decoded).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2635,20 +2636,20 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ネットワーク更新イベント</h1>
+			<h1>Network Update Events</h1>
 			<dl id="OnUpdateBegin">
 				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
-					<p>ネットワーク更新開始が指示された際に発生。</p>
+					<p>Occurs when instructed to begin the network update.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>フルパス。</dd>
+						<dd>The full path.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost・本体更新の際はbaseware<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2660,16 +2661,16 @@
 			<dl id="OnUpdateReady">
 				<dt class="entry">OnUpdateReady</dt>
 				<dd class="entry">
-					<p>更新ファイルが確認された際に発生。</p>
+					<p>Occurs when update files have been checked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd>更新対象種別。<br />(shell ghost balloon headline plugin)<br /></dd>
+						<dd>The update target class.<br />(shell ghost balloon headline plugin)<br /></dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2681,16 +2682,16 @@
 			<dl id="OnUpdateComplete">
 				<dt class="entry">OnUpdateComplete</dt>
 				<dd class="entry">
-					<p>ネットワーク更新が成功し完了した際に発生。</p>
+					<p>Occurs when the network update is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2702,16 +2703,16 @@
 			<dl id="OnUpdateFailure">
 				<dt class="entry">OnUpdateFailure</dt>
 				<dd class="entry">
-					<p>ネットワーク更新に失敗した際に発生。</p>
+					<p>Occurs when the network update has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。<br />※SSP only: 　失敗したファイル名。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.<br />※SSP only: The files that could not be updated.</dd>
 						<dt>Reference3</dt>
-						<dd>CROW：ゴースト更新の際はghost本体更新の際はbaseware。<br />SSP：<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>CROW: "ghost" if updating the ghost, "baseware" if updating the baseware.<br />SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2723,18 +2724,18 @@
 			<dl id="OnUpdate.OnDownloadBegin">
 				<dt class="entry">OnUpdate.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p>ファイルダウンロード開始の際に発生。</p>
+					<p>Occurs when the file download begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードするファイル名。</dd>
+						<dd>The name of the file being downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd>（CROW以外）ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
+						<dd>(Other than CROW) The number of the file being downloaded (serial number starting from 0).</dd>
 						<dt>Reference2</dt>
-						<dd>（CROW以外）更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>(Other than CROW) The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference3</dt>
-						<dd>※SSP only: <a href="#caption_updatetype">※更新対象種別</a>。</dd>
+						<dd>※SSP only: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2746,18 +2747,18 @@
 			<dl id="OnUpdate.OnMD5CompareBegin">
 				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p>MD5の照合開始の際に発生。</p>
+					<p>Occurs when the MD5 comparison begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>比較するファイル名。</dd>
+						<dd>The name of the file being compared.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2769,18 +2770,18 @@
 			<dl id="OnUpdate.OnMD5CompareComplete">
 				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p>MD5が一致した際に発生。</p>
+					<p>Occurs when the MD5 values match.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>落としたファイル名。</dd>
+						<dd>The name of the downloaded file.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2792,18 +2793,18 @@
 			<dl id="OnUpdate.OnMD5CompareFailure">
 				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p>MD5が一致しなかった際に発生。</p>
+					<p>Occurs when the MD5 values do not match.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>落としたファイル名。</dd>
+						<dd>The name of the downloaded file.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd>SSP　<a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>SSP: The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2815,16 +2816,16 @@
 			<dl id="OnUpdateOtherBegin">
 				<dt class="entry">OnUpdateOtherBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
+					<p>Occurs when instructed to begin a network update for something other than the ghost.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>フルパス。</dd>
+						<dd>The full path.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2834,16 +2835,16 @@
 			<dl id="OnUpdateOtherReady">
 				<dt class="entry">OnUpdateOtherReady</dt>
 				<dd class="entry">
-					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
+					<p>Occurs when update files for something other than the ghost have been checked.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2853,16 +2854,16 @@
 			<dl id="OnUpdateOtherComplete">
 				<dt class="entry">OnUpdateOtherComplete</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
+					<p>Occurs when the network update for something other than the ghost is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2872,16 +2873,16 @@
 			<dl id="OnUpdateOtherFailure">
 				<dt class="entry">OnUpdateOtherFailure</dt>
 				<dd class="entry">
-					<p>ゴースト以外のネットワーク更新に失敗した際に発生。</p>
+					<p>Occurs when the network update for something other than the ghost has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the files to be updated, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2891,18 +2892,18 @@
 			<dl id="OnUpdateOther.OnDownloadBegin">
 				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のファイルダウンロード開始の際に発生。</p>
+					<p>Occurs when the file download for something other than the ghost begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ダウンロードするファイル名。</dd>
+						<dd>The name of the file being downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd>ダウンロード中の更新ファイルの番号（0から始まる連番）。</dd>
+						<dd>The number of the file being downloaded (serial number starting from 0).</dd>
 						<dt>Reference2</dt>
-						<dd>更新を行うファイルの総数から1引かれたもの（0から始まる連番）。</dd>
+						<dd>The total number of files to be updated minus 1 (serial number starting from 0).</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2912,18 +2913,18 @@
 			<dl id="OnUpdateOther.OnMD5CompareBegin">
 				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5の照合開始の際に発生。</p>
+					<p>Occurs when the MD5 comparison for something other than the ghost begins.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>比較するファイル名。</dd>
+						<dd>The name of the file being compared.</dd>
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2933,16 +2934,16 @@
 			<dl id="OnUpdateOther.OnMD5CompareComplete">
 				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5が一致した際に発生。</p>
+					<p>Occurs when the MD5 values for something other than the ghost match.</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2952,16 +2953,16 @@
 			<dl id="OnUpdateOther.OnMD5CompareFailure">
 				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt>
 				<dd class="entry">
-					<p>ゴースト以外のMD5が一致しなかった際に発生。</p>
+					<p>Occurs when the MD5 values for something other than the ghost do not match.</p>
 					<dl class="reference">
 						<dt>Reference1</dt>
-						<dd>正しいMD5値。</dd>
+						<dd>The correct MD5 value.</dd>
 						<dt>Reference2</dt>
-						<dd>落としたファイルのMD5値。</dd>
+						<dd>The MD5 value of the downloaded file.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：<a href="#caption_updatereason">※更新実行理由</a>。</dd>
+						<dd>SSP 2.3: The <a href="#caption_updatereason">※network update reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2971,16 +2972,16 @@
 			<dl id="OnUpdateCheckComplete">
 				<dt class="entry">OnUpdateCheckComplete</dt>
 				<dd class="entry">
-					<p>ネットワーク更新のチェックに成功した際に発生。</p>
+					<p>Occurs when the network update check is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>The <a href="#caption_updateresultcomplete">※network update success reason</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
+						<dd>A list of the names of the updated files, separated by commas.</dd>
 						<dt>Reference3</dt>
-						<dd><a href="#caption_updatetype">※更新対象種別</a></dd>
+						<dd>The <a href="#caption_updatetype">※network update target class</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
+						<dd>SSP 2.3: The network update reason. "script" only.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2990,12 +2991,12 @@
 			<dl id="OnUpdateCheckFailure">
 				<dt class="entry">OnUpdateCheckFailure</dt>
 				<dd class="entry">
-					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
+					<p>Occurs when the network update check has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultfailure">※失敗理由</a></dd>
+						<dd>The <a href="#caption_updateresultfailure">※network failure reason</a>.</dd>
 						<dt>Reference4</dt>
-						<dd>SSP 2.3：更新実行理由。scriptのみ。</dd>
+						<dd>SSP 2.3: The network update reason. "script" only.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3005,21 +3006,21 @@
 			<dl id="OnUpdateResult">
 				<dt class="entry">OnUpdateResult</dt>
 				<dd class="entry">
-					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
+					<p>Occurs when a network update is performed, and notifies all update results at once, including the balloon and shell packaged update functions.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							更新を実行した順に、更新結果が以下のフォーマットで入っている（\1はバイト値1）
+							The update results are stored in the below format, in the order of update (\1 is the 1-byte value)
 							<p>
 								(※1)[\1](※2)[\1](※3)[\1](※4)
-								<br>または
+								<br>or
 								<br>(※1)[\1](※2)[\1](※3)
 							</p>
 							<ul>
-								<li>※1……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
-								<li>※2……成功時「OK」　失敗時「NG」</li>
-								<li>※3……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
-								<li>※4……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
+								<li>※1……The <a href="#caption_updatetype">network update target class</a>.</li>
+								<li>※2……"OK" on success, "NG" on failure</li>
+								<li>※3……If the update was successful, the number of updated files (0 when no new files=none), or if the update failed, <a href="#caption_updateresultfailure">network failure reason</a>.</li>
+								<li>※4……If the update failed and the file that caused the failure can be identified, the name of that file.</li>
 							</ul>
 						</dd>
 					</dl>
@@ -3031,22 +3032,22 @@
 			<dl id="OnUpdateResultEx">
 				<dt class="entry">OnUpdateResultEx</dt>
 				<dd class="entry">
-					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
+					<p>Occurs when a network update is performed, and notifies all update results at once, including the balloon and shell packaged update functions.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							更新を実行した順に、更新結果が以下のフォーマットで入っている（\1はバイト値1）
+							The update results are stored in the below format, in the order of update (\1 is the 1-byte value)
 							<p>
 								(※1)[\1](※2)[\1](※3)[\1](※4)[\1](※5)
-								<br>または
+								<br>or
 								<br>(※1)[\1](※2)[\1](※3)[\1](※4)
 							</p>
 							<ul>
-								<li>※1……ネットワーク更新対象の名前</li>
-								<li>※2……<a href="#caption_updatetype">ネットワーク更新対象の種別</a></li>
-								<li>※3……成功時「OK」　失敗時「NG」</li>
-								<li>※4……成功した場合は更新ファイル数(更新ファイルなし=noneの場合0)、失敗した場合は<a href="#caption_updateresultfailure">失敗理由</a>。</li>
-								<li>※5……失敗して、かつ失敗原因のファイルがわかる場合、そのファイル名。</li>
+								<li>※1……The name of the network update target.</li>
+								<li>※2……The <a href="#caption_updatetype">network update target class</a>.</li>
+								<li>※3……"OK" on success, "NG" on failure</li>
+								<li>※4……If the update was successful, the number of updated files (0 when no new files=none), or if the update failed, <a href="#caption_updateresultfailure">network failure reason</a>.</li>
+								<li>※5……If the update failed and the file that caused the failure can be identified, the name of that file.</li>
 							</ul>
 						</dd>
 					</dl>
@@ -3058,10 +3059,10 @@
 			<dl id="OnUpdateCheckResult">
 				<dt class="entry">OnUpdateCheckResult</dt>
 				<dd class="entry">
-					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultのエクスプローラ版。</p>
+					<p>Occurs at the end when the check only update option is selected. The explorer version of OnUpdateResult.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultと同じ</dd>
+						<dd>The same as OnUpdateResult.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3071,10 +3072,10 @@
 			<dl id="OnUpdateCheckResultEx">
 				<dt class="entry">OnUpdateCheckResultEx</dt>
 				<dd class="entry">
-					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultExのエクスプローラ版。</p>
+					<p>Occurs at the end when the check only update option is selected. The explorer version of OnUpdateResultEx.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultExと同じ</dd>
+						<dd>The same as OnUpdateResultEx.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3084,10 +3085,10 @@
 			<dl id="OnUpdateResultExplorer">
 				<dt class="entry">OnUpdateResultExplorer</dt>
 				<dd class="entry">
-					<p>ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
+					<p>Occurs when a network update is performed from the Ghost Explorer. The explorer version of OnUpdateResult.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>OnUpdateResultと同じ</dd>
+						<dd>The same as OnUpdateResult.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3095,73 +3096,73 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_updateresultcomplete">
-				<h1>ネットワーク更新成功理由</h1>
+				<h1>Network update success reasons</h1>
 				<dl>
 					<dt>none</dt>
-					<dd>更新するファイルが無かった。</dd>
+					<dd>There were no new files.</dd>
 					<dt>changed</dt>
-					<dd>更新された。</dd>
+					<dd>The update was completed.</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_updateresultfailure">
-				<h1>ネットワーク失敗理由</h1>
+				<h1>Network failure reasons</h1>
 				<dl>
 					<dt>timeout</dt>
-					<dd>タイムアウトした。</dd>
+					<dd>The connection timed out.</dd>
 					<dt>too slow</dt>
-					<dd><em>SSPではtimeoutになるため不出</em>。回線が非常に重い。</dd>
+					<dd><em>This error message is not used in SSP and instead defaults to "timeout."</em> The connection was too slow.</dd>
 					<dt>md5 miss</dt>
-					<dd>MD5が一致しなかった。</dd>
+					<dd>The MD5 values did not match.</dd>
 					<dt>artificial</dt>
-					<dd>ユーザ操作による更新中断。</dd>
-					<dt>404 等</dt>
-					<dd>そのステータスコードでの失敗。</dd>
+					<dd>The user interrupted the update process.</dd>
+					<dt>404 etc.</dt>
+					<dd>Failed for the reason of the status code.</dd>
 					<dt>fileio</dt>
-					<dd>※SSP only: 。容量不足による更新対象への書き込み失敗。</dd>
+					<dd>※SSP only: Failed to write to the update target due to a lack of space.</dd>
 					<dt>readonly</dt>
-					<dd>※SSP only: 。読み取り専用フラグによる更新対象への書き込み失敗。ファイルやフォルダに読み取り専用フラグがついていると発生。</dd>
+					<dd>※SSP only: Failed to write to the update target due to a read-only flag. Occurs when there is a read-only flag on the file or folder.</dd>
 					<dt>virusdetect</dt>
-					<dd>※SSP only: 。データ内にウイルスを検出した可能性がある。 [2.5.15]</dd>
+					<dd>※SSP only: A potential virus was detected in the data. [2.5.15]</dd>
 					<dt>toomanyredirect</dt>
-					<dd>※SSP only: 。リダイレクトが発生しすぎたので処理を中止した。 [2.5.15]</dd>
+					<dd>※SSP only: The process was stopped due to too many redirects. [2.5.15]</dd>
 					<dt>executing</dt>
-					<dd>※SSP only: 。すでに更新を実行中のため、二重起動を阻止した。 [2.5.26]</dd>
+					<dd>※SSP only: The update is already in progress, so the second attempt was stopped. [2.5.26]</dd>
 					<dt>paramerror</dt>
-					<dd>※SSP only: 。更新実行タグの設定ミスにより更新を実行できなかった。 [2.5.26]</dd>
+					<dd>※SSP only: The update couldn't be performed due to a setting mistake in the update tags. [2.5.26]</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_updatetype">
-				<h1>ネットワーク更新対象の種別</h1>
+				<h1>Network update target classes</h1>
 				<ul>
 					<li>ghost</li>
 					<li>shell</li>
 					<li>balloon</li>
 					<li>plugin</li>
 					<li>headline</li>
-					<li>baseware　※CROWのみ</li>
+					<li>※CROW only: baseware</li>
 				</ul>
 			</section>
 			<section class="caption" id="caption_updatereason">
-				<h1>ネットワーク更新理由</h1>
+				<h1>Network update reasons</h1>
 				<dl>
 					<dt>auto</dt>
-					<dd>SSPの設定などによる自動更新。</dd>
+					<dd>Automatic update, e.g. due to SSP settings etc.</dd>
 					<dt>manual</dt>
-					<dd>オーナードローメニューからの選択などによる手動実行。</dd>
+					<dd>Manual update, e.g. the user selecting an option in the right-click menu.</dd>
 					<dt>script</dt>
-					<dd>さくらスクリプトタグ（<a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>など）による更新。</dd>
+					<dd>Update due to SakuraScript tags (e.g. <a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>).</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>時計合わせイベント</h1>
+			<h1>Clock Fixing Events</h1>
 			<dl id="OnSNTPBegin">
 				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
-					<p>時計合わせが開始が指示された際に発生。</p>
+					<p>Occurs when instructed to start the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the server being connected to.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3173,18 +3174,18 @@
 			<dl id="OnSNTPCompareEx">
 				<dt class="entry">OnSNTPCompareEx</dt>
 				<dd class="entry">
-					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<p>Occurs when the connection to the server has been established. A script containing the <a href="./list_sakura_script.html#_6">\6 tag</a> must be returned in order to perform the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds with numbers after the decimal point. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
@@ -3194,18 +3195,18 @@
 			<dl id="OnSNTPCompare">
 				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
-					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
+					<p>Occurs when the connection to the server has been established. A script containing the <a href="./list_sakura_script.html#_6">\6 tag</a> must be returned in order to perform the clock correction.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second (if the time difference is less than a second, the time will be treated as being the same)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds as a whole number. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>※SSP only: The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3217,18 +3218,18 @@
 			<dl id="OnSNTPCorrectEx">
 				<dt class="entry">OnSNTPCorrectEx</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<p>Occurs when the local time is corrected to match the server time using the <a href="./list_sakura_script.html#_6">\6 tag</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒,ミリ秒 </dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second,millisecond</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位かつ小数点以下あり。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds with numbers after the decimal point. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.66</li>
@@ -3238,18 +3239,18 @@
 			<dl id="OnSNTPCorrect">
 				<dt class="entry">OnSNTPCorrect</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
+					<p>Occurs when the local time is corrected to match the server time using the <a href="./list_sakura_script.html#_6">\6 tag</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 						<dt>Reference1</dt>
-						<dd>カンマでセパレートされたサーバ側の現時刻 : 年,月,日,時,分,秒 (差が1秒未満はローカル時刻と同じ)</dd>
+						<dd>The current time on the server side, separated by commas: Year,month,day,hour,minute,second (if the time difference is less than a second, the time will be treated as being the same)</dd>
 						<dt>Reference2</dt>
-						<dd>カンマでセパレートされたローカル側の現時刻 : 年,月,日,時,分,秒</dd>
+						<dd>The current time on the local side, separated by commas: Year,month,day,hour,minute,second</dd>
 						<dt>Reference3</dt>
-						<dd>サーバとローカルの時刻のずれ。秒単位の整数。正の値がローカル時刻遅れ、負の値がローカル時刻進み状態。</dd>
+						<dd>The time difference between the server and local sides, in seconds as a whole number. If a positive value, the local time is behind the server; if a negative value, the local time is ahead of the server.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　サーバとローカルの時刻のずれ。ミリ秒単位の整数。</dd>
+						<dd>※SSP only: The time difference between the server and local sides, in milliseconds as a whole number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3261,10 +3262,10 @@
 			<dl id="OnSNTPFailure">
 				<dt class="entry">OnSNTPFailure</dt>
 				<dd class="entry">
-					<p>時計合わせに失敗した際に発生。</p>
+					<p>Occurs when the clock correction failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>接続先サーバ名。</dd>
+						<dd>The name of the connected server.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3275,14 +3276,14 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>メールチェックイベント</h1>
+			<h1>Mail Checking Events</h1>
 			<dl id="OnBIFFBegin">
 				<dt class="entry">OnBIFFBegin</dt>
 				<dd class="entry">
-					<p>メールチェック開始が指示された際に発生。</p>
+					<p>Occurs when instructed to start the mail check.</p>
 					<dl class="reference">
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the email server being checked (account name if SSP or CROW).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3294,24 +3295,24 @@
 			<dl id="OnBIFFComplete">
 				<dt class="entry">OnBIFFComplete</dt>
 				<dd class="entry">
-					<p>メールチェックが成功した際に発生。</p>
+					<p>Occurs when the mail check is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スプールされているメールの通数、１オリジン表記。</dd>
+						<dd>The number of spooled emails, starting from 1.</dd>
 						<dt>Reference1</dt>
-						<dd>スプールされているメールのバイト数。</dd>
+						<dd>The byte count of the spooled emails.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名。</dd>
+						<dd>The name of the server being checked.</dd>
 						<dt>Reference3</dt>
-						<dd>メールの新着差分。</dd>
+						<dd>The difference in the number of new emails.</dd>
 						<dt>Reference4</dt>
-						<dd>全メールのTopResult。POP通信全ヘッダリスト。メールごとバイト値2区切りの、ヘッダごとバイト値1区切り（通常はReference7の情報を利用すればよい）。</dd>
+						<dd>The TopResult of all emails, and the list of all POP transmission headers. Each email is delimited by 2-byte values, and each header is delimited by 1-byte values (usually, the information from Reference7 should be used).</dd>
 						<dt>Reference5</dt>
-						<dd>ListResult。メールサーバ上のID。POPコマンドの「LIST」の結果に相当する内容。</dd>
+						<dd>ListResult. The email server ID. Equivalent to the results of the POP command "LIST."</dd>
 						<dt>Reference6</dt>
-						<dd>UidlResult。メールを区別するためのID。POPコマンドの「UIDL」の結果に相当する内容。</dd>
+						<dd>UidlResult. The ID for differentiating emails. Equivalent to the results of the POP command "UIDL."</dd>
 						<dt>Reference7</dt>
-						<dd>バイト値1区切りの送信者とタイトル。</dd>
+						<dd>The senders and titles delimited by the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3323,16 +3324,16 @@
 			<dl id="OnBIFF2Complete">
 				<dt class="entry">OnBIFF2Complete</dt>
 				<dd class="entry">
-					<p>メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
+					<p>Occurs when the number of spooled emails has increased.<br />In SSP, only occurs when there was no script returned to OnBIFFComplete.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スプールされているメールの通数、１オリジン表記。</dd>
+						<dd>The number of spooled emails, starting from 1.</dd>
 						<dt>Reference1</dt>
-						<dd>スプールされているメールのバイト数。</dd>
+						<dd>The byte count of the spooled emails.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the mail server being checked (account name if SSP or CROW).</dd>
 						<dt>Reference3</dt>
-						<dd>全メールのTopResult。</dd>
+						<dd>The TopResult of all emails.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3343,12 +3344,12 @@
 			<dl id="OnBIFFFailure">
 				<dt class="entry">OnBIFFFailure</dt>
 				<dd class="entry">
-					<p>メールチェックに成功した際に発生。</p>
+					<p>Occurs when the mail check has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※失敗理由</dd>
+						<dd>※The failure reason.</dd>
 						<dt>Reference2</dt>
-						<dd>チェックするメールサーバ名、SSP、CROWはアカウント名。</dd>
+						<dd>The name of the mail server being checked (account name if SSP or CROW).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3359,16 +3360,16 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>ヘッドライン/RSSセンスイベント</h1>
+			<h1>Headline/RSS Sense Events</h1>
 			<dl id="OnHeadlinesenseBegin">
 				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンス開始が指示された際に発生。</p>
+					<p>Occurs when instructed to start the headline sensor.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ヘッドラインセンスするサイト名。</dd>
+						<dd>The name of the site to sense the headline of.</dd>
 						<dt>Reference1</dt>
-						<dd>ヘッドラインセンスするURL。</dd>
+						<dd>The URL to sense the headline of.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3379,16 +3380,16 @@
 			<dl id="OnHeadlinesense.OnFind">
 				<dt class="entry">OnHeadlinesense.OnFind</dt>
 				<dd class="entry">
-					<p>読み上げるべきヘッドラインセンスがあった際に発生。</p>
+					<p>Occurs when a headline to read was found.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ヘッドラインセンスするサイト名。</dd>
+						<dd>The name of the site to sense the headline of.</dd>
 						<dt>Reference1</dt>
-						<dd>ヘッドラインセンスするURL。</dd>
+						<dd>The URL to sense the headline of.</dd>
 						<dt>Reference2</dt>
-						<dd><a href="#caption_headlinesensephase">※OnFind フェーズ</a></dd>
+						<dd>The <a href="#caption_headlinesensephase">※OnFind phase</a>.</dd>
 						<dt>Reference3</dt>
-						<dd>ヘッドラインの内容。</dd>
+						<dd>The headline contents.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3399,10 +3400,10 @@
 			<dl id="OnHeadlinesenseComplete">
 				<dt class="entry">OnHeadlinesenseComplete</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
+					<p>Occurs when the headline sensor is completed successfully.<br />Headline sensor success indicates the start of reading the headline, so this event is only notified when acquiration succeeded but there were no new updates.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a>　現状「no update」固定。</dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>. Currently limited to "no update."</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3413,10 +3414,10 @@
 			<dl id="OnHeadlinesenseFailure">
 				<dt class="entry">OnHeadlinesenseFailure</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスに失敗した際に発生。</p>
+					<p>Occurs when the headline sensor has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3428,12 +3429,12 @@
 			<dl id="OnRSSBegin">
 				<dt class="entry">OnRSSBegin</dt>
 				<dd class="entry">
-					<p>RSSセンス開始が指示された際に発生。本イベントに反応しない場合は、OnHeadlineSenseBeginが呼び出される。</p>
+					<p>Occurs when instructed to start the RSS sensor. If there is no response to this event, OnHeadlineSenseBegin is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>RSSセンスするサイト名。</dd>
+						<dd>The name of the site to sense the RSS of.</dd>
 						<dt>Reference1</dt>
-						<dd>RSSセンスするURL。</dd>
+						<dd>The URL to sense the RSS of.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3443,28 +3444,28 @@
 			<dl id="OnRSSComplete">
 				<dt class="entry">OnRSSComplete</dt>
 				<dd class="entry">
-					<p>ヘッドラインセンスが正常に終了した際に発生。本イベントに反応しない場合は、表示に適切なスクリプトを生成しヘッドライン完了系イベントが呼び出される。</p>
+					<p>Occurs when the RSS sensor is completed successfully. If there is no response to this event, a script appropriate to display is generated and a headline sensor completion event is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>更新が無い時：no update　<a href="#caption_headlinesenseresult">※終了理由</a><br>更新が無い時はReference0のみでかつ"no update"という文字列のみ<br />
-						更新が有る時：RSS配信サイト名。</dd>
+						<dd>When there are no updates: "no update"　<a href="#caption_headlinesenseresult">※Ending reason</a>.<br>When there are no updates, Reference0 will be the only reference, and contain only "no update."<br />
+						When there are updates: The name of the RSS transmission site.</dd>
 						<dt>Reference1</dt>
-						<dd>更新が有る時のみ：RSSの配信元URL(フィードそのものではなく配信サイトを指すもの)</dd>
-						<dt>Reference2～</dt>
-						<dd>更新が有る時のみ：タイトル [\1] URL [\1] 更新日時（フォーマットはカンマ区切り：年,月,日,時,分,秒）[\1] 作者名 [\1] 内容または要約<br>更新がある時はRSSの要素数分Reference0,1,2～と続く<br>[\1]はバイト値1</dd>
+						<dd>Only when there are updates: The name of the RSS transmission URL (the URL that points to the site, not the feed itself).</dd>
+						<dt>Reference2~</dt>
+						<dd>Only when there are updates: Title [\1] URL [\1] Time of update (year,month,day,hour,minute,second delimited by commas) [\1] Creator name [\1] Contents or summary<br>When there are updates, the references continue from 0,1,2~ according to the number of RSS elements.<br>[\1] is the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 作者名・内容 2.4.10～</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Creator name, contents are from 2.4.10~</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnRSSFailure">
 				<dt class="entry">OnRSSFailure</dt>
 				<dd class="entry">
-					<p>RSSセンスに失敗した際に発生。本イベントに反応しない場合は、OnHeadlineSenseFailureが呼び出される。</p>
+					<p>Occurs when the RSS sensor has failed. If there is no response to this event, OnHeadlineSenseFailure is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">※終了理由</a></dd>
+						<dd>The <a href="#caption_headlinesenseresult">※ending reason</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3472,45 +3473,45 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_headlinesensephase">
-				<h1>ヘッドラインセンスOnFindフェーズ</h1>
+				<h1>Headline sense OnFind phases</h1>
 				<dl>
 					<dt>First</dt>
-					<dd>1ページ目</dd>
+					<dd>Page 1.</dd>
 					<dt>First and Last</dt>
-					<dd>1ページ目で次がない</dd>
+					<dd>Page 1 when there is no next page.</dd>
 					<dt>Last</dt>
-					<dd>最後のページ</dd>
+					<dd>The last page.</dd>
 					<dt>Next</dt>
-					<dd>いずれでもないページ</dd>
+					<dd>A page that fits none of the above descriptions.</dd>
 				</dl>
 			</section>
 			<section class="caption" id="caption_headlinesenseresult">
-				<h1>ヘッドラインセンス終了理由</h1>
+				<h1>Headline sense ending reasons</h1>
 				<dl>
 					<dt>no update</dt>
-					<dd>（現状OnHeadlinesenseCompleteのみ）更新がなかった</dd>
+					<dd>There were no new updates (currently only applicable to OnHeadlinesenseComplete).</dd>
 					<dt>can't download</dt>
-					<dd>ファイルが取れなかった</dd>
+					<dd>The file could not be downloaded.</dd>
 					<dt>can't analyze</dt>
-					<dd>ファイルは取れたが、有効なヘッドラインを取得できなかった</dd>
+					<dd>The file was downloadable, but there was no valid headline to acquire.</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>カレンダーイベント</h1>
+			<h1>Calendar Events</h1>
 			<dl id="OnSchedule5MinutesToGo">
 				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
-					<p>本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
+					<p>Occurs five minutes before a scheduled reminder registered in the baseware calendar.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#caption_scheduletype">タイプ</a></dd>
+						<dd>The <a href="#caption_scheduletype">schedule type</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントの内容(caption)</dd>
+						<dd>The schedule contents (caption).</dd>
 						<dt>Reference2</dt>
-						<dd>追加データ(subtitle)</dd>
+						<dd>The additional data (subtitle).</dd>
 						<dt>Reference3</dt>
-						<dd>スクリプト(script)</dd>
+						<dd>The script (script).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3520,16 +3521,16 @@
 			<dl id="OnScheduleRead">
 				<dt class="entry">OnScheduleRead</dt>
 				<dd class="entry">
-					<p>カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
+					<p>Occurs when the cursor is stopped over the calendar icon, at the timing of the scheduled reminder being read.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>イベントの<a href="#caption_scheduletype">タイプ</a>。</dd>
+						<dd>The <a href="#caption_scheduletype">schedule type</a>.</dd>
 						<dt>Reference1</dt>
-						<dd>イベントの内容(caption)</dd>
+						<dd>The schedule contents (caption).</dd>
 						<dt>Reference2</dt>
-						<dd>追加データ(subtitle)</dd>
+						<dd>The additional data (subtitle).</dd>
 						<dt>Reference3</dt>
-						<dd>スクリプト(script)</dd>
+						<dd>The script (script).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3539,10 +3540,10 @@
 			<dl id="OnSchedulesenseBegin">
 				<dt class="entry">OnSchedulesenseBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが接続開始する際に発生。</p>
+					<p>Occurs when the schedule sensor begins to connect.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3552,12 +3553,12 @@
 			<dl id="OnSchedulesenseComplete">
 				<dt class="entry">OnSchedulesenseComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理が完了した際に発生。</p>
+					<p>Occurs when the schedule sensor has finished processing.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 						<dt>Reference1</dt>
-						<dd>スケジュールセンサの返したスケジュールデータの数</dd>
+						<dd>The number of schedule data returned by the schedule sensor.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3567,10 +3568,10 @@
 			<dl id="OnSchedulesenseFailure">
 				<dt class="entry">OnSchedulesenseFailure</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
+					<p>Occurs when the schedule sensor processing has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
+						<dd><a href="#caption_headlinesenseresult">The failure reason</a> (shared with the headline sensor).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3580,10 +3581,10 @@
 			<dl id="OnSchedulepostBegin">
 				<dt class="entry">OnSchedulepostBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
+					<p>Occurs when the schedule sensor begins to connect in post mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3593,10 +3594,10 @@
 			<dl id="OnSchedulepostComplete">
 				<dt class="entry">OnSchedulepostComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
+					<p>Occurs when the schedule sensor has finished the posting process.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スケジュールセンサの名前</dd>
+						<dd>The schedule sensor name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3604,58 +3605,58 @@
 				</dd>
 			</dl>
 			<section class="caption" id="caption_scheduletype">
-				<h1>スケジュールタイプ</h1>
+				<h1>Schedule types</h1>
 				<dl>
 					<dt>default</dt>
-					<dd>認識できないタイプ</dd>
+					<dd>Unrecognized events</dd>
 					<dt>event</dt>
-					<dd>汎用</dd>
+					<dd>General events</dd>
 					<dt>meeting</dt>
-					<dd>会議</dd>
+					<dd>Meetings</dd>
 					<dt>appointment</dt>
-					<dd>アポイントメント</dd>
+					<dd>Appointments</dd>
 					<dt>reservation</dt>
-					<dd>病院などの予約</dd>
+					<dd>Reservations such as hospital appointments</dd>
 					<dt>duedate</dt>
-					<dd>しめきり</dd>
+					<dd>Deadlines</dd>
 					<dt>party</dt>
-					<dd>パーティー・飲み会</dd>
+					<dd>Parties and get-togethers</dd>
 					<dt>date</dt>
-					<dd>デート</dd>
+					<dd>Dates</dd>
 					<dt>work</dt>
-					<dd>仕事</dd>
+					<dd>Work events</dd>
 					<dt>go</dt>
-					<dd>お出かけ</dd>
+					<dd>Outings</dd>
 					<dt>tv</dt>
-					<dd>テレビ番組</dd>
+					<dd>Television programs</dd>
 					<dt>recording</dt>
-					<dd>録画予約</dd>
+					<dd>Timer recording reservations</dd>
 					<dt>cd</dt>
-					<dd>CD発売日</dd>
+					<dd>CD release dates</dd>
 					<dt>game</dt>
-					<dd>ゲーム発売日</dd>
+					<dd>Game release dates</dd>
 					<dt>video</dt>
-					<dd>映像メディアの発売日</dd>
+					<dd>Video media release dates</dd>
 					<dt>book</dt>
-					<dd>書籍発売日</dd>
+					<dd>Book release dates</dd>
 					<dt>release</dt>
-					<dd>その他発売日</dd>
+					<dd>Miscellaneous release dates</dd>
 				</dl>
 			</section>
 		</section>
 		<section class="category">
-			<h1>SSTPイベント</h1>
+			<h1>SSTP Events</h1>
 			<dl id="OnSSTPBreak">
 				<dt class="entry">OnSSTPBreak</dt>
 				<dd class="entry">
-					<p>SSTPがブレイクされた際に発生。</p>
+					<p>Occurs when the SSTP is broken.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>中断の操作が起きたスクリプト。</dd>
+						<dd>The script during which the breaking occurred.</dd>
 						<dt>Reference1</dt>
-						<dd>中断の操作が起きたバルーンのスコープ番号。本体側0、相方側1、それ以降も。</dd>
+						<dd>The scope number of the balloon to which the breaking occurred. 0 if main character, 1 if side character, and so on.</dd>
 						<dt>Reference2</dt>
-						<dd>中断位置。スクリプト先頭からの文字数で表現。文字数はさくらスクリプトのタグも含めたもの。<br />例）\s[2]あいうえお　の「あ」までで中断された場合、6</dd>
+						<dd>The interruption position. Expressed with the number of characters from the beginning of the script. The number includes SakuraScript tags.<br />Ex:\s[2]abcde<br />When interrupted at "a," the number will be 6.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3666,10 +3667,10 @@
 			<dl id="OnSSTPBlacklisting">
 				<dt class="entry">OnSSTPBlacklisting</dt>
 				<dd class="entry">
-					<p>最終クライアントのブラックリスト行きが指示された際に発生。</p>
+					<p>Occurs when the blacklisting of the final client is instructed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>最終クライアントのIPアドレス。</dd>
+						<dd>The IP address of the final client.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -3678,25 +3679,25 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>その他通信イベント</h1>
+			<h1>Other Transmission Events</h1>
 			<dl id="OnExecuteHTTPComplete">
 				<dt class="entry">OnExecuteHTTPComplete</dt>
 				<dd class="entry">
-					<p>execute-httpで正常に取得完了した際に発生。</p>
+					<p>Occurs when acquisition with execute-http is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
 						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
+						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
+						<dd>The URL of the target.</dd>
 						<dt>Reference3</dt>
-						<dd>--nofileオプションがある場合、取得したデータの中身。ただし改行コードはバイト値1に置き換えられている。
-						<br />そうでない場合は取得したファイルのフルパス。</dd>
+						<dd>The contents of the acquired data, if the --nofile option has been specified. However, newline codes will be replaced with the 1-byte value.
+						<br />Otherwise, the full path of the acquired file.</dd>
 						<dt>Reference4</dt>
-						<dd>取得結果コード。(200|204)等</dd>
+						<dd>The acquisition result code. (200|204) etc.</dd>
 						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
+						<dd>The cookie string.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3706,20 +3707,20 @@
 			<dl id="OnExecuteHTTPFailure">
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
-					<p>execute-httpで取得エラーした際に発生。</p>
+					<p>Occurs when an acquisition error is caused with execute-http.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>post/get</dd>
 						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
+						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
+						<dd>The URL of the target.</dd>
 						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
+						<dd>The full path of the acquired file.</dd>
 						<dt>Reference4</dt>
-						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等。<a href="#caption_updateresultfailure">[失敗理由]</a>も参照。</dd>
+						<dd>The acquisition result code. (timeout|fileio|200|204|403|404) etc. Refer to <a href="#caption_updateresultfailure">[network failure reason]</a>.</dd>
 						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
+						<dd>The cookie string.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3729,28 +3730,28 @@
 			<dl id="OnExecuteHTTPSSLInfo">
 				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
 				<dd class="entry">
-					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>Notified despite acquisition failure (outside of HTTP response 200), when a connection is successfully made on the SSL/TLS level.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>async ID (無ければからっぽ)</dd>
+						<dd>async ID (empty if there is no ID)</dd>
 						<dt>Reference1</dt>
-						<dd>取得URL</dd>
+						<dd>The acquired URL.</dd>
 						<dt>Reference2</dt>
-						<dd>httpレスポンスコード (エラーでも通知される)</dd>
+						<dd>The http response code (notified even if an error occurs).</dd>
 						<dt>Reference3</dt>
-						<dd>通信バージョン 今時はだいたい "TLSv1/SSLv3" (SSP内部でSSLv2は蹴るので実はこれだけしか来ない)</dd>
+						<dd>The transmission version. These days, mostly "TLSv1/SSLv3" (SSP internally prevents SSLv2, so in actuality these are the only working versions).</dd>
 						<dt>Reference4</dt>
-						<dd>暗号化方法<br />例：AES256-SHA</dd>
+						<dd>The encryption method.<br />Ex: AES256-SHA</dd>
 						<dt>Reference5</dt>
-						<dd>発行先 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
+						<dd>The place being published to. To check the name, take the string after /O=.<br />For programmers: The string has the results from passing through OpenSSL's X509_NAME_oneline.<br />Ex: /1.3.6.1.4.1.311.60.2.1.3=US/1.3.6.1.4.1.311.60.2.1.2=Delaware/businessCategory=Private Organization/serialNumber=4337446/C=US/postalCode=94107/ST=California/L=San Francisco/street=795 Folsom St, Suite 600/O=Twitter, Inc./OU=Twitter Operations/CN=twitter.com</dd>
 						<dt>Reference6</dt>
-						<dd>有効期限開始日時 年,月,日,時,分,秒<br />例：2011,7,7,9,0,0</dd>
+						<dd>The validity period starting date and time. Year,month,day,hour,minute,second<br />Ex: 2011,7,7,9,0,0</dd>
 						<dt>Reference7</dt>
-						<dd>有効期限終了日時 年,月,日,時,分,秒<br />例：2012,7,28,8,59,59</dd>
+						<dd>The validity period expiration date and time. Year,month,day,hour,minute,second<br />Ex: 2012,7,28,8,59,59</dd>
 						<dt>Reference8</dt>
-						<dd>発行者 名前を確認したい場合は、/O=の後に続く文字列を抜き出すと良い<br />プログラマさん向け：OpenSSLのX509_NAME_onelineに通した結果が入る<br />例：/C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
-						<dt>Reference9 (2.4.51～)</dt>
-						<dd>証明書チェーン CommonName(CN)をカンマ区切りで順番に列挙</dd>
+						<dd>The publisher. To check the name, take the string after /O=.<br />For programmers: The string has the results from passing through OpenSSL's X509_NAME_oneline.<br />Ex: /C=US/O=VeriSign, Inc./OU=VeriSign Trust Network/OU=Terms of use at https://www.verisign.com/rpa (c)06/CN=VeriSign Class 3 Extended Validation SSL CA</dd>
+						<dt>Reference9 (2.4.51~)</dt>
+						<dd>The certificate chain. Displays CommonName(CN) in order delimited by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3760,23 +3761,23 @@
 			<dl id="OnExecuteRSSComplete">
 				<dt class="entry">OnExecuteRSSComplete</dt>
 				<dd class="entry">
-					<p>\![execute,rss-get/post]で正常に取得完了した際に発生。</p>
+					<p>Occurs when acquisition with \![execute,rss-get/post] is completed successfully.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>タイトル [\1] URL [\1] 更新日時（フォーマットはカンマ区切り：年,月,日,時,分,秒）[\1] 作者名 [\1] 内容または要約<br>更新がある時はRSSの要素数分Reference0,1,2～と続く<br>[\1]はバイト値1</dd>
+						<dt>Reference0~</dt>
+						<dd>Title [\1] URL [\1] Time of update (comma-separated format: Year,month,day,hour,minute,second)  [\1] Creator name [\1] Contents or summary<br>When there are updates, the references continue from 0,1,2~ according to the number of RSS elements.<br>[\1] is the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 作者名・内容 2.4.10～</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Creator name・Contents 2.4.10~</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSFailure">
 				<dt class="entry">OnExecuteRSSFailure</dt>
 				<dd class="entry">
-					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
+					<p>Occurs when an acquisition error is caused with \![execute,rss-get/post].</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>解析失敗時はReference4=parse。他は<a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a></dd>
+						<dt>Reference0~</dt>
+						<dd>When the analysis fails, Reference4=parse. Otherwise, the same as <a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3786,10 +3787,10 @@
 			<dl id="OnExecuteRSS_SSLInfo">
 				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
 				<dd class="entry">
-					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>Notified despite acquisition failure (outside of HTTP response 200), when a connection is successfully made on the SSL/TLS level.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
+						<dt>Reference0~</dt>
+						<dd>The same as <a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a>.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3797,16 +3798,16 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnPingComplete or the ID specified with --event</dt>
 				<dd class="entry">
-					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
+					<p>Occurs when the number of pings specified in \![execute,ping] have been executed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dd>The source address [\1] The total number of pings sent [\1] The number of successful pings [\1] The number of failed pings<br>[\1] is the 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+						<dd>"OK" or error information [\1] The reply address [\1] RTT (response time in milliseconds)<br>[\1] is the 1-byte value.<br />From Reference2 onwards, the information of each individual sent ping is recorded. "Progress" indicates an incomplete status.<br />Refer to <a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure Status Headers</a> for details on error information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3814,16 +3815,16 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
+				<dt class="entry">OnPingProgress or the ID specified with --event + Progress</dt>
 				<dd class="entry">
-					<p>\![execute,ping]でping実行中に発生。</p>
+					<p>Occurs while executing pings with \![execute,ping].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>送信元アドレス [\1] 全送信回数 [\1] 成功回数 [\1] 失敗回数 [\1]はバイト値1</dd>
+						<dd>The source address [\1] The total number of pings sent [\1] The number of successful pings [\1] The number of failed pings<br>[\1] is the 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>「OK」またはエラー情報 [\1] 返答元アドレス [\1] RTT(往復にかかった時間ms) [\1]はバイト値1<br />Reference2以降、送信済みのPingの1回ごとの情報が記録される。Progressの場合は不完全。<br />エラー情報は<a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure の Statusヘッダ</a>を参照。</dd>
+						<dd>"OK" or error information [\1] The reply address [\1] RTT (response time in milliseconds)<br>[\1] is the 1-byte value.<br />From Reference2 onwards, the information of each individual sent ping is recorded. "Progress" indicates an incomplete status.<br />Refer to <a href="http://msdn.microsoft.com/en-us/library/aa366053(v=vs.85).aspx">ICMP_ECHO_REPLY Structure Status Headers</a> for details on error information.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3831,18 +3832,18 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnNSLookupComplete or the ID specified with --event</dt>
 				<dd class="entry">
-					<p>\![execute,nslookup]で成功時に発生。</p>
+					<p>Occurs when \![execute,nslookup] is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
+						<dd>The string specified with --host.</dd>
 						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dd>"lookup" when performing a DNS lookup, "reverse" when performing a reverse DNS lookup.</dd>
 						<dt>Reference3</dt>
-						<dd>実行結果。正引きでIP、逆引きでホスト名。</dd>
+						<dd>The search results. IP if a DNS lookup, host name if a reverse DNS lookup.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3850,16 +3851,16 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dt class="entry">OnNSLookupFailure or the ID specified with --event + Failure</dt>
 				<dd class="entry">
-					<p>\![execute,nslookup]で失敗時に発生。</p>
+					<p>Occurs when \![execute,nslookup] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>--eventで指定した文字列そのもの</dd>
+						<dd>The string specified with --event.</dd>
 						<dt>Reference1</dt>
-						<dd>--hostで指定した文字列そのもの</dd>
+						<dd>The string specified with --host.</dd>
 						<dt>Reference2</dt>
-						<dd>正引きでlookup、逆引きでreverse</dd>
+						<dd>"lookup" when performing a DNS lookup, "reverse" when performing a reverse DNS lookup.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3868,20 +3869,20 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>イベント送信失敗イベント</h1>
+			<h1>Event Transmission Failure Events</h1>
 				<dl id="OnRaisePluginFailure">
 				<dt class="entry">OnRaisePluginFailure</dt>
 				<dd class="entry">
-					<p>\![raiseplugin]が失敗した際に発生。</p>
+					<p>Occurs when \![raiseplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3891,16 +3892,16 @@
 			<dl id="OnNotifyPluginFailure">
 				<dt class="entry">OnNotifyPluginFailure</dt>
 				<dd class="entry">
-					<p>\![notifyplugin]が失敗した際に発生。</p>
+					<p>Occurs when \![notifyplugin] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />無効設定だった場合、disabled。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>プラグインの名前またはID。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The plugin name or ID.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3910,16 +3911,16 @@
 			<dl id="OnRaiseOtherFailure">
 				<dt class="entry">OnRaiseOtherFailure</dt>
 				<dd class="entry">
-					<p>\![raiseother]が失敗した際に発生。</p>
+					<p>Occurs when \![raiseother] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when not found.<br />"timecritical" when during \t.<br />"passivemode" when during passive mode.<br />"inductionmode" when during induction mode.<br />"minimized" when minimized.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The ghost name or \0 name.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3929,16 +3930,16 @@
 			<dl id="OnNotifyOtherFailure">
 				<dt class="entry">OnNotifyOtherFailure</dt>
 				<dd class="entry">
-					<p>\![notifyother]が失敗した際に発生。</p>
+					<p>Occurs when \![notifyother] has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>見つからなかった場合、notfound。<br />\t中だった場合、timecritical。<br />パッシブモードだった場合、passivemode。<br />インダクションモードだった場合、inductionmode。<br />最小化中だった場合、minimized。<br />他、204など実行結果。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>"notfound" when not found.<br />"timecritical" when during \t.<br />"passivemode" when during passive mode.<br />"inductionmode" when during induction mode.<br />"minimized" when minimized.<br />Otherwise, 204 or other execution errors.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴースト名または\0名。<br />__SYSTEM_ALL_GHOST__などの場合バイト値1区切りのリスト。</dd>
+						<dd>The ghost name or \0 name.<br />Sometimes in a list delimited by the 1-byte value, e.g. when using __SYSTEM_ALL_GHOST__.</dd>
 						<dt>Reference2</dt>
-						<dd>実行しようとしたイベントID。</dd>
-						<dt>Reference3～</dt>
-						<dd>実行しようとしたイベントのReference。</dd>
+						<dd>The ID of the event that should have been executed.</dd>
+						<dt>Reference3~</dt>
+						<dd>The References of the event that should have been executed.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3947,7 +3948,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>見切れ・重なりイベント</h1>
+			<h1>Offscreen, Overlap Events</h1>
 			<dl id="OnOverlap">
 				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
@@ -4010,7 +4011,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>OS状態イベント</h1>
+			<h1>Network Status Events</h1>
 			<dl id="OnNetworkHeavy">
 				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
@@ -4056,6 +4057,9 @@
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>OS Status Events</h1>
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
@@ -4448,7 +4452,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>選択領域モードイベント</h1>
+			<h1>Selection Area Events</h1>
 			<dl id="OnSelectModeBegin">
 				<dt class="entry">OnSelectModeBegin</dt>
 				<dd class="entry">
@@ -4532,7 +4536,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>音声認識・合成イベント</h1>
+			<h1>Voice Recognition, Synthesis Events</h1>
 			<dl id="OnSpeechSynthesisStatus">
 				<dt class="entry">OnSpeechSynthesisStatus</dt>
 				<dd class="entry">
@@ -4580,7 +4584,7 @@
 			</section>
 		</section>
 		<section class="category">
-			<h1>その他イベント</h1>
+			<h1>Other Events</h1>
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
@@ -4807,7 +4811,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>Notifyイベント</h1>
+			<h1>Notify Events</h1>
 			<dl id="basewareversion">
 				<dt class="entry">basewareversion</dt>
 				<dd class="entry">

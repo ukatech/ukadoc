@@ -273,7 +273,7 @@
 				<li><a href="#_!_quicksection,false_">\![quicksection,false]</a></li>
 				<li><a href="#__s">\_s</a></li>
 				<li><a href="#__s_ID1,ID2,ID3..._">\_s[(ID1),(ID2),(ID3),...]</a></li>
-				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,(sync object name),(time out time)]</a></li>
+				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,(sync object name),(timeout time)]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -1657,7 +1657,7 @@
 			<dl id="_!_set,balloontimeout,時間_">
 				<dt class="entry">\![set,balloontimeout,(time)]</dt>
 				<dd class="entry">
-					<p>Specifies the time for the balloon to time out. Units are in milliseconds.<br>
+					<p>Specifies the time for the balloon to timeout. Units are in milliseconds.<br>
 					The time is counted from when the script display has finished. Specifying 0 or a negative number will stop the balloon from timing out.</p>
 					
 					<p>When the time specification is omitted: Return to the original value<br>
@@ -2315,12 +2315,12 @@
 				</dd>
 			</dl>
 			<dl id="_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">
-				<dt class="entry">\![wait,syncobject,(sync object name),(time out time)]</dt>
+				<dt class="entry">\![wait,syncobject,(sync object name),(timeout time)]</dt>
 				<dd class="entry">
 					<p>
 						Waits until the sync object with the specified name (Mutex, Semaphore, Event on Windows) is in the signal state.
 						<br>Mutex is released after waiting, Semaphore is released once after waiting, and Event does not perform any particular operation after the signal is sent.
-						<br>If the time out time is omitted or specified as 0, it will wait indefinitely (until a script break), and if 1 or higher is specified it will wait using the specified number as milliseconds.
+						<br>If the timeout time is omitted or specified as 0, it will wait indefinitely (until a script break), and if 1 or higher is specified it will wait using the specified number as milliseconds.
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2474,7 +2474,7 @@
 			<dl id="__a_ID_">
 				<dt class="entry">\_a[(ID)]</dt>
 				<dd class="entry">
-					<p>All of the text will be used as an anchor, up to the next \_a. This will not time out like a menu choice, but will time out like normal dialogue.<br>Clicking the anchor will start the SHIORI event <a href="list_shiori_event.html#OnAnchorSelect">OnAnchorSelect</a>. (In SSP only, <a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelectEx</a> will be started first.)<br>The ID is stored in reference0.</p>
+					<p>All of the text will be used as an anchor, up to the next \_a. This will not timeout like a menu choice, but will timeout like normal dialogue.<br>Clicking the anchor will start the SHIORI event <a href="list_shiori_event.html#OnAnchorSelect">OnAnchorSelect</a>. (In SSP only, <a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelectEx</a> will be started first.)<br>The ID is stored in reference0.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2491,7 +2491,7 @@
 			<dl id="__a_OnID,r0,r1..._">
 				<dt class="entry">\_a[On(ID),(r0),(r1),...]</dt>
 				<dd class="entry">
-					<p>All of the text will be used as an anchor, up to the next \_a. This will not time out like a menu choice, but will time out like normal dialogue.<br>If the ID starts with "On" as shown above, clicking it will start the SHIORI event On(ID) (with the name as written in the ID).<br>The arguments following the ID are stored in reference0, reference1, etc, in the order they are written.</p>
+					<p>All of the text will be used as an anchor, up to the next \_a. This will not timeout like a menu choice, but will timeout like normal dialogue.<br>If the ID starts with "On" as shown above, clicking it will start the SHIORI event On(ID) (with the name as written in the ID).<br>The arguments following the ID are stored in reference0, reference1, etc, in the order they are written.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -2506,7 +2506,7 @@
 			<dl id="__a_ID,r2,r3..._">
 				<dt class="entry">\_a[(ID),(r2),(r3),...]</dt>
 				<dd class="entry">
-					<p>All of the text will be used as an anchor, up to the next \_a. This will not time out like a menu choice, but will time out like normal dialogue.<br>Clicking on the anchor will start the event <a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelect<em>Ex</em></a>.<br>The text that was used as the anchor will be stored as reference0, the ID will be stored in reference1, and subsequent arguments will be stored in reference2, reference3, etc, in the order they are written.<br>OnAnchorSelect also occurs after OnAnchorSelectEx, but nothing is entered after reference1, so it's pointless to write it this way.</p>
+					<p>All of the text will be used as an anchor, up to the next \_a. This will not timeout like a menu choice, but will timeout like normal dialogue.<br>Clicking on the anchor will start the event <a href="list_shiori_event.html#OnAnchorSelectEx">OnAnchorSelect<em>Ex</em></a>.<br>The text that was used as the anchor will be stored as reference0, the ID will be stored in reference1, and subsequent arguments will be stored in reference2, reference3, etc, in the order they are written.<br>OnAnchorSelect also occurs after OnAnchorSelectEx, but nothing is entered after reference1, so it's pointless to write it this way.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4062,7 +4062,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,dateinput,dateinputtest,30000,2012,12,23]An InputBox with the initial values of the date 2012,12,23 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,dateinput,dateinputtest,30000,2012,12,23]An InputBox with the initial values of the date 2012,12,23 has been opened. It will timeout after 30 seconds.</code></p>
 							<p><code>\![open,dateinput,dateinputtest,--timeout=30000,--text="2012,12,23"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
@@ -4078,7 +4078,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,sliderinput,slidertest,30000,50,0,100]A slider-type InputBox with an initial value of 50, a minimum value of 0, and a maximum value of 100 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,sliderinput,slidertest,30000,50,0,100]A slider-type InputBox with an initial value of 50, a minimum value of 0, and a maximum value of 100 has been opened. It will timeout after 30 seconds.</code></p>
 							<p><code>\![open,sliderinput,slidertest,--timeout=30000,--text="50,0,100"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
@@ -4094,7 +4094,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![open,timeinput,timeinputtest,30000,23,45,12]An InputBox with the initial values of 23,45,12 has been opened. It will time out after 30 seconds.</code></p>
+							<p><code>\![open,timeinput,timeinputtest,30000,23,45,12]An InputBox with the initial values of 23,45,12 has been opened. It will timeout after 30 seconds.</code></p>
 							<p><code>\![open,timeinput,timeinputtest,--timeout=30000,--text="23,45,12"]The same happens as above (an example of writing the command with the new option specifications).</code></p>
 						</section>
 					</div>
@@ -4682,7 +4682,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=SSP Ukagaka,--file=searchresultsfile.txt,--nodescript,--param=p=SSP Ukagaka,--timeout=5]Saves the Yahoo search result pages for "SSP Ukagaka" to [(folder of the ghost executing the command)]/ghost/master/var/searchresultsfile.txt When executing the request, the online marker and download status number will not be shown. If there is no response after 5 seconds, it will time out.</code></p>
+							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=SSP Ukagaka,--file=searchresultsfile.txt,--nodescript,--param=p=SSP Ukagaka,--timeout=5]Saves the Yahoo search result pages for "SSP Ukagaka" to [(folder of the ghost executing the command)]/ghost/master/var/searchresultsfile.txt When executing the request, the online marker and download status number will not be shown. If there is no response after 5 seconds, it will timeout.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4697,7 +4697,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>Usage example</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "Test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures. If there is no response after 5 seconds, it will time out.</code></p>
+							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=Test message]Sends "Test message" to the test thread in the ghost messaging board ゴースト回覧板３ｒｄ. ※Currently not possible due to the messaging board host strengthening anti-spam measures. If there is no response after 5 seconds, it will timeout.</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5248,7 +5248,7 @@
 					<li>Headline sense events will not be run.</li>
 					<li>Automatic changes will not happen.</li>
 					<li>Script breaks will not happen.</li>
-					<li>Choices will not time out.</li>
+					<li>Choices will not timeout.</li>
 					<li>Balloons will not close due to time passing.</li>
 					<li>Files will be ignored even if drag-and-dropped.</li>
 					<li>nar file double-click installation will also be ignored (in SSP, the ghost will be installed but no event will happen).</li>
