@@ -456,10 +456,16 @@
 				<li><a href="#_!_execute,http-get,URL_">\![execute,http-get,URL]</a></li>
 				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,URL,パラメータ]</a></li>
 				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,URL,パラメータ]</a></li>
+				
 				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,http-head,URL,オプション,オプション,オプション..._">\![execute,http-head,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,http-put,URL,オプション,オプション,オプション..._">\![execute,http-put,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,http-delete,URL,オプション,オプション,オプション..._">\![execute,http-delete,URL,オプション,オプション,オプション...]</a></li>
+				
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
+				
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,ファイル名,ディレクトリ名]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,ファイル名,ディレクトリ名]</a></li>
 				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID]</a></li>
@@ -4710,6 +4716,33 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_execute,http-head,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-head,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp head リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-put,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-put,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp put リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-delete,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-delete,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp delete リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_execute,rss-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,rss-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
@@ -5291,29 +5324,36 @@
 					<dd>処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。<br>
 					RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
 					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
-					
+
+					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
+					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
+
 					<dt>--cookie=クッキーデータ</dt>
 					<dd>Cookieのデータ、必要に応じてOnExecuteHTTPCompleteのReference5の値をそのまま指定する。</dd>
-					
+
 					<dt>--content-type=(multipart/form-data|application/x-www-form-urlencoded)</dt>
 					<dd>http-post限定。param指定のパラメータをどのような形式で送るか指定する。<br>
 					何も指定しなければapplication/x-www-form-urlencoded。<br>
 					指定形式によってはparamの書き方に制約があるので注意。<br>
 					[2.6.37] より、Content-Typeリクエストヘッダに直接この情報を反映するようになった。</dd>
-					
+
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
-					
+
+					<dt>--header=SomeHeader: リクエストヘッダの中身 [2.6.40]</dt>
+					<dd>任意の名前のリクエストヘッダを設定する。名前と中身を区切るコロンは必須。
+					<br />SSPが用意したヘッダ情報を上書きするため、指定に矛盾がないよう利用時に注意すること。</dd>
+
 					<dt>--nodescript</dt>
 					<dd>オンライン表示とダウンロード状況を表示しない。</dd>
-					
+
 					<dt>--nofile=パラメータ(文字コード) [2.5.77]</dt>
 					<dd>一時ファイルを作成せずメモリ上に取得したデータを展開し、イベントのReference3に格納する。
 					<br />パラメータ指定は取得したデータを解釈すべき文字コード。指定しない場合はUTF-8とみなす。
 					<br />取得可能なサイズは128KBまで。</dd>
-					
+
 					<dt>--param=パラメータ</dt>
-					<dd>get/postのパラメータを指定する。複数回の指定が可能。<br>
+					<dd>get/post/putのパラメータを指定する。複数回の指定が可能。<br>
 					multipart/form-dataの時：<br>
                     　--param=フィールド名=データ の形式を必要な数だけ繰り返す。<br>
 					　例： --param=message_body=データ <br>
@@ -5322,18 +5362,20 @@
                     　それ以外の時はすべてを改行文字(CRLF)でつないでサーバに送る(過去互換処理)。<br>
 					他のcontent-type指定の時：<br>
 					　複数定義するとすべてを改行文字(CRLF)でつないでサーバに送る。</dd>
-					
+
 					<dt>--param-charset=文字コード</dt>
 					<dd>文字コードを指定。Shift_JIS、EUC-JP、UTF-8など、デフォルトではUTF-8。</dd>
-					
+
+					<dt>--param-input-file=ファイル名 [2.6.40]</dt>
+					<dd>--paramオプションで指定し切れない大容量データを送信したい場合に、送信データの格納されたファイルを指定する。
+					<br />指定したのが絶対パス指定でない場合、[実行したゴーストのフォルダ]/ghost/master/ からの相対指定として解釈される。
+					<br />--paramを同時には指定しないこと。
+					<br />中身は基本的に関知しないので、文字コードやエンコード等は使う側で責任を持って処理すること。
+					<br />ただし、multipart/form-dataの時のみ、1行目を読み取ってフィールド間区切りとして解釈する。</dd>
+
 					<dt>--timeout=秒数</dt>
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
-					
-					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
-					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
 
-					<dt>--header=SomeHeader: リクエストヘッダの中身 [2.6.40]</dt>
-					<dd>任意の名前のリクエストヘッダを設定する。名前と中身を区切るコロンは必須。</dd>
 				</dl>
 			</section>
 		</section>
