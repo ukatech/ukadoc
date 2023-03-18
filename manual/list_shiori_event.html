@@ -632,9 +632,9 @@
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSPのみ　終了操作したメニューが属するキャラクターのスコープ番号。popupmenu.typeに影響される。(本体側0,相方1...)</dd> <!-- TODO: merged with upstream/master -->
+						<dd>※SSP only:　The scope number of the character whose menu was used for the closing operation. Affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 						<dt>Reference2</dt>
-						<dd>※SSPのみ　終了操作したウインドウのキャラクターのスコープ番号。popupmenu.typeに影響されない。(本体側0,相方1...)</dd>
+						<dd>※SSP only:　The scope number of the character whose window was closed. Not affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 						
 					</dl>
 					<ul class="supported-baseware">
@@ -652,9 +652,9 @@
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSPのみ　終了操作したメニューが属するキャラクターのスコープ番号。popupmenu.typeに影響される。(本体側0,相方1...)</dd> <!-- TODO: merged with upstream/master -->
+						<dd>※SSP only:　The scope number of the character whose menu was used for the closing operation. Affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 						<dt>Reference2</dt>
-						<dd>※SSPのみ　終了操作したウインドウのキャラクターのスコープ番号。popupmenu.typeに影響されない。(本体側0,相方1...)</dd>
+						<dd>※SSP only:　The scope number of the character whose window was closed. Not affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1263,7 +1263,7 @@
 								<li>talk …… talk/balloon</li>
 								<li>network …… connection (1)</li>
 								<li>network2 …… connection (2)</li>
-								<li>biff …… メール</li> <!-- TODO: merged with upstream/master -->
+								<li>biff …… email</li>
 								<li>application …… external applications</li>
 								<li>messenger …… IM</li>
 								<li>ipmessenger …… IPMessenger</li>
@@ -2567,18 +2567,17 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>URL Drop Events</h1> <!-- TODO: merged with upstream/master -->
-			<h1>URLドロップイベント</h1>
+			<h1>URL Drop Events</h1>
 			<dl id="OnURLDragDropping">
 				<dt class="entry">OnURLDragDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされようとして、マウスカーソルが重なった際に発生。
-					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
+					<p>Occurs when the mouse cursor is hovered over the ghost while dragging a URL.
+					<br />This event will occur with every URL that has the potential to be processed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ドロップされたURL。</dd>
+						<dd>The dropped URL.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the URL was dropped onto. 0 if the main character, 1 if the side character, 2 and above for the 3rd character and onwards.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.37</li>
@@ -2588,13 +2587,13 @@
 			<dl id="OnURLDropping">
 				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
-					<p>URLがドロップされた後で、ダウンロードを開始する時に発生。
-					<br />このイベントはダウンロード処理前に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
+					<p>Occurs when a download starts after a URL is dropped.
+					<br />This event occurs before the download process. It will not occur with homeurl installing or feed (RSS) installing.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>The URL path.</dd>
+						<dd>The dropped URL.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dd>The scope number of the character that the URL was dropped onto. 0 if the main character, 1 if the side character, 2 and above for the 3rd character and onwards.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2607,11 +2606,13 @@
 				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
 					<p>Occurs when the dropped URL has finished being received.
-					<br />このイベントはNARインストールの直前、ダウンロード処理完了直後に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
+					<br />This event occurs before installing a NAR, immediately after the download process has finished. It will not occur with homeurl installing or feed (RSS) installing.</p>
+						<dt>Reference0</dt>
+						<dd>The local path of the file that has been downloaded.</dd>
 						<dt>Reference1</dt>
-						<dd>ドロップされたURL。</dd>
+						<dd>The dropped URL.</dd>
 						<dt>Reference2</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd> <!-- TODO: merged with upstream/master -->
+						<dd>The scope number of the character that the URL was dropped onto. 0 if the main character, 1 if the side character, 2 and above for the 3rd character and onwards.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2624,16 +2625,16 @@
 				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
 					<p>Occurs when the dropped URL could not be received or the operation was canceled.
-					<br />このイベントはNARインストールを試行しようとして失敗した際に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p> <!-- TODO: merged with upstream/master -->
+					<br />This event occurs when a NAR installation fails. It will not occur with homeurl installing or feed (RSS) installing.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The local path of the part of the file that was downloaded.</dd>
 						<dt>Reference1</dt>
 						<dd>The <a href="#caption_updateresultfailure">※failure reason</a>.</dd>
 						<dt>Reference2</dt>
-						<dd>ドロップされたURL。</dd>
+						<dd>The dropped URL.</dd>
 						<dt>Reference3</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd> <!-- TODO: merged with upstream/master -->
+						<dd>The scope number of the character that the URL was dropped onto. 0 if the main character, 1 if the side character, 2 and above for the 3rd character and onwards.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2647,7 +2648,7 @@
 				<dd class="entry">
 					<p>Notified when a URL is drag-and-dropped onto a character window.<br />
 					If a script is returned for this event, the regular download process will be canceled.<br />
-					Only return a script if the URL needs to be processed individually on the ghost side.</p> <!-- TODO: merged with upstream/master - I think some stuff got cut here... -->
+					Only return a script if the URL needs to be processed individually on the ghost side.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>The URL path.</dd>
@@ -2656,10 +2657,10 @@
 						<dt>Reference2</dt>
 						<dd>The MIME type of the URL that was dropped.</dd>
 						<dt>Reference3</dt>
-						<dd>反応しなかった場合にSSPがこの後実行予定の処理。 <!-- TODO: merged with upstream/master -->
-						<br />feed・nar・homeurl・unknownのいずれか。
-						<br />unknownの場合は本体が処理に対応できないURLであり、本体側ではこれ以上の処理ができないことを示す。
-						<br />それ以外はそのまま <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> に渡すと処理の続きが行われる。</dd>
+						<dd>The process that SSP plans to take in case there is no response.
+						<br />One of "feed", "nar", "homeurl", or "unknown".
+						<br />When "unknown", the URL is one that cannot be processed, and the nothing can be done on the baseware side.
+						<br />The others are passed to <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> and the process continues.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref3は2.6.35</li>
@@ -3944,7 +3945,7 @@
 						<dt>Reference0</dt>
 						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.</dd>
 						<dt>Reference1</dt>
-						<dd>The plugin name or ID.</dd> <!-- TODO: merged with upstream/master - Same as below (I'm working from bottom to top) -->
+						<dd>The plugin name or ID.</dd>
 						<dt>Reference2</dt>
 						<dd>The ID of the event that should have been executed.</dd>
 						<dt>Reference3~</dt>
@@ -3963,7 +3964,7 @@
 						<dt>Reference0</dt>
 						<dd>"notfound" when the plugin was not found.<br />"disabled" when the plugin was set to disabled.<br />Otherwise, 204 or other execution errors.</dd>
 						<dt>Reference1</dt>
-						<dd>The plugin name or ID.</dd> <!-- TODO: merged with upstream/master - It seems that these events don't actually get the 1-byte delimited list...? -->
+						<dd>The plugin name or ID.</dd>
 						<dt>Reference2</dt>
 						<dd>The ID of the event that should have been executed.</dd>
 						<dt>Reference3~</dt>
@@ -4018,12 +4019,12 @@
 			<dl id="OnOverlap">
 				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
-					<p>キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
+					<p>Occurs when the character windows (surfaces) overlap.<br />Notified every time the overlap status changes, so it can also be used to detect when the ghost stops overlapping with some extra thinking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] はバイト値1<br />例：0-1 [\1] 0-2 で、0番ウインドウと1番ウインドウ、0番ウインドウと2番ウインドウが重なっていることを示す。</dd>
+						<dd>ID-ID [\1] ID-ID [\1] ID-ID ...<br />[\1] is the 1-byte value.<br />Ex: 0-1 [\1] 0-2 in which window 0 is overlapped with window 1, and window 0 is overlapped with window 2.</dd>
 						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+						<dd>In the same format as Reference0, the overlap status before it was changed (the same as Reference0 from the previous time this event occurred).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4033,12 +4034,12 @@
 			<dl id="OnOtherOverlap">
 				<dt class="entry">OnOtherOverlap</dt>
 				<dd class="entry">
-					<p>他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p>Occurs when the character windows (surfaces) overlap, including all other currently open ghosts. The global version of OnOverlap.<br />Notified every time the overlap status changes, so it can also be used to detect when the ghost stops overlapping with some extra thinking.<br />The ghost's own information is also included, so some caution should be used.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID [\1] Sakura名/ID-Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/0-マリ/1 [\1] マリ/0-所長たん/1</dd>
+						<dd>Sakura Name/ID-Sakura Name/ID [\1] Sakura Name/ID-Sakura Name/ID [\1] Sakura Name/ID-Sakura Name/ID ...<br />[\1] is the 1-byte value.<br />Ex: Emily/0-Mari/1 [\1] Mari/0-Shochoutan/1</dd>
 						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+						<dd>In the same format as Reference0, the overlap status before it was changed (the same as Reference0 from the previous time this event occurred).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4048,12 +4049,12 @@
 			<dl id="OnOffscreen">
 				<dt class="entry">OnOffscreen</dt>
 				<dd class="entry">
-					<p>キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
+					<p>Occurs when the character windows (surfaces) leave or come back from outside of the screen (display area). Offscreen event.<br />Notified every time the offscreen status changes, so it can also be used to detect when the ghost comes back onscreen with some extra thinking.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ID [\1] ID [\1] ID ...<br />[\1] はバイト値1<br />例：1 [\1] 2 で、1番ウインドウと2番ウインドウが見切れていることを示す。</dd>
+						<dd>ID [\1] ID [\1] ID ...<br />[\1] is the 1-byte value.<br />Ex: 1 [\1] 2 in which window 1 and window 2 are offscreen.</dd>
 						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+						<dd>In the same format as Reference0, the offscreen status before it was changed (the same as Reference0 from the previous time this event occurred).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4063,12 +4064,12 @@
 			<dl id="OnOtherOffscreen">
 				<dt class="entry">OnOtherOffscreen</dt>
 				<dd class="entry">
-					<p>他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
+					<p>Occurs when the character windows (surfaces) leave or come back from outside of the screen (display area), including all other currently open ghosts. The global version of OnOffscreen.<br />Notified every time the offscreen status changes, so it can also be used to detect when the ghost comes back onscreen with some extra thinking.<br />The ghost's own information is also included, so some caution should be used.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura名/ID [\1] Sakura名/ID [\1] Sakura名/ID ...<br />[\1] はバイト値1<br />例：Emily/1 [\1] 所長たん/0</dd>
+						<dd>Sakura Name/ID [\1] Sakura Name/ID [\1] Sakura Name/ID ...<br />[\1] is the 1-byte value.<br />Ex: Emily/1 [\1] Shochoutan/0</dd>
 						<dt>Reference1</dt>
-						<dd>Reference0と同じフォーマットで、状態が変わる前（＝1回前のイベント発生時のReference0）が通知される。</dd>
+						<dd>In the same format as Reference0, the offscreen status before it was changed (the same as Reference0 from the previous time this event occurred).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4081,10 +4082,10 @@
 			<dl id="OnNetworkHeavy">
 				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
-					<p>相手サーバが時間内に応答しなかった際に発生。</p>
+					<p>Occurs when the server does not respond after a certain amount of time.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※SSP only: 　タイムアウトするまでの時間。(秒単位)</dd>
+						<dd>※SSP only: The time until the timeout happened (in seconds).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4096,34 +4097,35 @@
 			<dl id="OnNetworkStatusChange">
 				<dt class="entry">OnNetworkStatusChange</dt>
 				<dd class="entry">
-					<p>ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
+					<p>Occurs when the network connection status changes.<br />Notified with NOTIFY only immediately after booting.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>onlineまたはoffline。</dd>
+						<dd>"online" or "offline."</dd>
 						<dt>Reference1</dt>
-						<dd>現在居るマシンに割り当てられているIPアドレスのバイト値1区切りリスト。</dd>
+						<dd>The list of IP addresses assigned to the current machine, delimited by the 1-byte value.</dd>
 						<dt>Reference2</dt>
-						<dd>接続の種類。 [SSP 2.4.22]<br />
-						cellular : 携帯回線もしくは通常のPPP(PPPoE等除く)<br />
-						ethernet : Ethernet (有線LAN)<br />
-						none : 接続なし<br />
-						wifi : 無線LAN<br />
-						wimax : WiMAX<br />
-						other : その他不明<br />
-						unknown : 検出に失敗
+						<dd>The connection type. [SSP 2.4.22]<br />
+						cellular: Wi-Fi hotspot tethering or a regular PPP (excluding PPPoE)<br />
+						ethernet: Ethernet (wired LAN)<br />
+						none: Not connected<br />
+						wifi: Wireless LAN<br />
+						wimax: WiMAX<br />
+						other: Other unspecified<br />
+						unknown: Failed to detect
 						</dd>
 						<dt>Reference3</dt>
-						<dd>接続回線のダウンロード側の最大通信速度を示す数値。単位はMBps。 [SSP 2.4.22]</dd>
+						<dd>The value showing the upper limit of the transmission speed on the download side of the connection. The unit is MBps. [SSP 2.4.22]</dd>
 						<dt>Reference4</dt>
-						<dd>接続回線のダウンロード側の推定有効通信速度を示す数値。単位はMBps。 [SSP 2.5.26]
-						<br />通信統計が取得できない環境や、統計値が不正確な状態ではReference3と同じ値となる。</dd>
+						<dd>The value showing the estimated effective transmission speed on the download side of the connection. The unit is MBps. [SSP 2.5.26]
+						<br />When in an environment where the transmission statistics cannot be obtained or the values are inaccurate, the value will be the same as Reference3.</dd>
 						<dt>Reference5</dt>
-						<dd>接続回線が従量課金回線かどうかを通知する。 [SSP 2.6.15]<br />
-						unknown : 未設定/不明<br />
-						unrestricted : 完全使い放題<br />
-						fixed : データ量の上限がある定額制<br />
-						variable : 従量課金<br />
-						Windwos 10/11で「従量制課金接続」を設定するとfixedになる。</dd>
+						<dd>Notifies whether or not the connection line is metered or not. [SSP 2.6.15]<br />
+						unknown: Undefined/unclear.<br />
+						unrestricted: Unrestricted usage.<br />
+						fixed: There is an upper limit on the amount of data with a fixed price.<br />
+						variable: The connection is metered.<br />
+						If the Windows 10/11 setting is metered, the value will be "fixed".</dd>
+
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4136,14 +4138,14 @@
 			<dl id="OnScreenSaverStart">
 				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
-					<p>スクリーンセーバーが起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
+					<p>Occurs when the screensaver starts. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スクリーンセーバ名</dd>
+						<dd>The screensaver name.</dd>
 						<dt>Reference1</dt>
-						<dd>スクリーンセーバ実行ファイルのパス</dd>
+						<dd>The path of the screensaver execution file.</dd>
 						<dt>Reference2</dt>
-						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
+						<dd>The idle time until the screensaver started (in seconds).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4153,14 +4155,14 @@
 			<dl id="OnScreenSaverEnd">
 				<dt class="entry">OnScreenSaverEnd</dt>
 				<dd class="entry">
-					<p>スクリーンセーバーが終了した際に発生。</p>
+					<p>Occurs when the screensaver ends.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>スクリーンセーバ名</dd>
+						<dd>The screensaver name.</dd>
 						<dt>Reference1</dt>
-						<dd>スクリーンセーバ実行ファイルのパス</dd>
+						<dd>The path of the screensaver execution file.</dd>
 						<dt>Reference2</dt>
-						<dd>スクリーンセーバ実行までの待ち時間(秒)</dd>
+						<dd>The idle time until the screensaver started (in seconds).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4170,8 +4172,8 @@
 			<dl id="OnSessionLock">
 				<dt class="entry">OnSessionLock</dt>
 				<dd class="entry">
-					<p>ログイン状態のままロック画面に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。
-					<br />本イベントはNOTIFYではないが、当然何を実行してもユーザーには見えないので注意。</p>
+					<p>Occurs when the computer goes to the lockscreen while still logged in. On Windows, this also applies to fast user switching.
+					<br />This event does not use NOTIFY, but whatever is being executed is not visible to the user, so some caution should be used.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.50</li>
 					</ul>
@@ -4180,7 +4182,7 @@
 			<dl id="OnSessionUnlock">
 				<dt class="entry">OnSessionUnlock</dt>
 				<dd class="entry">
-					<p>ロック画面から通常の操作に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。</p>
+					<p>Occurs when the computer has been returned to the regular screen from the lockscreen. On Windows, this also applies to fast user switching.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.50</li>
 					</ul>
@@ -4189,9 +4191,9 @@
 			<dl id="OnSessionDisconnect">
 				<dt class="entry">OnSessionDisconnect</dt>
 				<dd class="entry">
-					<p>簡易ユーザー切り替えで他のユーザーアカウントへの切り替え操作を行った時に発生する。
-					<br />Windows上ではOnSessionLockとセットで通知され、さらに強制最小化されるためOnWindowStateMinimizeも発生する。
-					<br />この挙動はWindows特有の制約であり、他のOS上で同様の動きになるとは限らない点に注意。</p>
+					<p>Occurs when fast user switching is used to switch to another user's account.
+					<br />On Windows, this event is notified along with OnSessionLock, and due to being forced to minimize, OnWindowStateMinimize also occurs.
+					<br />This behavior is specific to Windows, and may not work in the same way on another OS.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.53</li>
 					</ul>
@@ -4200,9 +4202,9 @@
 			<dl id="OnSessionReconnect">
 				<dt class="entry">OnSessionReconnect</dt>
 				<dd class="entry">
-					<p>簡易ユーザー切り替えで実行中のユーザーアカウントに戻ってきた時に発生する。
-					<br />Windows上ではOnSessionUnlockとセットで通知され、さらに強制最小化されたのが解除されるためOnWindowStateRestoreも発生する。
-					<br />この挙動はWindows特有の制約であり、他のOS上で同様の動きになるとは限らない点に注意。</p>
+					<p>Occurs when fast user switching is used to return to the original user's account.
+					<br />On Windows, this event is notified along with OnSessionUnlock, and due to having been forced to minimize, OnWindowStateRestore also occurs.
+					<br />This behavior is specific to Windows, and may not work in the same way on another OS.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.53</li>
 					</ul>
@@ -4211,10 +4213,10 @@
 			<dl id="OnCPULoadHigh">
 				<dt class="entry">OnCPULoadHigh</dt>
 				<dd class="entry">
-					<p>CPU負荷が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
+					<p>Occurs when the load on the CPU is high. (Currently activates when the load has stayed around 80% for a while.)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在の負荷率％</dd>
+						<dd>The current CPU load %.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
@@ -4224,10 +4226,10 @@
 			<dl id="OnCPULoadLow">
 				<dt class="entry">OnCPULoadLow</dt>
 				<dd class="entry">
-					<p>CPU負荷が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
+					<p>Occurs when the load on the CPU goes down from a high state. (Currently activates when the load has come down to below 60% after being detected as High.)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在の負荷率％</dd>
+						<dd>The current CPU load %.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
@@ -4237,10 +4239,10 @@
 			<dl id="OnMemoryLoadHigh">
 				<dt class="entry">OnMemoryLoadHigh</dt>
 				<dd class="entry">
-					<p>メモリ使用量が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
+					<p>Occurs when the memory usage is high. (Currently activates when the usage has stayed around 80% for a while.)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在の使用量％</dd>
+						<dd>The current usage %.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
@@ -4250,10 +4252,10 @@
 			<dl id="OnMemoryLoadLow">
 				<dt class="entry">OnMemoryLoadLow</dt>
 				<dd class="entry">
-					<p>メモリ使用量が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
+					<p>Occurs when the memory usage goes down from a high state. (Currently activates when the load has come down to below 60% after being detected as High.)</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在の使用量％</dd>
+						<dd>The current usage %.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.56</li>
@@ -4263,14 +4265,14 @@
 			<dl id="OnDisplayChange">
 				<dt class="entry">OnDisplayChange</dt>
 				<dd class="entry">
-					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
+					<p>Occurs when the resolution or color depth of the desktop (primary screen) is changed.<em class="specsign">[NOTIFY on booting, otherwise GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>変化後の色深度（bpp）</dd>
+						<dd>The color depth after the change. (bpp)</dd>
 						<dt>Reference1</dt>
-						<dd>変化後の解像度（width）</dd>
+						<dd>The resolution after the change. (width)</dd>
 						<dt>Reference2</dt>
-						<dd>変化後の解像度（height）</dd>
+						<dd>The resolution after the change. (height)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4281,18 +4283,18 @@
 			<dl id="OnDisplayHandover">
 				<dt class="entry">OnDisplayHandover</dt>
 				<dd class="entry">
-					<p>スクリーン間を跨いでウインドウを移動させた際に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<p>Occurs when a window is moved over screens.<em class="specsign">[NOTIFY or GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>init (位置初期化完了時) か update (初期化後の更新) 。<br />
-						initは起動後ウインドウの位置が決定した際に通知され、OnBootより前とは限らない。</dd>
+						<dd>"init" (when initialization of the position is complete) or "update" (when updated after initialization).<br />
+						"init" is notified when the window position is first decided after booting, and does not necessarily mean before OnBoot.</dd>
 						<dt>Reference1</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference2</dt>
-						<dd>移動前　左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)　init時は空欄<br />
-						例： 0,0,1600,900,32,1</dd>
+						<dd>The position and other information before moving.<br />Left, up, right, down, bit depth, primary monitor or otherwise (0/1)<br />Blank when "init."<br />
+						Ex: 0,0,1600,900,32,1</dd>
 						<dt>Reference3</dt>
-						<dd>移動後　左,上,右,下,ビット深度,プライマリモニタかどうか(0/1)</dd>
+						<dd>The position and other information after moving.<br />Left, up, right, down, bit depth, primary monitor or otherwise (0/1)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09</li>
@@ -4302,13 +4304,13 @@
 			<dl id="OnDisplayChangeEx">
 				<dt class="entry">OnDisplayChangeEx</dt>
 				<dd class="entry">
-					<p>スクリーンの解像度／色深度が変更された際に発生。マルチモニタ対応。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
+					<p>Occurs when the resolution or color depth of a screen is changed. Applies to multiple monitors. <em class="specsign">[NOTIFY on booting, otherwise GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>init (起動時通知) か update (起動後の更新)</dd>
-						<dt>Reference1～</dt>
-						<dd>左,上,右,下,ビット深度,プライマリモニタかどうか(0/1),タスクバーの位置(left,top,right,bottom,unknown),タスクバーと作業領域の区切り座標<br />
-						例： 0,0,1600,900,32,1,bottom,1560</dd>
+						<dd>"init" (a notification during booting) or "update" (an update after booting).</dd>
+						<dt>Reference1~</dt>
+						<dd>Left, up, right, down, bit depth, primary monitor or otherwise (0/1), the taskbar position (left,top,right,bottom,unknown), the coordinates of where the taskbar is separated from the rest of the screen<br />
+						Ex: 0,0,1600,900,32,1,bottom,1560</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09/タスクバーは2.6.35</li>
@@ -4318,37 +4320,37 @@
 			<dl id="OnDisplayPowerStatus">
 				<dt class="entry">OnDisplayPowerStatus</dt>
 				<dd class="entry">
-					<p>モニタの電源がON/OFFされた時に発生する。単純にON/OFFされた時だけでなく、ノート型で蓋を閉じた時も対象となる。</p>
+					<p>Occurs when the monitor is turned on or off. Additionally occurs when a laptop is closed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>1 = ON / 0 = OFF</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4以降</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4~</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="OnBatteryNotify">
 				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
-					<p>残りバッテリー量を通知。起動時のみ<em class="specsign">[NOTIFY]</em>で通知され、他はGET。</p>
+					<p>Notifies the remaining amount of battery. <em class="specsign">[NOTIFY on booting, otherwise GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>残りバッテリー％。</dd>
+						<dd>The remaining battery %.</dd>
 						<dt>Reference1</dt>
-						<dd>残り時間。不明の場合は-1。</dd>
+						<dd>The remaining time. -1 when unknown.</dd>
 						<dt>Reference2</dt>
-						<dd>offline(バッテリー駆動)・online(電源供給中)・backup(UPSなど補助電源)　のいずれか。</dd>
+						<dd>One of "offline" (running on battery power), "online" (currently charging), or "backup" (a backup power supply such as a UPS).</dd>
 						<dt>Reference3</dt>
-						<dd>以下の状態を示す文字列をカンマ区切りで通知。例： low,charging <br />
-						high：バッテリー残量が2/3以上<br />
-						low：バッテリー残量が1/3以下 (OnBatteryLowも発生)<br />
-						critical：バッテリー残量が5％以下 (OnBatteryCriticalも発生)<br />
-						charging：バッテリーが充電中（OnBatteryChargingStart/Stopも発生）<br />
-						no_battery：バッテリーが取り外されている<br />
-						power_saving：バッテリー節約機能がON (SSP 2.3.94以降/Windows 10以降)</dd>
+						<dd>Notifies a comma-delimited string containing the below statuses. Ex: low,charging <br />
+						high: The remaining battery amount is 2/3 or higher<br />
+						low: The remaining battery amount is 1/3 or lower (OnBatteryLow also occurs)<br />
+						critical: The remaining battery amount is 5% or lower (OnBatteryCritical also occurs)<br />
+						charging: The battery is being charged (OnBatteryChargingStart/Stop also occur)<br />
+						no_battery: The battery has been removed<br />
+						power_saving: Power saving mode is on (From SSP 2.3.94/From Windows 10)</dd>
 					</dl>
-					<p>Windows 7より前のOSでは、high/lowの基準が異なることがある。</p>
+					<p>On OSes earlier than Windows 7, the standards for high/low may differ.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4357,12 +4359,12 @@
 			<dl id="OnBatteryLow">
 				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
-					<p>バッテリー残量が少なめ(OnBatteryNotify Reference3がlow以下)になった際に発生する。<br />
-					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
-					「きのこ」との互換用イベントとして実装されている。</p>
+					<p>Occurs when the remaining battery amount has become low (when OnBatteryNotify's Reference3 is "low" or below).<br />
+					The external application Kinoko <a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">has an event with the same name</a>, so caution should be used.<br />
+					This event has been implemented to be compatible with Kinoko.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がlow以下になった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dt>Reference0~</dt>
+						<dd>The same as OnBatteryNotify. When Reference3 is "low," this event also occurs after OnBatteryNotify, so if an appropriate process is already defined for OnBatteryNotify in the ghost, nothing needs to be added for OnBatteryLow.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4372,12 +4374,12 @@
 			<dl id="OnBatteryCritical">
 				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
-					<p>バッテリー残量が極端に少なく(OnBatteryNotify Reference3がcritical以下)になった際に発生する。<br />
-					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
-					「きのこ」との互換用イベントとして実装されている。</p>
+					<p>Occurs when the remaining battery amount has become critically low (when OnBatteryNotify's Reference3 is "critical" or below).<br />
+					The external application Kinoko <a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">has an event with the same name</a>, so caution should be used.<br />
+					This event has been implemented to be compatible with Kinoko.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。Reference3がcriticalになった場合、OnBatteryNotifyが発生後に本イベントも発生するので、OnBatteryNotifyに適切な処理を実装している場合こちらの対応は不要。</dd>
+						<dt>Reference0~</dt>
+						<dd>The same as OnBatteryNotify. When Reference3 is "critical," this event also occurs after OnBatteryNotify, so if an appropriate process is already defined for OnBatteryNotify in the ghost, nothing needs to be added for OnBatteryCritical.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4387,10 +4389,10 @@
 			<dl id="OnBatteryChargingStart">
 				<dt class="entry">OnBatteryChargingStart</dt>
 				<dd class="entry">
-					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
+					<p>Occurs when battery charging has been started.<br />A compatibility event for <a href="http://tatadenden.blog23.fc2.com/">Ukagaka on Android</a>.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。</dd>
+						<dt>Reference0~</dt>
+						<dd>The same as OnBatteryNotify.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4400,10 +4402,10 @@
 			<dl id="OnBatteryChargingStop">
 				<dt class="entry">OnBatteryChargingStop</dt>
 				<dd class="entry">
-					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
+					<p>Occurs when battery charging has been stopped. Whether the battery is full or not does not change this event.<br />A compatibility event for <a href="http://tatadenden.blog23.fc2.com/">Ukagaka on Android</a>.</p>
 					<dl class="reference">
-						<dt>Reference0～</dt>
-						<dd>OnBatteryNotifyと同じ。</dd>
+						<dt>Reference0~</dt>
+						<dd>The same as OnBatteryNotify.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4413,10 +4415,10 @@
 			<dl id="OnDeviceArrival">
 				<dt class="entry">OnDeviceArrival</dt>
 				<dd class="entry">
-					<p>デバイスを検出された際に発生。</p>
+					<p>Occurs when a device has been detected.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
+						<dd>The type, name, maker, and device file name in a list delimited by the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4426,10 +4428,10 @@
 			<dl id="OnDeviceRemove">
 				<dt class="entry">OnDeviceRemove</dt>
 				<dd class="entry">
-					<p>デバイスを削除された際に発生。</p>
+					<p>Occurs when a device has been removed.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>タイプ、名前、製造者名、デバイスファイル名がバイト値1区切りで返る。</dd>
+						<dd>The type, name, maker, and device file name in a list delimited by the 1-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4439,11 +4441,11 @@
 			<dl id="OnTabletMode">
 				<dt class="entry">OnTabletMode</dt>
 				<dd class="entry">
-					<p>OSがタブレット機の操作に最適化された状態に切り替えられた際に発生。<br>
-					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
+					<p>Occurs when the OS is switched to an optimized state for functioning as a tablet.<br>
+					Notified first immediately after booting using NOTIFY (cannot talk), and then using GET (can talk) when the state is changed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>0/1：1がタブレットモード(OSがタブレット機の操作に最適化された状態)、0がモードOFF</dd>
+						<dd>0 or 1: 1 when tablet mode, 0 when not tablet mode (when the OS is in an optimized state for functioning as a tablet).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
@@ -4453,13 +4455,13 @@
 			<dl id="OnDarkTheme">
 				<dt class="entry">OnDarkTheme</dt>
 				<dd class="entry">
-					<p>OSがダークテーマ(暗めの表示)に切り替えられた際に発生。<br>
-					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
+					<p>Occurs when the OS has been switched to the dark theme.<br>
+					Notified first immediately after booting using NOTIFY (cannot talk), and then using GET (can talk) when the state is changed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>0/1：アプリ設定 1がダークテーマ、0が通常（明るい）テーマ</dd>
+						<dd>0 or 1: 1 when using the dark theme setting for applications, 0 when using the default (light) theme for applications.</dd>
 						<dt>Reference1</dt>
-						<dd>0/1：システム設定 1がダークテーマ、0が通常（明るい）テーマ (2.6.29)</dd>
+						<dd>0 or 1: 1 when using the dark theme setting for the system, 0 when using the default (light) theme for the system. (2.6.29)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
@@ -4469,19 +4471,19 @@
 			<dl id="OnOSUpdateInfo">
 				<dt class="entry">OnOSUpdateInfo</dt>
 				<dd class="entry">
-					<p>OSの更新確認日時・更新実行日時と、履歴情報の通知。<br>
-					起動直後にNOTIFY(喋れない)で通知され、更新が実行された時に少し遅れてGET(喋れる)で通知される。</p>
+					<p>Notifies the OS update check date, update execution date, and update history information.<br>
+					Notified first immediately after booting using NOTIFY (cannot talk), and then using GET (can talk) a while after updating.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>確認日時 年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
+						<dd>The update check date in the format year,month,day,hour,minute,second, delimited by regular commas and using local time.</dd>
 						<dt>Reference1</dt>
-						<dd>実行日時 年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
-						<dt>Reference2～</dt>
-						<dd>以下のフォーマットで更新履歴情報が後ろに続く。[\1]はバイト値1。<br>
-						状態[\1]エラーコード[\1]更新時刻[\1]更新内容(タイトル)<br>
-						状態：not_started(未実行)・in_progress(更新中)・success(成功)・success_with_errors(一応成功したがエラーあり)・fail(失敗)・abort(中断)・unknown(不明)のいずれか<br>
-						エラーコード：更新時にエラーがあれば非0、なければ0。Windowsの場合は16進8桁。<br>
-						更新時刻：年,月,日,時,分,秒 半角カンマ区切り ローカル時刻</dd>
+						<dd>The update execution date in the format year,month,day,hour,minute,second, delimited by regular commas and using local time.</dd>
+						<dt>Reference2~</dt>
+						<dd>The update history information in the below format. [\1] is the 1-byte value.<br>
+						Status[\1]Error code[\1]Update time[\1]Update contents (title)<br>
+						The status will be one of "not_started" (the update has not been started), "in_progress" (the update is in progress), "success" (the update was successful), "success_with_errors" (the update was successful with an error), "fail" (the update failed), "abort" (the update process was aborted), or "unknown" (the update status is unknown).<br>
+						The error code will be 0 if no error occurred during the update, and will contain a non-0 error code otherwise. On Windows, the error code will be 8 digits in hexadecimal.<br>
+						The update time will be in the format year,month,day,hour,minute,second, delimited by regular commas and using local time.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
@@ -4491,21 +4493,21 @@
 			<dl id="OnRecycleBinEmpty">
 				<dt class="entry">OnRecycleBinEmpty</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
-					<br />スクリプトを実行したゴーストだけでなく、起動中の全ゴーストにもOnRecycleBinEmptyFromOtherが通知される。</p>
+					<p>Occurs when the Recycle Bin is emptied with <a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>.
+					<br />OnRecycleBinEmptyFromOther is notified to all currently open ghosts, not only the ghost that ran the script.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在ゴミ箱に入っているファイルの数(空にした直後なのでふつうは0)</dd>
+						<dd>The number of files currently in the Recycle Bin (usually 0 as it was just emptied).</dd>
 						<dt>Reference1</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズ(空にした直後なのでふつうは0) 単位バイト</dd>
+						<dd>The size of the files currently in the Recycle Bin in bytes (usually 0 as it was just emptied).</dd>
 						<dt>Reference2</dt>
-						<dd>現在ゴミ箱に入っているファイルの数の直前との差(空にした直後なのでふつうは負の値)</dd>
+						<dd>The difference between the number of files currently in the Recycle Bin and the number before emptying (usually a negative value as it was just emptied).</dd>
 						<dt>Reference3</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差(空にした直後なのでふつうは負の値) 単位バイト</dd>
+						<dd>The difference between the size of files currently in the Recycle Bin and the size before emptying in bytes (usually a negative value as it was just emptied).</dd>
 						<dt>Reference4</dt>
-						<dd>正常に空にできたら1、何かエラーが起きたら0(もとから空っぽでも0)</dd>
+						<dd>1 if the Recycle Bin was emptied normally, 0 if an error occurred (including when it was empty to start with).</dd>
 						<dt>Reference5</dt>
-						<dd>タグを実行したゴーストの本体側の名前(sakuraname)。</dd>
+						<dd>The main character name of the ghost that ran the tag (sakuraname).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
@@ -4515,8 +4517,8 @@
 			<dl id="OnRecycleBinEmpty">
 				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
 				<dd class="entry">
-					<p>\![execute,emptyrecyclebin]でゴミ箱を空にする指示を出したゴースト以外に送られる。<br />
-					ReferenceはOnRecycleBinEmptyと同じ。</p>
+					<p>Sent to ghosts other than the one that emptied the Recycle Bin using \![execute,emptyrecyclebin].<br />
+					The References are the same as OnRecycleBinEmpty.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.35</li>
 					</ul>
@@ -4525,21 +4527,21 @@
 			<dl id="OnRecycleBinStatusUpdate">
 				<dt class="entry">OnRecycleBinStatusUpdate</dt>
 				<dd class="entry">
-					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生し、起動中の全ゴーストに通知される。
-					<br />また、ゴースト起動時に<em class="specsign">[NOTIFY]</em>で通知される。</p>
+					<p>Occurs when a file is thrown away into the Recycle Bin, or when the Recycle Bin is emptied manually using the Explorer, and is notified to all currently open ghosts.
+					<br />Also notified when the ghost is first booted with <em class="specsign">[NOTIFY]</em>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在ゴミ箱に入っているファイルの数</dd>
+						<dd>The number of files currently in the Recycle Bin.</dd>
 						<dt>Reference1</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズ 単位バイト</dd>
+						<dd>The size of the files currently in the Recycle Bin in bytes.</dd>
 						<dt>Reference2</dt>
-						<dd>現在ゴミ箱に入っているファイルの数の直前との差</dd>
+						<dd>The difference between the number of files currently in the Recycle Bin and the number before the event occurred.</dd>
 						<dt>Reference3</dt>
-						<dd>現在ゴミ箱に入っているファイルのサイズの直前との差 単位バイト</dd>
+						<dd>The difference between the size of the files currently in the Recycle Bin and the size before the event occurred in bytes.</dd>
 						<dt>Reference4</dt>
-						<dd>常に1 (OnRecycleBinEmptyとの互換用のダミー)</dd>
+						<dd>Always 1 (a dummy Reference for compatibility with OnRecycleBinEmpty).</dd>
 						<dt>Reference5</dt>
-						<dd>常に空 (OnRecycleBinEmptyとの互換用のダミー)</dd>
+						<dd>Always empty (a dummy Reference for compatibility with OnRecycleBinEmpty).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.04/Ref4は2.6.35</li>
@@ -4552,12 +4554,12 @@
 			<dl id="OnSelectModeBegin">
 				<dt class="entry">OnSelectModeBegin</dt>
 				<dd class="entry">
-					<p>\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
+					<p>Occurs when rectangle select mode has been entered after executing \![enter,selectrect].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dd>The select mode. Currently only "rect" is possible.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4567,12 +4569,12 @@
 			<dl id="OnSelectModeCancel">
 				<dt class="entry">OnSelectModeCancel</dt>
 				<dd class="entry">
-					<p>\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
+					<p>Occurs when no selection was made or the selection area was empty after executing \![leave,selectrect].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dd>The select mode. Currently only "rect" is possible.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4582,14 +4584,14 @@
 			<dl id="OnSelectModeComplete">
 				<dt class="entry">OnSelectModeComplete</dt>
 				<dd class="entry">
-					<p>\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
+					<p>Occurs when rectangle select mode is left by executing \![leave,selectrect].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dd>The select mode. Currently only "rect" is possible.</dd>
 						<dt>Reference2</dt>
-						<dd>選択結果（長方形枠）。カンマ区切りで、左,上,右,下の座標。</dd>
+						<dd>The selection results (rectangular) in left, top, right, and bottom coordinates, delimited by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4599,14 +4601,14 @@
 			<dl id="OnSelectModeMouseDown">
 				<dt class="entry">OnSelectModeMouseDown</dt>
 				<dd class="entry">
-					<p>矩形選択モード中にマウスボタンが押された際に発生。</p>
+					<p>Occurs when the mouse button is pressed during select mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dd>The select mode. Currently only "rect" is possible.</dd>
 						<dt>Reference2</dt>
-						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
+						<dd>The mouse position in X (horizontal axis) and Y (vertical axis) coordinates, delimited by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4616,14 +4618,14 @@
 			<dl id="OnSelectModeMouseUp">
 				<dt class="entry">OnSelectModeMouseUp</dt>
 				<dd class="entry">
-					<p>矩形選択モード中にマウスボタンが離された際に発生。</p>
+					<p>Occurs when the mouse button is released during select mode.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>選択モード。今のところ "rect" のみ。</dd>
+						<dd>The select mode. Currently only "rect" is possible.</dd>
 						<dt>Reference2</dt>
-						<dd>マウスの位置。カンマ区切りで、X(横),Y(縦)座標。</dd>
+						<dd>The mouse position in X (horizontal axis) and Y (vertical axis) coordinates, delimited by commas.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4636,10 +4638,10 @@
 			<dl id="OnSpeechSynthesisStatus">
 				<dt class="entry">OnSpeechSynthesisStatus</dt>
 				<dd class="entry">
-					<p>起動時と音声合成機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<p>Occurs on booting and when the voice synthesis function is turned on or off.<em class="specsign">[NOTIFY/GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>0/1 (無効/有効)</dd>
+						<dd>0/1 (invalid/valid)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.01</li>
@@ -4649,10 +4651,10 @@
 			<dl id="OnVoiceRecognitionStatus">
 				<dt class="entry">OnVoiceRecognitionStatus</dt>
 				<dd class="entry">
-					<p>起動時と音声認識機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
+					<p>Occurs on booting and when the voice recognition function is turned on or off.<em class="specsign">[NOTIFY/GET]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>0/1 (無効/有効)</dd>
+						<dd>0/1 (invalid/valid)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.01</li>
@@ -4662,12 +4664,12 @@
 			<dl id="OnVoiceRecognitionWord">
 				<dt class="entry">OnVoiceRecognitionWord</dt>
 				<dd class="entry">
-					<p>音声認識で単語が認識された際に発生。</p>
+					<p>Occurs when a word is recognised with the voice recognition function.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>本体の場合は0、相方の場合は1。SSP/CROWでは2以降もある。</dd>
+						<dd>0 if the main character, 1 if the side character. SSP and CROW also handle 2 and onwards.</dd>
 						<dt>Reference1</dt>
-						<dd>認識した単語。最初の名前呼びかけの時はキャラ名そのものになり、その際はメニューを表示するのが望ましい。</dd>
+						<dd>The word that was recognized. The first time a name is spoken, it will be the character name, and it is preferable that this is used to open the menu.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
@@ -4675,8 +4677,8 @@
 				</dd>
 			</dl>
 			<section class="caption" id="about_voicetag">
-				<h1>音声認識・合成機能について</h1>
-				<p>音声認識・合成機能については、 \__vタグ などSakuraScriptの仕様も参照すること。</p>
+				<h1>Regarding the voice recognition and synthesis functions</h1>
+				<p>When making use of the voice recognition and synthesis functions, refer to the SakuraScript specifications such as the \__v tag.</p>
 			</section>
 		</section>
 		<section class="category">
@@ -4684,18 +4686,18 @@
 			<dl id="OnKeyPress">
 				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
-					<p>本体がアクティブな状態でキーが入力された際に発生。</p>
+					<p>Occurs when a key is pressed while the ghost is selected.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>入力されたキー。(キートップに書かれた文字)</dd>
+						<dd>The key that was pressed (the character that is written on the keyboard).</dd>
 						<dt>Reference1</dt>
-						<dd>入力されたキー。(Win32仮想キーコード)</dd>
+						<dd>The key that was pressed (Win32 virtual-key codes).</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　キーの押しっぱなしカウント。</dd>
+						<dd>※SSP only: The counter for long key presses.</dd>
 						<dt>Reference3</dt>
-						<dd>※SSP only: 　キーイベントが来たキャラクターウインドウID。</dd>
+						<dd>※SSP only: The ID of the character window that the key event was activated for.</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　修飾キーがカンマ区切りで列挙される。例："ctrl,alt"</dd>
+						<dd>※SSP only: The additional keys, listed and delimited by commas. Ex: "ctrl,alt"</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4707,20 +4709,20 @@
 			<dl id="OnRecommendsiteChoice">
 				<dt class="entry">OnRecommendsiteChoice</dt>
 				<dd class="entry">
-					<p>メニューからサイトのリンクが選択された際に発生。</p>
+					<p>Occurs when a link to a site is selected in the menu.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択されたサイト名。</dd>
+						<dd>The name of the site that was selected.</dd>
 						<dt>Reference1</dt>
-						<dd>選択されたサイトのURL。</dd>
+						<dd>The URL of the site that was selected.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　重ねた時に表示されるサムネイル画像のURL/パス</dd>
+						<dd>※SSP only: The URL/path to the thumbnail image displayed when the cursor is hovered over the option</dd>
 						<dt>Reference3</dt>
-						<dd>※SSP only: 　recommendかportal</dd>
+						<dd>※SSP only: "recommend" or "portal"</dd>
 						<dt>Reference4</dt>
-						<dd>※SSP only: 　0か1 (0=sakuraか1=keroか)</dd>
+						<dd>※SSP only: 0 or 1 (0=sakura, 1=kero)</dd>
 						<dt>Reference5</dt>
-						<dd>※SSP only: 　数値 メニューの上から何番目か (0からはじまる点に注意)</dd>
+						<dd>※SSP only: A value displaying how far down from the top the selected link's position is. (Be aware of the fact that this starts from 0 and not 1.)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4732,16 +4734,16 @@
 			<dl id="OnTranslate">
 				<dt class="entry">OnTranslate</dt>
 				<dd class="entry">
-					<p>SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
+					<p>An event made to allow SHIORI to double as a translator function for MAKOTO.<br />Mainly sent as a response when a script is returned to the baseware as a result of a SHIORI Event using the GET command.<br />From the SHIORI Event that triggered OnTranslate, the script returned to the baseware through SHIORI internal operations is sent back to SHIORI once more, after baseware processes such as expanding environment variables. SHIORI can process a script a second time before returning it to the baseware again as the final script.<br />However, OnTranslate itself will not occur twice.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>元のスクリプト。</dd>
+						<dd>The original script.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only: 　コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate。<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。※該当がない場合欠番となる。</dd>
+						<dd>※SSP only: "communicate" when using communicate.<br />"sstp-send" when SSTP SEND.<br />"owned" when Owned SSTP.<br />"remote" when non-local SSTP.<br />"notranslate" when specified not to translate.<br />"plugin-script" when a script from a plugin.<br />"plugin-event" when a response to an event from a plugin.<br />The applicable information is returned delimited by commas. ※When no information is applicable, this value is empty.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　このスクリプトが発生したイベントID 。イベントが原因ではない場合欠番。</dd>
+						<dd>※SSP only: The ID of the event that triggered the script. Empty when an event was not the source.</dd>
 						<dt>Reference3</dt>
-						<dd>※SSP only: 　バイト値1区切りの上記イベントのReference 。イベントが原因ではない場合欠番。</dd>
+						<dd>※SSP only: The References of the above event, delimited by the one-byte value. Empty when an event was not the source.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4753,7 +4755,7 @@
 			<dl id="OnAITalk">
 				<dt class="entry">OnAITalk</dt>
 				<dd class="entry">
-					<p><a href="./list_sakura_script.html#_a">\aタグ実行</a>などにより、ランダムトーク発話を求められた際に発生。</p>
+					<p>Occurs when random talk is requested, such as with the <a href="./list_sakura_script.html#_a">\a tag</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4762,20 +4764,20 @@
 			<dl id="OnOtherGhostTalk">
 				<dt class="entry">OnOtherGhostTalk</dt>
 				<dd class="entry">
-					<p>他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
+					<p>Occurs when another ghost talks. Needs to be turned on with \![set,otherghosttalk,true].</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>ゴーストの本体側名。</dd>
+						<dd>The name of the ghost's main character.</dd>
 						<dt>Reference2</dt>
-						<dd>トークを中断した場合、break。<br />コミュニケートの場合、communicate。<br />SSTP SENDの場合、sstp-send。<br />Owned SSTPの場合、owned。<br />非ローカルSSTPの場合、remote。<br />トランスレートしない指定の場合、notranslate<br />プラグインからのスクリプトの場合、plugin-script<br />プラグインからのイベント反応の場合、plugin-event<br />該当するものがカンマ区切りで返る。</dd>
+						<dd>"break" if the talk was interrupted.<br />"communicate" when using communicate.<br />"sstp-send" when SSTP SEND.<br />"owned" when Owned SSTP.<br />"remote" when non-local SSTP.<br />"notranslate" when specified not to translate.<br />"plugin-script" when a script from a plugin.<br />"plugin-event" when a response to an event from a plugin.<br />The applicable information is returned delimited by commas.</dd>
 						<dt>Reference3</dt>
-						<dd>他ゴーストの話したイベントID。</dd>
+						<dd>The ID of the event that caused the other ghost to talk.</dd>
 						<dt>Reference4</dt>
-						<dd>他ゴーストの話した内容のスクリプト。</dd>
+						<dd>The contents of the script from the other ghost.</dd>
 						<dt>Reference5</dt>
-						<dd>バイト値1区切りの他ゴーストに渡されたReference。</dd>
+						<dd>The References that were passed to the other ghost, delimited by the one-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4785,7 +4787,7 @@
 			<dl id="OnEmbryoExist">
 				<dt class="entry">OnEmbryoExist</dt>
 				<dd class="entry">
-					<p>SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
+					<p>Occurs when materia.exe was already running when SSP booted.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4794,7 +4796,7 @@
 			<dl id="OnNekodorifExist">
 				<dt class="entry">OnNekodorifExist</dt>
 				<dd class="entry">
-					<p>SSP起動時、先に猫どりふが起動されていた際に発生。</p>
+					<p>Occurs when Nekodorif was already running when SSP booted.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4803,10 +4805,10 @@
 			<dl id="OnSoundStop">
 				<dt class="entry">OnSoundStop</dt>
 				<dd class="entry">
-					<p>サウンドが終了した際に発生。</p>
+					<p>Occurs when a sound has stopped playing.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>再生ファイル名。</dd>
+						<dd>The name of the file that was played.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4816,16 +4818,16 @@
 			<dl id="OnSoundError">
 				<dt class="entry">OnSoundError</dt>
 				<dd class="entry">
-					<p>サウンド処理に失敗した際に発生。</p>
+					<p>Occurs when a sound process has failed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>エラーを起こした再生コマンド。現在のところplay固定。</dd>
+						<dd>The command that played the sound that caused an error. "play" is currently the only possible value.</dd>
 						<dt>Reference1</dt>
-						<dd>サウンド再生エンジン内部のエラーコード(数値)。</dd>
+						<dd>The internal error code of the sound engine (a number).</dd>
 						<dt>Reference2</dt>
-						<dd>再生ファイル名。</dd>
+						<dd>The name of the file that was played.</dd>
 						<dt>Reference3</dt>
-						<dd>サウンド再生エンジンから出力されたエラーメッセージ。</dd>
+						<dd>The error message that the sound engine output.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4835,12 +4837,12 @@
 			<dl id="OnTextDrop">
 				<dt class="entry">OnTextDrop</dt>
 				<dd class="entry">
-					<p>テキストデータがDnDされた際に発生。</p>
+					<p>Occurs when text data was drag-and-dropped.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>テキスト内容。(改行はバイト値1)</dd>
+						<dd>The text contents. (Line breaks are represented by the one-byte value.)</dd>
 						<dt>Reference1</dt>
-						<dd>DnDされたキャラクターのID。</dd>
+						<dd>The ID of the character that the text was drag-and-dropped onto.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4850,16 +4852,16 @@
 			<dl id="OnShellScaling">
 				<dt class="entry">OnShellScaling</dt>
 				<dd class="entry">
-					<p>シェル倍率が変更された際に発生。</p>
+					<p>Occurs when the shell scaling is changed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>横方向の変更された後の倍率。（パーセント）</dd>
+						<dd>The horizontal scaling of the shell after the change (in percentage).</dd>
 						<dt>Reference1</dt>
-						<dd>横方向の変更される前の倍率。（パーセント）</dd>
+						<dd>The horizontal scaling of the shell before the change (in percentage).</dd>
 						<dt>Reference2</dt>
-						<dd>縦方向の変更された後の倍率。（パーセント）</dd>
+						<dd>The vertical scaling of the shell after the change (in percentage).</dd>
 						<dt>Reference3</dt>
-						<dd>縦方向の変更される前の倍率。（パーセント）</dd>
+						<dd>The vertical scaling of the shell before the change (in percentage).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4869,16 +4871,16 @@
 			<dl id="OnBalloonScaling">
 				<dt class="entry">OnBalloonScaling</dt>
 				<dd class="entry">
-					<p>バルーン倍率が変更された際に発生。</p>
+					<p>Occurs when the balloon scaling is changed.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>横方向の変更された後の倍率。（パーセント）</dd>
+						<dd>The horizontal scaling of the balloon after the change (in percentage).</dd>
 						<dt>Reference1</dt>
-						<dd>横方向の変更される前の倍率。（パーセント）</dd>
+						<dd>The horizontal scaling of the balloon before the change (in percentage).</dd>
 						<dt>Reference2</dt>
-						<dd>縦方向の変更された後の倍率。（パーセント）</dd>
+						<dd>The vertical scaling of the balloon after the change (in percentage).</dd>
 						<dt>Reference3</dt>
-						<dd>縦方向の変更される前の倍率。（パーセント）</dd>
+						<dd>The vertical scaling of the balloon before the change (in percentage).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5</li>
@@ -4888,17 +4890,17 @@
 			<dl id="OnLanguageChange">
 				<dt class="entry">OnLanguageChange</dt>
 				<dd class="entry">
-					<p>言語設定が変更された際と、起動直後に通知される。<br>
-					起動直後に通知される場合は必ずNOTIFYとなり、イベントに応答してしゃべることはできない。</p>
+					<p>Notified when the language setting has been changed, and immediately after booting.<br>
+					When this event is notified directly after booting, it will always use NOTIFY, and cannot prompt talking in response.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>言語名(name)</dd>
+						<dd>The language name (name).</dd>
 						<dt>Reference1</dt>
-						<dd>言語ID(langid)</dd>
+						<dd>The language ID (langid).</dd>
 						<dt>Reference2</dt>
-						<dd>言語設定ファイル群を格納したフォルダのフルパス</dd>
+						<dd>The full path of the folder containing the language setting files.</dd>
 						<dt>Reference3</dt>
-						<dd>ヘルプが記載されているURL</dd>
+						<dd>The URL that the help information is listed on.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5</li>
@@ -4911,14 +4913,14 @@
 			<dl id="basewareversion">
 				<dt class="entry">basewareversion</dt>
 				<dd class="entry">
-					<p>ベースウェアの情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the baseware information. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>バージョン番号。</dd>
+						<dd>The version number.</dd>
 						<dt>Reference1</dt>
-						<dd>本体の識別。</dd>
+						<dd>The baseware identification.</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only: 　バージョン情報の詳細な数値。</dd>
+						<dd>※SSP only: The detailed version number.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4929,12 +4931,12 @@
 			<dl id="hwnd">
 				<dt class="entry">hwnd</dt>
 				<dd class="entry">
-					<p>hwndを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the hwnd. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴーストのhwnd。バイト値１区切りで各スコープ。</dd>
+						<dd>The ghost hwnd. Each scope is listed, delimited by the one-byte value.</dd>
 						<dt>Reference1</dt>
-						<dd>バルーンのhwnd。バイト値１区切りで各スコープ。</dd>
+						<dd>The balloon hwnd. Each scope is listed, delimited by the one-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4945,10 +4947,10 @@
 			<dl id="uniqueid">
 				<dt class="entry">uniqueid</dt>
 				<dd class="entry">
-					<p>unique IDを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the unique ID. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴーストのユニークID。特殊なSSTPを送信する際に使用する。</dd>
+						<dd>The ghost's unique ID. Used when sending a particular SSTP.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4959,18 +4961,18 @@
 			<dl id="capability">
 				<dt class="entry">capability</dt>
 				<dd class="entry">
-					<p>SHIORI拡張実装状態を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the state of the SHIORI capability extensions. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							<p>実装レベルに応じて下記がReferenceに1つずつ送られる。
-							<br />ヘッダ名を小文字に直したものが通知される点に注意。例：SecurityLevel→securitylevel
-							<br /><a href="spec_shiori3.html">SHIORI/3.0仕様書</a>も参照。</p>
+							<p>Depending on the level of implementation, the below information is sent in individual References.
+							<br />Note that header names are converted to lowercase when notified. Ex: SecurityLevel→securitylevel
+							<br />Refer to the <a href="spec_shiori3.html">SHIORI/3.0 specifications</a>.</p>
 							<dl>
-								<dt>request.(ヘッダ名小文字)</dt>
-								<dd>SHIORIリクエストの対応状況。例：request.status</dd>
-								<dt>response.(ヘッダ名小文字)</dt>
-								<dd>SHIORIレスポンスの対応状況。例：response.marker</dd>
+								<dt>request. (header name in lowercase)</dt>
+								<dd>The status of the SHIORI request. Ex: request.status</dd>
+								<dt>response.(header name in lowercase)</dt>
+								<dd>The status of the SHIORI response. Ex: response.marker</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -4982,10 +4984,10 @@
 			<dl id="ownerghostname">
 				<dt class="entry">ownerghostname</dt>
 				<dd class="entry">
-					<p>現在のゴースト名を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the current ghost name. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>現在のゴースト名。</dd>
+						<dd>The current ghost name.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4997,10 +4999,10 @@
 			<dl id="otherghostname">
 				<dt class="entry">otherghostname</dt>
 				<dd class="entry">
-					<p>他に起動しているゴーストの本体側名を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the main character names of the other currently open ghosts. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>バイト値1区切りにされた、他に起動しているゴーストの本体側名、本体側サーフェス番号、相方側サーフェス番号。</dd>
+						<dd>The other open ghosts' main character names, main character surface number, and side character surface number, delimited by the one-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -5012,10 +5014,10 @@
 			<dl id="installedghostname">
 				<dt class="entry">installedghostname</dt>
 				<dd class="entry">
-					<p>インストールされているゴーストを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the currently installed ghosts. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>インストールされているゴースト名。</dd>
+						<dd>The names of the currently installed ghosts.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -5027,10 +5029,10 @@
 			<dl id="installedshellname">
 				<dt class="entry">installedshellname</dt>
 				<dd class="entry">
-					<p>インストールされているシェルを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the currently installed shells. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>インストールされているシェル名。</dd>
+						<dd>The names of the currently installed shells.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5041,10 +5043,10 @@
 			<dl id="installedballoonname">
 				<dt class="entry">installedballoonname</dt>
 				<dd class="entry">
-					<p>インストールされているバルーンを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the currently installed balloons. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>インストールされているバルーン名。</dd>
+						<dd>The names of the currently installed balloons.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5055,10 +5057,10 @@
 			<dl id="installedheadlinename">
 				<dt class="entry">installedheadlinename</dt>
 				<dd class="entry">
-					<p>インストールされているRSS/ヘッドラインを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the currently installed RSS/headlines. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>インストールされているRSS/ヘッドライン名。</dd>
+						<dd>The names of the currently installed RSS/headlines.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5068,10 +5070,10 @@
 			<dl id="installedplugin">
 				<dt class="entry">installedplugin</dt>
 				<dd class="entry">
-					<p>インストールされているプラグインを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the currently installed plugins. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>バイト値1区切りで、インストールされているプラグイン名,プラグインID</dd>
+						<dd>The names and IDs of the currently installed plugins, delimited by the one-byte value.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5081,10 +5083,10 @@
 			<dl id="configuredbiffname">
 				<dt class="entry">configuredbiffname</dt>
 				<dd class="entry">
-					<p>設定済みメールチェックアカウントのリストを通知する。<a href="list_sakura_script.html#_!_biff_">\![biff,アカウント名]</a>で利用できる。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies a list of the configured email check accounts. Can be used with <a href="list_sakura_script.html#_!_biff_">\![biff,(account name)]</a>. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>メールアカウント名</dd>
+						<dd>The email account names.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5</li>
@@ -5094,10 +5096,10 @@
 			<dl id="ghostpathlist">
 				<dt class="entry">ghostpathlist</dt>
 				<dd class="entry">
-					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the ghost storage folder (the Ghost setting in SSP Preferences -> Folder). <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>ゴースト格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the ghost storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5107,10 +5109,10 @@
 			<dl id="balloonpathlist">
 				<dt class="entry">balloonpathlist</dt>
 				<dd class="entry">
-					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the balloon storage folder (the Balloon setting in SSP Preferences -> Folder). <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>バルーン格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the balloon storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5120,10 +5122,10 @@
 			<dl id="headlinepathlist">
 				<dt class="entry">headlinepathlist</dt>
 				<dd class="entry">
-					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the headline storage folder (the Headline setting in SSP Preferences -> Folder). <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>ヘッドライン格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the headline storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5133,10 +5135,10 @@
 			<dl id="pluginpathlist">
 				<dt class="entry">pluginpathlist</dt>
 				<dd class="entry">
-					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the plugin storage folder (the Plugin setting in SSP Preferences -> Folder). <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>プラグイン格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the plugin storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5146,10 +5148,10 @@
 			<dl id="calendarskinpathlist">
 				<dt class="entry">calendarskinpathlist</dt>
 				<dd class="entry">
-					<p>カレンダースキン格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the calendar skin storage folder. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>カレンダースキン格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the calendar skin storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5159,10 +5161,10 @@
 			<dl id="calendarpluginpathlist">
 				<dt class="entry">calendarpluginpathlist</dt>
 				<dd class="entry">
-					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the path to the calendar schedule sensor storage folder. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>カレンダーのスケジュールセンサ格納フォルダの絶対パス</dd>
+						<dd>The absolute path to the calendar schedule sensor storage folder.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5172,18 +5174,18 @@
 			<dl id="rateofusegraph">
 				<dt class="entry">rateofusegraph</dt>
 				<dd class="entry">
-					<p>使ってるぞグラフの情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the information from the rate of use graph. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>
-							<p>バイト値1区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。</p>
+							<p>The following delimited by the one-byte value: the Sakura name, Kero name, boot count, boot time (minutes), boot time (percentage), (boot install vanish).</p>
 							<dl>
 								<dt>boot</dt>
-								<dd>起動中の時。</dd>
+								<dd>When the ghost is currently opened.</dd>
 								<dt>install</dt>
-								<dd>インストールされている時。</dd>
+								<dd>When the ghost is installed.</dd>
 								<dt>vanish</dt>
-								<dd>アンインストールした情報が残ってる時。</dd>
+								<dd>When the information is left over from an uninstalled ghost.</dd>
 							</dl>
 						</dd>
 					</dl>
@@ -5195,11 +5197,10 @@
 			<dl id="enable_log">
 				<dt class="entry">enable_log</dt>
 				<dd class="entry">
-					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<em class="specsign">[NOTIFY]</em><br />
-					<a href="list_shiori_resource.html#log_path">SHIORI Resource : log_path</a> も参照。</p>
+					<p>The ON/OFF state of the Dev. Palette's "Enable SHIORI Internal Log" option. <em class="specsign">[NOTIFY]</em><br />Refer to <a href="list_shiori_resource.html#log_path">SHIORI Resource : log_path</a>.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ONなら1、OFFなら0</dd>
+						<dd>1 if ON, 0 if OFF.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5209,10 +5210,10 @@
 			<dl id="enable_debug">
 				<dt class="entry">enable_debug</dt>
 				<dd class="entry">
-					<p>開発用パレットの「SHIORIデバッグモード有効」のON/OFF。<em class="specsign">[NOTIFY]</em></p>
+					<p>The ON/OFF state of the Dev. Palette's "Enable SHIORI Debug Mode" option. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ONなら1、OFFなら0</dd>
+						<dd>1 if ON, 0 if OFF.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5222,22 +5223,22 @@
 			<dl id="OnNotifySelfInfo">
 				<dt class="entry">OnNotifySelfInfo</dt>
 				<dd class="entry">
-					<p>ゴースト自身の情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the ghost's own information. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴースト名。</dd>
+						<dd>The ghost name.</dd>
 						<dt>Reference1</dt>
-						<dd>本体側の名前。</dd>
+						<dd>The main character's name.</dd>
 						<dt>Reference2</dt>
-						<dd>相方側の名前。</dd>
+						<dd>The side character's name.</dd>
 						<dt>Reference3</dt>
-						<dd>現在のシェル名。</dd>
+						<dd>The name of the current shell.</dd>
 						<dt>Reference4</dt>
-						<dd>現在のシェルへの絶対パス。</dd>
+						<dd>The absolute path to the current shell.</dd>
 						<dt>Reference5</dt>
-						<dd>現在のバルーン名。</dd>
+						<dd>The name of the current balloon.</dd>
 						<dt>Reference6</dt>
-						<dd>現在のバルーンへの絶対パス。</dd>
+						<dd>The absolute path to the current balloon.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5248,14 +5249,14 @@
 			<dl id="OnNotifyBalloonInfo">
 				<dt class="entry">OnNotifyBalloonInfo</dt>
 				<dd class="entry">
-					<p>現在使用中のバルーン情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the information on the balloon currently being used. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択しているバルーンの名前</dd>
+						<dd>The name of the currently selected balloon.</dd>
 						<dt>Reference1</dt>
-						<dd>選択しているバルーンのフルパス</dd>
+						<dd>The full path of the currently selected balloon.</dd>
 						<dt>Reference2</dt>
-						<dd>サーフェス番号リスト [キャラID＋コロン＋カンマ区切り＋スペース] 例：0:0,1,2,3 1:0,1</dd>
+						<dd>The surface number list. [character ID + colon + list delimited by commas + space] Ex: 0:0,1,2,3 1:0,1</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5265,14 +5266,14 @@
 			<dl id="OnNotifyShellInfo">
 				<dt class="entry">OnNotifyShellInfo</dt>
 				<dd class="entry">
-					<p>現在使用中のシェル情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the information on the shell currently being used. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>選択しているシェルの名前</dd>
+						<dd>The name of the currently selected shell.</dd>
 						<dt>Reference1</dt>
-						<dd>選択しているシェルのフルパス</dd>
+						<dd>The full path of the currently selected shell.</dd>
 						<dt>Reference2</dt>
-						<dd>サーフェス番号リスト [カンマ区切り] 例：0,1,2,3,4,5,6,7,8,10,11</dd>
+						<dd>The surface number list. [comma delimited] Ex: 0,1,2,3,4,5,6,7,8,10,11</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5282,15 +5283,15 @@
 			<dl id="OnNotifyDressupInfo">
 				<dt class="entry">OnNotifyDressupInfo</dt>
 				<dd class="entry">
-					<p>着せ替えの情報を通知。<br />
-					起動時のみ<em class="specsign">[NOTIFY]</em>で、メニューから切替などユーザーによる操作なら<em class="specsign">[GET]</em>で送られる。<br />
-					このイベントの前に発生する<a href="#OnDressupChanged">OnDressupChanged</a>も参照すること。</p>
+					<p>Notifies the dressup information.<br />
+					<em class="specsign">[NOTIFY]</em> only on booting, and sent with <em class="specsign">[GET]</em> upon user or menu operation.<br />
+					Refer to <a href="#OnDressupChanged">OnDressupChanged</a>, the event that occurs before this event.</p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>バイト値1区切りにされた以下の情報：[キャラクターID、カテゴリー名、パーツ名、オプション、有効1/無効0、サムネイルパス] <br />
-						オプションはカンマ区切りでいくつも追加されている場合もある。<br />
-						着せ替え定義の数だけ繰り返される。<br />
-						ゴースト側で前回の通知からの有効/無効の差分を処理すると、何が変わったかを把握できる。</dd>
+						<dd>The following information, delimited by the one-byte value: [character ID, category name, part name, option, on-1/off-0, thumbnail path] <br />
+						There are cases where multiple options are added, separated by commas.<br />
+						Occurs as many times as there are dressup definitions.<br />
+						What was changed can be detected by processing the difference between this and the previous notification's on/off status.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5300,16 +5301,16 @@
 			<dl id="OnNotifyUserInfo">
 				<dt class="entry">OnNotifyUserInfo</dt>
 				<dd class="entry">
-					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the user input information. Notified on boot and when the information is updated. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>呼び方。</dd>
+						<dd>The nickname.</dd>
 						<dt>Reference1</dt>
-						<dd>フルネーム。</dd>
+						<dd>The name.</dd>
 						<dt>Reference2</dt>
-						<dd>誕生日。(2003,5,5のようにカンマ区切りで)</dd>
+						<dd>The birth date (delimited by commas as the following: 2003,5,5).</dd>
 						<dt>Reference3</dt>
-						<dd>性別。male(男),female(女),undef(未定義)のいずれか。</dd>
+						<dd>The gender. "male" (male), "female" (female), or "undef" (undefined).</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5319,16 +5320,16 @@
 			<dl id="OnNotifyOSInfo">
 				<dt class="entry">OnNotifyOSInfo</dt>
 				<dd class="entry">
-					<p>OS情報を通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the OS information. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>OSのシステム,バージョン,表示用の名前 [カンマ区切り]</dd>
+						<dd>The OS, version, and display name. [delimited by commas]</dd>
 						<dt>Reference1</dt>
-						<dd>CPUタイプ,クロックMHz,追加情報 [カンマ区切り]</dd>
+						<dd>The CPU type, clock MHz, and additional information. [delimited by commas]</dd>
 						<dt>Reference2</dt>
-						<dd>物理,仮想メモリ(KB) [カンマ区切り]</dd>
+						<dd>The physical and virtual memory (KB). [delimited by commas]</dd>
 						<dt>Reference3</dt>
-						<dd>システム起動からの経過分。</dd>
+						<dd>The uptime since the system was booted.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -5338,10 +5339,10 @@
 			<dl id="OnNotifyFontInfo">
 				<dt class="entry">OnNotifyFontInfo</dt>
 				<dd class="entry">
-					<p>システムにインストールされているフォントを通知。<em class="specsign">[NOTIFY]</em></p>
+					<p>Notifies the fonts installed to the system. <em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>フォント名。</dd>
+						<dd>The font names.</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
