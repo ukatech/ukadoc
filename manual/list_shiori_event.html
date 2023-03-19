@@ -652,9 +652,9 @@
 						<dt>Reference0</dt>
 						<dd>※SSP only: The reason for closing.<br />Returns "user" if closed by the user,<br />"system" if closed by a shutdown.</dd>
 						<dt>Reference1</dt>
-						<dd>※SSP only:　The scope number of the character whose menu was used for the closing operation. Affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
+						<dd>※SSP only: The scope number of the character whose menu was used for the closing operation. Affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 						<dt>Reference2</dt>
-						<dd>※SSP only:　The scope number of the character whose window was closed. Not affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
+						<dd>※SSP only: The scope number of the character whose window was closed. Not affected by popupmenu.type. (0 for the main character, 1 for the side character...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1071,9 +1071,9 @@
 					<p>Occurs when the ghost boots after the baseware has finished updating. If there is no reaction to this event, OnBoot will occur instead.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>The version number after updating.　Ex: 2.3.59</dd>
+						<dd>The version number after updating. Ex: 2.3.59</dd>
 						<dt>Reference1</dt>
-						<dd>The version number as seen with the properties from Windows Explorer after updating.　Ex: 2.3.59.3000</dd>
+						<dd>The version number as seen with the properties from Windows Explorer after updating. Ex: 2.3.59.3000</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3515,7 +3515,7 @@
 					<p>Occurs when the RSS sensor is completed successfully. If there is no response to this event, a script appropriate to display is generated and a headline sensor completion event is called.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>When there are no updates: "no update"　<a href="#caption_headlinesenseresult">※Ending reason</a>.<br>When there are no updates, Reference0 will be the only reference, and contain only "no update."<br />
+						<dd>When there are no updates: "no update" <a href="#caption_headlinesenseresult">※Ending reason</a>.<br>When there are no updates, Reference0 will be the only reference, and contain only "no update."<br />
 						When there are updates: The name of the RSS transmission site.</dd>
 						<dt>Reference1</dt>
 						<dd>Only when there are updates: The name of the RSS transmission URL (the URL that points to the site, not the feed itself).</dd>
