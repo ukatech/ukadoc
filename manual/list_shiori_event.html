@@ -293,6 +293,8 @@
 			<ul>
 				<li><a href="#OnFileDropping">OnFileDropping</a></li>
 				<li><a href="#OnFileDropped">OnFileDropped</a></li>
+				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
+				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
 				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a></li>
 				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
 				<li><a href="#OnFileDrop">OnFileDrop</a></li>
@@ -2414,6 +2416,43 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherObjectDropping">
+				<dt class="entry">OnOtherObjectDropping</dt>
+				<dd class="entry">
+					<p>「ファイル」として扱えないもののカーソルがゴースト上に乗った際に発生。例：Windowsの「マイコンピュータ」など</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたものの名前(OSの言語設定に影響される)。
+						<br />複数ある場合はバイト値1区切り。</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたもののOSの言語設定に識別されないIDのようなもの。
+						<br />複数ある場合はバイト値1区切り。以下はWindows上の例。
+						
+						<ul>
+							<li>PC(マイコンピュータ) = ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}</li>
+							<li>ゴミ箱 = ::{645FF040-5081-101B-9F08-00AA002F954E}</li>
+							<li>(マイ)ネットワーク = ::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}</li>
+						</ul>
+						
+						</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.41</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherObjectDropped">
+				<dt class="entry">OnOtherObjectDropped</dt>
+				<dd class="entry">
+					<p>「ファイル」として扱えないものをゴースト上にドロップした際に発生。例：Windowsの「マイコンピュータ」など。
+					<br />Referenceは OnOtherObjectDropping とまったく同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.41</li>
 					</ul>
 				</dd>
 			</dl>
