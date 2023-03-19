@@ -457,12 +457,15 @@
 				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,(URL),(parameter)]</a></li>
 				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,(URL),(parameter)]</a></li>
 				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,(URL),(option),(option),(option),...]</a></li>
-				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,URL,(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,http-head,URL,オプション,オプション,オプション..._">\![execute,http-head,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,http-put,URL,オプション,オプション,オプション..._">\![execute,http-put,(URL),(option),(option),(option),...]</a></li>
+				<li><a href="#_!_execute,http-delete,URL,オプション,オプション,オプション..._">\![execute,http-delete,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,(file name),(directory name)]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,(file name),(directory name)]</a></li>
-				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),(zero position cutoff)]</a></li>
+				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID)]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,(file name)]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,(URL),(feed|nar)]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,(parameter 1),(parameter 2),...]</a></li>
@@ -850,8 +853,9 @@
 			<dl id="_!_set,alignmentondesktop,bottomまたはtop_">
 				<dt class="entry">\![set,alignmentondesktop,(bottom or top)]</dt>
 				<dd class="entry">
-					<p>Attaches the character that currently has the focus to the specified edge of the desktop.</p>
+					<p>Attaches the character that currently has the focus to the specified edge of the desktop. bottom for the bottom of the desktop, top for the top of the desktop.</p>
 					<p>Effective until the ghost is closed.</p>
+					<p>※Refer to alignment<em>to</em>desktop for SSP.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -901,12 +905,11 @@
 						<dd>The character will be returned to its default position settings.</dd>
 					</dl>
 					<p>
-					<!--TODO: Check if this line "SSP only alignmenttodesktop can also be used" is a mistake, since it is already under the section for alignmenttodesktop-->
-					※(SSP only) Also applies to alignment<em>to</em>desktop.
 					<br>When a character is attached to the top or bottom of the screen, it cannot be moved up or down by dragging.
 					<br>When a character is attached to the left or right of the screen, it cannot be moved sideways by dragging.
 					</p>
 					<p>Effective until the ghost is closed.</p>
+					<p>※The above also applies to alignment<em>on</em>desktop.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -4718,6 +4721,33 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_execute,http-head,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-head,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp head リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-put,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-put,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp put リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,http-delete,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,http-delete,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp delete リクエストを行う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_execute,rss-get,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,rss-get,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
@@ -5297,6 +5327,9 @@
 					<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a> or <a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a> are notified if the RSS commands are used.
 					<br>When an ID starting with On is specified, a SHIORI Event formatted as [Specified ID] or [Specified ID]Failure will run instead.<br>Ex: When --async=OnExample succeeds, OnExample will run, and when it fails, OnExampleFailure will run.</dd>
 					
+					<dt>--authorization=(the contents of the Authorization request header) [2.6.37]</dt>
+					<dd>Set in advance when Authorization headers are mandatory, such as OAuth.</dd>
+					
 					<dt>--cookie=cookie data</dt>
 					<dd>When necessary, the value of Reference5 of OnExecuteHTTPComplete should be specified as is.</dd>
 					
@@ -5309,6 +5342,10 @@
 					<dt>--file=(file name)</dt>
 					<dd>Specifies the name of the file to save the acquired data to. Saved to [(folder of the ghost executing the command)]/ghost/master/var/(file name).</dd>
 					
+					<dt>--header=(SomeHeader):(contents of the request header) [2.6.40]</dt>
+					<dd>Sets a request header of the name of choice. There must be a colon between the name and contents.
+					<br />Caution should be taken not to cause contradictions with the specifications, as this will overwrite the header information from SSP.</dd>
+					
 					<dt>--nodescript</dt>
 					<dd>Turns off the display of the online marker and download status.</dd>
 					
@@ -5320,7 +5357,7 @@
 					<dt>--param=(parameter)</dt>
 					<dd>Specifies the parameter for get/post. Can be specified multiple times.<br>
 					When multipart/form-data:<br>
-                    　The format --param=(field name)=(data) should be repeated only as many times as necessary.<br>
+                    　The format --param=(field name)=(data) will be repeated only as many times as necessary.<br>
 					　Ex: --param=message_body=(data) <br>
 					When application/x-www-form-urlencoded:<br>
                     　When the format --param=(field name)=(data) is repeated only as many times as necessary, everything will be sent to the server connected with &amp;.<br>
@@ -5331,11 +5368,15 @@
 					<dt>--param-charset=(character encoding)</dt>
 					<dd>Specifies the character encoding. Shift_JIS, EUC-JP, UTF-8 and others can be specified. The default is UTF-8.</dd>
 					
+					<dt>--param-input-file=(file name) [2.6.40]</dt>
+					<dd>Specifies the file containing data to be sent when it is too large to send with the --param option.
+					<br />When not specified as an absolute path, it will be interpreted as a relative path from  [(folder of the ghost executing the command)]/ghost/master/.
+					<br />Do not specify --param at the same time.
+					<br />The contents are not touched, so the character code and encoding should be the responsibility of and be processed by the side using the data.
+					<br />However, only with multipart/form-data, the first line is read and interpreted as a field separator.</dd>
+					
 					<dt>--timeout=(number of seconds)</dt>
 					<dd>Specifies the length of time to wait for a response (※not the length of time needed for a download). The upper limit is 300 seconds.<br>If there is no response within the specified number of seconds, the SHIORI event OnExecuteHTTPFailure will be notified, and Reference4 will contain "timeout."</dd>
-					
-					<dt>--authorization=(the contents of the Authorization request header) [2.6.37]</dt> <!-- TODO: merged with upstream/master -->
-					<dd>Set in advance when Authorization headers are mandatory, such as OAuth.</dd>
 				</dl>
 			</section>
 		</section>

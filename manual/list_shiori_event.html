@@ -3754,7 +3754,7 @@
 					<p>Occurs when acquisition with execute-http is completed successfully.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>post/get</dd>
+						<dd>One of post/get/head/put/delete.</dd>
 						<dt>Reference1</dt>
 						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
@@ -3766,6 +3766,8 @@
 						<dd>The acquisition result code. (200|204) etc.</dd>
 						<dt>Reference5</dt>
 						<dd>The cookie string.</dd>
+						<dt>Reference6</dt>
+						<dd>All of the acquired response headers. Delimited by the one-byte value rather than line breaks. [2.6.40]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -3778,7 +3780,7 @@
 					<p>Occurs when an acquisition error is caused with execute-http.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>post/get</dd>
+						<dd>One of post/get/head/put/delete.</dd>
 						<dt>Reference1</dt>
 						<dd>The string specified with the ID.</dd>
 						<dt>Reference2</dt>
@@ -3789,6 +3791,8 @@
 						<dd>The acquisition result code. (timeout|fileio|200|204|403|404) etc. Refer to <a href="#caption_updateresultfailure">[network failure reason]</a>.</dd>
 						<dt>Reference5</dt>
 						<dd>The cookie string.</dd>
+						<dt>Reference6</dt>
+						<dd>All of the acquired response headers. Delimited by the one-byte value rather than line breaks. [2.6.40]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
