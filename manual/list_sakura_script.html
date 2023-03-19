@@ -1900,11 +1900,11 @@
 				</dd>
 			</dl>
 			<dl id="_f_valign,寄せる側_">
-				<dt class="entry">\f[valign,寄せる側]</dt>
+				<dt class="entry">\f[valign,(alignment side)]</dt>
 				<dd class="entry">
-					<p>文字列の下揃え(\f[valign,bottom])・縦中央揃え(\f[valign,center])・上揃え(\f[valign,top])を設定する。
-					<br />文字等の追加の途中でこのコマンドを実行すると、すでに追加された同じ行に属する文字列も移動される。
-					<br />alignと異なり、\nや\_lではリセットされない。</p>
+					<p>Sets align bottom (\f[align,bottom]) ・ center (\f[align,center]) ・ align top (\f[align,top]) for text.
+					<br />Additionally, if this command is run in the middle of adding characters and such, the string already in the same line will also be moved.
+					<br />Unlike align, this command will not be reset with \n or \_l.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.19</li>
 					</ul>
@@ -4722,27 +4722,27 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-head,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-head,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,http-head,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp head リクエストを行う。</p>
+					<p>Executes an http head request with <a href="#notes_executehttp">※options</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-put,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-put,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,http-put,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp put リクエストを行う。</p>
+					<p>Executes an http put request with <a href="#notes_executehttp">※options</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_execute,http-delete,URL,オプション,オプション,オプション..._">
-				<dt class="entry">\![execute,http-delete,URL,オプション,オプション,オプション...]</dt>
+				<dt class="entry">\![execute,http-delete,URL,(option),(option),(option),...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp delete リクエストを行う。</p>
+					<p>Executes an http delete request with <a href="#notes_executehttp">※options</a>.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.40</li>
 					</ul>
