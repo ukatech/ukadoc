@@ -288,34 +288,34 @@
 		<section class="caption introduction" id="introduction_surfaces.txt">
 			<h1>surfaces.txt</h1>
 			<section>
-				<h1>概要</h1>
+				<h1>Summary</h1>
 				<p>
-					シェルの各種定義を行うためのファイル。基本的に全て省略可。必要なものだけ書く。
-					<br>例えば各サーフェス（表情・パーツ・コマ・着せ替えパーツ）へのアニメーション、当り判定、画像の合成などの設定はここで行う。
-					<br>またサーフェスIDに対して別名（エイリアス）を与えたい場合もここで設定できる。
-					<br>SSPではその他にも、当り判定にカーソルを乗せ続けた時に表示されるツールチップや、カーソル表示の変更などの設定も行える。
+					A file that contains the individual definitions for a shell. Fundamentally most of it is omissible and only certain parts are necessary to function.
+					<br>This file includes image synthesis, the collisions, and the animations (frames, expressions, parts, dressup parts) for each surface.
+					<br>It is also used to give surface IDs separate names, known as surface aliases.
+					<br>In SSP, in addition to the above, tooltips and special cursors when hovering over collisions can also be set up.
 				</p>
 				<p>
-					一方で、シェル名、シェル作者名などのシェルの基本情報に関する設定や、着せ替えのオーナードローメニュー（右クリックメニュー）の表示設定などはここではなく<a href="descript_shell.html">descript.txt</a>で行うので注意。
+					On the other hand, settings related to information such as the names of the shell and shell creator or the display settings for the dressup section of the owner draw menu (right-click menu) are written in <a href="descript_shell.html">descript.txt</a>, not this file.
 				</p>
 			</section>
 			<section>
-				<h1>基本の書式</h1>
-				<p>基本的にほとんどの設定が<em>省略可能</em>であり、必要に応じて各設定を行えばよい。</p>
-				<p>設定は、書くとすれば必ず一行目に書く必要がある<a href="#charset,文字コード-surfaces">charset</a>の他は、それぞれ「{」と「}」で囲まれた各ブレス内に記述する（各ブレスについてはこのページ内のそれぞれの項目参照）。</p>
-				<p>「{」および「}」はそれのみが書かれた行として存在する必要があり、例えば「surface1 {」のようにブレス名に続けて書く事はできない。</p>
-<pre><code>ブレス名
+				<h1>Basic format</h1>
+				<p>Almost all of the settings are <em>omissible</em>, and need only be added if deemed necessary.</p>
+				<p>When it comes to writing the settings, the <a href="#charset,文字コード-surfaces">charset</a> must be in the first line, and everything else must be written inside each brace, between { and } (refer to each entry on this page for details on each brace).</p>
+				<p>{ and } must be written on individual lines, and cannot be written as "surface1 {" on the same line as the brace name, for example.</p>
+<pre><code>Brace name
 {
-// 設定内容
+// Settings contents
 }
 </code></pre>
-				<p>ブレス名、{}、各設定として認識されない行はすべてコメント行として扱われる。慣例的には行頭を「//」から始める。</p>
-				<p>各行インデント可。</p>
-				<p>SSPのみ「surfaces***.txt（***は任意の文字列）」という名前のテキストファイルは全て読み込まれ、surfaces.txtと同様に扱われる。読み込み対象となるファイルが複数ある場合、読み込まれる順序はファイル名順となる。</p>
-				<p>なお、複数のsurfaces***.txtを用意した場合、<a href="#introduction_descriptbrace">descriptブレス</a>の設定（および<a href="#charset,文字コード-surfaces">charset</a>）はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
+				<p>All lines that are not recognised as either a brace name, {}, or settings will be treated as comments. Comments are customarily started with //.</p>
+				<p>Any line may be indented.</p>
+				<p>In SSP only, any text file named surfaces***.txt will be read (where *** is any string) and treated in the same way as surfaces.txt. When there are multiple files, they are read in the order of the file names.</p>
+				<p>When multiple surfaces***.txt files exist, they must all have <a href="#introduction_descriptbrace">descript braces</a> (including <a href="#charset,文字コード-surfaces">charset</a>). In other words, each file may have different settings.</p>
 			</section>
 			<section>
-				<h1>記述例</h1>
+				<h1>Usage example</h1>
 <pre><code>charset,Shift_JIS
 
 descript
@@ -348,7 +348,7 @@ kero.balloon.offsetx,-30
 kero.balloon.offsety,20
 }
 
-// SSPのみで有効な記法 ←このようにコメント行は//から始める
+// This definition method only works in SSP ← As this line does, comments start with //
 surface.append0-9
 {
 collision0,188,25,252,63,Head
