@@ -5324,9 +5324,10 @@
 				<h1>http get/post オプション</h1>
 				<dl>
 					<dt>--async=識別ID</dt>
-					<dd>処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。<br>
-					RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
-					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure</dd>
+					<dd>処理を待たずにSakuraScriptの続きを実行し、処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。
+					<br>RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
+					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure
+					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く。</dd>
 
 					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
 					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
@@ -5379,6 +5380,15 @@
 					<br />中身は基本的に関知しないので、文字コードやエンコード等は使う側で責任を持って処理すること。
 					<br />ただし、multipart/form-dataの時のみ、1行目を読み取ってフィールド間区切りとして解釈する。
 					<br />指定するファイルパスはSSP管轄下(SSP.exeと同じ場所以下か、ゴースト等を列挙するよう指定したフォルダ以下)に限られる。</dd>
+
+					<dt>--progress-notify [2.6.44]</dt>
+					<dd>ダウンロード処理中に<a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a>イベントを通知する。
+					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event [指定したID]Progress が発生する。<br>例:--async=OnExampleのとき OnExampleProgress
+					<br>ダウンロード処理中に、逐一イベント通知処理が行われるため、ダウンロード速度の低下が発生する。
+					<br>また、ファイルに出力する場合は、イベント通知時に一旦ファイルを閉じ、レスポンスを受けた後で再度ファイルを開く操作が加わるので、さらにダウンロード速度が遅くなる点に注意。</dd>
+
+					<dt>--sync=識別ID [2.6.44]</dt>
+					<dd>SakuraScriptの実行を一旦止めて処理待ちする点を除き、--async指定と同じ挙動となる。</dd>
 
 					<dt>--timeout=秒数</dt>
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
