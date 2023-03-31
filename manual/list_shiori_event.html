@@ -417,6 +417,7 @@
 			<ul>
 				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
 				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
+				<li><a href="#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a></li>
 				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
 				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
 				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
@@ -3786,14 +3787,14 @@
 						<dt>Reference0</dt>
 						<dd>post/get/head/put/delete のいずれか</dd>
 						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
+						<dd>--sync・--asyncオプションで指定した文字列。</dd>
 						<dt>Reference2</dt>
 						<dd>対象のURL。</dd>
 						<dt>Reference3</dt>
 						<dd>--nofileオプションがある場合、取得したデータの中身。ただし改行コードはバイト値1に置き換えられている。
 						<br />そうでない場合は取得したファイルのフルパス。</dd>
 						<dt>Reference4</dt>
-						<dd>取得結果コード。(200|204)等</dd>
+						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等。<a href="#caption_updateresultfailure">[失敗理由]</a>も参照。</dd>
 						<dt>Reference5</dt>
 						<dd>Cookieの文字列。</dd>
 						<dt>Reference6</dt>
@@ -3807,25 +3808,18 @@
 			<dl id="OnExecuteHTTPFailure">
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
-					<p>execute-httpで取得エラーした際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>post/get/head/put/delete のいずれか</dd>
-						<dt>Reference1</dt>
-						<dd>IDで指定した文字列。</dd>
-						<dt>Reference2</dt>
-						<dd>対象のURL。</dd>
-						<dt>Reference3</dt>
-						<dd>取得したファイルのフルパス。</dd>
-						<dt>Reference4</dt>
-						<dd>取得結果コード。(timeout|fileio|200|204|403|404)等。<a href="#caption_updateresultfailure">[失敗理由]</a>も参照。</dd>
-						<dt>Reference5</dt>
-						<dd>Cookieの文字列。</dd>
-						<dt>Reference6</dt>
-						<dd>受け取ったすべてのレスポンスヘッダ。改行の代わりにバイト値1で区切られている。 [2.6.40]</dd>
-					</dl>
+					<p>execute-httpで取得エラーした際に発生。ReferenceはCompleteと同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteHTTPProgress">
+				<dt class="entry">OnExecuteHTTPProgress</dt>
+				<dd class="entry">
+					<p>execute-httpで--progress-notifyを指定した際に発生。ReferenceはCompleteと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.44]</li>
 					</ul>
 				</dd>
 			</dl>
