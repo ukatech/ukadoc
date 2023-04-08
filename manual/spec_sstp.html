@@ -193,7 +193,8 @@
 			<br />ElectronなどJavaScriptを使ってアプリを作った時に、より簡単にSSTP通信をやりとりするために使うのを想定しています。
 			<br />localhost:9801(または別途指定されたSSTPポート) に対して、 /api/sstp/v1 に Content-Type: text/plainでHTTP/1.1でPOSTしてください。
 			<br />レスポンスもそのまま、HTTP/1.1 200 OKのContent-Type: text/plainで返ってきます。
-			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。</p>
+			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。
+			<br />なお、Content-Lengthヘッダは必須で、無ければエラーになります。</p>
 			
 			<p><a href="http://localhost:9801/api/sstp/v1">お試し</a></p>
 			
