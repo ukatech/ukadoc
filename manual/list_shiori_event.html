@@ -531,6 +531,8 @@
 				<li><a href="#capability">capability</a></li>
 				<li><a href="#ownerghostname">ownerghostname</a></li>
 				<li><a href="#otherghostname">otherghostname</a></li>
+				<li><a href="#installedsakuraname">installedsakuraname</a></li>
+				<li><a href="#installedkeroname">installedkeroname</a></li>
 				<li><a href="#installedghostname">installedghostname</a></li>
 				<li><a href="#installedshellname">installedshellname</a></li>
 				<li><a href="#installedballoonname">installedballoonname</a></li>
@@ -5035,6 +5037,36 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="installedsakuraname">
+				<dt class="entry">installedsakuraname</dt>
+				<dd class="entry">
+					<p>インストールされているゴーストのsakura.nameを通知。<em class="specsign">[NOTIFY]</em>
+					<br />必ずinstalledghostnameの前に通知される。
+					<br />また、同じゴーストを示す、installedsakuraname/installedkeroname/installedghostnameのReferenceの番号は一致することが保証される。</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>インストールされているゴーストのsakura.name。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.47</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="installedkeroname">
+				<dt class="entry">installedkeroname</dt>
+				<dd class="entry">
+					<p>インストールされているゴーストのkero.nameを通知。<em class="specsign">[NOTIFY]</em>
+					<br />必ずinstalledghostnameの前に通知される。
+					<br />また、同じゴーストを示す、installedsakuraname/installedkeroname/installedghostnameのReferenceの番号は一致することが保証される。</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>インストールされているゴーストのkero.name。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.47</li>
 					</ul>
 				</dd>
 			</dl>
