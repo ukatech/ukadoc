@@ -8,8 +8,38 @@
 <title>UKADOC Project SHIORI Eventリスト</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<!-- 引用"jsstp.js"文件 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@master/jsstp.min.js"></script>
 </head>
 <body>
+	<script type="text/javascript">
+		//一个全局变量用于检查当前ghost是否支持Has_Event
+		var has_has_event = false;
+		jsstp.has_event('Has_Event').then(function(result) {
+			has_has_event = result;
+		});
+		//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
+		async function check_event_str(event_id, security_level="local") {
+			if (has_has_event) {
+				const result=await jsstp.has_event(event_id, security_level);
+				//以日语返回支持情况
+				if (result)
+					return "対応";
+				else
+					return "非対応";
+			} else {
+				return "";
+			}
+		}
+		function set_event_str(element_class_name, event_id, security_level="local") {
+			check_event_str(event_id, security_level).then(function(result) {
+				var elements = document.getElementsByClassName(element_class_name);
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].innerHTML = result;
+				}
+			});
+		}
+	</script>
 	<h1 id="page-title">SHIORI Eventリスト</h1>
 	<nav class="menu-header">
 		<table>
@@ -140,148 +170,148 @@
 		<section class="navigation-category">
 			<h1>起動・終了・切り替えイベント</h1>
 			<ul>
-				<li><a href="#OnFirstBoot">OnFirstBoot</a></li>
-				<li><a href="#OnBoot">OnBoot</a></li>
-				<li><a href="#OnClose">OnClose</a></li>
-				<li><a href="#OnCloseAll">OnCloseAll</a></li>
-				<li><a href="#OnGhostChanged">OnGhostChanged</a></li>
-				<li><a href="#OnGhostChanging">OnGhostChanging</a></li>
-				<li><a href="#OnGhostCalled">OnGhostCalled</a></li>
-				<li><a href="#OnGhostCalling">OnGhostCalling</a></li>
-				<li><a href="#OnGhostCallComplete">OnGhostCallComplete</a></li>
-				<li><a href="#OnOtherGhostBooted">OnOtherGhostBooted</a></li>
-				<li><a href="#OnOtherGhostChanged">OnOtherGhostChanged</a></li>
-				<li><a href="#OnOtherGhostClosed">OnOtherGhostClosed</a></li>
-				<li><a href="#OnShellChanged">OnShellChanged</a></li>
-				<li><a href="#OnShellChanging">OnShellChanging</a></li>
-				<li><a href="#OnDressupChanged">OnDressupChanged</a></li>
-				<li><a href="#OnBalloonChange">OnBalloonChange</a></li>
-				<li><a href="#OnWindowStateRestore">OnWindowStateRestore</a></li>
-				<li><a href="#OnWindowStateMinimize">OnWindowStateMinimize</a></li>
-				<li><a href="#OnFullScreenAppMinimize">OnFullScreenAppMinimize</a></li>
-				<li><a href="#OnFullScreenAppRestore">OnFullScreenAppRestore</a></li>
-				<li><a href="#OnVirtualDesktopChanged">OnVirtualDesktopChanged</a></li>
-				<li><a href="#OnCacheSuspend">OnCacheSuspend</a></li>
-				<li><a href="#OnCacheRestore">OnCacheRestore</a></li>
-				<li><a href="#OnInitialize">OnInitialize</a></li>
-				<li><a href="#OnDestroy">OnDestroy</a></li>
-				<li><a href="#OnSysResume">OnSysResume</a></li>
-				<li><a href="#OnSysSuspend">OnSysSuspend</a></li>
-				<li><a href="#OnBasewareUpdating">OnBasewareUpdating</a></li>
-				<li><a href="#OnBasewareUpdated">OnBasewareUpdated</a></li>
+				<li><a href="#OnFirstBoot">OnFirstBoot</a><a href="#OnFirstBoot" class="OnFirstBoot_GhostStatus"></a></li>
+				<li><a href="#OnBoot">OnBoot</a><a href="#OnBoot" class="OnBoot_GhostStatus"></a></li>
+				<li><a href="#OnClose">OnClose</a><a href="#OnClose" class="OnClose_GhostStatus"></a></li>
+				<li><a href="#OnCloseAll">OnCloseAll</a><a href="#OnCloseAll" class="OnCloseAll_GhostStatus"></a></li>
+				<li><a href="#OnGhostChanged">OnGhostChanged</a><a href="#OnGhostChanged" class="OnGhostChanged_GhostStatus"></a></li>
+				<li><a href="#OnGhostChanging">OnGhostChanging</a><a href="#OnGhostChanging" class="OnGhostChanging_GhostStatus"></a></li>
+				<li><a href="#OnGhostCalled">OnGhostCalled</a><a href="#OnGhostCalled" class="OnGhostCalled_GhostStatus"></a></li>
+				<li><a href="#OnGhostCalling">OnGhostCalling</a><a href="#OnGhostCalling" class="OnGhostCalling_GhostStatus"></a></li>
+				<li><a href="#OnGhostCallComplete">OnGhostCallComplete</a><a href="#OnGhostCallComplete" class="OnGhostCallComplete_GhostStatus"></a></li>
+				<li><a href="#OnOtherGhostBooted">OnOtherGhostBooted</a><a href="#OnOtherGhostBooted" class="OnOtherGhostBooted_GhostStatus"></a></li>
+				<li><a href="#OnOtherGhostChanged">OnOtherGhostChanged</a><a href="#OnOtherGhostChanged" class="OnOtherGhostChanged_GhostStatus"></a></li>
+				<li><a href="#OnOtherGhostClosed">OnOtherGhostClosed</a><a href="#OnOtherGhostClosed" class="OnOtherGhostClosed_GhostStatus"></a></li>
+				<li><a href="#OnShellChanged">OnShellChanged</a><a href="#OnShellChanged" class="OnShellChanged_GhostStatus"></a></li>
+				<li><a href="#OnShellChanging">OnShellChanging</a><a href="#OnShellChanging" class="OnShellChanging_GhostStatus"></a></li>
+				<li><a href="#OnDressupChanged">OnDressupChanged</a><a href="#OnDressupChanged" class="OnDressupChanged_GhostStatus"></a></li>
+				<li><a href="#OnBalloonChange">OnBalloonChange</a><a href="#OnBalloonChange" class="OnBalloonChange_GhostStatus"></a></li>
+				<li><a href="#OnWindowStateRestore">OnWindowStateRestore</a><a href="#OnWindowStateRestore" class="OnWindowStateRestore_GhostStatus"></a></li>
+				<li><a href="#OnWindowStateMinimize">OnWindowStateMinimize</a><a href="#OnWindowStateMinimize" class="OnWindowStateMinimize_GhostStatus"></a></li>
+				<li><a href="#OnFullScreenAppMinimize">OnFullScreenAppMinimize</a><a href="#OnFullScreenAppMinimize" class="OnFullScreenAppMinimize_GhostStatus"></a></li>
+				<li><a href="#OnFullScreenAppRestore">OnFullScreenAppRestore</a><a href="#OnFullScreenAppRestore" class="OnFullScreenAppRestore_GhostStatus"></a></li>
+				<li><a href="#OnVirtualDesktopChanged">OnVirtualDesktopChanged</a><a href="#OnVirtualDesktopChanged" class="OnVirtualDesktopChanged_GhostStatus"></a></li>
+				<li><a href="#OnCacheSuspend">OnCacheSuspend</a><a href="#OnCacheSuspend" class="OnCacheSuspend_GhostStatus"></a></li>
+				<li><a href="#OnCacheRestore">OnCacheRestore</a><a href="#OnCacheRestore" class="OnCacheRestore_GhostStatus"></a></li>
+				<li><a href="#OnInitialize">OnInitialize</a><a href="#OnInitialize" class="OnInitialize_GhostStatus"></a></li>
+				<li><a href="#OnDestroy">OnDestroy</a><a href="#OnDestroy" class="OnDestroy_GhostStatus"></a></li>
+				<li><a href="#OnSysResume">OnSysResume</a><a href="#OnSysResume" class="OnSysResume_GhostStatus"></a></li>
+				<li><a href="#OnSysSuspend">OnSysSuspend</a><a href="#OnSysSuspend" class="OnSysSuspend_GhostStatus"></a></li>
+				<li><a href="#OnBasewareUpdating">OnBasewareUpdating</a><a href="#OnBasewareUpdating" class="OnBasewareUpdating_GhostStatus"></a></li>
+				<li><a href="#OnBasewareUpdated">OnBasewareUpdated</a><a href="#OnBasewareUpdated" class="OnBasewareUpdated_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>入力ボックスイベント</h1>
 			<ul>
-				<li><a href="#OnTeachStart">OnTeachStart</a></li>
-				<li><a href="#OnTeachInputCancel">OnTeachInputCancel</a></li>
-				<li><a href="#OnTeach">OnTeach</a></li>
-				<li><a href="#OnCommunicate">OnCommunicate</a></li>
-				<li><a href="#OnCommunicateInputCancel">OnCommunicateInputCancel</a></li>
-				<li><a href="#OnUserInput">OnUserInput</a></li>
-				<li><a href="#OnUserInputCancel">OnUserInputCancel</a></li>
-				<li><a href="#inputbox.autocomplete">inputbox.autocomplete</a></li>
+				<li><a href="#OnTeachStart">OnTeachStart</a><a href="#OnTeachStart" class="OnTeachStart_GhostStatus"></a></li>
+				<li><a href="#OnTeachInputCancel">OnTeachInputCancel</a><a href="#OnTeachInputCancel" class="OnTeachInputCancel_GhostStatus"></a></li>
+				<li><a href="#OnTeach">OnTeach</a><a href="#OnTeach" class="OnTeach_GhostStatus"></a></li>
+				<li><a href="#OnCommunicate">OnCommunicate</a><a href="#OnCommunicate" class="OnCommunicate_GhostStatus"></a></li>
+				<li><a href="#OnCommunicateInputCancel">OnCommunicateInputCancel</a><a href="#OnCommunicateInputCancel" class="OnCommunicateInputCancel_GhostStatus"></a></li>
+				<li><a href="#OnUserInput">OnUserInput</a><a href="#OnUserInput" class="OnUserInput_GhostStatus"></a></li>
+				<li><a href="#OnUserInputCancel">OnUserInputCancel</a><a href="#OnUserInputCancel" class="OnUserInputCancel_GhostStatus"></a></li>
+				<li><a href="#inputbox.autocomplete">inputbox.autocomplete</a><a href="#inputbox.autocomplete" class="inputbox.autocomplete_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>ダイアログボックスイベント</h1>
 			<ul>
-				<li><a href="#OnSystemDialog">OnSystemDialog</a></li>
-				<li><a href="#OnSystemDialogCancel">OnSystemDialogCancel</a></li>
-				<li><a href="#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a></li>
-				<li><a href="#OnGhostTermsAccept">OnGhostTermsAccept</a></li>
-				<li><a href="#OnGhostTermsDecline">OnGhostTermsDecline</a></li>
+				<li><a href="#OnSystemDialog">OnSystemDialog</a><a href="#OnSystemDialog" class="OnSystemDialog_GhostStatus"></a></li>
+				<li><a href="#OnSystemDialogCancel">OnSystemDialogCancel</a><a href="#OnSystemDialogCancel" class="OnSystemDialogCancel_GhostStatus"></a></li>
+				<li><a href="#OnConfigurationDialogHelp">OnConfigurationDialogHelp</a><a href="#OnConfigurationDialogHelp" class="OnConfigurationDialogHelp_GhostStatus"></a></li>
+				<li><a href="#OnGhostTermsAccept">OnGhostTermsAccept</a><a href="#OnGhostTermsAccept" class="OnGhostTermsAccept_GhostStatus"></a></li>
+				<li><a href="#OnGhostTermsDecline">OnGhostTermsDecline</a><a href="#OnGhostTermsDecline" class="OnGhostTermsDecline_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>時間イベント</h1>
 			<ul>
-				<li><a href="#OnSecondChange">OnSecondChange</a></li>
-				<li><a href="#OnMinuteChange">OnMinuteChange</a></li>
-				<li><a href="#OnHourTimeSignal">OnHourTimeSignal</a></li>
+				<li><a href="#OnSecondChange">OnSecondChange</a><a href="#OnSecondChange" class="OnSecondChange_GhostStatus"></a></li>
+				<li><a href="#OnMinuteChange">OnMinuteChange</a><a href="#OnMinuteChange" class="OnMinuteChange_GhostStatus"></a></li>
+				<li><a href="#OnHourTimeSignal">OnHourTimeSignal</a><a href="#OnHourTimeSignal" class="OnHourTimeSignal_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>消滅イベント</h1>
 			<ul>
-				<li><a href="#OnVanishSelecting">OnVanishSelecting</a></li>
-				<li><a href="#OnVanishSelected">OnVanishSelected</a></li>
-				<li><a href="#OnVanishCancel">OnVanishCancel</a></li>
-				<li><a href="#OnVanishButtonHold">OnVanishButtonHold</a></li>
-				<li><a href="#OnVanished">OnVanished</a></li>
-				<li><a href="#OnOtherGhostVanished">OnOtherGhostVanished</a></li>
+				<li><a href="#OnVanishSelecting">OnVanishSelecting</a><a href="#OnVanishSelecting" class="OnVanishSelecting_GhostStatus"></a></li>
+				<li><a href="#OnVanishSelected">OnVanishSelected</a><a href="#OnVanishSelected" class="OnVanishSelected_GhostStatus"></a></li>
+				<li><a href="#OnVanishCancel">OnVanishCancel</a><a href="#OnVanishCancel" class="OnVanishCancel_GhostStatus"></a></li>
+				<li><a href="#OnVanishButtonHold">OnVanishButtonHold</a><a href="#OnVanishButtonHold" class="OnVanishButtonHold_GhostStatus"></a></li>
+				<li><a href="#OnVanished">OnVanished</a><a href="#OnVanished" class="OnVanished_GhostStatus"></a></li>
+				<li><a href="#OnOtherGhostVanished">OnOtherGhostVanished</a><a href="#OnOtherGhostVanished" class="OnOtherGhostVanished_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>選択肢イベント</h1>
 			<ul>
-				<li><a href="#OnChoiceSelect">OnChoiceSelect</a></li>
-				<li><a href="#OnChoiceSelectEx">OnChoiceSelectEx</a></li>
-				<li><a href="#OnChoiceEnter">OnChoiceEnter</a></li>
-				<li><a href="#OnChoiceTimeout">OnChoiceTimeout</a></li>
-				<li><a href="#OnChoiceHover">OnChoiceHover</a></li>
-				<li><a href="#OnAnchorSelect">OnAnchorSelect</a></li>
-				<li><a href="#OnAnchorSelectEx">OnAnchorSelectEx</a></li>
+				<li><a href="#OnChoiceSelect">OnChoiceSelect</a><a href="#OnChoiceSelect" class="OnChoiceSelect_GhostStatus"></a></li>
+				<li><a href="#OnChoiceSelectEx">OnChoiceSelectEx</a><a href="#OnChoiceSelectEx" class="OnChoiceSelectEx_GhostStatus"></a></li>
+				<li><a href="#OnChoiceEnter">OnChoiceEnter</a><a href="#OnChoiceEnter" class="OnChoiceEnter_GhostStatus"></a></li>
+				<li><a href="#OnChoiceTimeout">OnChoiceTimeout</a><a href="#OnChoiceTimeout" class="OnChoiceTimeout_GhostStatus"></a></li>
+				<li><a href="#OnChoiceHover">OnChoiceHover</a><a href="#OnChoiceHover" class="OnChoiceHover_GhostStatus"></a></li>
+				<li><a href="#OnAnchorSelect">OnAnchorSelect</a><a href="#OnAnchorSelect" class="OnAnchorSelect_GhostStatus"></a></li>
+				<li><a href="#OnAnchorSelectEx">OnAnchorSelectEx</a><a href="#OnAnchorSelectEx" class="OnAnchorSelectEx_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>サーフェスイベント</h1>
 			<ul>
-				<li><a href="#OnSurfaceChange">OnSurfaceChange</a></li>
-				<li><a href="#OnSurfaceRestore">OnSurfaceRestore</a></li>
-				<li><a href="#OnOtherSurfaceChange">OnOtherSurfaceChange</a></li>
+				<li><a href="#OnSurfaceChange">OnSurfaceChange</a><a href="#OnSurfaceChange" class="OnSurfaceChange_GhostStatus"></a></li>
+				<li><a href="#OnSurfaceRestore">OnSurfaceRestore</a><a href="#OnSurfaceRestore" class="OnSurfaceRestore_GhostStatus"></a></li>
+				<li><a href="#OnOtherSurfaceChange">OnOtherSurfaceChange</a><a href="#OnOtherSurfaceChange" class="OnOtherSurfaceChange_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>マウスイベント</h1>
 			<ul>
-				<li><a href="#OnMouseClick">OnMouseClick</a></li>
-				<li><a href="#OnMouseClickEx">OnMouseClickEx</a></li>
-				<li><a href="#OnMouseDoubleClick">OnMouseDoubleClick</a></li>
-				<li><a href="#OnMouseDoubleClickEx">OnMouseDoubleClickEx</a></li>
-				<li><a href="#OnMouseMultipleClick">OnMouseMultipleClick</a></li>
-				<li><a href="#OnMouseMultipleClickEx">OnMouseMultipleClickEx</a></li>
-				<li><a href="#OnMouseUp">OnMouseUp</a></li>
-				<li><a href="#OnMouseUpEx">OnMouseUpEx</a></li>
-				<li><a href="#OnMouseDown">OnMouseDown</a></li>
-				<li><a href="#OnMouseDownEx">OnMouseDownEx</a></li>
-				<li><a href="#OnMouseMove">OnMouseMove</a></li>
-				<li><a href="#OnMouseWheel">OnMouseWheel</a></li>
-				<li><a href="#OnMouseEnterAll">OnMouseEnterAll</a></li>
-				<li><a href="#OnMouseLeaveAll">OnMouseLeaveAll</a></li>
-				<li><a href="#OnMouseEnter">OnMouseEnter</a></li>
-				<li><a href="#OnMouseLeave">OnMouseLeave</a></li>
-				<li><a href="#OnMouseDragStart">OnMouseDragStart</a></li>
-				<li><a href="#OnMouseDragEnd">OnMouseDragEnd</a></li>
-				<li><a href="#OnMouseHover">OnMouseHover</a></li>
-				<li><a href="#OnMouseGesture">OnMouseGesture</a></li>
+				<li><a href="#OnMouseClick">OnMouseClick</a><a href="#OnMouseClick" class="OnMouseClick_GhostStatus"></a></li>
+				<li><a href="#OnMouseClickEx">OnMouseClickEx</a><a href="#OnMouseClickEx" class="OnMouseClickEx_GhostStatus"></a></li>
+				<li><a href="#OnMouseDoubleClick">OnMouseDoubleClick</a><a href="#OnMouseDoubleClick" class="OnMouseDoubleClick_GhostStatus"></a></li>
+				<li><a href="#OnMouseDoubleClickEx">OnMouseDoubleClickEx</a><a href="#OnMouseDoubleClickEx" class="OnMouseDoubleClickEx_GhostStatus"></a></li>
+				<li><a href="#OnMouseMultipleClick">OnMouseMultipleClick</a><a href="#OnMouseMultipleClick" class="OnMouseMultipleClick_GhostStatus"></a></li>
+				<li><a href="#OnMouseMultipleClickEx">OnMouseMultipleClickEx</a><a href="#OnMouseMultipleClickEx" class="OnMouseMultipleClickEx_GhostStatus"></a></li>
+				<li><a href="#OnMouseUp">OnMouseUp</a><a href="#OnMouseUp" class="OnMouseUp_GhostStatus"></a></li>
+				<li><a href="#OnMouseUpEx">OnMouseUpEx</a><a href="#OnMouseUpEx" class="OnMouseUpEx_GhostStatus"></a></li>
+				<li><a href="#OnMouseDown">OnMouseDown</a><a href="#OnMouseDown" class="OnMouseDown_GhostStatus"></a></li>
+				<li><a href="#OnMouseDownEx">OnMouseDownEx</a><a href="#OnMouseDownEx" class="OnMouseDownEx_GhostStatus"></a></li>
+				<li><a href="#OnMouseMove">OnMouseMove</a><a href="#OnMouseMove" class="OnMouseMove_GhostStatus"></a></li>
+				<li><a href="#OnMouseWheel">OnMouseWheel</a><a href="#OnMouseWheel" class="OnMouseWheel_GhostStatus"></a></li>
+				<li><a href="#OnMouseEnterAll">OnMouseEnterAll</a><a href="#OnMouseEnterAll" class="OnMouseEnterAll_GhostStatus"></a></li>
+				<li><a href="#OnMouseLeaveAll">OnMouseLeaveAll</a><a href="#OnMouseLeaveAll" class="OnMouseLeaveAll_GhostStatus"></a></li>
+				<li><a href="#OnMouseEnter">OnMouseEnter</a><a href="#OnMouseEnter" class="OnMouseEnter_GhostStatus"></a></li>
+				<li><a href="#OnMouseLeave">OnMouseLeave</a><a href="#OnMouseLeave" class="OnMouseLeave_GhostStatus"></a></li>
+				<li><a href="#OnMouseDragStart">OnMouseDragStart</a><a href="#OnMouseDragStart" class="OnMouseDragStart_GhostStatus"></a></li>
+				<li><a href="#OnMouseDragEnd">OnMouseDragEnd</a><a href="#OnMouseDragEnd" class="OnMouseDragEnd_GhostStatus"></a></li>
+				<li><a href="#OnMouseHover">OnMouseHover</a><a href="#OnMouseHover" class="OnMouseHover_GhostStatus"></a></li>
+				<li><a href="#OnMouseGesture">OnMouseGesture</a><a href="#OnMouseGesture" class="OnMouseGesture_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>バルーンイベント</h1>
 			<ul>
-				<li><a href="#OnBalloonBreak">OnBalloonBreak</a></li>
-				<li><a href="#OnBalloonClose">OnBalloonClose</a></li>
-				<li><a href="#OnBalloonTimeout">OnBalloonTimeout</a></li>
+				<li><a href="#OnBalloonBreak">OnBalloonBreak</a><a href="#OnBalloonBreak" class="OnBalloonBreak_GhostStatus"></a></li>
+				<li><a href="#OnBalloonClose">OnBalloonClose</a><a href="#OnBalloonClose" class="OnBalloonClose_GhostStatus"></a></li>
+				<li><a href="#OnBalloonTimeout">OnBalloonTimeout</a><a href="#OnBalloonTimeout" class="OnBalloonTimeout_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>トレイバルーンイベント</h1>
 			<ul>
-				<li><a href="#OnTrayBalloonClick">OnTrayBalloonClick</a></li>
-				<li><a href="#OnTrayBalloonTimeout">OnTrayBalloonTimeout</a></li>
+				<li><a href="#OnTrayBalloonClick">OnTrayBalloonClick</a><a href="#OnTrayBalloonClick" class="OnTrayBalloonClick_GhostStatus"></a></li>
+				<li><a href="#OnTrayBalloonTimeout">OnTrayBalloonTimeout</a><a href="#OnTrayBalloonTimeout" class="OnTrayBalloonTimeout_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>インストールイベント</h1>
 			<ul>
-				<li><a href="#OnInstallBegin">OnInstallBegin</a></li>
-				<li><a href="#OnInstallComplete">OnInstallComplete</a></li>
-				<li><a href="#OnInstallCompleteEx">OnInstallCompleteEx</a></li>
-				<li><a href="#OnInstallFailure">OnInstallFailure</a></li>
-				<li><a href="#OnInstallRefuse">OnInstallRefuse</a></li>
-				<li><a href="#OnInstallReroute">OnInstallReroute</a></li>
+				<li><a href="#OnInstallBegin">OnInstallBegin</a><a href="#OnInstallBegin" class="OnInstallBegin_GhostStatus"></a></li>
+				<li><a href="#OnInstallComplete">OnInstallComplete</a><a href="#OnInstallComplete" class="OnInstallComplete_GhostStatus"></a></li>
+				<li><a href="#OnInstallCompleteEx">OnInstallCompleteEx</a><a href="#OnInstallCompleteEx" class="OnInstallCompleteEx_GhostStatus"></a></li>
+				<li><a href="#OnInstallFailure">OnInstallFailure</a><a href="#OnInstallFailure" class="OnInstallFailure_GhostStatus"></a></li>
+				<li><a href="#OnInstallRefuse">OnInstallRefuse</a><a href="#OnInstallRefuse" class="OnInstallRefuse_GhostStatus"></a></li>
+				<li><a href="#OnInstallReroute">OnInstallReroute</a><a href="#OnInstallReroute" class="OnInstallReroute_GhostStatus"></a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_install-identifier">インストールの識別子</a></li>
@@ -291,59 +321,59 @@
 		<section class="navigation-category">
 			<h1>ファイルドロップイベント</h1>
 			<ul>
-				<li><a href="#OnFileDropping">OnFileDropping</a></li>
-				<li><a href="#OnFileDropped">OnFileDropped</a></li>
-				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
-				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
-				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a></li>
-				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
-				<li><a href="#OnFileDrop">OnFileDrop</a></li>
-				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
-				<li><a href="#OnFileDrop2">OnFileDrop2</a></li>
-				<li><a href="#OnUpdatedataCreating">OnUpdatedataCreating</a></li>
-				<li><a href="#OnUpdatedataCreated">OnUpdatedataCreated</a></li>
-				<li><a href="#OnNarCreating">OnNarCreating</a></li>
-				<li><a href="#OnNarCreated">OnNarCreated</a></li>
+				<li><a href="#OnFileDropping">OnFileDropping</a><a href="#OnFileDropping" class="OnFileDropping_GhostStatus"></a></li>
+				<li><a href="#OnFileDropped">OnFileDropped</a><a href="#OnFileDropped" class="OnFileDropped_GhostStatus"></a></li>
+				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a><a href="#OnOtherObjectDropping" class="OnOtherObjectDropping_GhostStatus"></a></li>
+				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a><a href="#OnOtherObjectDropped" class="OnOtherObjectDropped_GhostStatus"></a></li>
+				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a><a href="#OnWallpaperChange" class="OnWallpaperChange_GhostStatus"></a></li>
+				<li><a href="#OnWallpaperChange">OnWallpaperChange</a><a href="#OnWallpaperChange" class="OnWallpaperChange_GhostStatus"></a></li>
+				<li><a href="#OnFileDrop">OnFileDrop</a><a href="#OnFileDrop" class="OnFileDrop_GhostStatus"></a></li>
+				<li><a href="#OnFileDropEx">OnFileDropEx</a><a href="#OnFileDropEx" class="OnFileDropEx_GhostStatus"></a></li>
+				<li><a href="#OnFileDrop2">OnFileDrop2</a><a href="#OnFileDrop2" class="OnFileDrop2_GhostStatus"></a></li>
+				<li><a href="#OnUpdatedataCreating">OnUpdatedataCreating</a><a href="#OnUpdatedataCreating" class="OnUpdatedataCreating_GhostStatus"></a></li>
+				<li><a href="#OnUpdatedataCreated">OnUpdatedataCreated</a><a href="#OnUpdatedataCreated" class="OnUpdatedataCreated_GhostStatus"></a></li>
+				<li><a href="#OnNarCreating">OnNarCreating</a><a href="#OnNarCreating" class="OnNarCreating_GhostStatus"></a></li>
+				<li><a href="#OnNarCreated">OnNarCreated</a><a href="#OnNarCreated" class="OnNarCreated_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>URLドロップイベント</h1>
 			<ul>
-				<li><a href="#OnURLDragDropping">OnURLDragDropping</a></li>
-				<li><a href="#OnURLDropping">OnURLDropping</a></li>
-				<li><a href="#OnURLDropped">OnURLDropped</a></li>
-				<li><a href="#OnURLDropFailure">OnURLDropFailure</a></li>
-				<li><a href="#OnURLQuery">OnURLQuery</a></li>
-				<li><a href="#OnXUkagakaLinkOpen">OnXUkagakaLinkOpen</a></li>
+				<li><a href="#OnURLDragDropping">OnURLDragDropping</a><a href="#OnURLDragDropping" class="OnURLDragDropping_GhostStatus"></a></li>
+				<li><a href="#OnURLDropping">OnURLDropping</a><a href="#OnURLDropping" class="OnURLDropping_GhostStatus"></a></li>
+				<li><a href="#OnURLDropped">OnURLDropped</a><a href="#OnURLDropped" class="OnURLDropped_GhostStatus"></a></li>
+				<li><a href="#OnURLDropFailure">OnURLDropFailure</a><a href="#OnURLDropFailure" class="OnURLDropFailure_GhostStatus"></a></li>
+				<li><a href="#OnURLQuery">OnURLQuery</a><a href="#OnURLQuery" class="OnURLQuery_GhostStatus"></a></li>
+				<li><a href="#OnXUkagakaLinkOpen">OnXUkagakaLinkOpen</a><a href="#OnXUkagakaLinkOpen" class="OnXUkagakaLinkOpen_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>ネットワーク更新イベント</h1>
 			<ul>
-				<li><a href="#OnUpdateProcessExec">OnUpdateProcessExec</a></li>
-				<li><a href="#OnUpdateBegin">OnUpdateBegin</a></li>
-				<li><a href="#OnUpdateReady">OnUpdateReady</a></li>
-				<li><a href="#OnUpdateComplete">OnUpdateComplete</a></li>
-				<li><a href="#OnUpdateFailure">OnUpdateFailure</a></li>
-				<li><a href="#OnUpdate.OnDownloadBegin">OnUpdate.OnDownloadBegin</a></li>
-				<li><a href="#OnUpdate.OnMD5CompareBegin">OnUpdate.OnMD5CompareBegin</a></li>
-				<li><a href="#OnUpdate.OnMD5CompareComplete">OnUpdate.OnMD5CompareComplete</a></li>
-				<li><a href="#OnUpdate.OnMD5CompareFailure">OnUpdate.OnMD5CompareFailure</a></li>
-				<li><a href="#OnUpdateOtherBegin">OnUpdateOtherBegin</a></li>
-				<li><a href="#OnUpdateOtherReady">OnUpdateOtherReady</a></li>
-				<li><a href="#OnUpdateOtherComplete">OnUpdateOtherComplete</a></li>
-				<li><a href="#OnUpdateOtherFailure">OnUpdateOtherFailure</a></li>
-				<li><a href="#OnUpdateOther.OnDownloadBegin">OnUpdateOther.OnDownloadBegin</a></li>
-				<li><a href="#OnUpdateOther.OnMD5CompareBegin">OnUpdateOther.OnMD5CompareBegin</a></li>
-				<li><a href="#OnUpdateOther.OnMD5CompareComplete">OnUpdateOther.OnMD5CompareComplete</a></li>
-				<li><a href="#OnUpdateOther.OnMD5CompareFailure">OnUpdateOther.OnMD5CompareFailure</a></li>
-				<li><a href="#OnUpdateCheckComplete">OnUpdateCheckComplete</a></li>
-				<li><a href="#OnUpdateCheckFailure">OnUpdateCheckFailure</a></li>
-				<li><a href="#OnUpdateResult">OnUpdateResult</a></li>
-				<li><a href="#OnUpdateResultEx">OnUpdateResultEx</a></li>
-				<li><a href="#OnUpdateCheckResult">OnUpdateCheckResult</a></li>
-				<li><a href="#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a></li>
-				<li><a href="#OnUpdateResultExplorer">OnUpdateResultExplorer</a></li>
+				<li><a href="#OnUpdateProcessExec">OnUpdateProcessExec</a><a href="#OnUpdateProcessExec" class="OnUpdateProcessExec_GhostStatus"></a></li>
+				<li><a href="#OnUpdateBegin">OnUpdateBegin</a><a href="#OnUpdateBegin" class="OnUpdateBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdateReady">OnUpdateReady</a><a href="#OnUpdateReady" class="OnUpdateReady_GhostStatus"></a></li>
+				<li><a href="#OnUpdateComplete">OnUpdateComplete</a><a href="#OnUpdateComplete" class="OnUpdateComplete_GhostStatus"></a></li>
+				<li><a href="#OnUpdateFailure">OnUpdateFailure</a><a href="#OnUpdateFailure" class="OnUpdateFailure_GhostStatus"></a></li>
+				<li><a href="#OnUpdate.OnDownloadBegin">OnUpdate.OnDownloadBegin</a><a href="#OnUpdate.OnDownloadBegin" class="OnUpdate.OnDownloadBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdate.OnMD5CompareBegin">OnUpdate.OnMD5CompareBegin</a><a href="#OnUpdate.OnMD5CompareBegin" class="OnUpdate.OnMD5CompareBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdate.OnMD5CompareComplete">OnUpdate.OnMD5CompareComplete</a><a href="#OnUpdate.OnMD5CompareComplete" class="OnUpdate.OnMD5CompareComplete_GhostStatus"></a></li>
+				<li><a href="#OnUpdate.OnMD5CompareFailure">OnUpdate.OnMD5CompareFailure</a><a href="#OnUpdate.OnMD5CompareFailure" class="OnUpdate.OnMD5CompareFailure_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOtherBegin">OnUpdateOtherBegin</a><a href="#OnUpdateOtherBegin" class="OnUpdateOtherBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOtherReady">OnUpdateOtherReady</a><a href="#OnUpdateOtherReady" class="OnUpdateOtherReady_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOtherComplete">OnUpdateOtherComplete</a><a href="#OnUpdateOtherComplete" class="OnUpdateOtherComplete_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOtherFailure">OnUpdateOtherFailure</a><a href="#OnUpdateOtherFailure" class="OnUpdateOtherFailure_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOther.OnDownloadBegin">OnUpdateOther.OnDownloadBegin</a><a href="#OnUpdateOther.OnDownloadBegin" class="OnUpdateOther.OnDownloadBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOther.OnMD5CompareBegin">OnUpdateOther.OnMD5CompareBegin</a><a href="#OnUpdateOther.OnMD5CompareBegin" class="OnUpdateOther.OnMD5CompareBegin_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOther.OnMD5CompareComplete">OnUpdateOther.OnMD5CompareComplete</a><a href="#OnUpdateOther.OnMD5CompareComplete" class="OnUpdateOther.OnMD5CompareComplete_GhostStatus"></a></li>
+				<li><a href="#OnUpdateOther.OnMD5CompareFailure">OnUpdateOther.OnMD5CompareFailure</a><a href="#OnUpdateOther.OnMD5CompareFailure" class="OnUpdateOther.OnMD5CompareFailure_GhostStatus"></a></li>
+				<li><a href="#OnUpdateCheckComplete">OnUpdateCheckComplete</a><a href="#OnUpdateCheckComplete" class="OnUpdateCheckComplete_GhostStatus"></a></li>
+				<li><a href="#OnUpdateCheckFailure">OnUpdateCheckFailure</a><a href="#OnUpdateCheckFailure" class="OnUpdateCheckFailure_GhostStatus"></a></li>
+				<li><a href="#OnUpdateResult">OnUpdateResult</a><a href="#OnUpdateResult" class="OnUpdateResult_GhostStatus"></a></li>
+				<li><a href="#OnUpdateResultEx">OnUpdateResultEx</a><a href="#OnUpdateResultEx" class="OnUpdateResultEx_GhostStatus"></a></li>
+				<li><a href="#OnUpdateCheckResult">OnUpdateCheckResult</a><a href="#OnUpdateCheckResult" class="OnUpdateCheckResult_GhostStatus"></a></li>
+				<li><a href="#OnUpdateCheckResultEx">OnUpdateCheckResultEx</a><a href="#OnUpdateCheckResultEx" class="OnUpdateCheckResultEx_GhostStatus"></a></li>
+				<li><a href="#OnUpdateResultExplorer">OnUpdateResultExplorer</a><a href="#OnUpdateResultExplorer" class="OnUpdateResultExplorer_GhostStatus"></a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_updateresultcomplete">ネットワーク更新成功理由</a></li>
@@ -355,35 +385,35 @@
 		<section class="navigation-category">
 			<h1>時計合わせイベント</h1>
 			<ul>
-				<li><a href="#OnSNTPBegin">OnSNTPBegin</a></li>
-				<li><a href="#OnSNTPCompareEx">OnSNTPCompareEx</a></li>
-				<li><a href="#OnSNTPCompare">OnSNTPCompare</a></li>
-				<li><a href="#OnSNTPCorrectEx">OnSNTPCorrectEx</a></li>
-				<li><a href="#OnSNTPCorrect">OnSNTPCorrect</a></li>
-				<li><a href="#OnSNTPFailure">OnSNTPFailure</a></li>
+				<li><a href="#OnSNTPBegin">OnSNTPBegin</a><a href="#OnSNTPBegin" class="OnSNTPBegin_GhostStatus"></a></li>
+				<li><a href="#OnSNTPCompareEx">OnSNTPCompareEx</a><a href="#OnSNTPCompareEx" class="OnSNTPCompareEx_GhostStatus"></a></li>
+				<li><a href="#OnSNTPCompare">OnSNTPCompare</a><a href="#OnSNTPCompare" class="OnSNTPCompare_GhostStatus"></a></li>
+				<li><a href="#OnSNTPCorrectEx">OnSNTPCorrectEx</a><a href="#OnSNTPCorrectEx" class="OnSNTPCorrectEx_GhostStatus"></a></li>
+				<li><a href="#OnSNTPCorrect">OnSNTPCorrect</a><a href="#OnSNTPCorrect" class="OnSNTPCorrect_GhostStatus"></a></li>
+				<li><a href="#OnSNTPFailure">OnSNTPFailure</a><a href="#OnSNTPFailure" class="OnSNTPFailure_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>メールチェックイベント</h1>
 			<ul>
-				<li><a href="#OnBIFFBegin">OnBIFFBegin</a></li>
-				<li><a href="#OnBIFFComplete">OnBIFFComplete</a></li>
-				<li><a href="#OnBIFF2Complete">OnBIFF2Complete</a></li>
-				<li><a href="#OnBIFFFailure">OnBIFFFailure</a></li>
+				<li><a href="#OnBIFFBegin">OnBIFFBegin</a><a href="#OnBIFFBegin" class="OnBIFFBegin_GhostStatus"></a></li>
+				<li><a href="#OnBIFFComplete">OnBIFFComplete</a><a href="#OnBIFFComplete" class="OnBIFFComplete_GhostStatus"></a></li>
+				<li><a href="#OnBIFF2Complete">OnBIFF2Complete</a><a href="#OnBIFF2Complete" class="OnBIFF2Complete_GhostStatus"></a></li>
+				<li><a href="#OnBIFFFailure">OnBIFFFailure</a><a href="#OnBIFFFailure" class="OnBIFFFailure_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>ヘッドライン/RSSセンスイベント</h1>
 			<ul>
-				<li><a href="#OnHeadlinesenseBegin">OnHeadlinesenseBegin</a></li>
-				<li><a href="#OnHeadlinesense.OnFind">OnHeadlinesense.OnFind</a></li>
-				<li><a href="#OnHeadlinesenseComplete">OnHeadlinesenseComplete</a></li>
-				<li><a href="#OnHeadlinesenseFailure">OnHeadlinesenseFailure</a></li>
+				<li><a href="#OnHeadlinesenseBegin">OnHeadlinesenseBegin</a><a href="#OnHeadlinesenseBegin" class="OnHeadlinesenseBegin_GhostStatus"></a></li>
+				<li><a href="#OnHeadlinesense.OnFind">OnHeadlinesense.OnFind</a><a href="#OnHeadlinesense.OnFind" class="OnHeadlinesense.OnFind_GhostStatus"></a></li>
+				<li><a href="#OnHeadlinesenseComplete">OnHeadlinesenseComplete</a><a href="#OnHeadlinesenseComplete" class="OnHeadlinesenseComplete_GhostStatus"></a></li>
+				<li><a href="#OnHeadlinesenseFailure">OnHeadlinesenseFailure</a><a href="#OnHeadlinesenseFailure" class="OnHeadlinesenseFailure_GhostStatus"></a></li>
 			</ul>
 			<ul>
-				<li><a href="#OnRSSBegin">OnRSSBegin</a></li>
-				<li><a href="#OnRSSComplete">OnRSSComplete</a></li>
-				<li><a href="#OnRSSFailure">OnRSSFailure</a></li>
+				<li><a href="#OnRSSBegin">OnRSSBegin</a><a href="#OnRSSBegin" class="OnRSSBegin_GhostStatus"></a></li>
+				<li><a href="#OnRSSComplete">OnRSSComplete</a><a href="#OnRSSComplete" class="OnRSSComplete_GhostStatus"></a></li>
+				<li><a href="#OnRSSFailure">OnRSSFailure</a><a href="#OnRSSFailure" class="OnRSSFailure_GhostStatus"></a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_headlinesensephase">ヘッドラインセンスOnFindフェーズ</a></li>
@@ -393,13 +423,13 @@
 		<section class="navigation-category">
 			<h1>カレンダーイベント</h1>
 			<ul>
-				<li><a href="#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a></li>
-				<li><a href="#OnScheduleRead">OnScheduleRead</a></li>
-				<li><a href="#OnSchedulesenseBegin">OnSchedulesenseBegin</a></li>
-				<li><a href="#OnSchedulesenseComplete">OnSchedulesenseComplete</a></li>
-				<li><a href="#OnSchedulesenseFailure">OnSchedulesenseFailure</a></li>
-				<li><a href="#OnSchedulepostBegin">OnSchedulepostBegin</a></li>
-				<li><a href="#OnSchedulepostComplete">OnSchedulepostComplete</a></li>
+				<li><a href="#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a><a href="#OnSchedule5MinutesToGo" class="OnSchedule5MinutesToGo_GhostStatus"></a></li>
+				<li><a href="#OnScheduleRead">OnScheduleRead</a><a href="#OnScheduleRead" class="OnScheduleRead_GhostStatus"></a></li>
+				<li><a href="#OnSchedulesenseBegin">OnSchedulesenseBegin</a><a href="#OnSchedulesenseBegin" class="OnSchedulesenseBegin_GhostStatus"></a></li>
+				<li><a href="#OnSchedulesenseComplete">OnSchedulesenseComplete</a><a href="#OnSchedulesenseComplete" class="OnSchedulesenseComplete_GhostStatus"></a></li>
+				<li><a href="#OnSchedulesenseFailure">OnSchedulesenseFailure</a><a href="#OnSchedulesenseFailure" class="OnSchedulesenseFailure_GhostStatus"></a></li>
+				<li><a href="#OnSchedulepostBegin">OnSchedulepostBegin</a><a href="#OnSchedulepostBegin" class="OnSchedulepostBegin_GhostStatus"></a></li>
+				<li><a href="#OnSchedulepostComplete">OnSchedulepostComplete</a><a href="#OnSchedulepostComplete" class="OnSchedulepostComplete_GhostStatus"></a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_scheduletype">スケジュールタイプ</a></li>
@@ -408,153 +438,153 @@
 		<section class="navigation-category">
 			<h1>SSTPイベント</h1>
 			<ul>
-				<li><a href="#OnSSTPBreak">OnSSTPBreak</a></li>
-				<li><a href="#OnSSTPBlacklisting">OnSSTPBlacklisting</a></li>
+				<li><a href="#OnSSTPBreak">OnSSTPBreak</a><a href="#OnSSTPBreak" class="OnSSTPBreak_GhostStatus"></a></li>
+				<li><a href="#OnSSTPBlacklisting">OnSSTPBlacklisting</a><a href="#OnSSTPBlacklisting" class="OnSSTPBlacklisting_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>その他通信イベント</h1>
 			<ul>
-				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
-				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
-				<li><a href="#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a></li>
-				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
-				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
-				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
-				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a></li>
-				<li><a href="#OnPingComplete">OnPingComplete</a></li>
-				<li><a href="#OnPingProgress">OnPingProgress</a></li>
-				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
-				<li><a href="#OnNSLookupFailure">OnNSLookupFailure</a></li>
+				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a><a href="#OnExecuteHTTPComplete" class="OnExecuteHTTPComplete_GhostStatus"></a></li>
+				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a><a href="#OnExecuteHTTPFailure" class="OnExecuteHTTPFailure_GhostStatus"></a></li>
+				<li><a href="#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a><a href="#OnExecuteHTTPProgress" class="OnExecuteHTTPProgress_GhostStatus"></a></li>
+				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a><a href="#OnExecuteHTTPSSLInfo" class="OnExecuteHTTPSSLInfo_GhostStatus"></a></li>
+				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a><a href="#OnExecuteRSSComplete" class="OnExecuteRSSComplete_GhostStatus"></a></li>
+				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a><a href="#OnExecuteRSSFailure" class="OnExecuteRSSFailure_GhostStatus"></a></li>
+				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a><a href="#OnExecuteRSS_SSLInfo" class="OnExecuteRSS_SSLInfo_GhostStatus"></a></li>
+				<li><a href="#OnPingComplete">OnPingComplete</a><a href="#OnPingComplete" class="OnPingComplete_GhostStatus"></a></li>
+				<li><a href="#OnPingProgress">OnPingProgress</a><a href="#OnPingProgress" class="OnPingProgress_GhostStatus"></a></li>
+				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a><a href="#OnNSLookupComplete" class="OnNSLookupComplete_GhostStatus"></a></li>
+				<li><a href="#OnNSLookupFailure">OnNSLookupFailure</a><a href="#OnNSLookupFailure" class="OnNSLookupFailure_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>イベント送信失敗イベント</h1>
 			<ul>
-				<li><a href="#OnRaisePluginFailure">OnRaisePluginFailure</a></li>
-				<li><a href="#OnNotifyPluginFailure">OnNotifyPluginFailure</a></li>
-				<li><a href="#OnRaiseOtherFailure">OnRaiseOtherFailure</a></li>
-				<li><a href="#OnNotifyOtherFailure">OnNotifyOtherFailure</a></li>
+				<li><a href="#OnRaisePluginFailure">OnRaisePluginFailure</a><a href="#OnRaisePluginFailure" class="OnRaisePluginFailure_GhostStatus"></a></li>
+				<li><a href="#OnNotifyPluginFailure">OnNotifyPluginFailure</a><a href="#OnNotifyPluginFailure" class="OnNotifyPluginFailure_GhostStatus"></a></li>
+				<li><a href="#OnRaiseOtherFailure">OnRaiseOtherFailure</a><a href="#OnRaiseOtherFailure" class="OnRaiseOtherFailure_GhostStatus"></a></li>
+				<li><a href="#OnNotifyOtherFailure">OnNotifyOtherFailure</a><a href="#OnNotifyOtherFailure" class="OnNotifyOtherFailure_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>見切れ・重なりイベント</h1>
 			<ul>
-				<li><a href="#OnOverlap">OnOverlap</a></li>
-				<li><a href="#OnOtherOverlap">OnOtherOverlap</a></li>
-				<li><a href="#OnOffscreen">OnOffscreen</a></li>
-				<li><a href="#OnOtherOffscreen">OnOtherOffscreen</a></li>
+				<li><a href="#OnOverlap">OnOverlap</a><a href="#OnOverlap" class="OnOverlap_GhostStatus"></a></li>
+				<li><a href="#OnOtherOverlap">OnOtherOverlap</a><a href="#OnOtherOverlap" class="OnOtherOverlap_GhostStatus"></a></li>
+				<li><a href="#OnOffscreen">OnOffscreen</a><a href="#OnOffscreen" class="OnOffscreen_GhostStatus"></a></li>
+				<li><a href="#OnOtherOffscreen">OnOtherOffscreen</a><a href="#OnOtherOffscreen" class="OnOtherOffscreen_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>ネットワーク状態イベント</h1>
 			<ul>
-				<li><a href="#OnNetworkHeavy">OnNetworkHeavy</a></li>
-				<li><a href="#OnNetworkStatusChange">OnNetworkStatusChange</a></li>
+				<li><a href="#OnNetworkHeavy">OnNetworkHeavy</a><a href="#OnNetworkHeavy" class="OnNetworkHeavy_GhostStatus"></a></li>
+				<li><a href="#OnNetworkStatusChange">OnNetworkStatusChange</a><a href="#OnNetworkStatusChange" class="OnNetworkStatusChange_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>OS状態イベント</h1>
 			<ul>
-				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a></li>
-				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a></li>
-				<li><a href="#OnSessionLock">OnSessionLock</a></li>
-				<li><a href="#OnSessionUnlock">OnSessionUnlock</a></li>
-				<li><a href="#OnSessionDisconnect">OnSessionDisconnect</a></li>
-				<li><a href="#OnSessionReconnect">OnSessionReconnect</a></li>
-				<li><a href="#OnCPULoadHigh">OnCPULoadHigh</a></li>
-				<li><a href="#OnCPULoadLow">OnCPULoadLow</a></li>
-				<li><a href="#OnMemoryLoadHigh">OnMemoryLoadHigh</a></li>
-				<li><a href="#OnMemoryLoadLow">OnMemoryLoadLow</a></li>
-				<li><a href="#OnDisplayChange">OnDisplayChange</a></li>
-				<li><a href="#OnDisplayHandover">OnDisplayHandover</a></li>
-				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a></li>
-				<li><a href="#OnDisplayPowerStatus">OnDisplayPowerStatus</a></li>
-				<li><a href="#OnBatteryNotify">OnBatteryNotify</a></li>
-				<li><a href="#OnBatteryLow">OnBatteryLow</a></li>
-				<li><a href="#OnBatteryCritical">OnBatteryCritical</a></li>
-				<li><a href="#OnBatteryChargingStart">OnBatteryChargingStart</a></li>
-				<li><a href="#OnBatteryChargingStop">OnBatteryChargingStop</a></li>
-				<li><a href="#OnDeviceArrival">OnDeviceArrival</a></li>
-				<li><a href="#OnDeviceRemove">OnDeviceRemove</a></li>
-				<li><a href="#OnTabletMode">OnTabletMode</a></li>
-				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
-				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
-				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
-				<li><a href="#OnRecycleBinEmptyFromOther">OnRecycleBinEmptyFromOther</a></li>
-				<li><a href="#OnRecycleBinStatusUpdate">OnRecycleBinStatusUpdate</a></li>
+				<li><a href="#OnScreenSaverStart">OnScreenSaverStart</a><a href="#OnScreenSaverStart" class="OnScreenSaverStart_GhostStatus"></a></li>
+				<li><a href="#OnScreenSaverEnd">OnScreenSaverEnd</a><a href="#OnScreenSaverEnd" class="OnScreenSaverEnd_GhostStatus"></a></li>
+				<li><a href="#OnSessionLock">OnSessionLock</a><a href="#OnSessionLock" class="OnSessionLock_GhostStatus"></a></li>
+				<li><a href="#OnSessionUnlock">OnSessionUnlock</a><a href="#OnSessionUnlock" class="OnSessionUnlock_GhostStatus"></a></li>
+				<li><a href="#OnSessionDisconnect">OnSessionDisconnect</a><a href="#OnSessionDisconnect" class="OnSessionDisconnect_GhostStatus"></a></li>
+				<li><a href="#OnSessionReconnect">OnSessionReconnect</a><a href="#OnSessionReconnect" class="OnSessionReconnect_GhostStatus"></a></li>
+				<li><a href="#OnCPULoadHigh">OnCPULoadHigh</a><a href="#OnCPULoadHigh" class="OnCPULoadHigh_GhostStatus"></a></li>
+				<li><a href="#OnCPULoadLow">OnCPULoadLow</a><a href="#OnCPULoadLow" class="OnCPULoadLow_GhostStatus"></a></li>
+				<li><a href="#OnMemoryLoadHigh">OnMemoryLoadHigh</a><a href="#OnMemoryLoadHigh" class="OnMemoryLoadHigh_GhostStatus"></a></li>
+				<li><a href="#OnMemoryLoadLow">OnMemoryLoadLow</a><a href="#OnMemoryLoadLow" class="OnMemoryLoadLow_GhostStatus"></a></li>
+				<li><a href="#OnDisplayChange">OnDisplayChange</a><a href="#OnDisplayChange" class="OnDisplayChange_GhostStatus"></a></li>
+				<li><a href="#OnDisplayHandover">OnDisplayHandover</a><a href="#OnDisplayHandover" class="OnDisplayHandover_GhostStatus"></a></li>
+				<li><a href="#OnDisplayChangeEx">OnDisplayChangeEx</a><a href="#OnDisplayChangeEx" class="OnDisplayChangeEx_GhostStatus"></a></li>
+				<li><a href="#OnDisplayPowerStatus">OnDisplayPowerStatus</a><a href="#OnDisplayPowerStatus" class="OnDisplayPowerStatus_GhostStatus"></a></li>
+				<li><a href="#OnBatteryNotify">OnBatteryNotify</a><a href="#OnBatteryNotify" class="OnBatteryNotify_GhostStatus"></a></li>
+				<li><a href="#OnBatteryLow">OnBatteryLow</a><a href="#OnBatteryLow" class="OnBatteryLow_GhostStatus"></a></li>
+				<li><a href="#OnBatteryCritical">OnBatteryCritical</a><a href="#OnBatteryCritical" class="OnBatteryCritical_GhostStatus"></a></li>
+				<li><a href="#OnBatteryChargingStart">OnBatteryChargingStart</a><a href="#OnBatteryChargingStart" class="OnBatteryChargingStart_GhostStatus"></a></li>
+				<li><a href="#OnBatteryChargingStop">OnBatteryChargingStop</a><a href="#OnBatteryChargingStop" class="OnBatteryChargingStop_GhostStatus"></a></li>
+				<li><a href="#OnDeviceArrival">OnDeviceArrival</a><a href="#OnDeviceArrival" class="OnDeviceArrival_GhostStatus"></a></li>
+				<li><a href="#OnDeviceRemove">OnDeviceRemove</a><a href="#OnDeviceRemove" class="OnDeviceRemove_GhostStatus"></a></li>
+				<li><a href="#OnTabletMode">OnTabletMode</a><a href="#OnTabletMode" class="OnTabletMode_GhostStatus"></a></li>
+				<li><a href="#OnDarkTheme">OnDarkTheme</a><a href="#OnDarkTheme" class="OnDarkTheme_GhostStatus"></a></li>
+				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a><a href="#OnOSUpdateInfo" class="OnOSUpdateInfo_GhostStatus"></a></li>
+				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a><a href="#OnRecycleBinEmpty" class="OnRecycleBinEmpty_GhostStatus"></a></li>
+				<li><a href="#OnRecycleBinEmptyFromOther">OnRecycleBinEmptyFromOther</a><a href="#OnRecycleBinEmptyFromOther" class="OnRecycleBinEmptyFromOther_GhostStatus"></a></li>
+				<li><a href="#OnRecycleBinStatusUpdate">OnRecycleBinStatusUpdate</a><a href="#OnRecycleBinStatusUpdate" class="OnRecycleBinStatusUpdate_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>選択領域モードイベント</h1>
 			<ul>
-				<li><a href="#OnSelectModeBegin">OnSelectModeBegin</a></li>
-				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
-				<li><a href="#OnSelectModeComplete">OnSelectModeComplete</a></li>
-				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a></li>
-				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a></li>
-				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a></li>
+				<li><a href="#OnSelectModeBegin">OnSelectModeBegin</a><a href="#OnSelectModeBegin" class="OnSelectModeBegin_GhostStatus"></a></li>
+				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a><a href="#OnSelectModeCancel" class="OnSelectModeCancel_GhostStatus"></a></li>
+				<li><a href="#OnSelectModeComplete">OnSelectModeComplete</a><a href="#OnSelectModeComplete" class="OnSelectModeComplete_GhostStatus"></a></li>
+				<li><a href="#OnSelectModeCancel">OnSelectModeCancel</a><a href="#OnSelectModeCancel" class="OnSelectModeCancel_GhostStatus"></a></li>
+				<li><a href="#OnSelectModeMouseDown">OnSelectModeMouseDown</a><a href="#OnSelectModeMouseDown" class="OnSelectModeMouseDown_GhostStatus"></a></li>
+				<li><a href="#OnSelectModeMouseUp">OnSelectModeMouseUp</a><a href="#OnSelectModeMouseUp" class="OnSelectModeMouseUp_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>音声認識・合成イベント</h1>
 			<ul>
-				<li><a href="#OnSpeechSynthesisStatus">OnSpeechSynthesisStatus</a></li>
-				<li><a href="#OnVoiceRecognitionStatus">OnVoiceRecognitionStatus</a></li>
-				<li><a href="#OnVoiceRecognitionWord">OnVoiceRecognitionWord</a></li>
+				<li><a href="#OnSpeechSynthesisStatus">OnSpeechSynthesisStatus</a><a href="#OnSpeechSynthesisStatus" class="OnSpeechSynthesisStatus_GhostStatus"></a></li>
+				<li><a href="#OnVoiceRecognitionStatus">OnVoiceRecognitionStatus</a><a href="#OnVoiceRecognitionStatus" class="OnVoiceRecognitionStatus_GhostStatus"></a></li>
+				<li><a href="#OnVoiceRecognitionWord">OnVoiceRecognitionWord</a><a href="#OnVoiceRecognitionWord" class="OnVoiceRecognitionWord_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>その他イベント</h1>
 			<ul>
-				<li><a href="#OnKeyPress">OnKeyPress</a></li>
-				<li><a href="#OnRecommendsiteChoice">OnRecommendsiteChoice</a></li>
-				<li><a href="#OnTranslate">OnTranslate</a></li>
-				<li><a href="#OnAITalk">OnAITalk</a></li>
-				<li><a href="#OnOtherGhostTalk">OnOtherGhostTalk</a></li>
-				<li><a href="#OnEmbryoExist">OnEmbryoExist</a></li>
-				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
-				<li><a href="#OnSoundStop">OnSoundStop</a></li>
-				<li><a href="#OnSoundError">OnSoundError</a></li>
-				<li><a href="#OnTextDrop">OnTextDrop</a></li>
-				<li><a href="#OnShellScaling">OnShellScaling</a></li>
-				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
-				<li><a href="#OnLanguageChange">OnLanguageChange</a></li>
+				<li><a href="#OnKeyPress">OnKeyPress</a><a href="#OnKeyPress" class="OnKeyPress_GhostStatus"></a></li>
+				<li><a href="#OnRecommendsiteChoice">OnRecommendsiteChoice</a><a href="#OnRecommendsiteChoice" class="OnRecommendsiteChoice_GhostStatus"></a></li>
+				<li><a href="#OnTranslate">OnTranslate</a><a href="#OnTranslate" class="OnTranslate_GhostStatus"></a></li>
+				<li><a href="#OnAITalk">OnAITalk</a><a href="#OnAITalk" class="OnAITalk_GhostStatus"></a></li>
+				<li><a href="#OnOtherGhostTalk">OnOtherGhostTalk</a><a href="#OnOtherGhostTalk" class="OnOtherGhostTalk_GhostStatus"></a></li>
+				<li><a href="#OnEmbryoExist">OnEmbryoExist</a><a href="#OnEmbryoExist" class="OnEmbryoExist_GhostStatus"></a></li>
+				<li><a href="#OnNekodorifExist">OnNekodorifExist</a><a href="#OnNekodorifExist" class="OnNekodorifExist_GhostStatus"></a></li>
+				<li><a href="#OnSoundStop">OnSoundStop</a><a href="#OnSoundStop" class="OnSoundStop_GhostStatus"></a></li>
+				<li><a href="#OnSoundError">OnSoundError</a><a href="#OnSoundError" class="OnSoundError_GhostStatus"></a></li>
+				<li><a href="#OnTextDrop">OnTextDrop</a><a href="#OnTextDrop" class="OnTextDrop_GhostStatus"></a></li>
+				<li><a href="#OnShellScaling">OnShellScaling</a><a href="#OnShellScaling" class="OnShellScaling_GhostStatus"></a></li>
+				<li><a href="#OnBalloonScaling">OnBalloonScaling</a><a href="#OnBalloonScaling" class="OnBalloonScaling_GhostStatus"></a></li>
+				<li><a href="#OnLanguageChange">OnLanguageChange</a><a href="#OnLanguageChange" class="OnLanguageChange_GhostStatus"></a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
 			<h1>Notifyイベント</h1>
 			<ul>
-				<li><a href="#basewareversion">basewareversion</a></li>
-				<li><a href="#hwnd">hwnd</a></li>
-				<li><a href="#uniqueid">uniqueid</a></li>
-				<li><a href="#capability">capability</a></li>
-				<li><a href="#ownerghostname">ownerghostname</a></li>
-				<li><a href="#otherghostname">otherghostname</a></li>
-				<li><a href="#installedsakuraname">installedsakuraname</a></li>
-				<li><a href="#installedkeroname">installedkeroname</a></li>
-				<li><a href="#installedghostname">installedghostname</a></li>
-				<li><a href="#installedshellname">installedshellname</a></li>
-				<li><a href="#installedballoonname">installedballoonname</a></li>
-				<li><a href="#installedheadlinename">installedheadlinename</a></li>
-				<li><a href="#installedplugin">installedplugin</a></li>
-				<li><a href="#configuredbiffname">configuredbiffname</a></li>
-				<li><a href="#ghostpathlist">ghostpathlist</a></li>
-				<li><a href="#balloonpathlist">balloonpathlist</a></li>
-				<li><a href="#headlinepathlist">headlinepathlist</a></li>
-				<li><a href="#pluginpathlist">pluginpathlist</a></li>
-				<li><a href="#calendarskinpathlist">calendarskinpathlist</a></li>
-				<li><a href="#calendarpluginpathlist">calendarpluginpathlist</a></li>
-				<li><a href="#rateofusegraph">rateofusegraph</a></li>
-				<li><a href="#enable_log">enable_log</a></li>
-				<li><a href="#enable_debug">enable_debug</a></li>
-				<li><a href="#OnNotifySelfInfo">OnNotifySelfInfo</a></li>
-				<li><a href="#OnNotifyBalloonInfo">OnNotifyBalloonInfo</a></li>
-				<li><a href="#OnNotifyShellInfo">OnNotifyShellInfo</a></li>
-				<li><a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a></li>
-				<li><a href="#OnNotifyUserInfo">OnNotifyUserInfo</a></li>
-				<li><a href="#OnNotifyOSInfo">OnNotifyOSInfo</a></li>
-				<li><a href="#OnNotifyFontInfo">OnNotifyFontInfo</a></li>
+				<li><a href="#basewareversion">basewareversion</a><a href="#basewareversion" class="basewareversion_GhostStatus"></a></li>
+				<li><a href="#hwnd">hwnd</a><a href="#hwnd" class="hwnd_GhostStatus"></a></li>
+				<li><a href="#uniqueid">uniqueid</a><a href="#uniqueid" class="uniqueid_GhostStatus"></a></li>
+				<li><a href="#capability">capability</a><a href="#capability" class="capability_GhostStatus"></a></li>
+				<li><a href="#ownerghostname">ownerghostname</a><a href="#ownerghostname" class="ownerghostname_GhostStatus"></a></li>
+				<li><a href="#otherghostname">otherghostname</a><a href="#otherghostname" class="otherghostname_GhostStatus"></a></li>
+				<li><a href="#installedsakuraname">installedsakuraname</a><a href="#installedsakuraname" class="installedsakuraname_GhostStatus"></a></li>
+				<li><a href="#installedkeroname">installedkeroname</a><a href="#installedkeroname" class="installedkeroname_GhostStatus"></a></li>
+				<li><a href="#installedghostname">installedghostname</a><a href="#installedghostname" class="installedghostname_GhostStatus"></a></li>
+				<li><a href="#installedshellname">installedshellname</a><a href="#installedshellname" class="installedshellname_GhostStatus"></a></li>
+				<li><a href="#installedballoonname">installedballoonname</a><a href="#installedballoonname" class="installedballoonname_GhostStatus"></a></li>
+				<li><a href="#installedheadlinename">installedheadlinename</a><a href="#installedheadlinename" class="installedheadlinename_GhostStatus"></a></li>
+				<li><a href="#installedplugin">installedplugin</a><a href="#installedplugin" class="installedplugin_GhostStatus"></a></li>
+				<li><a href="#configuredbiffname">configuredbiffname</a><a href="#configuredbiffname" class="configuredbiffname_GhostStatus"></a></li>
+				<li><a href="#ghostpathlist">ghostpathlist</a><a href="#ghostpathlist" class="ghostpathlist_GhostStatus"></a></li>
+				<li><a href="#balloonpathlist">balloonpathlist</a><a href="#balloonpathlist" class="balloonpathlist_GhostStatus"></a></li>
+				<li><a href="#headlinepathlist">headlinepathlist</a><a href="#headlinepathlist" class="headlinepathlist_GhostStatus"></a></li>
+				<li><a href="#pluginpathlist">pluginpathlist</a><a href="#pluginpathlist" class="pluginpathlist_GhostStatus"></a></li>
+				<li><a href="#calendarskinpathlist">calendarskinpathlist</a><a href="#calendarskinpathlist" class="calendarskinpathlist_GhostStatus"></a></li>
+				<li><a href="#calendarpluginpathlist">calendarpluginpathlist</a><a href="#calendarpluginpathlist" class="calendarpluginpathlist_GhostStatus"></a></li>
+				<li><a href="#rateofusegraph">rateofusegraph</a><a href="#rateofusegraph" class="rateofusegraph_GhostStatus"></a></li>
+				<li><a href="#enable_log">enable_log</a><a href="#enable_log" class="enable_log_GhostStatus"></a></li>
+				<li><a href="#enable_debug">enable_debug</a><a href="#enable_debug" class="enable_debug_GhostStatus"></a></li>
+				<li><a href="#OnNotifySelfInfo">OnNotifySelfInfo</a><a href="#OnNotifySelfInfo" class="OnNotifySelfInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyBalloonInfo">OnNotifyBalloonInfo</a><a href="#OnNotifyBalloonInfo" class="OnNotifyBalloonInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyShellInfo">OnNotifyShellInfo</a><a href="#OnNotifyShellInfo" class="OnNotifyShellInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a><a href="#OnNotifyDressupInfo" class="OnNotifyDressupInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyUserInfo">OnNotifyUserInfo</a><a href="#OnNotifyUserInfo" class="OnNotifyUserInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyOSInfo">OnNotifyOSInfo</a><a href="#OnNotifyOSInfo" class="OnNotifyOSInfo_GhostStatus"></a></li>
+				<li><a href="#OnNotifyFontInfo">OnNotifyFontInfo</a><a href="#OnNotifyFontInfo" class="OnNotifyFontInfo_GhostStatus"></a></li>
 			</ul>
 		</section>
 	</section>
@@ -588,7 +618,7 @@
 		<section class="category">
 			<h1>起動・終了・切り替えイベント</h1>
 			<dl id="OnFirstBoot">
-				<dt class="entry">OnFirstBoot</dt>
+				<dt class="entry">OnFirstBoot</dt><div class="OnFirstBoot_GhostStatus"></div>
 				<dd class="entry">
 					<p>初回起動した際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -603,7 +633,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBoot">
-				<dt class="entry">OnBoot</dt>
+				<dt class="entry">OnBoot</dt><div class="OnBoot_GhostStatus"></div>
 				<dd class="entry">
 					<p>起動した際に発生。<br>SSPでは、<a href="#OnGhostChanged">OnGhostChanged</a>、<a href="#OnGhostCalled">OnGhostCalled</a>、<a href="#OnFirstBoot">OnFirstBoot</a>、<a href="#OnVanished">OnVanished</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
@@ -622,7 +652,7 @@
 				</dd>
 			</dl>
 			<dl id="OnClose">
-				<dt class="entry">OnClose</dt>
+				<dt class="entry">OnClose</dt><div class="OnClose_GhostStatus"></div>
 				<dd class="entry">
 					<p>終了が指示された際に発生。<br>SSPでは、<a href="#OnGhostChanging">OnGhostChanging</a>、<a href="#OnCloseAll">OnCloseAll</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
@@ -641,7 +671,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCloseAll">
-				<dt class="entry">OnCloseAll</dt>
+				<dt class="entry">OnCloseAll</dt><div class="OnCloseAll_GhostStatus"></div>
 				<dd class="entry">
 					<p>SSP自体が終了する際に発生。<br>オーナードローメニューの「すべて終了」が指示された場合の他、唯一起動中のゴーストにおいて「終了」が指示された場合、およびOSのシャットダウンに伴いSSPが終了する場合にも発生する。</p>
 					<dl class="reference">
@@ -658,7 +688,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostChanged">
-				<dt class="entry">OnGhostChanged</dt>
+				<dt class="entry">OnGhostChanged</dt><div class="OnGhostChanged_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストから自ゴーストに切り替えられた際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -681,7 +711,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostChanging">
-				<dt class="entry">OnGhostChanging</dt>
+				<dt class="entry">OnGhostChanging</dt><div class="OnGhostChanging_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストへの切り替え指示があった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnClose">OnClose</a>が発生する。</p>
 					<dl class="reference">
@@ -702,7 +732,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCalled">
-				<dt class="entry">OnGhostCalled</dt>
+				<dt class="entry">OnGhostCalled</dt><div class="OnGhostCalled_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストから呼び出された際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -723,7 +753,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCalling">
-				<dt class="entry">OnGhostCalling</dt>
+				<dt class="entry">OnGhostCalling</dt><div class="OnGhostCalling_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストの呼び出しが指示された際に発生。</p>
 					<dl class="reference">
@@ -742,7 +772,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCallComplete">
-				<dt class="entry">OnGhostCallComplete</dt>
+				<dt class="entry">OnGhostCallComplete</dt><div class="OnGhostCallComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストを呼び出し、そのゴーストが起動スクリプトを完了後発生。</p>
 					<dl class="reference">
@@ -761,7 +791,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostBooted">
-				<dt class="entry">OnOtherGhostBooted</dt>
+				<dt class="entry">OnOtherGhostBooted</dt><div class="OnOtherGhostBooted_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストに呼び出された、他のゴーストが起動した際に発生。<br />言い換えると、呼び出したゴーストにOnGhostCallCompleteが発生するタイミングで、無関係なゴーストに発生。</p>
 					<dl class="reference">
@@ -780,7 +810,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostChanged">
-				<dt class="entry">OnOtherGhostChanged</dt>
+				<dt class="entry">OnOtherGhostChanged</dt><div class="OnOtherGhostChanged_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴースト間で切り替わった際に発生。</p>
 					<dl class="reference">
@@ -807,7 +837,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostClosed">
-				<dt class="entry">OnOtherGhostClosed</dt>
+				<dt class="entry">OnOtherGhostClosed</dt><div class="OnOtherGhostClosed_GhostStatus"></div>
 				<dd class="entry">
 					<p>複数起動中、他のゴーストが終了された際に発生。</p>
 					<dl class="reference">
@@ -826,7 +856,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellChanged">
-				<dt class="entry">OnShellChanged</dt>
+				<dt class="entry">OnShellChanged</dt><div class="OnShellChanged_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のシェルから切り替わった際に発生。</p>
 					<dl class="reference">
@@ -845,7 +875,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellChanging">
-				<dt class="entry">OnShellChanging</dt>
+				<dt class="entry">OnShellChanging</dt><div class="OnShellChanging_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のシェルへ切り替えた際に発生。</p>
 					<dl class="reference">
@@ -864,7 +894,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDressupChanged">
-				<dt class="entry">OnDressupChanged</dt>
+				<dt class="entry">OnDressupChanged</dt><div class="OnDressupChanged_GhostStatus"></div>
 				<dd class="entry">
 					<p>着せ替えが切替えられた際に発生する。<br />
 					複数回通知される場合があり、その場合は一番最後のOnDressupChangedが<em class="specsign">[GET]</em>、それ以外が<em class="specsign">[NOTIFY]</em>となる。<br />
@@ -887,7 +917,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonChange">
-				<dt class="entry">OnBalloonChange</dt>
+				<dt class="entry">OnBalloonChange</dt><div class="OnBalloonChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のバルーンから切り替わった際に発生。</p>
 					<dl class="reference">
@@ -902,7 +932,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWindowStateRestore">
-				<dt class="entry">OnWindowStateRestore</dt>
+				<dt class="entry">OnWindowStateRestore</dt><div class="OnWindowStateRestore_GhostStatus"></div>
 				<dd class="entry">
 					<p>最小化が解除された際に発生。</p>
 					<dl class="reference">
@@ -921,7 +951,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWindowStateMinimize">
-				<dt class="entry">OnWindowStateMinimize</dt>
+				<dt class="entry">OnWindowStateMinimize</dt><div class="OnWindowStateMinimize_GhostStatus"></div>
 				<dd class="entry">
 					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らせることが可能。</p>
 					<dl class="reference">
@@ -940,7 +970,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFullScreenAppMinimize">
-				<dt class="entry">OnFullScreenAppMinimize</dt>
+				<dt class="entry">OnFullScreenAppMinimize</dt><div class="OnFullScreenAppMinimize_GhostStatus"></div>
 				<dd class="entry">
 					<p>全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
 					<dl class="reference">
@@ -953,7 +983,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFullScreenAppRestore">
-				<dt class="entry">OnFullScreenAppRestore</dt>
+				<dt class="entry">OnFullScreenAppRestore</dt><div class="OnFullScreenAppRestore_GhostStatus"></div>
 				<dd class="entry">
 					<p>全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
 					<dl class="reference">
@@ -966,7 +996,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVirtualDesktopChanged">
-				<dt class="entry">OnVirtualDesktopChanged</dt>
+				<dt class="entry">OnVirtualDesktopChanged</dt><div class="OnVirtualDesktopChanged_GhostStatus"></div>
 				<dd class="entry">
 					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><strong class="warning">実験的機能のため今後仕様が変わる可能性がある</strong>。</p>
 					<dl class="reference">
@@ -981,7 +1011,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCacheSuspend">
-				<dt class="entry">OnCacheSuspend</dt>
+				<dt class="entry">OnCacheSuspend</dt><div class="OnCacheSuspend_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴーストキャッシュに入った際に発生。</p>
 					<ul class="supported-baseware">
@@ -990,7 +1020,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCacheRestore">
-				<dt class="entry">OnCacheRestore</dt>
+				<dt class="entry">OnCacheRestore</dt><div class="OnCacheRestore_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴーストキャッシュから出た際に発生。</p>
 					<ul class="supported-baseware">
@@ -999,7 +1029,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInitialize">
-				<dt class="entry">OnInitialize</dt>
+				<dt class="entry">OnInitialize</dt><div class="OnInitialize_GhostStatus"></div>
 				<dd class="entry">
 					<p>起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1012,7 +1042,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDestroy">
-				<dt class="entry">OnDestroy</dt>
+				<dt class="entry">OnDestroy</dt><div class="OnDestroy_GhostStatus"></div>
 				<dd class="entry">
 					<p>終了が指示された際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1025,7 +1055,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSysResume">
-				<dt class="entry">OnSysResume</dt>
+				<dt class="entry">OnSysResume</dt><div class="OnSysResume_GhostStatus"></div>
 				<dd class="entry">
 					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
 					<dl class="reference">
@@ -1038,7 +1068,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSysSuspend">
-				<dt class="entry">OnSysSuspend</dt>
+				<dt class="entry">OnSysSuspend</dt><div class="OnSysSuspend_GhostStatus"></div>
 				<dd class="entry">
 					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
@@ -1047,7 +1077,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBasewareUpdating">
-				<dt class="entry">OnBasewareUpdating</dt>
+				<dt class="entry">OnBasewareUpdating</dt><div class="OnBasewareUpdating_GhostStatus"></div>
 				<dd class="entry">
 					<p>本体更新時、ダウンロードが終わりファイル更新を開始する前に発生。このイベントに反応がない場合はOnCloseAll、OnCloseの順に発生する。</p>
 					<dl class="reference">
@@ -1062,7 +1092,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBasewareUpdated">
-				<dt class="entry">OnBasewareUpdated</dt>
+				<dt class="entry">OnBasewareUpdated</dt><div class="OnBasewareUpdated_GhostStatus"></div>
 				<dd class="entry">
 					<p>本体更新終了後、ゴーストが起動する時に発生。このイベントに反応がない場合はOnBootが発生する。</p>
 					<dl class="reference">
@@ -1080,7 +1110,7 @@
 		<section class="category">
 			<h1>入力ボックスイベント</h1>
 			<dl id="OnTeachStart">
-				<dt class="entry">OnTeachStart</dt>
+				<dt class="entry">OnTeachStart</dt><div class="OnTeachStart_GhostStatus"></div>
 				<dd class="entry">
 					<p>TeachBoxがオープンした際に発生。</p>
 					<ul class="supported-baseware">
@@ -1090,7 +1120,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTeachInputCancel">
-				<dt class="entry">OnTeachInputCancel</dt>
+				<dt class="entry">OnTeachInputCancel</dt><div class="OnTeachInputCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>TeachBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1105,7 +1135,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTeach">
-				<dt class="entry">OnTeach</dt>
+				<dt class="entry">OnTeach</dt><div class="OnTeach_GhostStatus"></div>
 				<dd class="entry">
 					<p>TeachBoxからの入力があった際に発生。</p>
 					<dl class="reference">
@@ -1118,7 +1148,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCommunicate">
-				<dt class="entry">OnCommunicate</dt>
+				<dt class="entry">OnCommunicate</dt><div class="OnCommunicate_GhostStatus"></div>
 				<dd class="entry">
 					<p>CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
 					<dl class="reference">
@@ -1136,7 +1166,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCommunicateInputCancel">
-				<dt class="entry">OnCommunicateInputCancel</dt>
+				<dt class="entry">OnCommunicateInputCancel</dt><div class="OnCommunicateInputCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>CommunicateBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1151,7 +1181,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUserInput">
-				<dt class="entry">OnUserInput</dt>
+				<dt class="entry">OnUserInput</dt><div class="OnUserInput_GhostStatus"></div>
 				<dd class="entry">
 					<p>InputBoxに入力され決定された際に発生。</p>
 					<p><a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>も参照のこと。</p>
@@ -1173,7 +1203,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUserInputCancel">
-				<dt class="entry">OnUserInputCancel</dt>
+				<dt class="entry">OnUserInputCancel</dt><div class="OnUserInputCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>InputBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1192,7 +1222,7 @@
 				</dd>
 			</dl>
 			<dl id="inputbox.autocomplete">
-				<dt class="entry">inputbox.autocomplete</dt>
+				<dt class="entry">inputbox.autocomplete</dt><div class="inputbox.autocomplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
 					<dl class="reference">
@@ -1210,7 +1240,7 @@
 		<section class="category">
 			<h1>ダイアログボックスイベント</h1>
 			<dl id="OnSystemDialog">
-				<dt class="entry">OnSystemDialog</dt>
+				<dt class="entry">OnSystemDialog</dt><div class="OnSystemDialog_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイル関連のダイアログで保存/OKが押された際に発生。</p>
 					<dl class="reference">
@@ -1227,7 +1257,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSystemDialogCancel">
-				<dt class="entry">OnSystemDialogCancel</dt>
+				<dt class="entry">OnSystemDialogCancel</dt><div class="OnSystemDialogCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイル関連のダイアログでキャンセルが押された際に発生。</p>
 					<dl class="reference">
@@ -1242,7 +1272,7 @@
 				</dd>
 			</dl>
 			<dl id="OnConfigurationDialogHelp">
-				<dt class="entry">OnConfigurationDialogHelp</dt>
+				<dt class="entry">OnConfigurationDialogHelp</dt><div class="OnConfigurationDialogHelp_GhostStatus"></div>
 				<dd class="entry">
 					<p>設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
 					<dl class="reference">
@@ -1280,7 +1310,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostTermsAccept">
-				<dt class="entry">OnGhostTermsAccept</dt>
+				<dt class="entry">OnGhostTermsAccept</dt><div class="OnGhostTermsAccept_GhostStatus"></div>
 				<dd class="entry">
 					<p>利用条件ダイアログで受諾が押された際に発生。
 					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
@@ -1290,7 +1320,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostTermsDecline">
-				<dt class="entry">OnGhostTermsDecline</dt>
+				<dt class="entry">OnGhostTermsDecline</dt><div class="OnGhostTermsDecline_GhostStatus"></div>
 				<dd class="entry">
 					<p>利用条件ダイアログで拒否が押された際に発生。
 					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
@@ -1303,7 +1333,7 @@
 		<section class="category">
 			<h1>時間イベント</h1>
 			<dl id="OnSecondChange">
-				<dt class="entry">OnSecondChange</dt>
+				<dt class="entry">OnSecondChange</dt><div class="OnSecondChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>1秒ごとに発生。</p>
 					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
@@ -1327,7 +1357,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMinuteChange">
-				<dt class="entry">OnMinuteChange</dt>
+				<dt class="entry">OnMinuteChange</dt><div class="OnMinuteChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>1分ごとに発生。</p>
 					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
@@ -1351,7 +1381,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHourTimeSignal">
-				<dt class="entry">OnHourTimeSignal</dt>
+				<dt class="entry">OnHourTimeSignal</dt><div class="OnHourTimeSignal_GhostStatus"></div>
 				<dd class="entry">
 					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
 					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
@@ -1376,7 +1406,7 @@
 		<section class="category">
 			<h1>消滅イベント</h1>
 			<dl id="OnVanishSelecting">
-				<dt class="entry">OnVanishSelecting</dt>
+				<dt class="entry">OnVanishSelecting</dt><div class="OnVanishSelecting_GhostStatus"></div>
 				<dd class="entry">
 					<p>消滅が指示された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1387,7 +1417,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishSelected">
-				<dt class="entry">OnVanishSelected</dt>
+				<dt class="entry">OnVanishSelected</dt><div class="OnVanishSelected_GhostStatus"></div>
 				<dd class="entry">
 					<p>確認ダイアログでYESが選択された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1398,7 +1428,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishCancel">
-				<dt class="entry">OnVanishCancel</dt>
+				<dt class="entry">OnVanishCancel</dt><div class="OnVanishCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>確認ダイアログでNOが選択された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1409,7 +1439,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishButtonHold">
-				<dt class="entry">OnVanishButtonHold</dt>
+				<dt class="entry">OnVanishButtonHold</dt><div class="OnVanishButtonHold_GhostStatus"></div>
 				<dd class="entry">
 					<p>消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
 					<dl class="reference">
@@ -1428,7 +1458,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanished">
-				<dt class="entry">OnVanished</dt>
+				<dt class="entry">OnVanished</dt><div class="OnVanished_GhostStatus"></div>
 				<dd class="entry">
 					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishedへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
 					<dl class="reference">
@@ -1449,7 +1479,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostVanished">
-				<dt class="entry">OnOtherGhostVanished</dt>
+				<dt class="entry">OnOtherGhostVanished</dt><div class="OnOtherGhostVanished_GhostStatus"></div>
 				<dd class="entry">
 					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
 					<dl class="reference">
@@ -1471,7 +1501,7 @@
 		<section class="category">
 			<h1>選択肢イベント</h1>
 			<dl id="OnChoiceSelect">
-				<dt class="entry">OnChoiceSelect</dt>
+				<dt class="entry">OnChoiceSelect</dt><div class="OnChoiceSelect_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢が選択された際に発生。</p>
 					<dl class="reference">
@@ -1488,7 +1518,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceSelectEx">
-				<dt class="entry">OnChoiceSelectEx</dt>
+				<dt class="entry">OnChoiceSelectEx</dt><div class="OnChoiceSelectEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
 					<dl class="reference">
@@ -1505,7 +1535,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceEnter">
-				<dt class="entry">OnChoiceEnter</dt>
+				<dt class="entry">OnChoiceEnter</dt><div class="OnChoiceEnter_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterはReferenceなしで発生する。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1524,7 +1554,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceTimeout">
-				<dt class="entry">OnChoiceTimeout</dt>
+				<dt class="entry">OnChoiceTimeout</dt><div class="OnChoiceTimeout_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢待ち時間がタイムアウトした際に発生。</p>
 					<dl class="reference">
@@ -1539,7 +1569,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceHover">
-				<dt class="entry">OnChoiceHover</dt>
+				<dt class="entry">OnChoiceHover</dt><div class="OnChoiceHover_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢上で静止された際に発生。</p>
 					<dl class="reference">
@@ -1556,7 +1586,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAnchorSelect">
-				<dt class="entry">OnAnchorSelect</dt>
+				<dt class="entry">OnAnchorSelect</dt><div class="OnAnchorSelect_GhostStatus"></div>
 				<dd class="entry">
 					<p>\_aジャンパがクリックされた瞬間に発生。</p>
 					<dl class="reference">
@@ -1571,7 +1601,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAnchorSelectEx">
-				<dt class="entry">OnAnchorSelectEx</dt>
+				<dt class="entry">OnAnchorSelectEx</dt><div class="OnAnchorSelectEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
 					<dl class="reference">
@@ -1591,7 +1621,7 @@
 		<section class="category">
 			<h1>サーフェスイベント</h1>
 			<dl id="OnSurfaceChange">
-				<dt class="entry">OnSurfaceChange</dt>
+				<dt class="entry">OnSurfaceChange</dt><div class="OnSurfaceChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>サーフェスが変わった際に発生。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1609,7 +1639,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSurfaceRestore">
-				<dt class="entry">OnSurfaceRestore</dt>
+				<dt class="entry">OnSurfaceRestore</dt><div class="OnSurfaceRestore_GhostStatus"></div>
 				<dd class="entry">
 					<p>トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
 					<dl class="reference">
@@ -1626,7 +1656,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherSurfaceChange">
-				<dt class="entry">OnOtherSurfaceChange</dt>
+				<dt class="entry">OnOtherSurfaceChange</dt><div class="OnOtherSurfaceChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
 					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
@@ -1653,7 +1683,7 @@
 		<section class="category">
 			<h1>マウスイベント</h1>
 			<dl id="OnMouseClick">
-				<dt class="entry">OnMouseClick</dt>
+				<dt class="entry">OnMouseClick</dt><div class="OnMouseClick_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
 					<dl class="reference">
@@ -1680,7 +1710,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseClickEx">
-				<dt class="entry">OnMouseClickEx</dt>
+				<dt class="entry">OnMouseClickEx</dt><div class="OnMouseClickEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
 					<dl class="reference">
@@ -1705,7 +1735,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDoubleClick">
-				<dt class="entry">OnMouseDoubleClick</dt>
+				<dt class="entry">OnMouseDoubleClick</dt><div class="OnMouseDoubleClick_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右ボタンでダブルクリックされた際に発生。</p>
 					<dl class="reference">
@@ -1732,7 +1762,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDoubleClickEx">
-				<dt class="entry">OnMouseDoubleClickEx</dt>
+				<dt class="entry">OnMouseDoubleClickEx</dt><div class="OnMouseDoubleClickEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右ボタン以外でダブルクリックされた際に発生。</p>
 					<dl class="reference">
@@ -1757,7 +1787,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMultipleClick">
-				<dt class="entry">OnMouseMultipleClick</dt>
+				<dt class="entry">OnMouseMultipleClick</dt><div class="OnMouseMultipleClick_GhostStatus"></div>
 				<dd class="entry">
 					<p>3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
 					<dl class="reference">
@@ -1784,7 +1814,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMultipleClickEx">
-				<dt class="entry">OnMouseMultipleClickEx</dt>
+				<dt class="entry">OnMouseMultipleClickEx</dt><div class="OnMouseMultipleClickEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
 					<dl class="reference">
@@ -1811,7 +1841,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseUp">
-				<dt class="entry">OnMouseUp</dt>
+				<dt class="entry">OnMouseUp</dt><div class="OnMouseUp_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
@@ -1836,7 +1866,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseUpEx">
-				<dt class="entry">OnMouseUpEx</dt>
+				<dt class="entry">OnMouseUpEx</dt><div class="OnMouseUpEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右以外のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
@@ -1861,7 +1891,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDown">
-				<dt class="entry">OnMouseDown</dt>
+				<dt class="entry">OnMouseDown</dt><div class="OnMouseDown_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -1886,7 +1916,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDownEx">
-				<dt class="entry">OnMouseDownEx</dt>
+				<dt class="entry">OnMouseDownEx</dt><div class="OnMouseDownEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>左・右以外のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -1911,7 +1941,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMove">
-				<dt class="entry">OnMouseMove</dt>
+				<dt class="entry">OnMouseMove</dt><div class="OnMouseMove_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスが移動した際に発生。</p>
 					<dl class="reference">
@@ -1938,7 +1968,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseWheel">
-				<dt class="entry">OnMouseWheel</dt>
+				<dt class="entry">OnMouseWheel</dt><div class="OnMouseWheel_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
 					<dl class="reference">
@@ -1965,7 +1995,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseEnterAll">
-				<dt class="entry">OnMouseEnterAll</dt>
+				<dt class="entry">OnMouseEnterAll</dt><div class="OnMouseEnterAll_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスがキャラクターウインドウに入った際に発生。</p>
 					<dl class="reference">
@@ -1990,7 +2020,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseLeaveAll">
-				<dt class="entry">OnMouseLeaveAll</dt>
+				<dt class="entry">OnMouseLeaveAll</dt><div class="OnMouseLeaveAll_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスがキャラクターウインドウから出た際に発生。</p>
 					<dl class="reference">
@@ -2015,7 +2045,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseEnter">
-				<dt class="entry">OnMouseEnter</dt>
+				<dt class="entry">OnMouseEnter</dt><div class="OnMouseEnter_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスが当たり判定に入った際に発生。</p>
 					<dl class="reference">
@@ -2040,7 +2070,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseLeave">
-				<dt class="entry">OnMouseLeave</dt>
+				<dt class="entry">OnMouseLeave</dt><div class="OnMouseLeave_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスが当たり判定から出た際に発生。</p>
 					<dl class="reference">
@@ -2065,7 +2095,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDragStart">
-				<dt class="entry">OnMouseDragStart</dt>
+				<dt class="entry">OnMouseDragStart</dt><div class="OnMouseDragStart_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスをドラッグし始めた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
@@ -2090,7 +2120,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDragEnd">
-				<dt class="entry">OnMouseDragEnd</dt>
+				<dt class="entry">OnMouseDragEnd</dt><div class="OnMouseDragEnd_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスをドラッグし終えた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
@@ -2115,7 +2145,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseHover">
-				<dt class="entry">OnMouseHover</dt>
+				<dt class="entry">OnMouseHover</dt><div class="OnMouseHover_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスが静止している際に発生。</p>
 					<dl class="reference">
@@ -2140,7 +2170,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseGesture">
-				<dt class="entry">OnMouseGesture</dt>
+				<dt class="entry">OnMouseGesture</dt><div class="OnMouseGesture_GhostStatus"></div>
 				<dd class="entry">
 					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
 					<dl class="reference">
@@ -2168,7 +2198,7 @@
 		<section class="category">
 			<h1>バルーンイベント</h1>
 			<dl id="OnBalloonBreak">
-				<dt class="entry">OnBalloonBreak</dt>
+				<dt class="entry">OnBalloonBreak</dt><div class="OnBalloonBreak_GhostStatus"></div>
 				<dd class="entry">
 					<p>SSTP以外でブレイクされた際に発生。</p>
 					<dl class="reference">
@@ -2185,7 +2215,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonClose">
-				<dt class="entry">OnBalloonClose</dt>
+				<dt class="entry">OnBalloonClose</dt><div class="OnBalloonClose_GhostStatus"></div>
 				<dd class="entry">
 					<p>バルーンを閉じた際に発生。</p>
 					<dl class="reference">
@@ -2198,7 +2228,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonTimeout">
-				<dt class="entry">OnBalloonTimeout</dt>
+				<dt class="entry">OnBalloonTimeout</dt><div class="OnBalloonTimeout_GhostStatus"></div>
 				<dd class="entry">
 					<p>選択肢以外でバルーンがタイムアウトした際に発生。</p>
 					<dl class="reference">
@@ -2216,7 +2246,7 @@
 		<section class="category">
 			<h1>トレイバルーンイベント</h1>
 			<dl id="OnTrayBalloonClick">
-				<dt class="entry">OnTrayBalloonClick</dt>
+				<dt class="entry">OnTrayBalloonClick</dt><div class="OnTrayBalloonClick_GhostStatus"></div>
 				<dd class="entry">
 					<p>トレイアイコンのバルーンをクリックして消した際に発生。</p>
 					<dl class="reference">
@@ -2231,7 +2261,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTrayBalloonTimeout">
-				<dt class="entry">OnTrayBalloonTimeout</dt>
+				<dt class="entry">OnTrayBalloonTimeout</dt><div class="OnTrayBalloonTimeout_GhostStatus"></div>
 				<dd class="entry">
 					<p>トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
 					<dl class="reference">
@@ -2249,7 +2279,7 @@
 		<section class="category">
 			<h1>インストールイベント</h1>
 			<dl id="OnInstallBegin">
-				<dt class="entry">OnInstallBegin</dt>
+				<dt class="entry">OnInstallBegin</dt><div class="OnInstallBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>アーカイブのインストール開始の際に発生。</p>
 					<ul class="supported-baseware">
@@ -2260,7 +2290,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallComplete">
-				<dt class="entry">OnInstallComplete</dt>
+				<dt class="entry">OnInstallComplete</dt><div class="OnInstallComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールが正常終了した際に発生。</p>
 					<dl class="reference">
@@ -2279,7 +2309,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallCompleteEx">
-				<dt class="entry">OnInstallCompleteEx</dt>
+				<dt class="entry">OnInstallCompleteEx</dt><div class="OnInstallCompleteEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
@@ -2296,7 +2326,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallFailure">
-				<dt class="entry">OnInstallFailure</dt>
+				<dt class="entry">OnInstallFailure</dt><div class="OnInstallFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールに失敗した際に発生。</p>
 					<dl class="reference">
@@ -2311,7 +2341,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallRefuse">
-				<dt class="entry">OnInstallRefuse</dt>
+				<dt class="entry">OnInstallRefuse</dt><div class="OnInstallRefuse_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
@@ -2330,7 +2360,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallReroute">
-				<dt class="entry">OnInstallReroute</dt>
+				<dt class="entry">OnInstallReroute</dt><div class="OnInstallReroute_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールするファイルが他のゴーストを指名していた際、かつ、指名対象ゴーストが一緒に起動していた時に発生。以降のインストールイベントは指名対象ゴースト側に発生する。</p>
 					<dl class="reference">
@@ -2391,7 +2421,7 @@
 		<section class="category">
 			<h1>ファイルドロップイベント</h1>
 			<dl id="OnFileDropping">
-				<dt class="entry">OnFileDropping</dt>
+				<dt class="entry">OnFileDropping</dt><div class="OnFileDropping_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
 					<dl class="reference">
@@ -2407,7 +2437,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDropped">
-				<dt class="entry">OnFileDropped</dt>
+				<dt class="entry">OnFileDropped</dt><div class="OnFileDropped_GhostStatus"></div>
 				<dd class="entry">
 					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2423,7 +2453,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherObjectDropping">
-				<dt class="entry">OnOtherObjectDropping</dt>
+				<dt class="entry">OnOtherObjectDropping</dt><div class="OnOtherObjectDropping_GhostStatus"></div>
 				<dd class="entry">
 					<p>「ファイル」として扱えないもののカーソルがゴースト上に乗った際に発生。例：Windowsの「マイコンピュータ」など</p>
 					<dl class="reference">
@@ -2450,7 +2480,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherObjectDropped">
-				<dt class="entry">OnOtherObjectDropped</dt>
+				<dt class="entry">OnOtherObjectDropped</dt><div class="OnOtherObjectDropped_GhostStatus"></div>
 				<dd class="entry">
 					<p>「ファイル」として扱えないものをゴースト上にドロップした際に発生。例：Windowsの「マイコンピュータ」など。
 					<br />Referenceは OnOtherObjectDropping とまったく同じ。</p>
@@ -2460,7 +2490,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDirectoryDrop">
-				<dt class="entry">OnDirectoryDrop</dt>
+				<dt class="entry">OnDirectoryDrop</dt><div class="OnDirectoryDrop_GhostStatus"></div>
 				<dd class="entry">
 					<p>ディレクトリがDnD された際に発生。</p>
 					<dl class="reference">
@@ -2476,7 +2506,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWallpaperChange">
-				<dt class="entry">OnWallpaperChange</dt>
+				<dt class="entry">OnWallpaperChange</dt><div class="OnWallpaperChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
 					<dl class="reference">
@@ -2491,7 +2521,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDrop">
-				<dt class="entry">OnFileDrop</dt>
+				<dt class="entry">OnFileDrop</dt><div class="OnFileDrop_GhostStatus"></div>
 				<dd class="entry">
 					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2507,7 +2537,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDrop2">
-				<dt class="entry">OnFileDrop2</dt>
+				<dt class="entry">OnFileDrop2</dt><div class="OnFileDrop2_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2524,7 +2554,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDropEx">
-				<dt class="entry">OnFileDropEx</dt>
+				<dt class="entry">OnFileDropEx</dt><div class="OnFileDropEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2539,7 +2569,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdatedataCreating">
-				<dt class="entry">OnUpdatedataCreating</dt>
+				<dt class="entry">OnUpdatedataCreating</dt><div class="OnUpdatedataCreating_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴーストフォルダがDnDされた際に発生。</p>
 					<ul class="supported-baseware">
@@ -2550,7 +2580,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdatedataCreated">
-				<dt class="entry">OnUpdatedataCreated</dt>
+				<dt class="entry">OnUpdatedataCreated</dt><div class="OnUpdatedataCreated_GhostStatus"></div>
 				<dd class="entry">
 					<p>updates2.dauが作成された際に発生。</p>
 					<ul class="supported-baseware">
@@ -2561,7 +2591,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNarCreating">
-				<dt class="entry">OnNarCreating</dt>
+				<dt class="entry">OnNarCreating</dt><div class="OnNarCreating_GhostStatus"></div>
 				<dd class="entry">
 					<p>install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2580,7 +2610,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNarCreated">
-				<dt class="entry">OnNarCreated</dt>
+				<dt class="entry">OnNarCreated</dt><div class="OnNarCreated_GhostStatus"></div>
 				<dd class="entry">
 					<p>narファイルが作成された際に発生。</p>
 					<dl class="reference">
@@ -2602,7 +2632,7 @@
 		<section class="category">
 			<h1>URLドロップイベント</h1>
 			<dl id="OnURLDragDropping">
-				<dt class="entry">OnURLDragDropping</dt>
+				<dt class="entry">OnURLDragDropping</dt><div class="OnURLDragDropping_GhostStatus"></div>
 				<dd class="entry">
 					<p>URLがドロップされようとして、マウスカーソルが重なった際に発生。
 					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
@@ -2618,7 +2648,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropping">
-				<dt class="entry">OnURLDropping</dt>
+				<dt class="entry">OnURLDropping</dt><div class="OnURLDropping_GhostStatus"></div>
 				<dd class="entry">
 					<p>URLがドロップされた後で、ダウンロードを開始する時に発生。
 					<br />このイベントはダウンロード処理前に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2636,7 +2666,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropped">
-				<dt class="entry">OnURLDropped</dt>
+				<dt class="entry">OnURLDropped</dt><div class="OnURLDropped_GhostStatus"></div>
 				<dd class="entry">
 					<p>ドロップされたURLを受領し終わった際に発生。
 					<br />このイベントはNARインストールの直前、ダウンロード処理完了直後に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2656,7 +2686,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropFailure">
-				<dt class="entry">OnURLDropFailure</dt>
+				<dt class="entry">OnURLDropFailure</dt><div class="OnURLDropFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。
 					<br />このイベントはNARインストールを試行しようとして失敗した際に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2678,7 +2708,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLQuery">
-				<dt class="entry">OnURLQuery</dt>
+				<dt class="entry">OnURLQuery</dt><div class="OnURLQuery_GhostStatus"></div>
 				<dd class="entry">
 					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知される。<br />
 					これに対してスクリプトを返すと、通常のダウンロード処理がキャンセルされる。<br />
@@ -2702,7 +2732,7 @@
 				</dd>
 			</dl>
 			<dl id="OnXUkagakaLinkOpen">
-				<dt class="entry">OnXUkagakaLinkOpen</dt>
+				<dt class="entry">OnXUkagakaLinkOpen</dt><div class="OnXUkagakaLinkOpen_GhostStatus"></div>
 				<dd class="entry">
 					<p>下記形式のWeb関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
 					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
@@ -2722,7 +2752,7 @@
 		<section class="category">
 			<h1>ネットワーク更新イベント</h1>
 			<dl id="OnUpdateProcessExec">
-				<dt class="entry">OnUpdateProcessExec</dt>
+				<dt class="entry">OnUpdateProcessExec</dt><div class="OnUpdateProcessExec_GhostStatus"></div>
 				<dd class="entry">
 					<p>メニューなどから更新を実行する指示がなされた場合に発生する。<br />
 					このイベントに対して何かスクリプトを返すと、更新処理をカスタマイズできる。<br />
@@ -2739,7 +2769,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateBegin">
-				<dt class="entry">OnUpdateBegin</dt>
+				<dt class="entry">OnUpdateBegin</dt><div class="OnUpdateBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -2760,7 +2790,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateReady">
-				<dt class="entry">OnUpdateReady</dt>
+				<dt class="entry">OnUpdateReady</dt><div class="OnUpdateReady_GhostStatus"></div>
 				<dd class="entry">
 					<p>更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
@@ -2781,7 +2811,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateComplete">
-				<dt class="entry">OnUpdateComplete</dt>
+				<dt class="entry">OnUpdateComplete</dt><div class="OnUpdateComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
@@ -2802,7 +2832,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateFailure">
-				<dt class="entry">OnUpdateFailure</dt>
+				<dt class="entry">OnUpdateFailure</dt><div class="OnUpdateFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
@@ -2823,7 +2853,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnDownloadBegin">
-				<dt class="entry">OnUpdate.OnDownloadBegin</dt>
+				<dt class="entry">OnUpdate.OnDownloadBegin</dt><div class="OnUpdate.OnDownloadBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
@@ -2846,7 +2876,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareBegin">
-				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt>
+				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt><div class="OnUpdate.OnMD5CompareBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>MD5の照合開始の際に発生。</p>
 					<dl class="reference">
@@ -2869,7 +2899,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareComplete">
-				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt>
+				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt><div class="OnUpdate.OnMD5CompareComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>MD5が一致した際に発生。</p>
 					<dl class="reference">
@@ -2892,7 +2922,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareFailure">
-				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt>
+				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt><div class="OnUpdate.OnMD5CompareFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>MD5が一致しなかった際に発生。</p>
 					<dl class="reference">
@@ -2915,7 +2945,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherBegin">
-				<dt class="entry">OnUpdateOtherBegin</dt>
+				<dt class="entry">OnUpdateOtherBegin</dt><div class="OnUpdateOtherBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -2934,7 +2964,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherReady">
-				<dt class="entry">OnUpdateOtherReady</dt>
+				<dt class="entry">OnUpdateOtherReady</dt><div class="OnUpdateOtherReady_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
@@ -2953,7 +2983,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherComplete">
-				<dt class="entry">OnUpdateOtherComplete</dt>
+				<dt class="entry">OnUpdateOtherComplete</dt><div class="OnUpdateOtherComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
@@ -2972,7 +3002,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherFailure">
-				<dt class="entry">OnUpdateOtherFailure</dt>
+				<dt class="entry">OnUpdateOtherFailure</dt><div class="OnUpdateOtherFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
@@ -2991,7 +3021,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnDownloadBegin">
-				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt>
+				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt><div class="OnUpdateOther.OnDownloadBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
@@ -3012,7 +3042,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareBegin">
-				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt><div class="OnUpdateOther.OnMD5CompareBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のMD5の照合開始の際に発生。</p>
 					<dl class="reference">
@@ -3033,7 +3063,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareComplete">
-				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt><div class="OnUpdateOther.OnMD5CompareComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のMD5が一致した際に発生。</p>
 					<dl class="reference">
@@ -3052,7 +3082,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareFailure">
-				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt><div class="OnUpdateOther.OnMD5CompareFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト以外のMD5が一致しなかった際に発生。</p>
 					<dl class="reference">
@@ -3071,7 +3101,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckComplete">
-				<dt class="entry">OnUpdateCheckComplete</dt>
+				<dt class="entry">OnUpdateCheckComplete</dt><div class="OnUpdateCheckComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
@@ -3090,7 +3120,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckFailure">
-				<dt class="entry">OnUpdateCheckFailure</dt>
+				<dt class="entry">OnUpdateCheckFailure</dt><div class="OnUpdateCheckFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3105,7 +3135,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResult">
-				<dt class="entry">OnUpdateResult</dt>
+				<dt class="entry">OnUpdateResult</dt><div class="OnUpdateResult_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
 					<dl class="reference">
@@ -3131,7 +3161,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResultEx">
-				<dt class="entry">OnUpdateResultEx</dt>
+				<dt class="entry">OnUpdateResultEx</dt><div class="OnUpdateResultEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
 					<dl class="reference">
@@ -3158,7 +3188,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckResult">
-				<dt class="entry">OnUpdateCheckResult</dt>
+				<dt class="entry">OnUpdateCheckResult</dt><div class="OnUpdateCheckResult_GhostStatus"></div>
 				<dd class="entry">
 					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3171,7 +3201,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckResultEx">
-				<dt class="entry">OnUpdateCheckResultEx</dt>
+				<dt class="entry">OnUpdateCheckResultEx</dt><div class="OnUpdateCheckResultEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultExのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3184,7 +3214,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResultExplorer">
-				<dt class="entry">OnUpdateResultExplorer</dt>
+				<dt class="entry">OnUpdateResultExplorer</dt><div class="OnUpdateResultExplorer_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3258,7 +3288,7 @@
 		<section class="category">
 			<h1>時計合わせイベント</h1>
 			<dl id="OnSNTPBegin">
-				<dt class="entry">OnSNTPBegin</dt>
+				<dt class="entry">OnSNTPBegin</dt><div class="OnSNTPBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>時計合わせが開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3273,7 +3303,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCompareEx">
-				<dt class="entry">OnSNTPCompareEx</dt>
+				<dt class="entry">OnSNTPCompareEx</dt><div class="OnSNTPCompareEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
 					<dl class="reference">
@@ -3294,7 +3324,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCompare">
-				<dt class="entry">OnSNTPCompare</dt>
+				<dt class="entry">OnSNTPCompare</dt><div class="OnSNTPCompare_GhostStatus"></div>
 				<dd class="entry">
 					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
 					<dl class="reference">
@@ -3317,7 +3347,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCorrectEx">
-				<dt class="entry">OnSNTPCorrectEx</dt>
+				<dt class="entry">OnSNTPCorrectEx</dt><div class="OnSNTPCorrectEx_GhostStatus"></div>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
 					<dl class="reference">
@@ -3338,7 +3368,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCorrect">
-				<dt class="entry">OnSNTPCorrect</dt>
+				<dt class="entry">OnSNTPCorrect</dt><div class="OnSNTPCorrect_GhostStatus"></div>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
 					<dl class="reference">
@@ -3361,7 +3391,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPFailure">
-				<dt class="entry">OnSNTPFailure</dt>
+				<dt class="entry">OnSNTPFailure</dt><div class="OnSNTPFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>時計合わせに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3379,7 +3409,7 @@
 		<section class="category">
 			<h1>メールチェックイベント</h1>
 			<dl id="OnBIFFBegin">
-				<dt class="entry">OnBIFFBegin</dt>
+				<dt class="entry">OnBIFFBegin</dt><div class="OnBIFFBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>メールチェック開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3394,7 +3424,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFFComplete">
-				<dt class="entry">OnBIFFComplete</dt>
+				<dt class="entry">OnBIFFComplete</dt><div class="OnBIFFComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>メールチェックが成功した際に発生。</p>
 					<dl class="reference">
@@ -3423,7 +3453,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFF2Complete">
-				<dt class="entry">OnBIFF2Complete</dt>
+				<dt class="entry">OnBIFF2Complete</dt><div class="OnBIFF2Complete_GhostStatus"></div>
 				<dd class="entry">
 					<p>メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
 					<dl class="reference">
@@ -3443,7 +3473,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFFFailure">
-				<dt class="entry">OnBIFFFailure</dt>
+				<dt class="entry">OnBIFFFailure</dt><div class="OnBIFFFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>メールチェックに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3463,7 +3493,7 @@
 		<section class="category">
 			<h1>ヘッドライン/RSSセンスイベント</h1>
 			<dl id="OnHeadlinesenseBegin">
-				<dt class="entry">OnHeadlinesenseBegin</dt>
+				<dt class="entry">OnHeadlinesenseBegin</dt><div class="OnHeadlinesenseBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>ヘッドラインセンス開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3479,7 +3509,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesense.OnFind">
-				<dt class="entry">OnHeadlinesense.OnFind</dt>
+				<dt class="entry">OnHeadlinesense.OnFind</dt><div class="OnHeadlinesense.OnFind_GhostStatus"></div>
 				<dd class="entry">
 					<p>読み上げるべきヘッドラインセンスがあった際に発生。</p>
 					<dl class="reference">
@@ -3499,7 +3529,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesenseComplete">
-				<dt class="entry">OnHeadlinesenseComplete</dt>
+				<dt class="entry">OnHeadlinesenseComplete</dt><div class="OnHeadlinesenseComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
 					<dl class="reference">
@@ -3513,7 +3543,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesenseFailure">
-				<dt class="entry">OnHeadlinesenseFailure</dt>
+				<dt class="entry">OnHeadlinesenseFailure</dt><div class="OnHeadlinesenseFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>ヘッドラインセンスに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3528,7 +3558,7 @@
 			</dl>
 
 			<dl id="OnRSSBegin">
-				<dt class="entry">OnRSSBegin</dt>
+				<dt class="entry">OnRSSBegin</dt><div class="OnRSSBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>RSSセンス開始が指示された際に発生。本イベントに反応しない場合は、OnHeadlineSenseBeginが呼び出される。</p>
 					<dl class="reference">
@@ -3543,7 +3573,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRSSComplete">
-				<dt class="entry">OnRSSComplete</dt>
+				<dt class="entry">OnRSSComplete</dt><div class="OnRSSComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>ヘッドラインセンスが正常に終了した際に発生。本イベントに反応しない場合は、表示に適切なスクリプトを生成しヘッドライン完了系イベントが呼び出される。</p>
 					<dl class="reference">
@@ -3561,7 +3591,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRSSFailure">
-				<dt class="entry">OnRSSFailure</dt>
+				<dt class="entry">OnRSSFailure</dt><div class="OnRSSFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>RSSセンスに失敗した際に発生。本イベントに反応しない場合は、OnHeadlineSenseFailureが呼び出される。</p>
 					<dl class="reference">
@@ -3601,7 +3631,7 @@
 		<section class="category">
 			<h1>カレンダーイベント</h1>
 			<dl id="OnSchedule5MinutesToGo">
-				<dt class="entry">OnSchedule5MinutesToGo</dt>
+				<dt class="entry">OnSchedule5MinutesToGo</dt><div class="OnSchedule5MinutesToGo_GhostStatus"></div>
 				<dd class="entry">
 					<p>本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
 					<dl class="reference">
@@ -3620,7 +3650,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScheduleRead">
-				<dt class="entry">OnScheduleRead</dt>
+				<dt class="entry">OnScheduleRead</dt><div class="OnScheduleRead_GhostStatus"></div>
 				<dd class="entry">
 					<p>カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
 					<dl class="reference">
@@ -3639,7 +3669,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseBegin">
-				<dt class="entry">OnSchedulesenseBegin</dt>
+				<dt class="entry">OnSchedulesenseBegin</dt><div class="OnSchedulesenseBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>スケジュールセンサが接続開始する際に発生。</p>
 					<dl class="reference">
@@ -3652,7 +3682,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseComplete">
-				<dt class="entry">OnSchedulesenseComplete</dt>
+				<dt class="entry">OnSchedulesenseComplete</dt><div class="OnSchedulesenseComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>スケジュールセンサの処理が完了した際に発生。</p>
 					<dl class="reference">
@@ -3667,7 +3697,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseFailure">
-				<dt class="entry">OnSchedulesenseFailure</dt>
+				<dt class="entry">OnSchedulesenseFailure</dt><div class="OnSchedulesenseFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
 					<dl class="reference">
@@ -3680,7 +3710,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulepostBegin">
-				<dt class="entry">OnSchedulepostBegin</dt>
+				<dt class="entry">OnSchedulepostBegin</dt><div class="OnSchedulepostBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
 					<dl class="reference">
@@ -3693,7 +3723,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulepostComplete">
-				<dt class="entry">OnSchedulepostComplete</dt>
+				<dt class="entry">OnSchedulepostComplete</dt><div class="OnSchedulepostComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
 					<dl class="reference">
@@ -3748,7 +3778,7 @@
 		<section class="category">
 			<h1>SSTPイベント</h1>
 			<dl id="OnSSTPBreak">
-				<dt class="entry">OnSSTPBreak</dt>
+				<dt class="entry">OnSSTPBreak</dt><div class="OnSSTPBreak_GhostStatus"></div>
 				<dd class="entry">
 					<p>SSTPがブレイクされた際に発生。</p>
 					<dl class="reference">
@@ -3766,7 +3796,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSSTPBlacklisting">
-				<dt class="entry">OnSSTPBlacklisting</dt>
+				<dt class="entry">OnSSTPBlacklisting</dt><div class="OnSSTPBlacklisting_GhostStatus"></div>
 				<dd class="entry">
 					<p>最終クライアントのブラックリスト行きが指示された際に発生。</p>
 					<dl class="reference">
@@ -3782,7 +3812,7 @@
 		<section class="category">
 			<h1>その他通信イベント</h1>
 			<dl id="OnExecuteHTTPComplete">
-				<dt class="entry">OnExecuteHTTPComplete</dt>
+				<dt class="entry">OnExecuteHTTPComplete</dt><div class="OnExecuteHTTPComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>execute-httpで正常に取得完了した際に発生。</p>
 					<dl class="reference">
@@ -3808,7 +3838,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPFailure">
-				<dt class="entry">OnExecuteHTTPFailure</dt>
+				<dt class="entry">OnExecuteHTTPFailure</dt><div class="OnExecuteHTTPFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>execute-httpで取得エラーした際に発生。ReferenceはCompleteと同じ。</p>
 					<ul class="supported-baseware">
@@ -3817,7 +3847,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPProgress">
-				<dt class="entry">OnExecuteHTTPProgress</dt>
+				<dt class="entry">OnExecuteHTTPProgress</dt><div class="OnExecuteHTTPProgress_GhostStatus"></div>
 				<dd class="entry">
 					<p>execute-httpで--progress-notifyを指定した際に発生。ReferenceはCompleteと同じ。</p>
 					<ul class="supported-baseware">
@@ -3826,7 +3856,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPSSLInfo">
-				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
+				<dt class="entry">OnExecuteHTTPSSLInfo</dt><div class="OnExecuteHTTPSSLInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
 					<dl class="reference">
@@ -3857,7 +3887,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSComplete">
-				<dt class="entry">OnExecuteRSSComplete</dt>
+				<dt class="entry">OnExecuteRSSComplete</dt><div class="OnExecuteRSSComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,rss-get/post]で正常に取得完了した際に発生。</p>
 					<dl class="reference">
@@ -3870,7 +3900,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSFailure">
-				<dt class="entry">OnExecuteRSSFailure</dt>
+				<dt class="entry">OnExecuteRSSFailure</dt><div class="OnExecuteRSSFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
 					<dl class="reference">
@@ -3883,7 +3913,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSS_SSLInfo">
-				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
+				<dt class="entry">OnExecuteRSS_SSLInfo</dt><div class="OnExecuteRSS_SSLInfo_GhostStatus"></a>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
 					<dl class="reference">
@@ -3896,7 +3926,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt><div class="OnPingCompleteまたは--eventで指定ID_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
 					<dl class="reference">
@@ -3913,7 +3943,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
+				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt><div class="OnPingProgressまたは--eventで指定ID+Progress_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,ping]でping実行中に発生。</p>
 					<dl class="reference">
@@ -3930,7 +3960,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt><div class="OnNSLookupCompleteまたは--eventで指定ID_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,nslookup]で成功時に発生。</p>
 					<dl class="reference">
@@ -3949,7 +3979,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt><div class="OnNSLookupFailureまたは--eventで指定ID＋Failure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,nslookup]で失敗時に発生。</p>
 					<dl class="reference">
@@ -3969,7 +3999,7 @@
 		<section class="category">
 			<h1>イベント送信失敗イベント</h1>
 				<dl id="OnRaisePluginFailure">
-				<dt class="entry">OnRaisePluginFailure</dt>
+				<dt class="entry">OnRaisePluginFailure</dt><div class="OnRaisePluginFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![raiseplugin]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -3988,7 +4018,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyPluginFailure">
-				<dt class="entry">OnNotifyPluginFailure</dt>
+				<dt class="entry">OnNotifyPluginFailure</dt><div class="OnNotifyPluginFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![notifyplugin]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4007,7 +4037,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRaiseOtherFailure">
-				<dt class="entry">OnRaiseOtherFailure</dt>
+				<dt class="entry">OnRaiseOtherFailure</dt><div class="OnRaiseOtherFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![raiseother]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4026,7 +4056,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyOtherFailure">
-				<dt class="entry">OnNotifyOtherFailure</dt>
+				<dt class="entry">OnNotifyOtherFailure</dt><div class="OnNotifyOtherFailure_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![notifyother]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4048,7 +4078,7 @@
 		<section class="category">
 			<h1>見切れ・重なりイベント</h1>
 			<dl id="OnOverlap">
-				<dt class="entry">OnOverlap</dt>
+				<dt class="entry">OnOverlap</dt><div class="OnOverlap_GhostStatus"></div>
 				<dd class="entry">
 					<p>キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
@@ -4063,7 +4093,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherOverlap">
-				<dt class="entry">OnOtherOverlap</dt>
+				<dt class="entry">OnOtherOverlap</dt><div class="OnOtherOverlap_GhostStatus"></div>
 				<dd class="entry">
 					<p>他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
@@ -4078,7 +4108,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOffscreen">
-				<dt class="entry">OnOffscreen</dt>
+				<dt class="entry">OnOffscreen</dt><div class="OnOffscreen_GhostStatus"></div>
 				<dd class="entry">
 					<p>キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
@@ -4093,7 +4123,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherOffscreen">
-				<dt class="entry">OnOtherOffscreen</dt>
+				<dt class="entry">OnOtherOffscreen</dt><div class="OnOtherOffscreen_GhostStatus"></div>
 				<dd class="entry">
 					<p>他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
@@ -4111,7 +4141,7 @@
 		<section class="category">
 			<h1>OS状態イベント</h1>
 			<dl id="OnNetworkHeavy">
-				<dt class="entry">OnNetworkHeavy</dt>
+				<dt class="entry">OnNetworkHeavy</dt><div class="OnNetworkHeavy_GhostStatus"></div>
 				<dd class="entry">
 					<p>相手サーバが時間内に応答しなかった際に発生。</p>
 					<dl class="reference">
@@ -4128,7 +4158,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNetworkStatusChange">
-				<dt class="entry">OnNetworkStatusChange</dt>
+				<dt class="entry">OnNetworkStatusChange</dt><div class="OnNetworkStatusChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
 					<dl class="reference">
@@ -4165,7 +4195,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScreenSaverStart">
-				<dt class="entry">OnScreenSaverStart</dt>
+				<dt class="entry">OnScreenSaverStart</dt><div class="OnScreenSaverStart_GhostStatus"></div>
 				<dd class="entry">
 					<p>スクリーンセーバーが起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4182,7 +4212,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScreenSaverEnd">
-				<dt class="entry">OnScreenSaverEnd</dt>
+				<dt class="entry">OnScreenSaverEnd</dt><div class="OnScreenSaverEnd_GhostStatus"></div>
 				<dd class="entry">
 					<p>スクリーンセーバーが終了した際に発生。</p>
 					<dl class="reference">
@@ -4199,7 +4229,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionLock">
-				<dt class="entry">OnSessionLock</dt>
+				<dt class="entry">OnSessionLock</dt><div class="OnSessionLock_GhostStatus"></div>
 				<dd class="entry">
 					<p>ログイン状態のままロック画面に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。
 					<br />本イベントはNOTIFYではないが、当然何を実行してもユーザーには見えないので注意。</p>
@@ -4209,7 +4239,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionUnlock">
-				<dt class="entry">OnSessionUnlock</dt>
+				<dt class="entry">OnSessionUnlock</dt><div class="OnSessionUnlock_GhostStatus"></div>
 				<dd class="entry">
 					<p>ロック画面から通常の操作に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。</p>
 					<ul class="supported-baseware">
@@ -4218,7 +4248,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionDisconnect">
-				<dt class="entry">OnSessionDisconnect</dt>
+				<dt class="entry">OnSessionDisconnect</dt><div class="OnSessionDisconnect_GhostStatus"></div>
 				<dd class="entry">
 					<p>簡易ユーザー切り替えで他のユーザーアカウントへの切り替え操作を行った時に発生する。
 					<br />Windows上ではOnSessionLockとセットで通知され、さらに強制最小化されるためOnWindowStateMinimizeも発生する。
@@ -4229,7 +4259,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionReconnect">
-				<dt class="entry">OnSessionReconnect</dt>
+				<dt class="entry">OnSessionReconnect</dt><div class="OnSessionReconnect_GhostStatus"></div>
 				<dd class="entry">
 					<p>簡易ユーザー切り替えで実行中のユーザーアカウントに戻ってきた時に発生する。
 					<br />Windows上ではOnSessionUnlockとセットで通知され、さらに強制最小化されたのが解除されるためOnWindowStateRestoreも発生する。
@@ -4240,7 +4270,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCPULoadHigh">
-				<dt class="entry">OnCPULoadHigh</dt>
+				<dt class="entry">OnCPULoadHigh</dt><div class="OnCPULoadHigh_GhostStatus"></div>
 				<dd class="entry">
 					<p>CPU負荷が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
 					<dl class="reference">
@@ -4253,7 +4283,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCPULoadLow">
-				<dt class="entry">OnCPULoadLow</dt>
+				<dt class="entry">OnCPULoadLow</dt><div class="OnCPULoadLow_GhostStatus"></div>
 				<dd class="entry">
 					<p>CPU負荷が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
 					<dl class="reference">
@@ -4266,7 +4296,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMemoryLoadHigh">
-				<dt class="entry">OnMemoryLoadHigh</dt>
+				<dt class="entry">OnMemoryLoadHigh</dt><div class="OnMemoryLoadHigh_GhostStatus"></div>
 				<dd class="entry">
 					<p>メモリ使用量が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
 					<dl class="reference">
@@ -4279,7 +4309,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMemoryLoadLow">
-				<dt class="entry">OnMemoryLoadLow</dt>
+				<dt class="entry">OnMemoryLoadLow</dt><div class="OnMemoryLoadLow_GhostStatus"></div>
 				<dd class="entry">
 					<p>メモリ使用量が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
 					<dl class="reference">
@@ -4292,7 +4322,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayChange">
-				<dt class="entry">OnDisplayChange</dt>
+				<dt class="entry">OnDisplayChange</dt><div class="OnDisplayChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4310,7 +4340,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayHandover">
-				<dt class="entry">OnDisplayHandover</dt>
+				<dt class="entry">OnDisplayHandover</dt><div class="OnDisplayHandover_GhostStatus"></div>
 				<dd class="entry">
 					<p>スクリーン間を跨いでウインドウを移動させた際に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4331,7 +4361,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayChangeEx">
-				<dt class="entry">OnDisplayChangeEx</dt>
+				<dt class="entry">OnDisplayChangeEx</dt><div class="OnDisplayChangeEx_GhostStatus"></div>
 				<dd class="entry">
 					<p>スクリーンの解像度／色深度が変更された際に発生。マルチモニタ対応。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4347,7 +4377,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayPowerStatus">
-				<dt class="entry">OnDisplayPowerStatus</dt>
+				<dt class="entry">OnDisplayPowerStatus</dt><div class="OnDisplayPowerStatus_GhostStatus"></div>
 				<dd class="entry">
 					<p>モニタの電源がON/OFFされた時に発生する。単純にON/OFFされた時だけでなく、ノート型で蓋を閉じた時も対象となる。</p>
 					<dl class="reference">
@@ -4360,7 +4390,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryNotify">
-				<dt class="entry">OnBatteryNotify</dt>
+				<dt class="entry">OnBatteryNotify</dt><div class="OnBatteryNotify_GhostStatus"></div>
 				<dd class="entry">
 					<p>残りバッテリー量を通知。起動時のみ<em class="specsign">[NOTIFY]</em>で通知され、他はGET。</p>
 					<dl class="reference">
@@ -4386,7 +4416,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryLow">
-				<dt class="entry">OnBatteryLow</dt>
+				<dt class="entry">OnBatteryLow</dt><div class="OnBatteryLow_GhostStatus"></div>
 				<dd class="entry">
 					<p>バッテリー残量が少なめ(OnBatteryNotify Reference3がlow以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
@@ -4401,7 +4431,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryCritical">
-				<dt class="entry">OnBatteryCritical</dt>
+				<dt class="entry">OnBatteryCritical</dt><div class="OnBatteryCritical_GhostStatus"></div>
 				<dd class="entry">
 					<p>バッテリー残量が極端に少なく(OnBatteryNotify Reference3がcritical以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
@@ -4416,7 +4446,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryChargingStart">
-				<dt class="entry">OnBatteryChargingStart</dt>
+				<dt class="entry">OnBatteryChargingStart</dt><div class="OnBatteryChargingStart_GhostStatus"></div>
 				<dd class="entry">
 					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
@@ -4429,7 +4459,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryChargingStop">
-				<dt class="entry">OnBatteryChargingStop</dt>
+				<dt class="entry">OnBatteryChargingStop</dt><div class="OnBatteryChargingStop_GhostStatus"></div>
 				<dd class="entry">
 					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
@@ -4442,7 +4472,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDeviceArrival">
-				<dt class="entry">OnDeviceArrival</dt>
+				<dt class="entry">OnDeviceArrival</dt><div class="OnDeviceArrival_GhostStatus"></div>
 				<dd class="entry">
 					<p>デバイスを検出された際に発生。</p>
 					<dl class="reference">
@@ -4455,7 +4485,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDeviceRemove">
-				<dt class="entry">OnDeviceRemove</dt>
+				<dt class="entry">OnDeviceRemove</dt><div class="OnDeviceRemove_GhostStatus"></div>
 				<dd class="entry">
 					<p>デバイスを削除された際に発生。</p>
 					<dl class="reference">
@@ -4468,7 +4498,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTabletMode">
-				<dt class="entry">OnTabletMode</dt>
+				<dt class="entry">OnTabletMode</dt><div class="OnTabletMode_GhostStatus"></div>
 				<dd class="entry">
 					<p>OSがタブレット機の操作に最適化された状態に切り替えられた際に発生。<br>
 					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
@@ -4482,7 +4512,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDarkTheme">
-				<dt class="entry">OnDarkTheme</dt>
+				<dt class="entry">OnDarkTheme</dt><div class="OnDarkTheme_GhostStatus"></div>
 				<dd class="entry">
 					<p>OSがダークテーマ(暗めの表示)に切り替えられた際に発生。<br>
 					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
@@ -4498,7 +4528,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOSUpdateInfo">
-				<dt class="entry">OnOSUpdateInfo</dt>
+				<dt class="entry">OnOSUpdateInfo</dt><div class="OnOSUpdateInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>OSの更新確認日時・更新実行日時と、履歴情報の通知。<br>
 					起動直後にNOTIFY(喋れない)で通知され、更新が実行された時に少し遅れてGET(喋れる)で通知される。</p>
@@ -4520,7 +4550,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinEmpty">
-				<dt class="entry">OnRecycleBinEmpty</dt>
+				<dt class="entry">OnRecycleBinEmpty</dt><div class="OnRecycleBinEmpty_GhostStatus"></div>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
 					<br />スクリプトを実行したゴーストだけでなく、起動中の全ゴーストにもOnRecycleBinEmptyFromOtherが通知される。</p>
@@ -4544,7 +4574,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinEmptyFromOther">
-				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
+				<dt class="entry">OnRecycleBinEmptyFromOther</dt><div class="OnRecycleBinEmptyFromOther_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![execute,emptyrecyclebin]でゴミ箱を空にする指示を出したゴースト以外に送られる。<br />
 					ReferenceはOnRecycleBinEmptyと同じ。</p>
@@ -4554,7 +4584,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinStatusUpdate">
-				<dt class="entry">OnRecycleBinStatusUpdate</dt>
+				<dt class="entry">OnRecycleBinStatusUpdate</dt><div class="OnRecycleBinStatusUpdate_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生し、起動中の全ゴーストに通知される。
 					<br />また、ゴースト起動時に<em class="specsign">[NOTIFY]</em>で通知される。</p>
@@ -4581,7 +4611,7 @@
 		<section class="category">
 			<h1>選択領域モードイベント</h1>
 			<dl id="OnSelectModeBegin">
-				<dt class="entry">OnSelectModeBegin</dt>
+				<dt class="entry">OnSelectModeBegin</dt><div class="OnSelectModeBegin_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
 					<dl class="reference">
@@ -4596,7 +4626,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeCancel">
-				<dt class="entry">OnSelectModeCancel</dt>
+				<dt class="entry">OnSelectModeCancel</dt><div class="OnSelectModeCancel_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
 					<dl class="reference">
@@ -4611,7 +4641,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeComplete">
-				<dt class="entry">OnSelectModeComplete</dt>
+				<dt class="entry">OnSelectModeComplete</dt><div class="OnSelectModeComplete_GhostStatus"></div>
 				<dd class="entry">
 					<p>\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
 					<dl class="reference">
@@ -4628,7 +4658,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeMouseDown">
-				<dt class="entry">OnSelectModeMouseDown</dt>
+				<dt class="entry">OnSelectModeMouseDown</dt><div class="OnSelectModeMouseDown_GhostStatus"></div>
 				<dd class="entry">
 					<p>矩形選択モード中にマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -4645,7 +4675,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeMouseUp">
-				<dt class="entry">OnSelectModeMouseUp</dt>
+				<dt class="entry">OnSelectModeMouseUp</dt><div class="OnSelectModeMouseUp_GhostStatus"></div>
 				<dd class="entry">
 					<p>矩形選択モード中にマウスボタンが離された際に発生。</p>
 					<dl class="reference">
@@ -4665,7 +4695,7 @@
 		<section class="category">
 			<h1>音声認識・合成イベント</h1>
 			<dl id="OnSpeechSynthesisStatus">
-				<dt class="entry">OnSpeechSynthesisStatus</dt>
+				<dt class="entry">OnSpeechSynthesisStatus</dt><div class="OnSpeechSynthesisStatus_GhostStatus"></div>
 				<dd class="entry">
 					<p>起動時と音声合成機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4678,7 +4708,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVoiceRecognitionStatus">
-				<dt class="entry">OnVoiceRecognitionStatus</dt>
+				<dt class="entry">OnVoiceRecognitionStatus</dt><div class="OnVoiceRecognitionStatus_GhostStatus"></div>
 				<dd class="entry">
 					<p>起動時と音声認識機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4691,7 +4721,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVoiceRecognitionWord">
-				<dt class="entry">OnVoiceRecognitionWord</dt>
+				<dt class="entry">OnVoiceRecognitionWord</dt><div class="OnVoiceRecognitionWord_GhostStatus"></div>
 				<dd class="entry">
 					<p>音声認識で単語が認識された際に発生。</p>
 					<dl class="reference">
@@ -4713,7 +4743,7 @@
 		<section class="category">
 			<h1>その他イベント</h1>
 			<dl id="OnKeyPress">
-				<dt class="entry">OnKeyPress</dt>
+				<dt class="entry">OnKeyPress</dt><div class="OnKeyPress_GhostStatus"></div>
 				<dd class="entry">
 					<p>本体がアクティブな状態でキーが入力された際に発生。</p>
 					<dl class="reference">
@@ -4736,7 +4766,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecommendsiteChoice">
-				<dt class="entry">OnRecommendsiteChoice</dt>
+				<dt class="entry">OnRecommendsiteChoice</dt><div class="OnRecommendsiteChoice_GhostStatus"></div>
 				<dd class="entry">
 					<p>メニューからサイトのリンクが選択された際に発生。</p>
 					<dl class="reference">
@@ -4761,7 +4791,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTranslate">
-				<dt class="entry">OnTranslate</dt>
+				<dt class="entry">OnTranslate</dt><div class="OnTranslate_GhostStatus"></div>
 				<dd class="entry">
 					<p>SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
 					<dl class="reference">
@@ -4782,7 +4812,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAITalk">
-				<dt class="entry">OnAITalk</dt>
+				<dt class="entry">OnAITalk</dt><div class="OnAITalk_GhostStatus"></div>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_a">\aタグ実行</a>などにより、ランダムトーク発話を求められた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4791,7 +4821,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostTalk">
-				<dt class="entry">OnOtherGhostTalk</dt>
+				<dt class="entry">OnOtherGhostTalk</dt><div class="OnOtherGhostTalk_GhostStatus"></div>
 				<dd class="entry">
 					<p>他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
 					<dl class="reference">
@@ -4814,7 +4844,7 @@
 				</dd>
 			</dl>
 			<dl id="OnEmbryoExist">
-				<dt class="entry">OnEmbryoExist</dt>
+				<dt class="entry">OnEmbryoExist</dt><div class="OnEmbryoExist_GhostStatus"></div>
 				<dd class="entry">
 					<p>SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4823,7 +4853,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNekodorifExist">
-				<dt class="entry">OnNekodorifExist</dt>
+				<dt class="entry">OnNekodorifExist</dt><div class="OnNekodorifExist_GhostStatus"></div>
 				<dd class="entry">
 					<p>SSP起動時、先に猫どりふが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4832,7 +4862,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSoundStop">
-				<dt class="entry">OnSoundStop</dt>
+				<dt class="entry">OnSoundStop</dt><div class="OnSoundStop_GhostStatus"></div>
 				<dd class="entry">
 					<p>サウンドが終了した際に発生。</p>
 					<dl class="reference">
@@ -4845,7 +4875,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSoundError">
-				<dt class="entry">OnSoundError</dt>
+				<dt class="entry">OnSoundError</dt><div class="OnSoundError_GhostStatus"></div>
 				<dd class="entry">
 					<p>サウンド処理に失敗した際に発生。</p>
 					<dl class="reference">
@@ -4864,7 +4894,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTextDrop">
-				<dt class="entry">OnTextDrop</dt>
+				<dt class="entry">OnTextDrop</dt><div class="OnTextDrop_GhostStatus"></div>
 				<dd class="entry">
 					<p>テキストデータがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -4879,7 +4909,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellScaling">
-				<dt class="entry">OnShellScaling</dt>
+				<dt class="entry">OnShellScaling</dt><div class="OnShellScaling_GhostStatus"></div>
 				<dd class="entry">
 					<p>シェル倍率が変更された際に発生。</p>
 					<dl class="reference">
@@ -4898,7 +4928,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonScaling">
-				<dt class="entry">OnBalloonScaling</dt>
+				<dt class="entry">OnBalloonScaling</dt><div class="OnBalloonScaling_GhostStatus"></div>
 				<dd class="entry">
 					<p>バルーン倍率が変更された際に発生。</p>
 					<dl class="reference">
@@ -4917,7 +4947,7 @@
 				</dd>
 			</dl>
 			<dl id="OnLanguageChange">
-				<dt class="entry">OnLanguageChange</dt>
+				<dt class="entry">OnLanguageChange</dt><div class="OnLanguageChange_GhostStatus"></div>
 				<dd class="entry">
 					<p>言語設定が変更された際と、起動直後に通知される。<br>
 					起動直後に通知される場合は必ずNOTIFYとなり、イベントに応答してしゃべることはできない。</p>
@@ -4940,7 +4970,7 @@
 		<section class="category">
 			<h1>Notifyイベント</h1>
 			<dl id="basewareversion">
-				<dt class="entry">basewareversion</dt>
+				<dt class="entry">basewareversion</dt><div class="basewareversion_GhostStatus"></div>
 				<dd class="entry">
 					<p>ベースウェアの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4958,7 +4988,7 @@
 				</dd>
 			</dl>
 			<dl id="hwnd">
-				<dt class="entry">hwnd</dt>
+				<dt class="entry">hwnd</dt><div class="hwnd_GhostStatus"></div>
 				<dd class="entry">
 					<p>hwndを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4974,7 +5004,7 @@
 				</dd>
 			</dl>
 			<dl id="uniqueid">
-				<dt class="entry">uniqueid</dt>
+				<dt class="entry">uniqueid</dt><div class="uniqueid_GhostStatus"></div>
 				<dd class="entry">
 					<p>unique IDを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4988,7 +5018,7 @@
 				</dd>
 			</dl>
 			<dl id="capability">
-				<dt class="entry">capability</dt>
+				<dt class="entry">capability</dt><div class="capability_GhostStatus"></div>
 				<dd class="entry">
 					<p>SHIORI拡張実装状態を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5011,7 +5041,7 @@
 				</dd>
 			</dl>
 			<dl id="ownerghostname">
-				<dt class="entry">ownerghostname</dt>
+				<dt class="entry">ownerghostname</dt><div class="ownerghostname_GhostStatus"></div>
 				<dd class="entry">
 					<p>現在のゴースト名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5026,7 +5056,7 @@
 				</dd>
 			</dl>
 			<dl id="otherghostname">
-				<dt class="entry">otherghostname</dt>
+				<dt class="entry">otherghostname</dt><div class="otherghostname_GhostStatus"></div>
 				<dd class="entry">
 					<p>他に起動しているゴーストの本体側名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5041,7 +5071,7 @@
 				</dd>
 			</dl>
 			<dl id="installedsakuraname">
-				<dt class="entry">installedsakuraname</dt>
+				<dt class="entry">installedsakuraname</dt><div class="installedsakuraname_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているゴーストのsakura.nameを通知。<em class="specsign">[NOTIFY]</em>
 					<br />必ずinstalledghostnameの前に通知される。
@@ -5056,7 +5086,7 @@
 				</dd>
 			</dl>
 			<dl id="installedkeroname">
-				<dt class="entry">installedkeroname</dt>
+				<dt class="entry">installedkeroname</dt><div class="installedkeroname_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているゴーストのkero.nameを通知。<em class="specsign">[NOTIFY]</em>
 					<br />必ずinstalledghostnameの前に通知される。
@@ -5071,7 +5101,7 @@
 				</dd>
 			</dl>
 			<dl id="installedghostname">
-				<dt class="entry">installedghostname</dt>
+				<dt class="entry">installedghostname</dt><div class="installedghostname_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているゴーストを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5086,7 +5116,7 @@
 				</dd>
 			</dl>
 			<dl id="installedshellname">
-				<dt class="entry">installedshellname</dt>
+				<dt class="entry">installedshellname</dt><div class="installedshellname_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているシェルを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5100,7 +5130,7 @@
 				</dd>
 			</dl>
 			<dl id="installedballoonname">
-				<dt class="entry">installedballoonname</dt>
+				<dt class="entry">installedballoonname</dt><div class="installedballoonname_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているバルーンを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5114,7 +5144,7 @@
 				</dd>
 			</dl>
 			<dl id="installedheadlinename">
-				<dt class="entry">installedheadlinename</dt>
+				<dt class="entry">installedheadlinename</dt><div class="installedheadlinename_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているRSS/ヘッドラインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5127,7 +5157,7 @@
 				</dd>
 			</dl>
 			<dl id="installedplugin">
-				<dt class="entry">installedplugin</dt>
+				<dt class="entry">installedplugin</dt><div class="installedplugin_GhostStatus"></div>
 				<dd class="entry">
 					<p>インストールされているプラグインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5140,7 +5170,7 @@
 				</dd>
 			</dl>
 			<dl id="configuredbiffname">
-				<dt class="entry">configuredbiffname</dt>
+				<dt class="entry">configuredbiffname</dt><div class="configuredbiffname_GhostStatus"></div>
 				<dd class="entry">
 					<p>設定済みメールチェックアカウントのリストを通知する。<a href="list_sakura_script.html#_!_biff_">\![biff,アカウント名]</a>で利用できる。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5153,7 +5183,7 @@
 				</dd>
 			</dl>
 			<dl id="ghostpathlist">
-				<dt class="entry">ghostpathlist</dt>
+				<dt class="entry">ghostpathlist</dt><div class="ghostpathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5166,7 +5196,7 @@
 				</dd>
 			</dl>
 			<dl id="balloonpathlist">
-				<dt class="entry">balloonpathlist</dt>
+				<dt class="entry">balloonpathlist</dt><div class="balloonpathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5179,7 +5209,7 @@
 				</dd>
 			</dl>
 			<dl id="headlinepathlist">
-				<dt class="entry">headlinepathlist</dt>
+				<dt class="entry">headlinepathlist</dt><div class="headlinepathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5192,7 +5222,7 @@
 				</dd>
 			</dl>
 			<dl id="pluginpathlist">
-				<dt class="entry">pluginpathlist</dt>
+				<dt class="entry">pluginpathlist</dt><div class="pluginpathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5205,7 +5235,7 @@
 				</dd>
 			</dl>
 			<dl id="calendarskinpathlist">
-				<dt class="entry">calendarskinpathlist</dt>
+				<dt class="entry">calendarskinpathlist</dt><div class="calendarskinpathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>カレンダースキン格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5218,7 +5248,7 @@
 				</dd>
 			</dl>
 			<dl id="calendarpluginpathlist">
-				<dt class="entry">calendarpluginpathlist</dt>
+				<dt class="entry">calendarpluginpathlist</dt><div class="calendarpluginpathlist_GhostStatus"></div>
 				<dd class="entry">
 					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5231,7 +5261,7 @@
 				</dd>
 			</dl>
 			<dl id="rateofusegraph">
-				<dt class="entry">rateofusegraph</dt>
+				<dt class="entry">rateofusegraph</dt><div class="rateofusegraph_GhostStatus"></div>
 				<dd class="entry">
 					<p>使ってるぞグラフの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5254,7 +5284,7 @@
 				</dd>
 			</dl>
 			<dl id="enable_log">
-				<dt class="entry">enable_log</dt>
+				<dt class="entry">enable_log</dt><div class="enable_log_GhostStatus"></a>
 				<dd class="entry">
 					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<em class="specsign">[NOTIFY]</em><br />
 					<a href="list_shiori_resource.html#log_path">SHIORI Resource : log_path</a> も参照。</p>
@@ -5268,7 +5298,7 @@
 				</dd>
 			</dl>
 			<dl id="enable_debug">
-				<dt class="entry">enable_debug</dt>
+				<dt class="entry">enable_debug</dt><div class="enable_debug_GhostStatus"></a>
 				<dd class="entry">
 					<p>開発用パレットの「SHIORIデバッグモード有効」のON/OFF。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5281,7 +5311,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifySelfInfo">
-				<dt class="entry">OnNotifySelfInfo</dt>
+				<dt class="entry">OnNotifySelfInfo</dt><div class="OnNotifySelfInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>ゴースト自身の情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5307,7 +5337,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyBalloonInfo">
-				<dt class="entry">OnNotifyBalloonInfo</dt>
+				<dt class="entry">OnNotifyBalloonInfo</dt><div class="OnNotifyBalloonInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>現在使用中のバルーン情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5324,7 +5354,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyShellInfo">
-				<dt class="entry">OnNotifyShellInfo</dt>
+				<dt class="entry">OnNotifyShellInfo</dt><div class="OnNotifyShellInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>現在使用中のシェル情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5341,7 +5371,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyDressupInfo">
-				<dt class="entry">OnNotifyDressupInfo</dt>
+				<dt class="entry">OnNotifyDressupInfo</dt><div class="OnNotifyDressupInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>着せ替えの情報を通知。<br />
 					起動時のみ<em class="specsign">[NOTIFY]</em>で、メニューから切替などユーザーによる操作なら<em class="specsign">[GET]</em>で送られる。<br />
@@ -5359,7 +5389,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyUserInfo">
-				<dt class="entry">OnNotifyUserInfo</dt>
+				<dt class="entry">OnNotifyUserInfo</dt><div class="OnNotifyUserInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5378,7 +5408,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyOSInfo">
-				<dt class="entry">OnNotifyOSInfo</dt>
+				<dt class="entry">OnNotifyOSInfo</dt><div class="OnNotifyOSInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>OS情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5397,7 +5427,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyFontInfo">
-				<dt class="entry">OnNotifyFontInfo</dt>
+				<dt class="entry">OnNotifyFontInfo</dt><div class="OnNotifyFontInfo_GhostStatus"></div>
 				<dd class="entry">
 					<p>システムにインストールされているフォントを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5411,5 +5441,268 @@
 			</dl>
 		</section>
 	</div>
+	<script type="text/javascript">
+set_event_str("OnFirstBoot_GhostStatus", "OnFirstBoot");
+set_event_str("OnBoot_GhostStatus", "OnBoot");
+set_event_str("OnClose_GhostStatus", "OnClose");
+set_event_str("OnCloseAll_GhostStatus", "OnCloseAll");
+set_event_str("OnGhostChanged_GhostStatus", "OnGhostChanged");
+set_event_str("OnGhostChanging_GhostStatus", "OnGhostChanging");
+set_event_str("OnGhostCalled_GhostStatus", "OnGhostCalled");
+set_event_str("OnGhostCalling_GhostStatus", "OnGhostCalling");
+set_event_str("OnGhostCallComplete_GhostStatus", "OnGhostCallComplete");
+set_event_str("OnOtherGhostBooted_GhostStatus", "OnOtherGhostBooted");
+set_event_str("OnOtherGhostChanged_GhostStatus", "OnOtherGhostChanged");
+set_event_str("OnOtherGhostClosed_GhostStatus", "OnOtherGhostClosed");
+set_event_str("OnShellChanged_GhostStatus", "OnShellChanged");
+set_event_str("OnShellChanging_GhostStatus", "OnShellChanging");
+set_event_str("OnDressupChanged_GhostStatus", "OnDressupChanged");
+set_event_str("OnBalloonChange_GhostStatus", "OnBalloonChange");
+set_event_str("OnWindowStateRestore_GhostStatus", "OnWindowStateRestore");
+set_event_str("OnWindowStateMinimize_GhostStatus", "OnWindowStateMinimize");
+set_event_str("OnFullScreenAppMinimize_GhostStatus", "OnFullScreenAppMinimize");
+set_event_str("OnFullScreenAppRestore_GhostStatus", "OnFullScreenAppRestore");
+set_event_str("OnVirtualDesktopChanged_GhostStatus", "OnVirtualDesktopChanged");
+set_event_str("OnCacheSuspend_GhostStatus", "OnCacheSuspend");
+set_event_str("OnCacheRestore_GhostStatus", "OnCacheRestore");
+set_event_str("OnInitialize_GhostStatus", "OnInitialize");
+set_event_str("OnDestroy_GhostStatus", "OnDestroy");
+set_event_str("OnSysResume_GhostStatus", "OnSysResume");
+set_event_str("OnSysSuspend_GhostStatus", "OnSysSuspend");
+set_event_str("OnBasewareUpdating_GhostStatus", "OnBasewareUpdating");
+set_event_str("OnBasewareUpdated_GhostStatus", "OnBasewareUpdated");
+set_event_str("OnTeachStart_GhostStatus", "OnTeachStart");
+set_event_str("OnTeachInputCancel_GhostStatus", "OnTeachInputCancel");
+set_event_str("OnTeach_GhostStatus", "OnTeach");
+set_event_str("OnCommunicate_GhostStatus", "OnCommunicate");
+set_event_str("OnCommunicateInputCancel_GhostStatus", "OnCommunicateInputCancel");
+set_event_str("OnUserInput_GhostStatus", "OnUserInput");
+set_event_str("OnUserInputCancel_GhostStatus", "OnUserInputCancel");
+set_event_str("inputbox.autocomplete_GhostStatus", "inputbox.autocomplete");
+set_event_str("OnSystemDialog_GhostStatus", "OnSystemDialog");
+set_event_str("OnSystemDialogCancel_GhostStatus", "OnSystemDialogCancel");
+set_event_str("OnConfigurationDialogHelp_GhostStatus", "OnConfigurationDialogHelp");
+set_event_str("OnGhostTermsAccept_GhostStatus", "OnGhostTermsAccept");
+set_event_str("OnGhostTermsDecline_GhostStatus", "OnGhostTermsDecline");
+set_event_str("OnSecondChange_GhostStatus", "OnSecondChange");
+set_event_str("OnMinuteChange_GhostStatus", "OnMinuteChange");
+set_event_str("OnHourTimeSignal_GhostStatus", "OnHourTimeSignal");
+set_event_str("OnVanishSelecting_GhostStatus", "OnVanishSelecting");
+set_event_str("OnVanishSelected_GhostStatus", "OnVanishSelected");
+set_event_str("OnVanishCancel_GhostStatus", "OnVanishCancel");
+set_event_str("OnVanishButtonHold_GhostStatus", "OnVanishButtonHold");
+set_event_str("OnVanished_GhostStatus", "OnVanished");
+set_event_str("OnOtherGhostVanished_GhostStatus", "OnOtherGhostVanished");
+set_event_str("OnChoiceSelect_GhostStatus", "OnChoiceSelect");
+set_event_str("OnChoiceSelectEx_GhostStatus", "OnChoiceSelectEx");
+set_event_str("OnChoiceEnter_GhostStatus", "OnChoiceEnter");
+set_event_str("OnChoiceTimeout_GhostStatus", "OnChoiceTimeout");
+set_event_str("OnChoiceHover_GhostStatus", "OnChoiceHover");
+set_event_str("OnAnchorSelect_GhostStatus", "OnAnchorSelect");
+set_event_str("OnAnchorSelectEx_GhostStatus", "OnAnchorSelectEx");
+set_event_str("OnSurfaceChange_GhostStatus", "OnSurfaceChange");
+set_event_str("OnSurfaceRestore_GhostStatus", "OnSurfaceRestore");
+set_event_str("OnOtherSurfaceChange_GhostStatus", "OnOtherSurfaceChange");
+set_event_str("OnMouseClick_GhostStatus", "OnMouseClick");
+set_event_str("OnMouseClickEx_GhostStatus", "OnMouseClickEx");
+set_event_str("OnMouseDoubleClick_GhostStatus", "OnMouseDoubleClick");
+set_event_str("OnMouseDoubleClickEx_GhostStatus", "OnMouseDoubleClickEx");
+set_event_str("OnMouseMultipleClick_GhostStatus", "OnMouseMultipleClick");
+set_event_str("OnMouseMultipleClickEx_GhostStatus", "OnMouseMultipleClickEx");
+set_event_str("OnMouseUp_GhostStatus", "OnMouseUp");
+set_event_str("OnMouseUpEx_GhostStatus", "OnMouseUpEx");
+set_event_str("OnMouseDown_GhostStatus", "OnMouseDown");
+set_event_str("OnMouseDownEx_GhostStatus", "OnMouseDownEx");
+set_event_str("OnMouseMove_GhostStatus", "OnMouseMove");
+set_event_str("OnMouseWheel_GhostStatus", "OnMouseWheel");
+set_event_str("OnMouseEnterAll_GhostStatus", "OnMouseEnterAll");
+set_event_str("OnMouseLeaveAll_GhostStatus", "OnMouseLeaveAll");
+set_event_str("OnMouseEnter_GhostStatus", "OnMouseEnter");
+set_event_str("OnMouseLeave_GhostStatus", "OnMouseLeave");
+set_event_str("OnMouseDragStart_GhostStatus", "OnMouseDragStart");
+set_event_str("OnMouseDragEnd_GhostStatus", "OnMouseDragEnd");
+set_event_str("OnMouseHover_GhostStatus", "OnMouseHover");
+set_event_str("OnMouseGesture_GhostStatus", "OnMouseGesture");
+set_event_str("OnBalloonBreak_GhostStatus", "OnBalloonBreak");
+set_event_str("OnBalloonClose_GhostStatus", "OnBalloonClose");
+set_event_str("OnBalloonTimeout_GhostStatus", "OnBalloonTimeout");
+set_event_str("OnTrayBalloonClick_GhostStatus", "OnTrayBalloonClick");
+set_event_str("OnTrayBalloonTimeout_GhostStatus", "OnTrayBalloonTimeout");
+set_event_str("OnInstallBegin_GhostStatus", "OnInstallBegin");
+set_event_str("OnInstallComplete_GhostStatus", "OnInstallComplete");
+set_event_str("OnInstallCompleteEx_GhostStatus", "OnInstallCompleteEx");
+set_event_str("OnInstallFailure_GhostStatus", "OnInstallFailure");
+set_event_str("OnInstallRefuse_GhostStatus", "OnInstallRefuse");
+set_event_str("OnInstallReroute_GhostStatus", "OnInstallReroute");
+set_event_str("OnFileDropping_GhostStatus", "OnFileDropping");
+set_event_str("OnFileDropped_GhostStatus", "OnFileDropped");
+set_event_str("OnOtherObjectDropping_GhostStatus", "OnOtherObjectDropping");
+set_event_str("OnOtherObjectDropped_GhostStatus", "OnOtherObjectDropped");
+set_event_str("OnWallpaperChange_GhostStatus", "OnDirectoryDrop");
+set_event_str("OnWallpaperChange_GhostStatus", "OnWallpaperChange");
+set_event_str("OnFileDrop_GhostStatus", "OnFileDrop");
+set_event_str("OnFileDropEx_GhostStatus", "OnFileDropEx");
+set_event_str("OnFileDrop2_GhostStatus", "OnFileDrop2");
+set_event_str("OnUpdatedataCreating_GhostStatus", "OnUpdatedataCreating");
+set_event_str("OnUpdatedataCreated_GhostStatus", "OnUpdatedataCreated");
+set_event_str("OnNarCreating_GhostStatus", "OnNarCreating");
+set_event_str("OnNarCreated_GhostStatus", "OnNarCreated");
+set_event_str("OnURLDragDropping_GhostStatus", "OnURLDragDropping");
+set_event_str("OnURLDropping_GhostStatus", "OnURLDropping");
+set_event_str("OnURLDropped_GhostStatus", "OnURLDropped");
+set_event_str("OnURLDropFailure_GhostStatus", "OnURLDropFailure");
+set_event_str("OnURLQuery_GhostStatus", "OnURLQuery");
+set_event_str("OnXUkagakaLinkOpen_GhostStatus", "OnXUkagakaLinkOpen");
+set_event_str("OnUpdateProcessExec_GhostStatus", "OnUpdateProcessExec");
+set_event_str("OnUpdateBegin_GhostStatus", "OnUpdateBegin");
+set_event_str("OnUpdateReady_GhostStatus", "OnUpdateReady");
+set_event_str("OnUpdateComplete_GhostStatus", "OnUpdateComplete");
+set_event_str("OnUpdateFailure_GhostStatus", "OnUpdateFailure");
+set_event_str("OnUpdate.OnDownloadBegin_GhostStatus", "OnUpdate.OnDownloadBegin");
+set_event_str("OnUpdate.OnMD5CompareBegin_GhostStatus", "OnUpdate.OnMD5CompareBegin");
+set_event_str("OnUpdate.OnMD5CompareComplete_GhostStatus", "OnUpdate.OnMD5CompareComplete");
+set_event_str("OnUpdate.OnMD5CompareFailure_GhostStatus", "OnUpdate.OnMD5CompareFailure");
+set_event_str("OnUpdateOtherBegin_GhostStatus", "OnUpdateOtherBegin");
+set_event_str("OnUpdateOtherReady_GhostStatus", "OnUpdateOtherReady");
+set_event_str("OnUpdateOtherComplete_GhostStatus", "OnUpdateOtherComplete");
+set_event_str("OnUpdateOtherFailure_GhostStatus", "OnUpdateOtherFailure");
+set_event_str("OnUpdateOther.OnDownloadBegin_GhostStatus", "OnUpdateOther.OnDownloadBegin");
+set_event_str("OnUpdateOther.OnMD5CompareBegin_GhostStatus", "OnUpdateOther.OnMD5CompareBegin");
+set_event_str("OnUpdateOther.OnMD5CompareComplete_GhostStatus", "OnUpdateOther.OnMD5CompareComplete");
+set_event_str("OnUpdateOther.OnMD5CompareFailure_GhostStatus", "OnUpdateOther.OnMD5CompareFailure");
+set_event_str("OnUpdateCheckComplete_GhostStatus", "OnUpdateCheckComplete");
+set_event_str("OnUpdateCheckFailure_GhostStatus", "OnUpdateCheckFailure");
+set_event_str("OnUpdateResult_GhostStatus", "OnUpdateResult");
+set_event_str("OnUpdateResultEx_GhostStatus", "OnUpdateResultEx");
+set_event_str("OnUpdateCheckResult_GhostStatus", "OnUpdateCheckResult");
+set_event_str("OnUpdateCheckResultEx_GhostStatus", "OnUpdateCheckResultEx");
+set_event_str("OnUpdateResultExplorer_GhostStatus", "OnUpdateResultExplorer");
+set_event_str("OnSNTPBegin_GhostStatus", "OnSNTPBegin");
+set_event_str("OnSNTPCompareEx_GhostStatus", "OnSNTPCompareEx");
+set_event_str("OnSNTPCompare_GhostStatus", "OnSNTPCompare");
+set_event_str("OnSNTPCorrectEx_GhostStatus", "OnSNTPCorrectEx");
+set_event_str("OnSNTPCorrect_GhostStatus", "OnSNTPCorrect");
+set_event_str("OnSNTPFailure_GhostStatus", "OnSNTPFailure");
+set_event_str("OnBIFFBegin_GhostStatus", "OnBIFFBegin");
+set_event_str("OnBIFFComplete_GhostStatus", "OnBIFFComplete");
+set_event_str("OnBIFF2Complete_GhostStatus", "OnBIFF2Complete");
+set_event_str("OnBIFFFailure_GhostStatus", "OnBIFFFailure");
+set_event_str("OnHeadlinesenseBegin_GhostStatus", "OnHeadlinesenseBegin");
+set_event_str("OnHeadlinesense.OnFind_GhostStatus", "OnHeadlinesense.OnFind");
+set_event_str("OnHeadlinesenseComplete_GhostStatus", "OnHeadlinesenseComplete");
+set_event_str("OnHeadlinesenseFailure_GhostStatus", "OnHeadlinesenseFailure");
+set_event_str("OnRSSBegin_GhostStatus", "OnRSSBegin");
+set_event_str("OnRSSComplete_GhostStatus", "OnRSSComplete");
+set_event_str("OnRSSFailure_GhostStatus", "OnRSSFailure");
+set_event_str("OnSchedule5MinutesToGo_GhostStatus", "OnSchedule5MinutesToGo");
+set_event_str("OnScheduleRead_GhostStatus", "OnScheduleRead");
+set_event_str("OnSchedulesenseBegin_GhostStatus", "OnSchedulesenseBegin");
+set_event_str("OnSchedulesenseComplete_GhostStatus", "OnSchedulesenseComplete");
+set_event_str("OnSchedulesenseFailure_GhostStatus", "OnSchedulesenseFailure");
+set_event_str("OnSchedulepostBegin_GhostStatus", "OnSchedulepostBegin");
+set_event_str("OnSchedulepostComplete_GhostStatus", "OnSchedulepostComplete");
+set_event_str("OnSSTPBreak_GhostStatus", "OnSSTPBreak");
+set_event_str("OnSSTPBlacklisting_GhostStatus", "OnSSTPBlacklisting");
+set_event_str("OnExecuteHTTPComplete_GhostStatus", "OnExecuteHTTPComplete");
+set_event_str("OnExecuteHTTPFailure_GhostStatus", "OnExecuteHTTPFailure");
+set_event_str("OnExecuteHTTPProgress_GhostStatus", "OnExecuteHTTPProgress");
+set_event_str("OnExecuteHTTPSSLInfo_GhostStatus", "OnExecuteHTTPSSLInfo");
+set_event_str("OnExecuteRSSComplete_GhostStatus", "OnExecuteRSSComplete");
+set_event_str("OnExecuteRSSFailure_GhostStatus", "OnExecuteRSSFailure");
+set_event_str("OnExecuteRSS_SSLInfo_GhostStatus", "OnExecuteRSS_SSLInfo");
+set_event_str("OnPingComplete_GhostStatus", "OnPingComplete");
+set_event_str("OnPingProgress_GhostStatus", "OnPingProgress");
+set_event_str("OnNSLookupComplete_GhostStatus", "OnNSLookupComplete");
+set_event_str("OnNSLookupFailure_GhostStatus", "OnNSLookupFailure");
+set_event_str("OnRaisePluginFailure_GhostStatus", "OnRaisePluginFailure");
+set_event_str("OnNotifyPluginFailure_GhostStatus", "OnNotifyPluginFailure");
+set_event_str("OnRaiseOtherFailure_GhostStatus", "OnRaiseOtherFailure");
+set_event_str("OnNotifyOtherFailure_GhostStatus", "OnNotifyOtherFailure");
+set_event_str("OnOverlap_GhostStatus", "OnOverlap");
+set_event_str("OnOtherOverlap_GhostStatus", "OnOtherOverlap");
+set_event_str("OnOffscreen_GhostStatus", "OnOffscreen");
+set_event_str("OnOtherOffscreen_GhostStatus", "OnOtherOffscreen");
+set_event_str("OnNetworkHeavy_GhostStatus", "OnNetworkHeavy");
+set_event_str("OnNetworkStatusChange_GhostStatus", "OnNetworkStatusChange");
+set_event_str("OnScreenSaverStart_GhostStatus", "OnScreenSaverStart");
+set_event_str("OnScreenSaverEnd_GhostStatus", "OnScreenSaverEnd");
+set_event_str("OnSessionLock_GhostStatus", "OnSessionLock");
+set_event_str("OnSessionUnlock_GhostStatus", "OnSessionUnlock");
+set_event_str("OnSessionDisconnect_GhostStatus", "OnSessionDisconnect");
+set_event_str("OnSessionReconnect_GhostStatus", "OnSessionReconnect");
+set_event_str("OnCPULoadHigh_GhostStatus", "OnCPULoadHigh");
+set_event_str("OnCPULoadLow_GhostStatus", "OnCPULoadLow");
+set_event_str("OnMemoryLoadHigh_GhostStatus", "OnMemoryLoadHigh");
+set_event_str("OnMemoryLoadLow_GhostStatus", "OnMemoryLoadLow");
+set_event_str("OnDisplayChange_GhostStatus", "OnDisplayChange");
+set_event_str("OnDisplayHandover_GhostStatus", "OnDisplayHandover");
+set_event_str("OnDisplayChangeEx_GhostStatus", "OnDisplayChangeEx");
+set_event_str("OnDisplayPowerStatus_GhostStatus", "OnDisplayPowerStatus");
+set_event_str("OnBatteryNotify_GhostStatus", "OnBatteryNotify");
+set_event_str("OnBatteryLow_GhostStatus", "OnBatteryLow");
+set_event_str("OnBatteryCritical_GhostStatus", "OnBatteryCritical");
+set_event_str("OnBatteryChargingStart_GhostStatus", "OnBatteryChargingStart");
+set_event_str("OnBatteryChargingStop_GhostStatus", "OnBatteryChargingStop");
+set_event_str("OnDeviceArrival_GhostStatus", "OnDeviceArrival");
+set_event_str("OnDeviceRemove_GhostStatus", "OnDeviceRemove");
+set_event_str("OnTabletMode_GhostStatus", "OnTabletMode");
+set_event_str("OnDarkTheme_GhostStatus", "OnDarkTheme");
+set_event_str("OnOSUpdateInfo_GhostStatus", "OnOSUpdateInfo");
+set_event_str("OnRecycleBinEmpty_GhostStatus", "OnRecycleBinEmpty");
+set_event_str("OnRecycleBinEmptyFromOther_GhostStatus", "OnRecycleBinEmptyFromOther");
+set_event_str("OnRecycleBinStatusUpdate_GhostStatus", "OnRecycleBinStatusUpdate");
+set_event_str("OnSelectModeBegin_GhostStatus", "OnSelectModeBegin");
+set_event_str("OnSelectModeCancel_GhostStatus", "OnSelectModeCancel");
+set_event_str("OnSelectModeComplete_GhostStatus", "OnSelectModeComplete");
+set_event_str("OnSelectModeCancel_GhostStatus", "OnSelectModeCancel");
+set_event_str("OnSelectModeMouseDown_GhostStatus", "OnSelectModeMouseDown");
+set_event_str("OnSelectModeMouseUp_GhostStatus", "OnSelectModeMouseUp");
+set_event_str("OnSpeechSynthesisStatus_GhostStatus", "OnSpeechSynthesisStatus");
+set_event_str("OnVoiceRecognitionStatus_GhostStatus", "OnVoiceRecognitionStatus");
+set_event_str("OnVoiceRecognitionWord_GhostStatus", "OnVoiceRecognitionWord");
+set_event_str("OnKeyPress_GhostStatus", "OnKeyPress");
+set_event_str("OnRecommendsiteChoice_GhostStatus", "OnRecommendsiteChoice");
+set_event_str("OnTranslate_GhostStatus", "OnTranslate");
+set_event_str("OnAITalk_GhostStatus", "OnAITalk");
+set_event_str("OnOtherGhostTalk_GhostStatus", "OnOtherGhostTalk");
+set_event_str("OnEmbryoExist_GhostStatus", "OnEmbryoExist");
+set_event_str("OnNekodorifExist_GhostStatus", "OnNekodorifExist");
+set_event_str("OnSoundStop_GhostStatus", "OnSoundStop");
+set_event_str("OnSoundError_GhostStatus", "OnSoundError");
+set_event_str("OnTextDrop_GhostStatus", "OnTextDrop");
+set_event_str("OnShellScaling_GhostStatus", "OnShellScaling");
+set_event_str("OnBalloonScaling_GhostStatus", "OnBalloonScaling");
+set_event_str("OnLanguageChange_GhostStatus", "OnLanguageChange");
+set_event_str("basewareversion_GhostStatus", "basewareversion");
+set_event_str("hwnd_GhostStatus", "hwnd");
+set_event_str("uniqueid_GhostStatus", "uniqueid");
+set_event_str("capability_GhostStatus", "capability");
+set_event_str("ownerghostname_GhostStatus", "ownerghostname");
+set_event_str("otherghostname_GhostStatus", "otherghostname");
+set_event_str("installedsakuraname_GhostStatus", "installedsakuraname");
+set_event_str("installedkeroname_GhostStatus", "installedkeroname");
+set_event_str("installedghostname_GhostStatus", "installedghostname");
+set_event_str("installedshellname_GhostStatus", "installedshellname");
+set_event_str("installedballoonname_GhostStatus", "installedballoonname");
+set_event_str("installedheadlinename_GhostStatus", "installedheadlinename");
+set_event_str("installedplugin_GhostStatus", "installedplugin");
+set_event_str("configuredbiffname_GhostStatus", "configuredbiffname");
+set_event_str("ghostpathlist_GhostStatus", "ghostpathlist");
+set_event_str("balloonpathlist_GhostStatus", "balloonpathlist");
+set_event_str("headlinepathlist_GhostStatus", "headlinepathlist");
+set_event_str("pluginpathlist_GhostStatus", "pluginpathlist");
+set_event_str("calendarskinpathlist_GhostStatus", "calendarskinpathlist");
+set_event_str("calendarpluginpathlist_GhostStatus", "calendarpluginpathlist");
+set_event_str("rateofusegraph_GhostStatus", "rateofusegraph");
+set_event_str("enable_log_GhostStatus", "enable_log");
+set_event_str("enable_debug_GhostStatus", "enable_debug");
+set_event_str("OnNotifySelfInfo_GhostStatus", "OnNotifySelfInfo");
+set_event_str("OnNotifyBalloonInfo_GhostStatus", "OnNotifyBalloonInfo");
+set_event_str("OnNotifyShellInfo_GhostStatus", "OnNotifyShellInfo");
+set_event_str("OnNotifyDressupInfo_GhostStatus", "OnNotifyDressupInfo");
+set_event_str("OnNotifyUserInfo_GhostStatus", "OnNotifyUserInfo");
+set_event_str("OnNotifyOSInfo_GhostStatus", "OnNotifyOSInfo");
+set_event_str("OnNotifyFontInfo_GhostStatus", "OnNotifyFontInfo");
+	</script>
 </body>
 </html>
