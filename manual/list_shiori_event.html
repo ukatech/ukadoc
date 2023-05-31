@@ -17,6 +17,7 @@
 		var has_has_event = false;
 		jsstp.has_event('Has_Event').then(function(result) {
 			has_has_event = result;
+			set_event();
 		});
 		//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 		async function check_event_str(event_id, security_level="local") {
@@ -5442,6 +5443,7 @@
 		</section>
 	</div>
 	<script type="text/javascript">
+const set_event = () => {
 set_event_str("OnFirstBoot_GhostStatus", "OnFirstBoot");
 set_event_str("OnBoot_GhostStatus", "OnBoot");
 set_event_str("OnClose_GhostStatus", "OnClose");
@@ -5703,6 +5705,7 @@ set_event_str("OnNotifyDressupInfo_GhostStatus", "OnNotifyDressupInfo");
 set_event_str("OnNotifyUserInfo_GhostStatus", "OnNotifyUserInfo");
 set_event_str("OnNotifyOSInfo_GhostStatus", "OnNotifyOSInfo");
 set_event_str("OnNotifyFontInfo_GhostStatus", "OnNotifyFontInfo");
+};
 	</script>
 </body>
 </html>
