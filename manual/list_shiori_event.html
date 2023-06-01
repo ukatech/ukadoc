@@ -26,9 +26,9 @@
 				const result=await jsstp.has_event(event_id, security_level);
 				//以日语返回支持情况
 				if (result)
-					return "対応";
+					return "（対応）";
 				else
-					return "非対応";
+					return "（非対応）";
 			} else {
 				return "";
 			}

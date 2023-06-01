@@ -333,12 +333,6 @@ a:hover {
 	color: #333;
 	margin-left: 1em;
 }
-.category dt.entry span::before {
-	content: "(";
-}
-.category dt.entry span::after {
-	content: ")";
-}
 .category .supported-baseware {
 	margin: 0 0 30px 15px;
 }
