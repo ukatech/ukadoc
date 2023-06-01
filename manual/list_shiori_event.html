@@ -17,7 +17,8 @@
 		var has_has_event = false;
 		jsstp.has_event('Has_Event').then(function(result) {
 			has_has_event = result;
-			set_event();
+			if(result)
+				set_event();
 		});
 		//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 		async function check_event_str(event_id, security_level="local") {
@@ -35,9 +36,8 @@
 		function set_event_str(element_class_name, event_id, security_level="local") {
 			check_event_str(event_id, security_level).then(function(result) {
 				var elements = document.getElementsByClassName(element_class_name);
-				for (var i = 0; i < elements.length; i++) {
+				for (var i = 0; i < elements.length; i++)
 					elements[i].innerHTML = result;
-				}
 			});
 		}
 	</script>
@@ -5554,7 +5554,7 @@ set_event_str("OnURLDropping_GhostStatus", "OnURLDropping");
 set_event_str("OnURLDropped_GhostStatus", "OnURLDropped");
 set_event_str("OnURLDropFailure_GhostStatus", "OnURLDropFailure");
 set_event_str("OnURLQuery_GhostStatus", "OnURLQuery");
-set_event_str("OnXUkagakaLinkOpen_GhostStatus", "OnXUkagakaLinkOpen");
+set_event_str("OnXUkagakaLinkOpen_GhostStatus", "OnXUkagakaLinkOpen", "external");
 set_event_str("OnUpdateProcessExec_GhostStatus", "OnUpdateProcessExec");
 set_event_str("OnUpdateBegin_GhostStatus", "OnUpdateBegin");
 set_event_str("OnUpdateReady_GhostStatus", "OnUpdateReady");
