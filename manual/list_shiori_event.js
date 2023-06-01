@@ -7,45 +7,45 @@
 	external: external ? external.split(",") : []
 };
 */
-var event_list;
-var has_has_event= false;
+let event_list;
+let has_has_event = false;
 
 //for support graph
-var count_support = 0;
-var count_all = 0;
-function base_update_support_graph(){
+let count_support = 0;
+let count_all = 0;
+function base_update_support_graph() {
 	const g = document.getElementById("supported_graph_content");
 	g.max = count_all;g.value = count_support;
 	document.getElementById("supported_ratio").textContent = `${count_support}/${count_all}`;
 }
-function update_support_graph(is_support){
+function update_support_graph(is_support) {
 	count_support += is_support;
 	count_all += 1;
 	base_update_support_graph();
 }
-function clear_support_graph(){
+function clear_support_graph() {
 	count_support = 0;
 	count_all = 0;
 	base_update_support_graph();
 }
-function hide_support_graph(){
+function hide_support_graph() {
 	document.getElementById("supported_graph").style.display = "none";
 }
-function show_support_graph(){
+function show_support_graph() {
 	document.getElementById("supported_graph").style.display = "block";
 }
-function clear_all(){
+function clear_all() {
 	clear_support_graph();
-	event_list= null;
-	has_has_event= false;
+	event_list = null;
+	has_has_event = false;
 }
 
-async function reload_button(){
+async function reload_button() {
 	clear_all();
 	//清空ghost列表
-	var list =document.getElementById("ghost_list_content");
+	const list = document.getElementById("ghost_list_content");
 	//备份当前选项（如果有的话）
-	var selected = list.value;
+	let selected = list.value;
 	//清空列表
 	list.options.length = 0;
 	//重新加载列表
@@ -53,41 +53,41 @@ async function reload_button(){
 		"Command": "GetFMO"
 	});
 	//对于每个fmo的key以".fullname"结尾的项，将其对应的value添加到列表中
-	for (var key in fmo) {
+	for (const key in fmo) {
 		if (key.endsWith(".fullname")) {
-			var option = document.createElement("option");
+			const option = document.createElement("option");
 			option.text = fmo[key];
 			option.value = option.text;
 			list.add(option);
 		}
 	}
 	//根据备份的选项重新选中（如果还在列表中的话）
-	if(selected)
+	if (selected)
 		list.value = selected;
 	else
 		list.value = list.options[0].value;
-	selected=list.value;
+	selected = list.value;
 	//隐藏所有的元素
 	document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
 	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
 	hide_support_graph();
 	jsstp.set_default_info("ReceiverGhostName", selected);
 	//如果选中了一个ghost，更新事件列表
-	if(selected){
+	if (selected) {
 		//清空事件统计图
 		clear_support_graph();
 		const has_get_events = await jsstp.has_event('Get_Supported_Events');
-		if(has_get_events){
-			event_list=await jsstp.get_supported_events();
+		if (has_get_events) {
+			event_list = await jsstp.get_supported_events();
 			show_support_graph();
 		}
-		else{
+		else {
 			has_has_event = await jsstp.has_event('Has_Event');
-			if(has_has_event){
+			if (has_has_event) {
 				show_support_graph();
 				document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
 			}
-			else{
+			else {
 				hide_support_graph();
 				document.getElementById("supported_text_event_Has_Event_reminder").style.display = "block";
 			}
@@ -99,7 +99,7 @@ async function reload_button(){
 window.onload = () => {
 	reload_button().then(() => {
 		//若无法加载ghost列表，隐藏所有ghost状态相关的元素
-		if(document.getElementById("ghost_list_content").value == "")
+		if (document.getElementById("ghost_list_content").value == "")
 			document.getElementById("GhostStatus").style.display = "none";
 		else
 			document.getElementById("GhostStatus").style.display = "block";
@@ -107,24 +107,24 @@ window.onload = () => {
 };
 //定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 async function base_check_event(event_id, security_level="local") {
-	var result = false;
+	let result = false;
 	if (event_list) {
 		if (security_level == "local")
 			result = event_list.local.includes(event_id);
 		else if (security_level == "external")
 			result = event_list.external.includes(event_id);
 	}
-	else if(has_has_event){
+	else if (has_has_event) {
 		result = await jsstp.has_event(event_id, security_level);
 	}
-	return!!result;
+	return !!result;
 }
 async function check_event(event_id, security_level="local") {
-	var result = await base_check_event(event_id, security_level);
-	var ex_var= false;
-	var common_var= false;
-	if(!result){
-		if(event_id.endsWith("Ex"))
+	let result = await base_check_event(event_id, security_level);
+	let ex_var = false;
+	let common_var = false;
+	if (!result) {
+		if (event_id.endsWith("Ex"))
 			common_var = await base_check_event(event_id.slice(0, -2), security_level);
 		else
 			ex_var = await base_check_event(event_id + "Ex", security_level);
@@ -137,9 +137,9 @@ async function check_event(event_id, security_level="local") {
 	};
 }
 function get_str_by_check_result(result) {
-	if(!event_list&&!has_has_event)
+	if (!event_list&&!has_has_event)
 		return "";
-	if (result.result){
+	if (result.result) {
 		if (result.ex_var)
 			return "（Ex対応）";
 		else if (result.common_var)
@@ -153,8 +153,8 @@ function get_str_by_check_result(result) {
 function set_event_str(element_class_name, event_id, security_level="local") {
 	check_event(event_id, security_level).then(function(result) {
 		update_support_graph(result.result);
-		var elements = document.getElementsByClassName(element_class_name);
-		for (var i = 0; i < elements.length; i++)
+		const elements = document.getElementsByClassName(element_class_name);
+		for (let i = 0; i < elements.length; i++)
 			elements[i].textContent = get_str_by_check_result(result);
 	});
 }
