@@ -48,25 +48,77 @@
 		function show_support_graph(){
 			document.getElementById("supported_graph").style.display = "block";
 		}
+		function clear_all(){
+			clear_support_graph();
+			event_list= null;
+			has_has_event= false;
+		}
 
-		jsstp.has_event('Get_Supported_Events').then(function(result) {
-			if(result)
-				jsstp.get_supported_events().then(function(result){
-					event_list=result;
-					show_support_graph();
-					set_event();
-				});
+		async function reload_button(){
+			clear_all();
+			//清空ghost列表
+			var list =document.getElementById("ghost_list_content");
+			//备份当前选项（如果有的话）
+			var selected = list.value;
+			//清空列表
+			list.options.length = 0;
+			//重新加载列表
+			fmo=await jsstp.EXECUTE({
+				"Command": "GetFMO"
+			});
+			//对于每个fmo的key以".fullname"结尾的项，将其对应的value添加到列表中
+			for (var key in fmo) {
+				if (key.endsWith(".fullname")) {
+					var option = document.createElement("option");
+					option.text = fmo[key];
+					option.value = option.text;
+					list.add(option);
+				}
+			}
+			//根据备份的选项重新选中（如果还在列表中的话）
+			if(selected)
+				list.value = selected;
 			else
-				jsstp.has_event('Has_Event').then(function(result) {
-					has_has_event= result;
-					if(result){
+				list.value = list.options[0].value;
+			selected=list.value;
+			//隐藏所有的元素
+			document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
+			document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
+			hide_support_graph();
+			jsstp.set_default_info("ReceiverGhostName", selected);
+			//如果选中了一个ghost，更新事件列表
+			if(selected){
+				//清空事件统计图
+				clear_support_graph();
+				const has_get_events = await jsstp.has_event('Get_Supported_Events');
+				if(has_get_events){
+					event_list=await jsstp.get_supported_events();
+					show_support_graph();
+				}
+				else{
+					has_has_event = await jsstp.has_event('Has_Event');
+					if(has_has_event){
 						show_support_graph();
-						set_event();
+						document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
 					}
-					else
+					else{
 						hide_support_graph();
-				});
-		});
+						document.getElementById("supported_text_event_Has_Event_reminder").style.display = "block";
+					}
+				};
+			}
+			set_event();
+		}
+		//页面加载完成后，尝试加载ghost列表
+		window.onload = () => {
+			reload_button().then(() => {
+				//若无法加载ghost列表，隐藏所有ghost状态相关的元素
+				if(document.getElementById("ghost_list_content").value == "")
+					document.getElementById("GhostStatus").style.display = "none";
+				else
+					document.getElementById("GhostStatus").style.display = "block";
+			});
+		};
 		//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 		async function base_check_event(event_id, security_level="local") {
 			var result = false;
@@ -99,6 +151,8 @@
 			};
 		}
 		function get_str_by_check_result(result) {
+			if(!event_list&&!has_has_event)
+				return "";
 			if (result.result){
 				if (result.ex_var)
 					return "（Ex対応）";
@@ -241,8 +295,29 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>SHIORI Event</h1>
-		<section class="navigation-category" id="supported_graph">
-			<p>support: <meter id="supported_graph_content" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
+		<section class="navigation-category" id="GhostStatus" style="display: none;">
+			<h1>Ghost Status</h1>
+			<!-- 一个列表用于显示和选择ghost -->
+			<div id="ghost_select">
+				<p>选择一个ghost：</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- reload按钮 -->
+				<button id="ghost_reload_button" onclick="reload_button()">刷新</button>
+			</div>
+			<div id="supported_text_event_Has_Event_reminder" style="display: none;">
+				<p>你的ghost需要支持以下事件：</p>
+				<a href="#Has_Event">Has_Event</a>
+			</div>
+			<div id="supported_graph" style="display: none;">
+				<p>support: <meter id="supported_graph_content" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
+			</div>
+			<div id="supported_text_event_Get_Supported_Events_reminder" style="display: none;">
+				<p>事件统计速度太慢？</p>
+				支持<a href="#Get_Supported_Events">Get_Supported_Events</a>事件以提高速度。
+			</div>
+		</section>
+		<section class="navigation-category">
+			<h1></h1>
 			<ul>
 				<li class="caption"><a href="#caption_format">このページの書式について</a></li>
 			</ul>
