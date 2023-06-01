@@ -151,6 +151,9 @@ a:hover {
 .navigation-bar > .navigation-category li.caption.introduction:before {
 	content: url("image/icon_doc-b.png") "　";
 }
+.navigation-bar > .navigation-category meter {
+	width: 60%;
+}
 
 
 

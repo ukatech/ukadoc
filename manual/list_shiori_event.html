@@ -15,6 +15,9 @@
 	<script type="text/javascript">
 		//一个全局变量用于检查当前ghost是否支持Has_Event
 		var has_has_event = false;
+		//for support graph
+		var count_support = 0;
+		var count_all = 0;
 		jsstp.has_event('Has_Event').then(function(result) {
 			has_has_event = result;
 			if(result)
@@ -24,6 +27,13 @@
 		async function check_event_str(event_id, security_level="local") {
 			if (has_has_event) {
 				const result=await jsstp.has_event(event_id, security_level);
+				//calc support graph
+				count_support += result;
+				count_all += 1;
+				const g = document.getElementById("supported_graph");
+				g.max = count_all;
+				g.value = count_support;
+				document.getElementById("supported_ratio").textContent = `${count_support}/${count_all}`;
 				//以日语返回支持情况
 				if (result)
 					return "（対応）";
@@ -164,6 +174,7 @@
 	<section class="navigation-bar">
 		<h1>SHIORI Event</h1>
 		<section class="navigation-category">
+			<p>support: <meter id="supported_graph" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
 			<ul>
 				<li class="caption"><a href="#caption_format">このページの書式について</a></li>
 			</ul>
