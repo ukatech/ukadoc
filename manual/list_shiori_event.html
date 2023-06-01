@@ -613,7 +613,7 @@
 		<section class="category">
 			<h1>起動・終了・切り替えイベント</h1>
 			<dl id="OnFirstBoot">
-				<dt class="entry">OnFirstBoot<span class="OnFirstBoot_GhostStatus"></span></dt>
+				<dt class="entry">OnFirstBoot</dt>
 				<dd class="entry">
 					<p>初回起動した際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -628,7 +628,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBoot">
-				<dt class="entry">OnBoot<span class="OnBoot_GhostStatus"></span></dt>
+				<dt class="entry">OnBoot</dt>
 				<dd class="entry">
 					<p>起動した際に発生。<br>SSPでは、<a href="#OnGhostChanged">OnGhostChanged</a>、<a href="#OnGhostCalled">OnGhostCalled</a>、<a href="#OnFirstBoot">OnFirstBoot</a>、<a href="#OnVanished">OnVanished</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
@@ -647,7 +647,7 @@
 				</dd>
 			</dl>
 			<dl id="OnClose">
-				<dt class="entry">OnClose<span class="OnClose_GhostStatus"></span></dt>
+				<dt class="entry">OnClose</dt>
 				<dd class="entry">
 					<p>終了が指示された際に発生。<br>SSPでは、<a href="#OnGhostChanging">OnGhostChanging</a>、<a href="#OnCloseAll">OnCloseAll</a>に対してスクリプトが返されなかった（204）場合、続けてこのイベントが発生する。</p>
 					<dl class="reference">
@@ -666,7 +666,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCloseAll">
-				<dt class="entry">OnCloseAll<span class="OnCloseAll_GhostStatus"></span></dt>
+				<dt class="entry">OnCloseAll</dt>
 				<dd class="entry">
 					<p>SSP自体が終了する際に発生。<br>オーナードローメニューの「すべて終了」が指示された場合の他、唯一起動中のゴーストにおいて「終了」が指示された場合、およびOSのシャットダウンに伴いSSPが終了する場合にも発生する。</p>
 					<dl class="reference">
@@ -683,7 +683,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostChanged">
-				<dt class="entry">OnGhostChanged<span class="OnGhostChanged_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostChanged</dt>
 				<dd class="entry">
 					<p>他のゴーストから自ゴーストに切り替えられた際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -706,7 +706,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostChanging">
-				<dt class="entry">OnGhostChanging<span class="OnGhostChanging_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostChanging</dt>
 				<dd class="entry">
 					<p>他のゴーストへの切り替え指示があった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnClose">OnClose</a>が発生する。</p>
 					<dl class="reference">
@@ -727,7 +727,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCalled">
-				<dt class="entry">OnGhostCalled<span class="OnGhostCalled_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostCalled</dt>
 				<dd class="entry">
 					<p>他のゴーストから呼び出された際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。</p>
 					<dl class="reference">
@@ -748,7 +748,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCalling">
-				<dt class="entry">OnGhostCalling<span class="OnGhostCalling_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostCalling</dt>
 				<dd class="entry">
 					<p>他のゴーストの呼び出しが指示された際に発生。</p>
 					<dl class="reference">
@@ -767,7 +767,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostCallComplete">
-				<dt class="entry">OnGhostCallComplete<span class="OnGhostCallComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostCallComplete</dt>
 				<dd class="entry">
 					<p>他のゴーストを呼び出し、そのゴーストが起動スクリプトを完了後発生。</p>
 					<dl class="reference">
@@ -786,7 +786,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostBooted">
-				<dt class="entry">OnOtherGhostBooted<span class="OnOtherGhostBooted_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherGhostBooted</dt>
 				<dd class="entry">
 					<p>他のゴーストに呼び出された、他のゴーストが起動した際に発生。<br />言い換えると、呼び出したゴーストにOnGhostCallCompleteが発生するタイミングで、無関係なゴーストに発生。</p>
 					<dl class="reference">
@@ -805,7 +805,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostChanged">
-				<dt class="entry">OnOtherGhostChanged<span class="OnOtherGhostChanged_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherGhostChanged</dt>
 				<dd class="entry">
 					<p>他のゴースト間で切り替わった際に発生。</p>
 					<dl class="reference">
@@ -832,7 +832,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostClosed">
-				<dt class="entry">OnOtherGhostClosed<span class="OnOtherGhostClosed_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherGhostClosed</dt>
 				<dd class="entry">
 					<p>複数起動中、他のゴーストが終了された際に発生。</p>
 					<dl class="reference">
@@ -851,7 +851,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellChanged">
-				<dt class="entry">OnShellChanged<span class="OnShellChanged_GhostStatus"></span></dt>
+				<dt class="entry">OnShellChanged</dt>
 				<dd class="entry">
 					<p>他のシェルから切り替わった際に発生。</p>
 					<dl class="reference">
@@ -870,7 +870,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellChanging">
-				<dt class="entry">OnShellChanging<span class="OnShellChanging_GhostStatus"></span></dt>
+				<dt class="entry">OnShellChanging</dt>
 				<dd class="entry">
 					<p>他のシェルへ切り替えた際に発生。</p>
 					<dl class="reference">
@@ -889,7 +889,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDressupChanged">
-				<dt class="entry">OnDressupChanged<span class="OnDressupChanged_GhostStatus"></span></dt>
+				<dt class="entry">OnDressupChanged</dt>
 				<dd class="entry">
 					<p>着せ替えが切替えられた際に発生する。<br />
 					複数回通知される場合があり、その場合は一番最後のOnDressupChangedが<em class="specsign">[GET]</em>、それ以外が<em class="specsign">[NOTIFY]</em>となる。<br />
@@ -912,7 +912,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonChange">
-				<dt class="entry">OnBalloonChange<span class="OnBalloonChange_GhostStatus"></span></dt>
+				<dt class="entry">OnBalloonChange</dt>
 				<dd class="entry">
 					<p>他のバルーンから切り替わった際に発生。</p>
 					<dl class="reference">
@@ -927,7 +927,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWindowStateRestore">
-				<dt class="entry">OnWindowStateRestore<span class="OnWindowStateRestore_GhostStatus"></span></dt>
+				<dt class="entry">OnWindowStateRestore</dt>
 				<dd class="entry">
 					<p>最小化が解除された際に発生。</p>
 					<dl class="reference">
@@ -946,7 +946,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWindowStateMinimize">
-				<dt class="entry">OnWindowStateMinimize<span class="OnWindowStateMinimize_GhostStatus"></span></dt>
+				<dt class="entry">OnWindowStateMinimize</dt>
 				<dd class="entry">
 					<p>最小化が指示された際に発生。<br />※SSPのみ設定で喋らせることが可能。</p>
 					<dl class="reference">
@@ -965,7 +965,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFullScreenAppMinimize">
-				<dt class="entry">OnFullScreenAppMinimize<span class="OnFullScreenAppMinimize_GhostStatus"></span></dt>
+				<dt class="entry">OnFullScreenAppMinimize</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ起動に対するSSP最小化の際に発生。<br />通常の最小化時に発生するOnWindowStateMinimizeに上書きされる。</p>
 					<dl class="reference">
@@ -978,7 +978,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFullScreenAppRestore">
-				<dt class="entry">OnFullScreenAppRestore<span class="OnFullScreenAppRestore_GhostStatus"></span></dt>
+				<dt class="entry">OnFullScreenAppRestore</dt>
 				<dd class="entry">
 					<p>全画面表示のアプリ終了に対するSSP最小化復帰の際に発生。<br />通常の最小化復帰時に発生するOnWindowStateRestoreに上書きされる。</p>
 					<dl class="reference">
@@ -991,7 +991,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVirtualDesktopChanged">
-				<dt class="entry">OnVirtualDesktopChanged<span class="OnVirtualDesktopChanged_GhostStatus"></span></dt>
+				<dt class="entry">OnVirtualDesktopChanged</dt>
 				<dd class="entry">
 					<p>仮想デスクトップが切り替わった際に発生。<br />現状Windows 10上でのみ有効。<br /><strong class="warning">実験的機能のため今後仕様が変わる可能性がある</strong>。</p>
 					<dl class="reference">
@@ -1006,7 +1006,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCacheSuspend">
-				<dt class="entry">OnCacheSuspend<span class="OnCacheSuspend_GhostStatus"></span></dt>
+				<dt class="entry">OnCacheSuspend</dt>
 				<dd class="entry">
 					<p>ゴーストキャッシュに入った際に発生。</p>
 					<ul class="supported-baseware">
@@ -1015,7 +1015,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCacheRestore">
-				<dt class="entry">OnCacheRestore<span class="OnCacheRestore_GhostStatus"></span></dt>
+				<dt class="entry">OnCacheRestore</dt>
 				<dd class="entry">
 					<p>ゴーストキャッシュから出た際に発生。</p>
 					<ul class="supported-baseware">
@@ -1024,7 +1024,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInitialize">
-				<dt class="entry">OnInitialize<span class="OnInitialize_GhostStatus"></span></dt>
+				<dt class="entry">OnInitialize</dt>
 				<dd class="entry">
 					<p>起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1037,7 +1037,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDestroy">
-				<dt class="entry">OnDestroy<span class="OnDestroy_GhostStatus"></span></dt>
+				<dt class="entry">OnDestroy</dt>
 				<dd class="entry">
 					<p>終了が指示された際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1050,7 +1050,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSysResume">
-				<dt class="entry">OnSysResume<span class="OnSysResume_GhostStatus"></span></dt>
+				<dt class="entry">OnSysResume</dt>
 				<dd class="entry">
 					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）解除の際に発生。</p>
 					<dl class="reference">
@@ -1063,7 +1063,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSysSuspend">
-				<dt class="entry">OnSysSuspend<span class="OnSysSuspend_GhostStatus"></span></dt>
+				<dt class="entry">OnSysSuspend</dt>
 				<dd class="entry">
 					<p>サスペンド（スリープ・休止状態（ハイバネーション）両方）開始の際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<ul class="supported-baseware">
@@ -1072,7 +1072,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBasewareUpdating">
-				<dt class="entry">OnBasewareUpdating<span class="OnBasewareUpdating_GhostStatus"></span></dt>
+				<dt class="entry">OnBasewareUpdating</dt>
 				<dd class="entry">
 					<p>本体更新時、ダウンロードが終わりファイル更新を開始する前に発生。このイベントに反応がない場合はOnCloseAll、OnCloseの順に発生する。</p>
 					<dl class="reference">
@@ -1087,7 +1087,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBasewareUpdated">
-				<dt class="entry">OnBasewareUpdated<span class="OnBasewareUpdated_GhostStatus"></span></dt>
+				<dt class="entry">OnBasewareUpdated</dt>
 				<dd class="entry">
 					<p>本体更新終了後、ゴーストが起動する時に発生。このイベントに反応がない場合はOnBootが発生する。</p>
 					<dl class="reference">
@@ -1105,7 +1105,7 @@
 		<section class="category">
 			<h1>入力ボックスイベント</h1>
 			<dl id="OnTeachStart">
-				<dt class="entry">OnTeachStart<span class="OnTeachStart_GhostStatus"></span></dt>
+				<dt class="entry">OnTeachStart</dt>
 				<dd class="entry">
 					<p>TeachBoxがオープンした際に発生。</p>
 					<ul class="supported-baseware">
@@ -1115,7 +1115,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTeachInputCancel">
-				<dt class="entry">OnTeachInputCancel<span class="OnTeachInputCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnTeachInputCancel</dt>
 				<dd class="entry">
 					<p>TeachBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1130,7 +1130,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTeach">
-				<dt class="entry">OnTeach<span class="OnTeach_GhostStatus"></span></dt>
+				<dt class="entry">OnTeach</dt>
 				<dd class="entry">
 					<p>TeachBoxからの入力があった際に発生。</p>
 					<dl class="reference">
@@ -1143,7 +1143,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCommunicate">
-				<dt class="entry">OnCommunicate<span class="OnCommunicate_GhostStatus"></span></dt>
+				<dt class="entry">OnCommunicate</dt>
 				<dd class="entry">
 					<p>CommunicateBox、または他ゴーストからスクリプトを渡された際に発生。</p>
 					<dl class="reference">
@@ -1161,7 +1161,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCommunicateInputCancel">
-				<dt class="entry">OnCommunicateInputCancel<span class="OnCommunicateInputCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnCommunicateInputCancel</dt>
 				<dd class="entry">
 					<p>CommunicateBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1176,7 +1176,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUserInput">
-				<dt class="entry">OnUserInput<span class="OnUserInput_GhostStatus"></span></dt>
+				<dt class="entry">OnUserInput</dt>
 				<dd class="entry">
 					<p>InputBoxに入力され決定された際に発生。</p>
 					<p><a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>も参照のこと。</p>
@@ -1198,7 +1198,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUserInputCancel">
-				<dt class="entry">OnUserInputCancel<span class="OnUserInputCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnUserInputCancel</dt>
 				<dd class="entry">
 					<p>InputBoxが閉じられた際に発生。</p>
 					<dl class="reference">
@@ -1217,7 +1217,7 @@
 				</dd>
 			</dl>
 			<dl id="inputbox.autocomplete">
-				<dt class="entry">inputbox.autocomplete<span class="inputbox.autocomplete_GhostStatus"></span></dt>
+				<dt class="entry">inputbox.autocomplete</dt>
 				<dd class="entry">
 					<p>ボックス展開時に発生。このイベントにバイト値1区切りでテキストのリストを返すと、入力ボックスでオートコンプリート機能が動作。<br />(WinMe/2000以降)</p>
 					<dl class="reference">
@@ -1235,7 +1235,7 @@
 		<section class="category">
 			<h1>ダイアログボックスイベント</h1>
 			<dl id="OnSystemDialog">
-				<dt class="entry">OnSystemDialog<span class="OnSystemDialog_GhostStatus"></span></dt>
+				<dt class="entry">OnSystemDialog</dt>
 				<dd class="entry">
 					<p>ファイル関連のダイアログで保存/OKが押された際に発生。</p>
 					<dl class="reference">
@@ -1252,7 +1252,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSystemDialogCancel">
-				<dt class="entry">OnSystemDialogCancel<span class="OnSystemDialogCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnSystemDialogCancel</dt>
 				<dd class="entry">
 					<p>ファイル関連のダイアログでキャンセルが押された際に発生。</p>
 					<dl class="reference">
@@ -1267,7 +1267,7 @@
 				</dd>
 			</dl>
 			<dl id="OnConfigurationDialogHelp">
-				<dt class="entry">OnConfigurationDialogHelp<span class="OnConfigurationDialogHelp_GhostStatus"></span></dt>
+				<dt class="entry">OnConfigurationDialogHelp</dt>
 				<dd class="entry">
 					<p>設定ダイアログのヘルプボタンで項目をクリックした際に発生。</p>
 					<dl class="reference">
@@ -1305,7 +1305,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostTermsAccept">
-				<dt class="entry">OnGhostTermsAccept<span class="OnGhostTermsAccept_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostTermsAccept</dt>
 				<dd class="entry">
 					<p>利用条件ダイアログで受諾が押された際に発生。
 					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
@@ -1315,7 +1315,7 @@
 				</dd>
 			</dl>
 			<dl id="OnGhostTermsDecline">
-				<dt class="entry">OnGhostTermsDecline<span class="OnGhostTermsDecline_GhostStatus"></span></dt>
+				<dt class="entry">OnGhostTermsDecline</dt>
 				<dd class="entry">
 					<p>利用条件ダイアログで拒否が押された際に発生。
 					<br />右上の閉じるボタンでは何もイベントは発生しない。</p>
@@ -1328,7 +1328,7 @@
 		<section class="category">
 			<h1>時間イベント</h1>
 			<dl id="OnSecondChange">
-				<dt class="entry">OnSecondChange<span class="OnSecondChange_GhostStatus"></span></dt>
+				<dt class="entry">OnSecondChange</dt>
 				<dd class="entry">
 					<p>1秒ごとに発生。</p>
 					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
@@ -1352,7 +1352,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMinuteChange">
-				<dt class="entry">OnMinuteChange<span class="OnMinuteChange_GhostStatus"></span></dt>
+				<dt class="entry">OnMinuteChange</dt>
 				<dd class="entry">
 					<p>1分ごとに発生。</p>
 					<p>トーク再生不能な時は、Reference3が0になった上でNOTIFYでイベント通知される。<strong class="warning">返されたスクリプトは無視される。</strong></p>
@@ -1376,7 +1376,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHourTimeSignal">
-				<dt class="entry">OnHourTimeSignal<span class="OnHourTimeSignal_GhostStatus"></span></dt>
+				<dt class="entry">OnHourTimeSignal</dt>
 				<dd class="entry">
 					<p>時報イベント。毎正時(?時0分0秒近く)に発生。</p>
 					<p>トーク再生不能な時はトークできるようになるまで待つ。そのため<strong class="warning">少しずれた時間に通知されることがある。</strong></p>
@@ -1401,7 +1401,7 @@
 		<section class="category">
 			<h1>消滅イベント</h1>
 			<dl id="OnVanishSelecting">
-				<dt class="entry">OnVanishSelecting<span class="OnVanishSelecting_GhostStatus"></span></dt>
+				<dt class="entry">OnVanishSelecting</dt>
 				<dd class="entry">
 					<p>消滅が指示された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1412,7 +1412,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishSelected">
-				<dt class="entry">OnVanishSelected<span class="OnVanishSelected_GhostStatus"></span></dt>
+				<dt class="entry">OnVanishSelected</dt>
 				<dd class="entry">
 					<p>確認ダイアログでYESが選択された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1423,7 +1423,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishCancel">
-				<dt class="entry">OnVanishCancel<span class="OnVanishCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnVanishCancel</dt>
 				<dd class="entry">
 					<p>確認ダイアログでNOが選択された際に発生。</p>
 					<ul class="supported-baseware">
@@ -1434,7 +1434,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanishButtonHold">
-				<dt class="entry">OnVanishButtonHold<span class="OnVanishButtonHold_GhostStatus"></span></dt>
+				<dt class="entry">OnVanishButtonHold</dt>
 				<dd class="entry">
 					<p>消滅イベント中ダブルクリックでキャンセルされた際に発生。</p>
 					<dl class="reference">
@@ -1453,7 +1453,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVanished">
-				<dt class="entry">OnVanished<span class="OnVanished_GhostStatus"></span></dt>
+				<dt class="entry">OnVanished</dt>
 				<dd class="entry">
 					<p>直前のゴーストの消滅により自分に切り替わった際に発生。<br>SSPでは、このイベントにスクリプトが返されなかった（204）場合、続けて<a href="#OnBoot">OnBoot</a>が発生する。<br>またSSPでは同時起動中の他のゴーストが消滅した際に、OnOtherGhostVanishedへスクリプトが返却されなかった際にも発生するため注意。この場合OnBootへのフォールバックはない。</p>
 					<dl class="reference">
@@ -1474,7 +1474,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostVanished">
-				<dt class="entry">OnOtherGhostVanished<span class="OnOtherGhostVanished_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherGhostVanished</dt>
 				<dd class="entry">
 					<p>複数起動中、他のゴーストが消滅した際に発生。</p>
 					<dl class="reference">
@@ -1496,7 +1496,7 @@
 		<section class="category">
 			<h1>選択肢イベント</h1>
 			<dl id="OnChoiceSelect">
-				<dt class="entry">OnChoiceSelect<span class="OnChoiceSelect_GhostStatus"></span></dt>
+				<dt class="entry">OnChoiceSelect</dt>
 				<dd class="entry">
 					<p>選択肢が選択された際に発生。</p>
 					<dl class="reference">
@@ -1513,7 +1513,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceSelectEx">
-				<dt class="entry">OnChoiceSelectEx<span class="OnChoiceSelectEx_GhostStatus"></span></dt>
+				<dt class="entry">OnChoiceSelectEx</dt>
 				<dd class="entry">
 					<p>選択肢が選択された際に発生。<br />OnChoiceSelectよりも先に開始。</p>
 					<dl class="reference">
@@ -1530,7 +1530,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceEnter">
-				<dt class="entry">OnChoiceEnter<span class="OnChoiceEnter_GhostStatus"></span></dt>
+				<dt class="entry">OnChoiceEnter</dt>
 				<dd class="entry">
 					<p>選択肢上にカーソルが乗った際と<em>外れた際</em>に発生。<br />選択肢から外れた際のOnChoiceEnterはReferenceなしで発生する。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1549,7 +1549,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceTimeout">
-				<dt class="entry">OnChoiceTimeout<span class="OnChoiceTimeout_GhostStatus"></span></dt>
+				<dt class="entry">OnChoiceTimeout</dt>
 				<dd class="entry">
 					<p>選択肢待ち時間がタイムアウトした際に発生。</p>
 					<dl class="reference">
@@ -1564,7 +1564,7 @@
 				</dd>
 			</dl>
 			<dl id="OnChoiceHover">
-				<dt class="entry">OnChoiceHover<span class="OnChoiceHover_GhostStatus"></span></dt>
+				<dt class="entry">OnChoiceHover</dt>
 				<dd class="entry">
 					<p>選択肢上で静止された際に発生。</p>
 					<dl class="reference">
@@ -1581,7 +1581,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAnchorSelect">
-				<dt class="entry">OnAnchorSelect<span class="OnAnchorSelect_GhostStatus"></span></dt>
+				<dt class="entry">OnAnchorSelect</dt>
 				<dd class="entry">
 					<p>\_aジャンパがクリックされた瞬間に発生。</p>
 					<dl class="reference">
@@ -1596,7 +1596,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAnchorSelectEx">
-				<dt class="entry">OnAnchorSelectEx<span class="OnAnchorSelectEx_GhostStatus"></span></dt>
+				<dt class="entry">OnAnchorSelectEx</dt>
 				<dd class="entry">
 					<p>\_aジャンパがクリックされた瞬間に発生。このイベントにSHIORIが何も返さなかった場合にのみ、続けてOnAnchorSelectが発生する。</p>
 					<dl class="reference">
@@ -1616,7 +1616,7 @@
 		<section class="category">
 			<h1>サーフェスイベント</h1>
 			<dl id="OnSurfaceChange">
-				<dt class="entry">OnSurfaceChange<span class="OnSurfaceChange_GhostStatus"></span></dt>
+				<dt class="entry">OnSurfaceChange</dt>
 				<dd class="entry">
 					<p>サーフェスが変わった際に発生。<br /><em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -1634,7 +1634,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSurfaceRestore">
-				<dt class="entry">OnSurfaceRestore<span class="OnSurfaceRestore_GhostStatus"></span></dt>
+				<dt class="entry">OnSurfaceRestore</dt>
 				<dd class="entry">
 					<p>トーク後一定時間経過後に一度発生。<br />SSPの場合は本体設定の喋りタイムアウトで設定された秒数+１５秒後に発生（つまりバルーンが閉じてから１５秒後）。<br />※喋りタイムアウト設定が０のときだけOnSurfaceRestoreが発生するまでバルーンが表示され続ける。</p>
 					<dl class="reference">
@@ -1651,7 +1651,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherSurfaceChange">
-				<dt class="entry">OnOtherSurfaceChange<span class="OnOtherSurfaceChange_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherSurfaceChange</dt>
 				<dd class="entry">
 					<p>（自分以外の）他のゴーストのサーフェス（表情）が変わった際に通知されます。<br />
 					負荷対策のため、標準では無効のイベントです。このイベントを使用するためには、事前に \![set,othersurfacechange,true] で有効化する必要があります。</p>
@@ -1678,7 +1678,7 @@
 		<section class="category">
 			<h1>マウスイベント</h1>
 			<dl id="OnMouseClick">
-				<dt class="entry">OnMouseClick<span class="OnMouseClick_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseClick</dt>
 				<dd class="entry">
 					<p>左・右ボタン（＋中ボタン）でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpに反応しない場合に発生。</p>
 					<dl class="reference">
@@ -1705,7 +1705,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseClickEx">
-				<dt class="entry">OnMouseClickEx<span class="OnMouseClickEx_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseClickEx</dt>
 				<dd class="entry">
 					<p>左・右ボタン以外でマウスクリックされた時(マウスボタンを1回押して放された瞬間)に、OnMouseUpExに反応しない場合に発生。</p>
 					<dl class="reference">
@@ -1730,7 +1730,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDoubleClick">
-				<dt class="entry">OnMouseDoubleClick<span class="OnMouseDoubleClick_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDoubleClick</dt>
 				<dd class="entry">
 					<p>左・右ボタンでダブルクリックされた際に発生。</p>
 					<dl class="reference">
@@ -1757,7 +1757,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDoubleClickEx">
-				<dt class="entry">OnMouseDoubleClickEx<span class="OnMouseDoubleClickEx_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDoubleClickEx</dt>
 				<dd class="entry">
 					<p>左・右ボタン以外でダブルクリックされた際に発生。</p>
 					<dl class="reference">
@@ -1782,7 +1782,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMultipleClick">
-				<dt class="entry">OnMouseMultipleClick<span class="OnMouseMultipleClick_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseMultipleClick</dt>
 				<dd class="entry">
 					<p>3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickとOnMouseDoubleClickの流れに戻る。</p>
 					<dl class="reference">
@@ -1809,7 +1809,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMultipleClickEx">
-				<dt class="entry">OnMouseMultipleClickEx<span class="OnMouseMultipleClickEx_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseMultipleClickEx</dt>
 				<dd class="entry">
 					<p>左・右ボタン以外で3回以上連続でクリックされた際に発生。<br />※SHIORIから同イベントに応答が無い場合、通常通りOnMouseClickExとOnMouseDoubleClickExの流れに戻る。</p>
 					<dl class="reference">
@@ -1836,7 +1836,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseUp">
-				<dt class="entry">OnMouseUp<span class="OnMouseUp_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseUp</dt>
 				<dd class="entry">
 					<p>左・右のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
@@ -1861,7 +1861,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseUpEx">
-				<dt class="entry">OnMouseUpEx<span class="OnMouseUpEx_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseUpEx</dt>
 				<dd class="entry">
 					<p>左・右以外のマウスボタンが放された際に発生。</p>
 					<dl class="reference">
@@ -1886,7 +1886,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDown">
-				<dt class="entry">OnMouseDown<span class="OnMouseDown_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDown</dt>
 				<dd class="entry">
 					<p>左・右のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -1911,7 +1911,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDownEx">
-				<dt class="entry">OnMouseDownEx<span class="OnMouseDownEx_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDownEx</dt>
 				<dd class="entry">
 					<p>左・右以外のマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -1936,7 +1936,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseMove">
-				<dt class="entry">OnMouseMove<span class="OnMouseMove_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseMove</dt>
 				<dd class="entry">
 					<p>マウスが移動した際に発生。</p>
 					<dl class="reference">
@@ -1963,7 +1963,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseWheel">
-				<dt class="entry">OnMouseWheel<span class="OnMouseWheel_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseWheel</dt>
 				<dd class="entry">
 					<p>マウスホイールが回転した際に発生。<br>SSP2.3.53以降、タッチパネル環境であった場合に、<a href="#OnMouseGesture">OnMouseGesture</a>のReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）時にも代替イベントとしてOnMouseWheelが発生する。その場合Reference2の数値は元々のOnMouseGestureの移動量とup・downの方向から変換される（upなら正数、downなら負数）。</p>
 					<dl class="reference">
@@ -1990,7 +1990,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseEnterAll">
-				<dt class="entry">OnMouseEnterAll<span class="OnMouseEnterAll_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseEnterAll</dt>
 				<dd class="entry">
 					<p>マウスがキャラクターウインドウに入った際に発生。</p>
 					<dl class="reference">
@@ -2015,7 +2015,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseLeaveAll">
-				<dt class="entry">OnMouseLeaveAll<span class="OnMouseLeaveAll_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseLeaveAll</dt>
 				<dd class="entry">
 					<p>マウスがキャラクターウインドウから出た際に発生。</p>
 					<dl class="reference">
@@ -2040,7 +2040,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseEnter">
-				<dt class="entry">OnMouseEnter<span class="OnMouseEnter_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseEnter</dt>
 				<dd class="entry">
 					<p>マウスが当たり判定に入った際に発生。</p>
 					<dl class="reference">
@@ -2065,7 +2065,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseLeave">
-				<dt class="entry">OnMouseLeave<span class="OnMouseLeave_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseLeave</dt>
 				<dd class="entry">
 					<p>マウスが当たり判定から出た際に発生。</p>
 					<dl class="reference">
@@ -2090,7 +2090,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDragStart">
-				<dt class="entry">OnMouseDragStart<span class="OnMouseDragStart_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDragStart</dt>
 				<dd class="entry">
 					<p>マウスをドラッグし始めた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
@@ -2115,7 +2115,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseDragEnd">
-				<dt class="entry">OnMouseDragEnd<span class="OnMouseDragEnd_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseDragEnd</dt>
 				<dd class="entry">
 					<p>マウスをドラッグし終えた際に発生。ただしパッシブモードでは抑制される。</p>
 					<dl class="reference">
@@ -2140,7 +2140,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseHover">
-				<dt class="entry">OnMouseHover<span class="OnMouseHover_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseHover</dt>
 				<dd class="entry">
 					<p>マウスが静止している際に発生。</p>
 					<dl class="reference">
@@ -2165,7 +2165,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMouseGesture">
-				<dt class="entry">OnMouseGesture<span class="OnMouseGesture_GhostStatus"></span></dt>
+				<dt class="entry">OnMouseGesture</dt>
 				<dd class="entry">
 					<p>マウスを右ドラッグまたはホイールをドラッグした際に発生。<br>なおSSP2.3.53以降、タッチパネル環境でOnMouseGestureのReference5がupまたはdownであるようなものに対してSHIORIが何も返さなかった（204 No Contentが返された）場合、代替イベントとして<a href="#OnMouseWheel">OnMouseWheel</a>が発生する。詳細はOnMouseWheelの節を参照。</p>
 					<dl class="reference">
@@ -2193,7 +2193,7 @@
 		<section class="category">
 			<h1>バルーンイベント</h1>
 			<dl id="OnBalloonBreak">
-				<dt class="entry">OnBalloonBreak<span class="OnBalloonBreak_GhostStatus"></span></dt>
+				<dt class="entry">OnBalloonBreak</dt>
 				<dd class="entry">
 					<p>SSTP以外でブレイクされた際に発生。</p>
 					<dl class="reference">
@@ -2210,7 +2210,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonClose">
-				<dt class="entry">OnBalloonClose<span class="OnBalloonClose_GhostStatus"></span></dt>
+				<dt class="entry">OnBalloonClose</dt>
 				<dd class="entry">
 					<p>バルーンを閉じた際に発生。</p>
 					<dl class="reference">
@@ -2223,7 +2223,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonTimeout">
-				<dt class="entry">OnBalloonTimeout<span class="OnBalloonTimeout_GhostStatus"></span></dt>
+				<dt class="entry">OnBalloonTimeout</dt>
 				<dd class="entry">
 					<p>選択肢以外でバルーンがタイムアウトした際に発生。</p>
 					<dl class="reference">
@@ -2241,7 +2241,7 @@
 		<section class="category">
 			<h1>トレイバルーンイベント</h1>
 			<dl id="OnTrayBalloonClick">
-				<dt class="entry">OnTrayBalloonClick<span class="OnTrayBalloonClick_GhostStatus"></span></dt>
+				<dt class="entry">OnTrayBalloonClick</dt>
 				<dd class="entry">
 					<p>トレイアイコンのバルーンをクリックして消した際に発生。</p>
 					<dl class="reference">
@@ -2256,7 +2256,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTrayBalloonTimeout">
-				<dt class="entry">OnTrayBalloonTimeout<span class="OnTrayBalloonTimeout_GhostStatus"></span></dt>
+				<dt class="entry">OnTrayBalloonTimeout</dt>
 				<dd class="entry">
 					<p>トレイアイコンのバルーンをタイムアウトや閉じるボタンで消した際に発生。</p>
 					<dl class="reference">
@@ -2274,7 +2274,7 @@
 		<section class="category">
 			<h1>インストールイベント</h1>
 			<dl id="OnInstallBegin">
-				<dt class="entry">OnInstallBegin<span class="OnInstallBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallBegin</dt>
 				<dd class="entry">
 					<p>アーカイブのインストール開始の際に発生。</p>
 					<ul class="supported-baseware">
@@ -2285,7 +2285,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallComplete">
-				<dt class="entry">OnInstallComplete<span class="OnInstallComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallComplete</dt>
 				<dd class="entry">
 					<p>インストールが正常終了した際に発生。</p>
 					<dl class="reference">
@@ -2304,7 +2304,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallCompleteEx">
-				<dt class="entry">OnInstallCompleteEx<span class="OnInstallCompleteEx_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallCompleteEx</dt>
 				<dd class="entry">
 					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
 					<dl class="reference">
@@ -2321,7 +2321,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallFailure">
-				<dt class="entry">OnInstallFailure<span class="OnInstallFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallFailure</dt>
 				<dd class="entry">
 					<p>インストールに失敗した際に発生。</p>
 					<dl class="reference">
@@ -2336,7 +2336,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallRefuse">
-				<dt class="entry">OnInstallRefuse<span class="OnInstallRefuse_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallRefuse</dt>
 				<dd class="entry">
 					<p>インストールするファイルが他のゴーストを指名していた際に発生。</p>
 					<dl class="reference">
@@ -2355,7 +2355,7 @@
 				</dd>
 			</dl>
 			<dl id="OnInstallReroute">
-				<dt class="entry">OnInstallReroute<span class="OnInstallReroute_GhostStatus"></span></dt>
+				<dt class="entry">OnInstallReroute</dt>
 				<dd class="entry">
 					<p>インストールするファイルが他のゴーストを指名していた際、かつ、指名対象ゴーストが一緒に起動していた時に発生。以降のインストールイベントは指名対象ゴースト側に発生する。</p>
 					<dl class="reference">
@@ -2416,7 +2416,7 @@
 		<section class="category">
 			<h1>ファイルドロップイベント</h1>
 			<dl id="OnFileDropping">
-				<dt class="entry">OnFileDropping<span class="OnFileDropping_GhostStatus"></span></dt>
+				<dt class="entry">OnFileDropping</dt>
 				<dd class="entry">
 					<p>ファイルをドラッグしたままのカーソルがゴースト上に乗った際に発生。</p>
 					<dl class="reference">
@@ -2432,7 +2432,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDropped">
-				<dt class="entry">OnFileDropped<span class="OnFileDropped_GhostStatus"></span></dt>
+				<dt class="entry">OnFileDropped</dt>
 				<dd class="entry">
 					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2448,7 +2448,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherObjectDropping">
-				<dt class="entry">OnOtherObjectDropping<span class="OnOtherObjectDropping_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherObjectDropping</dt>
 				<dd class="entry">
 					<p>「ファイル」として扱えないもののカーソルがゴースト上に乗った際に発生。例：Windowsの「マイコンピュータ」など</p>
 					<dl class="reference">
@@ -2475,7 +2475,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherObjectDropped">
-				<dt class="entry">OnOtherObjectDropped<span class="OnOtherObjectDropped_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherObjectDropped</dt>
 				<dd class="entry">
 					<p>「ファイル」として扱えないものをゴースト上にドロップした際に発生。例：Windowsの「マイコンピュータ」など。
 					<br />Referenceは OnOtherObjectDropping とまったく同じ。</p>
@@ -2485,7 +2485,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDirectoryDrop">
-				<dt class="entry">OnDirectoryDrop<span class="OnDirectoryDrop_GhostStatus"></span></dt>
+				<dt class="entry">OnDirectoryDrop</dt>
 				<dd class="entry">
 					<p>ディレクトリがDnD された際に発生。</p>
 					<dl class="reference">
@@ -2501,7 +2501,7 @@
 				</dd>
 			</dl>
 			<dl id="OnWallpaperChange">
-				<dt class="entry">OnWallpaperChange<span class="OnWallpaperChange_GhostStatus"></span></dt>
+				<dt class="entry">OnWallpaperChange</dt>
 				<dd class="entry">
 					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
 					<dl class="reference">
@@ -2516,7 +2516,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDrop">
-				<dt class="entry">OnFileDrop<span class="OnFileDrop_GhostStatus"></span></dt>
+				<dt class="entry">OnFileDrop</dt>
 				<dd class="entry">
 					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2532,7 +2532,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDrop2">
-				<dt class="entry">OnFileDrop2<span class="OnFileDrop2_GhostStatus"></span></dt>
+				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
 					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2549,7 +2549,7 @@
 				</dd>
 			</dl>
 			<dl id="OnFileDropEx">
-				<dt class="entry">OnFileDropEx<span class="OnFileDropEx_GhostStatus"></span></dt>
+				<dt class="entry">OnFileDropEx</dt>
 				<dd class="entry">
 					<p>ファイルがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2564,7 +2564,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdatedataCreating">
-				<dt class="entry">OnUpdatedataCreating<span class="OnUpdatedataCreating_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdatedataCreating</dt>
 				<dd class="entry">
 					<p>ゴーストフォルダがDnDされた際に発生。</p>
 					<ul class="supported-baseware">
@@ -2575,7 +2575,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdatedataCreated">
-				<dt class="entry">OnUpdatedataCreated<span class="OnUpdatedataCreated_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdatedataCreated</dt>
 				<dd class="entry">
 					<p>updates2.dauが作成された際に発生。</p>
 					<ul class="supported-baseware">
@@ -2586,7 +2586,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNarCreating">
-				<dt class="entry">OnNarCreating<span class="OnNarCreating_GhostStatus"></span></dt>
+				<dt class="entry">OnNarCreating</dt>
 				<dd class="entry">
 					<p>install.txtの入ったゴーストフォルダがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -2605,7 +2605,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNarCreated">
-				<dt class="entry">OnNarCreated<span class="OnNarCreated_GhostStatus"></span></dt>
+				<dt class="entry">OnNarCreated</dt>
 				<dd class="entry">
 					<p>narファイルが作成された際に発生。</p>
 					<dl class="reference">
@@ -2627,7 +2627,7 @@
 		<section class="category">
 			<h1>URLドロップイベント</h1>
 			<dl id="OnURLDragDropping">
-				<dt class="entry">OnURLDragDropping<span class="OnURLDragDropping_GhostStatus"></span></dt>
+				<dt class="entry">OnURLDragDropping</dt>
 				<dd class="entry">
 					<p>URLがドロップされようとして、マウスカーソルが重なった際に発生。
 					<br />このイベントは受け入れ可能なすべてのURLで発生する。</p>
@@ -2643,7 +2643,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropping">
-				<dt class="entry">OnURLDropping<span class="OnURLDropping_GhostStatus"></span></dt>
+				<dt class="entry">OnURLDropping</dt>
 				<dd class="entry">
 					<p>URLがドロップされた後で、ダウンロードを開始する時に発生。
 					<br />このイベントはダウンロード処理前に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2661,7 +2661,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropped">
-				<dt class="entry">OnURLDropped<span class="OnURLDropped_GhostStatus"></span></dt>
+				<dt class="entry">OnURLDropped</dt>
 				<dd class="entry">
 					<p>ドロップされたURLを受領し終わった際に発生。
 					<br />このイベントはNARインストールの直前、ダウンロード処理完了直後に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2681,7 +2681,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLDropFailure">
-				<dt class="entry">OnURLDropFailure<span class="OnURLDropFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnURLDropFailure</dt>
 				<dd class="entry">
 					<p>ドロップされたURLの受領に失敗したかキャンセルされた際に発生。
 					<br />このイベントはNARインストールを試行しようとして失敗した際に発生する。他(homeurlインストールやfeed(RSS)インストール)では発生しない。</p>
@@ -2703,7 +2703,7 @@
 				</dd>
 			</dl>
 			<dl id="OnURLQuery">
-				<dt class="entry">OnURLQuery<span class="OnURLQuery_GhostStatus"></span></dt>
+				<dt class="entry">OnURLQuery</dt>
 				<dd class="entry">
 					<p>URLがキャラクターウィンドウにドラッグ＆ドロップされた際に通知される。<br />
 					これに対してスクリプトを返すと、通常のダウンロード処理がキャンセルされる。<br />
@@ -2727,7 +2727,7 @@
 				</dd>
 			</dl>
 			<dl id="OnXUkagakaLinkOpen">
-				<dt class="entry">OnXUkagakaLinkOpen<span class="OnXUkagakaLinkOpen_GhostStatus"></span></dt>
+				<dt class="entry">OnXUkagakaLinkOpen</dt>
 				<dd class="entry">
 					<p>下記形式のWeb関連づけを開いた、またはドロップした場合に、指定したゴーストに通知される。<br />
 					x-ukagaka-link:type=event&amp;ghost=(descript.txtの"name"か"sakura.name")&amp;info=(Reference0に入る文字列)<br />
@@ -2747,7 +2747,7 @@
 		<section class="category">
 			<h1>ネットワーク更新イベント</h1>
 			<dl id="OnUpdateProcessExec">
-				<dt class="entry">OnUpdateProcessExec<span class="OnUpdateProcessExec_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateProcessExec</dt>
 				<dd class="entry">
 					<p>メニューなどから更新を実行する指示がなされた場合に発生する。<br />
 					このイベントに対して何かスクリプトを返すと、更新処理をカスタマイズできる。<br />
@@ -2764,7 +2764,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateBegin">
-				<dt class="entry">OnUpdateBegin<span class="OnUpdateBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateBegin</dt>
 				<dd class="entry">
 					<p>ネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -2785,7 +2785,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateReady">
-				<dt class="entry">OnUpdateReady<span class="OnUpdateReady_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateReady</dt>
 				<dd class="entry">
 					<p>更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
@@ -2806,7 +2806,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateComplete">
-				<dt class="entry">OnUpdateComplete<span class="OnUpdateComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateComplete</dt>
 				<dd class="entry">
 					<p>ネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
@@ -2827,7 +2827,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateFailure">
-				<dt class="entry">OnUpdateFailure<span class="OnUpdateFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateFailure</dt>
 				<dd class="entry">
 					<p>ネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
@@ -2848,7 +2848,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnDownloadBegin">
-				<dt class="entry">OnUpdate.OnDownloadBegin<span class="OnUpdate.OnDownloadBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdate.OnDownloadBegin</dt>
 				<dd class="entry">
 					<p>ファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
@@ -2871,7 +2871,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareBegin">
-				<dt class="entry">OnUpdate.OnMD5CompareBegin<span class="OnUpdate.OnMD5CompareBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdate.OnMD5CompareBegin</dt>
 				<dd class="entry">
 					<p>MD5の照合開始の際に発生。</p>
 					<dl class="reference">
@@ -2894,7 +2894,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareComplete">
-				<dt class="entry">OnUpdate.OnMD5CompareComplete<span class="OnUpdate.OnMD5CompareComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdate.OnMD5CompareComplete</dt>
 				<dd class="entry">
 					<p>MD5が一致した際に発生。</p>
 					<dl class="reference">
@@ -2917,7 +2917,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdate.OnMD5CompareFailure">
-				<dt class="entry">OnUpdate.OnMD5CompareFailure<span class="OnUpdate.OnMD5CompareFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdate.OnMD5CompareFailure</dt>
 				<dd class="entry">
 					<p>MD5が一致しなかった際に発生。</p>
 					<dl class="reference">
@@ -2940,7 +2940,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherBegin">
-				<dt class="entry">OnUpdateOtherBegin<span class="OnUpdateOtherBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOtherBegin</dt>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -2959,7 +2959,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherReady">
-				<dt class="entry">OnUpdateOtherReady<span class="OnUpdateOtherReady_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOtherReady</dt>
 				<dd class="entry">
 					<p>ゴースト以外の更新ファイルが確認された際に発生。</p>
 					<dl class="reference">
@@ -2978,7 +2978,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherComplete">
-				<dt class="entry">OnUpdateOtherComplete<span class="OnUpdateOtherComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOtherComplete</dt>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新が成功し完了した際に発生。</p>
 					<dl class="reference">
@@ -2997,7 +2997,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOtherFailure">
-				<dt class="entry">OnUpdateOtherFailure<span class="OnUpdateOtherFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOtherFailure</dt>
 				<dd class="entry">
 					<p>ゴースト以外のネットワーク更新に失敗した際に発生。</p>
 					<dl class="reference">
@@ -3016,7 +3016,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnDownloadBegin">
-				<dt class="entry">OnUpdateOther.OnDownloadBegin<span class="OnUpdateOther.OnDownloadBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOther.OnDownloadBegin</dt>
 				<dd class="entry">
 					<p>ゴースト以外のファイルダウンロード開始の際に発生。</p>
 					<dl class="reference">
@@ -3037,7 +3037,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareBegin">
-				<dt class="entry">OnUpdateOther.OnMD5CompareBegin<span class="OnUpdateOther.OnMD5CompareBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareBegin</dt>
 				<dd class="entry">
 					<p>ゴースト以外のMD5の照合開始の際に発生。</p>
 					<dl class="reference">
@@ -3058,7 +3058,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareComplete">
-				<dt class="entry">OnUpdateOther.OnMD5CompareComplete<span class="OnUpdateOther.OnMD5CompareComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareComplete</dt>
 				<dd class="entry">
 					<p>ゴースト以外のMD5が一致した際に発生。</p>
 					<dl class="reference">
@@ -3077,7 +3077,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateOther.OnMD5CompareFailure">
-				<dt class="entry">OnUpdateOther.OnMD5CompareFailure<span class="OnUpdateOther.OnMD5CompareFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateOther.OnMD5CompareFailure</dt>
 				<dd class="entry">
 					<p>ゴースト以外のMD5が一致しなかった際に発生。</p>
 					<dl class="reference">
@@ -3096,7 +3096,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckComplete">
-				<dt class="entry">OnUpdateCheckComplete<span class="OnUpdateCheckComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateCheckComplete</dt>
 				<dd class="entry">
 					<p>ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
@@ -3115,7 +3115,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckFailure">
-				<dt class="entry">OnUpdateCheckFailure<span class="OnUpdateCheckFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateCheckFailure</dt>
 				<dd class="entry">
 					<p>ネットワーク更新のチェックに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3130,7 +3130,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResult">
-				<dt class="entry">OnUpdateResult<span class="OnUpdateResult_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateResult</dt>
 				<dd class="entry">
 					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
 					<dl class="reference">
@@ -3156,7 +3156,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResultEx">
-				<dt class="entry">OnUpdateResultEx<span class="OnUpdateResultEx_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateResultEx</dt>
 				<dd class="entry">
 					<p>ネットワーク更新を実行した際に発生し、バルーン・シェル一括更新機能も含めてすべての更新結果を一括で通知する。</p>
 					<dl class="reference">
@@ -3183,7 +3183,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckResult">
-				<dt class="entry">OnUpdateCheckResult<span class="OnUpdateCheckResult_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateCheckResult</dt>
 				<dd class="entry">
 					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3196,7 +3196,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateCheckResultEx">
-				<dt class="entry">OnUpdateCheckResultEx<span class="OnUpdateCheckResultEx_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateCheckResultEx</dt>
 				<dd class="entry">
 					<p>更新チェックのみオプションをつけた時に最後に発生。OnUpdateResultExのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3209,7 +3209,7 @@
 				</dd>
 			</dl>
 			<dl id="OnUpdateResultExplorer">
-				<dt class="entry">OnUpdateResultExplorer<span class="OnUpdateResultExplorer_GhostStatus"></span></dt>
+				<dt class="entry">OnUpdateResultExplorer</dt>
 				<dd class="entry">
 					<p>ゴーストエクスプローラからネットワーク更新を実行した際に発生。OnUpdateResultのエクスプローラ版。</p>
 					<dl class="reference">
@@ -3283,7 +3283,7 @@
 		<section class="category">
 			<h1>時計合わせイベント</h1>
 			<dl id="OnSNTPBegin">
-				<dt class="entry">OnSNTPBegin<span class="OnSNTPBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPBegin</dt>
 				<dd class="entry">
 					<p>時計合わせが開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3298,7 +3298,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCompareEx">
-				<dt class="entry">OnSNTPCompareEx<span class="OnSNTPCompareEx_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPCompareEx</dt>
 				<dd class="entry">
 					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
 					<dl class="reference">
@@ -3319,7 +3319,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCompare">
-				<dt class="entry">OnSNTPCompare<span class="OnSNTPCompare_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPCompare</dt>
 				<dd class="entry">
 					<p>サーバに接続が確立された際に発生。修正を実行したい場合は<a href="./list_sakura_script.html#_6">\6タグ</a>を含むスクリプトを返すこと。</p>
 					<dl class="reference">
@@ -3342,7 +3342,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCorrectEx">
-				<dt class="entry">OnSNTPCorrectEx<span class="OnSNTPCorrectEx_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPCorrectEx</dt>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
 					<dl class="reference">
@@ -3363,7 +3363,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPCorrect">
-				<dt class="entry">OnSNTPCorrect<span class="OnSNTPCorrect_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPCorrect</dt>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_6">\6タグで</a>ローカル時刻をサーバ時刻に修正した際に発生。</p>
 					<dl class="reference">
@@ -3386,7 +3386,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSNTPFailure">
-				<dt class="entry">OnSNTPFailure<span class="OnSNTPFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnSNTPFailure</dt>
 				<dd class="entry">
 					<p>時計合わせに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3404,7 +3404,7 @@
 		<section class="category">
 			<h1>メールチェックイベント</h1>
 			<dl id="OnBIFFBegin">
-				<dt class="entry">OnBIFFBegin<span class="OnBIFFBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnBIFFBegin</dt>
 				<dd class="entry">
 					<p>メールチェック開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3419,7 +3419,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFFComplete">
-				<dt class="entry">OnBIFFComplete<span class="OnBIFFComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnBIFFComplete</dt>
 				<dd class="entry">
 					<p>メールチェックが成功した際に発生。</p>
 					<dl class="reference">
@@ -3448,7 +3448,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFF2Complete">
-				<dt class="entry">OnBIFF2Complete<span class="OnBIFF2Complete_GhostStatus"></span></dt>
+				<dt class="entry">OnBIFF2Complete</dt>
 				<dd class="entry">
 					<p>メールスプール数が増加した際に発生。<br />SSPではOnBIFFCompleteにスクリプトを返さなかった場合にのみ発生。</p>
 					<dl class="reference">
@@ -3468,7 +3468,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBIFFFailure">
-				<dt class="entry">OnBIFFFailure<span class="OnBIFFFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnBIFFFailure</dt>
 				<dd class="entry">
 					<p>メールチェックに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3488,7 +3488,7 @@
 		<section class="category">
 			<h1>ヘッドライン/RSSセンスイベント</h1>
 			<dl id="OnHeadlinesenseBegin">
-				<dt class="entry">OnHeadlinesenseBegin<span class="OnHeadlinesenseBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnHeadlinesenseBegin</dt>
 				<dd class="entry">
 					<p>ヘッドラインセンス開始が指示された際に発生。</p>
 					<dl class="reference">
@@ -3504,7 +3504,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesense.OnFind">
-				<dt class="entry">OnHeadlinesense.OnFind<span class="OnHeadlinesense.OnFind_GhostStatus"></span></dt>
+				<dt class="entry">OnHeadlinesense.OnFind</dt>
 				<dd class="entry">
 					<p>読み上げるべきヘッドラインセンスがあった際に発生。</p>
 					<dl class="reference">
@@ -3524,7 +3524,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesenseComplete">
-				<dt class="entry">OnHeadlinesenseComplete<span class="OnHeadlinesenseComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnHeadlinesenseComplete</dt>
 				<dd class="entry">
 					<p>ヘッドラインセンスが正常に終了した際に発生。<br />現状ヘッドラインセンスの成功は読み上げの開始を意味するので、このイベントは取得に成功したが更新が無かった場合のみ通知。</p>
 					<dl class="reference">
@@ -3538,7 +3538,7 @@
 				</dd>
 			</dl>
 			<dl id="OnHeadlinesenseFailure">
-				<dt class="entry">OnHeadlinesenseFailure<span class="OnHeadlinesenseFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnHeadlinesenseFailure</dt>
 				<dd class="entry">
 					<p>ヘッドラインセンスに失敗した際に発生。</p>
 					<dl class="reference">
@@ -3553,7 +3553,7 @@
 			</dl>
 
 			<dl id="OnRSSBegin">
-				<dt class="entry">OnRSSBegin<span class="OnRSSBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnRSSBegin</dt>
 				<dd class="entry">
 					<p>RSSセンス開始が指示された際に発生。本イベントに反応しない場合は、OnHeadlineSenseBeginが呼び出される。</p>
 					<dl class="reference">
@@ -3568,7 +3568,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRSSComplete">
-				<dt class="entry">OnRSSComplete<span class="OnRSSComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnRSSComplete</dt>
 				<dd class="entry">
 					<p>ヘッドラインセンスが正常に終了した際に発生。本イベントに反応しない場合は、表示に適切なスクリプトを生成しヘッドライン完了系イベントが呼び出される。</p>
 					<dl class="reference">
@@ -3586,7 +3586,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRSSFailure">
-				<dt class="entry">OnRSSFailure<span class="OnRSSFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnRSSFailure</dt>
 				<dd class="entry">
 					<p>RSSセンスに失敗した際に発生。本イベントに反応しない場合は、OnHeadlineSenseFailureが呼び出される。</p>
 					<dl class="reference">
@@ -3626,7 +3626,7 @@
 		<section class="category">
 			<h1>カレンダーイベント</h1>
 			<dl id="OnSchedule5MinutesToGo">
-				<dt class="entry">OnSchedule5MinutesToGo<span class="OnSchedule5MinutesToGo_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
 					<p>本体カレンダー機能に登録されているスケジュールの時間の5分前に発生。</p>
 					<dl class="reference">
@@ -3645,7 +3645,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScheduleRead">
-				<dt class="entry">OnScheduleRead<span class="OnScheduleRead_GhostStatus"></span></dt>
+				<dt class="entry">OnScheduleRead</dt>
 				<dd class="entry">
 					<p>カレンダーアイコン上でマウスが静止し、そのスケジュールが読まれるタイミングで発生。</p>
 					<dl class="reference">
@@ -3664,7 +3664,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseBegin">
-				<dt class="entry">OnSchedulesenseBegin<span class="OnSchedulesenseBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedulesenseBegin</dt>
 				<dd class="entry">
 					<p>スケジュールセンサが接続開始する際に発生。</p>
 					<dl class="reference">
@@ -3677,7 +3677,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseComplete">
-				<dt class="entry">OnSchedulesenseComplete<span class="OnSchedulesenseComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedulesenseComplete</dt>
 				<dd class="entry">
 					<p>スケジュールセンサの処理が完了した際に発生。</p>
 					<dl class="reference">
@@ -3692,7 +3692,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulesenseFailure">
-				<dt class="entry">OnSchedulesenseFailure<span class="OnSchedulesenseFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedulesenseFailure</dt>
 				<dd class="entry">
 					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
 					<dl class="reference">
@@ -3705,7 +3705,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulepostBegin">
-				<dt class="entry">OnSchedulepostBegin<span class="OnSchedulepostBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedulepostBegin</dt>
 				<dd class="entry">
 					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
 					<dl class="reference">
@@ -3718,7 +3718,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSchedulepostComplete">
-				<dt class="entry">OnSchedulepostComplete<span class="OnSchedulepostComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnSchedulepostComplete</dt>
 				<dd class="entry">
 					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
 					<dl class="reference">
@@ -3773,7 +3773,7 @@
 		<section class="category">
 			<h1>SSTPイベント</h1>
 			<dl id="OnSSTPBreak">
-				<dt class="entry">OnSSTPBreak<span class="OnSSTPBreak_GhostStatus"></span></dt>
+				<dt class="entry">OnSSTPBreak</dt>
 				<dd class="entry">
 					<p>SSTPがブレイクされた際に発生。</p>
 					<dl class="reference">
@@ -3791,7 +3791,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSSTPBlacklisting">
-				<dt class="entry">OnSSTPBlacklisting<span class="OnSSTPBlacklisting_GhostStatus"></span></dt>
+				<dt class="entry">OnSSTPBlacklisting</dt>
 				<dd class="entry">
 					<p>最終クライアントのブラックリスト行きが指示された際に発生。</p>
 					<dl class="reference">
@@ -3807,7 +3807,7 @@
 		<section class="category">
 			<h1>その他通信イベント</h1>
 			<dl id="OnExecuteHTTPComplete">
-				<dt class="entry">OnExecuteHTTPComplete<span class="OnExecuteHTTPComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteHTTPComplete</dt>
 				<dd class="entry">
 					<p>execute-httpで正常に取得完了した際に発生。</p>
 					<dl class="reference">
@@ -3833,7 +3833,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPFailure">
-				<dt class="entry">OnExecuteHTTPFailure<span class="OnExecuteHTTPFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
 					<p>execute-httpで取得エラーした際に発生。ReferenceはCompleteと同じ。</p>
 					<ul class="supported-baseware">
@@ -3842,7 +3842,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPProgress">
-				<dt class="entry">OnExecuteHTTPProgress<span class="OnExecuteHTTPProgress_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteHTTPProgress</dt>
 				<dd class="entry">
 					<p>execute-httpで--progress-notifyを指定した際に発生。ReferenceはCompleteと同じ。</p>
 					<ul class="supported-baseware">
@@ -3851,7 +3851,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteHTTPSSLInfo">
-				<dt class="entry">OnExecuteHTTPSSLInfo<span class="OnExecuteHTTPSSLInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
 					<dl class="reference">
@@ -3882,7 +3882,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSComplete">
-				<dt class="entry">OnExecuteRSSComplete<span class="OnExecuteRSSComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteRSSComplete</dt>
 				<dd class="entry">
 					<p>\![execute,rss-get/post]で正常に取得完了した際に発生。</p>
 					<dl class="reference">
@@ -3895,7 +3895,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSSFailure">
-				<dt class="entry">OnExecuteRSSFailure<span class="OnExecuteRSSFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteRSSFailure</dt>
 				<dd class="entry">
 					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
 					<dl class="reference">
@@ -3908,7 +3908,7 @@
 				</dd>
 			</dl>
 			<dl id="OnExecuteRSS_SSLInfo">
-				<dt class="entry">OnExecuteRSS_SSLInfo<span class="OnExecuteRSS_SSLInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
 					<dl class="reference">
@@ -3921,7 +3921,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID<span class="OnPingComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnPingComplete</dt>
 				<dd class="entry">
 					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
 					<dl class="reference">
@@ -3938,7 +3938,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress<span class="OnPingProgress_GhostStatus"></span></dt>
+				<dt class="entry">OnPingProgress</dt>
 				<dd class="entry">
 					<p>\![execute,ping]でping実行中に発生。</p>
 					<dl class="reference">
@@ -3955,7 +3955,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID<span class="OnNSLookupComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnNSLookupComplete</dt>
 				<dd class="entry">
 					<p>\![execute,nslookup]で成功時に発生。</p>
 					<dl class="reference">
@@ -3974,7 +3974,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure<span class="OnNSLookupFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnNSLookupFailure</dt>
 				<dd class="entry">
 					<p>\![execute,nslookup]で失敗時に発生。</p>
 					<dl class="reference">
@@ -3994,7 +3994,7 @@
 		<section class="category">
 			<h1>イベント送信失敗イベント</h1>
 				<dl id="OnRaisePluginFailure">
-				<dt class="entry">OnRaisePluginFailure<span class="OnRaisePluginFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnRaisePluginFailure</dt>
 				<dd class="entry">
 					<p>\![raiseplugin]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4013,7 +4013,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyPluginFailure">
-				<dt class="entry">OnNotifyPluginFailure<span class="OnNotifyPluginFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyPluginFailure</dt>
 				<dd class="entry">
 					<p>\![notifyplugin]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4032,7 +4032,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRaiseOtherFailure">
-				<dt class="entry">OnRaiseOtherFailure<span class="OnRaiseOtherFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnRaiseOtherFailure</dt>
 				<dd class="entry">
 					<p>\![raiseother]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4051,7 +4051,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyOtherFailure">
-				<dt class="entry">OnNotifyOtherFailure<span class="OnNotifyOtherFailure_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyOtherFailure</dt>
 				<dd class="entry">
 					<p>\![notifyother]が失敗した際に発生。</p>
 					<dl class="reference">
@@ -4073,7 +4073,7 @@
 		<section class="category">
 			<h1>見切れ・重なりイベント</h1>
 			<dl id="OnOverlap">
-				<dt class="entry">OnOverlap<span class="OnOverlap_GhostStatus"></span></dt>
+				<dt class="entry">OnOverlap</dt>
 				<dd class="entry">
 					<p>キャラクター（サーフェス）のウインドウが重なった時に発生。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
@@ -4088,7 +4088,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherOverlap">
-				<dt class="entry">OnOtherOverlap<span class="OnOtherOverlap_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherOverlap</dt>
 				<dd class="entry">
 					<p>他も含めて全起動中のキャラクター（サーフェス）のウインドウが重なった時に発生。OnOverlapのグローバル版。<br />重なり状態が変わった際に逐次通知されるので、「重ならなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
@@ -4103,7 +4103,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOffscreen">
-				<dt class="entry">OnOffscreen<span class="OnOffscreen_GhostStatus"></span></dt>
+				<dt class="entry">OnOffscreen</dt>
 				<dd class="entry">
 					<p>キャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。</p>
 					<dl class="reference">
@@ -4118,7 +4118,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherOffscreen">
-				<dt class="entry">OnOtherOffscreen<span class="OnOtherOffscreen_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherOffscreen</dt>
 				<dd class="entry">
 					<p>他を含めてキャラクター（サーフェス）のウインドウがモニタ（作業領域）外にひっかかった、あるいは出た時に発生。見切れ。OnOffscreenのグローバル版。<br />見切れ状態が変わった際に逐次通知されるので、「見切れなくなった」も工夫すれば検出できる。<br />自分自身の情報も一緒に通知されるので注意。</p>
 					<dl class="reference">
@@ -4136,7 +4136,7 @@
 		<section class="category">
 			<h1>OS状態イベント</h1>
 			<dl id="OnNetworkHeavy">
-				<dt class="entry">OnNetworkHeavy<span class="OnNetworkHeavy_GhostStatus"></span></dt>
+				<dt class="entry">OnNetworkHeavy</dt>
 				<dd class="entry">
 					<p>相手サーバが時間内に応答しなかった際に発生。</p>
 					<dl class="reference">
@@ -4153,7 +4153,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNetworkStatusChange">
-				<dt class="entry">OnNetworkStatusChange<span class="OnNetworkStatusChange_GhostStatus"></span></dt>
+				<dt class="entry">OnNetworkStatusChange</dt>
 				<dd class="entry">
 					<p>ネットワーク接続状態が変わった際に発生。<br />起動直後のみNOTIFYで通知。</p>
 					<dl class="reference">
@@ -4190,7 +4190,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScreenSaverStart">
-				<dt class="entry">OnScreenSaverStart<span class="OnScreenSaverStart_GhostStatus"></span></dt>
+				<dt class="entry">OnScreenSaverStart</dt>
 				<dd class="entry">
 					<p>スクリーンセーバーが起動した際に発生。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4207,7 +4207,7 @@
 				</dd>
 			</dl>
 			<dl id="OnScreenSaverEnd">
-				<dt class="entry">OnScreenSaverEnd<span class="OnScreenSaverEnd_GhostStatus"></span></dt>
+				<dt class="entry">OnScreenSaverEnd</dt>
 				<dd class="entry">
 					<p>スクリーンセーバーが終了した際に発生。</p>
 					<dl class="reference">
@@ -4224,7 +4224,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionLock">
-				<dt class="entry">OnSessionLock<span class="OnSessionLock_GhostStatus"></span></dt>
+				<dt class="entry">OnSessionLock</dt>
 				<dd class="entry">
 					<p>ログイン状態のままロック画面に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。
 					<br />本イベントはNOTIFYではないが、当然何を実行してもユーザーには見えないので注意。</p>
@@ -4234,7 +4234,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionUnlock">
-				<dt class="entry">OnSessionUnlock<span class="OnSessionUnlock_GhostStatus"></span></dt>
+				<dt class="entry">OnSessionUnlock</dt>
 				<dd class="entry">
 					<p>ロック画面から通常の操作に戻った際に発生。Windowsの場合は簡易ユーザー切り替えでも発生する。</p>
 					<ul class="supported-baseware">
@@ -4243,7 +4243,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionDisconnect">
-				<dt class="entry">OnSessionDisconnect<span class="OnSessionDisconnect_GhostStatus"></span></dt>
+				<dt class="entry">OnSessionDisconnect</dt>
 				<dd class="entry">
 					<p>簡易ユーザー切り替えで他のユーザーアカウントへの切り替え操作を行った時に発生する。
 					<br />Windows上ではOnSessionLockとセットで通知され、さらに強制最小化されるためOnWindowStateMinimizeも発生する。
@@ -4254,7 +4254,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSessionReconnect">
-				<dt class="entry">OnSessionReconnect<span class="OnSessionReconnect_GhostStatus"></span></dt>
+				<dt class="entry">OnSessionReconnect</dt>
 				<dd class="entry">
 					<p>簡易ユーザー切り替えで実行中のユーザーアカウントに戻ってきた時に発生する。
 					<br />Windows上ではOnSessionUnlockとセットで通知され、さらに強制最小化されたのが解除されるためOnWindowStateRestoreも発生する。
@@ -4265,7 +4265,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCPULoadHigh">
-				<dt class="entry">OnCPULoadHigh<span class="OnCPULoadHigh_GhostStatus"></span></dt>
+				<dt class="entry">OnCPULoadHigh</dt>
 				<dd class="entry">
 					<p>CPU負荷が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
 					<dl class="reference">
@@ -4278,7 +4278,7 @@
 				</dd>
 			</dl>
 			<dl id="OnCPULoadLow">
-				<dt class="entry">OnCPULoadLow<span class="OnCPULoadLow_GhostStatus"></span></dt>
+				<dt class="entry">OnCPULoadLow</dt>
 				<dd class="entry">
 					<p>CPU負荷が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
 					<dl class="reference">
@@ -4291,7 +4291,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMemoryLoadHigh">
-				<dt class="entry">OnMemoryLoadHigh<span class="OnMemoryLoadHigh_GhostStatus"></span></dt>
+				<dt class="entry">OnMemoryLoadHigh</dt>
 				<dd class="entry">
 					<p>メモリ使用量が高い時に発生する。(今のところおおよそ80％ぐらいが少し続いたら発動)</p>
 					<dl class="reference">
@@ -4304,7 +4304,7 @@
 				</dd>
 			</dl>
 			<dl id="OnMemoryLoadLow">
-				<dt class="entry">OnMemoryLoadLow<span class="OnMemoryLoadLow_GhostStatus"></span></dt>
+				<dt class="entry">OnMemoryLoadLow</dt>
 				<dd class="entry">
 					<p>メモリ使用量が高い状態から低く戻った時に発動する。(今のところHigh発動後60％を下回った時)</p>
 					<dl class="reference">
@@ -4317,7 +4317,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayChange">
-				<dt class="entry">OnDisplayChange<span class="OnDisplayChange_GhostStatus"></span></dt>
+				<dt class="entry">OnDisplayChange</dt>
 				<dd class="entry">
 					<p>デスクトップ（プライマリスクリーン）の解像度／色深度が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4335,7 +4335,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayHandover">
-				<dt class="entry">OnDisplayHandover<span class="OnDisplayHandover_GhostStatus"></span></dt>
+				<dt class="entry">OnDisplayHandover</dt>
 				<dd class="entry">
 					<p>スクリーン間を跨いでウインドウを移動させた際に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4356,7 +4356,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayChangeEx">
-				<dt class="entry">OnDisplayChangeEx<span class="OnDisplayChangeEx_GhostStatus"></span></dt>
+				<dt class="entry">OnDisplayChangeEx</dt>
 				<dd class="entry">
 					<p>スクリーンの解像度／色深度が変更された際に発生。マルチモニタ対応。<em class="specsign">[起動時NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4372,7 +4372,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDisplayPowerStatus">
-				<dt class="entry">OnDisplayPowerStatus<span class="OnDisplayPowerStatus_GhostStatus"></span></dt>
+				<dt class="entry">OnDisplayPowerStatus</dt>
 				<dd class="entry">
 					<p>モニタの電源がON/OFFされた時に発生する。単純にON/OFFされた時だけでなく、ノート型で蓋を閉じた時も対象となる。</p>
 					<dl class="reference">
@@ -4385,7 +4385,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryNotify">
-				<dt class="entry">OnBatteryNotify<span class="OnBatteryNotify_GhostStatus"></span></dt>
+				<dt class="entry">OnBatteryNotify</dt>
 				<dd class="entry">
 					<p>残りバッテリー量を通知。起動時のみ<em class="specsign">[NOTIFY]</em>で通知され、他はGET。</p>
 					<dl class="reference">
@@ -4411,7 +4411,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryLow">
-				<dt class="entry">OnBatteryLow<span class="OnBatteryLow_GhostStatus"></span></dt>
+				<dt class="entry">OnBatteryLow</dt>
 				<dd class="entry">
 					<p>バッテリー残量が少なめ(OnBatteryNotify Reference3がlow以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
@@ -4426,7 +4426,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryCritical">
-				<dt class="entry">OnBatteryCritical<span class="OnBatteryCritical_GhostStatus"></span></dt>
+				<dt class="entry">OnBatteryCritical</dt>
 				<dd class="entry">
 					<p>バッテリー残量が極端に少なく(OnBatteryNotify Reference3がcritical以下)になった際に発生する。<br />
 					外部アプリ「きのこ」が通知するイベントに<a href="list_shiori_event_ex.html#OnBatteryCritical-kinoko">同名の物</a>があるので注意。<br />
@@ -4441,7 +4441,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryChargingStart">
-				<dt class="entry">OnBatteryChargingStart<span class="OnBatteryChargingStart_GhostStatus"></span></dt>
+				<dt class="entry">OnBatteryChargingStart</dt>
 				<dd class="entry">
 					<p>バッテリーの充電を開始した場合に発生する。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
@@ -4454,7 +4454,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBatteryChargingStop">
-				<dt class="entry">OnBatteryChargingStop<span class="OnBatteryChargingStop_GhostStatus"></span></dt>
+				<dt class="entry">OnBatteryChargingStop</dt>
 				<dd class="entry">
 					<p>バッテリーの充電を停止した場合に発生する。満充電になった時とは限らない。<br />「<a href="http://tatadenden.blog23.fc2.com/">Androidの伺か</a>」互換イベント。</p>
 					<dl class="reference">
@@ -4467,7 +4467,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDeviceArrival">
-				<dt class="entry">OnDeviceArrival<span class="OnDeviceArrival_GhostStatus"></span></dt>
+				<dt class="entry">OnDeviceArrival</dt>
 				<dd class="entry">
 					<p>デバイスを検出された際に発生。</p>
 					<dl class="reference">
@@ -4480,7 +4480,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDeviceRemove">
-				<dt class="entry">OnDeviceRemove<span class="OnDeviceRemove_GhostStatus"></span></dt>
+				<dt class="entry">OnDeviceRemove</dt>
 				<dd class="entry">
 					<p>デバイスを削除された際に発生。</p>
 					<dl class="reference">
@@ -4493,7 +4493,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTabletMode">
-				<dt class="entry">OnTabletMode<span class="OnTabletMode_GhostStatus"></span></dt>
+				<dt class="entry">OnTabletMode</dt>
 				<dd class="entry">
 					<p>OSがタブレット機の操作に最適化された状態に切り替えられた際に発生。<br>
 					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
@@ -4507,7 +4507,7 @@
 				</dd>
 			</dl>
 			<dl id="OnDarkTheme">
-				<dt class="entry">OnDarkTheme<span class="OnDarkTheme_GhostStatus"></span></dt>
+				<dt class="entry">OnDarkTheme</dt>
 				<dd class="entry">
 					<p>OSがダークテーマ(暗めの表示)に切り替えられた際に発生。<br>
 					起動直後にNOTIFY(喋れない)で通知され、切り替わった時にGET(喋れる)で通知される。</p>
@@ -4523,7 +4523,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOSUpdateInfo">
-				<dt class="entry">OnOSUpdateInfo<span class="OnOSUpdateInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnOSUpdateInfo</dt>
 				<dd class="entry">
 					<p>OSの更新確認日時・更新実行日時と、履歴情報の通知。<br>
 					起動直後にNOTIFY(喋れない)で通知され、更新が実行された時に少し遅れてGET(喋れる)で通知される。</p>
@@ -4545,7 +4545,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinEmpty">
-				<dt class="entry">OnRecycleBinEmpty<span class="OnRecycleBinEmpty_GhostStatus"></span></dt>
+				<dt class="entry">OnRecycleBinEmpty</dt>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a>でゴミ箱を空にした時に発生する。
 					<br />スクリプトを実行したゴーストだけでなく、起動中の全ゴーストにもOnRecycleBinEmptyFromOtherが通知される。</p>
@@ -4569,7 +4569,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinEmptyFromOther">
-				<dt class="entry">OnRecycleBinEmptyFromOther<span class="OnRecycleBinEmptyFromOther_GhostStatus"></span></dt>
+				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
 				<dd class="entry">
 					<p>\![execute,emptyrecyclebin]でゴミ箱を空にする指示を出したゴースト以外に送られる。<br />
 					ReferenceはOnRecycleBinEmptyと同じ。</p>
@@ -4579,7 +4579,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecycleBinStatusUpdate">
-				<dt class="entry">OnRecycleBinStatusUpdate<span class="OnRecycleBinStatusUpdate_GhostStatus"></span></dt>
+				<dt class="entry">OnRecycleBinStatusUpdate</dt>
 				<dd class="entry">
 					<p>ゴミ箱にファイルが投げ込まれた時や、エクスプローラ上でゴミ箱を空にした時に発生し、起動中の全ゴーストに通知される。
 					<br />また、ゴースト起動時に<em class="specsign">[NOTIFY]</em>で通知される。</p>
@@ -4606,7 +4606,7 @@
 		<section class="category">
 			<h1>選択領域モードイベント</h1>
 			<dl id="OnSelectModeBegin">
-				<dt class="entry">OnSelectModeBegin<span class="OnSelectModeBegin_GhostStatus"></span></dt>
+				<dt class="entry">OnSelectModeBegin</dt>
 				<dd class="entry">
 					<p>\![enter,selectrect]を実行後に矩形選択モードに入った際に発生。</p>
 					<dl class="reference">
@@ -4621,7 +4621,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeCancel">
-				<dt class="entry">OnSelectModeCancel<span class="OnSelectModeCancel_GhostStatus"></span></dt>
+				<dt class="entry">OnSelectModeCancel</dt>
 				<dd class="entry">
 					<p>\![leave,selectrect]を実行後に、選択していなかった場合や、空の選択領域になっていた場合に発生します。</p>
 					<dl class="reference">
@@ -4636,7 +4636,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeComplete">
-				<dt class="entry">OnSelectModeComplete<span class="OnSelectModeComplete_GhostStatus"></span></dt>
+				<dt class="entry">OnSelectModeComplete</dt>
 				<dd class="entry">
 					<p>\![leave,selectrect]を実行後に矩形選択モードが解除された際に発生。</p>
 					<dl class="reference">
@@ -4653,7 +4653,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeMouseDown">
-				<dt class="entry">OnSelectModeMouseDown<span class="OnSelectModeMouseDown_GhostStatus"></span></dt>
+				<dt class="entry">OnSelectModeMouseDown</dt>
 				<dd class="entry">
 					<p>矩形選択モード中にマウスボタンが押された際に発生。</p>
 					<dl class="reference">
@@ -4670,7 +4670,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSelectModeMouseUp">
-				<dt class="entry">OnSelectModeMouseUp<span class="OnSelectModeMouseUp_GhostStatus"></span></dt>
+				<dt class="entry">OnSelectModeMouseUp</dt>
 				<dd class="entry">
 					<p>矩形選択モード中にマウスボタンが離された際に発生。</p>
 					<dl class="reference">
@@ -4690,7 +4690,7 @@
 		<section class="category">
 			<h1>音声認識・合成イベント</h1>
 			<dl id="OnSpeechSynthesisStatus">
-				<dt class="entry">OnSpeechSynthesisStatus<span class="OnSpeechSynthesisStatus_GhostStatus"></span></dt>
+				<dt class="entry">OnSpeechSynthesisStatus</dt>
 				<dd class="entry">
 					<p>起動時と音声合成機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4703,7 +4703,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVoiceRecognitionStatus">
-				<dt class="entry">OnVoiceRecognitionStatus<span class="OnVoiceRecognitionStatus_GhostStatus"></span></dt>
+				<dt class="entry">OnVoiceRecognitionStatus</dt>
 				<dd class="entry">
 					<p>起動時と音声認識機能がON/OFFされた時に発生。<em class="specsign">[NOTIFY/他GET]</em></p>
 					<dl class="reference">
@@ -4716,7 +4716,7 @@
 				</dd>
 			</dl>
 			<dl id="OnVoiceRecognitionWord">
-				<dt class="entry">OnVoiceRecognitionWord<span class="OnVoiceRecognitionWord_GhostStatus"></span></dt>
+				<dt class="entry">OnVoiceRecognitionWord</dt>
 				<dd class="entry">
 					<p>音声認識で単語が認識された際に発生。</p>
 					<dl class="reference">
@@ -4738,7 +4738,7 @@
 		<section class="category">
 			<h1>その他イベント</h1>
 			<dl id="OnKeyPress">
-				<dt class="entry">OnKeyPress<span class="OnKeyPress_GhostStatus"></span></dt>
+				<dt class="entry">OnKeyPress</dt>
 				<dd class="entry">
 					<p>本体がアクティブな状態でキーが入力された際に発生。</p>
 					<dl class="reference">
@@ -4761,7 +4761,7 @@
 				</dd>
 			</dl>
 			<dl id="OnRecommendsiteChoice">
-				<dt class="entry">OnRecommendsiteChoice<span class="OnRecommendsiteChoice_GhostStatus"></span></dt>
+				<dt class="entry">OnRecommendsiteChoice</dt>
 				<dd class="entry">
 					<p>メニューからサイトのリンクが選択された際に発生。</p>
 					<dl class="reference">
@@ -4786,7 +4786,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTranslate">
-				<dt class="entry">OnTranslate<span class="OnTranslate_GhostStatus"></span></dt>
+				<dt class="entry">OnTranslate</dt>
 				<dd class="entry">
 					<p>SHIORIがMAKOTOのトランスレート機能を兼任するためのイベント。<br />主に、GETコマンドのSHIORI Eventに対してベースウェアへスクリプトが返却された場合に、それに応じて発行される。<br />OnTranslateの元となったSHIORI Eventに対して、SHIORI内部での操作を経てベースウェアへ返却されたスクリプトが、ベースウェアによる環境変数の展開などの後に再びSHIORIに送られる。SHIORIはこのスクリプトに対して再度何らかの処理を行ってベースウェアに最終的なスクリプトとして返却できる。<br />なおOnTranslate自身では再度発生しない。</p>
 					<dl class="reference">
@@ -4807,7 +4807,7 @@
 				</dd>
 			</dl>
 			<dl id="OnAITalk">
-				<dt class="entry">OnAITalk<span class="OnAITalk_GhostStatus"></span></dt>
+				<dt class="entry">OnAITalk</dt>
 				<dd class="entry">
 					<p><a href="./list_sakura_script.html#_a">\aタグ実行</a>などにより、ランダムトーク発話を求められた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4816,7 +4816,7 @@
 				</dd>
 			</dl>
 			<dl id="OnOtherGhostTalk">
-				<dt class="entry">OnOtherGhostTalk<span class="OnOtherGhostTalk_GhostStatus"></span></dt>
+				<dt class="entry">OnOtherGhostTalk</dt>
 				<dd class="entry">
 					<p>他のゴーストが話した際に発生。\![set,otherghosttalk,true]で有効に。</p>
 					<dl class="reference">
@@ -4839,7 +4839,7 @@
 				</dd>
 			</dl>
 			<dl id="OnEmbryoExist">
-				<dt class="entry">OnEmbryoExist<span class="OnEmbryoExist_GhostStatus"></span></dt>
+				<dt class="entry">OnEmbryoExist</dt>
 				<dd class="entry">
 					<p>SSP起動時、先にmateria.exeが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4848,7 +4848,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNekodorifExist">
-				<dt class="entry">OnNekodorifExist<span class="OnNekodorifExist_GhostStatus"></span></dt>
+				<dt class="entry">OnNekodorifExist</dt>
 				<dd class="entry">
 					<p>SSP起動時、先に猫どりふが起動されていた際に発生。</p>
 					<ul class="supported-baseware">
@@ -4857,7 +4857,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSoundStop">
-				<dt class="entry">OnSoundStop<span class="OnSoundStop_GhostStatus"></span></dt>
+				<dt class="entry">OnSoundStop</dt>
 				<dd class="entry">
 					<p>サウンドが終了した際に発生。</p>
 					<dl class="reference">
@@ -4870,7 +4870,7 @@
 				</dd>
 			</dl>
 			<dl id="OnSoundError">
-				<dt class="entry">OnSoundError<span class="OnSoundError_GhostStatus"></span></dt>
+				<dt class="entry">OnSoundError</dt>
 				<dd class="entry">
 					<p>サウンド処理に失敗した際に発生。</p>
 					<dl class="reference">
@@ -4889,7 +4889,7 @@
 				</dd>
 			</dl>
 			<dl id="OnTextDrop">
-				<dt class="entry">OnTextDrop<span class="OnTextDrop_GhostStatus"></span></dt>
+				<dt class="entry">OnTextDrop</dt>
 				<dd class="entry">
 					<p>テキストデータがDnDされた際に発生。</p>
 					<dl class="reference">
@@ -4904,7 +4904,7 @@
 				</dd>
 			</dl>
 			<dl id="OnShellScaling">
-				<dt class="entry">OnShellScaling<span class="OnShellScaling_GhostStatus"></span></dt>
+				<dt class="entry">OnShellScaling</dt>
 				<dd class="entry">
 					<p>シェル倍率が変更された際に発生。</p>
 					<dl class="reference">
@@ -4923,7 +4923,7 @@
 				</dd>
 			</dl>
 			<dl id="OnBalloonScaling">
-				<dt class="entry">OnBalloonScaling<span class="OnBalloonScaling_GhostStatus"></span></dt>
+				<dt class="entry">OnBalloonScaling</dt>
 				<dd class="entry">
 					<p>バルーン倍率が変更された際に発生。</p>
 					<dl class="reference">
@@ -4942,7 +4942,7 @@
 				</dd>
 			</dl>
 			<dl id="OnLanguageChange">
-				<dt class="entry">OnLanguageChange<span class="OnLanguageChange_GhostStatus"></span></dt>
+				<dt class="entry">OnLanguageChange</dt>
 				<dd class="entry">
 					<p>言語設定が変更された際と、起動直後に通知される。<br>
 					起動直後に通知される場合は必ずNOTIFYとなり、イベントに応答してしゃべることはできない。</p>
@@ -4965,7 +4965,7 @@
 		<section class="category">
 			<h1>Notifyイベント</h1>
 			<dl id="basewareversion">
-				<dt class="entry">basewareversion<span class="basewareversion_GhostStatus"></span></dt>
+				<dt class="entry">basewareversion</dt>
 				<dd class="entry">
 					<p>ベースウェアの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4983,7 +4983,7 @@
 				</dd>
 			</dl>
 			<dl id="hwnd">
-				<dt class="entry">hwnd<span class="hwnd_GhostStatus"></span></dt>
+				<dt class="entry">hwnd</dt>
 				<dd class="entry">
 					<p>hwndを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -4999,7 +4999,7 @@
 				</dd>
 			</dl>
 			<dl id="uniqueid">
-				<dt class="entry">uniqueid<span class="uniqueid_GhostStatus"></span></dt>
+				<dt class="entry">uniqueid</dt>
 				<dd class="entry">
 					<p>unique IDを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5013,7 +5013,7 @@
 				</dd>
 			</dl>
 			<dl id="capability">
-				<dt class="entry">capability<span class="capability_GhostStatus"></span></dt>
+				<dt class="entry">capability</dt>
 				<dd class="entry">
 					<p>SHIORI拡張実装状態を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5036,7 +5036,7 @@
 				</dd>
 			</dl>
 			<dl id="ownerghostname">
-				<dt class="entry">ownerghostname<span class="ownerghostname_GhostStatus"></span></dt>
+				<dt class="entry">ownerghostname</dt>
 				<dd class="entry">
 					<p>現在のゴースト名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5051,7 +5051,7 @@
 				</dd>
 			</dl>
 			<dl id="otherghostname">
-				<dt class="entry">otherghostname<span class="otherghostname_GhostStatus"></span></dt>
+				<dt class="entry">otherghostname</dt>
 				<dd class="entry">
 					<p>他に起動しているゴーストの本体側名を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5066,7 +5066,7 @@
 				</dd>
 			</dl>
 			<dl id="installedsakuraname">
-				<dt class="entry">installedsakuraname<span class="installedsakuraname_GhostStatus"></span></dt>
+				<dt class="entry">installedsakuraname</dt>
 				<dd class="entry">
 					<p>インストールされているゴーストのsakura.nameを通知。<em class="specsign">[NOTIFY]</em>
 					<br />必ずinstalledghostnameの前に通知される。
@@ -5081,7 +5081,7 @@
 				</dd>
 			</dl>
 			<dl id="installedkeroname">
-				<dt class="entry">installedkeroname<span class="installedkeroname_GhostStatus"></span></dt>
+				<dt class="entry">installedkeroname</dt>
 				<dd class="entry">
 					<p>インストールされているゴーストのkero.nameを通知。<em class="specsign">[NOTIFY]</em>
 					<br />必ずinstalledghostnameの前に通知される。
@@ -5096,7 +5096,7 @@
 				</dd>
 			</dl>
 			<dl id="installedghostname">
-				<dt class="entry">installedghostname<span class="installedghostname_GhostStatus"></span></dt>
+				<dt class="entry">installedghostname</dt>
 				<dd class="entry">
 					<p>インストールされているゴーストを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5111,7 +5111,7 @@
 				</dd>
 			</dl>
 			<dl id="installedshellname">
-				<dt class="entry">installedshellname<span class="installedshellname_GhostStatus"></span></dt>
+				<dt class="entry">installedshellname</dt>
 				<dd class="entry">
 					<p>インストールされているシェルを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5125,7 +5125,7 @@
 				</dd>
 			</dl>
 			<dl id="installedballoonname">
-				<dt class="entry">installedballoonname<span class="installedballoonname_GhostStatus"></span></dt>
+				<dt class="entry">installedballoonname</dt>
 				<dd class="entry">
 					<p>インストールされているバルーンを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5139,7 +5139,7 @@
 				</dd>
 			</dl>
 			<dl id="installedheadlinename">
-				<dt class="entry">installedheadlinename<span class="installedheadlinename_GhostStatus"></span></dt>
+				<dt class="entry">installedheadlinename</dt>
 				<dd class="entry">
 					<p>インストールされているRSS/ヘッドラインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5152,7 +5152,7 @@
 				</dd>
 			</dl>
 			<dl id="installedplugin">
-				<dt class="entry">installedplugin<span class="installedplugin_GhostStatus"></span></dt>
+				<dt class="entry">installedplugin</dt>
 				<dd class="entry">
 					<p>インストールされているプラグインを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5165,7 +5165,7 @@
 				</dd>
 			</dl>
 			<dl id="configuredbiffname">
-				<dt class="entry">configuredbiffname<span class="configuredbiffname_GhostStatus"></span></dt>
+				<dt class="entry">configuredbiffname</dt>
 				<dd class="entry">
 					<p>設定済みメールチェックアカウントのリストを通知する。<a href="list_sakura_script.html#_!_biff_">\![biff,アカウント名]</a>で利用できる。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5178,7 +5178,7 @@
 				</dd>
 			</dl>
 			<dl id="ghostpathlist">
-				<dt class="entry">ghostpathlist<span class="ghostpathlist_GhostStatus"></span></dt>
+				<dt class="entry">ghostpathlist</dt>
 				<dd class="entry">
 					<p>ゴースト格納フォルダ（SSPの本体設定->フォルダ　のゴーストの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5191,7 +5191,7 @@
 				</dd>
 			</dl>
 			<dl id="balloonpathlist">
-				<dt class="entry">balloonpathlist<span class="balloonpathlist_GhostStatus"></span></dt>
+				<dt class="entry">balloonpathlist</dt>
 				<dd class="entry">
 					<p>バルーン格納フォルダ（SSPの本体設定->フォルダ　のバルーンの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5204,7 +5204,7 @@
 				</dd>
 			</dl>
 			<dl id="headlinepathlist">
-				<dt class="entry">headlinepathlist<span class="headlinepathlist_GhostStatus"></span></dt>
+				<dt class="entry">headlinepathlist</dt>
 				<dd class="entry">
 					<p>ヘッドライン格納フォルダ（SSPの本体設定->フォルダ　のヘッドラインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5217,7 +5217,7 @@
 				</dd>
 			</dl>
 			<dl id="pluginpathlist">
-				<dt class="entry">pluginpathlist<span class="pluginpathlist_GhostStatus"></span></dt>
+				<dt class="entry">pluginpathlist</dt>
 				<dd class="entry">
 					<p>プラグイン格納フォルダ（SSPの本体設定->フォルダ　のプラグインの設定）のパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5230,7 +5230,7 @@
 				</dd>
 			</dl>
 			<dl id="calendarskinpathlist">
-				<dt class="entry">calendarskinpathlist<span class="calendarskinpathlist_GhostStatus"></span></dt>
+				<dt class="entry">calendarskinpathlist</dt>
 				<dd class="entry">
 					<p>カレンダースキン格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5243,7 +5243,7 @@
 				</dd>
 			</dl>
 			<dl id="calendarpluginpathlist">
-				<dt class="entry">calendarpluginpathlist<span class="calendarpluginpathlist_GhostStatus"></span></dt>
+				<dt class="entry">calendarpluginpathlist</dt>
 				<dd class="entry">
 					<p>カレンダーのスケジュールセンサ格納フォルダのパスを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5256,7 +5256,7 @@
 				</dd>
 			</dl>
 			<dl id="rateofusegraph">
-				<dt class="entry">rateofusegraph<span class="rateofusegraph_GhostStatus"></span></dt>
+				<dt class="entry">rateofusegraph</dt>
 				<dd class="entry">
 					<p>使ってるぞグラフの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5279,7 +5279,7 @@
 				</dd>
 			</dl>
 			<dl id="enable_log">
-				<dt class="entry">enable_log<span class="enable_log_GhostStatus"></span></dt>
+				<dt class="entry">enable_log</dt>
 				<dd class="entry">
 					<p>開発用パレットの「SHIORI内部ログ機能有効」のON/OFF。<em class="specsign">[NOTIFY]</em><br />
 					<a href="list_shiori_resource.html#log_path">SHIORI Resource : log_path</a> も参照。</p>
@@ -5293,7 +5293,7 @@
 				</dd>
 			</dl>
 			<dl id="enable_debug">
-				<dt class="entry">enable_debug<span class="enable_debug_GhostStatus"></span></dt>
+				<dt class="entry">enable_debug</dt>
 				<dd class="entry">
 					<p>開発用パレットの「SHIORIデバッグモード有効」のON/OFF。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5306,7 +5306,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifySelfInfo">
-				<dt class="entry">OnNotifySelfInfo<span class="OnNotifySelfInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifySelfInfo</dt>
 				<dd class="entry">
 					<p>ゴースト自身の情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5332,7 +5332,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyBalloonInfo">
-				<dt class="entry">OnNotifyBalloonInfo<span class="OnNotifyBalloonInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyBalloonInfo</dt>
 				<dd class="entry">
 					<p>現在使用中のバルーン情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5349,7 +5349,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyShellInfo">
-				<dt class="entry">OnNotifyShellInfo<span class="OnNotifyShellInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyShellInfo</dt>
 				<dd class="entry">
 					<p>現在使用中のシェル情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5366,7 +5366,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyDressupInfo">
-				<dt class="entry">OnNotifyDressupInfo<span class="OnNotifyDressupInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyDressupInfo</dt>
 				<dd class="entry">
 					<p>着せ替えの情報を通知。<br />
 					起動時のみ<em class="specsign">[NOTIFY]</em>で、メニューから切替などユーザーによる操作なら<em class="specsign">[GET]</em>で送られる。<br />
@@ -5384,7 +5384,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyUserInfo">
-				<dt class="entry">OnNotifyUserInfo<span class="OnNotifyUserInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyUserInfo</dt>
 				<dd class="entry">
 					<p>ユーザーの入力情報を通知。起動時＋情報が更新された際に通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5403,7 +5403,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyOSInfo">
-				<dt class="entry">OnNotifyOSInfo<span class="OnNotifyOSInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyOSInfo</dt>
 				<dd class="entry">
 					<p>OS情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
@@ -5422,7 +5422,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNotifyFontInfo">
-				<dt class="entry">OnNotifyFontInfo<span class="OnNotifyFontInfo_GhostStatus"></span></dt>
+				<dt class="entry">OnNotifyFontInfo</dt>
 				<dd class="entry">
 					<p>システムにインストールされているフォントを通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
