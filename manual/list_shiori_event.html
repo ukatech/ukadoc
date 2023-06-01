@@ -13,26 +13,40 @@
 </head>
 <body>
 	<script type="text/javascript">
-		//一个全局变量用于检查当前ghost是否支持Has_Event
-		var has_has_event = false;
+		//一个全局变量用于保存ghost所支持的事件列表
+		/*
+		其结构大致如下：
+		{
+			local: local ? local.split(",") : [],
+			external: external ? external.split(",") : []
+		};
+		*/
+		var event_list;
 		//for support graph
 		var count_support = 0;
 		var count_all = 0;
-		jsstp.has_event('Has_Event').then(function(result) {
-			has_has_event = result;
+		jsstp.has_event('Get_Supported_Events').then(function(result) {
 			if(result)
-				set_event();
+				jsstp.get_supported_events().then(function(result){
+					event_list=result;set_event();
+				});
+			else
+				//隐藏supported_graph
+				document.getElementById("supported_graph").style.display = "none";
 		});
 		//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 		async function check_event_str(event_id, security_level="local") {
-			if (has_has_event) {
-				const result=await jsstp.has_event(event_id, security_level);
+			if (event_list) {
+				var result = false;
+				if (security_level == "local")
+					result = event_list.local.includes(event_id);
+				else if (security_level == "external")
+					result = event_list.external.includes(event_id);
 				//calc support graph
 				count_support += result;
 				count_all += 1;
-				const g = document.getElementById("supported_graph");
-				g.max = count_all;
-				g.value = count_support;
+				const g = document.getElementById("supported_graph_content");
+				g.max = count_all;g.value = count_support;
 				document.getElementById("supported_ratio").textContent = `${count_support}/${count_all}`;
 				//以日语返回支持情况
 				if (result)
@@ -173,8 +187,8 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>SHIORI Event</h1>
-		<section class="navigation-category">
-			<p>support: <meter id="supported_graph" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
+		<section class="navigation-category" id="supported_graph">
+			<p>support: <meter id="supported_graph_content" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
 			<ul>
 				<li class="caption"><a href="#caption_format">このページの書式について</a></li>
 			</ul>
