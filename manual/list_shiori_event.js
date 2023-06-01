@@ -97,6 +97,11 @@ async function reload_button() {
 }
 //页面加载完成后，尝试加载ghost列表
 window.onload = () => {
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
+		const span = document.createElement("span");
+		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+		el.appendChild(span);
+	}
 	reload_button().then(() => {
 		//若无法加载ghost列表，隐藏所有ghost状态相关的元素
 		if (document.getElementById("ghost_list_content").value == "")
