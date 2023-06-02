@@ -137,6 +137,9 @@ a:hover {
 	margin-left: 2em;
 	font-size: small;
 }
+.navigation-bar > .navigation-category span {
+	color: #333;
+}
 .navigation-bar > .navigation-category li.caption {
 	list-style-type: none;
 	margin-left: 0.5em;
@@ -150,6 +153,9 @@ a:hover {
 }
 .navigation-bar > .navigation-category li.caption.introduction:before {
 	content: url("image/icon_doc-b.png") "　";
+}
+.navigation-bar > .navigation-category meter {
+	width: 60%;
 }
 
 
@@ -326,6 +332,11 @@ a:hover {
 	padding: 2px 2px 2px 5px;
 	clear: left;
 	background-color: #eef;
+}
+.category dt.entry span {
+	font-size: medium;
+	font-weight: normal;
+	color: #333;
 }
 .category .supported-baseware {
 	margin: 0 0 30px 15px;

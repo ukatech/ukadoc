@@ -8,6 +8,9 @@
 <title>UKADOC Project SHIORI Eventリスト</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<!-- 引用"jsstp.js"文件 -->
+<script src="https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.0.0.0/jsstp.min.js"></script>
+<script src="list_shiori_event.js"></script>
 </head>
 <body>
 	<h1 id="page-title">SHIORI Eventリスト</h1>
@@ -132,7 +135,29 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>SHIORI Event</h1>
+		<section class="navigation-category" id="GhostStatus" style="display: none;">
+			<h1>Ghost Status</h1>
+			<!-- 一个列表用于显示和选择ghost -->
+			<div id="ghost_select">
+				<p>ゴーストを選択してください：</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- reloadボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">リロード</button>
+			</div>
+			<div id="supported_text_event_Has_Event_reminder" style="display: none;">
+				<p>あなたのゴーストは以下のイベントをサポートする必要があります：</p>
+				<a href="https://github.com/YAYA-shiori/yaya-dic/blob/acef2e384cd5a03eda8873cf82ca10bd720c8138/yaya_base/shiori3.dic#L1972L1989">Has_Event</a>
+			</div>
+			<div id="supported_graph" style="display: none;">
+				<p>support: <meter id="supported_graph_content" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
+			</div>
+			<div id="supported_text_event_Get_Supported_Events_reminder" style="display: none;">
+				<p>イベントの統計速度が遅い場合は？</p>
+				<a href="https://github.com/YAYA-shiori/yaya-dic/blob/acef2e384cd5a03eda8873cf82ca10bd720c8138/yaya_base/shiori3.dic#L1990L2025">Get_Supported_Events</a>イベントをサポートして、速度を向上させることができます。
+			</div>
+		</section>
 		<section class="navigation-category">
+			<h1></h1>
 			<ul>
 				<li class="caption"><a href="#caption_format">このページの書式について</a></li>
 			</ul>
@@ -295,7 +320,7 @@
 				<li><a href="#OnFileDropped">OnFileDropped</a></li>
 				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
 				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
-				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a></li>
+				<li><a href="#OnDirectoryDrop">OnDirectoryDrop</a></li>
 				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
 				<li><a href="#OnFileDrop">OnFileDrop</a></li>
 				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
@@ -3896,7 +3921,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnPingComplete</dt>
 				<dd class="entry">
 					<p>\![execute,ping]で指定回数のping実行完了時に発生。</p>
 					<dl class="reference">
@@ -3913,7 +3938,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgressまたは--eventで指定ID+Progress</dt>
+				<dt class="entry">OnPingProgress</dt>
 				<dd class="entry">
 					<p>\![execute,ping]でping実行中に発生。</p>
 					<dl class="reference">
@@ -3930,7 +3955,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupCompleteまたは--eventで指定ID</dt>
+				<dt class="entry">OnNSLookupComplete</dt>
 				<dd class="entry">
 					<p>\![execute,nslookup]で成功時に発生。</p>
 					<dl class="reference">
@@ -3949,7 +3974,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailureまたは--eventで指定ID＋Failure</dt>
+				<dt class="entry">OnNSLookupFailure</dt>
 				<dd class="entry">
 					<p>\![execute,nslookup]で失敗時に発生。</p>
 					<dl class="reference">
