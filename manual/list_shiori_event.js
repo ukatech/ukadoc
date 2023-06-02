@@ -7,9 +7,28 @@
 	external: external ? external.split(",") : []
 };
 */
+//页面加载完成后，尝试加载ghost列表
+window.onload = () => {
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
+		const span = document.createElement("span");
+		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+		el.appendChild(span);
+	}
+	for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
+		const span = document.createElement("span");
+		span.classList.add(el.textContent + "_GhostStatus");
+		el.appendChild(span);
+	}
+	reload_button().then(() => {
+		//若无法加载ghost列表，隐藏所有ghost状态相关的元素
+		if (document.getElementById("ghost_list_content").value == "")
+			document.getElementById("GhostStatus").style.display = "none";
+		else
+			document.getElementById("GhostStatus").style.display = "block";
+	});
+};
 let event_list;
 let has_has_event = false;
-
 //for support graph
 let count_support = 0;
 let count_all = 0;
@@ -86,26 +105,6 @@ async function reload_button() {
 	}
 	set_event();
 }
-//页面加载完成后，尝试加载ghost列表
-window.onload = () => {
-	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
-		const span = document.createElement("span");
-		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
-		el.appendChild(span);
-	}
-	for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
-		const span = document.createElement("span");
-		span.classList.add(el.textContent + "_GhostStatus");
-		el.appendChild(span);
-	}
-	reload_button().then(() => {
-		//若无法加载ghost列表，隐藏所有ghost状态相关的元素
-		if (document.getElementById("ghost_list_content").value == "")
-			document.getElementById("GhostStatus").style.display = "none";
-		else
-			document.getElementById("GhostStatus").style.display = "block";
-	});
-};
 //定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 async function base_check_event(event_id, security_level="local") {
 	let result = false;
