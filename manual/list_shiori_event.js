@@ -144,14 +144,14 @@ function get_str_by_check_result(result) {
 		return "";
 	if (result.result) {
 		if (result.ex_var)
-			return "（Ex対応）";
+			return " (Ex version supported)";
 		else if (result.common_var)
-			return "（共通対応）";
+			return " (Common version supported)";
 		else
-			return "（対応）";
+			return " (Supported)";
 	}
 	else
-		return "（未対応）";
+		return " (Not supported)";
 }
 function set_event_str(element_class_name, event_id, security_level="local") {
 	check_event(event_id, security_level).then(function(result) {
