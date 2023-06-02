@@ -8,6 +8,9 @@
 <title>UKADOC Project SHIORI Eventリスト</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<!-- 引用"jsstp.js"文件 -->
+<script src="https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.0.0.0/jsstp.min.js"></script>
+<script src="list_shiori_event.js"></script>
 </head>
 <body>
 	<h1 id="page-title">SHIORI Event List</h1>
@@ -132,7 +135,29 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>SHIORI Event</h1>
+		<section class="navigation-category" id="GhostStatus" style="display: none;">
+			<h1>Ghost Status</h1>
+			<!-- 一个列表用于显示和选择ghost -->
+			<div id="ghost_select">
+				<p>Please select a ghost:</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- reloadボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">Reload</button>
+			</div>
+			<div id="supported_text_event_Has_Event_reminder" style="display: none;">
+				<p>Your ghost must support the following events:</p>
+				<a href="https://github.com/YAYA-shiori/yaya-dic/blob/acef2e384cd5a03eda8873cf82ca10bd720c8138/yaya_base/shiori3.dic#L1972L1989">Has_Event</a>
+			</div>
+			<div id="supported_graph" style="display: none;">
+				<p>support: <meter id="supported_graph_content" min="0" max="0" value="0"></meter><span id="supported_ratio">0/0</span></p>
+			</div>
+			<div id="supported_text_event_Get_Supported_Events_reminder" style="display: none;">
+				<p>What if the event statistics speed is slow?</p>
+				<a href="https://github.com/YAYA-shiori/yaya-dic/blob/acef2e384cd5a03eda8873cf82ca10bd720c8138/yaya_base/shiori3.dic#L1990L2025">Get_Supported_Events</a> events to support and increase speed.
+			</div>
+		</section>
 		<section class="navigation-category">
+			<h1></h1>
 			<ul>
 				<li class="caption"><a href="#caption_format">About the formatting of this page</a></li>
 			</ul>
@@ -293,7 +318,9 @@
 			<ul>
 				<li><a href="#OnFileDropping">OnFileDropping</a></li>
 				<li><a href="#OnFileDropped">OnFileDropped</a></li>
-				<li><a href="#OnWallpaperChange">OnDirectoryDrop</a></li>
+				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
+				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
+				<li><a href="#OnDirectoryDrop">OnDirectoryDrop</a></li>
 				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
 				<li><a href="#OnFileDrop">OnFileDrop</a></li>
 				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
@@ -415,6 +442,7 @@
 			<ul>
 				<li><a href="#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a></li>
 				<li><a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a></li>
+				<li><a href="#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a></li>
 				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
 				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
 				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
@@ -528,6 +556,8 @@
 				<li><a href="#capability">capability</a></li>
 				<li><a href="#ownerghostname">ownerghostname</a></li>
 				<li><a href="#otherghostname">otherghostname</a></li>
+				<li><a href="#installedsakuraname">installedsakuraname</a></li>
+				<li><a href="#installedkeroname">installedkeroname</a></li>
 				<li><a href="#installedghostname">installedghostname</a></li>
 				<li><a href="#installedshellname">installedshellname</a></li>
 				<li><a href="#installedballoonname">installedballoonname</a></li>
@@ -2426,6 +2456,43 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnOtherObjectDropping">
+				<dt class="entry">OnOtherObjectDropping</dt>
+				<dd class="entry">
+					<p>Occurs when the cursor goes over the ghost with something that cannot be treated as a "file". Example: "My Computer" in Windows.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The scope number of the character that the file was dropped on. 0 if the main character, 1 if the side character, 2 if a 3rd character and so on.</dd>
+						<dt>Reference1</dt>
+						<dd>The name of the dropped item (affected by the OS language setting).
+						<br />Delimited by a 1-byte value when there are multiple.</dd>
+						<dt>Reference2</dt>
+						<dd>A kind of ID that for the dropped item that is not affected by the OS language settings.
+						<br />Delimited by a 1-byte value when there are multiple. The following is an example on Windows.
+						
+						<ul>
+							<li>PC(マイコンピュータ) = ::{20D04FE0-3AEA-1069-A2D8-08002B30309D}</li>
+							<li>ゴミ箱 = ::{645FF040-5081-101B-9F08-00AA002F954E}</li>
+							<li>(マイ)ネットワーク = ::{F02C1A0D-BE21-4350-88B0-7367FC96EF3C}</li>
+						</ul>
+						
+						</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.41</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnOtherObjectDropped">
+				<dt class="entry">OnOtherObjectDropped</dt>
+				<dd class="entry">
+					<p>Occurs when something is drag-and-dropped that cannot be treated as a "file". Example: "My Computer" in Windows.
+					<br />Reference is exactly the same as OnOtherObjectDropping.</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.41</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnDirectoryDrop">
 				<dt class="entry">OnDirectoryDrop</dt>
 				<dd class="entry">
@@ -3756,14 +3823,14 @@
 						<dt>Reference0</dt>
 						<dd>One of post/get/head/put/delete.</dd>
 						<dt>Reference1</dt>
-						<dd>The string specified with the ID.</dd>
+						<dd>The string specified by the --sync and --async options.</dd>
 						<dt>Reference2</dt>
 						<dd>The URL of the target.</dd>
 						<dt>Reference3</dt>
 						<dd>The contents of the acquired data, if the --nofile option has been specified. However, newline codes will be replaced with the 1-byte value.
 						<br />Otherwise, the full path of the acquired file.</dd>
 						<dt>Reference4</dt>
-						<dd>The acquisition result code. (200|204) etc.</dd>
+						<dd>The acquisition result code. (timeout|fileio|200|204|403|404) etc. Refer to <a href="#caption_updateresultfailure">[network failure reason]</a>.</dd>
 						<dt>Reference5</dt>
 						<dd>The cookie string.</dd>
 						<dt>Reference6</dt>
@@ -3777,25 +3844,18 @@
 			<dl id="OnExecuteHTTPFailure">
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
-					<p>Occurs when an acquisition error is caused with execute-http.</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>One of post/get/head/put/delete.</dd>
-						<dt>Reference1</dt>
-						<dd>The string specified with the ID.</dd>
-						<dt>Reference2</dt>
-						<dd>The URL of the target.</dd>
-						<dt>Reference3</dt>
-						<dd>The full path of the acquired file.</dd>
-						<dt>Reference4</dt>
-						<dd>The acquisition result code. (timeout|fileio|200|204|403|404) etc. Refer to <a href="#caption_updateresultfailure">[network failure reason]</a>.</dd>
-						<dt>Reference5</dt>
-						<dd>The cookie string.</dd>
-						<dt>Reference6</dt>
-						<dd>All of the acquired response headers. Delimited by the one-byte value rather than line breaks. [2.6.40]</dd>
-					</dl>
+					<p>Occurs when an acquisition error is caused with execute-http. References are the same as Complete.</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteHTTPProgress">
+				<dt class="entry">OnExecuteHTTPProgress</dt>
+				<dd class="entry">
+					<p>Occurs when --progress-notify is specified in execute-http. References are the same as Complete.</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.6.44]</li>
 					</ul>
 				</dd>
 			</dl>
@@ -3870,7 +3930,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingComplete">
-				<dt class="entry">OnPingComplete or the ID specified with --event</dt>
+				<dt class="entry">OnPingComplete</dt>
 				<dd class="entry">
 					<p>Occurs when the number of pings specified in \![execute,ping] have been executed.</p>
 					<dl class="reference">
@@ -3887,7 +3947,7 @@
 				</dd>
 			</dl>
 			<dl id="OnPingProgress">
-				<dt class="entry">OnPingProgress or the ID specified with --event + Progress</dt>
+				<dt class="entry">OnPingProgress</dt>
 				<dd class="entry">
 					<p>Occurs while executing pings with \![execute,ping].</p>
 					<dl class="reference">
@@ -3904,7 +3964,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupComplete">
-				<dt class="entry">OnNSLookupComplete or the ID specified with --event</dt>
+				<dt class="entry">OnNSLookupComplete</dt>
 				<dd class="entry">
 					<p>Occurs when \![execute,nslookup] is completed successfully.</p>
 					<dl class="reference">
@@ -3923,7 +3983,7 @@
 				</dd>
 			</dl>
 			<dl id="OnNSLookupFailure">
-				<dt class="entry">OnNSLookupFailure or the ID specified with --event + Failure</dt>
+				<dt class="entry">OnNSLookupFailure</dt>
 				<dd class="entry">
 					<p>Occurs when \![execute,nslookup] has failed.</p>
 					<dl class="reference">
@@ -4090,7 +4150,9 @@
 					<p>Occurs when the server does not respond after a certain amount of time.</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>※SSP only: The time until the timeout happened (in seconds).</dd>
+						<dd>※SSP only:　The time until the timeout happened (in seconds).</dd>
+						<dt>Reference1</dt>
+						<dd>※SSP only:　The elapsed time up to now (in seconds). [2.6.42～]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -4519,7 +4581,7 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnRecycleBinEmpty">
+			<dl id="OnRecycleBinEmptyFromOther">
 				<dt class="entry">OnRecycleBinEmptyFromOther</dt>
 				<dd class="entry">
 					<p>Sent to ghosts other than the one that emptied the Recycle Bin using \![execute,emptyrecyclebin].<br />
@@ -5013,6 +5075,36 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="installedsakuraname">
+				<dt class="entry">installedsakuraname</dt>
+				<dd class="entry">
+					<p>Notifies the sakura.name of currently installed ghosts. <em class="specsign">[NOTIFY]</em>
+					<br />It is always notified before the installedghostname.
+					<br />It is also guaranteed that the Reference numbers in the installedsakuraname/installedkeroname/installedghostname, indicating the same ghost, will match.</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>The sakura.name of the currently installed ghosts.</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.47</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="installedkeroname">
+				<dt class="entry">installedkeroname</dt>
+				<dd class="entry">
+					<p>Notifies the kero.name of currently installed ghosts. <em class="specsign">[NOTIFY]</em>
+					<br />It is always notified before the installedghostname.
+					<br />It is also guaranteed that the Reference numbers in the installedsakuraname/installedkeroname/installedghostname, indicating the same ghost, will match.</p>
+					<dl class="reference">
+						<dt>Reference*</dt>
+						<dd>The kero.name of the currently installed ghosts.</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.47</li>
 					</ul>
 				</dd>
 			</dl>

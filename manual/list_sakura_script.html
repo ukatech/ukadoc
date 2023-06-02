@@ -456,13 +456,16 @@
 				<li><a href="#_!_execute,http-get,URL_">\![execute,http-get,(URL)]</a></li>
 				<li><a href="#_!_execute,http-get,URL,パラメータ_">\![execute,http-get,(URL),(parameter)]</a></li>
 				<li><a href="#_!_execute,http-post,URL,パラメータ_">\![execute,http-post,(URL),(parameter)]</a></li>
+				
 				<li><a href="#_!_execute,http-get,URL,オプション,オプション,オプション..._">\![execute,http-get,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,http-post,URL,オプション,オプション,オプション..._">\![execute,http-post,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,http-head,URL,オプション,オプション,オプション..._">\![execute,http-head,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,http-put,URL,オプション,オプション,オプション..._">\![execute,http-put,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,http-delete,URL,オプション,オプション,オプション..._">\![execute,http-delete,(URL),(option),(option),(option),...]</a></li>
+				
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,(URL),(option),(option),(option),...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,(URL),(option),(option),(option),...]</a></li>
+				
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名_">\![execute,extractarchive,(file name),(directory name)]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名_">\![execute,compressarchive,(file name),(directory name)]</a></li>
 				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,(directory),(scope ID),(surface list),(prefix),(event ID),(zero position cutoff)]</a></li>
@@ -5323,9 +5326,10 @@
 				<h1>http get/post options</h1>
 				<dl>
 					<dt>--async=identification ID</dt>
-					<dd>Notifies the SHIORI events <a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a> or <a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a> when the process has finished.<br>
+					<dd>Execute the rest of the SakuraScript without waiting for the process to complete, and notify the SHIORI events <a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a> or <a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a> when the process has finished.<br>
 					<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a> or <a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a> are notified if the RSS commands are used.
-					<br>When an ID starting with On is specified, a SHIORI Event formatted as [Specified ID] or [Specified ID]Failure will run instead.<br>Ex: When --async=OnExample succeeds, OnExample will run, and when it fails, OnExampleFailure will run.</dd>
+					<br>When an ID starting with On is specified, a SHIORI Event formatted as [Specified ID] or [Specified ID]Failure will run instead.<br>Ex: When --async=OnExample succeeds, OnExample will run, and when it fails, OnExampleFailure will run.
+					<br>If you want to suspend the SakuraScript until the process is complete, write "--sync" instead.</dd>
 					
 					<dt>--authorization=(the contents of the Authorization request header) [2.6.37]</dt>
 					<dd>Set in advance when Authorization headers are mandatory, such as OAuth.</dd>
@@ -5333,7 +5337,7 @@
 					<dt>--cookie=cookie data</dt>
 					<dd>When necessary, the value of Reference5 of OnExecuteHTTPComplete should be specified as is.</dd>
 					
-					<dt>--content-type=(multipart/form-data|application/x-www-form-urlencoded)</dt>
+					<dt>--content-type=(multipart/form-data | application/x-www-form-urlencoded | other optional designations)</dt>
 					<dd>Limited to http-post. Specifies what format the param argument parameters should be sent in.<br>
 					Defaults to application/x-www-form-urlencoded if nothing is specified.<br>
 					It is important to keep in mind that there may be limitations on how to write the param arguments depending on the format of content-type.</dd>
@@ -5345,6 +5349,9 @@
 					<dt>--header=(SomeHeader):(contents of the request header) [2.6.40]</dt>
 					<dd>Sets a request header of the name of choice. There must be a colon between the name and contents.
 					<br />Caution should be taken not to cause contradictions with the specifications, as this will overwrite the header information from SSP.</dd>
+					
+					<dt>--log=file name</dt>
+					<dd>Log all communications with the server. Mainly for debugging during development.</dd>
 					
 					<dt>--nodescript</dt>
 					<dd>Turns off the display of the online marker and download status.</dd>
@@ -5374,6 +5381,16 @@
 					<br />Do not specify --param at the same time.
 					<br />The contents are not touched, so the character code and encoding should be the responsibility of and be processed by the side using the data.
 					<br />However, only with multipart/form-data, the first line is read and interpreted as a field separator.</dd>
+					<br />The specified file path must be under the jurisdiction of SSP (under the same location as SSP.exe or under a folder specified to list ghosts, etc.).</dd>
+
+					<dt>--progress-notify [2.6.44]</dt>
+					<dd>Notify the event <a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a> during the download process.
+					<br>When an ID starting with On is specified, a SHIORI Event formatted as [Specified ID]Progress will run instead.<br>Ex: When --async=OnExample is processing, OnExampleProgress will be notified.
+					<br>During the download process, event notification processing is performed sequentially, resulting in a reduction in download speed.
+					<br>Note that when outputting to a file, the file is closed at the time of event notification and re-opened after receiving a response, which further slows down the download speed.</dd>
+
+					<dt>--sync=identification ID [2.6.44]</dt>
+					<dd>The behavior is the same as the --async specification, except that SakuraScript execution is temporarily stopped and waits for the process to complete.</dd>
 					
 					<dt>--timeout=(number of seconds)</dt>
 					<dd>Specifies the length of time to wait for a response (※not the length of time needed for a download). The upper limit is 300 seconds.<br>If there is no response within the specified number of seconds, the SHIORI event OnExecuteHTTPFailure will be notified, and Reference4 will contain "timeout."</dd>

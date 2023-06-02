@@ -1,4 +1,7 @@
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 name: ukadoc server update request (update will be delayed up to 5 minutes)
 
