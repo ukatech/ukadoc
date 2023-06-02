@@ -49,18 +49,9 @@ async function reload_button() {
 	//清空列表
 	list.options.length = 0;
 	//重新加载列表
-	const fmo = await jsstp.EXECUTE({
-		"Command": "GetFMO"
-	});
-	//对于每个fmo的key以".fullname"结尾的项，将其对应的value添加到列表中
-	for (const key in fmo) {
-		if (key.endsWith(".fullname")) {
-			const option = document.createElement("option");
-			option.text = fmo[key];
-			option.value = option.text;
-			list.add(option);
-		}
-	}
+	const fmo = await jsstp.get_fmo_infos();
+	for (const ghost_uid in fmo)
+		list.options.add(new Option(fmo[ghost_uid].name, ghost_uid));
 	//根据备份的选项重新选中（如果还在列表中的话）
 	if (selected)
 		list.value = selected;
@@ -71,7 +62,7 @@ async function reload_button() {
 	document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
 	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
 	hide_support_graph();
-	jsstp.set_default_info("ReceiverGhostName", selected);
+	jsstp.set_default_info("ReceiverGhostHwnd", fmo[selected].hwnd);
 	//如果选中了一个ghost，更新事件列表
 	if (selected) {
 		//清空事件统计图
