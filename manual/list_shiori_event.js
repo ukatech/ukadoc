@@ -1,4 +1,27 @@
 "use strict";
+//页面加载完成后，尝试加载ghost列表
+window.onload = () => {
+	reload_button().then(() => {
+		//若无法加载ghost列表，移除所有ghost状态相关的元素
+		if (document.getElementById("ghost_list_content").value == ""){
+			document.getElementById("GhostStatus").remove();
+			return;
+		}
+		document.getElementById("GhostStatus").style.display = "block";
+		//追加相关元素
+		for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
+			const span = document.createElement("span");
+			span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+			el.appendChild(span);
+		}
+		for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
+			const span = document.createElement("span");
+			span.classList.add(el.textContent + "_GhostStatus");
+			el.appendChild(span);
+		}
+		
+	});
+};
 //一个全局变量用于保存ghost所支持的事件列表
 /*
 其结构大致如下：
@@ -7,26 +30,6 @@
 	external: external ? external.split(",") : []
 };
 */
-//页面加载完成后，尝试加载ghost列表
-window.onload = () => {
-	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
-		const span = document.createElement("span");
-		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
-		el.appendChild(span);
-	}
-	for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
-		const span = document.createElement("span");
-		span.classList.add(el.textContent + "_GhostStatus");
-		el.appendChild(span);
-	}
-	reload_button().then(() => {
-		//若无法加载ghost列表，隐藏所有ghost状态相关的元素
-		if (document.getElementById("ghost_list_content").value == "")
-			document.getElementById("GhostStatus").style.display = "none";
-		else
-			document.getElementById("GhostStatus").style.display = "block";
-	});
-};
 let event_list;
 let has_has_event = false;
 //for support graph
