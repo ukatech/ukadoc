@@ -75,16 +75,16 @@ async function reload_button() {
 	for (const ghost_uid in fmo)
 		list.options.add(new Option(fmo[ghost_uid].name, ghost_uid));
 	//根据备份的选项重新选中（如果还在列表中的话）
-	if (selected)
+	if (fmo[selected])
 		list.value = selected;
-	else
+	else if(list.options.length > 0)
 		list.value = list.options[0].value;
 	selected = list.value;
 	//隐藏所有的元素
 	document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
 	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
 	hide_support_graph();
-	jsstp.set_default_info("ReceiverGhostHwnd", fmo[selected].hwnd);
+	jsstp.set_default_info("ReceiverGhostHwnd", selected ? fmo[selected].hwnd : null);
 	//如果选中了一个ghost，更新事件列表
 	if (selected) {
 		//清空事件统计图
