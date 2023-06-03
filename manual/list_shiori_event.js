@@ -77,7 +77,7 @@ async function reload_button() {
 	//根据备份的选项重新选中（如果还在列表中的话）
 	if (fmo[selected])
 		list.value = selected;
-	else
+	else if(list.options.length > 0)
 		list.value = list.options[0].value;
 	selected = list.value;
 	//隐藏所有的元素
