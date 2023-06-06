@@ -1,41 +1,41 @@
 "use strict";
 //页面加载完成后，尝试加载ghost列表
-window.onload = () => {
-	reload_button().then(() => {
-		//若无法加载ghost列表，移除所有ghost状态相关的元素
-		if (document.getElementById("ghost_list_content").value == ""){
-			document.getElementById("GhostStatus").remove();
-			return;
-		}
-		document.getElementById("GhostStatus").style.display = "block";
-		//追加相关元素
-		for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
-			const span = document.createElement("span");
-			span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
-			//span中存储一个不用于显示的bool值，用于判断事件是否被支持
-			span.dataset.support = false;
-			el.appendChild(span);
-		}
-		for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
-			//获取其父元素，查看其下ul的子li的数量
-			const list = el.parentElement.querySelectorAll("ul > li:not(.caption)");
-			if (list.length > 4) {//若数量大于4，有必要追加一个进度条
-				let meter_div = document.createElement("div");
-				meter_div.innerHTML='<p>support: <meter min="0" max="0" value="0"></meter><span>0/0</span></p>';
-				meter_div.classList.add("sub_support_graph");
-				//设置进度条的max值
-				meter_div.querySelector("meter").max = list.length;
-				el.parentElement.insertBefore(meter_div, el.nextElementSibling);
-			}
-		}
-		update_all_sub_support_graph();
-		for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
-			const span = document.createElement("span");
-			span.classList.add(el.textContent + "_GhostStatus");
-			el.appendChild(span);
-		}
-	});
+window.onload = async function() {
+	if(await has_ghost()){
+		init_content();
+		reload_button();
+	}
+	else
+		document.getElementById("GhostStatus").remove();
 };
+async function has_ghost() {
+	const fmo = await jsstp.get_fmo_infos();
+	return !!(fmo && fmo.length());
+}
+function init_content() {
+	document.getElementById("GhostStatus").style.display = "block";
+	//追加相关元素
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
+		const span = document.createElement("span");
+		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+		el.appendChild(span);
+	}
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
+		//获取其父元素，查看其下ul的子li的数量
+		const list = el.parentElement.querySelectorAll("ul > li:not(.caption)");
+		if (list.length > 4) {//若数量大于4，有必要追加一个进度条
+			let meter_div = document.createElement("div");
+			meter_div.innerHTML=`<p>support: <meter min="0" max="${list.length}" value="0"></meter><span>?/${list.length}</span></p>`;
+			meter_div.classList.add("sub_support_graph");
+			el.parentElement.insertBefore(meter_div, el.nextElementSibling);
+		}
+	}
+	for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
+		const span = document.createElement("span");
+		span.classList.add(el.textContent + "_GhostStatus");
+		el.appendChild(span);
+	}
+}
 function hide_all_sub_support_graph() {
 	//获取所有class是sub_support_graph的元素
 	for (const meter_div of document.querySelectorAll(".sub_support_graph"))
@@ -53,8 +53,9 @@ function update_all_sub_support_graph() {
 		const list = meter_div.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
 		let count_support = 0;
 		for (const span of list)
-			if (span.dataset.support == "true")
+			if(ghost_satus_list.includes(span.classList[0]))
 				count_support += 1;
+
 		meter_div.querySelector("meter").value = count_support;
 		meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
 	}
@@ -69,6 +70,7 @@ function update_all_sub_support_graph() {
 */
 let event_list;
 let has_has_event = false;
+let ghost_satus_list = [];
 //for support graph
 let count_support = 0;
 let count_all = 0;
@@ -96,6 +98,7 @@ function show_support_graph() {
 function clear_all() {
 	clear_support_graph();
 	event_list = null;
+	ghost_satus_list = [];
 	has_has_event = false;
 }
 
@@ -149,20 +152,16 @@ async function reload_button() {
 	}
 	else
 		document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > span[class*='_GhostStatus']").forEach(el => el.textContent = "");
+	return !!selected;
 }
 //定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 async function base_check_event(event_id, security_level="local") {
-	let result = false;
-	if (event_list) {
-		if (security_level == "local")
-			result = event_list.local.includes(event_id);
-		else if (security_level == "external")
-			result = event_list.external.includes(event_id);
-	}
-	else if (has_has_event) {
-		result = await jsstp.has_event(event_id, security_level);
-	}
-	return !!result;
+	if(ghost_satus_list.includes(event_id+"_GhostStatus"))
+		return true;
+	if (event_list)
+		return event_list[security_level].includes(event_id);
+	else if (has_has_event)
+		return await jsstp.has_event(event_id, security_level);
 }
 async function check_event(event_id, security_level="local") {
 	let result = await base_check_event(event_id, security_level);
@@ -171,13 +170,13 @@ async function check_event(event_id, security_level="local") {
 	if (!result) {
 		if (event_id.endsWith("Ex")){
 			const common_event_id = event_id.slice(0, -2);
-			if (document.querySelector(`span[id='${common_event_id}_GhostStatus']`))
-				common_var = await base_check_event(event_id.slice(0, -2), security_level);
+			if (document.querySelector(`span.${common_event_id}_GhostStatus`))
+				common_var = await base_check_event(common_event_id, security_level);
 		}
 		else{
 			const ex_event_id = event_id + "Ex";
-			if (document.querySelector(`span[id='${ex_event_id}_GhostStatus']`))
-				ex_var = await base_check_event(event_id + "Ex", security_level);
+			if (document.querySelector(`span.${ex_event_id}_GhostStatus`))
+				ex_var = await base_check_event(ex_event_id, security_level);
 		}
 		result = ex_var || common_var;
 	}
@@ -202,11 +201,11 @@ function get_str_by_check_result(result) {
 function set_event_str(element_class_name, event_id, security_level="local") {
 	check_event(event_id, security_level).then(function(result) {
 		update_support_graph(result.result);
+		if(result.result)
+			ghost_satus_list.push(element_class_name);
 		const elements = document.getElementsByClassName(element_class_name);
-		for (let i = 0; i < elements.length; i++){
+		for (let i = 0; i < elements.length; i++)
 			elements[i].textContent = get_str_by_check_result(result);
-			elements[i].dataset.support = result.result;
-		}
 	});
 }
 function set_event() {
