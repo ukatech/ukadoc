@@ -38,35 +38,29 @@ window.onload = () => {
 	});
 };
 function hide_all_sub_support_graph() {
-	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
-		const meter_div = el.querySelector("div.sub_support_graph");
-		if (meter_div)
-			meter_div.style.display = "none";
-	}
+	const meter_div = document.getElementById("supported_graph");
+	if (meter_div)
+		meter_div.style.display = "none";
 }
 function show_all_sub_support_graph() {
-	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
-		const meter_div = el.querySelector("div.sub_support_graph");
-		if (meter_div)
-			meter_div.style.display = "block";
-	}
+	const meter_div = document.getElementById("supported_graph");
+	if (meter_div)
+		meter_div.style.display = "block";
 }
 function update_all_sub_support_graph() {
-	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
-		const meter_div = el.querySelector("div.sub_support_graph");
-		//若没有进度条，不更新
-		if (!meter_div)
-			continue;
-		//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
-		const list = el.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
-		let count_support = 0;
-		for (const span of list) {
-			if (span.dataset.support == "true")
-				count_support += 1;
-		}
-		meter_div.querySelector("meter").value = count_support;
-		meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
+	const meter_div = document.getElementById("supported_graph");
+	//若没有进度条，不更新
+	if (!meter_div)
+		return;
+	//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
+	const list = document.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
+	let count_support = 0;
+	for (const span of list) {
+		if (span.dataset.support == "true")
+			count_support += 1;
 	}
+	meter_div.querySelector("meter").value = count_support;
+	meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
 }
 //一个全局变量用于保存ghost所支持的事件列表
 /*
