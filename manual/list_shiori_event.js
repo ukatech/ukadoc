@@ -19,7 +19,6 @@ window.onload = () => {
 			span.classList.add(el.textContent + "_GhostStatus");
 			el.appendChild(span);
 		}
-		
 	});
 };
 //一个全局变量用于保存ghost所支持的事件列表
