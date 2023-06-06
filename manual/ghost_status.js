@@ -27,7 +27,7 @@ window.onload = () => {
 				meter_div.style.display = "none";
 				//设置进度条的max值
 				meter_div.querySelector("meter").max = list.length;
-				el.appendChild(meter_div);
+				el.parentElement.insertBefore(meter_div, el.nextElementSibling);
 			}
 		}
 		for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
@@ -50,9 +50,8 @@ function show_all_sub_support_graph() {
 function update_all_sub_support_graph() {
 	//获取所有class是sub_support_graph的元素
 	for (const meter_div of document.querySelectorAll(".sub_support_graph")) {
-		const title = meter_div.parentElement;
 		//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
-		const list = title.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
+		const list = meter_div.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
 		let count_support = 0;
 		for (const span of list)
 			if (span.dataset.support == "true")
