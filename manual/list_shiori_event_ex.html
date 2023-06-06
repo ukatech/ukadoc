@@ -2672,87 +2672,210 @@
 			<ul class="supported-baseware">
 				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 			</ul>
-			<dl id="ShioriEcho.GetName">
-				<dt class="entry">ShioriEcho.GetName</dt>
-				<dd class="entry">
-					<p>ゴーストターミナルがゴーストから名前を取得したときのイベント。</p>
-					<p>Ver.10以前：ゴーストターミナルの起動イベント。</p>
-					<dl class="reference">
-						<dt>Reference0（Ver 10以降）</dt>
-						<dd>ゴーストターミナルのバージョン。</dd>
-						<dt>戻り値（オプション）：X-SSTP-PassThru-GhostName</dt>
-						<dd>ゴースト名。</dd>
-						<dt>戻り値（オプション）：X-SSTP-PassThru-UserName</dt>
-						<dd>ユーザー名。</dd>
-					</dl>
-				</dd>
-			</dl>
+			<br><hr>
+			<h2>開始、終了</h2>
 			<dl id="ShioriEcho.Begin">
-				<dt class="entry">ShioriEcho.Begin（Ver 10以降）</dt>
+				<dt class="entry">ShioriEcho.Begin</dt>
 				<dd class="entry">
-					<p>このゴーストのゴーストターミナルが起動したときのイベント。</p>
+					<p>このゴーストが起動したときのghost_terminalイベント</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>ゴーストターミナルのバージョン。</dd>
-					</dl>
-				</dd>
-			</dl>
-			<dl id="ShioriEcho">
-				<dt class="entry">ShioriEcho</dt>
-				<dd class="entry">
-					<p>コマンドが入力された後のイベント。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>収集したコマンド。</dd>
-					</dl>
-				</dd>
-			</dl>
-			<dl id="ShioriEcho.GetResult">
-				<dt class="entry">ShioriEcho.GetResult</dt>
-				<dd class="entry">
-					<p>値の結果イベントのクエリ。</p>
-					<p>返信可能ヘッダ 1：</p>
-					<dl class="reference">
-						<dt>戻り値：X-SSTP-PassThru-Result</dt>
-						<dd>値の内容。</dd>
-						<dt>戻り値（オプション）：X-SSTP-PassThru-Type</dt>
-						<dd>値のタイプ。</dd>
-					</dl>
-					<p>返信可能ヘッダ 2：</p>
-					<dl class="reference">
-						<dt>戻り値：X-SSTP-PassThru-Special</dt>
-						<dd>コンテンツを表示し、次のコマンド取得に進む。<br />
-						    Ver 8以降のこの戻り値は簡単な意味で変換されます。<br />
-						    '\n'は改行に変換されます。<br />
-						    '\t'はタブに変わります。<br />
-						    「\\」は「\」に変わります。</dd>
-					</dl>
-					<p>返信可能ヘッダ 3：SHIORI/3.0 204（返り値なし）</p>
-					<p>1秒待って再起動 ShioriEcho.GetResult</p>
-					<p>返信可能ヘッダ 4：SHIORI/3.0 400（Bad Request）</p>
-					<p>警告メッセージを表示し、次のコマンド取得に進む。</p>
-					<p>Ver9以降：ShioriEcho.GetResultリクエストにghostが正常に応答した場合、返信可能ヘッダ 3があるため、そのような応答を無視して1秒待ちます。</p>
-				</dd>
-			</dl>
-			<dl id="ShioriEcho.TabPress">
-				<dt class="entry">ShioriEcho.TabPress</dt>
-				<dd class="entry">
-					<p>コマンドの補完が必要な時のイベント。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>収集したコマンド（カーソルの前の部分、それ以降は渡されない）。</dd>
+						<dd>ターミナルバージョン</dd>
 						<dt>Reference1</dt>
-						<dd>ユーザーが最初に連続してタブを押した回数（開始値0）。</dd>
-						<dt>戻り値（オプション）：X-SSTP-PassThru-Command</dt>
-						<dd>カーソル前のコマンドをこの内容に置き換える。</dd>
+						<dd>端末のセッションタイプ<br />
+							端末が `-s` で始まる場合は `SakuraScript` となる。<br />
+							端末が `-c` で始まる場合は `Command` となる。<br />
+							端末が共通で起動する場合は `Common` となる。</dd>
+						<dt>戻り値：X-SSTP-PassThru-Tittle（オプション）</dt>
+						<dd>端末のタイトルを設定する</dd>
+						<dt>戻り値：X-SSTP-PassThru-Icon（オプション）</dt>
+						<dd>端末のアイコンを設定する</dd>
+						<dt>戻り値：X-SSTP-PassThru-SmallIcon（オプション）</dt>
+						<dd>端末の小さいアイコンを設定する<br />
+							設定されていない場合、`X-SSTP-PassThru-Icon`と一致する</dd>
+						<dt>戻り値：X-SSTP-PassThru-CustomLoginInfo（オプション）</dt>
+						<dd>設定された場合、端末はデフォルトのログイン情報を表示せず、この<br />
+							この戻り値は、単純にエスケープされます：<br />
+							- `\n` は改行に変換されます。<br />
+							- `\t` はタブに変換されます。<br />
+							- `\\` は `\` に変換される。</dd>
 					</dl>
 				</dd>
 			</dl>
 			<dl id="ShioriEcho.End">
 				<dt class="entry">ShioriEcho.End</dt>
 				<dd class="entry">
-					<p>exitと入力して終了する際のイベント 。</p>
-					<p>Ver9の後：通常のプログラムの終了がトリガーされる。</p>
+					<p>通常のプログラム終了時に発生するghost_terminalイベント</p>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.GetName">
+				<dt class="entry">ShioriEcho.GetName</dt>
+				<dd class="entry">
+					<p>ghost_terminalが名前を取得したときのイベント</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-GhostName（オプション）</dt>
+						<dd>ゴーストの名前を表示する</dd>
+						<dt>戻り値：X-SSTP-PassThru-UserName（オプション）</dt>
+						<dd>ユーザー名を表示する</dd>
+					</dl>
+				</dd>
+			</dl>
+			<br><hr>
+			<h2>コマンドを実行する</h2>
+			<dl id="ShioriEcho">
+				<dt class="entry">ShioriEcho</dt>
+				<dd class="entry">
+					<p>コマンドが入力された後のイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>端末で収集したコマンド</dd>
+						<dt>戻り値</dt>
+						<dd>もし`ShioriEcho.GetResult`を定義していない場合、ここで`ShioriEcho.GetResult`でサポートされている任意の返値を返すことができます。これらの返値は、ターミナルによって正しく処理されます（ただし、戻り値3は、`ShioriEcho.GetResult`を定義せずに何も返さない場合、次のコマンド取得に入ります）。<br />
+							`ShioriEcho.GetResult`を定義している場合、ここでの返値は無視されます（**ただし、sakura scriptは正常に実行される**）。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.GetResult">
+				<dt class="entry">ShioriEcho.GetResult</dt>
+				<dd class="entry">
+					<p>バリューリザルトイベントのクエリ</p>
+					<p>返信可能ヘッダ 1：</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-Result</dt>
+						<dd>コンテンツを表示し、次のコマンド取得に進む。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Type</dt>
+						<dd>付加情報：値型</dd>
+					</dl>
+					<p>返信可能ヘッダ 2：</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-Special</dt>
+						<dd>コンテンツを表示し、次のコマンド取得に進む。<br />
+							この戻り値は、単純にエスケープされます：<br />
+							- `\n` は改行に変換されます。<br />
+							- `\t` はタブに変換されます。<br />
+							- `\\` は `\` に変換される。</dd>
+
+					</dl>
+					<p>返信可能ヘッダ 3：エンプティ</p>
+					<p>1秒待ってShioriEcho.GetResultを再実行する。</p>
+					<p>その他</p>
+					<dl class="reference">
+						<dt>戻り値：X-SSTP-PassThru-State</dt>
+						<dd>この返り値は、上記の返り値に重ね合わせることができます<br />
+							もし`End`であれば、端末は終了する。<br />
+							`Continue`であれば、端末は何も表示せず、次のコマンドの取得に進みます。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<br><hr>
+			<h2>その他</h2>
+			<dl id="ShioriEcho.TabPress">
+				<dt class="entry">ShioriEcho.TabPress</dt>
+				<dd class="entry">
+					<p>コマンドは、タブでイベントを完了させます。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>端末で収集したコマンド。</dd>
+						<dt>Reference1</dt>
+						<dd>タブを押したときにカーソルがあったコマンドの最初の文字（開始値0）。</dd>
+						<dt>Reference2</dt>
+						<dd>ユーザーが最初に連続してタブを押した回数（開始値0）。</dd>
+						<dt>Reference3</dt>
+						<dd>この一連のタブ補完の中で、最初にタブを押したときにカーソルがあったコマンドの最初の文字（開始値0）。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Command</dt>
+						<dd>コマンドをこの内容で置き換える。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-InsertIndex</dt>
+						<dd>カーソルをこの位置に移動させる（提供されない場合は変更しない）。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-OldInsertIndex</dt>
+						<dd>後続の `Reference3` をこの内容に更新し、この一連のタブコンプリートが終了するまで有効とする（提供されない場合は変更しない）。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandUpdate">
+				<dt class="entry">ShioriEcho.CommandUpdate</dt>
+				<dd class="entry">
+					<p>コマンド更新時のイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>端末で収集したコマンド</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-CommandForDisplay</dt>
+						<dd>表示されているコマンドをこの内容に置き換えます。<br />
+							ゴーストはこのイベントを利用して、パスワード入力時のマスク、通常読み上げ時のシンタックスハイライトなどの機能を実装することができます。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandPrompt">
+				<dt class="entry">ShioriEcho.CommandPrompt</dt>
+				<dd class="entry">
+					<p>コマンドプロンプトが更新されたときのイベント</p>
+					<dl class="reference">
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Prompt</dt>
+						<dd>表示されているコマンドプロンプトをこの内容で置き換える<br />
+							ゴーストはこのイベントでコマンドプロンプトを動的に変更することができます。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandComplete">
+				<dt class="entry">ShioriEcho.CommandComplete</dt>
+				<dd class="entry">
+					<p>ユーザーがコマンドラインの右端にある `→` を押したときのイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>端末が収集したコマンド</dd>
+						<dt>Reference1</dt>
+						<dd>カーソルがある位置で `→` を押したときのコマンドの最初の文字（開始値は0）。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Command</dt>
+						<dd>コマンドをこの内容で置き換える。<br />
+							ゴーストは、このイベントでコマンドをオートコンプリートすることができます。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-InsertIndex</dt>
+						<dd>カーソルをこの位置に移動させる（提供されない場合はそのままにする）。</dd>
+					</dl>
+				</dd>
+			</dl>
+			<br><hr>
+			<h2>コマンド履歴</h2>
+			<dl id="ShioriEcho.CommandHistory.New">
+				<dt class="entry">ShioriEcho.CommandHistory.New</dt>
+				<dd class="entry">
+					<p>コマンドヒストリーの末尾に空のコマンドが追加されたときのイベント</p>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandHistory.Update">
+				<dt class="entry">ShioriEcho.CommandHistory.Update</dt>
+				<dd class="entry">
+					<p>コマンドヒストリーが更新されたときのイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>historyコマンドの内容</dd>
+						<dt>Reference1</dt>
+						<dd>履歴コマンドのインデックス（逆順、開始値0）</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandHistory.Get">
+				<dt class="entry">ShioriEcho.CommandHistory.Get</dt>
+				<dd class="entry">
+					<p>コマンドヒストリーを取得したときのイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>履歴コマンドのインデックス（逆順、開始値0）</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Command</dt>
+						<dd>コマンドをこの内容で置き換える</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="ShioriEcho.CommandHistory.ForwardIndex">
+				<dt class="entry">ShioriEcho.CommandHistory.ForwardIndex</dt>
+				<dd class="entry">
+					<p>ユーザが `↑` を押したときにインデックスが更新されるときのイベント</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>履歴コマンドのインデックス（逆順、開始値0）</dd>
+						<dt>Reference1</dt>
+						<dd>`index`の値上がりが予想される量。</dd>
+						<dt>戻り値（オプション）：X-SSTP-PassThru-Index</dt>
+						<dd>インデックスをこの値に更新する</dd>
+					</dl>
 				</dd>
 			</dl>
 		</section>
