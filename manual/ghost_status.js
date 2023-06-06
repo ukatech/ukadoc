@@ -171,10 +171,16 @@ async function check_event(event_id, security_level="local") {
 	let ex_var = false;
 	let common_var = false;
 	if (!result) {
-		if (event_id.endsWith("Ex"))
-			common_var = await base_check_event(event_id.slice(0, -2), security_level);
-		else
-			ex_var = await base_check_event(event_id + "Ex", security_level);
+		if (event_id.endsWith("Ex")){
+			const common_event_id = event_id.slice(0, -2);
+			if (document.querySelector(`span[id='${common_event_id}_GhostStatus']`))
+				common_var = await base_check_event(event_id.slice(0, -2), security_level);
+		}
+		else{
+			const ex_event_id = event_id + "Ex";
+			if (document.querySelector(`span[id='${ex_event_id}_GhostStatus']`))
+				ex_var = await base_check_event(event_id + "Ex", security_level);
+		}
 		result = ex_var || common_var;
 	}
 	return {
@@ -184,8 +190,6 @@ async function check_event(event_id, security_level="local") {
 	};
 }
 function get_str_by_check_result(result) {
-	if (!event_list&&!has_has_event)
-		return "";
 	if (result.result) {
 		if (result.ex_var)
 			return "（Ex対応）";
@@ -207,7 +211,7 @@ function set_event_str(element_class_name, event_id, security_level="local") {
 		}
 	});
 }
-const set_event = () => {
+function set_event() {
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > a")) {
 		const event = el.textContent;
 		if (event == "OnXUkagakaLinkOpen")
