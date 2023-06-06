@@ -12,7 +12,23 @@ window.onload = () => {
 		for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
 			const span = document.createElement("span");
 			span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+			//span中存储一个不用于显示的bool值，用于判断事件是否被支持
+			span.dataset.support = false;
 			el.appendChild(span);
+		}
+		for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
+			//获取其父元素，查看其下ul的子li的数量
+			const list = el.parentElement.querySelectorAll("ul > li:not(.caption)");
+			if (list.length > 4) {//若数量大于4，有必要追加一个进度条
+				let meter_div = document.createElement("div");
+				meter_div.innerHTML='<p>support: <meter min="0" max="0" value="0"></meter><span>0/0</span></p>';
+				meter_div.classList.add("sub_support_graph");
+				//默认隐藏
+				meter_div.style.display = "none";
+				//设置进度条的max值
+				meter_div.querySelector("meter").max = list.length;
+				el.appendChild(meter_div);
+			}
 		}
 		for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
 			const span = document.createElement("span");
@@ -21,6 +37,37 @@ window.onload = () => {
 		}
 	});
 };
+function hide_all_sub_support_graph() {
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
+		const meter_div = el.querySelector("div.sub_support_graph");
+		if (meter_div)
+			meter_div.style.display = "none";
+	}
+}
+function show_all_sub_support_graph() {
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
+		const meter_div = el.querySelector("div.sub_support_graph");
+		if (meter_div)
+			meter_div.style.display = "block";
+	}
+}
+function update_all_sub_support_graph() {
+	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
+		const meter_div = el.querySelector("div.sub_support_graph");
+		//若没有进度条，不更新
+		if (!meter_div)
+			continue;
+		//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
+		const list = el.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
+		let count_support = 0;
+		for (const span of list) {
+			if (span.dataset.support == "true")
+				count_support += 1;
+		}
+		meter_div.querySelector("meter").value = count_support;
+		meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
+	}
+}
 //一个全局变量用于保存ghost所支持的事件列表
 /*
 其结构大致如下：
@@ -84,6 +131,7 @@ async function reload_button() {
 	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
 	hide_support_graph();
 	jsstp.set_default_info("ReceiverGhostHwnd", selected ? fmo[selected].hwnd : null);
+	hide_all_sub_support_graph();
 	//如果选中了一个ghost，更新事件列表
 	if (selected) {
 		//清空事件统计图
@@ -104,8 +152,12 @@ async function reload_button() {
 				document.getElementById("supported_text_event_Has_Event_reminder").style.display = "block";
 			}
 		};
+		set_event();
+		update_all_sub_support_graph();
+		show_all_sub_support_graph();
 	}
-	set_event();
+	else
+		document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > span[class*='_GhostStatus']").forEach(el => el.textContent = "");
 }
 //定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
 async function base_check_event(event_id, security_level="local") {
@@ -156,8 +208,10 @@ function set_event_str(element_class_name, event_id, security_level="local") {
 	check_event(event_id, security_level).then(function(result) {
 		update_support_graph(result.result);
 		const elements = document.getElementsByClassName(element_class_name);
-		for (let i = 0; i < elements.length; i++)
+		for (let i = 0; i < elements.length; i++){
 			elements[i].textContent = get_str_by_check_result(result);
+			elements[i].dataset.support = result.result;
+		}
 	});
 }
 const set_event = () => {
