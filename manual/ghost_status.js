@@ -23,13 +23,12 @@ window.onload = () => {
 				let meter_div = document.createElement("div");
 				meter_div.innerHTML='<p>support: <meter min="0" max="0" value="0"></meter><span>0/0</span></p>';
 				meter_div.classList.add("sub_support_graph");
-				//默认隐藏
-				meter_div.style.display = "none";
 				//设置进度条的max值
 				meter_div.querySelector("meter").max = list.length;
 				el.parentElement.insertBefore(meter_div, el.nextElementSibling);
 			}
 		}
+		update_all_sub_support_graph();
 		for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
 			const span = document.createElement("span");
 			span.classList.add(el.textContent + "_GhostStatus");
