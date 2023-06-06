@@ -38,29 +38,28 @@ window.onload = () => {
 	});
 };
 function hide_all_sub_support_graph() {
-	const meter_div = document.getElementById("supported_graph");
-	if (meter_div)
+	//获取所有class是sub_support_graph的元素
+	for (const meter_div of document.querySelectorAll(".sub_support_graph"))
 		meter_div.style.display = "none";
 }
 function show_all_sub_support_graph() {
-	const meter_div = document.getElementById("supported_graph");
-	if (meter_div)
+	//获取所有class是sub_support_graph的元素
+	for (const meter_div of document.querySelectorAll(".sub_support_graph"))
 		meter_div.style.display = "block";
 }
 function update_all_sub_support_graph() {
-	const meter_div = document.getElementById("supported_graph");
-	//若没有进度条，不更新
-	if (!meter_div)
-		return;
-	//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
-	const list = document.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
-	let count_support = 0;
-	for (const span of list) {
-		if (span.dataset.support == "true")
-			count_support += 1;
+	//获取所有class是sub_support_graph的元素
+	for (const meter_div of document.querySelectorAll(".sub_support_graph")) {
+		const title = meter_div.parentElement;
+		//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
+		const list = title.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
+		let count_support = 0;
+		for (const span of list)
+			if (span.dataset.support == "true")
+				count_support += 1;
+		meter_div.querySelector("meter").value = count_support;
+		meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
 	}
-	meter_div.querySelector("meter").value = count_support;
-	meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
 }
 //一个全局变量用于保存ghost所支持的事件列表
 /*
@@ -117,15 +116,16 @@ async function reload_button() {
 	//根据备份的选项重新选中（如果还在列表中的话）
 	if (fmo[selected])
 		list.value = selected;
-	else if(list.options.length > 0)
+	else if (list.options.length > 0)
 		list.value = list.options[0].value;
 	selected = list.value;
 	//隐藏所有的元素
 	document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
 	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
 	hide_support_graph();
-	jsstp.set_default_info("ReceiverGhostHwnd", selected ? fmo[selected].hwnd : null);
 	hide_all_sub_support_graph();
+
+	jsstp.set_default_info("ReceiverGhostHwnd", selected ? fmo[selected].hwnd : null);
 	//如果选中了一个ghost，更新事件列表
 	if (selected) {
 		//清空事件统计图
@@ -140,8 +140,7 @@ async function reload_button() {
 			if (has_has_event) {
 				show_support_graph();
 				document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
-			}
-			else {
+			} else {
 				hide_support_graph();
 				document.getElementById("supported_text_event_Has_Event_reminder").style.display = "block";
 			}
