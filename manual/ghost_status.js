@@ -1,13 +1,13 @@
 "use strict";
 //页面加载完成后，尝试加载ghost列表
-window.onload = async function() {
+document.addEventListener('DOMContentLoaded', async function (event) {
 	if(await has_ghost()){
 		init_content();
 		reload_button();
 	}
 	else
 		document.getElementById("GhostStatus").remove();
-};
+});
 async function has_ghost() {
 	const fmo = await jsstp.get_fmo_infos();
 	return !!(fmo && fmo.length());
