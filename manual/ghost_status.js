@@ -148,23 +148,31 @@ async function check_event(event_id, security_level="local") {
 	let result = await base_check_event(event_id, security_level);
 	let ex_var = false;
 	let common_var = false;
-	if (!result) {
-		if (event_id.endsWith("Ex")){
-			const common_event_id = event_id.slice(0, -2);
-			if (document.querySelector(`span.${common_event_id}_GhostStatus`))
-				common_var = await base_check_event(common_event_id, security_level);
+	let is_reg_event = false;
+	//进行额外判断
+	if (!result){
+		try{
+			if (event_id.endsWith("Ex")){
+				const common_event_id = event_id.slice(0, -2);
+				if (document.querySelector(`span.${common_event_id}_GhostStatus`))
+					common_var = await base_check_event(common_event_id, security_level);
+			}
+			else{
+				const ex_event_id = event_id + "Ex";
+				if (document.querySelector(`span.${ex_event_id}_GhostStatus`))
+					ex_var = await base_check_event(ex_event_id, security_level);
+			}
+			result = ex_var || common_var;
 		}
-		else{
-			const ex_event_id = event_id + "Ex";
-			if (document.querySelector(`span.${ex_event_id}_GhostStatus`))
-				ex_var = await base_check_event(ex_event_id, security_level);
-		}
-		result = ex_var || common_var;
+		catch(e){
+			is_reg_event = true;
+		};
 	}
 	return {
 		"result": result,
 		"ex_var": ex_var,
-		"common_var": common_var
+		"common_var": common_var,
+		"reg_event": is_reg_event,
 	};
 }
 function get_str_by_check_result(result) {
@@ -176,6 +184,8 @@ function get_str_by_check_result(result) {
 		else
 			return "（対応）";
 	}
+	else if (result.reg_event)
+		return "（特定のイベントではない）";
 	else
 		return "（未対応）";
 }
