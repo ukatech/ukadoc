@@ -125,7 +125,7 @@ async function reload_button() {
 		clear_support_graph();
 		await ghost_events_queryer.reset();
 		if(ghost_events_queryer.available){
-			if(!ghost_events_queryer.get_supported_events_available)
+			if(!ghost_events_queryer.supported_events_available)
 				document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
 			show_support_graph();
 			set_event().then(() => {
