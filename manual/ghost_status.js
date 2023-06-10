@@ -2,7 +2,7 @@
 //页面加载完成后，尝试加载ghost列表
 var jsstp;
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.1.0.0/jsstp.mjs").then(m=>m.jsstp);
+	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.1.1.0/jsstp.mjs").then(m=>m.jsstp);
 	if(await jsstp.available())
 		init_content().then(() => reload_button());
 	else
@@ -118,7 +118,7 @@ async function reload_button() {
 	hide_support_graph();
 	hide_all_sub_support_graph();
 
-	jsstp.set_default_info("ReceiverGhostHwnd", selected ? fmo[selected].hwnd : null);
+	jsstp.default_info.ReceiverGhostHwnd = selected ? fmo[selected].hwnd : null;
 	//如果选中了一个ghost，更新事件列表
 	if (selected) {
 		//清空事件统计图
