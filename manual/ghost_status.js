@@ -58,7 +58,6 @@ function update_all_sub_support_graph() {
 	}
 }
 let ghost_events_queryer = null;
-let ghost_status_list = {};
 //for support graph
 let count_support = 0;
 let count_all = 0;
@@ -86,7 +85,6 @@ function show_support_graph() {
 function clear_all() {
 	clear_support_graph();
 	ghost_events_queryer.clear();
-	ghost_status_list={};
 }
 function clear_ghost_status_content() {
 	document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > span[class*='_GhostStatus']").forEach(el => el.textContent = "");
@@ -168,7 +166,7 @@ async function check_event(event_id, security_level="local") {
 		}
 		catch(e){
 			is_reg_event = true;
-		};
+		}
 	}
 	return {
 		"result": result,
@@ -207,4 +205,4 @@ async function set_event() {
 		else
 			await set_event_str(event + "_GhostStatus", event);
 	}
-};
+}
