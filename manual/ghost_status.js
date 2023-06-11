@@ -2,7 +2,7 @@
 //页面加载完成后，尝试加载ghost列表
 var jsstp;
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.1.1.0/jsstp.mjs").then(m=>m.jsstp);
+	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v1.1.1.1/jsstp.mjs").then(m=>m.jsstp);
 	if(await jsstp.available())
 		init_content().then(() => reload_button());
 	else
@@ -125,7 +125,7 @@ async function reload_button() {
 		clear_support_graph();
 		await ghost_events_queryer.reset();
 		if(ghost_events_queryer.available){
-			if(!ghost_events_queryer.supported_events_available)
+			if(!ghost_events_queryer.fast_query_available)
 				document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
 			show_support_graph();
 			set_event().then(() => {
