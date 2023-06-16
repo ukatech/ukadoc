@@ -366,7 +366,7 @@ a:hover {
 	color: #666;
 }
 .category dd.entry .default:before {
-	content: "既定値: ";
+	content: "Default value: ";
 }
 .category dd.entry dl.reference , .category dd.entry > dl.property {
 	padding: 2px;

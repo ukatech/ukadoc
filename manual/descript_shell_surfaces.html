@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="robots" content="INDEX,FOLLOW">
@@ -145,7 +145,7 @@
 		<section class="navigation-category">
 			<h1>Descript Brace</h1>
 			<ul>
-				<li class="caption introduction"><a href="#introduction_descriptbrace">Descript brace examples</a></li>
+				<li class="caption introduction"><a href="#introduction_descriptbrace">Descript brace example</a></li>
 			</ul>
 			<ul>
 				<li><a href="#version,*">version,*</a></li>
@@ -285,6 +285,14 @@
 		</section>
 	</section>
 	<div class="categories">
+		<section class="caption" id="notes_translation">
+			<h1>Translated Document</h1>
+			<ul>
+				<li>This document has been translated from the original Japanese by members of the Ukagaka Dream Team community.</li>
+				<li>To see the original document, click <a href="https://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html">here</a>.</li>
+				<li>To submit corrections/updates, see <a href="https://github.com/Ukagaka-Dream-Team/ukadoc">our repository</a> to open an issue or find where to contact us.</li>
+			</ul>
+		</section>
 		<section class="caption introduction" id="introduction_surfaces.txt">
 			<h1>surfaces.txt</h1>
 			<section>
@@ -361,13 +369,13 @@ collision3,154,311,248,362,Skirt
 			</section>
 		</section>
 		<section class="category">
-			<h1>surfaces.txt または surfaces**.txt(SSPのみ)</h1>
+			<h1>surfaces.txt or surfaces**.txt (SSP only)</h1>
 			<dl id="charset,文字コード-surfaces">
-				<dt class="entry">charset,文字コード</dt>
+				<dt class="entry">charset,(character code)</dt>
 				<dd class="entry">
-					<p>表示する文字コード。旧い環境との互換性を考慮する場合はShift_JIS、それ以外はUTF-8を推奨。</p>
-					<p>SSPにおいて複数の<a href="#introduction_surfaces.txt">surfaces***.txtを用意</a>した場合はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
-					<p class="default">(OSの標準設定またはSSP->国際化->省略時の文字コード->テキスト定義)</p>
+					<p>Character code to be displayed. Shift_JIS is recommended for compatibility with older environments, otherwise UTF-8 is recommended.</p>
+					<p>In SSP, if multiple <a href="#introduction_surfaces.txt">surfaces***.txt files</a> are used, each file must have it's own configuration. (Conversely, each file may have different settings.)</p>
+					<p class="default">(OS standard setting or SSP -> Internationalization -> Default character code -> Text definition)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
@@ -376,10 +384,10 @@ collision3,154,311,248,362,Skirt
 			</dl>
 		</section>
 		<section class="category">
-			<h1>descriptブレス</h1>
+			<h1>Descript brace</h1>
 			<section class="caption introduction" id="introduction_descriptbrace">
-				<h1>descriptブレス記述例</h1>
-				<p>SSPで複数の<a href="#introduction_surfaces.txt">surfaces***.txtを用意</a>した場合はそれぞれのファイルに設定する必要がある（逆に言うとそれぞれのファイルで異なる設定が可能）。</p>
+				<h1>Descript brace example</h1>
+				<p>In SSP, if multiple <a href="#introduction_surfaces.txt">surfaces***.txt files</a> are used, each file must have it's own configuration. (Conversely, each file may have different settings.)</p>
 <pre><code>descript
 {
 version,1
@@ -391,7 +399,7 @@ animation-sort,ascend
 			<dl id="version,*">
 				<dt class="entry">version,*</dt>
 				<dd class="entry">
-					<p>使用する<a href="#caption_seriko-redefine">SERIKO定義の書式</a>のバージョン指定。0でSERIKO/1.x系書式（旧定義）、1でSERIKO/2.0書式。</p>
+					<p>Specify which version of <a href="#caption_seriko-redefine">SERIKO definition format</a> to use. 0 for SERIKO/1.x format (old definition), 1 for SERIKO/2.0 format.</p>
 					<p class="default">0</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -401,10 +409,10 @@ animation-sort,ascend
 				</dd>
 			</dl>
 			<dl id="maxwidth,ピクセル">
-				<dt class="entry">maxwidth,ピクセル</dt>
+				<dt class="entry">maxwidth,(pixels)</dt>
 				<dd class="entry">
-					<p>※SSPでは自動的に検出されるためこの情報は利用されない。<br>サーフェスの最大幅。単位はピクセル。重なり判定などで利用される。</p>
-					<p class="default">定義なし/SSPでは実際のsurface定義における最大横幅</p>
+					<p>※SSP does not use this information as it is detected automatically.<br>Maximum width of the surface, in pixels. This information is used for overlap determination, etc.</p>
+					<p class="default">No definition / In SSP, maximum width in actual surface definition</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -413,19 +421,19 @@ animation-sort,ascend
 				</dd>
 			</dl>
 			<dl id="collision-sort,ソート順序">
-				<dt class="entry">collision-sort,ソート順序</dt>
+				<dt class="entry">collision-sort,(sort order)</dt>
 				<dd class="entry">
-					<p>当たり判定の判定順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
-					<p class="default">none（IDによらず先に書かれている方が手前）</p>
+					<p>Sorting order of the collisions. In which order should they be displayed from the front to the back?<br> ascend for ascending order (1,2,3...), descend for descending order (10,9,8...).</p>
+					<p class="default">none (the one written first, regardless of ID, is in the foreground)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="animation-sort,ソート順序">
-				<dt class="entry">animation-sort,ソート順序</dt>
+				<dt class="entry">animation-sort,(sort order)</dt>
 				<dd class="entry">
-					<p>アニメーションID表示順ソート。手前から奥にどの順で表示するか。<br> ascendで昇順(1,2,3...) descendで降順(10,9,8...)</p>
+					<p>Sorting order of animations by ID number. In which order should they be displayed from the front to the back?<br> ascend for ascending order (1,2,3...), descend for descending order (10,9,8...).</p>
 					<p class="default">descend</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
