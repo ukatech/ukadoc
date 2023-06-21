@@ -2,7 +2,7 @@
 //页面加载完成后，尝试加载ghost列表
 var jsstp;
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.1.0/dist/jsstp.mjs").then(m=>m.jsstp);
+	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.1.2/dist/jsstp.mjs").then(m=>m.jsstp);
 	if (await jsstp.available())
 		init_content().then(() => reload_button());
 	else
