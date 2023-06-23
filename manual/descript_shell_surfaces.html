@@ -442,9 +442,9 @@ animation-sort,ascend
 			</dl>
 		</section>
 		<section class="category">
-			<h1>surfaceブレス</h1>
+			<h1>surface brace</h1>
 			<section class="caption introduction" id="introduction_surfacebrace">
-				<h1>surfaceブレス記述例</h1>
+				<h1>Surface brace examples</h1>
 <pre><code>surface1
 {
 element0,overlay,body0.png,0,0
@@ -462,37 +462,37 @@ animation0.pattern2,overlay,101,100,168,67
 animation0.pattern3,overlay,-1,100,168,67
 }
 </code></pre>
-				<p>SSPのみ追加指定（すでに定義済みのものに対してさらに定義を後付けする）用記法surace.appendがある。<br>詳細は<a href="#caption_surface.append">後述</a>。</p>
+				<p>In SSP only, there is a notation surace.append which is used to specify additional definitions (i.e., to append more definitions to those already defined).<br><a href="#caption_surface.append">See below</a> for details.</p>
 <pre><code>surface.append1-9,20-29
 {
-// 略（ふつうのsurfaceブレスと同様）
+// Truncated (Same as normal surface brace)
 }
 </code></pre>
-				<p>surface(.append)*の*部分に、サーフェスIDとなる数字を指定。複数指定、範囲指定が可能（<a href="#caption_surfacebraceID">後述</a>）。</p>
-				<p>なおそれ以外の各行の数字部分については各定義の説明参照。</p>
+				<p>Specify a number that is the surface ID in the * part of surface(.append)*. Multiple specifications and range specifications are possible (<a href="#caption_surfacebraceID">See below</a>).</p>
+				<p>For the rest of the numbers in this section, please refer to the explanation of each definition.</p>
 			</section>
 			<section class="caption introduction" id="introduction_seriko">
-				<h1>アニメーション（SERIKO）</h1>
+				<h1>Animations (SERIKO)</h1>
 				<section>
-					<h1>概要</h1>
-					<p>伺かのシェルはアニメーション機能を持つ。これは静止画像であるコマを連続的に描画することによって動画的表現を行うものである。</p>
-					<p>アニメーションは各サーフェスに対して設定される。そしてアニメーションの各コマとして用いる画像もまた別のサーフェスである。このときコマとして参照された側がまたさらにアニメーション定義を持っていたとしても、普通それは無視される（ただしSSPに限り、多重着せ替えと言う仕組みがある。<a href="#introduction_mayuna">着せ替え</a>の節参照）。</p>
-					<p>各サーフェスへの設定では、アニメーション自体をいつ開始するか、各コマにどのサーフェスを使い、どのような方法・時間間隔で描画するかといった内容を定義する必要がある。</p>
-					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはSERIKOという名前が与えられている。</p>
+					<h1>Summary</h1>
+					<p>Ukagaka shells have animation functions. Animation is represented by continuously drawing frames that are still images.</p>
+					<p>The animation is set for each surface. The image used as each frame of the animation is also another surface. If the surface referred to as the frame has additional animation definitions, they are usually ignored. (However, in SSP only, there is a mechanism called "multiple dressups" <a href="#introduction_mayuna">dressups</a>).</p>
+					<p>In the settings for each surface, it is necessary to define when the animation itself will start, which surface to use for each frame, and what method and time interval it will be drawn using.</p>
+					<p>The name SERIKO is given to a series of animation specifications in surfaces.txt.</p>
 				</section>
 				<section>
-					<h1>基本書式と記述例</h1>
+					<h1>Basic format examples</h1>
 <pre><code>
 surface0
 {
-// 瞬き
+// Blink
 animation0.interval,rarely
 animation0.pattern0,overlay,101,700,200,100
 animation0.pattern1,overlay,102,700,200,100
 animation0.pattern2,overlay,101,700,200,100
 animation0.pattern3,overlay,-1,700,0,0
 
-// トークに合わせて口を動かす
+// Move the mouth when talking
 animation10.interval,talk,2
 animation10.pattern0,overlay,200,700,200,120
 animation10.pattern1,overlay,201,700,200,120
@@ -500,18 +500,18 @@ animation10.pattern2,overlay,202,700,200,120
 animation10.pattern3,overlay,-1,700,0,0
 }
 </code></pre>
-					<p>surfaces.txtにおけるアニメーションの定義は、例えば以上のようになる。</p>
-					<p>上記では、surface0に対して「瞬き」「トークに合わせて口を動かす」の2つアニメーションを定義している。</p>
-					<p>全てのアニメーション定義はinterval定義とpattern定義を含んでいる。他にオプション定義や、SSPの場合はアニメーション専用の触り判定定義もあるが、それらが省略可能なのに対して、interval定義は省略不能であり、また一連のアニメーション定義の先頭に出現する必要がある。pattern定義も少なくとも一つは存在する必要がある。</p>
-					<p><a href="#animation*.interval,インターバル">interval定義</a>はアニメーションがいつ再生されるかの設定である。上例では「rarely」「talk」「never」の三種類の指定が登場している。詳細は<a href="#introduction_animationinterval">アニメーションインターバルの節</a>を参照されたいが、大意として「瞬き」アニメーションはときどき再生され、「トークに合わせて口を動かす」アニメーションはキャラクターが2文字喋るごとに再生されるようになっている。</p>
-					<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義</a>はアニメーションの各「コマ」の設定である。そのコマの描画メソッド（<a href="#introduction_drawmethod">描画メソッド</a>の節参照）、表示するまでの待ち時間、そのコマを下のコマに対してどれだけ位置をずらして描画するかについて設定を行う。pattern定義はコマが必要なだけ用意すればよい。pattern*の*にある数字は、0から始まる連番である。</p>
+					<p>An example animation definition in surfaces.txt is as follows.</p>
+					<p>In the above example, two animations are defined for surface0: "Blink" and "Move the mouth when talking".</p>
+					<p>All animation definitions include an interval definition and pattern definitions. There are also option definitions, and, in the case of SSP, animation-specific collision definitions. But while these are optional, interval definitions are not optional and must appear at the beginning of an animation definition.</p>
+					<p>The <a href="#animation*.interval,インターバル">interval definition</a> is the setting for when the animation will play. In the example above, there are three types of designations: "rarely", "talk", and "never". For details, see the <a href="#introduction_animationinterval">animation interval section</a>. Generally speaking, the "Blink" animation is played occasionally, and the "Move the mouth when talking" animation is played every time the character speaks two letters.</p>
+					<p>The <a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern definition</a> is the setting for each "frame" of the animation. Set the drawing method of the frame (See the <a href="#introduction_drawmethod">drawing methods</a> section), the waiting time until the frame is displayed, and how much the position of the frame should be shifted relative to the frame below it. The * in pattern* is a sequential number, starting from 0.</p>
 				</section>
 				<section>
-					<h1>各アニメーションの関係</h1>
-					<p>全てのアニメーションにはIDが与えられる（具体的な指定はanimation*.intervalの節参照）。</p>
-					<p>IDは単一のサーフェス内で重複が許されず、また異なるサーフェス間において同じIDをもつアニメーションは同じ意味を持つことが期待される。例えばキャラクターが正面を向いているsurface0と、横を向いているsurface1があったときに、その両方に「瞬き」のアニメーションを設定するとする。この時、キャラクターの姿勢の違いから実際に瞬きを表現するコマにあたる画像は違うものになるはずであるが、それにもかかわらず両方のサーフェスで同じアニメーションIDが与えられるべきである。特に後述の<a href="#introduction_mayuna">着せ替え</a>においてはこのIDと意味との関連付けは必須となる。</p>
-					<p>全ての異なるアニメーションは基本的に独立しており、非同期的に開始・終了する。<br>例えば瞬きをするアニメーションと、トークに合わせて口元が動くアニメーションは、互いに他方が動いていようがいまいが気にせず開始・終了すべきであろうし、実際IDの異なるアニメーションとして定義されている限りはそのように動作する。</p>
-					<p>しかしその一方で、startやalternativestartなどの、他のアニメーションを実行するための特殊な描画メソッドによって、アニメーション自体を他のアニメーションを実行するトリガとする仕組みも用意されている。<br>また、exclusiveオプションの指定により、排他的なアニメーションを実行することも可能である。</p>
+					<h1>Relationship between each animation</h1>
+					<p>All animations are given an ID (see animation*.interval section for specifics).</p>
+					<p>IDs cannot be duplicated within a single surface, and animations with the same ID across different surfaces are expected to have the same meaning. For example, suppose there are two surfaces; surface0 with the character facing forward, and surface1 with the character facing sideways; and we want to create a "blink" animation for both surfaces. In this case, the images corresponding to the frame that actually expresses the blink should be different due to the difference in the character's position, but the same animation ID should be given to both surfaces regardless. This is particularly important with <a href="#introduction_mayuna">dressup</a>, which is described below.</p>
+					<p>All different animations are essentially independent, and start and end asynchronously.<br>For example, an animation that blinks and an animation that moves the mouth when talking would start and end regardless of whether the other is running or not. In fact, as long as two animations are defined as different animations with different IDs, they will behave that way.</p>
+					<p>On the other hand, however, there is also a mechanism that allows animations themselves to trigger the execution of other animations. This is done by means of special drawing methods, such as start and alternativestart.<br>It is also possible to execute exclusive animation by specifying the exclusive option.</p>
 				</section>
 			</section>
 			<section class="caption introduction" id="introduction_mayuna">
