@@ -478,10 +478,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<p>Ukagaka shells have animation functions. Animation is represented by continuously drawing frames that are still images.</p>
 					<p>The animation is set for each surface. The image used as each frame of the animation is also another surface. If the surface referred to as the frame has additional animation definitions, they are usually ignored. (However, in SSP only, there is a mechanism called "multiple dressups" <a href="#introduction_mayuna">dressups</a>).</p>
 					<p>In the settings for each surface, it is necessary to define when the animation itself will start, which surface to use for each frame, and what method and time interval it will be drawn using.</p>
-					<p>The name SERIKO is given to sequences of animation specifications in surfaces.txt.</p>
+					<p>This specification for a series of animations in surfaces.txt is given the name SERIKO.</p>
 				</section>
 				<section>
-					<h1>Basic format examples</h1>
+					<h1>Basic format and description examples</h1>
 <pre><code>
 surface0
 {
@@ -515,92 +515,92 @@ animation10.pattern3,overlay,-1,700,0,0
 				</section>
 			</section>
 			<section class="caption introduction" id="introduction_mayuna">
-				<h1>着せ替え（MAYUNA）</h1>
+				<h1>Dressups (MAYUNA)</h1>
 				<section>
-					<h1>概要</h1>
-					<p>伺かのシェルは、着せ替えと呼ばれる仕組みを持つ。これは単一のシェル内で、複数の衣装などのパーツの表示・非表示や種類の切り替えを行うためのものである。</p>
-					<p>伺かのシェルにおける着せ替えは、アニメーションの一種として位置づけられる。<br>ただし他のアニメーションのようにコマ送りされず、アニメーションの開始時に即時全てのコマ（pattern）およびベースのサーフェスが合成されて、以後静止画として扱われる点が特徴である（従ってpattern定義のウェイトパラメータは無視される）。<br>この「描画があたかもベースサーフェスと一体化したかのように振舞う」という性質は、衣服のようなものを表現する目的に良く適う。</p>
-					<p>着せ替えのアニメーションとしての開始・終了は、主にオーナードローメニューの着せ替えメニューからスイッチする事で制御される。SSPの場合はそれに加えて、さくらスクリプトの<a href="list_sakura_script.html#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a>タグを用いたゴースト側からの制御が可能である。<br>オーナードローメニュー側の設定は、surfaces.txtではなく<a href="descript_shell.html">descript.txt</a>で行うので、そちらのページを参照。</p>
-					<p>なお、surfaces.txtにおける一連のアニメーションに関する仕様にはMAYUNAという名前が与えられている。</p>
+					<h1>Summary</h1>
+					<p>Ukagaka shells have a mechanism called "dressup". This is used for displaying/hiding elements, such as additional outfits, and switching between different kinds of outfits within a single shell.</p>
+					<p>Dressup in an ukagaka shell is considered a type of animation.<br>However, unlike other animations it does not move frame by frame, and instead all frames (patterns) and the base surface are immediately composited when the animation is started, and are treated as a single image thereafter (thus, the "wait" parameter in in the pattern definition is ignored).<br>This property of "the drawing behaves as if it were integrated with the base surface" is well suited for the purpose of expressing things like clothing.</p>
+					<p>The start and end of dressup animations is mainly controlled by switching in the "dressup" section of the owner draw menu. In SSP, it can additionally be controlled from the ghost side using the <a href="list_sakura_script.html#_!_bind,%E3%82%AB%E3%83%86%E3%82%B4%E3%83%AA%E5%90%8D,%E3%83%91%E3%83%BC%E3%83%84%E5%90%8D,%E6%95%B0%E5%80%A4_">\![bind]</a> SakuraScript tag.<br>The settings on the owner draw menu side are done in <a href="descript_shell.html">descript.txt</a>, not surfaces.txt, so refer to that page.</p>
+					<p>This specification for a series of animations in surfaces.txt is given the name MAYUNA.</p>
 				</section>
 				<section>
-					<h1>基本書式と記述例</h1>
+					<h1>Basic format and description examples</h1>
 <pre><code>
 surface0
 {
-// 服1の定義　アニメーションIDは0
+// Clothing 1 has an animation ID of 0
 animation0.interval,bind
 animation0.pattern0,add,500,0,50,100
 
-// 服2の定義　アニメーションIDは1
+// Clothing 2 has an animation ID of 1
 animation1.interval,bind
 animation1.pattern0,add,501,0,50,100
 }
 
-//--- 以下着せ替えパーツ定義 ---
-// 服1
+//--- Definition of the above dressup parts ---
+// Clothing 1
 surface500
 {
 element0,overlay,dress1.png,0,0
 }
 
-// 服2
+// Clothing 2
 surface501
 {
 element0,overlay,dress2.png,0,0
 }
 </code></pre>
-					<p>surfaces.txtにおける着せ替えの定義は、例えば以上のようになる。</p>
-					<p>上記では、surface0に対して「服1」と「服2」の二つの着せ替えを定義している。</p>
-					<p>通常のアニメーション定義同様、interval定義とpattern定義が必要である。interval定義にbindを指定する事で、そのアニメーションが着せ替えの定義である事を示す。</p>
-					<p>アニメーションの場合pattern定義はコマの数だけ行うが、着せ替えの場合は静止画仕様であるので、コマというよりはパーツを必要なだけ合成することになる。例のように着せ替えを構成するパーツが一つで済むならば、pattern行は1行のみになる。また着せ替えの場合各パーツは即時合成されるので、ウェイトパラメータは無視される。</p>
-					<p>pattern定義の描画メソッドについては後述。</p>
+					<p>An example dressup definition in surfaces.txt is as follows.</p>
+					<p>The above example defines two dressups for surface0, "Clothing 1" and "Clothing 2".</p>
+					<p>As with normal animation definitions, an interval definition and a pattern definition are required. By specifying bind in the interval definition, it indicates that the animation is a dressup definition.</p>
+					<p>In the case of animation, the pattern definitions are used as the number of frames. But in the case of dressup, since this is a static image specification, the patterns are combined as a whole rather than as frames. If you only need one piece to make up the dressup, as in the example above, then only one pattern line is needed. Also, in the case of dressup, each piece is composited immediately, so the wait parameter is ignored.</p>
+					<p>The drawing methods of pattern definitions are described below.</p>
 				</section>
 				<section>
-					<h1>利用可能な描画メソッド</h1>
-					<p>MATERIA（本家伺か）においては、着せ替えのために用意された4つのメソッド、すなわち「bind」「add」「reduce」「insert」が利用可能であった。このうちbindは旧仕様で、addが上位互換にあたる。</p>
-					<p>SSPにおいては、普通のアニメーション描画メソッドとして用意されたものの一部が着せ替えでも利用可能である。</p>
-					<p>具体的に着せ替えで利用できる描画メソッドなどの詳細については<a href="#introduction_drawmethod">描画メソッド</a>の節参照。</p>
+					<h1>Available drawing methods</h1>
+					<p>In MATERIA (original ukagaka), four methods were available for dressup: "bind", "add", "reduce", and "insert". Of these, bind is the old specification, and add is upward compatible.</p>
+					<p>In SSP, some of the methods used for normal animation drawing methods can also be used for dressup.</p>
+					<p>See the section on <a href="#introduction_drawmethod">drawing methods</a> for the specific drawing methods available for dressup.</p>
 				</section>
 				<section>
-					<h1>インターバルの組み合わせ指定におけるbind</h1>
-					<p>SSPにおいては、<a href="#introduction_animationinterval">アニメーションインターバルの節</a>で触れているように、インターバルの組み合わせ指定が可能である。</p>
-					<p>組み合わせ指定の中にbindを含めた場合のアニメーションは、bind単体であれば本来持っていた静止画仕様であるという性質は失う（pattern定義のウェイトパラメータが無視されなくなる）。しかしアニメーションの寿命は変わらないので、例えばbind+runonceのような組み合わせ指定の場合、すべてのpatternの描画が終わった時点の表示が、以後ベースサーフェスの変更または着せ替え状態の変化があるまで継続し続けることになる。</p>
-					<p>従って、bindを含むインターバル組み合わせ指定では、pattern定義の最終行においてアニメーションの終了を行わず、静止画として残したい描画を合成しておくべきである。</p>
+					<h1>Specification of bind combination intervals</h1>
+					<p>In SSP, it is possible to specify a combination of intervals, as mentioned in the <a href="#introduction_animationinterval">animation interval</a> section.</p>
+					<p>When bind is used in a combination specification, the animation loses the static image specification that it would have if bind was used alone (the wait parameter in the pattern definition is no longer ignored). However, the lifespan of the animation is unchanged. For example, in the case of a combination specification such as bind + runonce, the animation will continue to display after all patterns have been drawn until the base surface is changed or the dressup is changed.</p>
+					<p>Therefore, in an interval combination that includes bind, the animation should not be terminated at the final line of the pattern definition, but instead should be the drawing that you want to be composited as a static image.</p> <!-- TODO: I'm really uncertain of the translation of this line. Does it mean "the animation WILL NOT be terminated, and the final frame will be composited as a static image", or does it mean "the animation SHOULD NOT terminate, and you should put the image that you want to be composited as a still frame"? Important nuance... and I can't work it out from what google translate and deepL are telling me. It's also kind of run-on ahhhhhhh -->
 				</section>
 				<section>
-					<h1>多重着せ替え定義（SSPのみ）</h1>
-					<p>アニメーションのコマとして参照した先のsurfaceに、そのsurfaceのアニメーションが定義されていた場合、通常それらは無視される。</p>
-					<p>しかしSSPではintervalがbindのアニメーション（＝着せ替え）のみ無視されず反映されるようになっている。</p>
-					<p>これによって、着せ替えの影響を受けるような構造のアニメーションについて、アニメーションのコマ側で着せ替えに応じた定義を行う事が可能である。</p>
-					<p>なお多重着せ替えを入れ子にする事も可能であるが、循環的な参照は無視される。</p>
+					<h1>Multiple dressups definition (SSP only)</h1>
+					<p>If the surface referenced as an animation frame has animations defined for that surface, they are usually ignored.</p>
+					<p>However, in SSP, bind animations in particular (i.e. dressups) will be displayed instead of being ignored.</p>
+					<p>As a result, for animations that are affected by dressups, it is possible to define dressups on the frame side of the animation.</p>
+					<p>Note that it is possible to nest multiple dressups, but circular references are ignored.</p>
 				</section>
 			</section>
 			<section class="caption" id="caption_seriko-redefine">
-				<h1>SERIKOの旧定義と新定義について</h1>
+				<h1>Regarding the old and new SERIKO definitions</h1>
 				<section>
-					<h1>SERIKOの新定義と旧定義とは</h1>
+					<h1>What are the old and new definitions of SERIKO?</h1>
 					<p>
-						本家伺か（MATERIA）の開発末期のバージョンで、surfaces.txtへのSERIKO（アニメーション）に関する設定書式に変更がありました。
-						<br>これについて<a href="http://usada.sakura.vg/contents/seriko.html">本家仕様書</a>にあるSERIKO/1.x系の従来書式の事を旧定義、対する公式にドキュメント化されないままとなった新たな書式（SERIKO/2.0）のことを新定義と呼ぶ事があります。
+						In a late development version of MATERIA (original ukagaka), there was a change in the format of settings related to SERIKO (animation) in surfaces.txt.
+						<br>The old definition is the conventional SERIKO/1.x format found in the <a href="http://usada.sakura.vg/contents/seriko.html">original specification</a>, while the new definition is the new format (SERIKO/2.0) which has not been officially documented.
 					</p>
 					<p>
-						なお、<em>これとは全く別に</em>、MATERIA開発終了後にSSPなどがsufraces.txtの書式について独自に追加した記法などがあります（例えばsurface.appendや、surface1-9といった範囲指定）。
-						<br>これを含めて新定義と呼ぶ人や文献があるかもしれませんが、少なくともukadocで言う新旧定義はあくまでそのような用法ではなく、SERIKOの書式についての言葉である点に注意してください。
+						In addition, <em>and separately from this,</em> after the development of MATERIA was discontinued, SSP and others added their own notation to the format of surfaces.txt (e.g., surface.append, surface1-9, etc.).
+						<br>Some people and documents may refer to these additions as the new definition, but please note that the old and new definitions—at least in Ukadoc—are only about the SERIKO format, not that kind of usage.
 					</p>
 				</section>
 				<section>
-					<h1>新定義と旧定義の違い</h1>
-					<p>新定義における書式の変更点は以下の四つです。</p>
+					<h1>Differences between new and old definitions</h1>
+					<p>There are four formatting changes in the new definition:</p>
 					<ol>
-						<li><a href="#animation*.interval,インターバル">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
-						<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
-						<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
-						<li>描画メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
+						<li>Changed all <a href="#animation*.interval,インターバル">SERIKO-related</a> definition lines to begin with the word "animation".</li>
+						<li>The order of parameters in <a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern definitions</a> has been changed (drawing method was moved and is now written first).</li>
+						<li>The unit of the wait parameter in pattern definitions has been changed from 10 milliseconds to 1 millisecond.</li>
+						<li>For the drawing method <a href="#alternativestart,_ID1,ID2..._">alternativestart</a>, the brackets for specifying IDs have been changed from [] to ().</li>
 					</ol>
-					<p>これに加え、descriptブレスを設けて「<a href="#version,*">version,1</a>」の定義を行うことが必要です。</p>
-					<p>以下は<em>同じ定義内容</em>の旧定義と新定義の例です。</p>
-		<pre><code class="surfaces">// 旧定義
+					<p>In addition to this, it is necessary to have a description brace, in which "<a href="#version,*">version,1</a>" is defined.</p>
+					<p>Below is an example of the old definition and the new definition with the <em>same definition content</em>.</p>
+		<pre><code class="surfaces">// Old definition
 surface1
 {
 <span class="animationID">0</span>interval,rarely
@@ -623,7 +623,7 @@ surface1
 <span class="animationID">2</span>pattern<span class="patternID">7</span>,<span class="surfaceID">-1</span>,<span class="wait">70</span>,<span class="method">overlay</span>,<span class="posx">0</span>,<span class="posy">0</span>
 }
 </code></pre>
-<pre><code class="surfaces">// 新定義
+<pre><code class="surfaces">// New definition
 surface1
 {
 animation<span class="animationID">0</span>.interval,rarely
@@ -647,40 +647,40 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 }
 </code></pre>
 					<ul class="surfaces">
-						<li class="animationID">アニメーションID</li>
-						<li class="patternID">パターンID</li>
-						<li class="surfaceID">サーフェスID</li>
-						<li class="method">描画メソッド</li>
-						<li class="wait">ウェイト</li>
-						<li class="posx">x座標</li>
-						<li class="posy">y座標</li>
+						<li class="animationID">Animation ID</li>
+						<li class="patternID">Pattern ID</li>
+						<li class="surfaceID">Surface ID</li>
+						<li class="method">Drawing method</li>
+						<li class="wait">Wait</li>
+						<li class="posx">x-coordinate</li>
+						<li class="posy">y-coordinate</li>
 					</ul>
 					<p>
-						先頭が「animation」から始まるようになった他、ウェイトの数値が10倍になっていること、描画メソッドの指定がパラメータの先頭に移動したことに注意してください。
-						<br />またalternativestartは[]が()に変更されているほか、alternativestartの場合無視されるパラメータである「サーフェスID」「ウェイト」について、旧定義ではダミーの数値0を書いていたのに対し、新定義では描画メソッドが先頭に移動した関係から、「合成位置x,y」含めて丸ごと省略できていることもわかるかと思います。
+						Note that each line now begins with "animation", the number of the wait parameter has been multiplied by 10, and the drawing method specification has been moved to the beginning of the parameters.
+						<br />In addition, for the alternativestart drawing method, [] has been changed to (). In the old definition, the dummy value 0 was written for the "surface ID" and "wait" parameters, because these parameters are ignored by alternativestart. Whereas in the new definition, the drawing method has been moved to the start, so these values—including the x and y-coordinates—can be omitted entirely.
 					</p>
 				</section>
 				<section>
-					<h1>新定義で記述する利点</h1>
+					<h1>Advantages of using the new definition</h1>
 					<ul>
 						<li>
-							SSPが独自に追加した設定（このページにある項目で<img src="image/icon_m.png" alt="Materia" width="34" height="16" />の表示がなく<img src="image/icon_s.png" alt="SSP" width="34" height="16" />の表示のみがあるもの）については、旧定義で書かれる事が想定されていない場合があります。
-							<br />今後追加されるあらゆる設定にも同様の事がいえます。
-							<br />こうした設定を利用する場合は、新定義で記述することが望ましいでしょう（旧定義だと正常動作しない可能性がある）。
-							<br />その場合、新旧定義を混在させるとエラーとなるので、新定義に統一する必要があります。
+							Settings that SSP has added on its own (Those that do not display <img src="image/icon_m.png" alt="Materia" width="34" height="16" />, and only display <img src="image/icon_s.png" alt="SSP" width="34" height="16" />) may not be expected to be written in the old definition.
+							<br />The same can be said for any additional settings that will be added in the future.
+							<br />When using such settings, it is advisable to use the new definition (the old definition may not work properly).
+							<br />In such cases, mixing the old and new definitions will result in an error, so the definitions must be unified.
 						</li>
 						<li>
-							ウェイトの単位が10msから1msに変更され、より細やかな設定が可能になります。
+							The wait unit is changed from 10 ms to 1 ms, allowing for more detailed control.
 						</li>
 						<li>
-							また上例で見た通り、描画メソッドがパラメータの先頭に移動した事で、startやalternativestartのような特殊な描画メソッドで無視されるパラメータが綺麗に省略されることも利点かもしれません。
+							As seen in the example above, the advantage of moving the drawing method to the beginning of the parameters is that parameters which are ignored by special drawing methods—such as start and alternativestart—are neatly omitted.
 						</li>
 						<li>
-							他に、「animation」の語句が明示される事で、SERIKOに関する定義のまとまりが強調され、よりその行の意味が解りやすくなる面もあるかもしれませんが、およそ見やすさというものは慣れや個人差によるところが大であり、旧定義の方が親しんでいるし見やすいというのも自然な感じ方です。
+							In addition, by clearly specifying the word "animation", the cohesiveness of the definition of SERIKO may be emphasized and make the meaning of the line easier to understand. Although, the ease of reading depends largely on familiarity and personal differences, and it is natural to feel that the old definition is more familiar and easier to read.
 						</li>
 					</ul>
-					<p>以上のような点にメリットを感じない場合、SSPのみでの対応を考えるなら必ずしも移行する意味はないかもしれません。</p>
-					<p>なお、UKADOCでは基本的にSERIKOに関しては新定義で記述を行っているため、旧定義の記述で書きたい場合は上記を参考に適宜読み替えてください。</p>
+					<p>If you do not feel that the above points are beneficial, it may not necessarily make sense to migrate if you are considering using SSP only.</p>
+					<p>In addition, UKADOC describes SERIKO with the new definition, so if you want to use the old definition, please refer to the above and change the definitions accordingly.</p>
 				</section>
 			</section>
 			<section class="caption" id="caption_surfacebraceID">
