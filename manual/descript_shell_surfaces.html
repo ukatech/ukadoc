@@ -161,7 +161,7 @@
 				<li class="caption introduction"><a href="#introduction_seriko">Animations (SERIKO)</a></li>
 				<li class="caption introduction"><a href="#introduction_mayuna">Dressups (MAYUNA)</a></li>
 				<li class="caption"><a href="#caption_seriko-redefine">Regarding the old and new SERIKO definitions</a></li>
-				<li class="caption"><a href="#caption_surfacebraceID">Specifiable IDs in surface* braces</a></li>
+				<li class="caption"><a href="#caption_surfacebraceID">ID specifications possible for surface* braces</a></li>
 				<li class="caption"><a href="#caption_surface.append">surface* braces and surface.append* braces</a></li>
 				<li class="caption"><a href="#caption_basesurface">Base surfaces</a></li>
 				<li class="caption"><a href="#caption_z-axis">Position and order of components</a></li>
@@ -170,7 +170,7 @@
 			<ul>
 				<li><a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element*,(drawing method),(file name),(X coordinate),(Y coordinate)</a></li>
 				<li><a href="#animation*.interval,インターバル">animation*.interval,(interval)</a></li>
-				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,(drawing method),(surface number),(wait),(X coordinate),(Y coordinate)</a></li>
+				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,(drawing method),(surface ID),(wait),(X coordinate),(Y coordinate)</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
 				<li><a href="#animation*.option,shared-index">animation*.option,shared-index</a></li>
@@ -684,56 +684,56 @@ animation<span class="animationID">2</span>.pattern<span class="patternID">7</sp
 				</section>
 			</section>
 			<section class="caption" id="caption_surfacebraceID">
-				<h1>surface*ブレスで可能なID指定</h1>
-				<p>以下の各記法は併用可能。いずれもSSP専用。</p>
+				<h1>ID specifications possible for surface* braces</h1>
+				<p>All of the following notations can be used together. They are all for SSP only.</p>
 				<dl>
-					<dt>列挙指定「,」</dt>
+					<dt>Enumeration specification ","</dt>
 					<dd>
 <pre><code>surface1,3,4,6,12
 {
-// 略
+// Content omitted
 }
 </code></pre>
-						のように「,」区切りでIDを指定することで、複数のサーフェスに対して同じ内容で定義することが可能。
+						The same content can be defined for multiple surfaces by specifying IDs separated by "," like this.
 					</dd>
-					<dt>範囲指定「-」</dt>
+					<dt>Range specification "-"</dt>
 					<dd>
 <pre><code>surface1-12
 {
-// 略
+// Content omitted
 }
 </code></pre>
-						のように「-」を用いてIDを指定する事で、番号が連続する範囲の（例の場合surface1から12まで）複数のサーフェスに対して同じ内容で定義することが可能。
+						By specifying IDs using "-" like this, it is possible to define the same content for multiple surfaces in a consecutive range of numbers (from surface1 to surface12 in this example).
 					</dd>
-					<dt>範囲指定の除外指定「!」</dt>
+					<dt>Range exclusion specification "!"</dt>
 					<dd>
 <pre><code>surface1-30,!15,!20-25
 {
-// 略
+// Content omitted
 }
 </code></pre>
-						のように、「!」に続けて単独または範囲指定したIDは、その定義の対象から除外される（例の場合結局surface1-14,16-19,26-30などとした場合と同義）。<br>
-						なお、!による除外は記述の位置によらず他の指定よりも優先される（例えばsurface1-10,!2-4,3などと!の後に追記しても3は除外される）。
+						Writing "!" before a single ID or a range of IDs excludes those IDs from the definition (in this example, it is synonymous with writing surface1-14,16-19,26-30).<br>
+						Note that exclusion with ! takes precedence over other specifications, regardless of its position (for example, if you write surface1-10,!2-4,3, 3 will be excluded even though it is written after the excluded range).
 					</dd>
 				</dl>
-				<p>materia本来の仕様では、以下のようなsurface付での列挙指定のみ許される。</p>
+				<p>In the original specification of Materia, only enumeration specification as shown below is allowed with surfaces.</p>
 <pre><code>surface1,surface3,surface4
 {
-// 略
+// Content omitted
 }
 </code></pre>
 			</section>
 			<section class="caption" id="caption_surface.append">
-				<h1>surface*ブレスとsurface.append*ブレス</h1>
-				<p>surface.appendによる定義は、「既に（surfaceブレス、またはsuface*.pngの存在によって）ある定義」に対してのみ付け加えられる。</p>
-				<p>従って例えば、</p>
+				<h1>surface* braces and surface.append* braces</h1>
+				<p>Definitions in surface.append are only appended to "definitions that already exist (either by surface braces or by the existence of surface*.png)".</p>
+				<p>So for example:</p>
 <pre><code>surface1,3
 {
 collision0,188,25,252,63,Head
 collision1,180,191,220,222,Bust
 }
 </code></pre>
-				<p>の後に、追加定義のつもりで</p>
+				<p>And later, intended as an additional definition:</p>
 <pre><code>surface1-3
 {
 animation0.interval,sometimes
@@ -743,105 +743,105 @@ animation0.pattern2,overlay,101,100,168,67
 animation0.pattern3,overlay,-1,100,168,67
 }
 </code></pre>
-				<p>などとすると、本来定義するつもりのない「surface2」が<em>新設されて</em>、定義が行われてしまう。</p>
-				<p>このため、appendを使わない範囲指定の追加定義は「覚えのない重複定義エラー」などの原因になり得る。しかし、</p>
+				<p>With this, a new "surface2" will be <em>created and defined</em>, even though it was not originally intended to be defined.</p>
+				<p>Therefore, additional definitions with range specification without using append may cause "unknown duplicate definition errors". But if you write like so:</p>
 <pre><code>surface.append1-3
 {
-// 略
+// Content omitted
 }
 </code></pre>
-				<p>とした場合は、既に定義のある「surface1」および「surface3」のみにappendで追加した定義が加わり、予め存在しない「surface2」は内部的にも<em>新設されない</em>。</p>
-				<p>なお、この関係から、<em>surfaceブレスは</em>定義ファイル（surfaces.txtなど）内で<em>surface.appendブレスより先に書く</em>必要がある事に注意。</p>
+				<p>In this case, the definition added by append is only added to "surface1" and "surface3" since they already have definitions, and "surface2", which does not exist beforehand, is <en>not newly created</em>, even internally.</p>
+				<p>Note that due to this relationship, <em>surface braces</em> must be written <em>before the surface.append brace</em> in the definition file (surfaces.txt, etc.).</p>
 			</section>
 			<section class="caption" id="caption_basesurface">
-				<h1>ベースサーフェス</h1>
+				<h1>Base surfaces</h1>
 				<section>
-					<h1>ベースサーフェス</h1>
-					<p>各surfaceの基本的状態となる、アニメーションが合成される前の画像をベースサーフェスと呼ぶ。</p>
-					<p>アニメーションは通常ベースサーフェスの上位（画面手前側）に描画されることとなる。</p>
+					<h1>Base surfaces</h1>
+					<p>An image that is the basic state of each surface before animations are added is called the base surface.</p>
+					<p>Animations are usually drawn above the base surface (at the front of the screen).</p>
 				</section>
 				<section>
-					<h1>ベースサーフェスの実体</h1>
-					<p>あるsurfaceのベースサーフェスは、IDに対応するsurface*.pngと、IDに対応するsurfaceブレスでの<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element指定</a>で定義される。</p>
-					<p>surface*.pngがあるサーフェスでは、その画像がsurface*のベースサーフェスとなる。ただし同時にelement0が定義されている場合、surface*.pngの内容は破棄されelement0の定義内容で置き換わる（これは互換性確保のための仕様である）。</p>
-					<p>element1以降の定義がある場合は、それらの上に積み重なる形で順次合成され、最終的な合成結果がベースサーフェスとして扱われる。</p>
+					<h1>Base surface entity</h1>
+					<p>A surface's base surface is defined by the surface*.png corresponding to the ID and the <a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element specification</a> in the surface brace corresponding to the ID.</p>
+					<p>For surfaces with surface*.png, that image becomes the base surface of surface*. However, if element0 is also defined, the content of surface*.png is discarded, and is replaced with the content of element0 (this is a specification to ensure compatibility).</p>
+					<p>If there are definitions for element1 and after, they are composited sequentially, stacking on top of each other, and the final composited image is treated as the base surface.</p>
 				</section>
 			</section>
 			<section class="caption" id="caption_z-axis">
-				<h1>各要素の上下構造</h1>
+				<h1>Position and order of components</h1>
 				<section>
-					<h1>上位と下位</h1>
-					<p>以下画面手前側を上位、画面奥側を下位として表現する。</p>
+					<h1>Upper and lower</h1>
+					<p>The front of the screen is referred to as the upper side, and the back of the screen is referred to as the lower side.</p>
 				</section>
 				<section>
-					<h1>各パーツの上下構造</h1>
-					<p>elementおよび着せ替え（インターバルがbindのアニメーション）では、それぞれelementID・patternIDが小さい方が下位、大きい方が上位となる。</p>
+					<h1>Vertical structure of different parts</h1>
+					<p>For elements and dressups (animations with the bind interval), smaller element IDs and pattern IDs are lower, and larger IDs are higher.</p>
 				</section>
 				<section>
-					<h1>ベースサーフェスと各アニメーションの上下構造</h1>
-					<p>ベースサーフェスは基本的にすべての合成の最下位に置かれる画像だが、SSPの<a href="#animation*.option,background">backgroundオプション</a>が指定されたアニメーションは、ベースサーフェスより下位に（裏に）合成される。</p>
-					<p>着せ替えを含む各アニメーション間の上下構造は、通常アニメーションIDの大きい方から降順で上位となる（番号が大きい方から画面手前側に配置される）。ただしSSPではdescriptブレスで<a href="#animation-sort,ソート順序">animation-sort</a>定義を行えば、昇順にもできる。</p>
+					<h1>Vertical structure of the base surface and each animation</h1>
+					<p>The base surface is generally the image that is placed at the bottom of all composites, but in SSP, animations with the <a href="#animation*.option,background">background option</a> are composited below (behind) the base surface.</p>
+					<p>The upper and lower structure between animations, including dressup animations, is usually in descending order from the one with the highest animation ID (the one with the highest number is placed at the front of the screen). However, in SSP, if <a href="#animation-sort,ソート順序">animation-sort</a> is defined in the descript brace, it can be in ascending order.</p>
 				</section>
 				<section>
-					<h1>当たり判定（collision）の上下構造</h1>
-					<p>あるサーフェスの当たり判定は、基本的にsurfaces.txtにおいて先に登場したcollision定義が上位となる。ただしSSPではdescriptブレスで<a href="#collision-sort,ソート順序">collision-sort</a>定義を行えば、collisionIDを基準として昇順・降順にも設定できる。</p>
-					<p>またSSPでは<a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a>の設定によって、特定のアニメーションが表示されている場合にのみ有効な当たり判定が設定できる。この場合はまず各アニメーションの上下構造が考慮された上で、それぞれアニメーション・ベースサーフェスの当たり判定が通常どおりの順序で評価される。</p>
-					<p>animation-sortの設定がdescendの場合を例としてまとめると、上位から下位へ順に</p>
+					<h1>Vertical structure of collisions</h1>
+					<p>Generally, collision definitions that appear earlier in surfaces.txt are higher. However, in SSP, if <a href="#collision-sort,ソート順序">collision-sort</a> is defined in the descript brace, it can be set in ascending or descending order based on the collisionID.</p>
+					<p>In SSP, <a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision</a> can be used to set a collision area that is valid only when a specific animation is displayed. In this case, the vertical structure of each animation is first taken into account, and then the collision detection for each animation and the base surface is evaluated in the usual order.</p>
+					<p>For example, when animation-sort is set to descend, the following is the order from top to bottom.</p>
 					<ol>
-						<li>IDがより大きい通常のアニメーションの、より上位の当たり判定</li>
-						<li>IDがより大きい通常のアニメーションの、より下位の当たり判定</li>
-						<li>IDがより小さい通常のアニメーションの、より上位の当たり判定</li>
-						<li>IDがより小さい通常のアニメーションの、より下位の当たり判定</li>
-						<li>ベースサーフェスの、より上位の当たり判定</li>
-						<li>ベースサーフェスの、より下位の当たり判定</li>
-						<li>IDがより大きいbackgroundオプション付アニメーションの、より上位の当たり判定</li>
-						<li>IDがより大きいbackgroundオプション付アニメーションの、より下位の当たり判定</li>
-						<li>IDがより小さいbackgroundオプション付アニメーションの、より上位の当たり判定</li>
-						<li>IDがより小さいbackgroundオプション付アニメーションの、より下位の当たり判定</li>
+						<li>Higher hitboxes for regular animations with higher IDs</li>
+						<li>Lower hitboxes for regular animations with higher IDs</li>
+						<li>Higher hitboxes for regular animations with lower IDs</li>
+						<li>Lower hitboxes for regular animations with lower IDs</li>
+						<li>Higher hitboxes for the base surface</li>
+						<li>Lower hitboxes for the base surface</li>
+						<li>Higher hitboxes for animations with the background option with higher IDs</li>
+						<li>Lower hitboxes for animations with the background option with higher IDs</li>
+						<li>Higher hitboxes for animations with the background option with lower IDs</li>
+						<li>Lower hitboxes for animations with the background option with lower IDs</li>
 					</ol>
-					<p>となる（ここでいうアニメーションには着せ替えも含む）。</p>
+					<p>(Animation here includes dressup.)</p>
 				</section>
 			</section>
 			<section class="caption" id="caption_standarddef">
-				<h1>サーフェスIDの割り振り</h1>
-				<p>どんな表情・内容にどのサーフェスIDを割り振るかは、基本的に自由。</p>
-				<p>ただしsurface0,surface10はそれぞれデフォルトサーフェスとして必須とされ、たとえ相方側のないゴーストであってもsurface10として透明な画像などを用意する必要がある（SSPに限っては、必須とまではされない。またdescriptなどの設定でデフォルトサーフェスの変更も可能）。</p>
-				<p>また、一応の「事実上の標準」のようなIDの割り振りがあるので以下に示す。あくまで以下の割り振りは（0,10以外は）必須ではなく参考程度のもので、基本的には自由。</p>
-				<p>sakura側</p>
+				<h1>Allocation of surface IDs</h1>
+				<p>You are generally free to assign any surface ID to any expression or content.</p>
+				<p>However, surface0 and surface10 are required as default surfaces. If the ghost has no partner, it is necessary to prepare a transparent image as surface10. (In SSP only, the default surface can be changed in the descript settings.)</p>
+				<p>In addition, there are some "de facto standards". The following assignments (other than 0 and 10) are for reference only. They can are not required and can be assigned freely.</p>
+				<p>sakura side</p>
 				<ul>
-					<li>00	素</li>
-					<li>01	照れ</li>
-					<li>02	驚き</li>
-					<li>03	不安</li>
-					<li>04	落ち込み</li>
-					<li>05	微笑み</li>
-					<li>06	目閉じ</li>
-					<li>07	怒り</li>
-					<li>08	冷笑</li>
-					<li>09	照れ怒り</li>
-					<li>25	歌</li>
+					<li>00	Normal</li>
+					<li>01	Embarrassment</li>
+					<li>02	Surprise</li>
+					<li>03	Anxiety</li>
+					<li>04	Discourage</li>
+					<li>05	Smile</li>
+					<li>06	Closing Eyes</li>
+					<li>07	Anger</li>
+					<li>08	Sneer</li>
+					<li>09	Embarrassed anger</li> <!-- TODO: SSP doesn't actually have this one defined. Otherwise, I made them match SSP. Perhaps I should submit better translations for these in SSP at some point, and include this one... -->
+					<li>25	Singing</li>
 				</ul>
-				<p>kero側</p>
+				<p>kero side</p>
 				<ul>
-					<li>10	素</li>
-					<li>11	刮目</li>
-					<li>19	歌</li>
+					<li>10	Normal</li>
+					<li>11	Opening Eyes</li>
+					<li>19	Singing</li>
 				</ul>
-				<p>なお、MATERIAではsurfaceIDにつかえる数字は0から8192までという制限がある。</p>
+				<p>Note that in MATERIA, the range of numbers that can be used for surfaceIDs is limited to 0–8192.</p>
 			</section>
 			<dl id="element*,描画メソッド,ファイル名,X座標,Y座標">
-				<dt class="entry">element*,描画メソッド,ファイル名,X座標,Y座標</dt>
+				<dt class="entry">element*,(drawing method),(file name),(X coordinate),(Y coordinate)</dt>
 				<dd class="entry">
 					<p>
-						ベースサーフェスの合成。
-						<br>複数の画像を合成し、その合成結果をベースサーフェスとして一枚の画像のように扱う仕組み。
-						<br>サーフェスに対応するsurface*.pngという画像がある場合、element0が定義されていると元のsurface*.pngの内容が破棄されて、element0で置き換えられる
-						<br>element1以降は、その上に順次合成されていく。
-						<br>SSP2.3.53からは、element定義されたサーフェスをアニメーションパーツとして用いた場合も、一枚の画像のように振る舞う（以前は未定義）。
-						<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。
-						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
+						Base surface composite.
+						<br>A system that composites multiple images and treats the composite result as the base surface, as though it were a single image.
+						<br>If there is an image called surface*.png that corresponds to the surface, and element0 is defined, the content of the original surface*.png is discarded and replaced with the content of element0.
+						<br>element1 and onward are sequentially composited on top of it.
+						<br>Starting with SSP 2.3.53, surfaces defined as elements behave as if they were a single image, even if used as an animation part (previously undefined).
+						<br>The * part (elementID) is a serial number, starting with 0, that is consistent within the same surface.
+						<br>For drawing methods, see <a href="#h-drowmethod">drawing methods</a> below.
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -850,17 +850,17 @@ animation0.pattern3,overlay,-1,100,168,67
 				</dd>
 			</dl>
 			<dl id="animation*.interval,インターバル">
-				<dt class="entry">animation*.interval,インターバル</dt>
+				<dt class="entry">animation*.interval,(interval)</dt>
 				<dd class="entry">
 					<p>
-						アニメーションが開始するタイミング（周期）の定義。
-						<br>インターバルは下記の<a href="#h-animationinterval">アニメーションインターバル</a>参照。SSPのみ+区切りで列挙する事で組み合わせ指定が可能。
-						<br>*の部分（animationID）は任意の数字。そのスコープ内（\0、\1、...）の全surfaceで、共通して同じIDのアニメーションが同じ意味（例えば「瞬き」「口パク」「同じ服の着せ替え」など）を持つようにする。
-						<br>interval定義はそのIDのアニメーション定義全体の始点を示し、一連のanimation定義の中で必ず最初に記述されなければならない。
-						<br>アニメーションの重なり方とIDの順序の関係は<a href="#animation-sort,ソート順序">animation-sort</a>参照。
-						<br><a href="#caption_seriko-redefine">旧定義</a>：*interval,インターバル
+						Definition of the timing (cycle) at which the animation starts.
+						<br>For interval, see <a href="#h-animationinterval">animation intervals</a> below. In SSP only, combinations can be specified by listing multiple with + as a delimiter.
+						<br>The * part (animationID) is an arbitrary number. For all surfaces within the same scope (\0, \1, ...), animations with the same ID in common should have the same meaning (e.g., "blink", "talking", "same clothes", etc.).
+						<br>The interval definition indicates the starting point of the entire animation definition for that ID, and must always be first in a series of animation definitions.
+						<br>See <a href="#animation-sort,ソート順序">animation-sort</a> for the relationship between how animations ocerlap and the order of IDs.
+						<br><a href="#caption_seriko-redefine">Old definition</a>: *interval,(interval)
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -869,18 +869,18 @@ animation0.pattern3,overlay,-1,100,168,67
 				</dd>
 			</dl>
 			<dl id="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">
-				<dt class="entry">animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標</dt>
+				<dt class="entry">animation*.pattern*,(drawing method),(surface ID),(wait),(X coordinate),(Y coordinate)</dt>
 				<dd class="entry">
 					<p>
-						アニメーションの各コマの定義。各コマは通常それ以前のコマをリセットして新たにベースサーフェスに合成される形で描画される（厳密には描画メソッドによる）。
-						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
-						<br>patternに次ぐ*の部分（パターンID）は、一連のanimation*.pattern定義において0から始まる通し番号。materiaでは127が上限。番号の小さい方から積み重なる形で描画される。
-						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
-						<br>ウェイトはそのコマを描画する<em>まで</em>の待ち時間。単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
-						<br>X座標、Y座標はそのコマをベース（そのコマまでの描画結果）に対してどれだけずらして表示するかの指定。
-						<br>サーフェスIDに-1でそのアニメーションの停止、-2で現在実行中の他の全てのアニメーションを停止する事ができる。いずれの場合も描画メソッドやX座標、Y座標は無視される。
-						<br><a href="#caption_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,描画メソッド,X座標,Y座標
-					<p class="default">挙動なし</p>
+						Definition of each frame of the animation. Each frame is usually drawn by resetting the previous frame and compositing a new one on the base surface (strictly speaking, it depends on the drawing method).
+						<br>The * part following animation is the animationID (the same * as in animation*.interval).
+						<br>The * part (patternID) following pattern is a serial number starting from 0 in a series of animation*.pattern definitions. In materia, the upper limit is 127. The patterns are drawn in a stacked manner, starting with the one with the lowest number.
+						<br>For drawing methods, see <a href="#h-drowmethod">drawing methods</a> below.
+						<br>wait is the waiting time <em>until</em> the drame is drawn, in milliseconds. In SSP only, it can be written as "minimum wait-maximum wait" separated by a dash, in which case a value is randomly chosen between the minimum and maximum.
+						<br>The X and Y coordinates specify how much the frame should be shifted relative to the base (the result of drawing up to that frame).
+						<br>The surface ID can be set to -1 to stop the current animation, or -2 to stop all other animations currently running. In both cases, the drawing method and X and Y coordinates are ignored.
+						<br><a href="#caption_seriko-redefine">Old definition</a>:*pattern*,(surface ID),(wait),(drawing method),(X coordinate),(Y coordinate)
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -897,9 +897,9 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>なおintervalがbindのアニメーションについてはこの指定は未定義である。
 						<br>SSPのみ、animation*.option,exclusive,(1,3,5)のようにすると、指定IDのアニメーションに対してのみ限定的に排他制御することができる。
-						<br><a href="#caption_seriko-redefine">旧定義</a>：*option,exclusive
+						<br><a href="#caption_seriko-redefine">Old definition</a>:*option,exclusive
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -915,7 +915,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>backgroundオプションが指定されたアニメーションはベースサーフェスの後ろ（画面奥側）で実行される。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -930,7 +930,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br />\s切り替え元・切り替え先の両方に指定が必要で、どちらか片方だけだとリセットされる。
 						<br />また、切り替え先のアニメーションでpattern IDが見つからない場合もリセットされる。
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.02</li>
 					</ul>
@@ -945,7 +945,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>animation*.option,exclusive+background,(1,3,5) のようにすると、<em>exclusiveのみ</em>影響を受ける。
 						<br>なおintervalがbindのアニメーションについてはexclusive指定はそもそも未定義である。
 					</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -958,7 +958,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						通常の<a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision</a>や<a href="#collisionex*,ID,タイプ,座標1,座標2...">collisionex</a>のアニメーション動作中限定の定義。インターバルbindにも有効。
 						<br>animationに続く*の部分はanimationID（animation*.intervalの*と同一）。
 						<br>collisionに次ぐ*の部分は、一連のanimation*.collision定義内で重複しない番号。</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -968,7 +968,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
 					<p>当たり判定。囲まれた範囲がIDの領域となる。<br>*の部分（collisionID）は、同じsurface内で重複しない通し番号。<br>当たり判定の重なり方とIDの順序の関係は<a href="#collision-sort,ソート順序">collision-sort</a>参照。</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1000,7 +1000,7 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br />例1: collisionex0,Head,region,atari.png,255,0,0
 						<br />例2: collisionex1,Head,region,atari.png,0,255,0,true</dd>
 					</dl>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1558,7 +1558,7 @@ animation0.pattern3,overlay,-1,100,168,67
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
 							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
 							<br>着せ替え・elementでの使用不可。
-							<br><a href="#caption_seriko-redefine">旧定義</a>：alternativestart,[ID1,ID2...]
+							<br><a href="#caption_seriko-redefine">Old definition</a>:alternativestart,[ID1,ID2...]
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1632,7 +1632,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
 					<p>サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1820,7 +1820,7 @@ Shoulder,つつくとコミュニケートボックスを表示します。
 				<dt class="entry">当たり判定名,表示内容</dt>
 				<dd class="entry">
 					<p>当たり判定の上に来た時に表示するツールチップのテキストを設定。</p>
-					<p class="default">挙動なし</p>
+					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
