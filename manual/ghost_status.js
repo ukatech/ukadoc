@@ -1,8 +1,12 @@
+/// <reference types="jsstp" />
 "use strict";
-//页面加载完成后，尝试加载ghost列表
+
+/** @type {typeof import("jsstp").jsstp} */
 var jsstp;
+
+//页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp=await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.1.3/dist/jsstp.mjs").then(m=>m.jsstp);
+	jsstp=(await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.3.0/dist/jsstp.mjs")).jsstp;
 	if (await jsstp.available())
 		init_content().then(() => reload_button());
 	else
@@ -11,6 +15,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 async function init_content() {
 	document.getElementById("GhostStatus").style.display = "block";
 	ghost_events_queryer = await jsstp.new_event_queryer();
+	support_graph = new support_graph_t();
 	//追加相关元素
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
 		const span = document.createElement("span");
@@ -33,64 +38,82 @@ async function init_content() {
 		el.appendChild(span);
 	}
 }
-function hide_all_sub_support_graph() {
-	//获取所有class是sub_support_graph的元素
-	for (const meter_div of document.querySelectorAll(".sub_support_graph"))
-		meter_div.style.display = "none";
-}
-function show_all_sub_support_graph() {
-	//获取所有class是sub_support_graph的元素
-	for (const meter_div of document.querySelectorAll(".sub_support_graph"))
-		meter_div.style.display = "block";
-}
-function update_all_sub_support_graph() {
-	//获取所有class是sub_support_graph的元素
-	for (const meter_div of document.querySelectorAll(".sub_support_graph")) {
-		//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
-		const list = meter_div.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
-		let count_support = 0;
-		for (const span of list)
-			if (span.dataset.supported == "true")
-				count_support += 1;
+class sub_support_graph{
+	static hide_all() {
+		//获取所有class是sub_support_graph的元素
+		for (const meter_div of document.querySelectorAll(".sub_support_graph"))
+			meter_div.style.display = "none";
+	}
+	static show_all() {
+		//获取所有class是sub_support_graph的元素
+		for (const meter_div of document.querySelectorAll(".sub_support_graph"))
+			meter_div.style.display = "block";
+	}
+	static update_all() {
+		//获取所有class是sub_support_graph的元素
+		for (const meter_div of document.querySelectorAll(".sub_support_graph")) {
+			//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
+			const list = meter_div.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
+			let count_support = 0;
+			for (const span of list)
+				if (span.dataset.supported == "true")
+					count_support += 1;
 
-		meter_div.querySelector("meter").value = count_support;
-		meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
+			meter_div.querySelector("meter").value = count_support;
+			meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
+		}
 	}
 }
 let ghost_events_queryer = null;
-//for support graph
-let count_support = 0;
-let count_all = 0;
-function base_update_support_graph() {
-	const g = document.getElementById("supported_graph_content");
-	g.max = count_all; g.value = count_support;
-	document.getElementById("supported_ratio").textContent = `${count_support}/${count_all}`;
-}
-function update_support_graph(is_support) {
-	count_support += is_support;
-	count_all += 1;
-	base_update_support_graph();
-}
-function clear_support_graph() {
-	count_support = 0;
-	count_all = 0;
-	base_update_support_graph();
-}
-function hide_support_graph() {
-	document.getElementById("supported_graph").style.display = "none";
-}
-function show_support_graph() {
-	document.getElementById("supported_graph").style.display = "block";
-}
+let support_graph = null;
+class support_graph_t{
+	graph_content = document.getElementById("supported_graph_content");
+	graph_ratio = document.getElementById("supported_ratio");
+	graph = document.getElementById("supported_graph");
+
+	get count_support() { return this.graph_content.value; }
+	get count_all() { return this.graph_content.max; }
+	set count_support(value) { this.graph_content.value = value; }
+	set count_all(value) { this.graph_content.max = value; }
+
+	#base_update() {
+		this.graph_ratio.textContent = `${this.count_support}/${this.count_all}`;
+	}
+	update(is_support) {
+		this.count_support += is_support;
+		this.count_all += 1;
+		this.#base_update();
+	}
+	clear() {
+		this.count_support = 0;
+		this.count_all = 0;
+		this.#base_update();
+	}
+	hide() {
+		this.graph.style.display = "none";
+	}
+	show() {
+		this.graph.style.display = "block";
+	}
+};
 function clear_ghost_status_content() {
 	document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > span[class*='_GhostStatus']").forEach(el => el.textContent = "");
+}
+
+function hideElementById(...ids) {
+	for (const id of ids)
+		document.getElementById(id).style.display = "none";
+}
+function showElementById(...ids) {
+	for (const id of ids)
+		document.getElementById(id).style.display = "block";
 }
 
 function reload_button() {
 	const list = document.getElementById("ghost_list_content");
 	//隐藏所有的元素
-	document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "none";
-	document.getElementById("supported_text_event_Has_Event_reminder").style.display = "none";
+	hideElementById("supported_text_event_Get_Supported_Events_reminder",
+					"supported_text_event_Has_Event_reminder");
 	//重新加载列表
 	jsstp.get_fmo_infos().then(async fmo => {
 		//备份当前选项（如果有的话）
@@ -107,29 +130,26 @@ function reload_button() {
 			selected = list.value = list.options[0].value;
 		jsstp.default_info.ReceiverGhostHwnd = fmo[selected].hwnd;
 		//清空事件统计图
-		clear_support_graph();
+		support_graph.clear();
 		await ghost_events_queryer.reset();
 		if (ghost_events_queryer.available) {
 			if (!ghost_events_queryer.fast_query_available)
-				document.getElementById("supported_text_event_Get_Supported_Events_reminder").style.display = "block";
-			set_event().then(() => {update_all_sub_support_graph();show_support_graph();});
+				showElementById("supported_text_event_Get_Supported_Events_reminder");
+			set_event().then(() => {sub_support_graph.update_all();support_graph.show();});
 		}
 		else {
-			document.getElementById("supported_text_event_Has_Event_reminder").style.display = "block";
+			showElementById("supported_text_event_Has_Event_reminder");
 			throw new Error("ghost_events_queryer is not available");
 		}
-	}).catch(() => {
-		hide_support_graph();
-		hide_all_sub_support_graph();
+	}).catch(e => {
+		support_graph.hide();
+		sub_support_graph.hide_all();
 		clear_ghost_status_content();
+		console.error(e);
 	});
 }
-//定义一个函数，给定事件id和所需安全等级，返回一个事件对象是否被当前ghost支持的文本
-async function base_check_event(event_id, security_level = "local") {
-	return await ghost_events_queryer.check_event(event_id, security_level);
-}
 async function check_event(event_id, security_level = "local") {
-	let result = await base_check_event(event_id, security_level);
+	let result = await ghost_events_queryer(event_id, security_level);
 	let ex_var = false;
 	let common_var = false;
 	let is_reg_event = false;
@@ -139,12 +159,12 @@ async function check_event(event_id, security_level = "local") {
 			if (event_id.endsWith("Ex")) {
 				const common_event_id = event_id.slice(0, -2);
 				if (document.querySelector(`span.${common_event_id}_GhostStatus`))
-					common_var = await base_check_event(common_event_id, security_level);
+					common_var = await ghost_events_queryer(common_event_id, security_level);
 			}
 			else {
 				const ex_event_id = event_id + "Ex";
 				if (document.querySelector(`span.${ex_event_id}_GhostStatus`))
-					ex_var = await base_check_event(ex_event_id, security_level);
+					ex_var = await ghost_events_queryer(ex_event_id, security_level);
 			}
 			result = ex_var || common_var;
 		}
@@ -175,7 +195,7 @@ function get_str_by_check_result(result) {
 }
 async function set_event_str(element_class_name, event_id, security_level = "local") {
 	let result = await check_event(event_id, security_level)
-	update_support_graph(result.result);
+	support_graph.update(result.result);
 	for (let el of document.getElementsByClassName(element_class_name)) {
 		el.textContent = get_str_by_check_result(result);
 		el.dataset.supported = result.result;
