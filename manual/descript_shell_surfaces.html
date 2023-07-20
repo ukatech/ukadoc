@@ -1347,10 +1347,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">base</dt>
 					<dd class="entry">
 						<p>
-							<a href="#caption_basesurface">ベースサーフェス</a>を<em class="term">新規レイヤ</em>で完全に置き換える。collisionもコマのサーフェスに定義されたものに更新される。
-							<br>このメソッドのパターンを重ねると、サーフェス全面を描画し直すことによるアニメーション（いわばパラパラ漫画）が実現される。
-							<br>この描画メソッドが指定されたpattern定義では、XY座標は無視される。
-							<br>着せ替えおよびelementでは、baseメソッドは最初（element0、pattern0）にしか用いることができない。それ以外はoverlayに読み変えられる。
+							The <a href="#caption_basesurface">base surface</a> is completely replaced with the <em class="term">new layer</em>. Collisions are also replaced with the ones defined on the new layer's surface.
+							<br>By layering patterns of this method, the result is an animation created by redrawing the entire surface (like a flipbook).
+							<br>X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>For dressups and elements, the base method can only be used at the beginning (element0, pattern0). Otherwise, it is read as overlay.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1363,8 +1363,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">overlay</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を単に重ねる。
-							<br>着せ替え・elementでも使用できる（着せ替えの場合、<a href="#add">add</a>、<a href="#_2_bind">bind</a>も同じ効果となる）。
+							Simply overlay the <em class="term">new layer</em> on top of the <em class="term">base layer</em>.
+							<br>It can also be used for dressup and elements (In the case of dressup, <a href="#add">add</a> and <a href="#_2_bind">bind</a> have this same effect).
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1377,10 +1377,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">overlayfast</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を重ねる。
-							<br><em class="term">ベースレイヤ</em>の半透明部分では、透明度が低い部分ほど濃く<em class="term">新規レイヤ</em>を合成し、不透明であれば完全に合成し、全透明であれば一切合成しない。
-							<br><a href="#interpolate">interpolate</a>メソッドの対になるメソッド。
-							<br>着せ替え・elementでも使用できる。
+							Overlay the <em class="term">new layer</em> based on the opacity of the <em class="term">base layer</em>.
+							<br>In semi-transparent areas of the <em class="term">base layer</em>, the less transparent the area is, the more fully the <em class="term">new layer</em> is composited. If the area is opaque, the <em class="term">new layer</em> is composited completely. If the area is fully transparent, the <em class="term">new layer</em> is not composited at all.
+							<br>This is the opposite of the <a href="#interpolate">interpolate</a> method.
+							<br>Can also be used in dressup and elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1393,9 +1393,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">overlaymultiply</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を乗算合成で重ねる。
-							<br>挙動はoverlayfastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して乗算合成処理を行う。
-							<br>着せ替え・elementでも使用できる。
+							Multiply and overlay the <em class="term">new layer</em> based on the opacity of the <em class="term">base layer</em>.
+							<br>The behavior is the same as overlayfast and the outline remains the same, but instead of overwriting, a multiplicative composite operation is applied to the current surface.
+							<br>Can also be used in dressup and elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.91</li>
@@ -1406,10 +1406,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">replace</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の一部を<em class="term">新規レイヤ</em>で置き換える。
-							<br>透過色部分や、透明度情報があり半透明になっている部分についても、<em class="term">ベースレイヤ</em>の情報を残さずに上書きする。
-							<br>なお<em class="term">新規レイヤ</em>の範囲外は、あくまで空の領域であって透明度１００％の領域としては扱われない。この領域では何も合成が行われず、<em class="term">ベースレイヤ</em>の描画が単にそのまま残る。
-							<br>着せ替え・elementでも使用できる。
+							Replace part of the <em class="term">base layer</em> with the <em class="term">new layer</em>.
+							<br>Areas with transparency color and areas that are semi-transparent with transparency information are also overwritten, leaving no information from the <em class="term">base layer</em>.
+							<br>The area outside of the <em class="term">new layer</em> is an empty area and is not treated as an area with 100% transparency. Nothing is composited in this area, and the drawing of the <em class="term">base layer</em> simply remains as it is.
+							<br>Can also be used in dressup and elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1420,10 +1420,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">interpolate</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の透明度に応じて<em class="term">新規レイヤ</em>を重ねる。
-							<br><em class="term">ベースレイヤ</em>の半透明部分では、透明度が高い部分ほど濃く<em class="term">新規レイヤ</em>を合成し、全透明であれば完全に合成し、不透明であれば一切合成しない。
-							<br><a href="#overlayfast">overlayfast</a>メソッドの対になるメソッド。
-							<br>着せ替え・elementでも使用できる。
+							Overlay the <em class="term">new layer</em> based on the transparency of the <em class="term">new layer</em>.
+							<br>In semi-transparent areas of the <em class="term">base layer</em>, the more transparent the area is, the more fully the <em class="term">new layer</em> is composited. If the area is fully transparent, the <em class="term">new layer</em> is composited completely. If the area is opaque, the <em class="term">new layer</em> is not composited at all.
+							<br>This is the opposite of the <a href="#overlayfast">overlayfast</a> method.
+							<br>Can also be used in dressup and elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1435,7 +1435,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dd class="entry">
 						<p>
 							<a href="#overlay">overlay</a>に近いが、<em class="term">新規レイヤ</em>の透過（透過色および、pna・または<a href="descript_shell.html#seriko.use_self_alpha,数値">seliko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャンネル）を無視して重ねる。
-							<br>着せ替え・elementでも使用できる。
+							<br>Can also be used in dressup and elements.
 							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の透過色に関係なく黒（#000000）で表示されるだろう。
 						</p>
 						<ul class="supported-baseware">
