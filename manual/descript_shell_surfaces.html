@@ -237,9 +237,9 @@
 			</section>
 		</section>
 		<section class="navigation-category">
-			<h1>Surface.alias Brace</h1>
+			<h1>surface.alias Brace</h1>
 			<ul>
-				<li class="caption introduction"><a href="#introduction_surface.aliasbrace">Surface.alias brace examples</a></li>
+				<li class="caption introduction"><a href="#introduction_surface.aliasbrace">surface.alias brace examples</a></li>
 				<li class="caption"><a href="#caption_aliastxt">alias.txt</a></li>
 			</ul>
 			<ul>
@@ -1434,9 +1434,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">asis</dt>
 					<dd class="entry">
 						<p>
-							<a href="#overlay">overlay</a>に近いが、<em class="term">新規レイヤ</em>の透過（透過色および、pna・または<a href="descript_shell.html#seriko.use_self_alpha,数値">seriko.use_self_alpha</a>が設定されている場合は画像自体のアルファチャンネル）を無視して重ねる。
+							Similar to <a href="#overlay">overlay</a> but it ignores the transparency of the <em class="term">new layer</em> (transparency color and the alpha channel of the image itself if pna or <a href="descript_shell.html#seriko.use_self_alpha,数値">seriko.use_self_alpha</a> is used).
 							<br>Can also be used in dressup and elements.
-							<br>なおelement合成されたサーフェスを他のサーフェスのアニメーションパーツとしてasisメソッドで合成した場合の表示は未定義であるが、Windows上では普通、透過領域は画像本来の透過色に関係なく黒（#000000）で表示されるだろう。
+							<br>The display is undefined when an element-composited surface is used with the asis method as a part of an animation, but on Windows, transparent areas will usually be displayed as black (#000000) regardless of the original transparency color of the image.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1447,11 +1447,11 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">move</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の表示位置を、元の表示位置から指定座標分ずらす。
-							<br>moveによる表示位置の変更は瞬間的なもので、連続的な移動ではない。
-							<br>x軸方向は右側が正、y軸方向は下側が正である。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
-							<br>着せ替え・elementでは使用不可。
+							The display position of the <em class="term">base layer</em> is shifted by the specified coordinates from its original position.
+							<br>The change in display position with the move method is instantaneous, not continuous.
+							<br>Positive X values move to the right side, and positive Y values move downwards.
+							<br>Surface IDs are ignored in pattern definitions that specify this drawing method.
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1464,10 +1464,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">bind</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">新規レイヤ</em>を着せ替えパーツとする。
-							<br>着せ替えパーツとして単純に一つのサーフェスを重ねることしか出来なかった頃の唯一のメソッドで、現在はaddが互換。
-							<br>処理の内容は<a href="#overlay">overlay</a>と同義。
-							<br>着せ替えでないアニメーション・elementでの使用は未定義。
+							Use the <em class="term">new layer</em> as a dressup part.
+							<br>It was the only method available when the only way to create dressup parts was to simply stack one surface on top of another. It is now used interchangeably with the add method.
+							<br>It is processed in the same way as <a href="#overlay">overlay</a>.
+							<br>Usage in non-dressup animations and elements is undefined.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1479,9 +1479,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">add</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>に<em class="term">新規レイヤ</em>を着せ替えパーツとして重ねる。
-							<br>処理の内容は<a href="#overlay">overlay</a>と同義。
-							<br>着せ替えでないアニメーション・elementでの使用は未定義。
+							The <em class="term">new layer</em> is overlaid on the <em class="term">base layer</em> as a dressup part.
+							<br>It is processed in the same way as <a href="#overlay">overlay</a>.
+							<br>Usage in non-dressup animations and elements is undefined.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1493,12 +1493,12 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">reduce</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の透過の合成。新規レイヤの透明度情報でベースレイヤを「切り抜く」イメージ。
-							<br><em class="term">ベースレイヤ</em>と<em class="term">新規レイヤ</em>の<em>不透明度</em>が乗算される（有効な透過色は完全に透明な領域として扱われる）。
-							<br>例えば<em class="term">ベースレイヤ</em>が不透明度40%・<em class="term">新規レイヤ</em>が不透明度60%の領域は、合成後は不透明度24%＝透明度76%の領域となる。
-							<br>透明度以外の情報（RGB値）は単に無視される。
-							<br>なお<em class="term">新規レイヤ</em>の範囲外は透明相当として扱われる。
-							<br>着せ替え用に用意されたメソッドだが、着せ替えでないアニメーション・elementでも使用可能。
+							Composite the transparency of the <em class="term">base layer</em> and <em class="term">new layer</em>. This has the effect of "cropping" the <em class="term">base layer</em> using the transparency information of the <em class="term">new layer</em>.
+							<br>The <em>opacity</em> of the <em class="term">base layer</em> and the <em class="term">new layer</em> are multiplied (the transparency color is treated as a fully transparent area).
+							<br>For example, an area where the <em class="term">base layer </em> has 40% opacity and the <em class="term">new layer</em>has 60% opacity becomes an area with 24% opacity / 76% transparency after compositing.
+							<br>Information other than transparency (RGB values) is simply ignored.
+							<br>The area outside the range of the <em class="term">new layer</em> is treated as transparency.
+							<br>This method is provided for dressup, but can also be used for animations and elements that are not dressup.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1510,12 +1510,12 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">insert,ID</dt>
 					<dd class="entry">
 						<p>
-							指定したID（animation*の*の番号）の着せ替えグループ（intervalがbindのアニメーション）をその位置に挿入する。
-							<br>着せ替え用に用意されたメソッドで、着せ替えでないアニメーション・elementでの使用は未定義。
-							<br>例えばある着せ替えAが、他の着せ替えBよりも部分的に前・部分的に後ろといった位置関係の構造を持つ場合に、着せ替えAの後ろになる部分のコマと前になる部分のコマとの間に着せ替えBをinsertで挿入する事によって、自然な前後関係の表示が実現される。この時、着せ替えBの表示・非表示の状態に関わらず表示の完全性が維持される。
-							<br>insert先でのinsert（入れ子）も可能。
-							<br>ただし、あくまでも<em>着せ替えAとBの表示順を予約するだけ</em>で、強制的に着せ替えBを表示するものではない。
-							<br>実際に着せ替えBを表示するか否かは、着せ替えBの有効/無効状態に依存する。
+							Inserts the dressup group (animation with a bind interval) of the specified ID (the number of the * in animation*) at this position.
+							<br>This method is provided for dressup, and is undefined for use with animations and elements that are not dressup.
+							<br>For example, if dressup A has is positioned so that it is partially in front of and partially behind dressup B, a natural display of the front-back structure can be achieved by inserting dressup B between the back part and front part of dressup A. In this way, the integrity of the display is maintained regardless whether dressup B is displayed or not.
+							<br>It is also possible to use insert in the target surface (nesting).
+							<br>Note that this only <em>reserves the display order of dressup A and B</em>, and does not force dressup B to be displayed.
+							<br>Whether or not dressup B is actually displayed depends on the enable/disable status of dressup B.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1527,9 +1527,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">start,ID</dt>
 					<dd class="entry">
 						<p>
-							指定したID（animation*の*の番号）のアニメーションを再生させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>着せ替え・elementでの使用不可。
+							Play the animation with the specified ID (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1541,9 +1541,9 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">stop,ID</dt>
 					<dd class="entry">
 						<p>
-							指定したID（animation*の*の数字）のアニメーションを停止させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>着せ替え・elementでの使用不可。
+							Stop the animation with the specified ID (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1554,10 +1554,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">alternativestart,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
-							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを再生させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
-							<br>着せ替え・elementでの使用不可。
+							Play the animation of one of the specified ID numbers (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>In SSP, it is valid even if [] is used instead of parenthesis, or the delimiter "." is used instead of ",". 
+							<br>Cannot be used in dressup or elements.
 							<br><a href="#caption_seriko-redefine">Old definition</a>:alternativestart,[ID1,ID2...]
 						</p>
 						<ul class="supported-baseware">
@@ -1570,10 +1570,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">alternativestop,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
-							指定した複数のID（animation*の*の数字）の内どれかのアニメーションを停止させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
-							<br>着せ替え・elementでの使用不可。
+							Stop the animation of one of the specified ID numbers (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>In SSP, it is valid even if [] is used instead of parenthesis, or the delimiter "." is used instead of ",". 
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1584,10 +1584,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">parallelstart,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
-							指定した複数のID（animation*の*の数字）のすべてのアニメーションを再生させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
-							<br>着せ替え・elementでの使用不可。
+							Play animations of all specified ID numbers (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>In SSP, it is valid even if [] is used instead of parenthesis, or the delimiter "." is used instead of ",". 
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1598,10 +1598,10 @@ animation0.pattern3,overlay,-1,100,168,67
 					<dt class="entry">parallelstop,(ID1,ID2...)</dt>
 					<dd class="entry">
 						<p>
-							指定した複数のID（animation*の*の数字）のすべてのアニメーションを停止させる。
-							<br>この描画メソッドが指定されたpattern定義では、サーフェスID、ウェイト、XY座標は無視される。
-							<br>SSPの場合括弧が[]、区切りが「,」でなく「.」でも読み込まれる。
-							<br>着せ替え・elementでの使用不可。
+							Stop animations of all specified ID numbers (the number of the * in animation*).
+							<br>Surface ID, wait, and X and Y coordinates are ignored in pattern definitions that specify this drawing method.
+							<br>In SSP, it is valid even if [] is used instead of parenthesis, or the delimiter "." is used instead of ",". 
+							<br>Cannot be used in dressup or elements.
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1611,27 +1611,27 @@ animation0.pattern3,overlay,-1,100,168,67
 			</section>
 		</section>
 		<section class="category">
-			<h1>surface.aliasブレス</h1>
+			<h1>surface.alias Brace</h1>
 			<section class="caption introduction" id="introduction_surface.aliasbrace">
-				<h1>surface.aliasブレス記述例</h1>
+				<h1>surface.alias brace examples</h1>
 <pre><code>sakura.surface.alias
 {
-素,[0]
-照れ,[1,101,201]
-驚き,[2]
+Default,[0]
+Shy,[1,101,201]
+Surprised,[2]
 }
 </code></pre>
-				<p>相方側の設定はkero.surface.alias、char*.surface.alias（char*はSSPのみ）と書き変える。</p>
+				<p>The settings for side characters are written as kero.surface.alias and char*.surface.alias (char* is for SSP only).</p>
 			</section>
 			<section class="caption" id="caption_aliastxt">
 				<h1>alias.txt</h1>
-				<p>aliasブレスは、MATERIA period453まではsurfaces.txtでなくalias.txtという専用のファイルに記述される仕様であった。</p>
-				<p>現在では記述はsurfaces.txtに統合されているが、CROW・SSP共に互換性が保たれているため、別途alias.txtを用意する事も可能である。</p>
+				<p>Until MATERIA period453, the alias brace specification was written in a dedicated file called alias.txt instead of surfaces.txt.</p>
+				<p>Today the description is integrated into surfaces.txt, but CROW and SSP both maintain compatibility, it is possible to create a separate alias.txt file.</p>
 			</section>
 			<dl id="*,_*_">
 				<dt class="entry">*,[*]</dt>
 				<dd class="entry">
-					<p>サーフェスIDに対して任意のエイリアスIDを設定する。<br>例えば驚き,[2]とすれば、\s[驚き]で\s[2]と同じ意味となる。<br>また、1,[1,11,21]などとカンマ区切りで複数のサーフェスを指定することもでき、<br>この場合\s[1]で1,11,21からランダムで選ばれる。</p>
+					<p>Set an arbitrary alias ID for the surface ID.<br>For example, surprise,[2] means that \s[surprise] has the same meaning as \s[2].<br>You can also specify multiple surfaces separated by commas, e.g., 1,[1,11,21].<br>In this case, \s[1] will randomly select from 1,11,21.</p>
 					<p class="default">No behavior</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1642,9 +1642,9 @@ animation0.pattern3,overlay,-1,100,168,67
 			</dl>
 		</section>
 		<section class="category">
-			<h1>cursorブレス</h1>
+			<h1>Cursor Brace</h1>
 			<section class="caption introduction" id="introduction_cursorbrace">
-				<h1>cursorブレス記述例</h1>
+				<h1>Cursor brace examples</h1>
 <pre><code>sakura.cursor
 {
 mouseup0,Head,system:hand
@@ -1654,12 +1654,12 @@ mouseup1,Bust,system:hand
 mousedown1,Bust,system:grip
 }
 </code></pre>
-				<p>相方側の設定はkero.cursor、char*.cursor</p>
+				<p>The settings for side characters are written as kero.cursor and char*.cursor</p>
 			</section>
 			<dl id="mouseup*,当たり判定ID,ファイル名">
-				<dt class="entry">mouseup*,当たり判定ID,ファイル名</dt>
+				<dt class="entry">mouseup*,(collision ID),(file name)</dt>
 				<dd class="entry">
-					<p>当たり判定の上に乗った時表示するカーソルファイルを設定。<br>*部分は同じスコープのmouseup定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>Set the cursor file to be displayed when on top of a collision.<br>The * part is a number that must be unique in the mouseup definitions for this scope.<br>The name of the collision is the name set in the collision definition.<br>The file name is the cursor file name (cur/ani). Instead of a file name, the system cursor specification described below can also be used.</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:hand）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1667,9 +1667,9 @@ mousedown1,Bust,system:grip
 				</dd>
 			</dl>
 			<dl id="mousedown*,当たり判定ID,ファイル名">
-				<dt class="entry">mousedown*,当たり判定ID,ファイル名</dt>
+				<dt class="entry">mousedown*,(collision ID),(file name)</dt>
 				<dd class="entry">
-					<p>当たり判定の上でマウスボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>Set the cursor file to be displayed when a mouse button is pressed on a collision.<br>The * part is a number that must be unique in the mousedown definitions for this scope.<br>The name of the collision is the name set in the collision definition.<br>The file name is the cursor file name (cur/ani). Instead of a file name, the system cursor specification described below can also be used.</p>
 					<p class="default">system:finger（当たり判定名がbustの場合のみsystem:grip）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1677,9 +1677,9 @@ mousedown1,Bust,system:grip
 				</dd>
 			</dl>
 			<dl id="mouserightdown*,当たり判定ID,ファイル名">
-				<dt class="entry">mouserightdown*,当たり判定ID,ファイル名</dt>
+				<dt class="entry">mouserightdown*,(collision ID),(file name)</dt>
 				<dd class="entry">
-					<p>当たり判定の上でマウス右ボタンを押した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousedown定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>Set the cursor file to be displayed when the right mouse button is pressed on a collision.<br>The * part is a number that must be unique in the mousedown definitions for this scope.<br>The name of the collision is the name set in the collision definition.<br>The file name is the cursor file name (cur/ani). Instead of a file name, the system cursor specification described below can also be used.</p>
 					<p class="default">system:finger</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.14</li>
@@ -1687,9 +1687,9 @@ mousedown1,Bust,system:grip
 				</dd>
 			</dl>
 			<dl id="mousewheel*,当たり判定ID,ファイル名">
-				<dt class="entry">mousewheel*,当たり判定ID,ファイル名</dt>
+				<dt class="entry">mousewheel*,(collision ID),(file name)</dt>
 				<dd class="entry">
-					<p>当たり判定の上でマウスホイールを回した時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousewheel定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>Set the cursor file to be displayed when the mouse wheel is scrolled on a collision.<br>The * part is a number that must be unique in the mousewheel definitions for this scope.<br>The name of the collision is the name set in the collision definition.<br>The file name is the cursor file name (cur/ani). Instead of a file name, the system cursor specification described below can also be used.</p>
 					<p class="default">system:arrow</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1697,9 +1697,9 @@ mousedown1,Bust,system:grip
 				</dd>
 			</dl>
 			<dl id="mousehover*,当たり判定ID,ファイル名">
-				<dt class="entry">mousehover*,当たり判定ID,ファイル名</dt>
+				<dt class="entry">mousehover*,(collision ID),(file name)</dt>
 				<dd class="entry">
-					<p>当たり判定の上でマウスをしばらく動かさない時に表示するカーソルファイルを設定。<br>*部分は同じスコープのmousehover定義で重複しない番号。<br>当り判定名はcollision定義で設定した名前。<br>ファイル名にはカーソルファイル名(cur/ani)を指定。ファイル名の変わりに、後述のシステムカーソル指定が使用可能。</p>
+					<p>Set the cursor file to be displayed when the mouse is on a collision and is not moved for a while.<br>The * part is a number that must be unique in the mousehover definitions for this scope<br>The name of the collision is the name set in the collision definition.<br>The file name is the cursor file name (cur/ani). Instead of a file name, the system cursor specification described below can also be used.</p>
 					<p class="default">system:arrow</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
