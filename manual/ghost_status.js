@@ -4,14 +4,28 @@
 /** @type {typeof import("jsstp").jsstp} */
 var jsstp;
 
+String.prototype.hashCode = function () {
+	var hash = 0, i, chr;
+	if (this.length === 0) return hash;
+	for (i = 0; i < this.length; i++) {
+		chr = this.charCodeAt(i);
+		hash = ((hash << 5) - hash) + chr;
+		hash |= 0; // Convert to 32bit integer
+	}
+	return hash;
+}
+
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp=(await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.3.0/dist/jsstp.mjs")).jsstp;
+	jsstp = (await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.3.0/dist/jsstp.mjs")).jsstp;
 	if (await jsstp.available())
 		init_content().then(() => reload_button());
 	else
 		document.getElementById("GhostStatus").remove();
 });
+function get_ghost_status_class_name(method_name) {
+	return `m${method_name.hashCode()}_GhostStatus`;
+}
 async function init_content() {
 	document.getElementById("GhostStatus").style.display = "block";
 	ghost_events_queryer = await jsstp.new_event_queryer();
@@ -19,7 +33,7 @@ async function init_content() {
 	//追加相关元素
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
 		const span = document.createElement("span");
-		span.classList.add(el.querySelector("a").textContent + "_GhostStatus");
+		span.classList.add(get_ghost_status_class_name(el.querySelector("a").textContent));
 		el.appendChild(span);
 	}
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > h1")) {
@@ -34,11 +48,11 @@ async function init_content() {
 	}
 	for (const el of document.querySelectorAll("body > div.categories > section.category > dl > dt")) {
 		const span = document.createElement("span");
-		span.classList.add(el.textContent + "_GhostStatus");
+		span.classList.add(get_ghost_status_class_name(el.textContent));
 		el.appendChild(span);
 	}
 }
-class sub_support_graph{
+class sub_support_graph {
 	static hide_all() {
 		//获取所有class是sub_support_graph的元素
 		for (const meter_div of document.querySelectorAll(".sub_support_graph"))
@@ -66,7 +80,7 @@ class sub_support_graph{
 }
 let ghost_events_queryer = null;
 let support_graph = null;
-class support_graph_t{
+class support_graph_t {
 	graph_content = document.getElementById("supported_graph_content");
 	graph_ratio = document.getElementById("supported_ratio");
 	graph = document.getElementById("supported_graph");
@@ -113,7 +127,7 @@ function reload_button() {
 	const list = document.getElementById("ghost_list_content");
 	//隐藏所有的元素
 	hideElementById("supported_text_event_Get_Supported_Events_reminder",
-					"supported_text_event_Has_Event_reminder");
+		"supported_text_event_Has_Event_reminder");
 	//重新加载列表
 	jsstp.get_fmo_infos().then(async fmo => {
 		//备份当前选项（如果有的话）
@@ -135,7 +149,7 @@ function reload_button() {
 		if (ghost_events_queryer.available) {
 			if (!ghost_events_queryer.fast_query_available)
 				showElementById("supported_text_event_Get_Supported_Events_reminder");
-			set_event().then(() => {sub_support_graph.update_all();support_graph.show();});
+			set_event().then(() => { sub_support_graph.update_all(); support_graph.show(); });
 		}
 		else {
 			showElementById("supported_text_event_Has_Event_reminder");
@@ -158,12 +172,12 @@ async function check_event(event_id, security_level = "local") {
 		try {
 			if (event_id.endsWith("Ex")) {
 				const common_event_id = event_id.slice(0, -2);
-				if (document.querySelector(`span.${common_event_id}_GhostStatus`))
+				if (document.querySelector(`span.${get_ghost_status_class_name(common_event_id)}`))
 					common_var = await ghost_events_queryer(common_event_id, security_level);
 			}
 			else {
 				const ex_event_id = event_id + "Ex";
-				if (document.querySelector(`span.${ex_event_id}_GhostStatus`))
+				if (document.querySelector(`span.${get_ghost_status_class_name(ex_event_id)}`))
 					ex_var = await ghost_events_queryer(ex_event_id, security_level);
 			}
 			result = ex_var || common_var;
@@ -193,10 +207,10 @@ function get_str_by_check_result(result) {
 	else
 		return " (Not supported)";
 }
-async function set_event_str(element_class_name, event_id, security_level = "local") {
+async function set_event_str(event_id, security_level = "local") {
 	let result = await check_event(event_id, security_level)
 	support_graph.update(result.result);
-	for (let el of document.getElementsByClassName(element_class_name)) {
+	for (let el of document.getElementsByClassName(get_ghost_status_class_name(event_id))) {
 		el.textContent = get_str_by_check_result(result);
 		el.dataset.supported = result.result;
 	}
@@ -205,8 +219,8 @@ async function set_event() {
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption) > a")) {
 		const event = el.textContent;
 		if (el.dataset.external == "true")
-			await set_event_str(event + "_GhostStatus", event, "external");
+			await set_event_str(event, "external");
 		else
-			await set_event_str(event + "_GhostStatus", event);
+			await set_event_str(event);
 	}
 }
