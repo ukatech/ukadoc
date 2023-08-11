@@ -196,16 +196,16 @@ async function check_event(event_id, security_level = "local") {
 function get_str_by_check_result(result) {
 	if (result.result) {
 		if (result.ex_var)
-			return " (Ex version supported)";
+			return "（Ex対応）";
 		else if (result.common_var)
-			return " (Common version supported)";
+			return "（共通対応）";
 		else
-			return " (Supported)";
+			return "（対応）";
 	}
 	else if (result.reg_event)
-		return " (Not a singular event)";
+		return "（特定のイベントではない）";
 	else
-		return " (Not supported)";
+		return "（未対応）";
 }
 async function set_event_str(event_id, security_level = "local") {
 	let result = await check_event(event_id, security_level)
