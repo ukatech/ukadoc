@@ -17,7 +17,7 @@ String.prototype.hashCode = function () {
 
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', async function () {
-	jsstp = (await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.3.0/dist/jsstp.mjs")).jsstp;
+	jsstp = (await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.4.2/dist/jsstp.mjs")).jsstp;
 	if (await jsstp.available())
 		init_content().then(() => reload_button());
 	else
