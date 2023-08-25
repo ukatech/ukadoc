@@ -140,6 +140,12 @@ a:hover {
 .navigation-bar > .navigation-category span {
 	color: #333;
 }
+.navigation-bar > .navigation-category span[data-supported='true'] {
+	color: #393;
+}
+.navigation-bar > .navigation-category span[data-supported='false'] {
+	color: #933;
+}
 .navigation-bar > .navigation-category li.caption {
 	list-style-type: none;
 	margin-left: 0.5em;
