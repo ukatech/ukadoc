@@ -16,19 +16,15 @@ String.prototype.hashCode = function () {
 }
 
 //页面加载完成后，检查ghost可用性
-document.addEventListener('DOMContentLoaded', async function () {
-	jsstp = (await import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v2.0.4.2/dist/jsstp.mjs")).jsstp;
-	if (await jsstp.available())
-		init_content().then(() => reload_button());
-	else
-		document.getElementById("GhostStatus").remove();
-});
+document.addEventListener('DOMContentLoaded', () =>
+	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.0.0.0/dist/jsstp.mjs")
+	.then(m => (jsstp = m.jsstp).if_available(init_content).then(reload_button)).catch(e => e)
+);
 function get_ghost_status_class_name(method_name) {
 	return `m${method_name.hashCode()}_GhostStatus`;
 }
 async function init_content() {
 	document.getElementById("GhostStatus").style.display = "block";
-	ghost_events_queryer = await jsstp.new_event_queryer();
 	support_graph = new support_graph_t();
 	//追加相关元素
 	for (const el of document.querySelectorAll("body > section.navigation-bar > section.navigation-category > ul > li:not(.caption)")) {
@@ -68,13 +64,15 @@ class sub_support_graph {
 		for (const meter_div of document.querySelectorAll(".sub_support_graph")) {
 			//获取其父元素，遍历其下ul的子span，class中包含_GhostStatus的
 			const list = meter_div.parentElement.querySelectorAll("ul > li:not(.caption) > span[class*='_GhostStatus']");
-			let count_support = 0;
+			let count_support = 0, count_all_event = list.length;
 			for (const span of list)
 				if (span.dataset.supported == "true")
 					count_support += 1;
+				else if (span.dataset.is_reg_event == "true")
+					count_all_event -= 1;
 
 			meter_div.querySelector("meter").value = count_support;
-			meter_div.querySelector("span").textContent = `${count_support}/${list.length}`;
+			meter_div.querySelector("span").textContent = `${count_support}/${count_all_event}`;
 		}
 	}
 }
@@ -142,10 +140,10 @@ function reload_button() {
 			list.value = selected;
 		else
 			selected = list.value = list.options[0].value;
-		jsstp.default_info.ReceiverGhostHwnd = fmo[selected].hwnd;
+		//根据选中的选项生成事件查询器
+		ghost_events_queryer = await jsstp.by_fmo_info(fmo[selected]).new_event_queryer();
 		//清空事件统计图
 		support_graph.clear();
-		await ghost_events_queryer.reset();
 		if (ghost_events_queryer.available) {
 			if (!ghost_events_queryer.fast_query_available)
 				showElementById("supported_text_event_Get_Supported_Events_reminder");
@@ -169,7 +167,7 @@ async function check_event(event_id, security_level = "local") {
 	let is_reg_event = false;
 	//进行额外判断
 	if (!result) {
-		try {
+		if (!event_id.includes("*") && !event_id.includes("(")) {
 			if (event_id.endsWith("Ex")) {
 				const common_event_id = event_id.slice(0, -2);
 				if (document.querySelector(`span.${get_ghost_status_class_name(common_event_id)}`))
@@ -182,7 +180,7 @@ async function check_event(event_id, security_level = "local") {
 			}
 			result = ex_var || common_var;
 		}
-		catch (e) {
+		else {
 			is_reg_event = true;
 		}
 	}
@@ -213,6 +211,7 @@ async function set_event_str(event_id, security_level = "local") {
 	for (let el of document.getElementsByClassName(get_ghost_status_class_name(event_id))) {
 		el.textContent = get_str_by_check_result(result);
 		el.dataset.supported = result.result;
+		el.dataset.is_reg_event = result.reg_event;
 	}
 }
 async function set_event() {
