@@ -135,7 +135,7 @@
 		<h1>SHIORI Event</h1>
 		<section class="navigation-category" id="GhostStatus" style="display: none;">
 			<h1>Ghost Status</h1>
-			<!-- 一个列表用于显示和选择ghost -->
+			<!-- 一个列表用于?示和??ghost -->
 			<div id="ghost_select">
 				<p>ゴーストを選択してください：</p>
 				<select id="ghost_list_content" onchange="reload_button()"></select>
@@ -578,6 +578,7 @@
 				<li><a href="#OnNotifyUserInfo">OnNotifyUserInfo</a></li>
 				<li><a href="#OnNotifyOSInfo">OnNotifyOSInfo</a></li>
 				<li><a href="#OnNotifyFontInfo">OnNotifyFontInfo</a></li>
+				<li><a href="OnNotifyInternationalInfo">OnNotifyInternationalInfo</a></li>
 			</ul>
 		</section>
 	</section>
@@ -5426,6 +5427,26 @@
 					<dl class="reference">
 						<dt>Reference*</dt>
 						<dd>フォント名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNotifyInternationalInfo">
+				<dt class="entry">OnNotifyInternationalInfo</dt>
+				<dd class="entry">
+					<p>タイムゾーン、ロケール(言語)名など、国際化関連の情報を通知する。<em class="specsign">[NOTIFY]</em></p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>UTCからの時刻のずれ。単位は分。負の値＝早い　正の値＝遅い
+						<br />たとえば、日本標準時の場合、9時間早いので、-540になる。</dd>
+						<dt>Reference1</dt>
+						<dd>夏時間が有効か否か。有効=1 無効=0</dd>
+						<dt>Reference2</dt>
+						<dd><a href="https://ja.wikipedia.org/wiki/ISO_3166-1">ISO3166準拠の2文字国名</a>。</dd>
+						<dt>Reference3</dt>
+						<dd><a href="https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7">ISO639準拠の2文字言語</a>名。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
