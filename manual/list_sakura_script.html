@@ -4063,7 +4063,15 @@
 			<dl id="_!_open,dateinput,ID,表示時間,年,月,日,オプション_">
 				<dt class="entry">\![open,dateinput,ID,表示時間,年,月,日,オプション]</dt>
 				<dd class="entry">
-					<p>年月日入力InputBoxを開く。<br>表示時間はミリ秒で指定。<br>年,月,日は初期値。<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。<br>タイムアウトした場合は「Timeout」と入る。<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。</p>
+					<p>
+						年月日入力InputBoxを開く。
+						<br>表示時間はミリ秒で指定。
+						<br>年,月,日は初期値。
+						<br>入力決定時にSHIORIイベント<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生し、Reference1にカンマ区切りで「年,月,日」と入る。
+						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。 
+						<br>--option=○○の形で<a href="#notes_inputbox-option">※オプション</a>指定可能。
+						<br>その他の動作は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
