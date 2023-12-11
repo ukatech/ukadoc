@@ -430,7 +430,7 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>Plugin "Weather Station"</h1>
+			<h1>プラグイン「Weather Station」</h1>
 			<ul>
 				<li><a href="#OnWeatherStation.Weather">OnWeatherStation.Weather</a></li>
 				<li><a href="#OnWeatherStation.Astro">OnWeatherStation.Astro</a></li>
@@ -438,6 +438,12 @@
 				<li><a href="#OnWeatherStation.Forecast.Day">OnWeatherStation.Forecast.Day</a></li>
 				<li><a href="#OnWeatherStation.Forecast.Hourly">OnWeatherStation.Forecast.Hourly</a></li>
 				<li><a href="#OnWeatherStation.Error">OnWeatherStation.Error</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
+			<h1>ゴースト「Needle」</h1>
+			<ul>
+				<li><a href="#OnNeedlePoke">OnNeedlePoke</a></li>
 			</ul>
 		</section>
 	</section>
@@ -2913,7 +2919,7 @@
 			</dl>
 		</section>
 		<section class="category">
-			<h1>Plugin "Weather Station"</h1>
+			<h1>プラグイン「Weather Station」</h1>
 			<ul class="caption link">
 				<li>公開元：<a href="https://ukagaka.zichqec.com/plugin/weather_station">https://ukagaka.zichqec.com/plugin/weather_station</a></li>
 			</ul>
@@ -3467,6 +3473,27 @@
 					</dd>
 				</dl>
 			</div>
+		</section>
+		<section class="category">
+			<h1>ゴースト「Needle」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://ukagaka.zichqec.com/ghost/needle">https://ukagaka.zichqec.com/ghost/needle</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnNeedlePoke">
+				<dt class="entry">OnNeedlePoke</dt>
+				<dd class="entry">
+					<p>Occurs when Needle "pokes" another ghost (by overlapping them). If Needle is overlapping multiple scopes simultaneously, the event will be sent once for each scope.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The ID of the scope that was poked. 0 for the main character, 1 for the side character, 2 and onwards for additional characters.</dd>
+						<dt>Reference1</dt>
+						<dd>The name of the shell Needle is currently using.</dd>
+					</dl>
+				</dd>
+			</dl>
 		</section>
 	</div>
 </body>
