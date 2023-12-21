@@ -8,6 +8,7 @@
 <title>UKADOC Project さくらスクリプトリスト</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="sakura_player.js"></script>
 </head>
 <body>
 	<h1 id="page-title">さくらスクリプトリスト</h1>
@@ -598,7 +599,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは本体側になっている。</code></p>
+							<p><code type="SakuraScript">\0本体側が喋る。\1相方側が喋る。\p[2]3人めが喋る。\p[3]4人めが喋る。デフォルトのスコープは本体側になっている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -618,7 +619,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s1本体側にサーフェス1番を表示。</code></p>
+							<p><code type="SakuraScript">\s1本体側にサーフェス1番を表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -635,7 +636,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[100]本体側にサーフェス100番を表示。</code></p>
+							<p><code type="SakuraScript">\s[100]本体側にサーフェス100番を表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -652,7 +653,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]本体側にサーフェス0番を表示。\i[1]サーフェス0番に設定された、アニメーション1番を表示。</code></p>
+							<p><code type="SakuraScript">\s[0]本体側にサーフェス0番を表示。\i[1]サーフェス0番に設定された、アニメーション1番を表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -667,7 +668,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。</code></p>
+							<p><code type="SakuraScript">\1\s[10]相方側にサーフェス10番を表示。\i[2,wait]この文章はサーフェス10番内のアニメーション2番を表示し終わってから表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -682,7 +683,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[100]長いアニメーションを再生中。\![anim,clear,100]ここで、まだ再生中でも強制終了させる。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[100]長いアニメーションを再生中。\![anim,clear,100]ここで、まだ再生中でも強制終了させる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -698,7 +699,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -713,7 +714,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。\![anim,resume,200]ここで、再び再生開始。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[200]長いアニメーションを再生中。\![anim,pouse,200]ここで、一時停止。\![anim,resume,200]ここで、再び再生開始。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -729,7 +730,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[300]長いアニメーションを再生中。\![anim,offset,300,40,50]ここで、アニメーションを右に40pixel下に50pixelずらす。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[300]長いアニメーションを再生中。\![anim,offset,300,40,50]ここで、アニメーションを右に40pixel下に50pixelずらす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -787,7 +788,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。</code></p>
+							<p><code type="SakuraScript">\1\s[10]相方側をサーフェス10番に変更。\i[400]アニメーション400番とこの文章を同時に表示開始。\__w[animation,400]この文章はアニメーション400番の表示が終わるまで待ってから表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -802,7 +803,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></p>
+							<p><code type="SakuraScript">\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -820,7 +821,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -836,7 +837,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。アニメーションの再生自体は実行されているので、停止中に描画された分は表示されない。</code></p>
+							<p><code type="SakuraScript">\s[0]\i[500]サーフェス0番のアニメーション500番を再生開始。\![lock,repaint]ここで、アニメーションの描画を停止。\![unlock,repaint]ここで、停止中の描画を再開。アニメーションの再生自体は実行されているので、停止中に描画された分は表示されない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -855,7 +856,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmentondesktop,bottom]本体側がデスクトップ下部(タスクバーの上)にくっつく。</code></p>
+							<p><code type="SakuraScript">\![set,alignmentondesktop,bottom]本体側がデスクトップ下部(タスクバーの上)にくっつく。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -872,7 +873,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,alignmenttodesktop,free]本体側がマウスドラッグで位置を自由に移動出来るようになる。</code></p>
+							<p><code type="SakuraScript">\![set,alignmenttodesktop,free]本体側がマウスドラッグで位置を自由に移動出来るようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -909,7 +910,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\![set,alignmenttodesktop,top]相方側がデスクトップ上部にくっつく。\![set,alignmenttodesktop,default]相方側の吸着が標準設定に戻る。</code></p>
+							<p><code type="SakuraScript">\1\![set,alignmenttodesktop,top]相方側がデスクトップ上部にくっつく。\![set,alignmenttodesktop,default]相方側の吸着が標準設定に戻る。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -927,7 +928,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,scaling,50]本体側のサーフェスの大きさが、50%になる。</code></p>
+							<p><code type="SakuraScript">\![set,scaling,50]本体側のサーフェスの大きさが、50%になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -943,7 +944,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,scaling,50,100]本体側のサーフェスの大きさが、横50%縦100%になる。</code></p>
+							<p><code type="SakuraScript">\![set,scaling,50,100]本体側のサーフェスの大きさが、横50%縦100%になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -968,7 +969,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,50]相方側がだいたい半透明になる。</code></p>
+							<p><code type="SakuraScript">\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,50]相方側がだいたい半透明になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1021,7 +1022,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>移動を実行。\4この文章は、本体側が別スコープと一定距離離れてから表示される。</code></p>
+							<p><code type="SakuraScript">移動を実行。\4この文章は、本体側が別スコープと一定距離離れてから表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1038,7 +1039,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1相方側にスコープを設定。\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
+							<p><code type="SakuraScript">\1相方側にスコープを設定。\5この文章は相方側が別スコープと隣り合う位置まで移動してから表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1054,7 +1055,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![move,--X=80,--Y=-400,--time=2500,--base=screen,--base-offset=left.bottom,--move-offset=left.top]本体側が、画面の左下(screen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
+							<p><code type="SakuraScript">\![move,--X=80,--Y=-400,--time=2500,--base=screen,--base-offset=left.bottom,--move-offset=left.top]本体側が、画面の左下(screen,left.bottom)から数えて、右方向に80pixel上方向に400pixelの座標に、サーフェスの左上ピクセルを合わせた位置(left.top)へ、2.5秒かけて移動する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1070,8 +1071,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
-							<p><code>\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
+							<p><code type="SakuraScript">\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が、現在表示されているモニタの右上(screen,right.top)から数えて、左方向に175pixel下方向に400pixelの座標に、サーフェスの右下ピクセルを合わせた位置(right.bottom)へ、5秒で移動しようとする。</code></p>
+							<p><code type="SakuraScript">\1\![moveasync,--X=-175,--Y=200,--time=5000,--base=screen,--base-offset=right.top,--move-offset=right.bottom]相方側が移動開始。\![moveasync,cancel]ここで移動キャンセル。移動中に、別のイベントが発生しその中でキャンセルのさくらスクリプトが実行された場合も、移動をキャンセルできる。ダブルクリックすると移動を中断する、という演出などに使える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1113,7 +1114,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,zorder,1,0]相方側が、必ず本体側の手前に表示される。</code></p>
+							<p><code type="SakuraScript">\![set,zorder,1,0]相方側が、必ず本体側の手前に表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1128,7 +1129,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reset,zorder]ウインドウの表示を解除する。ユーザが最後に操作したものが最も手前に表示される。</code></p>
+							<p><code type="SakuraScript">\![reset,zorder]ウインドウの表示を解除する。ユーザが最後に操作したものが最も手前に表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1156,9 +1157,9 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,sticky-window,1,0]相方側が、本体側とセットで動く。</code></p>
-							<p><code>\![set,sticky-window,0,1,2]本体側と相方側と3人目がセットで動く。</code></p>
-							<p><code>\1\![move,40,100,0,0,left.top,left.top]相方側の左上を、本体側の左上に合わせた後、右へ40pixel下へ100pixel移動させる。\![set,sticky-window,1,0]その状態で、相方側と本体側をセットで動くようにする。</code></p>
+							<p><code type="SakuraScript">\![set,sticky-window,1,0]相方側が、本体側とセットで動く。</code></p>
+							<p><code type="SakuraScript">\![set,sticky-window,0,1,2]本体側と相方側と3人目がセットで動く。</code></p>
+							<p><code type="SakuraScript">\1\![move,40,100,0,0,left.top,left.top]相方側の左上を、本体側の左上に合わせた後、右へ40pixel下へ100pixel移動させる。\![set,sticky-window,1,0]その状態で、相方側と本体側をセットで動くようにする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1173,7 +1174,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reset,sticky-window]セットで動く設定を解除する。これ以降、ドラッグ移動時など個別に移動するようになる。</code></p>
+							<p><code type="SakuraScript">\![reset,sticky-window]セットで動く設定を解除する。これ以降、ドラッグ移動時など個別に移動するようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1241,7 +1242,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は推奨バルーンを指定する・専用バルーンを同梱するなどが必要。</code></p>
+							<p><code type="SakuraScript">\b[2]本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は推奨バルーンを指定する・専用バルーンを同梱するなどが必要。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1263,7 +1264,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、バルーン内座標X:50,Y:100に表示する。</code></p>
+							<p><code type="SakuraScript">\_b[image\test.png,50,100]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/master/imageフォルダにあるtest.pngを左上のpixelを透過色として、バルーン内座標X:50,Y:100に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1278,7 +1279,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、[実行したゴーストのフォルダ]/shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
+							<p><code type="SakuraScript">\_b[..\..\shell\master\surface0.png,0,15,opaque]本体側バルーンに、[実行したゴーストのフォルダ]/shell\masterフォルダにあるsurface0.pngを、バルーン内座標X:0,Y:15に、透過せずに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1308,7 +1309,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、バルーン内座標X:10,Y:20に、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
+							<p><code type="SakuraScript">\_b[test.png,10,20,--option=use_self_alpha,--clipping=100 30 150 90,--option=foreground]本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.pngを、バルーン内座標X:10,Y:20に、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を、バルーンの文字の上に表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1323,7 +1324,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
+							<p><code type="SakuraScript">本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline]を、現在のバルーン内の文字表示位置に、左上のドットを透過色として、表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1338,7 +1339,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード(文字列化)した画像データを、透過せずに表示する。</code></p>
+							<p><code type="SakuraScript">本体側バルーンに、\_b["data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAOCAIAAACpTQvdAAAAl0lEQVR42oVSCQ7AIAiDl6MvZyCMQ122JQSh5agiM0P/JmL4dGQxCIEjruSd6QRBE7D86nRCibMTTvScQPTazsEBfgaECUoQHAyfzXytLbMtTutQOdZhQ2uHc4dNlssOTrBWr40q2tNsXTq186myikUCsJYuU1bV81g2TJUs7bm8WC8fmKtKXC4O/1XaCVeVYmL6eIsRfwDNfLdu1l4zPAAAAABJRU5ErkJggg==",inline,opaque]文字と同じ扱いとして、base64エンコード(文字列化)した画像データを、透過せずに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1359,7 +1360,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を表示する。</code></p>
+							<p><code type="SakuraScript">本体側バルーンに、[実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.png\_b[test.png,inline,--option=use_self_alpha,--clipping=100 30 150 90]を、文字扱い、ファイルの透過情報付きpngとして、画像の横100～150pixel縦30～90pixelの範囲を表示する。</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
@@ -1380,7 +1381,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>文章が\n改行されて表示される。</code></p>
+							<p><code type="SakuraScript">文章が\n改行されて表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1397,7 +1398,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>文章が\n[half]半行改行されて表示される。\n\n[half]1行半の改行をすることで段落のような表現が出来る。</code></p>
+							<p><code type="SakuraScript">文章が\n[half]半行改行されて表示される。\n\n[half]1行半の改行をすることで段落のような表現が出来る。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1413,8 +1414,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>文章が\n[150]1行半改行されて表示される。</code></p>
-							<p><code>文章が\n[-250]2行半分戻る。</code></p>
+							<p><code type="SakuraScript">文章が\n[150]1行半改行されて表示される。</code></p>
+							<p><code type="SakuraScript">文章が\n[-250]2行半分戻る。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1430,7 +1431,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_nここに書かれた文章は改行されない。バルーンの表示領域を超えた場合は、表示されない。\_n</code></p>
+							<p><code type="SakuraScript">\_nここに書かれた文章は改行されない。バルーンの表示領域を超えた場合は、表示されない。\_n</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1447,7 +1448,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上(初期位置)から表示する。</code></p>
+							<p><code type="SakuraScript">\1相方側に文章表示。\0本体側に文章表示。現スコープのバルーン内の表示を全て消す。\cその後、左上(初期位置)から表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1462,7 +1463,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを3文字削除\c[char,3]削除終了。</code></p>
+							<p><code type="SakuraScript">トークを3文字削除\c[char,3]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1477,7 +1478,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークの5文字目から、3文字削除\c[char,3,4]削除終了。</code></p>
+							<p><code type="SakuraScript">トークの5文字目から、3文字削除\c[char,3,4]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1492,7 +1493,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\n\n\n\n\c[line,1]削除終了。\nこの行は削除されない。\_l[0,0]\c[line,1]削除終了。</code></p>
+							<p><code type="SakuraScript">トークを1行削除。\nこの行が削除される。\c[line,1]削除終了。\nこの行は削除される。\n\n\n\n\n\c[line,1]削除終了。\nこの行は削除されない。\_l[0,0]\c[line,1]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1507,7 +1508,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>トークを3行目から、\n1行削除。\nこの部分が\_l[,]削除される。\c[line,1,2]削除終了。</code></p>
+							<p><code type="SakuraScript">トークを3行目から、\n1行削除。\nこの部分が\_l[,]削除される。\c[line,1,2]削除終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1536,7 +1537,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_l[30,5em]「座標X=30pixel、座標Y=5文字分高さ」に表示。\_l[@-1650%,100]「座標X=最後の文字から文字高さ1650%分左、座標Y=100pixel」に表示。\_l[,@-100]「座標X=変更なし、座標Y=最後の文字から100pixel上」に表示。</code></p>
+							<p><code type="SakuraScript">\_l[30,5em]「座標X=30pixel、座標Y=5文字分高さ」に表示。\_l[@-1650%,100]「座標X=最後の文字から文字高さ1650%分左、座標Y=100pixel」に表示。\_l[,@-100]「座標X=変更なし、座標Y=最後の文字から100pixel上」に表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1551,7 +1552,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\Cこの文章は前回のトークの後ろに追記される。スコープも前回の最後の状態が反映されるので注意。</code></p>
+							<p><code type="SakuraScript">\Cこの文章は前回のトークの後ろに追記される。スコープも前回の最後の状態が反映されるので注意。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1567,7 +1568,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。</code></p>
+							<p><code type="SakuraScript">\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1583,7 +1584,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。\![set,autoscroll,enable]スクロール解除。</code></p>
+							<p><code type="SakuraScript">\![set,autoscroll,disable]スクロールロック。\n[5000]ロック中はこの文字は見えない。\![set,autoscroll,enable]スクロール解除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1598,8 +1599,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,balloonoffset,100,-50]バルーン位置の基準点をX:100,Y:-50に移動。</code></p>
-							<p><code>\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX:100,Y:-50(相対座標)に移動。</code></p>
+							<p><code type="SakuraScript">\![set,balloonoffset,100,-50]バルーン位置の基準点をX:100,Y:-50に移動。</code></p>
+							<p><code type="SakuraScript">\![set,balloonoffset,@100,@-50]バルーン位置の基準点をdescript.txtやsurfaces.txtの指定プラスX:100,Y:-50(相対座標)に移動。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1631,7 +1632,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![set,balloonalign,top]本体側バルーンを、シェルの頭上に表示。\1\![set,balloonalign,right]相方側バルーンを、シェルの右側に表示。</code></p>
+							<p><code type="SakuraScript">\0\![set,balloonalign,top]本体側バルーンを、シェルの頭上に表示。\1\![set,balloonalign,right]相方側バルーンを、シェルの右側に表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1647,7 +1648,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,balloonnum,テスト表示,1,5]ファイル受信時の表示テスト。\![set,balloonnum,,,]表示内容削除。</code></p>
+							<p><code type="SakuraScript">\![set,balloonnum,テスト表示,1,5]ファイル受信時の表示テスト。\![set,balloonnum,,,]表示内容削除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1668,7 +1669,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,balloontimeout,3000]このトークは、喋り終わってから3秒でバルーンが閉じる。</code></p>
+							<p><code type="SakuraScript">\![set,balloontimeout,3000]このトークは、喋り終わってから3秒でバルーンが閉じる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1702,7 +1703,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![*]マーカーをつける。</code></p>
+							<p><code type="SakuraScript">\![*]マーカーをつける。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1718,7 +1719,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![enter,onlinemode]本体側のバルーンにオンラインマーカーが表示される。</code></p>
+							<p><code type="SakuraScript">\0\![enter,onlinemode]本体側のバルーンにオンラインマーカーが表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1733,7 +1734,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\0\![enter,onlinemode]この文章の表示中は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
+							<p><code type="SakuraScript">\0\![enter,onlinemode]この文章の表示中は、本体側のバルーンにオンラインマーカーが表示される。\![leave,onlinemode]ここで消える。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1748,7 +1749,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。</code></p>
+							<p><code type="SakuraScript">\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1763,7 +1764,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。\![leave,nouserbreakmode]ここからブレーク出来るようになる。</code></p>
+							<p><code type="SakuraScript">\![enter,nouserbreakmode]この文章中は、スクリプトブレークできない。\![leave,nouserbreakmode]ここからブレーク出来るようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1780,7 +1781,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![lock,balloonrepaint]この文章はスクリプト実行が終わるまで表示されない。</code></p>
+							<p><code type="SakuraScript">\![lock,balloonrepaint]この文章はスクリプト実行が終わるまで表示されない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1795,7 +1796,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで描画が再開され、前の文章も描画される。</code></p>
+							<p><code type="SakuraScript">\![lock,balloonrepaint]この文章の描画はされない。\![unlock,balloonrepaint]ここで描画が再開され、前の文章も描画される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1836,7 +1837,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_?\1この文章はさくらスクリプトが実行されず\nそのまま表示される。\_?</code></p>
+							<p><code type="SakuraScript">\_?\1この文章はさくらスクリプトが実行されず\nそのまま表示される。\_?</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1853,7 +1854,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1\__v[disable]この文章は音声合成機能でしゃべらない。\__v</code></p>
+							<p><code type="SakuraScript">\1\__v[disable]この文章は音声合成機能でしゃべらない。\__v</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1888,7 +1889,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[align,center]これは中央揃え。\n\f[align,right]これは右揃え。\n\f[align,left]左揃えのつもりが\w9\w9\f[align,right]右揃えに。</code></p>
+							<p><code type="SakuraScript">\f[align,center]これは中央揃え。\n\f[align,right]これは右揃え。\n\f[align,left]左揃えのつもりが\w9\w9\f[align,right]右揃えに。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1919,7 +1920,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければデフォルトフォントで表示される。</code></p>
+							<p><code type="SakuraScript">\f[name,メイリオ,meiryo.ttf]メイリオがインストール済みならメイリオ、そうでなければmeiryo.ttf、それもなければデフォルトフォントで表示される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1934,7 +1935,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,200%]デフォルトサイズの200%で表示。\f[height,default]元のサイズに戻す。</code></p>
+							<p><code type="SakuraScript">\f[height,15]15pixelで表示。\f[height,+3]3pixel大きくする。\f[height,200%]デフォルトサイズの200%で表示。\f[height,default]元のサイズに戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1949,7 +1950,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[color,red]赤色で表示。\f[color,100,150,200]色指定で表示。\f[color,default]バルーンのデフォルト色に戻す。</code></p>
+							<p><code type="SakuraScript">\f[color,red]赤色で表示。\f[color,100,150,200]色指定で表示。\f[color,default]バルーンのデフォルト色に戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1964,7 +1965,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[shadowcolor,#ffff00]文字の影の色を黄色で表示。\f[shadowcolor,default]バルーンのデフォルト色に戻す。</code></p>
+							<p><code type="SakuraScript">\f[shadowcolor,#ffff00]文字の影の色を黄色で表示。\f[shadowcolor,default]バルーンのデフォルト色に戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1979,7 +1980,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
+							<p><code type="SakuraScript">\f[shadowcolor,none]文字の影自体をなくして表示。\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -1994,7 +1995,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[shadowcolor,#ffff00]\f[shadowstyle,outline]文字の周囲を黄色で縁取りして表示。\f[shadowstyle,default]\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
+							<p><code type="SakuraScript">\f[shadowcolor,#ffff00]\f[shadowstyle,outline]文字の周囲を黄色で縁取りして表示。\f[shadowstyle,default]\f[shadowcolor,default]バルーンのデフォルトに戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2009,7 +2010,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[height,30]\f[outline,1]白抜きにする。\f[outline,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">\f[height,30]\f[outline,1]白抜きにする。\f[outline,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2024,7 +2025,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
+							<p><code type="SakuraScript">\_a[OnTest]色変え前のアンカー\_a\n\f[anchor.font.color,50%,90%,20%]\_a[OnTest2]色変え後のアンカー\_a</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2040,7 +2041,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[bold,1]太字にする。\f[bold,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">\f[bold,1]太字にする。\f[bold,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2056,7 +2057,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[italic,1]This is italic.\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">\f[italic,1]This is italic.\f[italic,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2071,7 +2072,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[strike,1]文字に打ち消し線を引く。\f[strike,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">\f[strike,1]文字に打ち消し線を引く。\f[strike,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2086,7 +2087,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[underline,1]文字に下部線を引く。\f[underline,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">\f[underline,1]文字に下部線を引く。\f[underline,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2101,7 +2102,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>文字を\f[sub,1]下付き文字にする。\f[sub,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">文字を\f[sub,1]下付き文字にする。\f[sub,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2116,7 +2117,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>文字を\f[sup,1]上付き文字にする。\f[sup,default]バルーンのデフォルト設定にもどす。</code></p>
+							<p><code type="SakuraScript">文字を\f[sup,1]上付き文字にする。\f[sup,default]バルーンのデフォルト設定にもどす。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2131,7 +2132,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[shadowcolor,#6699cc]色々な\f[bold,1]装飾を\f[underline,1]した\f[height,20]文字を\f[default]全てバルーンのデフォルト設定に戻す。</code></p>
+							<p><code type="SakuraScript">\f[shadowcolor,#6699cc]色々な\f[bold,1]装飾を\f[underline,1]した\f[height,20]文字を\f[default]全てバルーンのデフォルト設定に戻す。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2160,7 +2161,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>0.45秒のウェイトをかける。\w9\nその後、1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
+							<p><code type="SakuraScript">0.45秒のウェイトをかける。\w9\nその後、1秒のウェイトをかける。\w9\w9\w2ウェイト終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2176,7 +2177,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>1.234秒のウェイトをかける。\_w[1234]ウェイト終了。</code></p>
+							<p><code type="SakuraScript">1.234秒のウェイトをかける。\_w[1234]ウェイト終了。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2191,7 +2192,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、累計2500msウェイトする(この場合、[2500-1000-2文字分の表示時間]で約1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で0からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
+							<p><code type="SakuraScript">１\_w[1000]２\__w[2500]３。最初に1000msウェイトし、その後、累計2500msウェイトする(この場合、[2500-1000-2文字分の表示時間]で約1500ms)。文字表示にかかった時間(SSPユーザー設定で可変)も加味されるため、スクリプト開始時からの精密なウェイトをかけることができる。クリアかクリック待ちが実行された時点で0からカウントしなおす。\__w[clear]\__w[500]ここで0.5秒のウェイトがかかる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2208,7 +2209,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1ここで相方が\f[bold,1]トークする。\xクリック後、スコープはデフォルトの本体側に戻り、フォント変更のさくらスクリプトは解除される。</code></p>
+							<p><code type="SakuraScript">\1ここで相方が\f[bold,1]トークする。\xクリック後、スコープはデフォルトの本体側に戻り、フォント変更のさくらスクリプトは解除される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2223,7 +2224,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\1ここで相方が\f[bold,1]トークする。\x[noclear]クリック後、スコープも文字装飾系のさくらスクリプトは有効。</code></p>
+							<p><code type="SakuraScript">\1ここで相方が\f[bold,1]トークする。\x[noclear]クリック後、スコープも文字装飾系のさくらスクリプトは有効。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2240,7 +2241,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>この文章表示中はマウス反応を受け付ける。\tこれ以降スクリプト再生終了まで受け付けない。</code></p>
+							<p><code type="SakuraScript">この文章表示中はマウス反応を受け付ける。\tこれ以降スクリプト再生終了まで受け付けない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2257,7 +2258,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_q文字を瞬間表示する。里々等、自動でウェイトが挿入される場合は注意。\_q</code></p>
+							<p><code type="SakuraScript">\_q文字を瞬間表示する。里々等、自動でウェイトが挿入される場合は注意。\_q</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2272,7 +2273,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。</code></p>
+							<p><code type="SakuraScript">\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2287,7 +2288,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksection,0]また、クイックセクションのさくらスクリプトは\![quicksection,1]混ぜて使っても有効。\_q</code></p>
+							<p><code type="SakuraScript">\![quicksection,1]文字を瞬間表示する。これもウェイトタグは実行される。\![quicksection,0]また、クイックセクションのさくらスクリプトは\![quicksection,1]混ぜて使っても有効。\_q</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2304,7 +2305,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_s本体側と相方側が同時に喋る。\_s</code></p>
+							<p><code type="SakuraScript">\_s本体側と相方側が同時に喋る。\_s</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2319,7 +2320,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_s[0,2,3]本体側と3人目のキャラと4人目のキャラが同時に喋る。\_s</code></p>
+							<p><code type="SakuraScript">\_s[0,2,3]本体側と3人目のキャラと4人目のキャラが同時に喋る。\_s</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2352,7 +2353,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]。選択時に発生するOnChoiceSelectのReference0に、選んだものによって「like」か「hate」が格納されている。</code></p>
+							<p><code type="SakuraScript">さくらスクリプトは好き？\q[好き,Like]\q[嫌い,Hate]。選択時に発生するOnChoiceSelectのReference0に、選んだものによって「like」か「hate」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2369,7 +2370,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]。選択時に、OnLikeSeasonイベントが発生し、例えば「春」を選択したならReference0に「花見」、Reference1に「桜」が格納されている。</code></p>
+							<p><code type="SakuraScript">好きな季節は？\q[春,OnLikeSeason,花見,桜]\q[夏,OnLikeSeason,花火,ひまわり]\q[秋,OnLikeSeason,月見,菊]\q[冬,OnLikeSeason,年越し,山茶花]。選択時に、OnLikeSeasonイベントが発生し、例えば「春」を選択したならReference0に「花見」、Reference1に「桜」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2393,7 +2394,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]。選択時に、OnChoiceSelectExイベントが発生し、例えば「秋」を選択したなら、Reference0に「秋」、Reference1に「LikeSeason」、Reference2に「月見」、Reference3に「菊」が格納されている。</code></p>
+							<p><code type="SakuraScript">好きな季節は？\q[春,LikeSeason,花見,桜]\q[夏,LikeSeason,花火,ひまわり]\q[秋,LikeSeason,月見,菊]\q[冬,LikeSeason,年越し,山茶花]。選択時に、OnChoiceSelectExイベントが発生し、例えば「秋」を選択したなら、Reference0に「秋」、Reference1に「LikeSeason」、Reference2に「月見」、Reference3に「菊」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2408,7 +2409,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\q[バルーンを閉じる,script:\e]\n入れ子も可能。\n\q[その１,"script:\q[その２,script:その３はない]"]</code></p>
+							<p><code type="SakuraScript">\q[バルーンを閉じる,script:\e]\n入れ子も可能。\n\q[その１,"script:\q[その２,script:その３はない]"]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2435,7 +2436,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動も可能で、画像を貼れば画像が選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
+							<p><code type="SakuraScript">\__q[OnTest,testreference]間にさくらスクリプトも挟める。\n改行、\_l[50,50]カーソル移動も可能で、画像を貼れば画像が選択肢になる。\__qこの例の場合、IDが「On」から始まっているため、選択時にOnTestイベントが発生し、reference0には「testreference」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2452,7 +2453,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\q[タイムアウトしない選択肢,NotTimeout]\*。選択時は通常通り、OnChoiceSelectExイベント(トークがなければOnChoiceSelectイベント)が発生する。</code></p>
+							<p><code type="SakuraScript">\q[タイムアウトしない選択肢,NotTimeout]\*。選択時は通常通り、OnChoiceSelectExイベント(トークがなければOnChoiceSelectイベント)が発生する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2476,7 +2477,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\q[早押し,FastPush]\![set,choicetimeout,500]</code></p>
+							<p><code type="SakuraScript">\q[早押し,FastPush]\![set,choicetimeout,500]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2493,7 +2494,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[Hint]アンカー\_aをクリックするとOnAnchorSelectExイベント(トークがなければOnAnchorSelectイベント)が発生する。reference0には「Hint」が格納されている。</code></p>
+							<p><code type="SakuraScript">\_a[Hint]アンカー\_aをクリックするとOnAnchorSelectExイベント(トークがなければOnAnchorSelectイベント)が発生する。reference0には「Hint」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2508,7 +2509,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。この2つのアンカーは、クリックするとSHIORIイベントOnHintが通知されるが、クリックしたものによってReference0の値が「0」か「1」に変わる。</code></p>
+							<p><code type="SakuraScript">\_a[OnHint,0]ヒント\_aが欲しいならクリックしよう。\_a[OnHint,1]ほらほら早く\_a。この2つのアンカーは、クリックするとSHIORIイベントOnHintが通知されるが、クリックしたものによってReference0の値が「0」か「1」に変わる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2523,7 +2524,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_a[CharactorName,対象テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,対象エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。アンカークリック時、OnAnchorSelectExイベントが発生する。「テディ」をクリックした場合、reference0に「テディ」、reference1に「CharactorName」、reference2に「対象テディ」、reference3に「年齢不詳」が格納されている。</code></p>
+							<p><code type="SakuraScript">\_a[CharactorName,対象テディ,年齢不詳]テディ\_aはいいやつだったのに。\_a[CharactorName,対象エミリ,0x10歳]エミリ\_aのとっておきのおやつを食べたばかりに……。アンカークリック時、OnAnchorSelectExイベントが発生する。「テディ」をクリックした場合、reference0に「テディ」、reference1に「CharactorName」、reference2に「対象テディ」、reference3に「年齢不詳」が格納されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2541,7 +2542,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorstyle,underline]\q[選択肢,OnTest]選択中の選択肢の表示を下線に変更する。</code></p>
+							<p><code type="SakuraScript">\f[cursorstyle,underline]\q[選択肢,OnTest]選択中の選択肢の表示を下線に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2556,7 +2557,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code type="SakuraScript">\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2571,7 +2572,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorpencolor,0,255,0]\q[選択肢,OnTest]選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code type="SakuraScript">\f[cursorpencolor,0,255,0]\q[選択肢,OnTest]選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2586,7 +2587,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursorfontcolor,default.anchor]\q[選択肢,OnTest]選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+							<p><code type="SakuraScript">\f[cursorfontcolor,default.anchor]\q[選択肢,OnTest]選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2601,7 +2602,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursormethod,copypen]\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursorbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code type="SakuraScript">\f[cursormethod,copypen]\f[cursorbrushcolor,red]\q[選択肢,OnTest]選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursorbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2616,7 +2617,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursornotselectstyle,underline]\q[選択肢,OnTest]非選択中の選択肢の表示を下線に変更する。</code></p>
+							<p><code type="SakuraScript">\f[cursornotselectstyle,underline]\q[選択肢,OnTest]非選択中の選択肢の表示を下線に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2631,7 +2632,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code type="SakuraScript">\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareの場合、背景色が赤色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2646,7 +2647,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursornotselectpencolor,0,255,0]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code type="SakuraScript">\f[cursornotselectpencolor,0,255,0]\q[選択肢,OnTest]非選択中の選択肢の形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2661,7 +2662,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursornotselectfontcolor,default.anchor]\q[選択肢,OnTest]非選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
+							<p><code type="SakuraScript">\f[cursornotselectfontcolor,default.anchor]\q[選択肢,OnTest]非選択中の選択肢の文字色をアンカーと同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2676,7 +2677,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[cursornotselectmethod,copypen]\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursornotselectbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code type="SakuraScript">\f[cursornotselectmethod,copypen]\f[cursornotselectbrushcolor,red]\q[選択肢,OnTest]非選択中の選択肢の、枠内の描画方法を変更する。copypenの場合、cursornotselectbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2691,7 +2692,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchorstyle,square]\_a[OnTest]アンカー\_a選択中のアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2706,7 +2707,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2721,7 +2722,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorpencolor,0,255,0]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchorpencolor,0,255,0]\_a[OnTest]アンカー\_a選択中のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2736,7 +2737,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorfontcolor,default.cursor]\_a[OnTest]アンカー\_a選択中のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchorfontcolor,default.cursor]\_a[OnTest]アンカー\_a選択中のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2751,7 +2752,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchormethod,copypen]\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの、枠内の描画方法を変更する。copypenの場合、anchorbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code type="SakuraScript">\f[anchormethod,copypen]\f[anchorbrushcolor,red]\_a[OnTest]アンカー\_a選択中のアンカーの、枠内の描画方法を変更する。copypenの場合、anchorbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2766,7 +2767,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchornotselectstyle,square]\_a[OnTest]アンカー\_a非選択のアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2781,7 +2782,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2796,7 +2797,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectpencolor,0,255,0]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchornotselectpencolor,0,255,0]\_a[OnTest]アンカー\_a非選択のアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2811,7 +2812,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectfontcolor,default.cursor]\_a[OnTest]アンカー\_a非選択のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchornotselectfontcolor,default.cursor]\_a[OnTest]アンカー\_a非選択のアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2826,7 +2827,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchornotselectmethod,copypen]\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの、枠内の描画方法を変更する。copypenの場合、anchornotselectbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code type="SakuraScript">\f[anchornotselectmethod,copypen]\f[anchornotselectbrushcolor,red]\_a[OnTest]アンカー\_a非選択のアンカーの、枠内の描画方法を変更する。copypenの場合、anchornotselectbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2841,7 +2842,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠(矩形)に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchorvisitedstyle,square]\_a[OnTest]アンカー\_a訪問済みのアンカーの表示を枠(矩形)に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2856,7 +2857,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareの場合、背景色が赤色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2871,7 +2872,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedpencolor,0,255,0]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
+							<p><code type="SakuraScript">\f[anchorvisitedpencolor,0,255,0]\_a[OnTest]アンカー\_a訪問済みのアンカーの形状がsquareかunderlineの場合、枠線の色が緑色になる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2886,7 +2887,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedfontcolor,default.cursor]\_a[OnTest]アンカー\_a訪問済みのアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
+							<p><code type="SakuraScript">\f[anchorvisitedfontcolor,default.cursor]\_a[OnTest]アンカー\_a訪問済みのアンカーの文字色を選択中選択肢と同じ色に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2901,7 +2902,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\f[anchorvisitedmethod,copypen]\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの、枠内の描画方法を変更する。copypenの場合、anchorvisitedbrushcolorの色がそのまま描画される。<br></code></p>
+							<p><code type="SakuraScript">\f[anchorvisitedmethod,copypen]\f[anchorvisitedbrushcolor,red]\_a[OnTest]アンカー\_a訪問済みのアンカーの、枠内の描画方法を変更する。copypenの場合、anchorvisitedbrushcolorの色がそのまま描画される。<br></code></p>
 						</section>
 					</div>
 				</dd>
@@ -2969,7 +2970,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>この文章は表示される。\eここから表示されない。</code></p>
+							<p><code type="SakuraScript">この文章は表示される。\eここから表示されない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -2986,7 +2987,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このスクリプトの再生後、ゴーストが終了する。\-</code></p>
+							<p><code type="SakuraScript">このスクリプトの再生後、ゴーストが終了する。\-</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3014,7 +3015,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ネットワーク更新を開始。\![updatebymyself]</code></p>
+							<p><code type="SakuraScript">ネットワーク更新を開始。\![updatebymyself]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3030,7 +3031,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ベースウェアの更新を実行。\![update,platform]</code></p>
+							<p><code type="SakuraScript">ベースウェアの更新を実行。\![update,platform]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3050,7 +3051,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>シェルの更新を実行。\![update,shell]</code></p>
+							<p><code type="SakuraScript">シェルの更新を実行。\![update,shell]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3073,7 +3074,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>プラグイン「共有変数プラグイン」「うかてん」の更新を実行。\![updateother,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
+							<p><code type="SakuraScript">プラグイン「共有変数プラグイン」「うかてん」の更新を実行。\![updateother,--plugin=共有変数プラグイン,--plugin=うかてん]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3106,7 +3107,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>時間をサーバと合わせる。\6</code></p>
+							<p><code type="SakuraScript">時間をサーバと合わせる。\6</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3129,7 +3130,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>時刻サーバに問い合わせを行う。\![executesntp]</code></p>
+							<p><code type="SakuraScript">時刻サーバに問い合わせを行う。\![executesntp]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3144,7 +3145,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ヘッドラインをどれか1つランダムに実行。\![execute,headline,random]</code></p>
+							<p><code type="SakuraScript">ヘッドラインをどれか1つランダムに実行。\![execute,headline,random]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3164,7 +3165,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>メールチェックイベントを開始。\![biff]</code></p>
+							<p><code type="SakuraScript">メールチェックイベントを開始。\![biff]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3187,7 +3188,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>自分自身を削除。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself]</code></p>
+							<p><code type="SakuraScript">自分自身を削除。Send Boxからのサンプル入力での実行時は要注意。\![vanishbymyself]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3203,7 +3204,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>ランダムチェンジ。\+</code></p>
+							<p><code type="SakuraScript">ランダムチェンジ。\+</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3219,7 +3220,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>リストの次のゴーストへチェンジ。\_+</code></p>
+							<p><code type="SakuraScript">リストの次のゴーストへチェンジ。\_+</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3248,7 +3249,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4.5に交代。\![change,ghost,Emily/Phase4.5]</code></p>
+							<p><code type="SakuraScript">Emily/Phase4.5に交代。\![change,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3275,7 +3276,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>masterシェルに切り替え。\![change,shell,master]</code></p>
+							<p><code type="SakuraScript">masterシェルに切り替え。\![change,shell,master]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3297,7 +3298,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>SSPデフォルト+にバルーン変更。\![change,balloon,SSPデフォルト+]</code></p>
+							<p><code type="SakuraScript">SSPデフォルト+にバルーン変更。\![change,balloon,SSPデフォルト+]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3319,7 +3320,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4.5を呼び出す。\![call,ghost,Emily/Phase4.5]</code></p>
+							<p><code type="SakuraScript">Emily/Phase4.5を呼び出す。\![call,ghost,Emily/Phase4.5]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3336,7 +3337,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\vこのスクリプト以降、最前面に表示されるようになる。</code></p>
+							<p><code type="SakuraScript">\vこのスクリプト以降、最前面に表示されるようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3354,7 +3355,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,windowstate,stayontop]このスクリプト以降、最前面に表示されるようになる。</code></p>
+							<p><code type="SakuraScript">\![set,windowstate,stayontop]このスクリプト以降、最前面に表示されるようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3372,7 +3373,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,windowstate,!stayontop]このスクリプト以降、アクティブなウインドウが手前に表示されるようになる。</code></p>
+							<p><code type="SakuraScript">\![set,windowstate,!stayontop]このスクリプト以降、アクティブなウインドウが手前に表示されるようになる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3388,7 +3389,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>最小化。\![set,windowstate,minimize]</code></p>
+							<p><code type="SakuraScript">最小化。\![set,windowstate,minimize]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3420,7 +3421,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Emily/Phase4.5のサムネイルを壁紙にする。\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
+							<p><code type="SakuraScript">Emily/Phase4.5のサムネイルを壁紙にする。\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3440,7 +3441,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,tasktrayicon,normal.ico,ゴースト/通常モード]アイコンを[実行したゴーストのフォルダ]/ghost/masterにあるnormal.icoにし、マウスオン時のメッセージを「ゴースト/通常モード」に変更する。</code></p>
+							<p><code type="SakuraScript">\![set,tasktrayicon,normal.ico,ゴースト/通常モード]アイコンを[実行したゴーストのフォルダ]/ghost/masterにあるnormal.icoにし、マウスオン時のメッセージを「ゴースト/通常モード」に変更する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3473,7 +3474,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error]</code></p>
+							<p><code type="SakuraScript">\![set,trayballoon,--text=何らかのエラーにより、処理が失敗しました,--title=エラーが発生しました,--icon=error]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3491,7 +3492,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>
+							<p><code type="SakuraScript">
 							\![set,otherghosttalk,true]これ以降、同時に起動しているゴーストが何か喋り終わるたびに、OnOtherGhostTalkが通知されるようになる。</code></p>
 						</section>
 					</div>
@@ -3507,7 +3508,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>
+							<p><code type="SakuraScript">
 							\![set,othersurfacechange,true]これ以降、同時に起動しているゴーストのサーフェスが変わるたびに、OnOtherSurfaceChangeが通知されるようになる。</code></p>
 						</section>
 					</div>
@@ -3525,7 +3526,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このトークの末端にあるraiseが再生された時、SHIORIイベント「OnRaiseTest」がSSPから通知される。Reference0には「test」が入っている。\![raise,OnRaiseTest,test]</code></p>
+							<p><code type="SakuraScript">このトークの末端にあるraiseが再生された時、SHIORIイベント「OnRaiseTest」がSSPから通知される。Reference0には「test」が入っている。\![raise,OnRaiseTest,test]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3546,8 +3547,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(フォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
-							<p><code>里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
+							<p><code type="SakuraScript">このトークの最後に、SHIORIイベント「OnEmbedTest」の実行結果が表示される。raiseと違いスクリプトが1つなので、スクリプト終了で効果が切れるさくらスクリプト(フォント変更など)が持続する。\![embed,OnEmbedTest]</code></p>
+							<p><code type="SakuraScript">里々のテンプレートでこのスクリプトを実行した場合は、この文の後にランダムトークがくっつく。\![embed,OnTalk]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3563,7 +3564,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![timerraise,5000,1,OnTimerraiseTest,test]5秒後(5000ミリ秒)後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
+							<p><code type="SakuraScript">\![timerraise,5000,1,OnTimerraiseTest,test]5秒後(5000ミリ秒)後に、OnTimerraiseTestが発生する。さくらスクリプトが実行された瞬間から時間をカウントする。\![timerraise,0,1,OnTimerraiseTest]ここで先ほどのタイマー予約をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3578,7 +3579,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![raiseother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。</code></p>
+							<p><code type="SakuraScript">\![raiseother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3593,7 +3594,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒(30000ミリ秒)おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
+							<p><code type="SakuraScript">\![timerraiseother,30000,0,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5に30秒(30000ミリ秒)おきに繰り返しOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。\![timerraiseother,0,1,Emily/Phase4.5,OnRoastedPotate]ここで繰り返し通知をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3608,7 +3609,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
+							<p><code type="SakuraScript">\![raiseplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」に、[実行したゴーストのフォルダ]/ghost/master/stamp.pngの画像とメッセージを登録する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3623,7 +3624,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![timerraiseplugin,60000,0,実体化,OnMenuExec]プラグイン「実体化」を60秒(60000ミリ秒)おきに繰り返し実行。\![timerraiseplugin,0,0,実体化,OnMenuExec]ここで繰り返し実行をキャンセル。</code></p>
+							<p><code type="SakuraScript">\![timerraiseplugin,60000,0,実体化,OnMenuExec]プラグイン「実体化」を60秒(60000ミリ秒)おきに繰り返し実行。\![timerraiseplugin,0,0,実体化,OnMenuExec]ここで繰り返し実行をキャンセル。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3638,7 +3639,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![notify,OnNotifyTest,test]OnNotifyTestが通知され、Reference0に「test」が入っている。OnNotifyTestでトークを書いてもSSPに反映されない。</code></p>
+							<p><code type="SakuraScript">\![notify,OnNotifyTest,test]OnNotifyTestが通知され、Reference0に「test」が入っている。OnNotifyTestでトークを書いてもSSPに反映されない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3653,7 +3654,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![notifyother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。もしこの通知イベントでEmily/Phase4.5が何かトークをしても、バルーンには何も表示されない。</code></p>
+							<p><code type="SakuraScript">\![notifyother,Emily/Phase4.5,OnRoastedPotate,sweet potato]Emily/Phase4.5が同時起動していれば、Emily/Phase4.5にOnRoastedPotateを通知。Reference0には「sweet potato」が入っている。もしこの通知イベントでEmily/Phase4.5が何かトークをしても、バルーンには何も表示されない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3668,7 +3669,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![notifyplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」の登録イベントをnotifyで呼び出す。プラグイン実行で処理は行われるが、ゴースト側への返答は無視される。</code></p>
+							<p><code type="SakuraScript">\![notifyplugin,スタンプ帳,OnStampAdd,[実行したゴーストのフォルダ]/ghost/master/stamp.png,マイスタンプ,スタンプを押したよ。よろしくね。]プラグイン「スタンプ帳」の登録イベントをnotifyで呼び出す。プラグイン実行で処理は行われるが、ゴースト側への返答は無視される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3694,7 +3695,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_v[se/test.wav]。[実行したゴーストのフォルダ]/ghost/master/seフォルダにあるtest.wavを再生する。</code></p>
+							<p><code type="SakuraScript">\_v[se/test.wav]。[実行したゴーストのフォルダ]/ghost/master/seフォルダにあるtest.wavを再生する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3711,7 +3712,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_v[test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\_V再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code type="SakuraScript">\_v[test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\_V再生が終了するまで待ってからこの文章を表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3726,7 +3727,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,play,test.mp4,--sound-only=true,--window=true][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.mp4動画を再生する。ただしシークバー強制表示、音声のみ。</code></p>
+							<p><code type="SakuraScript">\![sound,play,test.mp4,--sound-only=true,--window=true][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.mp4動画を再生する。ただしシークバー強制表示、音声のみ。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3750,7 +3751,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
+							<p><code type="SakuraScript">\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3765,7 +3766,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]ループ再生を停止する。</code></p>
+							<p><code type="SakuraScript">\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]ループ再生を停止する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3780,7 +3781,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,wait]再生が終了するまで待ってからこの文章を表示する。</code></p>
+							<p><code type="SakuraScript">\![sound,play,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,wait]再生が終了するまで待ってからこの文章を表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3795,7 +3796,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。</code></p>
+							<p><code type="SakuraScript">\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3810,7 +3811,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
+							<p><code type="SakuraScript">\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,pause]再生を一時停止してこの文章を表示する。\![sound,resume]中断した箇所から再生を開始する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3825,7 +3826,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]再生を完全に停止する。</code></p>
+							<p><code type="SakuraScript">\![sound,loop,test.wav][実行したゴーストのフォルダ]/ghost/masterフォルダにあるtest.wavを再生する。\![sound,stop]再生を完全に停止する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3870,8 +3871,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
-							<p><code>\j[file:///descript.txt][実行したゴーストのフォルダ]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
+							<p><code type="SakuraScript">\j[http://ssp.shillest.net/]ばぐとら研究所をブラウザを立ち上げて表示する。</code></p>
+							<p><code type="SakuraScript">\j[file:///descript.txt][実行したゴーストのフォルダ]/ghost/masterフォルダにあるdescript.txtを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3888,7 +3889,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,browser,http://ssp.shillest.net/]ばぐとら研究所をSSP本体設定で指定されたブラウザを立ち上げて表示する。</code></p>
+							<p><code type="SakuraScript">\![open,browser,http://ssp.shillest.net/]ばぐとら研究所をSSP本体設定で指定されたブラウザを立ち上げて表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3904,7 +3905,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,mailer,test@example.com]送信先アドレスにtest@example.comが入ったメーラーを開く。</code></p>
+							<p><code type="SakuraScript">\![open,mailer,test@example.com]送信先アドレスにtest@example.comが入ったメーラーを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3953,7 +3954,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,teachbox]TeachBoxを開く。</code></p>
+							<p><code type="SakuraScript">\![open,teachbox]TeachBoxを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3968,7 +3969,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![close,teachbox]TeachBoxを閉じる。開いてない場合は無視される。</code></p>
+							<p><code type="SakuraScript">\![close,teachbox]TeachBoxを閉じる。開いてない場合は無視される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -3994,8 +3995,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,communicatebox,テスト]CommunicateBoxを開く。最初から「テスト」の文字が入っている。</code></p>
-							<p><code>\![open,communicatebox,--text=テスト]上記と同じ(オプション指定の書き方)</code></p>
+							<p><code type="SakuraScript">\![open,communicatebox,テスト]CommunicateBoxを開く。最初から「テスト」の文字が入っている。</code></p>
+							<p><code type="SakuraScript">\![open,communicatebox,--text=テスト]上記と同じ(オプション指定の書き方)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4010,7 +4011,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![close,communicatebox]CommunicateBoxを閉じる。開いてない場合は無視される。</code></p>
+							<p><code type="SakuraScript">\![close,communicatebox]CommunicateBoxを閉じる。開いてない場合は無視される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4038,8 +4039,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
-							<p><code>\![open,inputbox,インプットテスト,--timeout=10000,--text=テスト入力] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
+							<p><code type="SakuraScript">\![open,inputbox,インプットテスト,--timeout=10000,--text=テスト入力] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4054,8 +4055,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,passwordinput,パスワードテスト,-1,--option==noclose]入力が●で伏せ字になるInputBoxを開く。OKボタンを押しても、時間経過でも自動的に閉じない。閉じるボタンを押すと閉じる。</code></p>
-							<p><code>\![open,passwordinput,パスワードテスト,--timeout=-1,--option==noclose] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,passwordinput,パスワードテスト,-1,--option==noclose]入力が●で伏せ字になるInputBoxを開く。OKボタンを押しても、時間経過でも自動的に閉じない。閉じるボタンを押すと閉じる。</code></p>
+							<p><code type="SakuraScript">\![open,passwordinput,パスワードテスト,--timeout=-1,--option==noclose] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4078,8 +4079,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,dateinput,日付入力テスト,30000,2012,12,23]初期値が2012年12月23日の年月日入力InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,dateinput,日付入力テスト,--timeout=30000,--text="2012,12,23"] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,dateinput,日付入力テスト,30000,2012,12,23]初期値が2012年12月23日の年月日入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code type="SakuraScript">\![open,dateinput,日付入力テスト,--timeout=30000,--text="2012,12,23"] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4094,8 +4095,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,sliderinput,スライダーテスト,30000,50,0,100]初期値が50、最小値が0、最大が100のスライダー型InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,sliderinput,スライダーテスト,--timeout=30000,--text="50,0,100"] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,sliderinput,スライダーテスト,30000,50,0,100]初期値が50、最小値が0、最大が100のスライダー型InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code type="SakuraScript">\![open,sliderinput,スライダーテスト,--timeout=30000,--text="50,0,100"] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4110,8 +4111,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,timeinput,時間入力テスト,30000,23,45,12]初期値が23時45分12秒の時間入力InputBoxを開く。30秒でタイムアウトする。</code></p>
-							<p><code>\![open,timeinput,時間入力テスト,--timeout=30000,--text="23,45,12"] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,timeinput,時間入力テスト,30000,23,45,12]初期値が23時45分12秒の時間入力InputBoxを開く。30秒でタイムアウトする。</code></p>
+							<p><code type="SakuraScript">\![open,timeinput,時間入力テスト,--timeout=30000,--text="23,45,12"] 上記と同じ(新オプション指定)</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4129,8 +4130,8 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,ipinput,IP入力テスト,30000,192,168,0,1]</code></p>
-							<p><code>\![open,ipinput,IP入力テスト,--timeout=30000,--text="192,168,0,1"]</code></p>
+							<p><code type="SakuraScript">\![open,ipinput,IP入力テスト,30000,192,168,0,1]</code></p>
+							<p><code type="SakuraScript">\![open,ipinput,IP入力テスト,--timeout=30000,--text="192,168,0,1"]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4145,7 +4146,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![close,inputbox,時間入力テスト]IDが「時間入力テスト」のInputBoxを閉じる。\![close,inputbox,__SYSTEM_ALL_INPUT__]その後、全てのInputBoxを閉じる。</code></p>
+							<p><code type="SakuraScript">\![close,inputbox,時間入力テスト]IDが「時間入力テスト」のInputBoxを閉じる。\![close,inputbox,__SYSTEM_ALL_INPUT__]その後、全てのInputBoxを閉じる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4162,7 +4163,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,configurationdialog,talk]SSP本体設定ダイアログの喋り/バルーンのタブを開く。</code></p>
+							<p><code type="SakuraScript">\![open,configurationdialog,talk]SSP本体設定ダイアログの喋り/バルーンのタブを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4179,7 +4180,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,ghostexplorer]ゴーストエクスプローラを開く。</code></p>
+							<p><code type="SakuraScript">\![open,ghostexplorer]ゴーストエクスプローラを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4196,7 +4197,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,shellexplorer]シェルエクスプローラを開く。</code></p>
+							<p><code type="SakuraScript">\![open,shellexplorer]シェルエクスプローラを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4213,7 +4214,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,balloonexplorer]バルーンエクスプローラを開く。</code></p>
+							<p><code type="SakuraScript">\![open,balloonexplorer]バルーンエクスプローラを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4230,7 +4231,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,headlinesensorexplorer]ヘッドラインエクスプローラを開く。</code></p>
+							<p><code type="SakuraScript">\![open,headlinesensorexplorer]ヘッドラインエクスプローラを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4245,7 +4246,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,pluginexplorer]プラグインエクスプローラを開く。</code></p>
+							<p><code type="SakuraScript">\![open,pluginexplorer]プラグインエクスプローラを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4262,7 +4263,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,rateofusegraph]ゴースト使用率を表示する。</code></p>
+							<p><code type="SakuraScript">\![open,rateofusegraph]ゴースト使用率を表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4278,7 +4279,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,rateofusegraphballoon]バルーン使用率を表示する。</code></p>
+							<p><code type="SakuraScript">\![open,rateofusegraphballoon]バルーン使用率を表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4302,7 +4303,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+							<p><code type="SakuraScript">\![open,calendar]カレンダーを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4317,7 +4318,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,help,talk]ブラウザで、http://ssp.shillest.net/ukadoc/ssphelp/の喋り/バルーンのページを開く。</code></p>
+							<p><code type="SakuraScript">\![open,help,talk]ブラウザで、http://ssp.shillest.net/ukadoc/ssphelp/の喋り/バルーンのページを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4332,7 +4333,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,calendar]カレンダーを開く。</code></p>
+							<p><code type="SakuraScript">\![open,calendar]カレンダーを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4349,7 +4350,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,readme]readme.txtを開く。</code></p>
+							<p><code type="SakuraScript">\![open,readme]readme.txtを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4366,7 +4367,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,terms]terms.txtを開く。</code></p>
+							<p><code type="SakuraScript">\![open,terms]terms.txtを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4381,9 +4382,9 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,file,shell/master/surface0.png]shell/masterフォルダのsurface0.pngが開かれる。</code></p>
-							<p><code>\![open,file,%ComSpec%]コマンドプロンプトが実行される。</code></p>
-							<p><code>\![open,file,TortoiseProc.exe]TortoiseSVNがインストールされていれば、パスを自動で検索して実行する。</code></p>
+							<p><code type="SakuraScript">\![open,file,shell/master/surface0.png]shell/masterフォルダのsurface0.pngが開かれる。</code></p>
+							<p><code type="SakuraScript">\![open,file,%ComSpec%]コマンドプロンプトが実行される。</code></p>
+							<p><code type="SakuraScript">\![open,file,TortoiseProc.exe]TortoiseSVNがインストールされていれば、パスを自動で検索して実行する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4398,7 +4399,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[実行したゴーストのフォルダ]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
+							<p><code type="SakuraScript">\![open,dialog,open,--title=オープンダイアログ表示テスト,--dir=C:/SSP/ghost/emily4/ghost/master,--filter=辞書ファイル|dic*.txt;*.dic;*.aym;*.kis|全てのファイル|*.*,--id=テストダイアログ]SSPがCドライブ直下に、SSPという名前のフォルダで存在する場合、Emily/Phase4.5の[実行したゴーストのフォルダ]/ghost/masterを初期位置とし、dic～.txtと～.dicと～.aymと～.kisのファイルのみ表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4413,7 +4414,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,dialog,save,--title=セーブダイアログ表示テスト,--dir=__system_mydocument__,--filter=テキストファイル|*.txt;*.dic,--ext=txt,--name=test,--id=テスト保存ダイアログ]マイドキュメントを初期位置として、.txtと.dicのファイルのみを表示し、初期ファイル名「test.txt」の保存ダイアログを開く。</code></p>
+							<p><code type="SakuraScript">\![open,dialog,save,--title=セーブダイアログ表示テスト,--dir=__system_mydocument__,--filter=テキストファイル|*.txt;*.dic,--ext=txt,--name=test,--id=テスト保存ダイアログ]マイドキュメントを初期位置として、.txtと.dicのファイルのみを表示し、初期ファイル名「test.txt」の保存ダイアログを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4428,7 +4429,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,dialog,folder,--title=フォルダ選択ダイアログ表示テスト,--id=OnTestFolderDialog]ダイアログで前回開いた場所を初期位置として、フォルダ選択ダイアログを開く。保存ボタンを押すと、指定したID名が「OnTestFolderDialog」でOnで始まっているため、同名のSHIORIイベントOnTestFolderDialogが通知される。</code></p>
+							<p><code type="SakuraScript">\![open,dialog,folder,--title=フォルダ選択ダイアログ表示テスト,--id=OnTestFolderDialog]ダイアログで前回開いた場所を初期位置として、フォルダ選択ダイアログを開く。保存ボタンを押すと、指定したID名が「OnTestFolderDialog」でOnで始まっているため、同名のSHIORIイベントOnTestFolderDialogが通知される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4453,7 +4454,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,dialog,color,--color=255 0 0,--id=テストカラーダイアログ]初期表示色が赤のカラーパレットダイアログを表示。</code></p>
+							<p><code type="SakuraScript">\![open,dialog,color,--color=255 0 0,--id=テストカラーダイアログ]初期表示色が赤のカラーパレットダイアログを表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4468,7 +4469,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![close,dialog,テストカラーダイアログ]現在表示されているダイアログのうち、idが「テストカラーダイアログ」のものを閉じる。ダイアログが閉じられた場合、OnSystemDialogCancelが通知される。</code></p>
+							<p><code type="SakuraScript">\![close,dialog,テストカラーダイアログ]現在表示されているダイアログのうち、idが「テストカラーダイアログ」のものを閉じる。ダイアログが閉じられた場合、OnSystemDialogCancelが通知される。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4483,7 +4484,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,surfacetest]サーフェステストダイアログを開く。</code></p>
+							<p><code type="SakuraScript">\![open,surfacetest]サーフェステストダイアログを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4498,7 +4499,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![open,aigraph]AIグラフを開く。</code></p>
+							<p><code type="SakuraScript">\![open,aigraph]AIグラフを開く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4627,7 +4628,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で変更出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
+							<p><code type="SakuraScript">\![set,property,currentghost.shelllist(master).menu,hidden]オーナードローメニューのシェル(S)から、masterシェルを非表示にし手動で変更出来ないようにする。\![set,property,currentghost.shelllist(master).menu,]masterシェルを再度オーナードローメニューに表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4643,7 +4644,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在使用中のバルーンの、本体側の表示可能な幅(ピクセル数)、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth.initial,currentghost.balloon.scope(0).validheight.initial]</code></p>
+							<p><code type="SakuraScript">このスクリプトの再生後、SHIORIイベント「SSPからバルーン情報取得」が通知される。Reference0に現在使用中のバルーンの、本体側の表示可能な幅(ピクセル数)、Reference1にその高さが入っている。\![get,property,SSPからバルーン情報取得,currentghost.balloon.scope(0).validwidth.initial,currentghost.balloon.scope(0).validheight.initial]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4662,7 +4663,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト(このページ)を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
+							<p><code type="SakuraScript">\![execute,http-get,http://ssp.shillest.net/ukadoc/manual/list_sakura_script.html]ukadocのさくらスクリプトリスト(このページ)を取得し、varフォルダにlist_sakura_script.htmlを保存する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4677,7 +4678,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,p=SSP 伺か]YAHOOでの「SSP 伺か」の検索結果ページを、そのまま保存する。</code></p>
+							<p><code type="SakuraScript">\![execute,http-get,http://search.yahoo.co.jp/search,p=SSP 伺か]YAHOOでの「SSP 伺か」の検索結果ページを、そのまま保存する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4692,7 +4693,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
+							<p><code type="SakuraScript">\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4707,7 +4708,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[実行したゴーストのフォルダ]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
+							<p><code type="SakuraScript">\![execute,http-get,http://search.yahoo.co.jp/search,--async=伺か検索,--file=検索結果ファイル.txt,--nodescript,--param=p=SSP 伺か,--timeout=5]YAHOOでの「SSP 伺か」の検索結果ページを、[実行したゴーストのフォルダ]/ghost/master/var/検索結果ファイル.txtに保存する。実行時、オンラインマーカーやダウンロード状況を出さない。5秒応答がなければタイムアウトする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4722,7 +4723,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
+							<p><code type="SakuraScript">\![execute,http-post,http://jbbs.shitaraba.net/bbs/read.cgi/computer/44300/1432574039/,--async=書き込みテスト,--param=BBS=44300&amp;KEY=1432574039&amp;DIR=computer&amp;MESSAGE=テストメッセージ]ゴースト回覧板３ｒｄの、テストスレに「テストメッセージ」と本文に入れて送信する。5秒応答がなければタイムアウトする。※したらば掲示板がスパム対策を強化したため現在書き込み不可。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4785,7 +4786,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,extractarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+							<p><code type="SakuraScript">\![execute,extractarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4803,7 +4804,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
+							<p><code type="SakuraScript">\![execute,compressarchive,C:/SSP/ghost/test.zip,C:/SSP/ghost/emily4]Cドライブ直下にSSPがインストールされている場合、Emily/Phase4.5のフォルダをtest.zipに圧縮してghostフォルダに置く。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4838,7 +4839,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,install,path,C:/SSP/emily4.nar]C:/SSPにあるemily4.narをインストールする。</code></p>
+							<p><code type="SakuraScript">\![execute,install,path,C:/SSP/emily4.nar]C:/SSPにあるemily4.narをインストールする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4857,7 +4858,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]Emily/Phase4.5のnarをダウンロードしてきてインストールする。</code></p>
+							<p><code type="SakuraScript">\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]Emily/Phase4.5のnarをダウンロードしてきてインストールする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4883,7 +4884,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,ping,--host=ssp.shillest.net,--event=pingテスト]ばぐとら研究所にデフォルト設定でpingを打つ。</code></p>
+							<p><code type="SakuraScript">\![execute,ping,--host=ssp.shillest.net,--event=pingテスト]ばぐとら研究所にデフォルト設定でpingを打つ。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4903,7 +4904,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![execute,nslookup,--host=ssp.shillest.net,--event=nslookupテスト]ばぐとら研究所のホスト名指定でIPを調べる。調べた内容は成功時に通知されるOnNSLookupCompleteのReference3に入っている。</code></p>
+							<p><code type="SakuraScript">\![execute,nslookup,--host=ssp.shillest.net,--event=nslookupテスト]ばぐとら研究所のホスト名指定でIPを調べる。調べた内容は成功時に通知されるOnNSLookupCompleteのReference3に入っている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4948,7 +4949,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>さくらスクリプトの再生後、パッシブモードになる。\![enter,passivemode]ここから、最小化も終了も出来ない。</code></p>
+							<p><code type="SakuraScript">さくらスクリプトの再生後、パッシブモードになる。\![enter,passivemode]ここから、最小化も終了も出来ない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4965,7 +4966,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![leave,passivemode]パッシブモード解除。</code></p>
+							<p><code type="SakuraScript">\![leave,passivemode]パッシブモード解除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4982,7 +4983,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,inductionmode]インダクションモード開始。</code></p>
+							<p><code type="SakuraScript">\![enter,inductionmode]インダクションモード開始。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4998,7 +4999,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![leave,inductionmode]インダクションモード解除。</code></p>
+							<p><code type="SakuraScript">\![leave,inductionmode]インダクションモード解除。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5015,7 +5016,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,selectmode,rect,head]セレクトモードを開始する。判定名headの範囲が初期選択されている。</code></p>
+							<p><code type="SakuraScript">\![enter,selectmode,rect,head]セレクトモードを開始する。判定名headの範囲が初期選択されている。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5030,7 +5031,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![leave,selectmode]セレクトモードを解除する。</code></p>
+							<p><code type="SakuraScript">\![leave,selectmode]セレクトモードを解除する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5046,7 +5047,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,collisionmode]コリジョンモードを開始する。</code></p>
+							<p><code type="SakuraScript">\![enter,collisionmode]コリジョンモードを開始する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5061,7 +5062,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![enter,collisionmode]コリジョンモードを開始する。\![leave,collisionmode]ここで解除する。</code></p>
+							<p><code type="SakuraScript">\![enter,collisionmode]コリジョンモードを開始する。\![leave,collisionmode]ここで解除する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5077,7 +5078,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reloadsurface]シェルをリロードする。</code></p>
+							<p><code type="SakuraScript">\![reloadsurface]シェルをリロードする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5092,7 +5093,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,descript]全descript.txtをリロードする。</code></p>
+							<p><code type="SakuraScript">\![reload,descript]全descript.txtをリロードする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5107,7 +5108,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,descript,shell balloon]シェルとバルーンのdescript.txtをリロードする。</code></p>
+							<p><code type="SakuraScript">\![reload,descript,shell balloon]シェルとバルーンのdescript.txtをリロードする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5122,7 +5123,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,shiori]shioriをリロードする。結果として辞書ファイルを全て読みなおす。起動中に書き換えた辞書ファイルの内容を適用する場合などに用いる。</code></p>
+							<p><code type="SakuraScript">\![reload,shiori]shioriをリロードする。結果として辞書ファイルを全て読みなおす。起動中に書き換えた辞書ファイルの内容を適用する場合などに用いる。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5137,7 +5138,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,makoto]makotoをリロードする。</code></p>
+							<p><code type="SakuraScript">\![reload,makoto]makotoをリロードする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5152,7 +5153,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,shell]シェルをリロードする。</code></p>
+							<p><code type="SakuraScript">\![reload,shell]シェルをリロードする。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5167,7 +5168,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\![reload,ghost]リロードする。自分自身へのゴースト切り替えと、SHIORIイベントが発生しないことを除けばほぼ同じ。</code></p>
+							<p><code type="SakuraScript">\![reload,ghost]リロードする。自分自身へのゴースト切り替えと、SHIORIイベントが発生しないことを除けばほぼ同じ。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5240,7 +5241,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_u[0x22EE]縦三点リーダを表示。\_u[8942]最初のさくらスクリプトの10進数表記。10進数の場合は0xをつけない。</code></p>
+							<p><code type="SakuraScript">\_u[0x22EE]縦三点リーダを表示。\_u[8942]最初のさくらスクリプトの10進数表記。10進数の場合は0xをつけない。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5257,7 +5258,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\_m[0x41]半角大文字Aを表示。</code></p>
+							<p><code type="SakuraScript">\_m[0x41]半角大文字Aを表示。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5274,7 +5275,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>\&amp;[amp]半角アンパサンドを表示。実体参照の書式、&amp;ID;のID部分を記入する。</code></p>
+							<p><code type="SakuraScript">\&amp;[amp]半角アンパサンドを表示。実体参照の書式、&amp;ID;のID部分を記入する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5290,7 +5291,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>SSTP経由でこのスクリプトを再生すると、再生したゴーストが終了する。\m[WM_CLOSE,0,0]</code></p>
+							<p><code type="SakuraScript">SSTP経由でこのスクリプトを再生すると、再生したゴーストが終了する。\m[WM_CLOSE,0,0]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5416,7 +5417,7 @@
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>%username、ちょっと聞いてよ。%msが%mpにある%mhで%meを食べてたら%mtを思いついたんだって。</code></p>
+							<p><code type="SakuraScript">%username、ちょっと聞いてよ。%msが%mpにある%mhで%meを食べてたら%mtを思いついたんだって。</code></p>
 						</section>
 					</div>
 				</dd>
