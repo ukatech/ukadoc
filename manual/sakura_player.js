@@ -10,22 +10,27 @@ document.addEventListener('DOMContentLoaded', () =>
 	.then(m => (jsstp = m.jsstp).if_available(init_content)).catch(e => e)
 );
 async function init_content() {
-	// 遍历所有的code class，要求type="SakuraScript"
+	// 获取所有的SakuraScript代码
+	const sakuraScriptCodes = document.querySelectorAll("code[type='SakuraScript']");
 	// 为其增加一个按钮，点击后执行SakuraScript
-	for (const code of document.querySelectorAll("code[type='SakuraScript']")) {
-		const button = document.createElement("button");
-		button.textContent = "执行";
-		button.addEventListener("click", () => {
-			const script = code.textContent;
-			jsstp.SEND({
-				"Event": "OnUkaDocScriptExample",
-				'Reference0': script,
-				"Script": script,
-				"Option": "notranslate"
-			});
-		});
-		// 为按钮添加悬浮提示
-		button.title = "执行SakuraScript";
+	sakuraScriptCodes.forEach(code => {
+		const button = createExecutionButton(code.textContent);
 		code.parentElement.insertBefore(button, code);
-	}
+	});
+}
+
+function createExecutionButton(script) {
+	const button = document.createElement("button");
+	button.textContent = "执行";
+	// 为按钮添加悬浮提示
+	button.title = "执行SakuraScript";
+	button.addEventListener("click", () => {
+		jsstp.SEND({
+			Event: "OnUkaDocScriptExample",
+			Reference0: script,
+			Script: script,
+			Option: "notranslate"
+		});
+	});
+	return button;
 }
