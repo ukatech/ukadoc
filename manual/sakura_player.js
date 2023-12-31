@@ -7,7 +7,7 @@ var jsstp;
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', () =>
 	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.0.0.1/dist/jsstp.mjs")
-	.then(m => (jsstp = m.jsstp).if_available(init_content)).catch(e => e)
+		.then(m => (jsstp = m.jsstp).if_available(init_content).then(reload_button)).catch(e => e)
 );
 async function init_content() {
 	// 获取所有的SakuraScript代码
@@ -17,7 +17,7 @@ async function init_content() {
 		const button = createExecutionButton(code.textContent);
 		const parent = code.parentElement.parentElement;
 		// 若父元素的子元素除了h1外只有一个元素，那么将按钮插入到h1后面
-		if (parent.children.length === 2) {
+		if (parent.children.length == 2) {
 			parent.insertBefore(button, parent.children[1]);
 			//取消h1的换行
 			parent.children[0].style.display = "inline";
@@ -42,4 +42,26 @@ function createExecutionButton(script) {
 		});
 	});
 	return button;
+}
+
+function reload_button() {
+	const list = document.getElementById("ghost_list_content");
+	//重新加载列表
+	jsstp.get_fmo_infos().then(async fmo => {
+		//备份当前选项（如果有的话）
+		let selected = list.value;
+		//清空列表
+		list.options.length = 0;
+		if (!fmo.available)
+			throw new Error("get_fmo_infos failed");
+		fmo.forEach((info, uuid) => list.options.add(new Option(info.name, uuid)));
+		//根据备份的选项重新选中（如果还在列表中的话）
+		if (fmo[selected])
+			list.value = selected;
+		else
+			selected = list.value = list.options[0].value;
+		jsstp = jsstp.by_fmo_info(fmo[selected]);
+	}).catch(e => {
+		console.error(e);
+	});
 }
