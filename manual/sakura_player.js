@@ -4,12 +4,15 @@
 /** @type {typeof import("jsstp").jsstp} */
 var jsstp;
 
+var selectedGhost;
+
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', () =>
 	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.0.0.1/dist/jsstp.mjs")
-	.then(m => (jsstp = m.jsstp).if_available(init_content)).catch(e => e)
+	.then(m => (jsstp = m.jsstp).if_available(init_content).then(reload_button)).catch(e => e)
 );
 async function init_content() {
+	document.getElementById("TargetGhost").style.display = "block";
 	// 获取所有的SakuraScript代码
 	const sakuraScriptCodes = document.querySelectorAll("code[type='SakuraScript']");
 	// 为其增加一个按钮，点击后执行SakuraScript
@@ -38,8 +41,35 @@ function createExecutionButton(script) {
 			Event: "OnUkadocScriptExample",
 			Reference0: script,
 			Script: script,
-			Option: "notranslate"
+			Option: "notranslate",
+			ReceiverGhostName: selectedGhost
 		});
 	});
 	return button;
+}
+
+function reload_button() {
+	const list = document.getElementById("ghost_list_content");
+	//重新加载列表
+	jsstp.get_fmo_infos().then(async fmo => {
+		//备份当前选项（如果有的话）
+		let selected = list.value;
+		//清空列表
+		list.options.length = 0;
+		if (!fmo.available)
+			throw new Error("get_fmo_infos failed");
+		fmo.forEach((info, uuid) => list.options.add(new Option(info.name, uuid)));
+		//根据备份的选项重新选中（如果还在列表中的话）
+		if (fmo[selected]) {
+			list.value = selected;
+			selectedGhost = fmo[selected].name;
+		}
+		else {
+			selected = list.value = list.options[0].value;
+			console.log(list.options[0].innerText);
+			selectedGhost = list.options[0].innerText;
+		}
+	}).catch(e => {
+		console.error(e);
+	});
 }

@@ -133,6 +133,21 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>さくらスクリプト</h1>
+		<section class="navigation-category" id="TargetGhost" style="display: none;">
+			<h1>Target Ghost</h1>
+			<!-- 一个列表用于?示和??ghost -->
+			<div id="ghost_select">
+				<p>Please select a target ghost for example scripts:</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- reloadボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">Reload</button>
+			</div>
+			<div id="supported_text_event_Has_Event_reminder">
+				<p>Some tags are considered dangerous, and will not run unless your ghost supports the following event:</p>
+				<a href="./list_shiori_event_ex.html#OnUkadocScriptExample">OnUkadocScriptExample</a>
+				<p>When using this event, please take care to escape dangerous tags yourself.</p>
+			</div>
+		</section>
 		<section class="navigation-category">
 			<h1>さくらスクリプトの仕様</h1>
 			<ul>
