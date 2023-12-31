@@ -496,7 +496,7 @@ Command: GetName
 					<dt>GetName</dt>
 					<dd>起動中のゴーストの (\0名),(\1名) カンマ区切り</dd>
 					
-					<dt>GetNames [SSP] [リモート不可]</dt>
+					<dt>GetNames [SSP]</dt>
 					<dd>現在インストールされている\0名のリスト。改行区切り。空行で終端。</dd>
 					
 					<dt>GetFMO [SSP 2.5.57] [リモート制限あり]</dt>
@@ -517,6 +517,25 @@ Command: GetName
 					
 					<dt>GetVersion</dt>
 					<dd>ベースウェア(実行中のソフト)のバージョン</dd>
+					
+					<dt>GetGhostNameList [SSP 2.6.53]</dt>
+					<dd>SSPで認識している全ゴーストの名前(descript.txtのname)の改行区切りリスト</dd>
+					
+					<dt>GetShellNameList [SSP 2.6.53]</dt>
+					<dd>起動中のゴーストで認識している全シェルの名前(descript.txtのname)の改行区切りリスト</dd>
+					
+					<dt>GetBalloonNameList [SSP 2.6.53]</dt>
+					<dd>SSPで認識している全バルーンの名前(descript.txtのname)の改行区切りリスト</dd>
+					
+					<dt>GetHeadlineNameList [SSP 2.6.53]</dt>
+					<dd>SSPで認識している全ヘッドラインの名前(descript.txtのname)の改行区切りリスト</dd>
+					
+					<dt>GetPluginNameList [SSP 2.6.53]</dt>
+					<dd>SSPで認識している全プラグインの名前(descript.txtのname)の改行区切りリスト</dd>
+					
+					<dt>GetShortVersion [SSP 2.6.53]</dt>
+					<dd>ベースウェア(実行中のソフト)のバージョン(ピリオド区切りのバージョン番号のみ)<br />
+					<a href="https://ssp.shillest.net/archive/version.json">version.json</a>のssp.full.versionなどと単純比較すると最新版かどうかチェックできる</dd>
 					
 					<dt>Quiet [リモート不可]</dt>
 					<dd>Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)</dd>
