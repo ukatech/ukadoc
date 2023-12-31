@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () =>
 	.then(m => (jsstp = m.jsstp).if_available(init_content).then(reload_button)).catch(e => e)
 );
 async function init_content() {
-	document.getElementById("TargetGhost").style.display = "block";
 	// 获取所有的SakuraScript代码
 	const sakuraScriptCodes = document.querySelectorAll("code[type='SakuraScript']");
 	// 为其增加一个按钮，点击后执行SakuraScript
