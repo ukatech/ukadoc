@@ -4,8 +4,6 @@
 /** @type {typeof import("jsstp").jsstp} */
 var jsstp;
 
-var selectedGhost;
-
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', () =>
 	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.0.0.1/dist/jsstp.mjs")
@@ -40,8 +38,7 @@ function createExecutionButton(script) {
 			Event: "OnUkadocScriptExample",
 			Reference0: script,
 			Script: script,
-			Option: "notranslate",
-			ReceiverGhostName: selectedGhost
+			Option: "notranslate"
 		});
 	});
 	return button;
@@ -59,15 +56,13 @@ function reload_button() {
 			throw new Error("get_fmo_infos failed");
 		fmo.forEach((info, uuid) => list.options.add(new Option(info.name, uuid)));
 		//根据备份的选项重新选中（如果还在列表中的话）
-		if (fmo[selected]) {
+		if (fmo[selected])
 			list.value = selected;
-			selectedGhost = fmo[selected].name;
-		}
 		else {
 			selected = list.value = list.options[0].value;
 			console.log(list.options[0].innerText);
-			selectedGhost = list.options[0].innerText;
 		}
+		jsstp = jsstp.by_fmo_info(fmo[selected]);
 	}).catch(e => {
 		console.error(e);
 	});
