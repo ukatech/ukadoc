@@ -6,7 +6,7 @@ var jsstp;
 
 //页面加载完成后，检查ghost可用性
 document.addEventListener('DOMContentLoaded', () =>
-	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.0.0.1/dist/jsstp.mjs")
+	import("https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.1.0.0/dist/jsstp.mjs")
 		.then(m => (jsstp = m.jsstp).if_available(init_content).then(reload_button)).catch(e => e)
 );
 async function init_content() {
