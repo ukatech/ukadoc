@@ -1314,9 +1314,11 @@
 						<dt>--option=fixed</dt>
 						<dd>スクロールした時に画像を動かさない。</dd>
 						<dt>--option=background</dt>
-						<dd>文字の下に画像を表示する。このオプションで、文字の背景として画像を使用することができる。</dd>
+						<dd>文字の下に画像を表示する。このオプションで、文字の背景として画像を使用することができる。
+						<br />画像よりもバルーンの透明度を優先して合成表示される。</dd>
 						<dt>--option=foreground</dt>
-						<dd>画像を前面に表示する。</dd>
+						<dd>画像を前面に表示する。
+						<br />バルーンよりも画像の透明度を優先して合成表示される。[SSP 2.6.54～]</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1371,6 +1373,10 @@
 						<dd>アルファチャンネル付きのPNGを透過して表示する。</dd>
 						<dt>--clipping=左 上 右 下</dt>
 						<dd>画像の一部分を矩形に切り抜いて表示する。<br>切り抜く範囲は左上右下と数値で指定。</dd>
+						<dt>--option=background</dt>
+						<dd>画像よりもバルーンの透明度を優先して合成表示される。[未指定時の標準仕様]</dd>
+						<dt>--option=foreground</dt>
+						<dd>バルーンよりも画像の透明度を優先して合成表示される。[SSP 2.6.54～]</dd>
 					</dl>
 					<div class="legend">
 						<section class="code">
