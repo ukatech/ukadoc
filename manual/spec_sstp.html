@@ -8,6 +8,7 @@
 <title>UKADOC Project SSTP/1.x</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="https://cdn.jsdelivr.net/gh/ukatech/jsstp-lib@v3.1.0.0/dist/jsstp.min.js"></script>
 </head>
 <body>
 	<h1 id="page-title">SSTP/1.x</h1>
@@ -222,6 +223,22 @@
 
 			<section class="caption">
 				<h1>requestサンプル</h1>
+				<button id="runButton" style="display: none;">実行</button>
+
+				<script>
+				document.getElementById("runButton").addEventListener("click", function() {
+					jsstp.SEND({
+						Charset: "UTF-8",
+						Sender: "SSTPクライアント",
+						Script: "\\h\\s0テストー。\\u\\s[10]テストやな。",
+						Option: "notranslate"
+					})
+				});
+				document.addEventListener("DOMContentLoaded", async () => {
+					if(await jsstp.available())
+						document.getElementById("runButton").style.display = "inline";
+				});
+				</script>
 <pre><!--
 -->SEND SSTP/1.0
 Charset: UTF-8
@@ -495,9 +512,33 @@ Command: GetName
 				<dl>
 					<dt>GetName</dt>
 					<dd>起動中のゴーストの (\0名),(\1名) カンマ区切り</dd>
-					
+					<textarea type="text" id="GetNameResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetNameResultTextBox").style.display = "block";
+								document.getElementById("GetNameResultTextBox").value = (await jsstp.GetName()).text_content;
+							} else {
+								document.getElementById("GetNameResultTextBox").style.display = "none";
+							}
+						});
+					</script>
+
 					<dt>GetNames [SSP]</dt>
 					<dd>現在インストールされている\0名のリスト。改行区切り。空行で終端。</dd>
+					<textarea type="text" id="GetNamesResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetNamesResultTextBox").style.display = "block";
+								document.getElementById("GetNamesResultTextBox").value = (await jsstp.GetNames()).text_content;
+							} else {
+								document.getElementById("GetNamesResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetFMO [SSP 2.5.57] [リモート制限あり]</dt>
 					<dd><a href="spec_fmo_mutex.html">FMO</a>の中身と同等の情報を取得する。
@@ -505,37 +546,178 @@ Command: GetName
 					<br />主にウインドウを持たずDirect SSTPを送信できないコンソールアプリなどで、Socket SSTPのみでReceiverGhostHWndヘッダを活用しDirect SSTP相当の機能を実現するために用いられる。
 					<br />改行区切り、空行で終端。
 					<br />リモートからの要求の場合は、各パス情報が抜け、ヘッダとhwndがダミーに置き換わる。</dd>
+					<textarea type="text" id="GetFMOResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetFMOResultTextBox").style.display = "block";
+								document.getElementById("GetFMOResultTextBox").value = (await jsstp.GetFMO()).text_content;
+							} else {
+								document.getElementById("GetFMOResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetGhostName [SSP]</dt>
 					<dd>起動中のゴースト本体の名前(descript.txtのname)</dd>
+					<textarea type="text" id="GetGhostNameResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetGhostNameResultTextBox").style.display = "block";
+								document.getElementById("GetGhostNameResultTextBox").value = (await jsstp.GetGhostName()).text_content;
+							} else {
+								document.getElementById("GetGhostNameResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetShellName [SSP]</dt>
 					<dd>起動中のゴーストの現在使用中のシェルの名前</dd>
+					<textarea type="text" id="GetShellNameResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetShellNameResultTextBox").style.display = "block";
+								document.getElementById("GetShellNameResultTextBox").value = (await jsstp.GetShellName()).text_content;
+							} else {
+								document.getElementById("GetShellNameResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetBalloonName [SSP]</dt>
 					<dd>起動中のゴーストの現在使用中のバルーンの名前</dd>
+					<textarea type="text" id="GetBalloonNameResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetBalloonNameResultTextBox").style.display = "block";
+								document.getElementById("GetBalloonNameResultTextBox").value = (await jsstp.GetBalloonName()).text_content;
+							} else {
+								document.getElementById("GetBalloonNameResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetVersion</dt>
 					<dd>ベースウェア(実行中のソフト)のバージョン</dd>
+					<textarea type="text" id="GetVersionResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetVersionResultTextBox").style.display = "block";
+								document.getElementById("GetVersionResultTextBox").value = (await jsstp.GetVersion()).text_content;
+							} else {
+								document.getElementById("GetVersionResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetGhostNameList [SSP 2.6.53]</dt>
 					<dd>SSPで認識している全ゴーストの名前(descript.txtのname)の改行区切りリスト</dd>
+					<textarea type="text" id="GetGhostNameListResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetGhostNameListResultTextBox").style.display = "block";
+								document.getElementById("GetGhostNameListResultTextBox").value = (await jsstp.GetGhostNameList()).text_content;
+							} else {
+								document.getElementById("GetGhostNameListResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetShellNameList [SSP 2.6.53]</dt>
 					<dd>起動中のゴーストで認識している全シェルの名前(descript.txtのname)の改行区切りリスト</dd>
+					<textarea type="text" id="GetShellNameListResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetShellNameListResultTextBox").style.display = "block";
+								document.getElementById("GetShellNameListResultTextBox").value = (await jsstp.GetShellNameList()).text_content;
+							} else {
+								document.getElementById("GetShellNameListResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetBalloonNameList [SSP 2.6.53]</dt>
 					<dd>SSPで認識している全バルーンの名前(descript.txtのname)の改行区切りリスト</dd>
+					<textarea type="text" id="GetBalloonNameListResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetBalloonNameListResultTextBox").style.display = "block";
+								document.getElementById("GetBalloonNameListResultTextBox").value = (await jsstp.GetBalloonNameList()).text_content;
+							} else {
+								document.getElementById("GetBalloonNameListResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetHeadlineNameList [SSP 2.6.53]</dt>
 					<dd>SSPで認識している全ヘッドラインの名前(descript.txtのname)の改行区切りリスト</dd>
+					<textarea type="text" id="GetHeadlineNameListResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetHeadlineNameListResultTextBox").style.display = "block";
+								document.getElementById("GetHeadlineNameListResultTextBox").value = (await jsstp.GetHeadlineNameList()).text_content;
+							} else {
+								document.getElementById("GetHeadlineNameListResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetPluginNameList [SSP 2.6.53]</dt>
 					<dd>SSPで認識している全プラグインの名前(descript.txtのname)の改行区切りリスト</dd>
+					<textarea type="text" id="GetPluginNameListResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetPluginNameListResultTextBox").style.display = "block";
+								document.getElementById("GetPluginNameListResultTextBox").value = (await jsstp.GetPluginNameList()).text_content;
+							} else {
+								document.getElementById("GetPluginNameListResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>GetShortVersion [SSP 2.6.53]</dt>
 					<dd>ベースウェア(実行中のソフト)のバージョン(ピリオド区切りのバージョン番号のみ)<br />
 					<a href="https://ssp.shillest.net/archive/version.json">version.json</a>のssp.full.versionなどと単純比較すると最新版かどうかチェックできる</dd>
+					<textarea type="text" id="GetShortVersionResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								const version = await jsstp.GetShortVersion();
+								document.getElementById("GetShortVersionResultTextBox").style.display = "block";
+								document.getElementById("GetShortVersionResultTextBox").value = version.text_content;
+								//创建一个流对象获取version.json
+								let reader = new FileReader();
+								reader.readAsText(await (await fetch("https://ssp.shillest.net/archive/version.json")).blob());
+								reader.onload = async () => {
+									const json = JSON.parse(reader.result);
+									const latestVersion = json["ssp.full.version"];
+									document.getElementById("GetShortVersionResultTextBox").style.color = (version == latestVersion) ? "green" : "red";
+								};
+							} else {
+								document.getElementById("GetShortVersionResultTextBox").style.display = "none";
+							}
+						});
+					</script>
 					
 					<dt>Quiet [リモート不可]</dt>
 					<dd>Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)</dd>
