@@ -705,14 +705,37 @@ Command: GetName
 								const version = await jsstp.GetShortVersion();
 								document.getElementById("GetShortVersionResultTextBox").style.display = "block";
 								document.getElementById("GetShortVersionResultTextBox").value = version.text_content;
-								//创建一个流对象获取version.json
-								let reader = new FileReader();
-								reader.readAsText(await (await fetch("https://ssp.shillest.net/archive/version.json")).blob());
-								reader.onload = async () => {
-									const json = JSON.parse(reader.result);
-									const latestVersion = json["ssp.full.version"];
-									document.getElementById("GetShortVersionResultTextBox").style.color = (version == latestVersion) ? "green" : "red";
-								};
+								//创建一个cors获取version.json
+								fetch("https://ssp.shillest.net/archive/version.json", {
+									method: 'GET',
+									mode: 'cors',
+								}).then(function (response) {
+									//if response.type is "cors", get the json file from response.body as ReadableStream
+									if (response.type === "cors") {
+										//ReadableStream init
+										const reader = response.body.getReader();
+										//buffer init
+										let buffer = "";
+										//ReadableStream read to data process
+										reader.read().then(function processText({ done, value }) {
+											//if ReadableStream is done
+											if (done) {
+												const json = JSON.parse(buffer);
+												const latestVersion = json["ssp.full.version"];
+												document.getElementById("GetShortVersionResultTextBox").style.color = (version == latestVersion) ? "green" : "red";
+												return;
+											}
+											//decode the ReadableStream to string
+											let text = new TextDecoder("utf-8").decode(value);
+											//log the text
+											console.log(text);
+											//append the text to buffer
+											buffer += text;
+											//read next
+											return reader.read().then(processText);
+										});
+									}
+								});
 							} else {
 								document.getElementById("GetShortVersionResultTextBox").style.display = "none";
 							}
