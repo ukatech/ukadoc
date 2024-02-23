@@ -231,7 +231,19 @@ Reference0: 1
 				<p>externalの場合は実行中マシンの外部からの通知なので、セキュリティ的に取り扱いに注意を要する。<br>
 				SenderTypeのinternal/externalとは別の概念であり、アプリケーション外から発生したイベントであっても、安全とみなして良いものはlocal判定となるので、SenderTypeがexternalでもSecurityLevelがlocalとなる場合がある。</p>
 				</dd>
-				
+
+				<dt class="entry">SecurityOrigin [SSP拡張]</dt>
+				<dd class="entry">
+				<p>送信元サーバを示すURL風の文字列。以下の形式となる。<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin">HTTPヘッダのOrigin</a>と考え方は同じ。
+				<br />SecurityOrigin: null
+				<br />SecurityOrigin: <scheme>://<hostname>
+				<br />SecurityOrigin: <scheme>://<hostname>:<port>
+				<br />scheme は通常、http,https,sstpのいずれか。hostnameは送信元サーバ名かIP。portは返信受付可能なポート。
+				<br />SSTPなどでヘッダが指定されていない、そもそも送信元の概念がないなど、情報なしの場合はnullとなる。
+				<br />SSTP仕様のSecurityOriginも参照すること。
+				</p>
+				</dd>				
+
 				<dt class="entry">Status [SSP拡張]</dt>
 				<dd class="entry">
 				<p>ゴーストの実行状態。下記の通り。複数ある場合はカンマでつなげたもの。</p>
