@@ -259,7 +259,8 @@ Option: notranslate
 					
 					<dt>SecurityLevel</dt>
 					<dd>SHIORIやSakuraScriptで処理する際のセキュリティレベルの指定。local/externalのいずれか。
-					<br />DirectSSTP、または127.0.0.1等明らかにローカルから来たリクエストのみ有効。</dd>
+					<br />DirectSSTP、または127.0.0.1等明らかにローカルから来たリクエストのみ有効。
+					<br />SSTP over HTTPは、localhostから配信されたhtml等から送られた場合を除き、常にexternalとみなされる。</dd>
 					
 					<dt>SecurityOrigin [SSP 2.6.59]</dt>
 					<dd>送信元サーバを示すURL風の文字列。以下の形式となる。<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Origin">HTTPヘッダのOrigin</a>と考え方は同じ。
@@ -268,7 +269,7 @@ Option: notranslate
 					<br />SecurityOrigin: &lt;scheme&gt;://&lt;hostname&gt;:&lt;port&gt;
 					<br />scheme は通常、http,https,sstpのいずれか。hostnameは送信元サーバ名かIP。portは返信受付可能なポート。
 					<br />特に指定がない場合は、nullが指定されたものとみなされる。
-					<br />SSTP over HTTPで、SSTP内にこのヘッダがなければ、HTTPのOriginヘッダの中身が指定されたものとみなされる。
+					<br />SSTP over HTTPは、HTTPのOriginヘッダの中身が常に設定され、SSTPの中のSecurityOriginは無視される。
 					</dd>
 
 					<dt>Option</dt>
