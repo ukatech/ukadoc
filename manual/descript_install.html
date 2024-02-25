@@ -338,22 +338,13 @@ type,package
 					</ul>
 				</dd>
 			</dl>
-			<dl id="balloon.directory,ディレクトリ名">
-				<dt class="entry">balloon.directory,ディレクトリ名</dt>
-				<dd class="entry">
-					<p>同時インストールするバルーンのインストール後のディレクトリ名。半角英数推奨。<br /><a href="#type,種別">type</a>が<em>ghost</em>の場合にのみ設定可能。</p>
-					<p class="default">挙動なし</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
 			<dl id="*.directory,ディレクトリ名">
 				<dt class="entry">*.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p>同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。</p>
+					<p>同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。
+					<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。
+					<br />複数の同じ種類のものをインストールしたい時は、*部分を balloon0,balloon1,...のように、種類の後ろに数字をつけて複数書けば良い。
+					<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -363,7 +354,8 @@ type,package
 			<dl id="*.source.directory,ディレクトリ名">
 				<dt class="entry">*.source.directory,ディレクトリ名</dt>
 				<dd class="entry">
-					<p>同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
+					<p>同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。
+					<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
 					<p class="default">*.directoryで設定したディレクトリ名</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -373,7 +365,7 @@ type,package
 			<dl id="*.refresh,数値">
 				<dt class="entry">*.refresh,数値</dt>
 				<dd class="entry">
-					<p>同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
+					<p>同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。</p>
 					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -383,7 +375,7 @@ type,package
 			<dl id="*.refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">*.refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p>同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。</p>
+					<p>同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
