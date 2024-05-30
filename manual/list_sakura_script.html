@@ -233,6 +233,7 @@
 				<li><a href="#_!_set,autoscroll,enable_">\![set,autoscroll,enable]</a></li>
 				<li><a href="#_!_set,balloonoffset,x,y_">\![set,balloonoffset,x,y]</a></li>
 				<li><a href="#_!_set,balloonalign,ID_">\![set,balloonalign,ID]</a></li>
+				<li><a href="#_!_set,balloonmarker,マーカー表示文字列_">\![set,balloonmarker,マーカー表示文字列]</a></li>
 				<li><a href="#_!_set,balloonnum,ファイル名,現在の数,最大数_">\![set,balloonnum,ファイル名,現在の数,最大数]</a></li>
 				<li><a href="#_!_set,balloontimeout,時間_">\![set,balloontimeout,時間]</a></li>
 				<li><a href="#_!_set,balloonwait,倍率_">\![set,balloonwait,倍率]</a></li>
@@ -1661,11 +1662,21 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_set,balloonmarker,マーカー表示文字列_">
+				<dt class="entry">\![set,balloonmarker,マーカー表示文字列]</dt>
+				<dd class="entry">
+					<p>SSTP受信時に表示するマーカー文字列を表示する。<br>表示先は現在のスコープが所属するバルーン。<br>表示文字列は省略可。消去する場合は引数を省略するか空欄にする。</p>
+					<p>ゴースト終了か、SSTP受信など本来この部分を使う機能が発動するまで有効。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.67</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_set,balloonnum,ファイル名,現在の数,最大数_">
 				<dt class="entry">\![set,balloonnum,ファイル名,現在の数,最大数]</dt>
 				<dd class="entry">
-					<p>ファイル受信時に表示されるデータ書式を表示する。現在の数、最大数は半角数値のみ。どのスコープで実行しても、\0バルーンにのみ表示される。<br>各引数は省略可。消去する場合は全引数を空欄にする。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>ファイル受信時に表示されるデータ書式を表示する。<br>表示先は現在のスコープが所属するバルーン。<br>各引数は省略可。消去する場合は全引数を省略するか空欄にする。<br>2.6.67より\1側バルーン以降にも出せるようになった。</p>
+					<p>ゴースト終了か、ネットワーク更新など本来この部分を使う機能が発動するまで有効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
