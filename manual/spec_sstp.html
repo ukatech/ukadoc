@@ -424,6 +424,10 @@ Script: \0\s[3]巨人っていっても、身長は列車数両分しかない�
 					<br />IfGhostの直後ではないScriptヘッダが存在した場合は、IfGhostに該当しない場合のデフォルト処理用Scriptとなる。
 					<br />省略した場合はどのゴーストに対しても同じScriptヘッダが再生される。
 					<br />SSTPのゴースト起動オプションを有効にしていた場合は、ここで指定したゴーストが一時的に起動される。</dd>
+					<dt>Option</dt>
+					<dd>SSTPで実行されるSakuraScriptや指定されたイベントがどのように扱われるかのオプションを指定する。
+					<br />カンマ区切りで複数指定可能。指定する文字列のうち、NOTIFY特有分は以下の通り。
+					<br />notify : イベントを強制的にNOTIFYで送る。また、保険用スクリプトは<a href="spec_shiori3.html#request">ValueNotifyヘッダで返された場合</a>と同じように強制的に扱われる。 [SSP 2.6.76]</dd>
 				</dl>
 				<h1>response固有ヘッダ</h1>
 				<dl>
@@ -437,6 +441,15 @@ Script: \0\s[3]巨人っていっても、身長は列車数両分しかない�
 		<section class="category" id="method_send">
 			<h1>メソッド：SEND</h1>
 			<p>(執筆中)</p>
+			<section class="caption">
+				<h1>request固有ヘッダ</h1>
+				<dl>
+					<dt>Option</dt>
+					<dd>SSTPで実行されるSakuraScriptがどのように扱われるかのオプションを指定する。
+					<br />カンマ区切りで複数指定可能。指定する文字列のうち、SEND特有分は以下の通り。
+					<br />notify : スクリプトが<a href="spec_shiori3.html#request">ValueNotifyヘッダで返された場合</a>と同じように強制的に扱われる。 [SSP 2.6.76]</dd>
+				</dl>
+			</section>
 		</section>
 
 
