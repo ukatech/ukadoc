@@ -160,6 +160,7 @@
 			<ul>
 				<li><a href="#_0もしくは_h">\0もしくは\h</a></li>
 				<li><a href="#_1もしくは_u">\1もしくは\u</a></li>
+				<li><a href="#_pID番号">\pID番号</a></li>
 				<li><a href="#_p_ID番号_">\p[ID番号]</a></li>
 			</ul>
 		</section>
@@ -211,6 +212,7 @@
 		<section class="navigation-category">
 			<h1>バルーン、テキストコマンド</h1>
 			<ul>
+				<li><a href="#_bID番号">\bID番号</a></li>
 				<li><a href="#_b_ID番号_">\b[ID番号]</a></li>
 				<li><a href="#__b_ファイル名,x,y_">\_b[ファイルパス,x,y]</a></li>
 				<li><a href="#__b_ファイル名,x,y,opaque_">\_b[ファイルパス,x,y,opaque]</a></li>
@@ -609,6 +611,24 @@
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
 					</ul>
+				</dd>
+			</dl>
+			<dl id="_pID番号">
+				<dt class="entry">\pID番号</dt>
+				<dd class="entry">
+					<p>ID番号のスコープを表示する。
+					<br>この場合0～9のみ使用可能。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\0本体側が喋る。\1相方側が喋る。\p23人めが喋る。\p34人めが喋る。デフォルトのスコープは本体側になっている。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_p_ID番号_">
@@ -1262,6 +1282,26 @@
 		</section>
 		<section class="category">
 			<h1>バルーン、テキストコマンド</h1>
+			<dl id="_bID番号">
+				<dt class="entry">\bID番号</dt>
+				<dd class="entry">
+					<p>現スコープ側のバルーンをID番号のバルーンに変更する。
+					<br>この場合0～9のみ使用可能。
+					<br>奇数はキャラクターの右側に表示するためのバルーンのために予約されているため、使えるIDは0または偶数のみ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\b2本体側のトークをバルーン2番に表示する。バルーンによって実装状況は異なり、バルーン2番が存在しない場合もある。SSP同梱バルーン「SSPデフォルト+」では、本体側バルーン2番は表示文字数の多い大きなバルーンとなるが、サイズの決まりはないため、これを使う際は推奨バルーンを指定する・専用バルーンを同梱するなどが必要。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
 			<dl id="_b_ID番号_">
 				<dt class="entry">\b[ID番号]</dt>
 				<dd class="entry">
