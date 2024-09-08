@@ -346,7 +346,7 @@ Value: \1\s[10]\0\s[0]\e
 				<dt class="entry">ValueNotify [SSP拡張 2.5.35]</dt>
 				<dd class="entry"><p><em>[実験的機能]</em>
 				<br />リクエストメソッドがNOTIFYの場合でもSakuraScriptを実行するための拡張機能。
-				<br />このヘッダでSakuraScriptを返すと、即時実行される。
+				<br />このヘッダでSakuraScriptを返すと、即時実行される。GETの場合はValueヘッダのスクリプトを実行する前に実行される。
 				<br />実行できるタグは極めて限られ、他のタグやその他文字列は全て無視される。
 				<br /><del>メソッドがNOTIFYでない時や、Valueヘッダがすでにある時は無視される。</del> 2.6.76で制限廃止
 				<br />現在実行できるタグは以下の通り：</p>
@@ -354,14 +354,16 @@ Value: \1\s[10]\0\s[0]\e
 				<li>\![sound]</li>
 				<li>\![set,trayicon]</li>
 				<li>\![set,trayballoon]</li>
-				<li>\![raise] (notifyと同じ動作になる)</li>
-				<li>\![raiseother] (notifyと同じ動作になる)</li>
-				<li>\![raiseplugin] (notifyと同じ動作になる)</li>
-				<li>\![timerraiseother] (notify扱いのイベントになる)</li>
-				<li>\![timerraiseplugin] (notify扱いのイベントになる)</li>
+				<li>\![raise]</li>
+				<li>\![raiseother]</li>
+				<li>\![raiseplugin]</li>
+				<li>\![timerraiseother]</li>
+				<li>\![timerraiseplugin]</li>
 				<li>\![notify]</li>
 				<li>\![notifyother]</li>
 				<li>\![notifyplugin]</li>
+				<li>\![get,property] ＋2.6.82</li>
+				<li>\![set,property] ＋2.6.82</li>
 				</ul>
 				</dd>
 
