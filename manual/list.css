@@ -449,3 +449,18 @@ a:hover {
 .category table {
 	margin: 0 auto;
 }
+
+
+
+.category.ghost {
+	border-color: #966;
+}
+.category.ghost > h1 {
+	background-color: #966;
+}
+.category.plugin {
+	border-color: #696;
+}
+.category.plugin > h1 {
+	background-color: #696;
+}
