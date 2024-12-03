@@ -458,6 +458,20 @@
 				<li><a href="#OnUkadocScriptExample">OnUkadocScriptExample</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category">
+			<h1>アプリ「Elin」</h1>
+			<ul>
+				<li><a href="#OnElinAllyCondition">OnElinAllyCondition</a></li>
+				<li><a href="#OnElinAllyDead">OnElinAllyDead</a></li>
+				<li><a href="#OnElinCatchFish">OnElinCatchFish</a></li>
+				<li><a href="#OnElinMapCharaGenerate">OnElinMapCharaGenerate</a></li>
+				<li><a href="#OnElinMapEnter">OnElinMapEnter</a></li>
+				<li><a href="#OnElinMapItemGenerate">OnElinMapGenerate</a></li>
+				<li><a href="#OnElinPCCondition">OnElinPCCondition</a></li>
+				<li><a href="#OnElinPCDead">OnElinPCDead</a></li>
+				<li><a href="#OnElinTarget">OnElinTarget</a></li>
+			</ul>
+		</section>
 	</section>
 	<div class="categories">
 		<section class="caption">
@@ -3570,6 +3584,151 @@
 				</dd>
 			</dl>
 		</section>
+		<section class="category application">
+			<h1>アプリ「Elin」</h1>
+			<ul class="caption link">
+				<li>参考：<a href="https://store.steampowered.com/app/2135150/Elin/">Steam: elin</a></li>
+				<li>参考：<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3371271468">Ukagaka for Elin</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+				<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnElinAllyCondition">
+				<dt class="entry">OnElinAllyCondition</dt>
+				<dd class="entry">
+					<p>ペットが何らかの状態異常にかかると発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ペットの名前</dd>
+						<dt>Reference1</dt>
+						<dd>状態異常の名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinAllyDead">
+				<dt class="entry">OnElinAllyDead</dt>
+				<dd class="entry">
+					<p>ペットが死ぬと発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ペットの名前</dd>
+						<dt>Reference1</dt>
+						<dd>死因</dd>
+						<dt>Reference2</dt>
+						<dd>(存在すれば)ペットを殺したNPCの名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinCatchFish">
+				<dt class="entry">OnElinCatchFish</dt>
+				<dd class="entry">
+					<p>何かを釣り上げると発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>釣り上げたアイテムの名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinMapCharaGenerate">
+				<dt class="entry">OnElinMapCharaGenerate</dt>
+				<dd class="entry">
+					<p>NPCが生成されると発生。Reference0-4のいずれかが値を持つ。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>敵NPCの情報</dd>
+						<dt>Reference1</dt>
+						<dd>中立NPCの情報</dd>
+						<dt>Reference2</dt>
+						<dd>友好NPCの情報</dd>
+						<dt>Reference3</dt>
+						<dd>味方NPCの情報</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinMapEnter">
+				<dt class="entry">OnElinMapEnter</dt>
+				<dd class="entry">
+					<p>マップに入ると発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>マップの名前</dd>
+						<dt>Reference1</dt>
+						<dd>敵NPCの情報</dd>
+						<dt>Reference2</dt>
+						<dd>中立NPCの情報</dd>
+						<dt>Reference3</dt>
+						<dd>友好NPCの情報</dd>
+						<dt>Reference4</dt>
+						<dd>味方NPCの情報</dd>
+						<dt>Reference4</dt>
+						<dd>床に落ちている/設置されているアイテムの情報</dd>
+						<dt>Reference5</dt>
+						<dd>街かどうか</dd>
+						<dt>Reference6</dt>
+						<dd>ネフィアかどうか</dd>
+						<dt>Reference7</dt>
+						<dd>PCの所有物件(?)かどうか</dd>
+						<dt>Reference8</dt>
+						<dd>固定ネフィアかどうか</dd>
+						<dt>Reference9</dt>
+						<dd>何も無いフィールドマップかどうか</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinMapItemGenerate">
+				<dt class="entry">OnElinMapItemGenerate</dt>
+				<dd class="entry">
+					<p>宝箱が生成されたとき等に発生</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>アイテムの情報</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinPCCondition">
+				<dt class="entry">OnElinPCCondition</dt>
+				<dd class="entry">
+					<p>PCが状態異常にかかると発生</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>状態異常の名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinPCDead">
+				<dt class="entry">OnElinPCDead</dt>
+				<dd class="entry">
+					<p>PCが死ぬと発生</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>PCの名前</dd>
+						<dt>Reference1</dt>
+						<dd>死因</dd>
+						<dt>Reference2</dt>
+						<dd>(存在すれば)PCを殺したNPCの名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnElinTarget">
+				<dt class="entry">OnElinTarget</dt>
+				<dd class="entry">
+					<p>NPCにShift+Fでターゲッティングすると発生</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ターゲッティングしたNPCの名前</dd>
+					</dl>
+				</dd>
+			</dl>
+			<div class="caption">
+				<h1>キャラクターとアイテムの情報</h1>
+                <h2>アイテムの情報</h2>
+                <p>アイテムはバイト値1で区切られている。例：土0x01金塊0x01鉄のつるはし0x01…</p>
+                <h2>キャラクターの情報</h2>
+                <p>1キャラクターはキャラクターの名前と持っているアイテムがバイト値1で区切られており、さらにキャラクター毎にバイト値2で区切られている。例：イーク0x02銅の短剣0x01ゴブリン0x02紙の大剣0x02珊瑚の軽外套0x01侍…</p>
+			</div>
+        </section>
 	</div>
 </body>
 </html>
