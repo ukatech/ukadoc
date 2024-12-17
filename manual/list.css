@@ -452,15 +452,19 @@ a:hover {
 
 
 
-.category.ghost {
+.category.ghost,
+.navigation-bar > .navigation-category.ghost {
 	border-color: #966;
 }
-.category.ghost > h1 {
+.category.ghost > h1,
+.navigation-bar > .navigation-category.ghost > h1 {
 	background-color: #966;
 }
-.category.plugin {
+.category.plugin,
+.navigation-bar > .navigation-category.plugin {
 	border-color: #696;
 }
-.category.plugin > h1 {
+.category.plugin > h1,
+.navigation-bar > .navigation-category.plugin > h1 {
 	background-color: #696;
 }
