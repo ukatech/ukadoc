@@ -281,6 +281,14 @@
 				<li><a href="#OnWeatherStation.Error">OnWeatherStation.Error</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category plugin">
+			<h1>プラグイン「Spectre」</h1>
+			<ul>
+				<li><a href="#OnSpectrePlugin.Surface">OnSpectrePlugin.Surface</a></li>
+				<li><a href="#OnSpectrePlugin.ConfirmCalibration">OnSpectrePlugin.ConfirmCalibration</a></li>
+				<li><a href="#OnSpectrePlugin.Possession">OnSpectrePlugin.Possession</a></li>
+			</ul>
+		</section>
 		<section class="navigation-category saori">
 			<h1>SAORI「httpc.dll」</h1>
 			<ul>
@@ -1760,6 +1768,82 @@
 					</dd>
 				</dl>
 			</div>
+		</section>
+		<section class="category plugin">
+			<h1>プラグイン「Spectre」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://ukagaka.zichqec.com/plugin/spectre">https://ukagaka.zichqec.com/plugin/spectre</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnSpectrePlugin.Surface">
+				<dt class="entry">OnSpectrePlugin.Surface</dt>
+				<dd class="entry">
+					<p>Occurs during Spectre's dialogues to call for surface changes from the ghost that is currently being spoken to.<br />
+					Note that this event does not come directly from the plugin itself, but rather is called from the ghost side by embed tags within the dialogues.<br />
+					The expressions included are the <a href="descript_shell_surfaces.html#caption_standarddef">recommended expressions</a>, plus a few extra that are common in English ghosts.<br />
+					<em>Expressions which the ghost's shell cannot produce accurately should be ignored and not return a response</em>, as the plugin will use this information for its own purposes.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The expression being called for. May be one of the following values:
+							<ul>
+								<li>normal …… usually surface0</li>
+								<li>embarrassed …… usually surface1</li>
+								<li>surprised …… usually surface2</li>
+								<li>anxious …… usually surface3</li>
+								<li>discouraged …… usually surface4</li>
+								<li>smile …… usually surface5</li>
+								<li>relieved …… usually surface6, also known as "contented"</li>
+								<li>angry …… usually surface7</li>
+								<li>sweat …… usually surface8, also known as "sweat smile" or "cold smile"</li>
+								<li>indignant …… usually surface9, also known as "embarrassed anger"</li>
+								<li>thinking …… common in some English ghosts, also known as "thoughtful" or "confused"</li>
+								<li>unamused …… common in some English ghosts, also known as "bored"</li>
+							</ul>
+						</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnSpectrePlugin.ConfirmCalibration">
+				<dt class="entry">OnSpectrePlugin.ConfirmCalibration</dt>
+				<dd class="entry">
+					<p>Occurs upon opening the plugin menu if this ghost is not yet "calibrated". Also occurs any time the user chooses to "racalibrate" this ghost.<br />
+					Returning a specific response completes a handshake that allows the ghost to complete the "calibration" step automatically.<br />
+					The required response is the following tag: \![raiseplugin,Spectre,OnCustomCalibrationConfirm]<br />
+					Within this tag, references should be sent containing expression data. The references should be written the same as the ones received in the OnSpectrePlugin.Surface event, and may be written in any order.<br />
+					<em>By default, only expressions that the ghost does not provide should be sent.</em> The plugin assumes that any expressions not listed are present.<br />
+					For ghosts with few compatible expressions, an option may be used to invert this behavior, and make the plugin use only expressions that are listed.<br />
+					For ghosts with no compatible expressions, a special reference is provided.<br />
+					<em>Expressions which the ghost's shell cannot produce accurately should be listed as references in this tag</em> (or should be omitted, if using the inverted behavior), as the plugin will use this information for its own purposes.</p>
+					<dl>
+						<dt>--option=include</dt>
+						<dd>Only surfaces that are listed will be used. (Inverted behavior.)</dd>
+						<dt>__NO_EXPRESSIONS__</dt>
+						<dd>No expressions will be used. Must be sent as reference0.</dd>
+					</dl>
+				</dd>
+			</dl>
+			<dl id="OnSpectrePlugin.Possession">
+				<dt class="entry">OnSpectrePlugin.Possession</dt>
+				<dd class="entry">
+					<p>Occurs 15 seconds after Spectre displays a dialogue through this ghost.<br />
+					Note that this event does not come directly from the plugin itself, but rather is called from the ghost side by a timerraise tag placed at the end of dialogues.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The current "mood" of the character, based on the current dialogue pool. May be one of the following values:
+							<ul>
+								<li>dissociated …… A very sad and incoherent mood</li>
+								<li>miserable …… A sad or angry mood</li>
+								<li>cheerful …… A happy or relaxed mood</li>
+							</ul>
+						</dd>
+						<dt>Reference1</dt>
+						<dd>Whether the script that was played was a "spooky text" script, e.g., a script with special text effects to evoke a feeling of unease. 1 if true, 0 if false.<br />
+						Note that "spooky text" scripts are currently only played in situations where Reference0 is "dissociated".</dd>
+					</dl>
+				</dd>
+			</dl>
 		</section>
 		<section class="category saori">
 			<h1>SAORI「httpc.dll」</h1>
