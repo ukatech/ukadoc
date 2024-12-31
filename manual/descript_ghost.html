@@ -185,6 +185,7 @@
 				<li><a href="#shiori.cache,数値">shiori.cache,数値</a></li>
 				<li><a href="#shiori.encoding,文字コード">shiori.encoding,文字コード</a></li>
 				<li><a href="#shiori.forceencoding,文字コード">shiori.forceencoding,文字コード</a></li>
+				<li><a href="#shiori.escape_unknown">shiori.escape_unknown,0/1</a></li>
 				<li><a href="#don&#39;t_need_onmousemove,数値">don&#39;t need onmousemove,数値</a></li>
 				<li><a href="#don&#39;t_need_bind,数値">don&#39;t need bind,数値</a></li>
 				<li><a href="#don&#39;t_need_seriko_talk,数値">don&#39;t need seriko talk,数値</a></li>
@@ -750,6 +751,17 @@ shiori,satori.dll
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="shiori.escape_unknown">
+				<dt class="entry">shiori.escape_unknown,0/1</dt>
+				<dd class="entry">
+					<p>SHIORIとの通信中の文字コードに変換できないUnicode文字があった時に、特殊なエスケープを行い、まったく文字として認識できない事態を最低限回避する。
+					<br />具体的には、?escape!unicode[0xABCD]のような形で、変換できない文字列を特別な形態に書き換えてSHIORIに渡し、同じ形態のままSHIORIから返ってきた時に適切に再変換する。</p>
+					<p class="default">0(false)/p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.89</li>
 					</ul>
 				</dd>
 			</dl>
