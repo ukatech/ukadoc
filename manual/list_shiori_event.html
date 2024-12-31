@@ -304,6 +304,7 @@
 				<li><a href="#OnInstallBegin">OnInstallBegin</a></li>
 				<li><a href="#OnInstallComplete">OnInstallComplete</a></li>
 				<li><a href="#OnInstallCompleteEx">OnInstallCompleteEx</a></li>
+				<li><a href="#OnInstallCompleteAll">OnInstallCompleteAll</a></li>
 				<li><a href="#OnInstallFailure">OnInstallFailure</a></li>
 				<li><a href="#OnInstallRefuse">OnInstallRefuse</a></li>
 				<li><a href="#OnInstallReroute">OnInstallReroute</a></li>
@@ -2400,6 +2401,24 @@
 				<dt class="entry">OnInstallCompleteEx</dt>
 				<dd class="entry">
 					<p>インストールが正常終了した際に発生。<br />このイベントが無かった場合OnInstallCompleteが発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
+						<dt>Reference1</dt>
+						<dd>インストールした物の名前。複数の場合はバイト値1区切り。</dd>
+						<dt>Reference2</dt>
+						<dd>インストールした場所。複数の場合はバイト値1区切り。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnInstallCompleteAll">
+				<dt class="entry">OnInstallCompleteAll</dt>
+				<dd class="entry">
+					<p>複数のnarをD&Dした時などに、インストールが<b>すべて</b>正常終了した際に、OnInstallComplete/同Exの後に、最後に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
