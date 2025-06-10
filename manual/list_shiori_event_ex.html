@@ -1489,7 +1489,7 @@
 						<dt>Reference4</dt>
 						<dd>The current version number of the plugin.</dd>
 						<dt>Reference5</dt>
-						<dd>1 if there is a plugin update available, 0 otherwise.</dd>
+						<dd>1 if there is a plugin update available, 0 otherwise. If the user is offline, this will always be 0.</dd>
 					</dl>
 				</dd>
 			</dl>
@@ -1760,7 +1760,7 @@
 					</dd>
 					<dt>no_api_response</dt>
 					<dd>
-						The API did not respond, or the SAORI used by the plugin failed to work.
+						The API did not respond, the SAORI used by the plugin failed to work, or the user is offline.
 					</dd>
 					<dt>other</dt>
 					<dd>
