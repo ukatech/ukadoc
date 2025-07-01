@@ -2492,7 +2492,7 @@
 			<dl id="_q_タイトル,ID_">
 				<dt class="entry">\q[タイトル,ID]</dt>
 				<dd class="entry">
-					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される(SSPのみそれに先立って<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>が開始される)。<br>IDはReference0に格納される。</p>
+					<p>選択肢を表示。<br>選択後、SHIORIイベント<a href="list_shiori_event.html#OnChoiceSelect">OnChoiceSelect</a>が開始される(SSPのみそれに先立って<a href="list_shiori_event.html#OnChoiceSelectEx">OnChoiceSelectEx</a>が開始される)。<br>IDはReference0に格納される。<br>テキストの自動改行を求める場合は\__q[]タグを使うこと。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -2579,7 +2579,7 @@
 			<dl id="___q_ID,..._">
 				<dt class="entry">\__q[ID,...]</dt>
 				<dd class="entry">
-					<p>\__qがくるまでの範囲を選択肢とする。<br>ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br>実行後に発生するSHIORI Eventも同様。</p>
+					<p>\__qがくるまでの範囲を選択肢とする。<br>ID仕様は、Onやscript:で始まるものが特別扱いされる点や、ID引数の扱いまで含めて\qと同じ。<br>実行後に発生するSHIORI Eventも同様。<br>\q[]タグと異なり、自動改行も行われる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
