@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="config-i18n.html" />
-    <link rel="next" href="information.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="config-i18n.html"/>
+    <link rel="next" href="information.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>本体設定:開発/その他</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -28,30 +36,7 @@
         </ul>
       </div>
       <div id="contents"><h1>設定：開発/その他</h1>
-<p>
-	画像左側のリストをクリックすると、それぞれの解説ページへ移動します。
-	<br /><img src="image/config-dev/0.png" usemap="#configdialog" width="602" height="591" alt="本体設定ダイアログ開発/その他" />
-	<map name="configdialog" id="configdialog">
-		<area shape="rect" coords="14,31,137,46" href="config-ippan.html" alt="一般" />
-		<area shape="rect" coords="14,47,137,66" href="config-ghost.html" alt="ゴースト(1)" />
-		<area shape="rect" coords="14,66,137,82" href="config-ghost2.html" alt="ゴースト(2)" />
-		<area shape="rect" coords="14,82,137,98" href="config-folder.html" alt="フォルダ" />
-		<area shape="rect" coords="14,98,137,114" href="config-disp.html" alt="表示" />
 
-		<area shape="rect" coords="14,115,137,133" href="config-talk.html" alt="喋り/バルーン" />
-		<area shape="rect" coords="14,134,137,152" href="config-dictation.html" alt="音声合成" />
-		<area shape="rect" coords="14,150,137,168" href="config-conn1.html" alt="接続(1)" />
-		<area shape="rect" coords="14,167,137,185" href="config-conn2.html" alt="接続(2)" />
-		<area shape="rect" coords="14,184,137,202" href="config-pop.html" alt="POP" />
-		<area shape="rect" coords="14,201,137,219" href="config-extprog.html" alt="外部アプリ" />
-
-		<area shape="rect" coords="14,218,137,236" href="config-im.html" alt="IM" />
-		<area shape="rect" coords="14,235,137,253" href="config-ipmes.html" alt="IPMessenger" />
-		<area shape="rect" coords="14,252,137,270" href="config-i18n.html" alt="国際化" />
-		<area shape="rect" coords="14,269,137,287" href="config-dev.html" alt="開発/その他" />
-		
-	</map>
-</p>
 <p>このページでは右クリックメニューの「設定」サブメニューにある項目「本体設定」で開くダイアログの、「開発/その他」ページについて解説しています。</p>
 <p class="Hint">
 この設定は「<a href="config-ippan.html">一般</a>」の設定で、「開発者用機能を有効にする」をONにしないと表示されません。
@@ -61,27 +46,27 @@
 
 <dl>
 	<dt>FMO名を変更する</dt>
-	<dd>現在起動中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をリストアップするFMOの名前を変更します。<br />
+	<dd>現在起動中のゴーストをリストアップするFMOの名前を変更します。<br />
 	通常は標準のSakuraのままで問題ありません。</dd>
 
 	<dt>ディレクトリをドロップした際に更新ファイルやNARを作成</dt>
-	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>にディレクトリをドラッグ＆ドロップした際の動作を決定します。<br />
-	開発時はONにしておくと、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に通知するか開発系のコマンドを実行するかの動作を選択できるようになります。
+	<dd>ゴーストにディレクトリをドラッグ＆ドロップした際の動作を決定します。<br />
+	開発時はONにしておくと、ゴーストに通知するか開発系のコマンドを実行するかの動作を選択できるようになります。
 	</dd>
 
 	 
-	<dt><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>時に旧ファイルを残す</dt>
-	<dd><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>で一時的に作成したファイルを、削除しないで保存しておきます。<br />
-	<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の際に起こった問題などを追跡するために使用することが出来ます。
+	<dt>ネットワーク更新時に旧ファイルを残す</dt>
+	<dd>ネットワーク更新で一時的に作成したファイルを、削除しないで保存しておきます。<br />
+	ネットワーク更新の際に起こった問題などを追跡するために使用することが出来ます。
 	</dd>
 
 	<dt>読み取り専用属性ファイルは更新対象にしない</dt>
-	<dd><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の対象になっているファイルに読み取り専用属性がついている場合、更新せずにそのまま残しておきます。
+	<dd>ネットワーク更新の対象になっているファイルに読み取り専用属性がついている場合、更新せずにそのまま残しておきます。
 	</dd>
 
-	<dt><a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が存在しない時に非表示とする</dt>
-	<dd>スクリプトで指定された<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が存在しない時に、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のウィンドウを消去します（通常はデフォルト<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が表示）。<br />
-	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のスクリプトの不具合の検証用途などに利用できます。
+	<dt>サーフィスが存在しない時に非表示とする</dt>
+	<dd>スクリプトで指定されたサーフィスが存在しない時に、ゴーストのウィンドウを消去します（通常はデフォルトサーフィスが表示）。<br />
+	ゴーストのスクリプトの不具合の検証用途などに利用できます。
 	</dd>
 
 	
@@ -92,7 +77,7 @@
 
 	<dt>Vanish（アンインストール）実行を抑制</dt>
 	<dd>絶対にVanish（アンインストール）を実行できない状態にします。<br />
-	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発中等に誤ってVanishを実行してしまうのを防ぐ等に利用できます。　</dd>
+	ゴースト開発中等に誤ってVanishを実行してしまうのを防ぐ等に利用できます。　</dd>
 
 	<dt>複数起動ロックを解除</dt>
 	<dd>通常SSPは1マシンに1つしか起動できないようになっていますが、開発用とその他用に分けたい場合など、複数起動したい場合にこのロックを解除してください。<br />
@@ -100,19 +85,19 @@
 	また、NARファイルを関連付けしている場合、NARを開いてのインストール実行ができなくなります（ドラッグ＆ドロップは利用可能）。</dd>
 
 	<dt>利用可能な場合は更新にバージョン管理ツールを使う</dt>
-	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の管理にバージョン管理ツールが使われている場合は、通常の<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の代わりに、それを起動して「更新」処理を行います。</dd>
+	<dd>ゴーストの管理にバージョン管理ツールが使われている場合は、通常のネットワーク更新の代わりに、それを起動して「更新」処理を行います。</dd>
 	
 	<dt>[XXX]レベル以上のエラー発生を通知</dt>
 	<dd>
-		選択したレベル以上のエラーが発生した際に、タスクトレイアイコンから<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を表示します。
-		<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発者は、開発中NOTICEか少なくともWARNING以上を通知することが推奨されます。
+		選択したレベル以上のエラーが発生した際に、タスクトレイアイコンからバルーンを表示します。
+		<br />ゴースト開発者は、開発中NOTICEか少なくともWARNING以上を通知することが推奨されます。
 		<br />通知レベルの意味については「<a href="dev-scriptlog.html#chapter2">スクリプトログ</a>」のページを参照してください。
 
 	</dd>
 
 	<dt>例外ハンドラを使う</dt>
 	<dd>
-		デバッグに協力していただける方や、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発者はOFFにしておくと、メモリへのアクセス違反等で「ちゃんと落ちる」ようになります。
+		デバッグに協力していただける方や、ゴースト開発者はOFFにしておくと、メモリへのアクセス違反等で「ちゃんと落ちる」ようになります。
 		<br />あまり頻繁にSSPが落ちるような場合はONにするといくらか軽減するかもしれませんが、開発中は非推奨です。
 	</dd>
 	
@@ -123,7 +108,16 @@
 </dl>
 
 <h3>更新定義ファイル</h3>
-<p>updates2.dauとupdates.txtのどちらを出力するか設定します。</p>
+<p>updates2.dauとupdates.txtのどちらか、あるいは両方を出力するか設定します。</p>
+<dl>
+	<dt>常にUTF-8文字コードを使用する</dt>
+	<dd>多バイト文字を含むファイル名を使用した時に、必ずUTF-8でファイル名を出力します
+	<br />文字化けを根本的に解決することができ、最近のSSPでは文字コードを自動認識しますので問題ありませんが、古い環境で互換性の問題が発生するかもしれません。</dd>
+
+	<dt>ファイルのハッシュ値計算処理キャッシュ</dt>
+	<dd>古い更新定義ファイル内のハッシュ値計算結果をなるべく再利用します。
+	<br />大量のファイルがある時に多少更新定義の生成が速くなる可能性がある代わりに、信頼性は低下します。</dd>
+</dl>
 
 <h3>NAR作成位置</h3>
 <p>NAR作成機能でNARファイルを出力するパスを設定します。</p>
@@ -135,7 +129,7 @@
 
 	<dt>フォルダと同じ</dt>
 	<dd>
-		NARを作成する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のフォルダと同じ場所に作成するようにします。
+		NARを作成するゴーストのフォルダと同じ場所に作成するようにします。
 	</dd>
 
 	<dt>指定したフォルダ</dt>
@@ -172,7 +166,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -226,6 +220,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

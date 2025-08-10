@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="howto-plugin.html" />
-    <link rel="next" href="functions.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="howto-plugin.html"/>
+    <link rel="next" href="functions.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>RSS/ヘッドライン</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -28,7 +36,7 @@
       <div id="contents"><h1>基本的な使い方：RSS/ヘッドライン</h1>
 
 
-<p>インターネット上のHPの要約(<a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>)を<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>にしゃべらせる仕組みです。</p>
+<p>インターネット上のHPの要約(ヘッドライン)をゴーストにしゃべらせる仕組みです。</p>
 
 <p>SSPインストール時に、いくつか最初から入っていますが、さらに追加することができます。<br />
 著名なサイト用や、個人HPの更新をしゃべるものが存在していますので、ぜひ使ってみてくださいね。</p>
@@ -40,13 +48,13 @@ RSS対応のサイトではそちらを利用するほうがよいでしょう�
 <p>初回起動時には、自動巡回機能はOFFになっています。<br />
 自動取得間隔の変更や、自動巡回をしたい場合は、本体設定の「<a href="conn">接続(2)</a>」にて設定を行なってください。</p>
 
-<p>いずれの場合も、特定の<a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>/RSSを指定して取得することができます。<br />
-<a href="howto-rclick.htm">右クリックメニュー</a>の「RSS/<a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>」から選択してください。</p>
+<p>いずれの場合も、特定のヘッドライン/RSSを指定して取得することができます。<br />
+<a href="howto-rclick.htm">右クリックメニュー</a>の「RSS/ヘッドライン」から選択してください。</p>
 
 <h2>ヘッドラインセンサを追加する</h2>
 
-<p><a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>センサも、「<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>」や｢<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>」と同じように配布されています。<br />
-ダウンロードしてきたファイルを、そのまま<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に<span class="Doing">ドロップ</span>してください。中身が壊れていなければ、すぐに使える状態になります。</p>
+<p>ヘッドラインセンサも、「シェル」や｢ゴースト」と同じように配布されています。<br />
+ダウンロードしてきたファイルを、そのままゴーストに<span class="Doing">ドロップ</span>してください。中身が壊れていなければ、すぐに使える状態になります。</p>
 
 <h2>RSSを追加する</h2>
 <p>SSPは、「RSS」「Atom」と呼ばれる、Webサイトやブログ等の更新内容通知仕様（フィード）に対応しています。<br />
@@ -77,7 +85,7 @@ RSS対応のサイトではそちらを利用するほうがよいでしょう�
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -131,6 +139,8 @@ RSS対応のサイトではそちらを利用するほうがよいでしょう�
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="dev.html" />
-    <link rel="next" href="dev-palette.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="dev.html"/>
+    <link rel="next" href="dev-palette.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>スクリプトログ</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -32,9 +40,9 @@
 
 
 <h2 id="chapter1">スクリプトログ</h2>
-<img src="image/dev-scriptlog/5.png" width="651" height="347" alt="スクリプトログ" />
+
 <p>
-	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が受け取った<a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>は、設定した件数分、内部的に保存されています。
+	ゴーストが受け取ったSakuraScriptは、設定した件数分、内部的に保存されています。
 	<br />スクリプトログでは、そのように内部に保存されているスクリプトを参照したり、保存したり、もう一度しゃべらせることができます。
 <p>
 <h3>(左下)Script</h3>
@@ -54,11 +62,11 @@
 	<dd>保存ダイアログを開き、指定位置にログをcsv形式で出力します。</dd>
 
 	<dt>実行</dt>
-	<dd>選択しているログを<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に再実行させます。</dd>
+	<dd>選択しているログをゴーストに再実行させます。</dd>
 </dl>
 
 <h2 id="chapter2">エラーログ</h2>
-<img src="image/dev-scriptlog/6.png" width="651" height="347" alt="エラーログ" />
+
 <p>
 	SSPの動作中に発生したエラーの履歴を表示します。
 	<br />エラーの内容を確認し、対処するための参考にしてください。
@@ -74,7 +82,7 @@
 	<dt><img src="image/dev-scriptlog/3.png" width="16" height="16" alt="" />Error</dt>
 	<dd>誤りがあります。補正不能なファイルの記述が一部読み飛ばされるなど、意図した動作をしていません。<br />正常動作のためには修正が必要です。</dd>
 	<dt><img src="image/dev-scriptlog/2.png" width="16" height="16" alt="" />Warning</dt>
-	<dd>ファイルの記述などに軽微な誤りがありますが、SSPの内部的な補正により、（おそらく）正常動作しています。<br />他の<a href="reference.html#x30d9-x30fc-x30b9-x30a6-x30a7-x30a2">ベースウェア</a>との互換性の観点から、またSSPの仕様変更に際して「何もしてないのに動かなくなった」などという事態が起こり得ますので、可能な限り修正してください。</dd>
+	<dd>ファイルの記述などに軽微な誤りがありますが、SSPの内部的な補正により、（おそらく）正常動作しています。<br />他のベースウェアとの互換性の観点から、またSSPの仕様変更に際して「何もしてないのに動かなくなった」などという事態が起こり得ますので、可能な限り修正してください。</dd>
 	<dt><img src="image/dev-scriptlog/1.png" width="16" height="16" alt="" />Notice</dt>
 	<dd>何らかの誤りの（潜在的な）可能性・危険性が発見されました。</dd>
 	<dt><img src="image/dev-scriptlog/0.png" width="16" height="16" alt="" />Info</dt>
@@ -98,7 +106,7 @@
 	<dt>保存</dt>
 	<dd>保存ダイアログを開き、指定位置にログをcsv形式で出力します。</dd>
 </dl>
-      </p></p></div>
+      </div>
       <div id="navigation">
         <ul>
           <li class="previous"><a href="dev.html">開発者向けヘルプ</a></li>
@@ -110,7 +118,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -164,6 +172,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

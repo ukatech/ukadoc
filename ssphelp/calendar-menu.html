@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="calendar-schedule.html" />
-    <link rel="next" href="sspim.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="calendar-schedule.html"/>
+    <link rel="next" href="sspim.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>カレンダー:メニュー</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -39,7 +47,7 @@
 
 
 <h2>予定を読む</h2>
-<p>その日の予定を<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が読み上げます。</p>
+<p>その日の予定をゴーストが読み上げます。</p>
 
 
 <h2>今日の予定</h2>
@@ -78,7 +86,7 @@
 <h2>スキン</h2>
 <p>カレンダーの外観を選択します。<br />
 スキンを複数登録してあると、選択できる項目が増えます。<br />
-<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の選択と同じ要領ですね。</p>
+ゴーストやシェルの選択と同じ要領ですね。</p>
 
 <h2>スケジュールセンサ</h2>
 <p>スケジュールをサーバーから取り出します。<br />
@@ -100,7 +108,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -154,6 +162,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

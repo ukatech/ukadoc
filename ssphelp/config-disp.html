@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="config-folder.html" />
-    <link rel="next" href="config-talk.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="config-folder.html"/>
+    <link rel="next" href="config-talk.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>本体設定:表示</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -28,48 +36,25 @@
         </ul>
       </div>
       <div id="contents"><h1>設定：表示</h1>
-<p>
-	画像左側のリストをクリックすると、それぞれの解説ページへ移動します。
-	<br /><img src="image/config-disp/0.png" usemap="#configdialog" width="602" height="591" alt="本体設定ダイアログ表示" />
-	<map name="configdialog" id="configdialog">
-		<area shape="rect" coords="14,31,137,46" href="config-ippan.html" alt="一般" />
-		<area shape="rect" coords="14,47,137,66" href="config-ghost.html" alt="ゴースト(1)" />
-		<area shape="rect" coords="14,66,137,82" href="config-ghost2.html" alt="ゴースト(2)" />
-		<area shape="rect" coords="14,82,137,98" href="config-folder.html" alt="フォルダ" />
-		<area shape="rect" coords="14,98,137,114" href="config-disp.html" alt="表示" />
 
-		<area shape="rect" coords="14,115,137,133" href="config-talk.html" alt="喋り/バルーン" />
-		<area shape="rect" coords="14,134,137,152" href="config-dictation.html" alt="音声合成" />
-		<area shape="rect" coords="14,150,137,168" href="config-conn1.html" alt="接続(1)" />
-		<area shape="rect" coords="14,167,137,185" href="config-conn2.html" alt="接続(2)" />
-		<area shape="rect" coords="14,184,137,202" href="config-pop.html" alt="POP" />
-		<area shape="rect" coords="14,201,137,219" href="config-extprog.html" alt="外部アプリ" />
-
-		<area shape="rect" coords="14,218,137,236" href="config-im.html" alt="IM" />
-		<area shape="rect" coords="14,235,137,253" href="config-ipmes.html" alt="IPMessenger" />
-		<area shape="rect" coords="14,252,137,270" href="config-i18n.html" alt="国際化" />
-		<area shape="rect" coords="14,269,137,287" href="config-dev.html" alt="開発/その他" />
-		
-	</map>
-</p>
 <p>このページでは右クリックメニューの「設定」サブメニューにある項目「本体設定」で開くダイアログの、「表示」ページについて解説しています。</p>
 <h2>各項目の解説</h2>
 <dl>
    <dt>カーソルを変更しない</dt>   
-   <dd>ON状態では、マウスカーソル付き<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>であっても、カーソルを変更しないようにします。<br />
-   <a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>によりマウスカーソルが変更されるのが嫌な場合は、ONにしてお使いください。　</dd>
+   <dd>ON状態では、マウスカーソル付きバルーンであっても、カーソルを変更しないようにします。<br />
+   バルーンによりマウスカーソルが変更されるのが嫌な場合は、ONにしてお使いください。　</dd>
    
    <dt>デスクトップ下端オフセット</dt>
    <dd>デスクトップ下端から何ドットずらすかを指定します。<br />
    「タスクバーを自動的に隠す」設定時に、タスクバーの裏に隠れてしまわないように設定する使い方などがあります。　</dd>
 
    <dt>メニュー幅を背景画像に合わせる</dt>
-   <dd>通常、メニューの幅はメニュー項目の幅の分だけ表示されていますが、これを<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>付属のメニュー画像の幅に合わせます。<br />
-   これにより、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>メニュー画像の全体が見えるようになります。
+   <dd>通常、メニューの幅はメニュー項目の幅の分だけ表示されていますが、これをゴースト付属のメニュー画像の幅に合わせます。<br />
+   これにより、ゴーストメニュー画像の全体が見えるようになります。
    </dd>
 
    <dt>メニュー選択中にプレビュー画像を表示する</dt>
-   <dd>右クリックメニューで<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>切換え・呼び出し・<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>切換え・<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>切換え等のメニューの選択中に、対応している場合はプレビュー画像(thumbnail.png)を表示します。</dd>
+   <dd>右クリックメニューでゴースト切換え・呼び出し・シェル切換え・バルーン切換え等のメニューの選択中に、対応している場合はプレビュー画像(thumbnail.png)を表示します。</dd>
 
    <dt>メニューの縦方向の余白設定</dt>
    <dd>右クリックメニューの行ごとの余白を設定します。<br />
@@ -77,18 +62,18 @@
   
    <dt>一部のメニューを階層化する</dt>
    <dd><a href="config-folder.html">設定：フォルダ</a>で複数フォルダの読み込みを設定した場合に、これをONにするとメニューがフォルダごとに分けられます。<br />
-   <a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>・<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>等、フォルダ設定可能なすべてのメニューに適用されます。<br />
-   多くの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をインストールしており、整理して表示したい場合に使うと良いでしょう。</dd>
+   ゴースト・バルーン等、フォルダ設定可能なすべてのメニューに適用されます。<br />
+   多くのゴーストをインストールしており、整理して表示したい場合に使うと良いでしょう。</dd>
 
-   <dt><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>・<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>・最近使ったものメニューの最大文字数</dt>
-   <dd>一部の名前の長い<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を表示するために、メニューで画面が埋め尽くされてしまう場合の対策用です。ここで設定した文字数を超える場合、後ろに&quot;...&quot;がついて省略表示となります。<br />
+   <dt>ゴースト・バルーン・最近使ったものメニューの最大文字数</dt>
+   <dd>一部の名前の長いゴーストを表示するために、メニューで画面が埋め尽くされてしまう場合の対策用です。ここで設定した文字数を超える場合、後ろに&quot;...&quot;がついて省略表示となります。<br />
    画面が狭い人は少なめに設定しておくと良いでしょう。</dd>
 
    <dt>最近使ったものメニューの最大記録数</dt>
    <dd>「最近使ったもの」に残す履歴の数です。この回数より前に起動/使用した項目は消えていきます。</dd>
 
    <dt>Flip3D中でも表示する。<span class="System">[Windows Vista以降のみ]</span></dt>
-   <dd>Filp3Dでウインドウを切り替えている間もキャラクター＋<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を表示したままにします。いつでもキャラクターを表示しておきたい場合に使用して下さい。</dd>
+   <dd>Filp3Dでウインドウを切り替えている間もキャラクター＋バルーンを表示したままにします。いつでもキャラクターを表示しておきたい場合に使用して下さい。</dd>
 
    <dt>タスクバーにキャラクターウインドウを表示</dt>
    <dd>
@@ -96,10 +81,14 @@
    <br />その時に、このオプションを有効にすると、上記機能が使えるようになります。</dd>
 
    <dt>フルスクリーンのアプリが起動した時に最小化</dt>
-   <dd>ゲームなどフルスクリーン表示するアプリケーションを起動した時に、自動的に<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を最小化表示します。</dd>
+   <dd>ゲームなどフルスクリーン表示するアプリケーションを起動した時に、自動的にゴーストを最小化表示します。</dd>
    
    <dt>全ての仮想デスクトップにキャラクターウインドウ表示</dt>
    <dd>Windows 10以降の新機能である仮想デスクトップ機能の切替状況に関係なく、すべての仮想デスクトップ上で表示します。</dd>
+
+   <dt>キャラクターをクリックするとキャラ以外のウインドウも手前に出る</dt>
+   <dd>エクスプローラーやログウィンドウなど、特定のキャラクター表示に所属しないウインドウも、クリック時に一緒に手前に出てきます。
+   <br />ウインドウが裏にまわって行方不明になりやすいので、通常はONのまま使用してください。</dd>
    
 </dl>
 
@@ -116,13 +105,13 @@
 
    <dt>クロスフェーダを使う</dt>
    <dd>
-   キャラクターの表情が切り替わったり、<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>等の表示・非表示が切り替わる際に、じわじわと切り替わってゆくフェードイン・フェードアウト的な効果を使います。
+   キャラクターの表情が切り替わったり、バルーン等の表示・非表示が切り替わる際に、じわじわと切り替わってゆくフェードイン・フェードアウト的な効果を使います。
    </dd>
    
    <dt>ドラッグ中に透明度を上げる</dt>
    <dd>キャラクターのウインドウをドラッグ中に、下にあるものが見えやすいように、不透明度を下げて裏側が見えるようにします。</dd>
 
-   <dt>（本体/<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>/カレンダーの透明度設定）</dt>
+   <dt>（本体/バルーン/カレンダーの透明度設定）</dt>
    <dd>それぞれのウインドウの透明度をスライダーを動かして調節します。</dd>
 </dl>
 
@@ -156,7 +145,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -210,6 +199,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

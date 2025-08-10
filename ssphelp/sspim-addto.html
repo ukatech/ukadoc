@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="sspim.html" />
-    <link rel="next" href="sspim-sendto.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="sspim.html"/>
+    <link rel="next" href="sspim-sendto.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>SSPメッセンジャー:送信先の追加</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -40,7 +48,7 @@
 
 ※自分を公開する代わりに相手の情報が引き出せるサービスです。なので、たとえ自分が固定IPであっても、変動IPの人を探す場合はディレクトリサービスにログインする必要があります。<br />
 
-※公開および引き出せる情報は、IPアドレスと<a href="reference.html#x53-x53-x54-x50">SSTP</a>受信待ちをしているポート番号の２つだけです。
+※公開および引き出せる情報は、IPアドレスとSSTP受信待ちをしているポート番号の２つだけです。
 </p>
 <p>また、使用頻度は少ないと思いますが、 (インターネットであろうがローカルネットワークであろうが)双方が固定IPであれば、ローカルに名前とIPの組合せを保存して使うことも出来ますし、そのほうが問い合わせを省略する分、すぐに相手に送信できます。
 
@@ -70,7 +78,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -124,6 +132,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="explorer.html" />
-    <link rel="next" href="shortcut.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="explorer.html"/>
+    <link rel="next" href="speech_recognition.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>エクスプローラ:右クリック/機能メニュー</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -39,7 +47,7 @@
 	<dt>フォルダを開く</dt>
 	<dd>指定項目の構成ファイルが収録されているフォルダをWindowsエクスプローラで開きます。</dd>
 
-	<dt>フォルダ（グループ）移動<span class="Note">[<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>以外]</span></dt>
+	<dt>フォルダ（グループ）移動<span class="Note">[シェル以外]</span></dt>
 	<dd>指定項目が属する<a href="config-folder.html">読み込みフォルダ（グループ）</a>を移動します。<br />現在起動中の項目については実行できないので注意してください。<br />なおフォルダが１つのみの場合はこの項目は選択できません。</dd>
 
 	<dt>配布元URLを開く</dt>
@@ -48,11 +56,12 @@
 	<dt>READMEを開く</dt>
 	<dd>指定項目のreadmeを開きます。<br />ただし、readmeが見付からない場合は何もしません。</dd>
 
-	<dt><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a></dt>
-	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の場合は起動せずに<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>のみを実行します。<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>以外の場合は、通常このメニューで<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>を実行します。</dd>
+	<dt>ネットワーク更新</dt>
+	<dd>ゴーストの場合は起動せずにネットワーク更新のみを実行します。<br />ゴースト以外の場合は、通常このメニューでネットワーク更新を実行します。</dd>
 
 	<dt>更新ファイルの作成</dt>
-	<dd><a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>のための、updates2.dauファイルを作成します。</dd>
+	<dd>ネットワーク更新のための、updates2.dau/updates.txtファイルを作成します。<br />
+	※互換性確保のため、ゴーストのルートフォルダ以外にghost/master以下にも同じものが作られます。</dd>
 
 	<dt>NAR作成</dt>
 	<dd>選択項目をネットワーク上で配布できるように、１つのファイルにまとめます。</dd>
@@ -61,62 +70,62 @@
 	<dd>更新ファイル作成・NAR作成を一度に実行します。</dd>
 </dl>
 <h2>ゴーストの項目</h2>
-<img src="image/explorer-menu/0.png" width="294" height="364" alt="ゴーストのメニュー" />
+
 <dl>
 	<dt>切り替え：<span class="Sentence">デフォルト</span></dt>
-	<dd>現在の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を他のものに切り替えます。
+	<dd>現在のゴーストを他のものに切り替えます。
 
-	<dt><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を呼ぶ</dt>
-	<dd>現在の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>はそのまま、あらたに別の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を立たせます。</dd>
+	<dt>ゴーストを呼ぶ</dt>
+	<dd>現在のゴーストはそのまま、あらたに別のゴーストを立たせます。</dd>
 	
 	<dt>起動用ショートカットを作成する</dt>
-	<dd>選択した<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>でSSPを起動するためのショートカットをデスクトップに作成します。</dd>
+	<dd>選択したゴーストでSSPを起動するためのショートカットをデスクトップに作成します。</dd>
 	
-	<dt>デフォルト<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に設定</dt>
+	<dt>デフォルトゴーストに設定</dt>
 	<dd>
-	エラー終了時に再起動した際など、標準で起動する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>として、現在選択中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を設定します。
-	<br />なお設定された<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のリスト左側のアイコンは【<img src="image/explorer-menu/5.png" width="18" height="16" alt="デフォルトマーク" />】になります。
+	エラー終了時に再起動した際など、標準で起動するゴーストとして、現在選択中のゴーストを設定します。
+	<br />なお設定されたゴーストのリスト左側のアイコンは【<img src="image/explorer-menu/5.png" width="18" height="16" alt="デフォルトマーク" />】になります。
 	</dd>
 	
-	<dt>喋り優先<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に指定</dt>
+	<dt>喋り優先ゴーストに指定</dt>
 	<dd>
-	喋る<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の指定のない<a href="reference.html#x53-x53-x54-x50">SSTP</a>などで、優先して喋らせたい<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>として、現在選択中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を設定します。
-	<br />なお設定された<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のリスト左側のアイコンは【<img src="image/explorer-menu/6.png" width="18" height="18" alt="喋り優先マーク" />】になります。
-	<br />※デフォルト<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>と喋り優先<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を兼ねる場合は【<img src="image/explorer-menu/7.png" width="16" height="16" alt="デフォルト・喋り優先同時指定" />】のような表示になる。
+	喋るゴーストの指定のないSSTPなどで、優先して喋らせたいゴーストとして、現在選択中のゴーストを設定します。
+	<br />なお設定されたゴーストのリスト左側のアイコンは【<img src="image/explorer-menu/6.png" width="18" height="18" alt="喋り優先マーク" />】になります。
+	<br />※デフォルトゴーストと喋り優先ゴーストを兼ねる場合は【<img src="image/explorer-menu/7.png" width="16" height="16" alt="デフォルト・喋り優先同時指定" />】のような表示になる。
 	</dd>
 
 	<dt>RSSの更新情報を使い一括更新</dt>
 	<dd>最新の更新情報を自動で取得し、更新があるキャラクターを自動的に一括更新します。</dd>
-</dd></dl>
+</dl>
 <h2>バルーンの項目</h2>
-<img src="image/explorer-menu/2.png" width="266" height="276" alt="バルーンのメニュー" />
-<dl>
-	<dt>切り替え：<span class="Sentence">デフォルト</span></dt>
-	<dd>現在の<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を、他のものに切り替えます。
 
-	<dt>デフォルト<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>に設定</dt>
-	<dd>
-		<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>側で使用する<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>が指定されていない場合（あるいは指定された<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>がない場合）に標準で使う<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を設定します。
-		<br />なお設定された<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>のリスト左側のアイコンは【<img src="image/explorer-menu/5.png" width="18" height="16" alt="デフォルトマーク" />】になります。
-	</dd>
-</dd></dl>
-<h2>シェルの項目</h2>
-<img src="image/explorer-menu/1.png" width="253" height="225" alt="シェルのメニュー" />
 <dl>
 	<dt>切り替え：<span class="Sentence">デフォルト</span></dt>
-	<dd>現在の<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>を、他のものに切り替えます。
-</dd></dl>
+	<dd>現在のバルーンを、他のものに切り替えます。
+
+	<dt>デフォルトバルーンに設定</dt>
+	<dd>
+		ゴースト側で使用するバルーンが指定されていない場合（あるいは指定されたバルーンがない場合）に標準で使うバルーンを設定します。
+		<br />なお設定されたバルーンのリスト左側のアイコンは【<img src="image/explorer-menu/5.png" width="18" height="16" alt="デフォルトマーク" />】になります。
+	</dd>
+</dl>
+<h2>シェルの項目</h2>
+
+<dl>
+	<dt>切り替え：<span class="Sentence">デフォルト</span></dt>
+	<dd>現在のシェルを、他のものに切り替えます。
+</dl>
 <h2>ヘッドラインの項目</h2>
-<img src="image/explorer-menu/3.png" width="260" height="269" alt="ヘッドラインのメニュー" />
+
 <dl>
 	<dt>読み上げる：<span class="Sentence">デフォルト</span></dt>
-	<dd><a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>センスを開始して、読み上げます。</dd>
+	<dd>ヘッドラインセンスを開始して、読み上げます。</dd>
 
 	<dt>Webページを表示</dt>
-	<dd>RSS/<a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>を配信しているサイトをブラウザで開きます。</dd>
+	<dd>RSS/ヘッドラインを配信しているサイトをブラウザで開きます。</dd>
 </dl>
 <h2>プラグインの項目</h2>
-<img src="image/explorer-menu/4.png" width="260" height="269" alt="プラグインのメニュー" />
+
 <dl>
 	<dt>設定/実行：<span class="Sentence">デフォルト</span></dt>
 	<dd>プラグインの設定あるいは実行を行います。実際に何をするかは、プラグイン毎に異なります。</dd>
@@ -128,7 +137,7 @@
       <div id="navigation">
         <ul>
           <li class="previous"><a href="explorer.html">エクスプローラ</a></li>
-          <li class="next"><a href="shortcut.html">ショートカット一覧</a></li>
+          <li class="next"><a href="speech_recognition.html">音声認識</a></li>
         </ul>
       </div>
     </div>
@@ -136,7 +145,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -190,6 +199,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="faq.html" />
-    <link rel="next" href="aboutssp.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="faq.html"/>
+    <link rel="next" href="aboutssp.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>用語説明</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -27,7 +35,7 @@
 
 
 <dl>
-	<dt id="x30b4-x30fc-x30b9-x30c8">ゴースト</dt>
+	<dt>ゴースト</dt>
 	<dd>
 	キャラクターデータのこと、あるいはその擬似ＡＩを構成する部分の事です。
 	<br />キャラクターの「人格」を司り、いろいろな反応を返したり会話を交わしたりするための、いわば「心」「魂」の部分をゴーストといいます。
@@ -35,20 +43,20 @@
 	<br />また文脈によっては後述の「伺か」と同様、漠然とジャンルのような意味合いでも用いられる言葉です。
 	</dd>
 
-	<dt id="x30b7-x30a7-x30eb">シェル</dt>
+	<dt>シェル</dt>
 	<dd>
 	ゴーストの立ち絵のデータの事です。
 	<br />キャラクターの「表示」を司る見かけの部分です。最近はそうでもありませんが、歴史的に開発者に男性が多い関係上(^_^;)、女性をかたどったものが多いようですが、男性や動物、非生物、また単純に情報ツールとして使うための「萌えレス(Moeless)」なものもあります。
 	<br />シェルはゴーストに複数くっつけて使うことができ、「シェル」メニューから切り替えが可能です。
 	</dd>
 
-	<dt id="x30d0-x30eb-x30fc-x30f3">バルーン</dt>
+	<dt>バルーン</dt>
 	<dd>
 	要するに「吹き出し」です。ゴーストの会話を表示するための小さいウィンドウのことです。
 	<br />これも、上記のシェルと同様、様々な格好のものが多数配布され、簡単にインストールすることができます。
 	</dd>
 
-	<dt id="x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</dt>
+	<dt>ネットワーク更新</dt>
 	<dd>
 	ゴーストなどを構成するファイルについて、インターネットを介して１ファイル単位で変更を検出し、更新分のみダウンロードして上書きする機能の事です。
 	<br />これによってユーザは、配布サイトへたびたび脚を運んで更新の有無を確認し、更新があれば丸ごとアーカイブをダウンロードし、上書きインストールするといった手間を省く事ができます。
@@ -56,27 +64,27 @@
 	<br />ゴーストは<a href="howto-rclick.html">右クリックメニュー</a>から、シェルとバルーンも<a href="config-ghost.html">本体設定</a>によっては同様に右クリックメニューから、またそれ以外も含めて全て<a href="explorer.html">エクスプローラ</a>から更新を実行できます。
 	</dd>
 
-	<dt id="x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</dt>
+	<dt>ヘッドライン</dt>
 	<dd>
 	ある特定のサイトの更新情報などを自動的に取得し、そのリストを表示する機能です。
 	<br />ヘッドライン機能はプラグインによって拡張することができ、そのパッケージを現在表示中のゴーストに<span class="Doing">ドラッグ</span>するか、解凍してheadlineフォルダの中に入れてSSPを一度終了することで認識します。
 	<br />このヘッドラインを自動的に巡回する機能もあります。
 	</dd>
 
-	<dt id="x3055-x304f-x3089-x5074-x2f-x3046-x306b-x3085-x3046-x5074">さくら側/うにゅう側</dt>
+	<dt>さくら側/うにゅう側</dt>
 	<dd>
 	かつての「偽○○」と呼ばれていた頃や、「何か」のデフォルトゴーストでは、メインキャラクター側がさくら、サブキャラクター側がうにゅうという名であり、その呼称の名残です。
 	<br />SSPでのデフォルトゴーストである「Emily」では猫耳な女性側が「さくら側」、謎生物？のテディ側が「うにゅう側」となります。
 	<br />\h側/\u側、\0側/\1側、\p0側/\p1側、メインキャラ側/サブキャラ側、本体側/相方側等の呼称はすべてこれと同じ意味となります。
 	</dd>
 
-	<dt id="x53-x48-x49-x4f-x52-x49">SHIORI</dt>
+	<dt>SHIORI</dt>
 	<dd>
 	「ゴースト」を作り上げるためのシステムの呼称です。
 	<br />通常WindowsのDLLとして提供されますが、OSに依存しない設計になっています。
 	</dd>
 
-	<dt id="x4d-x41-x4b-x4f-x54-x4f">MAKOTO</dt>
+	<dt>MAKOTO</dt>
 	<dd>
 	ゴーストやSSTP通信から来た文章の中のある一定の単語を置き換えるための仕組みです。
 	<br />語尾などを変化させて口調を変えるなどの演出に用いられます。
@@ -84,44 +92,44 @@
 	<br />なお、それを拡大解釈し、音楽を演奏したり、特殊な機能を提供したりするものも存在します。
 	</dd>
 
-	<dt id="x53-x45-x52-x49-x4b-x4f">SERIKO</dt>
+	<dt>SERIKO</dt>
 	<dd>
 	シェルのアニメーションの事です。
 	<br />SSP・伺かでは、シェルのアニメーションの仕様の事をこう呼ぶ場合があります。
 	</dd>
 
-	<dt id="x4d-x41-x59-x55-x4e-x41">MAYUNA</dt>
+	<dt>MAYUNA</dt>
 	<dd>
 	シェルの着せ替えの仕組みの事です。
 	<br />SSP・伺かの着せ替えは、SERIKO（アニメーション）の一種として実装されています。
 	</dd>
 
-	<dt id="x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</dt>
+	<dt>SakuraScript</dt>
 	<dd>
 	ゴーストやSSTP等で使われる、キャラクターの表情を制御したり、特定のURLを開いたり、バルーンに文字や絵を表示したりなどの命令を意味するタグで装飾された文字列のことです。
 	</dd>
 
-	<dt id="x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</dt>
+	<dt>サーフィス</dt>
 	<dd>
 	surface。サーフェス、サーフェイス、などとも。
 	<br />シェル（やバルーンなどの画像を含むコンテンツ）の、一枚の「コマ」にあたるパーツ・要素のことです。
 	<br />シェルではキャラクターの表情一つ一つに対応するほか、着せ替えやアニメーションもサーフィスの連続・合成で表現されます。
 	</dd>
 
-	<dt id="x53-x53-x54-x50">SSTP</dt>
+	<dt>SSTP</dt>
 	<dd>
 	Sakura Script Transfer Protocolの略。上記のSakuraScriptをネットワーク上でやりとりするための仕組みです。
 	<br />「毒電波」とも言われるようですが……(^_^;)
 	</dd>
 
-	<dt id="x4f3a-x304b">伺か</dt>
+	<dt>伺か</dt>
 	<dd>
 	うかがか、と読みます。
 	<br />本来はデスクトップマスコットと呼ばれる種類のアプリケーションの一つです。
 	<br />ただし現在では、その互換アプリケーション（SSPもその一つ）上でのみ動作するものも含めて、キャラクターデータである「ゴースト」をとりまく、ジャンルやコミュニティの漠然とした呼称ともなっています。
 	</dd>
 
-	<dt id="x30d9-x30fc-x30b9-x30a6-x30a7-x30a2">ベースウェア</dt>
+	<dt>ベースウェア</dt>
 	<dd>
 	ソフトウェアとしての「伺か」と、その互換アプリケーションの総称です。SSPもその一種といえます。
 	<br />ゴーストからみて、動作の土台となる環境を提供するソフトウェアであることからの呼び方です。
@@ -140,7 +148,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -194,6 +202,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

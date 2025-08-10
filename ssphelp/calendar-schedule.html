@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="calendar.html" />
-    <link rel="next" href="calendar-menu.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="calendar.html"/>
+    <link rel="next" href="calendar-menu.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>カレンダー:スケジュール編集</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -43,7 +51,7 @@
 <dl>
   <dt>種類</dt>
   <dd>イベントの大きな分類をここで指定します。<br />
-   一部の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>はこの値を見て違う反応をします。</dd>
+   一部のゴーストはこの値を見て違う反応をします。</dd>
 
 </dl>
 
@@ -65,8 +73,8 @@
    <dd>毎週・毎月・毎年あるスケジュールを設定できます。<br />
    予定を記入した日付以降で、設定通り予定を繰り返し表示します。</dd>
    
-   <dt>詳しい内容(<a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>使用可)</dt>
-   <dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に喋らせる、スケジュールの詳しい情報を <a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>で記述します。特別何も喋らせない場合は必要ありません。</dd>
+   <dt>詳しい内容(SakuraScript使用可)</dt>
+   <dd>ゴーストに喋らせる、スケジュールの詳しい情報を SakuraScriptで記述します。特別何も喋らせない場合は必要ありません。</dd>
    
    <dt>『追加』／『更新』ボタン</dt>
    <dd>表示中のスケジュールを登録します。更新の場合は、選択されたスケジュールを登録しなおします。</dd>
@@ -95,7 +103,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -149,6 +157,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

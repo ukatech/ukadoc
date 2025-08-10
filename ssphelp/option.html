@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="shortcut.html" />
-    <link rel="next" href="config.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="shortcut.html"/>
+    <link rel="next" href="config.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>起動オプション一覧</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -43,12 +51,16 @@
 <ol>
 	<li>ssp.exeのショートカットを作成します。<br />例：ssp.exeを右クリック→ショートカットの作成</li>
 	<li>作成したショートカットのプロパティを開きます。<br />例：ショートカットを右クリック→プロパティ</li>
-	<li>プロパティの「リンク先」欄にssp.exeのパスがあるのを確認したら、その全体を「&quot;&quot;」で囲います。</li>
-	<li>囲ったパスに続けて半角スペースを一つ置き、その後ろに下記の起動オプションを記入します。<br />例：&quot;C:/User/Document/略/SSP/ssp.exe&quot; /r</li>
+	<li>プロパティの「リンク先」欄にssp.exeのパスがあるのを確認したら、その全体を「""」で囲います。</li>
+	<li>囲ったパスに続けて半角スペースを一つ置き、その後ろに下記の起動オプションを記入します。<br />例："C:/User/Document/略/SSP/ssp.exe" /r</li>
 	<li>そのままOKボタンを押してプロパティを閉じ、ついでにショートカットに解りやすい名前をつけましょう。<br />例：SSP-ランダム起動</li>
 	<li>そのショートカットを実行すれば、普通にssp.exeを起動した場合とは異なり、オプション設定が反映された状態で起動できます。</li>
 </ol>
+
 <h2>オプション一覧</h2>
+
+<p>/o オプションはカンマ区切りで複数指定できます。</p>
+
 <table class="CommandLineSwitch">
 	<tr>
 		<th>スイッチ</th>
@@ -71,14 +83,92 @@
 	</tr>
 
 	<tr>
-		<td>/r</td>
-		<td>設定にかかわらず<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をランダム起動</td>
+		<td>/o bootunlock</td>
+		<td>二重起動チェックをスキップ</td>
 	</tr>
 
 	<tr>
-		<td>/g フォルダ名/<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>名</td>
-		<td>指定した<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を起動　空白区切りで複数起動</td>
+		<td>/o standalone</td>
+		<td>SSP.exeがすでに立ち上がっていた時に、起動中のSSP.exeに対してインストールやゴースト起動などの処理を委譲する仕組みを無効化し、必ず自身でゴーストを起動したりインストールを行ったりする。<br />
+		/o bootunlock,standalone のように二重起動チェックスキップと合わせて指定することで、完全に警告なしでSSP.exeを複数起動できる。</td>
 	</tr>
+
+	<tr>
+		<td>/o kiosk</td>
+		<td>KIOSKモードを有効にする。以下の通りの挙動となる。 [2.6.54～]
+		<br />/o bootunlock,standaloneが有効になる
+		<br />必ずalignmenttodesktopがfreeになる
+		<br />マウス・キーボード入力を受けつけない
+		<br />二重起動チェックに一切干渉しない
+		<br />通知領域アイコン・タスクバーアイコンを表示しない
+		<br />ゴーストやシェルのSSP側で管理している設定を保存しない
+		<br />起動中を示すウインドウを表示しない
+		<br />エラー通知しない</td>
+	</tr>
+
+	<tr>
+		<td>/o dontloadmodule</td>
+		<td>SHIORI/MAKOTO/PLUGIN/HEADLINE/CALENDAR系を読まない</td>
+	</tr>
+
+	<tr>
+		<td>/o dpiaware</td>
+		<td>DPI Awareness ModeをPer-Monitor V2にして起動する</td>
+	</tr>
+
+	<tr>
+		<td>/o callghost</td>
+		<td>/i と同時に使うと、インストール完了後にゴーストが自動で呼び出される。</td>
+	</tr>
+
+	<tr>
+		<td>/o deletesource</td>
+		<td>/i と同時に使うと、NARのインストールに成功した時にNARを削除する。</td>
+	</tr>
+
+	<tr>
+		<td>/f FMO名</td>
+		<td>書き込むFMO名を強制的に指定したものに変更する。</td>
+	</tr>
+
+	<tr>
+		<td>/r</td>
+		<td>設定にかかわらずゴーストをランダム起動</td>
+	</tr>
+
+	<tr>
+		<td>/g フォルダ名/ゴースト名</td>
+		<td>指定したゴーストを起動する。空白区切りで複数起動する。SSP起動時に指定された場合は、指定されたゴーストのうち最初のものを1組目のゴーストとして起動する。</td>
+	</tr>
+	
+	<tr>
+		<td>/? または --help</td>
+		<td>起動オプションのヘルプページをブラウザで開く</td>
+	</tr>
+	
+	<tr>
+		<td>/? ファイル名 または --help ファイル名</td>
+		<td>指定ファイル名のヘルプページをブラウザで開く</td>
+	</tr>
+
+	<tr>
+		<td>/m x-ukagaka-link:URL</td>
+		<td>x-ukagaka-link:URLを開いた時と同じ動きをする。SSP起動時に指定された場合は、1組目のゴースト起動まで待機してから実行される。</td>
+	</tr>
+
+	<tr>
+		<td>/i NARファイル名</td>
+		<td>NARをインストールする。起動中のSSPがある場合はインストール処理を起動中のほうに任せ、ない場合は自身でインストール処理を行った後起動を続行する。<br />
+		複数回指定すると、複数個のNARを順番にインストールする。<br />
+		任せる先のSSPがゴーストがインストールされていない旨の警告ダイアログ（「何とかして下さい」ダイアログ）が出ている状態でも対応できる。<br />
+		また、その場合に /o callghost も指定した場合は、警告ダイアログの起動続行ボタンを自動的に押された状態にして起動を続行する。</td>
+	</tr>
+
+	<tr>
+		<td>/s SSFファイル名</td>
+		<td><a href="https://emily.shillest.net/specwiki/?SSP/%E4%BB%95%E6%A7%98%E6%9B%B8/SSF%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB">SSFファイル</a>を実行する。SSP起動時に指定された場合は、1組目のゴースト起動まで待機してから実行される。</td>
+	</tr>
+
 </table>
       </div>
       <div id="navigation">
@@ -92,7 +182,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -146,6 +236,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="index.html" />
-    <link rel="next" href="howto-use.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="index.html"/>
+    <link rel="next" href="howto-use.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>起動する</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -36,8 +44,8 @@
 </p>
 
 <p>
-	あなたのデスクトップ上に『<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>』と『<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>』が表示されたら、起動完了です。
-	<br />インストール直後の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>は「Emily/Phase4.5」です。可愛がって下さいね。
+	あなたのデスクトップ上に『ゴースト』と『バルーン』が表示されたら、起動完了です。
+	<br />インストール直後のゴーストは「Emily/Phase4.5」です。可愛がって下さいね。
 </p>
 
 <h3>ショートカットを作る</h3>
@@ -58,17 +66,17 @@
 </p>
 
 <ul>
-	<li>スタートメニュー(Windows 10ではスタートメニューボタンを右クリック)から「ファイル名を指定して実行」</li>
-	<li>shell:statup と入力してOK</li>
+	<li>エクスプローラのウインドウを開き、アドレスバーをクリック</li>
+	<li>shell:statup と入力してEnter</li>
 	<li>表示されたエクスプローラのウインドウの中にショートカットを作成</li>
 </ul>
 
 <h2>起動に関する設定</h2>
-<p>本体設定で、SSPを起動したときに、どの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>で起動するかを以下から選択できます。</p>
+<p>本体設定で、SSPを起動したときに、どのゴーストで起動するかを以下から選択できます。</p>
 <ul>
 	<li>ランダムで起動する</li>
-	<li>前回終了した<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>で起動する</li>
-	<li>起動直後にエクスプローラを開き、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を選んで起動する</li>
+	<li>前回終了したゴーストで起動する</li>
+	<li>起動直後にエクスプローラを開き、ゴーストを選んで起動する</li>
 </ul>
 <p>⇒　詳しくは<a href="config-ghost.html">「ゴースト(1)」</a>のページをご覧ください。</p>
 
@@ -87,7 +95,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -141,6 +149,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

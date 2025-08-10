@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="links.html" />
-    <link rel="next" href="reference.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="links.html"/>
+    <link rel="next" href="reference.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>よくある質問</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -35,28 +43,31 @@
 </ul>
 
 <h2 id="q-howto">操作方法などの質問</h2>
+
 <table class="QnA" id="qna-mikire">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>や<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>が画面外にいってしまって戻せなくなりました。
+			バルーンやシェルが画面外にいってしまって戻せなくなりました。
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<a href="shortcut.html">キーボードショートカット</a>の「<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>位置初期化」「<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>位置初期化」で復帰可能です。
-			<br />またこれらの機能は、右クリックメニュー（<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>が画面外にある場合も、タスクトレイにある<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のアイコンを右クリックすると開けます）の<a href="functions.html">機能メニュー</a>からも実行できます。
+			<a href="shortcut.html">キーボードショートカット</a>の「シェル位置初期化」「バルーン位置初期化」で復帰可能です。
+			<br />またこれらの機能は、右クリックメニュー（シェルが画面外にある場合も、タスクトレイにあるゴーストのアイコンを右クリックすると開けます）の<a href="functions.html">機能メニュー</a>からも実行できます。
 			<br />ただこの方法は初回起動の時点で既に位置がおかしいような場合では使えません。
-			<br />そうした場合は<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>作者にかけあってください。
+			<br />そうした場合はゴースト作者にかけあってください。
 		</td>
 	</tr>
 </table>
+
+
 <table class="QnA" id="qna-tairyou">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>（や<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>）の数が多くなってきて、メニューから探すのが大変です。なんとかなりませんか。
+			ゴースト（やバルーン）の数が多くなってきて、メニューから探すのが大変です。なんとかなりませんか。
 		</td>
 	</tr>
 	<tr>
@@ -73,7 +84,7 @@
 			<a href="explorer.html">エクスプローラ</a>を使いましょう。
 			<br />作者名やインストール日時などでソートできる他、検索機能もあるので、目的のものを見つけるのが簡単なはずです。
 			<br />またエクスプローラを使う場合でも、フォルダ分けをしている場合、フォルダを並べ替えの対象にできるので役立ちます。
-	</td></tr>
+	</tr>
 	<tr>
 		<td>
 			<span class="Head">A3:</span>
@@ -82,18 +93,20 @@
 		</td>
 	</tr>
 </table>
+
+
 <table class="QnA" id="qna-matometekoushin">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			複数の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をいっぺんに<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>したいです。
+			複数のゴーストをいっぺんにネットワーク更新したいです。
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
 			<a href="explorer.html">エクスプローラ</a>で可能です。
-			<br />リストを選択中にCtrl + Aで全<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を選択し、右クリックから「<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>」を選んでください
+			<br />リストを選択中にCtrl + Aで全ゴーストを選択し、右クリックから「ネットワーク更新」を選んでください
 		</td>
 	</tr>
 </table>
@@ -101,6 +114,7 @@
 
 
 <h2 id="q-trouble">不具合・あやしい動作についての質問</h2>
+
 <table class="QnA" id="qna-bugreport">
 	<tr>
 		<td>
@@ -111,15 +125,16 @@
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<a href="links.html#links-others">リンク集</a>から、「バグ報告の仕方（<a href="reference.html#x4f3a-x304b">伺か</a>の場合）」をお読みください。
+			<a href="links.html#links-others">リンク集</a>から、「バグ報告の仕方（伺かの場合）」をお読みください。
 		</td>
 	</tr>
 </table>
+
 <table class="QnA" id="qna-md5error">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>をするとMD5チェックとかいう所でいつも合わないと言われるのですが
+			ネットワーク更新をするとMD5チェックとかいう所でいつも合わないと言われるのですが
 		</td>
 	</tr>
 	<tr>
@@ -137,26 +152,43 @@
 	<tr>
 		<td>
 			<span class="Head">A3:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の作者の方に問い合わせてください。
-			<br />もし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>からmd5不一致が起きているファイル名の通知があれば、それを併せて伝えると助けになるかも知れません。
+			ゴーストの作者の方に問い合わせてください。
+			<br />もしゴーストからmd5不一致が起きているファイル名の通知があれば、それを併せて伝えると助けになるかも知れません。
 		</td>
 	</tr>
 </table>
+
 <table class="QnA" id="qna-tinmoku">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>がしゃべらなくなりました。<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>固有メニューの設定を確認しても、特に喋らないようにはなっていないようです。
+			ゴーストがしゃべらなくなりました。ゴースト固有メニューの設定を確認しても、特に喋らないようにはなっていないようです。
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>によっては、画面端からはみ出していると喋らなくなってしまう場合があります。
+			ゴーストによっては、画面端からはみ出していると喋らなくなってしまう場合があります。
 			<br />一見はみ出しているように見えなくても、「表示されていない（透明）がキャラクターウィンドウの範囲である領域」がはみ出しているというケースもあるので、多少余裕を持って配置してみてください。
 		</td>
 	</tr>
 </table>
+
+<table class="QnA" id="qna-talkokasii">
+	<tr>
+		<td>
+			<span class="Head">Q:</span>
+			ゴーストの表情などがおかしくなったり（特にゴースト固有のモード変更時）、明らかにおかしいトークをしたりします。
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span class="Head">A1:</span>
+			<a href="config.html">設定：旧仕様サポート</a>がONになっていないか確かめてみてください。
+		</td>
+	</tr>
+</table>
+
 <table class="QnA" id="qna-sspcrush">
 	<tr>
 		<td>
@@ -173,7 +205,7 @@
 	<tr>
 		<td>
 			<span class="Head">A2:</span>
-			<a href="config-dev.html">例外ハンドラを使う</a>、をONにしてみてください。ただし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>開発中はおすすめできません（異常が判らなくなるので）。
+			<a href="config-dev.html">例外ハンドラを使う</a>、をONにしてみてください。ただしゴースト開発中はおすすめできません（異常が判らなくなるので）。
 		</td>
 	</tr>
 	<tr>
@@ -181,7 +213,7 @@
 			<span class="Head">A3:</span>
 			STACKTRC.TXTというファイルが、ssp.exeのあるフォルダと同じ場所にできているかもしれません。
 			<br />その場合は、<a href="aboutssp.html">SSP BUGTRAQのToDo</a>へ報告をおねがいします。
-			<br />環境情報はすべてそのファイルに載ってはいますが、起動していた<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や標準状態から行った設定変更の情報など、できるだけ詳しい情報があると修正が容易になります。
+			<br />環境情報はすべてそのファイルに載ってはいますが、起動していたゴーストや標準状態から行った設定変更の情報など、できるだけ詳しい情報があると修正が容易になります。
 			<br />詳しくは先述の質問「<a href="#qna-bugreport">バグ報告の仕方を教えてください</a>」も参考に。
 		</td>
 	</tr>
@@ -193,26 +225,27 @@
 		</td>
 	</tr>
 </table>
+
 <table class="QnA" id="qna-buggyghost">
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			バグバグな<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に切り替えたらSSPが起動しなくなりました。
+			バグバグなゴーストに切り替えたらSSPが起動しなくなりました。
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
 			ssp.exeのあるフォルダから、data → profile → app.datが設定ファイルです。
-			<br />これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルト<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に戻ります。
-			<br />また、ghostフォルダから該当する<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。
+			<br />これを削除するか中身でそれらしき行(Ghostなんとかと頭についている行)を削除するとデフォルトゴーストに戻ります。
+			<br />また、ghostフォルダから該当するゴーストを一度どこかに移動してSSPから見つけられなくすることでも同様の事が出来ます。
 			<br />なお、一応起動時に停止した時に自動的にこれらの処理を行なう機能も含まれております。
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<span class="Head">A2:</span>
-			ssp.exeのあるフォルダからdata → profileにあるrealize.txtおよび、各<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>内に作られるprofileフォルダを削除してみてください。
+			ssp.exeのあるフォルダからdata → profileにあるrealize.txtおよび、各ゴースト内に作られるprofileフォルダを削除してみてください。
 			<br />もしくは、SSPを別の場所に解凍してクリーンな状態のものを作ったのちghostフォルダやballoonフォルダなどだけ移動するという手もあります。
 		</td>
 	</tr>
@@ -240,7 +273,7 @@
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>について誰かと語りたいです！
+			ゴーストについて誰かと語りたいです！
 		</td>
 	</tr>
 	<tr>
@@ -262,7 +295,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -316,6 +349,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

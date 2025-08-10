@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="sspim-sendto.html" />
-    <link rel="next" href="explorer-menu.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="sspim-sendto.html"/>
+    <link rel="next" href="explorer-menu.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>エクスプローラ</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -26,27 +34,27 @@
         </ul>
       </div>
       <div id="contents"><h1>エクスプローラ</h1>
-<img src="image/explorer/0.png" width="737" height="334" alt="ファイルメニュー" />
+        
 <p>
-	SSPが現段階でSSPが認識している<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>などを一覧表示し、切り替えなどの操作行うためのダイアログウィンドウです。
-	<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>数が多く、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>切り替えメニューからの選択が面倒な場合や、選択項目を<a href="config-folder.html">設定されたフォルダ</a>間で移動したい場合など、さまざまに使えます。
+	SSPが現段階でSSPが認識しているゴーストなどを一覧表示し、切り替えなどの操作行うためのダイアログウィンドウです。
+	<br />ゴースト数が多く、ゴースト切り替えメニューからの選択が面倒な場合や、選択項目を<a href="config-folder.html">設定されたフォルダ</a>間で移動したい場合など、さまざまに使えます。
 </p>
 <p>
-	なお本体設定の「<a href="config-ghost.html">ゴースト(1)</a>」から、SSP起動時に毎回エクスプローラを起動して、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を選択して起動する設定も可能です。
+	なお本体設定の「<a href="config-ghost.html">ゴースト(1)</a>」から、SSP起動時に毎回エクスプローラを起動して、ゴーストを選択して起動する設定も可能です。
 </p>
 
 
 
 <h2>基本操作</h2>
 <p>
-	エクスプローラを開いた直後は、現在読み込まれている<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の一覧が表示されています。
-	<br />上部の「<a href="#chapter2-3">種類</a>」のメニューから、<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>や<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>など他の内容のリストに切り替える事ができます。
+	エクスプローラを開いた直後は、現在読み込まれているゴーストの一覧が表示されています。
+	<br />上部の「<a href="#chapter2-3">種類</a>」のメニューから、バルーンやシェルなど他の内容のリストに切り替える事ができます。
 </p>
 <p>
 	リスト中の青く表示されている項目が選択状態です。マウスで項目をクリックする事で選択できます。
 	<br />windowsのエクスプローラ上での選択と同様、ctrlキーを押しながらマウスで選択する事で複数選択したり、shiftキー押しながら範囲選択することもできますが、同時選択中に有効な操作は限られます。
-	<br />選択状態にある項目は、エクスプローラ右下のボタン（種類が<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の場合「切り替え」）の操作対象になる他、エクスプローラ上部の<a href="explorer-menu.html">機能メニュー（右クリックメニュー）</a>で各種操作ができます。
-	<br />なお<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>など、切り替えて使用するタイプのものは、現在使用中のものが最初に選択状態になっています。
+	<br />選択状態にある項目は、エクスプローラ右下のボタン（種類がゴーストの場合「切り替え」）の操作対象になる他、エクスプローラ上部の<a href="explorer-menu.html">機能メニュー（右クリックメニュー）</a>で各種操作ができます。
+	<br />なおゴーストなど、切り替えて使用するタイプのものは、現在使用中のものが最初に選択状態になっています。
 </p>
 <p>
 	項目をダブルクリックした場合、その項目を選択して右下のボタンを押したのと同じ操作になります。
@@ -54,11 +62,7 @@
 <p>
 	リストの列の見出し（名前、作者名、パス、グループ...とある部分）をクリックすると、その列を基準に昇順・降順でリストを並べ替えることができます。
 	<br />見出しの横に▲マークがある場合は昇順、▼マークがある場合は降順で、その列を基準に並んでいます。
-	<br /><a href="config-folder.html">フォルダ設定</a>をしている場合にグループで並び替えたり、特定の作者の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を探したりなどの用途に便利でしょう。
-</p>
-<p>
-	<img src="image/explorer/1.png" width="737" height="334" alt="並べ替えしたファイルメニュー" />
-	<br />画像は\0名昇順で並び替えた場合
+	<br /><a href="config-folder.html">フォルダ設定</a>をしている場合にグループで並び替えたり、特定の作者のゴーストを探したりなどの用途に便利でしょう。
 </p>
 <p>
 	なお右クリック/機能メニューからできる操作については、「<a href="explorer-menu.html">右クリック/機能メニュー</a>」のページを参照してください。
@@ -69,11 +73,11 @@
 </p>
 <h2>上部の各メニュー</h2>
 <h3>ファイル</h3>
-<img src="image/explorer/3.png" width="206" height="57" alt="ファイルメニュー" />
+
 <dl>
 	<dt>再読み込み</dt>
 	<dd>
-		<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>などがインストールされているフォルダをチェックし、新しい<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や削除された<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>があればそれを反映します。
+		ゴーストやバルーンなどがインストールされているフォルダをチェックし、新しいゴーストや削除されたゴーストがあればそれを反映します。
 		<br />通常は使う必要はありませんが、手動でファイル操作をした後などに実行すると良いでしょう。
 	</dd>
 
@@ -83,19 +87,19 @@
 	</dd>
 </dl>
 <h3>編集</h3>
-<img src="image/explorer/4.png" width="200" height="101" alt="編集メニュー" />
+
 <dl>
 	<dt>コピー</dt>
 	<dd>
 		選択中の項目に関する情報をコピーします。
-		<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の場合、半角スペース区切りで「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>名、\0名、\1名、作者名、配布元url」がクリップボードにコピーされます。
+		<br />ゴーストの場合、半角スペース区切りで「ゴースト名、\0名、\1名、作者名、配布元url」がクリップボードにコピーされます。
 		<br />その他の項目の場合、半角スペース区切りで「アイテム名、作者名、配布元url」になります。
 	</dd>
 
 	<dt>すべて選択</dt>
 	<dd>
 		リストの全項目を選択状態にします。
-		<br />全てのアイテムを一度に<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>したり実行するような場合に用います。
+		<br />全てのアイテムを一度にネットワーク更新したり実行するような場合に用います。
 		<br />なお、全項目に対して一度に操作を行うのは、項目数や実行内容によって処理に大変時間がかかることになりますので注意してください。
 	</dd>
 
@@ -113,21 +117,21 @@
 	</dd>
 </dl>
 <h3 id="chapter2-3">種類</h3>
-<img src="image/explorer/5.png" width="160" height="116" alt="種類メニュー" />
+
 <p>
 	選択した内容のリストに切り替えます。
-	<br /><a href="reference.html#x30b7-x30a7-x30eb">シェル</a>は、エクスプローラを開いた<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のものだけ表示されます（当該<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>名は、エクスプローラの外枠上部に、ウィンドウ名として「エクスプローラ - ○○」の形で表示されています）。
+	<br />シェルは、エクスプローラを開いたゴーストのものだけ表示されます（当該ゴースト名は、エクスプローラの外枠上部に、ウィンドウ名として「エクスプローラ - ○○」の形で表示されています）。
 </p>
 <h3>機能</h3>
-<img src="image/explorer/6.png" width="294" height="364" alt="機能メニュー（種類がゴーストの場合）" />
-<br />画像は種類が「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>」の場合
+
+<br />画像は種類が「ゴースト」の場合
 <p>
 	選択した項目についてさまざまな操作を行います。
 	<br />リスト中で右クリックした場合と同じメニューが表示されます。
 	<br />詳細は「<a href="explorer-menu.html">右クリック/機能メニュー</a>」のページを参照してください。
 </p>
 <h3>設定</h3>
-<img src="image/explorer/7.png" width="183" height="28" alt="設定メニュー" />
+
 <dl>
 	<dt>自動で閉じない</dt>
 	<dd>
@@ -143,12 +147,12 @@
 		エクスプローラを閉じます（右上の×ボタンと同じ）。
 	</dd>
 
-	<dt>切り替え<span class="Note">[<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>/<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>/<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>]</span></dt>
+	<dt>切り替え<span class="Note">[ゴースト/シェル/バルーン]</span></dt>
 	<dd>
-		使用中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>、<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>、<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>を、選択しているものへ切替えます。
+		使用中のゴースト、バルーン、シェルを、選択しているものへ切替えます。
 	</dd>
 
-	<dt>読み上げる<span class="Note">[<a href="reference.html#x30d8-x30c3-x30c9-x30e9-x30a4-x30f3">ヘッドライン</a>]</span></dt>
+	<dt>読み上げる<span class="Note">[ヘッドライン]</span></dt>
 	<dd>
 		選択しているウェブサイトの<a href="howto-headline.html">ヘッドライン</a>の読み上げを開始します。
 	</dd>
@@ -171,7 +175,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -225,6 +229,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

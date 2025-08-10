@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="config.html" />
-    <link rel="next" href="config-ippan.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="config.html"/>
+    <link rel="next" href="config-ippan.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>ゴーストごとの設定</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -26,9 +34,8 @@
         </ul>
       </div>
       <div id="contents"><h1>設定：ゴーストごとの設定</h1>
-<img src="image/config-eachghost/0.png" width="413" height="532" alt="ゴーストごとの設定ダイアログ" />
 <p class="Hint">
-	ここで行える設定の標準設定となるのは、本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えるものです。<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>ごとの設定が本体設定に優先します。
+	ここで行える設定の標準設定となるのは、本体設定の「<a href="config-ghost2.html">ゴースト(2)</a>」で行えるものです。ゴーストごとの設定が本体設定に優先します。
 </p>
 <h2>各項目の解説</h2>
 <p>
@@ -39,7 +46,7 @@
 	<dt>サウンドを鳴らさない</dt>
 	<dd>
 		SSP経由で制御されるサウンドをすべて停止し、サウンドを鳴らさなくします。
-		<br />ただし、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が自分で（SSPに頼らずに）サウンドを再生する機能を持っている場合があり、そのようなものは制御できないので注意してください。
+		<br />ただし、ゴーストが自分で（SSPに頼らずに）サウンドを再生する機能を持っている場合があり、そのようなものは制御できないので注意してください。
 	</dd>
 
 	<dt>常に手前に表示</dt>
@@ -47,15 +54,15 @@
 		喋っているかどうかにかかわらず、常にデスクトップの一番手前に表示するようにします。
 	</dd>
 
-	<dt><a href="reference.html#x53-x45-x52-x49-x4b-x4f">SERIKO</a> Moveを無視</dt>
+	<dt>SERIKO Moveを無視</dt>
 	<dd>
-		常時<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が動いている（浮遊の表現等）機能を強制的にOFFにします。
+		常時ゴーストが動いている（浮遊の表現等）機能を強制的にOFFにします。
 		<br />ウィンドウの動きがかなりの負荷になっている場合等に有効にすると負荷を軽減することができます。
 	</dd>
 
-	<dt><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>位置補正有効</dt>
+	<dt>バルーン位置補正有効</dt>
 	<dd>
-		<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を<span class="Doing">ドラッグ</span>して位置補正をするかどうかを設定します。
+		バルーンを<span class="Doing">ドラッグ</span>して位置補正をするかどうかを設定します。
 		<br />補正機能を動作させたくない場合は無効にしてください。
 	</dd>
 </dl>
@@ -64,16 +71,16 @@
 	この項目は<a href="config-ippan.html">開発用オプションがオン</a>になっている場合のみ表示されます。
 </p>
 <dl>
-	<dt>定義なし<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>を無視</dt>
+	<dt>定義なしサーフィスを無視</dt>
 	<dd>
-	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の表情として定義されていない、アニメーション用などの雑多な画像ファイルを無視します。通常OFFで問題ありません。
-	<br />旧い<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>では特にONにすると問題が生じます。
+	ゴーストの表情として定義されていない、アニメーション用などの雑多な画像ファイルを無視します。通常OFFで問題ありません。
+	<br />旧いゴーストでは特にONにすると問題が生じます。
 	</dd>
 
 	<dt>隠し指定された要素を表示する</dt>
 	<dd>
 	ネタバレ対策や、内部で使用するために、「ユーザーが操作できる形で表示しない」設定になっているものをすべて表示します。
-	<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>をリロードしないと反映されない場合があります。
+	<br />ゴーストをリロードしないと反映されない場合があります。
 	<br />デバッグ用途のみに使用することをおすすめします。 
 	</dd>
 </dl>
@@ -81,14 +88,14 @@
 <h3>シェル倍率</h3>
 <p>キャラクターの表示倍率に付随する設定です。</p>
 <dl>
-	<dt><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>も連携する</dt>
-	<dd><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>も連携して同じ倍率で拡大縮小します。</dd>
+	<dt>バルーンも連携する</dt>
+	<dd>バルーンも連携して同じ倍率で拡大縮小します。</dd>
 
 	<dt>拡大/縮小時の補完処理(低速)</dt>
 	<dd>拡大/縮小時にきれいに見えるよう補完処理をするかの設定です。<br />ONの場合比較的低速になりますがきれいに見えるようになります。</dd>
 
-	<dt><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>の補完処理(低速)</dt>
-	<dd><a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>を拡大/縮小した時にきれいに見えるよう補完処理をするかの設定です。<br />ONの場合比較的低速になりますが、OFFにすると文字が読みにくくなる可能性があります。</dd>
+	<dt>バルーンの補完処理(低速)</dt>
+	<dd>バルーンを拡大/縮小した時にきれいに見えるよう補完処理をするかの設定です。<br />ONの場合比較的低速になりますが、OFFにすると文字が読みにくくなる可能性があります。</dd>
 </dl>
 
 <h3>キャラクター自由移動</h3>
@@ -97,8 +104,8 @@
 	<dt>常に自由移動</dt>
 	<dd>常に自由に移動できるようにします。</dd>
 
-	<dt><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>設定</dt>
-	<dd><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>側の設定に任せます。</dd>
+	<dt>ゴースト設定</dt>
+	<dd>ゴースト側の設定に任せます。</dd>
 
 	<dt>常に制限</dt>
 	<dd>画面下部に吸着させるようにします。</dd>
@@ -125,7 +132,7 @@
 	<dt>標準設定</dt>
 	<dd>
 		本体設定ダイアログの「<a href="config-ghost2.html">ゴースト(2)</a>」のページを開きます。
-		<br /><a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>(2)での設定が、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>別設定の標準設定（未設定時の設定）になっています。
+		<br />ゴースト(2)での設定が、ゴースト別設定の標準設定（未設定時の設定）になっています。
 	</dd>
 	<dt>標準に戻す</dt>
 	<dd>
@@ -153,7 +160,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -207,6 +214,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

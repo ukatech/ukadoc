@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="functions.html" />
-    <link rel="next" href="calendar-schedule.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="functions.html"/>
+    <link rel="next" href="calendar-schedule.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>カレンダー</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -33,10 +41,10 @@ SSPが持つ特徴的な機能は以下の通りです。</p>
 
 <h2>ゴーストによる予定の読み上げ</h2>
 
-<p>日付右クリックから「今日の予定」を選択した時や、時間指定されたスケジュールの5分前になったときに、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が読み上げます。</p>
+<p>日付右クリックから「今日の予定」を選択した時や、時間指定されたスケジュールの5分前になったときに、ゴーストが読み上げます。</p>
 
 <p>
-それだけなら普通のスケジューラと何ら変わりありませんが、カレンダーイベント対応の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>であれば予定に応じたいろいろな反応をするようになっています。
+それだけなら普通のスケジューラと何ら変わりありませんが、カレンダーイベント対応のゴーストであれば予定に応じたいろいろな反応をするようになっています。
 <br />たとえばスケジュールの種類が「締切」の場合は、焦った表情になる等の反応があるかもしれません。
 </p>
 
@@ -63,7 +71,7 @@ SSPが持つ特徴的な機能は以下の通りです。</p>
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -117,6 +125,8 @@ SSPが持つ特徴的な機能は以下の通りです。</p>
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

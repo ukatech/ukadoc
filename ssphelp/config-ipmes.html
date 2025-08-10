@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="config-im.html" />
-    <link rel="next" href="config-i18n.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="config-im.html"/>
+    <link rel="next" href="config-i18n.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>本体設定:IP Messenger</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -28,30 +36,7 @@
         </ul>
       </div>
       <div id="contents"><h1>設定：IPMessenger</h1>
-<p>
-	画像左側のリストをクリックすると、それぞれの解説ページへ移動します。
-	<br /><img src="image/config-ipmes/0.png" usemap="#configdialog" width="602" height="591" alt="本体設定ダイアログIPMessenger" />
-	<map name="configdialog" id="configdialog">
-		<area shape="rect" coords="14,31,137,46" href="config-ippan.html" alt="一般" />
-		<area shape="rect" coords="14,47,137,66" href="config-ghost.html" alt="ゴースト(1)" />
-		<area shape="rect" coords="14,66,137,82" href="config-ghost2.html" alt="ゴースト(2)" />
-		<area shape="rect" coords="14,82,137,98" href="config-folder.html" alt="フォルダ" />
-		<area shape="rect" coords="14,98,137,114" href="config-disp.html" alt="表示" />
 
-		<area shape="rect" coords="14,115,137,133" href="config-talk.html" alt="喋り/バルーン" />
-		<area shape="rect" coords="14,134,137,152" href="config-dictation.html" alt="音声合成" />
-		<area shape="rect" coords="14,150,137,168" href="config-conn1.html" alt="接続(1)" />
-		<area shape="rect" coords="14,167,137,185" href="config-conn2.html" alt="接続(2)" />
-		<area shape="rect" coords="14,184,137,202" href="config-pop.html" alt="POP" />
-		<area shape="rect" coords="14,201,137,219" href="config-extprog.html" alt="外部アプリ" />
-
-		<area shape="rect" coords="14,218,137,236" href="config-im.html" alt="IM" />
-		<area shape="rect" coords="14,235,137,253" href="config-ipmes.html" alt="IPMessenger" />
-		<area shape="rect" coords="14,252,137,270" href="config-i18n.html" alt="国際化" />
-		<area shape="rect" coords="14,269,137,287" href="config-dev.html" alt="開発/その他" />
-		
-	</map>
-</p>
 <p>このページでは右クリックメニューの「設定」サブメニューにある項目「本体設定」で開くダイアログの、「IPMessenger」ページについて解説しています。</p>
 <p>IP Messengerを使ったインスタントメッセンジャ機能の設定です。</p>
 
@@ -104,7 +89,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -158,6 +143,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

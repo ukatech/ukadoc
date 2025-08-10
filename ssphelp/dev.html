@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="aboutssp.html" />
-    <link rel="next" href="dev-scriptlog.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="aboutssp.html"/>
+    <link rel="next" href="dev-scriptlog.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>開発者向けヘルプ</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -24,11 +32,11 @@
         </ul>
       </div>
       <div id="contents"><h1>開発者向けヘルプ</h1>
-<p>SSPが備える<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>などの開発者向け機能の案内+ちょっとした手引きです。</p>
+<p>SSPが備えるゴーストなどの開発者向け機能の案内+ちょっとした手引きです。</p>
 <p>
-	<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>たちと戯れていたら自分も作ってみたくなってしまったあなたへ。
+	ゴーストたちと戯れていたら自分も作ってみたくなってしまったあなたへ。
 	<br />もしくは、端からマスコットアプリを作るつもりでSSPを導入された方へ。
-	<br />あるいは<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>よりも、<a href="reference.html#x30d0-x30eb-x30fc-x30f3">バルーン</a>や<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>といったコンテンツの製作に興味がある方にも、有益な情報があるはずです。
+	<br />あるいはゴーストよりも、バルーンやシェルといったコンテンツの製作に興味がある方にも、有益な情報があるはずです。
 </p>
 <p>
 	といっても、残念ながらSSPのヘルプだけでは何の作り方もほとんど解りません。
@@ -71,17 +79,17 @@
 		<br />不要なファイルを更新に含めないための予防措置です。
 	</dd>
 
-	<dt><a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>が存在しない時に非表示とする</dt>
+	<dt>サーフィスが存在しない時に非表示とする</dt>
 	<dd>
 		<span class="Recommend">ON</span>。
-		<br />通常、スクリプト中で未定義の<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>を指定した場合、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>はデフォルトの表情（例えば\0側ならsurface0）を表示します。
-		<br />しかしこれだと<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>の指定ミスがあった場合に分かり難い事があるので、この設定をONにして<a href="reference.html#x30b5-x30fc-x30d5-x30a3-x30b9">サーフィス</a>を完全に消してしまうようにすると、ミスに気付きやすくなります。
+		<br />通常、スクリプト中で未定義のサーフィスを指定した場合、ゴーストはデフォルトの表情（例えば\0側ならsurface0）を表示します。
+		<br />しかしこれだとサーフィスの指定ミスがあった場合に分かり難い事があるので、この設定をONにしてサーフィスを完全に消してしまうようにすると、ミスに気付きやすくなります。
 	</dd>
 
 	<dt>Vanish(アンインストール)実行を抑制</dt>
 	<dd>
 		<span class="Recommend">ON</span>。
-		<br />開発中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を誤って消してしまうような事故の防止のためです。
+		<br />開発中のゴーストを誤って消してしまうような事故の防止のためです。
 		<br />アンインストール時の動作をテストしたいような場合にのみ解除してもよいかもしれません。
 	</dd>
 
@@ -100,27 +108,22 @@
 	<dt>例外ハンドラを使う</dt>
 	<dd>
 		<span class="Recommend">OFF</span>。
-		<br />同設定は、メモリへのアクセス違反が起きるような大きなエラーの際に、SSPが動作停止して<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が予期せぬ終了をする事を回避します。
+		<br />同設定は、メモリへのアクセス違反が起きるような大きなエラーの際に、SSPが動作停止してゴーストが予期せぬ終了をする事を回避します。
 		<br />これはユーザにとっては有益ですが、開発者にとってはエラーの兆候を見逃す原因になります。
 	</dd>
 </dl>
 
 <h3>本体設定 - <a href="config-folder.html">フォルダ</a></h3>
 <p>
-	開発中<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>専用のフォルダを作り、開発中の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>や開発の補助用の機能を備えた<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>などをまとめておくと便利です。
+	開発中ゴースト専用のフォルダを作り、開発中のゴーストや開発の補助用の機能を備えたゴーストなどをまとめておくと便利です。
 	<br />その上でそのフォルダについては、フォルダ個別設定の全てのチェックボックスをオンにしておくとよいでしょう。
 	<br />テスト中に起こると面倒が起きる可能性のある色々なイベントを防いでくれます。
-	<br />同様の設定は、後述の開発用パレットで個別の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>についても可能ですが、うっかりの防止に役立ちます。
-	<br />もちろん、インストールされている<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が多い場合の検索性向上の利点もあります。
+	<br />同様の設定は、後述の開発用パレットで個別のゴーストについても可能ですが、うっかりの防止に役立ちます。
+	<br />もちろん、インストールされているゴーストが多い場合の検索性向上の利点もあります。
 </p>
 
 <h2>開発者用機能の説明</h2>
-<img src="image/dev/0.png" usemap="#functions" width="350" height="350" alt="開発者モードでの機能サブメニュー" />
-<map name="functions" id="functions">
-	<area shape="rect" coords="4,66,350,81" href="#menuitem1" alt="1,スクリプトログ" />
-	<area shape="rect" coords="4,230,350,245" href="#menuitem2" alt="2,制限モード強制解除" />
-	<area shape="rect" coords="4,333,350,348" href="#menuitem3" alt="3,開発用パレット" />
-</map>
+
 <h3 id="menuitem1">1,スクリプトログ</h3>
 <p>
 	SSPが受け取り、実行したスクリプトの履歴を表示し、再度喋らせたりコピーするなどの操作が出来ます。
@@ -130,7 +133,7 @@
 
 <h3 id="menuitem2">2,制限モード強制解除</h3>
 <p>
-	パッシブモード、インダクションモードなどの、一部操作を制限するモードを強制的に終了します（モードは本来<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>側からさくらスクリプトによる制御で開始・終了されます）。
+	パッシブモード、インダクションモードなどの、一部操作を制限するモードを強制的に終了します（モードは本来ゴースト側からさくらスクリプトによる制御で開始・終了されます）。
 	<br />これらのモードは適切なタイミングで解除されなければ、実質的な操作不能状態に陥る可能性があるため、そのような状況で利用できます。
 	<br />一方で、本来これらのモードであるべき場面でモードが終了している事によって、想定外の操作・挙動が発生し、更なる不具合が引き起こされる可能性にも注意しなければなりません。
 	<br />従ってこの機能は、ユーザ側での緊急措置として常用されるものというよりは、あくまで開発中に、モード終了が正常に行われないような不具合を確認・修正する過程で活用されるべきでしょう。
@@ -167,7 +170,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -221,6 +224,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

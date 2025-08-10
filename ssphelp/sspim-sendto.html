@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="sspim-addto.html" />
-    <link rel="next" href="explorer.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="sspim-addto.html"/>
+    <link rel="next" href="explorer.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -14,6 +14,14 @@
     <title>SSPメッセンジャー:送信する</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -30,13 +38,13 @@
       <div id="contents"><h1>SSPメッセンジャ：送信する</h1>
 
 
-<p>ダイアログ上部の登録ユーザーの一覧から送信先を選んで、メッセージ欄に<a href="reference.html#x53-x61-x6b-x75-x72-x61-x53-x63-x72-x69-x70-x74">SakuraScript</a>形式のメッセージを書いて送信します。</p>
+<p>ダイアログ上部の登録ユーザーの一覧から送信先を選んで、メッセージ欄にSakuraScript形式のメッセージを書いて送信します。</p>
 
 <p>送信先ユーザは複数選択可能です。一度にたくさんの人に送信できます。</p>
 
 <h2>確認</h2>
 <p>スクリプトの内容に誤りがないか、確認ボタンを押して調べましょう。<br />
-正常に<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>が喋ってくれましたか？</p>
+正常にゴーストが喋ってくれましたか？</p>
 
 <h2>送信</h2>
 <p>こちらのボタンで実際に送信します。</p>
@@ -52,7 +60,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -106,6 +114,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>

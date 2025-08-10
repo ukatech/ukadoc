@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <link rel="stylesheet" type="text/css" href="about.css" />
-    <link rel="prev" href="dev-links.html" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <link rel="stylesheet" type="text/css" href="about.css"/>
+    <link rel="prev" href="dev-links.html"/>
 <!--[if lt IE 9]>
     <script type="text/javascript" src="lib/IE9.js"></script>
     <script type="text/javascript" src="lib/augment.min.js"></script>
@@ -13,6 +13,14 @@
     <title>開発よくある質問</title>
   </head>
   <body>
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+       
+      function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'ja', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <div id="main">
       <div id="breadcrumb">
         <ul>
@@ -28,7 +36,7 @@
 <p>
 	開発者向けのよくある質問です。
 	<br />あがってきたバグ報告の扱いに困っているような時にヒントになるかも知れません。
-	<br />ただし<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>ごとの情報まではカバーできませんので、<a href="dev-links.html">開発用リンク集</a>から各<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>ごとの解説などを参考に。
+	<br />ただしゴーストのSHIORIごとの情報まではカバーできませんので、<a href="dev-links.html">開発用リンク集</a>から各SHIORIごとの解説などを参考に。
 </p>
 <ul>
 	<li><a href="#q-basic">開発の基本についての質問</a></li>
@@ -40,30 +48,30 @@
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を作りたいです！　最初は何から始めればいいですか？
+			ゴーストを作りたいです！　最初は何から始めればいいですか？
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<p>
 				<span class="Head">A1:</span>
-				どんな<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を作りたいか大体イメージしたら、最初は二つのものを用意するところから始める事になるでしょう。
+				どんなゴーストを作りたいか大体イメージしたら、最初は二つのものを用意するところから始める事になるでしょう。
 			</p>
 			<p>
-				一つは<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>、つまりは立ち絵のセットで、自分で描くか他の人に描いてもらうかの二択です（あたりまえですが）。
-				<br />自力で用意する場合は、<a href="dev-links.html#links-reference">開発用リンク集</a>にある「ukadoc」の「<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の作成」あたりを参考に。
-				<br />そうでない場合、ありがたい事に世の中には「フリー<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>」と呼ばれる自由に使える<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>が公開されています。
-				<br />フリー<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>を探すのは、<a href="dev-links.html#links-material">開発用リンク集</a>の「freeshell wiki」が役立つでしょう。
+				一つはシェル、つまりは立ち絵のセットで、自分で描くか他の人に描いてもらうかの二択です（あたりまえですが）。
+				<br />自力で用意する場合は、<a href="dev-links.html#links-reference">開発用リンク集</a>にある「ukadoc」の「シェルの作成」あたりを参考に。
+				<br />そうでない場合、ありがたい事に世の中には「フリーシェル」と呼ばれる自由に使えるシェルが公開されています。
+				<br />フリーシェルを探すのは、<a href="dev-links.html#links-material">開発用リンク集</a>の「freeshell wiki」が役立つでしょう。
 			</p>
 			<p>
-				<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>の他にもう一つ必要なのが、<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>と呼ばれる<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の核となるものです。
-				<br /><a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>によって、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>がどんな時にどう喋ったり動いたりするかという頭脳の部分の作り方が全く変わります。
-				<br /><a href="dev-links.html#links-shiori">開発用リンク集</a>に、代表的な<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>にはどんなものがあるか書いています。
-				<br />それを参考にして自分と<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>にあったものを選んでみてください。
+				シェルの他にもう一つ必要なのが、SHIORIと呼ばれるゴーストの核となるものです。
+				<br />SHIORIによって、ゴーストがどんな時にどう喋ったり動いたりするかという頭脳の部分の作り方が全く変わります。
+				<br /><a href="dev-links.html#links-shiori">開発用リンク集</a>に、代表的なSHIORIにはどんなものがあるか書いています。
+				<br />それを参考にして自分とゴーストにあったものを選んでみてください。
 			</p>
 			<p>
-				<a href="reference.html#x30b7-x30a7-x30eb">シェル</a>も<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>も用意できたら、いよいよ作成に取り掛かるのですが、ここから先の作業はほとんど<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>次第といっていいです。
-				<br />ですからまずは<a href="reference.html#x53-x48-x49-x4f-x52-x49">SHIORI</a>について解説されているサイトをよく読んでみるといいかもしれません。
+				シェルもSHIORIも用意できたら、いよいよ作成に取り掛かるのですが、ここから先の作業はほとんどSHIORI次第といっていいです。
+				<br />ですからまずはSHIORIについて解説されているサイトをよく読んでみるといいかもしれません。
 				<br />そういったサイトも、なるべく<a href="dev-links.html#links-shiori">開発用リンク集</a>に載せています。
 			</p>
 		</td>
@@ -73,32 +81,32 @@
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>を公開するにはどうしたらいいですか？
+			ゴーストを公開するにはどうしたらいいですか？
 		</td>
 	</tr>
 	<tr>
 		<td>
 			<p>
 				<span class="Head">A1:</span>
-				もしあなたの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>に、<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>の機能をつけなくともよいのなら、方法は簡単です。
-				<br />要はあなたの<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のファイル一式をnar（やzip）にして公開すればよいだけです。
+				もしあなたのゴーストに、ネットワーク更新の機能をつけなくともよいのなら、方法は簡単です。
+				<br />要はあなたのゴーストのファイル一式をnar（やzip）にして公開すればよいだけです。
 				<br />オンラインストレージサービス（Drop box、Googleドライブ、One Dribe、etc.）を使ったり、適当なアップローダを使うこともできるかもしれません。
 				<br />その時に必要な設定やファイルがいくらかありますが、詳細は<a href="dev-links.html#links-reference">開発リンク集</a>の「ukadoc」から「配布用ファイルを作る」のページをお読みください。
 			</p>
 			<p>
-				しかし<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>機能をつけるつもりがあるならば、それに加えて（あるいは替わって）サーバの準備が必要です。
+				しかしネットワーク更新機能をつけるつもりがあるならば、それに加えて（あるいは替わって）サーバの準備が必要です。
 				<br />サーバといっても、通常個人ウェブサイトを設置するのに必要な、いわゆるレンタルサーバ、レンタルスペース、サイト公開代理サービスなどと呼ばれるサービスを利用すれば大丈夫です。
-				<br />ただし、サーバの設定や利用規約によっては、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>の公開に適さない場合があります。
-				<br />他の<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>作者がどのようなサーバを利用しているか観察してみるか、<a href="dev-links.html#links-others">開発リンク集</a>にある「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>配布するなら」の記事が役立つはずです。
+				<br />ただし、サーバの設定や利用規約によっては、ゴーストの公開に適さない場合があります。
+				<br />他のゴースト作者がどのようなサーバを利用しているか観察してみるか、<a href="dev-links.html#links-others">開発リンク集</a>にある「ゴースト配布するなら」の記事が役立つはずです。
 			</p>
 			<p>
-				サーバを用意したなら、あとは<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のファイルをサーバ上にアップロードするだけです。
+				サーバを用意したなら、あとはゴーストのファイルをサーバ上にアップロードするだけです。
 				<br />アップロードは通常のウェブサイト同様に、FTP通信を用います。
-				<br />この辺りの詳細は<a href="dev-links.html#links-reference">開発リンク集</a>の「ukadoc」から「<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>に対応する」のページをお読みください。
+				<br />この辺りの詳細は<a href="dev-links.html#links-reference">開発リンク集</a>の「ukadoc」から「ネットワーク更新に対応する」のページをお読みください。
 				<br />※FTP通信によるサーバへのアップロード自体がよくわからない方は、「ウェブサイト　公開」などで検索されるとよろしいでしょう。
 			</p>
 			<p>
-				なお、一般的なFTPソフトの他に、<a href="dev-links.html">開発用リンク集</a>にある「整備班」で配布している「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>配布系自動化システム」を導入すると、<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>のアップロードに関わるいくらかの手間やトラブルを回避する事ができます。
+				なお、一般的なFTPソフトの他に、<a href="dev-links.html">開発用リンク集</a>にある「整備班」で配布している「ゴースト配布系自動化システム」を導入すると、ゴーストのアップロードに関わるいくらかの手間やトラブルを回避する事ができます。
 				<br />最初の導入と設定だけが少し手間ですが、是非試してみてください。
 			</p>
 		</td>
@@ -108,7 +116,7 @@
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>とSSPをセットで配布してもいいですか？
+			ゴーストとSSPをセットで配布してもいいですか？
 		</td>
 	</tr>
 	<tr>
@@ -128,7 +136,7 @@
 	<tr>
 		<td>
 			<span class="Head">A1:</span>
-			<a href="links.html">リンク集</a>にある、「disc-2」や「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>キャプターさくら」に登録されるとよいでしょう。余裕があれば是非「GHOST TOWN」にも。
+			<a href="links.html">リンク集</a>にある、「disc-2」や「ゴーストキャプターさくら」に登録されるとよいでしょう。余裕があれば是非「GHOST TOWN」にも。
 			<br />また「回覧板」にも、宣伝してよいスレッドがあります。一番迅速なリアクションがあるのは、twitterかもしれません。
 		</td>
 	</tr>
@@ -159,7 +167,7 @@
 			<span class="Head">A1:</span>
 			<a href="links.html#links-community">リンク集</a>にある「伺的なフォーラム」の開発フォーラムがそのための場所として用意されています。
 			<br />一見人が居ないように見えても、あなたが質問を投げればどこからともなく誰かがやって来るでしょう。
-			<br />また2015年現在一番人がいるのはtwitterです。アカウントがあるなら「#<a href="reference.html#x4f3a-x304b">伺か</a>」「#ukagaka」タグをつけて質問をつぶやけば、まず間違いなく誰かに捕捉されます<span class="Undertone">（時には勢いあまって包囲されますがどうか怯まないでください）</span>。
+			<br />また2015年現在一番人がいるのはtwitterです。アカウントがあるなら「#伺か」「#ukagaka」タグをつけて質問をつぶやけば、まず間違いなく誰かに捕捉されます<span class="Undertone">（時には勢いあまって包囲されますがどうか怯まないでください）</span>。
 		</td>
 	</tr>
 </table>
@@ -183,7 +191,7 @@
 	<tr>
 		<td>
 			<span class="Head">Q:</span>
-			MD5不一致エラーが出て<a href="reference.html#x30cd-x30c3-x30c8-x30ef-x30fc-x30af-x66f4-x65b0">ネットワーク更新</a>がうまく行きません。
+			MD5不一致エラーが出てネットワーク更新がうまく行きません。
 		</td>
 	</tr>
 	<tr>
@@ -191,7 +199,7 @@
 			<span class="Head">A1:</span>
 			更新用ファイル（update.txt/update2.dau）を作成したあとに、更新対象のファイルに変更を加えていませんか？
 			<br />また、FTP通信で更新用ファイルをアップロードする際に、アスキーモードで転送していませんか？
-			<br />なお、こうしたミスの防止には、<a href="links">リンク集</a>にある「整備班」で配布されている、「<a href="reference.html#x30b4-x30fc-x30b9-x30c8">ゴースト</a>配布系自動化システム」が役立つでしょう。
+			<br />なお、こうしたミスの防止には、<a href="links">リンク集</a>にある「整備班」で配布されている、「ゴースト配布系自動化システム」が役立つでしょう。
 		</td>
 	</tr>
 	<tr>
@@ -213,7 +221,7 @@
       <div id="search">
         <p>
           <label>検索
-            <input id="query" type="text" />
+            <input id="query" type="text"/>
           </label>
         </p>
         <script type="text/javascript" src="lib/lunr-ie7.js"></script>
@@ -267,6 +275,8 @@
                                           <li><a href="explorer-menu.html">右クリック/機能メニュー</a>
                                           </li>
                                 </ul>
+                              </li>
+                              <li><a href="speech_recognition.html">音声認識</a>
                               </li>
                               <li><a href="shortcut.html">ショートカット一覧</a>
                               </li>
