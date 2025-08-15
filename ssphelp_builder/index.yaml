@@ -80,7 +80,7 @@
         - title: 国際化
           place: config-i18n
         - title: 配信
-          place: config-haishin
+          place: config-streamingtool
         - title: 開発/その他
           place: config-dev
 - title: 情報
