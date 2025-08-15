@@ -289,18 +289,16 @@ table#environment td {
 .Figure {
 	float: right;
 }
+
 #menu {
-	position: absolute;
-	top:0;
-	left:0;
-	z-index:3;
-
+	position: static;
+	float: left;
 	width: 250px;
-	height: 100%;
-	overflow: hidden auto;
-
-	margin: 0;
+	height: auto;
+	overflow: auto;
+	margin: 0 16px 0 0;
 	padding: 0;
+	z-index: auto;
 	color: #000000;
 	background-color: #ccccff;
 	line-height: 1.3em;
@@ -335,10 +333,9 @@ ul ul ul {
 }
 
 #main {
-	position: relative;
-
-	margin-left: 260px;
+	position: static;
+	overflow: hidden;
+	margin-left: 0;
 	padding-right: 1em;
-	height: 100%;
-	overflow: hidden auto;
+	height: auto;
 }
