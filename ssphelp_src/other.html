@@ -1,0 +1,25 @@
+<h1>その他の機能</h1>
+
+<p>
+	ここでは、その他の雑多な機能や実験的機能について説明します。
+</p>
+
+<h2>MCPサーバ対応機能</h2>
+<p>
+	SSPはMCP (Model context protocol) サーバとしてふるまうことができ、LLMからのSakuraScript実行やプロパティシステムの読み取りなどが可能です。
+	<br />この機能を使用するためには、claude_desktop_config.jsonなどに以下を追加してみてください。
+</p>
+
+<pre>
+{
+  "mcpServers": {
+    "ssp-mcp-server": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://127.0.0.1:9801/api/mcp/v1"
+      ]
+    }
+  }
+}
+</pre>
