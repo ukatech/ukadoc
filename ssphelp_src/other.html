@@ -7,19 +7,5 @@
 <h2>MCPサーバ対応機能</h2>
 <p>
 	SSPはMCP (Model context protocol) サーバとしてふるまうことができ、AI(LLM)からのSakuraScript実行やプロパティシステムの読み取りなどが可能です。
-	<br />この機能を使用するためには、claude_desktop_config.jsonなどに以下を追加してみてください。
+	<br />この機能を使用するためには、SSPを起動した状態で、<a href="http://127.0.0.1:9801/api/mcp/help">127.0.0.1:9801/api/mcp/help</a>を開き、説明を読んで、claude_desktop_config.jsonなどに適切に追加してみてください。
 </p>
-
-<pre>
-{
-  "mcpServers": {
-    "ssp-mcp-server": {
-      "command": "npx",
-      "args": [
-        "mcp-remote",
-        "http://127.0.0.1:9801/api/mcp/v1"
-      ]
-    }
-  }
-}
-</pre>
