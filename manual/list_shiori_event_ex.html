@@ -229,6 +229,12 @@
 				<li><a href="#OnNeedlePoke">OnNeedlePoke</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category ghost">
+			<h1>ゴースト「Hydrate」</h1>
+			<ul>
+				<li><a href="#OnHydrateStatsNotify">OnHydrateStatsNotify</a></li>
+			</ul>
+		</section>
 		<section class="navigation-category plugin">
 			<h1>プラグイン「バーチャルビールかけ（BeerShower）」</h1>
 			<ul>
@@ -1048,6 +1054,44 @@
 						<dd>The ID of the scope that was poked. 0 for the main character, 1 for the side character, 2 and onwards for additional characters.</dd>
 						<dt>Reference1</dt>
 						<dd>The name of the shell Needle is currently using.</dd>
+					</dl>
+				</dd>
+			</dl>
+		<section class="category ghost">
+			<h1>ゴースト「Hydrate」</h1>
+			<ul class="caption link">
+				<li>公開元：<a href="https://ukagaka.zichqec.com/ghost/hydrate">https://ukagaka.zichqec.com/ghost/hydrate</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnHydrateStatsNotify">
+				<dt class="entry">OnHydrateStatsNotify</dt>
+				<dd class="entry">
+					<p>Notifies information about Hydrate's current state and the user's hydration stats.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The name of the shell Hydrate is currently using.</dd>
+						<dt>Reference1</dt>
+						<dd>A list of the current dressups. This is a 2-dimensional array, where each dressup is delimited by 0xFDEF, and the category and part name of each dressup is delimited by 0x01. (Example: "Glass shape[0x01]Tall[0xFDEF]Drink[0x01]Tea")</dd>
+						<dt>Reference2</dt>
+						<dd>Currently blank, reserved for future use.</dd>
+						<dt>Reference3</dt>
+						<dd>Currently blank, reserved for future use.</dd>
+						<dt>Reference4</dt>
+						<dd>The number of drinks today.</dd>
+						<dt>Reference5</dt>
+						<dd>The number of drinks in total.</dd>
+						<dt>Reference6</dt>
+						<dd>The current drink streak (number of drinks in a row).</dd>
+						<dt>Reference7</dt>
+						<dd>The highest ever drink streak (number of drinks in a row).</dd>
+						<dt>Reference8</dt>
+						<dd>The number of extra sips taken today.</dd>
+						<dt>Reference9</dt>
+						<dd>The number of extra sips in total.</dd>
+						<dt>Reference10</dt>
+						<dd>Whether Hydrate is minimized or not. 1 if true, 0 otherwise.</dd>
 					</dl>
 				</dd>
 			</dl>
