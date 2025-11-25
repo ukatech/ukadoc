@@ -468,6 +468,12 @@
 				<li><a href="#OnElinTarget">OnElinTarget</a></li>
 			</ul>
 		</section>
+		<section class="navigation-category application">
+			<h1>Music player通知イベント</h1>
+			<ul>
+				<li><a href="#OnMusicPlayer.SongInfo">OnMusicPlayer.SongInfo</a></li>
+			</ul>
+		</section>
 		<section class="navigation-category other">
 			<h1>外部アプリ汎用イベント</h1>
 			<ul>
@@ -3712,6 +3718,53 @@
                 <p>1キャラクターはキャラクターの名前と持っているアイテムがバイト値1で区切られており、さらにキャラクター毎にバイト値2で区切られている。例：イーク0x02銅の短剣0x01ゴブリン0x02紙の大剣0x02珊瑚の軽外套0x01侍…</p>
 			</div>
         </section>
+		<section class="category application">
+			<h1>Music player通知イベント</h1>
+			<ul class="caption link">
+				<li>仕様提唱元：<a href="https://github.com/Zichqec/music_player">Music player</a></li>
+				<li>実装例：<a href="https://ukagaka.zichqec.com/ghost/flux">FLUX</a></li>
+			</ul>
+			<ul class="supported-baseware">
+				<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+			</ul>
+			<dl id="OnMusicPlayer.SongInfo">
+				<dt class="entry">OnMusicPlayer.SongInfo</dt>
+				<dd class="entry">
+					<p>Notifies information about the music player's internal state to all open ghosts. <em class="specsign">[NOTIFY]</em><br />
+					Because the implementation is added and updated on the ghost side, some ghosts may use an older version with fewer references.</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>The sakura name of the ghost that sent the event.</dd>
+						<dt>Reference1</dt>
+						<dd>The file path of the currently loaded song. Empty if no song is loaded.</dd>
+						<dt>Reference2</dt>
+						<dd>The playlist index number of the currently loaded song. -1 if no song is loaded, and in certain circumstances when a song has been removed from the playlist but is still playing.</dd>
+						<dt>Reference3</dt>
+						<dd>The playback state. 0 if stopped, 1 if playing music, and 2 if playback is paused.</dd>
+						<dt>Reference4</dt>
+						<dd>The current volume, from 0-100.</dd>
+						<dt>Reference5</dt>
+						<dd>The current playback speed, usually from 0-400. Some implementations may allow speeds higher than 400.</dd>
+						<dt>Reference6</dt>
+						<dd>The current left/right balance. -100 is all the way to the left, 0 is centered, and 100 is all the way to the right.</dd>
+						<dt>Reference7</dt>
+						<dd>The play mode. Numbers correspond to the following modes.
+						<ul>
+							<li>0 - Loop Playlist</li>
+							<li>1 - Shuffle and Loop</li>
+							<li>2 - Loop One Song</li>
+							<li>3 - Play One Song</li>
+							<li>4 - Random</li>
+						</ul>
+						</dd>
+						<dt>Reference8</dt>
+						<dd>A special flag for stopping playback. "stop after playback" means playback will stop when the current song ends. "stop after playlist" means playback will stop when the current playlist ends (applicable in both "Loop Playlist" and "Shuffle and Loop" modes). Empty if neither flag is set.</dd>
+						<dt>Reference9</dt>
+						<dd>The number of songs in the current playlist.</dd>
+					</dl>
+				</dd>
+			</dl>
+		</section>
 		<section class="category other">
 			<h1>外部アプリ汎用イベント</h1>
 			<dl id="OnApplicationBoot">
