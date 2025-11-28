@@ -155,6 +155,7 @@
 				<li><a href="#char*.name,名前">char*.name,名前</a></li>
 				<li><a href="#seriko.zorder,スコープID,スコープID,_">seriko.zorder,スコープID,スコープID,...</a></li>
 				<li><a href="#seriko.sticky-window,スコープID,スコープID,_">seriko.sticky-window,スコープID,スコープID,...</a></li>
+				<li><a href="#seriko.dpi,推奨DPI">seriko.dpi,推奨DPI</a></li>
 				<li><a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop,位置情報</a></li>
 				<li><a href="#sakura.seriko.alignmenttodesktop,位置情報">sakura.seriko.alignmenttodesktop,位置情報</a></li>
 				<li><a href="#kero.seriko.alignmenttodesktop,位置情報">kero.seriko.alignmenttodesktop,位置情報</a></li>
@@ -485,6 +486,24 @@ kero.menuitem3,2
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="seriko.dpi,推奨DPI">
+				<dt class="entry">seriko.dpi,推奨DPI</dt>
+				<dd class="entry">
+					<p>このシェルで推奨する画面のDPI値。何も指定しなければWindows標準の96固定となる。<br />
+					シェルを創った環境のWindows設定で システム-ディスプレイ-拡大縮小を確認し、以下の対照表に合わせて値を選ぶとよい。</p>
+					<ul>
+						<li>100% - 96</li>
+						<li>125% - 120</li>
+						<li>150% - 144</li>
+						<li>175% - 168</li>
+						<li>200% - 192</li>
+					</ul>
+					<p class="default">96</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.21</li>
 					</ul>
 				</dd>
 			</dl>

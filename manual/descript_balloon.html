@@ -146,6 +146,7 @@
 				<li><a href="#id,ID名">id,ID名</a></li>
 				<li><a href="#craftmanurl,URL">craftmanurl,URL</a></li>
 				<li><a href="#homeurl,URL">homeurl,URL</a></li>
+				<li><a href="#dpi,推奨DPI">dpi,推奨DPI</a></li>
 				<li><a href="#readme,ファイル名">readme,ファイル名</a></li>
 				<li><a href="#readme.charset,文字コード">readme.charset,文字コード</a></li>
 				<li><a href="#cursor,ファイル名">cursor,ファイル名/mousecursor,ファイル名</a></li>
@@ -492,6 +493,24 @@ communicatebox.height,20
 					<p class="default">値なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="dpi,推奨DPI">
+				<dt class="entry">dpi,推奨DPI</dt>
+				<dd class="entry">
+					<p>このバルーンで推奨する画面のDPI値。何も指定しなければWindows標準の96固定となる。<br />
+					バルーンを創った環境のWindows設定で システム-ディスプレイ-拡大縮小を確認し、以下の対照表に合わせて値を選ぶとよい。</p>
+					<ul>
+						<li>100% - 96</li>
+						<li>125% - 120</li>
+						<li>150% - 144</li>
+						<li>175% - 168</li>
+						<li>200% - 192</li>
+					</ul>
+					<p class="default">96</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.21</li>
 					</ul>
 				</dd>
 			</dl>
