@@ -4254,6 +4254,7 @@
 						InputBoxを開く。
 						<br>決定時(OKボタンを押す)にSHIORIイベント、<a href="list_shiori_event.html#OnUserInput">OnUserInput</a>が発生する。
 						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnUserInputCancel">OnUserInputCancel</a>が発生する。
+						<br>OnUserInputCancelに応答がない場合、かつ表示時間からタイムアウトした場合は、互換性確保のため、"timeout"を入力テキストとしたOnUserInputが発生する。
 						<br>なお入力中は他の一切の操作を受け付けない制御がされていたが、SSPではそうならない。
 					</p>
 					<p>
