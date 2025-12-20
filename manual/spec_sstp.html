@@ -745,18 +745,30 @@ Command: GetName
 					<dt>Restore</dt>
 					<dd>Quietを解除。追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>CompressArchive [SSP] [リモート不可]</dt>
-					<dd>指定したフォルダ内のファイル群を圧縮ファイルに圧縮する。
-					<br />処理が終わるまでレスポンスが返らないので注意。
-					<br />パラメータ0：圧縮ファイル名
+					<dt>CompressArchive [SSP 2.7.23] [リモート不可]</dt>
+					<dd>指定したフォルダ内のファイル群をZIPファイルに圧縮する。
+					<br />パラメータ0：圧縮ファイル名(フルパスで指定、相対パス指定不可)
 					<br />パラメータ1：圧縮すべきフォルダのフルパス
+					<br />パラメータ2以降：オプション(省略可)
+					<br />オプションは以下の通り。
+					<br />--event=イベント識別子……イベント識別子を指定すると、レスポンス後に圧縮を続け、終わり次第イベントが起きる。識別子がOnではじまる場合はその識別子のイベントが発生し、それ以外の場合はOnCompressArchiveCompleteまたはOnCompressArchiveFailureが発生する。省略時は処理が完了するまでレスポンスが返らない。
+					<br />--password=パスワード……指定したパスワードを使用してAES暗号化ZIPを有効にする。
+					<br />動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnCompressArchiveComplete">OnCompressArchiveComplete</a>・<a href="list_shiori_event.html#OnCompressArchiveFailure">OnCompressArchiveFailure</a>を参照。
+					<br />セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 					
-					<dt>ExtractArchive [SSP] [リモート不可]</dt>
-					<dd>指定した圧縮ファイルを解凍する。
-					<br />処理が終わるまでレスポンスが返らないので注意。
-					<br />パラメータ0：圧縮ファイル名
+					<dt>ExtractArchive [SSP 2.7.23] [リモート不可]</dt>
+					<dd>指定したZIPファイルを解凍する。
+					<br />パラメータ0：圧縮ファイル名(フルパスで指定、相対パス指定不可)
 					<br />パラメータ1：解凍先のフォルダのフルパス
+					<br />パラメータ2以降：オプション(省略可)
+					<br />オプションは以下の通り。
+					<br />--event=イベント識別子……イベント識別子を指定すると、レスポンス後に解凍を続け、終わり次第イベントが起きる。識別子がOnではじまる場合はその識別子のイベントが発生し、それ以外の場合はOnExtractArchiveCompleteまたはOnExtractArchiveFailureが発生する。省略時は処理が完了するまでレスポンスが返らない。
+					<br />--password=パスワード……指定したパスワードを使用してパスワード問い合わせなしで展開する。
+					<br />動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnExtractArchiveComplete">OnExtractArchiveComplete</a>・<a href="list_shiori_event.html#OnExtractArchiveFailure">OnExtractArchiveFailure</a>を参照。
+					<br />セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
+					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 
 					<dt>DumpSurface [SSP 2.5.98] [リモート不可]</dt>

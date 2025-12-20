@@ -547,6 +547,13 @@
 				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
 				<li><a href="#OnLanguageChange">OnLanguageChange</a></li>
 				<li><a href="#OnResetWindowPos">OnResetWindowPos</a></li>
+				<li><a href="#OnExtractArchiveComplete">OnExtractArchiveComplete</a></li>
+				<li><a href="#OnExtractArchiveFailure">OnExtractArchiveFailure</a></li>
+				<li><a href="#OnCompressArchiveComplete">OnCompressArchiveComplete</a></li>
+				<li><a href="#OnCompressArchiveFailure">OnCompressArchiveFailure</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#caption_archive_error_codes">アーカイブ操作エラーコード</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -5110,6 +5117,115 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnExtractArchiveComplete">
+				<dt class="entry">OnExtractArchiveComplete</dt>
+				<dd class="entry">
+					<p>アーカイブの解凍が正常に完了した際に発生する。</p>
+					<p><a href="list_sakura_script.html#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive]</a>にて--eventオプションで指定した識別子がOnではじまる場合、その識別子のイベントが発生する。それ以外の場合は本イベントが発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>解凍されたファイル数。</dd>
+						<dt>Reference2</dt>
+						<dd>圧縮サイズ（バイト）。</dd>
+						<dt>Reference3</dt>
+						<dd>非圧縮サイズ（バイト）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.23</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExtractArchiveFailure">
+				<dt class="entry">OnExtractArchiveFailure</dt>
+				<dd class="entry">
+					<p>アーカイブの解凍が失敗した際に発生する。</p>
+					<p><a href="list_sakura_script.html#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive]</a>にて--eventオプションで指定した識別子がOnではじまる場合、その識別子に「Failure」を付加したイベントが発生する。それ以外の場合は本イベントが発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>エラー内容。<a href="#caption_archive_error_codes">※エラーコード一覧</a>を参照。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.23</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCompressArchiveComplete">
+				<dt class="entry">OnCompressArchiveComplete</dt>
+				<dd class="entry">
+					<p>アーカイブの圧縮が正常に完了した際に発生する。</p>
+					<p><a href="list_sakura_script.html#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive]</a>にて--eventオプションで指定した識別子がOnではじまる場合、その識別子のイベントが発生する。それ以外の場合は本イベントが発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>圧縮されたファイル数。</dd>
+						<dt>Reference2</dt>
+						<dd>圧縮サイズ（バイト）。</dd>
+						<dt>Reference3</dt>
+						<dd>非圧縮サイズ（バイト）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.23</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnCompressArchiveFailure">
+				<dt class="entry">OnCompressArchiveFailure</dt>
+				<dd class="entry">
+					<p>アーカイブの圧縮が失敗した際に発生する。</p>
+					<p><a href="list_sakura_script.html#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive]</a>にて--eventオプションで指定した識別子がOnではじまる場合、その識別子に「Failure」を付加したイベントが発生する。それ以外の場合は本イベントが発生する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>エラー内容。<a href="#caption_archive_error_codes">※エラーコード一覧</a>を参照。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.23</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="caption_archive_error_codes">
+				<h1>アーカイブ操作エラーコード</h1>
+				<dl>
+					<dt>none</dt>
+					<dd>エラーなし（正常）</dd>
+					<dt>invalid parameter</dt>
+					<dd>無効なパラメータ</dd>
+					<dt>file not found</dt>
+					<dd>ファイルが見つからない</dd>
+					<dt>directory not found</dt>
+					<dd>ディレクトリが見つからない</dd>
+					<dt>create directory failed</dt>
+					<dd>ディレクトリの作成に失敗</dd>
+					<dt>open failed</dt>
+					<dd>ファイルを開くのに失敗</dd>
+					<dt>getfileinfo failed</dt>
+					<dd>ファイル情報の取得に失敗</dd>
+					<dt>file open failed</dt>
+					<dd>ファイルを開くのに失敗</dd>
+					<dt>goto failed</dt>
+					<dd>ファイル位置の移動に失敗</dd>
+					<dt>corrupted</dt>
+					<dd>アーカイブが破損している</dd>
+					<dt>crc</dt>
+					<dd>CRCエラー（データの整合性エラー）</dd>
+					<dt>stream</dt>
+					<dd>ストリームエラー</dd>
+					<dt>unknown method</dt>
+					<dd>不明な圧縮方式</dd>
+					<dt>password required</dt>
+					<dd>パスワードが必要</dd>
+					<dt>password mismatch</dt>
+					<dd>パスワードが一致しない</dd>
+					<dt>close failed</dt>
+					<dd>ファイルのクローズに失敗</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>Notifyイベント</h1>
