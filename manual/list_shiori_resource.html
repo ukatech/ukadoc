@@ -206,9 +206,6 @@
 				<li><a href="#sakura.popupmenu.type">sakura.popupmenu.type</a></li>
 				<li><a href="#kero.popupmenu.type">kero.popupmenu.type</a></li>
 				<li><a href="#char*.popupmenu.type">char*.popupmenu.type</a></li>
-				<li><a href="#sakura.popupmenu.applybindtoself">sakura.popupmenu.applybindtoself</a></li>
-				<li><a href="#kero.popupmenu.applybindtoself">kero.popupmenu.applybindtoself</a></li>
-				<li><a href="#char*.popupmenu.applybindtoself">char*.popupmenu.applybindtoself</a></li>
 				<li><a href="#getaistate">getaistate</a></li>
 				<li><a href="#getaistateex">getaistateex</a></li>
 				<li><a href="#legacyinterface">legacyinterface</a></li>
@@ -763,7 +760,6 @@
 				<dt class="entry">sakura.popupmenu.visible</dt>
 				<dd class="entry">
 					<p>本体側のオーナードローメニューの表示。1で表示、0で非表示。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
@@ -774,7 +770,6 @@
 				<dt class="entry">kero.popupmenu.visible</dt>
 				<dd class="entry">
 					<p>相方側のオーナードローメニューの表示。1で表示、0で非表示。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
@@ -785,7 +780,6 @@
 				<dt class="entry">char*.popupmenu.visible</dt>
 				<dd class="entry">
 					<p>\p[*]のオーナードローメニューの表示。1で表示、0で非表示。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -795,7 +789,6 @@
 				<dt class="entry">sakura.popupmenu.type</dt>
 				<dd class="entry">
 					<p>本体側のオーナードローメニューの変更。0で本体側メニュー、1で省略メニュー。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -805,7 +798,6 @@
 				<dt class="entry">kero.popupmenu.type</dt>
 				<dd class="entry">
 					<p>相方側のオーナードローメニューの変更。0で本体側メニュー、1で省略メニュー。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -815,45 +807,8 @@
 				<dt class="entry">char*.popupmenu.type</dt>
 				<dd class="entry">
 					<p>\p[*]のオーナードローメニューの変更。0で本体側メニュー、1で省略メニュー。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="sakura.popupmenu.applybindtoself">
-				<dt class="entry">sakura.popupmenu.applybindtoself</dt>
-				<dd class="entry">
-					<p>オーナードローメニューの種類を変更した時の着せ替えメニューの挙動を変える。
-					<br/>メニューの種類に応じて変える＝0　メニューが所属するスコープ（キャラクターID）の着せ替えを出す＝1
-					<br/>標準設定は1となり、SSP 2.7.25より前の挙動と異なるので、戻したい場合は明示的に0を設定すること。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.26</li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="kero.popupmenu.applybindtoself">
-				<dt class="entry">kero.popupmenu.applybindtoself</dt>
-				<dd class="entry">
-					<p>オーナードローメニューの種類を変更した時の着せ替えメニューの挙動を変える。
-					<br/>メニューの種類に応じて変える＝0　メニューが所属するスコープ（キャラクターID）の着せ替えを出す＝1
-					<br/>標準設定は1となり、SSP 2.7.25より前の挙動と異なるので、戻したい場合は明示的に0を設定すること。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.26</li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="char*.popupmenu.applybindtoself">
-				<dt class="entry">char*.popupmenu.applybindtoself</dt>
-				<dd class="entry">
-					<p>オーナードローメニューの種類を変更した時の着せ替えメニューの挙動を変える。
-					<br/>メニューの種類に応じて変える＝0　メニューが所属するスコープ（キャラクターID）の着せ替えを出す＝1
-					<br/>標準設定は1となり、SSP 2.7.25より前の挙動と異なるので、戻したい場合は明示的に0を設定すること。</p>
-					<p>この定義はゴーストのdescript.txtに書くことも可能。動的変更が不要な場合はdescript.txtに書くとよい。</p>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.26</li>
 					</ul>
 				</dd>
 			</dl>
