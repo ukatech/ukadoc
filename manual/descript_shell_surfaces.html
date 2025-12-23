@@ -206,6 +206,8 @@
 					<li><a href="#never">never</a></li>
 					<li><a href="#yen-e">yen-e</a></li>
 					<li><a href="#talk,数値">talk,数値</a></li>
+					<li><a href="#starttalk">starttalk</a></li>
+					<li><a href="#endtalk">endtalk</a></li>
 					<li><a href="#_1_bind">bind</a></li>
 				</ul>
 			</section>
@@ -1259,7 +1261,7 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dl id="yen-e">
 					<dt class="entry">yen-e</dt>
 					<dd class="entry">
-						<p>そのサーフェスで\eが来た時に実行。</p>
+						<p>SakuraScriptで\eが来た時に実行。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1275,6 +1277,27 @@ animation0.pattern3,overlay,-1,100,168,67
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="starttalk">
+					<dt class="entry">starttalk</dt>
+					<dd class="entry">
+						<p>該当するスコープのトークがはじまった時に実行。
+						<br />具体的には、吹き出しで何か喋りはじめた時に実行される。（\_sタグによるシンクロ表示含む）
+						<br />短時間の間に頻繁にスコープが切り替わるようなスクリプトでは、アニメーション発動が追いつかず実行されない場合がある点に注意。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.26</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="endtalk">
+					<dt class="entry">endtalk</dt>
+					<dd class="entry">
+						<p>該当するスコープのトークが終わった時に実行。
+						<br />具体的には、\0・\1・\p[2]タグでスコープが切り替わってスコープから外れた際、かつstarttalkの発動履歴がある場合に実行される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.26</li>
 						</ul>
 					</dd>
 				</dl>
