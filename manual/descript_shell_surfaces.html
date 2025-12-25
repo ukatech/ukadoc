@@ -225,6 +225,7 @@
 					<li><a href="#interpolate">interpolate</a></li>
 					<li><a href="#asis">asis</a></li>
 					<li><a href="#move">move</a></li>
+					<li><a href="#scaling">scaling</a></li>
 					<li><a href="#_2_bind">bind</a></li>
 					<li><a href="#add">add</a></li>
 					<li><a href="#reduce">reduce</a></li>
@@ -1467,11 +1468,29 @@ animation0.pattern3,overlay,-1,100,168,67
 							<br>x軸方向は右側が正、y軸方向は下側が正である。
 							<br>この描画メソッドが指定されたpattern定義では、サーフェスIDは無視される。
 							<br>着せ替え・elementでは使用不可。
+							<br>注意：ユーザー設定でmove動作を切ることが可能
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="scaling">
+					<dt class="entry">scaling</dt>
+					<dd class="entry">
+						<p>
+							キャラクターウインドウを指定した倍率で拡大・縮小表示する。
+							<br>この描画メソッドのみ、X・Y座標に小数点以下の指定が可能(例：92.5)。
+							<br>拡大率は以下の通りの計算で求められた値となる。
+							<br>ユーザー拡大率指定 x \![scaling]タグ指定 x 実行中のscalingアニメーション指定1 x 実行中のscalingアニメーション指定2 ...
+							<br>注意1：ウインドウの拡大縮小表示はコストがかなり大きいので濫用しないこと。
+							<br>注意2：よほど特殊な事情がない限りアニメーションの最後で100％に戻さないとバグの原因になる。
+							<br>注意3：moveを切る機能を有効にしている場合、scalingも動かなくなる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.28</li>
 						</ul>
 					</dd>
 				</dl>
