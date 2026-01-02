@@ -188,7 +188,7 @@
 				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,横倍率,縦倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
-				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値]</a></li>
+				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値,変化時間]</a></li>
 				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
@@ -1007,7 +1007,9 @@
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
 				<dt class="entry">\![set,scaling,横倍率,縦倍率,変化時間]</dt>
 				<dd class="entry">
-					<p>サーフェスの倍率を精密に変更する。<br>倍率の単位は%、変化時間の単位はミリ秒。</p>
+					<p>サーフェスの倍率を精密に変更する。<br>倍率の単位は%、変化時間の単位はミリ秒。
+					<br />このタグは実行時に実行キューに格納される形となり、非同期的に実行される。たとえば変化時間2秒のタグと、続けて変化時間5秒のタグを実行した場合、合計7秒かけて指定順に倍率が変化することになる。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.31</li>
@@ -1015,10 +1017,12 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,alpha,数値_">
-				<dt class="entry">\![set,alpha,数値]</dt>
+				<dt class="entry">\![set,alpha,数値,変化時間]</dt>
 				<dd class="entry">
-					<p>現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。</p>
-					<p>ゴースト終了まで有効。</p>
+					<p>現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。変化時間の単位はミリ秒で、省略時は0（即時適用）。
+					<br />このタグは実行時に実行キューに格納される形となり、非同期的に実行される。たとえば変化時間2秒のタグと、続けて変化時間5秒のタグを実行した場合、合計7秒かけて指定順に透明度が変化することになる。
+					<br />ゴースト終了まで有効。
+					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
