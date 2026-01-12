@@ -1163,17 +1163,22 @@
 				<dt class="entry">\![set,zorder,スコープID,スコープID,...]</dt>
 				<dd class="entry">
 					<p>指定スコープのウインドウを左側から順に手前側に配置する。<br>
-					例：\![set,zorder,1,0]と指定すると、必ず\1が\0ウインドウより手前に表示される。</p>
-					
-					<p>それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
+					例：\![set,zorder,1,0]と指定すると、必ず\1が\0ウインドウより手前に表示される。<br>
+					それぞれスコープIDの違うタグを複数回実行すると、複数のグループが作れる。<br>
 					例：\![set,zorder,1,0] \![set,zorder,3,2] と実行すると、\1が\0より前、\p[3]が\p[2]より前に表示される。</p>
+
+					<p>バルーンもあわせたZ順制御をしたい場合は、以下の例に従うこと。<br>
+					例：\![set,zorder,balloon1,surface1,balloon0,surface0]<br>
+					例(省略記法)：![set,zorder,b1,s1,b0,s0]<br>
+					これを指定すると、\1のバルーン - \1の立ち絵 - \0のバルーン - \0の立ち絵、の順に厳密に制御される。<br>
+					こちらは技術的な制限のため、スコープID版のような「グループ機能」はない。</p>
 					
 					<p>指定できるスコープIDの数に制限はないが、大量に指定するとちょっと重くなるので、2～3個程度が望ましい。<br>
 					すでにペアにしたスコープIDを含むタグを実行するとエラーとなる。組み合わせを変える場合は\![reset]タグを使ってからやり直すこと。</p>
 					
 					<p>ゴースト終了まで有効。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.3.77/2.7.35(s,b記法)</li>
 					</ul>
 					<div class="legend">
 						<section class="code">
