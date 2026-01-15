@@ -170,9 +170,12 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
-			<h1>.narignore / .updateignore</h1>
+			<h1>.narignore / .updateignore / .narinclude / .updateinclude</h1>
 			<ul>
 				<li class="caption introduction"><a href="#introduction_narignore_updateignore">.narignore / .updateignore</a></li>
+			</ul>
+			<ul>
+				<li class="caption introduction"><a href="#introduction_narinclude_updateinclude">.narinclude / .updateinclude</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -504,14 +507,22 @@ ghost/master/profile/,nonar,noupdate
 				</ul>
 			</section>
 		</section>
-		<section class="category" id="#narignore_updateignore">
-			<h1>.narignore / .updateignore</h1>
-			<section class="caption introduction" id="introduction_narignore_updateignore">
-				<h1>.narignore / .updateignore</h1>
+		<section class="category">
+			<h1 id="#narignore_updateignore">.narignore / .updateignore / .narinclude / .updateinclude</h1>
+			<section class="caption introduction">
+				<h1 id="#narignore_updateignore">.narignore / .updateignore</h1>
 				<section>
-					<h1>概要</h1>
 					<p>developer_options.txtの記法より柔軟性をもたせるため、.gitignoreの記法をそのまま使えるようにしたものが、.narignore/.updateignoreである。</p>
 					<p>記法は <a href="https://git-scm.com/docs/gitignore/ja">.gitignoreのマニュアル</a> を確認するか、LLM(テキスト生成AI)にやりたいことを質問して生成してもらうとよい。</p>
+					<p>伺か限定の特殊機能として、include:指定がある。たとえば<br>
+					include:.narignore<br>
+					と書くと、.narignoreファイルの内容をまるごとこの行の位置に挿入したかのように処理する。
+					</p>
+				</section>
+				<h1 id="#narinclude_updateinclude">.narinclude / .updateinclude</h1>
+				<section>
+					<p>.narignore/.updateignoreのホワイトリスト版。ここに書いたものだけが更新ファイル/NARに格納される。<br>
+					サブディレクトリの扱いがgitignoreと異なり、たとえばshell/masterとだけ書いてshell/は書かなくても、親ディレクトリをきちんと含んで処理する。</p>
 				</section>
 			</section>
 		</section>
