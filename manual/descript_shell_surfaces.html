@@ -229,6 +229,7 @@
 					<li><a href="#_2_bind">bind</a></li>
 					<li><a href="#add">add</a></li>
 					<li><a href="#reduce">reduce</a></li>
+					<li><a href="#import">import</a></li>
 					<li><a href="#insert,ID">insert,ID</a></li>
 					<li><a href="#start,ID">start,ID</a></li>
 					<li><a href="#stop,ID">stop,ID</a></li>
@@ -1537,6 +1538,20 @@ animation0.pattern3,overlay,-1,100,168,67
 						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="import">
+					<dt class="entry">import,ファイル名,ウエイトmsec,X,Y</dt>
+					<dd class="entry">
+						<p>
+							指定したAPNG/GIFアニメ/WebPアニメを、冒頭待機時間=ウエイトmsec、表示位置=(X,Y)で再生できるようインポートする。
+							<br>インポートしたアニメーションはoverlayメソッドで合成される。
+							<br>このアニメーションは既存のアニメーション定義と並列で動作し共存可能である。
+							<br>なお、フレームと待機時間のみインポートされ、元のファイルで定義されている「繰り返し回数」は無視される。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li> 2.7.50
 						</ul>
 					</dd>
 				</dl>
