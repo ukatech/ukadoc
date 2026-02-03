@@ -377,8 +377,9 @@ Script: \h\s0テストー。\u\s[10]テストやな。
 		<section class="category" id="method_notify">
 			<h1>メソッド：NOTIFY</h1>
 
-			<p>ゴーストにイベントを通知するためのメソッドです。
-			<br />Eventヘッダ＝SHIORI/3.0 IDに対応し、Reference*はそのままです。</p>
+			<p>ゴーストにイベントを通知するためのメソッドである。
+			<br />SENDとNOTIFYは同一の処理として扱われ、機能上の差異はない。共通するヘッダの詳細やIfGhostの振り分けルールなどの仕様は<a href="#method_send">メソッド：SEND</a>を参照のこと。
+			<br />Eventヘッダ＝SHIORI/3.0 IDに対応し、Reference*はそのまま引き渡される。</p>
 
 			<section class="caption">
 				<h1>イベント通知のみサンプル(NOTIFY/1.0)</h1>
@@ -394,8 +395,8 @@ Reference1: Linked Horizon
 
 			</section>
 
-			<p>ゴースト側で指定したイベントIDに反応しない場合に、「保険用の」スクリプトを指定して再生させることができます。
-			<br />その際に、IfGhostヘッダを指定すると、直後にあるScriptヘッダは指定したゴースト専用のスクリプトとして扱います。</p>
+			<p>ゴースト側で指定したイベントIDに反応しない場合に、「保険用の」スクリプトを指定して再生させることができる。
+			<br />その際に、IfGhostヘッダを指定すると、直後にあるScriptヘッダは指定したゴースト専用のスクリプトとして扱われる。</p>
 
 			<section class="caption">
 				<h1>保険反応つきサンプル(NOTIFY/1.1)</h1>
@@ -413,18 +414,8 @@ Script: \0\s[3]巨人っていっても、身長は列車数両分しかない�
 
 </pre>
 				<h1>request固有ヘッダ</h1>
+				<p>Event、Reference*、Script、IfGhost、Ghostなどの共通ヘッダの詳細は<a href="#method_send">メソッド：SEND</a>を参照。</p>
 				<dl>
-					<dt>Event</dt>
-					<dd>イベントID。SHIORI/3.0ではIDヘッダの指定として取り扱われる。</dd>
-					<dt>Reference*</dt>
-					<dd>イベントのReferenceヘッダ。SHIORIには文字コード変換等最低限の処理を行い、そのまま引き渡される。</dd>
-					<dt>Script</dt>
-					<dd>イベントに反応しなかった場合に再生されるSakuraScript。</dd>
-					<dt>IfGhost</dt>
-					<dd>\0側名,\1側名 の書式でゴーストの名前を指定すると、直後に来たScriptヘッダを特定のゴースト専用として取り扱う。
-					<br />IfGhostの直後ではないScriptヘッダが存在した場合は、IfGhostに該当しない場合のデフォルト処理用Scriptとなる。
-					<br />省略した場合はどのゴーストに対しても同じScriptヘッダが再生される。
-					<br />SSTPのゴースト起動オプションを有効にしていた場合は、ここで指定したゴーストが一時的に起動される。</dd>
 					<dt>Option</dt>
 					<dd>SSTPで実行されるSakuraScriptや指定されたイベントがどのように扱われるかのオプションを指定する。
 					<br />カンマ区切りで複数指定可能。指定する文字列のうち、NOTIFY特有分は以下の通り。
@@ -441,16 +432,131 @@ Script: \0\s[3]巨人っていっても、身長は列車数両分しかない�
 
 		<section class="category" id="method_send">
 			<h1>メソッド：SEND</h1>
-			<p>(執筆中)</p>
+
+			<p>SENDは、外部アプリケーションからゴーストにSakuraScriptやSHIORIイベントを送信し、再生させるためのメソッドである。
+			<br />SENDとNOTIFYは同一の処理として扱われる。両者に機能上の差異はない。以下の仕様はNOTIFYにもそのまま適用される。
+			<br />Scriptヘッダで直接SakuraScriptを指定する方法と、Eventヘッダでイベントを送信しSHIORI応答でスクリプトを得る方法の両方が使用できる。
+			<br />EventとScriptは併用可能で、Eventに対するSHIORI応答がスクリプトを返さなかった場合、Scriptヘッダのスクリプトにフォールバックする。
+			<br />対象ゴーストが未指定の場合、現在起動中のゴーストが対象となる。</p>
+
+			<section class="caption">
+				<h1>基本的なスクリプト再生サンプル</h1>
+<pre><!--
+-->SEND SSTP/1.4
+Charset: UTF-8
+Sender: SampleApp
+Script: \h\s[0]こんにちは。\w5\u\s[10]ご機嫌いかが？\e
+
+</pre>
+			</section>
+
+			<section class="caption">
+				<h1>イベント送信サンプル</h1>
+<pre><!--
+-->SEND SSTP/1.4
+Charset: UTF-8
+Sender: SampleApp
+Event: OnExternalEvent
+Reference0: param1
+Reference1: param2
+
+</pre>
+			</section>
+
+			<section class="caption">
+				<h1>イベント＋フォールバックスクリプトサンプル</h1>
+<pre><!--
+-->SEND SSTP/1.4
+Charset: UTF-8
+Sender: SampleApp
+Event: OnCustomEvent
+Reference0: data
+Script: \h\s[0]イベント未対応時のスクリプト\e
+
+</pre>
+			</section>
+
+			<p>IfGhostヘッダを複数回記述し、対応するScriptヘッダと組み合わせることで、ゴーストごとに異なるスクリプトを指定できる。</p>
+
+			<section class="caption">
+				<h1>IfGhostによる振り分けサンプル</h1>
+<pre><!--
+-->SEND SSTP/1.4
+Charset: UTF-8
+Sender: SampleApp
+Script: \h\s[0]こんにちは。\e
+IfGhost: まゆら
+Script: \h\s[0]まゆらさん、こんにちは。\e
+IfGhost: 花ちゃん,妹
+Script: \h\s[0]花ちゃんと妹さん、こんにちは。\e
+
+</pre>
+			</section>
+
+			<section class="caption">
+				<h1>割り込み抑制付きサンプル</h1>
+<pre><!--
+-->SEND SSTP/1.4
+Charset: UTF-8
+Sender: SampleApp
+Script: \h\s[0]割り込まないで追加。\e
+Option: nobreak
+
+</pre>
+			</section>
+
 			<section class="caption">
 				<h1>request固有ヘッダ</h1>
 				<dl>
+					<dt>Sender</dt>
+					<dd>共通ヘッダだが、SEND/NOTIFYでの特殊値として<code>Sender: First</code>が使用できる。指定すると、初回起動時のゴースト（さくら）を対象にする。
+					<br />SenderとUser-Agentの両方が未指定の場合、400 Bad Requestとなる。</dd>
+					<dt>Script</dt>
+					<dd>再生するSakuraScript。
+					<br />Eventヘッダと併用した場合、Eventに対するSHIORI応答がスクリプトを返さなかった場合のフォールバックとして使用される。</dd>
+					<dt>Entry</dt>
+					<dd>エントリデータ。SHIORIに渡される。</dd>
+					<dt>Event</dt>
+					<dd>SHIORIイベント名。SHIORI/3.0ではIDヘッダの指定として取り扱われる。</dd>
+					<dt>Reference*</dt>
+					<dd>イベントのReferenceヘッダ。SHIORIには文字コード変換等最低限の処理を行い、そのまま引き渡される。</dd>
+					<dt>IfGhost</dt>
+					<dd>\0側名,\1側名 の書式でゴーストの名前を指定すると、直後に来たScriptヘッダを特定のゴースト専用として取り扱う。
+					<br />IfGhostの直後ではないScriptヘッダが存在した場合は、IfGhostに該当しない場合のデフォルト処理用Scriptとなる。
+					<br />省略した場合はどのゴーストに対しても同じScriptヘッダが再生される。
+					<br />詳細な振り分けルールは後述の<a href="#caption_ifghost">IfGhostによるスクリプト振り分け</a>を参照。</dd>
+					<dt>Ghost</dt>
+					<dd>ゴースト名（descript.txtのname）で対象ゴーストを指定する。</dd>
 					<dt>Option</dt>
 					<dd>SSTPで実行されるSakuraScriptがどのように扱われるかのオプションを指定する。
-					<br />カンマ区切りで複数指定可能。指定する文字列のうち、SEND特有分は以下の通り。
-					<br />notify : スクリプトが<a href="spec_shiori3.html#request">ValueNotifyヘッダで返された場合</a>と同じように強制的に扱われる。 [SSP 2.6.76]</dd>
+					<br />カンマ区切りで複数指定可能。共通オプション(nodescript, notranslate等)に加え、SEND/NOTIFYで使用できるオプションフラグは以下の通り。
+					<br />nobreak : 現在再生中のスクリプトを中断せずにキューイングする。
+					<br />notify : SHIORIイベントをnotifyモード（応答不要）で送信する。また、スクリプトが<a href="spec_shiori3.html#request">ValueNotifyヘッダで返された場合</a>と同じように強制的に扱われる。 [SSP 2.6.76]</dd>
+				</dl>
+				<h1>response固有ヘッダ</h1>
+				<dl>
+					<dt>Script</dt>
+					<dd>実際に再生されたスクリプト。改行は除去される。</dd>
+					<dt>SHIORIカスタムヘッダ</dt>
+					<dd>SHIORIの応答に含まれるヘッダが透過される。</dd>
 				</dl>
 			</section>
+
+			<section class="caption" id="caption_ifghost">
+				<h1>IfGhostによるスクリプト振り分け</h1>
+				<p>IfGhostヘッダを複数回記述し、対応するScriptヘッダと組み合わせることで、ゴーストごとに異なるスクリプトを指定できる。
+				<br />IfGhostとScriptは出現順で対応付けられる。最初のIfGhostより前に記述されたScriptはデフォルトスクリプトとなる。</p>
+				<dl>
+					<dt>名前の照合</dt>
+					<dd>IfGhostが「\0側名,\1側名」形式の場合、両方の名前が一致する必要がある。
+					<br />IfGhostが「\0側名」のみの場合、\0側名の一致だけで選択される。
+					<br />いずれにも一致しない場合、デフォルトスクリプトが使用される。ただし、ゴースト側が「未指定SSTP拒否」設定の場合はデフォルトスクリプトも使用されない。</dd>
+					<dt>デフォルトゴースト扱い</dt>
+					<dd>以下の名前はデフォルトゴースト（さくら）として扱われ、そのスクリプトはデフォルトスクリプトとしても機能する。
+					<br />「さくら」「エミリ」「えみりぃ」</dd>
+				</dl>
+			</section>
+
 		</section>
 
 
