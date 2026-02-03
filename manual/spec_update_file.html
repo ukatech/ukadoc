@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project 更新定義ファイル</title>
+<link rel="stylesheet" href="list.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+	<h1 id="page-title">更新定義ファイル</h1>
+	<nav class="menu-header">
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="http://ssp.shillest.net/ukadoc/manual/index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th>さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th>規格</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
+							<li><a href="./spec_sstp.html">SSTP/1.x</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_update_file.html">更新定義ファイル</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</nav>
+	<section class="navigation-bar">
+		<h1>更新定義ファイル</h1>
+		<section class="navigation-category">
+			<h1>更新定義ファイル</h1>
+			<ul>
+				<li><a href="#overview">概要</a></li>
+				<li><a href="#updates2dau">updates2.dau (Version 2)</a></li>
+				<li><a href="#updatestxt">updates.txt (Version 3)</a></li>
+				<li><a href="#fields">フィールド詳細</a></li>
+				<li><a href="#path-handling">パスの扱い</a></li>
+				<li><a href="#generation">生成処理</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category caption introduction" id="overview">
+			<h1>概要</h1>
+			<p>ゴースト更新システム（ネットワーク更新）で使用される更新定義ファイルの仕様である。
+			<br />更新定義ファイルにはゴーストを構成するファイルの一覧とそのハッシュ値が記録されており、ベースウェアはこれをサーバから取得してローカルのファイルと比較し、差分更新を行う。</p>
+			<p>現在有効な形式は以下の2種類である。旧形式のupdates.dau (Version 1) は廃止済みのため省略する。</p>
+			<dl>
+				<dt>updates2.dau (Version 2)</dt>
+				<dd>バイト値1区切りのバイナリ寄りの形式。</dd>
+				<dt>updates.txt (Version 3)</dt>
+				<dd>バイト値1区切りだが行プレフィックスを持つテキスト形式。</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="updates2dau">
+			<h1>updates2.dau (Version 2)</h1>
+			<p>バイト値1をフィールド区切りとし、各行をCRLFで終端する形式である。</p>
+
+			<section>
+				<dl>
+					<dt class="entry">文字コード</dt>
+					<dd class="entry"><p>デフォルトはOSデフォルトのcharset。先頭エントリの末尾に <code>charset=文字コード名</code> フィールドを付加することで指定できる。</p></dd>
+
+					<dt class="entry">行フォーマット</dt>
+					<dd class="entry"><p>各行は以下の形式である。</p>
+<pre><code>ファイルパス<span style="color:#c04000">\x01</span>MD5ハッシュ<span style="color:#c04000">\x01</span>拡張フィールド1<span style="color:#c04000">\x01</span>拡張フィールド2<span style="color:#c04000">\x01</span>...</code></pre>
+						<p><code style="color:#c04000">\x01</code> はバイト値1を示す。改行はCRLF。</p>
+					</dd>
+				</dl>
+			</section>
+
+			<section class="caption">
+				<h1>サンプル</h1>
+<pre><code><!--
+-->ghost/master/descript.txt<span style="color:#c04000">\x01</span>a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4<span style="color:#c04000">\x01</span>size=1234<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>charset=Shift_JIS<span style="color:#c04000">\x01</span>
+ghost/master/shiori.dll<span style="color:#c04000">\x01</span>f6e5d4c3b2a1f6e5d4c3b2a1f6e5d4c3<span style="color:#c04000">\x01</span>size=65536<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>
+shell/master/surface0.png<span style="color:#c04000">\x01</span>deadbeefdeadbeefdeadbeefdeadbeef<span style="color:#c04000">\x01</span>size=32768<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>
+</code></pre>
+				<p>※ <code style="color:#c04000">\x01</code> は実際にはバイト値1である。<code>charset=</code> は先頭エントリの末尾にのみ付加される。</p>
+			</section>
+		</section>
+
+		<section class="category" id="updatestxt">
+			<h1>updates.txt (Version 3)</h1>
+			<p>updates2.dauと同じバイト値1区切りだが、各行に行種別プレフィックスを持つテキスト形式である。</p>
+
+			<section>
+				<dl>
+					<dt class="entry">行種別</dt>
+					<dd class="entry">
+						<p>各行は行頭のプレフィックスにより種別が決まる。<code>file,</code> でも <code>charset,</code> でもない行は無視される。</p>
+						<dl class="property">
+							<dt>charset,文字コード名</dt>
+							<dd>以降の行の文字コードを指定する。ファイル先頭付近に記述する。</dd>
+							<dt>file,データ群...</dt>
+							<dd><code>file,</code> プレフィックスの後の内容はupdates2.dauと同一フォーマットである。</dd>
+						</dl>
+					</dd>
+				</dl>
+			</section>
+
+			<section class="caption">
+				<h1>サンプル</h1>
+<pre><code><!--
+-->charset,Shift_JIS
+file,ghost/master/descript.txt<span style="color:#c04000">\x01</span>a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4<span style="color:#c04000">\x01</span>size=1234<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>
+file,ghost/master/shiori.dll<span style="color:#c04000">\x01</span>f6e5d4c3b2a1f6e5d4c3b2a1f6e5d4c3<span style="color:#c04000">\x01</span>size=65536<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>
+file,shell/master/surface0.png<span style="color:#c04000">\x01</span>deadbeefdeadbeefdeadbeefdeadbeef<span style="color:#c04000">\x01</span>size=32768<span style="color:#c04000">\x01</span>date=2024-01-15T12:34:56<span style="color:#c04000">\x01</span>
+</code></pre>
+				<p>※ <code style="color:#c04000">\x01</code> は実際にはバイト値1である。</p>
+			</section>
+		</section>
+
+		<section class="category" id="fields">
+			<h1>フィールド詳細</h1>
+			<p>updates2.dauおよびupdates.txtの <code>file,</code> 行で共通のフィールド定義である。</p>
+
+			<section>
+				<dl>
+					<dt class="entry">必須フィールド</dt>
+					<dd class="entry">
+						<dl class="property">
+							<dt>ファイルパス (位置[0])</dt>
+							<dd>更新対象ファイルの相対パス。スラッシュ (<code>/</code>) 区切り。</dd>
+							<dt>MD5ハッシュ (位置[1])</dt>
+							<dd>ファイル内容のMD5ハッシュ。32文字の16進数文字列。</dd>
+						</dl>
+					</dd>
+
+					<dt class="entry">拡張フィールド (位置[2]以降)</dt>
+					<dd class="entry">
+						<p><code>key=value</code> 形式で記述する。すべて省略可能。</p>
+						<dl class="property">
+							<dt>size=数値</dt>
+							<dd>ファイルサイズ（バイト単位）。</dd>
+							<dt>date=文字列</dt>
+							<dd>ISO 8601形式の日時文字列。例: <code>2024-01-15T12:34:56</code></dd>
+							<dt>charset=文字列</dt>
+							<dd>文字コード名。updates2.dauの先頭エントリの末尾にのみ付加される。文字コード判定のみに使われ、定義ファイルとしての読み込み時は無視される。</dd>
+						</dl>
+					</dd>
+				</dl>
+			</section>
+		</section>
+
+		<section class="category" id="path-handling">
+			<h1>パスの扱い</h1>
+
+			<section>
+				<dl>
+					<dt class="entry">URLエンコード</dt>
+					<dd class="entry"><p>全エントリがパーセントエンコード済みの場合はデコードして使用する。そうでない場合はURL側のみエンコードされる。</p></dd>
+
+					<dt class="entry">セキュリティチェック</dt>
+					<dd class="entry">
+						<p>以下の条件に該当するエントリは無効として扱われる。</p>
+						<ul class="description">
+							<li>MD5がない。</li>
+							<li>末尾が <code>/</code> または <code>\</code>（ディレクトリエントリ）。</li>
+							<li><code>..\</code> や <code>../</code> を含む（ディレクトリトラバーサル防止）。</li>
+						</ul>
+					</dd>
+				</dl>
+			</section>
+		</section>
+
+		<section class="category" id="generation">
+			<h1>生成処理</h1>
+			<p>SSPの「更新ファイル作成」機能などにより、ゴーストのファイル一覧からupdates2.dau / updates.txtを生成できる。</p>
+
+			<section>
+				<dl>
+					<dt class="entry">ファイル走査</dt>
+					<dd class="entry">
+						<p>ディレクトリを再帰的に走査する。以下のファイルは除外される。</p>
+						<ul class="description">
+							<li>隠しファイル (<code>FILE_ATTRIBUTE_HIDDEN</code>)</li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a> の <code>noupdate</code> で指定されたファイル</li>
+							<li>.gitignore形式のフィルタファイルで除外されたファイル</li>
+						</ul>
+					</dd>
+
+					<dt class="entry">ghost\masterへのコピー</dt>
+					<dd class="entry"><p>ディレクトリ直下に <code>ghost\master</code> フォルダが存在する場合、生成した更新ファイルをそこにもコピーする。</p></dd>
+				</dl>
+			</section>
+		</section>
+	</div>
+</body>
+</html>
