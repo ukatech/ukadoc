@@ -188,8 +188,8 @@
 				<li><a href="#_!_set,alignmenttodesktop,方向_">\![set,alignmenttodesktop,方向]</a></li>
 				<li><a href="#_!_set,scaling,倍率_">\![set,scaling,倍率]</a></li>
 				<li><a href="#_!_set,scaling,横倍率,縦倍率_">\![set,scaling,横倍率,縦倍率]</a></li>
-				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,変化時間]</a></li>
-				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値,変化時間]</a></li>
+				<li><a href="#_!_set,scaling,横倍率,縦倍率,変化時間_">\![set,scaling,横倍率,縦倍率,オプション]</a></li>
+				<li><a href="#_!_set,alpha,数値_">\![set,alpha,数値,オプション]</a></li>
 				<li><a href="#_!_effect,プラグイン名,速度倍率,パラメータ_">\![effect,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ_">\![effect2,追加サーフェスID,プラグイン名,速度倍率,パラメータ]</a></li>
 				<li><a href="#_!_filter,プラグイン名,起動時間,パラメータ_">\![filter,プラグイン名,起動時間,パラメータ]</a></li>
@@ -1010,26 +1010,40 @@
 				</dd>
 			</dl>
 			<dl id="_!_set,scaling,横倍率,縦倍率,変化時間_">
-				<dt class="entry">\![set,scaling,横倍率,縦倍率,変化時間]</dt>
+				<dt class="entry">\![set,scaling,横倍率,縦倍率,オプション]</dt>
 				<dd class="entry">
-					<p>サーフェスの倍率を精密に変更する。<br>倍率の単位は%、変化時間の単位はミリ秒。
-					<br />このタグは実行時に実行キューに格納される形となり、非同期的に実行される。
-					<br />たとえば変化時間2秒のタグと、続けて変化時間5秒のタグを実行した場合、変化を待たずこのタグの後のスクリプトを並行して実行しながら、合計7秒かけて指定順に倍率が変化することになる。
+					<p>サーフェスの倍率を精密に変更する。倍率の単位は%。
+					<br />オプションにより、アニメーション時間の指定や、完了までの待機が可能である。
 					</p>
+					<ul class="description">
+						<li>--time=ミリ秒……アニメーション時間（ミリ秒）。省略時・負値は0（即時適用）。位置パラメータとしても指定可（後方互換）。</li>
+						<li>--wait……アニメーション完了までスクリプト実行を待機する。省略時は非同期（即座に次の処理へ進む）。SSP 2.7.52以降。</li>
+					</ul>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />2.7.31</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.31</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![set,scaling,200,200,--time=2000]2秒かけて200%へ変化する（非同期）。</code></p>
+							<p><code type="SakuraScript">\![set,scaling,200,200,--time=3000,--wait]3秒かけて200%へ変化する（完了まで待機）。</code></p>
+							<p><code type="SakuraScript">\![set,scaling,100,100,--time=1000,--wait]1秒かけて等倍に戻す（完了まで待機）。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_set,alpha,数値_">
-				<dt class="entry">\![set,alpha,数値,変化時間]</dt>
+				<dt class="entry">\![set,alpha,数値,オプション]</dt>
 				<dd class="entry">
-					<p>現スコープ側サーフェスを0～100で透明度を変更する。値が小さいほど透明。変化時間の単位はミリ秒で、省略時は0（即時適用）。
-					<br />このタグは実行時に実行キューに格納される形となり、非同期的に実行される。
-					<br />たとえば変化時間2秒のタグと、続けて変化時間5秒のタグを実行した場合、変化を待たずこのタグの後のスクリプトを並行して実行しながら、合計7秒かけて指定順に透明度が変化することになる。
+					<p>現スコープ側サーフェスを0～100で透過度を変更する。0で完全透明、100で不透明。100超は100にクランプされる。負値は値変更なしの再描画のみ。
+					<br />オプションにより、アニメーション時間の指定や、完了までの待機が可能である。
 					<br />ゴースト終了まで有効。
 					</p>
+					<ul class="description">
+						<li>--time=ミリ秒……アニメーション時間（ミリ秒）。省略時・負値は0（即時適用）。位置パラメータとしても指定可（後方互換）。</li>
+						<li>--wait……アニメーション完了までスクリプト実行を待機する。省略時は非同期（即座に次の処理へ進む）。SSP 2.7.52以降。</li>
+					</ul>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1037,6 +1051,9 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code type="SakuraScript">\0\![set,alpha,0]本体側が透明になり見えなくなる。\1\![set,alpha,50]相方側がだいたい半透明になる。</code></p>
+							<p><code type="SakuraScript">\![set,alpha,50,--time=1000]1秒かけて透過度50へ変化する（非同期）。</code></p>
+							<p><code type="SakuraScript">\![set,alpha,50,--time=2000,--wait]2秒かけて透過度50へ変化する（完了まで待機）。</code></p>
+							<p><code type="SakuraScript">\![set,alpha,100,--time=1000,--wait]1秒かけて不透明に戻す（完了まで待機）。</code></p>
 						</section>
 					</div>
 				</dd>
