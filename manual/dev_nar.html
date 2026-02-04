@@ -55,6 +55,7 @@
 		<li><a href="#chapterEX4">バルーンなどの同梱配布について</a></li>
 		<li><a href="#chapterEX5">ゴーストへの追加ファイルについて</a></li>
 		<li><a href="#chapterEX6">複数インストール用パッケージについて</a></li>
+		<li><a href="#chapterEX7">initial_install.narによるサイレントインストールについて</a></li>
 	</ol>
 </nav>
 <section id="chapter1" class="ordered">
@@ -313,6 +314,20 @@ name,パッケージ名
 		<p>上例のファイル構成はゴーストを二つ同梱している例ですが、もちろん実際にはゴーストに限らずアーカイブとして有効なあらゆる内容を含む事ができます。</p>
 		<p>ただし、type,shellやtype,supplementのようなacceptを指定する内容で、指定先がバラバラのものを一緒にしてしまわないように注意してください。</p>
 	</div>
+</section>
+<section id="chapterEX7" class="ordered ex">
+	<h1>initial_install.narによるサイレントインストールについて</h1>
+	<div class="passage">
+		<p>ssp.exeと同じフォルダに<em class="filename">initial_install.nar</em>というファイル名のnarファイルを配置した状態でSSPを起動すると、起動時にそのnarファイルが自動的にサイレント（確認ダイアログなし）で上書きインストールされる。</p>
+		<p>インストール完了後、<em class="filename">initial_install.nar</em>は自動的に削除される。</p>
+	</div>
+	<div class="passage">
+		<p>この機能は主に開発者向けのもので、SSPの配布パッケージにゴーストなどを同梱して配布したい場合に便利である。</p>
+		<p>例えばSSP本体と一緒に特定のゴーストを同梱した配布パッケージを作りたい場合、ssp.exeと同じ場所に<em class="filename">initial_install.nar</em>を置いておくだけで、ユーザが初回起動した際に自動的にゴーストがインストールされる。</p>
+	</div>
+	<ul class="supported-baseware">
+		<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.52</li>
+	</ul>
 </section>
 <aside class="passage hint">
 	<dl>
