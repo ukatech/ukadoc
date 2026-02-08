@@ -285,6 +285,22 @@
 			</ul>
 		</section>
 		<section class="navigation-category">
+			<h1>ゲームパッドイベント</h1>
+			<ul>
+				<li><a href="#OnGamepadButtonDown">OnGamepadButtonDown</a></li>
+				<li><a href="#OnGamepadButtonUp">OnGamepadButtonUp</a></li>
+				<li><a href="#OnGamepadAxisMove">OnGamepadAxisMove</a></li>
+				<li><a href="#OnGamepadConnected">OnGamepadConnected</a></li>
+				<li><a href="#OnGamepadDisconnected">OnGamepadDisconnected</a></li>
+			</ul>
+			<ul>
+				<li class="caption"><a href="#caption_gamepad_button">ボタン名一覧</a></li>
+				<li class="caption"><a href="#caption_gamepad_axis">軸名一覧</a></li>
+				<li class="caption"><a href="#caption_gamepad_padindex">パッドインデックスについて</a></li>
+				<li class="caption"><a href="#caption_gamepad_xinput">Windows上のSSPにおけるXInput固有の仕様</a></li>
+			</ul>
+		</section>
+		<section class="navigation-category">
 			<h1>バルーンイベント</h1>
 			<ul>
 				<li><a href="#OnBalloonBreak">OnBalloonBreak</a></li>
@@ -2289,6 +2305,151 @@
 					</ul>
 				</dd>
 			</dl>
+		</section>
+		<section class="category">
+			<h1>ゲームパッドイベント</h1>
+			<dl id="OnGamepadButtonDown">
+				<dt class="entry">OnGamepadButtonDown</dt>
+				<dd class="entry">
+					<p>ゲームパッドのボタンが押された瞬間に発生。<br />ボタンを押し続けている間は発生しない（押した瞬間のみ）。<br />複数のボタンが同時に変化した場合、ボタンごとに個別のイベントが発生する。<br />イベントは起動中の全ゴーストに同時にブロードキャストされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_gamepad_padindex">パッドインデックス</a>。</dd>
+						<dt>Reference1</dt>
+						<dd><a href="#caption_gamepad_button">ボタン名</a>。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnGamepadButtonUp">
+				<dt class="entry">OnGamepadButtonUp</dt>
+				<dd class="entry">
+					<p>ゲームパッドのボタンが離された瞬間に発生。<br />複数のボタンが同時に変化した場合、ボタンごとに個別のイベントが発生する。<br />イベントは起動中の全ゴーストに同時にブロードキャストされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_gamepad_padindex">パッドインデックス</a>。</dd>
+						<dt>Reference1</dt>
+						<dd><a href="#caption_gamepad_button">ボタン名</a>。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnGamepadAxisMove">
+				<dt class="entry">OnGamepadAxisMove</dt>
+				<dd class="entry">
+					<p>ゲームパッドのアナログスティックやトリガーの値が前回通知時から大きく変化した場合に発生。<br />微小な揺れではイベントは発生しない。スティック中央付近やトリガーの遊び部分（デッドゾーン）の値は自動的に0に丸められる。<br />スティックやトリガーが中央位置（ニュートラル）に戻った場合は、変化量に関わらず必ず発生する。<br />イベントは起動中の全ゴーストに同時にブロードキャストされる。<br />軸イベントはスティック操作中に高頻度で発生する可能性があるため、重い処理を行う場合はゴースト側で頻度制御を検討すること。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_gamepad_padindex">パッドインデックス</a>。</dd>
+						<dt>Reference1</dt>
+						<dd><a href="#caption_gamepad_axis">軸名</a>。</dd>
+						<dt>Reference2</dt>
+						<dd>生値（整数）。範囲はベースウェアの実装に依存する。</dd>
+						<dt>Reference3</dt>
+						<dd>正規化値（小数）。スティックは-1.0～1.0、トリガーは0.0～1.0の範囲。通常はこちらを使用する。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnGamepadConnected">
+				<dt class="entry">OnGamepadConnected</dt>
+				<dd class="entry">
+					<p>ゲームパッドが接続された際に発生。SSP起動時に既に接続されていた場合も発生する。<br />イベントは起動中の全ゴーストに同時にブロードキャストされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_gamepad_padindex">パッドインデックス</a>。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnGamepadDisconnected">
+				<dt class="entry">OnGamepadDisconnected</dt>
+				<dd class="entry">
+					<p>ゲームパッドが切断された際に発生。<br />イベントは起動中の全ゴーストに同時にブロードキャストされる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd><a href="#caption_gamepad_padindex">パッドインデックス</a>。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="caption_gamepad_button">
+				<h1>ボタン名一覧</h1>
+				<dl>
+					<dt>A</dt>
+					<dd>フェイスボタン下</dd>
+					<dt>B</dt>
+					<dd>フェイスボタン右</dd>
+					<dt>X</dt>
+					<dd>フェイスボタン左</dd>
+					<dt>Y</dt>
+					<dd>フェイスボタン上</dd>
+					<dt>LB</dt>
+					<dd>左バンパー（L1相当）</dd>
+					<dt>RB</dt>
+					<dd>右バンパー（R1相当）</dd>
+					<dt>LSB</dt>
+					<dd>左スティック押込み（L3相当）</dd>
+					<dt>RSB</dt>
+					<dd>右スティック押込み（R3相当）</dd>
+					<dt>Start</dt>
+					<dd>スタートボタン</dd>
+					<dt>Back</dt>
+					<dd>バック / セレクトボタン</dd>
+					<dt>DPadUp</dt>
+					<dd>十字キー上</dd>
+					<dt>DPadDown</dt>
+					<dd>十字キー下</dd>
+					<dt>DPadLeft</dt>
+					<dd>十字キー左</dd>
+					<dt>DPadRight</dt>
+					<dd>十字キー右</dd>
+				</dl>
+				<p>十字キーの斜め入力は、2つのボタンイベントとして個別に発生する（例：右上ならDPadUpとDPadRight）。</p>
+			</section>
+			<section class="caption" id="caption_gamepad_axis">
+				<h1>軸名一覧</h1>
+				<dl>
+					<dt>LeftStickX</dt>
+					<dd>左スティック水平（右が正、左が負）。正規化値の範囲は-1.0～1.0。</dd>
+					<dt>LeftStickY</dt>
+					<dd>左スティック垂直（上が正、下が負）。正規化値の範囲は-1.0～1.0。</dd>
+					<dt>RightStickX</dt>
+					<dd>右スティック水平（右が正、左が負）。正規化値の範囲は-1.0～1.0。</dd>
+					<dt>RightStickY</dt>
+					<dd>右スティック垂直（上が正、下が負）。正規化値の範囲は-1.0～1.0。</dd>
+					<dt>LeftTrigger</dt>
+					<dd>左トリガー（引くほど大きい）。正規化値の範囲は0.0～1.0。</dd>
+					<dt>RightTrigger</dt>
+					<dd>右トリガー（引くほど大きい）。正規化値の範囲は0.0～1.0。</dd>
+				</dl>
+			</section>
+			<section class="caption" id="caption_gamepad_padindex">
+				<h1>パッドインデックスについて</h1>
+				<p>全イベントのReference0にはパッドインデックスが渡される。<br />ゲームパッド1台のみを想定する場合、Reference0は無視して構わない（通常は0である）。</p>
+			</section>
+			<section class="caption" id="caption_gamepad_xinput">
+				<h1>Windows上のSSPにおけるXInput固有の仕様</h1>
+				<p>Windows上のSSPではXInput APIを使用してゲームパッド入力を取得している。そのため以下の制約がある。</p>
+				<dl>
+					<dt>対応コントローラ</dt>
+					<dd>XInput対応ゲームパッド（Xbox系コントローラ等）のみ。DirectInput専用のコントローラは認識されない。</dd>
+					<dt>同時接続数</dt>
+					<dd>最大4台。パッドインデックスは0～3の範囲。</dd>
+					<dt>OnGamepadAxisMoveのReference2（生値）の範囲</dt>
+					<dd>スティックは-32768～32767、トリガーは0～255。</dd>
+				</dl>
+			</section>
 		</section>
 		<section class="category">
 			<h1>バルーンイベント</h1>
