@@ -561,6 +561,7 @@
 				<li><a href="#OnSoundError">OnSoundError</a></li>
 				<li><a href="#OnMusicPlayEx">OnMusicPlayEx</a></li>
 				<li><a href="#OnMusicPlay">OnMusicPlay</a></li>
+				<li><a href="#OnVideoPlayEx">OnVideoPlayEx</a></li>
 				<li><a href="#OnTextDrop">OnTextDrop</a></li>
 				<li><a href="#OnShellScaling">OnShellScaling</a></li>
 				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
@@ -5202,7 +5203,8 @@
 				<dt class="entry">OnMusicPlayEx</dt>
 				<dd class="entry">
 					<p>Windows標準のメディアプレイヤーアプリなど、対応した音楽再生ソフトで再生中の曲情報をゴーストに通知する。
-					<br/>このイベントに反応しない場合はOnMusicPlayにフォールバックする。</p>
+					<br/>このイベントに反応しない場合はOnMusicPlayにフォールバックする。
+					<br/>ブラウザでの動画・音楽再生は全部OnVideoPlayEx扱いになるので注意。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>曲タイトル</dd>
@@ -5213,6 +5215,19 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.55</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnVideoPlayEx">
+				<dt class="entry">OnVideoPlayEx</dt>
+				<dd class="entry">
+					<p>Windows標準のメディアプレイヤーアプリなど、対応した音楽再生ソフトで再生中の動画情報をゴーストに通知する。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>OnMusicPlayExと同じ</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.59</li>
 					</ul>
 				</dd>
 			</dl>
