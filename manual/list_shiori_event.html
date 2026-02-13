@@ -559,6 +559,8 @@
 				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
 				<li><a href="#OnSoundStop">OnSoundStop</a></li>
 				<li><a href="#OnSoundError">OnSoundError</a></li>
+				<li><a href="#OnMusicPlayEx">OnMusicPlayEx</a></li>
+				<li><a href="#OnMusicPlay">OnMusicPlay</a></li>
 				<li><a href="#OnTextDrop">OnTextDrop</a></li>
 				<li><a href="#OnShellScaling">OnShellScaling</a></li>
 				<li><a href="#OnBalloonScaling">OnBalloonScaling</a></li>
@@ -5196,6 +5198,69 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnMusicPlayEx">
+				<dt class="entry">OnMusicPlayEx</dt>
+				<dd class="entry">
+					<p>Windows標準のメディアプレイヤーアプリなど、対応した音楽再生ソフトで再生中の曲情報をゴーストに通知する。
+					<br/>このイベントに反応しない場合はOnMusicPlayにフォールバックする。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>曲タイトル</dd>
+						<dt>Reference1</dt>
+						<dd>アーティスト名</dd>
+						<dt>Reference2以降</dt>
+						<dd>拡張情報名[バイト値1]拡張情報の内容 <a href="#caption_musicplayex_codes">OnMusicPlayExの拡張情報リスト</a></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.55</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnMusicPlay">
+				<dt class="entry">OnMusicPlay</dt>
+				<dd class="entry">
+					<p>Windows標準のメディアプレイヤーアプリなど、対応した音楽再生ソフトで再生中の曲情報をゴーストに通知する。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>曲タイトル</dd>
+						<dt>Reference1</dt>
+						<dd>アーティスト名</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.55</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="caption_musicplayex_codes">
+				<h1>OnMusicPlayExの拡張情報リスト</h1>
+				<dl>
+					<dt>album</dt>
+					<dd>アルバム名 iSing4U/SSP2.5.75</dd>
+					<dt>albumartist</dt>
+					<dd>アルバム制作者名 SSP2.5.75</dd>
+					<dt>subtitle</dt>
+					<dd>サブタイトル SSP2.5.75</dd>
+					<dt>source</dt>
+					<dd>再生アプリ情報 SSP2.5.75</dd>
+					<dt>duration</dt>
+					<dd>曲の長さ(秒) iSing4U/SSP2.5.75</dd>
+					<dt>genre</dt>
+					<dd>ジャンル iSing4U/SSP2.5.75</dd>
+					<dt>artwork</dt>
+					<dd>アルバムアートワークの画像ファイルパス SSP 2.5.75</dd>
+					<dt>rating</dt>
+					<dd>レート（マイレート） iSing4U</dd>
+					<dt>playcount</dt>
+					<dd>再生回数 iSing4U</dd>
+					<dt>composer</dt>
+					<dd>作曲者名 iSing4U</dd>
+					<dt>uniqueid</dt>
+					<dd>曲のユニークID iSing4U</dd>
+					<dt>playlist</dt>
+					<dd>プレイリスト情報 iSing4U</dd>
+				</dl>
+			</section>
+		</section>
 			<dl id="OnTextDrop">
 				<dt class="entry">OnTextDrop</dt>
 				<dd class="entry">
