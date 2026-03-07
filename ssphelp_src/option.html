@@ -135,6 +135,55 @@
 	</tr>
 
 	<tr>
+		<th colspan="2">オフラインサーフェスダンプ</th>
+	</tr>
+
+	<tr>
+		<td>--offline-dump フォルダパス</td>
+		<td>オフラインダンプモードで起動する。ゴーストを実際に起動することなく、指定したゴーストフォルダのsurfaces.txtを読み込んでサーフェス画像をダンプし、即終了する。SHIORI/MAKOTO/PIROはロードされない。ウィンドウ・メッセージループも作成されない。<br />
+		引数にはゴーストのフォルダパスを指定する（末尾の\は任意）。<br />
+		<br />
+		例：<code>ssp.exe --offline-dump "C:\SSP\ghost\myGhost" --dump-surface-list "0,1" --dump-output-dir "C:\dump"</code></td>
+	</tr>
+
+	<tr>
+		<td>--dump-shell フォルダ名か名前</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプ対象のシェルをフォルダ名（＝shell以下の相対パス）か名前で指定する。省略時はdescript.txtで指定されているデフォルトシェル（通常はmaster）が使われる。</td>
+	</tr>
+
+	<tr>
+		<td>--dump-scope (スコープID)</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプ画像のスコープIDを指定する。省略時は0。</td>
+	</tr>
+
+	<tr>
+		<td>--dump-surface-list リスト</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプするサーフェスをカンマ区切りで指定する。surface番号のプレフィックス（surface）は省略可能。<a href="https://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html#caption_surfacebraceID">surfaces.txtのサーフェスID指定の拡張形式</a>も使用できる。<br />
+		例：<code>--dump-surface-list "0,1,10"</code><br />
+		このオプションを省略した場合はサーフェスダンプは行われない（--dump-error-log と組み合わせてパースエラーのみ出力することができる）。</td>
+	</tr>
+
+	<tr>
+		<td>--dump-output-dir ディレクトリ</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプ画像の出力先ディレクトリを指定する。省略時はカレントディレクトリが使われる。</td>
+	</tr>
+
+	<tr>
+		<td>--dump-output-prefix プレフィックス</td>
+		<td>--offline-dump と組み合わせて使用する。出力ファイル名の先頭に付けるプレフィックスを指定する。省略時はプレフィックスなし。</td>
+	</tr>
+
+	<tr>
+		<td>--dump-error-log ファイルパス</td>
+		<td>--offline-dump と組み合わせて使用する。surfaces.txtのパースエラーをUTF-8テキストファイルとして指定パスに書き出す。エラーがない場合は空のファイルが作成される。<br />
+		--dump-surface-list を省略してこのオプションのみ指定することで、ダンプを行わずエラーチェックのみを実行できる。</td>
+	</tr>
+
+	<tr>
+		<th colspan="2">その他</th>
+	</tr>
+
+	<tr>
 		<td>initial_install.nar</td>
 		<td>起動オプションではないが、ssp.exeと同じフォルダに<b>initial_install.nar</b>という名前のNARファイルを配置しておくと、SSP起動時にサイレント（確認ダイアログなし）で上書きインストールされる。インストール完了後、initial_install.narは自動的に削除される。SSPにゴースト等を同梱して配布する場合などに利用できる。 [2.7.52～]</td>
 	</tr>
