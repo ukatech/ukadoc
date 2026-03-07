@@ -147,34 +147,34 @@
 	</tr>
 
 	<tr>
-		<td>--dump-shell フォルダ名か名前</td>
+		<td>--dump-shell フォルダ名か名前 [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。ダンプ対象のシェルをフォルダ名（＝shell以下の相対パス）か名前で指定する。省略時はdescript.txtで指定されているデフォルトシェル（通常はmaster）が使われる。</td>
 	</tr>
 
 	<tr>
-		<td>--dump-scope (スコープID)</td>
+		<td>--dump-scope (スコープID) [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。ダンプ画像のスコープIDを指定する。省略時は0。</td>
 	</tr>
 
 	<tr>
-		<td>--dump-surface-list リスト</td>
+		<td>--dump-surface-list リスト [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。ダンプするサーフェスをカンマ区切りで指定する。surface番号のプレフィックス（surface）は省略可能。<a href="https://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html#caption_surfacebraceID">surfaces.txtのサーフェスID指定の拡張形式</a>も使用できる。<br />
 		例：<code>--dump-surface-list "0,1,10"</code><br />
 		このオプションを省略した場合はサーフェスダンプは行われない（--dump-error-log と組み合わせてパースエラーのみ出力することができる）。</td>
 	</tr>
 
 	<tr>
-		<td>--dump-output-dir ディレクトリ</td>
+		<td>--dump-output-dir ディレクトリ [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。ダンプ画像の出力先ディレクトリを指定する。省略時はカレントディレクトリが使われる。</td>
 	</tr>
 
 	<tr>
-		<td>--dump-output-prefix プレフィックス</td>
+		<td>--dump-output-prefix プレフィックス [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。出力ファイル名の先頭に付けるプレフィックスを指定する。省略時はプレフィックスなし。</td>
 	</tr>
 
 	<tr>
-		<td>--dump-error-log ファイルパス</td>
+		<td>--dump-error-log ファイルパス [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。surfaces.txtのパースエラーをUTF-8テキストファイルとして指定パスに書き出す。エラーがない場合は空のファイルが作成される。<br />
 		--dump-surface-list を省略してこのオプションのみ指定することで、ダンプを行わずエラーチェックのみを実行できる。</td>
 	</tr>
