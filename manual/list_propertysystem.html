@@ -220,6 +220,7 @@
 				<li><a href="#currentghost.balloon.scope(ID).basepos.x">currentghost.balloon.scope(ID).basepos.x</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).basepos.y">currentghost.balloon.scope(ID).basepos.y</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).char_width">currentghost.balloon.scope(ID).char_width</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).background.color">currentghost.balloon.scope(ID).background.color</a></li>
 
 				<li><a href="#balloonlist(バルーン名/パス).汎用プロパティ名">balloonlist(バルーン名/パス).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.index(ID).汎用プロパティ名">balloonlist.index(ID).汎用プロパティ名</a></li>
@@ -1072,6 +1073,18 @@
 					<p>バルーン標準フォントでの半角文字列幅。等幅フォントでは文字高さ÷2、プロポーショナルフォントでは半角大文字A～Zの幅の平均値。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).background.color">
+				<dt class="entry">currentghost.balloon.scope(ID).background.color</dt>
+				<dd class="entry">
+					<p>バルーンの背景色を R,G,B の値で取得する。
+					<br />「背景色」とは、バルーンの中で最も頻繁に使われている色（代表色）か、バルーン全体の平均色のいずれかであり、この色とテキストの色が十分コントラストが出るように制御するなどの用途が考えらえる。
+					<br />参考：SSP 2.7.81時点の実装は「代表色」である。
+					</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.81</li>
 					</ul>
 				</dd>
 			</dl>
