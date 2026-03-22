@@ -153,8 +153,8 @@
 				<li><a href="#OnInstallComplete">OnInstallComplete</a></li>
 				<li><a href="#OnChoiceSelect_Ex_/OnAnchorSelect_Ex_/_q等に指定された任意名イベント">OnChoiceSelect(Ex)/OnAnchorSelect(Ex)/\q等に指定された任意名イベント</a></li>
 				<li><a href="#_!_raiseplugin_および_!_notifyplugin_に指定された任意名イベント">\![raiseplugin]および\![notifyplugin]に指定された任意名イベント</a></li>
-				<li><a href="#OnGetProperty">OnGetProperty</a></li>
-				<li><a href="#OnSetProperty">OnSetProperty</a></li>
+				<li><a href="#property.get">property.get</a></li>
+				<li><a href="#property.set">property.set</a></li>
 			</ul>
 		</section>
 	</section>
@@ -432,8 +432,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnGetProperty">
-				<dt class="entry">OnGetProperty</dt>
+			<dl id="property.get">
+				<dt class="entry">property.get</dt>
 				<dd class="entry">
 					<p><a href="list_propertysystem.html#pluginlist(プラグイン名/パス/ID).ext.拡張プロパティ名">pluginlist(プラグイン名/パス/ID).ext</a>による拡張プロパティ取得時に発生。<br />取得できたプロパティの値を返す。</p>
 					<dl class="reference">
@@ -441,12 +441,12 @@
 						<dd>拡張プロパティの名前。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.84</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnSetProperty">
-				<dt class="entry">OnSetProperty</dt>
+			<dl id="property.set">
+				<dt class="entry">property.set</dt>
 				<dd class="entry">
 					<p><a href="list_propertysystem.html#pluginlist(プラグイン名/パス/ID).ext.拡張プロパティ名">pluginlist(プラグイン名/パス/ID).ext</a>による拡張プロパティ設定時に発生。<br />成功時204、失敗時適切なステータスコードを返す。</p>
 					<dl class="reference">
@@ -456,7 +456,7 @@
 						<dd>設定すべき値。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.84</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
 					</ul>
 				</dd>
 			</dl>

@@ -154,8 +154,10 @@
 				<li><a href="#baseware.version">baseware.version</a></li>
 				<li><a href="#baseware.name">baseware.name</a></li>
 				<li><a href="#ghostlist.count">ghostlist.count</a></li>
-				<li><a href="#ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名">ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名</a></li>
-				<li><a href="#ghostlist(ゴースト名/本体側名/パス).icon">ghostlist(ゴースト名/本体側名/パス).icon</a></li>
+				<li><a href="#ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名">ghostlist(ゴースト名/本体側名/パス/ID).汎用プロパティ名</a></li>
+				<li><a href="#ghostlist(ゴースト名/本体側名/パス).icon">ghostlist(ゴースト名/本体側名/パス/ID).icon</a></li>
+				<li><a href="#ghostlist(ゴースト名/本体側名/パス).ext.拡張プロパティ名">ghostlist(ゴースト名/本体側名/パス/ID).ext.拡張プロパティ名</a></li>
+				<li><a href="#ghostlist.index(ID).ext.拡張プロパティ名">ghostlist.index(ID).ext.拡張プロパティ名</a></li>
 				<li><a href="#ghostlist.index(ID).汎用プロパティ名">ghostlist.index(ID).汎用プロパティ名</a></li>
 				<li><a href="#ghostlist.current.汎用プロパティ名">ghostlist.current.汎用プロパティ名</a></li>
 				<li><a href="#activeghostlist(ゴースト名/本体側名/パス).汎用プロパティ名">activeghostlist(ゴースト名/本体側名/パス).汎用プロパティ名</a></li>
@@ -518,6 +520,24 @@
 					<p>そのゴーストのアイコンのパス。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist(ゴースト名/本体側名/パス).ext.拡張プロパティ名">
+				<dt class="entry">ghostlist(ゴースト名/本体側名/パス).ext.拡張プロパティ名</dt>
+				<dd class="entry">
+					<p>SHIORIイベント（<a href="list_shiori_event.html#property.get">property.get</a>・<a href="list_shiori_event.html#property.set">property.set</a>）を起こし、ゴースト内部の拡張プロパティを取得・設定する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="ghostlist.index(ID).ext.拡張プロパティ名">
+				<dt class="entry">ghostlist.index(ID).ext.拡張プロパティ名</dt>
+				<dd class="entry">
+					<p>SHIORIイベント（<a href="list_shiori_event.html#property.get">property.get</a>・<a href="list_shiori_event.html#property.set">property.set</a>）を起こし、ゴースト内部の拡張プロパティを取得・設定する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
 					</ul>
 				</dd>
 			</dl>
@@ -1165,18 +1185,18 @@
 			<dl id="pluginlist(プラグイン名/パス/ID).ext.拡張プロパティ名">
 				<dt class="entry">pluginlist(プラグイン名/パス/ID).ext.拡張プロパティ名</dt>
 				<dd class="entry">
-					<p>プラグインイベント（<a href="list_plugin_event.html#OnGetProperty">OnGetProperty</a>・<a href="list_plugin_event.html#OnSetProperty">OnSetProperty</a>）を起こし、プラグイン内部の拡張プロパティを取得・設定する。</p>
+					<p>プラグインイベント（<a href="list_plugin_event.html#property.get">property.get</a>・<a href="list_plugin_event.html#property.set">property.set</a>）を起こし、プラグイン内部の拡張プロパティを取得・設定する。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.84</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="pluginlist.index(ID).ext.拡張プロパティ名">
 				<dt class="entry">pluginlist.index(ID).ext.拡張プロパティ名</dt>
 				<dd class="entry">
-					<p>プラグインイベント（<a href="list_plugin_event.html#OnGetProperty">OnGetProperty</a>・<a href="list_plugin_event.html#OnSetProperty">OnSetProperty</a>）を起こし、プラグイン内部の拡張プロパティを取得・設定する。</p>
+					<p>プラグインイベント（<a href="list_plugin_event.html#property.get">property.get</a>・<a href="list_plugin_event.html#property.set">property.set</a>）を起こし、プラグイン内部の拡張プロパティを取得・設定する。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.84</li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.85</li>
 					</ul>
 				</dd>
 			</dl>
