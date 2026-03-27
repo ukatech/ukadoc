@@ -174,13 +174,14 @@
 				<li><a href="#currentghost.scope.count">currentghost.scope.count</a></li>
 				<li><a href="#currentghost.scope(ID).surface.num">currentghost.scope(ID).surface.num</a></li>
 				<li><a href="#currentghost.scope(ID).seriko.defaultsurface">currentghost.scope(ID).seriko.defaultsurface</a></li>
-				<li><a href="#currentghost.scope(番号).surface.x">currentghost.scope(番号).surface.x</a></li>
-				<li><a href="#currentghost.scope(番号).surface.y">currentghost.scope(番号).surface.y</a></li>
-				<li><a href="#currentghost.scope(番号).x">currentghost.scope(番号).x</a></li>
-				<li><a href="#currentghost.scope(番号).y">currentghost.scope(番号).y</a></li>
-				<li><a href="#currentghost.scope(番号).rect">currentghost.scope(番号).rect</a></li>
-				<li><a href="#currentghost.scope(番号).name">currentghost.scope(番号).name</a></li>
-				
+				<li><a href="#currentghost.scope(ID).surface.x">currentghost.scope(ID).surface.x</a></li>
+				<li><a href="#currentghost.scope(ID).surface.y">currentghost.scope(ID).surface.y</a></li>
+				<li><a href="#currentghost.scope(ID).x">currentghost.scope(ID).x</a></li>
+				<li><a href="#currentghost.scope(ID).y">currentghost.scope(ID).y</a></li>
+				<li><a href="#currentghost.scope(ID).rect">currentghost.scope(ID).rect</a></li>
+				<li><a href="#currentghost.scope(ID).name">currentghost.scope(ID).name</a></li>
+				<li><a href="#currentghost.scope(ID).scaling">currentghost.scope(ID).scaling</a></li>
+
 				<li><a href="#currentghost.balloon.汎用プロパティ名">currentghost.balloon.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.balloon.count">currentghost.balloon.count</a></li>
 				
@@ -223,6 +224,7 @@
 				<li><a href="#currentghost.balloon.scope(ID).basepos.y">currentghost.balloon.scope(ID).basepos.y</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).char_width">currentghost.balloon.scope(ID).char_width</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).background.color">currentghost.balloon.scope(ID).background.color</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).scaling">currentghost.balloon.scope(ID).scaling</a></li>
 
 				<li><a href="#balloonlist(バルーン名/パス).汎用プロパティ名">balloonlist(バルーン名/パス).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.index(ID).汎用プロパティ名">balloonlist.index(ID).汎用プロパティ名</a></li>
@@ -705,8 +707,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).surface.x">
-				<dt class="entry">currentghost.scope(番号).surface.x</dt>
+			<dl id="currentghost.scope(ID).surface.x">
+				<dt class="entry">currentghost.scope(ID).surface.x</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDのサーフェスのX座標。</p>
 					<ul class="supported-baseware">
@@ -714,8 +716,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).surface.y">
-				<dt class="entry">currentghost.scope(番号).surface.y</dt>
+			<dl id="currentghost.scope(ID).surface.y">
+				<dt class="entry">currentghost.scope(ID).surface.y</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDのサーフェスY座標。</p>
 					<ul class="supported-baseware">
@@ -723,8 +725,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).x">
-				<dt class="entry">currentghost.scope(番号).x</dt>
+			<dl id="currentghost.scope(ID).x">
+				<dt class="entry">currentghost.scope(ID).x</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDのサーフェスの基準点のスクリーンにおけるX座標。<br />マルチモニタの場合、プライマリモニタ左上を原点とする仮想デスクトップ全体での位置。<br />基準点は通常サーフェス中央下。GHOSTおよびSHELLのdescript.txtの、<a href="descript_shell.html#sakura.defaultx,X座標">sakura(kero、char*).defaultx</a>で設定可能。</p>
 					<ul class="supported-baseware">
@@ -732,8 +734,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).y">
-				<dt class="entry">currentghost.scope(番号).y</dt>
+			<dl id="currentghost.scope(ID).y">
+				<dt class="entry">currentghost.scope(ID).y</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDのサーフェスの基準点のスクリーンにおけるY座標。<br />マルチモニタの場合、プライマリモニタ左上を原点とする仮想デスクトップ全体での位置。<br />基準点は通常サーフェス中央下。GHOSTおよびSHELLのdescript.txtの、<a href="descript_shell.html#sakura.defaulty,Y座標">sakura(kero、char*).defaulty</a>で設定可能。</p>
 					<ul class="supported-baseware">
@@ -741,8 +743,8 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).rect">
-				<dt class="entry">currentghost.scope(番号).rect</dt>
+			<dl id="currentghost.scope(ID).rect">
+				<dt class="entry">currentghost.scope(ID).rect</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDのウインドウ矩形座標(左,上,右,下)。</p>
 					<ul class="supported-baseware">
@@ -750,12 +752,21 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="currentghost.scope(番号).name">
-				<dt class="entry">currentghost.scope(番号).name</dt>
+			<dl id="currentghost.scope(ID).name">
+				<dt class="entry">currentghost.scope(ID).name</dt>
 				<dd class="entry">
 					<p>現在のゴーストのスコープIDの名前。<br>0番はdescript.txtのsakura.nameと同じ、1番はkero.nameと同じ、以降2番以降はchar?.nameと同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.67</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).scaling">
+				<dt class="entry">currentghost.scope(ID).scaling</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDの実効拡大率。ユーザー設定×タグ設定×SERIKO設定の結果なので、小数点以下が出る場合あり。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.89</li>
 					</ul>
 				</dd>
 			</dl>
@@ -1107,6 +1118,15 @@
 					</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.81</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).scaling">
+				<dt class="entry">currentghost.balloon.scope(ID).scaling</dt>
+				<dd class="entry">
+					<p>現在のバルーンの実効拡大率。ユーザー設定×タグ設定×SERIKO設定の結果なので、小数点以下が出る場合あり。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.89</li>
 					</ul>
 				</dd>
 			</dl>
