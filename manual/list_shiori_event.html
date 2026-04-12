@@ -336,13 +336,13 @@
 			<ul>
 				<li><a href="#OnFileDropping">OnFileDropping</a></li>
 				<li><a href="#OnFileDropped">OnFileDropped</a></li>
+				<li><a href="#OnFileDrop">OnFileDrop</a></li>
+				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
+				<li><a href="#OnFileDrop2">OnFileDrop2</a></li>
 				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
 				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
 				<li><a href="#OnDirectoryDrop">OnDirectoryDrop</a></li>
 				<li><a href="#OnWallpaperChange">OnWallpaperChange</a></li>
-				<li><a href="#OnFileDrop">OnFileDrop</a></li>
-				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
-				<li><a href="#OnFileDrop2">OnFileDrop2</a></li>
 				<li><a href="#OnUpdatedataCreating">OnUpdatedataCreating</a></li>
 				<li><a href="#OnUpdatedataCreated">OnUpdatedataCreated</a></li>
 				<li><a href="#OnNarCreating">OnNarCreating</a></li>
@@ -2739,6 +2739,55 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnFileDrop">
+				<dt class="entry">OnFileDrop</dt>
+				<dd class="entry">
+					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnFileDrop2">
+				<dt class="entry">OnFileDrop2</dt>
+				<dd class="entry">
+					<p>ファイルがDnDされた際に発生。このイベントが現時点での最新仕様となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnFileDropEx">
+				<dt class="entry">OnFileDropEx</dt>
+				<dd class="entry">
+					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnOtherObjectDropping">
 				<dt class="entry">OnOtherObjectDropping</dt>
 				<dd class="entry">
@@ -2804,55 +2853,6 @@
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnFileDrop">
-				<dt class="entry">OnFileDrop</dt>
-				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパス。</dd>
-						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnFileDrop2">
-				<dt class="entry">OnFileDrop2</dt>
-				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
-						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
-						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
-						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
-					</ul>
-				</dd>
-			</dl>
-			<dl id="OnFileDropEx">
-				<dt class="entry">OnFileDropEx</dt>
-				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。</p>
-					<dl class="reference">
-						<dt>Reference0</dt>
-						<dd>ドロップされたファイルパスを（複数あればbyte値1で区切って）返す。</dd>
-						<dt>Reference1</dt>
-						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
-					</dl>
-					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
