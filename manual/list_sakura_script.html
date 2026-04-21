@@ -479,6 +479,8 @@
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
 				
+				<li><a href="#_!_cancel,http,URL_">\![cancel,http,URL]</a></li>
+
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</a></li>
@@ -5070,6 +5072,15 @@
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_cancel,http,URL_">
+				<dt class="entry">\![cancel,http,URL]</dt>
+				<dd class="entry">
+					<p>進行中のHTTPリクエストをキャンセルする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.04</li>
 					</ul>
 				</dd>
 			</dl>
