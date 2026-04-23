@@ -465,6 +465,12 @@
 				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
 				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
 				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a></li>
+				<li><a href="#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a></li>
+				<li><a href="#OnExecuteWebSocketReceive">OnExecuteWebSocketReceive</a></li>
+				<li><a href="#OnExecuteWebSocketReconnect">OnExecuteWebSocketReconnect</a></li>
+				<li><a href="#OnExecuteWebSocketClose">OnExecuteWebSocketClose</a></li>
+				<li><a href="#OnExecuteWebSocketFailure">OnExecuteWebSocketFailure</a></li>
+				<li><a href="#OnExecuteWebSocket_SSLInfo">OnExecuteWebSocket_SSLInfo</a></li>
 				<li><a href="#OnPingComplete">OnPingComplete</a></li>
 				<li><a href="#OnPingProgress">OnPingProgress</a></li>
 				<li><a href="#OnNSLookupComplete">OnNSLookupComplete</a></li>
@@ -4228,6 +4234,108 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocketOpen">
+				<dt class="entry">OnExecuteWebSocketOpen</dt>
+				<dd class="entry">
+					<p>WebSocket接続確立時（HTTP 101 Upgrade成功後）に発生。初回接続のみ発火し、再接続成功時はOnExecuteWebSocketReconnectが発生する。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Open" がイベント名となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>接続URL (ws:// または wss://)。</dd>
+						<dt>Reference2</dt>
+						<dd>"200"（固定）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocketReceive">
+				<dt class="entry">OnExecuteWebSocketReceive</dt>
+				<dd class="entry">
+					<p>WebSocket接続中にサーバーからデータフレームを受信するたびに発生。断片化フレームは自動的に再組み立てされてから発火する。Ping/Pong/Closeフレームでは発火しない。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventIDそのままがイベント名となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>接続URL。</dd>
+						<dt>Reference2</dt>
+						<dd>opcodeの種別。"1"=テキストフレーム (UTF-8)、"2"=バイナリフレーム。</dd>
+						<dt>Reference3</dt>
+						<dd>受信データ。テキストフレームの場合はUTF-8文字列そのまま、バイナリフレームの場合はBase64エンコード文字列。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocketReconnect">
+				<dt class="entry">OnExecuteWebSocketReconnect</dt>
+				<dd class="entry">
+					<p>エラー切断後の自動再接続が成功したときに発生。OnExecuteWebSocketOpenは発火せず、このイベントがOpenに相当する役割を担う。再接続後の受信は通常どおりOnExecuteWebSocketReceiveで通知される。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Reconnect" がイベント名となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>接続URL。</dd>
+						<dt>Reference2</dt>
+						<dd>"200"（固定）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocketClose">
+				<dt class="entry">OnExecuteWebSocketClose</dt>
+				<dd class="entry">
+					<p>WebSocket接続が最終的に切断されたときに発生。自動再接続を試みた場合はその後に発火する。Failure時は発火しない。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Close" がイベント名となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>接続URL。</dd>
+						<dt>Reference2</dt>
+						<dd>切断要因コード。"1000"=正常切断（サーバーまたは\![close,websocket]による）、"userbreak"=\![cancel,websocket]またはゴースト終了による強制中断。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocketFailure">
+				<dt class="entry">OnExecuteWebSocketFailure</dt>
+				<dd class="entry">
+					<p>初回接続でHTTP 101 Upgradeに失敗したとき、または接続中にエラー切断が発生し自動再接続を5回試みてもすべて失敗したときに発生。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Failure" がイベント名となる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>接続URL。</dd>
+						<dt>Reference2</dt>
+						<dd>エラー内容文字列。初回接続失敗時はSPHttpのエラーテキスト、自動再接続全失敗時は"reconnect failed"（固定）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteWebSocket_SSLInfo">
+				<dt class="entry">OnExecuteWebSocket_SSLInfo</dt>
+				<dd class="entry">
+					<p>wss://接続時にSSL/TLS接続が確立したときに発生。初回接続時のみ発火し、Upgradeの成否にかかわらず発火する。イベント名は常に固定で--eventオプションによる変更は不可。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dt>Reference1～</dt>
+						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoのReference1以降と同じ</a>。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
 					</ul>
 				</dd>
 			</dl>

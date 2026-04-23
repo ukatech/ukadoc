@@ -478,6 +478,11 @@
 				
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,websocket,URL,オプション,オプション,オプション..._">\![execute,websocket,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_send,websocket,URL,data1,data2,..._">\![send,websocket,URL,data1,data2,...]</a></li>
+				<li><a href="#_!_send,websocket-binary,URL,base64data_">\![send,websocket-binary,URL,base64data]</a></li>
+				<li><a href="#_!_close,websocket,URL_">\![close,websocket,URL]</a></li>
+				<li><a href="#_!_cancel,websocket,URL_">\![cancel,websocket,URL]</a></li>
 				
 				<li><a href="#_!_cancel,http,URL_">\![cancel,http,URL]</a></li>
 
@@ -5075,6 +5080,85 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_execute,websocket,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,websocket,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでWebSocket接続を確立する。接続・受信・切断の各タイミングでSHIORIイベントが発行される。パラメータ群の指定はrss-getと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_send,websocket,URL,data1,data2,..._">
+				<dt class="entry">\![send,websocket,URL,data1,data2,...]</dt>
+				<dd class="entry">
+					<p>接続済みのWebSocketセッションに対して、テキストフレームとして送信する。URLで対象のセッションを特定する。dataを2つ以上指定すると、それらをCRLFで結合したテキストが送られる。セッションが存在しない場合（接続前・切断後）はタグは無視される。</p>
+					<ul class="description">
+						<li>URL……接続時に使ったURLと同じ文字列。</li>
+						<li>data1,data2,……送信するUTF-8テキスト。2つ以上指定するとCRLFで結合される。</li>
+					</ul>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![send,websocket,ws://example.com/chat,Hello!,World]ws://example.com/chat に "Hello!\r\nWorld" をテキストフレームとして送信する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_send,websocket-binary,URL,base64data_">
+				<dt class="entry">\![send,websocket-binary,URL,base64data]</dt>
+				<dd class="entry">
+					<p>接続済みのWebSocketセッションに対して、バイナリフレームとして送信する。URLで対象のセッションを特定する。セッションが存在しない場合はタグは無視される。</p>
+					<ul class="description">
+						<li>URL……接続時に使ったURLと同じ文字列。</li>
+						<li>base64data……Base64エンコードされたバイナリデータ。</li>
+					</ul>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![send,websocket-binary,ws://example.com/stream,SGVsbG8=]ws://example.com/stream に Base64デコードしたバイナリデータをバイナリフレームとして送信する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_close,websocket,URL_">
+				<dt class="entry">\![close,websocket,URL]</dt>
+				<dd class="entry">
+					<p>RFC 6455に従いCloseフレームを送信して正常に切断する。サーバー側のCloseフレーム応答を待ってから接続を閉じる。切断後に<a href="list_shiori_event.html#OnExecuteWebSocketClose">OnExecuteWebSocketClose</a> (Reference2="1000") が発生する。</p>
+					<ul class="description">
+						<li>URL……接続時に使ったURLと同じ文字列。</li>
+						<li>status_code……省略時は1000（正常終了）。1001=going away、1008=policy violation等 (RFC 6455 §7.4.1)。</li>
+					</ul>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![close,websocket,ws://example.com/chat]ws://example.com/chat を正常に切断する。</code></p>
+							<p><code type="SakuraScript">\![close,websocket,ws://example.com/chat,1001]ステータスコード1001 (going away) で切断する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_cancel,websocket,URL_">
+				<dt class="entry">\![cancel,websocket,URL]</dt>
+				<dd class="entry">
+					<p>Closeフレームを送らずに接続を強制中断する。自動再接続のバックオフ待機中でも即座に中断する。切断後に<a href="list_shiori_event.html#OnExecuteWebSocketClose">OnExecuteWebSocketClose</a> (Reference2="userbreak") が発生する。正常に会話を終わらせる場合は\![close,websocket,...]を使用すること。</p>
+					<ul class="description">
+						<li>URL……接続時に使ったURLと同じ文字列。</li>
+					</ul>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_cancel,http,URL_">
 				<dt class="entry">\![cancel,http,URL]</dt>
 				<dd class="entry">
@@ -5688,10 +5772,13 @@
 					<dd>国際化関連の挙動を制御するためのAccept-Languageヘッダを指定する。</dd>
 
 					<dt>--async=識別ID</dt>
-					<dd>処理を待たずにSakuraScriptの続きを実行し、処理が完了してから<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>イベントを通知。
+					<dd>処理を待たずにSakuraScriptの続きを実行し、処理が完了してからイベントを通知する。
+					<br>HTTPの場合は<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>。
 					<br>RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
-					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event[指定したID]/[指定したID]Failureが発生する。<br>例:--async=OnExampleのとき 成功時OnExample、失敗時OnExampleFailure
-					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く。</dd>
+					<br>WebSocketの場合は接続・受信・切断の各タイミングで<a href="list_shiori_event.html#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReceive">Receive</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReconnect">Reconnect</a>/<a href="list_shiori_event.html#OnExecuteWebSocketClose">Close</a>/<a href="list_shiori_event.html#OnExecuteWebSocketFailure">Failure</a>が発生する（常にAsync動作のため--syncは適用不可）。
+					<br>Onから始まるIDを指定した場合、HTTP/RSSは[指定したID]（成功）/[指定したID]Failure（失敗）が発生する。WebSocketは[指定したID]Open/[指定したID]（受信）/[指定したID]Reconnect/[指定したID]Close/[指定したID]Failureが発生する。
+					<br>例:--async=OnExampleのとき HTTP/RSS→OnExample/OnExampleFailure、WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure
+					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く（WebSocketには適用不可）。</dd>
 
 					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
 					<dd>OAuthなどAuthorizationヘッダが必須の場合にあらかじめ設定する。</dd>
