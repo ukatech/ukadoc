@@ -4266,7 +4266,7 @@
 						<dt>Reference2</dt>
 						<dd>opcodeの種別。"1"=テキストフレーム (UTF-8)、"2"=バイナリフレーム。</dd>
 						<dt>Reference3</dt>
-						<dd>受信データ。テキストフレームの場合はUTF-8文字列そのまま、バイナリフレームの場合はBase64エンコード文字列。</dd>
+						<dd>受信データ。テキストフレームの場合はUTF-8文字列そのまま(改行コードはバイト値1に変換)、バイナリフレームの場合はBase64エンコード文字列。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.05</li>
