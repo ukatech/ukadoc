@@ -5763,7 +5763,7 @@
 				</ul>
 			</section>
 			<section class="caption" id="notes_executehttp">
-				<h1>http get/post オプション</h1>
+				<h1>http/websocket オプション</h1>
 				<dl>
 					<dt>--accept=Acceptリクエストヘッダの中身 [2.7.34]</dt>
 					<dd>受け取れるContent-Type形式を指定するAcceptヘッダを指定する。</dd>
@@ -5851,6 +5851,8 @@
 					<dt>--timeout=秒数</dt>
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
 
+					<dt>--m_websocketProtocol=Sec-Websocket-Protocol [2.8.08]</dt>
+					<dd>WebSocket接続の際に使用する、Sec-Websocket-Protocolヘッダを指定する。指定しなければこのヘッダ自体が送られれない。</dd>
 				</dl>
 			</section>
 		</section>
