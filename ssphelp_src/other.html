@@ -8,4 +8,30 @@
 <p>
 	SSPはMCP (Model context protocol) サーバとしてふるまうことができ、AI(LLM)からのSakuraScript実行やプロパティシステムの読み取りなどが可能です。
 	<br />この機能を使用するためには、SSPを起動した状態で、<a href="http://127.0.0.1:9801/api/mcp/help">127.0.0.1:9801/api/mcp/help</a>を開き、説明を読んで、claude_desktop_config.jsonなどに適切に追加してみてください。
+	<br />今のところ以下の機能が利用可能です。
+</p>
+
+<ul>
+	<li>get_active_ghost_list - アクティブなゴースト(キャラクター)のリストを取得する</li>
+	<li>get_expression_table - 特定のゴースト(キャラクター)で使える表情リストを取得する</li>
+	<li>sakurascript - SakuraScriptを実行する</li>
+</ul>
+
+<h2>伺かの仕様をMCPで探せるようにする</h2>
+
+<p>
+	ukagaka-doc-mcpをインストールして、適切に設定してください。
+	<br /><a href="https://github.com/finelagusaz/ukagaka-doc-mcp">https://github.com/finelagusaz/ukagaka-doc-mcp</a>
+</p>
+
+<h2>surfaces.txtなどが正しいかAIに確認させたい</h2>
+
+<p>
+	<a href="options.html">起動オプション一覧</a>の「オフラインサーフェスダンプ」の--dump-error-logが使える旨を、CLAUDE.md/AGENTS.mdに書いてください。
+</p>
+
+<h2>ゴーストの辞書(スクリプト)もAIに確認させたい</h2>
+
+<p>
+	YAYAでよければ<a href="https://github.com/YAYA-shiori/tama/blob/master/docs/README_JP.md">デバッグツールtama</a>のtamacや--ciモードが使えます。
 </p>
