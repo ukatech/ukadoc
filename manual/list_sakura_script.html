@@ -363,6 +363,8 @@
 				<li><a href="#_!_set,windowstate,stayontop_">\![set,windowstate,stayontop]</a></li>
 				<li><a href="#_!_set,windowstate,!stayontop_">\![set,windowstate,!stayontop]</a></li>
 				<li><a href="#_!_set,windowstate,minimize_">\![set,windowstate,minimize]</a></li>
+				<li><a href="#_!_save,wallpaper_">\![save,wallpaper]</a></li>
+				<li><a href="#_!_restore,wallpaper_">\![restore,wallpaper]</a></li>
 				<li><a href="#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper,ファイル名,オプション]</a></li>
 				<li><a href="#_!_set,tasktrayicon,ファイル名,テキスト_">\![set,tasktrayicon,ファイル名,テキスト]</a></li>
 				<li><a href="#_!_set,trayballoon,オプション,オプション,オプション..._">\![set,trayballoon,オプション,オプション,オプション...]</a></li>
@@ -3595,6 +3597,24 @@
 							<p><code type="SakuraScript">最小化。\![set,windowstate,minimize]</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_save,wallpaper_">
+				<dt class="entry">\![save,wallpaper]</dt>
+				<dd class="entry">
+					<p>現在の壁紙をいったん保存し、restoreで復帰できるようにする。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.11</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_restore,wallpaper_">
+				<dt class="entry">\![restore,wallpaper]</dt>
+				<dd class="entry">
+					<p>save,wallpaperで保存された壁紙を復帰する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.11</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_set,wallpaper,ファイル名,オプション_">
