@@ -5860,10 +5860,15 @@
 					<br />指定するファイルパスはSSP管轄下(SSP.exeと同じ場所以下か、ゴースト等を列挙するよう指定したフォルダ以下)に限られる。</dd>
 
 					<dt>--progress-notify [2.6.44]</dt>
-					<dd>ダウンロード処理中に<a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a>イベントを通知する。
+					<dd>ダウンロード処理中に<a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a>イベント、またはイベントIDがOnではじまる場合は後ろにProgressをつけたイベントを通知する。
 					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event [指定したID]Progress が発生する。<br>例:--async=OnExampleのとき OnExampleProgress
 					<br>ダウンロード処理中に、逐一イベント通知処理が行われるため、ダウンロード速度の低下が発生する。
 					<br>また、ファイルに出力する場合は、イベント通知時に一旦ファイルを閉じ、レスポンスを受けた後で再度ファイルを開く操作が加わるので、さらにダウンロード速度が遅くなる点に注意。</dd>
+
+					<dt>--streaming または --streaming=種類 [2.8.14]</dt>
+					<dd>HTTPリクエストのストリーミング処理を指定する。 --streaming=sse でServer-Sent Events、 --streaming=text で改行区切りストリーミング(NDJSONなど)
+					<br>種類指定なしで--streamingとした場合は、サーバからのレスポンスのContent-Typeに応じて適切にストリーミング処理を行う。
+					<br>受信したデータは<a href="list_shiori_event.html#OnExecuteHTTPStreaming">OnExecuteHTTPStreaming</a>イベント、またはイベントIDがOnではじまる場合はOnHogehogeStreamingのように後ろにStreamingをつけたイベントを通知する。</dd>
 
 					<dt>--sync=識別ID [2.6.44]</dt>
 					<dd>SakuraScriptの実行を一旦止めて処理待ちする点を除き、--async指定と同じ挙動となる。</dd>
