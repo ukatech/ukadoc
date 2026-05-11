@@ -835,24 +835,24 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>サーフェスに対応するsurface*.pngという画像がある場合、element0が定義されていると元のsurface*.pngの内容が破棄されて、element0で置き換えられる
 						<br>element1以降は、その上に順次合成されていく。
 					</p>
-					<p>
-						SSP2.3.53からは、element定義されたサーフェスをアニメーションパーツとして用いた場合も、一枚の画像のように振る舞う（以前は未定義）。
-					</p>
-					<p>
-						SSP 2.7.38以降では、surface*.pngまたはelement定義にアニメGIF/APNG/WebPアニメを指定すると、SERIKO定義を書かなくても自動的にアニメーションする。
+					<dl>
+						<dt>SSP 2.3.53～</dt>
+						<dd>element定義されたサーフェスをアニメーションパーツとして用いた場合も、一枚の画像のように振る舞う（以前は未定義）。</dd>
+
+						<dt>SSP 2.7.38～</dt>
+						<dd>surface*.pngまたはelement定義にアニメGIF/APNG/WebPアニメを指定すると、SERIKO定義を書かなくても自動的にアニメーションする。
 						<br>*の部分（elementID）は同じsurface内で一貫した、0から始まる通し番号。
-						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
-					</p>
-					<p>
-						(,オプション...)の部分は、element定義でのみ使用できるオプションの指定。
-						<br>今のところclippingオプションのみが存在するが、複数指定が必要な場合は以下のように定義できるものとする。
-						<br>element0,overlay,face.png,0,0,clipping,10,10,50,50,option2,0,0,option3,1,1...
-					</p>
-					<p>
-						SSP 2.8.15以降では、以下のオプション定義が使用できるようになった。
+						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。</dd>
+
+						<dt>SSP 2.8.15～</dt>
+						<dd>以下のオプション定義が使用できるようになった。
 						<br>clipping,左,上,右,下 : 左、上、右、下で指定された矩形部分のみを描画する。これを使用するとアニメーション読み込みは無効となる。
-						<br>例：element0,overlay,face.png,0,0,clipping,10,10,50,50
-					</p>
+						<br>例：element0,overlay,face.png,0,0,clipping,10,10,50,50</dd>
+
+						<dt>(,オプション...)定義の書き方</dt>
+						<dd>今のところclippingオプションのみが存在するが、複数指定が必要な場合は以下のように定義できるものとする。
+						<br>element0,overlay,face.png,0,0,clipping,10,10,50,50,option2,0,0,option3,1,1...</dd>
+					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
