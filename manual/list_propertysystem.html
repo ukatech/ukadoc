@@ -151,6 +151,12 @@
 				<li><a href="#system.os">system.os</a></li>
 				<li><a href="#system.cpu">system.cpu</a></li>
 				<li><a href="#system.memory">system.memory</a></li>
+				<li><a href="#system.monitor.count">system.monitor.count</a></li>
+				<li><a href="#system.monitor.index(ID).work">system.monitor.index(ID).work</a></li>
+				<li><a href="#system.monitor.index(ID).rect">system.monitor.index(ID).rect</a></li>
+				<li><a href="#system.monitor.index(ID).bpp">system.monitor.index(ID).bpp</a></li>
+				<li><a href="#system.monitor.index(ID).dpi">system.monitor.index(ID).dpi</a></li>
+				<li><a href="#system.monitor.index(ID).primary">system.monitor.index(ID).primary</a></li>
 				<li><a href="#baseware.version">baseware.version</a></li>
 				<li><a href="#baseware.name">baseware.name</a></li>
 				<li><a href="#ghostlist.count">ghostlist.count</a></li>
@@ -181,6 +187,11 @@
 				<li><a href="#currentghost.scope(ID).rect">currentghost.scope(ID).rect</a></li>
 				<li><a href="#currentghost.scope(ID).name">currentghost.scope(ID).name</a></li>
 				<li><a href="#currentghost.scope(ID).scaling">currentghost.scope(ID).scaling</a></li>
+				<li><a href="#currentghost.scope(ID).currentmonitor.work">currentghost.scope(ID).currentmonitor.work</a></li>
+				<li><a href="#currentghost.scope(ID).currentmonitor.rect">currentghost.scope(ID).currentmonitor.rect</a></li>
+				<li><a href="#currentghost.scope(ID).currentmonitor.bpp">currentghost.scope(ID).currentmonitor.bpp</a></li>
+				<li><a href="#currentghost.scope(ID).currentmonitor.dpi">currentghost.scope(ID).currentmonitor.dpi</a></li>
+				<li><a href="#currentghost.scope(ID).currentmonitor.primary">currentghost.scope(ID).currentmonitor.primary</a></li>
 
 				<li><a href="#currentghost.balloon.汎用プロパティ名">currentghost.balloon.汎用プロパティ名</a></li>
 				<li><a href="#currentghost.balloon.count">currentghost.balloon.count</a></li>
@@ -476,6 +487,60 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="system.monitor.count">
+				<dt class="entry">system.monitor.count</dt>
+				<dd class="entry">
+					<p>接続されているモニターの数。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.monitor.index(ID).work">
+				<dt class="entry">system.monitor.index(ID).work</dt>
+				<dd class="entry">
+					<p>IDのモニターの作業領域(左,上,右,下)。タスクバー等のシステム予約領域を除いたウインドウを配置できる領域。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.monitor.index(ID).rect">
+				<dt class="entry">system.monitor.index(ID).rect</dt>
+				<dd class="entry">
+					<p>IDのモニターの矩形座標(左,上,右,下)。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.monitor.index(ID).bpp">
+				<dt class="entry">system.monitor.index(ID).bpp</dt>
+				<dd class="entry">
+					<p>IDのモニターの色深度(bits per pixel)。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.monitor.index(ID).dpi">
+				<dt class="entry">system.monitor.index(ID).dpi</dt>
+				<dd class="entry">
+					<p>IDのモニターのDPI。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.monitor.index(ID).primary">
+				<dt class="entry">system.monitor.index(ID).primary</dt>
+				<dd class="entry">
+					<p>IDのモニターがプライマリモニターかどうか。プライマリの場合は1、それ以外は0。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="baseware.version">
 				<dt class="entry">baseware.version</dt>
 				<dd class="entry">
@@ -767,6 +832,51 @@
 					<p>現在のゴーストのスコープIDの実効拡大率。ユーザー設定×タグ設定×SERIKO設定の結果なので、小数点以下が出る場合あり。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.89</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).currentmonitor.work">
+				<dt class="entry">currentghost.scope(ID).currentmonitor.work</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのウインドウが表示されているモニターの作業領域(左,上,右,下)。タスクバー等のシステム予約領域を除いたウインドウを配置できる領域。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).currentmonitor.rect">
+				<dt class="entry">currentghost.scope(ID).currentmonitor.rect</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのウインドウが表示されているモニターの矩形座標(左,上,右,下)。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).currentmonitor.bpp">
+				<dt class="entry">currentghost.scope(ID).currentmonitor.bpp</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのウインドウが表示されているモニターの色深度(bits per pixel)。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).currentmonitor.dpi">
+				<dt class="entry">currentghost.scope(ID).currentmonitor.dpi</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのウインドウが表示されているモニターのDPI。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.scope(ID).currentmonitor.primary">
+				<dt class="entry">currentghost.scope(ID).currentmonitor.primary</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのウインドウが表示されているモニターがプライマリモニターかどうか。プライマリの場合は1、それ以外は0。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.16</li>
 					</ul>
 				</dd>
 			</dl>
