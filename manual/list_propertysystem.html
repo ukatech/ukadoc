@@ -161,7 +161,8 @@
 				<li><a href="#system.disk.count">system.disk.count</a></li>
 				<li><a href="#system.disk.index">system.disk.index(ID).(キー)</a></li>
 				<li><a href="#system.network">system.network.(キー)</a></li>
-				<li><a href="#system.theme.mode">system.theme.mode</a></li>
+				<li><a href="#system.theme.app.mode">system.theme.app.mode</a></li>
+				<li><a href="#system.theme.os.mode">system.theme.os.mode</a></li>
 				<li><a href="#system.dnd.mode">system.dnd.mode</a></li>
 				<li><a href="#baseware.version">baseware.version</a></li>
 				<li><a href="#baseware.name">baseware.name</a></li>
@@ -597,7 +598,7 @@
 					<p>ID番目（0始まり）のドライブの情報。IDの範囲は0から system.disk.count - 1 まで。(キー)に入る文字列は以下の通り。</p>
 					<dl>
 						<dt>mountpoint</dt>
-						<dd>ドライブレター（末尾の「\」を除いたもの）。例：C:</dd>
+						<dd>Windowsではドライブレター（末尾の「\」を除いたもの）、他OSではマウントポイント。例： C: /home </dd>
 						<dt>type</dt>
 						<dd>ドライブの種類。fixed（固定ディスク）、removable（リムーバブルディスク）、network（ネットワークドライブ）、optical（光学ドライブ）、ram（RAMディスク）、unknown（不明）のいずれか。</dd>
 						<dt>total</dt>
@@ -633,10 +634,19 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="system.theme.mode">
-				<dt class="entry">system.theme.mode</dt>
+			<dl id="system.theme.app.mode">
+				<dt class="entry">system.theme.app.mode</dt>
 				<dd class="entry">
 					<p>SSPのアプリUIのテーマモード。dark（ダークテーマ）またはlight（ライトテーマ）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.17</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="system.theme.os.mode">
+				<dt class="entry">system.theme.os.mode</dt>
+				<dd class="entry">
+					<p>OSのテーマモード。dark（ダークテーマ）またはlight（ライトテーマ）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.17</li>
 					</ul>
