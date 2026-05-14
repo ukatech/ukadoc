@@ -437,7 +437,9 @@
 					<p>起動中のOSの情報。(キー)に入る文字列は以下の通り。</p>
 					<dl>
 						<dt>type</dt>
-						<dd>OSの種類。SSPの場合Windows固定。</dd>
+						<dd>OSの種類。Windows,MacOS,Darwin,Linux,Android,FreeBSD,ReactOSなど。Web上ランタイムなら"Web"。(歴史的経緯で値はTitleCase)</dd>
+						<dt>arch</dt>
+						<dd>OSのアーキテクチャ。x86,x64,arm,arm64,ia64,risc-v,ppc,mips,loongarchなど。確定できない・アーキテクチャ非依存なら"unknown"</dd>
 						<dt>name</dt>
 						<dd>OSの名前。例：Windows 11 22H2</dd>
 						<dt>version</dt>
