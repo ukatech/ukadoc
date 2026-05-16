@@ -946,6 +946,7 @@
 					<p>着せ替えが切替えられた際に発生する。<br />
 					複数回通知される場合があり、その場合は一番最後のOnDressupChangedが<em class="specsign">[GET]</em>、それ以外が<em class="specsign">[NOTIFY]</em>となる。<br />
 					このイベントの後に発生する<a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a>も参照すること。</p>
+					<p><strong class="warning">着せ替えフラグ変更差分が大量になった場合(今のところ100要素)この通知はスキップされる。大量変更の受け取りはOnNotifyDressupInfoを利用すること。</strong></p></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>着せ替え対象のキャラクターID。</dd>
