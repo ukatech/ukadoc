@@ -73,6 +73,12 @@
 	<br />スタイルIDにはスタイル名を入力してください。IDが分かっている方はIDも通ります。
 	<br />ホスト名・ポート番号は同じPC内で動かすなら空欄で問題ありません。
 	<br />Server.bat(server_fastapi.py)を起動してください。</dd>
+
+	<dt>OpenAI TTS - Local (ローカルAPI互換)</dt>
+
+	<dd>ボイスIDにはText-to-speech AIモデルの名前を入力してください。例えば「irodori-tts」などです。
+	<br />スタイルIDは互換サーバの仕様の従って入力してください。例えばIrodori-TTS-Serverの場合はvoicesフォルダに入れた参照音声のwavファイル名（拡張子なし）です。
+	<br />ホスト名は同じPC内で動かすなら空欄で問題ありません。ポート番号はサービスごとの設定が必要です。例えばIrodori-TTS-Serverの場合は8088になります。</dd>
 </dl>
 
 <h3>CloudAPI</h3>
@@ -84,6 +90,13 @@
 	<br />スタイルIDはボイスの詳細ページに書いてあります。
 	<br />ピッチは0が推奨です。それ以外だと合成スピードが落ちるそうです。
 	<br />APIキーは<a href="https://hub.aivis-project.com/cloud-api/dashboard">こちらのダッシュボード</a>から取得できますので、キー欄に貼りつけてください。</dd>
+
+	<dt>OpenAI TTS - Cloud (クラウドAPI・または互換サービス)</dt>
+
+	<dd>ボイスIDにはText-to-speech AIモデルの名前を入力してください。例えば「gpt-4o-mini-tts」「tts-1」などです。
+	<br />スタイルIDは<a href="https://developers.openai.com/api/docs/guides/text-to-speech#voice-options">こちらのドキュメントの「Voice options」セクション</a>に書いてある名前を入力してください。例：「marin」「cedar」
+	<br />APIキーは<a href="https://platform.openai.com/account/api-keys">こちらのダッシュボード</a>から取得できますので、キー欄に貼りつけてください。
+	<br />互換サービスを使う場合は、ホスト名を設定してください。OpenAIのText-to-speechを使う場合は空欄で問題ありません。</dd>
 
 </dl>
 
