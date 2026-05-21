@@ -165,6 +165,7 @@
 				<li><a href="#_!_anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名_">\![anim,add,text,x,y,横幅,縦幅,文字列,表示時間,r,g,b,文字サイズ,文字名]</a></li>
 				<li><a href="#___w_animation,ID_">\__w[animation,ID]</a></li>
 				<li><a href="#_!_bind,カテゴリ名,パーツ名,数値_">\![bind,カテゴリ名,パーツ名,数値]</a></li>
+				<li><a href="#_!_bind-noevent,カテゴリ名,パーツ名,数値_">\![bind-noevent,カテゴリ名,パーツ名,数値]</a></li>
 				<li><a href="#_!_lock,repaint_">\![lock,repaint]</a></li>
 				<li><a href="#_!_unlock,repaint_">\![unlock,repaint]</a></li>
 				<li><a href="#_!_set,alignmentondesktop,bottomまたはtop_">\![set,alignmentondesktop,bottomまたはtop]</a></li>
@@ -855,6 +856,15 @@
 							<p><code type="SakuraScript">\![bind,head,ribbon,1]本体側の着せ替えとして設定された、headカテゴリのribbonを装着。\1\![bind,arm,,0]相方側の着せ替えとして設定された、armカテゴリのパーツを全て解除。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_bind-noevent,カテゴリ名,パーツ名,数値_">
+				<dt class="entry">\![bind-noevent,カテゴリ名,パーツ名,数値]</dt>
+				<dd class="entry">
+					<p>\![bind]と同様に着せ替えパーツを操作するが、イベントを発生させない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.23</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_lock,repaint_">
