@@ -177,6 +177,7 @@
 				<li><a href="#animation*.option,shared-index">animation*.option,shared-index</a></li>
 				<li><a href="#animation*.option,オプション">animation*.option,オプション</a></li>
 				<li><a href="#animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)">animation*.collision*,当たり判定定義animation*.collisionex*,当たり判定定義(ex)</a></li>
+				<li><a href="#animation*.name,定義名">animation*.name,定義名</a></li>
 				<li><a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision*,始点X,始点Y,終点X,終点Y,ID</a></li>
 				<li><a href="#collisionex*,ID,タイプ,座標1,座標2...">collisionex*,ID,タイプ,座標1,座標2...</a></li>
 				<li><a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx,座標</a></li>
@@ -191,6 +192,7 @@
 				<li><a href="#point.kinoko.centery,座標">point.kinoko.centery,座標</a></li>
 				<li><a href="#point.basepos.x,座標">point.basepos.x,座標</a></li>
 				<li><a href="#point.basepos.y,座標">point.basepos.y,座標</a></li>
+				<li><a href="#name,定義名">name,定義名</a></li>
 			</ul>
 			<section>
 				<h1>アニメーションインターバル</h1>
@@ -976,6 +978,16 @@ animation0.pattern3,overlay,-1,100,168,67
 					</ul>
 				</dd>
 			</dl>
+			<dl id="animation*.name,定義名">
+				<dt class="entry">animation*.name,定義名</dt>
+				<dd class="entry">
+					<p>アニメーションの名前。animationIDと同様に、\i[]タグ・\![anim]タグ・start,stop・exclusivemodeなどのID欄に使用できる。</p>
+					<p class="default">未定義</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.24</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="collision*,始点X,始点Y,終点X,終点Y,ID">
 				<dt class="entry">collision*,始点X,始点Y,終点X,終点Y,ID</dt>
 				<dd class="entry">
@@ -1161,6 +1173,16 @@ animation0.pattern3,overlay,-1,100,168,67
 					<p class="default">サーフェスの下端</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="name,定義名">
+				<dt class="entry">name,定義名</dt>
+				<dd class="entry">
+					<p>サーフェスの名前。surface.aliasブレスと同様に扱われ、\s[]タグでIDの代わりに使用できる。</p>
+					<p class="default">未定義</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.24</li>
 					</ul>
 				</dd>
 			</dl>
