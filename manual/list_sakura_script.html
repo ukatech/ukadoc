@@ -8,6 +8,7 @@
 <title>UKADOC Project さくらスクリプトリスト</title>
 <link rel="stylesheet" href="list.css" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script src="sakura_player.js"></script>
 </head>
 <body>
 	<h1 id="page-title">さくらスクリプトリスト</h1>
@@ -133,6 +134,21 @@
 	</nav>
 	<section class="navigation-bar">
 		<h1>さくらスクリプト</h1>
+		<section class="navigation-category" id="TargetGhost">
+			<h1>Target Ghost</h1>
+			<!-- 実行対象のゴーストを選択するリスト -->
+			<div id="ghost_select">
+				<p>「読み込み」ボタンを押すと、起動中のゴースト一覧を取得する。記述例を実行する対象のゴーストを選択すること：</p>
+				<select id="ghost_list_content" onchange="reload_button()"></select>
+				<!-- 読み込みボタン -->
+				<button id="ghost_reload_button" onclick="reload_button()">読み込み</button>
+			</div>
+			<div>
+				<p>いくつかのタグは危険であるため、対象ゴーストが以下のイベントをサポートしていない限り実行されません：</p>
+				<a href="./list_shiori_event_ex.html#OnUkadocScriptExample">OnUkadocScriptExample</a>
+				<p>イベントを実行する際は、危険なタグをエスケープするよう十分ご注意ください。</p>
+			</div>
+		</section>
 		<section class="navigation-category">
 			<h1>さくらスクリプトの仕様</h1>
 			<ul>
