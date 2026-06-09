@@ -298,7 +298,9 @@
 				<li><a href="#_!_quicksection,false_">\![quicksection,false]</a></li>
 				<li><a href="#__s">\_s</a></li>
 				<li><a href="#__s_ID1,ID2,ID3..._">\_s[ID1,ID2,ID3...]</a></li>
-				<li><a href="#_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</a></li>
+				<li><a href="#_!_wait,syncobject,同期オブジェクト名,オプション_">\![wait,syncobject,同期オブジェクト名,オプション]</a></li>
+				<li><a href="#_!_set,syncobject,同期オブジェクト名_">\![set,syncobject,同期オブジェクト名]</a></li>
+				<li><a href="#_!_reset,syncobject,同期オブジェクト名_">\![reset,syncobject,同期オブジェクト名]</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -2539,16 +2541,46 @@
 					</div>
 				</dd>
 			</dl>
-			<dl id="_!_wait,syncobject,同期オブジェクト名,タイムアウト時間_">
-				<dt class="entry">\![wait,syncobject,同期オブジェクト名,タイムアウト時間]</dt>
+			<dl id="_!_wait,syncobject,同期オブジェクト名,オプション_">
+				<dt class="entry">\![wait,syncobject,同期オブジェクト名,オプション]</dt>
 				<dd class="entry">
 					<p>
-						指定した名前つき同期オブジェクト(Windows上の場合はMutex,Semaphore,Event)がシグナル状態になるまで待機する。
-						<br>Mutexは待機後解放、Semaphoreは待機後1解放、Eventは取得後特に何も操作しない。
-						<br>タイムアウト時間は省略または0で(スクリプトブレークされるまで)無限待機、1以上を指定すると指定ミリ秒間待機。
+						指定した名前つき同期オブジェクト(Windows上の場合はMutex,Semaphore,Event,WaitableTimer(2.8.28から))がシグナル状態になるまで待機する。
+						<br>Mutexは待機後解放、Semaphoreは待機後1解放、Event及びWaitableTimerは取得後特に何も操作しない。
 					</p>
+					<p>以下のオプションを指定できる。</p>
+					<ul class="description">
+						<li>数値 もしくは --timeout=数値……タイムアウト時間。省略または0で(スクリプトブレークされるまで)無限待機、1以上を指定すると指定ミリ秒間待機。</li>
+						<li>--reset=0 or 1……待機直後にmutexとsemaphoreをreleaseするかどうか。1でリリースする（デフォルト）、0でリリースしない。</li>
+					</ul>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_set,syncobject,同期オブジェクト名_">
+				<dt class="entry">\![set,syncobject,同期オブジェクト名]</dt>
+				<dd class="entry">
+					<p>
+						指定した名前つき同期オブジェクトをシグナル状態にする(活性化)。
+						<br>SemaphoreはReleaseSemaphoreで1加算、EventはSetEvent、WaitableTimerは即座にシグナル状態にする。
+						<br>所有していないMutexのsetは意味をなさないため無視される。
+					</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.28</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_reset,syncobject,同期オブジェクト名_">
+				<dt class="entry">\![reset,syncobject,同期オブジェクト名]</dt>
+				<dd class="entry">
+					<p>
+						指定した名前つき同期オブジェクトを非シグナル状態にする(非活性化)。
+						<br>EventはResetEvent、WaitableTimerはCancelWaitableTimerで非シグナル状態にする。
+						<br>Semaphore及びMutexに対するresetは意味をなさないため無視される。
+					</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.28</li>
 					</ul>
 				</dd>
 			</dl>
