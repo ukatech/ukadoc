@@ -186,6 +186,7 @@
 
 				<li><a href="#currentghost.scope.count">currentghost.scope.count</a></li>
 				<li><a href="#currentghost.scope(ID).surface.num">currentghost.scope(ID).surface.num</a></li>
+				<li><a href="#currentghost.scope(ID).animation.num">currentghost.scope(ID).animation.num</a></li>
 				<li><a href="#currentghost.scope(ID).seriko.defaultsurface">currentghost.scope(ID).seriko.defaultsurface</a></li>
 				<li><a href="#currentghost.scope(ID).surface.x">currentghost.scope(ID).surface.x</a></li>
 				<li><a href="#currentghost.scope(ID).surface.y">currentghost.scope(ID).surface.y</a></li>
@@ -878,17 +879,28 @@
 			<dl id="currentghost.scope(ID).surface.num">
 				<dt class="entry">currentghost.scope(ID).surface.num</dt>
 				<dd class="entry">
-					<p>現在のゴーストのスコープIDのサーフェスID。</p>
+					<p>現在のゴーストのスコープIDのサーフェスID。設定も可能で\s[]タグと同じ挙動になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
+			<dl id="currentghost.scope(ID).animation.num">
+				<dt class="entry">currentghost.scope(ID).animation.num</dt>
+				<dd class="entry">
+					<p>現在のゴーストのスコープIDのアニメーションID。
+					<br />取得時：現在実行中のアニメーションIDのカンマ区切りのリスト。あくまでも取得した瞬間の実行状態であり、結果を受け取って処理した後でなおアニメーションが実行中であるかは保証されない。
+					<br />設定時：指定したアニメーションIDを追加で実行する。指定されていないIDのアニメーションが停止するわけではなくあくまで追加。カンマ区切りで複数一括設定でき、\i[]タグを複数連続指定した場合と同じ挙動になる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.28</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="currentghost.scope(ID).seriko.defaultsurface">
 				<dt class="entry">currentghost.scope(ID).seriko.defaultsurface</dt>
 				<dd class="entry">
-					<p>現在のゴーストのデフォルトサーフェス。</p>
+					<p>現在のゴーストのデフォルトサーフェス。設定も可能。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
