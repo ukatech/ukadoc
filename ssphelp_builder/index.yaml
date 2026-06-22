@@ -38,6 +38,8 @@
       children:
         - title: 右クリック/機能メニュー
           place: explorer-menu
+    - title: 画像ビューワ
+      place: pictureviewer
     - title: 音声認識
       place: speech_recognition
     - title: その他の機能
