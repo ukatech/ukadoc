@@ -286,7 +286,7 @@
 				<li><a href="#communicatebox.width,サイズ">communicatebox.width,サイズ</a></li>
 				<li><a href="#communicatebox.height,サイズ">communicatebox.height,サイズ</a></li>
 				<li><a href="#paint_transparent_region_black,数値">paint_transparent_region_black,数値</a></li>
-				<li><a href="#use_self_alpha,数値">use_self_alpha,数値</a></li>
+				<li><a href="#use_self_alpha,値">use_self_alpha,値</a></li>
 				<li><a href="#use_input_alpha,数値">use_input_alpha,数値</a></li>
 				<li><a href="#overlay_outside_balloon,数値">overlay_outside_balloon,数値</a></li>
 				<li><a href="#windowposition.x,座標">windowposition.x,座標</a></li>
@@ -2008,17 +2008,17 @@ communicatebox.height,20
 					<br />例えば0を指定した上で全面真っ白のpnaを用意した画像は、透過色なしで画像のまま表示される。
 					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
 					
-					<p class="default">指定なし（pnaを透明度としている画像では1相当、<a href="#use_self_alpha,数値">画像自体のアルファチャンネルを透明度としている画像</a>では0相当の動作になる）</p>
+					<p class="default">指定なし（pnaを透明度としている画像では1相当、<a href="#use_self_alpha,値">画像自体のアルファチャンネルを透明度としている画像</a>では0相当の動作になる）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
-			<dl id="use_self_alpha,数値">
-				<dt class="entry">use_self_alpha,数値</dt>
+			<dl id="use_self_alpha,値">
+				<dt class="entry">use_self_alpha,値</dt>
 				<dd class="entry">
-					<p>数値が1だった場合はpnaでなくバルーンのサーフェス自体のアルファチャンネルを透明度として使用する。
-					<br />なお、1の場合でもアルファチャンネルを持たないサーフェスについてはpnaが有効。
+					<p>1またはtrueを指定した場合は、透明度のある画像（アルファチャンネル付きPNG）および.pnaのあるサーフェスはアルファチャンネルを参照して透明度として使用する。アルファチャンネルも.pnaも存在しない場合は画像左上の色をキー色とする従来挙動になる。
+					<br />fullを指定した場合は上記に加え、アルファチャンネルのないサーフェスも全て不透明として扱う（左上のキー色透過を行わない）。
 					<br />入力ボックス系のバルーンはuse_input_alphaも1にしないと半透明化できないため注意。
 					<br />この設定はバルーン全体の一括設定のみで、オーバーライドはできない。</p>
 					<p class="default">0</p>
