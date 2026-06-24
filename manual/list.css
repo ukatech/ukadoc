@@ -347,6 +347,12 @@ a:hover {
 	font-weight: normal;
 	color: #333;
 }
+.category dt.entry.deprecated {
+	border-left-color: #aaa;
+	border-bottom-color: #aaa;
+	background-color: #eee;
+	color: #666;
+}
 .category .supported-baseware {
 	margin: 0 0 30px 15px;
 }

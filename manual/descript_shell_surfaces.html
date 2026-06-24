@@ -222,9 +222,16 @@
 				<ul>
 					<li><a href="#base">base</a></li>
 					<li><a href="#overlay">overlay</a></li>
+					<li><a href="#overlay-fast">overlay-fast</a></li>
 					<li><a href="#overlayfast">overlayfast</a></li>
+					<li><a href="#blend-multiply">blend-multiply</a></li>
+					<li><a href="#blend-multiply-fast">blend-multiply-fast</a></li>
 					<li><a href="#overlaymultiply">overlaymultiply</a></li>
+					<li><a href="#blend-screen">blend-screen</a></li>
+					<li><a href="#blend-screen-fast">blend-screen-fast</a></li>
 					<li><a href="#overlayscreen">overlayscreen</a></li>
+					<li><a href="#blend-overlay">blend-overlay</a></li>
+					<li><a href="#blend-overlay-fast">blend-overlay-fast</a></li>
 					<li><a href="#replace">replace</a></li>
 					<li><a href="#interpolate">interpolate</a></li>
 					<li><a href="#asis">asis</a></li>
@@ -1430,8 +1437,8 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
-				<dl id="overlayfast">
-					<dt class="entry">overlayfast</dt>
+				<dl id="overlay-fast">
+					<dt class="entry">overlay-fast</dt>
 					<dd class="entry">
 						<p>
 							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を重ねる。
@@ -1440,35 +1447,116 @@ animation0.pattern3,overlay,-1,100,168,67
 							<br>着せ替え・elementでも使用できる。
 						</p>
 						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlayfast">
+					<dt class="entry deprecated">overlayfast</dt>
+					<dd class="entry">
+						<p><a href="#overlay-fast">overlay-fast</a>の旧称。互換性のために維持されている。</p>
+						<ul class="supported-baseware">
 							<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 							<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
 						</ul>
 					</dd>
 				</dl>
-				<dl id="overlaymultiply">
-					<dt class="entry">overlaymultiply</dt>
+				<dl id="blend-multiply">
+					<dt class="entry">blend-multiply</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を乗算合成で重ねる。
+							<br>Photoshopなど画像編集ソフトの乗算（Multiply）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-multiply-fast">
+					<dt class="entry">blend-multiply-fast</dt>
 					<dd class="entry">
 						<p>
 							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を乗算合成で重ねる。
-							<br>挙動はoverlayfastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して乗算合成処理を行う。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して乗算合成処理を行う。
 							<br>着せ替え・elementでも使用できる。
 						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlaymultiply">
+					<dt class="entry deprecated">overlaymultiply</dt>
+					<dd class="entry">
+						<p><a href="#blend-multiply-fast">blend-multiply-fast</a>の旧称。互換性のために維持されている。</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.91</li>
 						</ul>
 					</dd>
 				</dl>
-				<dl id="overlayscreen">
-					<dt class="entry">overlayscreen</dt>
+				<dl id="blend-screen">
+					<dt class="entry">blend-screen</dt>
 					<dd class="entry">
 						<p>
-							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をスクリーン合成で重ねる。
-							<br>挙動はoverlayfastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してスクリーン合成処理を行う。
+							<em class="term">新規レイヤ</em>をスクリーン合成で重ねる。
+							<br>Photoshopなど画像編集ソフトのスクリーン（Screen）レイヤー合成に相当する。
 							<br>着せ替え・elementでも使用できる。
 						</p>
 						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-screen-fast">
+					<dt class="entry">blend-screen-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をスクリーン合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してスクリーン合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="overlayscreen">
+					<dt class="entry deprecated">overlayscreen</dt>
+					<dd class="entry">
+						<p><a href="#blend-screen-fast">blend-screen-fast</a>の旧称。互換性のために維持されている。</p>
+						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.35</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-overlay">
+					<dt class="entry">blend-overlay</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>をオーバーレイ合成で重ねる。
+							<br>Photoshopなど画像編集ソフトのオーバーレイ（Overlay）レイヤー合成に相当する。
+							<br><a href="#overlay">overlay</a>メソッドとは無関係で、暗い部分は乗算、明るい部分はスクリーン合成となる。
+							<br>着せ替え・elementでも使用できる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-overlay-fast">
+					<dt class="entry">blend-overlay-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をオーバーレイ合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してオーバーレイ合成処理を行う。
+							<br><a href="#overlay">overlay</a>メソッドとは無関係で、暗い部分は乗算、明るい部分はスクリーン合成となる。
+							<br>着せ替え・elementでも使用できる。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
 						</ul>
 					</dd>
 				</dl>
