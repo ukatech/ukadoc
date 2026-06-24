@@ -171,7 +171,7 @@
 			<ul>
 				<li><a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element*,描画メソッド,ファイル名,X座標,Y座標(,オプション...)</a></li>
 				<li><a href="#animation*.interval,インターバル">animation*.interval,インターバル</a></li>
-				<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標</a></li>
+				<li><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標(,オプション...)</a></li>
 				<li><a href="#animation*.option,exclusive">animation*.option,exclusive</a></li>
 				<li><a href="#animation*.option,background">animation*.option,background</a></li>
 				<li><a href="#animation*.option,shared-index">animation*.option,shared-index</a></li>
@@ -603,7 +603,7 @@ element0,overlay,dress2.png,0,0
 					<p>新定義における書式の変更点は以下の四つです。</p>
 					<ol>
 						<li><a href="#animation*.interval,インターバル">SERIKO関連の定義行</a>を全て「animation」の語からはじめるように変更。</li>
-						<li><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
+						<li><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">pattern定義行</a>のパラメータの順序が変更された（描画メソッド指定を先頭に移動）。</li>
 						<li>pattern定義のウェイトパラメータの単位が、10ミリ秒から1ミリ秒に変更された。</li>
 						<li>描画メソッドの<a href="#alternativestart,_ID1,ID2..._">alternativestart</a>で、ID指定の括弧が[]から()に変更された。</li>
 					</ol>
@@ -861,9 +861,14 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>clipping,左,上,右,下 : 左、上、右、下で指定された矩形部分のみを描画する。これを使用するとアニメーション読み込みは無効となる。
 						<br>例：element0,overlay,face.png,0,0,clipping,10,10,50,50</dd>
 
+						<dt>SSP 2.8.37～</dt>
+						<dd>以下のオプション定義が使用できるようになった。
+						<br>alpha,値(0-255) : 描画する際の不透明度を指定する。0で完全透明、255で完全不透明。
+						<br>例：element0,overlay,face.png,0,0,alpha,128</dd>
+
 						<dt>(,オプション...)定義の書き方</dt>
-						<dd>今のところclippingオプションのみが存在するが、複数指定が必要な場合は以下のように定義できるものとする。
-						<br>element0,overlay,face.png,0,0,clipping,10,10,50,50,option2,0,0,option3,1,1...</dd>
+						<dd>複数指定が必要な場合は以下のように定義できるものとする。
+						<br>element0,overlay,face.png,0,0,clipping,10,10,50,50,alpha,128...</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -892,8 +897,8 @@ animation0.pattern3,overlay,-1,100,168,67
 					</ul>
 				</dd>
 			</dl>
-			<dl id="animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">
-				<dt class="entry">animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標</dt>
+			<dl id="animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">
+				<dt class="entry">animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標(,オプション...)</dt>
 				<dd class="entry">
 					<p>
 						アニメーションの各コマの定義。各コマは通常それ以前のコマをリセットして新たにベースサーフェスに合成される形で描画される（厳密には描画メソッドによる）。
@@ -902,9 +907,20 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>描画メソッドは下記の<a href="#h-drowmethod">描画メソッド</a>参照。
 						<br>ウェイトはそのコマを描画する<em>まで</em>の待ち時間。単位はミリ秒。SSPのみ「最小ウェイト-最大ウェイト」とマイナス文字で区切った書き方もでき、その場合は最小～最大間でランダムに選択される。
 						<br>X座標、Y座標はそのコマをベース（そのコマまでの描画結果）に対してどれだけずらして表示するかの指定。
-						<br>サーフェスIDに-1でそのアニメーションの停止、-2で現在実行中の他の全てのアニメーションを停止する事ができる。いずれの場合も描画メソッドやX座標、Y座標は無視される。
-						<br>サーフェスIDにはname定義で指定したID以外の別名も指定できる。 (SSP 2.8.25～)
+						<br>サーフェス番号に-1でそのアニメーションの停止、-2で現在実行中の他の全てのアニメーションを停止する事ができる。いずれの場合も描画メソッドやX座標、Y座標は無視される。
+						<br>サーフェス番号にはname定義で指定したID以外の別名も指定できる。 (SSP 2.8.25～)
 						<br><a href="#caption_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,描画メソッド,X座標,Y座標
+					</p>
+					<dl>
+						<dt>SSP 2.8.37～</dt>
+						<dd>以下のオプション定義が使用できるようになった。
+						<br>alpha,値(0-255) : 描画する際の不透明度を指定する。0で完全透明、255で完全不透明。
+						<br>例：animation0.pattern0,overlay,101,700,0,0,alpha,128</dd>
+
+						<dt>(,オプション...)定義の書き方</dt>
+						<dd>複数指定が必要な場合は以下のように定義できるものとする。
+						<br>animation0.pattern0,overlay,101,700,0,0,alpha,128,option2,...</dd>
+					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1370,7 +1386,7 @@ animation0.pattern3,overlay,-1,100,168,67
 					<h1>描画メソッド</h1>
 					<section>
 						<h1>概要</h1>
-						<p><a href="#animation*.pattern*,描画メソッド,サーフェスID,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
+						<p><a href="#animation*.pattern*,描画メソッド,サーフェス番号,ウェイト,X座標,Y座標">animationパターン定義</a>および<a href="#element*,描画メソッド,ファイル名,X座標,Y座標">element定義</a>における、各コマ（パーツ）の合成・描画方法。</p>
 						<p>画像の合成ではなく、<a href="#caption_basesurface">ベースサーフェス</a>の置き換え(base)、ベースサーフェスの移動（move）や他のアニメーションの挿入・実行（insert、start、stop、alternativestart、alternativestop）といった様々な役割のメソッドが存在する。</p>
 					</section>
 					<section>
