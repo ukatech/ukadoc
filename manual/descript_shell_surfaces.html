@@ -234,6 +234,20 @@
 					<li><a href="#blend-overlay-fast">blend-overlay-fast</a></li>
 					<li><a href="#blend-add">blend-add</a></li>
 					<li><a href="#blend-add-fast">blend-add-fast</a></li>
+					<li><a href="#blend-soft-light">blend-soft-light</a></li>
+					<li><a href="#blend-soft-light-fast">blend-soft-light-fast</a></li>
+					<li><a href="#blend-hard-light">blend-hard-light</a></li>
+					<li><a href="#blend-hard-light-fast">blend-hard-light-fast</a></li>
+					<li><a href="#blend-color-dodge">blend-color-dodge</a></li>
+					<li><a href="#blend-color-dodge-fast">blend-color-dodge-fast</a></li>
+					<li><a href="#blend-color">blend-color</a></li>
+					<li><a href="#blend-color-fast">blend-color-fast</a></li>
+					<li><a href="#blend-luminosity">blend-luminosity</a></li>
+					<li><a href="#blend-luminosity-fast">blend-luminosity-fast</a></li>
+					<li><a href="#blend-hue">blend-hue</a></li>
+					<li><a href="#blend-hue-fast">blend-hue-fast</a></li>
+					<li><a href="#blend-saturation">blend-saturation</a></li>
+					<li><a href="#blend-saturation-fast">blend-saturation-fast</a></li>
 					<li><a href="#replace">replace</a></li>
 					<li><a href="#interpolate">interpolate</a></li>
 					<li><a href="#asis">asis</a></li>
@@ -1614,6 +1628,209 @@ animation0.pattern3,overlay,-1,100,168,67
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.36</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-soft-light">
+					<dt class="entry">blend-soft-light</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>をソフトライト合成で重ねる。
+							<br>Photoshopなど画像編集ソフトのソフトライト（Soft Light）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-soft-light-fast">
+					<dt class="entry">blend-soft-light-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をソフトライト合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してソフトライト合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-hard-light">
+					<dt class="entry">blend-hard-light</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>をハードライト合成で重ねる。
+							<br>Photoshopなど画像編集ソフトのハードライト（Hard Light）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-hard-light-fast">
+					<dt class="entry">blend-hard-light-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をハードライト合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してハードライト合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color-dodge">
+					<dt class="entry">blend-color-dodge</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を覆い焼きカラー合成で重ねる。
+							<br>Photoshopなど画像編集ソフトの覆い焼きカラー（Color Dodge）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color-dodge-fast">
+					<dt class="entry">blend-color-dodge-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を覆い焼きカラー合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して覆い焼きカラー合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color">
+					<dt class="entry">blend-color</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>をカラー合成で重ねる。
+							<br>Photoshopなど画像編集ソフトのカラー（Color）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color-fast">
+					<dt class="entry">blend-color-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>をカラー合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対してカラー合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-luminosity">
+					<dt class="entry">blend-luminosity</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を輝度合成で重ねる。
+							<br>Photoshopなど画像編集ソフトの輝度（Luminosity）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-luminosity-fast">
+					<dt class="entry">blend-luminosity-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を輝度合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して輝度合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-hue">
+					<dt class="entry">blend-hue</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を色相合成で重ねる。
+							<br>Photoshopなど画像編集ソフトの色相（Hue）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-hue-fast">
+					<dt class="entry">blend-hue-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を色相合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して色相合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-saturation">
+					<dt class="entry">blend-saturation</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を彩度合成で重ねる。
+							<br>Photoshopなど画像編集ソフトの彩度（Saturation）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-saturation-fast">
+					<dt class="entry">blend-saturation-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を彩度合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して彩度合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
 						</ul>
 					</dd>
 				</dl>
