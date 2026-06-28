@@ -908,6 +908,14 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>alpha,値(0-255) : 描画する際の不透明度を指定する。0で完全透明、255で完全不透明。
 						<br>例：element0,overlay,face.png,0,0,alpha,128</dd>
 
+						<dt>SSP 2.8.41～</dt>
+						<dd>以下のオプション定義が使用できるようになった。
+						<br>source,値 : 
+						<br>複数の描画候補を持つ画像またはファイルから、実際に描画に用いる対象を指定する。
+						<br>マルチページTIFFの場合は0オリジンのページ番号、DLL/EXE内アイコンの場合は0オリジンのリソース番号、PSDなどの場合はレイヤー名を指定する。
+						<br>PSDなどのレイヤー情報に描画方法の情報が含まれる仕様がある場合に限り、描画メソッドの指定をautoにすることができる。
+						<br>例：element0,auto,face.png,0,0,source,頭</dd>
+
 						<dt>(,オプション...)定義の書き方</dt>
 						<dd>複数指定が必要な場合は以下のように定義できるものとする。
 						<br>element0,overlay,face.png,0,0,clipping,10,10,50,50,alpha,128...</dd>
@@ -2265,6 +2273,17 @@ animation0.pattern3,overlay,-1,100,168,67
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.40</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="auto">
+					<dt class="entry">auto</dt>
+					<dd class="entry">
+						<p>
+							sourceオプションのあるelement定義で使用した場合のみ、レイヤー情報から描画メソッドを自動推定する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.41</li>
 						</ul>
 					</dd>
 				</dl>
