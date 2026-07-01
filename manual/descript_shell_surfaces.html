@@ -234,12 +234,16 @@
 					<li><a href="#blend-overlay-fast">blend-overlay-fast</a></li>
 					<li><a href="#blend-add">blend-add</a></li>
 					<li><a href="#blend-add-fast">blend-add-fast</a></li>
+					<li><a href="#blend-add-glow">blend-add-glow</a></li>
+					<li><a href="#blend-add-glow-fast">blend-add-glow-fast</a></li>
 					<li><a href="#blend-soft-light">blend-soft-light</a></li>
 					<li><a href="#blend-soft-light-fast">blend-soft-light-fast</a></li>
 					<li><a href="#blend-hard-light">blend-hard-light</a></li>
 					<li><a href="#blend-hard-light-fast">blend-hard-light-fast</a></li>
 					<li><a href="#blend-color-dodge">blend-color-dodge</a></li>
 					<li><a href="#blend-color-dodge-fast">blend-color-dodge-fast</a></li>
+					<li><a href="#blend-color-dodge-glow">blend-color-dodge-glow</a></li>
+					<li><a href="#blend-color-dodge-glow-fast">blend-color-dodge-glow-fast</a></li>
 					<li><a href="#blend-color">blend-color</a></li>
 					<li><a href="#blend-color-fast">blend-color-fast</a></li>
 					<li><a href="#blend-luminosity">blend-luminosity</a></li>
@@ -1671,6 +1675,35 @@ animation0.pattern3,overlay,-1,100,168,67
 						</ul>
 					</dd>
 				</dl>
+				<dl id="blend-add-glow">
+					<dt class="entry">blend-add-glow</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を加算(発光)合成で重ねる。
+							<br>CLIP STUDIO PAINTなど画像編集ソフトの加算(発光)（Add Glow）レイヤー合成に相当する。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.46</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-add-glow-fast">
+					<dt class="entry">blend-add-glow-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を加算(発光)合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して加算(発光)合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.46</li>
+						</ul>
+					</dd>
+				</dl>
 				<dl id="blend-soft-light">
 					<dt class="entry">blend-soft-light</dt>
 					<dd class="entry">
@@ -1755,6 +1788,35 @@ animation0.pattern3,overlay,-1,100,168,67
 						</p>
 						<ul class="supported-baseware">
 							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.39</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color-dodge-glow">
+					<dt class="entry">blend-color-dodge-glow</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">新規レイヤ</em>を覆い焼きカラー(発光)合成で重ねる。
+							<br>CLIP STUDIO PAINTなど画像編集ソフトの覆い焼き(発光)レイヤー合成に相当する（処理内容は覆い焼きカラー(発光)に準ずる）。
+							<br>着せ替え・elementでも使用できる。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.46</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="blend-color-dodge-glow-fast">
+					<dt class="entry">blend-color-dodge-glow-fast</dt>
+					<dd class="entry">
+						<p>
+							<em class="term">ベースレイヤ</em>の不透明度に応じて、<em class="term">新規レイヤ</em>を覆い焼きカラー(発光)合成で重ねる。
+							<br>挙動はoverlay-fastと同様で外形は変わらないが、上書きの代わりに現在のサーフェスに対して覆い焼きカラー(発光)合成処理を行う。
+							<br>着せ替え・elementでも使用できる。
+							<br>名称中の「fast」は歴史的な経緯によるもので、処理速度が速いわけではない。
+							<br>シェルのdescript.txtに<a href="descript_shell.html#seriko.use_self_alpha,値"><code>seriko.use_self_alpha,full</code></a>を設定することを推奨する。
+						</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.46</li>
 						</ul>
 					</dd>
 				</dl>
