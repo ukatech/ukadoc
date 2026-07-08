@@ -339,6 +339,8 @@
 				<li><a href="#OnFileDrop">OnFileDrop</a></li>
 				<li><a href="#OnFileDropEx">OnFileDropEx</a></li>
 				<li><a href="#OnFileDrop2">OnFileDrop2</a></li>
+				<li><a href="#OnMediaPlayerOpen">OnMediaPlayerOpen</a></li>
+				<li><a href="#OnPictureViewerOpen">OnPictureViewerOpen</a></li>
 				<li><a href="#OnOtherObjectDropping">OnOtherObjectDropping</a></li>
 				<li><a href="#OnOtherObjectDropped">OnOtherObjectDropped</a></li>
 				<li><a href="#OnDirectoryDrop">OnDirectoryDrop</a></li>
@@ -2767,6 +2769,23 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnFileDropEx">
+				<dt class="entry">OnFileDropEx</dt>
+				<dd class="entry">
+					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたファイルのMIMEタイプ(SSP 2.7.98以降)。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnFileDrop2">
 				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
@@ -2787,20 +2806,37 @@
 					</ul>
 				</dd>
 			</dl>
-			<dl id="OnFileDropEx">
-				<dt class="entry">OnFileDropEx</dt>
+			<dl id="OnMediaPlayerOpen">
+				<dt class="entry">OnMediaPlayerOpen</dt>
 				<dd class="entry">
-					<p>[旧仕様]ファイルがDnDされた際に発生。</p>
+					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず、かつメディアプレーヤーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
 						<dt>Reference1</dt>
 						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
 						<dt>Reference2</dt>
-						<dd>ドロップされたファイルのMIMEタイプ(SSP 2.7.98以降)。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
+						<dd>ドロップされたファイルのMIMEタイプ。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.51</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnPictureViewerOpen">
+				<dt class="entry">OnPictureViewerOpen</dt>
+				<dd class="entry">
+					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず、かつ画僧ビューアーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
+						<dt>Reference1</dt>
+						<dd>ドロップされたキャラクターのスコープ番号。本体側0、相方1、3人目以降は2以降。</dd>
+						<dt>Reference2</dt>
+						<dd>ドロップされたファイルのMIMEタイプ。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.51</li>
 					</ul>
 				</dd>
 			</dl>
