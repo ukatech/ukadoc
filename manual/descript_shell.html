@@ -232,11 +232,21 @@
 				<li><a href="#seriko.paint_transparent_region_black,数値">seriko.paint_transparent_region_black,数値</a></li>
 				<li><a href="#seriko.use_self_alpha,値">seriko.use_self_alpha,値</a></li>
 				<li><a href="#seriko.force_disable_crossfade,値">seriko.force_disable_crossfade,値</a></li>
+				<li><a href="#sakura.icon.frame.color.r,数値">sakura.icon.frame.color.r,数値</a></li>
+				<li><a href="#sakura.icon.frame.color.g,数値">sakura.icon.frame.color.g,数値</a></li>
+				<li><a href="#sakura.icon.frame.color.b,数値">sakura.icon.frame.color.b,数値</a></li>
+				<li><a href="#kero.icon.frame.color.r,数値">kero.icon.frame.color.r,数値</a></li>
+				<li><a href="#kero.icon.frame.color.g,数値">kero.icon.frame.color.g,数値</a></li>
+				<li><a href="#kero.icon.frame.color.b,数値">kero.icon.frame.color.b,数値</a></li>
+				<li><a href="#char*.icon.frame.color.r,数値">char*.icon.frame.color.r,数値</a></li>
+				<li><a href="#char*.icon.frame.color.g,数値">char*.icon.frame.color.g,数値</a></li>
+				<li><a href="#char*.icon.frame.color.b,数値">char*.icon.frame.color.b,数値</a></li>
 			</ul>
 			<ul>
 				<li class="caption"><a href="#caption_surfaceposition">サーフェスの位置情報</a></li>
 				<li class="caption"><a href="#caption_balloonposition">バルーンの位置情報</a></li>
 				<li class="caption"><a href="#caption_menualign">メニュー画像の位置指定</a></li>
+				<li class="caption"><a href="#caption_iconframecolor">アイコン枠色の明度調整について</a></li>
 			</ul>
 		</section>
 	</section>
@@ -1344,6 +1354,96 @@ kero.menuitem3,2
 					</ul>
 				</dd>
 			</dl>
+			<dl id="sakura.icon.frame.color.r,数値">
+				<dt class="entry">sakura.icon.frame.color.r,数値</dt>
+				<dd class="entry">
+					<p>本体側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の赤成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.icon.frame.color.g,数値">
+				<dt class="entry">sakura.icon.frame.color.g,数値</dt>
+				<dd class="entry">
+					<p>本体側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の緑成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sakura.icon.frame.color.b,数値">
+				<dt class="entry">sakura.icon.frame.color.b,数値</dt>
+				<dd class="entry">
+					<p>本体側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の青成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.icon.frame.color.r,数値">
+				<dt class="entry">kero.icon.frame.color.r,数値</dt>
+				<dd class="entry">
+					<p>相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の赤成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.icon.frame.color.g,数値">
+				<dt class="entry">kero.icon.frame.color.g,数値</dt>
+				<dd class="entry">
+					<p>相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の緑成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="kero.icon.frame.color.b,数値">
+				<dt class="entry">kero.icon.frame.color.b,数値</dt>
+				<dd class="entry">
+					<p>相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の青成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.icon.frame.color.r,数値">
+				<dt class="entry">char*.icon.frame.color.r,数値</dt>
+				<dd class="entry">
+					<p>2人目以降の相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の赤成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.icon.frame.color.g,数値">
+				<dt class="entry">char*.icon.frame.color.g,数値</dt>
+				<dd class="entry">
+					<p>2人目以降の相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の緑成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="char*.icon.frame.color.b,数値">
+				<dt class="entry">char*.icon.frame.color.b,数値</dt>
+				<dd class="entry">
+					<p>2人目以降の相方側のアイコン(顔サムネイル)が<a href="./list_sakura_script.html#_!_open,backlogviewer_">バックログ(発言履歴)ウィンドウ</a>に表示される際の、枠の青成分(0～255)。<a href="#caption_iconframecolor">※注意</a></p>
+					<p class="default">値なし</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.53</li>
+					</ul>
+				</dd>
+			</dl>
 			<div class="caption" id="caption_surfaceposition">
 				<h1>サーフェスの位置情報</h1>
 				<dl>
@@ -1397,6 +1497,12 @@ kero.menuitem3,2
 					<dt>+repeat-y</dt>
 					<dd>[background/foreground/sidebar]縦方向に繰り返して（タイリングして）画像を表示する。 [SSP 2.5.39]</dd>
 				</dl>
+			</div>
+			<div class="caption" id="caption_iconframecolor">
+				<h1>アイコン枠色の明度調整について</h1>
+				<p>sakura(kero/char*).icon.frame.color.(r/g/b)で指定した色は、そのままバックログ(発言履歴)ウィンドウの枠色として使われるわけではない。<br />
+				ダークモード/ライトモードなど、ウィンドウのUI配色に合わせて明度を上げ下げする演算が加えられた上で表示される。<br />
+				そのため、指定はできるだけ混じりけのない原色に近い値が望ましい。(例：赤にしたい場合はRGB＝255,0,0など)</p>
 			</div>
 		</section>
 	</div>
