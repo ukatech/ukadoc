@@ -192,6 +192,7 @@
 				<li><a href="#point.kinoko.centery,座標">point.kinoko.centery,座標</a></li>
 				<li><a href="#point.basepos.x,座標">point.basepos.x,座標</a></li>
 				<li><a href="#point.basepos.y,座標">point.basepos.y,座標</a></li>
+				<li><a href="#icon.rect,始点X,始点Y,終点X,終点Y">icon.rect,始点X,始点Y,終点X,終点Y</a></li>
 				<li><a href="#name,定義名">name,定義名</a></li>
 			</ul>
 			<section>
@@ -1258,6 +1259,19 @@ animation0.pattern3,overlay,-1,100,168,67
 					<p class="default">サーフェスの下端</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="icon.rect,始点X,始点Y,終点X,終点Y">
+				<dt class="entry">icon.rect,始点X,始点Y,終点X,終点Y</dt>
+				<dd class="entry">
+					<p>顔サムネイル(バックログ／発言履歴ウィンドウなどで使用される、キャラクターの顔部分を切り出した縮小画像)の切り出し矩形を明示指定する。<br>
+					指定した場合、当たり判定のface/顔やhead/頭を用いた自動検出（<a href="#collision*,始点X,始点Y,終点X,終点Y,ID">collision</a>参照）より優先される。</p>
+					<p>face/headの自動検出と異なり、指定した矩形はそのまま採用され、余白を持たせる拡大処理は行われない。<br>
+					ただし出力は正方形になるため、指定矩形の縦横のうち長い方の辺を基準に、矩形の中心を基準として正方形に整形される。</p>
+					<p class="default">未指定(collisionのface/顔・head/頭から自動検出)</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.52</li>
 					</ul>
 				</dd>
 			</dl>
