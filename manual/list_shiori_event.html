@@ -5980,17 +5980,35 @@
 					<p>使ってるぞグラフの情報を通知。<em class="specsign">[NOTIFY]</em></p>
 					<dl class="reference">
 						<dt>Reference*</dt>
-						<dd>
-							<p>バイト値1区切りにされたゴースト名、sakura名、kero名、起動回数、起動時間(分)、起動時間％、(boot install vanish)。</p>
-							<dl>
-								<dt>boot</dt>
-								<dd>起動中の時。</dd>
-								<dt>install</dt>
-								<dd>インストールされている時。</dd>
-								<dt>vanish</dt>
-								<dd>アンインストールした情報が残ってる時。</dd>
-							</dl>
-						</dd>
+						<dd>バイト値1区切りにされた以下の情報。</dd>
+					</dl>
+					<dl class="reference">
+						<dt>1番目</dt>
+						<dd>ゴースト名。</dd>
+						<dt>2番目</dt>
+						<dd>sakura名。</dd>
+						<dt>3番目</dt>
+						<dd>kero名。</dd>
+						<dt>4番目</dt>
+						<dd>起動回数。</dd>
+						<dt>5番目</dt>
+						<dd>起動時間。(分)</dd>
+						<dt>6番目</dt>
+						<dd>起動時間割合。(％)</dd>
+						<dt>7番目</dt>
+						<dd>状態。<br />boot(起動中)<br />install(インストールされている)<br />vanish(アンインストールした情報が残ってる)<br />のいずれか。</dd>
+						<dt>8番目</dt>
+						<dd>起動回数。(週報、今日から7日前までの集計) [以下SSP 2.8.54～]</dd>
+						<dt>9番目</dt>
+						<dd>起動時間。(週報、分)</dd>
+						<dt>10番目</dt>
+						<dd>起動時間割合。(週報、％)</dd>
+						<dt>11番目</dt>
+						<dd>起動回数。(月報、今日から30日前までの集計)</dd>
+						<dt>12番目</dt>
+						<dd>起動時間。(月報、分)</dd>
+						<dt>13番目</dt>
+						<dd>起動時間割合。(月報、％)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
