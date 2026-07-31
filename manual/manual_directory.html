@@ -70,7 +70,7 @@
 　　+-.narinclude (必要な時のみ)(SSPのみ)
 　　+-.updateinclude (必要な時のみ)(SSPのみ)
 　　<em class="filename">+-readme.txt または readme.md (必要な時のみ)</em>
-　　<em class="filename">+-terms.txt (必要な時のみ)</em>
+　　<em class="filename">+-terms.txt または terms.md (必要な時のみ)</em>
 　　<em class="filename">+-thumbnail.png</em>
 </pre>
 </section>
@@ -85,8 +85,8 @@
 　　+-descript.txt
 　　+-balloons*s.txt
 　　+-balloonk*s.txt
-　　<em class="filename">+-readme.txt (必要な時のみ)</em>
-　　<em class="filename">+-terms.txt (必要な時のみ)</em>
+　　<em class="filename">+-readme.txt または readme.md (必要な時のみ)</em>
+　　<em class="filename">+-terms.txt または terms.md (必要な時のみ)</em>
 　　+-balloons*.png
 　　+-balloonk*.png
 　　+-balloons*.pna （MATERIA不可）
@@ -188,12 +188,13 @@
 				<br>画像埋込 \![画像説明](画像パス) も解釈できるが、画像パスが相対パスで、ゴーストの中に実際にファイルが存在し、かつPNGかJPEGの場合のみ利用可能となる。</p>
 			</dd>
 
-			<dt><span class="directory">(myghost)\</span>terms.txt</dt>
+			<dt><span class="directory">(myghost)\</span>terms.txt または terms.md</dt>
 			<dd>
 				<p>利用条件表示。NAR/ZIPファイルのインストール前にこの内容を表示するダイアログが出る。</p>
 				<p>インストールを中断してダイアログ表示するので、どうしても必要な場合のみ入れること。</p>
 				<p>readmeと同じく、1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使える。</p>
 				<p>省略可能、かつ<em>不要なら省略することが望ましい</em>。</p>
+				<p>readme.mdと同じ条件でterms.mdも利用可能。</p>
 			</dd>
 
 			<dt><span class="directory">(myghost)\</span>thumbnail.png</dt>
