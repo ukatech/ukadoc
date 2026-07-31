@@ -69,7 +69,7 @@
 　　+-.updateignore (必要な時のみ)(SSPのみ)
 　　+-.narinclude (必要な時のみ)(SSPのみ)
 　　+-.updateinclude (必要な時のみ)(SSPのみ)
-　　<em class="filename">+-readme.txt (必要な時のみ)</em>
+　　<em class="filename">+-readme.txt または readme.md (必要な時のみ)</em>
 　　<em class="filename">+-terms.txt (必要な時のみ)</em>
 　　<em class="filename">+-thumbnail.png</em>
 </pre>
@@ -177,13 +177,15 @@
 				<p>省略可能。</p>
 			</dd>
 
-			<dt><span class="directory">(myghost)\</span>readme.txt</dt>
+			<dt><span class="directory">(myghost)\</span>readme.txt または readme.md</dt>
 			<dd>
 				<p>ゴースト全体のreadme。</p>
 				<p>配布者や配布元など明記するのが一般的。</p>
 				<p>1行目にcharset,UTF-8と書いておくか、BOMを含んでおけばShift JIS以外も使える。</p>
 				<p>インストール時に開かれるほか、オーナードローメニューなどからも開ける。</p>
 				<p>省略可能だが存在するのが望ましい。</p>
+				<p>readme.txtの代わりにreadme.mdを使用することができ、その場合はMarkdown形式を解釈して文字サイズや表などの装飾つきで表示される。
+				<br>画像埋込 \![画像説明](画像パス) も解釈できるが、画像パスが相対パスで、ゴーストの中に実際にファイルが存在し、かつPNGかJPEGの場合のみ利用可能となる。</p>
 			</dd>
 
 			<dt><span class="directory">(myghost)\</span>terms.txt</dt>
