@@ -249,6 +249,10 @@
 				<li><a href="#currentghost.balloon.scope(ID).background.color">currentghost.balloon.scope(ID).background.color</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).scaling">currentghost.balloon.scope(ID).scaling</a></li>
 
+				<li><a href="#currentghost.sound.count">currentghost.sound.count</a></li>
+				<li><a href="#currentghost.sound.index(ID).サウンドプロパティ名">currentghost.sound.index(ID).サウンドプロパティ名</a></li>
+				<li><a href="#currentghost.sound(要素名).サウンドプロパティ名">currentghost.sound(要素名).サウンドプロパティ名</a></li>>
+
 				<li><a href="#balloonlist(バルーン名/パス).汎用プロパティ名">balloonlist(バルーン名/パス).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.index(ID).汎用プロパティ名">balloonlist.index(ID).汎用プロパティ名</a></li>
 				<li><a href="#balloonlist.count">balloonlist.count</a></li>
@@ -317,6 +321,22 @@
 					<li><a href="#sakura.bind.menu">sakura.bind.menu</a></li>
 					<li><a href="#kero.bind.menu">kero.bind.menu</a></li>
 					<li><a href="#char*.bind.menu">char*.bind.menu</a></li>
+				</ul>
+			</section>
+			<section>
+				<h1>サウンドプロパティ名</h1>
+				<ul>
+					<li><a href="#sound.name">name</a></li>
+					<li><a href="#sound.path">path</a></li>
+					<li><a href="#sound.id">id</a></li>
+					<li><a href="#sound.position">position</a></li>
+					<li><a href="#sound.duration">duration</a></li>
+					<li><a href="#sound.playing">playing</a></li>
+					<li><a href="#sound.pause">pause</a></li>
+					<li><a href="#sound.preload">preload</a></li>
+					<li><a href="#sound.loop">loop</a></li>
+					<li><a href="#sound.error">error</a></li>
+					<li class="caption"><a href="#notes_sound_propertyset">サウンドプロパティの書き込みについて</a></li>
 				</ul>
 			</section>
 		</section>
@@ -1426,6 +1446,40 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="currentghost.sound.count">
+				<dt class="entry">currentghost.sound.count</dt>
+				<dd class="entry">
+					<p>現在のゴーストが管理しているメディアの数。
+					<br />\![sound,play]・\![sound,loop]・\![sound,preload]などで開かれ、まだ閉じられていないものすべてが対象。再生中のものだけではないことに注意。
+					<br />個々のメディアが再生中かどうかは<a href="#sound.playing">playing</a>で判別する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.sound.index(ID).サウンドプロパティ名">
+				<dt class="entry">currentghost.sound.index(ID).サウンドプロパティ名</dt>
+				<dd class="entry">
+					<p>現在のゴーストが管理しているメディアのうち、ID番目のものから情報を取得。
+					<br />IDは新しく開かれたものから順に0,1,2...となる。範囲外のIDを指定した場合は取得失敗となる。
+					<br />サウンドプロパティ名は<a href="#sound.name">後述</a>。書き込みが可能なものと、その際の注意点については<a href="#notes_sound_propertyset">こちら</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.sound(要素名).サウンドプロパティ名">
+				<dt class="entry">currentghost.sound(要素名).サウンドプロパティ名</dt>
+				<dd class="entry">
+					<p>現在のゴーストが管理しているメディアのうち、要素名が一致する最も新しいものから情報を取得。
+					<br />要素名は\![sound,play,～]などで指定したファイル名/パス/URLそのもの。
+					<br />ドットを挟まず括弧を直接続けることに注意（<code>currentghost.sound(～)</code>であって<code>currentghost.sound.(～)</code>ではない）。
+					<br />サウンドプロパティ名は<a href="#sound.name">後述</a>。書き込みが可能なものと、その際の注意点については<a href="#notes_sound_propertyset">こちら</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="balloonlist(バルーン名/パス).汎用プロパティ名">
 				<dt class="entry">balloonlist(バルーン名/パス).汎用プロパティ名</dt>
 				<dd class="entry">
@@ -2010,6 +2064,111 @@
 						</ul>
 					</dd>
 				</dl>
+			</section>
+			<section class="subcategory">
+				<h1>サウンドプロパティ名</h1>
+				<dl id="sound.name">
+					<dt class="entry">name</dt>
+					<dd class="entry">
+						<p>対象のメディアの要素名。\![sound,play,～]などで指定したファイル名/パス/URLそのもの。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.path">
+					<dt class="entry">path</dt>
+					<dd class="entry">
+						<p>対象のメディアの解決後のフルパス。URL指定の場合はURLそのもの。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.id">
+					<dt class="entry">id</dt>
+					<dd class="entry">
+						<p>対象のメディアに割り当てられたプロセス内で一意の識別番号。<br />同じメディアを指し続けているかどうかの確認に使える。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.position">
+					<dt class="entry">position</dt>
+					<dd class="entry">
+						<p>対象のメディアの現在の再生位置。ミリ秒。<br />位置を取得できない実装・フォーマットの場合は-1。
+							<br /><em class="specsign">[SET有効]</em>SETすると<a href="list_sakura_script.html#_!_sound,option_">\![sound,option,～]</a>の<a href="list_sakura_script.html#notes_sound">--seektime=</a>と同じ効果。
+							<br />値の書式も--seektime=と同じで、「:」を含まない場合はミリ秒単位の整数、「:」を含む場合は[[時:]分:]秒[.ミリ秒]として解釈する。頭に@をつけると現在の再生位置からの相対指定となり、負の値も指定できる（例：@-5000で5秒巻き戻し）。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.duration">
+					<dt class="entry">duration</dt>
+					<dd class="entry">
+						<p>対象のメディア全体の長さ。ミリ秒。<br />長さを取得できない実装・フォーマットの場合は-1。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.playing">
+					<dt class="entry">playing</dt>
+					<dd class="entry">
+						<p>対象のメディアが再生中なら1、さもなくば0。<br />一時停止中も1のままなので、必要なら<a href="#sound.pause">pause</a>と併用する。
+							<br /><em class="specsign">[SET有効]</em>1をSETすると<a href="list_sakura_script.html#_!_sound,play,ファイル名_">\![sound,play,～]</a>、0をSETすると<a href="list_sakura_script.html#_!_sound,stop,ファイル名_">\![sound,stop,～]</a>と同じ効果。
+							<br />1をSETして再生を開始する場合、対象のメディアの現在のループ指定などはそのまま維持される。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.pause">
+					<dt class="entry">pause</dt>
+					<dd class="entry">
+						<p>対象のメディアが一時停止中なら1、さもなくば0。
+							<br /><em class="specsign">[SET有効]</em>1をSETすると<a href="list_sakura_script.html#_!_sound,pause,ファイル名_">\![sound,pause,～]</a>、0をSETすると<a href="list_sakura_script.html#_!_sound,resume,ファイル名_">\![sound,resume,～]</a>と同じ効果。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.preload">
+					<dt class="entry">preload</dt>
+					<dd class="entry">
+						<p>対象のメディアが\![sound,preload]で開かれたものなら1、さもなくば0。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.loop">
+					<dt class="entry">loop</dt>
+					<dd class="entry">
+						<p>対象のメディアがループ再生指定（\![sound,loop]）なら1、さもなくば0。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.error">
+					<dt class="entry">error</dt>
+					<dd class="entry">
+						<p>対象のメディアで直近に発生したエラーメッセージ。エラーがなければ空文字列。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.72</li>
+						</ul>
+					</dd>
+				</dl>
+				<section class="caption" id="notes_sound_propertyset">
+					<h1>サウンドプロパティの書き込みについて [2.8.72]</h1>
+					<p>サウンドプロパティのうち<a href="#sound.position">position</a>・<a href="#sound.playing">playing</a>・<a href="#sound.pause">pause</a>は<a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,～]</a>による書き込みに対応する。それ以外のサウンドプロパティは読み取り専用。</p>
+					<p>書き込みは対応するさくらスクリプトのタグと同じ処理に変換して実行される。したがってタグを直接書いた場合とまったく同じ結果になり、指定が無効な場合（既に停止しているメディアにpauseを書き込んだ場合など）もタグと同様に何も起こらない。</p>
+					<p>変換されるタグは要素名で対象を指定するため、同じ要素名のメディアが複数ある場合は<a href="#currentghost.sound(要素名).index(ID).サウンドプロパティ名">index(ID)</a>で対象を指定しても、書き込みは要素名が一致する最も新しいメディアに対して行われる。読み取りとは対象が異なる場合があることに注意。</p>
+					<p>また書き込みは非同期に実行されるため、書き込んだ直後に同じプロパティを読み取っても結果がまだ反映されていない場合がある。</p>
+				</section>
 			</section>
 		</section>
 	</div>
