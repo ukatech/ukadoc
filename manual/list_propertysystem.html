@@ -336,6 +336,15 @@
 					<li><a href="#sound.preload">preload</a></li>
 					<li><a href="#sound.loop">loop</a></li>
 					<li><a href="#sound.error">error</a></li>
+					<li><a href="#sound.meta.title">meta.title</a></li>
+					<li><a href="#sound.meta.artist">meta.artist</a></li>
+					<li><a href="#sound.meta.albumartist">meta.albumartist</a></li>
+					<li><a href="#sound.meta.album">meta.album</a></li>
+					<li><a href="#sound.meta.genre">meta.genre</a></li>
+					<li><a href="#sound.meta.year">meta.year</a></li>
+					<li><a href="#sound.meta.track">meta.track</a></li>
+					<li><a href="#sound.meta.artwork">meta.artwork</a></li>
+					<li class="caption"><a href="#notes_sound_meta">サウンドプロパティのメタデータ（meta.～）について</a></li>
 					<li class="caption"><a href="#notes_sound_propertyset">サウンドプロパティの書き込みについて</a></li>
 				</ul>
 			</section>
@@ -2162,6 +2171,84 @@
 						</ul>
 					</dd>
 				</dl>
+				<dl id="sound.meta.title">
+					<dt class="entry">meta.title</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録された曲名（タイトル）。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.artist">
+					<dt class="entry">meta.artist</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録されたアーティスト名。<br />複数記録されている場合は「; 」（セミコロンと半角空白）区切りで連結される。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.albumartist">
+					<dt class="entry">meta.albumartist</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録されたアルバムアーティスト名。<br />複数記録されている場合は「; 」（セミコロンと半角空白）区切りで連結される。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.album">
+					<dt class="entry">meta.album</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録されたアルバム名。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.genre">
+					<dt class="entry">meta.genre</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録されたジャンル。<br />複数記録されている場合は「; 」（セミコロンと半角空白）区切りで連結される。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.year">
+					<dt class="entry">meta.year</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録された年（西暦）。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.track">
+					<dt class="entry">meta.track</dt>
+					<dd class="entry">
+						<p>対象のメディアのタグに記録されたトラック番号。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="sound.meta.artwork">
+					<dt class="entry">meta.artwork</dt>
+					<dd class="entry">
+						<p>対象のメディアのアルバムアートワークの画像ファイルパス。<br />タグが無い場合や取得できない場合の挙動は<a href="#notes_sound_meta">こちら</a>。</p>
+						<ul class="supported-baseware">
+							<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.73</li>
+						</ul>
+					</dd>
+				</dl>
+				<section class="caption" id="notes_sound_meta">
+					<h1>サウンドプロパティのメタデータ（meta.～）について [2.8.73]</h1>
+					<p>meta.で始まるサウンドプロパティは、メディアファイルに埋め込まれたタグ情報（ID3、Vorbis Comment、MP4のメタデータatom、ASFの属性など）を取得する。すべて読み取り専用。</p>
+					<p><strong>タグが存在しない場合や、何らかの理由で取得できなかった場合は、そのプロパティ自体が存在しないものとして扱われる。</strong><a href="#sound.error">error</a>のように空文字列が返るのではなく、プロパティの参照自体が失敗する点に注意（存在しないプロパティ名を指定した場合と同じ挙動になる）。タグの有無が不定のメディアを扱う場合は、この前提でスクリプトを書くこと。</p>
+					<p>なおwav等のタグを持たないフォーマットでは、当然ながらすべてのmeta.プロパティが取得失敗となる。</p>
+				</section>
 				<section class="caption" id="notes_sound_propertyset">
 					<h1>サウンドプロパティの書き込みについて [2.8.72]</h1>
 					<p>サウンドプロパティのうち<a href="#sound.position">position</a>・<a href="#sound.playing">playing</a>・<a href="#sound.pause">pause</a>は<a href="list_sakura_script.html#_!_set,property,プロパティ名,値_">\![set,property,～]</a>による書き込みに対応する。それ以外のサウンドプロパティは読み取り専用。</p>
