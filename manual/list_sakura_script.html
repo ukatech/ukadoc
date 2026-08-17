@@ -5924,6 +5924,7 @@
 					<br>HTTPの場合は<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>。
 					<br>RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
 					<br>WebSocketの場合は接続・受信・切断の各タイミングで<a href="list_shiori_event.html#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReceive">Receive</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReconnect">Reconnect</a>/<a href="list_shiori_event.html#OnExecuteWebSocketClose">Close</a>/<a href="list_shiori_event.html#OnExecuteWebSocketFailure">Failure</a>が発生する（常にAsync動作のため--syncは適用不可）。
+					<br>Onから始まらないIDを指定した場合は、上記イベント名通りのイベントが発生する。
 					<br>Onから始まるIDを指定した場合、HTTP/RSSは[指定したID]（成功）/[指定したID]Failure（失敗）が発生する。WebSocketは[指定したID]Open/[指定したID]（受信）/[指定したID]Reconnect/[指定したID]Close/[指定したID]Failureが発生する。
 					<br>例:--async=OnExampleのとき HTTP/RSS→OnExample/OnExampleFailure、WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure
 					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く（WebSocketには適用不可）。</dd>
