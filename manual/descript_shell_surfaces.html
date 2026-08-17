@@ -900,30 +900,30 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>surface*.pngまたはelement定義にアニメGIF/APNG/WebPアニメを指定すると、SERIKO定義を書かなくても自動的にアニメーションする(SSP 2.7.38～)。
 						<br>element定義されたサーフェスをアニメーションパーツとして用いた場合も、一枚の画像のように振る舞う(SSP 2.3.53～。それ以前は未定義)。
 					</p>
-					<p>オプションは以下の通り。複数指定する場合は「element0,overlay,face.png,0,0,clipping,10,10,50,50,alpha,128」のように続けて記述できる。</p>
+					<p>オプションは以下の通り。複数指定する場合は「element0,overlay,face.png,0,0,--clipping,10,10,50,50,--alpha,128」のように続けて記述できる。</p>
 					<dl class="reference">
-						<dt>clipping,左,上,右,下</dt>
+						<dt>--clipping,左,上,右,下</dt>
 						<dd>[SSP 2.8.15～]左、上、右、下で指定された矩形部分のみを描画する。これを使用するとアニメーション読み込みは無効となる。
-						<br>例：element0,overlay,face.png,0,0,clipping,10,10,50,50</dd>
+						<br>例：element0,overlay,face.png,0,0,--clipping,10,10,50,50</dd>
 
-						<dt>alpha,値(0-255)</dt>
+						<dt>--alpha,値(0-255)</dt>
 						<dd>[SSP 2.8.37～]描画する際の不透明度を指定する。0で完全透明、255で完全不透明。
-						<br>例：element0,overlay,face.png,0,0,alpha,128</dd>
+						<br>例：element0,overlay,face.png,0,0,--alpha,128</dd>
 
-						<dt>source,値</dt>
+						<dt>--source,値</dt>
 						<dd>[SSP 2.8.41～]複数の描画候補を持つ画像またはファイルから、実際に描画に用いる対象を指定する。
 						<br>マルチページTIFFの場合は0オリジンのページ番号、DLL/EXE内アイコンの場合は0オリジンのリソース番号、PSDなどの場合はレイヤー名を指定する。
 						<br>レイヤーグループの中にあるレイヤーを指定する場合は、::で区切ってグループ名を書く(グループのネスト対応)。
 						<br>PSDなどのレイヤー情報に描画方法の情報が含まれる仕様がある場合に限り、描画メソッドの指定をautoにすることができる。
 						<br>PSDなどの指定したレイヤーに不透明度設定がある場合、かつalphaオプションが指定されていない場合に、レイヤーの不透明度情報を自動的に使用する。
-						<br>例：element0,auto,face.png,0,0,source,顔::頭</dd>
+						<br>例：element0,auto,face.png,0,0,--source,顔::頭</dd>
 
-						<dt>scaling,横,縦</dt>
+						<dt>--scaling,横,縦</dt>
 						<dd>[SSP 2.8.73～]画像を指定サイズに拡大縮小して合成する。clippingと併用した場合は切り抜いた範囲に対して拡大縮小する。
 						<br>横・縦の数値は末尾に%を付けると（clipping後の）元画像に対する百分率、無指定または末尾にpxを付けるとピクセル数として扱われる。
 						<br>数値を負数にすると、絶対値のサイズで左右または上下を反転して表示する。
 						<br>指定できるサイズは1～4096pxの範囲に制限される。
-						<br>例：element0,overlay,face.png,0,0,scaling,50%,50%</dd>
+						<br>例：element0,overlay,face.png,0,0,--scaling,50%,50%</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
@@ -966,11 +966,11 @@ animation0.pattern3,overlay,-1,100,168,67
 						<br>サーフェス番号にはname定義で指定したID以外の別名も指定できる。 (SSP 2.8.25～)
 						<br><a href="#caption_seriko-redefine">旧定義</a>：*pattern*,サーフェスID,ウェイト,描画メソッド,X座標,Y座標
 					</p>
-					<p>オプションは以下の通り。複数指定する場合は「animation0.pattern0,overlay,101,700,0,0,alpha,128,option2,...」のように続けて記述できる。</p>
+					<p>オプションは以下の通り。複数指定する場合は「animation0.pattern0,overlay,101,700,0,0,--alpha,128,--option2,...」のように続けて記述できる。</p>
 					<dl class="reference">
-						<dt>alpha,値(0-255)</dt>
+						<dt>--alpha,値(0-255)</dt>
 						<dd>[SSP 2.8.37～]描画する際の不透明度を指定する。0で完全透明、255で完全不透明。
-						<br>例：animation0.pattern0,overlay,101,700,0,0,alpha,128</dd>
+						<br>例：animation0.pattern0,overlay,101,700,0,0,--alpha,128</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
