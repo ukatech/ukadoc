@@ -81,8 +81,6 @@
           place: config-extprog
         - title: IM
           place: config-im
-        - title: IP Messenger
-          place: config-ipmes
         - title: 国際化
           place: config-i18n
         - title: 配信
