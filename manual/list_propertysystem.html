@@ -231,6 +231,8 @@
 
 				<li><a href="#currentghost.seriko.surfacelist.all">currentghost.seriko.surfacelist.all</a></li>
 				<li><a href="#currentghost.seriko.surfacelist.defined">currentghost.seriko.surfacelist.defined</a></li>
+				<li><a href="#currentghost.seriko.sticky-window">currentghost.seriko.sticky-window</a></li>
+				<li><a href="#currentghost.seriko.zorder">currentghost.seriko.zorder</a></li>
 
 				<li><a href="#currentghost.balloon.scope(ID).count">currentghost.balloon.scope(ID).count</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).num">currentghost.balloon.scope(ID).num</a></li>
@@ -1304,6 +1306,38 @@
 					<p>シェル上で有効なサーフェスIDの中で、surfaces.txt内に有効な定義のあるもののリスト。カンマ区切り。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.5.98)</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.sticky-window">
+				<dt class="entry">currentghost.seriko.sticky-window</dt>
+				<dd class="entry">
+					<p>現在の<a href="list_sakura_script.html#_!_set,sticky-window,スコープID,スコープID,_">\![set,sticky-window,～]</a>の設定状態。<br />
+					グループ内のスコープIDをカンマ区切り、グループ同士をセミコロン区切りで並べたもの。<br />
+					例えばスコープ0と1、スコープ2と3をそれぞれくっつけている場合は <code>0,1;2,3</code> となる。<br />
+					設定が一つもない場合は値なし。<br /><em class="specsign">[SET有効]</em></p>
+					<p>書き込みの場合は同じ書式で<strong>現在の設定を完全に置き換える</strong>。さくらスクリプトのタグがグループを追加していくのとは異なる点に注意。<br />
+					空文字列を書き込むとすべてのくっつき設定が解除される。<br />
+					要素が2つ未満のグループ、および既に他のグループで使われているスコープIDを含むグループは無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.78</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.seriko.zorder">
+				<dt class="entry">currentghost.seriko.zorder</dt>
+				<dd class="entry">
+					<p>現在の<a href="list_sakura_script.html#_!_set,zorder,スコープID,スコープID,_">\![set,zorder,～]</a>の設定状態。<br />
+					グループ内の要素をカンマ区切り、グループ同士をセミコロン区切りで並べたもの。要素は手前にあるものから順に並ぶ。<br />
+					要素を明示指定するモードでは <code>s0,b0,s1;s2,b2</code> のように <code>s</code>（サーフェス）・<code>b</code>（バルーン）＋スコープIDの短縮形で返る。<br />
+					スコープIDのみを指定する従来のモードでは <code>0,1;2,3</code> のように数値だけが返る。<br />
+					設定が一つもない場合は値なし。<br /><em class="specsign">[SET有効]</em></p>
+					<p>書き込みの場合は同じ書式で<strong>現在の設定を完全に置き換える</strong>。さくらスクリプトのタグがグループを追加していくのとは異なる点に注意。<br />
+					空文字列を書き込むとすべてのZオーダー設定が解除される。<br />
+					読み取った値をそのまま書き戻せば元の状態を再現できる。<br />
+					要素が2つ未満のグループは無視される。また明示指定モードと従来モードは排他のため、<code>s0,b0;2,3</code> のように<strong>両モードを混在させることはできない</strong>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.78</li>
 					</ul>
 				</dd>
 			</dl>
