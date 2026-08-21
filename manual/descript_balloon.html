@@ -582,8 +582,9 @@ communicatebox.height,20
 			<dl id="origin.x,座標">
 				<dt class="entry">origin.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>テキスト開始位置のX座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は1列目の<em class="specsign">右端</em>を指す。</p>
-					<p class="default">不明</p>
+					<p>テキスト開始位置のX座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は1列目の<em class="specsign">右端</em>を指す。
+					<br />通常は指定せずvalidrectの定義に任せる場合が多い。</p>
+					<p class="default">横書き=validrect.left 縦書き=validrect.right</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -594,8 +595,9 @@ communicatebox.height,20
 			<dl id="origin.y,座標">
 				<dt class="entry">origin.y,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>テキスト開始位置のY座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は字送りの開始位置になる。</p>
-					<p class="default">不明</p>
+					<p>テキスト開始位置のY座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は字送りの開始位置になる。
+					<br />通常は指定せずvalidrectの定義に任せる場合が多い。</p>
+					<p class="default">validrect.top</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -654,8 +656,8 @@ communicatebox.height,20
 			<dl id="wordwrappoint.x,座標">
 				<dt class="entry">wordwrappoint.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>自動改行で折り返すX座標。<br />横書き（<a href="#vertical,0/1">vertical</a>が0）のときのみ使用される。</p>
-					<p class="default">不明</p>
+					<p>自動改行で折り返すX座標。<br />横書き（<a href="#vertical,0/1">vertical</a>が0）のときのみ使用される。<br />未指定の場合はvalidrect.rightまで書けるものとして扱う。</p>
+					<p class="default">validrect.right</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -667,7 +669,7 @@ communicatebox.height,20
 				<dt class="entry">wordwrappoint.y,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
 					<p>自動改行で折り返すY座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）のときのみ使用され、横書きでは無視される。<br />未指定の場合はvalidrect.bottomまで書けるものとして扱う。</p>
-					<p class="default">指定なし（validrect.bottomと同じ扱い）</p>
+					<p class="default">validrect.bottom</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.80</li>
 					</ul>
@@ -679,8 +681,8 @@ communicatebox.height,20
 					<p>1を指定すると、このバルーンのテキストを日本語縦書き（上から下へ字を送り、右から左へ行を送る）で表示する。</p>
 					<p>縦書きにすると、descript.txtの座標指定の意味が以下のように変わる。座標自体は今までどおりバルーン画像の左上を原点として書けばよい。</p>
 					<ul>
-						<li>origin.x … <em class="specsign">1列目の右端</em>。ここから左へ向かって列が進む。</li>
-						<li>origin.y … 字送りの開始位置（1文字目の上端）。</li>
+						<li>origin.x … <em class="specsign">1列目の右端</em>。ここから左へ向かって列が進む。通常は指定せずvalidrectの定義に任せる場合が多い。</li>
+						<li>origin.y … 字送りの開始位置（1文字目の上端）。通常は指定せずvalidrectの定義に任せる場合が多い。</li>
 						<li>validrect … 変更なし。テキストを描画してよい範囲。</li>
 						<li>折り返しは<a href="#wordwrappoint.y,座標">wordwrappoint.y</a>で指定する。wordwrappoint.xは無視される。</li>
 					</ul>
