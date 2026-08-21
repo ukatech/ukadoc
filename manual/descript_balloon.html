@@ -161,6 +161,8 @@
 				<li><a href="#validrect.right,座標">validrect.right,座標</a></li>
 				<li><a href="#validrect.bottom,座標">validrect.bottom,座標</a></li>
 				<li><a href="#wordwrappoint.x,座標">wordwrappoint.x,座標</a></li>
+				<li><a href="#wordwrappoint.y,座標">wordwrappoint.y,座標</a></li>
+				<li><a href="#vertical,0/1">vertical,0/1</a></li>
 				<li><a href="#font.name,フォント名">font.name,フォント名</a></li>
 				<li><a href="#font.height,数値">font.height,数値</a></li>
 				<li><a href="#font.color.r,数値">font.color.r,数値</a></li>
@@ -580,7 +582,7 @@ communicatebox.height,20
 			<dl id="origin.x,座標">
 				<dt class="entry">origin.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>テキスト開始位置のX座標。</p>
+					<p>テキスト開始位置のX座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は1列目の<em class="specsign">右端</em>を指す。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -592,7 +594,7 @@ communicatebox.height,20
 			<dl id="origin.y,座標">
 				<dt class="entry">origin.y,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>テキスト開始位置のY座標。</p>
+					<p>テキスト開始位置のY座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）の場合は字送りの開始位置になる。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -652,12 +654,49 @@ communicatebox.height,20
 			<dl id="wordwrappoint.x,座標">
 				<dt class="entry">wordwrappoint.x,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>自動改行で折り返すX座標。</p>
+					<p>自動改行で折り返すX座標。<br />横書き（<a href="#vertical,0/1">vertical</a>が0）のときのみ使用される。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="wordwrappoint.y,座標">
+				<dt class="entry">wordwrappoint.y,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>自動改行で折り返すY座標。<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）のときのみ使用され、横書きでは無視される。<br />未指定の場合はvalidrect.bottomまで書けるものとして扱う。</p>
+					<p class="default">指定なし（validrect.bottomと同じ扱い）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.80</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="vertical,0/1">
+				<dt class="entry">vertical,0/1</dt>
+				<dd class="entry">
+					<p>1を指定すると、このバルーンのテキストを日本語縦書き（上から下へ字を送り、右から左へ行を送る）で表示する。</p>
+					<p>縦書きにすると、descript.txtの座標指定の意味が以下のように変わる。座標自体は今までどおりバルーン画像の左上を原点として書けばよい。</p>
+					<ul>
+						<li>origin.x … <em class="specsign">1列目の右端</em>。ここから左へ向かって列が進む。</li>
+						<li>origin.y … 字送りの開始位置（1文字目の上端）。</li>
+						<li>validrect … 変更なし。テキストを描画してよい範囲。</li>
+						<li>折り返しは<a href="#wordwrappoint.y,座標">wordwrappoint.y</a>で指定する。wordwrappoint.xは無視される。</li>
+					</ul>
+					<p>フォントは指定されたフォント名の縦書き用異体（フォント名の頭に@が付いたもの）が自動的に使われる。<br />
+					指定されたフォントに縦書き用異体が存在しない場合（バルーンフォルダに置いたフォントファイルや欧文フォントなど）は、環境の標準ゴシックの縦書き用異体に自動的に差し替わる。</p>
+					<p>また、以下の項目は「画面上の向き」ではなく「文字の送り方向を基準にした向き」で働くようになるので注意すること。</p>
+					<ul>
+						<li>\f[align,～]は列内での字寄せ（left＝上寄せ、right＝下寄せ）、\f[valign,～]は行の厚み方向の寄せ（top＝右寄せ、bottom＝左寄せ）になる。</li>
+						<li>arrow0（スクロール上）・arrow1（スクロール下）は、意味としてはそれぞれ右・左へのスクロールになる。画像と位置はバルーン側で用意すること。</li>
+						<li>下線（font.underlineや\f[underline,true]、アンカーの下線）は列の右側に引かれる。</li>
+					</ul>
+					<p>制限として、SSTPマーカーの送信元表示とネットワーク更新の進捗表示も縦書きで描画される。入力ボックス（communicatebox）は横書きのまま。</p>
+					<p>バルーンの各サーフェスごとの<a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a>でも指定できるが、同一バルーン内でサーフェスごとに縦書き・横書きを切り替えると、切り替え前に表示していた文章のレイアウトが崩れる。</p>
+					<p class="default">0（横書き）</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.80</li>
 					</ul>
 				</dd>
 			</dl>
