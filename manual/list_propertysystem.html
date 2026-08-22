@@ -250,6 +250,7 @@
 				<li><a href="#currentghost.balloon.scope(ID).char_width">currentghost.balloon.scope(ID).char_width</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).background.color">currentghost.balloon.scope(ID).background.color</a></li>
 				<li><a href="#currentghost.balloon.scope(ID).scaling">currentghost.balloon.scope(ID).scaling</a></li>
+				<li><a href="#currentghost.balloon.scope(ID).vertical">currentghost.balloon.scope(ID).vertical</a></li>
 
 				<li><a href="#currentghost.sound.count">currentghost.sound.count</a></li>
 				<li><a href="#currentghost.sound.index(ID).サウンドプロパティ名">currentghost.sound.index(ID).サウンドプロパティ名</a></li>
@@ -1486,6 +1487,17 @@
 					<p>現在のバルーンの実効拡大率。ユーザー設定×タグ設定×SERIKO設定の結果なので、小数点以下が出る場合あり。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.89</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="currentghost.balloon.scope(ID).vertical">
+				<dt class="entry">currentghost.balloon.scope(ID).vertical</dt>
+				<dd class="entry">
+					<p>現在のバルーンが<a href="./descript_balloon.html#vertical,0/1">縦書き</a>かどうか。縦書きなら1、横書きなら0。
+					<br />縦書きの場合、<a href="#currentghost.balloon.scope(ID).validwidth">validwidth</a>・<a href="#currentghost.balloon.scope(ID).validheight">validheight</a>・<a href="#currentghost.balloon.scope(ID).lines">lines</a>は「画面上の向き」ではなく「文字の送り方向を基準にした向き」の値になり、それぞれ「1列の長さ」「列が進む方向に使える幅」「収まる列数」を示す。
+					<br />文字数の計算などで縦書きと横書きを区別する必要がある場合に使う。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.80</li>
 					</ul>
 				</dd>
 			</dl>
