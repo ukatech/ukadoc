@@ -922,8 +922,21 @@ animation0.pattern3,overlay,-1,100,168,67
 						<dd>[SSP 2.8.73～]画像を指定サイズに拡大縮小して合成する。clippingと併用した場合は切り抜いた範囲に対して拡大縮小する。
 						<br>横・縦の数値は末尾に%を付けると（clipping後の）元画像に対する百分率、無指定または末尾にpxを付けるとピクセル数として扱われる。
 						<br>数値を負数にすると、絶対値のサイズで左右または上下を反転して表示する。
+						<br>[SSP 2.8.82～]横・縦の片方に0を指定すると、0でない方のサイズに合わせて、元画像の縦横比を保ったまま拡大縮小する。
 						<br>指定できるサイズは1～4096pxの範囲に制限される。
-						<br>例：element0,overlay,face.png,0,0,--scaling,50%,50%</dd>
+						<br>例：element0,overlay,face.png,0,0,--scaling,50%,50%
+						<br>例：element0,overlay,face.png,0,0,--scaling,150,0（元画像が300x200なら150x100になる）</dd>
+
+						<dt>--scaling,サイズ,基準辺</dt>
+						<dd>[SSP 2.8.82～]元画像の縦横比を保ったまま、基準辺が指定サイズになるよう拡大縮小して合成する。サイズはピクセル数のみで、%は使用できない。
+						<br>基準辺にはlong（長辺）またはshort（短辺）を指定する。
+						<br>基準辺の末尾にmaxを付けると縮小のみ（指定サイズより小さい画像は拡大しない）、minを付けると拡大のみ（指定サイズより大きい画像は縮小しない）となる。
+						<br>long・shortを省略してmaxまたはminだけを書いた場合は、longを指定したものとして扱われる。
+						<br>サイズを負数にすると、絶対値のサイズで左右上下とも反転して表示する。
+						<br>指定できるサイズは1～4096pxの範囲に制限される。
+						<br>例：element0,overlay,face.png,0,0,--scaling,300,long（元画像が400x300なら300x225になる）
+						<br>例：element0,overlay,face.png,0,0,--scaling,300,longmax（長辺が300pxを超える場合のみ300pxまで縮小する）
+						<br>例：element0,overlay,face.png,0,0,--scaling,300,shortmin（短辺が300px未満の場合のみ300pxまで拡大する）</dd>
 					</dl>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
