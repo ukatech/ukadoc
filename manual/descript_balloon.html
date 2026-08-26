@@ -257,6 +257,7 @@
 				<li><a href="#sstpmessage.x,座標">sstpmessage.x,座標</a></li>
 				<li><a href="#sstpmessage.y,座標">sstpmessage.y,座標</a></li>
 				<li><a href="#sstpmessage.xr,座標">sstpmessage.xr,座標</a></li>
+				<li><a href="#sstpmessage.yb,座標">sstpmessage.yb,座標</a></li>
 				<li><a href="#onlinemarker.interval,待機時間">onlinemarker.interval,待機時間</a></li>
 				<li><a href="#onlinemarker.x,座標">onlinemarker.x,座標</a></li>
 				<li><a href="#onlinemarker.y,座標">onlinemarker.y,座標</a></li>
@@ -270,8 +271,10 @@
 				<li><a href="#number.font.color.r,数値">number.font.color.r,数値</a></li>
 				<li><a href="#number.font.color.g,数値">number.font.color.g,数値</a></li>
 				<li><a href="#number.font.color.b,数値">number.font.color.b,数値</a></li>
+				<li><a href="#number.x,座標">number.x,座標</a></li>
 				<li><a href="#number.xr,座標">number.xr,座標</a></li>
 				<li><a href="#number.y,座標">number.y,座標</a></li>
+				<li><a href="#number.yb,座標">number.yb,座標</a></li>
 				<li><a href="#arrow0.x,座標">arrow0.x,座標</a></li>
 				<li><a href="#arrow0.y,座標">arrow0.y,座標</a></li>
 				<li><a href="#arrow1.x,座標">arrow1.x,座標</a></li>
@@ -685,7 +688,10 @@ communicatebox.height,20
 						<li>origin.y … 字送りの開始位置（1文字目の上端）。通常は指定せずvalidrectの定義に任せる場合が多い。</li>
 						<li>validrect … 変更なし。テキストを描画してよい範囲。</li>
 						<li>折り返しは<a href="#wordwrappoint.y,座標">wordwrappoint.y</a>で指定する。wordwrappoint.xは無視される。</li>
+						<li>SSTPメッセージの表示終了位置は<a href="#sstpmessage.yb,座標">sstpmessage.yb</a>で指定する。sstpmessage.xrは無視される。</li>
+						<li><a href="#number.y,座標">number.y</a>（＝number.yb） … カウンタ数値の<em class="specsign">下端</em>。ここから上へ向かって数値が伸びる。<a href="#number.x,座標">number.x</a>（＝number.xr）は数値が置かれる列の位置になる。</li>
 					</ul>
+					<p>origin.xやnumber.xのように右端を基準にしたい座標は、<a href="#note1">*1</a>のルールどおりマイナス値で書ける（例：origin.x,-14 ならバルーン画像の右端から14ピクセル）。</p>
 					<p>フォントは指定されたフォント名の縦書き用異体（フォント名の頭に@が付いたもの）が自動的に使われる。<br />
 					指定されたフォントに縦書き用異体が存在しない場合（バルーンフォルダに置いたフォントファイルや欧文フォントなど）は、環境の標準ゴシックの縦書き用異体に自動的に差し替わる。</p>
 					<p>また、以下の項目は「画面上の向き」ではなく「文字の送り方向を基準にした向き」で働くようになるので注意すること。</p>
@@ -1689,10 +1695,22 @@ communicatebox.height,20
 			<dl id="sstpmessage.xr,座標">
 				<dt class="entry">sstpmessage.xr,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>SSTPメッセージの表示終了位置X座標。左起点。（※負値を指定すると右起点）</p>
+					<p>SSTPメッセージの表示終了位置X座標。左起点。（※負値を指定すると右起点）
+					<br />横書き（<a href="#vertical,0/1">vertical</a>が0）のときのみ使用される。縦書きでは<a href="#sstpmessage.yb,座標">sstpmessage.yb</a>を使うこと。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="sstpmessage.yb,座標">
+				<dt class="entry">sstpmessage.yb,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>SSTPメッセージの表示終了位置Y座標。上起点。（※負値を指定すると下起点）
+					<br />縦書き（<a href="#vertical,0/1">vertical</a>が1）のときのみ使用され、横書きでは無視される。<br />縦書きでは文字が上から下へ送られるため、表示終了位置は<a href="#sstpmessage.xr,座標">sstpmessage.xr</a>のX座標ではなくY座標で指定する。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.83</li>
 					</ul>
 				</dd>
 			</dl>
@@ -1850,10 +1868,21 @@ communicatebox.height,20
 					</ul>
 				</dd>
 			</dl>
+			<dl id="number.x,座標">
+				<dt class="entry">number.x,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>カウンタ数値のX座標。<a href="#number.xr,座標">number.xr</a>と同じもので、左起点で書きたい場合のための別名。
+					<br />横書き（<a href="#vertical,0/1">vertical</a>が0）では数値の右端（＝数値が伸びていく先の端）を指す。縦書きでは数値が置かれる列の位置になり、数値が伸びていく先の端を決めるのは<a href="#number.yb,座標">number.yb</a>のほうになる。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.83</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="number.xr,座標">
 				<dt class="entry">number.xr,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>カウンタ数値のX座標。右起点。</p>
+					<p>カウンタ数値のX座標。右起点。<a href="#number.x,座標">number.x</a>と同じもの。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -1865,12 +1894,23 @@ communicatebox.height,20
 			<dl id="number.y,座標">
 				<dt class="entry">number.y,座標 <a href="#note1">*1</a></dt>
 				<dd class="entry">
-					<p>カウンタ数値のY座標。</p>
+					<p>カウンタ数値のY座標。
+					<br />横書き（<a href="#vertical,0/1">vertical</a>が0）では数値の上端を指す。縦書きでは数値の下端になる（縦書きの数値は下端を基準に上へ向かって伸びる）。</p>
 					<p class="default">不明</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="number.yb,座標">
+				<dt class="entry">number.yb,座標 <a href="#note1">*1</a></dt>
+				<dd class="entry">
+					<p>カウンタ数値のY座標。下起点。<a href="#number.y,座標">number.y</a>と同じもので、縦書きで下端が基準になることを明示したい場合のための別名。</p>
+					<p class="default">不明</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.83</li>
 					</ul>
 				</dd>
 			</dl>

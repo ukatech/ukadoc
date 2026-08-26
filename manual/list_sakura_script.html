@@ -1654,9 +1654,11 @@
 					<br>\_l実行直後には、トラブル防止のため行揃えが左揃えにリセットされる点に注意。必要に応じて再度指定しなおすこと。</p>
 					<dl>
 						<dt>数値</dt>
-						<dd>バルーンの文字描画範囲左上からのピクセル単位座標</dd>
+						<dd>バルーンの文字描画開始点（<a href="./descript_balloon.html#origin.x,座標">origin</a>の位置。横書きでは文字描画範囲の左上）からのピクセル単位座標</dd>
 						<dt>(省略)</dt>
 						<dd>移動しない。X,Y両方ともに省略すると無効果。</dd>
+						<dt>centerx / centery</dt>
+						<dd>Xにcenterx、Yにcenteryと書くと、バルーン画像の中央（幅／高さの半分）に移動する。これだけは文字描画開始点ではなくバルーン画像そのものが基準。</dd>
 						<dt>XXem</dt>
 						<dd>後ろにemとつけると、文字高さを基準とした座標指定となる。1em＝タグを書いた時点での文字高さ。小数点指定可能。</dd>
 						<dt>XXlh</dt>
@@ -1666,6 +1668,9 @@
 						<dt>@XX</dt>
 						<dd>現在の文字描画位置からの相対座標となる。Xがマイナス値だと左、Yがマイナス値だと上。emや%指定との共存可能。</dd>
 					</dl>
+					<p><a href="./descript_balloon.html#vertical,0/1">縦書きバルーン</a>でも座標軸はバルーン画像そのままで、Xは右方向・Yは下方向が正。
+					<br>ただし文字描画開始点が文字描画範囲の<em class="specsign">右上</em>になり、そこから左へ向かって列が進むため、次の列へ移るにはXにマイナス値を指定することになる。Yは字送り方向（上から下）なので横書きと同じ感覚で使える。
+					<br>例えば\_l[@-1lh,0]で「1列ぶん左の列の先頭へ」（横書きの\_l[0,@1lh]にあたる）、\_l[,@1em]で「字送りを1文字ぶん進める」となる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

@@ -1391,7 +1391,8 @@
 			<dl id="currentghost.balloon.scope(ID).validwidth">
 				<dt class="entry">currentghost.balloon.scope(ID).validwidth</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える幅。baseposに関係なく描画範囲全てを示す。</p>
+					<p>現在のバルーンの文字描画に使える幅。baseposに関係なく描画範囲全てを示す。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は列が並ぶ方向（右から左）に使える幅で、スクロール後の描画幅と一致する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1400,7 +1401,8 @@
 			<dl id="currentghost.balloon.scope(ID).validwidth.initial">
 				<dt class="entry">currentghost.balloon.scope(ID).validwidth.initial</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える幅（basepos.x＝文字開始点を考慮したもの）</p>
+					<p>現在のバルーンの文字描画に使える幅（basepos.x＝文字開始点を考慮したもの）
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は列が並ぶ方向に使える幅で、1列目の開始位置（basepos）を考慮したもの。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
@@ -1409,7 +1411,8 @@
 			<dl id="currentghost.balloon.scope(ID).validheight">
 				<dt class="entry">currentghost.balloon.scope(ID).validheight</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える高さ。baseposに関係なく描画範囲全てを示す。スクロール後の描画高さと一致。</p>
+					<p>現在のバルーンの文字描画に使える高さ。baseposに関係なく描画範囲全てを示す。スクロール後の描画高さと一致。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は1列の長さ（＝1列に書ける字送りの長さ）で、スクロールしても変化しない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1418,7 +1421,8 @@
 			<dl id="currentghost.balloon.scope(ID).validheight.initial">
 				<dt class="entry">currentghost.balloon.scope(ID).validheight.initial</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画に使える高さ。basepos.y＝文字開始点を考慮したもの。スクロール前の描画高さと一致。</p>
+					<p>現在のバルーンの文字描画に使える高さ。basepos.y＝文字開始点を考慮したもの。スクロール前の描画高さと一致。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は1列の長さで、字送りの開始位置（basepos）を考慮したもの。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
@@ -1427,7 +1431,8 @@
 			<dl id="currentghost.balloon.scope(ID).lines">
 				<dt class="entry">currentghost.balloon.scope(ID).lines</dt>
 				<dd class="entry">
-					<p>現在のバルーンのおさまる行数の最大値。baseposに関係なく描画範囲全てを示す。スクロール後の表示行数と一致。</p>
+					<p>現在のバルーンのおさまる行数の最大値。baseposに関係なく描画範囲全てを示す。スクロール後の表示行数と一致。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は「行」が「列」に読み替わり、おさまる列数になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1436,7 +1441,8 @@
 			<dl id="currentghost.balloon.scope(ID).lines.initial">
 				<dt class="entry">currentghost.balloon.scope(ID).lines.initial</dt>
 				<dd class="entry">
-					<p>現在のバルーンのおさまる行数の最大値。basepos.y＝文字開始点を考慮したもの。スクロール前の表示行数と一致。</p>
+					<p>現在のバルーンのおさまる行数の最大値。basepos.y＝文字開始点を考慮したもの。スクロール前の表示行数と一致。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は「行」が「列」に読み替わり、おさまる列数になる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
@@ -1445,7 +1451,8 @@
 			<dl id="currentghost.balloon.scope(ID).basepos.x">
 				<dt class="entry">currentghost.balloon.scope(ID).basepos.x</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画開始点(X座標)。描画範囲の左端とは限らない。</p>
+					<p>現在のバルーンの文字描画開始点(X座標)。描画範囲の左端とは限らない。バルーン画像の左上を原点とした座標。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は1列目の右端（＝<a href="./descript_balloon.html#origin.x,座標">origin.x</a>）を指す。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
@@ -1454,7 +1461,8 @@
 			<dl id="currentghost.balloon.scope(ID).basepos.y">
 				<dt class="entry">currentghost.balloon.scope(ID).basepos.y</dt>
 				<dd class="entry">
-					<p>現在のバルーンの文字描画開始点(Y座標)。描画範囲の上端とは限らない。</p>
+					<p>現在のバルーンの文字描画開始点(Y座標)。描画範囲の上端とは限らない。バルーン画像の左上を原点とした座標。
+					<br /><a href="./descript_balloon.html#vertical,0/1">縦書き</a>の場合は字送りの開始位置（1文字目の上端。＝<a href="./descript_balloon.html#origin.y,座標">origin.y</a>）を指す。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" />(2.3.72) </li>
 					</ul>
@@ -1494,8 +1502,9 @@
 				<dt class="entry">currentghost.balloon.scope(ID).vertical</dt>
 				<dd class="entry">
 					<p>現在のバルーンが<a href="./descript_balloon.html#vertical,0/1">縦書き</a>かどうか。縦書きなら1、横書きなら0。
-					<br />縦書きの場合、<a href="#currentghost.balloon.scope(ID).validwidth">validwidth</a>・<a href="#currentghost.balloon.scope(ID).validheight">validheight</a>・<a href="#currentghost.balloon.scope(ID).lines">lines</a>は「画面上の向き」ではなく「文字の送り方向を基準にした向き」の値になり、それぞれ「1列の長さ」「列が進む方向に使える幅」「収まる列数」を示す。
-					<br />文字数の計算などで縦書きと横書きを区別する必要がある場合に使う。</p>
+					<br /><a href="#currentghost.balloon.scope(ID).validwidth">validwidth</a>・<a href="#currentghost.balloon.scope(ID).validheight">validheight</a>は縦書きでも名前どおり「画面上の向き」の値で、縦書きではvalidwidthが「列が進む方向に使える幅」、validheightが「1列の長さ」になる。<a href="#currentghost.balloon.scope(ID).lines">lines</a>は縦横どちらでも「収まる行数」（縦書きでは列数）を示す。
+					<br />1行（1列）に何文字入るかを計算したい場合は、縦書きならvalidheight、横書きならvalidwidthを見ること。この判別のためにこのプロパティを使う。
+					<br />※SSP 2.8.83で仕様変更。2.8.80では縦書き時のvalidwidth・validheightが「文字の送り方向を基準にした向き」の値だった。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.80</li>
 					</ul>
