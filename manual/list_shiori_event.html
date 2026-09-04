@@ -532,6 +532,7 @@
 				<li><a href="#OnDeviceRemove">OnDeviceRemove</a></li>
 				<li><a href="#OnTabletMode">OnTabletMode</a></li>
 				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
+				<li><a href="#OnDesktopWallpaperChange">OnDesktopWallpaperChange</a></li>
 				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
 				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
 				<li><a href="#OnRecycleBinEmptyFromOther">OnRecycleBinEmptyFromOther</a></li>
@@ -2914,10 +2915,13 @@
 			<dl id="OnWallpaperChange">
 				<dt class="entry">OnWallpaperChange</dt>
 				<dd class="entry">
-					<p>画像ファイルのDnDによって壁紙が変更された際に発生。</p>
+					<p>画像ファイルのDnDによって壁紙が変更された際に発生。<br>
+					OS側で壁紙が変更されたことの通知は<a href="#OnDesktopWallpaperChange">OnDesktopWallpaperChange</a>。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。</dd>
+						<dt>Reference1</dt>
+						<dd>※SSPのみ　ドロップされたキャラクターのスコープ番号。(本体側0,相方1...)</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -5012,6 +5016,45 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.02</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnDesktopWallpaperChange">
+				<dt class="entry">OnDesktopWallpaperChange</dt>
+				<dd class="entry">
+					<p>OS側でデスクトップの壁紙が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em><br>
+					利用者が個人用設定などで壁紙を変えた場合のほか、スライドショーやWindowsスポットライトによる自動的な差し替え、テーマの切り替えでも発生する。<br>
+					スライドショーとスポットライトは最短1分間隔で自動的に切り替わるため、この2つがきっかけの場合は起動後であってもNOTIFY(喋れない)で通知される。<br>
+					画像ファイルのDnDによって壁紙を変更した際の<a href="#OnWallpaperChange">OnWallpaperChange</a>とは別のイベントで、SSP自身が壁紙を変更した場合(Reference1がself)には両方が発生する。両方に反応する場合は二重にならないよう注意。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>init (起動時通知) か update (起動後の変更)</dd>
+						<dt>Reference1</dt>
+						<dd>変更のきっかけ。<br>
+						user：利用者が変更した<br>
+						slideshow：スライドショーの自動送り<br>
+						spotlight：Windowsスポットライトの自動更新<br>
+						theme：テーマの切り替えに伴うもの<br>
+						self：SSP自身が変更した(画像のDnD・プロファイルからの復元)<br>
+						unknown：変更されたことは確かだが、きっかけが判別できない</dd>
+						<dt>Reference2</dt>
+						<dd>現在の壁紙画像のフルパス。単色背景の場合や取得できなかった場合は空。<br>
+						Windowsの仕様上、利用者が選んだ元の画像ファイルではなく、OSが作成したキャッシュ(TranscodedWallpaperやスポットライトのキャッシュ)のパスになることがある。</dd>
+						<dt>Reference3</dt>
+						<dd>直前の壁紙画像のフルパス。Reference0がinitの場合は空。</dd>
+						<dt>Reference4</dt>
+						<dd>表示スタイル。center / tile / stretch / fit / fill / span のいずれか。</dd>
+						<dt>Reference5</dt>
+						<dd>デスクトップの背景色。壁紙の余白に出る色。R,G,B の半角カンマ区切り。</dd>
+						<dt>Reference6～</dt>
+						<dd>モニタごとの壁紙情報が以下のフォーマットでモニタの数だけ後ろに続く。[\1]はバイト値1。<br>
+						モニタ番号[\1]壁紙画像のフルパス[\1]表示スタイル<br>
+						モニタ番号は<a href="#OnDisplayChangeEx">OnDisplayChangeEx</a>のReference1～の並び順と対応する(Reference1がモニタ番号0)。<br>
+						表示スタイルはOSがモニタごとに保持していないため、現状はすべて同じ値(Reference4と同一)になる。<br>
+						モニタごとの壁紙を扱えない環境(Windows 7以前)ではReference6以降は付かない。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.86</li>
 					</ul>
 				</dd>
 			</dl>
