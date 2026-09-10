@@ -475,6 +475,9 @@
 				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
 				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
 				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a></li>
+				<li><a href="#OnExecuteScheduleComplete">OnExecuteScheduleComplete</a></li>
+				<li><a href="#OnExecuteScheduleFailure">OnExecuteScheduleFailure</a></li>
+				<li><a href="#OnExecuteScheduleGetComplete">OnExecuteScheduleGetComplete</a></li>
 				<li><a href="#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a></li>
 				<li><a href="#OnExecuteWebSocketReceive">OnExecuteWebSocketReceive</a></li>
 				<li><a href="#OnExecuteWebSocketReconnect">OnExecuteWebSocketReconnect</a></li>
@@ -4420,6 +4423,59 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteScheduleComplete">
+				<dt class="entry">OnExecuteScheduleComplete</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_execute,schedule-add,オプション,オプション,オプション..._">\![execute,schedule-add]</a>・<a href="list_sakura_script.html#_!_execute,schedule-delete,UID,オプション..._">\![execute,schedule-delete]</a>で、ゴースト用の予定表への登録・削除が完了した際に発生。</p>
+					<p>--eventでOnから始まるIDを指定した場合は、そのIDがイベント名になる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>操作の種類。add または delete</dd>
+						<dt>Reference1</dt>
+						<dd>対象の予定のUID。schedule-addでUIDを省略した場合は、SSPが割り当てたUIDが入る。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteScheduleFailure">
+				<dt class="entry">OnExecuteScheduleFailure</dt>
+				<dd class="entry">
+					<p>\![execute,schedule-add/schedule-delete]が失敗した際に発生。</p>
+					<p>--eventでOnから始まるIDを指定した場合は、そのIDの後ろにFailureをつけたイベント名になる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>操作の種類。add または delete</dd>
+						<dt>Reference1</dt>
+						<dd>失敗の理由
+						<br />notauthorized : SSTPなど外部から送られたスクリプトで登録・削除しようとした
+						<br />invalid : --summary・--startが無い、日時の書式が正しくない、UIDに使えない文字が含まれている、schedule-deleteでUIDが無い
+						<br />notfound : schedule-deleteで指定したUIDの予定が無い
+						<br />save : ファイルへの保存に失敗した（登録・削除自体は反映されている）</dd>
+						<dt>Reference2</dt>
+						<dd>指定されたUID（無ければ空）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteScheduleGetComplete">
+				<dt class="entry">OnExecuteScheduleGetComplete</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_execute,schedule-get,オプション,オプション,オプション..._">\![execute,schedule-get]</a>で、ゴースト用の予定表を読み出した際に発生。</p>
+					<p>--eventでOnから始まるIDを指定した場合は、そのIDがイベント名になる。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd><a href="#OnExecuteICalComplete">OnExecuteICalCompleteと同じ</a>。
+						<br />対象はゴースト用の予定表だけで、ユーザーが登録した予定やスケジュールセンサの予定は含まれない。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
 					</ul>
 				</dd>
 			</dl>

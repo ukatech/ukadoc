@@ -507,6 +507,9 @@
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,ical-post,URL,オプション,オプション,オプション..._">\![execute,ical-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,schedule-add,オプション,オプション,オプション..._">\![execute,schedule-add,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,schedule-delete,UID,オプション..._">\![execute,schedule-delete,UID,オプション...]</a></li>
+				<li><a href="#_!_execute,schedule-get,オプション,オプション,オプション..._">\![execute,schedule-get,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,websocket,URL,オプション,オプション,オプション..._">\![execute,websocket,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_send,websocket,URL,data1,data2,..._">\![send,websocket,URL,data1,data2,...]</a></li>
 				<li><a href="#_!_send,websocket-binary,URL,base64data_">\![send,websocket-binary,URL,base64data]</a></li>
@@ -5259,6 +5262,70 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
 					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,schedule-add,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,schedule-add,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p>ゴースト用の予定表に予定を1件登録する。登録した予定はSSPのカレンダーに表示され、ユーザーの予定と同じく今日の予定や<a href="list_shiori_event.html#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a>の対象になる。
+					<br />ゴースト用の予定表は、ユーザーの予定・スケジュールセンサとは別のファイル（data/schedule/ghost/schedule.ics）に保存され、すべてのゴーストで共有される。他のゴーストが登録した予定も上書き・削除できる。
+					<br />ユーザーはカレンダー上で閲覧できるが編集はできない。カレンダーのメニュー「すべて削除」→「ゴーストが登録した予定」で一括削除できる。
+					<br />結果は<a href="list_shiori_event.html#OnExecuteScheduleComplete">OnExecuteScheduleComplete</a>、失敗時は<a href="list_shiori_event.html#OnExecuteScheduleFailure">OnExecuteScheduleFailure</a>で通知される。SSTPなど外部から送られたスクリプトでは実行できない。</p>
+					<p>オプション（--summary と --start は必須）
+					<br />--summary=タイトル : 予定のタイトル(SUMMARY)。
+					<br />--start=日時 : 開始日時。yyyymmdd なら終日予定、yyyymmddThhmm または yyyymmddThhmmss なら時刻付き（ローカル時刻）。区切りの - と : は無視される。
+					<br />--end=日時 : 終了日時。書式は --start と同じ。省略時は開始日の1日だけの予定になる。
+					<br />--uid=UID : 予定の識別子。空白を含まない半角英数記号のみ。同じUIDの予定があれば置き換える。省略時はSSPが割り当て、OnExecuteScheduleCompleteで返す。
+					<br />--description=説明 : DESCRIPTION。
+					<br />--location=場所 : LOCATION。
+					<br />--url=URL : URL。
+					<br />--categories=分類 : CATEGORIES。
+					<br />--status=状態 : STATUS（CONFIRMED / TENTATIVE / CANCELLED）。
+					<br />--type=種類 : 予定の種類。<a href="list_shiori_event.html#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a>等のReference0に入る。
+					<br />--rrule=規則 : 繰り返し規則（RRULEの値部分。例 FREQ=WEEKLY;BYDAY=MO）。
+					<br />--exdate=日付 : 繰り返しから除外する日（yyyymmdd）。複数ある場合はカンマ区切り。
+					<br />--notify=分 : 何分前に通知するか。省略時はSSPの設定に従う。
+					<br />--script=スクリプト : 予定に添えるさくらスクリプト。通知時・予定を読むときに実行される。
+					<br />--event=イベントID : Onから始まるIDを指定すると、結果のイベント名がそのIDになる（失敗時はIDの後ろにFailureをつけた名前）。
+					<br />カンマを含む値（--rrule・--exdate など）を指定する場合は、引数全体を " " で囲むこと。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![execute,schedule-add,--uid=myghost-meeting,--summary=打ち合わせ,--start=20261001T1000,--end=20261001T1100,"--rrule=FREQ=WEEKLY;BYDAY=TH",--notify=10,--event=OnMyScheduleAdded]2026年10月1日から毎週木曜10時の予定を登録し、10分前に通知させる。</code></p>
+							<p><code type="SakuraScript">\![execute,schedule-add,--summary=記念日,--start=20261224,--rrule=FREQ=YEARLY]毎年12月24日の終日予定を登録する。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_execute,schedule-delete,UID,オプション..._">
+				<dt class="entry">\![execute,schedule-delete,UID,オプション...]</dt>
+				<dd class="entry">
+					<p>ゴースト用の予定表から、指定したUIDの予定を削除する。ユーザーの予定・スケジュールセンサの予定は削除できない。
+					<br />結果は<a href="list_shiori_event.html#OnExecuteScheduleComplete">OnExecuteScheduleComplete</a>、失敗時（該当する予定が無い場合を含む）は<a href="list_shiori_event.html#OnExecuteScheduleFailure">OnExecuteScheduleFailure</a>で通知される。SSTPなど外部から送られたスクリプトでは実行できない。
+					<br />オプションは --event=イベントID のみ。<a href="#_!_execute,schedule-add,オプション,オプション,オプション..._">schedule-add</a>と同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,schedule-get,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,schedule-get,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p>ゴースト用の予定表に登録されている予定を読み出し、<a href="list_shiori_event.html#OnExecuteScheduleGetComplete">OnExecuteScheduleGetComplete</a>で通知する。Referenceの形式は<a href="list_shiori_event.html#OnExecuteICalComplete">OnExecuteICalComplete</a>と同じ。
+					<br />対象はゴースト用の予定表だけで、ユーザーの予定・スケジュールセンサの予定は含まれない。
+					<br />どの予定をいくつ返すかは<a href="#notes_executeical">iCal絞り込みオプション</a>（--from・--to・--expand・--limit）で指定する。ほかに --event=イベントID が使える。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![execute,schedule-get,--expand=7,--event=OnMySchedule]今日から7日ぶんのゴースト用の予定を「発生」単位で展開し、OnMyScheduleで受け取る。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,websocket,URL,オプション,オプション,オプション..._">
