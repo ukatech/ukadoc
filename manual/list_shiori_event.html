@@ -449,6 +449,7 @@
 				<li><a href="#OnSchedulepostComplete">OnSchedulepostComplete</a></li>
 			</ul>
 			<ul>
+				<li class="caption"><a href="#caption_schedulesensetiming">スケジュールセンサの更新タイミングとイベント</a></li>
 				<li class="caption"><a href="#caption_scheduletype">スケジュールタイプ</a></li>
 			</ul>
 		</section>
@@ -4071,10 +4072,13 @@
 			<dl id="OnSchedulesenseBegin">
 				<dt class="entry">OnSchedulesenseBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが接続開始する際に発生。</p>
+					<p>スケジュールセンサが接続開始する際に発生。<br />特定のゴーストではなく起動中の全ゴーストに通知される。</p>
+					<p><strong class="warning">手動更新（カレンダーのメニューからセンサを選んで更新した場合）でのみ発生する。</strong>定期チェックでは<a href="#caption_schedulesensetiming">後述</a>の通り発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
+						<dt>Reference1</dt>
+						<dd>スケジュールセンサの購読URL</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4084,7 +4088,9 @@
 			<dl id="OnSchedulesenseComplete">
 				<dt class="entry">OnSchedulesenseComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理が完了した際に発生。</p>
+					<p>スケジュールセンサの処理が完了した際に発生。<br />特定のゴーストではなく起動中の全ゴーストに通知される。</p>
+					<p><strong class="warning">手動更新でのみ発生する。</strong>定期チェックでは<a href="#caption_schedulesensetiming">後述</a>の通り発生しない。
+					<br />取得はできたが更新が無かった場合（304 Not Modifiedや内容が同一だった場合）も、成功として本イベントが発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -4099,10 +4105,13 @@
 			<dl id="OnSchedulesenseFailure">
 				<dt class="entry">OnSchedulesenseFailure</dt>
 				<dd class="entry">
-					<p>スケジュールセンサの処理に失敗した場合に発生。</p>
+					<p>スケジュールセンサの処理に失敗した場合に発生。<br />特定のゴーストではなく起動中の全ゴーストに通知される。</p>
+					<p>Begin/Completeと違い、<a href="#caption_schedulesensetiming">定期チェックでも発生する</a>。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）</dd>
+						<dd><a href="#caption_headlinesenseresult">失敗した理由</a>（ヘッドラインセンサのものと共通）。取得できなかった場合can't download、取得はできたがiCalとして解析できなかった場合can't analyze。</dd>
+						<dt>Reference1</dt>
+						<dd>スケジュールセンサの名前。定期チェックではBeginが無いため、これが無いとどのセンサが失敗したのか分からない</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -4112,7 +4121,8 @@
 			<dl id="OnSchedulepostBegin">
 				<dt class="entry">OnSchedulepostBegin</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿モードで接続開始する際に発生。</p>
+					<p>[旧仕様]スケジュールセンサが投稿モードで接続開始する際に発生。
+					<br /><strong class="warning">投稿機能自体が廃止されているため、現在のSSPでは発生しない。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -4125,7 +4135,8 @@
 			<dl id="OnSchedulepostComplete">
 				<dt class="entry">OnSchedulepostComplete</dt>
 				<dd class="entry">
-					<p>スケジュールセンサが投稿処理を完了した際に発生。</p>
+					<p>[旧仕様]スケジュールセンサが投稿処理を完了した際に発生。
+					<br /><strong class="warning">投稿機能自体が廃止されているため、現在のSSPでは発生しない。</strong></p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>スケジュールセンサの名前</dd>
@@ -4135,6 +4146,15 @@
 					</ul>
 				</dd>
 			</dl>
+			<section class="caption" id="caption_schedulesensetiming">
+				<h1>スケジュールセンサの更新タイミングとイベント</h1>
+				<dl>
+					<dt>手動更新</dt>
+					<dd>カレンダーのメニューからセンサを選んで更新した場合。Begin→Complete（または Failure）が全て発生する。</dd>
+					<dt>定期チェック</dt>
+					<dd>SSPが30分おきに全センサを自動で巡回する場合。<a href="#OnSchedulesenseFailure">OnSchedulesenseFailure</a>のみ発生する。<br />全センサぶんのBegin/Completeが定期的に流れるとゴーストが喋りすぎるため、異常時だけ通知される。</dd>
+				</dl>
+			</section>
 			<section class="caption" id="caption_scheduletype">
 				<h1>スケジュールタイプ</h1>
 				<dl>
