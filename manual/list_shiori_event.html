@@ -478,6 +478,8 @@
 				<li><a href="#OnExecuteScheduleComplete">OnExecuteScheduleComplete</a></li>
 				<li><a href="#OnExecuteScheduleFailure">OnExecuteScheduleFailure</a></li>
 				<li><a href="#OnExecuteScheduleGetComplete">OnExecuteScheduleGetComplete</a></li>
+				<li><a href="#OnExecuteFileWatchChange">OnExecuteFileWatchChange</a></li>
+				<li><a href="#OnExecuteFileWatchFailure">OnExecuteFileWatchFailure</a></li>
 				<li><a href="#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a></li>
 				<li><a href="#OnExecuteWebSocketReceive">OnExecuteWebSocketReceive</a></li>
 				<li><a href="#OnExecuteWebSocketReconnect">OnExecuteWebSocketReconnect</a></li>
@@ -4473,6 +4475,51 @@
 						<dt>Reference0～</dt>
 						<dd><a href="#OnExecuteICalComplete">OnExecuteICalCompleteと同じ</a>。
 						<br />対象はゴースト用の予定表だけで、ユーザーが登録した予定やスケジュールセンサの予定は含まれない。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteFileWatchChange">
+				<dt class="entry">OnExecuteFileWatchChange</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch]</a>で監視しているファイルまたはディレクトリが変化した際に発生。</p>
+					<p>--asyncでOnから始まるIDを指定した場合は、そのIDがイベント名になる。</p>
+					<p>ファイルへの書き込みは短い間に何度も起きることがあるため、1回の保存で複数回発生することがある。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--asyncで指定した文字列そのもの（無ければ空）</dd>
+						<dt>Reference1</dt>
+						<dd>指定したパスの文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>変化の種類
+						<br />ファイルの場合 : modified（更新）、created（作成）、deleted（削除）
+						<br />ディレクトリの場合 : changed（直下で作成・削除・名前変更・更新のいずれかがあった）、deleted（ディレクトリ自体が無くなった）</dd>
+						<dt>Reference3</dt>
+						<dd>監視しているファイルまたはディレクトリのフルパス</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteFileWatchFailure">
+				<dt class="entry">OnExecuteFileWatchFailure</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch]</a>が失敗した際や、監視を続けられなくなった際に発生。この場合、その監視は解除される。</p>
+					<p>--asyncでOnから始まるIDを指定した場合は、そのIDの後ろにFailureをつけたイベント名になる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--asyncで指定した文字列そのもの（無ければ空）</dd>
+						<dt>Reference1</dt>
+						<dd>指定したパスの文字列そのもの</dd>
+						<dt>Reference2</dt>
+						<dd>失敗の理由
+						<br />notauthorized : SSTPなど外部から送られたスクリプトで監視しようとした
+						<br />invalid : パスが指定されていない
+						<br />notfound : 監視先のディレクトリ（ファイルの場合はそのファイルを置くディレクトリ）が無い、監視を始められない、または監視中に無くなった
+						<br />limit : SSP全体で監視しているディレクトリの種類が上限（63）を超える</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>

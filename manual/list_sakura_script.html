@@ -526,6 +526,8 @@
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,種別]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
+				<li><a href="#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch,パス,オプション...]</a></li>
+				<li><a href="#_!_cancel,filewatch,パス_">\![cancel,filewatch,パス]</a></li>
 				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
 				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata]</a></li>
 				<li><a href="#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a></li>
@@ -5581,6 +5583,37 @@
 							<p><code type="SakuraScript">\![execute,nslookup,--host=ssp.shillest.net,--event=nslookupテスト]ばぐとら研究所のホスト名指定でIPを調べる。調べた内容は成功時に通知されるOnNSLookupCompleteのReference3に入っている。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_execute,filewatch,パス,オプション..._">
+				<dt class="entry">\![execute,filewatch,パス,オプション...]</dt>
+				<dd class="entry">
+					<p>指定したファイルまたはディレクトリの監視を始め、変化があるたびに<a href="list_shiori_event.html#OnExecuteFileWatchChange">OnExecuteFileWatchChange</a>で通知する。監視を始められなかった場合や、監視中に監視先のディレクトリが無くなった場合は<a href="list_shiori_event.html#OnExecuteFileWatchFailure">OnExecuteFileWatchFailure</a>で通知され、その監視は終わる。SSTPなど外部から送られたスクリプトでは実行できない。<br />パラメータは以下の通り。</p>
+					<ul class="description">
+						<li>パス……監視するファイルまたはディレクトリ。相対パス指定の場合はghost/master/以下の相対パスと解釈される。</li>
+						<li>--async=イベントまたは識別子……Onではじまる文字列を指定すると(後述のイベントの替わりに)そのイベントが起きる</li>
+					</ul>
+					<p>ファイルを指定した場合は、更新・作成・削除を通知する。まだ存在しないファイルも指定でき、作成されると通知される。ただし、そのファイルを置くディレクトリは存在している必要がある。
+					<br />ディレクトリを指定した場合は、直下でファイルやディレクトリの作成・削除・名前変更・更新があったことだけを通知する。どのファイルが変わったかは通知されず、サブディレクトリの中の変化も通知されない。ディレクトリとして監視するには、実行時にそのディレクトリが存在している必要がある（存在しないパスはファイルとして監視される）。
+					<br />同じパスをもう一度指定すると、以前の指定は置き換えられる。監視はゴーストの終了時にすべて解除される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![execute,filewatch,config.json,--async=OnConfigChanged]ghost/master/config.jsonが変化するたびに、OnConfigChangedイベントが起きる。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_cancel,filewatch,パス_">
+				<dt class="entry">\![cancel,filewatch,パス]</dt>
+				<dd class="entry">
+					<p><a href="#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch]</a>で始めた監視を解除する。パスは監視を始めたときと同じ場所を指すように指定する。該当する監視が無い場合は無視される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_execute,createnar">
