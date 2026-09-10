@@ -4426,10 +4426,10 @@
 			<dl id="OnExecuteWebSocketOpen">
 				<dt class="entry">OnExecuteWebSocketOpen</dt>
 				<dd class="entry">
-					<p>WebSocket接続確立時（HTTP 101 Upgrade成功後）に発生。初回接続のみ発火し、再接続成功時はOnExecuteWebSocketReconnectが発生する。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Open" がイベント名となる。</p>
+					<p>WebSocket接続確立時（HTTP 101 Upgrade成功後）に発生。初回接続のみ発火し、再接続成功時はOnExecuteWebSocketReconnectが発生する。<br />--asyncオプションで指定したeventIDが "On" で始まる場合はeventID+"Open" がイベント名となる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>接続URL (ws:// または wss://)。</dd>
 						<dt>Reference2</dt>
@@ -4443,10 +4443,10 @@
 			<dl id="OnExecuteWebSocketReceive">
 				<dt class="entry">OnExecuteWebSocketReceive</dt>
 				<dd class="entry">
-					<p>WebSocket接続中にサーバーからデータフレームを受信するたびに発生。断片化フレームは自動的に再組み立てされてから発火する。Ping/Pong/Closeフレームでは発火しない。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventIDそのままがイベント名となる。</p>
+					<p>WebSocket接続中にサーバーからデータフレームを受信するたびに発生。断片化フレームは自動的に再組み立てされてから発火する。Ping/Pong/Closeフレームでは発火しない。<br />--asyncオプションで指定したeventIDが "On" で始まる場合はeventIDそのままがイベント名となる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>接続URL。</dd>
 						<dt>Reference2</dt>
@@ -4462,10 +4462,10 @@
 			<dl id="OnExecuteWebSocketReconnect">
 				<dt class="entry">OnExecuteWebSocketReconnect</dt>
 				<dd class="entry">
-					<p>エラー切断後の自動再接続が成功したときに発生。OnExecuteWebSocketOpenは発火せず、このイベントがOpenに相当する役割を担う。再接続後の受信は通常どおりOnExecuteWebSocketReceiveで通知される。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Reconnect" がイベント名となる。</p>
+					<p>エラー切断後の自動再接続が成功したときに発生。OnExecuteWebSocketOpenは発火せず、このイベントがOpenに相当する役割を担う。再接続後の受信は通常どおりOnExecuteWebSocketReceiveで通知される。<br />--asyncオプションで指定したeventIDが "On" で始まる場合はeventID+"Reconnect" がイベント名となる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>接続URL。</dd>
 						<dt>Reference2</dt>
@@ -4479,10 +4479,10 @@
 			<dl id="OnExecuteWebSocketClose">
 				<dt class="entry">OnExecuteWebSocketClose</dt>
 				<dd class="entry">
-					<p>WebSocket接続が最終的に切断されたときに発生。自動再接続を試みた場合はその後に発火する。Failure時は発火しない。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Close" がイベント名となる。</p>
+					<p>WebSocket接続が最終的に切断されたときに発生。自動再接続を試みた場合はその後に発火する。Failure時は発火しない。<br />--asyncオプションで指定したeventIDが "On" で始まる場合はeventID+"Close" がイベント名となる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>接続URL。</dd>
 						<dt>Reference2</dt>
@@ -4496,10 +4496,10 @@
 			<dl id="OnExecuteWebSocketFailure">
 				<dt class="entry">OnExecuteWebSocketFailure</dt>
 				<dd class="entry">
-					<p>初回接続でHTTP 101 Upgradeに失敗したとき、または接続中にエラー切断が発生し自動再接続を5回試みてもすべて失敗したときに発生。<br />--eventオプションで指定したeventIDが "On" で始まる場合はeventID+"Failure" がイベント名となる。</p>
+					<p>初回接続でHTTP 101 Upgradeに失敗したとき、または接続中にエラー切断が発生し自動再接続を5回試みてもすべて失敗したときに発生。<br />--asyncオプションで指定したeventIDが "On" で始まる場合はeventID+"Failure" がイベント名となる。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1</dt>
 						<dd>接続URL。</dd>
 						<dt>Reference2</dt>
@@ -4513,10 +4513,10 @@
 			<dl id="OnExecuteWebSocket_SSLInfo">
 				<dt class="entry">OnExecuteWebSocket_SSLInfo</dt>
 				<dd class="entry">
-					<p>wss://接続時にSSL/TLS接続が確立したときに発生。初回接続時のみ発火し、Upgradeの成否にかかわらず発火する。イベント名は常に固定で--eventオプションによる変更は不可。</p>
+					<p>wss://接続時にSSL/TLS接続が確立したときに発生。初回接続時のみ発火し、Upgradeの成否にかかわらず発火する。イベント名は常に固定で--asyncオプションによる変更は不可。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd>Sakura Scriptの--eventオプションで指定されたイベント識別子。</dd>
+						<dd>Sakura Scriptの--asyncオプションで指定されたイベント識別子。</dd>
 						<dt>Reference1～</dt>
 						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoのReference1以降と同じ</a>。</dd>
 					</dl>
