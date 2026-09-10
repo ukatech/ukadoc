@@ -505,6 +505,8 @@
 				
 				<li><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,rss-post,URL,オプション,オプション,オプション..._">\![execute,rss-post,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get,URL,オプション,オプション,オプション...]</a></li>
+				<li><a href="#_!_execute,ical-post,URL,オプション,オプション,オプション..._">\![execute,ical-post,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_execute,websocket,URL,オプション,オプション,オプション..._">\![execute,websocket,URL,オプション,オプション,オプション...]</a></li>
 				<li><a href="#_!_send,websocket,URL,data1,data2,..._">\![send,websocket,URL,data1,data2,...]</a></li>
 				<li><a href="#_!_send,websocket-binary,URL,base64data_">\![send,websocket-binary,URL,base64data]</a></li>
@@ -512,6 +514,7 @@
 				<li><a href="#_!_cancel,websocket,URL_">\![cancel,websocket,URL]</a></li>
 				
 				<li><a href="#_!_cancel,http,URL_">\![cancel,http,URL]</a></li>
+				<li><a href="#_!_cancel,ical,URL_">\![cancel,ical,URL]</a></li>
 
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
@@ -556,6 +559,7 @@
 				<li class="caption"><a href="#notes_passivemode">PassiveMode</a></li>
 				<li class="caption"><a href="#notes_inductionmode">InductionMode</a></li>
 				<li class="caption"><a href="#notes_executehttp">http get/post オプション</a></li>
+				<li class="caption"><a href="#notes_executeical">iCal絞り込みオプション</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -5229,6 +5233,34 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="_!_execute,ical-get,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,ical-get,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをiCalendar(RFC 5545)のカレンダーとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<p>取得したイベントは<a href="list_shiori_event.html#OnExecuteICalComplete">OnExecuteICalComplete</a>、失敗時は<a href="list_shiori_event.html#OnExecuteICalFailure">OnExecuteICalFailure</a>で通知される。</p>
+					<p>どのイベントをいくつ返すかは<a href="#notes_executeical">iCal絞り込みオプション</a>（--from・--to・--expand・--limit）で指定する。無指定の場合はファイルに書かれたVEVENTを先頭から最大200件返す。</p>
+					<p>解析対象はVCALENDAR直下のX-WR-CALNAME・X-WR-TIMEZONE・CALSCALEと、VEVENT（およびその中のVALARM）。SUMMARYを持たないVEVENTは無効とみなして除外される。<br />なお、--nofileを指定しても解析用の一時ファイルは作成される（指定は無視される）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![execute,ical-get,https://example.com/calendar.ics,--async=OnMyCalendar,--expand=7]今日から7日ぶんの予定を「発生」単位で展開し、OnMyCalendarで受け取る。</code></p>
+							<p><code type="SakuraScript">\![execute,ical-get,https://example.com/calendar.ics,--async=OnMyCalendar,--from=20261201,--to=20261231,--limit=50]2026年12月に発生する予定を最大50件、VEVENT単位で受け取る。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_execute,ical-post,URL,オプション,オプション,オプション..._">
+				<dt class="entry">\![execute,ical-post,URL,オプション,オプション,オプション...]</dt>
+				<dd class="entry">
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをiCalendar(RFC 5545)のカレンダーとして解析したのち、解析結果をイベントとして通知する。<br />解析・通知の仕様は<a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">ical-get</a>と同じ。パラメータ群の指定はhttp-postと同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_execute,websocket,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,websocket,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
@@ -5314,6 +5346,18 @@
 					<p>進行中のHTTPリクエストをキャンセルする。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.04</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_cancel,ical,URL_">
+				<dt class="entry">\![cancel,ical,URL]</dt>
+				<dd class="entry">
+					<p>進行中の<a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">ical-get/ical-post</a>リクエストをキャンセルする。</p>
+					<ul class="description">
+						<li>URL……取得開始時に使ったURLと同じ文字列。</li>
+					</ul>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
 					</ul>
 				</dd>
 			</dl>
@@ -5912,7 +5956,7 @@
 				</ul>
 			</section>
 			<section class="caption" id="notes_executehttp">
-				<h1>http/websocket オプション</h1>
+				<h1>http/rss/ical/websocket オプション</h1>
 				<dl>
 					<dt>--accept=Acceptリクエストヘッダの中身 [2.7.34]</dt>
 					<dd>受け取れるContent-Type形式を指定するAcceptヘッダを指定する。</dd>
@@ -5924,9 +5968,10 @@
 					<dd>処理を待たずにSakuraScriptの続きを実行し、処理が完了してからイベントを通知する。
 					<br>HTTPの場合は<a href="list_shiori_event.html#OnExecuteHTTPComplete">OnExecuteHTTPComplete</a>または<a href="list_shiori_event.html#OnExecuteHTTPFailure">OnExecuteHTTPFailure</a>。
 					<br>RSSの場合は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>か<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>。
+					<br>iCalの場合は<a href="list_shiori_event.html#OnExecuteICalComplete">OnExecuteICalComplete</a>か<a href="list_shiori_event.html#OnExecuteICalFailure">OnExecuteICalFailure</a>。 [2.8.90]
 					<br>WebSocketの場合は接続・受信・切断の各タイミングで<a href="list_shiori_event.html#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReceive">Receive</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReconnect">Reconnect</a>/<a href="list_shiori_event.html#OnExecuteWebSocketClose">Close</a>/<a href="list_shiori_event.html#OnExecuteWebSocketFailure">Failure</a>が発生する（常にAsync動作のため--syncは適用不可）。
 					<br>Onから始まらないIDを指定した場合は、上記イベント名通りのイベントが発生する。
-					<br>Onから始まるIDを指定した場合、HTTP/RSSは[指定したID]（成功）/[指定したID]Failure（失敗）が発生する。WebSocketは[指定したID]Open/[指定したID]（受信）/[指定したID]Reconnect/[指定したID]Close/[指定したID]Failureが発生する。
+					<br>Onから始まるIDを指定した場合、HTTP/RSS/iCalは[指定したID]（成功）/[指定したID]Failure（失敗）が発生する。WebSocketは[指定したID]Open/[指定したID]（受信）/[指定したID]Reconnect/[指定したID]Close/[指定したID]Failureが発生する。
 					<br>例:--async=OnExampleのとき HTTP/RSS→OnExample/OnExampleFailure、WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure
 					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く（WebSocketには適用不可）。</dd>
 
@@ -5942,8 +5987,14 @@
 					指定形式によってはparamの書き方に制約があるので注意。<br>
 					[2.6.37] より、Content-Typeリクエストヘッダに直接この情報を反映するようになった。</dd>
 
+					<dt>--expand または --expand=日数 [2.8.90]</dt>
+					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />RRULEによる繰り返しを展開し、「発生」1回ごとに1件返す。日数を書いた場合は--to省略時の期間長（既定30日）になる。</dd>
+
 					<dt>--file=ファイル名</dt>
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
+
+					<dt>--from=yyyymmdd [2.8.90]</dt>
+					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの期間の開始日。省略時は当日。</dd>
 
 					<dt>--header=SomeHeader: リクエストヘッダの中身 [2.6.40]</dt>
 					<dd>任意の名前のリクエストヘッダを設定する。名前と中身を区切るコロンは必須。
@@ -5951,6 +6002,9 @@
 
 					<dt>--insecure [2.7.34]</dt>
 					<dd>TLS証明書の検証をスキップする。</dd>
+
+					<dt>--limit=件数 [2.8.90]</dt>
+					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの最大件数。省略時は200件、0を指定すると無制限。</dd>
 
 					<dt>--log=ファイル名</dt>
 					<dd>サーバとの通信内容をすべてログに記録する。主に開発時のデバッグ用。</dd>
@@ -5962,7 +6016,8 @@
 					<dd>一時ファイルを作成せずメモリ上に取得したデータを展開し、イベントのReference3に格納する。
 					<br />パラメータ指定は取得したデータを解釈すべき文字コード。指定しない場合はUTF-8とみなす。
 					<br />Referenceには改行を含められないので、改行コードはバイト値1に変換される。
-					<br />取得可能なサイズは128KBまで。</dd>
+					<br />取得可能なサイズは128KBまで。
+					<br />[2.8.90] rss-get/rss-post・ical-get/ical-postでは解析用のファイルが必要なため、この指定は無視される。</dd>
 
 					<dt>--no-cache [2.7.34]</dt>
 					<dd>Cache-Control: no-cacheを指定し、キャッシュ利用を抑制する。</dd>
@@ -6006,8 +6061,38 @@
 					<dt>--timeout=秒数</dt>
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
 
+					<dt>--to=yyyymmdd [2.8.90]</dt>
+					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの期間の終了日（この日を含む）。</dd>
+
 					<dt>--m_websocketProtocol=Sec-Websocket-Protocol [2.8.08]</dt>
 					<dd>WebSocket接続の際に使用する、Sec-Websocket-Protocolヘッダを指定する。指定しなければこのヘッダ自体が送られれない。</dd>
+				</dl>
+			</section>
+			<section class="caption" id="notes_executeical">
+				<h1>iCal絞り込みオプション [2.8.90]</h1>
+				<p><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get/ical-post]</a>で、取得したカレンダーからどのイベントを返すかを指定するオプション。他のリクエストでは無視される。</p>
+				<p>--from・--to・--expandのいずれかを書くと「期間モード」になり、期間内に発生する予定だけが返る。<br />どれも書かなかった場合はファイルに書かれたVEVENTを先頭から順にそのまま返す（期間による絞り込みを行わない）。</p>
+				<dl>
+					<dt>期間の決め方</dt>
+					<dd>開始日は--fromの日付、省略時は当日。<br />
+					終了日は--toの日付（その日を含む）。--to省略時は、--expand=日数があればその日数ぶん、--expandに日数を書かなければ30日ぶん、--expand自体が無ければ1830日ぶん。<br />
+					期間の長さは最大1830日に丸められる。--toが--fromより前の場合は--fromの当日1日ぶんとして扱われる。</dd>
+
+					<dt>--expandあり（発生単位）</dt>
+					<dd>RRULEによる繰り返しを1回ずつ展開し、「発生」1回につきReference1件を返す。日付の昇順に並ぶ。<br />
+					同じ予定が期間内に何度も発生する場合、その回数ぶんReferenceが並ぶ。</dd>
+
+					<dt>--expandなし（VEVENT単位）</dt>
+					<dd>期間内に1回でも発生する予定を、VEVENTごとに1件だけ返す。<br />
+					このとき各Referenceの「発生日」には、期間内で最初に発生する日が入る。</dd>
+
+					<dt>件数の上限</dt>
+					<dd>--limitで指定した件数に達した時点で打ち切る。省略時は200件、--limit=0で無制限。</dd>
+
+					<dt>発生日の判定</dt>
+					<dd>RRULE（FREQ・INTERVAL・COUNT・UNTIL・BYDAY・BYMONTHDAY・BYMONTH）とEXDATEを解釈して判定する。<br />
+					DTSTARTからDTENDまでが複数日にわたる予定は、その全ての日を「発生日」とみなす。<br />
+					EXDATEに挙げられた日は、繰り返しの有無に関わらず発生しないものとして扱われる。</dd>
 				</dl>
 			</section>
 		</section>

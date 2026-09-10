@@ -439,6 +439,7 @@
 		<section class="navigation-category">
 			<h1>カレンダーイベント</h1>
 			<ul>
+				<li><a href="#OnScheduleTodayNotify">OnScheduleTodayNotify</a></li>
 				<li><a href="#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a></li>
 				<li><a href="#OnScheduleRead">OnScheduleRead</a></li>
 				<li><a href="#OnSchedulesenseBegin">OnSchedulesenseBegin</a></li>
@@ -466,6 +467,10 @@
 				<li><a href="#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a></li>
 				<li><a href="#OnExecuteHTTPStreaming">OnExecuteHTTPStreaming</a></li>
 				<li><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a></li>
+				<li><a href="#OnExecuteICalComplete">OnExecuteICalComplete</a></li>
+				<li><a href="#OnExecuteICalFailure">OnExecuteICalFailure</a></li>
+				<li><a href="#OnExecuteICalProgress">OnExecuteICalProgress</a></li>
+				<li><a href="#OnExecuteICal_SSLInfo">OnExecuteICal_SSLInfo</a></li>
 				<li><a href="#OnExecuteRSSComplete">OnExecuteRSSComplete</a></li>
 				<li><a href="#OnExecuteRSSFailure">OnExecuteRSSFailure</a></li>
 				<li><a href="#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a></li>
@@ -3628,6 +3633,10 @@
 					<dd>※SSPのみ。リダイレクトが発生しすぎたので処理を中止した。 [2.5.15]</dd>
 					<dt>executing</dt>
 					<dd>※SSPのみ。すでに更新を実行中のため、二重起動を阻止した。 [2.5.26]</dd>
+					<dt>parse</dt>
+					<dd>※SSPのみ。取得はできたが、内容の解析に失敗した。rss-get/rss-post・ical-get/ical-postで発生する。</dd>
+					<dt>downloading</dt>
+					<dd>※SSPのみ。同じURLの取得がすでに進行中のため、二重取得を阻止した。execute-http/rss/icalで発生する。 [2.8.90]</dd>
 					<dt>paramerror</dt>
 					<dd>※SSPのみ。更新実行タグの設定ミスにより更新を実行できなかった。 [2.5.26]</dd>
 				</dl>
@@ -4000,6 +4009,27 @@
 		</section>
 		<section class="category">
 			<h1>カレンダーイベント</h1>
+			<dl id="OnScheduleTodayNotify">
+				<dt class="entry">OnScheduleTodayNotify</dt>
+				<dd class="entry">
+					<p>本体カレンダー機能の「今日の予定」の内容が変化した際に発生。<em class="specsign">[NOTIFY]</em>
+					<br />日付が変わった時、予定を追加・削除した時、スケジュールセンサの取得結果が変わった時など。変化が無ければ発生しない。
+					<br />特定のゴーストではなく起動中の全ゴーストに通知される。</p>
+					<p>Reference0以降が更新後の「今日の予定」1件ずつ。各Referenceの中はバイト値1（以下[\1]）で区切られている。
+					<br />予定が1件も無くなった場合はReferenceが1つも無い状態で発生する。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>イベントの<a href="#caption_scheduletype">タイプ</a> [\1] イベントの内容(caption) [\1] 追加データ(subtitle) [\1] スクリプト(script) [\1] 開始日時 [\1] 終了日時 [\1]
+						<br />予定の数だけReference0,1,2～と続く。末尾にも区切りの[\1]が付く点に注意。
+						<br />開始日時・終了日時はカンマ区切りの「年,月,日,時,分,秒」形式。時刻を設定していない予定は時・分・秒が空になり「2026,9,10,,,」のようになる。
+						<br />終了日時は終了時刻を設定した予定にのみ入る。設定が無ければ空。
+						<br />caption・subtitle・scriptは本体カレンダーに登録された文字列そのままで、さくらスクリプト用のエスケープは行われない。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnSchedule5MinutesToGo">
 				<dt class="entry">OnSchedule5MinutesToGo</dt>
 				<dd class="entry">
@@ -4212,6 +4242,7 @@
 				<dt class="entry">OnExecuteHTTPFailure</dt>
 				<dd class="entry">
 					<p>execute-httpで取得エラーした際に発生。ReferenceはCompleteと同じ。</p>
+					<p>[2.8.90] 同じURLの取得がすでに進行中の場合、後から出したリクエストは実行されずこのイベント(Reference4=downloading)が発生する。それ以前はタグが黙って無視されていた。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
@@ -4271,6 +4302,65 @@
 					</ul>
 				</dd>
 			</dl>
+			<dl id="OnExecuteICalComplete">
+				<dt class="entry">OnExecuteICalComplete</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get/ical-post]</a>で正常に取得・解析完了した際に発生。</p>
+					<p>Reference0がカレンダー全体の情報、Reference1以降が予定1件ずつ。各Referenceの中はバイト値1（以下[\1]）で区切られている。<br />どの予定がいくつ並ぶかは<a href="list_sakura_script.html#notes_executeical">iCal絞り込みオプション</a>で決まる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>カレンダー名(X-WR-CALNAME) [\1] タイムゾーン(X-WR-TIMEZONE) [\1] 暦法(CALSCALE。通常はGREGORIAN) [\1] このイベントで返した予定の件数 [\1] ファイル中の予定の総数 [\1] 絞り込み期間の開始日 [\1] 絞り込み期間の終了日
+						<br />期間の開始日・終了日は「年,月,日,,,」形式。--from・--to・--expandをいずれも指定しなかった場合は空。</dd>
+						<dt>Reference1～</dt>
+						<dd>UID [\1] 開始日時 [\1] 終了日時 [\1] タイトル(SUMMARY) [\1] 説明(DESCRIPTION) [\1] 場所(LOCATION) [\1] URL [\1] 状態(STATUS) [\1] 分類(CATEGORIES) [\1] 繰り返し規則(RRULEの原文) [\1] 終日フラグ [\1] 発生日
+						<br />予定の数だけReference1,2,3～と続く。
+						<br />開始日時・終了日時・発生日は、RSSと同じカンマ区切りの「年,月,日,時,分,秒」形式。終日予定は時・分・秒が空になり「2026,9,10,,,」のようになる。
+						<br />終了日時はその予定の最終日（DTENDの日付値は排他指定なので、1日戻した値が入る）。
+						<br />終日フラグは終日予定なら1、時刻付きなら0。
+						<br />発生日は、--from・--to・--expandのいずれかを指定した場合のみ入る。--expandありなら展開した1回ぶんの発生日、--expandなしなら期間内で最初に発生する日。指定が無い場合は空。
+						<br />RRULEは原文のまま渡されるので、SSPの展開を使わず自前で解釈することもできる。
+						<br />タイトル・説明・場所・URL・分類・カレンダー名は、さくらスクリプトとして解釈されないようエスケープされている（\→\\、%→\%、改行とタブ→半角空白）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteICalFailure">
+				<dt class="entry">OnExecuteICalFailure</dt>
+				<dd class="entry">
+					<p>\![execute,ical-get/ical-post]で取得エラーした際に発生。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd>解析失敗時はReference4=parse。同じURLの取得がすでに進行中だった場合はReference4=downloading。他は<a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a>（Completeとは並びが違う点に注意）。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteICalProgress">
+				<dt class="entry">OnExecuteICalProgress</dt>
+				<dd class="entry">
+					<p>\![execute,ical-get/ical-post]で--progress-notifyを指定した際に発生。解析前の通知なので、Referenceは<a href="#OnExecuteHTTPComplete">OnExecuteHTTPCompleteと同じ</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnExecuteICal_SSLInfo">
+				<dt class="entry">OnExecuteICal_SSLInfo</dt>
+				<dd class="entry">
+					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<dl class="reference">
+						<dt>Reference0～</dt>
+						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="OnExecuteRSSComplete">
 				<dt class="entry">OnExecuteRSSComplete</dt>
 				<dd class="entry">
@@ -4290,7 +4380,7 @@
 					<p>\![execute,rss-get/post]で取得エラーした際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
-						<dd>解析失敗時はReference4=parse。他は<a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a></dd>
+						<dd>解析失敗時はReference4=parse。同じURLの取得がすでに進行中だった場合はReference4=downloading [2.8.90]。他は<a href="#OnExecuteHTTPFailure">OnExecuteHTTPFailureと同じ</a></dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
