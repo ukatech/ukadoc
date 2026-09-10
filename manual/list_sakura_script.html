@@ -520,7 +520,7 @@
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
-				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,feedまたはnar]</a></li>
+				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,種別]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
@@ -5445,13 +5445,20 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,url,URL,feedまたはnar_">
-				<dt class="entry">\![execute,install,url,URL,(feed|nar|homeurlのいずれか)]</dt>
+				<dt class="entry">\![execute,install,url,URL,種別]</dt>
 				<dd class="entry">
-					<p>指定したURLのnarファイルをインストールまたはRSSFeedを登録。
-					<br />(feed|nar|homeurl)は省略可能。
+					<p>指定したURLのファイルをダウンロードし、種別に応じたインストール／登録処理を行う。
 					<br />ファイルのダウンロードを一時ファイル用フォルダ内に自動的に行い、適宜インストール処理を行う。
 					<br />このタグで実行されたダウンロード処理については、OnURLQueryは発生しない。</p>
-					
+					<p>種別は省略可能。省略した場合はContent-Typeとファイルの中身から自動判別される。</p>
+					<ul class="description">
+						<li>nar……narファイルとしてインストールする</li>
+						<li>feed……<a href="descript_install.html#type,種別">ヘッドラインセンサ</a>(RSSFeed)として登録する</li>
+						<li>homeurl……そのURLをhomeurlとみなしてネットワーク更新を実行する</li>
+						<li>ical……iCal(.ics)を購読する<a href="descript_install.html#type,種別">スケジュールセンサ</a>として登録する。カレンダー用フォルダ内にdescript.txtが自動生成され、以後カレンダーの表示や<a href="list_shiori_event.html#OnScheduleTodayNotify">OnScheduleTodayNotify</a>の対象になる</li>
+						<li>ssf……SSFファイルとして取得し、トークを再生する</li>
+					</ul>
+
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5705,7 +5712,9 @@
 			<dl id="_!_reload,descript,パラメータ_">
 				<dt class="entry">\![reload,descript,パラメータ]</dt>
 				<dd class="entry">
-					<p>指定したdescript.txtをリロードする。<br>半角スペース区切りで複数指定可能。<br>ghost shell balloon headline plugin</p>
+					<p>指定したdescript.txtをリロードする。<br>半角スペース区切りで複数指定可能。<br>ghost shell balloon headline plugin language calendar.skin calendar.plugin</p>
+					<p>calendar.skinはカレンダースキン、calendar.pluginはスケジュールセンサ（<a href="descript_install.html#type,種別">install.txtのtype</a>と同じ区分）。
+					<br />install.txtと同じ「calendar skin」「calendar plugin」表記も受け付けるが、パラメータの区切りが半角スペースなので、ドット表記の方を推奨。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -5972,7 +5981,8 @@
 					<br>WebSocketの場合は接続・受信・切断の各タイミングで<a href="list_shiori_event.html#OnExecuteWebSocketOpen">OnExecuteWebSocketOpen</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReceive">Receive</a>/<a href="list_shiori_event.html#OnExecuteWebSocketReconnect">Reconnect</a>/<a href="list_shiori_event.html#OnExecuteWebSocketClose">Close</a>/<a href="list_shiori_event.html#OnExecuteWebSocketFailure">Failure</a>が発生する（常にAsync動作のため--syncは適用不可）。
 					<br>Onから始まらないIDを指定した場合は、上記イベント名通りのイベントが発生する。
 					<br>Onから始まるIDを指定した場合、HTTP/RSS/iCalは[指定したID]（成功）/[指定したID]Failure（失敗）が発生する。WebSocketは[指定したID]Open/[指定したID]（受信）/[指定したID]Reconnect/[指定したID]Close/[指定したID]Failureが発生する。
-					<br>例:--async=OnExampleのとき HTTP/RSS→OnExample/OnExampleFailure、WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure
+					<br>例:--async=OnExampleのとき HTTP/RSS/iCal→OnExample/OnExampleFailure、WebSocket→OnExampleOpen/OnExample/OnExampleReconnect/OnExampleClose/OnExampleFailure
+					<br>ただし、SSLInfo系イベント(<a href="list_shiori_event.html#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfo</a>/<a href="list_shiori_event.html#OnExecuteRSS_SSLInfo">OnExecuteRSS_SSLInfo</a>/<a href="list_shiori_event.html#OnExecuteICal_SSLInfo">OnExecuteICal_SSLInfo</a>/<a href="list_shiori_event.html#OnExecuteWebSocket_SSLInfo">OnExecuteWebSocket_SSLInfo</a>)はこの対象外で、Onから始まるIDを指定しても常に上記のイベント名で通知される。
 					<br>SakuraScriptの処理を一旦中断したい場合は、代わりに--syncと書く（WebSocketには適用不可）。</dd>
 
 					<dt>--authorization=Authorizationリクエストヘッダの中身 [2.6.37]</dt>
@@ -6045,7 +6055,7 @@
 					<br />指定するファイルパスはSSP管轄下(SSP.exeと同じ場所以下か、ゴースト等を列挙するよう指定したフォルダ以下)に限られる。</dd>
 
 					<dt>--progress-notify [2.6.44]</dt>
-					<dd>ダウンロード処理中に<a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a>イベント、またはイベントIDがOnではじまる場合は後ろにProgressをつけたイベントを通知する。
+					<dd>ダウンロード処理中に<a href="list_shiori_event.html#OnExecuteHTTPProgress">OnExecuteHTTPProgress</a>イベント(ical-get/ical-postの場合は<a href="list_shiori_event.html#OnExecuteICalProgress">OnExecuteICalProgress</a> [2.8.90])、またはイベントIDがOnではじまる場合は後ろにProgressをつけたイベントを通知する。
 					<br>Onから始まるIDを指定した場合、上記の代わりにSHIORI Event [指定したID]Progress が発生する。<br>例:--async=OnExampleのとき OnExampleProgress
 					<br>ダウンロード処理中に、逐一イベント通知処理が行われるため、ダウンロード速度の低下が発生する。
 					<br>また、ファイルに出力する場合は、イベント通知時に一旦ファイルを閉じ、レスポンスを受けた後で再度ファイルを開く操作が加わるので、さらにダウンロード速度が遅くなる点に注意。</dd>

@@ -4295,6 +4295,7 @@
 				<dt class="entry">OnExecuteHTTPSSLInfo</dt>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>--async・--syncでOnから始まるIDを指定した場合でも、イベント名は置き換わらず常に本イベントで通知される。どのリクエストのものかはReference0で判別すること。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>async ID (無ければからっぽ)</dd>
@@ -4372,6 +4373,7 @@
 				<dt class="entry">OnExecuteICal_SSLInfo</dt>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>--async・--syncでOnから始まるIDを指定した場合でも、イベント名は置き換わらず常に本イベントで通知される。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
 						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
@@ -4411,6 +4413,7 @@
 				<dt class="entry">OnExecuteRSS_SSLInfo</dt>
 				<dd class="entry">
 					<p>取得失敗(HTTPレスポンスが200以外)でも、SSL/TLSレベルでは接続に成功しているので通知される。</p>
+					<p>--async・--syncでOnから始まるIDを指定した場合でも、イベント名は置き換わらず常に本イベントで通知される。</p>
 					<dl class="reference">
 						<dt>Reference0～</dt>
 						<dd><a href="#OnExecuteHTTPSSLInfo">OnExecuteHTTPSSLInfoと同じ</a></dd>
