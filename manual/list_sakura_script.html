@@ -5291,7 +5291,7 @@
 					<br />--description=説明 : DESCRIPTION。
 					<br />--location=場所 : LOCATION。
 					<br />--url=URL : URL。
-					<br />--categories=分類 : CATEGORIES。
+					<br />--categories=分類 : CATEGORIES。複数ある場合はカンマ区切り（iCalのCATEGORIESの値としてそのまま保存される）。
 					<br />--status=状態 : STATUS（CONFIRMED / TENTATIVE / CANCELLED）。
 					<br />--type=種類 : 予定の種類。<a href="list_shiori_event.html#OnSchedule5MinutesToGo">OnSchedule5MinutesToGo</a>等のReference0に入る。
 					<br />--rrule=規則 : 繰り返し規則（RRULEの値部分。例 FREQ=WEEKLY;BYDAY=MO）。
@@ -5299,7 +5299,7 @@
 					<br />--notify=分 : 何分前に通知するか。省略時はSSPの設定に従う。
 					<br />--script=スクリプト : 予定に添えるさくらスクリプト。通知時・予定を読むときに実行される。
 					<br />--event=イベントID : Onから始まるIDを指定すると、結果のイベント名がそのIDになる（失敗時はIDの後ろにFailureをつけた名前）。
-					<br />カンマを含む値（--rrule・--exdate など）を指定する場合は、引数全体を " " で囲むこと。</p>
+					<br />カンマを含む値（--rrule・--exdate・--categories など）を指定する場合は、引数全体を " " で囲むこと。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.91</li>
 					</ul>
@@ -6213,7 +6213,7 @@
 
 					<dt>発生日の判定</dt>
 					<dd>RRULE（FREQ・INTERVAL・COUNT・UNTIL・BYDAY・BYMONTHDAY・BYMONTH）とEXDATEを解釈して判定する。<br />
-					DTSTARTからDTENDまでが複数日にわたる予定は、その全ての日を「発生日」とみなす。<br />
+					DTSTARTからDTEND（DTENDの代わりにDURATIONで長さを書いた予定はその終わり）までが複数日にわたる予定は、その全ての日を「発生日」とみなす。<br />
 					EXDATEに挙げられた日は、繰り返しの有無に関わらず発生しないものとして扱われる。</dd>
 				</dl>
 			</section>
