@@ -565,6 +565,7 @@
 				<li class="caption"><a href="#notes_inductionmode">InductionMode</a></li>
 				<li class="caption"><a href="#notes_executehttp">http get/post オプション</a></li>
 				<li class="caption"><a href="#notes_executeical">iCal絞り込みオプション</a></li>
+				<li class="caption"><a href="#notes_executerss">RSS絞り込みオプション</a></li>
 			</ul>
 		</section>
 		<section class="navigation-category">
@@ -5224,15 +5225,24 @@
 				<dt class="entry">\![execute,rss-get,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<p>取得した項目は<a href="list_shiori_event.html#OnExecuteRSSComplete">OnExecuteRSSComplete</a>、失敗時は<a href="list_shiori_event.html#OnExecuteRSSFailure">OnExecuteRSSFailure</a>で通知される。</p>
+					<p>[2.8.92] どの項目をいくつ返すかは<a href="#notes_executerss">RSS絞り込みオプション</a>（--from・--to・--limit）で指定できる。無指定の場合は全項目を返す。</p>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 絞り込み 2.8.92～</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![execute,rss-get,https://example.com/feed.xml,--async=OnMyFeed,--limit=5]最新の5件をOnMyFeedで受け取る。</code></p>
+							<p><code type="SakuraScript">\![execute,rss-get,https://example.com/feed.xml,--async=OnMyFeed,--from=20261201,--to=20261207]2026年12月1日から7日までの項目だけを受け取る。</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,rss-post,URL,オプション,オプション,オプション..._">
 				<dt class="entry">\![execute,rss-post,URL,オプション,オプション,オプション...]</dt>
 				<dd class="entry">
-					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
+					<p><a href="#notes_executehttp">※オプション</a>付きでhttp post リクエストを行い、レスポンスをRSS/Atomフィードとして解析したのち、解析結果をイベントとして通知する。<br />解析・通知・<a href="#notes_executerss">絞り込み</a>の仕様は<a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">rss-get</a>と同じ。パラメータ群の指定はhttp-postと同じ。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -6105,7 +6115,7 @@
 					<dd>取得するデータの保存名を指定。[実行したゴーストのフォルダ]/ghost/master/var/ファイル名に保存される。</dd>
 
 					<dt>--from=yyyymmdd [2.8.90]</dt>
-					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの期間の開始日。省略時は当日。</dd>
+					<dd>ical-get/ical-post・rss-get/rss-post [2.8.92] 限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>・<a href="#notes_executerss">※RSS絞り込みオプション</a>を参照。<br />返すイベントの期間の開始日。省略時は当日。<br />[2.8.92] rss-get/rss-postでは返す項目の更新日時の下限（その日の0時から）。省略時は下限なし。</dd>
 
 					<dt>--header=SomeHeader: リクエストヘッダの中身 [2.6.40]</dt>
 					<dd>任意の名前のリクエストヘッダを設定する。名前と中身を区切るコロンは必須。
@@ -6115,7 +6125,7 @@
 					<dd>TLS証明書の検証をスキップする。</dd>
 
 					<dt>--limit=件数 [2.8.90]</dt>
-					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの最大件数。省略時は200件、0を指定すると無制限。<br />--limitだけを書いた場合は、開始日を当日とする期間モードになる。--from・--to・--expand・--limitをどれも書かなかった場合は件数の上限も無い（全件返す）。</dd>
+					<dd>ical-get/ical-post・rss-get/rss-post [2.8.92] 限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>・<a href="#notes_executerss">※RSS絞り込みオプション</a>を参照。<br />返すイベントの最大件数。省略時は200件、0を指定すると無制限。<br />--limitだけを書いた場合は、開始日を当日とする期間モードになる。--from・--to・--expand・--limitをどれも書かなかった場合は件数の上限も無い（全件返す）。<br />[2.8.92] rss-get/rss-postでは、書いた場合だけ新しい順にその件数で打ち切る。省略時・0は無制限で、--limitだけを書いても期間は絞り込まれない。</dd>
 
 					<dt>--log=ファイル名</dt>
 					<dd>サーバとの通信内容をすべてログに記録する。主に開発時のデバッグ用。</dd>
@@ -6173,7 +6183,7 @@
 					<dd>レスポンスを待つ時間(※ダウンロードに要する時間ではない)を指定する。最大300秒。<br>指定秒数までにレスポンスがなかった場合、SHIORIイベント「OnExecuteHTTPFailure」が通知され、Reference4に「timeout」が入っている。</dd>
 
 					<dt>--to=yyyymmdd [2.8.90]</dt>
-					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの期間の終了日（この日を含む）。</dd>
+					<dd>ical-get/ical-post・rss-get/rss-post [2.8.92] 限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>・<a href="#notes_executerss">※RSS絞り込みオプション</a>を参照。<br />返すイベントの期間の終了日（この日を含む）。<br />[2.8.92] rss-get/rss-postでは返す項目の更新日時の上限（その日の終わりまで）。省略時は上限なし。</dd>
 
 					<dt>--m_websocketProtocol=Sec-Websocket-Protocol [2.8.08]</dt>
 					<dd>WebSocket接続の際に使用する、Sec-Websocket-Protocolヘッダを指定する。指定しなければこのヘッダ自体が送られれない。</dd>
@@ -6181,7 +6191,7 @@
 			</section>
 			<section class="caption" id="notes_executeical">
 				<h1>iCal絞り込みオプション [2.8.90]</h1>
-				<p><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get/ical-post]</a>で、取得したカレンダーからどのイベントを返すかを指定するオプション。他のリクエストでは無視される。</p>
+				<p><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get/ical-post]</a>で、取得したカレンダーからどのイベントを返すかを指定するオプション。<br />[2.8.92] rss-get/rss-postでも同名のオプションが使えるが、省略時の扱いが違う（<a href="#notes_executerss">RSS絞り込みオプション</a>を参照）。他のリクエストでは無視される。</p>
 				<p>--from・--to・--expand・--limitのいずれかを書くと「期間モード」になり、期間内に発生する予定だけが返る。--limitだけを書いた場合は、当日からの期間モードになる。<br />どれも書かなかった場合はファイルに書かれたVEVENTを先頭から順に全件そのまま返す（期間による絞り込みも、件数の上限も無い）。</p>
 				<dl>
 					<dt>期間の決め方</dt>
@@ -6205,6 +6215,22 @@
 					<dd>RRULE（FREQ・INTERVAL・COUNT・UNTIL・BYDAY・BYMONTHDAY・BYMONTH）とEXDATEを解釈して判定する。<br />
 					DTSTARTからDTENDまでが複数日にわたる予定は、その全ての日を「発生日」とみなす。<br />
 					EXDATEに挙げられた日は、繰り返しの有無に関わらず発生しないものとして扱われる。</dd>
+				</dl>
+			</section>
+			<section class="caption" id="notes_executerss">
+				<h1>RSS絞り込みオプション [2.8.92]</h1>
+				<p><a href="#_!_execute,rss-get,URL,オプション,オプション,オプション..._">\![execute,rss-get/rss-post]</a>で、取得したフィードからどの項目を返すかを指定するオプション。<br />書式は<a href="#notes_executeical">iCal絞り込みオプション</a>と同じだが、省略時の扱いが違う。--expandは無視される。</p>
+				<p>どれも書かなかった場合は全項目を返す。</p>
+				<dl>
+					<dt>期間（--from・--to）</dt>
+					<dd>--from=yyyymmddはその日の0時0分0秒以降、--to=yyyymmddはその日の終わりまで（その日を含む）の更新日時を持つ項目を返す。日付は実行環境のローカル日付で判定する。<br />
+					省略した側は制限なし（iCalのように当日からにはならない）。存在しない日付を書いた場合は省略と同じ扱い。--toが--fromより前の場合は項目が返らない。<br />
+					--from・--toのどちらかを書いた場合、更新日時を持たない（または解釈できない）項目は返らない。</dd>
+
+					<dt>件数の上限（--limit）</dt>
+					<dd>書いた場合だけ、その件数に達した時点で打ち切る。--limit=0は無制限。<br />
+					iCalと違って既定の上限（200件）は無く、--limitだけを書いても期間は絞り込まれない。<br />
+					項目は更新日時の新しい順に並ぶので、--limit=5なら最新の5件になる（どの項目も更新日時を持たないフィードではフィードに書かれた順の先頭5件）。</dd>
 				</dl>
 			</section>
 		</section>
