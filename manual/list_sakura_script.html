@@ -5243,7 +5243,7 @@
 				<dd class="entry">
 					<p><a href="#notes_executehttp">※オプション</a>付きでhttp get リクエストを行い、レスポンスをiCalendar(RFC 5545)のカレンダーとして解析したのち、解析結果をイベントとして通知する。<br />パラメータ群の指定はhttp-postと同じ。</p>
 					<p>取得したイベントは<a href="list_shiori_event.html#OnExecuteICalComplete">OnExecuteICalComplete</a>、失敗時は<a href="list_shiori_event.html#OnExecuteICalFailure">OnExecuteICalFailure</a>で通知される。</p>
-					<p>どのイベントをいくつ返すかは<a href="#notes_executeical">iCal絞り込みオプション</a>（--from・--to・--expand・--limit）で指定する。無指定の場合はファイルに書かれたVEVENTを先頭から最大200件返す。</p>
+					<p>どのイベントをいくつ返すかは<a href="#notes_executeical">iCal絞り込みオプション</a>（--from・--to・--expand・--limit）で指定する。無指定の場合はファイルに書かれたVEVENTを先頭から全件返す。</p>
 					<p>解析対象はVCALENDAR直下のX-WR-CALNAME・X-WR-TIMEZONE・CALSCALEと、VEVENT（およびその中のVALARM）。SUMMARYを持たないVEVENTは無効とみなして除外される。<br />なお、--nofileを指定しても解析用の一時ファイルは作成される（指定は無視される）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.90</li>
@@ -6114,7 +6114,7 @@
 					<dd>TLS証明書の検証をスキップする。</dd>
 
 					<dt>--limit=件数 [2.8.90]</dt>
-					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの最大件数。省略時は200件、0を指定すると無制限。</dd>
+					<dd>ical-get/ical-post限定。<a href="#notes_executeical">※iCal絞り込みオプション</a>を参照。<br />返すイベントの最大件数。省略時は200件、0を指定すると無制限。<br />--limitだけを書いた場合は、開始日を当日とする期間モードになる。--from・--to・--expand・--limitをどれも書かなかった場合は件数の上限も無い（全件返す）。</dd>
 
 					<dt>--log=ファイル名</dt>
 					<dd>サーバとの通信内容をすべてログに記録する。主に開発時のデバッグ用。</dd>
@@ -6181,23 +6181,24 @@
 			<section class="caption" id="notes_executeical">
 				<h1>iCal絞り込みオプション [2.8.90]</h1>
 				<p><a href="#_!_execute,ical-get,URL,オプション,オプション,オプション..._">\![execute,ical-get/ical-post]</a>で、取得したカレンダーからどのイベントを返すかを指定するオプション。他のリクエストでは無視される。</p>
-				<p>--from・--to・--expandのいずれかを書くと「期間モード」になり、期間内に発生する予定だけが返る。<br />どれも書かなかった場合はファイルに書かれたVEVENTを先頭から順にそのまま返す（期間による絞り込みを行わない）。</p>
+				<p>--from・--to・--expand・--limitのいずれかを書くと「期間モード」になり、期間内に発生する予定だけが返る。--limitだけを書いた場合は、当日からの期間モードになる。<br />どれも書かなかった場合はファイルに書かれたVEVENTを先頭から順に全件そのまま返す（期間による絞り込みも、件数の上限も無い）。</p>
 				<dl>
 					<dt>期間の決め方</dt>
 					<dd>開始日は--fromの日付、省略時は当日。<br />
 					終了日は--toの日付（その日を含む）。--to省略時は、--expand=日数があればその日数ぶん、--expandに日数を書かなければ30日ぶん、--expand自体が無ければ1830日ぶん。<br />
-					期間の長さは最大1830日に丸められる。--toが--fromより前の場合は--fromの当日1日ぶんとして扱われる。</dd>
+					期間の長さは最大1830日に丸められる。--toが--fromより前の場合は期間が空になり、予定は返らない。</dd>
 
 					<dt>--expandあり（発生単位）</dt>
 					<dd>RRULEによる繰り返しを1回ずつ展開し、「発生」1回につきReference1件を返す。日付の昇順に並ぶ。<br />
 					同じ予定が期間内に何度も発生する場合、その回数ぶんReferenceが並ぶ。</dd>
 
 					<dt>--expandなし（VEVENT単位）</dt>
-					<dd>期間内に1回でも発生する予定を、VEVENTごとに1件だけ返す。<br />
+					<dd>期間内に1回でも発生する予定を、VEVENTごとに1件だけ返す。期間内で最初に発生する日の昇順に並ぶ（同じ日なら開始日時の順）。<br />
 					このとき各Referenceの「発生日」には、期間内で最初に発生する日が入る。</dd>
 
 					<dt>件数の上限</dt>
-					<dd>--limitで指定した件数に達した時点で打ち切る。省略時は200件、--limit=0で無制限。</dd>
+					<dd>--limitで指定した件数に達した時点で打ち切る。期間モードでの省略時は200件、--limit=0で無制限。<br />
+					期間モードでない場合（オプションを何も書かなかった場合）は上限が無い。</dd>
 
 					<dt>発生日の判定</dt>
 					<dd>RRULE（FREQ・INTERVAL・COUNT・UNTIL・BYDAY・BYMONTHDAY・BYMONTH）とEXDATEを解釈して判定する。<br />
