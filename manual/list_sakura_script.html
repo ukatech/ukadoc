@@ -371,6 +371,7 @@
 				<li><a href="#_7">\7</a></li>
 				<li><a href="#_!_executesntp_">\![executesntp]</a></li>
 				<li><a href="#_!_execute,headline,ヘッドライン名_">\![execute,headline,ヘッドライン名]</a></li>
+				<li><a href="#_!_execute,calendarplugin,カレンダープラグイン名_">\![execute,calendarplugin,カレンダープラグイン名]</a></li>
 				<li><a href="#_!_biff_">\![biff(,アカウント名)]</a></li>
 				<li><a href="#_!_vanishbymyself_">\![vanishbymyself]</a></li>
 				<li><a href="#_+">\+</a></li>
@@ -378,6 +379,7 @@
 				<li><a href="#_!_change,ghost,ゴースト名_">\![change,ghost,ゴースト名]</a></li>
 				<li><a href="#_!_change,shell,シェル名_">\![change,shell,シェル名]</a></li>
 				<li><a href="#_!_change,balloon,バルーン名_">\![change,balloon,バルーン名]</a></li>
+				<li><a href="#_!_change,calendarskin,カレンダースキン名_">\![change,calendarskin,カレンダースキン名]</a></li>
 				<li><a href="#_!_call,ghost,ゴースト名_">\![call,ghost,ゴースト名]</a></li>
 				<li><a href="#_v">\v</a></li>
 				<li><a href="#_!_set,windowstate,stayontop_">\![set,windowstate,stayontop]</a></li>
@@ -451,6 +453,8 @@
 				<li><a href="#_!_open,balloonexplorer_">\![open,balloonexplorer]</a></li>
 				<li><a href="#_!_open,headlinesensorexplorer_">\![open,headlinesensorexplorer]</a></li>
 				<li><a href="#_!_open,pluginexplorer_">\![open,pluginexplorer]</a></li>
+				<li><a href="#_!_open,calendarskinexplorer_">\![open,calendarskinexplorer]</a></li>
+				<li><a href="#_!_open,calendarpluginexplorer_">\![open,calendarpluginexplorer]</a></li>
 				<li><a href="#_!_open,rateofusegraph_">\![open,rateofusegraph]</a></li>
 				<li><a href="#_!_open,rateofusegraphballoon_">\![open,rateofusegraphballoon]</a></li>
 				<li><a href="#_!_open,rateofusegraphtotal_">\![open,rateofusegraphtotal]</a></li>
@@ -3433,6 +3437,20 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_execute,calendarplugin,カレンダープラグイン名_">
+				<dt class="entry">\![execute,calendarplugin,カレンダープラグイン名]</dt>
+				<dd class="entry">
+					<p>カレンダープラグイン(スケジュールセンサ)の予定取得を開始する。カレンダーのメニューからプラグインを選んだ場合と同じ。<br>
+					カレンダーを表示していない場合も実行される。<br>
+					カレンダープラグイン名をrandomにするとランダムに選択。<br>
+					lastinstalledにすると最後にインストールされたカレンダープラグインを実行。ただしSSPを一度終了した場合は無効。<br>
+					該当するカレンダープラグインがなかった場合は無視される。<br>
+					カレンダープラグイン名は<a href="list_shiori_event.html#installedcalendarpluginname">installedcalendarpluginname</a>で通知される。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.93</li>
+					</ul>
+				</dd>
+			</dl>
 			<dl id="_!_biff_">
 				<dt class="entry">\![biff(,アカウント名)]</dt>
 				<dd class="entry">
@@ -3590,6 +3608,23 @@
 							<p><code type="SakuraScript">SSPデフォルト+にバルーン変更。\![change,balloon,SSPデフォルト+]</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_change,calendarskin,カレンダースキン名_">
+				<dt class="entry">\![change,calendarskin,カレンダースキン名]</dt>
+				<dd class="entry">
+					<p>カレンダーのスキンを切り替える。カレンダーのメニューからスキンを選んだ場合と同じ。<br>
+					該当するカレンダースキンがなかった場合は無視される。<br>
+					カレンダーを一度も開いていない場合は設定だけが変更され、次にカレンダーを開いたときに反映される。</p>
+
+					<p>カレンダースキン名をlastinstalledにすると最後にインストールしたカレンダースキンに切り替え。ただしSSPを一度終了した場合は無効。<br>
+					カレンダースキン名をrandomにするとランダムに切り替え。<br>
+					カレンダースキン名は<a href="list_shiori_event.html#installedcalendarskinname">installedcalendarskinname</a>で通知される。
+					</p>
+
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.93</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_call,ghost,ゴースト名_">
@@ -4682,6 +4717,36 @@
 					</div>
 				</dd>
 			</dl>
+			<dl id="_!_open,calendarskinexplorer_">
+				<dt class="entry">\![open,calendarskinexplorer]</dt>
+				<dd class="entry">
+					<p>カレンダースキンエクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![open,calendarskinexplorer]カレンダースキンエクスプローラを開く。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_open,calendarpluginexplorer_">
+				<dt class="entry">\![open,calendarpluginexplorer]</dt>
+				<dd class="entry">
+					<p>カレンダープラグイン(スケジュールセンサ)エクスプローラを開く。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![open,calendarpluginexplorer]カレンダープラグインエクスプローラを開く。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
 			<dl id="_!_open,rateofusegraph_">
 				<dt class="entry">\![open,rateofusegraph]</dt>
 				<dd class="entry">
@@ -4774,7 +4839,8 @@
 				<dd class="entry">
 					<p>readme.txtを開く。
 					<br />何も指定しな場合、起動中ゴーストの、[実行したゴーストのフォルダ]/ghost/master/descript.txtのreadmeに指定してあるファイルが開く。
-					<br />\![open,readme,種類(ghost/shell/balloon/headline/plugin),名前] と指定すると、指定したreadmeが開く。例：\![open,readme,ghost,Emily/Phase4]</p>
+					<br />\![open,readme,種類(ghost/shell/balloon/headline/plugin/calendar.skin/calendar.plugin),名前] と指定すると、指定したreadmeが開く。例：\![open,readme,ghost,Emily/Phase4]
+					<br />calendar.skinはカレンダースキン、calendar.pluginはカレンダープラグイン（スケジュールセンサ）。「calendar skin」「calendar plugin」のスペース区切り表記も受け付ける。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
