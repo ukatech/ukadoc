@@ -544,6 +544,7 @@
 				<li><a href="#OnTabletMode">OnTabletMode</a></li>
 				<li><a href="#OnDarkTheme">OnDarkTheme</a></li>
 				<li><a href="#OnDesktopWallpaperChange">OnDesktopWallpaperChange</a></li>
+				<li><a href="#OnWindowModeChange">OnWindowModeChange</a></li>
 				<li><a href="#OnOSUpdateInfo">OnOSUpdateInfo</a></li>
 				<li><a href="#OnRecycleBinEmpty">OnRecycleBinEmpty</a></li>
 				<li><a href="#OnRecycleBinEmptyFromOther">OnRecycleBinEmptyFromOther</a></li>
@@ -5273,6 +5274,29 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.86</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnWindowModeChange">
+				<dt class="entry">OnWindowModeChange</dt>
+				<dd class="entry">
+					<p>SSPのウインドウモードが切り替えられた際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em><br>
+					ウインドウモードは、ゴーストをデスクトップ上ではなくSSPが用意したウインドウ(コンテナ)の中に表示するモード。コンテナの内側がゴーストにとっての画面になる。<br>
+					切り替えによってゴーストにとっての画面の大きさが変わるため、このイベントの後に<a href="#OnDisplayChange">OnDisplayChange</a>も発生する。<br>
+					現在のモードは<a href="./list_propertysystem.html#baseware.windowmode">baseware.windowmode</a>でも取得できる。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>init (起動時通知) か update (起動後の切り替え)</dd>
+						<dt>Reference1</dt>
+						<dd>現在のモード。<br>
+						normal：通常モード(ゴーストをデスクトップ上に表示する)<br>
+						shared：ウインドウモード。全ゴーストで1枚のコンテナを共有する<br>
+						perghost：ウインドウモード。ゴースト1体につき1枚のコンテナを使う</dd>
+						<dt>Reference2</dt>
+						<dd>直前のモード。値の種類はReference1と同じ。Reference0がinitの場合は空。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.93</li>
 					</ul>
 				</dd>
 			</dl>

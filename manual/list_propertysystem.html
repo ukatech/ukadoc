@@ -166,6 +166,7 @@
 				<li><a href="#system.dnd.mode">system.dnd.mode</a></li>
 				<li><a href="#baseware.version">baseware.version</a></li>
 				<li><a href="#baseware.name">baseware.name</a></li>
+				<li><a href="#baseware.windowmode">baseware.windowmode</a></li>
 				<li><a href="#ghostlist.count">ghostlist.count</a></li>
 				<li><a href="#ghostlist(ゴースト名/本体側名/パス).汎用プロパティ名">ghostlist(ゴースト名/本体側名/パス/ID).汎用プロパティ名</a></li>
 				<li><a href="#ghostlist(ゴースト名/本体側名/パス).icon">ghostlist(ゴースト名/本体側名/パス/ID).icon</a></li>
@@ -729,6 +730,16 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_c.png" alt="CROW" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="baseware.windowmode">
+				<dt class="entry">baseware.windowmode</dt>
+				<dd class="entry">
+					<p>SSPのウインドウモードの状態。normal（通常モード）、shared（ウインドウモード・全ゴーストで1枚のコンテナを共有）、perghost（ウインドウモード・ゴースト1体につき1枚のコンテナ）のいずれか。<br>
+					切り替えられた際には<a href="./list_shiori_event.html#OnWindowModeChange">OnWindowModeChange</a>が発生する。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.93</li>
 					</ul>
 				</dd>
 			</dl>
