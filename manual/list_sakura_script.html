@@ -3202,7 +3202,8 @@
 			</div>
 			<div class="caption" id="notes_color">
 				<h1>文字色指定の方法</h1>
-				<p>基本はHTML・CSSの色の表現と似ています。</p>
+				<p>基本はHTML・CSSの色の表現と似ています。<br>
+				[2.8.93] 以下のいずれにも当てはまらない値（数値でないR,G,B、16進数でない文字を含むカラーコードなど）は無視される。以前は黒として扱われることがあった。</p>
 				<dl>
 					<dt>R,G,B</dt>
 					<dd>赤・緑・青の三原色の明度をそれぞれ0～255の10進数値で表現し、カンマで区切る。<br>0,0,0で黒、255,255,255で白。</dd>
@@ -3689,7 +3690,8 @@
 			<dl id="_!_save,wallpaper_">
 				<dt class="entry">\![save,wallpaper]</dt>
 				<dd class="entry">
-					<p>現在の壁紙をいったん保存し、restoreで復帰できるようにする。</p>
+					<p>現在の壁紙をいったん保存し、restoreで復帰できるようにする。<br>
+					[2.8.93] ウインドウモード中は、OSの壁紙ではなくウインドウモードの背景（背景の種類・画像・配置・色）を保存する。通常モードで保存した内容とは別に保持される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.11</li>
 					</ul>
@@ -3698,7 +3700,8 @@
 			<dl id="_!_restore,wallpaper_">
 				<dt class="entry">\![restore,wallpaper]</dt>
 				<dd class="entry">
-					<p>save,wallpaperで保存された壁紙を復帰する。</p>
+					<p>save,wallpaperで保存された壁紙を復帰する。<br>
+					[2.8.93] ウインドウモード中は、ウインドウモード中にsave,wallpaperで保存した背景をウインドウモードの背景へ復帰する（OSの壁紙は変更しない）。ウインドウモードで保存したことがなければ何もしない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.11</li>
 					</ul>
@@ -3708,8 +3711,9 @@
 				<dt class="entry">\![set,wallpaper,ファイル名,オプション]</dt>
 				<dd class="entry">
 					<p>指定したファイルを壁紙にする。<br>
-					ファイル名には、絶対パスの他、ssp.exeからの相対パスが使用可能。<br>
-					ファイル名を指定しないか空にすると壁紙設定が解除される(OSデフォルトの設定に戻る)。<br>
+					ファイル名には、絶対パスの他、相対パスが使用可能。相対パスは[実行したゴーストのフォルダ]/ghost/master、[実行したゴーストのフォルダ]、SSPのフォルダの順に探す。<br>
+					先頭が!の場合はSSPのフォルダから、\または/の場合はSSPのあるドライブのルートからの相対パスとみなす。<br>
+					ファイル名を指定しないか空にすると壁紙設定が解除される(壁紙のない、背景色だけの状態になる)。<br>
 					オプションは以下の通り。</p>
 					<dl>
 						<dt>center</dt>
@@ -3722,9 +3726,40 @@
 						<dd>画像の横幅をモニタ幅いっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
 						<dt>stretch-y</dt>
 						<dd>画像の高さをモニタ高さいっぱいに合わせるようにして、縦横比を考慮して拡大する。Windows 7以降のみ。</dd>
+						<dt>fit</dt>
+						<dd>画像の縦横比を保ったまま、画像全体がモニタに収まるように拡大縮小する。余白には背景色が表示される。</dd>
+						<dt>fill</dt>
+						<dd>画像の縦横比を保ったまま、モニタ全体を覆うように拡大縮小する。はみ出した部分は表示されない。</dd>
 						<dt>span</dt>
 						<dd>マルチモニタ環境において、全モニタに渡るように拡大する。Windows 10以降のみ。</dd>
 					</dl>
+					<p>[2.8.93] 以下の形式でも指定できる。--で始まる引数は順不同で、上記のファイル名・オプションによる指定と混在してもよい（--で始まらない引数は、現れた順にファイル名・オプションとみなす）。</p>
+					<dl>
+						<dt>--file=ファイル名</dt>
+						<dd>壁紙にするファイル。上記のファイル名と同じ。</dd>
+						<dt>--position=配置</dt>
+						<dd>画像の配置。上記のオプションと同じ値を指定する。省略時はcenter。</dd>
+						<dt>--color=色指定</dt>
+						<dd>背景色（画像の余白や、画像を指定しない場合の単色背景に使われる色）。<a href="#notes_color">文字色指定の方法</a>のうち、R,G,B・R%,G%,B%・16進数カラーコード・定義済みキーワードが使用可能。<br>
+						R,G,Bのようにカンマを含む書式は、"--color=255,128,0"のように引数全体をダブルクォートで囲むこと。<br>
+						色として解釈できない値を指定した場合、このタグは何もしない。</dd>
+					</dl>
+					<p>[2.8.93] ファイル名と--colorの有無によって、以下のように動作する。</p>
+					<dl>
+						<dt>ファイル名のみ</dt>
+						<dd>画像を壁紙にする。背景色は変更しない。</dd>
+						<dt>ファイル名と--color</dt>
+						<dd>画像を壁紙にし、背景色も変更する。</dd>
+						<dt>--colorのみ</dt>
+						<dd>画像なしの、指定色の単色背景にする。</dd>
+						<dt>どちらもなし</dt>
+						<dd>壁紙設定を解除する（壁紙を外し、背景色だけの状態にする。背景色は変更しない）。</dd>
+					</dl>
+					<p>[2.8.93] ウインドウモードで動作中は、OSの壁紙を変更せず、そのゴーストが表示されているウインドウモードのウインドウの背景を変更する（全ゴーストで1つのウインドウを共有している場合は、全ゴーストの背景が変わる）。<br>
+					背景の設定は「背景 - 画像」扱いになり、SSP終了後も保持される。<br>
+					配置はspanのみfillと同じ扱いになる。--colorを省略した場合、背景色は画像の主な色になる。<br>
+					ファイル名も--colorも指定しない場合は、背景を「背景 - デスクトップ」（OSの壁紙を再現する設定）に戻す。<br>
+					画像ファイルのドラッグ＆ドロップによる壁紙変更も、同様にウインドウモードの背景を変更する。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
@@ -3733,6 +3768,8 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code type="SakuraScript">Emily/Phase4.5のサムネイルを壁紙にする。\![set,wallpaper,ghost/emily4/thumbnail.png]</code></p>
+							<p><code type="SakuraScript">画像全体が収まるように表示し、余白を紺色にする。\![set,wallpaper,--file=ghost/emily4/thumbnail.png,--position=fit,--color=navy]</code></p>
+							<p><code type="SakuraScript">画像なしの単色背景にする。\![set,wallpaper,"--color=32,64,96"]</code></p>
 						</section>
 					</div>
 				</dd>
