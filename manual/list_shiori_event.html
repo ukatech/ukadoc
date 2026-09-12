@@ -5080,7 +5080,8 @@
 						<dd>init (起動時通知) か update (起動後の更新)</dd>
 						<dt>Reference1～</dt>
 						<dd>左,上,右,下,ビット深度,プライマリモニタかどうか(0/1),タスクバーの位置(left,top,right,bottom,unknown),タスクバーと作業領域の区切り座標<br />
-						例： 0,0,1600,900,32,1,bottom,1560</dd>
+						例： 0,0,1600,900,32,1,bottom,1560<br />
+						<a href="#OnWindowModeChange">ウインドウモード</a>では、コンテナのクライアント領域を1枚の画面とした1件だけになる(例： 0,0,1280,720,32,1,unknown,0)。実モニタの変更では発生せず、コンテナのサイズ変更やウインドウモードの切り替えで発生する。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.4.09/タスクバーは2.6.35</li>
@@ -5244,7 +5245,9 @@
 					<p>OS側でデスクトップの壁紙が変更された際に発生。<em class="specsign">[起動時NOTIFY/他GET]</em><br>
 					利用者が個人用設定などで壁紙を変えた場合のほか、スライドショーやWindowsスポットライトによる自動的な差し替え、テーマの切り替えでも発生する。<br>
 					スライドショーとスポットライトは最短1分間隔で自動的に切り替わるため、この2つがきっかけの場合は起動後であってもNOTIFY(喋れない)で通知される。<br>
-					画像ファイルのDnDによって壁紙を変更した際の<a href="#OnWallpaperChange">OnWallpaperChange</a>とは別のイベントで、SSP自身が壁紙を変更した場合(Reference1がself)には両方が発生する。両方に反応する場合は二重にならないよう注意。</p>
+					画像ファイルのDnDによって壁紙を変更した際の<a href="#OnWallpaperChange">OnWallpaperChange</a>とは別のイベントで、SSP自身が壁紙を変更した場合(Reference1がself)には両方が発生する。両方に反応する場合は二重にならないよう注意。<br>
+					<a href="#OnWindowModeChange">ウインドウモード</a>では、ゴーストにとっての壁紙はコンテナの背景になる。OS側で壁紙が変更されて発生するのはコンテナの背景が「デスクトップ」の場合だけで、白・灰・黒・画像の場合は発生しない。代わりに、コンテナの背景が切り替わった時(コンテナのメニュー、<a href="list_sakura_script.html#_!_set,wallpaper,ファイル名,オプション_">\![set,wallpaper]</a>、<a href="list_sakura_script.html#_!_restore,wallpaper_">\![restore,wallpaper]</a>)と、ウインドウモードの切り替えによってゴーストから見える背景が変わった時に発生する。同じ背景を選び直しただけでは発生しない。<br>
+					perghost(ゴースト1体につき1枚のコンテナ)の場合は、自分が載っているコンテナの背景が変わった時だけ発生する。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>init (起動時通知) か update (起動後の変更)</dd>
@@ -5255,22 +5258,27 @@
 						spotlight：Windowsスポットライトの自動更新<br>
 						theme：テーマの切り替えに伴うもの<br>
 						self：SSP自身が変更した(画像のDnD・プロファイルからの復元)<br>
-						unknown：変更されたことは確かだが、きっかけが判別できない</dd>
+						unknown：変更されたことは確かだが、きっかけが判別できない<br>
+						ウインドウモードでは、コンテナのメニューやウインドウモードの切り替えによる変更はuser、\![set,wallpaper]・\![restore,wallpaper]による変更はselfになる。起動時通知(init)でコンテナの背景が「デスクトップ」以外の場合はunknown。</dd>
 						<dt>Reference2</dt>
 						<dd>現在の壁紙画像のフルパス。単色背景の場合や取得できなかった場合は空。<br>
-						Windowsの仕様上、利用者が選んだ元の画像ファイルではなく、OSが作成したキャッシュ(TranscodedWallpaperやスポットライトのキャッシュ)のパスになることがある。</dd>
+						Windowsの仕様上、利用者が選んだ元の画像ファイルではなく、OSが作成したキャッシュ(TranscodedWallpaperやスポットライトのキャッシュ)のパスになることがある。<br>
+						ウインドウモードでは、コンテナの背景が「デスクトップ」ならOS側の壁紙、画像ならその画像のフルパス、白・灰・黒や画像なしの色指定なら空。</dd>
 						<dt>Reference3</dt>
 						<dd>直前の壁紙画像のフルパス。Reference0がinitの場合は空。</dd>
 						<dt>Reference4</dt>
-						<dd>表示スタイル。center / tile / stretch / fit / fill / span のいずれか。</dd>
+						<dd>表示スタイル。center / tile / stretch / fit / fill / span のいずれか。<br>
+						ウインドウモードでコンテナの背景が画像の場合は stretch-x / stretch-y もあり得る。白・灰・黒の場合は center。</dd>
 						<dt>Reference5</dt>
-						<dd>デスクトップの背景色。壁紙の余白に出る色。R,G,B の半角カンマ区切り。</dd>
+						<dd>デスクトップの背景色。壁紙の余白に出る色。R,G,B の半角カンマ区切り。<br>
+						ウインドウモードでは、コンテナの背景が画像ならその地色(色の指定があればその色、無ければ画像から求めた色)、白・灰・黒ならその色。</dd>
 						<dt>Reference6～</dt>
 						<dd>モニタごとの壁紙情報が以下のフォーマットでモニタの数だけ後ろに続く。[\1]はバイト値1。<br>
 						モニタ番号[\1]壁紙画像のフルパス[\1]表示スタイル<br>
 						モニタ番号は<a href="#OnDisplayChangeEx">OnDisplayChangeEx</a>のReference1～の並び順と対応する(Reference1がモニタ番号0)。<br>
 						表示スタイルはOSがモニタごとに保持していないため、現状はすべて同じ値(Reference4と同一)になる。<br>
-						モニタごとの壁紙を扱えない環境(Windows 7以前)ではReference6以降は付かない。</dd>
+						モニタごとの壁紙を扱えない環境(Windows 7以前)ではReference6以降は付かない。<br>
+						ウインドウモードでは、コンテナの背景の種類によらず、コンテナを1枚の画面とした1件(モニタ番号0)だけが付く。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.86</li>
