@@ -846,6 +846,23 @@ Command: GetName
 						});
 					</script>
 					
+					<dt>GetStatus [SSP 2.8.94]</dt>
+					<dd>起動中のゴーストの現在の実行状態。SHIORI/3.0 requestのStatusヘッダや、プロパティシステムの<a href="list_propertysystem.html#currentghost.status">currentghost.status</a>と同じ内容。
+					<br />複数の状態に当てはまる場合はカンマ区切り。各値の意味は<a href="list_propertysystem.html#currentghost.status">※SHIORI Statusヘッダ</a>を参照。
+					<br />どの状態にも当てはまらない場合は追加データなし(ステータスコード200)</dd>
+					<textarea type="text" id="GetStatusResultTextBox" style="display: none; width: 358px; height: 106px;">
+					</textarea>
+					<script>
+						document.addEventListener("DOMContentLoaded", async () => {
+							if (await jsstp.available()) {
+								document.getElementById("GetStatusResultTextBox").style.display = "block";
+								document.getElementById("GetStatusResultTextBox").value = (await jsstp.GetStatus()).text_content;
+							} else {
+								document.getElementById("GetStatusResultTextBox").style.display = "none";
+							}
+						});
+					</script>
+
 					<dt>Quiet [リモート不可]</dt>
 					<dd>Restoreを実行するか、16秒間が経過するまで黙る。追加データなし(ステータスコード200番台で成功)</dd>
 					
