@@ -278,7 +278,8 @@ Option: notranslate
 					<br />カンマ区切りで複数指定可能。指定する文字列は以下の通り。
 					<br />nodescript : バルーンのSSTP表示を無効にする(リモートからのSSTPは無効)
 					<br />notranslate : OnTranslateやMAKOTOでのトランスレート処理を行わない
-					<br />nobreak : 現在実行中のスクリプトを中断せず、終わるまで待つ</dd>
+					<br />nobreak : 現在実行中のスクリプトを中断せず、終わるまで待つ
+					<br />strict : SakuraScriptの解釈に失敗した箇所をエラーログに記録する。対象は存在しないサーフェス(\s)・アニメーション(\i)・バルーン(\b)の指定、未知のタグ・\![コマンド]・\&amp;[実体参照]、必要な[]や数字の欠け、\p・\b・\n・\c・\qの不正な値。SENDのスクリプトと、NOTIFY/GIVEでゴーストが返したスクリプトに有効 [SSP 2.8.94]</dd>
 					
 					<dt>ID</dt>
 					<dd>"Owned SSTP"と呼ばれるもの。<a href="list_shiori_event.html#uniqueid">SHIORI uniqueid</a>で送られてきたIDか、<a href="spec_fmo_mutex.html">FMOの識別ID(SSPのみ)</a>を指定すると、各種セキュリティチェックやロック等を無視して、本SSTPをゴースト内部での処理と同じ優先度で扱う。
