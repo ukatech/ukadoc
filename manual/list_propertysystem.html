@@ -304,6 +304,10 @@
 				<li><a href="#rateofuselist.index(順位).percent">rateofuselist.index(順位).percent</a></li>
 				<li><a href="#rateofuselist.index(順位).percentweekly">rateofuselist.index(順位).percentweekly</a></li>
 				<li><a href="#rateofuselist.index(順位).percentmonthly">rateofuselist.index(順位).percentmonthly</a></li>
+				<li><a href="#developer.log.ログ種別.count">developer.log.ログ種別.count</a></li>
+				<li><a href="#developer.log.ログ種別.index(ID).ログプロパティ名">developer.log.ログ種別.index(ID).ログプロパティ名</a></li>
+				<li><a href="#developer.log.ログ種別(名前).count">developer.log.ログ種別(名前).count</a></li>
+				<li><a href="#developer.log.ログ種別(名前).index(ID).ログプロパティ名">developer.log.ログ種別(名前).index(ID).ログプロパティ名</a></li>
 			</ul>
 			<section>
 				<h1>汎用プロパティ名</h1>
@@ -1975,6 +1979,72 @@
 					<p>使用率のその順位のゴーストの起動時間割合。(パーセント、小数、月報版、今日から30日前までの集計)</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.8.54</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="developer.log.ログ種別.count">
+				<dt class="entry">developer.log.ログ種別.count</dt>
+				<dd class="entry">
+					<p>SSPが記録しているログの現在の件数。ログ種別に入る文字列は以下の通り。</p>
+					<dl>
+						<dt>script</dt>
+						<dd>スクリプトログ（ログウインドウの種別Script）。</dd>
+						<dt>error</dt>
+						<dd>エラーログ（同Error）。</dd>
+						<dt>network</dt>
+						<dd>ネットワークログ（同Network）。</dd>
+						<dt>update</dt>
+						<dd>アップデートログ（同Update）。</dd>
+					</dl>
+					<p>各ログが保持する件数には上限があり（既定50件）、上限を超えると古いものから消えていく。
+					<br />developer.log.～ はすべて読み取り専用で、開発者機能の設定に関わらず取得できる。
+					<br />エラーログでは、同じ内容のログが続くとtypeがSystemの要約1件にまとめられることがある。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="developer.log.ログ種別.index(ID).ログプロパティ名">
+				<dt class="entry">developer.log.ログ種別.index(ID).ログプロパティ名</dt>
+				<dd class="entry">
+					<p>ログのうちID番目のものから情報を取得。
+					<br />IDは新しいものから順に0,1,2...となる。範囲外のIDを指定した場合は取得失敗となる。
+					<br />ログ種別は<a href="#developer.log.ログ種別.count">developer.log.ログ種別.count</a>を参照。ログプロパティ名に入る文字列は以下の通り。</p>
+					<dl>
+						<dt>type</dt>
+						<dd>ログの種類。
+						<br />scriptではGhost(～)またはSSTP(～)の形式で、括弧内には該当する属性がカンマ区切りで入る（Ghost：External、Embed、SSF、Plugin　SSTP：LocalまたはRemote、TempGhost、Auth　共通：NoTranslate）。Ghostで該当する属性が無い場合は括弧ごと省略されGhostのみになる。付加情報がある場合は末尾に「:付加情報」が付く。
+						<br />その他のログ種別ではInfo、Notice、Warning、Error、Critical、Systemのいずれか。</dd>
+						<dt>name</dt>
+						<dd>ログの発生元の名前（ゴースト名など）。発生元が無い場合は[SYSTEM]。</dd>
+						<dt>value</dt>
+						<dd>ログの本文。長いものも省略されずに全文が返る。</dd>
+						<dt>time</dt>
+						<dd>ログが記録された日時。ローカル時刻で、OSの短い日付形式と24時間表記の時:分を半角スペースで区切ったもの。書式はOSの地域設定に依存する。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="developer.log.ログ種別(名前).count">
+				<dt class="entry">developer.log.ログ種別(名前).count</dt>
+				<dd class="entry">
+					<p>ログのうち、nameが名前と一致するものの件数。大文字小文字は区別しない。
+					<br />ドットを挟まず括弧を直接続けることに注意（<code>developer.log.script(～)</code>であって<code>developer.log.script.(～)</code>ではない）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="developer.log.ログ種別(名前).index(ID).ログプロパティ名">
+				<dt class="entry">developer.log.ログ種別(名前).index(ID).ログプロパティ名</dt>
+				<dd class="entry">
+					<p>ログのうち、nameが名前と一致するものの中でID番目のものから情報を取得。
+					<br />IDは新しいものから順に0,1,2...となる。<code>.index(ID)</code>を省略した場合（<code>developer.log.ログ種別(名前).ログプロパティ名</code>）は最も新しいものが対象になる。
+					<br />ドットを挟まず括弧を直接続けることに注意。ログプロパティ名は<a href="#developer.log.ログ種別.index(ID).ログプロパティ名">こちら</a>。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
 				</dd>
 			</dl>
