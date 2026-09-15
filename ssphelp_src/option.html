@@ -185,8 +185,24 @@
 
 	<tr>
 		<td>--dump-error-log ファイルパス [省略可]</td>
-		<td>--offline-dump と組み合わせて使用する。surfaces.txtのパースエラーをUTF-8テキストファイルとして指定パスに書き出す。エラーがない場合は空のファイルが作成される。<br />
-		--dump-surface-list を省略してこのオプションのみ指定することで、ダンプを行わずエラーチェックのみを実行できる。</td>
+		<td>--offline-dump と組み合わせて使用する。シェル読み込み時のエラーログ（surfaces.txtのパースエラーなど）を指定パスに書き出す。<br />
+		--dump-surface-list を省略してこのオプションのみ指定することで、ダンプを行わずエラーチェックのみを実行できる。<br />
+		例：<code>ssp.exe --offline-dump "C:\SSP\ghost\myGhost" --dump-error-log "C:\dump\error.csv"</code><br />
+		<br />
+		出力形式：BOM付きUTF-8のCSV（改行はCRLF）。1行が1件で、各列は"で囲まれ、列中の"は""にエスケープされる。<br />
+		<code>"時刻","ゴースト名","レベル","内容"</code><br />
+		時刻：HH:MM:SS形式。<br />
+		レベル：Info / Notice / Warning / Error / Critical / System のいずれか。<br />
+		内容：ログの本文。2.8.94以降、SERIKO関連のログには <code>[SERIKO] shell\master\surfaces.txt:Line=12:Surface=10 ...</code> のように定義元のファイル（ゴーストフォルダからの相対パス）と行番号が付く。二重定義のログには、先に定義された位置も <code> (ファイル名:Line=n)</code> として併記される。<br />
+		2.8.94以降、このオプション指定時はログを最大10000件まで保持し、似た内容のログを要約行（レベルSystem）にまとめる処理も行わないため、ログが取りこぼされない。<br />
+		ログが1件もない場合はファイルは作成されない（同じパスに既存のファイルがあっても上書き・削除はされない）。<br />
+		<br />
+		終了コード：2.8.94以降、記録されたログのうち最も重いレベルに応じた終了コードでプロセスが終了する。<br />
+		0：ログなし、またはInfo/Noticeのみ<br />
+		1：Warningあり（Error/Criticalなし）<br />
+		2：Errorあり（Criticalなし）<br />
+		3：Criticalあり<br />
+		ゴーストの読み込み自体に失敗した場合（指定フォルダのdescript.txtが読めない等）は、ログは出力されず終了コードも0になる。</td>
 	</tr>
 
 	<tr>
