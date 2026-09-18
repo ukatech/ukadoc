@@ -200,13 +200,15 @@
 		<td>--offline-dump フォルダパス</td>
 		<td>オフラインダンプモードで起動する。ゴーストを実際に起動することなく、指定したゴーストフォルダのsurfaces.txtを読み込んでサーフェス画像をダンプし、即終了する。SHIORI/MAKOTO/PIROはロードされない。ウィンドウ・メッセージループも作成されない。<br />
 		引数にはゴーストのフォルダパスを指定する（末尾の\は任意）。<br />
+		2.8.98以降、オフラインダンプ関連のオプション（このオプション・--dump-output-dir・--dump-error-log）に相対パスを指定した場合は、SSPを起動したときのカレントディレクトリ基準で解決される。<br />
 		<br />
 		例：<code>ssp.exe --offline-dump "C:\SSP\ghost\myGhost" --dump-surface-list "0,1" --dump-output-dir "C:\dump"</code></td>
 	</tr>
 
 	<tr>
 		<td>--dump-shell フォルダ名か名前 [省略可]</td>
-		<td>--offline-dump と組み合わせて使用する。ダンプ対象のシェルをフォルダ名（＝shell以下の相対パス）か名前で指定する。省略時はdescript.txtで指定されているデフォルトシェル（通常はmaster）が使われる。</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプ対象のシェルをフォルダ名（＝shell以下の相対パス）か名前で指定する。省略時はdescript.txtで指定されているデフォルトシェル（通常はmaster）が使われる。<br />
+		2.8.98以降、指定したシェルが見つからない場合は、デフォルトシェルでダンプせず、エラーログにErrorを記録して何も出力しない。</td>
 	</tr>
 
 	<tr>
@@ -218,17 +220,19 @@
 		<td>--dump-surface-list リスト [省略可]</td>
 		<td>--offline-dump と組み合わせて使用する。ダンプするサーフェスをカンマ区切りで指定する。surface番号のプレフィックス（surface）は省略可能。<a href="https://ssp.shillest.net/ukadoc/manual/descript_shell_surfaces.html#caption_surfacebraceID">surfaces.txtのサーフェスID指定の拡張形式</a>も使用できる。<br />
 		例：<code>--dump-surface-list "0,1,10"</code><br />
-		このオプションを省略した場合はサーフェスダンプは行われない（--dump-error-log と組み合わせてパースエラーのみ出力することができる）。</td>
+		このオプションを省略した場合はサーフェスダンプは行われない（--dump-error-log と組み合わせてパースエラーのみ出力することができる）。<br />
+		2.8.98以降、プレフィックスの省略は先頭の要素だけでなく各要素で有効（<code>"0,surface1"</code> など）。また、範囲でなく単独の番号で指定したサーフェスが存在しない場合は、エラーログにWarningを記録する（範囲指定内の欠番は記録しない）。</td>
 	</tr>
 
 	<tr>
 		<td>--dump-output-dir ディレクトリ [省略可]</td>
-		<td>--offline-dump と組み合わせて使用する。ダンプ画像の出力先ディレクトリを指定する。省略時はカレントディレクトリが使われる。</td>
+		<td>--offline-dump と組み合わせて使用する。ダンプ画像の出力先ディレクトリを指定する。省略時はカレントディレクトリが使われる（2.8.97以前は省略するとダンプが行われなかった）。</td>
 	</tr>
 
 	<tr>
 		<td>--dump-output-prefix プレフィックス [省略可]</td>
-		<td>--offline-dump と組み合わせて使用する。出力ファイル名の先頭に付けるプレフィックスを指定する。省略時はプレフィックスなし。</td>
+		<td>--offline-dump と組み合わせて使用する。出力ファイル名のうち、サーフェス番号の前に付く部分を指定する。既定の「surface」がこの文字列に置き換わる（付け足しではない）。省略時は「surface」。<br />
+		例：<code>--dump-output-prefix "x_"</code> でサーフェス0は <code>x_0.png</code> になる（<code>x_surface0.png</code> ではない）。</td>
 	</tr>
 
 	<tr>
