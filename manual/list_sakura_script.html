@@ -532,8 +532,8 @@
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch,パス,オプション...]</a></li>
 				<li><a href="#_!_cancel,filewatch,パス_">\![cancel,filewatch,パス]</a></li>
-				<li><a href="#_!_execute,createnar">\![execute,createnar]</a></li>
-				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata]</a></li>
+				<li><a href="#_!_execute,createnar">\![execute,createnar,出力先ファイル]</a></li>
+				<li><a href="#_!_execute,createupdatedata">\![execute,createupdatedata,出力先ファイル]</a></li>
 				<li><a href="#_!_execute,emptyrecyclebin">\![execute,emptyrecyclebin]</a></li>
 				<li><a href="#_!_enter,passivemode_">\![enter,passivemode]</a></li>
 				<li><a href="#_!_leave,passivemode_">\![leave,passivemode]</a></li>
@@ -5731,18 +5731,23 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,createnar">
-				<dt class="entry">\![execute,createnar]</dt>
+				<dt class="entry">\![execute,createnar,出力先ファイル]</dt>
 				<dd class="entry">
-					<p>スクリプトを実行したゴースト自身のNARを作る。</p>
+					<p>スクリプトを実行したゴースト自身のNARを作る。
+					<br />出力先ファイル : 省略可。ゴーストのghost/masterフォルダからの相対パス、または絶対パスで指定する。[2.8.98]
+					<br />指定した場合は出力先の確認を行わずそのファイルに作り、既に同名のファイルがある場合は上書きする。出力先がゴーストのフォルダ内の場合、そのファイル自身はNARに含まれない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
 					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_execute,createupdatedata">
-				<dt class="entry">\![execute,createupdatedata]</dt>
+				<dt class="entry">\![execute,createupdatedata,出力先ファイル]</dt>
 				<dd class="entry">
-					<p>スクリプトを実行したゴースト自身の更新定義ファイル(updates2.dau/updates.txt)を作る。</p>
+					<p>スクリプトを実行したゴースト自身の更新定義ファイル(updates2.dau/updates.txt)を作る。
+					<br />出力先ファイル : 省略可。ゴーストのghost/masterフォルダからの相対パス、または絶対パスで指定する。[2.8.98]
+					<br />指定した場合はそのファイルに1つだけ作り、既に同名のファイルがある場合は上書きする。ファイル名が.dauで終わる場合はupdates2.dauと同じ形式、それ以外の場合はupdates.txtの形式で出力する。
+					<br />このとき通常の出力先(ゴーストのルートとghost/master)のupdates2.dau/updates.txtは作成・削除とも行わない。出力先がゴーストのフォルダ内の場合、そのファイル自身は更新定義に含まれない。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.5.08</li>
 					</ul>
