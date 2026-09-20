@@ -1124,9 +1124,26 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_sakura.balloon.offsetx,座標">
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p>そのサーフェスでのみの本体側バルーン位置X座標。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
-					align=top/bottom：サーフェスの中央</p>
+					<p>そのサーフェスでのみの本体側バルーン位置X座標。<br />
+					offsetx / offsety の後ろに方向を表す1文字を付けると、バルーンをどこに出すかによって違う値を使わせることができる(SSPのみ)。</p>
+					<dl>
+						<dt>offsetx / offsety</dt>
+						<dd>方向指定なし。下記が書かれていない時に使われる既定値。</dd>
+						<dt>offsetxl / offsetyl</dt>
+						<dd>バルーンをシェルの左に出す時。</dd>
+						<dt>offsetxr / offsetyr</dt>
+						<dd>バルーンをシェルの右に出す時。</dd>
+						<dt>offsetxc / offsetyc</dt>
+						<dd>バルーンをシェルの頭上・足元に出す時。中央寄せになる2通りで共通。</dd>
+						<dt>offsetxb / offsetyb</dt>
+						<dd>バルーンをシェルの足元に出す時。頭上と足元で違う値にしたい場合に使う。</dd>
+					</dl>
+					<p>offsetxb が無ければ offsetxc、それも無ければ offsetx が使われる。
+					offsetxc / offsetxl / offsetxr が無い時は offsetx が使われる。X座標とY座標はそれぞれ独立に決まる。<br />
+					ここで書いた値は、シェルの<a href="./descript_shell.html#_1_sakura.balloon.offsetx,座標">descript.txt</a>に書いた同名の値より優先される。</p>
+					<p>符号の向きは<a href="./descript_shell.html#_1_sakura.balloon.offsetx,座標">descript.txtのsakura.balloon.offsetx</a>と同じ。</p>
+					<p class="default">左右に出す時：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
+					頭上・足元に出す時：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1137,9 +1154,11 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_sakura.balloon.offsety,座標">
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p>そのサーフェスでのみの本体側バルーン位置Y座標。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
-					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
+					<p>そのサーフェスでのみの本体側バルーン位置Y座標。<br />
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
+					<p class="default">左右に出す時：バルーンの上端と、サーフェスの上端が揃う位置<br>
+					頭上に出す時：バルーンの下端と、サーフェスの上端が揃う位置<br>
+					足元に出す時：バルーンの上端と、サーフェスの下端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1150,9 +1169,10 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_kero.balloon.offsetx,座標">
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
-					<p>そのサーフェスでのみの相方側バルーン位置X座標。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
-					align=top/bottom：サーフェスの中央</p>
+					<p>そのサーフェスでのみの相方側バルーン位置X座標。<br />
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
+					<p class="default">左右に出す時：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
+					頭上・足元に出す時：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1163,9 +1183,11 @@ animation0.pattern3,overlay,-1,100,168,67
 			<dl id="_2_kero.balloon.offsety,座標">
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
-					<p>そのサーフェスでのみの相方側バルーン位置Y座標。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
-					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
+					<p>そのサーフェスでのみの相方側バルーン位置Y座標。<br />
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
+					<p class="default">左右に出す時：バルーンの上端と、サーフェスの上端が揃う位置<br>
+					頭上に出す時：バルーンの下端と、サーフェスの上端が揃う位置<br>
+					足元に出す時：バルーンの上端と、サーフェスの下端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -1177,9 +1199,10 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p>そのサーフェスでのみのバルーン位置X座標(本体・相方問わず)。<br>
-					offset.xとも記述可能。</p>
-					<p class="default">通常：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
-					align=top/bottom：サーフェスの中央</p>
+					offset.xとも記述可能。<br />
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
+					<p class="default">左右に出す時：バルーンの左右端と、サーフェスの右左端が揃う位置<br>
+					頭上・足元に出す時：サーフェスの中央</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -1189,9 +1212,11 @@ animation0.pattern3,overlay,-1,100,168,67
 				<dt class="entry">balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p>そのサーフェスでのみのバルーン位置Y座標(本体・相方問わず)。<br>
-					offset.yとも記述可能。</p>
-					<p class="default">通常：バルーンの上端と、サーフェスの上端が揃う位置<br>
-					align=top/bottom：バルーンの上下端と、サーフェスの下上端が揃う位置</p>
+					offset.yとも記述可能。<br />
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_2_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
+					<p class="default">左右に出す時：バルーンの上端と、サーフェスの上端が揃う位置<br>
+					頭上に出す時：バルーンの下端と、サーフェスの上端が揃う位置<br>
+					足元に出す時：バルーンの上端と、サーフェスの下端が揃う位置</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>

@@ -688,8 +688,32 @@ kero.menuitem3,2
 				<dt class="entry">sakura.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p>本体側バルーン位置X座標。<br />
-					後ろにl,rをつける (例：offsetxr) と、バルーンを左右に表示する時のオフセットを個別に設定できる(SSP 2.4.58～)。<br />
-					ただし、r(右)の時はX座標が逆になるので注意(通常と逆で左方向が＋)</p>
+					offsetx / offsety の後ろに方向を表す1文字を付けると、バルーンをどこに出すかによって違う値を使わせることができる(SSPのみ)。</p>
+					<dl>
+						<dt>offsetx / offsety</dt>
+						<dd>方向指定なし。下記が書かれていない時に使われる既定値。</dd>
+						<dt>offsetxl / offsetyl</dt>
+						<dd>バルーンをシェルの左に出す時。</dd>
+						<dt>offsetxr / offsetyr</dt>
+						<dd>バルーンをシェルの右に出す時。</dd>
+						<dt>offsetxc / offsetyc</dt>
+						<dd>バルーンをシェルの頭上・足元に出す時。中央寄せになる2通りで共通。</dd>
+						<dt>offsetxb / offsetyb</dt>
+						<dd>バルーンをシェルの足元に出す時。頭上と足元で違う値にしたい場合に使う。</dd>
+					</dl>
+					<p>書かれていない時に何が使われるかは以下の通り。X座標とY座標はそれぞれ独立に決まる。</p>
+					<dl>
+						<dt>offsetxb が無い時</dt>
+						<dd>offsetxc → offsetx の順に探す。</dd>
+						<dt>offsetxc / offsetxl / offsetxr が無い時</dt>
+						<dd>offsetx を使う。</dd>
+					</dl>
+					<p>どちらに出すかは、バルーンのdescript.txtの<a href="./descript_balloon.html#windowposition.x,座標">windowposition.x</a>、
+					シェルの<a href="#sakura.balloon.alignment,位置情報">sakura.balloon.alignment</a>、
+					さくらスクリプトの<a href="./list_sakura_script.html#_!_set,balloonalign,ID_">\![set,balloonalign,ID]</a>で決まる。</p>
+					<p><strong>符号に注意。</strong>X座標の＋はどの場合もシェルに近づく向きで、左に出す時は右方向、右に出す時は<strong>左方向</strong>が＋になる
+					(頭上・足元は右方向が＋)。Y座標の＋は常に下方向。<br />
+					ただし0の位置(基準)が方向ごとに違う。左右はバルーンの上端とシェル画像の上端が揃う位置、頭上はバルーンの下端がシェル画像の上端に接する位置、足元はバルーンの上端がシェル画像の下端に接する位置。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -702,8 +726,7 @@ kero.menuitem3,2
 				<dt class="entry">sakura.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p>本体側バルーン位置Y座標。<br />
-					後ろにl,rをつける (例：offsetxr) と、バルーンを左右に表示する時のオフセットを個別に設定できる(SSP 2.4.58～)。<br />
-					ただし、r(右)の時はX座標が逆になるので注意(通常と逆で左方向が＋)</p>
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_1_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -716,8 +739,7 @@ kero.menuitem3,2
 				<dt class="entry">kero.balloon.offsetx,座標</dt>
 				<dd class="entry">
 					<p>相方側バルーン位置X座標。<br />
-					後ろにl,rをつける (例：offsetxr) と、バルーンを左右に表示する時のオフセットを個別に設定できる(SSP 2.4.58～)。<br />
-					ただし、r(右)の時はX座標が逆になるので注意(通常と逆で左方向が＋)</p>
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_1_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -730,8 +752,7 @@ kero.menuitem3,2
 				<dt class="entry">kero.balloon.offsety,座標</dt>
 				<dd class="entry">
 					<p>相方側バルーン位置Y座標。<br />
-					後ろにl,rをつける (例：offsetxr) と、バルーンを左右に表示する時のオフセットを個別に設定できる(SSP 2.4.58～)。<br />
-					ただし、r(右)の時はX座標が逆になるので注意(通常と逆で左方向が＋)</p>
+					方向を表す1文字(l / r / c / b)を後ろに付ける書き方については<a href="#_1_sakura.balloon.offsetx,座標">sakura.balloon.offsetx</a>を参照。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
