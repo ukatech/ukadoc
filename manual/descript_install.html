@@ -137,6 +137,7 @@
 			<h1>install.txt</h1>
 			<ul>
 				<li class="caption introduction"><a href="#introduction_install.txt">install.txt</a></li>
+				<li class="caption introduction"><a href="#introduction_install_multi">同時インストール</a></li>
 			</ul>
 			<ul>
 				<li><a href="#charset,文字コード">charset,文字コード</a></li>
@@ -237,8 +238,57 @@ type,package
 					<p>charset指定は必ず1行目で行う（Shift_JISの場合省略可）。</p>
 					<p>name、typeは必須。directoryもtypeがsupplementかpackage以外の場合は必須。<br>それ以外の項目は、必要に応じて指定する。</p>
 					<p>追加シェルやサプリメントの場合、想定外のゴーストにインストールされる事を避けるためにaccept指定が利用できる。<br>特にサプリメントは予期せぬファイルの上書き破損事故の危険性があるためほぼ必須。<br>accept指定に用いるのはゴースト名ではなく<em>本体側名</em>であることに注意。</p>
-					<p>SSPでは、バルーンやプラグインをゴーストかシェルに同梱させる場合、*.directoryを利用する。</p>
+					<p>SSPでは、バルーンやプラグインをゴーストかシェルに同梱させる場合、*.directoryを利用する。<br />詳しくは<a href="#introduction_install_multi">「同時インストール」</a>を参照。</p>
 					<p>なおnameは主に、<a href="list_shiori_event.html#OnInstallComplete">インストール系SHIORI Event</a>のReferenceでの通知内容に用いられる。<br>ゴーストによってはこの情報を利用して、インストールされた直後の対象へ切り替えを実行できるような機能を備えている場合があるが、descript.txtにある実際のゴーストのnameとinstall.txtでの表記が異なると、その切り替えが正常に働かなくなるので注意。</p>
+				</section>
+			</section>
+			<section class="caption introduction" id="introduction_install_multi">
+				<h1>同時インストール</h1>
+				<section>
+					<h1>概要</h1>
+					<p>
+						SSPでは、ゴーストやシェルのアーカイブにバルーンなどを同梱して、まとめてインストールさせる事ができる。
+						<br />同梱する内容は「*.」で始まるエントリで指定し、*の部分には同梱する内容の種別が入る。
+					</p>
+					<p>*に書けるのは下記の5種類。</p>
+					<dl>
+						<dt>balloon</dt>
+						<dd>バルーン</dd>
+						<dt>headline</dt>
+						<dd>ヘッドラインセンサ</dd>
+						<dt>plugin</dt>
+						<dd>プラグイン</dd>
+						<dt>calendar.skin</dt>
+						<dd>カレンダーの外見ファイル</dd>
+						<dt>calendar.plugin</dt>
+						<dd>カレンダーのスケジュールセンサ</dd>
+					</dl>
+					<p><a href="#type,種別">type</a>での表記と異なり、カレンダー系は<em>ドット区切り</em>である事に注意（calendar skinではなくcalendar.skin）。</p>
+					<p>アーカイブ自身の<a href="#type,種別">type</a>を問わず機能するが、実用上はtypeが<em>ghost</em>か<em>shell</em>のアーカイブで用いる。</p>
+				</section>
+				<section>
+					<h1>複数同梱する場合の番号の付け方</h1>
+					<p>同じ種別のものを複数同梱する場合は、*の部分を balloon0、balloon1、… のように、種別の後ろへ0始まりの番号を付けて並べる。（SSP 2.7.00以降）</p>
+					<p>探索は<em>無印→0→1→2…</em>の順に行われ、<em>見つからない番号が出た時点で打ち切られる</em>。
+					<br />そのため<em>欠番を作ってはいけない</em>。例えばballoon0とballoon2だけを書いた場合、balloon1が無い時点で打ち切られるため、balloon2は読まれない。</p>
+					<p>無印と0は別のものとして扱われる。balloonとballoon0を両方書けば、バルーンが2個インストールされる。</p>
+					<p><a href="#*.directory,ディレクトリ名">*.directory</a>、<a href="#*.source.directory,ディレクトリ名">*.source.directory</a>、<a href="#*.refresh,数値">*.refresh</a>、<a href="#*.refreshundeletemask,ファイル名1:ファイル名2...">*.refreshundeletemask</a>は、いずれも番号ごとに独立して指定できる。</p>
+					<p>なお、ゴーストやシェルに<em>紐づくバルーンとして設定されるのは最初の1個だけ</em>である。
+					<br />2個目以降はインストールされるだけで、そのゴーストの標準バルーンにはならない。</p>
+				</section>
+				<section>
+					<h1>記述例</h1>
+					<p>ゴーストにバルーン2個とプラグイン1個を同梱する場合</p>
+<pre><code>charset,Shift_JIS
+name,凡例さん
+type,ghost
+directory,example
+balloon0.directory,example_balloon
+balloon0.source.directory,balloon_normal
+balloon1.directory,example_balloon_ex
+balloon1.source.directory,balloon_special
+plugin0.directory,example_plugin
+</code></pre>
 				</section>
 			</section>
 			<dl id="charset,文字コード">
@@ -361,9 +411,9 @@ type,package
 				<dt class="entry">*.directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p>同時インストールする内容のインストール後のディレクトリ名。半角英数推奨。
-					<br />*部分には同時インストールする内容のtype（balloon、headline、plugin、calendar.skin、calendar.pluginのいずれか）が入る。
-					<br />複数の同じ種類のものをインストールしたい時は、*部分を balloon0,balloon1,...のように、種類の後ろに数字をつけて複数書けば良い。
-					<br /><a href="#type,種別">type</a>が<em>ghost</em>か<em>shell</em>の場合にのみ設定可能。</p>
+					<br />*部分の書き方と、同じ種別を複数同梱する場合の番号の付け方は<a href="#introduction_install_multi">「同時インストール」</a>を参照。
+					<br />ここに指定できるのは<em>1階層のディレクトリ名だけ</em>で、パス区切りは使えない（「_」に置換される）。
+					<br />アーカイブ自身の<a href="#type,種別">type</a>を問わず機能するが、実用上はtypeが<em>ghost</em>か<em>shell</em>のアーカイブで用いる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -374,7 +424,11 @@ type,package
 				<dt class="entry">*.source.directory,ディレクトリ名</dt>
 				<dd class="entry">
 					<p>同時にインストールする内容のアーカイブ内でのディレクトリ名。半角英数推奨。
-					<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。</p>
+					<br />同時にインストールする内容の、設置後のディレクトリ名とアーカイブ内でのディレクトリ名が一致しない場合に設定。
+					<br />番号付き（balloon0.source.directoryなど）も同様に指定できる。</p>
+					<p>SSP 2.9.00以降は、extra\bal1 のようにアーカイブ内の階層を辿る相対パスも指定できる。
+					<br />区切りは「\」「/」のどちらでもよい。「..」による上位階層への参照はできない（取り除かれる）。
+					<br />2.9.00未満では区切りが「_」に置換されるため、1階層のディレクトリ名しか指定できない。</p>
 					<p class="default">*.directoryで設定したディレクトリ名</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -384,7 +438,7 @@ type,package
 			<dl id="*.refresh,数値">
 				<dt class="entry">*.refresh,数値</dt>
 				<dd class="entry">
-					<p>同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。</p>
+					<p>同時にインストールする内容の<a href="#refresh,数値">refresh</a>設定。<br />番号付き（balloon0.refreshなど）も同様に指定できる。</p>
 					<p class="default">1以外の任意値（refresh無効）</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -394,7 +448,7 @@ type,package
 			<dl id="*.refreshundeletemask,ファイル名1:ファイル名2...">
 				<dt class="entry">*.refreshundeletemask,ファイル名1:ファイル名2...</dt>
 				<dd class="entry">
-					<p>同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。</p>
+					<p>同時にインストールする内容の<a href="#refreshundeletemask,ファイル名1:ファイル名2...">refreshundeletemask</a>設定。<br />番号付き（balloon0.refreshundeletemaskなど）も同様に指定できる。</p>
 					<p class="default">挙動なし</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

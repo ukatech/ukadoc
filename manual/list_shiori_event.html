@@ -2583,14 +2583,15 @@
 			<dl id="OnInstallComplete">
 				<dt class="entry">OnInstallComplete</dt>
 				<dd class="entry">
-					<p>インストールが正常終了した際に発生。</p>
+					<p>インストールが正常終了した際に発生。<br />このイベントは旧仕様のため、1回のインストールで同時に入った物のうち<em>先頭の2件</em>しか通知されない。
+					<br />同梱によって3件以上が同時にインストールされうる場合は、<a href="#OnInstallCompleteEx">OnInstallCompleteEx</a>を使う事。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。</dd>
 						<dt>Reference1</dt>
 						<dd>インストールした物の名前（install.txtのname指定）。</dd>
 						<dt>Reference2</dt>
-						<dd>インストールした物の名前2（ghost with balloonなどの場合のballoon側の名前）。</dd>
+						<dd>インストールした物の名前2（ゴーストにバルーンを同梱した場合などのballoon側の名前）。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
@@ -2621,7 +2622,8 @@
 			<dl id="OnInstallCompleteAll">
 				<dt class="entry">OnInstallCompleteAll</dt>
 				<dd class="entry">
-					<p>複数のnarをD&Dした時などに、インストールが<b>すべて</b>正常終了した際に、OnInstallComplete/同Exの後に、最後に発生。</p>
+					<p>複数のnarをD&Dした時などに、インストールが<b>すべて</b>正常終了した際に、OnInstallComplete/同Exの後に、最後に発生。
+					<br />SSPでは2.9.00より前のバージョンに実装漏れがあり、実際には発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>インストールした物の<a href="#caption_install-identifier">※識別子</a>。複数の場合はバイト値1区切り。</dd>
@@ -2631,7 +2633,7 @@
 						<dd>インストールした場所。複数の場合はバイト値1区切り。</dd>
 					</dl>
 					<ul class="supported-baseware">
-						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.00</li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
 					</ul>
 				</dd>
@@ -2700,7 +2702,7 @@
 					<li>rss</li>
 					<li>supplement</li>
 				</ul>
-				<p>以下はOnInstallComplete / OnNarCreatedのみ</p>
+				<p>以下はOnInstallComplete / OnNarCreatedのみ<br />SSPでは廃止されており、ゴーストとバルーンがそれぞれ別の識別子として通知される。</p>
 				<ul>
 					<li>ghost with balloon</li>
 					<li>shell with balloon</li>
@@ -2712,6 +2714,8 @@
 					<li>package</li>
 					<li>language</li>
 				</ul>
+				<p>SSPで<a href="descript_install.html#introduction_install_multi">同時インストール</a>された物の識別子は、install.txtでの指定と同じく<em>ドット区切り</em>の
+				calendar.skin / calendar.plugin になる。<br />アーカイブ本体側の識別子はinstall.txtのtypeの表記のままなので、空白区切りの calendar skin / calendar plugin になる。</p>
 			</section>
 			<section class="caption" id="caption_install-reasonoffailure">
 				<h1>インストールの失敗理由</h1>
