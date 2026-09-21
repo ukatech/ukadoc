@@ -271,6 +271,49 @@
 	</tr>
 
 	<tr>
+		<th colspan="2">オフラインツール</th>
+	</tr>
+
+	<tr>
+		<td>--offline-tool 種別 [2.9.01以降]</td>
+		<td>オフラインツールモードで起動する。ゴーストを起動することなく、--target-dir で指定したフォルダからNAR・更新定義ファイル・アーカイブを作成し、即終了する。ゴーストのイベントは一切発生せず、ウィンドウ・メッセージループも作成されない。<br />
+		さくらスクリプトの \![execute,createnar] / \![execute,createupdatedata] / \![execute,compressarchive] と同等の処理だが、出力先の制限（SSP管理下のフォルダに限る等）はなく自由に指定できる。<br />
+		種別には以下のいずれかを指定する（大文字小文字は区別しない）。<br />
+		<br />
+		nar：NARファイルを作成する。developer_options.txt の nonar 指定・.narignore 等による除外は通常のNAR作成と同じく適用される。フォルダ直下にinstall.txtが無い場合は、descript.txt（またはghost\master\descript.txt）から種別と名前を判定して対象フォルダにinstall.txtを作成したうえで収録する。種別と名前が判定できない場合は失敗となる。<br />
+		updatedata：更新定義ファイルを作成する。--output のファイル名が.dauで終わる場合はupdates2.dauと同じ形式、それ以外の場合はupdates.txtの形式で、指定したファイル1つだけを作成する。対象フォルダ直下・ghost\master の updates2.dau / updates.txt は作成・削除とも行わない。developer_options.txt の noupdate 指定・.updateignore 等による除外は通常と同じく適用される。<br />
+		archive：対象フォルダをそのまま圧縮する。.narignore 等の除外指定は読まない（隠しファイル・隠しフォルダは収録しない）。形式は --output の拡張子で決まり、.7zの場合は7z形式、それ以外はzip形式となる。<br />
+		<br />
+		いずれの種別でも、出力先のファイルが既に存在する場合は上書きする。出力先が対象フォルダ内の場合、そのファイル自身は収録しない。出力先のフォルダはあらかじめ存在している必要がある。<br />
+		--target-dir・--output に相対パスを指定した場合は、SSPを起動したときのカレントディレクトリ基準で解決される。<br />
+		<br />
+		終了コード：<br />
+		0：成功<br />
+		1：引数が不正（種別が不明、--target-dir・--output の省略、--target-dir が存在しないかフォルダでない）<br />
+		2：作成に失敗した（出力先に書き込めない、NARの種別と名前が判定できない、updatedataで読み取れないファイルや深すぎる階層（32段超）があった、など）。失敗時も途中まで作成したファイルが残る場合がある<br />
+		<br />
+		例：<code>ssp.exe --offline-tool nar --target-dir "C:\src\myGhost" --output "C:\out\myGhost.nar"</code><br />
+		例：<code>ssp.exe --offline-tool updatedata --target-dir "C:\src\myGhost" --output "C:\out\updates2.dau"</code><br />
+		例：<code>ssp.exe --offline-tool archive --target-dir "C:\src\data" --output "C:\out\data.7z" --password "pass"</code></td>
+	</tr>
+
+	<tr>
+		<td>--target-dir フォルダパス [2.9.01以降]</td>
+		<td>--offline-tool と組み合わせて使用する（必須）。処理対象のフォルダを指定する（末尾の\は任意）。NAR・更新定義ファイルの場合はゴースト等のルートフォルダ（descript.txtやinstall.txt、ghostフォルダがあるフォルダ）を指定する。</td>
+	</tr>
+
+	<tr>
+		<td>--output ファイルパス [2.9.01以降]</td>
+		<td>--offline-tool と組み合わせて使用する（必須）。作成するファイルのパスを指定する。</td>
+	</tr>
+
+	<tr>
+		<td>--password パスワード [省略可] [2.9.01以降]</td>
+		<td>--offline-tool の nar または archive と組み合わせて使用する。指定したパスワードでAES暗号化ZIPを作成する（7z形式の場合は7zの暗号化となる）。updatedata では無視される。<br />
+		パスワードはコマンドラインにそのまま残るため、取り扱いに注意すること。</td>
+	</tr>
+
+	<tr>
 		<td>--guifont フォント名 [2.8.75以降]</td>
 		<td>GUIに使用するフォントを指定する。完全にすべてが置き換わるわけではなく、メニューの一部やタイトルバーなどは今のところ変わらない。</td>
 	</tr>
