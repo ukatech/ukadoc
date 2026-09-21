@@ -22,12 +22,23 @@
 	<li>そのショートカットを実行すれば、普通にssp.exeを起動した場合とは異なり、オプション設定が反映された状態で起動できます。</li>
 </ol>
 
-<h2>オプション一覧</h2>
+<h2 id="list">オプション一覧</h2>
 
-<p>--option オプションはカンマ区切りで複数指定できます。</p>
 <p>各オプションは <code>--オプション名</code> 形式を推奨します。後方互換のため <code>/x</code> / <code>-x</code> 形式のショートオプションも引き続き使用できます。</p>
 <p>値を取るオプションは <code>--オプション名 値</code> のように、オプション名と値を半角スペースで区切って指定します。値に空白を含む場合は「""」で囲んでください。</p>
 <p>2.8.97以降は補助的に <code>--オプション名=値</code> の形式も受け付けます（例：<code><a>--sstp-listen</a>=9900</code>）。このページの記載は空白区切りを基本とします。なお <code>/x</code> 形式のショートオプションでは <code>=</code> 形式は使えません。</p>
+
+<ul>
+	<li><a href="#option">--option オプション</a></li>
+	<li><a href="#general">一般オプション</a></li>
+	<li><a href="#offline-dump">オフラインサーフェスダンプ</a></li>
+	<li><a href="#offline-tool">オフラインツール</a></li>
+	<li><a href="#other">その他</a></li>
+</ul>
+
+<h3 id="option">--option オプション</h3>
+
+<p>--option オプションはカンマ区切りで複数指定できます（例：<code>--option bootunlock,standalone</code>）。</p>
 
 <table class="CommandLineSwitch">
 	<tr>
@@ -118,6 +129,15 @@
 		<td>--option deletesource<br /><small>（旧: /o deletesource）</small></td>
 		<td>--install と同時に使うと、NARのインストールに成功した時にNARを削除する。</td>
 	</tr>
+</table>
+
+<h3 id="general">一般オプション</h3>
+
+<table class="CommandLineSwitch">
+	<tr>
+		<th>スイッチ</th>
+		<th>機能</th>
+	</tr>
 
 	<tr>
 		<td>--fmo-name FMO名<br /><small>（旧: /f FMO名）</small></td>
@@ -196,7 +216,17 @@
 	</tr>
 
 	<tr>
-		<th colspan="2">オフラインサーフェスダンプ</th>
+		<td>--guifont フォント名 [2.8.75以降]</td>
+		<td>GUIに使用するフォントを指定する。完全にすべてが置き換わるわけではなく、メニューの一部やタイトルバーなどは今のところ変わらない。</td>
+	</tr>
+</table>
+
+<h3 id="offline-dump">オフラインサーフェスダンプ</h3>
+
+<table class="CommandLineSwitch">
+	<tr>
+		<th>スイッチ</th>
+		<th>機能</th>
 	</tr>
 
 	<tr>
@@ -269,9 +299,14 @@
 		このオプションでcollisionを指定しない場合、ユーザー設定（開発用パレットの当たり判定表示）にかかわらず当たり判定は描かれない。
 		</td>
 	</tr>
+</table>
 
+<h3 id="offline-tool">オフラインツール</h3>
+
+<table class="CommandLineSwitch">
 	<tr>
-		<th colspan="2">オフラインツール</th>
+		<th>スイッチ</th>
+		<th>機能</th>
 	</tr>
 
 	<tr>
@@ -312,19 +347,18 @@
 		<td>--offline-tool の nar または archive と組み合わせて使用する。指定したパスワードでAES暗号化ZIPを作成する（7z形式の場合は7zの暗号化となる）。updatedata では無視される。<br />
 		パスワードはコマンドラインにそのまま残るため、取り扱いに注意すること。</td>
 	</tr>
+</table>
 
-	<tr>
-		<td>--guifont フォント名 [2.8.75以降]</td>
-		<td>GUIに使用するフォントを指定する。完全にすべてが置き換わるわけではなく、メニューの一部やタイトルバーなどは今のところ変わらない。</td>
-	</tr>
+<h3 id="other">その他</h3>
 
+<table class="CommandLineSwitch">
 	<tr>
-		<th colspan="2">その他</th>
+		<th>スイッチ</th>
+		<th>機能</th>
 	</tr>
 
 	<tr>
 		<td>initial_install.nar</td>
 		<td>起動オプションではないが、ssp.exeと同じフォルダに<b>initial_install.nar</b>という名前のNARファイルを配置しておくと、SSP起動時にサイレント（確認ダイアログなし）で上書きインストールされる。インストール完了後、initial_install.narは自動的に削除される。SSPにゴースト等を同梱して配布する場合などに利用できる。 [2.7.52～]</td>
 	</tr>
-
 </table>
