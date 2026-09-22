@@ -526,6 +526,7 @@
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</a></li>
+				<li><a href="#_!_execute,dumpballoon,ディレクトリ,スコープID_">\![execute,dumpballoon,ディレクトリ,スコープID,prefix,イベントID]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,種別]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
@@ -5611,6 +5612,22 @@
 					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.5.98]</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="_!_execute,dumpballoon,ディレクトリ,スコープID_">
+				<dt class="entry">\![execute,dumpballoon,ディレクトリ,スコープID,prefix,イベントID]</dt>
+				<dd class="entry">
+					<p>指定したスコープのバルーンの、現在の描画内容を画像として指定したディレクトリに出力する。
+					<br />サーフェスと異なり状態を指定して描き直すことはできず、その時点でバルーンに描かれている内容がそのまま出力される。拡大縮小や半透明(フェード含む)は適用前の等倍の画像になる。
+					<br />バルーンが非表示でも、描画内容が残っていれば出力される。
+					<br />出力ファイル名は prefix+スコープID+.png となる(例 : balloon0.png)。
+					<br />スコープID : \sタグに指定するものと同じIDを指定する。
+					<br />prefix : (省略可) 出力したいファイルの頭につける文字列。省略した場合はballoon。
+					<br />イベントID : (省略可) 出力が終わり次第指定したイベントを発生させる。Reference0には出力に成功したファイル数(0または1)が入る。
+					<br />出力先の制限は\![execute,dumpsurface]と同じ。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.02</li>
 					</ul>
 				</dd>
 			</dl>
