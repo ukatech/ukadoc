@@ -6,7 +6,12 @@
 
 <h2>MCPサーバ対応機能</h2>
 <p>
-	SSPはMCP (Model context protocol) サーバとしてふるまうことができ、AI(LLM)からのSakuraScript実行やプロパティシステムの読み取りなどが可能です。
+	伺か関連で利用できるMCP (Model context protocol) サーバには、SSPに内蔵されているもののほか、仕様書やゴーストを検索するためのオンラインのものがあります。
+</p>
+
+<h3>SSP内蔵のMCPサーバ</h3>
+<p>
+	SSPはMCPサーバとしてふるまうことができ、AI(LLM)からのSakuraScript実行やプロパティシステムの読み取りなどが可能です。
 	<br />この機能を使用するためには、SSPを起動した状態で、<a href="http://127.0.0.1:9801/api/mcp/help">127.0.0.1:9801/api/mcp/help</a>を開き、説明を読んで、claude_desktop_config.jsonなどに適切に追加してみてください。
 	<br />今のところ以下の機能が利用可能です。
 </p>
@@ -18,11 +23,22 @@
 	<li>sakurascript - SakuraScriptを実行する</li>
 </ul>
 
-<h2>伺かの仕様をMCPで探せるようにする</h2>
+<h3>伺かの仕様をMCPで探せるようにする</h3>
 
 <p>
-	ukagaka-doc-mcpをインストールして、適切に設定してください。
+	UKADOC・YAYA Wiki・里々Wiki・蒼空Wikiを検索できるMCPサーバがあります。
+	<br />オンライン版を使う場合は、以下のURLをリモートMCPサーバ(カスタムコネクタなど)として追加してください。
+	<br /><a href="https://ssp.shillest.net/ukadoc/mcp">https://ssp.shillest.net/ukadoc/mcp</a>
+	<br />手元で動かしたい場合は、オンライン版の元になっているukagaka-doc-mcpをインストールして、適切に設定してください。
 	<br /><a href="https://github.com/finelagusaz/ukagaka-doc-mcp">https://github.com/finelagusaz/ukagaka-doc-mcp</a>
+</p>
+
+<h3>ゴーストをMCPで探せるようにする</h3>
+
+<p>
+	ゴースト検索サイト(<a href="https://buynowforsale.shillest.net/ghosts/">https://buynowforsale.shillest.net/ghosts/</a>)と同等の検索ができるMCPサーバがあります。以下のURLをリモートMCPサーバとして追加してください。公開情報のみを扱うため、認証の設定は不要です。
+	<br /><a href="https://buynowforsale.shillest.net/ghosts/mcp">https://buynowforsale.shillest.net/ghosts/mcp</a>
+	<br />詳しくは<a href="https://buynowforsale.shillest.net/ghosts/about.html#mcp">こちら</a>を参照してください。
 </p>
 
 <h2>surfaces.txtなどが正しいかAIに確認させたい</h2>
