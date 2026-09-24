@@ -140,6 +140,7 @@
 				<li><a href="#sstp">概要</a></li>
 				<li><a href="#direct">Direct SSTP</a></li>
 				<li><a href="#http">SSTP over HTTP</a></li>
+				<li><a href="#keepalive">keep-alive</a></li>
 				<li><a href="#req_res">request/response</a></li>
 				<li><a href="#method_notify">メソッド：NOTIFY</a></li>
 				<li><a href="#method_send">メソッド：SEND</a></li>
@@ -164,7 +165,7 @@
 			<br />セキュリティ上の都合で、現在は設定を変更しない限りlocalhost限定でのリスニングとなり、端末外部からは通信できません。また、昔はポート11000番もリスニングしていましたが、マルウェアによる通信と誤認されたことから現在では廃止されています。
 			<br /><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=sakura+script">IANAのPort number registry</a>には7743と9801番が登録されていますが、実運用されているのは9801番のみです。
 			<br />同じ略称のプロトコルにMicrosoftが策定したVPN通信のためのSecure Socket Tunneling Protocolがありますが、技術上の関連性はありません。
-			<br />パフォーマンスの必要な頻繁な通信を考慮しておらず、HTTPのようなkeep-aliveの仕組みはありません。毎回通信終了時に切断されます。</p>
+			<br />既定では毎回通信終了時に切断されます。頻繁に通信する場合は、HTTPと同様の<a href="#keepalive">keep-alive</a>で接続を使い回すことができます [SSP 2.9.03]。</p>
 		</section>
 		
 		
@@ -196,7 +197,8 @@
 			<br />localhost:9801(または別途指定されたSSTPポート) に対して、 /api/sstp/v1 に Content-Type: text/plainでHTTP/1.1でPOSTしてください。
 			<br />レスポンスもそのまま、HTTP/1.1 200 OKのContent-Type: text/plainで返ってきます。
 			<br />SSTPがエラーでもHTTPは200 OKな点に注意してください。
-			<br />なお、Content-Lengthヘッダは必須で、無ければエラーになります。</p>
+			<br />なお、Content-Lengthヘッダは必須で、無ければエラーになります。
+			<br />HTTPのkeep-aliveに対応しています。HTTP/1.1では既定で接続が維持され、Connection: close で切断されます(HTTP/1.0は Connection: keep-alive の明示時のみ維持)。Transfer-Encoding(chunked等)付きのリクエストでは維持されません。このとき接続の維持はHTTP側の指定だけで決まり、メッセージボディ中のSSTPのConnectionヘッダは無視されます [SSP 2.9.03]。</p>
 
 			<p><a href="http://localhost:9801/api/sstp/v1">お試し</a></p>
 
@@ -204,6 +206,54 @@
 
 			<p>注意：Originヘッダがlocalhostを指していない場合は、強制的にリモートアドレスからのSSTPリクエストとして扱われ、SakuraScriptタグや実行できるSSTPメソッドに強い制約がかかり、かつSecurityLevelヘッダも無視されます。
 			<br />この制約は、HTTPのOriginがlocalhost、かつSSTPのSecurityLevelがlocalの場合のみ緩和されます。</p>
+		</section>
+
+
+		<section class="category" id="keepalive">
+			<h1>keep-alive</h1>
+			<p>SSP 2.9.03以降、(Socket) SSTPでもHTTPと同様のkeep-aliveにより、1本のTCP接続で複数のリクエストを続けて送ることができます [SSP 2.9.03]。
+			<br />接続確立の手間を省けるので、短い間隔で何度もSSTPを送るクライアントに向いています。</p>
+			<ul>
+				<li>requestに <code>Connection: keep-alive</code> ヘッダを付けたときだけ接続が維持されます(HTTP/1.0と同じ明示指定方式)。付けなければ従来どおり応答後に切断され、応答の内容も従来と変わりません。</li>
+				<li>SSTP/1.xのみが対象です。それ以外のバージョンではConnectionヘッダは無視され、常に切断されます。</li>
+				<li>Direct SSTPは接続の概念が無いため対象外です。SSTP over HTTPはHTTP側のkeep-aliveの規則に従います(<a href="#http">SSTP over HTTP</a>参照)。</li>
+				<li>requestにConnectionヘッダがあった場合、responseにも必ずConnectionヘッダが付きます。
+					<br /><code>Connection: keep-alive</code> と <code>Keep-Alive: timeout=秒数</code> が返れば接続は維持されています。
+					<br /><code>Connection: close</code> が返った場合は応答後に切断されます(同時に維持できる接続数の上限に達した場合など)。</li>
+				<li>接続が維持される応答では、追加データがあれば必ずCharsetとContent-Lengthヘッダが付き、追加データの後ろに空行は付きません。追加データが無ければヘッダ直後の空行で終わります。
+					<br />また、切断される従来の応答の末尾に付いていたゼロ終端(0x00)は送られません。応答の終わりは空行とContent-Lengthだけで判断してください。</li>
+				<li>次のrequestは、前のresponseを受け取り終えてから送ってください(パイプライン非対応)。responseより先に次のrequestを送った場合、その応答で切断されることがあります。</li>
+				<li>requestの末尾にゼロ終端などの余分なバイトを付けないでください。次のrequestの一部とみなされます。</li>
+				<li>responseの後、Keep-Aliveのtimeoutで示された秒数(SSP 2.9.03では5秒)の間に次のrequestが無ければ、SSP側から切断されます。クライアントはいつ切断されても再接続して送り直せるようにしてください。</li>
+			</ul>
+
+			<section class="caption">
+				<h1>requestサンプル</h1>
+<pre><!--
+-->EXECUTE SSTP/1.4
+Charset: UTF-8
+Sender: SSTPクライアント
+Command: GetVersion
+Connection: keep-alive
+
+</pre>
+				<h1>responseサンプル(接続維持・データあり)</h1>
+<pre><!--
+-->SSTP/1.4 200 OK
+Charset: UTF-8
+Connection: keep-alive
+Keep-Alive: timeout=5
+Content-Length: 24
+
+追加データはここ</pre>
+				<h1>responseサンプル(切断・データなし)</h1>
+<pre><!--
+-->SSTP/1.4 204 No Content
+Charset: UTF-8
+Connection: close
+
+</pre>
+			</section>
 		</section>
 		
 		
