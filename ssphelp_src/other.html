@@ -52,6 +52,24 @@
 	<br />詳しくは<a href="https://buynowforsale.shillest.net/ghosts/about.html#mcp">こちら</a>を参照してください。
 </p>
 
+<h3>AIエージェントに設定してもらう</h3>
+
+<p>
+	Claude Code・Codex CLI・Cursorなど、手元のPCで動くAIエージェントを使っている場合は、SSPを起動した状態で、エージェントに次のように頼むと設定してもらえます。
+</p>
+<pre>SSPのMCPサーバを使えるようにしたい。http://127.0.0.1:9801/api/mcp/help を読んで、あなた自身のMCP設定に追加して。</pre>
+<p>
+	ブラウザ上で動くAI(claude.aiなど)からは127.0.0.1に接続できないため、この方法は使えません。
+</p>
+
+<h4>AIエージェント向けの設定手順</h4>
+<ol>
+	<li>http://127.0.0.1:9801/api/mcp/help を取得する。接続できない場合はSSPが起動していないため、ユーザーに起動を依頼する。</li>
+	<li>ページ内のJSONにあるmcp.exeのフルパスをcommandとし、引数なしのstdio形式MCPサーバとして、自身のMCP設定に追加する。JSONはClaude Desktop用の例なので、自身の設定形式に読み替えること。</li>
+	<li>ユーザーが望めば、上記のオンラインMCPサーバ(https://ssp.shillest.net/ukadoc/mcp と https://buynowforsale.shillest.net/ghosts/mcp)もリモートMCPサーバとして追加する。</li>
+	<li>設定の反映に再起動や新しいセッションが必要な場合は、その旨をユーザーに伝える。</li>
+</ol>
+
 <h2>AIエージェントでゴーストを作りたい(Vibe Coding)</h2>
 
 <p>
