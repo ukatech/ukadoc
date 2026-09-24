@@ -25,6 +25,8 @@
 	<li>sakurascript - SakuraScriptを実行する。strictを指定すると、SSTPのOption: strictと同様に存在しないサーフィス等の指定がエラーログに記録され、get_logで確認できる</li>
 	<li>raise_event - SHIORIイベントを発生させ(SSTP NOTIFYのEvent相当)、ゴーストが返したスクリプトを再生する。返されたスクリプトは結果にも含まれる。strict指定可</li>
 	<li>reload - ゴースト・SHIORI(辞書)・シェル・バルーンなどを再読み込みする。読み込み中のエラーはget_logで確認できる</li>
+	<li>dump_surface - キャラクターの画像(透過PNG)を取得する。サーフィスIDを省略すると現在表示中の姿(拡大縮小・透明度の適用前)を、指定するとそのサーフィス単体を初期状態で描画したものを返す。\![execute,dumpsurface]相当で、1回1枚</li>
+	<li>dump_balloon - バルーンの画像(透過PNG)を取得する。最後に描画された状態を返す。\![execute,dumpballoon]相当</li>
 </ul>
 
 <p>
