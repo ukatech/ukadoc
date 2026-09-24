@@ -23,7 +23,14 @@
 	<li>get_property - プロパティシステムの値を取得する</li>
 	<li>get_log - エラーログ・スクリプトログ・ネットワークログ・更新ログ・ステータスログを取得する。ゴースト名や前回取得分以降(since_id)での絞り込みが可能</li>
 	<li>sakurascript - SakuraScriptを実行する。strictを指定すると、SSTPのOption: strictと同様に存在しないサーフィス等の指定がエラーログに記録され、get_logで確認できる</li>
+	<li>raise_event - SHIORIイベントを発生させ(SSTP NOTIFYのEvent相当)、ゴーストが返したスクリプトを再生する。返されたスクリプトは結果にも含まれる。strict指定可</li>
+	<li>reload - ゴースト・SHIORI(辞書)・シェル・バルーンなどを再読み込みする。読み込み中のエラーはget_logで確認できる</li>
 </ul>
+
+<p>
+	MCPサーバはローカル専用の機能のため、sakurascriptなどで送ったスクリプトは対象ゴースト自身の処理(Owned SSTP)と同様に扱われ、\![reload,...]なども実行できます。
+	<br />ゴーストを指定する引数(ghost_name)には、ゴースト名のほか、ゴーストのルートフォルダ(ghostとshellを含むフォルダ)のフルパスも指定できます。
+</p>
 
 <h3>伺かの仕様をMCPで探せるようにする</h3>
 
