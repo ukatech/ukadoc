@@ -18,9 +18,11 @@
 
 <ul>
 	<li>get_active_ghost_list - アクティブなゴースト(キャラクター)のリストを取得する</li>
+	<li>get_status - ゴーストごとの現在の状態(会話中・選択肢待ちなど)を取得する。SSTP EXECUTE GetStatus相当</li>
 	<li>get_expression_table - 特定のゴースト(キャラクター)で使える表情リストを取得する</li>
 	<li>get_property - プロパティシステムの値を取得する</li>
-	<li>sakurascript - SakuraScriptを実行する</li>
+	<li>get_log - エラーログ・スクリプトログ・ネットワークログ・更新ログ・ステータスログを取得する。ゴースト名や前回取得分以降(since_id)での絞り込みが可能</li>
+	<li>sakurascript - SakuraScriptを実行する。strictを指定すると、SSTPのOption: strictと同様に存在しないサーフィス等の指定がエラーログに記録され、get_logで確認できる</li>
 </ul>
 
 <h3>伺かの仕様をMCPで探せるようにする</h3>
