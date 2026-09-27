@@ -314,6 +314,21 @@
 		カテゴリ名・パーツ名の前後の空白は取り除かれないため、カンマの後ろに空白を入れないこと。
 		</td>
 	</tr>
+
+	<tr>
+		<td>--dump-animation アニメーションID [省略可] [2.9.05以降]</td>
+		<td>--offline-dump と組み合わせて使用する。指定したアニメーションを\i[ID]と同様に再生し、コマごとの画像を連番で出力する。指定できるIDは1つだけ（数値のほか、\i[ID]と同様にsurfaces.txtでアニメーションに付けた名前も使用できる）。<br />
+		各サーフェスについて、まず通常のダンプと同じ画像（runonceのアニメーションを1周させた後の状態）を <code>surface0.png</code> として出力し、続けて指定アニメーションのパターンが進むたびに <code>surface0_0000.png</code>、<code>surface0_0001.png</code>…と0始まり4桁の連番で出力する。--dump-output-prefix や --dump-surface-option の指定は連番の画像にも適用される。<br />
+		例：<code>ssp.exe --offline-dump "C:\SSP\ghost\myGhost" --dump-surface-list "0" --dump-animation 10 --dump-output-dir "C:\dump"</code><br />
+		<br />
+		runonce・always などのアニメーションは通常のダンプと同様に動いており、その上に指定アニメーションが重なる。連番の対象になるのは指定アニメーション自身のパターンだけで、always のアニメーションが進んでも枚数は増えない。<br />
+		指定アニメーションが最後のパターンまで進んだ時点（alwaysの場合は1周した時点）で終了する。他のアニメーションのstopや排他で止められた場合もそこで終了する。<br />
+		start・alternativestart・parallelstart で起動された別のアニメーションは連番の対象にならない。指定アニメーションにこれらのパターンが含まれる場合はWarningのログが記録される（出力は続行される）。<br />
+		start・stop系のパターンは画像が変わらないため連番の1コマとしては数えない。<br />
+		指定したIDがそのサーフェスに存在しない場合、または着せ替えで無効になっている・排他中などの理由で再生できない場合は、Warningのログを記録し、そのサーフェスは通常の1枚だけを出力する。<br />
+		連番は最大10000枚（_9999まで）で、これに達した場合はWarningのログを記録して打ち切る。
+		</td>
+	</tr>
 </table>
 
 <h3 id="offline-tool">オフラインツール</h3>

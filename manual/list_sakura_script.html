@@ -525,7 +525,7 @@
 
 				<li><a href="#_!_execute,extractarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,extractarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
 				<li><a href="#_!_execute,compressarchive,ファイル名,ディレクトリ名,オプション..._">\![execute,compressarchive,ファイル名,ディレクトリ名,オプション...]</a></li>
-				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</a></li>
+				<li><a href="#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し,アニメーションID]</a></li>
 				<li><a href="#_!_execute,dumpballoon,ディレクトリ,スコープID_">\![execute,dumpballoon,ディレクトリ,スコープID,prefix,イベントID]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,種別]</a></li>
@@ -5596,7 +5596,7 @@
 				</dd>
 			</dl>
 			<dl id="_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">
-				<dt class="entry">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し]</dt>
+				<dt class="entry">\![execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト,prefix,イベントID,ゼロ位置切り出し,アニメーションID]</dt>
 				<dd class="entry">
 					<p>合成済みのサーフェス画像を指定したディレクトリに出力する。
 					<br />イベントIDを指定しない場合は、処理が完了するまでスクリプトの実行は停止する。
@@ -5608,6 +5608,7 @@
 					<br />prefix : (省略可) 出力したいファイルの頭につける文字列。省略した場合はsurface。
 					<br />イベントID : (省略可) これを指定するとSakuraScriptの続きを実行しながら出力を続け、終わり次第指定したイベントを発生させる。Reference0には出力に成功したファイル数が入る。
 					<br />ゼロ位置切り出し : 1を指定すると、アニメーション定義に関わらず必ず0,0からダンプし、負の座標部分を無視する。
+					<br />アニメーションID : (省略可) 指定すると、各サーフェスの通常の画像(prefix+サーフェス番号.png)に続けて、そのアニメーションを\i[ID]と同様に再生し、パターンが進むたびの画像を prefix+サーフェス番号_0000.png から0始まり4桁の連番で出力する。指定できるIDは1つだけ。詳細は起動オプション --dump-animation と同じ。イベントのReference0には連番の画像も含めたファイル数が入る。[2.9.05]
 					<br />セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
 					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />出力先が制限範囲外の場合は何も出力せず、エラーログに記録される。</p>
