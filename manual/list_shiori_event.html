@@ -3676,6 +3676,32 @@
 					<dd>さくらスクリプトタグ（<a href="list_sakura_script.html#_!_updatebymyself_">\![updatebymyself]</a>など）による更新。</dd>
 				</dl>
 			</section>
+			<section class="caption" id="caption_updateorder">
+				<h1>ネットワーク更新イベントの発生順序</h1>
+				<p>SSPの通常のネットワーク更新（ゴースト更新）でのイベント発生順序は以下の通り。</p>
+				<ol>
+					<li>OnUpdateProcessExec　※メニューなどからの実行時のみ。スクリプトを返した場合、以降の標準の更新処理は行われない。</li>
+					<li>OnUpdateBegin</li>
+					<li>OnUpdateReady　※更新ファイルがあった場合のみ。更新ファイルが無い場合は、以降のイベントは飛ばして OnUpdateComplete（Reference0 が none）が発生する。</li>
+					<li>更新ファイル1つごとに、以下を繰り返す。
+						<ol>
+							<li>OnUpdate.OnDownloadBegin</li>
+							<li>OnUpdate.OnMD5CompareBegin</li>
+							<li>OnUpdate.OnMD5CompareComplete または OnUpdate.OnMD5CompareFailure<br />
+							MD5が一致しなかった場合は、同じファイルについて OnUpdate.OnDownloadBegin からやり直す。リトライ回数を超えても一致しなかった場合は、OnUpdateFailure（md5 miss）となり、以降のファイルは処理されない。</li>
+						</ol>
+					</li>
+					<li>全ファイルの取得後、更新ファイルの置き換えとSHIORI・シェルなどの再読み込みを行ってから、OnUpdateComplete が発生する。したがって、OnUpdateComplete は再読み込み後のゴーストが受け取る。</li>
+				</ol>
+				<ul>
+					<li>途中で失敗（中断を含む）した場合は、その時点で OnUpdateFailure が発生して終了する。同じ更新で OnUpdateFailure と OnUpdateComplete の両方が発生することはない。</li>
+					<li>OnUpdateReady・各ファイルの処理の後・置き換え前には、それまでに発生したイベントのスクリプトの再生が終わるまで待ってから次へ進む。そのため、これらのイベントでスクリプトを返すと、その再生が終わるまで更新は次の段階に進まない。</li>
+					<li>自動更新（更新理由が auto）の場合、OnUpdateBegin は更新ファイルの有無が確認できた時点、つまり OnUpdateReady の直前に発生する。更新ファイルが無い場合と、更新ファイルの確認前に失敗した場合は、OnUpdateBegin・OnUpdateComplete・OnUpdateFailure のいずれも発生しない。</li>
+					<li>更新チェックのみ（ゴーストエクスプローラなどからのチェック）の場合、OnUpdateBegin・OnUpdateReady・OnUpdate.OnDownloadBegin・OnUpdate.OnMD5Compare*・OnUpdateComplete・OnUpdateFailure は発生せず、代わりに OnUpdateCheckComplete または OnUpdateCheckFailure が発生する。</li>
+					<li>ゴースト以外（シェル・バルーンなど）の更新では、上記のイベント名が OnUpdateOther〜（OnUpdateOtherBegin、OnUpdateOther.OnDownloadBegin など）に置き換わる。発生順序は同じ。</li>
+				</ul>
+				<p>ゴースト本体・シェル・バルーンをまとめて更新する場合は、ゴースト → シェル → バルーン（→ 推奨バルーン）の順に、それぞれ上記の一連のイベントが発生する。全ての更新が終わった後に、最後に一度だけ OnUpdateResultEx が発生する。OnUpdateResultEx がスクリプトを返さなかった場合に限り、続けて OnUpdateResult が発生する。更新チェックのみの場合は、それぞれ OnUpdateCheckResultEx・OnUpdateCheckResult となる。</p>
+			</section>
 		</section>
 		<section class="category">
 			<h1>時計合わせイベント</h1>
