@@ -3494,7 +3494,8 @@
 					<p>ネットワーク更新のチェックに成功した際に発生。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
-						<dd><a href="#caption_updateresultcomplete">※成功理由</a></dd>
+						<dd>更新ファイルがあった場合は、更新を行うファイルの総数（OnUpdateReady と異なり、1は引かれない）。<br />
+						更新ファイルが無かった場合は none。</dd>
 						<dt>Reference1</dt>
 						<dd>カンマでセパレートされた更新されたファイル名のリスト。</dd>
 						<dt>Reference3</dt>
@@ -3696,6 +3697,7 @@
 				<ul>
 					<li>途中で失敗（中断を含む）した場合は、その時点で OnUpdateFailure が発生して終了する。同じ更新で OnUpdateFailure と OnUpdateComplete の両方が発生することはない。</li>
 					<li>OnUpdateReady・各ファイルの処理の後・置き換え前には、それまでに発生したイベントのスクリプトの再生が終わるまで待ってから次へ進む。そのため、これらのイベントでスクリプトを返すと、その再生が終わるまで更新は次の段階に進まない。</li>
+					<li>OnUpdateReady のスクリプトの再生が終わり、ファイルの取得を始める時点で早送りキー（SSPの設定「早送りキーを有効にする」で指定したキー。標準では Ctrl）が押されていた場合、その更新では全てのファイルについて OnUpdate.OnDownloadBegin・OnUpdate.OnMD5Compare* が発生しない（ファイルの取得とMD5の照合そのものは行われる）。OnUpdateBegin・OnUpdateReady・OnUpdateComplete・OnUpdateFailure は通常通り発生する。</li>
 					<li>自動更新（更新理由が auto）の場合、OnUpdateBegin は更新ファイルの有無が確認できた時点、つまり OnUpdateReady の直前に発生する。更新ファイルが無い場合と、更新ファイルの確認前に失敗した場合は、OnUpdateBegin・OnUpdateComplete・OnUpdateFailure のいずれも発生しない。</li>
 					<li>更新チェックのみ（ゴーストエクスプローラなどからのチェック）の場合、OnUpdateBegin・OnUpdateReady・OnUpdate.OnDownloadBegin・OnUpdate.OnMD5Compare*・OnUpdateComplete・OnUpdateFailure は発生せず、代わりに OnUpdateCheckComplete または OnUpdateCheckFailure が発生する。</li>
 					<li>ゴースト以外（シェル・バルーンなど）の更新では、上記のイベント名が OnUpdateOther〜（OnUpdateOtherBegin、OnUpdateOther.OnDownloadBegin など）に置き換わる。発生順序は同じ。</li>
