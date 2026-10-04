@@ -949,6 +949,8 @@ Command: GetName
 					<dt>DumpSurface [SSP 2.5.98] [リモート不可]</dt>
 					<dd>合成済みのサーフェス画像を指定したディレクトリに出力する。パラメータは<a href="list_sakura_script.html#_!_execute,dumpsurface,ディレクトリ,スコープID,サーフェスリスト_">\![execute,dumpsurface]</a>と同じ。
 					<br />ただしイベントIDは指定できず、ディレクトリ・スコープID・サーフェスリスト・prefix・ゼロ位置切り出し・アニメーションID [SSP 2.9.05] の順に指定する。
+					<br />[SSP 2.9.08] SakuraScript版と同じく、--dir= / --scope= / --surface= / --prefix= / --fromzero= / --animation= の形式でも順不同で指定でき、上記の順による指定と混在してもよい（--で始まらないパラメータは、現れた順に上記の順で割り当てられる）。ディレクトリ以外は省略でき、スコープIDの省略時は0になる。--event=は無視される。
+					<br />DumpSurface[...]の形式ではパラメータ中にカンマを書けないため、カンマを含むサーフェスリストはReference0以降で指定すること。
 					<br />処理が終わるまでレスポンスが返らないので注意。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
 

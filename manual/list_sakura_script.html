@@ -1807,6 +1807,9 @@
 				<dd class="entry">
 					<p>SSTP受信時に表示するマーカー文字列を表示する。<br>表示先は現在のスコープが所属するバルーン。<br>表示文字列は省略可。消去する場合は引数を省略するか空欄にする。</p>
 					<p>ゴースト終了か、SSTP受信など本来この部分を使う機能が発動するまで有効。</p>
+					<p>消去は「このタグで指定した文字列を取り消す」という意味で、マーカーそのものを隠すものではない。SSTPで受信したスクリプトの再生中に消去すると、既定の送信元表示（from 送信元）に戻る。<br>
+					また、SSTPやSHIORIのMarkerヘッダでマーカー文字列が指定されている場合はそちらが優先され、このタグの指定は表示されない。<br>
+					画像として出力する際にマーカーを除きたい場合は、<a href="#_!_execute,dumpballoon,ディレクトリ,スコープID_">\![execute,dumpballoon]</a>の--hide=balloonmarkerを使う。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.6.67</li>
 					</ul>
@@ -5612,9 +5615,33 @@
 					<br />セキュリティ上の観点から、出力先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
 					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />出力先が制限範囲外の場合は何も出力せず、エラーログに記録される。</p>
+					<p>[2.9.08] 以下の形式でも指定できる。--で始まる引数は順不同で、上記の各引数による指定と混在してもよい（--で始まらない引数は、現れた順にディレクトリ・スコープID・サーフェスリスト・prefix・イベントID・ゼロ位置切り出し・アニメーションIDとみなす）。<br />
+					ディレクトリ以外は省略でき、スコープIDの省略時は0になる。</p>
+					<dl>
+						<dt>--dir=ディレクトリ</dt>
+						<dd>出力先のディレクトリ。</dd>
+						<dt>--scope=スコープID</dt>
+						<dd>スコープID。</dd>
+						<dt>--surface=サーフェスリスト</dt>
+						<dd>サーフェスリスト。カンマを含む場合は"--surface=0,10"のように引数全体をダブルクォートで囲むこと。</dd>
+						<dt>--prefix=prefix</dt>
+						<dd>出力ファイル名の頭につける文字列。</dd>
+						<dt>--event=イベントID</dt>
+						<dd>イベントID。--async=でも同じ。</dd>
+						<dt>--fromzero=真偽値</dt>
+						<dd>ゼロ位置切り出し。</dd>
+						<dt>--animation=アニメーションID</dt>
+						<dd>アニメーションID。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> [2.5.98]</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\0のサーフェス0～9をdumpフォルダに出力する。\![execute,dumpsurface,--dir=dump,--scope=0,"--surface=0-9"]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,dumpballoon,ディレクトリ,スコープID_">
@@ -5628,9 +5655,32 @@
 					<br />prefix : (省略可) 出力したいファイルの頭につける文字列。省略した場合はballoon。
 					<br />イベントID : (省略可) 出力が終わり次第指定したイベントを発生させる。Reference0には出力に成功したファイル数(0または1)が入る。
 					<br />出力先の制限は\![execute,dumpsurface]と同じ。制限範囲外の場合は何も出力せず、エラーログに記録される。</p>
+					<p>[2.9.08] 以下の形式でも指定できる。--で始まる引数は順不同で、上記の各引数による指定と混在してもよい（--で始まらない引数は、現れた順にディレクトリ・スコープID・prefix・イベントIDとみなす）。<br />
+					ディレクトリ以外は省略でき、スコープIDの省略時は0になる。</p>
+					<dl>
+						<dt>--dir=ディレクトリ</dt>
+						<dd>出力先のディレクトリ。</dd>
+						<dt>--scope=スコープID</dt>
+						<dd>スコープID。</dd>
+						<dt>--prefix=prefix</dt>
+						<dd>出力ファイル名の頭につける文字列。</dd>
+						<dt>--event=イベントID</dt>
+						<dd>イベントID。--async=でも同じ。</dd>
+						<dt>--hide=項目</dt>
+						<dd>指定した項目を描かずに描き直したものを出力する。表示中のバルーンには影響しない。複数指定する場合は"--hide=balloonmarker,balloonnum"のようにカンマで区切り、引数全体をダブルクォートで囲むこと。<br />
+						balloonmarker : SSTPマーカー（\![set,balloonmarker]の表示や、SSTPで受信したスクリプトの送信元表示）<br />
+						balloonnum : \![set,balloonnum]の表示<br />
+						この指定がある場合は、その時点の描画内容ではなく、その時点の状態から描き直した内容が出力される（\![lock,balloonrepaint]中でも描き直す）。</dd>
+					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.02</li>
 					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">SSTPマーカーとballoonnumを除いて、\0のバルーンをdumpフォルダに出力する。\![execute,dumpballoon,--dir=dump,--scope=0,"--hide=balloonmarker,balloonnum"]</code></p>
+						</section>
+					</div>
 				</dd>
 			</dl>
 			<dl id="_!_execute,install,path,ファイル名_">
