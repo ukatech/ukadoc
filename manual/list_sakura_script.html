@@ -447,6 +447,8 @@
 				<li><a href="#_!_open,sliderinput,ID,表示時間,現在値,最小,最大,オプション_">\![open,sliderinput,ID,表示時間,現在値,最小,最大,オプション]</a></li>
 				<li><a href="#_!_open,timeinput,ID,表示時間,時,分,秒,オプション_">\![open,timeinput,ID,表示時間,時,分,秒,オプション]</a></li>
 				<li><a href="#_!_open,ipinput,ID,表示時間,IPアドレス,オプション_">\![open,ipinput,ID,表示時間,IPアドレス,オプション]</a></li>
+				<li><a href="#_!_open,textareabox,ID,表示時間,テキスト,オプション,..._">\![open,textareabox,ID,表示時間,テキスト,オプション,...]</a></li>
+				<li><a href="#_!_close,textareabox,ID_">\![close,textareabox,ID]</a></li>
 				<li><a href="#_!_open,configurationdialog,ダイアログID_">\![open,configurationdialog,ダイアログID]</a></li>
 				<li><a href="#_!_open,ghostexplorer_">\![open,ghostexplorer]</a></li>
 				<li><a href="#_!_open,shellexplorer_">\![open,shellexplorer]</a></li>
@@ -4622,6 +4624,44 @@
 							<p><code type="SakuraScript">\![close,inputbox,時間入力テスト]IDが「時間入力テスト」のInputBoxを閉じる。\![close,inputbox,__SYSTEM_ALL_INPUT__]その後、全てのInputBoxを閉じる。</code></p>
 						</section>
 					</div>
+				</dd>
+			</dl>
+			<dl id="_!_open,textareabox,ID,表示時間,テキスト,オプション,..._">
+				<dt class="entry">\![open,textareabox,ID,表示時間,テキスト,オプション,...]</dt>
+				<dd class="entry">
+					<p>
+						複数行の入力ボックス(textareabox)を開く。
+						<br>決定時(OKボタンを押すか、Ctrl+Enter)にSHIORIイベント<a href="list_shiori_event.html#OnTextAreaInput">OnTextAreaInput</a>が発生する。Enterキーは改行になる。
+						<br>表示時間を過ぎた(タイムアウトした)場合と、閉じるボタンを押して閉じた場合は、<a href="list_shiori_event.html#OnTextAreaInputCancel">OnTextAreaInputCancel</a>が発生する。
+					</p>
+					<p>
+						<br>入力内容の改行は、バイト値1の文字(\1)で区切って渡される。テキスト(初期表示する内容)も同じく\1で改行を表す。
+						<br>IDの扱い(「On」で始まる場合はID名のイベントが発生する)は<a href="#notes_inputbox-id">InputBoxのID</a>と同じ。
+						<br>表示時間・テキストの指定と<a href="#notes_inputbox-option">※オプション</a>は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。ただし次の点が異なる。
+						<br>・--limit=は改行を1文字として数える。
+						<br>・入力補完(<a href="list_shiori_event.html#inputbox.autocomplete">inputbox.autocomplete</a>)は使えない。
+						<br>・--balloon=を省略した場合はballoonc5を使う。balloonc5が無いバルーンでは、話しているキャラクターの現在のバルーン画像を背景にし、validrectの範囲を入力欄にする(文字の書体・大きさ・色もバルーン本文のもの)。縦書きのバルーンでも入力欄は横書きになる。
+					</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.10</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\![open,textareabox,感想,--timeout=300000] 複数行の入力ボックスを開く。5分でタイムアウトする。</code></p>
+							<p><code type="SakuraScript">\![open,textareabox,OnDiaryInput,--limit=400] 決定時にOnDiaryInputが発生する。改行込みで400文字まで。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_close,textareabox,ID_">
+				<dt class="entry">\![close,textareabox,ID]</dt>
+				<dd class="entry">
+					<p>IDで指定された複数行入力ボックス(textareabox)を閉じる。全部閉じたい場合は、__SYSTEM_ALL_INPUT__を指定する。
+					<br>\![close,inputbox,...]ではtextareaboxは閉じない。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.10</li>
+					</ul>
 				</dd>
 			</dl>
 			<dl id="_!_open,configurationdialog,ダイアログID_">

@@ -205,6 +205,8 @@
 				<li><a href="#OnCommunicateInputCancel">OnCommunicateInputCancel</a></li>
 				<li><a href="#OnUserInput">OnUserInput</a></li>
 				<li><a href="#OnUserInputCancel">OnUserInputCancel</a></li>
+				<li><a href="#OnTextAreaInput">OnTextAreaInput</a></li>
+				<li><a href="#OnTextAreaInputCancel">OnTextAreaInputCancel</a></li>
 				<li><a href="#inputbox.autocomplete">inputbox.autocomplete</a></li>
 			</ul>
 		</section>
@@ -1297,6 +1299,46 @@
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 						<li><img src="image/icon_n.png" alt="Ninix" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnTextAreaInput">
+				<dt class="entry">OnTextAreaInput</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#_!_open,textareabox,ID,表示時間,テキスト,オプション,..._">複数行入力ボックス(textareabox)</a>に入力され決定された際に発生。
+					<br>IDが「On」で始まる場合はこのイベントの代わりにID名のイベントが発生し、Reference0に入力内容が入る(以降は1つずつ前へずれる)。<a href="list_sakura_script.html#notes_inputbox-id">InputBoxのID</a>と同じ規則。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>textareaboxのID。</dd>
+						<dt>Reference1</dt>
+						<dd>入力された内容。改行はバイト値1の文字(\1)で区切られる。</dd>
+						<dt>Reference2</dt>
+						<dd>空欄(OnUserInputとReferenceの位置を揃えるため)</dd>
+						<dt>Reference3～</dt>
+						<dd>--reference=で指定した追加情報</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.10</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnTextAreaInputCancel">
+				<dt class="entry">OnTextAreaInputCancel</dt>
+				<dd class="entry">
+					<p>複数行入力ボックス(textareabox)が閉じられた際に発生。
+					<br>IDにかかわらずこのイベントが発生する。OnUserInputCancelと違い、タイムアウト時に入力決定のイベントへ投げ直すことはない。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>textareaboxのID。</dd>
+						<dt>Reference1</dt>
+						<dd>タイムアウトした場合、timeout。閉じられた場合、close。</dd>
+						<dt>Reference2</dt>
+						<dd>閉じるまでに入力されていた内容。改行はバイト値1の文字(\1)で区切られる。</dd>
+						<dt>Reference3～</dt>
+						<dd>--reference=で指定した追加情報</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.10</li>
 					</ul>
 				</dd>
 			</dl>
