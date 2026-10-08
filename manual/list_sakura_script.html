@@ -529,6 +529,7 @@
 				<li><a href="#_!_execute,dumpballoon,ディレクトリ,スコープID_">\![execute,dumpballoon,ディレクトリ,スコープID,prefix,イベントID]</a></li>
 				<li><a href="#_!_execute,install,path,ファイル名_">\![execute,install,path,ファイル名]</a></li>
 				<li><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url,URL,種別]</a></li>
+				<li><a href="#_!_execute,dropdefault_">\![execute,dropdefault,file,ファイルパス,ファイルパス...]\![execute,dropdefault,url,URL,種別]</a></li>
 				<li><a href="#_!_execute,ping,パラメータ1,パラメータ2,..._">\![execute,ping,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,nslookup,パラメータ1,パラメータ2,..._">\![execute,nslookup,パラメータ1,パラメータ2,...]</a></li>
 				<li><a href="#_!_execute,filewatch,パス,オプション..._">\![execute,filewatch,パス,オプション...]</a></li>
@@ -5720,6 +5721,33 @@
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code type="SakuraScript">\![execute,install,url,http://ssp.shillest.net/ghost/emily4.nar,nar]Emily/Phase4.5のnarをダウンロードしてきてインストールする。</code></p>
+						</section>
+					</div>
+				</dd>
+			</dl>
+			<dl id="_!_execute,dropdefault_">
+				<dt class="entry">\![execute,dropdefault,file,ファイルパス,ファイルパス...]<br />\![execute,dropdefault,url,URL,種別]</dt>
+				<dd class="entry">
+					<p>ドラッグ＆ドロップのイベントにゴーストが応答したことで行われなかった、本体の既定の処理を行う。
+					<br />ドロップを受けて何か喋ったうえで、続きは本体に任せたい場合に使う。イベントに応答したスクリプトの中だけでなく、選択肢を選んだ後など、後から実行してもよい。</p>
+					<ul class="description">
+						<li>file……<a href="list_shiori_event.html#OnFileDrop2">OnFileDrop2</a>(OnFileDropEx・OnFileDropなどを含む)に応答しなかった場合と同じ処理を行う。画像は画像ビューアー、音声・動画はメディアプレーヤー、書庫はアーカイブビューアーで開く。いずれでも開けないファイルには何もしない(関連付けられたアプリケーションでは開かない)。
+						<br />ファイルパスには、OnFileDrop2のReference0(byte値1区切り)をそのまま渡してもよいし、カンマで区切って複数並べてもよい。パスにカンマが含まれる場合は " " で囲むこと。相対パスはゴーストのフォルダ(ghost/master)基準。
+						<br />ディレクトリには、ゴーストが応答しなかった場合の処理が元々無いため、先頭がディレクトリの場合は何もしない。
+						<br />narやSSFのインストール、壁紙の変更(<a href="list_shiori_event.html#OnWallpaperChange">OnWallpaperChange</a>)はOnFileDrop2より前に処理されるため、このタグでは行わない。</li>
+						<li>url……<a href="list_shiori_event.html#OnURLQuery">OnURLQuery</a>に応答しなかった場合と同じ処理を行う。種別にはOnURLQueryのReference3をそのまま渡す。
+						<br />種別がunknownの場合は何もしない。種別を省略した場合はContent-Typeとファイルの中身から判別し直す(判別のための通信がもう一度発生する)。
+						<br /><a href="#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a>と同じ処理だが、その後に発生するOnURLDroppingなどのイベントのスコープ番号は、このタグを実行したスコープになる。</li>
+					</ul>
+					<p>このタグで開いた画像ビューアーなどについても、<a href="list_shiori_event.html#OnPictureViewerOpen">OnPictureViewerOpen</a>・<a href="list_shiori_event.html#OnMediaPlayerOpen">OnMediaPlayerOpen</a>・<a href="list_shiori_event.html#OnArchiveViewerOpen">OnArchiveViewerOpen</a>は発生する。Reference1(スコープ番号)は、このタグを実行したスコープになる。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.10</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code type="SakuraScript">\0画像を見せてくれるの？\![execute,dropdefault,file,"C:/Users/user/Pictures/photo.png"]OnFileDrop2に応答して喋ったうえで、ドロップされた画像を画像ビューアーで開く。実際にはOnFileDrop2のReference0をそのまま渡す。</code></p>
+							<p><code type="SakuraScript">\0ダウンロードするね。\![execute,dropdefault,url,http://ssp.shillest.net/ghost/emily4.nar,nar]OnURLQueryに応答して喋ったうえで、本来の処理(この場合はnarのダウンロードとインストール)を続ける。実際にはOnURLQueryのReference0とReference3をそのまま渡す。</code></p>
 						</section>
 					</div>
 				</dd>

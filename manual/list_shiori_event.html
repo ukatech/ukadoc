@@ -2809,7 +2809,8 @@
 			<dl id="OnFileDrop2">
 				<dt class="entry">OnFileDrop2</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされた際に発生。このイベントが現時点での最新仕様となる。</p>
+					<p>ファイルがDnDされた際に発生。このイベントが現時点での最新仕様となる。
+					<br />このイベントに応答すると、本体の既定の処理(画像ビューアー・メディアプレーヤー・アーカイブビューアーで開く)は行われない。応答したうえで既定の処理も行わせたい場合は、<a href="list_sakura_script.html#_!_execute,dropdefault_">\![execute,dropdefault,file]</a>を使う。[2.9.10]</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
@@ -2829,7 +2830,7 @@
 			<dl id="OnMediaPlayerOpen">
 				<dt class="entry">OnMediaPlayerOpen</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず、かつメディアプレーヤーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
+					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず(または<a href="list_sakura_script.html#_!_execute,dropdefault_">\![execute,dropdefault,file]</a>を実行して[2.9.10])、かつメディアプレーヤーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
@@ -2846,7 +2847,7 @@
 			<dl id="OnPictureViewerOpen">
 				<dt class="entry">OnPictureViewerOpen</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず、かつ画僧ビューアーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
+					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず(または<a href="list_sakura_script.html#_!_execute,dropdefault_">\![execute,dropdefault,file]</a>を実行して[2.9.10])、かつ画像ビューアーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
@@ -2863,7 +2864,7 @@
 			<dl id="OnArchiveViewerOpen">
 				<dt class="entry">OnArchiveViewerOpen</dt>
 				<dd class="entry">
-					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず、かつアーカイブビューアーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
+					<p>ファイルがDnDされて、OnFileDrop2にゴーストが応答せず(または<a href="list_sakura_script.html#_!_execute,dropdefault_">\![execute,dropdefault,file]</a>を実行して[2.9.10])、かつアーカイブビューアーが開かれた際に発生。ReferenceはOnFileDrop2と同一。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>ドロップされたファイルパス。複数ファイル/ディレクトリがあればbyte値1で区切る。</dd>
@@ -3102,9 +3103,9 @@
 						<dd>ドロップされたURLのMIMEタイプ</dd>
 						<dt>Reference3</dt>
 						<dd>反応しなかった場合にSSPがこの後実行予定の処理。
-						<br />feed・nar・homeurl・unknownのいずれか。
+						<br />feed・nar・homeurl・ical・ssf・unknownのいずれか。
 						<br />unknownの場合は本体が処理に対応できないURLであり、本体側ではこれ以上の処理ができないことを示す。
-						<br />それ以外はそのまま <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> に渡すと処理の続きが行われる。</dd>
+						<br />それ以外はReference0とともにそのまま <a href="list_sakura_script.html#_!_execute,dropdefault_">\![execute,dropdefault,url]</a>[2.9.10] または <a href="list_sakura_script.html#_!_execute,install,url,URL,feedまたはnar_">\![execute,install,url]</a> に渡すと処理の続きが行われる。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> Ref3は2.6.35</li>
