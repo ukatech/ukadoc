@@ -46,6 +46,8 @@
       place: windowmode
     - title: 音声認識
       place: speech_recognition
+    - title: 音声合成
+      place: speech_synthesis
     - title: その他の機能
       place: other
     - title: ショートカット一覧
