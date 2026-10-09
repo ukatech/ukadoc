@@ -4514,6 +4514,7 @@
 							<h1>記述例</h1>
 							<p><code type="SakuraScript">\![open,inputbox,インプットテスト,10000,テスト入力]「テスト入力」と初期入力されたInputBoxを開く。OKボタンを押すか、10秒経過で自動的に閉じる。</code></p>
 							<p><code type="SakuraScript">\![open,inputbox,インプットテスト,--timeout=10000,--text=テスト入力] 上記と同じ(新オプション指定)</code></p>
+							<p><code type="SakuraScript">\![open,inputbox,OnNameInput,--placeholder=あなたの名前] 空欄に「あなたの名前」と薄く表示されたInputBoxを開く。[2.9.10]</code></p>
 						</section>
 					</div>
 				</dd>
@@ -4639,6 +4640,7 @@
 						<br>IDの扱い(「On」で始まる場合はID名のイベントが発生する)は<a href="#notes_inputbox-id">InputBoxのID</a>と同じ。
 						<br>表示時間・テキストの指定と<a href="#notes_inputbox-option">※オプション</a>は<a href="#_!_open,inputbox,ID,表示時間,テキスト,オプション,..._">inputbox</a>と同じ。ただし次の点が異なる。
 						<br>・--limit=は改行を1文字として数える。
+						<br>・--placeholder=(空欄のときに薄く表示する案内文)も\1で改行を表す。
 						<br>・入力補完(<a href="list_shiori_event.html#inputbox.autocomplete">inputbox.autocomplete</a>)は使えない。
 						<br>・--balloon=を省略した場合はballoonc5を使う。balloonc5が無いバルーンでは、話しているキャラクターの現在のバルーン画像を背景にし、validrectの範囲を入力欄にする(文字の書体・大きさ・色もバルーン本文のもの)。縦書きのバルーンでも入力欄は横書きになる。
 					</p>
@@ -4650,6 +4652,7 @@
 							<h1>記述例</h1>
 							<p><code type="SakuraScript">\![open,textareabox,感想,--timeout=300000] 複数行の入力ボックスを開く。5分でタイムアウトする。</code></p>
 							<p><code type="SakuraScript">\![open,textareabox,OnDiaryInput,--limit=400] 決定時にOnDiaryInputが発生する。改行込みで400文字まで。</code></p>
+							<p><code type="SakuraScript">\![open,textareabox,OnDiaryInput,--placeholder=今日の出来事(Ctrl+Enterで決定)] 空欄に案内文を薄く表示する。</code></p>
 						</section>
 					</div>
 				</dd>
@@ -5126,6 +5129,12 @@
 					<dt>--text=デフォルト表示</dt>
 					<dd>最初から表示すべき文字列。
 					<br />sliderinputでは初期値,最小,最大/dateinputでは年,月,日/timeinputでは時,分,秒</dd>
+					
+					<dt>--placeholder=案内文 [2.9.10]</dt>
+					<dd>入力欄が空のときだけ薄く表示し、何を入力すればよいかを示す文字列(HTMLのplaceholderに相当)。文字を入力すると消え、空に戻すと再び表示される。
+					<br />--text=と違い入力内容には含まれず、--limit=の文字数にも数えない。
+					<br />文字色は入力欄の文字色と背景色を混ぜた色になる。
+					<br />inputbox・passwordinput・textareaboxで有効(passwordinputでも伏せ字にせずそのまま表示する)。textareaboxでは\1で改行を表す。</dd>
 					
 					<dt>--timeout=タイムアウトミリ秒</dt>
 					<dd>入力ボックスを自動的に閉じるまでの時間。ゼロ以下を指定すると閉じない。</dd>
