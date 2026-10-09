@@ -637,6 +637,7 @@
 				<li><a href="#OnNotifyShellInfo">OnNotifyShellInfo</a></li>
 				<li><a href="#OnNotifyDressupInfo">OnNotifyDressupInfo</a></li>
 				<li><a href="#OnNotifyUserInfo">OnNotifyUserInfo</a></li>
+				<li><a href="#OnNotifyHolidayInfo">OnNotifyHolidayInfo</a></li>
 				<li><a href="#OnNotifyOSInfo">OnNotifyOSInfo</a></li>
 				<li><a href="#OnNotifyFontInfo">OnNotifyFontInfo</a></li>
 				<li><a href="#OnNotifyInternationalInfo">OnNotifyInternationalInfo</a></li>
@@ -6552,6 +6553,25 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnNotifyHolidayInfo">
+				<dt class="entry">OnNotifyHolidayInfo</dt>
+				<dd class="entry">
+					<p>今日の祝日名を通知。起動時、<a href="#OnNotifyUserInfo">OnNotifyUserInfo</a>の直後に送られる。<em class="specsign">[NOTIFY]</em><br />
+					SSPの言語フォルダにある祝日表(holidays.txt、地域設定の国別の表があればholidays-XX.txt)から今日の祝日名が取れたときだけ送られ、祝日でない日や、名前の載っていない祝日表では送られない。<br />
+					「今日」はSSPの「現在時刻の仮想的変更」(タイムマシン)の影響を受ける。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>祝日名。(元日、Christmas Day など。振替休日は「振替休日」や「Christmas Day (substitute day)」のようになる)</dd>
+						<dt>Reference1</dt>
+						<dd>日付。(2026,01,01のようにカンマ区切りで)</dd>
+						<dt>Reference2</dt>
+						<dd>読み込んだ祝日表の国コード(ISO 3166。holidays-GB.txtならGB)。国別でない既定の表(holidays.txt)なら空。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.11</li>
 					</ul>
 				</dd>
 			</dl>
