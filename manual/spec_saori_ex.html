@@ -636,7 +636,7 @@ Argument3: --tz=+09:00
 				<dt class="entry">Diff</dt>
 				<dd class="entry">
 					<p>日時2－日時1を、単位で数えた整数で返す。端数は0の方向へ切り捨てる。
-					<br /><code>day</code>以上は<code>--tz=</code>のゾーンの暦で数える。たとえば日時2が日付だけ（その日の0時）なら、「あと何日」は<code>--tz=</code>のゾーンで日付が変わる時刻に1つ減る。<code>month</code> / <code>year</code>は暦の月で数える（1月31日から2月28日までで1か月）。</p>
+					<br /><code>day</code>以上は<code>--tz=</code>のゾーンの暦で数える。たとえば日時2が日付だけ（その日の0時）なら、「あと何日」は<code>--tz=</code>のゾーンで日付が変わる時刻に1つ減る。<code>month</code> / <code>year</code>は暦の月で数え、<a href="#internal_time.Add">Add</a>で足して越えない最大の数を返す（1月31日からは、平年なら2月28日、うるう年なら2月29日の同じ時刻で1か月）。</p>
 					<dl class="reference">
 						<dt>Argument1</dt>
 						<dd>日時1</dd>
