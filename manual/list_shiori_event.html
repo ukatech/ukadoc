@@ -597,6 +597,8 @@
 				<li><a href="#OnExtractArchiveFailure">OnExtractArchiveFailure</a></li>
 				<li><a href="#OnCompressArchiveComplete">OnCompressArchiveComplete</a></li>
 				<li><a href="#OnCompressArchiveFailure">OnCompressArchiveFailure</a></li>
+				<li><a href="#OnInternalSaoriComplete">OnInternalSaoriComplete</a></li>
+				<li><a href="#OnInternalSaoriFailure">OnInternalSaoriFailure</a></li>
 				<li><a href="#property.get">property.get</a></li>
 				<li><a href="#property.set">property.set</a></li>
 			</ul>
@@ -5999,6 +6001,48 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.23</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnInternalSaoriComplete">
+				<dt class="entry">OnInternalSaoriComplete</dt>
+				<dd class="entry">
+					<p><a href="spec_saori_ex.html">SAORI over DirectSSTP</a>で内蔵モジュールを<code>--async=識別子</code>付きで呼び出したとき、処理が成功すると送られる。識別子がOnで始まる場合は、このイベントの代わりに識別子と同じ名前のイベントが送られる。<br />
+					詳しくは<a href="spec_saori_ex.html#async">非同期の呼び出し</a>を参照。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--async=で指定した識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>結果。(同期の呼び出しの Result)</dd>
+						<dt>Reference2</dt>
+						<dd>モジュール名。(internal_crypto など)</dd>
+						<dt>Reference3</dt>
+						<dd>関数名。(Digest など)</dd>
+						<dt>Reference4以降</dt>
+						<dd>複数の値を返す関数の値。(同期の呼び出しの Value0 以降)</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnInternalSaoriFailure">
+				<dt class="entry">OnInternalSaoriFailure</dt>
+				<dd class="entry">
+					<p><a href="spec_saori_ex.html">SAORI over DirectSSTP</a>で内蔵モジュールを<code>--async=識別子</code>付きで呼び出したとき、処理が失敗すると送られる。識別子がOnで始まる場合は、このイベントの代わりに「識別子＋Failure」という名前のイベントが送られる。<br />
+					詳しくは<a href="spec_saori_ex.html#async">非同期の呼び出し</a>を参照。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>--async=で指定した識別子。</dd>
+						<dt>Reference1</dt>
+						<dd>失敗理由。(同期の呼び出しの ErrorDescription と同じ。invalid encoding など)</dd>
+						<dt>Reference2</dt>
+						<dd>モジュール名。</dd>
+						<dt>Reference3</dt>
+						<dd>関数名。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
 					</ul>
 				</dd>
 			</dl>

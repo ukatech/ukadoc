@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="robots" content="INDEX,FOLLOW">
+<meta name="author" content="UKADOC Project">
+<meta name="keywords" content="ukadoc,伺か">
+<title>UKADOC Project SAORI over DirectSSTP</title>
+<link rel="stylesheet" href="list.css" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+	<h1 id="page-title">SAORI over DirectSSTP</h1>
+	<nav class="menu-header">
+		<table>
+			<tbody>
+				<tr>
+					<th>トップページへ戻る</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="http://ssp.shillest.net/ukadoc/manual/index.html">INDEX</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="6">設定ファイル</th>
+					<th>Ghost</th>
+					<td>
+						<ul>
+							<li><a href="./descript_ghost.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Shell</th>
+					<td>
+						<ul>
+							<li><a href="./descript_shell.html">descript.txt</a></li>
+							<li><a href="./descript_shell_surfaces.html">surfaces.txt</a></li>
+							<li><a href="./descript_shell_surfacetable.html">surfacetable.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Balloon</th>
+					<td>
+						<ul>
+							<li><a href="./descript_balloon.html">descript.txt</a></li>
+							<li><a href="./descript_balloon.html#balloonsoption">balloon(s/k)*s.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Plugin</th>
+					<td>
+						<ul>
+							<li><a href="./descript_plugin.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Headline</th>
+					<td>
+						<ul>
+							<li><a href="./descript_headline.html">descript.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>Install</th>
+					<td>
+						<ul>
+							<li><a href="./descript_install.html">install.txt</a></li>
+							<li><a href="./descript_install.html#delete.txt">delete.txt</a></li>
+							<li><a href="./descript_install.html#developer_options.txt">developer_options.txt</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th>さくらスクリプト</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./list_sakura_script.html">Sakura Script</a></li>
+							<li><a href="./list_propertysystem.html">Property System</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th rowspan="2">イベント</th>
+					<th>SHIORI</th>
+					<td>
+						<ul>
+							<li><a href="./list_shiori_event.html">SHIORI Event</a></li>
+							<li><a href="./list_shiori_event_ex.html">SHIORI Event（外部）</a></li>
+							<li><a href="./list_shiori_resource.html">SHIORI Resource</a></li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<th>PLUGIN</th>
+					<td>
+						<ul>
+							<li><a href="./list_plugin_event.html">PLUGIN Event</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<th>規格</th>
+					<td colspan="2">
+						<ul>
+							<li><a href="./spec_shiori3.html">SHIORI/3.0</a></li>
+							<li><a href="./spec_sstp.html">SSTP/1.x</a></li>
+							<li><a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</li>
+							<li><a href="./spec_saori_ex.html">SAORI over DirectSSTP</a></li>
+							<li><a href="./spec_plugin.html">PLUGIN/2.0</a></li>
+							<li><a href="./spec_headline.html">HEADLINE/2.0</a></li>
+							<li><a href="./spec_dll.html">DLL</a></li>
+							<li><a href="./spec_fmo_mutex.html">FMO/MUTEX</a></li>
+							<li><a href="./spec_update_file.html">更新定義ファイル</a></li>
+							<li><a href="./spec_web.html">Web関連</a></li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</nav>
+	<section class="navigation-bar">
+		<h1>SAORI over DirectSSTP</h1>
+		<section class="navigation-category">
+			<ul>
+				<li><a href="#saori">SAORI/1.0の概要</a></li>
+				<li><a href="#directsstp">SAORI over DirectSSTP</a></li>
+				<li><a href="#async">非同期の呼び出し</a></li>
+				<li><a href="#sender">送信側の手順</a></li>
+				<li><a href="#internal">内蔵モジュールの共通規約</a></li>
+				<li><a href="#internal_data">internal_data</a></li>
+				<li><a href="#internal_crypto">internal_crypto</a></li>
+				<li><a href="#internal_random">internal_random</a></li>
+				<li><a href="#internal_time">internal_time</a></li>
+				<li><a href="#compat">互換モジュール</a></li>
+			</ul>
+		</section>
+	</section>
+	<div class="categories">
+		<section class="category caption introduction" id="chapter0">
+			<h1>SAORI over DirectSSTP</h1>
+			<p>参考：<a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</p>
+			<p>SAORI/1.0の要求を、DLLのrequest関数ではなく<a href="spec_sstp.html#direct">Direct SSTP</a>でベースウェアに送り、ベースウェアに内蔵された機能（内蔵モジュール）をSAORIとして呼び出すための拡張規格です。[SSP 2.9.13]
+			<br />SHIORIから見ると「DLLを置かずに使えるSAORI」になります。ハッシュ・乱数・日時の計算など、これまでゴーストごとにDLLを同梱していた機能をベースウェアが提供します。
+			<br />このページの前半（SAORI/1.0の概要～送信側の手順）はベースウェアに依存しない規格、後半（内蔵モジュール）はSSPが内蔵しているモジュールの説明です。</p>
+		</section>
+
+		<section class="category" id="saori">
+			<h1>SAORI/1.0の概要</h1>
+			<p>SAORI/1.0の正しい定義は原典（外部サイト）を参照してください。ここではこのページを読むのに必要な部分だけを簡単にまとめます。</p>
+			<section>
+				<h1>要求</h1>
+<pre><code>EXECUTE SAORI/1.0
+Charset: UTF-8
+Sender: 呼び出し元の名前
+SecurityLevel: Local
+Argument0: 1つ目の引数
+Argument1: 2つ目の引数
+
+</code></pre>
+				<p>改行はCR+LF、空行で終わります。引数は<code>Argument0</code>から番号順に並べます。値が空の引数も、その位置の引数として数えます。
+				<br /><code>Charset</code>は要求の文字コードで、応答も同じ文字コードで返ります。
+				<br />機能の有無の確認には<code>GET Version SAORI/1.0</code>を使います。</p>
+			</section>
+			<section>
+				<h1>応答</h1>
+<pre><code>SAORI/1.0 200 OK
+Charset: UTF-8
+Result: 結果
+Value0: 複数の値を返すときの1つ目
+
+</code></pre>
+				<dl>
+					<dt>200 OK</dt>
+					<dd>成功。<code>Result</code>が結果。複数の値を返すときは<code>Value0</code>、<code>Value1</code>…にも入る。</dd>
+					<dt>204 No Content</dt>
+					<dd>成功したが、返す値が無い（結果が空文字列）。</dd>
+					<dt>400 Bad Request</dt>
+					<dd>呼び出し方の誤り。</dd>
+					<dt>500 Internal Server Error</dt>
+					<dd>処理の失敗。</dd>
+				</dl>
+			</section>
+		</section>
+
+		<section class="category" id="directsstp">
+			<h1>SAORI over DirectSSTP</h1>
+			<section>
+				<h1>送り方</h1>
+				<p><a href="spec_sstp.html#direct">Direct SSTP</a>と同じく<code>WM_COPYDATA</code>（<code>dwData = 9801</code>）を使い、<code>lpData</code>にSSTPの要求の代わりにSAORI/1.0の要求を入れて、自分のゴーストの窓（<a href="spec_fmo_mutex.html">FMO</a>の<code>hwnd</code>）へ送ります。
+				<br />窓・<code>WM_COPYDATA</code>の扱い（SendMessage系で送る、<code>cbData</code>など）はDirect SSTPと同じです。</p>
+<pre><code>EXECUTE SAORI/1.0
+Module: internal_crypto
+Charset: UTF-8
+Sender: YAYA
+SecurityLevel: Local
+HWnd: 1234
+Argument0: Digest
+Argument1: sha256
+Argument2: abc
+
+</code></pre>
+				<dl>
+					<dt>Module</dt>
+					<dd>【必須】呼び出すモジュールの名前。DLL名から<code>.dll</code>を除いた形で書く（例：<code>internal_crypto</code>、<code>string</code>）。大文字小文字は区別しない。
+					<br />無ければ400（<code>ErrorDescription: invalid parameter</code>）、知らないモジュールなら400（<code>ErrorDescription: unknown module</code>）。</dd>
+					<dt>HWnd</dt>
+					<dd>返事を受ける窓。省略時は<code>WM_COPYDATA</code>の<code>wParam</code>の窓（Direct SSTPのSSTPと同じ規則）。</dd>
+					<dt>Charset</dt>
+					<dd>要求の文字コード。応答も同じ文字コードで返る。</dd>
+					<dt>SecurityLevel</dt>
+					<dd>Direct SSTPでは常に<code>Local</code>として扱う（ヘッダの値は見ない）。</dd>
+					<dt>Sender</dt>
+					<dd>呼び出し元の名前。ベースウェアは使わない。</dd>
+					<dt>Argument[n]</dt>
+					<dd>引数。SAORI/1.0と同じ。</dd>
+				</dl>
+			</section>
+			<section>
+				<h1>応答の受け取り</h1>
+				<p>応答は<code>HWnd</code>（または<code>wParam</code>）の窓へ、<code>WM_COPYDATA</code>（<code>dwData = 9801</code>）で返ります。内容は<code>SAORI/</code>で始まるSAORI/1.0の応答です。
+				<br />ベースウェアは要求の処理中に返事を送るので、送信側のSendMessageが戻る前に返事が届きます。</p>
+			</section>
+			<section>
+				<h1>受け付ける経路</h1>
+				<p>SAORI over DirectSSTPはDirect SSTPだけで受け付けます。
+				<br />ソケットのSSTPやSSTP over HTTPでSAORI/1.0の要求を送ると、<code>SAORI/1.0 400 Bad Request</code>と<code>ErrorDescription: direct sstp only</code>が返ります（SSTP over HTTPでは、HTTPの200の本文としてこの応答が返ります）。
+				<br />SAORIの要求はSSTPログに記録されません。</p>
+			</section>
+			<section>
+				<h1>呼び出し元のゴースト</h1>
+				<p>ゴーストの窓へ送った場合は、そのゴーストが呼び出し元になります。
+				<br />ベースウェアの主窓へ送ったときなど、呼び出し元のゴーストが分からない場合は「ゴーストなし」として扱います（Direct SSTPのSSTPのように表示中のゴーストを代わりに当てることはしません）。
+				ゴーストを使わない処理は普通に動き、ゴーストに依存する処理（結果をイベントで届ける<a href="#async">非同期の呼び出し</a>、ゴーストのフォルダを基準にした相対パスなど）は400（<code>ErrorDescription: ghost required</code>）になります。
+				<br /><code>ReceiverGhostName</code> / <code>ReceiverGhostHWnd</code>ヘッダは見ません。</p>
+			</section>
+			<section>
+				<h1>返事の取り違えを防ぐ</h1>
+				<p>ベースウェアは、<code>SAORI/</code>（および<code>SSTP/</code>）で始まる受信を返事とみなし、要求としては扱いません。</p>
+			</section>
+			<section>
+				<h1>機能の判定</h1>
+				<p>モジュールが使えるかどうかは、<code>GET Version SAORI/1.0</code>に<code>Module</code>を付けて送って確かめます。使えれば<code>SAORI/1.0 200 OK</code>（SSPでは<code>Result: SSP Internal</code>）が返ります。
+				<br />この拡張に対応していないSSP（2.9.12以前）はSAORI/1.0の要求をSSTPの要求として読み、SSTPのエラー（<code>GET Version</code>には<code>SSTP/1.0 501 Not Implemented</code>、<code>EXECUTE</code>には<code>SSTP/1.0 400 Bad Request</code>）を返します。
+				<br />送信側は「<code>SAORI/1.0 200</code>で始まる返事でなければ使えない」「返事が来なければ使えない」と判定してください。</p>
+			</section>
+			<section>
+				<h1>ErrorDescription</h1>
+				<p>失敗したときは、応答に<code>ErrorDescription</code>ヘッダで失敗理由（固定の英語の文字列）が付きます。SAORI/1.0の原典には無いヘッダで、SHIORI/3.0の同名のヘッダにならっています。
+				<br />どのモジュールでも使うものは次のとおりです。ほかは各モジュールの説明を参照してください。</p>
+				<dl>
+					<dt>direct sstp only</dt>
+					<dd>400。Direct SSTP以外の経路で送った。</dd>
+					<dt>unknown module</dt>
+					<dd>400。<code>Module</code>のモジュールが無い。</dd>
+					<dt>unknown function</dt>
+					<dd>400。関数名（<code>Argument0</code>）がモジュールに無い。</dd>
+					<dt>ghost required</dt>
+					<dd>400。呼び出し元のゴーストが分からないのに、ゴーストに依存する処理を求めた。</dd>
+					<dt>invalid parameter</dt>
+					<dd>400。<code>Module</code>の欠け・引数の欠けや誤り。</dd>
+				</dl>
+				<p>互換モジュール（DLLのSAORIの互換）は、原作どおり<code>ErrorDescription</code>の付かない400を返すことがあります。</p>
+			</section>
+			<section>
+				<h1>ヘッダの値に書けないもの</h1>
+				<p>SAORIのヘッダの値には、改行と、先頭・末尾の空白を書けません（カンマは書けます）。こうしたデータは、内蔵モジュールでは<code>--data-in=base64</code>などの<a href="#internal_bytes">形式</a>を使って渡してください。</p>
+			</section>
+		</section>
+
+		<section class="category" id="async">
+			<h1>非同期の呼び出し</h1>
+			<p>内蔵モジュール（名前が<code>internal_</code>で始まるもの）の関数は、オプション<code>--async=識別子</code>を付けると非同期で動きます。要求を受け付けると、応答はすぐに204で返り、結果はあとで呼び出し元のゴーストへイベントで届きます。
+			<br />ゴーストなしの呼び出しでは使えません（400 <code>ghost required</code>）。識別子が空なら400（<code>invalid parameter</code>）です。
+			<br />時間のかかる処理（大きなファイルのハッシュなど）には<code>--async</code>を使ってください。</p>
+			<dl>
+				<dt>イベント名</dt>
+				<dd>識別子が<code>On</code>で始まれば、成功時はその名前、失敗時は「識別子＋<code>Failure</code>」。
+				<br />そうでなければ、成功時は<a href="list_shiori_event.html#OnInternalSaoriComplete">OnInternalSaoriComplete</a>、失敗時は<a href="list_shiori_event.html#OnInternalSaoriFailure">OnInternalSaoriFailure</a>。</dd>
+				<dt>成功時のReference</dt>
+				<dd>Reference0＝識別子、Reference1＝結果（同期の呼び出しの<code>Result</code>）、Reference2＝モジュール名、Reference3＝関数名、Reference4以降＝<code>Value0</code>以降。</dd>
+				<dt>失敗時のReference</dt>
+				<dd>Reference0＝識別子、Reference1＝失敗理由（同期の呼び出しの<code>ErrorDescription</code>と同じ文字列）、Reference2＝モジュール名、Reference3＝関数名。</dd>
+			</dl>
+			<p>引数の数やオプションの名前の誤りは、受付の時点で400になります。引数の中身の誤り（読めない16進など）は、失敗のイベントで届きます。
+			<br />結果が届く前に呼び出し元のゴーストが終了した場合（SHIORIの再読み込みを含む）、結果は届きません。</p>
+		</section>
+
+		<section class="category" id="sender">
+			<h1>送信側の手順</h1>
+			<p>SHIORIなどの送信側は、次の手順でSAORI over DirectSSTPを使います。</p>
+			<ol>
+				<li><a href="spec_fmo_mutex.html">FMO</a>などから、自分のゴーストの窓（<code>hwnd</code>）を得る。</li>
+				<li>返事を受ける窓を用意する。</li>
+				<li>SAORI/1.0の要求を組み立てて、<code>Module</code>と<code>HWnd</code>（返事を受ける窓）を付ける。</li>
+				<li>ゴーストの窓へ<code>WM_COPYDATA</code>（<code>dwData = 9801</code>）をSendMessage系の関数で送る。</li>
+				<li>返事を受ける窓に<code>WM_COPYDATA</code>（<code>dwData = 9801</code>）で届いた、<code>SAORI/</code>で始まるデータを応答として読む。</li>
+			</ol>
+			<p>使えるかどうかは、最初に<a href="#directsstp">GET Version</a>で確かめてください。</p>
+		</section>
+
+		<section class="category" id="internal">
+			<h1>内蔵モジュールの共通規約</h1>
+			<p>SSPが内蔵している、名前が<code>internal_</code>で始まるモジュールの共通の決まりです。（同じ名前のSAORI DLLと衝突しないように、<code>internal_</code>で始まる名前にしています。）
+			<br />これらのモジュールはDirect SSTPからだけ呼べます。DLLとしてloadすることはできません。</p>
+			<section>
+				<h1>関数と引数</h1>
+				<p><code>Argument0</code>が関数名（大文字小文字は区別しない）、<code>Argument1</code>以降がその関数の引数です。知らない関数名は400（<code>unknown function</code>）です。
+				<br />引数は、関数ごとに決まった数の<strong>位置引数</strong>と、その後ろに並べる<strong>オプション</strong>（<code>--名前=値</code>）からなります。</p>
+				<ul>
+					<li>位置引数の位置にある値は、<code>--</code>で始まっていてもオプションとしては読まず、データとして扱います。</li>
+					<li>オプションは位置引数より後ろにだけ書けます。省略できる位置引数を飛ばしてオプションを書くときは、空の引数を置いてください。</li>
+					<li>オプションの名前は大文字小文字を区別しません。同じ名前を2回書くと後のものが有効です。</li>
+					<li>位置引数より後ろにある<code>--</code>で始まらない値、関数が受け付けないオプションは400（<code>invalid parameter</code>）です。</li>
+					<li>どの関数も<a href="#async"><code>--async=識別子</code></a>を受け付けます。</li>
+				</ul>
+<pre><code>Argument0: Digest
+Argument1: sha256
+Argument2: SGVsbG8=
+Argument3: --data-in=base64
+Argument4: --out=base64
+</code></pre>
+			</section>
+			<section id="internal_bytes">
+				<h1>バイト列の入力の形式</h1>
+				<p>ハッシュなどはバイト列を扱いますが、SAORIで渡せるのは文字列です。バイト列を受け取る引数にはそれぞれ名前（<code>data</code>、<code>key</code>、<code>a</code>、<code>b</code>など。各関数の説明を参照）があり、<code>--名前-in=形式</code>でその引数の読み方を変えられます。例：<code>--key-in=hex</code>、<code>--data-in=base64</code>。</p>
+				<dl>
+					<dt>text</dt>
+					<dd>文字列を、<code>--charset=</code>の文字コード（既定は<strong>UTF-8</strong>）のバイト列にする。要求の<code>Charset</code>ではない（送り手の文字コードによらず、Web APIの署名などと同じ値になるように）。その文字コードで表せない文字があれば400（<code>invalid encoding</code>）。</dd>
+					<dt>hex</dt>
+					<dd>16進。大文字小文字はどちらでもよい。奇数桁・16進以外の文字は400（<code>invalid encoding</code>）。</dd>
+					<dt>base64 / base64url</dt>
+					<dd>パディング（<code>=</code>）はあってもなくてもよい。それぞれのアルファベット以外の文字は400（<code>invalid encoding</code>）。</dd>
+					<dt>base32</dt>
+					<dd>RFC 4648。大文字小文字・パディングの有無は問わない。不正な文字は400（<code>invalid encoding</code>）。</dd>
+					<dt>url</dt>
+					<dd>パーセントエンコードを戻したもの。<code>+</code>は空白に戻さない。<code>%</code>の後ろが16進2桁でなければ400（<code>invalid encoding</code>）。</dd>
+					<dt>file</dt>
+					<dd>値をファイルのパスとして、ファイルの中身を読む。<code>internal_crypto</code>の<code>Digest</code> / <code>HMAC</code>の<code>data</code>だけで使える。
+					<br />相対パスはゴーストのフォルダ（ghost/master）が基準。ゴーストなしの呼び出しで相対パスを渡すと400（<code>ghost required</code>）。ファイルが無ければ400（<code>file not found</code>）、途中で読めなくなったら500（<code>file read failed</code>）。</dd>
+				</dl>
+				<p>既定の形式は引数ごとに決まっています（各関数の説明を参照）。デコードした後のデータは1つの引数あたり8MBまで（<code>too large</code>）ですが、Direct SSTPの要求そのものが1MBまでなので、実際にはそれより小さくなります。<code>file</code>は少しずつ読むので大きさの上限はありません。</p>
+			</section>
+			<section>
+				<h1>バイト列の出力の形式</h1>
+				<p>バイト列を返す関数は、<code>--out=形式</code>で結果の書き方を変えられます。既定の形式は関数ごとに決まっています。出力の既定の形式は、同じ名前の入力の既定の形式に合わせてあるので、出した値をそのまま別の関数に渡せます。</p>
+				<dl>
+					<dt>hex</dt>
+					<dd>16進（小文字）。</dd>
+					<dt>HEX</dt>
+					<dd>16進（大文字）。</dd>
+					<dt>base64</dt>
+					<dd>パディングあり。</dd>
+					<dt>base64url</dt>
+					<dd>パディングなし。</dd>
+					<dt>base32</dt>
+					<dd>RFC 4648。パディングあり。</dd>
+					<dt>url</dt>
+					<dd>RFC 3986の非予約文字（<code>A-Z a-z 0-9 - . _ ~</code>）以外をすべて<code>%XX</code>（大文字）にする。</dd>
+					<dt>text</dt>
+					<dd><code>--charset=</code>の文字コード（既定はUTF-8）の文字列として返す。その文字コードとして正しく戻せないバイト列や、NUL・改行（SAORIのヘッダに書けない）を含むときは500（<code>not text</code>）。</dd>
+				</dl>
+				<p><code>--charset=</code>には文字コードの名前（<code>UTF-8</code>、<code>Shift_JIS</code>、<code>EUC-JP</code>など）を書きます。知らない名前やUTF-16は400（<code>invalid parameter</code>）です。</p>
+			</section>
+			<section>
+				<h1>応答と失敗理由</h1>
+				<p>成功すれば200で<code>Result</code>に結果が入ります。結果が空文字列のときは204です。真偽を返す関数は、200で<code>1</code>（真）または<code>0</code>（偽）を返します。「一致しない」などは失敗ではありません。
+				<br />失敗時の<a href="#directsstp">ErrorDescription</a>には、共通のもののほかに次のものがあります。</p>
+				<dl>
+					<dt>unsupported algorithm</dt>
+					<dd>400。知らないアルゴリズム名。</dd>
+					<dt>invalid encoding</dt>
+					<dd>400。<code>--名前-in=</code>の形式として読めない。</dd>
+					<dt>out of range</dt>
+					<dd>400。数値・日時が扱える範囲の外。</dd>
+					<dt>too large</dt>
+					<dd>400。データが大きすぎる。</dd>
+					<dt>file not found</dt>
+					<dd>400。<code>--data-in=file</code>のファイルが無い。</dd>
+					<dt>not text</dt>
+					<dd>500。<code>--out=text</code>で文字列に戻せない。</dd>
+					<dt>file read failed</dt>
+					<dd>500。ファイルを途中で読めなくなった。</dd>
+					<dt>internal error</dt>
+					<dd>500。ベースウェア内部の想定外の失敗。</dd>
+				</dl>
+			</section>
+		</section>
+
+		<section class="category" id="internal_data">
+			<h1>internal_data</h1>
+			<p>データの形式の変換。</p>
+			<dl id="internal_data.Convert">
+				<dt class="entry">Convert</dt>
+				<dd class="entry">
+					<p>データを別の形式で書き直す（base64⇔16進⇔パーセントエンコード⇔文字列など）。入力は<code>--data-in=</code>、出力は<code>--out=</code>で指定する。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code></dd>
+					</dl>
+<pre><code>Argument0: Convert
+Argument1: 48656c6c6f
+Argument2: --data-in=hex
+Argument3: --out=base64
+
+→ Result: SGVsbG8=
+</code></pre>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_crypto">
+			<h1>internal_crypto</h1>
+			<p>ハッシュ・MACなど。
+			<br /><code>Digest</code> / <code>HMAC</code>のアルゴリズム名は次のとおりです。ハイフン・アンダースコアの有無と大文字小文字は区別しません（<code>SHA-256</code>も<code>sha_256</code>も<code>sha256</code>と同じ）。これ以外は400（<code>unsupported algorithm</code>）です。
+			<br /><code>md5</code> <code>sha1</code> <code>sha224</code> <code>sha256</code> <code>sha384</code> <code>sha512</code> <code>sha512-256</code> <code>sha3-224</code> <code>sha3-256</code> <code>sha3-384</code> <code>sha3-512</code> <code>blake2b512</code> <code>blake2s256</code></p>
+			<dl id="internal_crypto.Digest">
+				<dt class="entry">Digest</dt>
+				<dd class="entry">
+					<p>ハッシュ値を求める。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>アルゴリズム名</dd>
+						<dt>Argument2</dt>
+						<dd>data（既定の形式は<code>text</code>。<code>file</code>も使える）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>hex</code>） / <code>--charset=</code></dd>
+					</dl>
+<pre><code>Argument0: Digest
+Argument1: sha256
+Argument2: abc
+
+→ Result: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
+</code></pre>
+					<p>文字列は既定でUTF-8のバイト列としてハッシュします。Shift_JISのバイト列のハッシュがほしいときは<code>--charset=Shift_JIS</code>を付けてください。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.HMAC">
+				<dt class="entry">HMAC</dt>
+				<dd class="entry">
+					<p>HMACを求める。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>アルゴリズム名</dd>
+						<dt>Argument2</dt>
+						<dd>key（既定の形式は<code>text</code>）</dd>
+						<dt>Argument3</dt>
+						<dd>data（既定の形式は<code>text</code>。<code>file</code>も使える）</dd>
+						<dt>オプション</dt>
+						<dd><code>--key-in=</code> / <code>--data-in=</code> / <code>--out=</code>（既定は<code>hex</code>） / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Compare">
+				<dt class="entry">Compare</dt>
+				<dd class="entry">
+					<p>2つのバイト列を、内容によらず同じ時間で比べる。等しければ<code>1</code>、違えば<code>0</code>（長さが違えば<code>0</code>）。
+					<br />Webhookの署名の照合など、比べる時間から中身を推測されたくない場面に使う。16進の署名どうしを比べるときは<code>--a-in=hex --b-in=hex</code>にすると、大文字小文字の違いを気にしなくてよい。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>a（既定の形式は<code>text</code>）</dd>
+						<dt>Argument2</dt>
+						<dd>b（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--a-in=</code> / <code>--b-in=</code> / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_random">
+			<h1>internal_random</h1>
+			<p>暗号論的に安全な乱数（OpenSSLの<code>RAND_bytes</code>）。</p>
+			<dl id="internal_random.Bytes">
+				<dt class="entry">Bytes</dt>
+				<dd class="entry">
+					<p>ランダムなバイト列。ソルトやトークンの生成などに。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>バイト数（1～1024。範囲外は400 <code>out of range</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--out=</code>（既定は<code>hex</code>）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_random.Number">
+				<dt class="entry">Number</dt>
+				<dd class="entry">
+					<p>最小以上・最大以下の整数を、偏りなく1つ選ぶ。64ビット符号付き整数の範囲で使える。最小が最大より大きければ400（<code>invalid parameter</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>最小</dd>
+						<dt>Argument2</dt>
+						<dd>最大</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_random.UUID">
+				<dt class="entry">UUID</dt>
+				<dd class="entry">
+					<p>UUID（RFC 9562）を小文字の正規の表記（<code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>）で返す。
+					<br />バージョン4は全体がランダム。バージョン7は先頭の48ビットが現在時刻（UNIX時刻のミリ秒）で、作った順に並べやすい（同じミリ秒の中での順序は保証しない）。</p>
+					<dl class="reference">
+						<dt>オプション</dt>
+						<dd><code>--version=4</code>（既定） / <code>--version=7</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_time">
+			<h1>internal_time</h1>
+			<p>日時の整形と計算。日時は内部ではUTCのエポック秒（1970-01-01T00:00:00Zからの秒数。YAYAの<code>GETSECCOUNT</code>と同じ単位）で扱います。</p>
+			<section>
+				<h1>日時の引数</h1>
+				<p>日時を受け取る引数には、次のどれかを書きます。どれとしても読めなければ400（<code>invalid parameter</code>）です。存在しない日付（2月30日など）も400です。</p>
+				<dl>
+					<dt>整数</dt>
+					<dd>エポック秒。負の値（1970年より前）も書ける。</dd>
+					<dt>now</dt>
+					<dd>現在時刻。</dd>
+					<dt>ISO 8601</dt>
+					<dd><code>2026-10-11</code>、<code>2026-10-11T21:00:00+09:00</code>、<code>2026-10-11 21:00</code>、<code>20261011T210000Z</code>など。小数秒は読み捨てる。
+					<br />ゾーン（<code>Z</code>や<code>+09:00</code>）の無いものは、<code>--tz=</code>のゾーンの時刻として読む。</dd>
+					<dt>HTTPの日付</dt>
+					<dd><code>Sun, 11 Oct 2026 12:00:00 GMT</code>など。</dd>
+				</dl>
+				<p>扱える範囲はUTCで0001-01-01～9999-12-31です（<code>--tz=local</code>のときは1601年以降）。範囲の外は400（<code>out of range</code>）です。</p>
+			</section>
+			<section>
+				<h1>ゾーン（--tz=）</h1>
+				<dl>
+					<dt>local</dt>
+					<dd>（既定）OSのタイムゾーン。その日時の夏時間を反映する。</dd>
+					<dt>UTC / Z</dt>
+					<dd>UTC。</dd>
+					<dt>+09:00 / +0900 / +09</dt>
+					<dd>UTCからのオフセット（±18:00まで）。</dd>
+				</dl>
+				<p><code>Asia/Tokyo</code>などの名前付きのゾーンには、まだ対応していません（400 <code>invalid parameter</code>）。</p>
+			</section>
+			<dl id="internal_time.Format">
+				<dt class="entry">Format</dt>
+				<dd class="entry">
+					<p>日時を<code>--tz=</code>のゾーンの日時として整形する。曜日・月名は英語で固定（言語・地域の設定によらない）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>日時</dd>
+						<dt>Argument2</dt>
+						<dd>書式（省略時・空のときは<code>iso8601</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--tz=</code></dd>
+					</dl>
+					<p>書式は次の名前か、<code>%</code>を使った書式です。知らない書式名・知らない<code>%</code>の文字は400（<code>invalid parameter</code>）です。</p>
+					<dl>
+						<dt>iso8601 / rfc3339</dt>
+						<dd><code>2026-10-11T21:00:00+09:00</code>。オフセットが0なら末尾は<code>Z</code>。</dd>
+						<dt>http</dt>
+						<dd><code>Sun, 11 Oct 2026 12:00:00 GMT</code>。<code>--tz=</code>によらず常にGMT。</dd>
+						<dt>epoch / epochms</dt>
+						<dd>エポック秒 / エポックミリ秒。</dd>
+						<dt>%書式</dt>
+						<dd><code>%Y</code>（西暦4桁） <code>%y</code>（西暦の下2桁） <code>%m</code>（月） <code>%d</code>（日） <code>%H</code>（時） <code>%M</code>（分） <code>%S</code>（秒） <code>%j</code>（年の何日目） <code>%u</code>（曜日 月=1～日=7） <code>%w</code>（曜日 日=0～土=6） <code>%a</code>（Sun） <code>%A</code>（Sunday） <code>%b</code>（Jan） <code>%B</code>（January） <code>%z</code>（+0900） <code>%:z</code>（+09:00） <code>%s</code>（エポック秒） <code>%%</code>（%）。
+						<br /><code>%</code>以外の文字はそのまま出力する。</dd>
+					</dl>
+<pre><code>Argument0: Format
+Argument1: 0
+Argument2: %Y/%m/%d %H:%M (%a)
+Argument3: --tz=+09:00
+
+→ Result: 1970/01/01 09:00 (Thu)
+</code></pre>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_time.Add">
+				<dt class="entry">Add</dt>
+				<dd class="entry">
+					<p>日時に量を足した日時を、エポック秒で返す。量は負でもよい。
+					<br /><code>second</code> / <code>minute</code> / <code>hour</code>は経過時間で足す。<code>day</code>以上は<code>--tz=</code>のゾーンの暦で足す（夏時間の切り替えをまたいでも同じ時刻になる）。
+					<br />月末は丸める（1月31日＋1か月＝2月28日または29日）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>日時</dd>
+						<dt>Argument2</dt>
+						<dd>量（整数）</dd>
+						<dt>Argument3</dt>
+						<dd>単位：<code>second</code> <code>minute</code> <code>hour</code> <code>day</code> <code>week</code> <code>month</code> <code>year</code>（複数形の<code>days</code>なども可）</dd>
+						<dt>オプション</dt>
+						<dd><code>--tz=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_time.Diff">
+				<dt class="entry">Diff</dt>
+				<dd class="entry">
+					<p>日時2－日時1を、単位で数えた整数で返す。端数は0の方向へ切り捨てる。
+					<br /><code>day</code>以上は<code>--tz=</code>のゾーンの暦で数える。たとえば日時2が日付だけ（その日の0時）なら、「あと何日」は<code>--tz=</code>のゾーンで日付が変わる時刻に1つ減る。<code>month</code> / <code>year</code>は暦の月で数える（1月31日から2月28日までで1か月）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>日時1</dd>
+						<dt>Argument2</dt>
+						<dd>日時2</dd>
+						<dt>Argument3</dt>
+						<dd>単位（<a href="#internal_time.Add">Add</a>と同じ）</dd>
+						<dt>オプション</dt>
+						<dd><code>--tz=</code></dd>
+					</dl>
+<pre><code>Argument0: Diff
+Argument1: 2026-12-20T10:00
+Argument2: 2026-12-24
+Argument3: day
+
+→ Result: 3（3日と14時間なので3）
+</code></pre>
+					<p>カレンダーの日付どうしの差（「今日から何日後か」）がほしいときは、日時1も日付だけにしてください（<a href="#internal_time.Format">Format</a>の<code>%Y-%m-%d</code>で今日の日付を作れます）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="compat">
+			<h1>互換モジュール</h1>
+			<p>SSPは、よく使われていた次のSAORI DLLの互換の機能を内蔵しています。ゴーストがこれらのDLLをloadすると、SSPはDLLを読まずに内蔵の機能に差し替えます（ファイル名で判定します）。
+			<br />[SSP 2.9.13] これらはDirect SSTPからも、DLL名から<code>.dll</code>を除いた名前（<code>Module: string</code>など）で呼べます。引数と戻り値は原作のSAORIのままです。</p>
+			<p><code>houchi</code> <code>clipcopy</code> <code>textcopy</code> <code>saori_ip</code> <code>saori_cpuid</code> <code>mciaudio</code> <code>cpuusage</code> <code>httpc</code> <code>string</code> <code>hanayu</code></p>
+			<ul>
+				<li>Direct SSTPには<code>load</code> / <code>unload</code>が無いので、ゴーストごとに状態を持つもの（<code>mciaudio</code> / <code>httpc</code> / <code>string</code> / <code>hanayu</code>）は、そのゴーストの最初の呼び出しで用意し、ゴーストの終了（SHIORIの再読み込みを含む）で捨てます。DLLとしてloadしたものとは状態を共有しません。</li>
+				<li>ゴーストなしの呼び出しでは、ゴーストに依存する処理（<code>httpc</code>の取得・保存と<code>bg</code>、<code>hanayu</code>の<code>show</code>、<code>mciaudio</code>の<code>load</code> / <code>play</code> / <code>loop</code> / <code>stop</code>）は400（<code>ghost required</code>）になります。</li>
+				<li><code>houchi</code>はloadしたときに働くものなので、Direct SSTPから呼んでも何も起きません。</li>
+				<li>Direct SSTPの要求はSSPの主スレッドで処理されるので、<code>httpc</code>の取得は<code>bg</code>を付けて行ってください（付けないと、取得の間SSPの画面が止まります）。</li>
+			</ul>
+		</section>
+	</div>
+</body>
+</html>
