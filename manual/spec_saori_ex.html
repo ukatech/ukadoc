@@ -146,6 +146,7 @@
 				<li><a href="#internal_crypto">internal_crypto</a></li>
 				<li><a href="#internal_random">internal_random</a></li>
 				<li><a href="#internal_time">internal_time</a></li>
+				<li><a href="#internal_text">internal_text</a></li>
 				<li><a href="#compat">互換モジュール</a></li>
 			</ul>
 		</section>
@@ -155,7 +156,7 @@
 			<h1>SAORI over DirectSSTP</h1>
 			<p>参考：<a href="http://www.boreas.dti.ne.jp/~sdn/saori.html">SAORI/1.0</a>（外部サイト）</p>
 			<p>SAORI/1.0の要求を、DLLのrequest関数ではなく<a href="spec_sstp.html#direct">Direct SSTP</a>でベースウェアに送り、ベースウェアに内蔵された機能（内蔵モジュール）をSAORIとして呼び出すための拡張規格です。[SSP 2.9.13]
-			<br />SHIORIから見ると「DLLを置かずに使えるSAORI」になります。ハッシュ・乱数・日時の計算など、これまでゴーストごとにDLLを同梱していた機能をベースウェアが提供します。
+			<br />SHIORIから見ると「DLLを置かずに使えるSAORI」になります。ハッシュ・暗号・乱数・日時の計算など、これまでゴーストごとにDLLを同梱していた機能をベースウェアが提供します。
 			<br />このページの前半（SAORI/1.0の概要～送信側の手順）はベースウェアに依存しない規格、後半（内蔵モジュール）はSSPが内蔵しているモジュールの説明です。</p>
 		</section>
 
@@ -289,7 +290,8 @@ Argument2: abc
 			<h1>非同期の呼び出し</h1>
 			<p>内蔵モジュール（名前が<code>internal_</code>で始まるもの）の関数は、オプション<code>--async=識別子</code>を付けると非同期で動きます。要求を受け付けると、応答はすぐに204で返り、結果はあとで呼び出し元のゴーストへイベントで届きます。
 			<br />ゴーストなしの呼び出しでは使えません（400 <code>ghost required</code>）。識別子が空なら400（<code>invalid parameter</code>）です。
-			<br />時間のかかる処理（大きなファイルのハッシュなど）には<code>--async</code>を使ってください。</p>
+			<br />時間のかかる処理（大きなファイルのハッシュ、パスワードのハッシュ、鍵の導出など）には<code>--async</code>を使ってください。
+			<br />同時に動く非同期の呼び出しは、SSPではCPUの数ほど（2～4）までです。それを超えた分は、前のものが終わるまで順番を待ちます。</p>
 			<section class="caption">
 				<h1>結果を届けるイベント</h1>
 				<dl>
@@ -346,7 +348,8 @@ Argument4: --out=base64
 			</section>
 			<section class="caption" id="internal_bytes">
 				<h1>バイト列の入力の形式</h1>
-				<p>ハッシュなどはバイト列を扱いますが、SAORIで渡せるのは文字列です。バイト列を受け取る引数にはそれぞれ名前（<code>data</code>、<code>key</code>、<code>a</code>、<code>b</code>など。各関数の説明を参照）があり、<code>--名前-in=形式</code>でその引数の読み方を変えられます。例：<code>--key-in=hex</code>、<code>--data-in=base64</code>。</p>
+				<p>ハッシュなどはバイト列を扱いますが、SAORIで渡せるのは文字列です。バイト列を受け取る引数にはそれぞれ名前（<code>data</code>、<code>key</code>、<code>password</code>、<code>salt</code>、<code>ciphertext</code>、<code>a</code>、<code>b</code>など。各関数の説明を参照）があり、<code>--名前-in=形式</code>でその引数の読み方を変えられます。例：<code>--key-in=hex</code>、<code>--data-in=base64</code>。
+				<br />オプションで渡すバイト列（<code>--aad=</code>、<code>--iv=</code>、<code>--info=</code>）も同じで、<code>--aad-in=hex</code>のように読み方を変えられます。</p>
 				<dl>
 					<dt>text</dt>
 					<dd>文字列を、<code>--charset=</code>の文字コード（既定は<strong>UTF-8</strong>）のバイト列にする。要求の<code>Charset</code>ではない（送り手の文字コードによらず、Web APIの署名などと同じ値になるように）。その文字コードで表せない文字があれば400（<code>invalid encoding</code>）。</dd>
@@ -393,7 +396,9 @@ Argument4: --out=base64
 					<dt>unsupported algorithm</dt>
 					<dd>400。知らないアルゴリズム名。</dd>
 					<dt>invalid encoding</dt>
-					<dd>400。<code>--名前-in=</code>の形式として読めない。</dd>
+					<dd>400。<code>--名前-in=</code>の形式として読めない。圧縮データが壊れている。</dd>
+					<dt>invalid key</dt>
+					<dd>400。鍵の長さがアルゴリズムに合わない。</dd>
 					<dt>out of range</dt>
 					<dd>400。数値・日時が扱える範囲の外。</dd>
 					<dt>too large</dt>
@@ -404,6 +409,8 @@ Argument4: --out=base64
 					<dd>500。<code>--out=text</code>で文字列に戻せない。</dd>
 					<dt>file read failed</dt>
 					<dd>500。ファイルを途中で読めなくなった。</dd>
+					<dt>authentication failed</dt>
+					<dd>500。復号できない（暗号文の改ざん・鍵の違いなど）。</dd>
 					<dt>internal error</dt>
 					<dd>500。ベースウェア内部の想定外の失敗。</dd>
 				</dl>
@@ -412,7 +419,7 @@ Argument4: --out=base64
 
 		<section class="category" id="internal_data">
 			<h1>internal_data</h1>
-			<p>データの形式の変換。</p>
+			<p>データの形式の変換と、圧縮・展開。</p>
 			<dl id="internal_data.Convert">
 				<dt class="entry">Convert</dt>
 				<dd class="entry">
@@ -434,12 +441,53 @@ Argument4: --out=base64
 					</ul>
 				</dd>
 			</dl>
+			<dl id="internal_data.Compress">
+				<dt class="entry">Compress</dt>
+				<dd class="entry">
+					<p>データを圧縮する。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式：<code>gzip</code> / <code>zlib</code> / <code>deflate</code>（ヘッダの無い生のdeflate）</dd>
+						<dt>Argument2</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--level=</code>（0～9。省略時はzlibの既定） / <code>--out=</code>（既定は<code>base64</code>） / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_data.Decompress">
+				<dt class="entry">Decompress</dt>
+				<dd class="entry">
+					<p>圧縮されたデータを展開する。<code>gzip</code>は複数のメンバーをつないだものも読む。
+					<br />壊れている・途中で切れている・後ろに余計なデータがあるときは400（<code>invalid encoding</code>）。展開した後の大きさも8MBまで（超えると400 <code>too large</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式：<code>gzip</code> / <code>zlib</code> / <code>deflate</code> / <code>brotli</code> / <code>zstd</code>（<code>brotli</code>と<code>zstd</code>は展開だけ）</dd>
+						<dt>Argument2</dt>
+						<dd>data（既定の形式は<code>base64</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code></dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Decompress<br />Argument1: gzip<br />Argument2: H4sIAAAAAAAACvNIzcnJBwCCidH3BQAAAA==<br /><br />→ Result: Hello</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 
 		<section class="category" id="internal_crypto">
 			<h1>internal_crypto</h1>
-			<p>ハッシュ・MACなど。
-			<br /><code>Digest</code> / <code>HMAC</code>のアルゴリズム名は次のとおりです。ハイフン・アンダースコアの有無と大文字小文字は区別しません（<code>SHA-256</code>も<code>sha_256</code>も<code>sha256</code>と同じ）。これ以外は400（<code>unsupported algorithm</code>）です。
+			<p>ハッシュ・MAC・共通鍵暗号・鍵の導出・パスワードのハッシュ・データの保護（DPAPI）・ワンタイムパスワード（TOTP）。
+			<br /><code>Digest</code> / <code>HMAC</code>のアルゴリズム名（<code>DeriveKey</code> / <code>TOTP</code>の<code>--digest=</code>も同じ）は次のとおりです。ハイフン・アンダースコアの有無と大文字小文字は区別しません（<code>SHA-256</code>も<code>sha_256</code>も<code>sha256</code>と同じ）。これ以外は400（<code>unsupported algorithm</code>）です。
 			<br /><code>md5</code> <code>sha1</code> <code>sha224</code> <code>sha256</code> <code>sha384</code> <code>sha512</code> <code>sha512-256</code> <code>sha3-224</code> <code>sha3-256</code> <code>sha3-384</code> <code>sha3-512</code> <code>blake2b512</code> <code>blake2s256</code></p>
 			<dl id="internal_crypto.Digest">
 				<dt class="entry">Digest</dt>
@@ -497,6 +545,202 @@ Argument4: --out=base64
 						<dt>オプション</dt>
 						<dd><code>--a-in=</code> / <code>--b-in=</code> / <code>--charset=</code></dd>
 					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="internal_crypto_cipher">
+				<h1>共通鍵暗号（Encrypt / Decrypt）</h1>
+				<p>アルゴリズムは次のとおりです（名前のハイフン・アンダースコアの有無と大文字小文字は区別しない）。これ以外は400（<code>unsupported algorithm</code>）です。</p>
+				<dl>
+					<dt>aes-256-gcm（推奨） / aes-128-gcm / chacha20-poly1305</dt>
+					<dd>認証付き暗号。改ざんされた暗号文は復号できない。暗号文の形は「nonce（12バイト）＋暗号文＋認証タグ（16バイト）」。</dd>
+					<dt>aes-256-cbc / aes-128-cbc</dt>
+					<dd>PKCS#7のパディング。暗号文の形は「IV（16バイト）＋暗号文」。改ざんを検出できないので、ほかのシステムとやりとりするときだけ使うこと。</dd>
+					<dt>aes-256-ctr</dt>
+					<dd>暗号文の形は「IV（16バイト）＋暗号文」。改ざんを検出できない。</dd>
+				</dl>
+				<p>鍵（key）の長さは、アルゴリズムの鍵長ちょうど（AES-256とChaCha20は32バイト、AES-128は16バイト）でなければ400（<code>invalid key</code>）です。パスワードから鍵を作るときは<a href="#internal_crypto.DeriveKey">DeriveKey</a>を通してください。
+				<br />nonce / IVは、暗号化のたびに乱数で作って暗号文の先頭に付けます。<code>--iv=</code>（nonce / IVを指定する）と<code>--pack=none</code>（先頭に付けない）は、ほかのシステムがnonceを別に受け渡す場合のためだけのものです。<strong>同じ鍵で同じnonce / IVを2回使うと、GCM・ChaCha20-Poly1305・CTRは暗号として破れます</strong>（平文が漏れ、改ざんもできるようになる）。<code>--iv=</code>に固定の値を書いて使い回さないでください。</p>
+			</section>
+			<dl id="internal_crypto.Encrypt">
+				<dt class="entry">Encrypt</dt>
+				<dd class="entry">
+					<p>共通鍵暗号で暗号化する。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>アルゴリズム名（<a href="#internal_crypto_cipher">共通鍵暗号</a>を参照）</dd>
+						<dt>Argument2</dt>
+						<dd>key（既定の形式は<code>text</code>）</dd>
+						<dt>Argument3</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--key-in=</code> / <code>--data-in=</code> / <code>--aad=</code>（追加認証データ。認証付き暗号だけ。<code>--aad-in=</code>、既定の形式は<code>text</code>） / <code>--iv=</code>（<code>--iv-in=</code>、既定の形式は<code>hex</code>） / <code>--pack=none</code> / <code>--out=</code>（既定は<code>base64</code>） / <code>--charset=</code></dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Encrypt<br />Argument1: aes-256-gcm<br />Argument2: 000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f<br />Argument3: secret message<br />Argument4: --key-in=hex<br /><br />→ Result: （毎回違うbase64）</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Decrypt">
+				<dt class="entry">Decrypt</dt>
+				<dd class="entry">
+					<p><a href="#internal_crypto.Encrypt">Encrypt</a>の暗号文を復号する。
+					<br />復号できなければ500（<code>authentication failed</code>）。認証付き暗号では、暗号文・認証タグ・<code>--aad=</code>のどれかが違えばこれになる。CBCではパディングが合わないとき。CTRは間違った鍵でも何かしらの値を返す。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>アルゴリズム名</dd>
+						<dt>Argument2</dt>
+						<dd>key（既定の形式は<code>text</code>）</dd>
+						<dt>Argument3</dt>
+						<dd>ciphertext（既定の形式は<code>base64</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--key-in=</code> / <code>--ciphertext-in=</code> / <code>--aad=</code> / <code>--aad-in=</code> / <code>--iv=</code> / <code>--iv-in=</code> / <code>--pack=none</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code></dd>
+					</dl>
+					<p><code>--pack=none</code>のときは<code>--iv=</code>が要ります。<code>--pack=none</code>でないとき（nonce / IVが暗号文の先頭にあるとき）に<code>--iv=</code>を付けると400（<code>invalid parameter</code>）です。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.DeriveKey">
+				<dt class="entry">DeriveKey</dt>
+				<dd class="entry">
+					<p>パスワードなどから、暗号の鍵などに使うバイト列を導出する。方式ごとのパラメータはオプションで指定し、その方式で使わないオプションを書くと400（<code>invalid parameter</code>）。
+					<br />時間とメモリを使う処理なので、<a href="#async"><code>--async</code></a>を推奨。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式：<code>pbkdf2</code> / <code>hkdf</code> / <code>scrypt</code> / <code>argon2id</code></dd>
+						<dt>Argument2</dt>
+						<dd>password（既定の形式は<code>text</code>）</dd>
+						<dt>Argument3</dt>
+						<dd>salt（既定の形式は<code>text</code>）</dd>
+						<dt>Argument4</dt>
+						<dd>長さ（バイト。1～1024）</dd>
+						<dt>オプション</dt>
+						<dd><code>--password-in=</code> / <code>--salt-in=</code> / 下の方式ごとのオプション / <code>--out=</code>（既定は<code>hex</code>） / <code>--charset=</code></dd>
+					</dl>
+					<dl class="property">
+						<dt>pbkdf2</dt>
+						<dd><code>--digest=</code>（既定は<code>sha256</code>） / <code>--iterations=</code>（既定は600000。1～10000000）</dd>
+						<dt>hkdf</dt>
+						<dd><code>--digest=</code>（既定は<code>sha256</code>） / <code>--info=</code>（<code>--info-in=</code>、既定の形式は<code>text</code>）。passwordが入力の鍵（IKM）で、空にはできない。saltは空でもよい。</dd>
+						<dt>scrypt</dt>
+						<dd><code>--n=</code>（既定は8192。2の累乗） / <code>--r=</code>（既定は8） / <code>--p=</code>（既定は10。1～16）。N×r×128バイトが12MiBまで。</dd>
+						<dt>argon2id</dt>
+						<dd><code>--iterations=</code>（既定は3。1～1000） / <code>--memory=</code>（KiB。既定は12288。lanes×8～12288） / <code>--lanes=</code>（既定は1。1～16）。saltは8バイト以上、長さは4以上。バージョンは1.3（0x13）。秘密鍵（secret）と関連データ（associated data）は使えない。</dd>
+					</dl>
+					<p>範囲の外は400（<code>out of range</code>）です。既定のパラメータは、OWASPの推奨のうちメモリの上限（12MiB）に収まる組み合わせです。</p>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: DeriveKey<br />Argument1: pbkdf2<br />Argument2: password<br />Argument3: salt<br />Argument4: 20<br />Argument5: --digest=sha1<br />Argument6: --iterations=4096<br /><br />→ Result: 4b007901b765489abead49d926f721d065a429c1</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.HashPassword">
+				<dt class="entry">HashPassword</dt>
+				<dd class="entry">
+					<p>パスワードを保存用にハッシュし、PHC文字列（方式・パラメータ・ソルト・ハッシュをまとめた1行の文字列）で返す。ソルトは毎回16バイトの乱数、ハッシュは32バイト、パラメータは下の表で固定（OWASPの推奨のうち、メモリの上限12MiBに収まるもの）。
+					<br />保存した文字列は<a href="#internal_crypto.VerifyPassword">VerifyPassword</a>で照合する。<a href="#async"><code>--async</code></a>を推奨。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>password（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--method=</code>（下の表。既定は<code>argon2id</code>） / <code>--password-in=</code> / <code>--charset=</code></dd>
+					</dl>
+					<dl class="property">
+						<dt>argon2id</dt>
+						<dd><code>$argon2id$v=19$m=12288,t=3,p=1$ソルト$ハッシュ</code></dd>
+						<dt>scrypt</dt>
+						<dd><code>$scrypt$ln=13,r=8,p=10$ソルト$ハッシュ</code>（ln は N の2を底とする対数）</dd>
+						<dt>pbkdf2-sha256</dt>
+						<dd><code>$pbkdf2-sha256$i=600000,l=32$ソルト$ハッシュ</code></dd>
+					</dl>
+					<p>ソルトとハッシュはbase64（パディングなし）です。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.VerifyPassword">
+				<dt class="entry">VerifyPassword</dt>
+				<dd class="entry">
+					<p>パスワードがPHC文字列と一致するかを調べ、一致すれば<code>1</code>、しなければ<code>0</code>を返す。パラメータはPHC文字列から読む。<a href="#async"><code>--async</code></a>を推奨。
+					<br /><a href="#internal_crypto.HashPassword">HashPassword</a>の出力のほか、同じ形のものなら他の実装が作った文字列も読める（<code>$argon2id$</code>（<code>v=</code>の無いもの・<code>v=16</code>も可） / <code>$scrypt$</code> / <code>$pbkdf2-sha1$</code> / <code>$pbkdf2-sha256$</code> / <code>$pbkdf2-sha512$</code>）。ただしメモリの上限（12MiB）を超えるパラメータのもの（argon2-cffiの既定の64MiBなど）は400（<code>out of range</code>）で照合できない。
+					<br />これ以外の方式（bcryptなど）は400（<code>unsupported algorithm</code>）、形の誤りは400（<code>invalid parameter</code>）、パラメータが<a href="#internal_crypto.DeriveKey">DeriveKey</a>の範囲の外なら400（<code>out of range</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>password（既定の形式は<code>text</code>）</dd>
+						<dt>Argument2</dt>
+						<dd>PHC文字列</dd>
+						<dt>オプション</dt>
+						<dd><code>--password-in=</code> / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Protect">
+				<dt class="entry">Protect</dt>
+				<dd class="entry">
+					<p>データを、OSのデータ保護機能（WindowsのDPAPI）で包む。包んだものは、同じPCの同じユーザー（<code>--scope=machine</code>なら同じPCの全ユーザー）でしか<a href="#internal_crypto.Unprotect">Unprotect</a>できない。
+					<br />セーブデータに置くトークンなどを、ほかのPCやほかのユーザーにコピーされても読めないようにするためのもので、ゴースト同士を分けるものではない（同じユーザーで動くほかのゴーストやプログラムは戻せる）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--scope=user</code>（既定） / <code>--scope=machine</code> / <code>--out=</code>（既定は<code>base64</code>） / <code>--charset=</code></dd>
+					</dl>
+					<p><strong>セーブデータを別のPCへ持っていった場合（SSPのセーブデータ共有、クラウドストレージでの同期、手でのコピーなど）や、Windowsのユーザーを作り直した場合は、Unprotectできなくなります。</strong>スクリプトはUnprotectの失敗を「ログインし直してもらう」などとして扱ってください。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Unprotect">
+				<dt class="entry">Unprotect</dt>
+				<dd class="entry">
+					<p><a href="#internal_crypto.Protect">Protect</a>で包んだデータを元に戻す。戻せなければ500（<code>authentication failed</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>data（既定の形式は<code>base64</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.TOTP">
+				<dt class="entry">TOTP</dt>
+				<dd class="entry">
+					<p>時刻ベースのワンタイムパスワード（RFC 6238。2段階認証のアプリが出す数字）を求める。桁数に満たなければ先頭を0で埋める。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>key（既定の形式は<code>base32</code>。認証アプリに登録する秘密鍵の文字列）</dd>
+						<dt>オプション</dt>
+						<dd><code>--key-in=</code> / <code>--digits=</code>（既定は6。6～10） / <code>--period=</code>（秒。既定は30。1～86400） / <code>--digest=</code>（既定は<code>sha1</code>。<code>md5</code>は使えない） / <code>--time=</code>（日時。<a href="#internal_time">internal_time</a>の日時の引数と同じ書き方で、ゾーンの無いものはOSのタイムゾーンの時刻。既定は現在時刻） / <code>--charset=</code></dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: TOTP<br />Argument1: GEZDGNBVGY3TQOJQGEZDGNBVGY3TQOJQ<br />Argument2: --time=59<br />Argument3: --digits=8<br /><br />→ Result: 94287082</code></p>
+						</section>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
 					</ul>
@@ -570,7 +814,8 @@ Argument4: --out=base64
 					<dt>HTTPの日付</dt>
 					<dd><code>Sun, 11 Oct 2026 12:00:00 GMT</code>など。</dd>
 				</dl>
-				<p>扱える範囲はUTCで0001-01-01～9999-12-31です（<code>--tz=local</code>のときは1601年以降）。範囲の外は400（<code>out of range</code>）です。</p>
+				<p>扱える範囲はUTCで0001-01-01～9999-12-31です（<code>--tz=local</code>のときは1601年以降）。範囲の外は400（<code>out of range</code>）です。
+				<br />ただし、ISO 8601・HTTPの日付の文字列で書けるのは1601年以降です（それより前は400 <code>invalid parameter</code>。整数のエポック秒なら書けます）。</p>
 			</section>
 			<section class="caption">
 				<h1>ゾーン（--tz=）</h1>
@@ -581,8 +826,11 @@ Argument4: --out=base64
 					<dd>UTC。</dd>
 					<dt>+09:00 / +0900 / +09</dt>
 					<dd>UTCからのオフセット（±18:00まで）。</dd>
+					<dt>名前付きのゾーン</dt>
+					<dd>IANAのタイムゾーン名（<code>Asia/Tokyo</code>、<code>America/New_York</code>など）か、Windowsのタイムゾーン名（<code>Tokyo Standard Time</code>など）。大文字小文字は区別しない。その日時の夏時間を反映する。
+					<br />ゾーンの規則はOS（Windows）のタイムゾーン情報を使う。IANAの名前は、Unicode CLDRの対応表でWindowsの名前に引き直す。OSが持っていない名前は400（<code>invalid parameter</code>）。UTCとして扱うことはしない。</dd>
 				</dl>
-				<p><code>Asia/Tokyo</code>などの名前付きのゾーンには、まだ対応していません（400 <code>invalid parameter</code>）。</p>
+				<p>名前付きのゾーンの規則はOSのタイムゾーン情報の範囲のものです。OSの情報に無い昔の規則（多くは2000年代より前）は、OSが持つ最初の年の規則で代用されます。</p>
 			</section>
 			<dl id="internal_time.Format">
 				<dt class="entry">Format</dt>
@@ -662,6 +910,33 @@ Argument4: --out=base64
 						</section>
 					</div>
 					<p>カレンダーの日付どうしの差（「今日から何日後か」）がほしいときは、日時1も日付だけにしてください（<a href="#internal_time.Format">Format</a>の<code>%Y-%m-%d</code>で今日の日付を作れます）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_text">
+			<h1>internal_text</h1>
+			<p>文字列の処理。</p>
+			<dl id="internal_text.Normalize">
+				<dt class="entry">Normalize</dt>
+				<dd class="entry">
+					<p>文字列をUnicodeの正規化形式にそろえる。半角カナと全角カナ、合成済みの文字と結合文字の並びなど、見た目が同じで符号が違う文字列を比べる前にそろえるのに使う。
+					<br />OSの機能（Windows Vista以降の<code>NormalizeString</code>）を使う。使えないOSでは500（<code>internal error</code>）。対になっていないサロゲートを含む文字列は400（<code>invalid encoding</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>形式：<code>NFC</code> / <code>NFD</code> / <code>NFKC</code> / <code>NFKD</code>（大文字小文字は区別しない。これ以外は400 <code>unsupported algorithm</code>）</dd>
+						<dt>Argument2</dt>
+						<dd>文字列</dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Normalize<br />Argument1: NFKC<br />Argument2: ｶﾞｲﾄﾞ①<br /><br />→ Result: ガイド1</code></p>
+						</section>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
 					</ul>
