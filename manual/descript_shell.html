@@ -565,8 +565,11 @@ kero.menuitem3,2
 			<dl id="sakura.defaultx,X座標">
 				<dt class="entry">sakura.defaultx,X座標</dt>
 				<dd class="entry">
-					<p>本体側の画像ベースX座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像中央）</p>
+					<p>本体側(\0)の既定位置のX座標。サーフェスの基準点(通常はサーフェスの中央下)をこの位置に置く。[2.9.13]<br />
+					値の書式と意味(単位・座標系・負の値・--の扱い・無効になる条件)は、SHIORIリソースの<a href="list_shiori_resource.html#sakura.defaultx">sakura.defaultx</a>と同じ。<br />
+					優先順位は、SHIORIリソース＞シェル側のdescript.txt(これ)＞<a href="descript_ghost.html#sakura.defaultx,X座標">ゴースト側のdescript.txt</a>。<br />
+					同じdescript.txtに<a href="#sakura.defaultleft,X座標">sakura.defaultleft</a>も書かれている場合は、こちら(defaultx)が優先される。</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -575,8 +578,8 @@ kero.menuitem3,2
 			<dl id="kero.defaultx,X座標">
 				<dt class="entry">kero.defaultx,X座標</dt>
 				<dd class="entry">
-					<p>相方側の画像ベースX座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像中央）</p>
+					<p>相方側(\1)の既定位置のX座標。<a href="#sakura.defaultx,X座標">sakura.defaultx</a>と同様。[2.9.13]</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -585,8 +588,8 @@ kero.menuitem3,2
 			<dl id="char*.defaultx,X座標">
 				<dt class="entry">char*.defaultx,X座標</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側の画像ベースX座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像中央）</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のX座標。<a href="#sakura.defaultx,X座標">sakura.defaultx</a>と同様。[2.9.13]</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -595,8 +598,11 @@ kero.menuitem3,2
 			<dl id="sakura.defaulty,Y座標">
 				<dt class="entry">sakura.defaulty,Y座標</dt>
 				<dd class="entry">
-					<p>本体側の画像ベースY座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像下端）</p>
+					<p>本体側(\0)の既定位置のY座標。サーフェスの基準点(通常はサーフェスの中央下)をこの位置に置く。[2.9.13]<br />
+					値の書式と意味(単位・座標系・負の値・--の扱い・無効になる条件)は、SHIORIリソースの<a href="list_shiori_resource.html#sakura.defaulty">sakura.defaulty</a>と同じ。<br />
+					優先順位は、SHIORIリソース＞シェル側のdescript.txt(これ)＞<a href="descript_ghost.html#sakura.defaulty,Y座標">ゴースト側のdescript.txt</a>。<br />
+					同じdescript.txtに<a href="#sakura.defaulttop,Y座標">sakura.defaulttop</a>も書かれている場合は、こちら(defaulty)が優先される。</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -605,8 +611,8 @@ kero.menuitem3,2
 			<dl id="kero.defaulty,Y座標">
 				<dt class="entry">kero.defaulty,Y座標</dt>
 				<dd class="entry">
-					<p>相方側の画像ベースY座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像下端）</p>
+					<p>相方側(\1)の既定位置のY座標。<a href="#sakura.defaulty,Y座標">sakura.defaulty</a>と同様。[2.9.13]</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -615,8 +621,8 @@ kero.menuitem3,2
 			<dl id="char*.defaulty,Y座標">
 				<dt class="entry">char*.defaulty,Y座標</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側の画像ベースY座標。</p>
-					<p class="default">ghostのdescript設定（無ければ画像下端）</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のY座標。<a href="#sakura.defaulty,Y座標">sakura.defaulty</a>と同様。[2.9.13]</p>
+					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -625,7 +631,9 @@ kero.menuitem3,2
 			<dl id="sakura.defaultleft,X座標">
 				<dt class="entry">sakura.defaultleft,X座標</dt>
 				<dd class="entry">
-					<p>本体側のディスプレイ上でのデフォルトX座標。</p>
+					<p>本体側(\0)の既定位置のX座標。キャラクターウィンドウの左端をこの位置に置く。<br />
+					値の書式と意味(単位・座標系・負の値・--の扱い・無効になる条件)は、SHIORIリソースの<a href="list_shiori_resource.html#sakura.defaultleft">sakura.defaultleft</a>と同じ。負の値は右端からの余白になる。[2.9.13]<br />
+					優先順位は、SHIORIリソース＞シェル側のdescript.txt(これ)＞<a href="descript_ghost.html#sakura.defaultleft,X座標">ゴースト側のdescript.txt</a>。同じdescript.txtに<a href="#sakura.defaultx,X座標">sakura.defaultx</a>も書かれている場合はそちらが優先される。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -635,7 +643,7 @@ kero.menuitem3,2
 			<dl id="kero.defaultleft,X座標">
 				<dt class="entry">kero.defaultleft,X座標</dt>
 				<dd class="entry">
-					<p>相方側のディスプレイ上でのデフォルトX座標。</p>
+					<p>相方側(\1)の既定位置のX座標。<a href="#sakura.defaultleft,X座標">sakura.defaultleft</a>と同様。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -645,7 +653,7 @@ kero.menuitem3,2
 			<dl id="char*.defaultleft,X座標">
 				<dt class="entry">char*.defaultleft,X座標</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側のディスプレイ上でのデフォルトX座標。</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のX座標。<a href="#sakura.defaultleft,X座標">sakura.defaultleft</a>と同様。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -655,8 +663,10 @@ kero.menuitem3,2
 			<dl id="sakura.defaulttop,Y座標">
 				<dt class="entry">sakura.defaulttop,Y座標</dt>
 				<dd class="entry">
-					<p>本体側のディスプレイ上でのデフォルトY座標。<br />
-					<a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop</a>がfreeである場合のみ有効。</p>
+					<p>本体側(\0)の既定位置のY座標。キャラクターウィンドウの上端をこの位置に置く。<br />
+					値の書式と意味(単位・座標系・負の値・--の扱い・無効になる条件)は、SHIORIリソースの<a href="list_shiori_resource.html#sakura.defaulttop">sakura.defaulttop</a>と同じ。負の値は下端からの余白になる。[2.9.13]<br />
+					<a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop</a>がfreeである場合など、上端/下端に沿わない設定のときだけ有効。<br />
+					優先順位は、SHIORIリソース＞シェル側のdescript.txt(これ)＞<a href="descript_ghost.html#sakura.defaulttop,Y座標">ゴースト側のdescript.txt</a>。同じdescript.txtに<a href="#sakura.defaulty,Y座標">sakura.defaulty</a>も書かれている場合はそちらが優先される。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -666,8 +676,7 @@ kero.menuitem3,2
 			<dl id="kero.defaulttop,Y座標">
 				<dt class="entry">kero.defaulttop,Y座標</dt>
 				<dd class="entry">
-					<p>相方側のディスプレイ上でのデフォルトY座標。<br />
-					<a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop</a>がfreeである場合のみ有効。</p>
+					<p>相方側(\1)の既定位置のY座標。<a href="#sakura.defaulttop,Y座標">sakura.defaulttop</a>と同様。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -677,8 +686,7 @@ kero.menuitem3,2
 			<dl id="char*.defaulttop,Y座標">
 				<dt class="entry">char*.defaulttop,Y座標</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側のディスプレイ上でのデフォルトY座標。<br />
-					<a href="#seriko.alignmenttodesktop,位置情報">seriko.alignmenttodesktop</a>がfreeである場合のみ有効。</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のY座標。<a href="#sakura.defaulttop,Y座標">sakura.defaulttop</a>と同様。</p>
 					<p class="default">ghostのdescript設定</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>

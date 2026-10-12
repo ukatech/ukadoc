@@ -472,7 +472,14 @@
 			<dl id="sakura.defaultx">
 				<dt class="entry">sakura.defaultx</dt>
 				<dd class="entry">
-					<p>本体側の画像ベースX座標。</p>
+					<p>本体側(\0)の既定位置のX座標。サーフェスの基準点(通常はサーフェスの中央下)をこの位置に置く。<br />
+					既定位置は、表示位置の記憶が無いとき(初回起動時や、表示位置を初期化したときなど)に使われる。どれも指定しなければ、プライマリモニタの作業領域の右下に置かれる。<br />
+					値の単位はピクセルで、プライマリモニタの左上を原点とするスクリーン座標(マルチモニタの場合は仮想デスクトップ全体での位置)。<br />
+					負の値は、プライマリモニタの作業領域の右端からの距離になる。-0は右端そのもの。[2.9.13]<br />
+					プライマリモニタより左にあるモニタを指すなど、負の座標そのものを指定したいときは、--100のように-を2つ重ねる(この例はX座標-100)。[2.9.13]<br />
+					同じ軸に<a href="#sakura.defaultleft">sakura.defaultleft</a>も指定されている場合は、こちら(defaultx)が優先される。<br />
+					<a href="descript_ghost.html#sakura.defaultx,X座標">ゴースト</a>・<a href="descript_shell.html#sakura.defaultx,X座標">シェル</a>のdescript.txtにも同じ項目を書ける[2.9.13]。SHIORIリソースのほうが優先される。<br />
+					デスクトップの左端/右端に沿って表示する設定のときは、X座標はその設定で決まるため無効。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -481,7 +488,8 @@
 			<dl id="kero.defaultx">
 				<dt class="entry">kero.defaultx</dt>
 				<dd class="entry">
-					<p>相方側の画像ベースX座標。</p>
+					<p>相方側(\1)の既定位置のX座標。書式と意味は<a href="#sakura.defaultx">sakura.defaultx</a>と同様。<br />
+					どれも指定しなければ、本体側の左隣に置かれる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -490,7 +498,9 @@
 			<dl id="char*.defaultx">
 				<dt class="entry">char*.defaultx</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側の画像ベースX座標。</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のX座標。書式と意味は<a href="#sakura.defaultx">sakura.defaultx</a>と同様。<br />
+					主に3人目以降(char2以降)に使う。char0・char1は、sakura・keroの指定が無いときに使われる。<br />
+					どれも指定しなければ、1つ前のキャラクターの左隣に置かれる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -499,7 +509,13 @@
 			<dl id="sakura.defaulty">
 				<dt class="entry">sakura.defaulty</dt>
 				<dd class="entry">
-					<p>本体側の画像ベースY座標。</p>
+					<p>本体側(\0)の既定位置のY座標。サーフェスの基準点(通常はサーフェスの中央下)をこの位置に置く。<br />
+					既定位置が使われる場面と、値の単位・座標系は<a href="#sakura.defaultx">sakura.defaultx</a>と同じ。<br />
+					負の値は、プライマリモニタの作業領域の下端からの距離になる。-0は下端そのもの。ここでの下端は、SSPの設定の「デスクトップ下端オフセット」の分だけ上にずらした位置。[2.9.13]<br />
+					-を2つ重ねると負の座標そのものになる(--100はY座標-100)。[2.9.13]<br />
+					同じ軸に<a href="#sakura.defaulttop">sakura.defaulttop</a>も指定されている場合は、こちら(defaulty)が優先される。<br />
+					<a href="descript_ghost.html#sakura.defaulty,Y座標">ゴースト</a>・<a href="descript_shell.html#sakura.defaulty,Y座標">シェル</a>のdescript.txtにも同じ項目を書ける[2.9.13]。SHIORIリソースのほうが優先される。<br />
+					デスクトップの上端/下端に沿って表示する設定のときは、Y座標はその設定で決まるため無効(自由移動モードなどのときに有効)。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -508,7 +524,8 @@
 			<dl id="kero.defaulty">
 				<dt class="entry">kero.defaulty</dt>
 				<dd class="entry">
-					<p>相方側の画像ベースY座標。</p>
+					<p>相方側(\1)の既定位置のY座標。書式と意味は<a href="#sakura.defaulty">sakura.defaulty</a>と同様。<br />
+					どれも指定しなければ、本体側と同じ高さに置かれる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -517,7 +534,9 @@
 			<dl id="char*.defaulty">
 				<dt class="entry">char*.defaulty</dt>
 				<dd class="entry">
-					<p>2人目以降の相方側の画像ベースY座標。</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のY座標。書式と意味は<a href="#sakura.defaulty">sakura.defaulty</a>と同様。<br />
+					char0・char1は、sakura・keroの指定が無いときに使われる。<br />
+					どれも指定しなければ、1つ前のキャラクターと同じ高さに置かれる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -526,7 +545,11 @@
 			<dl id="sakura.defaultleft">
 				<dt class="entry">sakura.defaultleft</dt>
 				<dd class="entry">
-					<p>本体側のディスプレイ上でのデフォルトX座標。</p>
+					<p>本体側(\0)の既定位置のX座標。キャラクターウィンドウの左端をこの位置に置く。<br />
+					既定位置が使われる場面と、値の単位・座標系・無効になる条件は<a href="#sakura.defaultx">sakura.defaultx</a>と同じ。<a href="#sakura.defaultx">sakura.defaultx</a>も指定されている場合はそちらが優先される。<br />
+					負の値は、プライマリモニタの作業領域の右端から、キャラクターの右端までの距離になる。-0で右端にぴったり付く。サーフェスの幅を気にせず、画面右端からの余白として指定できる。[2.9.13]<br />
+					-を2つ重ねると負の座標そのものになる(--100はX座標-100)。[2.9.13]<br />
+					<a href="descript_ghost.html#sakura.defaultleft,X座標">ゴースト</a>・<a href="descript_shell.html#sakura.defaultleft,X座標">シェル</a>のdescript.txtにも同じ項目を書ける。SHIORIリソースのほうが優先される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -537,7 +560,7 @@
 			<dl id="kero.defaultleft">
 				<dt class="entry">kero.defaultleft</dt>
 				<dd class="entry">
-					<p>相方側のディスプレイ上でのデフォルトX座標。</p>
+					<p>相方側(\1)の既定位置のX座標。書式と意味は<a href="#sakura.defaultleft">sakura.defaultleft</a>と同様。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -548,7 +571,8 @@
 			<dl id="char*.defaultleft">
 				<dt class="entry">char*.defaultleft</dt>
 				<dd class="entry">
-					<p>2人目以降のディスプレイ上でのデフォルトX座標。</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のX座標。書式と意味は<a href="#sakura.defaultleft">sakura.defaultleft</a>と同様。<br />
+					char0・char1は、sakura・keroの指定が無いときに使われる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_m.png" alt="Materia" width="34" height="16" /></li>
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
@@ -559,7 +583,11 @@
 			<dl id="sakura.defaulttop">
 				<dt class="entry">sakura.defaulttop</dt>
 				<dd class="entry">
-					<p>本体側のディスプレイ上でのデフォルトY座標。(自由移動モードのみ有効)</p>
+					<p>本体側(\0)の既定位置のY座標。キャラクターウィンドウの上端をこの位置に置く。<br />
+					既定位置が使われる場面と、値の単位・座標系・無効になる条件は<a href="#sakura.defaulty">sakura.defaulty</a>と同じ(自由移動モードなどのときに有効)。<a href="#sakura.defaulty">sakura.defaulty</a>も指定されている場合はそちらが優先される。<br />
+					負の値は、プライマリモニタの作業領域の下端から、キャラクターの下端までの距離になる。-0で下端にぴったり付く。ここでの下端は、SSPの設定の「デスクトップ下端オフセット」の分だけ上にずらした位置。[2.9.13]<br />
+					-を2つ重ねると負の座標そのものになる(--100はY座標-100)。[2.9.13]<br />
+					<a href="descript_ghost.html#sakura.defaulttop,Y座標">ゴースト</a>・<a href="descript_shell.html#sakura.defaulttop,Y座標">シェル</a>のdescript.txtにも同じ項目を書ける。SHIORIリソースのほうが優先される。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -568,7 +596,7 @@
 			<dl id="kero.defaulttop">
 				<dt class="entry">kero.defaulttop</dt>
 				<dd class="entry">
-					<p>相方側のディスプレイ上でのデフォルトY座標。(自由移動モードのみ有効)</p>
+					<p>相方側(\1)の既定位置のY座標。書式と意味は<a href="#sakura.defaulttop">sakura.defaulttop</a>と同様。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -577,7 +605,8 @@
 			<dl id="char*.defaulttop">
 				<dt class="entry">char*.defaulttop</dt>
 				<dd class="entry">
-					<p>2人目以降のディスプレイ上でのデフォルトY座標。(自由移動モードのみ有効)</p>
+					<p>*番目のキャラクター(\p[*])の既定位置のY座標。書式と意味は<a href="#sakura.defaulttop">sakura.defaulttop</a>と同様。<br />
+					char0・char1は、sakura・keroの指定が無いときに使われる。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
 					</ul>
@@ -586,7 +615,10 @@
 			<dl id="boxname.defaultleft">
 				<dt class="entry">(入力ボックス種類).defaultleft　(入力ボックス種類).defaulttop</dt>
 				<dd class="entry">
-					<p>入力ボックスの初期スクリーンX・Y座標。leftがX、topがY。<br />
+					<p>入力ボックスの初期スクリーンX・Y座標。leftがX、topがY。leftとtopの両方を返したときだけ有効。<br />
+					ユーザーが入力ボックスを動かした位置を記憶している場合は、そちらが優先される。<br />
+					負の値は、本体側が表示されているモニタの作業領域の右端/下端から、入力ボックスの右端/下端までの距離になる。-0で右端/下端にぴったり付く。[2.9.13]<br />
+					-を2つ重ねると負の座標そのものになる(--100は座標-100)。[2.9.13]<br />
 					ボックス種類は以下の通り：communicatebox、scriptbox、addressbar、teachbox、dateinput、timeinput、ipinput、sliderinput、passwordinput、inputbox</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /></li>
