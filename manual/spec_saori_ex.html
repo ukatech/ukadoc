@@ -356,7 +356,7 @@ Argument4: --out=base64
 					<dt>hex</dt>
 					<dd>16進。大文字小文字はどちらでもよい。奇数桁・16進以外の文字は400（<code>invalid encoding</code>）。</dd>
 					<dt>base64 / base64url</dt>
-					<dd>パディング（<code>=</code>）はあってもなくてもよい。それぞれのアルファベット以外の文字は400（<code>invalid encoding</code>）。</dd>
+					<dd>パディング（<code>=</code>）はあってもなくてもよい。どちらの形式でも、base64とbase64urlの両方の文字（<code>+ / - _</code>）を読む。それ以外の文字・パディングの誤りは400（<code>invalid encoding</code>）。</dd>
 					<dt>base32</dt>
 					<dd>RFC 4648。大文字小文字・パディングの有無は問わない。不正な文字は400（<code>invalid encoding</code>）。</dd>
 					<dt>url</dt>
@@ -384,7 +384,8 @@ Argument4: --out=base64
 					<dt>url</dt>
 					<dd>RFC 3986の非予約文字（<code>A-Z a-z 0-9 - . _ ~</code>）以外をすべて<code>%XX</code>（大文字）にする。</dd>
 					<dt>text</dt>
-					<dd><code>--charset=</code>の文字コード（既定はUTF-8）の文字列として返す。その文字コードとして正しく戻せないバイト列や、NUL・改行（SAORIのヘッダに書けない）を含むときは500（<code>not text</code>）。</dd>
+					<dd><code>--charset=</code>の文字コード（既定はUTF-8）の文字列として返す。その文字コードとして正しく戻せないバイト列や、NUL・改行（SAORIのヘッダに書けない）を含むときは500（<code>not text</code>）。
+						<br />応答は要求の<code>Charset</code>の文字コードで返るので、そこで表せない文字は<code>?</code>に化けます。どんな文字でも受け取れるように、要求は<code>Charset: UTF-8</code>で送ってください。</dd>
 				</dl>
 				<p><code>--charset=</code>には文字コードの名前（<code>UTF-8</code>、<code>Shift_JIS</code>、<code>EUC-JP</code>など）を書きます。知らない名前やUTF-16は400（<code>invalid parameter</code>）です。</p>
 			</section>
@@ -815,7 +816,8 @@ Argument4: --out=base64
 					<dd><code>Sun, 11 Oct 2026 12:00:00 GMT</code>など。</dd>
 				</dl>
 				<p>扱える範囲はUTCで0001-01-01～9999-12-31です（<code>--tz=local</code>のときは1601年以降）。範囲の外は400（<code>out of range</code>）です。
-				<br />ただし、ISO 8601・HTTPの日付の文字列で書けるのは1601年以降です（それより前は400 <code>invalid parameter</code>。整数のエポック秒なら書けます）。</p>
+				<br />ただし、ISO 8601・HTTPの日付の文字列で書けるのは1601年以降です（それより前は400 <code>invalid parameter</code>。整数のエポック秒なら書けます）。
+				<br />範囲はUTCで決まるので、9999-12-31の近くを東（<code>+09:00</code>など）のゾーンで整形すると、年が10000（5桁）になることがあります。</p>
 			</section>
 			<section class="caption">
 				<h1>ゾーン（--tz=）</h1>
