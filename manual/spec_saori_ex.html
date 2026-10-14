@@ -148,6 +148,7 @@
 				<li><a href="#internal_time">internal_time</a></li>
 				<li><a href="#internal_text">internal_text</a></li>
 				<li><a href="#internal_jwt">internal_jwt</a></li>
+				<li><a href="#internal_system">internal_system</a></li>
 				<li><a href="#compat">互換モジュール</a></li>
 			</ul>
 		</section>
@@ -261,7 +262,8 @@ Argument2: abc
 				<h1>機能の判定</h1>
 				<p>モジュールが使えるかどうかは、<code>GET Version SAORI/1.0</code>に<code>Module</code>を付けて送って確かめます。使えれば<code>SAORI/1.0 200 OK</code>（SSPでは<code>Result: SSP Internal</code>）が返ります。
 				<br />この拡張に対応していないSSP（2.9.12以前）はSAORI/1.0の要求をSSTPの要求として読み、SSTPのエラー（<code>GET Version</code>には<code>SSTP/1.0 501 Not Implemented</code>、<code>EXECUTE</code>には<code>SSTP/1.0 400 Bad Request</code>）を返します。
-				<br />送信側は「<code>SAORI/1.0 200</code>で始まる返事でなければ使えない」「返事が来なければ使えない」と判定してください。</p>
+				<br />送信側は「<code>SAORI/1.0 200</code>で始まる返事でなければ使えない」「返事が来なければ使えない」と判定してください。
+				<br />SSPの内蔵モジュールとその関数の一覧は、<a href="#internal_system">internal_system</a>で取れます。</p>
 			</section>
 			<section class="caption">
 				<h1>ErrorDescription</h1>
@@ -322,6 +324,34 @@ Argument2: abc
 				</ol>
 			</section>
 			<p>使えるかどうかは、最初に<a href="#directsstp">GET Version</a>で確かめてください。</p>
+			<section class="caption">
+				<h1>記述例</h1>
+				<p>YAYA・里々では、上の手順をSHIORI自身が行います。DLLのSAORIと同じ書き方で、モジュール名を<code>internal_</code>で始まる名前にするだけです。使えない場合（旧SSPなど）の扱いは、各SHIORIの説明を参照してください。</p>
+				<dl>
+					<dt>YAYA（<code>FUNCTIONEX</code>）</dt>
+					<dd>
+<pre>// 同期
+_hash = FUNCTIONEX('internal_crypto', 'Digest', 'sha256', 'abc')
+
+// 非同期：結果は OnHashDone に届く（reference[0]=識別子、reference[1]=結果）
+FUNCTIONEX('internal_crypto', 'HashPassword', 'secret', '--async=OnHashDone')
+OnHashDone
+{
+	_phc = reference[1]
+}</pre>
+					</dd>
+					<dt>里々（登録は不要で、モジュール名をそのまま<code>（）</code>で呼ぶ）</dt>
+					<dd>
+<pre>＊OnBoot
+　（internal_crypto、Digest、sha256、abc）
+　（internal_crypto、HashPassword、secret、--async=OnHashDone）
+
+＊OnHashDone
+　（Ｒ１）</pre>
+					</dd>
+				</dl>
+				<p>結果が<code>Result</code>、追加の値が<code>Value0</code>以降として扱われるのは、DLLのSAORIと同じです。<code>--async</code>を付けた呼び出しの戻り値は空になります。</p>
+			</section>
 		</section>
 
 		<section class="category" id="internal">
@@ -1141,6 +1171,52 @@ Argument4: --out=base64
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>Argument0: Verify<br />Argument1: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYWt1cmEiLCJleHAiOjQxMDI0NDQ4MDB9.eJKcQzLKm4FjTltXWvPqonVpfwhVaBgpvf9nZw0szuM<br />Argument2: 0123456789abcdef0123456789abcdef<br />Argument3: --alg=HS256<br /><br />→ Result: {"sub":"sakura","exp":4102444800}</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_system">
+			<h1>internal_system</h1>
+			<p>内蔵モジュールの一覧。どの関数が使えるかをスクリプトから確かめるのに使う。
+			<br />一覧に出るのは名前が<code>internal_</code>で始まるモジュールだけです（<a href="#compat">互換モジュール</a>は出ません）。
+			<br />結果は<code>Result</code>にカンマ区切りで、<code>Value0</code>以降に1つずつ入ります。並び順に意味はありません。</p>
+			<dl id="internal_system.ListModules">
+				<dt class="entry">ListModules</dt>
+				<dd class="entry">
+					<p>内蔵モジュールの名前の一覧を返す（<code>internal_system</code>自身も含む）。</p>
+					<dl class="reference">
+						<dt>引数</dt>
+						<dd>なし</dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: ListModules<br /><br />→ Result: internal_crypto,internal_random,internal_time,internal_data,internal_text,internal_jwt,internal_system<br />→ Value0: internal_crypto<br />→ Value1: internal_random<br />…</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_system.ListFunctions">
+				<dt class="entry">ListFunctions</dt>
+				<dd class="entry">
+					<p>指定した内蔵モジュールの関数名の一覧を返す。関数名は正規の綴り（大文字小文字）で返る。
+					<br />内蔵モジュールでない名前（互換モジュールを含む）は400（<code>unknown module</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>モジュール名（大文字小文字は区別しない）</dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: ListFunctions<br />Argument1: internal_jwt<br /><br />→ Result: Sign,Verify<br />→ Value0: Sign<br />→ Value1: Verify</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
