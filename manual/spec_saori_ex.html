@@ -147,6 +147,7 @@
 				<li><a href="#internal_random">internal_random</a></li>
 				<li><a href="#internal_time">internal_time</a></li>
 				<li><a href="#internal_text">internal_text</a></li>
+				<li><a href="#internal_jwt">internal_jwt</a></li>
 				<li><a href="#compat">互換モジュール</a></li>
 			</ul>
 		</section>
@@ -290,7 +291,7 @@ Argument2: abc
 			<h1>非同期の呼び出し</h1>
 			<p>内蔵モジュール（名前が<code>internal_</code>で始まるもの）の関数は、オプション<code>--async=識別子</code>を付けると非同期で動きます。要求を受け付けると、応答はすぐに204で返り、結果はあとで呼び出し元のゴーストへイベントで届きます。
 			<br />ゴーストなしの呼び出しでは使えません（400 <code>ghost required</code>）。識別子が空なら400（<code>invalid parameter</code>）です。
-			<br />時間のかかる処理（大きなファイルのハッシュ、パスワードのハッシュ、鍵の導出など）には<code>--async</code>を使ってください。
+			<br />時間のかかる処理（大きなファイルのハッシュ、パスワードのハッシュ、鍵の導出、RSAの鍵ペアの生成など）には<code>--async</code>を使ってください。
 			<br />同時に動く非同期の呼び出しは、SSPではCPUの数ほど（2～4）までです。それを超えた分は、前のものが終わるまで順番を待ちます。</p>
 			<section class="caption">
 				<h1>結果を届けるイベント</h1>
@@ -348,7 +349,7 @@ Argument4: --out=base64
 			</section>
 			<section class="caption" id="internal_bytes">
 				<h1>バイト列の入力の形式</h1>
-				<p>ハッシュなどはバイト列を扱いますが、SAORIで渡せるのは文字列です。バイト列を受け取る引数にはそれぞれ名前（<code>data</code>、<code>key</code>、<code>password</code>、<code>salt</code>、<code>ciphertext</code>、<code>a</code>、<code>b</code>など。各関数の説明を参照）があり、<code>--名前-in=形式</code>でその引数の読み方を変えられます。例：<code>--key-in=hex</code>、<code>--data-in=base64</code>。
+				<p>ハッシュなどはバイト列を扱いますが、SAORIで渡せるのは文字列です。バイト列を受け取る引数にはそれぞれ名前（<code>data</code>、<code>key</code>、<code>password</code>、<code>salt</code>、<code>ciphertext</code>、<code>signature</code>、<code>a</code>、<code>b</code>など。各関数の説明を参照）があり、<code>--名前-in=形式</code>でその引数の読み方を変えられます。例：<code>--key-in=hex</code>、<code>--data-in=base64</code>。
 				<br />オプションで渡すバイト列（<code>--aad=</code>、<code>--iv=</code>、<code>--info=</code>）も同じで、<code>--aad-in=hex</code>のように読み方を変えられます。</p>
 				<dl>
 					<dt>text</dt>
@@ -399,7 +400,7 @@ Argument4: --out=base64
 					<dt>invalid encoding</dt>
 					<dd>400。<code>--名前-in=</code>の形式として読めない。圧縮データが壊れている。</dd>
 					<dt>invalid key</dt>
-					<dd>400。鍵の長さがアルゴリズムに合わない。</dd>
+					<dd>400。鍵の長さがアルゴリズムに合わない。公開鍵暗号の鍵として読めない、鍵の種類が方式に合わない。</dd>
 					<dt>out of range</dt>
 					<dd>400。数値・日時が扱える範囲の外。</dd>
 					<dt>too large</dt>
@@ -411,7 +412,9 @@ Argument4: --out=base64
 					<dt>file read failed</dt>
 					<dd>500。ファイルを途中で読めなくなった。</dd>
 					<dt>authentication failed</dt>
-					<dd>500。復号できない（暗号文の改ざん・鍵の違いなど）。</dd>
+					<dd>500。復号できない（暗号文の改ざん・鍵の違いなど）。JWTを検証できない。</dd>
+					<dt>expired / not yet valid</dt>
+					<dd>500。JWTの有効期限（<code>exp</code>）が切れている / 有効になる時刻（<code>nbf</code>）より前。</dd>
 					<dt>internal error</dt>
 					<dd>500。ベースウェア内部の想定外の失敗。</dd>
 				</dl>
@@ -487,7 +490,7 @@ Argument4: --out=base64
 
 		<section class="category" id="internal_crypto">
 			<h1>internal_crypto</h1>
-			<p>ハッシュ・MAC・共通鍵暗号・鍵の導出・パスワードのハッシュ・データの保護（DPAPI）・ワンタイムパスワード（TOTP）。
+			<p>ハッシュ・MAC・共通鍵暗号・鍵の導出・パスワードのハッシュ・データの保護（DPAPI）・ワンタイムパスワード（TOTP）・公開鍵暗号の署名。
 			<br /><code>Digest</code> / <code>HMAC</code>のアルゴリズム名（<code>DeriveKey</code> / <code>TOTP</code>の<code>--digest=</code>も同じ）は次のとおりです。ハイフン・アンダースコアの有無と大文字小文字は区別しません（<code>SHA-256</code>も<code>sha_256</code>も<code>sha256</code>と同じ）。これ以外は400（<code>unsupported algorithm</code>）です。
 			<br /><code>md5</code> <code>sha1</code> <code>sha224</code> <code>sha256</code> <code>sha384</code> <code>sha512</code> <code>sha512-256</code> <code>sha3-224</code> <code>sha3-256</code> <code>sha3-384</code> <code>sha3-512</code> <code>blake2b512</code> <code>blake2s256</code></p>
 			<dl id="internal_crypto.Digest">
@@ -747,6 +750,86 @@ Argument4: --out=base64
 					</ul>
 				</dd>
 			</dl>
+			<section class="caption" id="internal_crypto_pkey">
+				<h1>公開鍵暗号（GenerateKeyPair / Sign / Verify）</h1>
+				<p>署名の方式は次のとおりです（名前のハイフン・アンダースコアの有無と大文字小文字は区別しない）。これ以外は400（<code>unsupported algorithm</code>）です。それぞれJWT（JWS）のalgの<code>EdDSA</code> / <code>ES256</code> / <code>RS256</code> / <code>PS256</code>と同じ署名になります。</p>
+				<dl>
+					<dt>ed25519</dt>
+					<dd>Ed25519（RFC 8032）。署名は64バイト。</dd>
+					<dt>es256</dt>
+					<dd>ECDSA（P-256）+ SHA-256。署名は64バイト（r‖s。JWSと同じ形で、DER形式ではない）。</dd>
+					<dt>rs256</dt>
+					<dd>RSA（RSASSA-PKCS1-v1_5）+ SHA-256。</dd>
+					<dt>ps256</dt>
+					<dd>RSA（RSASSA-PSS）+ SHA-256。MGF1もSHA-256、ソルトは32バイト（JWAのPS256と同じ）。</dd>
+				</dl>
+				<p>鍵は、1行のDERのbase64か、PEMで渡します。<a href="#internal_crypto.GenerateKeyPair">GenerateKeyPair</a>は前者（秘密鍵はPKCS#8、公開鍵はSubjectPublicKeyInfo）を出力します。
+				<br />PEMは改行を含みSAORIのヘッダに書けないので、改行を空白にしたもの（または改行を除いて1行にしたもの）を渡してください。<code>-----BEGIN</code>で始まればPEMとして、<code>-----BEGIN ...-----</code>と<code>-----END</code>の間をbase64として読みます。
+				<br />秘密鍵はPKCS#8（<code>PRIVATE KEY</code>）のほか、RSAはPKCS#1（<code>RSA PRIVATE KEY</code>）、ECDSAはSEC1（<code>EC PRIVATE KEY</code>）も読めます。パスワードで暗号化された秘密鍵は読めません。公開鍵はSubjectPublicKeyInfo（<code>PUBLIC KEY</code>）です。
+				<br />RSAの鍵は2048～4096ビット、ECDSAの鍵はP-256だけです。読めない鍵・種類や大きさが方式に合わない鍵は400（<code>invalid key</code>）です。</p>
+			</section>
+			<dl id="internal_crypto.GenerateKeyPair">
+				<dt class="entry">GenerateKeyPair</dt>
+				<dd class="entry">
+					<p>公開鍵暗号の鍵ペアを作る。<code>Value0</code>に秘密鍵（PKCS#8）、<code>Value1</code>に公開鍵（SubjectPublicKeyInfo）が、どちらもDERのbase64で入る。<code>Result</code>は<code>Value0</code>と同じ。
+					<br />RSAの鍵の生成は数秒かかることがあるので、<a href="#async"><code>--async</code></a>を推奨（非同期の呼び出しでは、秘密鍵がReference4、公開鍵がReference5に入る）。
+					<br />秘密鍵は、必要なら<a href="#internal_crypto.Protect">Protect</a>で包んで保存してください。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式：<code>ed25519</code> / <code>es256</code>（P-256） / <code>rsa-2048</code> / <code>rsa-3072</code> / <code>rsa-4096</code>（RSAの鍵は<code>rs256</code>と<code>ps256</code>のどちらにも使える）</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Sign">
+				<dt class="entry">Sign</dt>
+				<dd class="entry">
+					<p>秘密鍵でデータに署名する。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式（<a href="#internal_crypto_pkey">公開鍵暗号</a>を参照）</dd>
+						<dt>Argument2</dt>
+						<dd>秘密鍵</dd>
+						<dt>Argument3</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>base64url</code>） / <code>--charset=</code></dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Sign<br />Argument1: ed25519<br />Argument2: MC4CAQAwBQYDK2VwBCIEIJ1hsZ3v/VpguoRK9JLsLMREScVpezJpGXA7rAMcrn9g<br />Argument3: eyJhbGciOiJFZERTQSJ9.RXhhbXBsZSBvZiBFZDI1NTE5IHNpZ25pbmc<br /><br />→ Result: hgyY0il_MGCjP0JzlnLWG1PPOt7-09PGcvMg3AIbQR6dWbhijcNR4ki4iylGjg5BhVsPt9g7sVvpAr_MuM0KAg</code></p>
+						</section>
+					</div>
+					<p>Ed25519とRSA（rs256）は、同じ鍵とデータなら毎回同じ署名になります。es256とps256は毎回違う署名になります（どれも<a href="#internal_crypto.Verify">Verify</a>で検証できる）。</p>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.Verify">
+				<dt class="entry">Verify</dt>
+				<dd class="entry">
+					<p>署名を公開鍵で検証する。正しければ<code>1</code>、正しくなければ<code>0</code>（署名の長さが違うときも<code>0</code>）。公開鍵の代わりに秘密鍵を渡してもよい。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式（<a href="#internal_crypto_pkey">公開鍵暗号</a>を参照）</dd>
+						<dt>Argument2</dt>
+						<dd>公開鍵</dd>
+						<dt>Argument3</dt>
+						<dd>data（既定の形式は<code>text</code>）</dd>
+						<dt>Argument4</dt>
+						<dd>signature（既定の形式は<code>base64url</code>）</dd>
+						<dt>オプション</dt>
+						<dd><code>--data-in=</code> / <code>--signature-in=</code> / <code>--charset=</code></dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
 		</section>
 
 		<section class="category" id="internal_random">
@@ -941,6 +1024,81 @@ Argument4: --out=base64
 					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
+					</ul>
+				</dd>
+			</dl>
+		</section>
+
+		<section class="category" id="internal_jwt">
+			<h1>internal_jwt</h1>
+			<p>JWT（RFC 7519）の作成と検証。形式はJWSのコンパクト形式（<code>ヘッダ.ペイロード.署名</code>）だけです。
+			<br />algは次のとおりです（引数・<code>--alg=</code>では大文字小文字を区別しない）。<code>none</code>を含め、これ以外は400（<code>unsupported algorithm</code>）です。</p>
+			<dl>
+				<dt>HS256 / HS384 / HS512</dt>
+				<dd>HMAC（共通鍵）。鍵は<code>--key-in=</code>の形式（既定は<code>text</code>。文字列はUTF-8）で渡す。鍵はハッシュの長さ以上（HS256は32バイト、HS384は48バイト、HS512は64バイト）でなければ400（<code>invalid key</code>。RFC 7518の要求）。</dd>
+				<dt>RS256 / PS256 / ES256 / EdDSA</dt>
+				<dd>公開鍵暗号。鍵の渡し方と方式の詳細は<a href="#internal_crypto_pkey">internal_cryptoの公開鍵暗号</a>と同じ（<code>EdDSA</code>はEd25519だけ）。<code>--key-in=</code>は使えない（400 <code>invalid parameter</code>）。</dd>
+			</dl>
+			<dl id="internal_jwt.Sign">
+				<dt class="entry">Sign</dt>
+				<dd class="entry">
+					<p>ペイロードに署名して、JWTを作る。
+					<br />ペイロードはJSONのオブジェクトで、書かれた文字列のまま（UTF-8で）使う。JSONのオブジェクト1つでなければ400（<code>invalid parameter</code>）。
+					<br />ヘッダは<code>{"alg":"HS256","typ":"JWT"}</code>の形。<code>--header=</code>にJSONのオブジェクトを書くと、その項目（<code>kid</code>など）を足せる（<code>typ</code>を書けばそれが優先。<code>alg</code>を書くときはArgument1と同じ値でなければ400 <code>invalid parameter</code>）。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>alg</dd>
+						<dt>Argument2</dt>
+						<dd>鍵（HS*は共通鍵、ほかは秘密鍵）</dd>
+						<dt>Argument3</dt>
+						<dd>ペイロード（JSON）</dd>
+						<dt>オプション</dt>
+						<dd><code>--header=</code>（JSON） / <code>--key-in=</code>（HS*だけ）</dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Sign<br />Argument1: HS256<br />Argument2: 0123456789abcdef0123456789abcdef<br />Argument3: {"sub":"sakura","exp":4102444800}<br /><br />→ Result: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYWt1cmEiLCJleHAiOjQxMDI0NDQ4MDB9.eJKcQzLKm4FjTltXWvPqonVpfwhVaBgpvf9nZw0szuM</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_jwt.Verify">
+				<dt class="entry">Verify</dt>
+				<dd class="entry">
+					<p>JWTの署名と有効期限を検証して、正しければペイロード（JSON）を返す。ペイロードに改行があれば空白に置き換えて返す（JSONとしての意味は変わらない）。
+					<br /><strong>algは<code>--alg=</code>で必ず指定する</strong>（無ければ400 <code>invalid parameter</code>）。トークンのヘッダの<code>alg</code>は信用せず、指定と一致しなければ失敗にする（algのすり替えや<code>none</code>による偽造を防ぐため）。
+					<br /><code>exp</code>（有効期限）と<code>nbf</code>（有効になる時刻）があれば確かめる。<code>iss</code>・<code>aud</code>・<code>iat</code>などほかの項目は見ないので、必要ならスクリプトで確かめること。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>トークン</dd>
+						<dt>Argument2</dt>
+						<dd>鍵（HS*は共通鍵、ほかは公開鍵）</dd>
+						<dt>オプション</dt>
+						<dd><code>--alg=</code>（必須） / <code>--leeway=</code>（秒。時計のずれの許容。既定は0。0～86400） / <code>--key-in=</code>（HS*だけ） / <code>--time=</code>（現在時刻の代わりに使う日時。<a href="#internal_time">internal_time</a>の日時の引数と同じ書き方。既定は現在時刻）</dd>
+					</dl>
+					<p>失敗は次のとおりです。</p>
+					<dl class="property">
+						<dt>500 authentication failed</dt>
+						<dd>署名が合わない。ヘッダの<code>alg</code>が<code>--alg=</code>と違う（大文字小文字も区別する）。ヘッダに<code>crit</code>がある。トークンの形が壊れている（3つに分かれない、base64urlとして読めない、ヘッダ・ペイロードがJSONのオブジェクトでない、UTF-8として正しくない）。<code>exp</code> / <code>nbf</code>が数値でない。</dd>
+						<dt>500 expired</dt>
+						<dd>現在時刻が<code>exp</code>＋leeway以降（<code>exp</code>の時刻ちょうどで失効）。</dd>
+						<dt>500 not yet valid</dt>
+						<dd>現在時刻＋leewayが<code>nbf</code>より前。</dd>
+						<dt>400 invalid key</dt>
+						<dd>鍵が読めない、種類が合わない、HS*の鍵が短い。</dd>
+					</dl>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: Verify<br />Argument1: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJzYWt1cmEiLCJleHAiOjQxMDI0NDQ4MDB9.eJKcQzLKm4FjTltXWvPqonVpfwhVaBgpvf9nZw0szuM<br />Argument2: 0123456789abcdef0123456789abcdef<br />Argument3: --alg=HS256<br /><br />→ Result: {"sub":"sakura","exp":4102444800}</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
 					</ul>
 				</dd>
 			</dl>
