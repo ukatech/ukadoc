@@ -362,6 +362,8 @@ Argument4: --out=base64
 					<dd>RFC 4648。大文字小文字・パディングの有無は問わない。不正な文字は400（<code>invalid encoding</code>）。</dd>
 					<dt>url</dt>
 					<dd>パーセントエンコードを戻したもの。<code>+</code>は空白に戻さない。<code>%</code>の後ろが16進2桁でなければ400（<code>invalid encoding</code>）。</dd>
+					<dt>bech32</dt>
+					<dd>[SSP 2.9.14] BIP-173のbech32（nostrの<code>npub1...</code> / <code>nsec1...</code>など。bech32mは読めない）。データの部分をバイト列にする。<code>1</code>より前の部分（hrp。<code>npub</code>など）は見ないので、種類を確かめたいときはスクリプトで文字列の先頭を見ること。大文字だけ・小文字だけのどちらでもよい。混在・チェックサムの誤り・不正な文字は400（<code>invalid encoding</code>）。長さ（BIP-173の90文字）の制限はない。</dd>
 					<dt>file</dt>
 					<dd>値をファイルのパスとして、ファイルの中身を読む。<code>internal_crypto</code>の<code>Digest</code> / <code>HMAC</code>の<code>data</code>だけで使える。
 					<br />相対パスはゴーストのフォルダ（ghost/master）が基準。ゴーストなしの呼び出しで相対パスを渡すと400（<code>ghost required</code>）。ファイルが無ければ400（<code>file not found</code>）、途中で読めなくなったら500（<code>file read failed</code>）。</dd>
@@ -384,6 +386,8 @@ Argument4: --out=base64
 					<dd>RFC 4648。パディングあり。</dd>
 					<dt>url</dt>
 					<dd>RFC 3986の非予約文字（<code>A-Z a-z 0-9 - . _ ~</code>）以外をすべて<code>%XX</code>（大文字）にする。</dd>
+					<dt>bech32</dt>
+					<dd>[SSP 2.9.14] BIP-173のbech32（小文字）。hrp（<code>npub</code>など。1～83文字）を<code>--hrp=</code>で指定する。<code>--hrp=</code>を受け付けるのは<a href="#internal_data.Convert">internal_dataのConvert</a>だけで、ほかの関数で<code>--out=bech32</code>にすると400（<code>invalid parameter</code>）。</dd>
 					<dt>text</dt>
 					<dd><code>--charset=</code>の文字コード（既定はUTF-8）の文字列として返す。その文字コードとして正しく戻せないバイト列や、NUL・改行（SAORIのヘッダに書けない）を含むときは500（<code>not text</code>）。
 						<br />応答は要求の<code>Charset</code>の文字コードで返るので、そこで表せない文字は<code>?</code>に化けます。どんな文字でも受け取れるように、要求は<code>Charset: UTF-8</code>で送ってください。</dd>
@@ -432,12 +436,13 @@ Argument4: --out=base64
 						<dt>Argument1</dt>
 						<dd>data（既定の形式は<code>text</code>）</dd>
 						<dt>オプション</dt>
-						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code></dd>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>text</code>） / <code>--charset=</code> / <code>--hrp=</code>（[SSP 2.9.14] <code>--out=bech32</code>のhrp）</dd>
 					</dl>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>Argument0: Convert<br />Argument1: 48656c6c6f<br />Argument2: --data-in=hex<br />Argument3: --out=base64<br /><br />→ Result: SGVsbG8=</code></p>
+							<p><code>Argument0: Convert<br />Argument1: 7e7e9c42a91bfef19fa929e5fda1b72e0ebc1a4c1141673e2794234d86addf4e<br />Argument2: --data-in=hex<br />Argument3: --out=bech32<br />Argument4: --hrp=npub<br /><br />→ Result: npub10elfcs4fr0l0r8af98jlmgdh9c8tcxjvz9qkw038js35mp4dma8qzvjptg</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
@@ -490,7 +495,7 @@ Argument4: --out=base64
 
 		<section class="category" id="internal_crypto">
 			<h1>internal_crypto</h1>
-			<p>ハッシュ・MAC・共通鍵暗号・鍵の導出・パスワードのハッシュ・データの保護（DPAPI）・ワンタイムパスワード（TOTP）・公開鍵暗号の署名。
+			<p>ハッシュ・MAC・共通鍵暗号・鍵の導出・パスワードのハッシュ・データの保護（DPAPI）・ワンタイムパスワード（TOTP）・公開鍵暗号の署名と鍵共有。
 			<br /><code>Digest</code> / <code>HMAC</code>のアルゴリズム名（<code>DeriveKey</code> / <code>TOTP</code>の<code>--digest=</code>も同じ）は次のとおりです。ハイフン・アンダースコアの有無と大文字小文字は区別しません（<code>SHA-256</code>も<code>sha_256</code>も<code>sha256</code>と同じ）。これ以外は400（<code>unsupported algorithm</code>）です。
 			<br /><code>md5</code> <code>sha1</code> <code>sha224</code> <code>sha256</code> <code>sha384</code> <code>sha512</code> <code>sha512-256</code> <code>sha3-224</code> <code>sha3-256</code> <code>sha3-384</code> <code>sha3-512</code> <code>blake2b512</code> <code>blake2s256</code></p>
 			<dl id="internal_crypto.Digest">
@@ -564,6 +569,8 @@ Argument4: --out=base64
 					<dd>PKCS#7のパディング。暗号文の形は「IV（16バイト）＋暗号文」。改ざんを検出できないので、ほかのシステムとやりとりするときだけ使うこと。</dd>
 					<dt>aes-256-ctr</dt>
 					<dd>暗号文の形は「IV（16バイト）＋暗号文」。改ざんを検出できない。</dd>
+					<dt>chacha20</dt>
+					<dd>[SSP 2.9.14] 認証の付かないChaCha20（RFC 8439。nonceは12バイト、ブロックのカウンタは0から）。暗号文の形は「nonce（12バイト）＋暗号文」。改ざんを検出できないので、ほかのシステム（nostrのNIP-44など、MACを別に付ける方式）とやりとりするときだけ使うこと。</dd>
 				</dl>
 				<p>鍵（key）の長さは、アルゴリズムの鍵長ちょうど（AES-256とChaCha20は32バイト、AES-128は16バイト）でなければ400（<code>invalid key</code>）です。パスワードから鍵を作るときは<a href="#internal_crypto.DeriveKey">DeriveKey</a>を通してください。
 				<br />nonce / IVは、暗号化のたびに乱数で作って暗号文の先頭に付けます。<code>--iv=</code>（nonce / IVを指定する）と<code>--pack=none</code>（先頭に付けない）は、ほかのシステムがnonceを別に受け渡す場合のためだけのものです。<strong>同じ鍵で同じnonce / IVを2回使うと、GCM・ChaCha20-Poly1305・CTRは暗号として破れます</strong>（平文が漏れ、改ざんもできるようになる）。<code>--iv=</code>に固定の値を書いて使い回さないでください。</p>
@@ -621,7 +628,7 @@ Argument4: --out=base64
 					<br />時間とメモリを使う処理なので、<a href="#async"><code>--async</code></a>を推奨。</p>
 					<dl class="reference">
 						<dt>Argument1</dt>
-						<dd>方式：<code>pbkdf2</code> / <code>hkdf</code> / <code>scrypt</code> / <code>argon2id</code></dd>
+						<dd>方式：<code>pbkdf2</code> / <code>hkdf</code> / <code>hkdf-extract</code> / <code>hkdf-expand</code> / <code>scrypt</code> / <code>argon2id</code></dd>
 						<dt>Argument2</dt>
 						<dd>password（既定の形式は<code>text</code>）</dd>
 						<dt>Argument3</dt>
@@ -636,6 +643,10 @@ Argument4: --out=base64
 						<dd><code>--digest=</code>（既定は<code>sha256</code>） / <code>--iterations=</code>（既定は600000。1～10000000）</dd>
 						<dt>hkdf</dt>
 						<dd><code>--digest=</code>（既定は<code>sha256</code>） / <code>--info=</code>（<code>--info-in=</code>、既定の形式は<code>text</code>）。passwordが入力の鍵（IKM）で、空にはできない。saltは空でもよい。</dd>
+						<dt>hkdf-extract</dt>
+						<dd>[SSP 2.9.14] HKDFのextractだけ（RFC 5869 §2.2）。<code>--digest=</code>（既定は<code>sha256</code>）。passwordが入力の鍵（IKM。空にはできない）、saltはそのまま。結果はPRKで、長さはハッシュの長さちょうど（sha256なら32）でなければ400（<code>out of range</code>）。</dd>
+						<dt>hkdf-expand</dt>
+						<dd>[SSP 2.9.14] HKDFのexpandだけ（RFC 5869 §2.3）。<code>--digest=</code>（既定は<code>sha256</code>） / <code>--info=</code>。passwordがPRK（空にはできない）。saltは空にする（空でなければ400 <code>invalid parameter</code>）。長さはハッシュの長さ×255まで。</dd>
 						<dt>scrypt</dt>
 						<dd><code>--n=</code>（既定は8192。2の累乗） / <code>--r=</code>（既定は8） / <code>--p=</code>（既定は10。1～16）。N×r×128バイトが12MiBまで。</dd>
 						<dt>argon2id</dt>
@@ -751,8 +762,8 @@ Argument4: --out=base64
 				</dd>
 			</dl>
 			<section class="caption" id="internal_crypto_pkey">
-				<h1>公開鍵暗号（GenerateKeyPair / Sign / Verify）</h1>
-				<p>署名の方式は次のとおりです（名前のハイフン・アンダースコアの有無と大文字小文字は区別しない）。これ以外は400（<code>unsupported algorithm</code>）です。それぞれJWT（JWS）のalgの<code>EdDSA</code> / <code>ES256</code> / <code>RS256</code> / <code>PS256</code>と同じ署名になります。</p>
+				<h1>公開鍵暗号（GenerateKeyPair / Sign / Verify / KeyAgreement）</h1>
+				<p>署名の方式は次のとおりです（名前のハイフン・アンダースコアの有無と大文字小文字は区別しない）。これ以外は400（<code>unsupported algorithm</code>）です。<code>ed25519</code>～<code>ps256</code>は、それぞれJWT（JWS）のalgの<code>EdDSA</code> / <code>ES256</code> / <code>RS256</code> / <code>PS256</code>と同じ署名になります。</p>
 				<dl>
 					<dt>ed25519</dt>
 					<dd>Ed25519（RFC 8032）。署名は64バイト。</dd>
@@ -762,11 +773,15 @@ Argument4: --out=base64
 					<dd>RSA（RSASSA-PKCS1-v1_5）+ SHA-256。</dd>
 					<dt>ps256</dt>
 					<dd>RSA（RSASSA-PSS）+ SHA-256。MGF1もSHA-256、ソルトは32バイト（JWAのPS256と同じ）。</dd>
+					<dt>bip340</dt>
+					<dd>secp256k1のSchnorr署名（BIP-340。nostrのイベントの署名と同じ）。署名は64バイト。メッセージはハッシュせずにそのまま署名する（長さは自由。nostrではイベントのID（32バイト）を<code>--data-in=hex</code>で渡す）。鍵の渡し方はほかの方式と違う（下を参照）。</dd>
 				</dl>
 				<p>鍵は、1行のDERのbase64か、PEMで渡します。<a href="#internal_crypto.GenerateKeyPair">GenerateKeyPair</a>は前者（秘密鍵はPKCS#8、公開鍵はSubjectPublicKeyInfo）を出力します。
 				<br />PEMは改行を含みSAORIのヘッダに書けないので、改行を空白にしたもの（または改行を除いて1行にしたもの）を渡してください。<code>-----BEGIN</code>で始まればPEMとして、<code>-----BEGIN ...-----</code>と<code>-----END</code>の間をbase64として読みます。
 				<br />秘密鍵はPKCS#8（<code>PRIVATE KEY</code>）のほか、RSAはPKCS#1（<code>RSA PRIVATE KEY</code>）、ECDSAはSEC1（<code>EC PRIVATE KEY</code>）も読めます。パスワードで暗号化された秘密鍵は読めません。公開鍵はSubjectPublicKeyInfo（<code>PUBLIC KEY</code>）です。
 				<br />RSAの鍵は2048～4096ビット、ECDSAの鍵はP-256だけです。読めない鍵・種類や大きさが方式に合わない鍵は400（<code>invalid key</code>）です。</p>
+				<p><strong><code>bip340</code>と<code>KeyAgreement</code>の<code>secp256k1</code>の鍵は、DER / PEMではなく生の値</strong>です。秘密鍵は32バイト、公開鍵はx座標だけの32バイト（BIP-340の形。nostrの公開鍵と同じ）で、既定の形式は<code>hex</code>です。<code>--key-in=</code>で読み方を変えられます（<code>--key-in=bech32</code>なら<code>nsec1...</code> / <code>npub1...</code>をそのまま渡せる）。
+				<br />長さが違う鍵、0や位数以上の秘密鍵は400（<code>invalid key</code>）です。<code>--key-in=</code>はこの2つの方式でだけ使えます（ほかの方式で付けると400 <code>invalid parameter</code>）。</p>
 			</section>
 			<dl id="internal_crypto.GenerateKeyPair">
 				<dt class="entry">GenerateKeyPair</dt>
@@ -776,8 +791,9 @@ Argument4: --out=base64
 					<br />秘密鍵は、必要なら<a href="#internal_crypto.Protect">Protect</a>で包んで保存してください。</p>
 					<dl class="reference">
 						<dt>Argument1</dt>
-						<dd>方式：<code>ed25519</code> / <code>es256</code>（P-256） / <code>rsa-2048</code> / <code>rsa-3072</code> / <code>rsa-4096</code>（RSAの鍵は<code>rs256</code>と<code>ps256</code>のどちらにも使える）</dd>
+						<dd>方式：<code>ed25519</code> / <code>es256</code>（P-256） / <code>rsa-2048</code> / <code>rsa-3072</code> / <code>rsa-4096</code>（RSAの鍵は<code>rs256</code>と<code>ps256</code>のどちらにも使える） / <code>bip340</code>（secp256k1）</dd>
 					</dl>
+					<p><code>bip340</code>だけは、<code>Value0</code>に秘密鍵（32バイト）、<code>Value1</code>にx座標だけの公開鍵（32バイト）が、どちらも16進（小文字）で入る。nostrの<code>nsec</code> / <code>npub</code>にするときは<a href="#internal_data.Convert">Convert</a>の<code>--out=bech32</code>を使う。この鍵は<a href="#internal_crypto.KeyAgreement">KeyAgreement</a>の<code>secp256k1</code>にもそのまま使える。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
 					</ul>
@@ -795,15 +811,16 @@ Argument4: --out=base64
 						<dt>Argument3</dt>
 						<dd>data（既定の形式は<code>text</code>）</dd>
 						<dt>オプション</dt>
-						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>base64url</code>） / <code>--charset=</code></dd>
+						<dd><code>--data-in=</code> / <code>--out=</code>（既定は<code>base64url</code>。<code>bip340</code>は<code>hex</code>） / <code>--charset=</code> / <code>--key-in=</code>（<code>bip340</code>だけ。既定は<code>hex</code>） / <code>--aux=</code>（<code>bip340</code>だけ。BIP-340の補助の乱数32バイト。<code>--aux-in=</code>、既定の形式は<code>hex</code>。省略時は毎回乱数。テストベクタと突き合わせるとき以外は使わないこと）</dd>
 					</dl>
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
 							<p><code>Argument0: Sign<br />Argument1: ed25519<br />Argument2: MC4CAQAwBQYDK2VwBCIEIJ1hsZ3v/VpguoRK9JLsLMREScVpezJpGXA7rAMcrn9g<br />Argument3: eyJhbGciOiJFZERTQSJ9.RXhhbXBsZSBvZiBFZDI1NTE5IHNpZ25pbmc<br /><br />→ Result: hgyY0il_MGCjP0JzlnLWG1PPOt7-09PGcvMg3AIbQR6dWbhijcNR4ki4iylGjg5BhVsPt9g7sVvpAr_MuM0KAg</code></p>
+							<p><code>Argument0: Sign<br />Argument1: bip340<br />Argument2: b7e151628aed2a6abf7158809cf4f3c762e7160f38b4da56a784d9045190cfef<br />Argument3: 243f6a8885a308d313198a2e03707344a4093822299f31d0082efa98ec4e6c89<br />Argument4: --data-in=hex<br />Argument5: --aux=0000000000000000000000000000000000000000000000000000000000000001<br /><br />→ Result: 6896bd60eeae296db48a229ff71dfe071bde413e6d43f917dc8dcf8c78de33418906d11ac976abccb20b091292bff4ea897efcb639ea871cfa95f6de339e4b0a</code>（BIP-340のテストベクタ1）</p>
 						</section>
 					</div>
-					<p>Ed25519とRSA（rs256）は、同じ鍵とデータなら毎回同じ署名になります。es256とps256は毎回違う署名になります（どれも<a href="#internal_crypto.Verify">Verify</a>で検証できる）。</p>
+					<p>Ed25519とRSA（rs256）は、同じ鍵とデータなら毎回同じ署名になります。es256・ps256・bip340は毎回違う署名になります（どれも<a href="#internal_crypto.Verify">Verify</a>で検証できる）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
 					</ul>
@@ -812,7 +829,8 @@ Argument4: --out=base64
 			<dl id="internal_crypto.Verify">
 				<dt class="entry">Verify</dt>
 				<dd class="entry">
-					<p>署名を公開鍵で検証する。正しければ<code>1</code>、正しくなければ<code>0</code>（署名の長さが違うときも<code>0</code>）。公開鍵の代わりに秘密鍵を渡してもよい。</p>
+					<p>署名を公開鍵で検証する。正しければ<code>1</code>、正しくなければ<code>0</code>（署名の長さが違うときも<code>0</code>）。公開鍵の代わりに秘密鍵を渡してもよい（<code>bip340</code>を除く）。
+					<br /><code>bip340</code>では、32バイトだが曲線上の点にならない公開鍵も、BIP-340の決まりどおり<code>0</code>になる（長さが違えば400 <code>invalid key</code>）。</p>
 					<dl class="reference">
 						<dt>Argument1</dt>
 						<dd>方式（<a href="#internal_crypto_pkey">公開鍵暗号</a>を参照）</dd>
@@ -821,10 +839,38 @@ Argument4: --out=base64
 						<dt>Argument3</dt>
 						<dd>data（既定の形式は<code>text</code>）</dd>
 						<dt>Argument4</dt>
-						<dd>signature（既定の形式は<code>base64url</code>）</dd>
+						<dd>signature（既定の形式は<code>base64url</code>。<code>bip340</code>は<code>hex</code>）</dd>
 						<dt>オプション</dt>
-						<dd><code>--data-in=</code> / <code>--signature-in=</code> / <code>--charset=</code></dd>
+						<dd><code>--data-in=</code> / <code>--signature-in=</code> / <code>--charset=</code> / <code>--key-in=</code>（<code>bip340</code>だけ。既定は<code>hex</code>）</dd>
 					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_crypto.KeyAgreement">
+				<dt class="entry">KeyAgreement</dt>
+				<dd class="entry">
+					<p>自分の秘密鍵と相手の公開鍵から、2人だけが同じ値を得られる共有の秘密を求める（ECDH）。結果は点のx座標（32バイト）そのままで、ハッシュはしない（nostrのNIP-44と同じ）。
+					<br /><strong>結果をそのまま暗号の鍵にしないこと。</strong><a href="#internal_crypto.DeriveKey">DeriveKey</a>の<code>hkdf</code>（または<code>hkdf-extract</code>）を通してから使ってください。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>方式：<code>secp256k1</code></dd>
+						<dt>Argument2</dt>
+						<dd>秘密鍵（32バイト。既定の形式は<code>hex</code>）</dd>
+						<dt>Argument3</dt>
+						<dd>相手の公開鍵（既定の形式は<code>hex</code>）。x座標だけの32バイト（BIP-340 / nostrの形）、圧縮形式の33バイト、非圧縮形式の65バイトのどれでもよい</dd>
+						<dt>オプション</dt>
+						<dd><code>--key-in=</code> / <code>--peer-in=</code> / <code>--out=</code>（既定は<code>hex</code>）</dd>
+					</dl>
+					<p>秘密鍵が範囲外、相手の公開鍵が曲線上の点でない・長さが違うときは400（<code>invalid key</code>）です。</p>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: KeyAgreement<br />Argument1: secp256k1<br />Argument2: 315e59ff51cb9209768cf7da80791ddcaae56ac9775eb25b6dee1234bc5d2268<br />Argument3: c2f9d9948dc8c7c38321e4b85c8558872eafa0641cd269db76848a6073e69133<br /><br />→ Result: 5ad01c0fc57ed5f92a0518b6440ca876eb1f247ddbb237ba1caaabbf4cebbdce</code></p>
+							<p><code>Argument0: DeriveKey<br />Argument1: hkdf-extract<br />Argument2: 5ad01c0fc57ed5f92a0518b6440ca876eb1f247ddbb237ba1caaabbf4cebbdce<br />Argument3: nip44-v2<br />Argument4: 32<br />Argument5: --password-in=hex<br /><br />→ Result: 3dfef0ce2a4d80a25e7a328accf73448ef67096f65f79588e358d9a0eb9013f1</code>（NIP-44の会話鍵。NIP-44のテストベクタ）</p>
+						</section>
+					</div>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.14</li>
 					</ul>
