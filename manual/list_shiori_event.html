@@ -5759,9 +5759,9 @@
 			<dl id="OnSoundSpectrum">
 				<dt class="entry">OnSoundSpectrum</dt>
 				<dd class="entry">
-					<p><a href="list_sakura_script.html#notes_sound">--spectrum=</a>つきで読み込んだサウンドの再生中に、一定間隔で発生。再生中の音のスペクトラム(低音から高音までの帯域ごとの音量レベル)を通知する。スペクトラムアナライザなどの表示用。
+					<p><a href="list_sakura_script.html#notes_sound">--spectrum=</a>を指定したサウンドの再生中に、一定間隔で発生。再生中の音のスペクトラム(低音から高音までの帯域ごとの音量レベル)を通知する。スペクトラムアナライザなどの表示用。
 					<br />解析するのは再生中の波形そのもので、--volumeや--balanceの設定を掛ける前の値になる。そのため音量を絞っても値は小さくならない。
-					<br />一時停止中は発生しない。再生が停止・終了するときは、全てのレベルが0の通知を1回発生させたあとに<a href="#OnSoundStop">OnSoundStop</a>が発生する。
+					<br />一時停止中は発生しない。再生が停止・終了するとき、または--spectrum=0で通知を止めるときは、全てのレベルが0の通知を1回発生させる(停止・終了のときは、そのあとに<a href="#OnSoundStop">OnSoundStop</a>が発生する)。
 					<br />MIDI・CDトラック・ADPCMなどの圧縮wavのように、再生中の波形を取り出せないサウンドでは発生しない(再生自体は通常どおり行われる)。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
