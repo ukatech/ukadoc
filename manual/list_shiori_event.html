@@ -5759,10 +5759,11 @@
 			<dl id="OnSoundSpectrum">
 				<dt class="entry">OnSoundSpectrum</dt>
 				<dd class="entry">
-					<p><a href="list_sakura_script.html#notes_sound">--spectrum=</a>を指定したサウンドの再生中に、一定間隔で発生。再生中の音のスペクトラム(低音から高音までの帯域ごとの音量レベルと、そのピークホールド値)を通知する。スペクトラムアナライザなどの表示用。
+					<p><a href="list_sakura_script.html#notes_sound">--spectrum=</a>を指定したサウンドの再生中に、一定間隔で発生。再生中の音のスペクトラム(全体の音量レベルと、低音から高音までの帯域ごとの音量レベル、およびそれぞれのピークホールド値)を通知する。スペクトラムアナライザなどの表示用。
 					<br />解析するのは再生中の波形そのもので、--volumeや--balanceの設定を掛ける前の値になる。そのため音量を絞っても値は小さくならない。
 					<br />一時停止中は発生しない。再生が停止・終了するとき、または--spectrum=0で通知を止めるときは、全てのレベルが0の通知を1回発生させる(停止・終了のときは、そのあとに<a href="#OnSoundStop">OnSoundStop</a>が発生する)。
-					<br />MIDI・CDトラック・ADPCMなどの圧縮wavのように、再生中の波形を取り出せないサウンドでは発生しない(再生自体は通常どおり行われる)。</p>
+					<br />MIDI・CDトラック・xWMAのwavのように、再生中の波形を取り出せないサウンドでは発生しない(再生自体は通常どおり行われる)。
+					<br />ADPCM(MS-ADPCM・IMA-ADPCM)のwavは、通知を始めたときに解析用として別に波形を展開する。展開後が64MBを超える長いファイル(44.1kHzステレオで約6分以上)では発生しない。</p>
 					<dl class="reference">
 						<dt>Reference0</dt>
 						<dd>再生ファイル名。</dd>
@@ -5771,11 +5772,11 @@
 						<dt>Reference2</dt>
 						<dd>全体の音量レベル(0～100)。</dd>
 						<dt>Reference3</dt>
-						<dd>帯域ごとの音量レベル(0～100)。低音の帯域から高音の帯域の順に、バイト値1(\1)区切りで並ぶ。個数はReference1と同じ。</dd>
+						<dd>全体の音量レベル(Reference2)のピークホールド値(0～100)。ホールド時間は--spectrum-hold=で指定する(既定は500ミリ秒)。</dd>
 						<dt>Reference4</dt>
-						<dd>帯域ごとのピークホールド値(0～100)。Reference3と同じ並び・同じ個数。ホールド時間は--spectrum-hold=で指定する(既定は500ミリ秒)。</dd>
+						<dd>帯域ごとの音量レベル(0～100)。低音の帯域から高音の帯域の順に、バイト値1(\1)区切りで並ぶ。個数はReference1と同じ。</dd>
 						<dt>Reference5</dt>
-						<dd>全体の音量レベル(Reference2)のピークホールド値(0～100)。</dd>
+						<dd>帯域ごとのピークホールド値(0～100)。Reference4と同じ並び・同じ個数。ホールド時間はReference3と同じ。</dd>
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.18</li>
