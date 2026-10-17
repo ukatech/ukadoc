@@ -4314,6 +4314,11 @@
 					<dd>シークバーつきのウインドウを表示するかどうか。trueの場合は音声のみでも強制表示する。指定しなければ音声のみならなし、動画ならあり。</dd>
 					<dt>--sound-only=false/true (=OFF/ON)</dt>
 					<dd>load時限定：動画ファイルの音声のみ再生が可能。指定しなければfalseと同じ。</dd>
+					<dt>--spectrum=間隔 [2.9.18]</dt>
+					<dd>load/play時限定：再生中の音のスペクトラム(帯域ごとの音量レベル)を、指定した間隔(ミリ秒)ごとに<a href="list_shiori_event.html#OnSoundSpectrum">OnSoundSpectrum</a>イベントで通知する。指定できる範囲は50～1000で、範囲外は端に丸められる。0または指定なしなら通知しない。
+					<br />ファイルを開く時にしか仕込めないため、既にload済みのファイルに対する指定は無視される。通知が不要になったら、いったんstopで閉じてから開き直すこと。</dd>
+					<dt>--spectrum-bands=1～64 [2.9.18]</dt>
+					<dd>load/play時限定：--spectrum=で通知する帯域の数。指定しなければ16。</dd>
 				</dl>
 			</section>
 		</section>

@@ -585,6 +585,7 @@
 				<li><a href="#OnNekodorifExist">OnNekodorifExist</a></li>
 				<li><a href="#OnSoundStop">OnSoundStop</a></li>
 				<li><a href="#OnSoundLoop">OnSoundLoop</a></li>
+				<li><a href="#OnSoundSpectrum">OnSoundSpectrum</a></li>
 				<li><a href="#OnSoundError">OnSoundError</a></li>
 				<li><a href="#OnMusicPlayEx">OnMusicPlayEx</a></li>
 				<li><a href="#OnMusicPlay">OnMusicPlay</a></li>
@@ -5752,6 +5753,28 @@
 					</dl>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.7.93</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="OnSoundSpectrum">
+				<dt class="entry">OnSoundSpectrum</dt>
+				<dd class="entry">
+					<p><a href="list_sakura_script.html#notes_sound">--spectrum=</a>つきで読み込んだサウンドの再生中に、一定間隔で発生。再生中の音のスペクトラム(低音から高音までの帯域ごとの音量レベル)を通知する。スペクトラムアナライザなどの表示用。
+					<br />解析するのは再生中の波形そのもので、--volumeや--balanceの設定を掛ける前の値になる。そのため音量を絞っても値は小さくならない。
+					<br />一時停止中は発生しない。再生が停止・終了するときは、全てのレベルが0の通知を1回発生させたあとに<a href="#OnSoundStop">OnSoundStop</a>が発生する。
+					<br />MIDI・CDトラック・ADPCMなどの圧縮wavのように、再生中の波形を取り出せないサウンドでは発生しない(再生自体は通常どおり行われる)。</p>
+					<dl class="reference">
+						<dt>Reference0</dt>
+						<dd>再生ファイル名。</dd>
+						<dt>Reference1</dt>
+						<dd>帯域の数。--spectrum-bands=で指定した数(既定は16)。</dd>
+						<dt>Reference2</dt>
+						<dd>全体の音量レベル(0～100)。</dd>
+						<dt>Reference3</dt>
+						<dd>帯域ごとの音量レベル(0～100)。低音の帯域から高音の帯域の順に、バイト値1(\1)区切りで並ぶ。個数はReference1と同じ。</dd>
+					</dl>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.18</li>
 					</ul>
 				</dd>
 			</dl>
