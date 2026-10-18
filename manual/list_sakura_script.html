@@ -4319,7 +4319,7 @@
 					<br />再生中でもoptionでいつでも開始・停止・間隔の変更ができる。途中から開始した場合、開始直後の短い間は帯域が小さめに出ることがある。</dd>
 					<dt>--spectrum-bands=0/5/10/15/31 [2.9.18]</dt>
 					<dd>--spectrum=で通知する帯域の数。0・5・10・15・31のどれかを指定する(それ以外の数を指定した場合は一番近いもの。例：16なら15、20なら15、64なら31)。指定しなければ10。再生中でも変更できる。
-						<br />[2.9.19] 0にすると帯域ごとの解析を行わず、全体の音量レベル(<a href="list_shiori_event.html#OnSoundSpectrum">OnSoundSpectrum</a>のReference2・3)と再生位置(Reference6)だけを通知する。音量つきの経過時間通知として使える。MIDI・CDトラックなど波形を取り出せないサウンドでも再生位置は通知される(音量は0)。
+						<br />[2.9.19] 0にすると帯域ごとの解析を行わず、チャンネルごとの全体の音量レベル(<a href="list_shiori_event.html#OnSoundSpectrum">OnSoundSpectrum</a>のReference2・3)と再生位置(Reference6)だけを通知する。音量つきの経過時間通知として使える。MIDI・CDトラックなど波形を取り出せないサウンドでも再生位置は通知される(音量は0)。
 					<br />各帯域の周波数は帯域数ごとに固定の表で決まっており、<a href="#notes_sound_spectrum">下表</a>のとおり。</dd>
 					<dt>--spectrum-hold=ミリ秒 [2.9.18]</dt>
 					<dd>--spectrum=で通知するピークホールド値(<a href="list_shiori_event.html#OnSoundSpectrum">OnSoundSpectrum</a>のReference3・5)のホールド時間。0～10000で、指定しなければ500。0にするとホールドなし(ピークは現在の値と同じ)。再生中でも変更できる。
