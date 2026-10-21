@@ -712,8 +712,23 @@ Argument4: --out=base64
 						<dd><code>$scrypt$ln=13,r=8,p=10$ソルト$ハッシュ</code>（ln は N の2を底とする対数）</dd>
 						<dt>pbkdf2-sha256</dt>
 						<dd><code>$pbkdf2-sha256$i=600000,l=32$ソルト$ハッシュ</code></dd>
+						<dt>bcrypt</dt>
+						<dd>[SSP 2.9.23] <code>$2b$12$</code>＋ソルト22文字＋ハッシュ31文字。パスワードは先頭の72バイトまでしか使われない。</dd>
+						<dt>sha512-crypt</dt>
+						<dd>[SSP 2.9.23] <code>$6$rounds=656000$ソルト$ハッシュ</code>（ソルトは16文字）</dd>
+						<dt>sha256-crypt</dt>
+						<dd>[SSP 2.9.23] <code>$5$rounds=535000$ソルト$ハッシュ</code>（ソルトは16文字）</dd>
+						<dt>md5-crypt</dt>
+						<dd>[SSP 2.9.23] <code>$1$ソルト$ハッシュ</code>（ソルトは8文字）</dd>
+						<dt>apr1</dt>
+						<dd>[SSP 2.9.23] <code>$apr1$ソルト$ハッシュ</code>（ソルトは8文字。Apacheのhtpasswdの形式）</dd>
+						<dt>bsdi-crypt</dt>
+						<dd>[SSP 2.9.23] <code>_</code>＋反復回数4文字＋ソルト4文字＋ハッシュ11文字（BSDiの拡張DES。反復回数は5001）</dd>
+						<dt>des-crypt</dt>
+						<dd>[SSP 2.9.23] ソルト2文字＋ハッシュ11文字（伝統的なcrypt(3)のDES）。パスワードは先頭の8文字までしか使われない。</dd>
 					</dl>
-					<p>ソルトとハッシュはbase64（パディングなし）です。</p>
+					<p>ソルトとハッシュはbase64（パディングなし）です。
+					<br />[SSP 2.9.23] bcrypt以下はcrypt(3)の形式で、ほかのシステム（/etc/shadow、htpasswd、PHPの<code>password_hash</code>など）とやりとりするためのもの。<code>--method=</code>の名前のハイフン・アンダースコアと大文字小文字は無視する。ソルトとハッシュは各形式の文字（<code>./0-9A-Za-z</code>）で、パラメータは上の表で固定。md5-crypt・apr1・bsdi-crypt・des-cryptは今では弱い方式なので、相互運用のほかには使わないこと。crypt(3)の形式ではパスワードにNUL（0x00）を含められず、含めると400（<code>invalid parameter</code>）。1024バイトを超えるパスワードは400（<code>out of range</code>）。</p>
 					<ul class="supported-baseware">
 						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.13</li>
 					</ul>
@@ -724,12 +739,13 @@ Argument4: --out=base64
 				<dd class="entry">
 					<p>パスワードがPHC文字列と一致するかを調べ、一致すれば<code>1</code>、しなければ<code>0</code>を返す。パラメータはPHC文字列から読む。<a href="#async"><code>--async</code></a>を推奨。
 					<br /><a href="#internal_crypto.HashPassword">HashPassword</a>の出力のほか、同じ形のものなら他の実装が作った文字列も読める（<code>$argon2id$</code>（<code>v=</code>の無いもの・<code>v=16</code>も可） / <code>$scrypt$</code> / <code>$pbkdf2-sha1$</code> / <code>$pbkdf2-sha256$</code> / <code>$pbkdf2-sha512$</code>）。ただしメモリの上限（12MiB）を超えるパラメータのもの（argon2-cffiの既定の64MiBなど）は400（<code>out of range</code>）で照合できない。
-					<br />これ以外の方式（bcryptなど）は400（<code>unsupported algorithm</code>）、形の誤りは400（<code>invalid parameter</code>）、パラメータが<a href="#internal_crypto.DeriveKey">DeriveKey</a>の範囲の外なら400（<code>out of range</code>）。</p>
+					<br />[SSP 2.9.23] crypt(3)の形式も読める（<code>$2a$</code> / <code>$2b$</code> / <code>$2y$</code>（bcrypt。3つとも同じに扱う） / <code>$6$</code> / <code>$5$</code>（<code>rounds=</code>の無いもの・1000未満を1000に切り上げるものも可） / <code>$1$</code> / <code>$apr1$</code> / <code>_</code>で始まる20文字（BSDiの拡張DES） / 13文字（伝統的なDES））。bcryptのコストは16まで、SHA-cryptの<code>rounds=</code>は10000000までで、それを超えると400（<code>out of range</code>）。<code>$2x$</code>・<code>$2$</code>は扱わない。
+					<br />これ以外の方式は400（<code>unsupported algorithm</code>）、形の誤りは400（<code>invalid parameter</code>）、パラメータが<a href="#internal_crypto.DeriveKey">DeriveKey</a>の範囲の外なら400（<code>out of range</code>）。</p>
 					<dl class="reference">
 						<dt>Argument1</dt>
 						<dd>password（既定の形式は<code>text</code>）</dd>
 						<dt>Argument2</dt>
-						<dd>PHC文字列</dd>
+						<dd>PHC文字列（[SSP 2.9.23] またはcrypt(3)の形式の文字列）</dd>
 						<dt>オプション</dt>
 						<dd><code>--password-in=</code> / <code>--charset=</code></dd>
 					</dl>
