@@ -932,6 +932,7 @@ Command: GetName
 					<br />--event=イベント識別子……イベント識別子を指定すると、レスポンス後に圧縮を続け、終わり次第イベントが起きる。識別子がOnではじまる場合はその識別子のイベントが発生し、それ以外の場合はOnCompressArchiveCompleteまたはOnCompressArchiveFailureが発生する。省略時は処理が完了するまでレスポンスが返らない。
 					<br />--password=パスワード……指定したパスワードを使用してAES暗号化ZIPを有効にする。
 					<br />動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnCompressArchiveComplete">OnCompressArchiveComplete</a>・<a href="list_shiori_event.html#OnCompressArchiveFailure">OnCompressArchiveFailure</a>を参照。
+					<br />[SSP 2.9.25] SAORI over DirectSSTPからは、<a href="spec_saori_ex.html#internal_file.CompressArchive">internal_fileのCompressArchive</a>でも呼べる（相対パス指定や<code>/</code>区切りも書ける）。
 					<br />セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
 					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>
@@ -945,6 +946,7 @@ Command: GetName
 					<br />--event=イベント識別子……イベント識別子を指定すると、レスポンス後に解凍を続け、終わり次第イベントが起きる。識別子がOnではじまる場合はその識別子のイベントが発生し、それ以外の場合はOnExtractArchiveCompleteまたはOnExtractArchiveFailureが発生する。省略時は処理が完了するまでレスポンスが返らない。
 					<br />--password=パスワード……指定したパスワードを使用してパスワード問い合わせなしで展開する。
 					<br />動作後のイベントに関する仕様は<a href="list_shiori_event.html#OnExtractArchiveComplete">OnExtractArchiveComplete</a>・<a href="list_shiori_event.html#OnExtractArchiveFailure">OnExtractArchiveFailure</a>を参照。
+					<br />[SSP 2.9.25] SAORI over DirectSSTPからは、<a href="spec_saori_ex.html#internal_file.ExtractArchive">internal_fileのExtractArchive</a>でも呼べる（相対パス指定や<code>/</code>区切りも書ける）。
 					<br />セキュリティ上の観点から、解凍先は、SSP管理下のフォルダ(ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所)以下への展開に制限される。
 					<br />また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。
 					<br />追加データなし(ステータスコード200番台で成功)</dd>

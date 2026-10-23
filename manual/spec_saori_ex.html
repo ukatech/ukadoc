@@ -1246,6 +1246,69 @@ Argument4: --out=base64
 					</ul>
 				</dd>
 			</dl>
+			<dl id="internal_file.CompressArchive">
+				<dt class="entry">CompressArchive</dt>
+				<dd class="entry">
+					<p>ファイルまたはフォルダをZIPファイルに圧縮する。<a href="spec_sstp.html#method_execute">SSTPのEXECUTE</a>の<code>CompressArchive</code>と同じ処理を、SAORI over DirectSSTPから呼べるようにしたもの。
+					<br />書庫の処理は数秒かかることがあるので、<a href="#async"><code>--async</code></a>を強く推奨する。同期で呼ぶと、処理の間ゴーストが止まる。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>圧縮先のZIPファイルのパス。相対パスはゴーストのフォルダ（ghost/master）が基準。区切りは<code>/</code>も<code>\</code>も書ける。ゴーストなしの呼び出しで相対パスを渡すと400（<code>ghost required</code>）。</dd>
+						<dt>Argument2</dt>
+						<dd>圧縮するフォルダ（中のファイルを再帰的に含める）またはファイルのパス。書き方はArgument1と同じ。無ければ400（<code>file not found</code>）。</dd>
+					</dl>
+					<p>オプション（同じ名前を2回書くと後のものが有効）：</p>
+					<ul class="description">
+						<li>--password=パスワード……指定したパスワードでAES暗号化ZIPにする。</li>
+						<li>--option=オプション……次の値をカンマ区切りで<strong>1つにまとめて</strong>指定する（<code>--option=overwrite,lzma</code>のように。<code>--option=</code>を2つに分けて書くと後のものだけが有効になる）。
+							<br />overwrite……圧縮先のZIPファイルが既にあれば置き換える。
+							<br />append……圧縮先のZIPファイルが既にあれば追加する。
+							<br />lzma……LZMAで圧縮する。
+							<br />headerencrypt……ヘッダも暗号化する（<code>--password=</code>が必要）。
+							<br />圧縮先のZIPファイルが既にあって、<code>overwrite</code>も<code>append</code>も指定していないときは400（<code>file exists</code>）。</li>
+					</ul>
+					<p>成功すると200で、<code>Result</code>に圧縮したファイル数、<code>Value0</code>に圧縮後のバイト数、<code>Value1</code>に圧縮前（展開後）のバイト数が入る（10進の整数）。SSTPのEXECUTEの<a href="list_shiori_event.html#OnCompressArchiveComplete">OnCompressArchiveComplete</a>の<code>Reference1</code>～<code>Reference3</code>と同じ値で、<a href="#async"><code>--async</code></a>では<code>Reference1</code>（<code>Result</code>）と<code>Reference4</code>・<code>Reference5</code>（<code>Value0</code>・<code>Value1</code>）に入る。
+					<br />[SSP 2.9.25] ZIPでは、このファイル数とバイト数が正しい値にならないことがある（圧縮では0になる）。圧縮そのものの成否には影響しない。</p>
+					<p>失敗は次のとおり。400は<code>file not found</code>（圧縮元が無い）/ <code>invalid parameter</code>（引数が足りない、パスが空、オプションが不正）/ <code>ghost required</code> / <code>file exists</code> / <code>path not allowed</code>（圧縮先がSSP管理下のフォルダの外）。500は<code>open failed</code>など、圧縮に失敗した理由。</p>
+					<p>セキュリティ上の観点から、圧縮先は、SSP管理下のフォルダ（ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所）以下に制限される。パスは<code>..</code>などを解決した結果で調べる。また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: CompressArchive<br />Argument1: save/backup.zip<br />Argument2: save/data<br />Argument3: --option=overwrite<br />Argument4: --async=OnBackupDone<br /><br />→ 204（結果は<a href="#async">OnBackupDoneイベント</a>で届く）</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.25</li>
+					</ul>
+				</dd>
+			</dl>
+			<dl id="internal_file.ExtractArchive">
+				<dt class="entry">ExtractArchive</dt>
+				<dd class="entry">
+					<p>ZIPファイルを展開する。<a href="spec_sstp.html#method_execute">SSTPのEXECUTE</a>の<code>ExtractArchive</code>と同じ処理を、SAORI over DirectSSTPから呼べるようにしたもの。
+					<br />書庫の処理は数秒かかることがあるので、<a href="#async"><code>--async</code></a>を強く推奨する。同期で呼ぶと、処理の間ゴーストが止まる。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>展開するZIPファイルのパス。相対パスはゴーストのフォルダ（ghost/master）が基準。区切りは<code>/</code>も<code>\</code>も書ける。ゴーストなしの呼び出しで相対パスを渡すと400（<code>ghost required</code>）。ファイルが無い（フォルダを含む）ときは400（<code>file not found</code>）。</dd>
+						<dt>Argument2</dt>
+						<dd>展開先のフォルダのパス。書き方はArgument1と同じ。フォルダが無ければ作る（作れなければ500 <code>create directory failed</code>）。</dd>
+					</dl>
+					<p>オプションは<a href="#async"><code>--async</code></a>だけ。パスワードを指定するオプションは無い（パスワード付きのZIPは展開できないことがある）。</p>
+					<p>成功すると200で、<code>Result</code>に展開したファイル数、<code>Value0</code>に圧縮後のバイト数、<code>Value1</code>に展開後のバイト数が入る（10進の整数）。SSTPのEXECUTEの<a href="list_shiori_event.html#OnExtractArchiveComplete">OnExtractArchiveComplete</a>の<code>Reference1</code>～<code>Reference3</code>と同じ値で、<a href="#async"><code>--async</code></a>では<code>Reference1</code>（<code>Result</code>）と<code>Reference4</code>・<code>Reference5</code>（<code>Value0</code>・<code>Value1</code>）に入る。
+					<br />[SSP 2.9.25] ZIPでは、このファイル数とバイト数が正しい値にならないことがある（複数のファイルを含むZIPでは、バイト数が最後の1ファイル分になる）。展開そのものの成否には影響しない。</p>
+					<p>失敗は次のとおり。400は<code>file not found</code>（展開するZIPファイルが無い）/ <code>invalid parameter</code>（引数が足りない、パスが空）/ <code>ghost required</code> / <code>path not allowed</code>（展開先がSSP管理下のフォルダの外）。500は<code>create directory failed</code>か、展開に失敗した理由（<code>open failed</code>、<code>crc</code>、<code>password required</code>など）。</p>
+					<p>セキュリティ上の観点から、展開先は、SSP管理下のフォルダ（ghostフォルダ、balloonフォルダなど「フォルダ」設定で指定した場所）以下に制限される。パスは<code>..</code>などを解決した結果で調べる。また、この制限は適宜強化される可能性があるため、ゴースト自身のデータが置かれているフォルダ以下に限定するのが無難。</p>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: ExtractArchive<br />Argument1: save/backup.zip<br />Argument2: save/restore<br />Argument3: --async=OnRestoreDone<br /><br />→ 204（結果は<a href="#async">OnRestoreDoneイベント</a>で届く）<br />　Reference0: OnRestoreDone<br />　Reference1: 12（展開したファイル数）<br />　Reference2: internal_file<br />　Reference3: ExtractArchive<br />　Reference4: 圧縮後のバイト数<br />　Reference5: 展開後のバイト数</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.25</li>
+					</ul>
+				</dd>
+			</dl>
 			<section class="caption" id="internal_file_impl">
 				<h1>MediaInfoを実装するベースウェア向けの注記</h1>
 				<p>MediaInfoは、他のOSのベースウェアでも既存の部品（ffprobe / libavformat、TagLib、OS標準のメディアAPIなど）で無理なく実装できる範囲に絞ってある。</p>
