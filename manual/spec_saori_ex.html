@@ -148,6 +148,7 @@
 				<li><a href="#internal_time">internal_time</a></li>
 				<li><a href="#internal_text">internal_text</a></li>
 				<li><a href="#internal_jwt">internal_jwt</a></li>
+				<li><a href="#internal_file">internal_file</a></li>
 				<li><a href="#internal_system">internal_system</a></li>
 				<li><a href="#compat">互換モジュール</a></li>
 			</ul>
@@ -367,6 +368,7 @@ OnHashDone
 					<li>オプションは位置引数より後ろにだけ書けます。省略できる位置引数を飛ばしてオプションを書くときは、空の引数を置いてください。</li>
 					<li>オプションの名前は大文字小文字を区別しません。同じ名前を2回書くと後のものが有効です。</li>
 					<li>位置引数より後ろにある<code>--</code>で始まらない値、関数が受け付けないオプションは400（<code>invalid parameter</code>）です。</li>
+					<li>[SSP 2.9.25] 位置引数の数が決まっていない関数（<a href="#internal_file.MediaInfo">internal_fileのMediaInfo</a>）は、2番目以降の位置で最初に<code>--</code>で始まる値から後ろをオプションとして読みます。</li>
 					<li>どの関数も<a href="#async"><code>--async=識別子</code></a>を受け付けます。</li>
 				</ul>
 <pre><!--
@@ -1196,6 +1198,73 @@ Argument4: --out=base64
 			</dl>
 		</section>
 
+		<section class="category" id="internal_file">
+			<h1>internal_file</h1>
+			<p>ファイルそのものを対象にする処理。（ファイルの中身をバイト列として読むだけの処理は、<code>internal_crypto</code>の<code>Digest</code> / <code>HMAC</code>の<code>--data-in=file</code>のように、それぞれの関数が受け付けます。）</p>
+			<dl id="internal_file.MediaInfo">
+				<dt class="entry">MediaInfo</dt>
+				<dd class="entry">
+					<p>音声・動画・画像ファイルのタグ・長さ・大きさを、<strong>ファイルをロードせずに</strong>（再生の準備をせずに、ヘッダやタグだけを読んで）取得する。<code>\![sound]</code>で要素を作らなくても、パスだけで読める。<code>sound.*</code>の一覧に要素は増えず、<code>OnSound*</code>イベントも出ず、一時ファイルも作らない。
+					<br /><strong>環境によっては取得できない場合がある。</strong>SSPはOSのプロパティハンドラ（エクスプローラーのファイルの詳細に出るのと同じ仕組み）に頼って読むので、OSにその形式のハンドラが無い、あるいはハンドラが一部の項目を返さない形式では、その値は空になる（タグが無いファイルと区別はできない）。取れなかったことはエラーにならない。
+					<br />読み出しはファイルの置き場所（ネットワークドライブなど）によっては時間がかかるので、<a href="#async"><code>--async</code></a>を推奨する。同期で呼ぶと、読み出しの間ゴーストが止まる。</p>
+					<dl class="reference">
+						<dt>Argument1</dt>
+						<dd>ファイルのパス。相対パスはゴーストのフォルダ（ghost/master）が基準。区切りは<code>/</code>も<code>\</code>も書ける。ゴーストなしの呼び出しで相対パスを渡すと400（<code>ghost required</code>）。ファイルが無い（フォルダを含む）ときは400（<code>file not found</code>）。URLは受け付けない。</dd>
+						<dt>Argument2以降</dt>
+						<dd>欲しい値のキー。1個以上必須（1個もなければ400 <code>invalid parameter</code>）で、11個まで。キーは大文字小文字を区別しない。</dd>
+					</dl>
+					<p>キーは次のとおり。値はすべて文字列（数値は10進の整数）。タグの項目は、<code>sound.(要素名).meta.*</code>と同じ名前と意味。</p>
+					<dl>
+						<dt>title / artist / albumartist / album / genre / comment</dt>
+						<dd>文字列。</dd>
+						<dt>year</dt>
+						<dd>4桁の西暦。元の値が日付全体なら先頭の4桁。</dd>
+						<dt>track</dt>
+						<dd>曲番号の整数だけ。総数は含めない（<code>3/12</code>なら<code>3</code>）。</dd>
+						<dt>duration</dt>
+						<dd>音声・動画の長さ（ミリ秒）。画像は空。VBRのMP3などは推定値のことがある。</dd>
+						<dt>width / height</dt>
+						<dd>画素数（px）。動画は映像のサイズ、画像は画像のサイズ。音声は空。アルバムアートなど、埋め込まれたジャケット画像だけの映像は動画と数えない。</dd>
+					</dl>
+					<p>応答の<code>Result</code>は種別で、<code>audio</code>（音声）/ <code>video</code>（動画）/ <code>image</code>（画像）のどれか。判別できなければ空。種別は目安なので、<code>Result</code>が空でも<code>Value</code>は埋まることがある。<code>Result</code>で分岐せず、<code>Value</code>が空かどうかで判断すること。今後、種別が増えることがある。
+					<br /><code>Value0</code>以降は、<code>Argument2</code>以降に並べたキーと同じ順に対応する。取れなかった値・知らないキーは<strong>空文字</strong>（エラーにはならない。実装独自のキーは返さない）。読めない・未対応の形式でも、400にはならず、<code>Result</code>も<code>Value</code>もすべて空の200で返る。</p>
+					<ul>
+						<li>値の中の改行は、バイト値<code>0x01</code>に置き換える（CRLFも<code>0x01</code>1つ。LFだけ・CRだけもそれぞれ<code>0x01</code>1つ）。NULは除く。</li>
+						<li>複数の値を持つタグ（複数のアーティストなど）は、<code>; </code>（セミコロンと半角空白）でつないだ1つの文字列にする。</li>
+						<li>応答の文字コードは要求の<code>Charset</code>に従う。</li>
+						<li>ファイルに書かれたタグの文字コードの推定（ID3v1や、実際は別の文字コードなのに誤った文字コードとして書かれたタグなど）はOSまかせで、文字化けすることがある。</li>
+						<li>どの形式のどの項目が取れるかはOSの環境で異なる。SSPで確かめた範囲では、Windows 11の標準の環境で、WAVのタグ、MP3のコメント、MKV / WebMのほとんどのタグと映像サイズなどは取れなかった。</li>
+					</ul>
+					<div class="legend">
+						<section class="code">
+							<h1>記述例</h1>
+							<p><code>Argument0: MediaInfo<br />Argument1: sound/bgm01.mp3<br />Argument2: title<br />Argument3: artist<br />Argument4: duration<br />Argument5: --async=OnMediaInfo<br /><br />→ 204（結果は<a href="#async">OnMediaInfoイベント</a>で届く）<br />　Reference0: OnMediaInfo<br />　Reference1: audio<br />　Reference2: internal_file<br />　Reference3: MediaInfo<br />　Reference4: タイトル<br />　Reference5: アーティスト<br />　Reference6: 215000</code></p>
+						</section>
+					</div>
+					<ul class="supported-baseware">
+						<li><img src="image/icon_s.png" alt="SSP" width="34" height="16" /> 2.9.25</li>
+					</ul>
+				</dd>
+			</dl>
+			<section class="caption" id="internal_file_impl">
+				<h1>MediaInfoを実装するベースウェア向けの注記</h1>
+				<p>MediaInfoは、他のOSのベースウェアでも既存の部品（ffprobe / libavformat、TagLib、OS標準のメディアAPIなど）で無理なく実装できる範囲に絞ってある。</p>
+				<ul>
+					<li><strong>必ず守ること（MUST）：</strong>上のキーの名前・単位・形、取れなかった値は空文字にすること、値の整形（改行の<code>0x01</code>、NULの除去）、相対パスの基準（ghost/master）、応答の形（<code>Result</code> + <code>Value0..</code>）、仕様にないキーは空にして独自のキーを返さないこと、パスの区切りに<code>/</code>を受け付けること。</li>
+					<li><strong>望ましいこと（SHOULD）：</strong>パスの区切りに<code>\</code>も受け付けること（ゴーストの作者は<code>\</code>で書くが、他のOSでは<code>\</code>が普通のファイル名の文字になりうる）。複数の値のタグを<code>; </code>でつなぐこと。</li>
+					<li><strong>実装によって違ってよいこと：</strong>対応する形式（ICO、HEICなどの追加の形式は、取れれば取れたでよく、取れなくても不具合ではない）、元のタグの文字コードの推定、VBRの長さの精度、<code>Result</code>の判定方法、どの形式のどの項目が取れるか。形式ごとのタグの対応（ID3v2の<code>TIT2</code>が<code>title</code>になる、など）は仕様では決めない。</li>
+					<li><strong>適合の確かめ方：</strong>値が出たら正しいこと。出ないこと（空）は合格。<code>duration</code>は誤差を許す（目安は±100ミリ秒か1%）。</li>
+				</ul>
+				<p>ffprobe / libavformatで実装するときの目安：</p>
+				<ul>
+					<li><code>duration</code>は<code>format.duration</code>。<code>width</code> / <code>height</code>は、動画は映像ストリーム、画像は画像自体の値。</li>
+					<li>OggやOpusのタグは<code>format.tags</code>ではなく<code>streams[].tags</code>にある。</li>
+					<li>MP3やM4Aの埋め込みジャケット画像は、<code>attached_pic</code>つきの映像ストリームとして報告される。これを映像と数えないと、音声が<code>video</code>になってしまう。</li>
+					<li><code>track</code>（<code>3/12</code>の形）と<code>date</code>（<code>2024-05-06</code>の形）は、仕様の<code>track</code>（曲番号だけ）と<code>year</code>（先頭の4桁）の形に整える必要がある。</li>
+				</ul>
+			</section>
+		</section>
+
 		<section class="category" id="internal_system">
 			<h1>internal_system</h1>
 			<p>内蔵モジュールの一覧。どの関数が使えるかをスクリプトから確かめるのに使う。
@@ -1212,7 +1281,7 @@ Argument4: --out=base64
 					<div class="legend">
 						<section class="code">
 							<h1>記述例</h1>
-							<p><code>Argument0: ListModules<br /><br />→ Result: internal_crypto,internal_random,internal_time,internal_data,internal_text,internal_jwt,internal_system<br />→ Value0: internal_crypto<br />→ Value1: internal_random<br />…</code></p>
+							<p><code>Argument0: ListModules<br /><br />→ Result: internal_crypto,internal_random,internal_time,internal_data,internal_text,internal_jwt,internal_system,internal_file<br />→ Value0: internal_crypto<br />→ Value1: internal_random<br />…</code></p>
 						</section>
 					</div>
 					<ul class="supported-baseware">
