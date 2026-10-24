@@ -1,5 +1,9 @@
 # UKADOC編集ガイド
 
+**UKADOC の正本は [ukatech/ukadoc-spec](https://github.com/ukatech/ukadoc-spec)（Markdown、1項目1ファイル。`../ukadoc-spec`）に移った。** 新しい仕様の追加・修正はそちらに書くこと。このリポジトリの `manual/` は、`9eb14c5` 時点を ukadoc-spec に変換した後の旧 HTML 版で、当面は並存させている。並存期間中にここ（`manual/`）へ入れた変更は、ukadoc-spec にも手で写すこと（`git log 9eb14c5..master -- manual` で追える）。
+
+**以下は、並存期間中の `manual/` の HTML の編集ガイドである。**
+
 **適用範囲：manual/フォルダ以下のHTMLファイル**
 
 ## 基本方針
